@@ -1,0 +1,228 @@
+{
+  "schema_version": 2,
+  "description": "사용자 지정 First Group 6개 주. 공개 ADM1 경계와 소규모 검증 창을 분리합니다.",
+  "endpoint": "planetary-computer",
+  "collection": "sentinel-2-l2a",
+  "collection_mode": "bounded_windows",
+  "window_size": 256,
+  "years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "season_start": "06-01",
+  "season_end": "09-30",
+  "cloud_cover": 20,
+  "bands": [
+    "blue",
+    "green",
+    "red"
+  ],
+  "max_total_bytes": 2147483648,
+  "max_asset_bytes": 268435456,
+  "prior_download_budget_bytes": 234529507,
+  "prior_budget_note": "2021기존창8912896 + B04전체221758050 + 2023진단창HTTP458966. 새작업 예산에서 차감.",
+  "download_worldcover": true,
+  "worldcover_year": 2021,
+  "minimum_complete_scenes": 6,
+  "target_verified_patches": [
+    1000,
+    3000
+  ],
+  "boundary_status": "public_ADM1_reference_fetched",
+  "boundary_api": "https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM1/",
+  "provinces": [
+    {
+      "id": "south_sulawesi",
+      "name": "South Sulawesi",
+      "local_name": "Sulawesi Selatan"
+    },
+    {
+      "id": "gorontalo",
+      "name": "Gorontalo",
+      "local_name": "Gorontalo"
+    },
+    {
+      "id": "southeast_sulawesi",
+      "name": "Southeast Sulawesi",
+      "local_name": "Sulawesi Tenggara"
+    },
+    {
+      "id": "banten",
+      "name": "Banten",
+      "local_name": "Banten"
+    },
+    {
+      "id": "west_java",
+      "name": "West Java",
+      "local_name": "Jawa Barat"
+    },
+    {
+      "id": "east_java",
+      "name": "East Java",
+      "local_name": "Jawa Timur"
+    }
+  ],
+  "aois": [
+    {
+      "id": "south_sulawesi",
+      "province_name": "South Sulawesi",
+      "local_name": "Sulawesi Selatan",
+      "bbox": [
+        119.91862781261483,
+        -3.8203196,
+        119.97862781261483,
+        -3.7603196000000003
+      ],
+      "province_bbox": [
+        117.6525941,
+        -7.424191,
+        121.8395718,
+        -1.8824829
+      ],
+      "representative_interior_point": [
+        119.94862781261483,
+        -3.7903196
+      ],
+      "sample_bbox_inside_province": true,
+      "boundary_status": "public_geoboundaries_ADM1_reference_not_legal_certification",
+      "boundary_feature_id": "65028918B17554737605304",
+      "boundary_geojson": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+      "scope_note": "province_bbox는 전체 주 범위; bbox는 내부 대표점 주변 STAC 검색용 작은 범위; 실제256창은 주 전체가 아님"
+    },
+    {
+      "id": "gorontalo",
+      "province_name": "Gorontalo",
+      "local_name": "Gorontalo",
+      "bbox": [
+        122.2257185311915,
+        0.6422791999999999,
+        122.2857185311915,
+        0.7022792
+      ],
+      "province_bbox": [
+        121.1559965,
+        0.3061748,
+        123.5519226,
+        1.0394659
+      ],
+      "representative_interior_point": [
+        122.2557185311915,
+        0.6722792
+      ],
+      "sample_bbox_inside_province": true,
+      "boundary_status": "public_geoboundaries_ADM1_reference_not_legal_certification",
+      "boundary_feature_id": "65028918B94020759558104",
+      "boundary_geojson": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+      "scope_note": "province_bbox는 전체 주 범위; bbox는 내부 대표점 주변 STAC 검색용 작은 범위; 실제256창은 주 전체가 아님"
+    },
+    {
+      "id": "southeast_sulawesi",
+      "province_name": "Southeast Sulawesi",
+      "local_name": "Sulawesi Tenggara",
+      "bbox": [
+        121.78232683218192,
+        -3.8318666,
+        121.84232683218193,
+        -3.7718666000000005
+      ],
+      "province_bbox": [
+        120.8656896,
+        -6.2130512,
+        124.6113545,
+        -2.7102475
+      ],
+      "representative_interior_point": [
+        121.81232683218192,
+        -3.8018666000000003
+      ],
+      "sample_bbox_inside_province": true,
+      "boundary_status": "public_geoboundaries_ADM1_reference_not_legal_certification",
+      "boundary_feature_id": "65028918B94007491868798",
+      "boundary_geojson": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+      "scope_note": "province_bbox는 전체 주 범위; bbox는 내부 대표점 주변 STAC 검색용 작은 범위; 실제256창은 주 전체가 아님"
+    },
+    {
+      "id": "banten",
+      "province_name": "Banten",
+      "local_name": "Banten",
+      "bbox": [
+        106.10434180551447,
+        -6.46753335,
+        106.16434180551447,
+        -6.40753335
+      ],
+      "province_bbox": [
+        105.099815,
+        -7.0367223,
+        106.7800127,
+        -5.8078104
+      ],
+      "representative_interior_point": [
+        106.13434180551447,
+        -6.43753335
+      ],
+      "sample_bbox_inside_province": true,
+      "boundary_status": "public_geoboundaries_ADM1_reference_not_legal_certification",
+      "boundary_feature_id": "65028918B99918739720671",
+      "boundary_geojson": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+      "scope_note": "province_bbox는 전체 주 범위; bbox는 내부 대표점 주변 STAC 검색용 작은 범위; 실제256창은 주 전체가 아님"
+    },
+    {
+      "id": "west_java",
+      "province_name": "West Java",
+      "local_name": "Jawa Barat",
+      "bbox": [
+        107.62362883177167,
+        -6.8974129,
+        107.68362883177167,
+        -6.8374128999999995
+      ],
+      "province_bbox": [
+        106.3708302,
+        -7.8204266,
+        108.8867652,
+        -5.9147353
+      ],
+      "representative_interior_point": [
+        107.65362883177167,
+        -6.8674129
+      ],
+      "sample_bbox_inside_province": true,
+      "boundary_status": "public_geoboundaries_ADM1_reference_not_legal_certification",
+      "boundary_feature_id": "65028918B28366581005022",
+      "boundary_geojson": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+      "scope_note": "province_bbox는 전체 주 범위; bbox는 내부 대표점 주변 STAC 검색용 작은 범위; 실제256창은 주 전체가 아님"
+    },
+    {
+      "id": "east_java",
+      "province_name": "East Java",
+      "local_name": "Jawa Timur",
+      "bbox": [
+        112.24683100308779,
+        -7.79213925,
+        112.3068310030878,
+        -7.7321392499999995
+      ],
+      "province_bbox": [
+        110.8972111,
+        -8.7808254,
+        116.2703024,
+        -5.0432281
+      ],
+      "representative_interior_point": [
+        112.27683100308779,
+        -7.76213925
+      ],
+      "sample_bbox_inside_province": true,
+      "boundary_status": "public_geoboundaries_ADM1_reference_not_legal_certification",
+      "boundary_feature_id": "65028918B43243108525571",
+      "boundary_geojson": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+      "scope_note": "province_bbox는 전체 주 범위; bbox는 내부 대표점 주변 STAC 검색용 작은 범위; 실제256창은 주 전체가 아님"
+    }
+  ],
+  "boundary_manifest": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\boundary-manifest.json"
+}

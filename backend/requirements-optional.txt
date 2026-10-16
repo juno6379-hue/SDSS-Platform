@@ -1,0 +1,6 @@
+# 외부 서비스 연동 시에만 설치하고 별도 인증을 설정한다.
+earthengine-api>=1,<2
+mlflow>=2.17,<4
+psycopg[binary]>=3.2,<4
+# 실험 결과 검토용 PNG 생성 스크립트에 사용한다.
+matplotlib>=3.9,<4

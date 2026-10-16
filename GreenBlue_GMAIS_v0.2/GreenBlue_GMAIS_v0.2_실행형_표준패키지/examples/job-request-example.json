@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.2.0",
+  "agent_id": "lcluc-agent",
+  "capability_id": "landcover.change_detection",
+  "input_refs": [
+    {
+      "id": "ds-s2-banten-2021-window",
+      "version": "0.1.0",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "role": "T1"
+    }
+  ],
+  "aoi": {
+    "bbox": [
+      106.1,
+      -6.8,
+      106.2,
+      -6.7
+    ],
+    "crs": "EPSG:32748"
+  },
+  "requested_outputs": [
+    "COG",
+    "JSON"
+  ],
+  "execution_context": {
+    "trace_id": "trace-demo-0001",
+    "purpose": "contract-test",
+    "environment": "development"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "command": "npm.cmd run build",
+  "permission_mode": "approved normal-permission retry after sandbox EPERM",
+  "exit_code": 0,
+  "typescript": "pass",
+  "modules": 42,
+  "vite_duration_seconds": 32.65,
+  "css_kb": 81.65,
+  "css_gzip_kb": 13.16,
+  "js_kb": 1356.73,
+  "js_gzip_kb": 378.56,
+  "warnings": [
+    "MapLibre bundle chunk exceeds 500 kB"
+  ],
+  "evidence_basis": "actual exec session 36031 terminal output"
+}

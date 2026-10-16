@@ -1,0 +1,20 @@
+
+> indonesia-climate-sdss-web@0.1.0 build
+> tsc -b && vite build
+
+vite v6.4.4 building for production...
+✓ 0 modules transformed.
+✗ Build failed in 82ms
+error during build:
+[vite:build-html] EPERM: operation not permitted, realpath 'E:\GeoAI–MLOps–SDSS\frontend\src\main.tsx'
+file: E:/GeoAI–MLOps–SDSS/frontend/index.html
+    at node:fs:2848:18
+    at getRealPath (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/node_modules/vite/dist/node/chunks/dep-3O3b9SCF.js:16363:16)
+    at tryResolveRealFileOrType (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/node_modules/vite/dist/node/chunks/dep-3O3b9SCF.js:16354:20)
+    at tryCleanFsResolve (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/node_modules/vite/dist/node/chunks/dep-3O3b9SCF.js:15954:22)
+    at tryFsResolve (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/node_modules/vite/dist/node/chunks/dep-3O3b9SCF.js:15947:15)
+    at Object.resolveId (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/node_modules/vite/dist/node/chunks/dep-3O3b9SCF.js:15747:19)
+    at Object.handler (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/node_modules/vite/dist/node/chunks/dep-3O3b9SCF.js:46806:15)
+    at file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/node_modules/rollup/dist/es/shared/node-entry.js:23609:40
+    at async PluginDriver.hookFirstAndGetPlugin (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/node_modules/rollup/dist/es/shared/node-entry.js:23491:28)
+    at async resolveId (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/node_modules/rollup/dist/es/shared/node-entry.js:21944:26)

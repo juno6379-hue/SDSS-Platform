@@ -1,0 +1,43 @@
+# TEMPLATE ONLY — supply approved registry, digest, namespace, cluster/GPU and secret policy.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gmais-agent-api
+  labels: {app: gmais-agent-api}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: gmais-agent-api}
+  template:
+    metadata:
+      labels: {app: gmais-agent-api}
+    spec:
+      serviceAccountName: gmais-runtime # Create with least privilege before use
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+      - name: agent-api
+        image: registry.example.invalid/geoai/agent-api@sha256:REPLACE_WITH_REAL_DIGEST
+        imagePullPolicy: IfNotPresent
+        ports: [{containerPort: 8080}]
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities: {drop: [ALL]}
+        resources:
+          requests: {cpu: '500m', memory: '512Mi'}
+          limits: {cpu: '2', memory: '2Gi'}
+        startupProbe:
+          httpGet: {path: /healthz, port: 8080}
+          periodSeconds: 10
+          failureThreshold: 30
+        readinessProbe:
+          httpGet: {path: /readyz, port: 8080}
+          periodSeconds: 10
+        livenessProbe:
+          httpGet: {path: /healthz, port: 8080}
+          periodSeconds: 20
+        volumeMounts: [{name: tmp, mountPath: /tmp}]
+      volumes: [{name: tmp, emptyDir: {}}]

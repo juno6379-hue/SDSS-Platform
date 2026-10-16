@@ -1,0 +1,28 @@
+{
+  "extension": {
+    "id": "greenblue.workflow-plan.rfc1",
+    "contract_basis": "GMAIS v0.2 workflow-plan schema",
+    "present_in_upstream_openapi": false,
+    "approval_status": "INTERNAL_REVIEW"
+  },
+  "workflow_run_id": "ui-8fe6b57c-aac9-4d54-a00a-6ed9c66ae16c",
+  "trace_id": "trace-3f84737a-85b9-404d-b14b-a9d5b764f8d4",
+  "mode": "PLAN_ONLY",
+  "execution_started": false,
+  "can_execute": false,
+  "status": "BLOCKED",
+  "topological_order": ["n1"],
+  "nodes": [{
+    "node_id": "n1", "agent_id": "lcluc-agent", "capability_id": "landcover.change_detection",
+    "depends_on": [], "status": "BLOCKED",
+    "blockers": [
+      {"code": "MODEL_NOT_READY", "message": "Agent readiness가 READY가 아니므로 실행할 수 없습니다."},
+      {"code": "DATA_MISSING", "message": "고정 ID/version/SHA로 지정된 입력 데이터 참조가 없습니다."}
+    ]
+  }],
+  "blockers": ["Agent 실행과 GMAIS Dataset Registry의 호환이 아직 준비되지 않았습니다."],
+  "limitations": [
+    "이 RFC 확장은 계획 검사만 수행하며 Job/Result/지도/보고서를 생성하지 않습니다.",
+    "GMAIS v0.2와 기관의 공식 승인 계약으로 해석하지 않습니다."
+  ]
+}

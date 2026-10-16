@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GMAIS Agent Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "agent_id",
+    "version",
+    "provider",
+    "model_type",
+    "execution_mode",
+    "capabilities",
+    "readiness",
+    "deployment_profile"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0"
+    },
+    "agent_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{2,50}$"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contact": {
+      "type": "string"
+    },
+    "model_type": {
+      "enum": [
+        "trainable_ml",
+        "calibrated_physical",
+        "statistical",
+        "inference_only",
+        "external_service"
+      ]
+    },
+    "execution_mode": {
+      "enum": [
+        "ASYNC_API",
+        "OCI_JOB",
+        "EXTERNAL_API",
+        "BATCH_IMPORT"
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "capability_id",
+          "input_schema",
+          "output_schema"
+        ],
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "output_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_dataset_types": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "readiness": {
+      "enum": [
+        "BLOCKED",
+        "READY",
+        "NOT_IMPLEMENTED"
+      ]
+    },
+    "model_approval_status": {
+      "enum": [
+        "DRAFT",
+        "VALIDATED",
+        "APPROVED",
+        "DEPLOYED",
+        "RETIRED"
+      ]
+    },
+    "deployment_profile": {
+      "type": "string"
+    },
+    "resource_profile": {
+      "type": "object"
+    },
+    "known_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.2.0",
+  "dataset_id": "ds-s2-banten-2021-window",
+  "version": "0.1.0",
+  "source": {
+    "institution": "Copernicus",
+    "product": "Sentinel-2 L2A",
+    "license": "verify-provider-terms"
+  },
+  "data_type": "raster",
+  "spatial": {
+    "bbox": [
+      106.1,
+      -6.8,
+      106.2,
+      -6.7
+    ],
+    "crs": "EPSG:32748"
+  },
+  "temporal": {
+    "start": "2021-08-17T02:55:49Z",
+    "end": "2021-08-17T02:55:49Z",
+    "calendar": "gregorian"
+  },
+  "units": "DN",
+  "resolution": {
+    "x": 10,
+    "y": 10,
+    "unit": "m"
+  },
+  "quality_status": "VALIDATED",
+  "access_class": "PUBLIC",
+  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "artifact_uri": "s3://example-bucket/raw/banten-2021.tif",
+  "lineage": [],
+  "limitations": [
+    "예시 입력. 실제 검증 자료 아님."
+  ]
+}

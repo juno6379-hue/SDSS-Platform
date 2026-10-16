@@ -1,0 +1,648 @@
+{
+  "snapshot_started_at": "2026-10-16T07:42:02.873717+00:00",
+  "snapshot_finished_at": "2026-10-16T07:42:04.605664+00:00",
+  "scope": "§3/G0/G1 existing data implementation inventory; no collector mutation/no HTTP/no scientific approval",
+  "requested_protected_session": 89858,
+  "network_requests": 0,
+  "source_manifest": {
+    "path": "data/first-group-training-esri-v1/annual-window-report.json",
+    "sha256": "f8fc58e6aaf66758b63ae4e7b387ad86c4ab49a882d75ed4a1f846c37e127984",
+    "bytes": 48903469,
+    "mtime_utc": "2026-10-16T07:38:57.113505+00:00"
+  },
+  "ledger": {
+    "path": "data/first-group-training-budget/global-ledger.json",
+    "sha256": "fe50a6afd590092be31b944ad7751280dec9a316370666572166da83dfbac462",
+    "bytes": 47803,
+    "mtime_utc": "2026-10-16T07:38:57.185676+00:00"
+  },
+  "running_evidence": {
+    "execution_lock_present": true,
+    "pending_batches": [
+      "parallel-v2-grid-esri_io-gorontalo-2020-g03",
+      "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02"
+    ],
+    "process_health_verified": false,
+    "note": "lock/last manifest alone are not process completion/health proof"
+  },
+  "collection": {
+    "physical_patches": 1256,
+    "manifest_quality_eligible_patches": 1004,
+    "quality_ineligible_patches": 252,
+    "eligible_by_province_year": {
+      "south_sulawesi": {
+        "2020": 37,
+        "2021": 32,
+        "2022": 29,
+        "2023": 36,
+        "2024": 36,
+        "2025": 30
+      },
+      "gorontalo": {
+        "2020": 30,
+        "2021": 23,
+        "2022": 14,
+        "2023": 30,
+        "2024": 25,
+        "2025": 8
+      },
+      "southeast_sulawesi": {
+        "2020": 25,
+        "2021": 18,
+        "2022": 26,
+        "2023": 18,
+        "2024": 1,
+        "2025": 17
+      },
+      "east_java": {
+        "2020": 23,
+        "2021": 16,
+        "2022": 18,
+        "2023": 28,
+        "2024": 16,
+        "2025": 14
+      },
+      "banten": {
+        "2020": 53,
+        "2021": 58,
+        "2022": 37,
+        "2023": 32,
+        "2024": 23,
+        "2025": 16
+      },
+      "west_java": {
+        "2020": 57,
+        "2021": 41,
+        "2022": 41,
+        "2023": 32,
+        "2024": 32,
+        "2025": 32
+      }
+    },
+    "label_sources": {
+      "esri_io": 1256
+    },
+    "wrong_label_year_count": 0,
+    "source_attempt_statuses": {
+      "quality_insufficient": 8,
+      "rgb_window_downloaded": 83,
+      "failed": 11,
+      "reference_diversity_deferred": 3
+    },
+    "source_attempt_errors": [
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-00\\annual-window-report.json",
+        "aoi": "east_java-extra-00",
+        "year": "2021",
+        "category": "payload_or_response_contract",
+        "http_status": null,
+        "sanitized_message": "AOI 중심점이 COG 범위 밖입니다"
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2024-v2-laneB-east_java-boundary-00\\annual-window-report.json",
+        "aoi": "east_java-extra-00",
+        "year": "2024",
+        "category": "payload_or_response_contract",
+        "http_status": null,
+        "sanitized_message": "AOI 중심점이 COG 범위 밖입니다"
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g01\\annual-window-report.json",
+        "aoi": "gorontalo-g01",
+        "year": "2025",
+        "category": "unexpected_runtime",
+        "http_status": null,
+        "sanitized_message": "COG Range 응답 길이 불일치"
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2025-v2-laneB-banten-boundary-00\\annual-window-report.json",
+        "aoi": "banten-extra-08",
+        "year": "2025",
+        "category": "unexpected_runtime",
+        "http_status": null,
+        "sanitized_message": "COG Range 응답 길이 불일치"
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-00\\annual-window-report.json",
+        "aoi": "east_java-extra-00",
+        "year": "2025",
+        "category": "payload_or_response_contract",
+        "http_status": null,
+        "sanitized_message": "AOI 중심점이 COG 범위 밖입니다"
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-01\\annual-window-report.json",
+        "aoi": "east_java-extra-01",
+        "year": "2020",
+        "category": "payload_or_response_contract",
+        "http_status": null,
+        "sanitized_message": "AOI 중심점이 COG 범위 밖입니다"
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2020-g01\\annual-window-report.json",
+        "aoi": "east_java-g01",
+        "year": "2020",
+        "category": "payload_or_response_contract",
+        "http_status": null,
+        "sanitized_message": "AOI 중심점이 COG 범위 밖입니다"
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-01\\annual-window-report.json",
+        "aoi": "east_java-extra-01",
+        "year": "2021",
+        "category": "payload_or_response_contract",
+        "http_status": null,
+        "sanitized_message": "AOI 중심점이 COG 범위 밖입니다"
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2021-g01\\annual-window-report.json",
+        "aoi": "west_java-g01",
+        "year": "2021",
+        "category": "payload_or_response_contract",
+        "http_status": null,
+        "sanitized_message": "AOI 중심점이 COG 범위 밖입니다"
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2021-g01\\annual-window-report.json",
+        "aoi": "east_java-g01",
+        "year": "2021",
+        "category": "payload_or_response_contract",
+        "http_status": null,
+        "sanitized_message": "AOI 중심점이 COG 범위 밖입니다"
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-01\\annual-window-report.json",
+        "aoi": "east_java-extra-01",
+        "year": "2022",
+        "category": "payload_or_response_contract",
+        "http_status": null,
+        "sanitized_message": "AOI 중심점이 COG 범위 밖입니다"
+      }
+    ],
+    "covered_province_year_cells": 36,
+    "expected_province_year_cells": 36,
+    "split_counts": {
+      "train": 550,
+      "val": 219,
+      "test": 235
+    },
+    "training_ready": false,
+    "readiness_reason": "manifest eligibility count is not class balance/leakage/independent validation approval"
+  },
+  "budget": {
+    "historical_charged_upper_bound_bytes": 2161836459,
+    "new_reserved_or_measured_bytes": 1772951948,
+    "new_budget_maximum_bytes": 4294967296,
+    "combined_maximum_bytes": 6456803755,
+    "external_research_metadata_bytes": 3675728,
+    "pending_reserved_bytes": 136314880,
+    "ledger_internal_sum_matches": true,
+    "rate_limit_active": false,
+    "historical_sha_checks": [
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-annual\\run-result.json",
+        "expected_sha256": "8513b6da3d8d2816a4ed9af147a4c799084f7b11eca73be96bfa35306cab7df5",
+        "actual_sha256": "8513b6da3d8d2816a4ed9af147a4c799084f7b11eca73be96bfa35306cab7df5",
+        "match": true
+      },
+      {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-recovery32\\run-result.json",
+        "expected_sha256": "9563d8b82300c15a4093b34306658d8eb1a317f914ff7338dde3b4d4eb95371e",
+        "actual_sha256": "9563d8b82300c15a4093b34306658d8eb1a317f914ff7338dde3b4d4eb95371e",
+        "match": true
+      }
+    ],
+    "is_total_network_received_bytes": false
+  },
+  "sample_patch_integrity": [
+    {
+      "patch_id": "grid-esri_io-gorontalo-2020-g00-r0-c0",
+      "province": "gorontalo",
+      "year": "2020",
+      "scene_id": "S2B_MSIL2A_20200824T021349_R060_T51NVA_20200909T185934",
+      "label_source": "esri_io",
+      "label_year": 2020,
+      "normalization_evidence": {
+        "scale": [
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        "offset": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "evidence_path": "first-group-training-esri-v1/sources/grid-esri_io-gorontalo-2020-g00/gorontalo-g00-2020/calibration.json",
+        "evidence_sha256": "fd565449e4305d13c76c98e092cac806ee82fe9e6b32202b55d85d152d60ac58"
+      },
+      "files": {
+        "image": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\grid-esri_io-gorontalo-2020-g00\\r00-c00\\image.tif",
+          "exists": true,
+          "sha256": "c93bd65a4f3ed2810d61532e846042549a6c1fad2eae86e36a105eb0bd290e58",
+          "expected_sha256": "c93bd65a4f3ed2810d61532e846042549a6c1fad2eae86e36a105eb0bd290e58",
+          "match": true
+        },
+        "label": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\grid-esri_io-gorontalo-2020-g00\\r00-c00\\label.tif",
+          "exists": true,
+          "sha256": "2ae5ea7410fe0cfe5daae6e9f5e4432abf763ed83ce68a2bc99da249d9cc1e4c",
+          "expected_sha256": "2ae5ea7410fe0cfe5daae6e9f5e4432abf763ed83ce68a2bc99da249d9cc1e4c",
+          "match": true
+        },
+        "quality": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\grid-esri_io-gorontalo-2020-g00\\r00-c00\\quality.tif",
+          "exists": true,
+          "sha256": "753bf4d15d427b9c4f530945c0dd5e9b70100311a57cbb856d28d394b7b0bf8c",
+          "expected_sha256": "753bf4d15d427b9c4f530945c0dd5e9b70100311a57cbb856d28d394b7b0bf8c",
+          "match": true
+        }
+      }
+    },
+    {
+      "patch_id": "grid-esri_io-gorontalo-2020-g00-r0-c1",
+      "province": "gorontalo",
+      "year": "2020",
+      "scene_id": "S2B_MSIL2A_20200824T021349_R060_T51NVA_20200909T185934",
+      "label_source": "esri_io",
+      "label_year": 2020,
+      "normalization_evidence": {
+        "scale": [
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        "offset": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "evidence_path": "first-group-training-esri-v1/sources/grid-esri_io-gorontalo-2020-g00/gorontalo-g00-2020/calibration.json",
+        "evidence_sha256": "fd565449e4305d13c76c98e092cac806ee82fe9e6b32202b55d85d152d60ac58"
+      },
+      "files": {
+        "image": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\grid-esri_io-gorontalo-2020-g00\\r00-c01\\image.tif",
+          "exists": true,
+          "sha256": "1e1af7197dc37ecfddc0c983f63fe92acfb18fba9a29e41056d31c52cf93b1c9",
+          "expected_sha256": "1e1af7197dc37ecfddc0c983f63fe92acfb18fba9a29e41056d31c52cf93b1c9",
+          "match": true
+        },
+        "label": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\grid-esri_io-gorontalo-2020-g00\\r00-c01\\label.tif",
+          "exists": true,
+          "sha256": "3b1a9673b266f3ee0f3d7a3827f6097fa24309fb0fc00368b372f86facf9bd3d",
+          "expected_sha256": "3b1a9673b266f3ee0f3d7a3827f6097fa24309fb0fc00368b372f86facf9bd3d",
+          "match": true
+        },
+        "quality": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\grid-esri_io-gorontalo-2020-g00\\r00-c01\\quality.tif",
+          "exists": true,
+          "sha256": "399a7e2ae2a96b305f1442ac2faca85d16fd5c59fd7cbfbf2a934bb7e3a57e4a",
+          "expected_sha256": "399a7e2ae2a96b305f1442ac2faca85d16fd5c59fd7cbfbf2a934bb7e3a57e4a",
+          "match": true
+        }
+      }
+    }
+  ],
+  "gmais_v02": {
+    "state": "SOURCE_PRESENT_LOCAL_COPY",
+    "package_path": "E:\\GeoAI–MLOps–SDSS\\contracts\\upstream\\GMAIS-v0.2",
+    "version": "0.2.0",
+    "status": "INTERNAL PROPOSAL / DEVELOPMENT PARTNER REVIEW — NOT APPROVED",
+    "consortium_approved": false,
+    "canonical_package_verified": true,
+    "package_file_count": 34,
+    "file_sha_checks": [
+      {
+        "path": "README.md",
+        "expected_sha256": "4e94def988c5795db4cbb97c7c2931b75d626265a32a5bee30c9a361dd565a32",
+        "actual_sha256": "4e94def988c5795db4cbb97c7c2931b75d626265a32a5bee30c9a361dd565a32",
+        "match": true
+      },
+      {
+        "path": "api/openapi.yaml",
+        "expected_sha256": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44",
+        "actual_sha256": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44",
+        "match": true
+      },
+      {
+        "path": "docs/GMAIS_v0.2_실행형_통합표준규격서.docx",
+        "expected_sha256": "b6ac9d3e0392aa0485fa91230096be0e3823869f0d416c49d287fa3195d540f4",
+        "actual_sha256": "b6ac9d3e0392aa0485fa91230096be0e3823869f0d416c49d287fa3195d540f4",
+        "match": true
+      },
+      {
+        "path": "docs/GMAIS_개발기관_납품_검수_체크리스트_v0.2.docx",
+        "expected_sha256": "c98ecd94f8b5a16b7624dc7433a0e99bfb6945fba0fea5373c1f588627e994b2",
+        "actual_sha256": "c98ecd94f8b5a16b7624dc7433a0e99bfb6945fba0fea5373c1f588627e994b2",
+        "match": true
+      },
+      {
+        "path": "evidence/contract-test-results.txt",
+        "expected_sha256": "811f9dd1b7541e2cbc2c0e00c63cd49e3668790ef09fbc0ac32221f221404941",
+        "actual_sha256": "811f9dd1b7541e2cbc2c0e00c63cd49e3668790ef09fbc0ac32221f221404941",
+        "match": true
+      },
+      {
+        "path": "examples/agent-example.json",
+        "expected_sha256": "196edbd4a1d5d26478703e99f0fd1225f8cd9cdaa1aaeda9cd58bb6c3bbede78",
+        "actual_sha256": "196edbd4a1d5d26478703e99f0fd1225f8cd9cdaa1aaeda9cd58bb6c3bbede78",
+        "match": true
+      },
+      {
+        "path": "examples/dataset-example.json",
+        "expected_sha256": "3d2b4a7b017ff6f9ecfe9ce9d7fe7eef5dfe3dfab342eed614add6c8653ce60e",
+        "actual_sha256": "3d2b4a7b017ff6f9ecfe9ce9d7fe7eef5dfe3dfab342eed614add6c8653ce60e",
+        "match": true
+      },
+      {
+        "path": "examples/job-request-example.json",
+        "expected_sha256": "fda8eabe1911a4eee8767c9bdaab46756e864f742a04f2bb2fac1c5955f902ec",
+        "actual_sha256": "fda8eabe1911a4eee8767c9bdaab46756e864f742a04f2bb2fac1c5955f902ec",
+        "match": true
+      },
+      {
+        "path": "examples/update-ticket-example.json",
+        "expected_sha256": "77950a06591bfed21e0efb8103b61ddf0e79b8f923c9575558fbcf91ef19e68f",
+        "actual_sha256": "77950a06591bfed21e0efb8103b61ddf0e79b8f923c9575558fbcf91ef19e68f",
+        "match": true
+      },
+      {
+        "path": "examples/workflow-example.json",
+        "expected_sha256": "0bfc475c9a0a4ff49d6a5447faf9e3a98842d9390840b0a6c8abbbe904166ac8",
+        "actual_sha256": "0bfc475c9a0a4ff49d6a5447faf9e3a98842d9390840b0a6c8abbbe904166ac8",
+        "match": true
+      },
+      {
+        "path": "kubernetes/agent-deployment.template.yaml",
+        "expected_sha256": "1b1fde4b5b9772a4ea6d28f70dc5cdcb7e50a2813a9fcd3880b3566599144742",
+        "actual_sha256": "1b1fde4b5b9772a4ea6d28f70dc5cdcb7e50a2813a9fcd3880b3566599144742",
+        "match": true
+      },
+      {
+        "path": "kubernetes/model-job.template.yaml",
+        "expected_sha256": "8c78074ad8dfe164d0738586e76605403a0d807c425ba64b3d4074e5df1c1a71",
+        "actual_sha256": "8c78074ad8dfe164d0738586e76605403a0d807c425ba64b3d4074e5df1c1a71",
+        "match": true
+      },
+      {
+        "path": "reference_adapter/__init__.py",
+        "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "match": true
+      },
+      {
+        "path": "reference_adapter/policies.py",
+        "expected_sha256": "0440500f7aa889dbe6637a550cab17d13cc4f158e0c6f914fa60d1b2aea84cac",
+        "actual_sha256": "0440500f7aa889dbe6637a550cab17d13cc4f158e0c6f914fa60d1b2aea84cac",
+        "match": true
+      },
+      {
+        "path": "reference_adapter/server.py",
+        "expected_sha256": "8ca7bca8de60c3aad6ddec1ecb6a6de050ef019c1a009bbd6fa20f6565742147",
+        "actual_sha256": "8ca7bca8de60c3aad6ddec1ecb6a6de050ef019c1a009bbd6fa20f6565742147",
+        "match": true
+      },
+      {
+        "path": "requirements-test.txt",
+        "expected_sha256": "8e319578f49cf80509b48a774ba185bd980be72d9b6af6e40bc4f159bc3a0bd6",
+        "actual_sha256": "8e319578f49cf80509b48a774ba185bd980be72d9b6af6e40bc4f159bc3a0bd6",
+        "match": true
+      },
+      {
+        "path": "schemas/agent-manifest.schema.json",
+        "expected_sha256": "13b57cb935a50be3e60a0a648e7b3c97d68e83893322504a52909aa30e446345",
+        "actual_sha256": "13b57cb935a50be3e60a0a648e7b3c97d68e83893322504a52909aa30e446345",
+        "match": true
+      },
+      {
+        "path": "schemas/dataset-manifest.schema.json",
+        "expected_sha256": "080f6e157ad9c51a840ebccce4845e4444d01d2d2d8da077f4ccd714b6b58819",
+        "actual_sha256": "080f6e157ad9c51a840ebccce4845e4444d01d2d2d8da077f4ccd714b6b58819",
+        "match": true
+      },
+      {
+        "path": "schemas/error.schema.json",
+        "expected_sha256": "076e6bbc4763d07e55c2b4aa3628db526a711d14b1fe153aacb1fd058aab1de3",
+        "actual_sha256": "076e6bbc4763d07e55c2b4aa3628db526a711d14b1fe153aacb1fd058aab1de3",
+        "match": true
+      },
+      {
+        "path": "schemas/job-request.schema.json",
+        "expected_sha256": "9c630fa1696c2ca61a0e7e78b69623c0b6fcc3885b45a60d0563ee48b215df2d",
+        "actual_sha256": "9c630fa1696c2ca61a0e7e78b69623c0b6fcc3885b45a60d0563ee48b215df2d",
+        "match": true
+      },
+      {
+        "path": "schemas/job-status.schema.json",
+        "expected_sha256": "829bc5cbf6bc4c55fc43b4e55c4bbb145a7e2a4042807e7825d1595bc164566b",
+        "actual_sha256": "829bc5cbf6bc4c55fc43b4e55c4bbb145a7e2a4042807e7825d1595bc164566b",
+        "match": true
+      },
+      {
+        "path": "schemas/result-manifest.schema.json",
+        "expected_sha256": "351131b4d25d45b92ca3991125670829fb26a5c84844b10e7052b8c082504b0f",
+        "actual_sha256": "351131b4d25d45b92ca3991125670829fb26a5c84844b10e7052b8c082504b0f",
+        "match": true
+      },
+      {
+        "path": "schemas/update-ticket.schema.json",
+        "expected_sha256": "b2743260ef6bf877217436073c98c46c3d35eea70f20d4389d07d9eba0033194",
+        "actual_sha256": "b2743260ef6bf877217436073c98c46c3d35eea70f20d4389d07d9eba0033194",
+        "match": true
+      },
+      {
+        "path": "schemas/workflow-plan.schema.json",
+        "expected_sha256": "575bebea254e802e9a58dbcc6a49e2d555bab34ad4da997f978ee9f8cad421d1",
+        "actual_sha256": "575bebea254e802e9a58dbcc6a49e2d555bab34ad4da997f978ee9f8cad421d1",
+        "match": true
+      },
+      {
+        "path": "templates/cross-reference-profile.md",
+        "expected_sha256": "18381f5c31874a5ed4eaff394b48b288d85b2a25499f6aec795cfe2412f3d056",
+        "actual_sha256": "18381f5c31874a5ed4eaff394b48b288d85b2a25499f6aec795cfe2412f3d056",
+        "match": true
+      },
+      {
+        "path": "templates/error-catalog.csv",
+        "expected_sha256": "b05fc7cb08a630f17a31734a07c3c62ca4cc40ec98eaf7d8a35fa2d5e8f6f64f",
+        "actual_sha256": "b05fc7cb08a630f17a31734a07c3c62ca4cc40ec98eaf7d8a35fa2d5e8f6f64f",
+        "match": true
+      },
+      {
+        "path": "templates/interface-change-request.md",
+        "expected_sha256": "ac98832712f3f395629e6c9f43b3430c17b3e723d3d39c4cb21c8415c695d9b7",
+        "actual_sha256": "ac98832712f3f395629e6c9f43b3430c17b3e723d3d39c4cb21c8415c695d9b7",
+        "match": true
+      },
+      {
+        "path": "templates/model-delivery-checklist.md",
+        "expected_sha256": "ac8a8d7fa16dfb3fa483f98f0487b75d692781678bfb2a6050c8b7b65b5cba1a",
+        "actual_sha256": "ac8a8d7fa16dfb3fa483f98f0487b75d692781678bfb2a6050c8b7b65b5cba1a",
+        "match": true
+      },
+      {
+        "path": "templates/model-type-profiles.md",
+        "expected_sha256": "c82694afa1ab6ee6e98f3b98ebb34678a6bd3619a235c4cce587d8ef44e3b6c6",
+        "actual_sha256": "c82694afa1ab6ee6e98f3b98ebb34678a6bd3619a235c4cce587d8ef44e3b6c6",
+        "match": true
+      },
+      {
+        "path": "templates/raci-model-allocation.csv",
+        "expected_sha256": "0e784af162826f76ff74fb3b952c60133b148cb31e32d0649a7c5e45ef053eac",
+        "actual_sha256": "0e784af162826f76ff74fb3b952c60133b148cb31e32d0649a7c5e45ef053eac",
+        "match": true
+      },
+      {
+        "path": "templates/rollout-approval-gates.md",
+        "expected_sha256": "1492bee6d97fc7884fd63a7d3cd7e8904d08f8a627a8e998c91d34c23b68b023",
+        "actual_sha256": "1492bee6d97fc7884fd63a7d3cd7e8904d08f8a627a8e998c91d34c23b68b023",
+        "match": true
+      },
+      {
+        "path": "tests/__init__.py",
+        "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "match": true
+      },
+      {
+        "path": "tests/test_contract.py",
+        "expected_sha256": "cafb70115c69a29d30f1d11b0aa88bfc0290fc490557f1fbdc9486e3a34ab87d",
+        "actual_sha256": "cafb70115c69a29d30f1d11b0aa88bfc0290fc490557f1fbdc9486e3a34ab87d",
+        "match": true
+      },
+      {
+        "path": "tests/test_policies.py",
+        "expected_sha256": "fa7c330d25c0c73b721df63d110a64f3a8be8d476cec09a40908cd967417dbe2",
+        "actual_sha256": "fa7c330d25c0c73b721df63d110a64f3a8be8d476cec09a40908cd967417dbe2",
+        "match": true
+      }
+    ],
+    "dataset_schema_sha256": "080f6e157ad9c51a840ebccce4845e4444d01d2d2d8da077f4ccd714b6b58819",
+    "dataset_required_fields": [
+      "schema_version",
+      "dataset_id",
+      "version",
+      "source",
+      "data_type",
+      "spatial",
+      "temporal",
+      "quality_status",
+      "access_class",
+      "sha256",
+      "artifact_uri",
+      "lineage"
+    ],
+    "top_additional_properties": false,
+    "quality_status_values": [
+      "RAW",
+      "STAGED",
+      "STANDARDIZED",
+      "VALIDATED",
+      "REJECTED"
+    ],
+    "cross_reference_profile_sha256": "18381f5c31874a5ed4eaff394b48b288d85b2a25499f6aec795cfe2412f3d056",
+    "legacy_patch_static_field_comparison": {
+      "missing_required_fields": [
+        "schema_version",
+        "dataset_id",
+        "version",
+        "source",
+        "data_type",
+        "spatial",
+        "temporal",
+        "access_class",
+        "sha256",
+        "artifact_uri",
+        "lineage"
+      ],
+      "undeclared_top_level_fields": [
+        "aoi",
+        "province",
+        "year",
+        "bbox",
+        "status",
+        "valid_pixel_ratio",
+        "sample_class_coverage",
+        "verified_patches",
+        "incomplete_year",
+        "label_status",
+        "stac_response_filter",
+        "candidate_selection",
+        "scene_id",
+        "source_group",
+        "datetime",
+        "cloud_cover",
+        "source_properties",
+        "source_band_metadata",
+        "stac_item",
+        "calibration",
+        "normalization",
+        "source_crops",
+        "quality_mask",
+        "image_path",
+        "bands",
+        "logical_bands",
+        "band_processing",
+        "reflectance_conversion_verified",
+        "quality_mask_path",
+        "pixel_count",
+        "minimum_valid_fraction",
+        "invalid_pixel_count",
+        "spatial_resolution",
+        "reference_metadata",
+        "taxonomy_signature",
+        "label_path",
+        "label_source",
+        "label_year",
+        "label_dataset_version",
+        "label_source_url",
+        "label_temporal_match",
+        "label_valid_pixel_ratio",
+        "split",
+        "spatial_location_id",
+        "patch_id",
+        "province_inside_fraction",
+        "source_window",
+        "window_in_source",
+        "patch_sha256"
+      ],
+      "is_full_schema_validation": false
+    },
+    "jsonschema_validator_available": false,
+    "note": "unmodified upstream internal proposal; static comparison does not establish contract/scientific approval"
+  },
+  "runtime": {
+    "python": "3.11.9",
+    "optional_modules_present": {
+      "numpy": true,
+      "rasterio": true,
+      "pyproj": true,
+      "shapely": true,
+      "ee": false
+    }
+  },
+  "catalogue_record_counts": {
+    "analyses": 3,
+    "datasets": 6,
+    "gmais_idempotency": 2,
+    "gmais_jobs": 2,
+    "models": 1
+  },
+  "protected_artifacts_modified": false,
+  "existing_source_and_ledger_files_written": 0
+}

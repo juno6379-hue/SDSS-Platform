@@ -1,0 +1,189 @@
+openapi: 3.1.0
+info:
+  title: GMAIS GeoAI Agent Integration API — Proposed Contract
+  version: 0.2.0
+  description: GreenBlue internal proposed API; not yet consortium/BIG approved. For
+    contract testing; not a scientific model service.
+servers:
+- url: http://127.0.0.1:8787
+  description: Local reference adapter for contract tests only
+paths:
+  /healthz:
+    get:
+      summary: Process liveness
+      security: []
+      responses:
+        '200':
+          description: Server alive
+  /readyz:
+    get:
+      summary: Runtime readiness (not scientific/model approval)
+      security: []
+      responses:
+        '200':
+          description: Runtime ready
+        '503':
+          description: Runtime unavailable
+  /v1/agents:
+    get:
+      summary: List registered agents
+      responses:
+        '200':
+          description: Agent manifest references
+  /v1/agents/{agent_id}:
+    get:
+      summary: Get agent manifest
+      parameters:
+      - name: agent_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Agent manifest
+        '404':
+          description: Not found
+  /v1/agents/{agent_id}/capabilities:
+    get:
+      summary: Capability discovery
+      parameters:
+      - name: agent_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Capabilities
+  /v1/agents/{agent_id}/readiness:
+    get:
+      summary: Check data/model readiness separately
+      parameters:
+      - name: agent_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Readiness state and blocking evidence
+  /v1/agents/{agent_id}/jobs:
+    post:
+      summary: Submit governed async job
+      parameters:
+      - name: agent_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/job-request.schema.json
+      responses:
+        '202':
+          description: Job accepted; Location /v1/jobs/{job_id}
+          headers:
+            Location:
+              schema:
+                type: string
+        '400':
+          description: Invalid request
+        '403':
+          description: Forbidden
+        '409':
+          description: Data/model readiness or approval blocked
+        '429':
+          description: Rate limited
+  /v1/jobs/{job_id}:
+    get:
+      summary: Get job status
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Job status
+        '404':
+          description: Unknown job
+  /v1/jobs/{job_id}/results:
+    get:
+      summary: Get immutable result manifest
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Result manifest
+        '409':
+          description: Job not successful
+        '404':
+          description: Unknown job
+  /v1/jobs/{job_id}/cancel:
+    post:
+      summary: Request cancellation
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '202':
+          description: Cancellation requested
+        '409':
+          description: Terminal job cannot cancel
+  /v1/results/{result_id}:
+    get:
+      summary: Result and lineage lookup
+      parameters:
+      - name: result_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Result metadata
+  /v1/models/{model_id}/update-tickets:
+    post:
+      summary: Request retraining or recalibration ticket (not automatic execution)
+      parameters:
+      - name: model_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/update-ticket.schema.json
+      responses:
+        '202':
+          description: Ticket registered
+        '403':
+          description: Insufficient role
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+- bearerAuth: []

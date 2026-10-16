@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.2.0",
+  "workflow_run_id": "wf-demo-0001",
+  "trace_id": "trace-demo-0001",
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_id": "lcluc-agent",
+      "capability_id": "landcover.change_detection",
+      "depends_on": [],
+      "input_bindings": [
+        {
+          "id": "ds-s2-banten-2021-window",
+          "version": "0.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "role": "T1"
+        }
+      ],
+      "timeout_seconds": 120,
+      "max_retries": 1
+    }
+  ],
+  "policy": {
+    "on_blocked": "STOP_DEPENDENTS",
+    "max_parallel": 1,
+    "require_human_approval": true
+  }
+}

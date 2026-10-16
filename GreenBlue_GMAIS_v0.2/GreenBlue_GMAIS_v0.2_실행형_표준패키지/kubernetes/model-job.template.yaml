@@ -1,0 +1,27 @@
+# TEMPLATE ONLY: DO NOT EXECUTE until signed image, RBAC and data-access profiles approved.
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: gmais-analysis-placeholder
+spec:
+  ttlSecondsAfterFinished: 86400
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      serviceAccountName: gmais-job-runner
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+      - name: worker
+        image: registry.example.invalid/geoai/model-worker@sha256:REPLACE_WITH_REAL_DIGEST
+        args: ["run-job", "--job-id", "REPLACE_JOB_ID"]
+        securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+        resources:
+          requests: {cpu: "1", memory: "2Gi"}
+          limits: {cpu: "4", memory: "8Gi"}
+        volumeMounts: [{name: tmp, mountPath: /tmp}]
+      volumes: [{name: tmp, emptyDir: {}}]
+# GPU resource claims, object-store CSI / workload identity, network policy and scheduling are cluster-specific.

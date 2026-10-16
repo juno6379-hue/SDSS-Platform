@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.2.0",
+  "ticket_id": "upd-demo-0001",
+  "model_ref": {
+    "id": "lcluc-unet",
+    "version": "0.1.0-draft",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "update_type": "RETRAINING",
+  "trigger": "NEW_DATA",
+  "proposed_inputs": [
+    {
+      "id": "ds-s2-banten-2021-window",
+      "version": "0.1.0",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "validation_plan": {
+    "independent_test_ref": "pending-independent-reference",
+    "metrics": [
+      "mIoU",
+      "class-wise F1"
+    ],
+    "acceptance_threshold_ref": "tbd-by-model-owner"
+  },
+  "approval_state": "PROPOSED",
+  "evidence_refs": []
+}

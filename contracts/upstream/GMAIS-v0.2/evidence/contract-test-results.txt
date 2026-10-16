@@ -1,0 +1,17 @@
+test_blocked_model_cannot_execute (test_contract.GmaisContractTests.test_blocked_model_cannot_execute) ... ok
+test_health_not_model_approval (test_contract.GmaisContractTests.test_health_not_model_approval) ... ok
+test_mock_only_development_and_idempotency (test_contract.GmaisContractTests.test_mock_only_development_and_idempotency) ... ok
+test_no_mock_in_production (test_contract.GmaisContractTests.test_no_mock_in_production) ... ok
+test_openapi_is_well_formed (test_contract.GmaisContractTests.test_openapi_is_well_formed) ... ok
+test_schemas_compile_and_examples_validate (test_contract.GmaisContractTests.test_schemas_compile_and_examples_validate) ... ok
+test_unauthorized_denied (test_contract.GmaisContractTests.test_unauthorized_denied) ... ok
+test_workflow_must_be_acyclic (test_contract.GmaisContractTests.test_workflow_must_be_acyclic) ... ok
+test_dag_cycle_and_unknown_dependency (test_policies.TestPolicies.test_dag_cycle_and_unknown_dependency) ... ok
+test_independent_validation_and_approval_gate (test_policies.TestPolicies.test_independent_validation_and_approval_gate) ... ok
+test_model_type_update_methods (test_policies.TestPolicies.test_model_type_update_methods) ... ok
+test_state_machine_cannot_revive_terminal_job (test_policies.TestPolicies.test_state_machine_cannot_revive_terminal_job) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.606s
+
+OK

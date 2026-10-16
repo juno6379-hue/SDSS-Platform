@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GMAIS Error",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "error"
+  ],
+  "properties": {
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message",
+        "trace_id",
+        "retryable"
+      ],
+      "properties": {
+        "code": {
+          "enum": [
+            "INVALID_REQUEST",
+            "UNAUTHORIZED",
+            "FORBIDDEN",
+            "DATA_MISSING",
+            "DATA_QUALITY",
+            "MODEL_NOT_APPROVED",
+            "AGENT_NOT_IMPLEMENTED",
+            "MODEL_NOT_READY",
+            "RESOURCE_UNAVAILABLE",
+            "RATE_LIMITED",
+            "INVALID_CRS",
+            "INVALID_TIME",
+            "SCHEMA_MISMATCH",
+            "JOB_NOT_FOUND",
+            "INTERNAL_ERROR"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trace_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "details": {
+          "type": "object"
+        },
+        "retry_after_seconds": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

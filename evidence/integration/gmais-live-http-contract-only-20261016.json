@@ -1,0 +1,34 @@
+{
+  "evidence_kind": "local_http_contract_smoke",
+  "recorded_at": "2026-10-16T16:02:12+09:00",
+  "api_origin": "http://127.0.0.1:8000",
+  "contract": {
+    "name": "GMAIS v0.2",
+    "status": "INTERNAL_REVIEW_NOT_APPROVED",
+    "upstream_reference": "contracts/upstream/GMAIS-v0.2/"
+  },
+  "test_input": {
+    "purpose": "explicit contract-only test fixture",
+    "scientific_data": false,
+    "model_inference": false
+  },
+  "observations": {
+    "agent_registry_http_status": 200,
+    "registered_agent_count": 6,
+    "lcluc_readiness": "BLOCKED",
+    "job_submission_http_status": 409,
+    "job_id": "job-00893a5fc1014e4db9eea3d8a7fa238f",
+    "job_status_http_status": 200,
+    "job_status": "BLOCKED",
+    "trace_id_preserved": true,
+    "idempotent_replay_reused_same_job": true,
+    "job_results_http_status": 409,
+    "result_created": false,
+    "workflow_plan_http_status": 200,
+    "workflow_plan_status": "BLOCKED",
+    "workflow_plan_extension_id": "greenblue.workflow-plan.rfc1",
+    "workflow_plan_present_in_upstream_openapi": false,
+    "workflow_execution_started": false
+  },
+  "interpretation": "Actual local HTTP routes and blocked-state behavior verified. This is contract/runtime evidence only; it is not a satellite-data test, scientific validation, approved GMAIS conformance certificate, or production deployment test."
+}

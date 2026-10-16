@@ -1,0 +1,11 @@
+﻿error_code,http_code,retryable,meaning
+DATA_MISSING,409,No,모델 필수 데이터 미확보
+DATA_QUALITY,409,No,품질·정합 불충족
+MODEL_NOT_APPROVED,409,No,운영 승인 미충족
+AGENT_NOT_IMPLEMENTED,409,No,외부 Agent 아직 미구현
+INVALID_CRS,422,No,지원 좌표계/정합 오류
+INVALID_TIME,422,No,관측 시기/시나리오 불일치
+RATE_LIMITED,429,Yes,Retry-After 준수
+RESOURCE_UNAVAILABLE,503,Yes,한도 내 후퇴·재시도
+SCHEMA_MISMATCH,422,No,입출력 계약 불일치
+INTERNAL_ERROR,500,Conditional,문제 분석 및 운영자 승인

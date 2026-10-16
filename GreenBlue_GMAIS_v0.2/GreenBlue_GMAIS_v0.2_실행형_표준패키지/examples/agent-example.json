@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.2.0",
+  "agent_id": "lcluc-agent",
+  "version": "0.2.0",
+  "provider": "GreenBlue (internal proposal only)",
+  "model_type": "trainable_ml",
+  "execution_mode": "ASYNC_API",
+  "capabilities": [
+    {
+      "capability_id": "landcover.change_detection",
+      "input_schema": "schemas/job-request.schema.json",
+      "output_schema": "schemas/result-manifest.schema.json",
+      "required_dataset_types": [
+        "raster"
+      ]
+    }
+  ],
+  "readiness": "BLOCKED",
+  "model_approval_status": "DRAFT",
+  "deployment_profile": "OCI_JOB",
+  "known_limitations": [
+    "현재 정식 학습 데이터 부족. 운영 추론 불가."
+  ]
+}
