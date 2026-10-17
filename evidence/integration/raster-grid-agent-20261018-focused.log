@@ -1,0 +1,40 @@
+test_access_and_type_guard_before_image_bytes_and_size_bound (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_access_and_type_guard_before_image_bytes_and_size_bound) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_db_files_inputs_unchanged_and_all_nonheader_claims_false (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_db_files_inputs_unchanged_and_all_nonheader_claims_false) ... ok
+test_descriptions_missing_wrong_order_registered_names_and_count_reject (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_descriptions_missing_wrong_order_registered_names_and_count_reject) ... ok
+test_geographic_feet_crs_northup_and_shape_policy (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_geographic_feet_crs_northup_and_shape_policy) ... ok
+test_global_model_failure_invalid_no_header_reads_and_mutable_invalid_stays_io_zero (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_global_model_failure_invalid_no_header_reads_and_mutable_invalid_stays_io_zero) ... ok
+test_memoryfile_driver_forced_pam_disabled_and_no_pixel_or_mask_reads (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_memoryfile_driver_forced_pam_disabled_and_no_pixel_or_mask_reads) ... ok
+test_nonraster_vrt_and_tamper_reject_before_memoryfile (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_nonraster_vrt_and_tamper_reject_before_memoryfile) ... ERROR
+test_shifted_second_grid_failfast_preserves_first_header_and_later_unchecked (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_shifted_second_grid_failfast_preserves_first_header_and_later_unchecked) ... ok
+test_temporal_and_late_file_failure_do_not_promote_header_partial_flags (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_temporal_and_late_file_failure_do_not_promote_header_partial_flags) ... ok
+test_two_six_actual_headers_cross_grid_same_get_and_full_flags_only (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_two_six_actual_headers_cross_grid_same_get_and_full_flags_only) ... ok
+
+======================================================================
+ERROR: test_nonraster_vrt_and_tamper_reject_before_memoryfile (test_registry_raster_grid_normalization.RegistryRasterGridNormalizationTests.test_nonraster_vrt_and_tamper_reject_before_memoryfile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_registry_raster_grid_normalization.py", line 107, in test_nonraster_vrt_and_tamper_reject_before_memoryfile
+    self.raster(2020);self.annual.paths[0][0].write_bytes(b'tampered but no repin')
+    ^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_registry_raster_grid_normalization.py", line 39, in raster
+    with rasterio.open(path,'w',driver='GTiff',width=width,height=height,count=count,crs=crs,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\env.py", line 463, in wrapper
+    return f(*args, **kwds)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\__init__.py", line 378, in open
+    dataset = writer(
+              ^^^^^^^
+  File "rasterio/_io.pyx", line 1509, in rasterio._io.DatasetWriterBase.__init__
+  File "rasterio/_io.pyx", line 306, in rasterio._io._delete_dataset_if_exists
+  File "rasterio/_io.pyx", line 307, in rasterio._io._delete_dataset_if_exists
+  File "rasterio/_base.pyx", line 222, in rasterio._base.open_dataset
+  File "rasterio/_err.pyx", line 359, in rasterio._err.exc_wrap_pointer
+rasterio._err.CPLE_AppDefinedError: Missing one of rasterXSize, rasterYSize or bands on VRTDataset.
+
+----------------------------------------------------------------------
+Ran 10 tests in 16.946s
+
+FAILED (errors=1)

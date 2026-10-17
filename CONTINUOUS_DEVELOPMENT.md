@@ -1,5 +1,27 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 실제 GTiff 헤더와 장면 간 엄격한 격자 일치 관측 (129)
+
+계약 담당은 신규 `backend/app/ml/registry_raster_grid_normalization.py`·집중시험·문서129, 독립 담당은 별도 실제 GeoTIFF2/6행의 헤더·격자·경쟁·junction 검증과 UI/API 영향, Root는 실제7fixture·관련 회귀·운영 조회·보존·공통 문서/Git, 이해 담당은 완료 소스의 쉬운 설명·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 이전 작업자는 모두 완료 상태이고 수집·학습 프로세스는 관측되지 않았다. API/Ollama 서비스와 보고예약 ACTIVE/10분을 실제 수집·학습 실행과 구분한다.
+
+`inspect_registry_raster_grid_normalization(store, model_ref, training_report_sha256, requested_years)`는 선검사한127 요청 snapshot으로 읽기 전용 header Store proxy를 통해128을1회 호출한다. 실제 image get에서 bounded canonical record/ref·manifest digest·raster 유형·PUBLIC 선언·명시6밴드 이름을 파일보다 먼저 검사한다.123의경로/링크/식별자 검사를 거친64MiB 이내 복사 바이트의 실제SHA를 확인하고, 동일바이트를 TIFF magic·MemoryFile GTiff강제 드라이버로 열어 metadata만 본다. PAM NO/EMPTY_DIR/INTERNAL georef를 적용하며 픽셀 read·mask read·통계·추론을 호출하지 않는다.
+
+실제 밴드설명6개와 source.band_names의 B02/B03/B04/B08/B11/B12 순서가 명시적으로 같아야 한다. width/height1~1024·count6·projected CRS/metre factor1·north-up(a>0,e<0,b=d=0)·유한 affine/행렬식/4corner·퇴화하지 않은 유한 bounds를 요구한다. 첫 장면의 canonicalWKT 문자열·shape·6개affine 값과 뒤 장면이 정확히 같아야 한다. 수치허용오차/재투영/추측/밴드명 보완은 없으며 의미상 같은 CRS도 WKT표현이 다르면 거부할 수 있는 신규 내부 소비 정책이다.
+
+헤더 검사가128기간 검사보다 먼저 수행되고,125는 같은 자산SHA로 파일을 다시 읽는다. 추가Storeget0·모델load1회·정상model1+dataset3×N을 유지한다. samecopy의 metadata 결합과 같은 pin 재검사는 전체 DB/모델/다중파일의 원자snapshot이 아니다. 헤더 후 실제파일 변경은125에서 거부하지만 모든 TOCTOU/FIFO차단·mappeddrive 매체·GDAL/Torch parser CPU/RSS/시간 격리·완전한 외부IO격리를 보장하지 않는다. Store 원문 JSON predecode 한계도 상속한다.
+
+exact19 출력은 원128관측을 그대로 보존한다. 전체기간·모델·파일·헤더가 성공할 때만 RASTER_GRID_MATCHED_UNVERIFIED/raster_header_verified·cross_scene_grid_verified·artifact_bytes_verified=true다. registry_temporal_year_verified는128 관측 범위다. header_observations에서 실패 전 실제header가 남아도 전체grid/성공이 아니다. registry_aoi·quality_report·quality_mask·pixel_values·state_dict·기관권위·과학·실행·Workflow9개는 항상false다. dtype에 제한을 두지 않아complex/다른dtype도header관측을 통과할 수 있다. nodata/scale-offset/픽셀finite·유효영역/물리표준화·실제AOI·모델실행가능성을 검증한 것이 아니다.
+
+집중 최종11 PASS/19.150초·Root 관련44 PASS/40.033초(신규11+128의11+127의9+125의13)·독립9 PASS/0 SKIP/17.265843초다. 중복 묶음을 합산하지 않는다. 초기집중10건 중1ERROR는 malformedVRT 임시fixture를GTiff writer로 덮어복구하며GDAL이oldVRT를해석한시험setup오류였다. Temp파일만unlink후재생성하도록시험을 정정하고 원로그를 보존했다. 제품 VRT 처리는 TIFF magic에서 MemoryFile 호출0으로 정상 거부했으며 신규 제품지적은 없다.
+
+독립 별도Temp6개GTiff/18Registry/CPUcheckpoint2·6행은7/19get·키중복0·DB/파일불변과 read/read_masks 호출금지patch·소스AST0을 확인했다. CRS/shift/shape·누락/역순description·geographic/USfoot/rotated/1025너비·opaque/VRT·명시names누락/RESTRICTED snapshot前차단·header後변조125 SHA거부·invalid/global/model실패header0·실Windowsjunction차단/링크만해제/target보존을 검증했다. Root는각각 새Temp에 모델/자료를 설정한7시나리오에서 정상3영상1load10get과shift/description누락/순서/geographic/width/opaque 거부를 확인했다. 합성자료·학습하지않은CPUcheckpoint의 읽기 시험이며 훈련·forward·추론·독립 정확도·기관승인 근거는 아니다.
+
+보호141개·기존소스291개·이전증거1109개·catalog14행 canonical SHA·예약136314880바이트를 보존했다.03:37 KST URI mode=ro 운영조회는 legacydatasets6/models1·dataset_versions0이다. 원본·원장·lock·기존분할·운영모델은 그대로이며 운영checkpoint/래스터load·수집·등록·훈련·추론·배포·Workflow dispatch0이다. 내부 미연결 함수로 API/UI 변경이 없어 이번 frontend/build/browser·전체backend 재실행은 하지 않았다.120/121의 전체1184(1183 PASS·기존1 SKIP)/frontend261/build는 이전 근거다.
+
+관련 계약·사용법·시험·인계와 이해자료를 함께 갱신했다. 다음130은 Registry 공간bbox와 실제 래스터extent의 관계 진단이다. 격자 일치는 Registry AOI/물리취득일·장면독립성·QA/구름mask·115per_scene실행·독립라벨/모델승인·다른5실행기·운영GeoLLM/RAG/PostGIS·staging/RBAC/기관UAT 완료가 아니다. 단일 내부 읽기 단위로 전체개발이나10분보고 예약을 중단하지 않는다.
+
+근거: `docs/implementation/129_registry_raster_grid_normalization.md`, `evidence/integration/raster-grid-agent-20261018-focused-final.log`, `raster-grid-agent-20261018-focused.log`, `raster-grid-root-related-20261018.log`, `raster-grid-independent-20261018.json`, `raster-grid-runtime-20261018.json`, `raster-grid-live-integrity-20261018.json`, `raster-grid-operating-inventory-20261018.json`, 최종 `raster-grid-closeout-20261018.json`.
+
 ## 2026-10-18 — 동일 Registry 읽기에서 요청 UTC 연도와 등록 기간 결합 (128)
 
 계약 담당은 신규 `backend/app/ml/registry_temporal_normalization.py`·집중시험·문서128, 독립 담당은 별도 실제 Temp2/6장면의 UTC/ns·같은get·부분상태·UI/API 영향, Root는 실제 GeoTIFF/등록 묶음·관련 회귀·운영 조회·보존·공통 문서/Git, 이해 담당은 완료 소스의 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 이전 에이전트는 모두 완료 상태이고 실제 수집·학습 프로세스는 관측되지 않았다. API/Ollama 실행과 보고예약 ACTIVE/10분은 수집·학습 실행과 구분한다.

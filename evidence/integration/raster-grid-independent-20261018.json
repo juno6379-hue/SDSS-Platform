@@ -1,0 +1,78 @@
+{
+  "scope": "SYNTHETIC_TEMP_ACTUAL_GTIFF_HEADERS_AND_STRICT_GRID_ONLY",
+  "tests": 9,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 17.265843100001803,
+  "passed": true,
+  "source_sha256": "17371e6a2a49a9845bf2a5d6b2cb0a777808400ac814b2d14e6347d7eb992501",
+  "frozen_source_matches": true,
+  "baseline_commit": "97e712d4476eb00680469d40972c571172930f3f",
+  "old_source_byte_checks": [
+    {
+      "path": "backend/app/ml/registry_temporal_normalization.py",
+      "baseline_sha256": "6cc04dcfb2e71745a09ed7a62b17ccc94637e5c9ad12730fe7ac3d8e20b98f15",
+      "current_sha256": "6cc04dcfb2e71745a09ed7a62b17ccc94637e5c9ad12730fe7ac3d8e20b98f15",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/pinned_annual_normalization.py",
+      "baseline_sha256": "4589a70425dcdfc1e6f7b9a065929f74860f572284cf9fd8c021a8fb5fc81953",
+      "current_sha256": "4589a70425dcdfc1e6f7b9a065929f74860f572284cf9fd8c021a8fb5fc81953",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/registered_per_scene_files.py",
+      "baseline_sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
+      "current_sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/per_scene_normalization_files.py",
+      "baseline_sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+      "current_sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/lcluc_workflow.py",
+      "baseline_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "current_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "baseline_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "current_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/LclucWorkflowPanel.tsx",
+      "baseline_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "current_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/lclucWorkflowAdapter.ts",
+      "baseline_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "current_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "unchanged": true
+    }
+  ],
+  "tracked_source_differences": [],
+  "actual_windows_junction": {
+    "created": true,
+    "rejected": true,
+    "link_only_removed": true,
+    "target_preserved": true
+  },
+  "operating_Store_API_registration_checkpoint_reads_or_writes": 0,
+  "inference_training_pixel_mask_read_calls": 0,
+  "UI_API_changes": 0,
+  "frontend_build_browser_runs": 0,
+  "limitations": [
+    "Metadata-only GTiff interpretation and strict canonical WKT/shape/affine equality, not raster values, masks, actual AOI, physical acquisition, calibration or scientific accuracy.",
+    "Snapshot before GDAL and later same-SHA recheck reduce this change gap, not global atomicity or all races. GDAL/Torch/Store parsing do not guarantee CPU/RSS/time isolation.",
+    "Internal unwired observer; existing temporal/batch nested flags retain their narrower scopes. No API/UI/frontend/build/browser/full-backend rerun. Prior1184 is history; do not sum overlapping suites."
+  ]
+}

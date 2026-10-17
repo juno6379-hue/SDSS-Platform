@@ -1,0 +1,94 @@
+{
+  "scope": "TESTED_SYNTHETIC_ACTUAL_TEMP_GEOTIFF_HEADERS_MODEL_AND_REGISTRY",
+  "checks_passed": [
+    {
+      "case": "valid",
+      "status": "RASTER_GRID_MATCHED_UNVERIFIED",
+      "issue": null,
+      "checked_headers": 3,
+      "store_gets": 10,
+      "torch_loads": 1
+    },
+    {
+      "case": "shift",
+      "status": "RASTER_BLOCKED",
+      "issue": {
+        "code": "RASTER_GRID_MISMATCH",
+        "field": "grid",
+        "year": 2022
+      },
+      "checked_headers": 2,
+      "store_gets": 5,
+      "torch_loads": 1
+    },
+    {
+      "case": "missing_description",
+      "status": "RASTER_BLOCKED",
+      "issue": {
+        "code": "RASTER_BAND_SIGNATURE_INVALID",
+        "field": "band_names",
+        "year": 2021
+      },
+      "checked_headers": 1,
+      "store_gets": 2,
+      "torch_loads": 1
+    },
+    {
+      "case": "band_order",
+      "status": "RASTER_BLOCKED",
+      "issue": {
+        "code": "RASTER_BAND_SIGNATURE_INVALID",
+        "field": "band_names",
+        "year": 2022
+      },
+      "checked_headers": 2,
+      "store_gets": 5,
+      "torch_loads": 1
+    },
+    {
+      "case": "geographic",
+      "status": "RASTER_BLOCKED",
+      "issue": {
+        "code": "RASTER_HEADER_INVALID",
+        "field": "crs",
+        "year": 2021
+      },
+      "checked_headers": 1,
+      "store_gets": 2,
+      "torch_loads": 1
+    },
+    {
+      "case": "width",
+      "status": "RASTER_BLOCKED",
+      "issue": {
+        "code": "RASTER_GRID_MISMATCH",
+        "field": "grid",
+        "year": 2023
+      },
+      "checked_headers": 3,
+      "store_gets": 8,
+      "torch_loads": 1
+    },
+    {
+      "case": "opaque",
+      "status": "RASTER_BLOCKED",
+      "issue": {
+        "code": "RASTER_FORMAT_UNSUPPORTED",
+        "field": "image",
+        "year": 2021
+      },
+      "checked_headers": 1,
+      "store_gets": 2,
+      "torch_loads": 1
+    }
+  ],
+  "torch_version": "2.14.0+cpu",
+  "all_fixtures_files_and_registry_bytes_unchanged_during_reader": true,
+  "temporary_untrained_model_checkpoint_loaded": true,
+  "operating_model_loaded": false,
+  "training_inference_executed": false,
+  "operating_registry_contact": false,
+  "scientific_accuracy_validated": false,
+  "pixel_values_verified": false,
+  "registry_aoi_verified": false
+}

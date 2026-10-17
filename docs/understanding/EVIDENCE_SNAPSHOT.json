@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T03:34:49.686157+09:00",
-  "source_commit": "0ff71266aae84e14fe8620bdafe56725d7fd5c80",
-  "source_commit_reason": "Published127 baseline plus128 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T03:45:29.300031+09:00",
+  "source_commit": "97e712d4476eb00680469d40972c571172930f3f",
+  "source_commit_reason": "Published128 baseline plus129 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -3424,6 +3424,115 @@
       "collector_training_processes_observed": 0,
       "next_internal_candidate": "129_ACTUAL_RASTER_HEADER_AND_CROSS_SCENE_GRID_DIAGNOSTICS",
       "snapshot_files": 1628
+    },
+    "latest_actual_raster_header_and_cross_scene_grid_read": {
+      "recorded_at": "2026-10-18T03:45:29.300031+09:00",
+      "status": "129_PINNED_GTIFF_HEADER_AND_CROSS_SCENE_GRID_READ_VERIFIED",
+      "focused": {
+        "passed": 11,
+        "seconds": 19.15
+      },
+      "related": {
+        "passed": 44,
+        "seconds": 40.033,
+        "composition": "11 new raster-grid +11 prior128 temporal +9 prior127 annual +13 registered scene tests"
+      },
+      "independent": {
+        "passed": 9,
+        "skipped": 0,
+        "seconds": 17.265843100001803
+      },
+      "root_actual_temp_registered_scene_scenarios": 7,
+      "overlapping_test_bundles_are_not_additive": true,
+      "source_sha256": "17371e6a2a49a9845bf2a5d6b2cb0a777808400ac814b2d14e6347d7eb992501",
+      "test_sha256": "ec89b2e7fefd750dbd24562d213fef698d035e0149bab2c19a67bbe17594635f",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T03:45:29.300031+09:00",
+        "understanding_markdown": 96,
+        "implementation_markdown": 1,
+        "local_links": 407,
+        "metadata_evidence_references": 10601,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T03:45:11.486058+09:00",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 291,
+        "existing_source_changes": [],
+        "previous_evidence_checked": 1109,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "reserved_bytes_preserved": 136314880,
+        "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "operating_inventory": {
+        "recorded_at": "2026-10-18T03:37:27.132870+09:00",
+        "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+        "counts_by_kind": {
+          "analyses": 3,
+          "datasets": 6,
+          "gmais_idempotency": 2,
+          "gmais_jobs": 2,
+          "models": 1
+        },
+        "dataset_versions_count": 0,
+        "operating_writes": 0,
+        "model_or_raster_files_loaded": false
+      },
+      "initial_fixture_vrt_overwrite_error_log_preserved_then_test_fixture_only_repaired": true,
+      "gtiff_driver_only_header_reads_from_same_sha_checked_copied_bytes": true,
+      "pixel_values_quality_mask_and_registry_aoi_verified": false,
+      "one_checkpoint_load_per_valid_batch": true,
+      "registered_utc_temporal_year_declarations_bound_to_actual_same_image_record": true,
+      "physical_acquisition_year_or_authority_verified": false,
+      "no_extra_temporal_registry_get_calls": true,
+      "distinct_image_registry_keys_do_not_prove_distinct_physical_scenes_or_temporal_independence": true,
+      "explicit_scene_extensions_and_lineage_roles_are_internal_contract_not_official_authority": true,
+      "public_declaration_read_policy_is_not_acl_and_quality_state_is_not_qa_approval": true,
+      "store_database_json_predecode_is_not_memory_bounded_by_new_postdecode_tree_checks": true,
+      "checkpoint_manifest_is_caller_metadata": false,
+      "actual124_model_join_completed": true,
+      "requested_year_batch_read_completed": true,
+      "registry_temporal_year_binding_completed": true,
+      "physical_acquisition_year_verified": false,
+      "parent127_temporal_year_verified_remains_false": true,
+      "temporary_untrained_checkpoint_loaded_with_cpu_weights_only": true,
+      "all_year_quality_mask_or_runtime_binding_completed": false,
+      "api_ui_workflow_runtime_connected": false,
+      "execution_authorized": false,
+      "state_dict_verified": false,
+      "source_authority_verified": false,
+      "scientific_accuracy_validated": false,
+      "workflow_supported": false,
+      "frontend_build_browser_rerun_this_unit": false,
+      "backend_full_rerun_this_unit": false,
+      "reason_no_full_rerun": "All291 previous source files are byte-identical. New internal actual GTiff header and strict cross-scene grid binding tested with actual Temp CPU checkpoint/Registry/rasters, independent failures and124/125 related regressions. No API/UI contract change.",
+      "previous_backend_regression": {
+        "unit": "120/121",
+        "tests_run": 1184,
+        "passed": 1183,
+        "skipped": 1,
+        "seconds": 399.529
+      },
+      "previous_frontend_regression": {
+        "unit": "120/121",
+        "passed": 261,
+        "build_modules": 108,
+        "build_seconds": 21.85
+      },
+      "understanding_updated": true,
+      "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+      "operating_model_or_raster_load": 0,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_internal_candidate": "130_REGISTRY_SPATIAL_BBOX_AND_ACTUAL_RASTER_EXTENT_RELATION",
+      "snapshot_files": 1647
     }
   },
   "files": {
@@ -3440,8 +3549,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "ff214c987540dfba78dd0771cb8c81cd775268909325b54cd0355e0413e6de53",
-      "bytes": 373900
+      "sha256": "d2f23ef99796aad01b0024614ae19f3aa90fc9d989806dc48b967b47a0f2ead3",
+      "bytes": 379956
     },
     "README.md": {
       "sha256": "0d213fdb1da768b59dd402c3af248fa902c00a078c3072703337effadc542c56",
@@ -3695,6 +3804,10 @@
       "sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
       "bytes": 6839
     },
+    "backend/app/ml/registry_raster_grid_normalization.py": {
+      "sha256": "17371e6a2a49a9845bf2a5d6b2cb0a777808400ac814b2d14e6347d7eb992501",
+      "bytes": 7675
+    },
     "backend/app/ml/registry_temporal_normalization.py": {
       "sha256": "6cc04dcfb2e71745a09ed7a62b17ccc94637e5c9ad12730fe7ac3d8e20b98f15",
       "bytes": 6860
@@ -3860,8 +3973,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "55603cd989e99f7a09532294e0e21eb5e222d776b8e28fac157ced8da0558fcf",
-      "bytes": 381041
+      "sha256": "f61c9b197eea1dfd625b14167cf754193779e175e7a3e64fc4b7cc16aa843dec",
+      "bytes": 387097
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -3980,8 +4093,12 @@
       "bytes": 10851
     },
     "docs/implementation/128_registry_temporal_normalization.md": {
-      "sha256": "51bd7145aa8ee3eddf1cf3cdb5a2585b0485f766a49acff2b21a7d4e7457a16b",
-      "bytes": 11808
+      "sha256": "b2d368269d96e7da0859056ea1b38b902c67877c6bd860b0bd2fbaa2eb863ada",
+      "bytes": 12090
+    },
+    "docs/implementation/129_registry_raster_grid_normalization.md": {
+      "sha256": "402087c8c78029e0ea4d89f6af61341bc71677a9e990121fa230d8ac2dfa2429",
+      "bytes": 12106
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -4296,48 +4413,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "206aea44fa1d4f79a0da878aa2f896937670169775556afe1fab544d4eacab24",
-      "bytes": 149561
+      "sha256": "c0fc2ea1c19d7c9b4304bcd5911538f0b05d909027debfd99ecaed01bf26fc20",
+      "bytes": 150583
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "4fd45f0d8ecad4de85e9a44caae0bf18f826e4309897e36b3371ba63426c0396",
-      "bytes": 119565
+      "sha256": "5db9aa8aa4e7781ef5c9f6e0867e3c0a6ba2d83e5f4c553629942e0e777c2a4d",
+      "bytes": 120671
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "4ce35bd7cabe0ed91603d3366291c049fd9ab02db39b60cc4dac3f4f466b1fe4",
-      "bytes": 89963
+      "sha256": "7660121d6e271b69ce4e447b7142ec35f7d5a611d934c1e64ca112d1e7f86952",
+      "bytes": 90976
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "923d8b028ff17f15ab8b1052e048dd30868e934bee8006d5636b818cdf852dcf",
-      "bytes": 72953
+      "sha256": "a329e043c9e5dae1efb85f70f0bad56009dbbec4f615e23464ba2ef70a4eb6b9",
+      "bytes": 74045
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "0f5cff22524cd7e9adb5cc135a61dc457750c521d3ba3febe62784d96ad51e22",
-      "bytes": 37994
+      "sha256": "ecc61828cc5db9192709b81ef82cbf82938799cf76c00c67dbb2641ab644e3a2",
+      "bytes": 39016
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "52d7fba638daf95b4f4c57e8216c7bb5e11a595fafc2b53ceb82a8188a1c5561",
-      "bytes": 76386
+      "sha256": "81ba0382dcb6c894df1d1f03f5587e01a35b6ca088cf4d7560a187649f86c1a3",
+      "bytes": 77388
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "f8829e19a744afbfddc913e4b7ae934ae87439e584da99aa777f7edc65ac95a4",
-      "bytes": 216418
+      "sha256": "96fff577bb8d8d327eddda994b0494776994769f954576e1b526d6632aa85fbd",
+      "bytes": 218282
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "98b7b1b95deee55c0ac31bfb57688e48bdc2ad7a3efcbcb6c0fcd934bef397e4",
-      "bytes": 177955
+      "sha256": "ab93424c4a39c162387de56770b569abfbf3d14cde1482f9831a1553bc6a05ff",
+      "bytes": 179533
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "87ba3847055d0c650f9f64cf5eee2d7849b181d0984c30eae0e98373c6933df6",
-      "bytes": 113462
+      "sha256": "a2eea6106ee2d933a313da225918307c28b9c01b042eb295210f8c529891b33e",
+      "bytes": 114505
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "97bb25467a8e7b25bec431f81ed3450912261c692c62116a34321522c3513e14",
-      "bytes": 187607
+      "sha256": "90984536432adb19b76e5ec9a291514847b6ac52df3aad2a28475c3dd5069fe1",
+      "bytes": 189238
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -4575,6 +4692,10 @@
       "sha256": "6d98b1a041e829bcc816eeb6b86c9c74482112faab44a6e05b6a51f26ab71185",
       "bytes": 10971
     },
+    "docs/understanding/gate-notes/GATE_REGISTRY_RASTER_GRID_20261018.md": {
+      "sha256": "d4d0bbd083768b2b3dc3409c4a7e7e4a478690d9c24c394156aff883e3d5c826",
+      "bytes": 10853
+    },
     "docs/understanding/gate-notes/GATE_REGISTRY_TEMPORAL_NORMALIZATION_20261018.md": {
       "sha256": "afc293d61d7855110140aeb63b7a56f41ee243d118fc69db572af0b45ebf9883",
       "bytes": 10809
@@ -4664,16 +4785,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "b83775f2efd1e606941b34f47df5b069d66b514d537b0d61343c07c5bb795705",
-      "bytes": 191432
+      "sha256": "62d061c7511c2e27410e882a995c68824f0bd74e7c639f8debdf06023d8dd7b5",
+      "bytes": 192647
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "4c76de1650a34e730e3eea4072d1f547667b4c8089bced6ea686982b9ffee1ff",
-      "bytes": 129381
+      "sha256": "eda3eb3fe756adb7ab6a02ae907422e1254eefd038d68d42b0f9cc2abe4573a8",
+      "bytes": 130352
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "4769f4d998485334d82f6f9af412874827709c9e2727bcb60aacf93e7421ee89",
-      "bytes": 153543
+      "sha256": "24d3f7bafea50eb5d5123232367961a9c9810b287b58d136202db79a4be103da",
+      "bytes": 154995
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -7178,6 +7299,66 @@
     "evidence/integration/pinned-scene-runtime-initial-20261018.log": {
       "sha256": "29508db997158bdfaa53861463a9550ea64550076f7e3b81c0c2d8de60355a7d",
       "bytes": 423
+    },
+    "evidence/integration/raster-grid-agent-20261018-focused-final.log": {
+      "sha256": "1734629aa29eecf46667eda0b19ac942a3e282c7e40ab63e027547016e21fae8",
+      "bytes": 2840
+    },
+    "evidence/integration/raster-grid-agent-20261018-focused.log": {
+      "sha256": "bb1b02d3f5f9a4257f161d5c7b76e63211e2e524e6c1b29db9a60dee9c2d9af0",
+      "bytes": 4410
+    },
+    "evidence/integration/raster-grid-closeout-20261018.json": {
+      "sha256": "627cd166eab663def30abac1be23cc848aba15a9bc2332f21ff409a1d2af2f79",
+      "bytes": 4703
+    },
+    "evidence/integration/raster-grid-closeout-20261018.py": {
+      "sha256": "b06cd5c764ae40697b3f0c741d9e2bed42e782bfe787a2553c1185db6b69050c",
+      "bytes": 8687
+    },
+    "evidence/integration/raster-grid-independent-20261018.json": {
+      "sha256": "8b1d24ac2b33d545d5a7d335b4a8238cfed09d7e95639a051fbf3fb27d0b1b72",
+      "bytes": 3653
+    },
+    "evidence/integration/raster-grid-independent-20261018.log": {
+      "sha256": "4cedd1fb2e6f7a8ceac7747e0791dbe5b59b4ef34625374ce42503b14f4a2e4e",
+      "bytes": 5132
+    },
+    "evidence/integration/raster-grid-independent-20261018.py": {
+      "sha256": "a17272f855035fbe5dfdf82ee0444bec189f78e0914fb9d6dfbb87d2db20a85c",
+      "bytes": 15217
+    },
+    "evidence/integration/raster-grid-integrity-20261018.py": {
+      "sha256": "934ad8b46066c4c45e13fe74840f5b1e8094e212029df2ae66bdc0bf3c0ae4e5",
+      "bytes": 2488
+    },
+    "evidence/integration/raster-grid-live-integrity-20261018.json": {
+      "sha256": "01445c0f0548cf22654be0e2930fd2769827bd061ed180dc26a1d058d3f12e35",
+      "bytes": 577
+    },
+    "evidence/integration/raster-grid-operating-inventory-20261018.json": {
+      "sha256": "6116021c732ab2b42f0136d1630fd78df3041d71ffebf81e19c0d36d477db447",
+      "bytes": 352
+    },
+    "evidence/integration/raster-grid-preflight-20261018.json": {
+      "sha256": "387e592b855b9fe2fafd85052a4835f6979f7c6a47e3d822d8a5232ebe103b59",
+      "bytes": 489755
+    },
+    "evidence/integration/raster-grid-root-related-20261018.log": {
+      "sha256": "64d662db6f96e9e6941b5b0673348743209404d7fa4a858312dfcc9745aa110a",
+      "bytes": 9983
+    },
+    "evidence/integration/raster-grid-runtime-20261018.json": {
+      "sha256": "0a92112b8f8b0cb3fa2d5edbb49313638944ea397c7ccd45f58d5c5ee56543bf",
+      "bytes": 2364
+    },
+    "evidence/integration/raster-grid-runtime-20261018.log": {
+      "sha256": "6d658758584e2f321bf31fac804b20eb76cce384a2f99277e2f8ae70e97176b0",
+      "bytes": 98
+    },
+    "evidence/integration/raster-grid-runtime-20261018.py": {
+      "sha256": "ebb55d0c173710c127cc97d124b77192991b3b746b016c263bd327ba16a1b7ca",
+      "bytes": 8029
     },
     "evidence/integration/readiness-connectivity-adapter-ast-parity-20261017.json": {
       "sha256": "5f60bfc783b7248fd772f6f0614a7b106ca42a782df40cc0ab063611462bcb50",
@@ -9867,6 +10048,10 @@
       "sha256": "04f209ee6fb60b21ad5ab4410329d0277a9b7d5d34620a8cb4da919b31086379",
       "bytes": 12366
     },
+    "tests/test_registry_raster_grid_normalization.py": {
+      "sha256": "ec89b2e7fefd750dbd24562d213fef698d035e0149bab2c19a67bbe17594635f",
+      "bytes": 11382
+    },
     "tests/test_registry_temporal_normalization.py": {
       "sha256": "d6c51b9a6075b381c2840ea8b8bcd059025253ccf92866cf6e391613e4693619",
       "bytes": 10597
@@ -9941,11 +10126,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T03:34:49.686157+09:00",
-    "understanding_markdown": 95,
+    "checked_at": "2026-10-18T03:45:29.300031+09:00",
+    "understanding_markdown": 96,
     "implementation_markdown": 1,
-    "local_links": 402,
-    "metadata_evidence_references": 10446,
+    "local_links": 407,
+    "metadata_evidence_references": 10601,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true

@@ -1,5 +1,7 @@
 # 128 — 동일 Registry 관측에서 요청 UTC 연도와 영상 기간 결합
 
+> 후속129: 본 기간 관측에 actual GTiff header·장면 간 엄격한 WKT/shape/affine 일치를 결합한 `129_registry_raster_grid_normalization.md`를 구현·검증했다. 픽셀/마스크·dtype실행호환·Registry AOI 관계·과학/실행 승인은 미검증이다.
+
 ## 쉬운 설명과 범위
 
 127은 year를 요청 라벨로만 처리했다. 신규 `backend/app/ml/registry_temporal_normalization.py`의 `inspect_registry_temporal_normalization(store, model_ref, training_report_sha256, requested_years)`는 **125가 실제로 읽는 영상 Registry record와 같은 관측**에서 temporal을 검산한다. 별도로 기간만 미리 조회한 뒤127이 다른 record를 다시 읽게 하지 않는다.
