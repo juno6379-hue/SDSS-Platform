@@ -87,6 +87,46 @@ class LclucWorkflowTests(unittest.TestCase):
             model.head.bias[1]=1
         torch.save({'architecture':'tiny_unet','state_dict':model.state_dict(),'manifest':self.signature},self.checkpoint)
 
+    def test_nonempty_actual_cpu_geometry_json_tuple_roundtrip_succeeds(self):
+        # Hand-set untrained threshold network, never an accuracy/approval test.
+        model = TinyUNet(3)
+        with torch.no_grad():
+            for parameter in model.parameters(): parameter.zero_()
+            model.enc1[0].weight[0,0,1,1] = 1
+            model.enc1[2].weight[0,0,1,1] = 1
+            model.dec1[0].weight[0,16,1,1] = 1
+            model.dec1[2].weight[0,0,1,1] = 1
+            model.head.bias[1] = .01005
+            model.head.weight[2,0,0,0] = 1
+        torch.save({'architecture':'tiny_unet','state_dict':model.state_dict(),'manifest':self.signature},self.checkpoint)
+        sha = self.sha(self.checkpoint)
+        self.model['checkpoint_sha256'] = sha
+        self.model['evaluation']['checkpoint_sha256'] = sha
+        self.model['model_version_declaration']['checkpoint_sha256'] = sha
+        self.request['model_ref']['sha256'] = sha
+        self.store.put('models',self.model)
+        result = workflow.execute_lcluc_workflow(self.store,self.request)
+        self.assertEqual(result['status'],'SUCCEEDED',result)
+        report = json.loads((self.root/result['report_path']).read_text(encoding='utf-8'))
+        change = report['changes']['2020-2021']
+        self.assertEqual(change['vector_feature_count'],1)
+        self.assertEqual(change['valid_pixels'],256)
+        self.assertEqual(change['changed_area_m2'],25600)
+        self.assertEqual(change['geometry']['features'][0]['properties']['transition_code'],11)
+
+    def test_saved_report_value_or_numeric_type_mismatch_still_fails(self):
+        from backend.app.ml.service import analyze_timeseries
+        def mismatched_runner(payload, root):
+            report = analyze_timeseries(payload, root)
+            changed = copy.deepcopy(report)
+            # bool and int compare equal in Python, but are different JSON values.
+            changed['quality']['annual_coverage_complete'] = 1
+            (root/report['report_path']).write_text(json.dumps(changed),encoding='utf-8')
+            return report
+        result = workflow.execute_lcluc_workflow(self.store,self.request,_runner=mismatched_runner)
+        self.assertEqual((result['status'],result['issue']),('FAILED','RUNNER_REPORT_MISMATCH'))
+        self.assertTrue((self.root/'results'/'lcluc-workflows'/result['id']/'timeseries.json').is_file())
+
     def gate_reject(self):
         runner=unittest.mock.Mock(side_effect=AssertionError('runner must not execute'))
         result=workflow.execute_lcluc_workflow(self.store,self.request,_runner=runner)

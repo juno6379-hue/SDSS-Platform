@@ -1,5 +1,9 @@
 # 116 — LCLUC Workflow 명시 제출·상태·검증 산출물 API
 
+## 118 후속 — 같은 실행의 선택 변화쌍 지도 연결
+
+[118 구현·검증](118_lcluc_workflow_change_map.md)에서 수동 pair 선택→고정 index GET→browser SHA·WGS84 도형 검사→중립 지도 미리보기를 연결했다. 기존115의 nonempty tuple/JSON list 보고서 비교 결함도 canonical JSON 동치로 최소 수정하고 회귀2건을 추가했다. 아래 지도 연결 미완료 표현은 당시 이력이며 최신 상태는118과 인계서를 따른다. 기존 상단 지도/KPI·운영 Draft/승인·원본은 보존했고 운영 실행은0이다. 6밴드 per_scene·실제 독립 검증·운영 GeoLLM/RAG·staging/UAT 완료를 뜻하지 않는다.
+
 상태: **TESTED_SYNTHETIC / 운영 성공 실행 미수행**. 신규 `backend/app/lcluc_workflow_api.py`는 115의 고정 Registry→admission→실제 시계열 runner를 HTTP에 연결한다. core115·모델/자료 Gate·멱등/실패 정책은 변경하지 않았다. main의 router import/include 두 줄은 Root가 별도 배선한다. 기존 앱을 import해 운영 Store를 초기화하는 새 모듈이 아니며 `create_lcluc_workflow_router(get_store)`가 caller의 기존 Store를 사용한다.
 
 ## HTTP 계약

@@ -244,7 +244,11 @@ def _execute(store, request, *, _runner=None):
         report_path = local_asset(root, 'results/' + payload['output_id'] + '/timeseries.json')
         _need(report.get('report_path') == str(report_path.relative_to(root))
               and report.get('checkpoint_sha256') == request['model_ref']['sha256'], 'RUNNER_REPORT_MISMATCH')
-        _need(report_path.stat().st_size <= 8 * 1024**2 and json.loads(report_path.read_text(encoding='utf-8')) == report, 'RUNNER_REPORT_MISMATCH')
+        # Rasterio geometry may contain tuple coordinates; JSON represents these
+        # as arrays. Compare their finite canonical JSON, preserving value/type
+        # differences while accepting that serialization representation change.
+        _need(report_path.stat().st_size <= 8 * 1024**2
+              and _canonical(json.loads(report_path.read_text(encoding='utf-8'))) == _canonical(report), 'RUNNER_REPORT_MISMATCH')
         output = report_path.parent
         total, artifacts = 0, []
         for path in sorted(output.rglob('*')):

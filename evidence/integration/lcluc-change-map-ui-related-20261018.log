@@ -1,0 +1,66 @@
+TAP version 13
+# (node:9612) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: manual GeoJSON reads exact receipt index with session auth and exact byte SHA
+ok 1 - manual GeoJSON reads exact receipt index with session auth and exact byte SHA
+  ---
+  duration_ms: 16.7513
+  type: 'test'
+  ...
+# Subtest: content-length over8MiB cancels before reader consumption
+ok 2 - content-length over8MiB cancels before reader consumption
+  ---
+  duration_ms: 2.0285
+  type: 'test'
+  ...
+# Subtest: stream cumulative over8MiB cancels before joining or parsing
+ok 3 - stream cumulative over8MiB cancels before joining or parsing
+  ---
+  duration_ms: 0.6416
+  type: 'test'
+  ...
+# Subtest: wrong SHA rejects valid JSON; malformed UTF8/JSON reject even with matching SHA
+ok 4 - wrong SHA rejects valid JSON; malformed UTF8/JSON reject even with matching SHA
+  ---
+  duration_ms: 3.6841
+  type: 'test'
+  ...
+# Subtest: invalid model/index/SHA paths never fetch or become arbitrary URLs
+ok 5 - invalid model/index/SHA paths never fetch or become arbitrary URLs
+  ---
+  duration_ms: 1.0516
+  type: 'test'
+  ...
+# Subtest: stale before request means no GET; stale streamed response is canceled and discarded
+ok 6 - stale before request means no GET; stale streamed response is canceled and discarded
+  ---
+  duration_ms: 2.6006
+  type: 'test'
+  ...
+# Subtest: HTTP failure has no parser or raw message exposure
+ok 7 - HTTP failure has no parser or raw message exposure
+  ---
+  duration_ms: 0.9201
+  type: 'test'
+  ...
+# Subtest: map is an explicit blank pair selection and manual read; parent retains receipt/report on pair change
+ok 8 - map is an explicit blank pair selection and manual read; parent retains receipt/report on pair change
+  ---
+  duration_ms: 2.4106
+  type: 'test'
+  ...
+# Subtest: map has empty0 distinct from raster stats, truncation warning, local attribution, neutral source and cleanup
+ok 9 - map has empty0 distinct from raster stats, truncation warning, local attribution, neutral source and cleanup
+  ---
+  duration_ms: 2.3711
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 312.0233

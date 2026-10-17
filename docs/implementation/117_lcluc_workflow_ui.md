@@ -1,5 +1,9 @@
 # 117 — LCLUC 고정 입력 실행과 조회 UI
 
+## 118 후속 — 같은 실행의 선택 변화쌍 지도 연결
+
+[118 구현·검증](118_lcluc_workflow_change_map.md)에서 수동 pair 선택→고정 index GET→browser SHA·WGS84 도형 검사→중립 지도 미리보기를 연결했다. 기존115의 nonempty tuple/JSON list 보고서 비교 결함도 canonical JSON 동치로 최소 수정하고 회귀2건을 추가했다. 아래 지도 연결 미완료 표현은 당시 이력이며 최신 상태는118과 인계서를 따른다. 기존 상단 지도/KPI·운영 Draft/승인·원본은 보존했고 운영 실행은0이다. 6밴드 per_scene·실제 독립 검증·운영 GeoLLM/RAG·staging/UAT 완료를 뜻하지 않는다.
+
 상태: **TESTED_SYNTHETIC / 운영 실행 미수행**. 116의 로컬 Workflow API에 연결하는 명시 UI다. 기존 LCLUC Workspace에 기본 접힌 패널 하나를 추가하며 다른 5개 분야에는 표시하지 않는다. PNG 기반 카드·탭·SVG 체계와 기존 실행/비교/리포트 버튼을 바꾸지 않는다. 지도 변화쌍 투영은 후속이며 가짜 결과 지도를 만들지 않는다.
 
 ## 파일과 연결 범위

@@ -1,5 +1,9 @@
 # 114. GeoLLM 실행 환경·RAG·도구 연계 기술 검토
 
+## 118 후속 — 같은 실행의 선택 변화쌍 지도 연결
+
+[118 구현·검증](118_lcluc_workflow_change_map.md)에서 수동 pair 선택→고정 index GET→browser SHA·WGS84 도형 검사→중립 지도 미리보기를 연결했다. 기존115의 nonempty tuple/JSON list 보고서 비교 결함도 canonical JSON 동치로 최소 수정하고 회귀2건을 추가했다. 아래 지도 연결 미완료 표현은 당시 이력이며 최신 상태는118과 인계서를 따른다. 기존 상단 지도/KPI·운영 Draft/승인·원본은 보존했고 운영 실행은0이다. 6밴드 per_scene·실제 독립 검증·운영 GeoLLM/RAG·staging/UAT 완료를 뜻하지 않는다.
+
 ## 116·117 후속 상태 — 명시 실행 API·화면 연결 완료
 
 [116 API](116_lcluc_workflow_api.md)와 [117 UI](117_lcluc_workflow_ui.md)에서 115 코어를 수동 제출·상태/보고서 조회·검증 산출물 다운로드에 연결했다. 임시 합성 자료의 실제 CPU 실행과 기존5174/8002 반영은 검증됐으며 운영 실행은0이다. 아래 API/UI 미연결·미착수 표현은 당시 이력이다. 현재도 독립 정확도·공식 GMAIS Result·운영 배포 인수·6밴드 per_scene·선택 변화쌍 지도 연결은 미완료이며, GeoLLM 서비스의 기존 NO-LLM fallback은 그대로다. 최신 시험·보존·후속은 인계서와116·117을 따른다.

@@ -1,5 +1,21 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 고정 실행 결과의 명시 변화쌍 지도 연결 (118)
+
+116·117의 성공 receipt와 수동으로 읽은 보고서에서 변화쌍을 직접 선택해 지도에 연결했다. 계약 담당은 같은 실행·trace·연도·보고서 경로·artifact index/SHA와 Polygon/MultiPolygon 검증을, UI 담당은 인증 GET·8MiB stream·browser SHA·중립 MapLibre 지도·빈 결과/부분벡터/수명 처리를 구현했다. Root는 독립 검증·실제 브라우저·기존 코어 결함 수정·전체 회귀·보존·문서/Git을, 이해 에이전트는 완료 소스·시험 근거의 설명·발표·FAQ·INDEX·변경이력을 맡았다.
+
+지도는 빈 선택에서 시작하며 사용자의 명시 읽기에서만 기존 `/v1/lcluc/workflows/{id}/assets/{index}`를 호출한다. 고정 namespace·SHA와 WGS84의 유한 2D 좌표·닫힌 ring·클래스 전이·개수/정점 상한을 검사한다. 최대5000도형·100000정점/8MiB 미리보기이며 날짜변경선 모호성은 보수적으로 거부한다. 검사는 도형 위상·기관 출처·독립 과학 정확도 인증이 아니다. 기존 상단 PNG 지도와 KPI는 바꾸지 않는다. 지도는 별도 중립 배경이며 외부 기저지도 호출을 추가하지 않는다.
+
+실제 비어 있지 않은 CPU 결과에서 기존115의 `RUNNER_REPORT_MISMATCH` 결함을 발견했다. checkpoint SHA는 일치했고 rasterio 좌표 tuple이 저장 JSON의 list와 직접 비교돼 실패한 것이 진단 로그로 확인됐다. 코어의 비교 한 곳을 유한 canonical JSON 동치로 바꿨으며 nonempty 성공과 bool/int 보고서 변조 거부 회귀2건을 추가했다. 처음 실패한 진단을 보존했고 실제 원본·승인 조건을 바꿔 통과시키지 않았다.
+
+코어19 PASS/11.800초, 코어+API34 PASS/25.842초, adapter13 PASS/14.751초, 합동front23 PASS/16.725초(adapter13+UI10), Root 독립6 PASS/0.436초다. 전체 backend는 **1170건 중1169 PASS·기존 Windows1 SKIP/389.307초/exit0**, 전체 frontend229 PASS/25.048초, build102modules/21.67초/exit0다. 이 묶음들을 중복 합산하지 않는다.
+
+격리된3연도16×16 생성 영상과 손으로 고정한 비학습 TinyUNet·명시 mock 승인 metadata로 실제 CPU 결과를 만들었다. 브라우저5175→8003에서2020-2021과2020-2022는 Polygon1·정점5·유효256픽셀·변화25600m²,2021-2022는0도형임을 확인했다. 선택만으로 지도를 읽지 않고, pair 변경은 이전 지도만 비우며 보고서를 유지한다. 명시0도형 조회는 canvas를 생성하지 않는다. 빠른 pair 전환·뒤로 가기 후 이전 지도/보고서 미표시도 확인했다. 모바일·강제 네트워크 지연·인증 Bearer·truncated=true를 실제 브라우저에서 재현한 것은 아니며 각각 별도 시험/소스 근거와 구분한다. 임시 생성 자료의 실제 추론·렌더링은 운영 자료 정확도나 독립 승인이 아니다.
+
+보호141·이전증거925·catalog14 canonical·기존 main/API/Workspace는 불변이고 기존 source265개 중 허용한5파일만 변경됐다. 원본·원장·예약136314880B·lock·분할·모델은 보존했다. 운영 수집·학습·등록·배포·Workflow 실행0이며 실제 수집/학습 worker는 관측되지 않았다. 기존 API/Ollama 서비스와 개발 담당 실행, 보고 예약 ACTIVE를 구분한다. 현재 운영 모델 Draft·독립라벨 미확보·6밴드 per_scene/구름mask·다른5실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/기관UAT는 미완료다.
+
+다음 내부 후보119는 같은 변화쌍의 전체 래스터 전이행렬·클래스 범례/통계 연결이다. 전체 개발 완료로 처리하지 않으며 지속 개발·10분 역할 보고를 유지한다. 근거: `docs/implementation/118_lcluc_workflow_change_map.md`, `evidence/integration/lcluc-change-map-full-backend-20261018.log`, `evidence/integration/lcluc-change-map-generated-fixture-20261018.json`, `evidence/integration/lcluc-change-map-browser-20261018.json`, `evidence/integration/lcluc-change-map-live-integrity-20261018.json`. 최종 감사·스냅샷 범위는 `evidence/integration/lcluc-change-map-closeout-20261018.json`을 따른다.
+
 ## 2026-10-18 — LCLUC 명시 실행 API와 UI 연결 완료 (116·117)
 
 115의 실행 코어를 새 로컬 확장 API와 LCLUC 입력 화면에 연결했다. API 담당은 명시 POST·저장 상태 GET·보고서·인증 유지 index 다운로드와 계약시험, UI 담당은 접힌 실행 패널·엄격한 요청/응답 검사·이동 시 늦은 응답 폐기·SVG·연도별 파일 구분을 구현했다. Root는 기존 main에 import/include 두 문장만 추가하고, 기존 인증·라우트 AST 보존·독립/전체 회귀·실제 브라우저·보존·Git을 검증했다. 이해 에이전트는 완료 소스와 증거를 읽어 쉬운 설명·이론·발표대본·FAQ·INDEX·변경이력을 갱신했다.

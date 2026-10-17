@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: independent real CPU three-year results select nonempty and empty without mutating proof
+ok 1 - independent real CPU three-year results select nonempty and empty without mutating proof
+  ---
+  duration_ms: 10.9798
+  type: 'test'
+  ...
+# Subtest: independent year pair and artifact path rebinding are rejected
+ok 2 - independent year pair and artifact path rebinding are rejected
+  ---
+  duration_ms: 2.8209
+  type: 'test'
+  ...
+# Subtest: independent duplicate receipt artifact and external namespace reject before map selection
+ok 3 - independent duplicate receipt artifact and external namespace reject before map selection
+  ---
+  duration_ms: 1.0846
+  type: 'test'
+  ...
+# Subtest: independent nonempty coordinates are bounded and detached from untrusted input
+ok 4 - independent nonempty coordinates are bounded and detached from untrusted input
+  ---
+  duration_ms: 2.885
+  type: 'test'
+  ...
+# Subtest: independent rendering collection excludes inline CRS or unsupported features and metadata mismatch
+ok 5 - independent rendering collection excludes inline CRS or unsupported features and metadata mismatch
+  ---
+  duration_ms: 1.6042
+  type: 'test'
+  ...
+# Subtest: independent dateline spanning preview rejects and empty does not invent bounds
+ok 6 - independent dateline spanning preview rejects and empty does not invent bounds
+  ---
+  duration_ms: 2.9618
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 435.754

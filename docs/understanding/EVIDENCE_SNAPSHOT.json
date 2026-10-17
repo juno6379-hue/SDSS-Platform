@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T01:21:33.924696+09:00",
-  "source_commit": "b5b18ebbef60faf61871a5ae20020504c136c710",
-  "source_commit_reason": "Published115 baseline plus116/117 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T01:38:33.769568+09:00",
+  "source_commit": "ed53f43bbbf905a0d204ab5c5d0b74d45b4162be",
+  "source_commit_reason": "Published116/117 baseline plus118 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -119,7 +119,12 @@
     "lcluc_workflow_api_ui_exact_main_two_ast_additions_auth_preserved": true,
     "lcluc_workflow_api_ui_temp_cpu_receipt_report_download_sha_browser_verified": true,
     "lcluc_workflow_api_ui_operating_dispatch_zero": true,
-    "lcluc_workflow_api_ui_documentation_understanding_updated": true
+    "lcluc_workflow_api_ui_documentation_understanding_updated": true,
+    "lcluc_change_map_full1170_front229_build_verified": true,
+    "lcluc_change_map_nonempty_tuple_json_core_bug_fixed_with_type_tamper_regression": true,
+    "lcluc_change_map_same_receipt_bounded_sha_geometry_and_lifetime_verified": true,
+    "lcluc_change_map_protected141_old_evidence925_catalog14_preserved": true,
+    "lcluc_change_map_docs_and_understanding_updated": true
   },
   "reported_status": {
     "ready_for_training": false,
@@ -2489,6 +2494,100 @@
       "next_unit": "118_EXPLICIT_CHANGE_PAIR_AND_SAME_RECEIPT_GEOJSON_MAP_BINDING",
       "understanding_updated": true,
       "snapshot_files": 1392
+    },
+    "latest_lcluc_change_pair_map": {
+      "recorded_at": "2026-10-18T01:38:33.769568+09:00",
+      "status": "118_EXPLICIT_PINNED_CHANGE_PAIR_MAP_CONNECTED_NONEMPTY_CORE_JSON_FIX_VERIFIED",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T01:38:02.685896+09:00",
+        "understanding_markdown": 86,
+        "implementation_markdown": 1,
+        "local_links": 356,
+        "metadata_evidence_references": 8946,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true,
+        "template_files_checked": [
+          "docs/understanding/GATE_TEMPLATE.md"
+        ]
+      },
+      "backend_full": {
+        "tests_run": 1170,
+        "passed": 1169,
+        "skipped": 1,
+        "seconds": 389.307,
+        "exit_code": 0
+      },
+      "core_focused": {
+        "passed": 19,
+        "seconds": 11.8
+      },
+      "core_api_related": {
+        "passed": 34,
+        "seconds": 25.842
+      },
+      "adapter": {
+        "passed": 13,
+        "seconds": 14.7508363
+      },
+      "joint_frontend": {
+        "passed": 23,
+        "seconds": 16.725,
+        "composition": "13 adapter +10 UI tests, not additive"
+      },
+      "independent": {
+        "passed": 6,
+        "seconds": 0.435754
+      },
+      "frontend_full": {
+        "passed": 229,
+        "seconds": 25.048
+      },
+      "build": {
+        "modules": 102,
+        "seconds": 21.67,
+        "exit_code": 0
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T01:38:02.038370+09:00",
+        "scope": "118_GENERATED_FIXTURE_AND_GUARDED_RENDERING_NOT_OPERATING_DATA_EXECUTION",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 265,
+        "authorized_existing_source_changes": [
+          "backend/app/lcluc_workflow.py",
+          "frontend/src/LclucWorkflowPanel.tsx",
+          "frontend/src/lcluc-workflow.css",
+          "frontend/src/lclucWorkflowClient.ts",
+          "tests/test_lcluc_workflow.py"
+        ],
+        "unexpected_existing_source_changes": [],
+        "previous_evidence_checked": 925,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "catalog_matches_prior": true,
+        "main_and_existing_api_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+        "verified_after_full_regression": true
+      },
+      "core_bug": "Rasterio tuple coordinates differ from JSON arrays in direct Python equality. Compare finite canonical JSON while rejecting bool/int value differences.",
+      "actual_cpu_fixture": "Hand-set untrained TinyUNet and generated16x16 rasters, fabricated approval metadata; actual inference geometry, not scientific evaluation.",
+      "browser_proof": "evidence/integration/lcluc-change-map-browser-20261018.json",
+      "original_user_tab_preserved": true,
+      "owned_fixture_tabs_and_servers_closed": true,
+      "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+      "scientific_accuracy_validated": false,
+      "standard_gmais_result": false,
+      "six_band_per_scene_normalization_supported": false,
+      "upper_png_map_and_kpi_connected": false,
+      "dedicated_same_receipt_change_preview_connected": true,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_unit": "119_SAME_CHANGE_PAIR_FULL_RASTER_TRANSITION_MATRIX_AND_CLASS_LEGEND",
+      "understanding_updated": true,
+      "snapshot_files": 1425
     }
   },
   "files": {
@@ -2505,8 +2604,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "c909f5a3153b82389ea2ccc886ef0b00a0ecf8e4369d6712dc0b3052765e207c",
-      "bytes": 323664
+      "sha256": "dc70c5924c3a394caa04b9f58b8dae6f3fc612af3b7921aad5ad296d3f6ae3c9",
+      "bytes": 327926
     },
     "README.md": {
       "sha256": "78cf42da9ef93f2ceaa89f1c4f762e2167506ec5f2614908160e534ca88030a3",
@@ -2673,8 +2772,8 @@
       "bytes": 8344
     },
     "backend/app/lcluc_workflow.py": {
-      "sha256": "354ceaa5355125c4a8f17addc1782d41ef41843c29e448fcc4d4823edd726f0d",
-      "bytes": 15094
+      "sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "bytes": 15373
     },
     "backend/app/lcluc_workflow_api.py": {
       "sha256": "fd42bfe71edbdded3faa233a4580868a69744e84b42d35e7342c7309f402eaff",
@@ -2885,8 +2984,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "0b7e98d287169b0197f36c089b8a5fb9c6110d8121149e852c99e6703f7821b1",
-      "bytes": 330805
+      "sha256": "6bb0ad0b640251a87377739dd92a2659b07f32d8802fd2109c787d5f3c6148c9",
+      "bytes": 335067
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -2945,24 +3044,28 @@
       "bytes": 8026
     },
     "docs/implementation/113_lcluc_integration_acceptance.md": {
-      "sha256": "52cc281bcb5bd83676c779ffdf394c2b6474ce4eb28bba26f8babacca306ea9a",
-      "bytes": 12092
+      "sha256": "ddada1f1915daf86fc281406fcceaccb311b170595435e5d5653205ca5ff9eec",
+      "bytes": 12788
     },
     "docs/implementation/114_geollm_technical_review.md": {
-      "sha256": "3edddfbdc5a502c7b676bec00b4b9893f6357d5ca51eb7666eba53abdd8c1222",
-      "bytes": 25338
+      "sha256": "d9a40c85ee8634a96bc9a5e33780755a1143b8876b31d8f1b822bda3e4fdaaa5",
+      "bytes": 26034
     },
     "docs/implementation/115_lcluc_workflow_executor.md": {
-      "sha256": "f797af2f12f05f51519c947a4d22438f5537fbb52dc59bf91770984faeb566be",
-      "bytes": 15659
+      "sha256": "5d637b9d5199b48d4c10010a6743609bdeaf2b30674d327346acc79620de73c9",
+      "bytes": 16351
     },
     "docs/implementation/116_lcluc_workflow_api.md": {
-      "sha256": "c37f5d1324ba71dbbadfb2dd1da17ebfeab63f5184f53ad1d299f323303f9698",
-      "bytes": 12796
+      "sha256": "a878e205979182dd806343be07c325ecc68e5f1a00c59dd2ac2e946687a78614",
+      "bytes": 13488
     },
     "docs/implementation/117_lcluc_workflow_ui.md": {
-      "sha256": "b24d15c53c78ba30a5df126d58c58d9151b8bbd82b2316f44e91d36d9b0f9724",
-      "bytes": 9787
+      "sha256": "4de683fbaafd5b747a3ee50bcc485e1f93f8463b08cfa93f869e3efef4897944",
+      "bytes": 10479
+    },
+    "docs/implementation/118_lcluc_workflow_change_map.md": {
+      "sha256": "61db7b1af1374c9406c101b572cd6a30dad9213a06d02c63761f6bc845c3d1c1",
+      "bytes": 10234
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -3277,48 +3380,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "994228619810c83d0bf9791e4447d9329c4f720d11e9c234847d0d03974ef8e2",
-      "bytes": 137770
+      "sha256": "9fe4bc468c2b6dc7a7ee4c88a2aa594068aaa2d617a7e59c972c67036de72c09",
+      "bytes": 139232
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "b4b8a336772801e67137f2fdb74565b80a454cfd9fa84eedcea701cc36e79b1b",
-      "bytes": 106511
+      "sha256": "b404a9c1cf462fe268f2109a3e823fa184c36689f62e87a76ba75037296059c4",
+      "bytes": 108062
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "5fac197c52a9971d19a4ad22d83af15410156bdac5acb90245189bcedc10232b",
-      "bytes": 77916
+      "sha256": "129c37906f4b15a0b689e2cb3cd78b4da4b77a5ae1d4476900fbe0dc48eb8873",
+      "bytes": 79466
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "1b4855111f32bc1f5cf6d9ef544b7c6d6ae7ff23a86678234a5c41c6fa2bda4c",
-      "bytes": 61143
+      "sha256": "af30f115c2bd854929c279b51142c7a98fdba957f23e95f91e0d2c61bb7987d9",
+      "bytes": 62614
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "665d556ce2136f4393cb5b0927cf1e6d86b29960a2c73810e1e4d18fc2423967",
-      "bytes": 26438
+      "sha256": "8121b69e2a5b2047332514f6d14503ba8b91204fe3aa69aa9aedab02c728f5d3",
+      "bytes": 27915
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "60360910baf6dc97e8a891ca29fb5d01997fd40b0e6431e1376acffc09cfaffe",
-      "bytes": 64127
+      "sha256": "7c296ef4db8037229f67321c050b9c9ef55755b2835003bc1954d1fe4ac4b743",
+      "bytes": 66054
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "16967b16713e0038befbaf7178682fa2c5000f075d466caf78dd0184e9ee6a47",
-      "bytes": 192578
+      "sha256": "35369f7e6629cbb710980971398802483554c4fca7a7e240a6c84a22d959d1ae",
+      "bytes": 195211
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "27950d63d28bea51bac249cc4004b41d4a63b487dd39d6af2aaeb661d9ab15b0",
-      "bytes": 161763
+      "sha256": "71313f9aa6c247d85666baa0c0e2d5ea5e3d91c6d2ab3d7d3a23bf3dd66c750f",
+      "bytes": 163880
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "7ae907de53a204b7add64b81fc3461a9046ee48e92287791fb57de57ae6f8086",
-      "bytes": 101344
+      "sha256": "04a8e711b36f9c4f13b5d9e7f80623be932680d586fd31d435378ec91c6cfcb2",
+      "bytes": 102936
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "59eedd52dc0a4454428a397471af0aa7b42ee2ee51ef46b51c3f51652f3fe416",
-      "bytes": 169447
+      "sha256": "13d9676733d0b6d8765923f7a3cbb748aedb577e943673c36200c8844b410f9f",
+      "bytes": 171609
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -3443,6 +3546,10 @@
     "docs/understanding/gate-notes/GATE_JOB_SNAPSHOT_20261017.md": {
       "sha256": "9dcd49f61963239fca880b8c9b8ffd2cfd957e24eb524d1a06956e5b57c36ac0",
       "bytes": 4945
+    },
+    "docs/understanding/gate-notes/GATE_LCLUC_CHANGE_MAP_20261018.md": {
+      "sha256": "cb6bd2f3f56604700e562a28bd3383d31c655149336b3490a7bb150ee5f69bd9",
+      "bytes": 11627
     },
     "docs/understanding/gate-notes/GATE_LCLUC_LOCAL_WORKFLOW_20261018.md": {
       "sha256": "24a0c99f11067c72660c89d1804e7d456812e0565aa8b09e0b705d8c7558733e",
@@ -3605,16 +3712,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "631522dec4da2373406e3beb5fdb6766ec3b58e165e8ae4ea20c4df9211d0cf3",
-      "bytes": 178178
+      "sha256": "3d1cdf5108bc0d29fe0bde0979e2f17d95c06055d5703bb62e37e59b8c5051f2",
+      "bytes": 179778
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "953b49d1c164470cabc25dc22631dc2e622cc04f2fddc3f4a71f691734ce517f",
-      "bytes": 116824
+      "sha256": "6396e940ae0a3e2f5eeae0e2feb6bdd705b27823113bb69ee46cd9511cb1b203",
+      "bytes": 118841
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "aa9fc8a30fe5aa597eba8058514bd14839127a084174013c0c62713010ff766f",
-      "bytes": 138992
+      "sha256": "f155515c14f6883595a307a8128cc78c6ef7ea658fbdb578b59bb14047256fb7",
+      "bytes": 141041
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -4687,6 +4794,114 @@
     "evidence/integration/job-snapshot-ui-build-20261017.log": {
       "sha256": "acc5609156ecbd67c22c2c0025083f87d9529817ed20d9304037ce1a9530dd0a",
       "bytes": 3964
+    },
+    "evidence/integration/lcluc-change-map-adapter-focused-20261018.log": {
+      "sha256": "9a3b08f789f49df69a0366c9e943b0f71e1ae9fc5b1b0cc7aa47c5f210547599",
+      "bytes": 3243
+    },
+    "evidence/integration/lcluc-change-map-browser-20261018.json": {
+      "sha256": "733e3c57cae1b8053845db3f9e4e93c34a608de640341b6d98cf7c9ac8bdc1fe",
+      "bytes": 2245
+    },
+    "evidence/integration/lcluc-change-map-closeout-20261018.json": {
+      "sha256": "92df000c3d32f3647a152caeea342e0e84e222eca5322fe4fe969a830596db22",
+      "bytes": 3351
+    },
+    "evidence/integration/lcluc-change-map-core-api-final-20261018.log": {
+      "sha256": "d46b2a4933adcc375b30af755d81307838322f64dc30e64fe49490fdce934723",
+      "bytes": 11708
+    },
+    "evidence/integration/lcluc-change-map-core-focused-20261018.log": {
+      "sha256": "dbe33b1084d6e8bc86db61d875bad2615f46a330bd87157c890c4abcc6c70b57",
+      "bytes": 4582
+    },
+    "evidence/integration/lcluc-change-map-documentation-audit-20261018.json": {
+      "sha256": "9dc7087b787039858a7ac4bc63aeb729a7cbd69fa74fd45b718460c91267564d",
+      "bytes": 355
+    },
+    "evidence/integration/lcluc-change-map-empty-20261018.png": {
+      "sha256": "082de0ff7fdf9cbefa473f89011c873aa6d2c2f5a10144b7a60655e5b021db2d",
+      "bytes": 100710
+    },
+    "evidence/integration/lcluc-change-map-empty-dom-20261018.txt": {
+      "sha256": "7b092171b798892f36be727ee3dfcc4678a1b70f110f765e19f028370ef13303",
+      "bytes": 18782
+    },
+    "evidence/integration/lcluc-change-map-full-backend-20261018.log": {
+      "sha256": "bb779ba10c8cead2a5c824f36fb2002ed9d61c2fedc39681de028fecfd073fcc",
+      "bytes": 232830
+    },
+    "evidence/integration/lcluc-change-map-generated-fixture-20261018.json": {
+      "sha256": "e459a49d6013c4aafc5ea346f60954b7b2e4002cabb8e768ef10c76388a6e55d",
+      "bytes": 32423
+    },
+    "evidence/integration/lcluc-change-map-independent-20261018.log": {
+      "sha256": "f241c98ed27a8ed06da131f58c8b2aa7ca1bf9c770d14a8cf939826765d427ae",
+      "bytes": 1562
+    },
+    "evidence/integration/lcluc-change-map-independent-20261018.test.mjs": {
+      "sha256": "aa30e2100a012ac12d667af0434bec6730ad9bbf9bc3484f05030e6a5803eaea",
+      "bytes": 3678
+    },
+    "evidence/integration/lcluc-change-map-live-integrity-20261018.json": {
+      "sha256": "956267aee3a2da777aae5d12a9b2cc68fab5288c2bb171d07414e52d7db85a75",
+      "bytes": 934
+    },
+    "evidence/integration/lcluc-change-map-nonempty-20261018.png": {
+      "sha256": "3d636f27774b569b48811648497b841fa39edf04823ba082b3b5c3e1f0b2b985",
+      "bytes": 66522
+    },
+    "evidence/integration/lcluc-change-map-nonempty-dom-20261018.txt": {
+      "sha256": "e9c32415389a5a70435232693951fa037f1c4c97457d09f762892cb6c6fecc47",
+      "bytes": 18945
+    },
+    "evidence/integration/lcluc-change-map-nonempty-initial-diagnostic-20261018.log": {
+      "sha256": "92e0f7d8ddd8e2150e85e000f46cd5d7933f9545d05b4f43040823ba0cc14846",
+      "bytes": 1082
+    },
+    "evidence/integration/lcluc-change-map-original-LclucWorkflowPanel.tsx-20261018.txt": {
+      "sha256": "c342e4597ba296e1f5fcf253e4f8206a8e0cb487be4c69d472a12374083de0d1",
+      "bytes": 7449
+    },
+    "evidence/integration/lcluc-change-map-original-lcluc-workflow.css-20261018.txt": {
+      "sha256": "bd4d543db862d4b270741921f0b2cd1acf2c56980afc119936b2e51fe65069ee",
+      "bytes": 2906
+    },
+    "evidence/integration/lcluc-change-map-original-lclucWorkflowClient.ts-20261018.txt": {
+      "sha256": "2a644fdc76bd83e371476f3db4aea6d0de60f221d0085af57582c36de3b923d4",
+      "bytes": 1630
+    },
+    "evidence/integration/lcluc-change-map-original-lcluc_workflow.py-20261018.txt": {
+      "sha256": "354ceaa5355125c4a8f17addc1782d41ef41843c29e448fcc4d4823edd726f0d",
+      "bytes": 15094
+    },
+    "evidence/integration/lcluc-change-map-original-test_lcluc_workflow.py-20261018.txt": {
+      "sha256": "ef6286e1ae791ff3de47b213be2ea0cf3c39b7a3776e3c7e26d55be164cc9900",
+      "bytes": 19542
+    },
+    "evidence/integration/lcluc-change-map-preflight-20261018.json": {
+      "sha256": "322eb5a7c2c4fc8ba166fc05df5b14d43f52b79149af0f71801d637fb5a2cb95",
+      "bytes": 402010
+    },
+    "evidence/integration/lcluc-change-map-ui-build-20261018.log": {
+      "sha256": "2fc6f66878e95c3bc9e24208c429940093ec88fa22807375f975770a07c39981",
+      "bytes": 755
+    },
+    "evidence/integration/lcluc-change-map-ui-build-initial-20261018.log": {
+      "sha256": "bff677b3b5faec4d7a77419c13a1c0107cf35110e42ff3132ee9c7d132a0a924",
+      "bytes": 755
+    },
+    "evidence/integration/lcluc-change-map-ui-related-20261018.log": {
+      "sha256": "001f7171657cfd00c9de998369fbcf23d0fc7c73ac036deeb4bec5fc65ecd782",
+      "bytes": 2355
+    },
+    "evidence/integration/lcluc-change-map-ui-related-final-20261018.log": {
+      "sha256": "f8259efb406385a4d8a085cc291e2b5ade5f26a31c9edecdc10422d12ee6be99",
+      "bytes": 5666
+    },
+    "evidence/integration/lcluc-change-map-ui-tests-20261018.log": {
+      "sha256": "667e2fc1c38c05256df8c3fb3efdc5d1151e61efe50160150a8e176cd97b3b9a",
+      "bytes": 56177
     },
     "evidence/integration/lcluc-geollm-closeout-20261018.json": {
       "sha256": "1932b7b1f0b7595e3515e6b2897f9b9600c66aa512c7d24e3b4711b4d1bcfa65",
@@ -7404,9 +7619,13 @@
       "sha256": "8505a3c3db38cbbf9f246e666cf854d929f4354bd0f81efb0ceb1fd7000a8538",
       "bytes": 7334
     },
+    "frontend/src/LclucWorkflowChangeMap.tsx": {
+      "sha256": "e8ea422c13148ef2a7aab76fb750205d6cfcd7a16a4217caa1fe993c956f00a2",
+      "bytes": 7531
+    },
     "frontend/src/LclucWorkflowPanel.tsx": {
-      "sha256": "c342e4597ba296e1f5fcf253e4f8206a8e0cb487be4c69d472a12374083de0d1",
-      "bytes": 7449
+      "sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "bytes": 7755
     },
     "frontend/src/ModelAnalysisWorkspace.tsx": {
       "sha256": "137a48fe30a9974a3ea5f9b5a2de0211881b3b91ae01aaa86ef4a203e3750324",
@@ -7553,8 +7772,16 @@
       "bytes": 6834
     },
     "frontend/src/lcluc-workflow.css": {
-      "sha256": "bd4d543db862d4b270741921f0b2cd1acf2c56980afc119936b2e51fe65069ee",
-      "bytes": 2906
+      "sha256": "f2738e71d2edea79e7c852ec1ea9b263c97b729211aca94cff1b2a19fb493d15",
+      "bytes": 4219
+    },
+    "frontend/src/lclucChangeMapAdapter.test.mjs": {
+      "sha256": "953ebbe0bca9fb4c6de52a8e674e9135a739ea70d97d1eaa1c2f48424e30096f",
+      "bytes": 11241
+    },
+    "frontend/src/lclucChangeMapAdapter.ts": {
+      "sha256": "5119c9844d0e157feff353bdf29d43feaaaad5940ebb96aabaa2327384c58329",
+      "bytes": 6582
     },
     "frontend/src/lclucWorkflowAdapter.test.mjs": {
       "sha256": "6375169deac1ac18c6f74922ae95c68a2e0b130b33ef04f454ba9e7b7008c83c",
@@ -7564,9 +7791,13 @@
       "sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
       "bytes": 9954
     },
+    "frontend/src/lclucWorkflowChangeMap.test.mjs": {
+      "sha256": "8f9e2162d66675f09857fca41fa3463308249367481a00ddecbe7af88d2c15e6",
+      "bytes": 6338
+    },
     "frontend/src/lclucWorkflowClient.ts": {
-      "sha256": "2a644fdc76bd83e371476f3db4aea6d0de60f221d0085af57582c36de3b923d4",
-      "bytes": 1630
+      "sha256": "e449804dd4b59acf37591986ae813d9b4e96e193d0ce4260e7eec0cc1c3808ba",
+      "bytes": 3242
     },
     "frontend/src/lineageVerificationAdapter.test.mjs": {
       "sha256": "6a4eb0ea968c8038c1512f8182677b5cfdab77655e3ba4ab72753f7fbc78eacc",
@@ -7869,8 +8100,8 @@
       "bytes": 12793
     },
     "tests/test_lcluc_workflow.py": {
-      "sha256": "ef6286e1ae791ff3de47b213be2ea0cf3c39b7a3776e3c7e26d55be164cc9900",
-      "bytes": 19542
+      "sha256": "f486cc3bc5369263f8a75deff9697e44752fccfbd1fb6fe153ddd992c5fb5df8",
+      "bytes": 21924
     },
     "tests/test_lcluc_workflow_api.py": {
       "sha256": "515bb8570763657e6573b7caf9aa3da06eab094fef5336b692cf8f87e47aae30",
@@ -8062,17 +8293,16 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T01:20:51.014458+09:00",
-    "understanding_markdown": 85,
-    "implementation_markdown": 2,
-    "local_links": 351,
-    "metadata_evidence_references": 8701,
+    "checked_at": "2026-10-18T01:38:02.685896+09:00",
+    "understanding_markdown": 86,
+    "implementation_markdown": 1,
+    "local_links": 356,
+    "metadata_evidence_references": 8946,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true,
     "template_files_checked": [
       "docs/understanding/GATE_TEMPLATE.md"
-    ],
-    "scope": "Root metadata/local-path audit; evidence execution results are recorded in linked logs, not inferred from link existence."
+    ]
   }
 }

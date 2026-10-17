@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-18T01:35:20.697481+09:00",
+  "scope": "TESTED_SYNTHETIC_GENERATED_RASTERS_HAND_SET_UNTRAINED_NETWORK_MOCK_APPROVAL",
+  "workflow_id": "142138f029ee3eeed8bf7c1d0d20205c2a3b96c94d341a1b67bde63e8dcdf930",
+  "trace_id": "trace-change-map-118",
+  "fixture_ports": [
+    5175,
+    8003
+  ],
+  "fixture_generated_by": "Generated16x16 GeoTIFFs and hand-set untrained TinyUNet threshold weights; fabricated admission metadata; actual CPU runner. No manually invented geometry.",
+  "observations": {
+    "report_manual_read": true,
+    "initial_pair_empty": true,
+    "pair_selection_without_click_did_not_render_map": true,
+    "nonempty_pair": "2020-2021",
+    "nonempty_features": 1,
+    "vertices": 5,
+    "full_raster_valid_pixels": 256,
+    "changed_area_m2": 25600,
+    "maplibre_polygon_visually_verified": true,
+    "sha256_matches_pinned_artifact": "6f318eafc66bce6ebf62a06c96f197a0bdafe18008c6412665759b461ff93ec5",
+    "pair_change_clears_map_retains_report": true,
+    "empty_pair": "2021-2022",
+    "empty_message_visible": true,
+    "empty_has_no_map_canvas": true,
+    "first_last_pair_2020_2022_rendered": true,
+    "rapid_pair_change_clears_map": true,
+    "back_lcluc_without_old_map_report": true,
+    "original_user_tab_preserved": true
+  },
+  "operating_collection_training_registration_deployment_workflow_dispatch": 0,
+  "limitations": [
+    "No mobile viewport test.",
+    "No forced network delay injection; rapid pair switching and back observed, generation handling separately unit tested.",
+    "Fixture browser token empty; Bearer preservation and failures tested with mocked client, not an authenticated browser session.",
+    "Fixture vector_truncated=false; warning source and unit contracts are distinct from a truncated browser fixture.",
+    "Rendering shape/range/hash is not geometry topology, source authority or independent scientific accuracy."
+  ],
+  "evidence": [
+    "evidence/integration/lcluc-change-map-nonempty-20261018.png",
+    "evidence/integration/lcluc-change-map-nonempty-dom-20261018.txt",
+    "evidence/integration/lcluc-change-map-empty-20261018.png",
+    "evidence/integration/lcluc-change-map-empty-dom-20261018.txt"
+  ]
+}

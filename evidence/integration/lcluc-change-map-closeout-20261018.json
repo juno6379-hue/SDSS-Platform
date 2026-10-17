@@ -1,0 +1,94 @@
+{
+  "recorded_at": "2026-10-18T01:38:33.769568+09:00",
+  "status": "118_EXPLICIT_PINNED_CHANGE_PAIR_MAP_CONNECTED_NONEMPTY_CORE_JSON_FIX_VERIFIED",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T01:38:02.685896+09:00",
+    "understanding_markdown": 86,
+    "implementation_markdown": 1,
+    "local_links": 356,
+    "metadata_evidence_references": 8946,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true,
+    "template_files_checked": [
+      "docs/understanding/GATE_TEMPLATE.md"
+    ]
+  },
+  "backend_full": {
+    "tests_run": 1170,
+    "passed": 1169,
+    "skipped": 1,
+    "seconds": 389.307,
+    "exit_code": 0
+  },
+  "core_focused": {
+    "passed": 19,
+    "seconds": 11.8
+  },
+  "core_api_related": {
+    "passed": 34,
+    "seconds": 25.842
+  },
+  "adapter": {
+    "passed": 13,
+    "seconds": 14.7508363
+  },
+  "joint_frontend": {
+    "passed": 23,
+    "seconds": 16.725,
+    "composition": "13 adapter +10 UI tests, not additive"
+  },
+  "independent": {
+    "passed": 6,
+    "seconds": 0.435754
+  },
+  "frontend_full": {
+    "passed": 229,
+    "seconds": 25.048
+  },
+  "build": {
+    "modules": 102,
+    "seconds": 21.67,
+    "exit_code": 0
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T01:38:02.038370+09:00",
+    "scope": "118_GENERATED_FIXTURE_AND_GUARDED_RENDERING_NOT_OPERATING_DATA_EXECUTION",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 265,
+    "authorized_existing_source_changes": [
+      "backend/app/lcluc_workflow.py",
+      "frontend/src/LclucWorkflowPanel.tsx",
+      "frontend/src/lcluc-workflow.css",
+      "frontend/src/lclucWorkflowClient.ts",
+      "tests/test_lcluc_workflow.py"
+    ],
+    "unexpected_existing_source_changes": [],
+    "previous_evidence_checked": 925,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "catalog_matches_prior": true,
+    "main_and_existing_api_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+    "verified_after_full_regression": true
+  },
+  "core_bug": "Rasterio tuple coordinates differ from JSON arrays in direct Python equality. Compare finite canonical JSON while rejecting bool/int value differences.",
+  "actual_cpu_fixture": "Hand-set untrained TinyUNet and generated16x16 rasters, fabricated approval metadata; actual inference geometry, not scientific evaluation.",
+  "browser_proof": "evidence/integration/lcluc-change-map-browser-20261018.json",
+  "original_user_tab_preserved": true,
+  "owned_fixture_tabs_and_servers_closed": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "scientific_accuracy_validated": false,
+  "standard_gmais_result": false,
+  "six_band_per_scene_normalization_supported": false,
+  "upper_png_map_and_kpi_connected": false,
+  "dedicated_same_receipt_change_preview_connected": true,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_unit": "119_SAME_CHANGE_PAIR_FULL_RASTER_TRANSITION_MATRIX_AND_CLASS_LEGEND",
+  "understanding_updated": true,
+  "snapshot_files": 1425
+}
