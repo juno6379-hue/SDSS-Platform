@@ -1,5 +1,29 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 세 Dataset Registry 고정 참조와 한 장면 정규화 파일 연결 (125)
+
+계약 담당은 신규 `backend/app/ml/registered_per_scene_files.py`·집중시험·문서125, 독립 검토 담당은 실제 Temp 등록/역할·lineage·경쟁/무쓰기·UI/API 영향, Root는 실제 GeoTIFF/등록자료 대조·관련 회귀·운영 조회·보존·공통 문서/Git, 이해 담당은 완료 소스에 근거한 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다. 기존 작업자는 유휴였고 수집·학습 프로세스는 관측되지 않았다. 보고예약 ACTIVE/10분과 실제 실행 상태를 구분한다.
+
+`read_registered_per_scene_files(store, checkpoint_manifest, image_ref, evidence_ref, metadata_ref)`는 영상/raster·보정JSON/document·원 metadata/document의 세 고정id/version/SHA를 Store.get으로 읽고 record키/identity/canonical manifest digest·역할을 검산한 뒤123의 bounded 실제 파일 읽기를 연결한다. resolve/register/verify_artifact를 호출하거나 caller 원문 경로·source_scene·normalization을 받지 않는다. checkpoint_manifest는 여전히 caller 입력이며124의 실제 모델 참조와 자동 결합하지 않는다.
+
+image.source.scene_id와 source.band_names를 명시적으로 요구하고 source.product나 checkpoint.band_names에서 발명하지 않는다. evidence.lineage에는 image와metadata의 normalization_input_image/normalization_source_metadata 역할을 각1개 요구한다. source 확장과 role은 원schema가 수용하는 **신규 내부 소비 규칙**이며 기관 공식 규격·권위 인증이 아니다. 다른 lineage 부모는 metadata만 canonical 검사하고 실제 자산·전체DAG는 조회하지 않는다. source 확장이 없는 legacy record는 차단하고 역채우지 않는다.
+
+PUBLIC만 읽는 새 소비 정책이지만 실제 ACL/사용자 권한 검증은 아니다. RAW/STAGED/STANDARDIZED/VALIDATED/REJECTED 모든 quality 상태를 진단할 수 있으며 QA 본문·품질 승인·학습 가능성을 추정하지 않는다. REJECTED의 파일 바이트가 일치해도 실행 허가가 아니다. evidence에서 scale/offset을 도출하므로 고정 문서 선언 일치이지 물리 보정값의 독립 검증이 아니다.
+
+정상 REGISTERED_FILES_MATCHED_UNVERIFIED만 전체 artifact_bytes_verified=true다. registry_references_verified는3개 record/canonical/ref 검사 범위로, 이후 scene/lineage/파일 실패에 부분 true가 남아도 전체 성공이 아니다. checkpoint/래스터header/QA본문/mask/기관/ACL/기타부모/state_dict/과학/실행/Workflow11개 플래그는 항상 false다. evidence는 동일 SHA로 두 번 읽어 변경을 거부하지만3record·다중파일의 동시 원자 snapshot을 보장하지 않는다.
+
+반환 metadata tree 한도는2MiB/깊이16/node65536 등이다. 기존 Store.get의 DB body JSON decode가 먼저이므로 DB 원문 해석·RSS 전체 hardcap은 아니며 내부 trusted-local 범위다. canonical_manifest의 cold schema 파일 읽기는 있을 수 있고 원자료 파일은123의 영상64MiB/evidence2MiB/원metadata2MiB 한도를 따른다. 기존 Store/schema/API/실행gate를 수정하지 않았다.
+
+집중13 PASS/4.377초·Root 관련38 PASS/6.463초(신규13+DatasetVersion11+123파일14)·독립9 PASS/0 SKIP/2.920962초다. race 시험 추가 전 독립8 PASS/2.097초 로그/JSON도 보존하며 중복 합산하지 않는다. 실제 TempStore의3버전 등록·reader3get만·DB 원문 불변·put/register/resolve/verify 호출금지·Torch import0, 명시 선언/lineage/quality/access·변조·사이파일변경 차단을 확인했다. 제품 결함으로 보고된 실패는 없다.
+
+Root 합성 Temp6밴드 GeoTIFF·JSON·XML6시나리오는 실제 등록3참조/파일 일치, generic product와 다른 명시 scene_id 사용, 선언 없는 legacy 차단/무보완, 세 역할 바이트 변조 거부를 확인했다. 모델 load·훈련·추론·운영 등록/쓰기0이다.03:01 KST 운영 SQLite를 URI mode=ro로 별도 조회했으며 legacy datasets6·models1이고 **dataset_versions0**이다. 이번 구현·격리 등록시험을 운영 등록 진전으로 표현하지 않는다.
+
+보호141개·기존소스283개 전체·이전증거1049개·catalog14행 canonical SHA·예약136314880B를 보존했다. 원본·원장·lock·분할·운영 모델·기존 Registry/Workflow/API/UI와122~124는 그대로다. 미연결 내부 helper라 이번 frontend/build/browser·전체 backend 재실행은 하지 않았으며120/121의 전체1184(1183 PASS·기존1 SKIP)/frontend261/build는 이전 이력이다.
+
+다음126은124 실제 모델 manifest와125 장면 검증의 자동 결합 및 전 연차 사전검증 계약이다. 운영 DatasetVersion 등록·품질/구름mask·기존115 per_scene 실행·독립 라벨/승인·다른5실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/UAT는 미완료로 유지한다. 실제 수집·학습·배포·Workflow dispatch0이며 단일 내부 연결 완료를 전체 개발 완료로 간주하지 않는다.
+
+근거: `docs/implementation/125_registered_per_scene_files.md`, `evidence/integration/registry-normalization-agent-focused-20261018.log`, `registry-normalization-root-related-20261018.log`, `registry-normalization-independent-20261018.json`, `registry-normalization-runtime-20261018.json`, `registry-normalization-live-integrity-20261018.json`, `registry-normalization-operating-inventory-20261018.json`, 최종 `registry-normalization-closeout-20261018.json`. 계약·사용법·시험 근거·인계와 이해자료를 함께 갱신했다.
+
 ## 2026-10-18 — 모델 등록 참조와 실제 checkpoint manifest 읽기 결합 (124)
 
 계약 담당은 신규 `backend/app/ml/model_checkpoint_manifest.py`·집중시험·문서124, 독립 검토 담당은 실제 Temp checkpoint/ZIP/JSON/ambient 환경·UI/API 영향, Root는 관련 회귀·실제 CPU checkpoint/장면 파일 수동 대조·보존·공통 문서/Git, 이해 담당은 완료 코드 기반 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 이전 작업자는 유휴였고 실제 수집·학습 프로세스는 관측되지 않았다. 보고예약 ACTIVE/10분은 실제 실행과 구분한다.

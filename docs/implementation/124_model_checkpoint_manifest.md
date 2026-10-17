@@ -1,5 +1,7 @@
 # 124 — 모델 고정 참조와 실제 checkpoint manifest의 읽기 결합
 
+후속125는 [세 Dataset Registry 참조와 장면 파일 연결](125_registered_per_scene_files.md)을 별도 추가했다.125의 checkpoint_manifest는 아직 caller 입력이며124 실제 모델 reader와의 자동 결합·전연차·실행 연결은126 이후다. 기존 Store.get의 DB JSON 해석은 반환 tree 검사 전이며124/125의 파일 한도를 전체 DB decode/RSS 격리로 해석하지 않는다.
+
 ## 쉬운 설명과 범위
 
 123에서 checkpoint_manifest는 caller가 준 설명이었다. 신규 `backend/app/ml/model_checkpoint_manifest.py`의 `read_pinned_model_checkpoint_manifest(store, model_ref, training_report_sha256)`는 저장 모델의 명시 버전 선언·부모 SHA를 검사하고 실제 `best.pt` 복사 바이트의 SHA와 학습 보고서 SHA를 확인한 다음, **같은 checkpoint 복사 바이트**에서 manifest를 읽는다. 보고서의 input_signature/copied manifest를 실제 checkpoint manifest 대신 사용하지 않는다.

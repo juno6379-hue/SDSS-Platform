@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T02:50:21.127648+09:00",
-  "source_commit": "816515ead72faa53eda2e96a9826748aed0896f7",
-  "source_commit_reason": "Published123 baseline plus124 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T03:04:24.772186+09:00",
+  "source_commit": "4824b45aada7ba677381bdfad5a9739e12bd2dd5",
+  "source_commit_reason": "Published124 baseline plus125 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -3019,7 +3019,105 @@
       "collector_training_processes_observed": 0,
       "next_internal_candidate": "125_DATASET_REGISTRY_SCENE_NORMALIZATION_BINDING_AND_ALL_YEAR_PREFLIGHT",
       "snapshot_files": 1552
-    }
+    },
+    "latest_registered_per_scene_files_read": {
+      "recorded_at": "2026-10-18T03:04:24.772186+09:00",
+      "status": "125_THREE_REGISTERED_REFERENCES_AND_ONE_SCENE_FILES_READ_VERIFIED",
+      "focused": {
+        "passed": 13,
+        "seconds": 4.377
+      },
+      "related": {
+        "passed": 38,
+        "seconds": 6.463,
+        "composition": "13 new reader +11 DatasetVersion +14 prior123 file tests"
+      },
+      "independent": {
+        "passed": 9,
+        "skipped": 0,
+        "seconds": 2.92096180000226
+      },
+      "root_actual_temp_registered_scene_scenarios": 6,
+      "overlapping_test_bundles_are_not_additive": true,
+      "source_sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
+      "test_sha256": "04f209ee6fb60b21ad5ab4410329d0277a9b7d5d34620a8cb4da919b31086379",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T03:04:24.772186+09:00",
+        "understanding_markdown": 92,
+        "implementation_markdown": 1,
+        "local_links": 386,
+        "metadata_evidence_references": 9993,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T02:58:39.728301+09:00",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 283,
+        "existing_source_changes": [],
+        "previous_evidence_checked": 1049,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "reserved_bytes_preserved": 136314880,
+        "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "operating_inventory": {
+        "recorded_at": "2026-10-18T03:01:12.793687+09:00",
+        "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+        "counts_by_kind": {
+          "analyses": 3,
+          "datasets": 6,
+          "gmais_idempotency": 2,
+          "gmais_jobs": 2,
+          "models": 1
+        },
+        "dataset_versions_count": 0,
+        "operating_writes": 0,
+        "model_or_raster_files_loaded": false
+      },
+      "initial_eight_pass_independent_log_preserved_before_ninth_race_test": true,
+      "explicit_scene_extensions_and_lineage_roles_are_internal_contract_not_official_authority": true,
+      "public_declaration_read_policy_is_not_acl_and_quality_state_is_not_qa_approval": true,
+      "store_database_json_predecode_is_not_memory_bounded_by_new_postdecode_tree_checks": true,
+      "checkpoint_manifest_is_caller_metadata": true,
+      "actual124_model_join_completed": false,
+      "all_year_quality_mask_or_runtime_binding_completed": false,
+      "api_ui_workflow_runtime_connected": false,
+      "execution_authorized": false,
+      "state_dict_verified": false,
+      "source_authority_verified": false,
+      "scientific_accuracy_validated": false,
+      "workflow_supported": false,
+      "frontend_build_browser_rerun_this_unit": false,
+      "backend_full_rerun_this_unit": false,
+      "reason_no_full_rerun": "All283 previous source files are byte-identical. New unconnected internal reader tested with actual Temp Registry/rasters, independent reference/role/file boundaries and DatasetVersion/123 related regressions. No API/UI contract change.",
+      "previous_backend_regression": {
+        "unit": "120/121",
+        "tests_run": 1184,
+        "passed": 1183,
+        "skipped": 1,
+        "seconds": 399.529
+      },
+      "previous_frontend_regression": {
+        "unit": "120/121",
+        "passed": 261,
+        "build_modules": 108,
+        "build_seconds": 21.85
+      },
+      "understanding_updated": true,
+      "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+      "operating_model_or_raster_load": 0,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_internal_candidate": "126_ACTUAL_MODEL_MANIFEST_AND_REGISTERED_SCENE_JOIN_AND_ALL_YEAR_PREFLIGHT_CONTRACT",
+      "snapshot_files": 1572
+    },
+    "operating_dataset_versions_count": 0
   },
   "files": {
     ".gitattributes": {
@@ -3035,8 +3133,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "ba9683aca971174c42aa72830145ca9aed02d3bd64b901509d0e68314e791f93",
-      "bytes": 351766
+      "sha256": "c35f9d85bd79a84e684e0131eade3d1723cf29cf5234144621d209938b583df8",
+      "bytes": 357452
     },
     "README.md": {
       "sha256": "0d213fdb1da768b59dd402c3af248fa902c00a078c3072703337effadc542c56",
@@ -3278,6 +3376,10 @@
       "sha256": "42490200e4e46a583bef0853912bf6fb49ec6f57843ee83a0a71494e98fdc3d2",
       "bytes": 9373
     },
+    "backend/app/ml/registered_per_scene_files.py": {
+      "sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
+      "bytes": 6839
+    },
     "backend/app/ml/service.py": {
       "sha256": "f2a44674f22632315cf21959e5c6adf1bb9bf88097fb44d2998aa525cb2e661b",
       "bytes": 35913
@@ -3439,8 +3541,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "f2065e518243c08e802d20626dc1cdf08984cfe695076cbb39840e0ca14b8789",
-      "bytes": 358907
+      "sha256": "64b508357e346207007670fd9fdebeb542b52368134076f5c522d139675c54e3",
+      "bytes": 364593
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -3543,8 +3645,12 @@
       "bytes": 12384
     },
     "docs/implementation/124_model_checkpoint_manifest.md": {
-      "sha256": "d1605490a5ed1ad6d3e5bc4cd0a67bb0893df0ac7900b2ac3c3de88942f4a105",
-      "bytes": 11985
+      "sha256": "4797100c1a53d0e2a589fb9330d5036cbc59609a78c95042396997e0d6a4000e",
+      "bytes": 12404
+    },
+    "docs/implementation/125_registered_per_scene_files.md": {
+      "sha256": "cdf89cd3ead14ad3e1eb1bbde08306345ce91afb099919613a9a111d61acaab7",
+      "bytes": 12063
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -3859,48 +3965,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "d7c88ee90aba4b529e5754553e423fe18188270a854cb4546caa88fe2038ad1f",
-      "bytes": 145263
+      "sha256": "136d3d7a34164e02749cd01dad32fb21df7a455f9b7ac2c7411c8e54eba49535",
+      "bytes": 146388
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "6bbdab65d7feccfcebd15e1d810571e0c6a5e8cef034a0022ffe77a4559ec6e4",
-      "bytes": 114944
+      "sha256": "4640e5552ae4933e09d050f546517aa2f9637defc87e8c6b6f30aa323c1f5720",
+      "bytes": 115994
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "2efe46cb1b218139c0332b20cf1e55d1a9b9efadfb78644c0bcd05c51dddd888",
-      "bytes": 85749
+      "sha256": "5cc469d0ecece41cb6d7e15609807b090e4bd7a7ebad72d63f78d7251990e7bf",
+      "bytes": 86813
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "d12bd67cac61c7288e85cc74a002b14972c859b581c94cc928c14ff92673f3d5",
-      "bytes": 68832
+      "sha256": "2bbaf8aa59ba1a1bdc52c2dfb0d181997eebdbc2df84e662ed941de4088e89e3",
+      "bytes": 69808
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "3ba115938ddce7f4e6161325e8da1026e65fd3b369d948b8d34c1c77dcee4523",
-      "bytes": 33854
+      "sha256": "42f058382bbd450e02b880ece419757069d2a1c68105641b272c2c6b4afbe65c",
+      "bytes": 34891
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "1a1dd4ed2dbb04d8a117a9d2faa4145b8abcae08ea768f7e7110b4b3226e930f",
-      "bytes": 72345
+      "sha256": "5d7667a59d0de14ff3f6fb031410791aa8af70aaed25e85a83d091be7a57cb37",
+      "bytes": 73332
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "85cb801dbcc76b83e649dfcade88ebd6b78a517e717bf3df093f42a6c1baff9a",
-      "bytes": 207571
+      "sha256": "04f3657dc6cb15b436952c0b2ed1acc3c59b15cacfd30e701d8fa659918fd8c1",
+      "bytes": 209767
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "02c7c91e073735c6ab7314bbab7084de880ffd765ee4d214f04ecf756f66c280",
-      "bytes": 171784
+      "sha256": "3983637c2bac57dc296fdf711974be8e7c61fff825b328572b30d60f28f326b8",
+      "bytes": 172955
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "eb9136522b6a9c182cb8b669b69d6d1819420596afd90d946e3dd0da7e9cbe52",
-      "bytes": 109116
+      "sha256": "ab97c83ae99b41442f945d52cfc126f9d4bc28920f51b05909beeab10b9647b0",
+      "bytes": 110214
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "5ef7b72c513e8d786c52d05ce8028e51562dee28399cbc568d9820e47c300893",
-      "bytes": 180435
+      "sha256": "6d1e1acbd6eb33dc2f9b3828456af448434776bbc3403fdaa2c96ab5342be745",
+      "bytes": 182225
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -4126,6 +4232,10 @@
       "sha256": "9a9e58baf574af7ff64500ebefbee5fd6e296e661d00806ca46533c98a01c03d",
       "bytes": 5023
     },
+    "docs/understanding/gate-notes/GATE_REGISTERED_PER_SCENE_FILES_20261018.md": {
+      "sha256": "6d98b1a041e829bcc816eeb6b86c9c74482112faab44a6e05b6a51f26ab71185",
+      "bytes": 10971
+    },
     "docs/understanding/gate-notes/GATE_RESUME_20261017.md": {
       "sha256": "a18cc659c91fd6b6b6276d4bdd8dca83ea2d3c647484e23b39d03ac9d8b87d80",
       "bytes": 7456
@@ -4211,16 +4321,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "b75460ae4ccfbb57db1cfdfcdc8b0502290892d1af4ad8556172335aa4b79038",
-      "bytes": 186677
+      "sha256": "816b675d744bbdb913df58b614beecd63e1b60a8ff395b1f7d71518c53e2d7d7",
+      "bytes": 187878
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "c5d460999bfa65439dc5a63b70fe983854263f4a1d2d2f4eb0ffb9f2c098cc2c",
-      "bytes": 125318
+      "sha256": "bab589ce65606bc203eb63b73889df7a92e6dd37621f1f0848ae714868fe228b",
+      "bytes": 126351
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "df7e030468be5b7b05fde4b7d38fd0740d04df0436b0cd3397c41fc6b31b7c27",
-      "bytes": 148109
+      "sha256": "21d9b4c0dcb6260a56d3fcdb5955bc820910d23c173850bc166289b33e0bc2ba",
+      "bytes": 149215
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -7534,6 +7644,70 @@
       "sha256": "4ebac619cf3d0399f7abdb83183f0319b858388e28856f4707b095ebebfcfb70",
       "bytes": 2857
     },
+    "evidence/integration/registry-normalization-agent-focused-20261018.log": {
+      "sha256": "fa1f66b6d4398822d92c928a985d0db999a1b503b92c1d6345e3c53fb560b3a9",
+      "bytes": 2773
+    },
+    "evidence/integration/registry-normalization-closeout-20261018.json": {
+      "sha256": "cee8f6dcd57d335e042a45c03eef702a5364ade6387c8e76eed32f9d9f0863b4",
+      "bytes": 3895
+    },
+    "evidence/integration/registry-normalization-closeout-20261018.py": {
+      "sha256": "e7d68c85502099c42a4c03865fff7bf68b3d396d61951070b322ebe9d132f4fe",
+      "bytes": 7694
+    },
+    "evidence/integration/registry-normalization-independent-20261018.json": {
+      "sha256": "9025c450023228782f5ce1ce21215ca0d7f1433a3fbd25322cdd598f6073e27c",
+      "bytes": 3692
+    },
+    "evidence/integration/registry-normalization-independent-20261018.log": {
+      "sha256": "b15c12e2eb4d83fbd5ac6543a2eb3d38595755da6604360c4ec71239cc920ebd",
+      "bytes": 5118
+    },
+    "evidence/integration/registry-normalization-independent-20261018.py": {
+      "sha256": "ebd286baa933a80f91f3994523c4a5fdf883c04737f5bc6d74e7482a3ac6dc57",
+      "bytes": 15108
+    },
+    "evidence/integration/registry-normalization-independent-initial-20261018.json": {
+      "sha256": "6eb907eeadba8244efff0ff8d1e27c05f7203a5c68641e39730af3daa8d679c4",
+      "bytes": 3692
+    },
+    "evidence/integration/registry-normalization-independent-initial-20261018.log": {
+      "sha256": "c3a6e9512d0348694e7c69e2023b65a62b2d0bfcf2c0a564b8d93fd1753fb17f",
+      "bytes": 4959
+    },
+    "evidence/integration/registry-normalization-integrity-20261018.py": {
+      "sha256": "547fe7069afeb32e40fd972001482f68d7eaf191fbed282eb3c2bc954e4e86a0",
+      "bytes": 2510
+    },
+    "evidence/integration/registry-normalization-live-integrity-20261018.json": {
+      "sha256": "e12c42d7ba0b9e5581242b9796a48c9106a45862fd65412a25e0542f475490f6",
+      "bytes": 577
+    },
+    "evidence/integration/registry-normalization-operating-inventory-20261018.json": {
+      "sha256": "2af6ce0220a2d6a840141951e48929c310ba99dcc183a6a5d73f449155e24425",
+      "bytes": 350
+    },
+    "evidence/integration/registry-normalization-preflight-20261018.json": {
+      "sha256": "aa278b7e75f8dc84b952f716222cfea7d879abc2bf211fbcf317a15832747ed8",
+      "bytes": 455572
+    },
+    "evidence/integration/registry-normalization-root-related-20261018.log": {
+      "sha256": "a25b4da1210fc742848a7898a47971126122302163834408967d4a82e4ba8e27",
+      "bytes": 7636
+    },
+    "evidence/integration/registry-normalization-runtime-20261018.json": {
+      "sha256": "c521e1de5e55ff961abd820bc74a7ef9b48eb6a4674da0d5b97ea48f1d6045ce",
+      "bytes": 966
+    },
+    "evidence/integration/registry-normalization-runtime-20261018.log": {
+      "sha256": "d387d1af3b10fbf8d6cbeb62d4d1c08207af40b16d27ad2d67f4af0c9b4ef833",
+      "bytes": 78
+    },
+    "evidence/integration/registry-normalization-runtime-20261018.py": {
+      "sha256": "693079cd587f4504ffdb765e28f724c5ae5aff5b34496dbec2c648f0105b3de5",
+      "bytes": 6336
+    },
     "evidence/integration/resume-tests-script-20261017.log": {
       "sha256": "c0bc5fe4090698563c03435df5c00d10a528e5bb363e3b32d421e81ea494f911",
       "bytes": 43977
@@ -9162,6 +9336,10 @@
       "sha256": "4902f323a67fd68edebe092200c9b961b000565b0b6e67f1e54175be0c7407c6",
       "bytes": 13185
     },
+    "tests/test_registered_per_scene_files.py": {
+      "sha256": "04f209ee6fb60b21ad5ab4410329d0277a9b7d5d34620a8cb4da919b31086379",
+      "bytes": 12366
+    },
     "tests/test_schema_formats.py": {
       "sha256": "ddb4ad0a1ceff9f42c4907491dcea0aebc36ab727a7ce017fd1a3fbb7baf773d",
       "bytes": 9790
@@ -9232,11 +9410,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T02:50:21.127648+09:00",
-    "understanding_markdown": 91,
+    "checked_at": "2026-10-18T03:04:24.772186+09:00",
+    "understanding_markdown": 92,
     "implementation_markdown": 1,
-    "local_links": 381,
-    "metadata_evidence_references": 9850,
+    "local_links": 386,
+    "metadata_evidence_references": 9993,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true

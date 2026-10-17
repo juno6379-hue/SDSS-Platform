@@ -1,0 +1,18 @@
+{
+  "scope": "TESTED_SYNTHETIC_TEMP_REGISTERED_VERSIONS_AND_ACTUAL_SIX_BAND_RASTER",
+  "checks_passed": [
+    "three_actual_temp_registry_versions_and_raster_evidence_metadata_hashes_match",
+    "explicit_registered_scene_id_used_without_guessing_from_generic_product_name",
+    "legacy_missing_scene_declaration_blocked_without_backfill_or_registry_write",
+    "image_actual_tamper_rejected_against_immutable_role_reference",
+    "normalization_evidence_actual_tamper_rejected_against_immutable_role_reference",
+    "source_metadata_actual_tamper_rejected_against_immutable_role_reference"
+  ],
+  "quality_status": "RAW_NOT_A_QUALITY_APPROVAL",
+  "checkpoint_manifest_source": "Explicit caller metadata, not124 model binding",
+  "fixture_files_and_caller_metadata_unchanged_after_restoration": true,
+  "model_loaded": false,
+  "training_inference_executed": false,
+  "operating_registry_contact": false,
+  "scientific_accuracy_validated": false
+}
