@@ -1,5 +1,7 @@
 # 115 — 고정 Registry 입력을 실제 LCLUC 시계열 추론에 연결
 
+후속122는 [제품별 정규화 선언 순수 진단](122_per_scene_normalization_contract.md)을 추가했다.115의 global1~16밴드 실행과 per_scene 차단은 그대로다.6개 밴드 자체의 전면 금지가 아니며 신규 진단 일치는 파일 검증·실행 지원·승인을 뜻하지 않는다. 이후116/117 API·화면 연결 이력과122 미연결 내부 helper를 구분한다.
+
 ## 118 후속 — 같은 실행의 선택 변화쌍 지도 연결
 
 [118 구현·검증](118_lcluc_workflow_change_map.md)에서 수동 pair 선택→고정 index GET→browser SHA·WGS84 도형 검사→중립 지도 미리보기를 연결했다. 기존115의 nonempty tuple/JSON list 보고서 비교 결함도 canonical JSON 동치로 최소 수정하고 회귀2건을 추가했다. 아래 지도 연결 미완료 표현은 당시 이력이며 최신 상태는118과 인계서를 따른다. 기존 상단 지도/KPI·운영 Draft/승인·원본은 보존했고 운영 실행은0이다. 6밴드 per_scene·실제 독립 검증·운영 GeoLLM/RAG·staging/UAT 완료를 뜻하지 않는다.

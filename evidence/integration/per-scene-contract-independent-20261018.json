@@ -1,0 +1,71 @@
+{
+  "scope": "INDEPENDENT_SYNTHETIC_METADATA_ONLY",
+  "tests": 7,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 1.0304690999982995,
+  "passed": true,
+  "helper_sha256": "b2f1f79c5b9773d9588d4e9b560f9df12ed94d2c1e5301b638cc9c432090f8ea",
+  "baseline_commit": "9a79c3db77e3a94936ab74597939b5bf5630e2c3",
+  "original_source_byte_checks": [
+    {
+      "path": "backend/app/lcluc_workflow.py",
+      "baseline_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "current_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/service.py",
+      "baseline_sha256": "f2a44674f22632315cf21959e5c6adf1bb9bf88097fb44d2998aa525cb2e661b",
+      "current_sha256": "f2a44674f22632315cf21959e5c6adf1bb9bf88097fb44d2998aa525cb2e661b",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/normalization.py",
+      "baseline_sha256": "390f5b673fd694b3f7c1002a091f8c0a443bc400a728784426cca4064bf4bd83",
+      "current_sha256": "390f5b673fd694b3f7c1002a091f8c0a443bc400a728784426cca4064bf4bd83",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "baseline_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "current_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/LclucWorkflowPanel.tsx",
+      "baseline_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "current_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/lclucWorkflowAdapter.ts",
+      "baseline_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "current_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/ModelReview.tsx",
+      "baseline_sha256": "6c02add1ab58e0a39e5ededc6087c8dfa456eeaa84565967a36433046416a6a9",
+      "current_sha256": "6c02add1ab58e0a39e5ededc6087c8dfa456eeaa84565967a36433046416a6a9",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/api.ts",
+      "baseline_sha256": "a145655eef679b406de56330935b11e3c23b7c2feea9a0c5a33079cad5d8bb44",
+      "current_sha256": "a145655eef679b406de56330935b11e3c23b7c2feea9a0c5a33079cad5d8bb44",
+      "unchanged": true
+    }
+  ],
+  "tracked_source_differences": [],
+  "actual_file_verification": false,
+  "raster_reads": 0,
+  "Store_calls": 0,
+  "API_calls": 0,
+  "inference_calls": 0,
+  "training_calls": 0,
+  "UI_changes": 0,
+  "browser_runs": 0,
+  "full_frontend_or_build_runs": 0,
+  "limitation": "Only supplied declaration compatibility; opaque paths/URLs and SHA syntax are not file, authority, calibration, mask, readiness or scientific verification. Existing global1..16 execution unchanged. No API/UI caller is wired. Existing1184 backend history is not a new run; do not sum overlapping suites."
+}

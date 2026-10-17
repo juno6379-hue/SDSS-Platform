@@ -1,0 +1,74 @@
+{
+  "recorded_at": "2026-10-18T02:24:36.513340+09:00",
+  "status": "122_PURE_PER_SCENE_NORMALIZATION_DECLARATION_DIAGNOSTIC_VERIFIED",
+  "focused": {
+    "passed": 14,
+    "seconds": 0.031
+  },
+  "independent": {
+    "passed": 7,
+    "unittest_seconds": 0.014,
+    "including_source_audit_seconds": 1.0304690999982995
+  },
+  "existing_boundary_regressions": {
+    "passed": 4,
+    "seconds": 8.994
+  },
+  "root_actual_temp_file_boundary_scenarios": 6,
+  "overlapping_test_bundles_are_not_additive": true,
+  "source_sha256": "b2f1f79c5b9773d9588d4e9b560f9df12ed94d2c1e5301b638cc9c432090f8ea",
+  "test_sha256": "14ed1420561d3b73c6317af48beb9cc71fb851f0d13abe7c435543b8ba94310d",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T02:24:36.513340+09:00",
+    "understanding_markdown": 89,
+    "implementation_markdown": 1,
+    "local_links": 371,
+    "metadata_evidence_references": 9553,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T02:22:23.185875+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 277,
+    "existing_source_changes": [],
+    "previous_evidence_checked": 1006,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "api_ui_workflow_runtime_connected": false,
+  "execution_authorized": false,
+  "artifact_bytes_verified_by_new_helper": false,
+  "source_authority_verified": false,
+  "scientific_accuracy_validated": false,
+  "workflow_supported_by_new_helper": false,
+  "frontend_build_browser_rerun_this_unit": false,
+  "backend_full_rerun_this_unit": false,
+  "reason_no_full_rerun": "All277 previous source files are byte-identical. New pure unconnected helper tested with independent metadata and existing runtime boundaries; no API/UI contract change.",
+  "previous_backend_regression": {
+    "unit": "120/121",
+    "tests_run": 1184,
+    "passed": 1183,
+    "skipped": 1,
+    "seconds": 399.529
+  },
+  "previous_frontend_regression": {
+    "unit": "120/121",
+    "passed": 261,
+    "build_modules": 108,
+    "build_seconds": 21.85
+  },
+  "understanding_updated": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_internal_candidate": "123_READ_ONLY_PINNED_PER_SCENE_FILE_PROVENANCE_BOUNDARY_DESIGN",
+  "snapshot_files": 1512
+}

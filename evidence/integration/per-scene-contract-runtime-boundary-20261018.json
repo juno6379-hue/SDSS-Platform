@@ -1,0 +1,18 @@
+{
+  "scope": "TESTED_SYNTHETIC_TEMP_FILES_DECLARATION_VS_ACTUAL_HASH_BOUNDARY",
+  "checks_passed": [
+    "consistent_supplied_metadata_and_actual_temp_files_both_accepted_at_their_own_scope",
+    "image_byte_tamper_invisible_to_pure_observer_but_rejected_by_existing_file_verifier",
+    "evidence_byte_tamper_invisible_to_pure_observer_but_rejected_by_existing_file_verifier",
+    "source_metadata_byte_tamper_invisible_to_pure_observer_but_rejected_by_existing_file_verifier",
+    "syntactically_valid_unobserved_image_sha_is_not_a_verified_file_binding",
+    "declared_product_mismatch_rejected_by_both_layers"
+  ],
+  "all_actual_fixture_files_restored_before_cleanup": true,
+  "helper_input_metadata_unchanged": true,
+  "checkpoint_loaded": false,
+  "training_inference_executed": false,
+  "operating_data_contact": false,
+  "scientific_accuracy_validated": false,
+  "source_authority_verified": false
+}

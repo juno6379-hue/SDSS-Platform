@@ -1,5 +1,23 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 6밴드 제품별 정규화 선언의 순수 계약 진단 (122)
+
+계약 담당은 신규 `backend/app/ml/per_scene_normalization_contract.py`·집중시험·문서122, 독립 검토 담당은 수치/상태/무I/O·기존 UI/API 영향 검토, Root는 기존 경계 회귀·실제 Temp 파일 대조·보존·공통 문서/Git, 이해 담당은 완료 코드 기반 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다. 기존 작업자는 유휴였으며 중복 실행하지 않았다.
+
+115 Workflow는 global 정규화의1~16개 밴드 구조를 허용한다. 모든6밴드가 금지된 것이 아니라 per_scene_product_metadata 입력 경로가 미연결이다. 기존 ML 추론기는 각 영상의 normalization/source_scene과 제품 근거·원 metadata SHA를 검증할 수 있으나115는 해당 필드·mask를 실행 payload로 전달하지 않는다. 이 차이를 확정하고 실행 Gate는 변경하지 않았다.
+
+신규 `inspect_per_scene_normalization_contract(checkpoint_manifest, source_scene, normalization, evidence)`는 공급한 Python metadata의 밴드1~6/실제6개 이름 순서·제품ID·채널별 유한 scale/offset 선언만 비교한다. scalar를6채널로 확장하며 bool·수치문자·잘못된 길이·비유한 값은 거부한다. OUT_OF_SCOPE/INCOMPLETE/INVALID/DECLARATION_MISMATCH/DECLARATIONS_CONSISTENT_UNVERIFIED를 구분한다. global/모드 미기재의 OUT_OF_SCOPE는 나머지 입력을 검사하지 않았다는 뜻이다. per_scene별 계수와 manifest의 global fallback 계수는 비교하지 않는다.
+
+모든 결과에서 실행 승인·파일 바이트 검증·기관 권위 검증·과학 정확도·Workflow 지원5개 플래그는 false다. SHA는 역할별64자리 구문만 확인하고 path/URL은 열지 않는 문자열이다. 독립된 영상/근거/원 metadata SHA끼리 같아야 한다고 비교하지 않으며 실제 바이트를 확인했다고 표시하지 않는다. spectral 의미·float32 변환 결과·mask·모델 state/학습/독립성도 검증하지 않는다. 기존 numpy 기반 verifier를 강화하거나 교체한 것이 아닌 신규 진단 한정 계약이다.
+
+집중14 PASS/0.031초·독립7 PASS/0.014초(소스SHA/Git감사 포함 전체1.030초)·기존 경계4 PASS/8.994초다. Root는 명시 합성 Temp6밴드 GeoTIFF/보정JSON/XML 근거에서 선언과 기존 실제 파일 검증의 성공을 확인한 뒤 영상·근거·원 metadata 바이트 또는 유효 형식 SHA를 바꿨다. pure 진단은 선언 일치를 유지하지만 기존 파일 verifier는 거부하는6시나리오를 확인했다. 제품ID 불일치는 두 계층이 거부했다. 이 Temp 시험은 훈련·추론·checkpoint load·공식 제품 인증 근거가 아니다. 중복 시험 묶음을 합산하지 않는다.
+
+보호141개·기존소스277개 전체·이전증거1006개·catalog14행 canonical SHA와 예약136314880B를 보존했다. 기존 Workflow/서비스/normalization/API/UI·원본·원장·lock·분할·운영 모델을 바꾸지 않았다. API/화면에 연결하지 않은 내부 순수 helper이므로 이번 frontend/build/browser 재실행 대상은 없다. 전체 backend1184(1183 PASS·기존1 SKIP)와 frontend261/build 성공은120/121의 이전 근거이며122에서 다시 실행한 결과가 아니다.
+
+현재 실제 수집·학습·등록·배포·Workflow 실행0, 보고예약 ACTIVE/10분이다. 다음 내부 후보123은 승인된 고정 참조와 제품별 근거를 연결하는 읽기 전용 파일 검증 경계 설계다. 미확보된 독립 라벨·운영 모델 승인·6밴드 per_scene 실행·다른5실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/UAT는 미완료로 유지한다. 단일 진단 완료를 전체 개발 완료로 보지 않는다.
+
+근거: `docs/implementation/122_per_scene_normalization_contract.md`, `evidence/integration/per-scene-contract-focused-20261018.log`, `per-scene-contract-independent-20261018.json`, `per-scene-contract-existing-boundaries-20261018.log`, `per-scene-contract-runtime-boundary-20261018.json`, `per-scene-contract-live-integrity-20261018.json`, 최종 `per-scene-contract-closeout-20261018.json`. 관련 계약·사용법·검증 한계·인계와 이해자료를 함께 갱신했다.
+
 ## 2026-10-18 — 고정 학습 모델의 val/test 오류 분석 조회·화면 연결 (120/121)
 
 ML112가 생성한 보관 오류 분석을 고정 모델 ID·명시 버전·checkpoint SHA·training report SHA로 읽는 인증 API와 Model & MLOps 화면을 연결했다. API 담당은 기존 파일 조회·의미 검산·고정 index 다운로드, UI 담당은 클래스별 FP/FN·Precision/Recall·분모 null·오분류쌍과 검증 다운로드, Root는 main 연결·독립 HTTP·전체 회귀·실제 브라우저·보존·문서/Git, 이해 담당은 완료 소스의 해설·발표·FAQ·INDEX·변경이력을 맡았다.
