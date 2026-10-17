@@ -57,3 +57,7 @@ Root 관련 15개 모듈은 **171 실행 / 170 PASS / 1 SKIP / 79.284초 / exit 
 전체 회귀 뒤 07:23:48의 `grid-patch-declarations-live-integrity-final-20261018.json`에서 **tracked source 431개 = 승인한 grid 1개 변경 + 불변 430개**, 보호 파일 141개·이전 증거 1399개·catalog 14행 canonical SHA·운영 dataset_versions 0·예약 136314880바이트 유지가 다시 확인됐다. 07:23:50의 넓은 프로세스 패턴 조회에서도 실제 collector/train은 없었다. ACTIVE/10분 보고 예약과 API 등 기존 프로세스를 실제 수집·학습 실행으로 표현하지 않는다. 원본 source/report/배열 보존과 metadata에 따라 새 image SHA가 달라지는 범위를 구분한다.
 
 기존 main/HTTP/137 계약·UI·모델 metadata를 바꾸지 않으므로 이번 frontend/build/browser 재실행은 필요하지 않다. 새 description과 training_support 선언은 실제 운영 수집 재개·연차 자료 확보·라벨 독립성·기관 QA/모델/실행 승인을 뜻하지 않는다. 원본·원장·lock·예약·분할·모델을 보존하며, 실제 운영 프로세스에 새 코드가 적용됐다는 검증도 별도다.
+
+## 후속146 명시 source 버전 등록
+
+[146 source raster 등록 CLI](146_source_raster_registration_cli.md)는 caller 완성 manifest와 기존 catalog를 명시해 RAW/STAGED 영상·마스크 버전을 한 건씩 등록하는 사용자 진입점이다. source2건을 준비하면 기존143 보고서 등록 흐름에 연결할 수 있다.140 보고서 파일 저장은 아직 별도 함수 호출이며 native 품질·기관/모델 승인·운영 수집 재개를 뜻하지 않는다. 기존 코드/운영 자료를 바꾸거나 metadata를 역채움하지 않았다.

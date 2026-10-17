@@ -69,3 +69,7 @@ pending은 기존 Banten/West Java2023 두 batch이고 예약합136,314,880B를 
 최초 신규11 PASS/4.844초·관련37 PASS/8.291초 로그를 보존했다. logical path 재해석 보강 후 최종 신규 **12 PASS/4.114초/exit0**, `evidence/integration/data-pipeline-focused-final-20261018.log`다. 최종 관련은 **51 PASS/10.453초/exit0**, `evidence/integration/data-pipeline-related-final-20261018.log`다. 실제 TempStore 공통 등록/resolve·동일 재등록·다른 version 내용 거부·명시 부모·누락/자가/중복 lineage·변조·missing 품질·경로/row binding·strict JSON/size·report 변경·logical retarget·기존 CLI 동등을 시험했다. 신규/관련 중복 시험을 합산하지 않는다. 독립 검토·최종 보존은 Root 통합 근거를 따른다.
 
 새 CLI와 helper는 운영 서버 route를 바꾸지 않으며 사용자 화면의 새 endpoint가 없어 UI 수정은 필요 없다. 테스트 반영과 운영 자료 등록·실제 서버 적용을 구분한다. Root는 관련 설계/인계/원장과 이해 에이전트의 해설·발표 대본·FAQ·INDEX·변경 이력을 통합한다. 이 단위만으로 사용자가 요청한 Data Pipeline 전체 완료를 선언하지 않는다.
+
+## 후속146 명시 source 버전 등록
+
+[146 source raster 등록 CLI](146_source_raster_registration_cli.md)는 caller 완성 manifest와 기존 catalog를 명시해 RAW/STAGED 영상·마스크 버전을 한 건씩 등록하는 사용자 진입점이다. source2건을 준비하면 기존143 보고서 등록 흐름에 연결할 수 있다.140 보고서 파일 저장은 아직 별도 함수 호출이며 native 품질·기관/모델 승인·운영 수집 재개를 뜻하지 않는다. 기존 코드/운영 자료를 바꾸거나 metadata를 역채움하지 않았다.

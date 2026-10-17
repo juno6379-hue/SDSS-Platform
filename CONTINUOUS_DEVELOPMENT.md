@@ -1,5 +1,27 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 명시 source raster DatasetVersion 등록 명령 (146)
+
+구현 담당은 신규 register_dataset_version.py·집중시험·문서146을, 독립 담당은 실제 subprocess와 source2건→품질보고서 CLI→소비 연결을 맡았다. Root는 계약 검토·관련 회귀·운영 보존·공통 문서·Git을, 이해 담당은 완료 코드와 시험을 읽고 설명·대본·FAQ·INDEX·변경 이력14개를 갱신했다. 시작 시145 작업자는 모두 완료 상태였고 실제 운영 수집·학습은0이었다. ACTIVE/10분 보고 예약과 API/Ollama 프로세스를 수집·학습 재개로 표현하지 않는다.
+
+신규 CLI는 caller가 완성한 GMAIS raster manifest1개와 --manifest/명시 절대 --data-root를 요구한다. __file__ 기준 Python 모듈 bootstrap은 제공하지만 데이터 root를 자동 선택하거나 생성하지 않는다. 기존 root/catalog.sqlite3가 필요하며143의 bounded strict UTF8 JSON/중복 인자·key/비유한 수·경로·readonly records-schema 검사를 재사용한다.138 raster 선언 subset+96 full schema/digest를 독립 예상 사본과 비교하고 RAW/STAGED만 수용한다. 메타데이터·기관·밴드·mask semantics·연도/지역을 추정하지 않는다.
+
+96 verify_artifact로 ctor 전에 로컬 source SHA를 확인하고 readonly DB 검사 연결을 닫은 뒤 Store(root,recover_jobs=False)와96 register_version1회를 명시 호출한다. DB/부모 identity를 단계별 확인하고 반환 record exact6·고정 id/version/SHA·manifest digest·UTC stamp·false 승인을 검증하며 Store.get으로 readback한다. 기존 id/version은 불변이고 동일 선언의 재호출은 재사용한다.96의 기존 전체 파일 해시·Store JSON predecode에는 새 시간/RSS hardcap을 부여하지 않았고 순차 관측은 원자 snapshot이나 OS sandbox가 아니다.
+
+출력은 exact20이며 성공 SOURCE_RASTER_REGISTERED_UNAPPROVED/exit0, 사전차단 BLOCKED/exit2, Store 초기화 시작 뒤 예외나 등록/반환 확인 불가 REGISTRATION_OUTCOME_UNCONFIRMED/exit3이다. store_initialization_started/registration_attempted/registry_outcome_verified를 구분하며 성공도 registry_registered만 true이고 품질·기관·과학·실행 승인 flag는 false다. 미확정은 자동 retry·rollback·삭제나 기록 부재를 뜻하지 않는다.96이 충돌로 거부하더라도 이미 초기화 경계를 지난 오류는 보수적으로 미확정일 수 있다. --help는 정적 도움말이고 그 외 UTF8 JSON 한 개를 출력하며 원래 예외/경로를 오류 메시지로 누출하지 않는다.
+
+raster는 선언 자료형이며 이 CLI는 native GTiff header/픽셀·밴드 정체·부모 lineage 실재·기관 ACL·물리 교정·독립 정답을 검증하지 않는다. 해시가 맞는 opaque bytes도 raster 선언으로 등록될 수 있고 이후129/133 등 native 소비에서 계속 차단될 수 있다. 기존 immutable 등록·보고서/소비 gate를 변경하거나 binary training_support를 순수 품질 선언으로 변환하지 않는다. 등록 성공은 등록 사실만이며 모델/Workflow 배포 준비 완료가 아니다.
+
+집중12 PASS/10.075초, 관련127건 중126 PASS/1 SKIP/46.97초, 독립10 PASS/1 SKIP/25.6986765초다. 각 묶음은 겹치므로 합산하지 않는다. 독립시험의 source 영상/마스크2건은146 CLI 실제 subprocess로 등록하고140 저장 함수는 caller의 별도 Python 준비 단계,143 inspect/register와131/133 소비는 각각의 실제 호출로 구분한다. Temp GTiff/SQLite·명시 fault injection·초기 로그·fixture별 계수는 문서146/독립 JSON을 따른다. 운영 등록·수집·학습·추론·배포·기관 승인 실행0이다.
+
+보호141개·기존 tracked source432개·이전 증거1416개·catalog14행 SHA·운영 dataset_versions0·예약136314880바이트를 보존했다. 원본·원장·lock·분할·모델·예약 및 기존96/142/143/main/API/UI 변경0이다. 신규 명령만 추가했으므로 이번 전체 backend/frontend/build/browser 재실행은 없고 최신 전체 backend145의1431 PASS/1 SKIP/332.720초와137 frontend271 PASS/build112는 이전 이력이다. 이번 근거는 관련 회귀와 실제 Temp 통합시험이다.
+
+구현·내부 입력/출력 계약·사용법·시험·인계와 이해자료14개를 같은 단위로 갱신했다.111 데이터 파이프라인과143 보고서 CLI 문서에도 새 진입점을 연결했다. 다음147 후보는 GeoLLM 근거 화면에서 검증된 local LCLUC workflow 완료 보고서를 명시 조회하는 동선이며 LLM/RAG 자체 연결과 구분한다.140 report 저장의 사용자 CLI, 운영 수집 재개/연차 확보·독립 라벨·학습/모델 승인·다른5개 실행기·GeoLLM/RAG/PostGIS·staging/보안/UAT는 여전히 후속이다. 전체 개발은 미완료이고10분 보고 예약을 중단하지 않는다.
+
+근거: docs/implementation/146_source_raster_registration_cli.md 및 evidence/integration/source-raster-registration-cli-agent-20261018.log, source-raster-registration-cli-root-related-20261018.log, source-raster-registration-cli-independent-20261018.json, source-raster-registration-cli-live-integrity-final-20261018.json, source-raster-registration-cli-final-processes-20261018.json, source-raster-registration-cli-closeout-20261018.json.
+
+개발 중 신규146 초안의 Temp 재현에서 catalog.sqlite3 자체를 source artifact로 지정하면 등록 성공 직후 source DB SHA가 바뀌는 자기참조를 확인했다. 최종 CLI는 DB 본체/sidecar 및 같은 파일 별칭을 SQLite 검사·Store 생성 전에 거부하도록 보강했다. 기존 배포96/143·운영 DB 사고가 아니며 임시 재현뿐이다. 보강 전 집중9 PASS/9.491초·관련123 PASS/36.632초·독립8 PASS/1 SKIP/21.7476992초의 원본과 재현 증거를 보존했다. 재현 helper 최초 python-c 셸 인용 SyntaxError도 제품 시험 실패와 분리해 남겼다.
+
 ## 2026-10-18 — 격자 패치 밴드 설명·학습 지원 마스크 의미 구분 (145)
 
 구현 담당은 collect_training_grid.py의 materialize_patches·신규 집중시험·문서145를, 독립 담당은 실제 Temp GTiff와 published144 baseline 비교를 맡았다. Root는 범위 검토·관련/전체 백엔드 회귀·보존 감사·인계·Git을, 이해 담당은 검증 완료 후 쉬운 설명·대본·FAQ·INDEX·변경 이력14개를 갱신했다. 시작 시144 작업자는 완료 상태였고 운영 수집·학습 프로세스0이었다. ACTIVE/10분 보고 예약과 API/Ollama 프로세스는 실제 수집·학습 재개가 아니다.

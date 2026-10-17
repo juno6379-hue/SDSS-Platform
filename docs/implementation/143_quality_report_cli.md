@@ -90,3 +90,7 @@ Root 관련 회귀는 **90 PASS / 37.707초 / exit 0**, `quality-report-cli-root
 ## 후속144 신규 producer 선언
 
 [144 producer 보강](144_collection_raster_declarations.md)은 앞으로 생성하는 scene 영상의 실제 밴드 설명과 이진 품질 mask/nodata를 기록하고 NaN/Inf를 제외한다. 기존143 CLI·원본 산출물은 그대로이며 새 파일의 caller 명시 manifest/보고서 작성·등록·승인은 별도다.
+
+## 후속146 명시 source 버전 등록
+
+[146 source raster 등록 CLI](146_source_raster_registration_cli.md)는 caller 완성 manifest와 기존 catalog를 명시해 RAW/STAGED 영상·마스크 버전을 한 건씩 등록하는 사용자 진입점이다. source2건을 준비하면 기존143 보고서 등록 흐름에 연결할 수 있다.140 보고서 파일 저장은 아직 별도 함수 호출이며 native 품질·기관/모델 승인·운영 수집 재개를 뜻하지 않는다. 기존 코드/운영 자료를 바꾸거나 metadata를 역채움하지 않았다.

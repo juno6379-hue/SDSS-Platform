@@ -1,0 +1,341 @@
+{
+  "status": "146_EXPLICIT_SOURCE_RASTER_REGISTRATION_CLI",
+  "focused": {
+    "tests": 13,
+    "passed": 12,
+    "skipped": 1,
+    "seconds": 10.075,
+    "log": "evidence/integration/source-raster-registration-cli-agent-20261018.log"
+  },
+  "related": {
+    "tests": 127,
+    "passed": 126,
+    "skipped": 1,
+    "seconds": 46.97,
+    "log": "evidence/integration/source-raster-registration-cli-root-related-20261018.log"
+  },
+  "independent": {
+    "schema_version": 1,
+    "scope": "INDEPENDENT_SOURCE_RASTER_REGISTRATION_CLI_TEMP_ONLY",
+    "git_baseline": "f4565f5ff9b743cfd51cea087bbcf7d2e840729f",
+    "tests": 11,
+    "passed": 10,
+    "skipped": 1,
+    "skip_reasons": [
+      "actual symlink unavailable winerror=1314 errno=22"
+    ],
+    "failures": 0,
+    "errors": 0,
+    "seconds": 25.698676500003785,
+    "source_sha256": "befa11f07709501a10b440409e2dad495a8ee04570f30d9347818522a0511de8",
+    "test_sha256": "1f3b2e82a24accf68a0bc7a4464846ffb3890c61b2b3d1997d46d2e4c65517c4",
+    "test_names": [
+      "test_00_frozen_source_and_tests",
+      "test_01_actual_external_cwd_source2_cli_report_cli_and_readonly_consumers",
+      "test_02_actual_raw_staged_accept_and_type_quality_upgrade_reject",
+      "test_03_actual_conflict_preserves_original_and_uncertainty",
+      "test_04_actual_opaque_raster_restricted_and_unresolved_lineage_are_unapproved",
+      "test_05_actual_strict_json_bad_args_catalog_and_sha_no_registration",
+      "test_06_inprocess_constructor_register_and_actual_post_commit_faults",
+      "test_07_inprocess_validator_and_return_record_mutation_private_copy",
+      "test_08_actual_manifest_symlink_permission_skip",
+      "test_09_actual_catalog_and_sidecar_artifacts_block_before_constructor",
+      "test_10_actual_hardlink_to_catalog_block_before_constructor"
+    ],
+    "old_sources_unchanged": {
+      "backend/app/data/quality_report_preflight.py": true,
+      "tests/test_quality_report_preflight.py": true,
+      "backend/app/data/quality_report_storage.py": true,
+      "backend/app/data/quality_report_completion.py": true,
+      "backend/app/dataset_registry.py": true,
+      "backend/app/store.py": true,
+      "backend/app/ml/registered_quality_mask_files.py": true,
+      "backend/app/ml/registered_binary_mask_values.py": true,
+      "backend/app/main.py": true,
+      "frontend/src/AnnualInputDiagnostics.tsx": true,
+      "backend/app/data/quality_report_registration.py": true,
+      "tests/test_quality_report_registration.py": true,
+      "scripts/quality_report_cli.py": true,
+      "scripts/collect_samples.py": true,
+      "scripts/collect_training_grid.py": true
+    },
+    "separate_git_baseline_matches": {
+      "backend/app/data/quality_report_preflight.py": true,
+      "tests/test_quality_report_preflight.py": true,
+      "backend/app/data/quality_report_storage.py": true,
+      "backend/app/data/quality_report_completion.py": true,
+      "backend/app/dataset_registry.py": true,
+      "backend/app/store.py": true,
+      "backend/app/ml/registered_quality_mask_files.py": true,
+      "backend/app/ml/registered_binary_mask_values.py": true,
+      "backend/app/main.py": true,
+      "frontend/src/AnnualInputDiagnostics.tsx": true,
+      "backend/app/data/quality_report_registration.py": true,
+      "tests/test_quality_report_registration.py": true,
+      "scripts/quality_report_cli.py": true,
+      "scripts/collect_samples.py": true,
+      "scripts/collect_training_grid.py": true
+    },
+    "observations": [
+      {
+        "actual": "external cwd/no PYTHONPATH new CLI image+mask two explicit registrations -> caller Python140 file preparation ->143 inspect/register ->131133 readonly",
+        "python_source_registration_setup": 0,
+        "initial_empty_catalog_setup": true,
+        "source_rows": 2,
+        "report_rows": 1,
+        "counts": {
+          "valid_pixels": 128,
+          "invalid_pixels": 128,
+          "total_pixels": 256
+        },
+        "replay_all_db_files_unchanged": true
+      },
+      {
+        "actual_counterexample": "opaque bytes + declared raster + RESTRICTED + nonexistent lineage parent accepted as unapproved metadata/hash registration",
+        "native_GTIFF_or_parent_ACL_verification": false,
+        "scientific_or_execution_approval": false
+      },
+      {
+        "explicit_fault_injection": "constructor/before-register/real-commit-then-error/contaminated-record",
+        "actual_after_commit_rows": 1,
+        "rollback_retry_delete": 0
+      },
+      {
+        "actual_self_reference_prevention": "catalog and case alias plus journal/wal/shm artifact paths rejected before Store constructor",
+        "writes_during_cli": 0
+      },
+      {
+        "actual_catalog_hardlink": "created in explicit Temp, samefile true; rejected before constructor",
+        "writes_during_cli": 0
+      }
+    ],
+    "initial_evidence_preserved": {
+      "py": "7ec323d589b0e6c36a8948c8063da61936b26407e5f8f97034023a5ef0118e19",
+      "json": "937ee950a0a5ff851e812699823c9a177d94abadf596d720235ee44f8cbc6ca8",
+      "log": "d8be04881897d7b28d2b54bc412abec5b1436a322830cd837358e1025f6d0d3a"
+    },
+    "initial_result": "8 PASS / 1 SKIP / 21.7476992s before catalog artifact alias hardening; not a final alias safety result",
+    "actual_scope": "native Temp GTiffs, empty-catalog setup, new CLI two subprocess source registrations from external cwd with no PYTHONPATH, explicit Python140 preparation,143 subprocess report and131133readonly",
+    "mock_scope": "inprocess constructor/validator/return faults and actual-commit-then-error; symlink permission unavailable is SKIP",
+    "operating_writes": 0,
+    "operating_collection": 0,
+    "network_requests": 0,
+    "training": 0,
+    "inference": 0,
+    "api_ui_changed": false,
+    "frontend_build_browser_required": false,
+    "limitations": [
+      "Declared raster plus matching SHA is not native GTiff/header/band/pixel/QA validation; opaque bytes can register unapproved.",
+      "No parent lineage resolution, institution/source authority, ACL or scientific/execution approval is granted.",
+      "Store constructor and registration can have effects before an exception; UNCONFIRMED does not claim rollback/absence and no automatic retry/delete occurs.",
+      "Two source CLI calls and later report preparation/registration are explicit sequential caller actions, not one atomic transaction.",
+      "Only Temp roots are used; operating data/ledgers/reservations/models are not opened or changed."
+    ]
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T07:37:50.195302+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 432,
+    "existing_source_changes": [],
+    "unexpected_existing_source_changes": [],
+    "expected_changed_existing_sources": [],
+    "unchanged_existing_source_files": 432,
+    "previous_evidence_checked": 1416,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_execution_workflow_model_and_other_sources_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "understanding_updated": true,
+  "web_ui_api_changed": false,
+  "backend_full_rerun_this_unit": false,
+  "frontend_build_browser_rerun_this_unit": false,
+  "operating_collection_training_registry_approval_deployment_workflow_dispatch": 0,
+  "metadata_guessed": false,
+  "source_artifacts_rewritten": false,
+  "automatic_report_storage": false,
+  "native_raster_or_lineage_parent_validated": false,
+  "scientific_accuracy_validated": false,
+  "execution_authorized": false,
+  "workflow_supported": false,
+  "next_internal_candidate": "147_EXPLICIT_VERIFIED_LOCAL_LCLUC_WORKFLOW_REPORT_EVIDENCE_VIEW",
+  "recorded_at": "2026-10-18T07:38:58.896945+09:00",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T07:38:58.896945+09:00",
+    "understanding_markdown": 113,
+    "implementation_markdown": 1,
+    "local_links": 520,
+    "metadata_evidence_references": 13787,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "source_records": {
+    "scripts/register_dataset_version.py": {
+      "sha256": "befa11f07709501a10b440409e2dad495a8ee04570f30d9347818522a0511de8",
+      "bytes": 7201
+    },
+    "tests/test_source_raster_registration_cli.py": {
+      "sha256": "1f3b2e82a24accf68a0bc7a4464846ffb3890c61b2b3d1997d46d2e4c65517c4",
+      "bytes": 14896
+    }
+  },
+  "live_processes": {
+    "checked_at": "2026-10-18T07:37:51.2251997+09:00",
+    "processes": [
+      {
+        "pid": 27268,
+        "parent_pid": 31440,
+        "name": "ollama app.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+        "created": "2026-10-17T08:40:23.427079+09:00",
+        "cpu": 28.09375,
+        "working_set": 88858624
+      },
+      {
+        "pid": 27860,
+        "parent_pid": 27268,
+        "name": "ollama.exe",
+        "command_line": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+        "created": "2026-10-17T08:40:25.549335+09:00",
+        "cpu": 10.421875,
+        "working_set": 84852736
+      },
+      {
+        "pid": 2060,
+        "parent_pid": 14348,
+        "name": "node.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" --experimental-vm-modules c:\\Temp\\.tmpxMLdb7\\kernel.js --session-id b9c3e259a941427ba4c2d16ab02f8369 --working-dir E:\\GeoAI–MLOps–SDSS",
+        "created": "2026-10-17T08:42:22.31783+09:00",
+        "cpu": 6.734375,
+        "working_set": 98066432
+      },
+      {
+        "pid": 29716,
+        "parent_pid": 14348,
+        "name": "node.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" c:\\Temp\\.tmpxMLdb7\\trusted-worker.js E:\\GeoAI–MLOps–SDSS",
+        "created": "2026-10-17T08:42:22.373789+09:00",
+        "cpu": 101.890625,
+        "working_set": 155934720
+      },
+      {
+        "pid": 30944,
+        "parent_pid": 2712,
+        "name": "node.exe",
+        "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1",
+        "created": "2026-10-17T08:43:30.869429+09:00",
+        "cpu": 33.703125,
+        "working_set": 54734848
+      },
+      {
+        "pid": 32224,
+        "parent_pid": 24092,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
+        "created": "2026-10-17T08:47:42.900196+09:00",
+        "cpu": 462.984375,
+        "working_set": 17387520
+      },
+      {
+        "pid": 26912,
+        "parent_pid": 3392,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001",
+        "created": "2026-10-17T09:52:41.77702+09:00",
+        "cpu": 389.9375,
+        "working_set": 32194560
+      },
+      {
+        "pid": 15608,
+        "parent_pid": 29584,
+        "name": "node.exe",
+        "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1 --port 5174",
+        "created": "2026-10-17T09:54:35.813007+09:00",
+        "cpu": 90.65625,
+        "working_set": 102318080
+      },
+      {
+        "pid": 35032,
+        "parent_pid": 22796,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend",
+        "created": "2026-10-17T10:04:47.513016+09:00",
+        "cpu": 11855.640625,
+        "working_set": 21463040
+      },
+      {
+        "pid": 38668,
+        "parent_pid": 35032,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\"",
+        "created": "2026-10-18T06:32:18.405808+09:00",
+        "cpu": 10.796875,
+        "working_set": 55660544
+      }
+    ],
+    "collector_training_processes_observed": 0,
+    "collector_training_command_matches": [],
+    "observation_limit": "Process command patterns only; unittest interpreters and temporary API fixtures are not operating training",
+    "automation_status": "ACTIVE",
+    "automation_interval_minutes": 10,
+    "automation_was_not_modified": true
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T07:27:49.318219+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "previous_full_backend": {
+    "unit": 145,
+    "passed": 1431,
+    "skipped": 1,
+    "seconds": 332.72
+  },
+  "previous_frontend": {
+    "unit": 137,
+    "passed": 271,
+    "build_modules": 112,
+    "build_seconds": 13.48
+  },
+  "catalog_self_reference_reproduction": {
+    "scope": "TEMP_ONLY_OLD_CLI_SELF_CATALOG_ARTIFACT_REPRODUCTION",
+    "source_sha256": "897750a4909586778539e3e388e3ea70d8904403216a9efee0a75853d17cf9f9",
+    "exit_code": 0,
+    "status": "SOURCE_RASTER_REGISTERED_UNAPPROVED",
+    "declared_artifact_sha256": "5416b047e7958b76c8745f00492a5c67edd21338e5abcd910900dccec7681a94",
+    "actual_artifact_sha256_after_registration": "f2492b330f81f61ee410901c3fb9bcfcbb5de2479f11119ba5979a1175c1b134",
+    "success_ref_immediately_matches_actual_bytes": false,
+    "registry_rows": 1,
+    "operating_access": 0
+  },
+  "pre_hardening_tests": {
+    "focused": {
+      "passed": 9,
+      "seconds": 9.491
+    },
+    "related": {
+      "passed": 123,
+      "seconds": 36.632
+    },
+    "independent": {
+      "passed": 8,
+      "skipped": 1,
+      "seconds": 21.7476992
+    },
+    "reason": "Catalog self-reference guard was not yet present; all initial raw logs preserved."
+  },
+  "snapshot_files": 2139
+}

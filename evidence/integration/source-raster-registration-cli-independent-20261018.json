@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "scope": "INDEPENDENT_SOURCE_RASTER_REGISTRATION_CLI_TEMP_ONLY",
+  "git_baseline": "f4565f5ff9b743cfd51cea087bbcf7d2e840729f",
+  "tests": 11,
+  "passed": 10,
+  "skipped": 1,
+  "skip_reasons": [
+    "actual symlink unavailable winerror=1314 errno=22"
+  ],
+  "failures": 0,
+  "errors": 0,
+  "seconds": 25.698676500003785,
+  "source_sha256": "befa11f07709501a10b440409e2dad495a8ee04570f30d9347818522a0511de8",
+  "test_sha256": "1f3b2e82a24accf68a0bc7a4464846ffb3890c61b2b3d1997d46d2e4c65517c4",
+  "test_names": [
+    "test_00_frozen_source_and_tests",
+    "test_01_actual_external_cwd_source2_cli_report_cli_and_readonly_consumers",
+    "test_02_actual_raw_staged_accept_and_type_quality_upgrade_reject",
+    "test_03_actual_conflict_preserves_original_and_uncertainty",
+    "test_04_actual_opaque_raster_restricted_and_unresolved_lineage_are_unapproved",
+    "test_05_actual_strict_json_bad_args_catalog_and_sha_no_registration",
+    "test_06_inprocess_constructor_register_and_actual_post_commit_faults",
+    "test_07_inprocess_validator_and_return_record_mutation_private_copy",
+    "test_08_actual_manifest_symlink_permission_skip",
+    "test_09_actual_catalog_and_sidecar_artifacts_block_before_constructor",
+    "test_10_actual_hardlink_to_catalog_block_before_constructor"
+  ],
+  "old_sources_unchanged": {
+    "backend/app/data/quality_report_preflight.py": true,
+    "tests/test_quality_report_preflight.py": true,
+    "backend/app/data/quality_report_storage.py": true,
+    "backend/app/data/quality_report_completion.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/store.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true,
+    "backend/app/data/quality_report_registration.py": true,
+    "tests/test_quality_report_registration.py": true,
+    "scripts/quality_report_cli.py": true,
+    "scripts/collect_samples.py": true,
+    "scripts/collect_training_grid.py": true
+  },
+  "separate_git_baseline_matches": {
+    "backend/app/data/quality_report_preflight.py": true,
+    "tests/test_quality_report_preflight.py": true,
+    "backend/app/data/quality_report_storage.py": true,
+    "backend/app/data/quality_report_completion.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/store.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true,
+    "backend/app/data/quality_report_registration.py": true,
+    "tests/test_quality_report_registration.py": true,
+    "scripts/quality_report_cli.py": true,
+    "scripts/collect_samples.py": true,
+    "scripts/collect_training_grid.py": true
+  },
+  "observations": [
+    {
+      "actual": "external cwd/no PYTHONPATH new CLI image+mask two explicit registrations -> caller Python140 file preparation ->143 inspect/register ->131133 readonly",
+      "python_source_registration_setup": 0,
+      "initial_empty_catalog_setup": true,
+      "source_rows": 2,
+      "report_rows": 1,
+      "counts": {
+        "valid_pixels": 128,
+        "invalid_pixels": 128,
+        "total_pixels": 256
+      },
+      "replay_all_db_files_unchanged": true
+    },
+    {
+      "actual_counterexample": "opaque bytes + declared raster + RESTRICTED + nonexistent lineage parent accepted as unapproved metadata/hash registration",
+      "native_GTIFF_or_parent_ACL_verification": false,
+      "scientific_or_execution_approval": false
+    },
+    {
+      "explicit_fault_injection": "constructor/before-register/real-commit-then-error/contaminated-record",
+      "actual_after_commit_rows": 1,
+      "rollback_retry_delete": 0
+    },
+    {
+      "actual_self_reference_prevention": "catalog and case alias plus journal/wal/shm artifact paths rejected before Store constructor",
+      "writes_during_cli": 0
+    },
+    {
+      "actual_catalog_hardlink": "created in explicit Temp, samefile true; rejected before constructor",
+      "writes_during_cli": 0
+    }
+  ],
+  "initial_evidence_preserved": {
+    "py": "7ec323d589b0e6c36a8948c8063da61936b26407e5f8f97034023a5ef0118e19",
+    "json": "937ee950a0a5ff851e812699823c9a177d94abadf596d720235ee44f8cbc6ca8",
+    "log": "d8be04881897d7b28d2b54bc412abec5b1436a322830cd837358e1025f6d0d3a"
+  },
+  "initial_result": "8 PASS / 1 SKIP / 21.7476992s before catalog artifact alias hardening; not a final alias safety result",
+  "actual_scope": "native Temp GTiffs, empty-catalog setup, new CLI two subprocess source registrations from external cwd with no PYTHONPATH, explicit Python140 preparation,143 subprocess report and131133readonly",
+  "mock_scope": "inprocess constructor/validator/return faults and actual-commit-then-error; symlink permission unavailable is SKIP",
+  "operating_writes": 0,
+  "operating_collection": 0,
+  "network_requests": 0,
+  "training": 0,
+  "inference": 0,
+  "api_ui_changed": false,
+  "frontend_build_browser_required": false,
+  "limitations": [
+    "Declared raster plus matching SHA is not native GTiff/header/band/pixel/QA validation; opaque bytes can register unapproved.",
+    "No parent lineage resolution, institution/source authority, ACL or scientific/execution approval is granted.",
+    "Store constructor and registration can have effects before an exception; UNCONFIRMED does not claim rollback/absence and no automatic retry/delete occurs.",
+    "Two source CLI calls and later report preparation/registration are explicit sequential caller actions, not one atomic transaction.",
+    "Only Temp roots are used; operating data/ledgers/reservations/models are not opened or changed."
+  ]
+}
