@@ -1,0 +1,317 @@
+{
+  "status": "139_EXPLICIT_METADATA_UNREGISTERED_REPORT_MANIFEST_COMPLETION",
+  "focused": {
+    "passed": 9,
+    "seconds": 1.234,
+    "log": "evidence/integration/quality-report-completion-agent-final-20261018.log"
+  },
+  "related": {
+    "passed": 48,
+    "seconds": 12.067,
+    "log": "evidence/integration/quality-report-completion-root-related-final2-20261018.log"
+  },
+  "independent": {
+    "schema_version": 1,
+    "scope": "INDEPENDENT_EXPLICIT_QUALITY_REPORT_COMPLETION_TEMP_ONLY",
+    "status": "TESTED_SYNTHETIC",
+    "tests": 8,
+    "passed": 8,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 2.0615961000003153,
+    "test_names": [
+      "test_01_frozen_sha_no_store_or_schema_io_imports",
+      "test_02_exact_full_caller_metadata_and_detached_bytes",
+      "test_03_metadata_invalid_before_producer_noio",
+      "test_04_untrusted_parent_typed_flags_refs_bytes_and_partial_failures",
+      "test_05_producer_argument_mutation_cannot_change_verification_snapshot",
+      "test_06_actual_temp_complete_manifest_schema_sqlite_consumption",
+      "test_07_preparation_is_not_access_quality_or_mask_conversion",
+      "test_08_post_validation_parent_mutation_old_sha_reproduction_and_fixed_snapshot"
+    ],
+    "source_sha256": "d98c9d52e8add04b5a620d78d4e988e633477f761003ae646f6dc99906efab39",
+    "test_sha256": "86f3f04a7778bd688ccb922e9dc59108dee6340d9ffbce0fa97b1894b51be07d",
+    "git_baseline": "200d22c3c7f146f795c26442eec1bd971733770d",
+    "separate_git_baseline_matches": {
+      "backend/app/data/quality_mask_bundle.py": true,
+      "tests/test_quality_mask_bundle.py": true,
+      "backend/app/dataset_registry.py": true,
+      "backend/app/ml/per_scene_normalization_files.py": true,
+      "backend/app/ml/registered_quality_mask_files.py": true,
+      "backend/app/ml/registered_quality_mask_grid.py": true,
+      "backend/app/ml/registered_binary_mask_values.py": true,
+      "scripts/collect_samples.py": true,
+      "scripts/collect_training_grid.py": true,
+      "backend/app/main.py": true,
+      "frontend/src/AnnualInputDiagnostics.tsx": true
+    },
+    "old_sources_unchanged": {
+      "backend/app/data/quality_mask_bundle.py": true,
+      "tests/test_quality_mask_bundle.py": true,
+      "backend/app/dataset_registry.py": true,
+      "backend/app/ml/per_scene_normalization_files.py": true,
+      "backend/app/ml/registered_quality_mask_files.py": true,
+      "backend/app/ml/registered_quality_mask_grid.py": true,
+      "backend/app/ml/registered_binary_mask_values.py": true,
+      "scripts/collect_samples.py": true,
+      "scripts/collect_training_grid.py": true,
+      "backend/app/main.py": true,
+      "frontend/src/AnnualInputDiagnostics.tsx": true
+    },
+    "observations": [
+      {
+        "actual": "fresh Temp GTiff image6/mask1 +complete caller-metadata report +SQLite3versions",
+        "fixture_registry_setup_writes": 3,
+        "readonly_consumer_gets": 6,
+        "counts": {
+          "valid_pixels": 128,
+          "invalid_pixels": 128,
+          "total_pixels": 256
+        },
+        "source_quality": "RAW",
+        "report_quality": "STAGED",
+        "files_and_db_unchanged": true,
+        "approval": false
+      },
+      {
+        "counterexample": "restricted_image_public_report",
+        "completion_prepared": true,
+        "consumer": "BLOCKED",
+        "code": "ACCESS_DECLARATION_BLOCKED",
+        "image_access_preserved": "RESTRICTED",
+        "explicit_report_access_preserved": "PUBLIC",
+        "files_and_db_unchanged": true,
+        "approval": false
+      },
+      {
+        "counterexample": "nodata0",
+        "completion_prepared": true,
+        "consumer": "BLOCKED",
+        "code": "MASK_INTRINSIC_VALIDITY_UNSUPPORTED",
+        "image_access_preserved": "PUBLIC",
+        "explicit_report_access_preserved": "PUBLIC",
+        "files_and_db_unchanged": true,
+        "approval": false
+      },
+      {
+        "counterexample": "value255",
+        "completion_prepared": true,
+        "consumer": "BLOCKED",
+        "code": "MASK_VALUES_NOT_BINARY",
+        "image_access_preserved": "PUBLIC",
+        "explicit_report_access_preserved": "PUBLIC",
+        "files_and_db_unchanged": true,
+        "approval": false
+      },
+      {
+        "explicit_mock": "producer dict mutated immediately after successful typed validation",
+        "initial_source_sha256": "0ef9c2930df1224eeb1f130b80b0dd15d799776d734cf713805abb08e05240e9",
+        "reconstructed_initial_source_bytes_sha_verified": true,
+        "final_source_sha256": "d98c9d52e8add04b5a620d78d4e988e633477f761003ae646f6dc99906efab39",
+        "results": [
+          {
+            "version": "initial_exact_sha",
+            "returned_bytes_match_fixed_sha": false
+          },
+          {
+            "version": "final_frozen_sha",
+            "returned_bytes_match_fixed_sha": true
+          }
+        ],
+        "operating_concurrency_test": false
+      }
+    ],
+    "actual_scope": "fresh Temp files, complete manifest96schema, actual SQLite version setup then readonlySQL131/133 consumption",
+    "mock_scope": "I/O/write denial guards, producer call counter and explicitly malformed/argument-mutating138 parent only; no mocked successful131/133 responses",
+    "operating_data_access": false,
+    "operating_writes": 0,
+    "training": 0,
+    "inference": 0,
+    "api_ui_changed": false,
+    "frontend_build_browser_required": false,
+    "limitations": [
+      "Pure completion preserves caller statements; no report/image QA equality or cross-access authority policy is verified.",
+      "Synthetic registration occurs only during explicit Temp fixture setup, not in product completion.",
+      "128/256 is observed binary count, not scientific or institutional approval.",
+      "Legacy nodata0 and label/AOI-derived masks, actual production/registration/approval remain separate."
+    ]
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T06:03:21.192187+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 316,
+    "existing_source_changes": [],
+    "expected_changed_existing_sources": [],
+    "unchanged_existing_source_files": 316,
+    "previous_evidence_checked": 1291,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_execution_workflow_model_and_other_sources_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "understanding_updated": true,
+  "ui_api_connected": false,
+  "backend_full_rerun_this_unit": false,
+  "frontend_build_browser_rerun_this_unit": false,
+  "operating_collection_training_registry_approval_deployment_workflow_dispatch": 0,
+  "automatic_quality_promotion": false,
+  "artifact_bytes_verified": false,
+  "source_authority_verified": false,
+  "scientific_accuracy_validated": false,
+  "execution_authorized": false,
+  "workflow_supported": false,
+  "next_internal_candidate": "140_EXPLICIT_NEW_PATH_REPORT_STORAGE_WITHOUT_OVERWRITE_OR_REGISTRATION",
+  "recorded_at": "2026-10-18T06:03:43.532199+09:00",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T06:03:43.532199+09:00",
+    "understanding_markdown": 106,
+    "implementation_markdown": 1,
+    "local_links": 480,
+    "metadata_evidence_references": 12347,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "source_records": {
+    "backend/app/data/quality_report_completion.py": {
+      "sha256": "d98c9d52e8add04b5a620d78d4e988e633477f761003ae646f6dc99906efab39",
+      "bytes": 8030
+    },
+    "tests/test_quality_report_completion.py": {
+      "sha256": "86f3f04a7778bd688ccb922e9dc59108dee6340d9ffbce0fa97b1894b51be07d",
+      "bytes": 11148
+    }
+  },
+  "live_processes": {
+    "checked_at": "2026-10-18T06:02:59.0732249+09:00",
+    "processes": [
+      {
+        "pid": 27268,
+        "parent_pid": 31440,
+        "name": "ollama app.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+        "created": "/Date(1792194023427)/",
+        "cpu": 27.671875,
+        "working_set": 88911872
+      },
+      {
+        "pid": 27860,
+        "parent_pid": 27268,
+        "name": "ollama.exe",
+        "command_line": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+        "created": "/Date(1792194025549)/",
+        "cpu": 10.125,
+        "working_set": 84852736
+      },
+      {
+        "pid": 2060,
+        "parent_pid": 14348,
+        "name": "node.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" --experimental-vm-modules c:\\Temp\\.tmpxMLdb7\\kernel.js --session-id b9c3e259a941427ba4c2d16ab02f8369 --working-dir E:\\GeoAI–MLOps–SDSS",
+        "created": "/Date(1792194142317)/",
+        "cpu": 6.734375,
+        "working_set": 98066432
+      },
+      {
+        "pid": 29716,
+        "parent_pid": 14348,
+        "name": "node.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" c:\\Temp\\.tmpxMLdb7\\trusted-worker.js E:\\GeoAI–MLOps–SDSS",
+        "created": "/Date(1792194142373)/",
+        "cpu": 101.078125,
+        "working_set": 155918336
+      },
+      {
+        "pid": 30944,
+        "parent_pid": 2712,
+        "name": "node.exe",
+        "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1",
+        "created": "/Date(1792194210869)/",
+        "cpu": 33.609375,
+        "working_set": 54407168
+      },
+      {
+        "pid": 32224,
+        "parent_pid": 24092,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
+        "created": "/Date(1792194462900)/",
+        "cpu": 454.515625,
+        "working_set": 17358848
+      },
+      {
+        "pid": 26912,
+        "parent_pid": 3392,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001",
+        "created": "/Date(1792198361777)/",
+        "cpu": 381.46875,
+        "working_set": 32186368
+      },
+      {
+        "pid": 15608,
+        "parent_pid": 29584,
+        "name": "node.exe",
+        "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1 --port 5174",
+        "created": "/Date(1792198475813)/",
+        "cpu": 89.140625,
+        "working_set": 102318080
+      },
+      {
+        "pid": 35032,
+        "parent_pid": 22796,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend",
+        "created": "/Date(1792199087513)/",
+        "cpu": 10801.359375,
+        "working_set": 21401600
+      },
+      {
+        "pid": 30320,
+        "parent_pid": 35032,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\"",
+        "created": "/Date(1792270860004)/",
+        "cpu": 3.40625,
+        "working_set": 55595008
+      }
+    ],
+    "collector_training_processes_observed": 0,
+    "collector_training_command_matches": [],
+    "observation_limit": "Process command patterns only; unittest interpreters and temporary API fixtures are not operating training",
+    "automation_status": "ACTIVE",
+    "automation_interval_minutes": 10,
+    "automation_was_not_modified": true
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T05:57:11.467658+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "previous_full_backend": {
+    "unit": 137,
+    "passed": 1358,
+    "skipped": 1,
+    "seconds": 484.77
+  },
+  "previous_frontend": {
+    "unit": 137,
+    "passed": 271,
+    "build_modules": 112,
+    "build_seconds": 13.48
+  },
+  "snapshot_files": 1879
+}

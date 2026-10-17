@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T05:53:44.915910+09:00",
-  "source_commit": "f01752a699497e94bece097865c862e1173d5bf1",
-  "source_commit_reason": "Published137 baseline plus138 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T06:03:43.532199+09:00",
+  "source_commit": "200d22c3c7f146f795c26442eec1bd971733770d",
+  "source_commit_reason": "Published138 baseline plus139 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -5361,6 +5361,323 @@
         "operating_writes": 0
       },
       "snapshot_files": 1857
+    },
+    "latest_quality_report_metadata_completion": {
+      "status": "139_EXPLICIT_METADATA_UNREGISTERED_REPORT_MANIFEST_COMPLETION",
+      "focused": {
+        "passed": 9,
+        "seconds": 1.234,
+        "log": "evidence/integration/quality-report-completion-agent-final-20261018.log"
+      },
+      "related": {
+        "passed": 48,
+        "seconds": 12.067,
+        "log": "evidence/integration/quality-report-completion-root-related-final2-20261018.log"
+      },
+      "independent": {
+        "schema_version": 1,
+        "scope": "INDEPENDENT_EXPLICIT_QUALITY_REPORT_COMPLETION_TEMP_ONLY",
+        "status": "TESTED_SYNTHETIC",
+        "tests": 8,
+        "passed": 8,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0,
+        "seconds": 2.0615961000003153,
+        "test_names": [
+          "test_01_frozen_sha_no_store_or_schema_io_imports",
+          "test_02_exact_full_caller_metadata_and_detached_bytes",
+          "test_03_metadata_invalid_before_producer_noio",
+          "test_04_untrusted_parent_typed_flags_refs_bytes_and_partial_failures",
+          "test_05_producer_argument_mutation_cannot_change_verification_snapshot",
+          "test_06_actual_temp_complete_manifest_schema_sqlite_consumption",
+          "test_07_preparation_is_not_access_quality_or_mask_conversion",
+          "test_08_post_validation_parent_mutation_old_sha_reproduction_and_fixed_snapshot"
+        ],
+        "source_sha256": "d98c9d52e8add04b5a620d78d4e988e633477f761003ae646f6dc99906efab39",
+        "test_sha256": "86f3f04a7778bd688ccb922e9dc59108dee6340d9ffbce0fa97b1894b51be07d",
+        "git_baseline": "200d22c3c7f146f795c26442eec1bd971733770d",
+        "separate_git_baseline_matches": {
+          "backend/app/data/quality_mask_bundle.py": true,
+          "tests/test_quality_mask_bundle.py": true,
+          "backend/app/dataset_registry.py": true,
+          "backend/app/ml/per_scene_normalization_files.py": true,
+          "backend/app/ml/registered_quality_mask_files.py": true,
+          "backend/app/ml/registered_quality_mask_grid.py": true,
+          "backend/app/ml/registered_binary_mask_values.py": true,
+          "scripts/collect_samples.py": true,
+          "scripts/collect_training_grid.py": true,
+          "backend/app/main.py": true,
+          "frontend/src/AnnualInputDiagnostics.tsx": true
+        },
+        "old_sources_unchanged": {
+          "backend/app/data/quality_mask_bundle.py": true,
+          "tests/test_quality_mask_bundle.py": true,
+          "backend/app/dataset_registry.py": true,
+          "backend/app/ml/per_scene_normalization_files.py": true,
+          "backend/app/ml/registered_quality_mask_files.py": true,
+          "backend/app/ml/registered_quality_mask_grid.py": true,
+          "backend/app/ml/registered_binary_mask_values.py": true,
+          "scripts/collect_samples.py": true,
+          "scripts/collect_training_grid.py": true,
+          "backend/app/main.py": true,
+          "frontend/src/AnnualInputDiagnostics.tsx": true
+        },
+        "observations": [
+          {
+            "actual": "fresh Temp GTiff image6/mask1 +complete caller-metadata report +SQLite3versions",
+            "fixture_registry_setup_writes": 3,
+            "readonly_consumer_gets": 6,
+            "counts": {
+              "valid_pixels": 128,
+              "invalid_pixels": 128,
+              "total_pixels": 256
+            },
+            "source_quality": "RAW",
+            "report_quality": "STAGED",
+            "files_and_db_unchanged": true,
+            "approval": false
+          },
+          {
+            "counterexample": "restricted_image_public_report",
+            "completion_prepared": true,
+            "consumer": "BLOCKED",
+            "code": "ACCESS_DECLARATION_BLOCKED",
+            "image_access_preserved": "RESTRICTED",
+            "explicit_report_access_preserved": "PUBLIC",
+            "files_and_db_unchanged": true,
+            "approval": false
+          },
+          {
+            "counterexample": "nodata0",
+            "completion_prepared": true,
+            "consumer": "BLOCKED",
+            "code": "MASK_INTRINSIC_VALIDITY_UNSUPPORTED",
+            "image_access_preserved": "PUBLIC",
+            "explicit_report_access_preserved": "PUBLIC",
+            "files_and_db_unchanged": true,
+            "approval": false
+          },
+          {
+            "counterexample": "value255",
+            "completion_prepared": true,
+            "consumer": "BLOCKED",
+            "code": "MASK_VALUES_NOT_BINARY",
+            "image_access_preserved": "PUBLIC",
+            "explicit_report_access_preserved": "PUBLIC",
+            "files_and_db_unchanged": true,
+            "approval": false
+          },
+          {
+            "explicit_mock": "producer dict mutated immediately after successful typed validation",
+            "initial_source_sha256": "0ef9c2930df1224eeb1f130b80b0dd15d799776d734cf713805abb08e05240e9",
+            "reconstructed_initial_source_bytes_sha_verified": true,
+            "final_source_sha256": "d98c9d52e8add04b5a620d78d4e988e633477f761003ae646f6dc99906efab39",
+            "results": [
+              {
+                "version": "initial_exact_sha",
+                "returned_bytes_match_fixed_sha": false
+              },
+              {
+                "version": "final_frozen_sha",
+                "returned_bytes_match_fixed_sha": true
+              }
+            ],
+            "operating_concurrency_test": false
+          }
+        ],
+        "actual_scope": "fresh Temp files, complete manifest96schema, actual SQLite version setup then readonlySQL131/133 consumption",
+        "mock_scope": "I/O/write denial guards, producer call counter and explicitly malformed/argument-mutating138 parent only; no mocked successful131/133 responses",
+        "operating_data_access": false,
+        "operating_writes": 0,
+        "training": 0,
+        "inference": 0,
+        "api_ui_changed": false,
+        "frontend_build_browser_required": false,
+        "limitations": [
+          "Pure completion preserves caller statements; no report/image QA equality or cross-access authority policy is verified.",
+          "Synthetic registration occurs only during explicit Temp fixture setup, not in product completion.",
+          "128/256 is observed binary count, not scientific or institutional approval.",
+          "Legacy nodata0 and label/AOI-derived masks, actual production/registration/approval remain separate."
+        ]
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T06:03:21.192187+09:00",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 316,
+        "existing_source_changes": [],
+        "expected_changed_existing_sources": [],
+        "unchanged_existing_source_files": 316,
+        "previous_evidence_checked": 1291,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "reserved_bytes_preserved": 136314880,
+        "existing_execution_workflow_model_and_other_sources_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "understanding_updated": true,
+      "ui_api_connected": false,
+      "backend_full_rerun_this_unit": false,
+      "frontend_build_browser_rerun_this_unit": false,
+      "operating_collection_training_registry_approval_deployment_workflow_dispatch": 0,
+      "automatic_quality_promotion": false,
+      "artifact_bytes_verified": false,
+      "source_authority_verified": false,
+      "scientific_accuracy_validated": false,
+      "execution_authorized": false,
+      "workflow_supported": false,
+      "next_internal_candidate": "140_EXPLICIT_NEW_PATH_REPORT_STORAGE_WITHOUT_OVERWRITE_OR_REGISTRATION",
+      "recorded_at": "2026-10-18T06:03:43.532199+09:00",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T06:03:43.532199+09:00",
+        "understanding_markdown": 106,
+        "implementation_markdown": 1,
+        "local_links": 480,
+        "metadata_evidence_references": 12347,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true
+      },
+      "source_records": {
+        "backend/app/data/quality_report_completion.py": {
+          "sha256": "d98c9d52e8add04b5a620d78d4e988e633477f761003ae646f6dc99906efab39",
+          "bytes": 8030
+        },
+        "tests/test_quality_report_completion.py": {
+          "sha256": "86f3f04a7778bd688ccb922e9dc59108dee6340d9ffbce0fa97b1894b51be07d",
+          "bytes": 11148
+        }
+      },
+      "live_processes": {
+        "checked_at": "2026-10-18T06:02:59.0732249+09:00",
+        "processes": [
+          {
+            "pid": 27268,
+            "parent_pid": 31440,
+            "name": "ollama app.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+            "created": "/Date(1792194023427)/",
+            "cpu": 27.671875,
+            "working_set": 88911872
+          },
+          {
+            "pid": 27860,
+            "parent_pid": 27268,
+            "name": "ollama.exe",
+            "command_line": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+            "created": "/Date(1792194025549)/",
+            "cpu": 10.125,
+            "working_set": 84852736
+          },
+          {
+            "pid": 2060,
+            "parent_pid": 14348,
+            "name": "node.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" --experimental-vm-modules c:\\Temp\\.tmpxMLdb7\\kernel.js --session-id b9c3e259a941427ba4c2d16ab02f8369 --working-dir E:\\GeoAI–MLOps–SDSS",
+            "created": "/Date(1792194142317)/",
+            "cpu": 6.734375,
+            "working_set": 98066432
+          },
+          {
+            "pid": 29716,
+            "parent_pid": 14348,
+            "name": "node.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" c:\\Temp\\.tmpxMLdb7\\trusted-worker.js E:\\GeoAI–MLOps–SDSS",
+            "created": "/Date(1792194142373)/",
+            "cpu": 101.078125,
+            "working_set": 155918336
+          },
+          {
+            "pid": 30944,
+            "parent_pid": 2712,
+            "name": "node.exe",
+            "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1",
+            "created": "/Date(1792194210869)/",
+            "cpu": 33.609375,
+            "working_set": 54407168
+          },
+          {
+            "pid": 32224,
+            "parent_pid": 24092,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
+            "created": "/Date(1792194462900)/",
+            "cpu": 454.515625,
+            "working_set": 17358848
+          },
+          {
+            "pid": 26912,
+            "parent_pid": 3392,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001",
+            "created": "/Date(1792198361777)/",
+            "cpu": 381.46875,
+            "working_set": 32186368
+          },
+          {
+            "pid": 15608,
+            "parent_pid": 29584,
+            "name": "node.exe",
+            "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1 --port 5174",
+            "created": "/Date(1792198475813)/",
+            "cpu": 89.140625,
+            "working_set": 102318080
+          },
+          {
+            "pid": 35032,
+            "parent_pid": 22796,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend",
+            "created": "/Date(1792199087513)/",
+            "cpu": 10801.359375,
+            "working_set": 21401600
+          },
+          {
+            "pid": 30320,
+            "parent_pid": 35032,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\"",
+            "created": "/Date(1792270860004)/",
+            "cpu": 3.40625,
+            "working_set": 55595008
+          }
+        ],
+        "collector_training_processes_observed": 0,
+        "collector_training_command_matches": [],
+        "observation_limit": "Process command patterns only; unittest interpreters and temporary API fixtures are not operating training",
+        "automation_status": "ACTIVE",
+        "automation_interval_minutes": 10,
+        "automation_was_not_modified": true
+      },
+      "operating_inventory": {
+        "recorded_at": "2026-10-18T05:57:11.467658+09:00",
+        "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+        "counts_by_kind": {
+          "analyses": 3,
+          "datasets": 6,
+          "gmais_idempotency": 2,
+          "gmais_jobs": 2,
+          "models": 1
+        },
+        "dataset_versions_count": 0,
+        "operating_writes": 0,
+        "model_or_raster_files_loaded": false
+      },
+      "previous_full_backend": {
+        "unit": 137,
+        "passed": 1358,
+        "skipped": 1,
+        "seconds": 484.77
+      },
+      "previous_frontend": {
+        "unit": 137,
+        "passed": 271,
+        "build_modules": 112,
+        "build_seconds": 13.48
+      },
+      "snapshot_files": 1879
     }
   },
   "files": {
@@ -5377,8 +5694,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "e4727cb47bb83ebdf1bdb9a3eaff2d9c7c08226d173054fba754707614285c2b",
-      "bytes": 431948
+      "sha256": "ca1385b770090aba1bc800688fa70d22c93264dfc5d283c9e7a0fa1500d9b8e7",
+      "bytes": 436415
     },
     "README.md": {
       "sha256": "0d213fdb1da768b59dd402c3af248fa902c00a078c3072703337effadc542c56",
@@ -5431,6 +5748,10 @@
     "backend/app/data/quality_mask_bundle.py": {
       "sha256": "72750fe9f1299a878a589e66ac1e0d53b01eddfc3af6237915e6e16bce623945",
       "bytes": 10712
+    },
+    "backend/app/data/quality_report_completion.py": {
+      "sha256": "d98c9d52e8add04b5a620d78d4e988e633477f761003ae646f6dc99906efab39",
+      "bytes": 8030
     },
     "backend/app/data/readiness_connectivity_envelope.py": {
       "sha256": "f909143eed5eb931bda9671fb51c816e1575d6b28ebb9b3f6ef607078322fcb2",
@@ -5845,8 +6166,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "9859e838654c8b18eb4c8973c34c444064e26e175c3249d3381ccefc71cef1da",
-      "bytes": 439089
+      "sha256": "cb50876e27c1b5704388cf0bf7b56432bfddc36204894719686015115498ffdc",
+      "bytes": 443556
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -6005,8 +6326,12 @@
       "bytes": 24899
     },
     "docs/implementation/138_quality_mask_bundle.md": {
-      "sha256": "d2d10f2165f7707317173fd46f545467b8e260c42edc3d38bfc794e2e34bb28c",
-      "bytes": 12993
+      "sha256": "07af34bea108625b3fbfb885be75568e0b1f208325f7b88ad6298b79bc988e6a",
+      "bytes": 13325
+    },
+    "docs/implementation/139_quality_report_completion.md": {
+      "sha256": "3b60f5efb7c756c1b1833918675b20963e8d7583bcd450779f4313dd133cbc8e",
+      "bytes": 13032
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -6321,48 +6646,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "faf7d53fe3c7897574fb7207ae927b46fc00fab152dc109b1661bd207f45abdf",
-      "bytes": 162538
+      "sha256": "d9f8ce7ce7605c61cf41dbca9b5fbd1b10bc3adb3ff7a403c31ea5e64bd527c0",
+      "bytes": 163918
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "8e316aedbfe4191d1fb78b1cd9e4aa3a46290289a52b3083beaef7f198356298",
-      "bytes": 131182
+      "sha256": "1dc95d71fc6df5d4b6d244c50cf99801cf8cc29e1c3dc095b6f2d55d48f544a9",
+      "bytes": 132492
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "314cd9af6d825ca5e63f0e765c71820049e2b16bdbf3755a6e5f92d44c0efeb4",
-      "bytes": 101464
+      "sha256": "889d641ef50115c812d69fdb5b2809e033166fc435aa881416acbb8a910c64e4",
+      "bytes": 102818
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "ba251b4a67be41188826f1da48507c4de8ae3931cc33e650da7492e5d22e6614",
-      "bytes": 84508
+      "sha256": "7326cd92d42b3d157c2a9f278a8eead2ebd19aecd6a30ab9c6046c068dba9c94",
+      "bytes": 85823
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "7f8d001a3ec805c9226ef408cf56ed8bdbfd64392ceb6865344d2cc74a00e9b0",
-      "bytes": 49310
+      "sha256": "ecc47511db3049174215b2813d98c5149cca502c1604667231a2264776a177ae",
+      "bytes": 50626
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "58f1df8033d3f01c6709ddf37f12d54af843d3d7075d46cfbb8611a3409acfde",
-      "bytes": 88418
+      "sha256": "c2f255e73b32b3c47fc1da13c4a90ffc4bc138ec6e7a5837d4eba9a906549daf",
+      "bytes": 89713
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "d80d77f111f9a52b43ba51e0d1e14bab3ef3dc51aa30816e4866f85bcacbcb67",
-      "bytes": 235171
+      "sha256": "e8101be2cc3190fc2042bfe02837a24b1c8154421ce49be0866321d4670d2633",
+      "bytes": 237215
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "e8b0ca42cab31beefd8ca124fe02c621eb3a9e57965fbdd984a2909b7e3882cd",
-      "bytes": 192459
+      "sha256": "81639adc6933d84dcbfa7141da24dbb8b39fce3e7cd81734210c8c22f1d8acb7",
+      "bytes": 193756
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "8aa52ce4455ebb504f7575b7d57cbbb389642f27f55c5cfd855ce4e7708bf608",
-      "bytes": 125945
+      "sha256": "7641ebbe9d01d1eacd3ae0b796fea14fb4218fc323f2e044278886e31b076a03",
+      "bytes": 127384
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "05caac37d19c7ba9a1cdf35b41e1381986c7b68e8cddc7a8cd2901d7dbd23c73",
-      "bytes": 205303
+      "sha256": "3305ab836828b34aec1278caefdb081486e26e704989d03cf88aacdf8e31cef0",
+      "bytes": 207198
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -6580,6 +6905,10 @@
       "sha256": "0746d526b6cc8dc52535e9ff01026c46eb18929a8f40b010e1d1ce9d9f709776",
       "bytes": 12650
     },
+    "docs/understanding/gate-notes/GATE_QUALITY_REPORT_COMPLETION_20261018.md": {
+      "sha256": "a66d00fdacc0a95d66efa8361777eaeb5ded79f7557c3cd9762cf2b0cdcb2038",
+      "bytes": 12913
+    },
     "docs/understanding/gate-notes/GATE_RASTER_CONTENT_20261017.md": {
       "sha256": "5a06ac70e1caa44d6bc6895f28f473334281b87fa11d240d3e357eed9be7af5a",
       "bytes": 9706
@@ -6729,16 +7058,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "493bef63e92f7358eaeb0ef27966a4189137c108754b6831a1a07a774250c492",
-      "bytes": 206639
+      "sha256": "1b1ef7c1126e41bad5c2a6abb3c99c198f3a9f6fec499aec05abbed0ede8642a",
+      "bytes": 208397
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "3502f5772f176a5469190fed3e7b1f318f9f914116658f8d202254d2916fd392",
-      "bytes": 141837
+      "sha256": "a8c24453d7241f6299d788f1fbded7d2dd2fc903f81b2de9d8b1949c8741c9f7",
+      "bytes": 143180
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "93bd9c0edbca99eff75ba899c90978a84384e884efa3731d926436ce0e6007c9",
-      "bytes": 168589
+      "sha256": "c674905f92e84b4e7eece3c6f46c136c615b89d2057b353948a2684b996fb8d9",
+      "bytes": 170107
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -9856,6 +10185,78 @@
       "sha256": "6f3f7d2048c1137ad821b9b617a500ca95adeb4a9b827d01c1573b53a6296540",
       "bytes": 5467
     },
+    "evidence/integration/quality-report-completion-agent-20261018.log": {
+      "sha256": "ea4874e7bd42ffd10b38a82008fa59d543aa542611dde9e18984c7399453ac77",
+      "bytes": 2013
+    },
+    "evidence/integration/quality-report-completion-agent-final-20261018.log": {
+      "sha256": "d4b4ba061ba9dd2c3eb74a9818810136ce5de668406a41eaf41778d1cb486501",
+      "bytes": 2207
+    },
+    "evidence/integration/quality-report-completion-closeout-20261018.json": {
+      "sha256": "a6c227ce5d577a31b1c2771c87c11d252b14ad19c62814ba6d0ddeef95dcf68f",
+      "bytes": 17522
+    },
+    "evidence/integration/quality-report-completion-closeout-20261018.py": {
+      "sha256": "12283bfc97afa1852caa95b21dafbf4777d69544a1fc317152c2ec8997be39f9",
+      "bytes": 11295
+    },
+    "evidence/integration/quality-report-completion-final-processes-20261018.json": {
+      "sha256": "0c5393f8a78bcb9cfbbbc036cbc6a5af6282a9e56c837b7ed4cbd238e4c3177e",
+      "bytes": 10585
+    },
+    "evidence/integration/quality-report-completion-independent-20261018.json": {
+      "sha256": "5bbed37653b183dc1f8717b7a6805ca572b0cb7b20c119e8836e5f3f2f4df79e",
+      "bytes": 5350
+    },
+    "evidence/integration/quality-report-completion-independent-20261018.log": {
+      "sha256": "a8aaf8fd29f013dcd93ffc865e194f7172a638fbc57c3c0808b86f61afb386e9",
+      "bytes": 1339
+    },
+    "evidence/integration/quality-report-completion-independent-20261018.py": {
+      "sha256": "b0151131b2e16b8780f883299df07e8475aa60773c09b0ff072030a37178de53",
+      "bytes": 20659
+    },
+    "evidence/integration/quality-report-completion-independent-initial-20261018.json": {
+      "sha256": "f2e59873145c878cccb6910fa1765b8fceff1e0dd7947b32da35d026b1be8d5a",
+      "bytes": 4585
+    },
+    "evidence/integration/quality-report-completion-independent-initial-20261018.log": {
+      "sha256": "6195898c69228e4a3cd7e6fa6fa9af54a38e06727430c9728d744fc551188b07",
+      "bytes": 1148
+    },
+    "evidence/integration/quality-report-completion-independent-initial-20261018.py": {
+      "sha256": "5fa114b343dde7f27d2fa92b78f132c026def1d697d7cbdf639d32bbe1952364",
+      "bytes": 18288
+    },
+    "evidence/integration/quality-report-completion-integrity-20261018.py": {
+      "sha256": "1af06e31e740e5995fc4abd1be2288a28f9f396e8b6c5e6896837db6eac226da",
+      "bytes": 2825
+    },
+    "evidence/integration/quality-report-completion-live-integrity-final-20261018.json": {
+      "sha256": "78887277ba63266c6c4e50d5a59bdec57fee2a813861fde302c0f04634ea8347",
+      "bytes": 667
+    },
+    "evidence/integration/quality-report-completion-live-processes-20261018.json": {
+      "sha256": "ca4c455bf16fa35e535327fedec1be8e2decfdc81b70ac7e55c067adc0f31bf0",
+      "bytes": 10581
+    },
+    "evidence/integration/quality-report-completion-operating-inventory-20261018.json": {
+      "sha256": "147e392b7379b6971a6fcce2808a5c656f62927704710d9b74cf5600912c2ad9",
+      "bytes": 352
+    },
+    "evidence/integration/quality-report-completion-preflight-20261018.json": {
+      "sha256": "40d7963ccb3d6835aa460c297a93a95ba7099b9e4369a5261112ff443ee4ac74",
+      "bytes": 635672
+    },
+    "evidence/integration/quality-report-completion-root-related-20261018.log": {
+      "sha256": "99d64f1754d1026bde4e4a6f48df22b0a89336ebeecee5a675e22a8a204c11c1",
+      "bytes": 9195
+    },
+    "evidence/integration/quality-report-completion-root-related-final2-20261018.log": {
+      "sha256": "0a16891db57236ab8c5d26ca6507164515465645e2ea77668a7468fc85a4f005",
+      "bytes": 9389
+    },
     "evidence/integration/raster-grid-agent-20261018-focused-final.log": {
       "sha256": "1734629aa29eecf46667eda0b19ac942a3e282c7e40ab63e027547016e21fae8",
       "bytes": 2840
@@ -12616,6 +13017,10 @@
       "sha256": "1bfa06a5a21346af4c8d30390c6deaaf4690138eced2e6e99eccf46c5c70ffa6",
       "bytes": 10360
     },
+    "tests/test_quality_report_completion.py": {
+      "sha256": "86f3f04a7778bd688ccb922e9dc59108dee6340d9ffbce0fa97b1894b51be07d",
+      "bytes": 11148
+    },
     "tests/test_readiness_connectivity_adapter.py": {
       "sha256": "7d1958c004dabaaf427495e90d2c431952c3caa399712285a2778c4e374efa91",
       "bytes": 19959
@@ -12794,11 +13199,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T05:53:44.915910+09:00",
-    "understanding_markdown": 105,
+    "checked_at": "2026-10-18T06:03:43.532199+09:00",
+    "understanding_markdown": 106,
     "implementation_markdown": 1,
-    "local_links": 471,
-    "metadata_evidence_references": 12165,
+    "local_links": 480,
+    "metadata_evidence_references": 12347,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true

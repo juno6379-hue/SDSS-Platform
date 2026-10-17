@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "scope": "INDEPENDENT_EXPLICIT_QUALITY_REPORT_COMPLETION_TEMP_ONLY",
+  "status": "TESTED_SYNTHETIC",
+  "tests": 7,
+  "passed": 7,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 0.909637599994312,
+  "test_names": [
+    "test_01_frozen_sha_no_store_or_schema_io_imports",
+    "test_02_exact_full_caller_metadata_and_detached_bytes",
+    "test_03_metadata_invalid_before_producer_noio",
+    "test_04_untrusted_parent_typed_flags_refs_bytes_and_partial_failures",
+    "test_05_producer_argument_mutation_cannot_change_verification_snapshot",
+    "test_06_actual_temp_complete_manifest_schema_sqlite_consumption",
+    "test_07_preparation_is_not_access_quality_or_mask_conversion"
+  ],
+  "source_sha256": "0ef9c2930df1224eeb1f130b80b0dd15d799776d734cf713805abb08e05240e9",
+  "test_sha256": "21714a53670a15672fba44b0f4bfddaae8bbb503509c6bf86a9cbc2e62f4eb96",
+  "git_baseline": "200d22c3c7f146f795c26442eec1bd971733770d",
+  "separate_git_baseline_matches": {
+    "backend/app/data/quality_mask_bundle.py": true,
+    "tests/test_quality_mask_bundle.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/ml/per_scene_normalization_files.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_quality_mask_grid.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "scripts/collect_samples.py": true,
+    "scripts/collect_training_grid.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "old_sources_unchanged": {
+    "backend/app/data/quality_mask_bundle.py": true,
+    "tests/test_quality_mask_bundle.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/ml/per_scene_normalization_files.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_quality_mask_grid.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "scripts/collect_samples.py": true,
+    "scripts/collect_training_grid.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "observations": [
+    {
+      "actual": "fresh Temp GTiff image6/mask1 +complete caller-metadata report +SQLite3versions",
+      "fixture_registry_setup_writes": 3,
+      "readonly_consumer_gets": 6,
+      "counts": {
+        "valid_pixels": 128,
+        "invalid_pixels": 128,
+        "total_pixels": 256
+      },
+      "source_quality": "RAW",
+      "report_quality": "STAGED",
+      "files_and_db_unchanged": true,
+      "approval": false
+    },
+    {
+      "counterexample": "restricted_image_public_report",
+      "completion_prepared": true,
+      "consumer": "BLOCKED",
+      "code": "ACCESS_DECLARATION_BLOCKED",
+      "image_access_preserved": "RESTRICTED",
+      "explicit_report_access_preserved": "PUBLIC",
+      "files_and_db_unchanged": true,
+      "approval": false
+    },
+    {
+      "counterexample": "nodata0",
+      "completion_prepared": true,
+      "consumer": "BLOCKED",
+      "code": "MASK_INTRINSIC_VALIDITY_UNSUPPORTED",
+      "image_access_preserved": "PUBLIC",
+      "explicit_report_access_preserved": "PUBLIC",
+      "files_and_db_unchanged": true,
+      "approval": false
+    },
+    {
+      "counterexample": "value255",
+      "completion_prepared": true,
+      "consumer": "BLOCKED",
+      "code": "MASK_VALUES_NOT_BINARY",
+      "image_access_preserved": "PUBLIC",
+      "explicit_report_access_preserved": "PUBLIC",
+      "files_and_db_unchanged": true,
+      "approval": false
+    }
+  ],
+  "actual_scope": "fresh Temp files, complete manifest96schema, actual SQLite version setup then readonlySQL131/133 consumption",
+  "mock_scope": "I/O/write denial guards, producer call counter and explicitly malformed/argument-mutating138 parent only; no mocked successful131/133 responses",
+  "operating_data_access": false,
+  "operating_writes": 0,
+  "training": 0,
+  "inference": 0,
+  "api_ui_changed": false,
+  "frontend_build_browser_required": false,
+  "limitations": [
+    "Pure completion preserves caller statements; no report/image QA equality or cross-access authority policy is verified.",
+    "Synthetic registration occurs only during explicit Temp fixture setup, not in product completion.",
+    "128/256 is observed binary count, not scientific or institutional approval.",
+    "Legacy nodata0 and label/AOI-derived masks, actual production/registration/approval remain separate."
+  ]
+}

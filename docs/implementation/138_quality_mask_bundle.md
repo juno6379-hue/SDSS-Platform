@@ -69,3 +69,7 @@ nodata0·value255·RESTRICTED의 세 반례는 준비에는 성공하지만 실�
 ## 별도 상태 문서 검토
 
 별도 갱신된 docs16/20은05:52 관측 시각과 정체 기간만 바뀌었음을 quality-mask-bundle-separate-status-docs-20261018.json으로 검산했다. 누계·manifest/원장 SHA는 그대로이며138의 수집 재개 성과로 표현하지 않는다.
+
+## 후속139 명시 메타데이터 결합
+
+[139 결합 계약](139_quality_report_completion.md)은 호출자가 제공하는 누락5필드로 report manifest 초안을 완성한다.138의 입력/bytes/patch와 기존 소비 코드는 그대로다. 등록·실파일 저장·UI 연결·QA/ACL 승인으로 확대하지 않는다.

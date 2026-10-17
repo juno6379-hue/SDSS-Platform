@@ -1,5 +1,23 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 호출자 명시 메타데이터로 품질 보고서 manifest 초안 완성 (139)
+
+구현 담당은 신규 quality_report_completion.py·집중시험·문서139를,독립 담당은 별도 실제 Temp 소비 호환과 오염된138 출력 경계를 맡았다. Root는 관련 회귀·운영 조회·보존·공통 문서·Git을,이해 담당은 완료 소스·시험으로 해설·발표 대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시 이전 작업자는 완료 상태였고 실제 운영 수집·학습 프로세스는 없었다. API/Ollama 및 보고 예약 ACTIVE/10분은 실제 실행과 구분한다.
+
+complete_quality_report(image_manifest,mask_manifest,report_identity,report_metadata)는4개 명시 입력의 제한된 builtin JSON 사본을 먼저 고정한다. source/spatial/temporal/quality_status/access_class exact5 metadata는 호출자만 제공하며 이미지의 기관·공간·시간 값을 자동 복사하거나 기본값으로 채우지 않는다. 유효 경로에서138을 독립 인자 사본으로1회 호출한 뒤 신뢰 기준 사본에서 재구성한 exact22 전체와 type·bytes/SHA·ref·patch/lineage·기존 보고서 경로·원선언을 대조한다. 변조·부분 실패·예외는 원문 없이 고정 오류와 null payload로 닫는다.
+
+7필드 patch와5필드 metadata를 겹침 없이 결합해12키 report_manifest_draft를 반환한다. 성공은 UNREGISTERED_REPORT_MANIFEST_PREPARED이며 최종 exact21 응답과10개 false flags를 유지한다.138 보고서 bytes/SHA의 내용을 바꾸지 않으며 mutable parent를 검산한 뒤 다시 읽지 않고 고정 기준 사본의 bytes를 반환한다. RAW/STAGED와 접근 enum의 명시 값을 보존하지만 보고서 stage와 image stage의 동일성이나 접근 등급 순위 정책은 발명하지 않는다. 이 선언 결합은 기관 QA·ACL·공개 권한·자료의 과학 정확도·실파일·등록·실행 승인이 아니다.
+
+집중9 PASS/1.234초,관련48 PASS/12.067초,독립8 PASS/0 SKIP/2.0615961초다. 중복 묶음은 합산하지 않는다. 실제 Temp GTiff/report/SQLite setup과96schema·131/133 읽기 소비를 분리하고,입출력 불변·잘못된 metadata·오염된138 부모·접근 선언과 실제 소비 차단을 검증했다. 준비 함수 자체의 파일/Store/네트워크/Torch/GDAL/cold schema I/O는0이며 시험 caller가 작성·등록한 임시 자료를 운영 성과로 표현하지 않는다.
+
+보호141개·기존 소스316개·이전 증거1291개·catalog14행 SHA·dataset_versions0·예약136314880바이트를 보존했다. 원본·원장·lock·분할·운영 모델·예약을 바꾸지 않았다. 기존138 이하/main/API/137UI·실행 gate 변경0이다. 이 내부 함수는 아직 writer/HTTP/UI에 연결하지 않았으므로 이번 frontend/build/browser 및 전체backend 재실행은 없고,137 전체1358 PASS/1SKIP·front271은 이전 이력이다. 신규 함수와 기존 생산/소비/Registry의 관련·독립 검증을 이번 근거로 사용한다.
+
+설계·내부 입력/출력 계약·사용법·시험·인계와 이해자료14개를 같은 단위로 갱신한다. 전체 개발은 미완료다. 다음140 후보는 caller가 명시한 새 경로에만 report bytes/draft를 저장하는 선존재 거부 writer이며 실제 Registry/운영 연결은 별도다. 기존 collector nodata0·label/AOI 결합·밴드 description·독립 라벨·품질/모델 승인·다른5개 실행기·GeoLLM/RAG/PostGIS·staging/RBAC/UAT는 여전히 후속이다. 내부 manifest 초안 완성을 전체 데이터 확보나 실행 준비로 확대하지 않는다.
+
+초기 집중8 PASS/0.705초·관련47 PASS/13.756초·독립7 PASS/0.9096376초는 보강 전 근거로 보존했다. Root가 검산 후 parent report_bytes 재조회 경계를 찾아 신규139 한 항목을 고정 사본 반환으로 보강했고 검산 직후 가변 parent를 바꾸는 회귀를 추가했다. 기존138 이하는 바꾸지 않았으며 초기·최종 묶음을 합산하지 않는다.
+
+근거: docs/implementation/139_quality_report_completion.md 및 evidence/integration/quality-report-completion-agent-final-20261018.log, quality-report-completion-root-related-final2-20261018.log, quality-report-completion-independent-20261018.json, quality-report-completion-live-integrity-final-20261018.json, 최종 quality-report-completion-closeout-20261018.json.
+
 ## 2026-10-18 — 품질 보고서 바이트와 미등록 참조 초안의 순수 준비 함수 (138)
 
 구현 담당은 새 backend/app/data/quality_mask_bundle.py·집중시험·문서138을, 독립 담당은 실제 임시 파일/Registry와131·133 소비 호환 및 경계 검증을 맡았다. Root는 관련 회귀·운영 조회·보존·문서/증거·Git을, 이해 담당은 완료된 구현과 시험을 읽어 해설·발표 대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시 이전 작업자는 완료 상태였고 API/Ollama 외 운영 수집·학습 프로세스는 관측되지 않았다. 보고 예약 ACTIVE/10분은 실제 실행과 구분한다.
