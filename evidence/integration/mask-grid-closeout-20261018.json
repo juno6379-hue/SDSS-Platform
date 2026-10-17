@@ -1,0 +1,168 @@
+{
+  "recorded_at": "2026-10-18T04:18:51.510813+09:00",
+  "status": "132_REGISTERED_IMAGE_MASK_HEADERS_AND_GRID_MATCHED_UNVERIFIED",
+  "focused": {
+    "passed": 10,
+    "seconds": 6.446
+  },
+  "related": {
+    "passed": 42,
+    "seconds": 29.023,
+    "composition": "10 new grid +10 quality reader +11 raster grid +11 DatasetVersion"
+  },
+  "initial_related_wrong_module_name": {
+    "tests_run": 32,
+    "passed": 31,
+    "import_errors": 1,
+    "seconds": 26.398,
+    "raw_log_preserved": true,
+    "product_source_change": false
+  },
+  "independent": {
+    "passed": 8,
+    "skipped": 0,
+    "seconds": 3.5748021000035806
+  },
+  "root_actual_temp_file_scenarios": 7,
+  "overlapping_test_bundles_are_not_additive": true,
+  "source_sha256": "d4827f901496607e9bd33e9d4bb9446f19de176592b3a903405fe243e4ee6ec3",
+  "test_sha256": "3f8031206d0e24a26f5d4408bfe0a0c299ed8ed697ce65750957d53cb0d43641",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T04:18:51.510813+09:00",
+    "understanding_markdown": 99,
+    "implementation_markdown": 1,
+    "local_links": 422,
+    "metadata_evidence_references": 11051,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T04:15:42.419862+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 297,
+    "existing_source_changes": [],
+    "previous_evidence_checked": 1153,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T04:11:27.862374+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "live_processes": {
+    "checked_at": "2026-10-18T04:18:03.2013965+09:00",
+    "processes": [
+      {
+        "ProcessId": 27268,
+        "Name": "ollama app.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\""
+      },
+      {
+        "ProcessId": 27860,
+        "Name": "ollama.exe",
+        "CommandLine": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve"
+      },
+      {
+        "ProcessId": 32224,
+        "Name": "python.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000"
+      },
+      {
+        "ProcessId": 26912,
+        "Name": "python.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001"
+      },
+      {
+        "ProcessId": 35032,
+        "Name": "python.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend"
+      },
+      {
+        "ProcessId": 32916,
+        "Name": "python.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\""
+      }
+    ],
+    "collector_training_processes_observed": 0,
+    "observation_limit": "Process command patterns; no claim of universal scheduler state",
+    "automation_status": "ACTIVE",
+    "automation_interval_minutes": 10,
+    "automation_was_not_modified": true
+  },
+  "exact20_output_and_ten_unverified_flags_always_false": true,
+  "parent131_observation_preserved_and_header_flag_scope_unchanged": true,
+  "store_get_calls_valid_path": 3,
+  "image_file_snapshots_valid_path": 2,
+  "mask_file_snapshots_valid_path": 2,
+  "header_requires_full_parent131_success": true,
+  "second_fixed_sha_snapshot_precedes_each_header": true,
+  "image_explicit_six_bands_and_actual_descriptions_required": true,
+  "mask_single_band_uint8_required": true,
+  "width_height_wkt_affine_bounds_exact_match_required": true,
+  "pixel_or_read_masks_calls_by_reader": 0,
+  "model_or_torch_load_by_reader": 0,
+  "quality_report_verified": false,
+  "quality_mask_verified": false,
+  "pixel_values_verified": false,
+  "mask_semantics_verified": false,
+  "registry_aoi_verified": false,
+  "source_authority_verified": false,
+  "scientific_accuracy_validated": false,
+  "execution_authorized": false,
+  "state_dict_verified": false,
+  "workflow_supported": false,
+  "image_byte_limit": 67108864,
+  "report_byte_limit": 2097152,
+  "mask_byte_limit": 16777216,
+  "mask_value255_not_interpreted_or_approved": true,
+  "image_dtype_nodata_numeric_model_compatibility_unverified": true,
+  "parent130_batch_runtime_api_ui_connected": false,
+  "store_database_json_predecode_not_bounded_by_postdecode_tree_limit": true,
+  "gdal_parser_cpu_rss_time_and_all_external_io_not_os_isolated": true,
+  "sequential_registry_and_file_snapshots_are_not_atomic": true,
+  "frontend_build_browser_rerun_this_unit": false,
+  "backend_full_rerun_this_unit": false,
+  "reason_no_full_rerun": "All297 previous source files unchanged. New unconnected header/grid diagnostic covered by focused, related and independent real Temp files; no external API/UI contract change.",
+  "previous_backend_regression": {
+    "unit": "120/121",
+    "tests_run": 1184,
+    "passed": 1183,
+    "skipped": 1,
+    "seconds": 399.529
+  },
+  "previous_frontend_regression": {
+    "unit": "120/121",
+    "passed": 261,
+    "build_modules": 108,
+    "build_seconds": 21.85
+  },
+  "publish_pattern_false_positive_corrected": {
+    "cause": "Unbounded sk- regex matched substring of mask-grid evidence filenames",
+    "correction": "Require token-start boundary; no allowlisting or findings bypass",
+    "local_publish_guard_only": true
+  },
+  "understanding_updated": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "operating_model_or_raster_load": 0,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_internal_candidate": "133_EXPLICIT_MASK_VALUE_SEMANTICS_AND_BOUNDED_DIAGNOSTIC_NOT_QA_APPROVAL",
+  "snapshot_files": 1704
+}

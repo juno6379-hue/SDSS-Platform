@@ -1,5 +1,23 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 영상·품질 마스크의 실제 헤더와 격자 정합 진단 (132)
+
+구현 담당은 신규 `backend/app/ml/registered_quality_mask_grid.py`와 집중시험·계약 문서132를, 독립 담당은 별도 실제 임시 GeoTIFF 검증을 맡았다. Root는 관련 회귀·실파일 대조·운영 조회·보존·공통 문서·Git을 담당했다. 이해 담당은 완료된 코드와 시험에 맞춰 설명·발표 대본·FAQ·INDEX·변경 이력을 갱신한다. 시작 시 이전 작업자는 완료 상태였고 실제 수집·학습 프로세스는 관측되지 않았다. 예약 ACTIVE/10분은 실제 수집·학습 실행과 구분한다.
+
+`inspect_registered_quality_mask_grid(store, image_ref, quality_report_ref, mask_ref)`는 입력을 고정 사본으로 만들고 131의 세 등록 참조·보고서 연결·파일 SHA 검사를 먼저 통과해야 한다. 같은 실제 get의 canonical image/mask manifest를 캡처하며 추가 Store.get은 없다. 이후 영상64MiB·마스크16MiB 한도 안에서 각각 파일을 다시 복사하고 고정 SHA를 재검사한다. 정상 경로는 get 3회, 영상과 마스크 각 두 번의 파일 관측이다. 순차 재관측이 원자 snapshot을 보장하지는 않는다.
+
+영상에는 명시된 B02/B03/B04/B08/B11/B12 선언과 실제 6밴드 description이 필요하다. 기존129의 GTiff·투영 미터 CRS·북향 affine·유한 bounds·가로세로 최대1024 검사를 재사용한다. 마스크는 GTiff·1밴드 uint8 및 같은 투영·북향·크기 제한을 검사하고 영상과 width/height/WKT/affine/bounds를 정확히 대조한다. 누락된 밴드를 추정하지 않으며 VRT/불투명 파일은 TIFF magic에서 차단한다. 픽셀·read_masks·학습·추론·모델 load는 수행하지 않는다.
+
+exact20 출력의 상위 image_mask_headers_verified·image_mask_grid_verified·artifact_bytes_verified는 모든 단계가 성공할 때만 true다. 실패해도 이미 파싱한 일부 헤더와 nested131의 성공 이력은 남을 수 있다. nested131의 raster_header_verified=false는 그 함수의 바이트 검사 범위를 그대로 나타내며 상위 헤더 관측과 혼동하지 않는다. 품질 보고서·품질 마스크·픽셀값·마스크 의미·실제 AOI·기관 권위·과학 정확도·실행·state_dict·Workflow의10개 flag는 항상 false다. uint8 값255도 이번 reader는 해석하지 않는다. 헤더와 격자의 일치는 QA·모델 호환성·유효영역·이진 마스크 의미·운영 승인이 아니다.
+
+집중10 PASS/6.446초, 독립8 PASS/0 SKIP/3.574802초이며 중복 묶음을 합산하지 않는다. Root 실제 임시 파일7시나리오는 정상·위치·CRS·폭·밴드 수·dtype·불투명 마스크를 대조했고 모두 예상 결과였다. 각 시나리오의 원131 바이트 성공과 상위 실패의 구분, 파일·DB 불변, 픽셀 읽기 금지를 확인했다. Root 관련 회귀의 최초 실행은 잘못 지정한 test_dataset_registry 모듈명 때문에31개 통과와 가져오기 오류1건을 기록했다. 제품 소스 수정 없이 정확한 test_dataset_registry_versions로 재실행하며 원로그를 보존한다. 최종 관련 회귀42 PASS/29.023초(신규10+131의10+129의11+DatasetVersion11), exit0으로 확인했다.
+
+보호141개·기존 소스297개·이전 증거1153개·catalog14행 canonical SHA·예약136314880바이트를 보존했다.04:11 KST URI mode=ro 운영 조회에서 dataset_versions는0이다. 운영 모델·원본 래스터·원장·lock·분할·예약은 그대로이며 운영 수집·등록·훈련·추론·배포·Workflow dispatch는0이다. 내부 미연결 reader이므로 API/UI 계약 변경과 화면 적용은 없고 frontend/build/browser·전체 backend를 재실행하지 않았다. 관련 회귀와 독립 실파일 검증을 수행하며120/121의 전체 시험은 이전 이력으로 유지한다.
+
+GDAL parser의 CPU/RSS/시간 hardcap, 모든 외부 I/O의 OS 격리, Store 원문 JSON predecode 제한, 다중 파일 원자성은 확보하지 않았다. PUBLIC은 선언 조건이고 실제 ACL 인증이 아니다. 관련 계약·사용법·시험 근거·인계와 이해자료를 같은 단위로 갱신한다. 다음133은 마스크 값·의미의 명시 계약과 제한된 읽기 진단 후보이며 품질 승인 정책과 구분한다. 130 연차 배치 연결·115 per_scene 실행·독립 라벨·모델 승인·다른5개 실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/기관 UAT는 미완료다. 단일 내부 진단을 전체 개발 완료로 보거나10분 보고 예약을 중단하지 않는다.
+
+근거: `docs/implementation/132_registered_quality_mask_grid.md`, `evidence/integration/mask-grid-agent-20261018-focused.log`, `mask-grid-root-related-20261018.log`, `mask-grid-root-related-final-20261018.log`, `mask-grid-independent-20261018.json`, `mask-grid-runtime-20261018.json`, `mask-grid-live-integrity-20261018.json`, `mask-grid-operating-inventory-20261018.json`, 최종 `mask-grid-closeout-20261018.json`.
+
 ## 2026-10-18 — 품질 보고서·명시적 마스크의 등록 참조와 파일 바이트 연결 (131)
 
 구현 담당은 신규 `backend/app/ml/registered_quality_mask_files.py`, 집중시험, 문서131을 맡았다. 독립 담당은 고정 참조·JSON·SHA·크기·무쓰기 경계를 검증했다. Root는 실제 임시 파일 대조, 관련 회귀, 운영 조회, 보존, 공통 문서와 Git을 맡았고, 이해 담당은 완료된 구현과 시험을 읽어 설명·발표·FAQ·INDEX·변경 이력을 갱신했다. 시작 시 이전 작업자는 모두 완료 상태였으며 수집·학습 프로세스는 관측되지 않았다. 보고 예약 ACTIVE/10분과 API·Ollama 실행을 실제 수집·학습 실행과 구분한다.

@@ -69,3 +69,7 @@ Root 관련 **48 PASS / 11.419초 / exit 0**는 `evidence/integration/quality-ma
 `evidence/integration/quality-mask-runtime-20261018.py`와 같은 stem `.json`·`.log`는 실제 Temp 영상/마스크 GeoTIFF 및 세 등록 버전의 **7개 시나리오 통과**를 기록한다. 정상 결합, opaque mask의 SHA 성공과 QA false, 보고서/영상/마스크 바이트 변조, legacy envelope, 명시 보고서 경로 부재를 확인했다. reader는 get 3회만 사용하고 쓰기·모델 접근·Torch/Rasterio import 시도 없이 동작했으며 전체 Temp 파일과 DB를 보존했다. 실제 GeoTIFF fixture를 사용했더라도 이 reader 자체가 헤더나 픽셀을 검사한 것은 아니다.
 
 `evidence/integration/quality-mask-live-integrity-20261018.json`은 보호 141개·기존 source 295개·이전 증거 1138개·catalog 14행 SHA와 예약 136314880바이트 불변을 기록한다. source/tests 최종 동결 SHA를 유지했고 기존 제품 소스는 수정하지 않았다. 내부 미연결 reader의 집중·관련·독립·실파일 대조 범위로 마감하며 이전 전체 backend/frontend 결과를 이번 재실행으로 표현하지 않는다. 130 배치 연결과 실제 mask header/grid/값·QA 정책·기관·과학·실행 승인은 별도 후속이다. 최종 근거를 반영한 뒤 문서를 동결했다.
+
+## 후속132
+
+실제 영상·마스크 헤더와 격자 정합 진단은 `132_registered_quality_mask_grid.md` 및 신규 `registered_quality_mask_grid.py`에서 수행한다. 131의 바이트 관측을 변경하지 않고 성공 후 재고정 SHA와 헤더를 검사한다. 마스크 픽셀값·의미·QA 승인은 여전히 미검증이다.

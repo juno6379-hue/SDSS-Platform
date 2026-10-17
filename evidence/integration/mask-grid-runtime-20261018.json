@@ -1,0 +1,96 @@
+{
+  "scope": "TESTED_SYNTHETIC_ACTUAL_TEMP_IMAGE_MASK_HEADER_GRID_THREE_REGISTERED_REFERENCES",
+  "checks_passed": [
+    {
+      "case": "valid",
+      "status": "REGISTERED_QUALITY_MASK_GRID_MATCHED_UNVERIFIED",
+      "issue": null,
+      "store_gets": 3,
+      "parent131_all_file_bytes_verified": true,
+      "image_header_observed": true,
+      "mask_header_observed": true
+    },
+    {
+      "case": "shift",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "IMAGE_MASK_GRID_MISMATCH",
+        "field": "grid"
+      },
+      "store_gets": 3,
+      "parent131_all_file_bytes_verified": true,
+      "image_header_observed": true,
+      "mask_header_observed": true
+    },
+    {
+      "case": "mask_crs",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "IMAGE_MASK_GRID_MISMATCH",
+        "field": "grid"
+      },
+      "store_gets": 3,
+      "parent131_all_file_bytes_verified": true,
+      "image_header_observed": true,
+      "mask_header_observed": true
+    },
+    {
+      "case": "mask_width",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "IMAGE_MASK_GRID_MISMATCH",
+        "field": "grid"
+      },
+      "store_gets": 3,
+      "parent131_all_file_bytes_verified": true,
+      "image_header_observed": true,
+      "mask_header_observed": true
+    },
+    {
+      "case": "mask_two_bands",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "MASK_HEADER_INVALID",
+        "field": "shape_dtype"
+      },
+      "store_gets": 3,
+      "parent131_all_file_bytes_verified": true,
+      "image_header_observed": true,
+      "mask_header_observed": false
+    },
+    {
+      "case": "mask_uint16",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "MASK_HEADER_INVALID",
+        "field": "shape_dtype"
+      },
+      "store_gets": 3,
+      "parent131_all_file_bytes_verified": true,
+      "image_header_observed": true,
+      "mask_header_observed": false
+    },
+    {
+      "case": "opaque_mask",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "MASK_FORMAT_UNSUPPORTED",
+        "field": "mask"
+      },
+      "store_gets": 3,
+      "parent131_all_file_bytes_verified": true,
+      "image_header_observed": true,
+      "mask_header_observed": false
+    }
+  ],
+  "reader_requested_torch_import": false,
+  "all_fixture_files_and_database_bytes_unchanged_during_reader": true,
+  "matching_file_bytes_are_not_header_grid_mask_semantics_or_quality_approval": true,
+  "operating_model_loaded": false,
+  "temporary_model_loaded": false,
+  "operating_registry_contact": false,
+  "training_inference_executed": false,
+  "quality_report_verified": false,
+  "quality_mask_verified": false,
+  "scientific_accuracy_validated": false
+}
