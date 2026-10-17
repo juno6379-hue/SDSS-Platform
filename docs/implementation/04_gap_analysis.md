@@ -20,3 +20,7 @@
 ### 2026-10-18 후속: 실제 등록·ML 오류분석·GeoLLM 기술검토
 
 [111](111_data_pipeline_completion.md)은 수집 source report를 RAW/STAGED 문서로 공통 버전에 연결한 명시 CLI이며 운영등록/AI-ready 승인이 아니다. [112](112_lcluc_ml_completion.md)는 기존 TinyUNet RGB 체크포인트를 확인하고 완료best 모델의 val/test 오류분석을 실제 학습 report에 연결했다. class7·QA차단과 독립 검증 라벨 미확보를 해제하지 않는다. [113](113_lcluc_integration_acceptance.md)의 LCLUC전용 새 orchestration은 후속PLANNED다. [114](114_geollm_technical_review.md)는 현재 앱에 LLM/RAG 미연결임을 확인하고 설치된 Ollama 모델의 별도 실응답·실패·임베딩과 Qwen3:8b 후보/N/A를 구분한다. 기존 정상 GeoLLM API/UI·운영 DB/원장은 변경하지 않았다. 최신 전체 시험·보존·이해자료·다음 수락 조건은 인계서의111~114 절을 따른다. 이 변경만으로 Data/ML/운영·기관UAT 전체 완료를 선언하지 않는다.
+
+## 115 후속 상태 — 로컬 CLI 실행 연결 완료, API/UI는 후속
+
+[115 구현·검증](115_lcluc_workflow_executor.md)에서 고정 Registry·배포/독립평가 metadata·실파일 검사를 거친 LCLUC 로컬 실행 코어와 명시 CLI를 추가했다. 생성 영상·시험용 승인 metadata의 TempStore에서 실제 TinyUNet CPU 시계열·변화·전환행렬·보고서·7개 artifact SHA를 검증했고 운영 실행은0이다. 기존 아래 '미착수/PLANNED'는113/114 조사 당시의 이력이며 최신 내부 코어 상태는115를 따른다. global-only boundedtile 코어가 완료됐지만6밴드 per_scene 보정/구름mask·API/UI·GMAIS Result·generic DAG·실제독립평가/배포 인수는 미완료다. 현재 운영 Draft/QA차단/기관권한을 우회하거나 Ollama/RAG를 앱에 연결한 변경은 아니다. 전체 시험·보존·이해자료와116 후보는 최신 인계서를 따른다.

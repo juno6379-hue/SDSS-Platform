@@ -82,3 +82,5 @@ API 컨테이너만 실행하며 기본 데이터는 호스트 `data`에 보존�
 - [수집 결과→공통 DatasetVersion 등록](docs/implementation/111_data_pipeline_completion.md)
 - [실제 TinyUNet 아키텍처·최종 오류분석](docs/implementation/112_lcluc_ml_completion.md)
 - [LCLUC 통합·staging·보안·UAT 수락 조건](docs/implementation/113_lcluc_integration_acceptance.md)
+
+- [LCLUC 로컬 실행 코어·명시 CLI](docs/implementation/115_lcluc_workflow_executor.md): 고정 입력·단일 claim·실제 시계열 추론을 격리 시험했습니다. API/UI와6밴드 제품별 보정은 후속이며 운영 승인 완료가 아닙니다.

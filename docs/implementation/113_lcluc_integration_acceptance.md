@@ -1,5 +1,9 @@
 # 113. LCLUC 우선 통합 수락 조건과 Ollama 연결 현황
 
+## 115 후속 상태 — 로컬 CLI 실행 연결 완료, API/UI는 후속
+
+[115 구현·검증](115_lcluc_workflow_executor.md)에서 고정 Registry·배포/독립평가 metadata·실파일 검사를 거친 LCLUC 로컬 실행 코어와 명시 CLI를 추가했다. 생성 영상·시험용 승인 metadata의 TempStore에서 실제 TinyUNet CPU 시계열·변화·전환행렬·보고서·7개 artifact SHA를 검증했고 운영 실행은0이다. 기존 아래 '미착수/PLANNED'는113/114 조사 당시의 이력이며 최신 내부 코어 상태는115를 따른다. global-only boundedtile 코어가 완료됐지만6밴드 per_scene 보정/구름mask·API/UI·GMAIS Result·generic DAG·실제독립평가/배포 인수는 미완료다. 현재 운영 Draft/QA차단/기관권한을 우회하거나 Ollama/RAG를 앱에 연결한 변경은 아니다. 전체 시험·보존·이해자료와116 후보는 최신 인계서를 따른다.
+
 상태: **읽기 전용 조사 / 내부 실행 연결 PLANNED / 운영·과학 승인 BLOCKED**. 2026-10-18 현재 소스·로컬 프로세스·리스너를 읽었다. 이 조사에서 소스·설정·원본·DB를 수정하거나 endpoint를 호출하지 않았다. Ollama 설치·모델 pull·생성 요청·클러스터 접근·배포·새 QA/학습은 실행하지 않았다. LCLUC 실행 연결은 후속 PLANNED이며 아직 착수하지 않았다. 사용자 우선순위에 따라 GeoLLM 기술 검토를 먼저 수행한다. 이후 완료 여부는 해당 코드·시험·실제 근거로 갱신한다.
 
 ## 핵심 판정

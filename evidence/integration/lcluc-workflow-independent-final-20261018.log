@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\evidence\integration\lcluc-workflow-independent-20261018.py", line 12, in <module>
+    from test_lcluc_workflow import LclucWorkflowTests as Base
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_lcluc_workflow.py", line 20, in <module>
+    from backend.app import lcluc_workflow as workflow
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\lcluc_workflow.py", line 7, in <module>
+    from .dataset_registry import resolve_version, version_key
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\dataset_registry.py", line 8, in <module>
+    from jsonschema import Draft202012Validator, FormatChecker
+ModuleNotFoundError: No module named 'jsonschema'

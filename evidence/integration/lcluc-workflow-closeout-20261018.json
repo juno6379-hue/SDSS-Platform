@@ -1,0 +1,51 @@
+{
+  "recorded_at": "2026-10-18T00:57:32.506940+09:00",
+  "status": "LOCAL_LCLUC_CORE_AND_EXPLICIT_CLI_COMPLETED_NOT_OPERATING_ACCEPTANCE",
+  "scope": "GLOBAL_NORMALIZATION_TINY_UNET_BOUNDED_TILE",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T00:57:32.506940+09:00",
+    "understanding_markdown": 84,
+    "implementation_markdown": 1,
+    "local_links": 347,
+    "metadata_evidence_references": 8351,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "current_regression": {
+    "tests_run": 1153,
+    "passed": 1152,
+    "skipped": 1,
+    "seconds": 331.642,
+    "exit_code": 0,
+    "log": "evidence/integration/lcluc-workflow-full-tests-20261018.log"
+  },
+  "independent": {
+    "tests": 24,
+    "passed": 24,
+    "seconds": 12.821,
+    "exit_code": 0,
+    "composition": "17 new implementation tests + 7 independently authored boundary tests",
+    "log": "evidence/integration/lcluc-workflow-independent-final2-20261018.log"
+  },
+  "related": {
+    "tests": 26,
+    "passed": 26,
+    "seconds": 21.46,
+    "exit_code": 0,
+    "scope": "Dataset Registry + model declaration provenance + 3 existing ML normalization/year/evaluation tests; no training",
+    "log": "evidence/integration/lcluc-workflow-independent-related-20261018.log"
+  },
+  "protected_files_checked": 141,
+  "catalog_rows": 14,
+  "existing_source_changes": [],
+  "understanding_updated": true,
+  "operating_collection_training_jobs_registry_deployment": 0,
+  "API_UI_connected": false,
+  "six_band_per_scene_normalization_supported": false,
+  "scientific_accuracy_validated": false,
+  "standard_gmais_result": false,
+  "front_build_browser_rerun": false,
+  "next_unit": "116_API_UI_BINDING_AND_PINNED_PER_SCENE_INPUT_CONTRACT_REVIEW",
+  "snapshot_files": 1346
+}

@@ -1,5 +1,9 @@
 # 114. GeoLLM 실행 환경·RAG·도구 연계 기술 검토
 
+## 115 후속 상태 — 로컬 CLI 실행 연결 완료, API/UI는 후속
+
+[115 구현·검증](115_lcluc_workflow_executor.md)에서 고정 Registry·배포/독립평가 metadata·실파일 검사를 거친 LCLUC 로컬 실행 코어와 명시 CLI를 추가했다. 생성 영상·시험용 승인 metadata의 TempStore에서 실제 TinyUNet CPU 시계열·변화·전환행렬·보고서·7개 artifact SHA를 검증했고 운영 실행은0이다. 기존 아래 '미착수/PLANNED'는113/114 조사 당시의 이력이며 최신 내부 코어 상태는115를 따른다. global-only boundedtile 코어가 완료됐지만6밴드 per_scene 보정/구름mask·API/UI·GMAIS Result·generic DAG·실제독립평가/배포 인수는 미완료다. 현재 운영 Draft/QA차단/기관권한을 우회하거나 Ollama/RAG를 앱에 연결한 변경은 아니다. 전체 시험·보존·이해자료와116 후보는 최신 인계서를 따른다.
+
 상태: **읽기 감사·별도 로컬 실응답 VERIFIED_REAL / 평가 코드 TESTED_SYNTHETIC / 후보 아키텍처 PLANNED**. 기존 GeoLLM API·UI·데이터·모델·원장을 변경하지 않았다. 이 문서는 실제 앱 연결, 서버 설치/실행, 로컬 smoke, 운영 RAG와 과학 실행을 구분한다. 초기 읽기 담당은 소스·설정·프로세스·설치파일만 조사했고, Root가 별도 수행한 생성/embedding HTTP의 결과·실패·한계와 공식 자료는 아래 최종 측정 절에 기록했다. 모델 pull·DB접속·패키지 설치는 수행하지 않았다.
 
 ## 현재 결론

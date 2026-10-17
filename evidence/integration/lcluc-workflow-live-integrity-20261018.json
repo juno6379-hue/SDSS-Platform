@@ -1,0 +1,70 @@
+{
+  "recorded_at": "2026-10-18T00:53:55.632992",
+  "scope": "ISOLATED_TEMP_STORE_CPU_EXECUTION_AND_LOCAL_PROTECTED_BYTES_NOT_OPERATING_EXECUTION",
+  "protected_files_checked": 141,
+  "protected_changes": [],
+  "existing_source_checked": 252,
+  "existing_source_changes": [],
+  "previous_evidence_checked": 866,
+  "previous_evidence_changes": [],
+  "frozen_new_source_files": {
+    "backend/app/lcluc_workflow.py": {
+      "sha256": "354ceaa5355125c4a8f17addc1782d41ef41843c29e448fcc4d4823edd726f0d",
+      "bytes": 15094
+    },
+    "scripts/run_lcluc_workflow.py": {
+      "sha256": "e4ff22f52c9b29e346867666433e510e4ab0ea9f54c334e3262dc6a7270ca3f7",
+      "bytes": 1400
+    },
+    "tests/test_lcluc_workflow.py": {
+      "sha256": "ef6286e1ae791ff3de47b213be2ea0cf3c39b7a3776e3c7e26d55be164cc9900",
+      "bytes": 19542
+    }
+  },
+  "catalog_rows": 14,
+  "catalog_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "pending": [
+    {
+      "batch": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "files": {
+        "config.json": true,
+        "window-state.json": true,
+        "worker-result.json": false,
+        "annual-window-report.json": false
+      }
+    },
+    {
+      "batch": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "files": {
+        "config.json": true,
+        "window-state.json": true,
+        "worker-result.json": false,
+        "annual-window-report.json": false
+      }
+    }
+  ],
+  "reserved_bytes_preserved": 136314880,
+  "operating_collection_training_registration_jobs_deployment": 0,
+  "API_UI_changes": false,
+  "global_gmais_workflow_plan_unchanged": true,
+  "per_scene_normalization_execution": "UNSUPPORTED_BLOCKED_IN_V1",
+  "current_operating_model": "DRAFT_UNCHANGED_NOT_EXECUTED",
+  "exactly_once_completion": "NOT_CLAIMED_DISPATCH_CLAIM_ONLY",
+  "filesystem_database_atomicity": "NOT_PROVIDED",
+  "independent": {
+    "tests_run": 24,
+    "passed": 24,
+    "skipped": 0,
+    "seconds": 12.821,
+    "exit_code": 0,
+    "log": "evidence/integration/lcluc-workflow-independent-final2-20261018.log"
+  },
+  "full": {
+    "tests_run": 1153,
+    "passed": 1152,
+    "skipped": 1,
+    "seconds": 331.642,
+    "exit_code": 0,
+    "log": "evidence/integration/lcluc-workflow-full-tests-20261018.log"
+  }
+}
