@@ -1,0 +1,1212 @@
+{
+  "scope": "TESTED_SYNTHETIC_GENERATED_RASTERS_HAND_SET_UNTRAINED_NETWORK_MOCK_APPROVAL",
+  "request": {
+    "schema_version": 1,
+    "capability": "landcover.change_detection",
+    "trace_id": "trace-transition-119",
+    "idempotency_key": "transition-browser-119",
+    "model_ref": {
+      "id": "fixture-model",
+      "version": "v1",
+      "sha256": "bad399d527b9ef1f13fcde2e8ca9a8ea5285d73fec0f680518aa76a2af9c0077"
+    },
+    "images": [
+      {
+        "year": 2020,
+        "input_ref": {
+          "id": "fixture-input-2020",
+          "version": "v1",
+          "sha256": "50a459a05168e1e3e23bf36d3fb44c2d55164f7e215772a1ce9f3016e15a366e"
+        },
+        "quality_report_sha256": "eb7d50d4fc8095be821852078abf8bcb4ed5e47c8f28fded7686186140394455"
+      },
+      {
+        "year": 2021,
+        "input_ref": {
+          "id": "fixture-input-2021",
+          "version": "v1",
+          "sha256": "7ea3204be5ad1dd8c0c91e9f36ad610d4616735e6d7dfcb53d204ff4b657e76d"
+        },
+        "quality_report_sha256": "eb7d50d4fc8095be821852078abf8bcb4ed5e47c8f28fded7686186140394455"
+      },
+      {
+        "year": 2022,
+        "input_ref": {
+          "id": "fixture-input-2022",
+          "version": "v1",
+          "sha256": "7ea3204be5ad1dd8c0c91e9f36ad610d4616735e6d7dfcb53d204ff4b657e76d"
+        },
+        "quality_report_sha256": "eb7d50d4fc8095be821852078abf8bcb4ed5e47c8f28fded7686186140394455"
+      }
+    ]
+  },
+  "receipt": {
+    "schema_version": 1,
+    "scope": "LOCAL_LCLUC_WORKFLOW_ONLY",
+    "id": "0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3",
+    "trace_id": "trace-transition-119",
+    "request_sha256": "66d7b21fce9ec92c38f5296f53947028c3b73bef36b9aee1d5447f65e02c7876",
+    "status": "SUCCEEDED",
+    "request_snapshot": {
+      "schema_version": 1,
+      "capability": "landcover.change_detection",
+      "trace_id": "trace-transition-119",
+      "model_ref": {
+        "id": "fixture-model",
+        "sha256": "bad399d527b9ef1f13fcde2e8ca9a8ea5285d73fec0f680518aa76a2af9c0077",
+        "version": "v1"
+      },
+      "images": [
+        {
+          "input_ref": {
+            "id": "fixture-input-2020",
+            "sha256": "50a459a05168e1e3e23bf36d3fb44c2d55164f7e215772a1ce9f3016e15a366e",
+            "version": "v1"
+          },
+          "quality_report_sha256": "eb7d50d4fc8095be821852078abf8bcb4ed5e47c8f28fded7686186140394455",
+          "year": 2020
+        },
+        {
+          "input_ref": {
+            "id": "fixture-input-2021",
+            "sha256": "7ea3204be5ad1dd8c0c91e9f36ad610d4616735e6d7dfcb53d204ff4b657e76d",
+            "version": "v1"
+          },
+          "quality_report_sha256": "eb7d50d4fc8095be821852078abf8bcb4ed5e47c8f28fded7686186140394455",
+          "year": 2021
+        },
+        {
+          "input_ref": {
+            "id": "fixture-input-2022",
+            "sha256": "7ea3204be5ad1dd8c0c91e9f36ad610d4616735e6d7dfcb53d204ff4b657e76d",
+            "version": "v1"
+          },
+          "quality_report_sha256": "eb7d50d4fc8095be821852078abf8bcb4ed5e47c8f28fded7686186140394455",
+          "year": 2022
+        }
+      ]
+    },
+    "created_at": "2026-10-17T16:43:34.572663+00:00",
+    "issue": null,
+    "artifacts": [
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2021\\changes.geojson",
+        "sha256": "6f318eafc66bce6ebf62a06c96f197a0bdafe18008c6412665759b461ff93ec5"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2021\\report.json",
+        "sha256": "453bb9051fa67b0e2b19dac104738686c22da123b7d276009b85cfe0c3497fc4"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2021\\transitions.csv",
+        "sha256": "f7817264003a02a3fd3465c0e7b0bd961a861832c0774486bb9de51b20436a92"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2021\\transitions.tif",
+        "sha256": "7cce2d5f8b9b4d9226e7b898a01265cdc3e918570f7e814a893bdc11a887d8ae"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2022\\changes.geojson",
+        "sha256": "6f318eafc66bce6ebf62a06c96f197a0bdafe18008c6412665759b461ff93ec5"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2022\\report.json",
+        "sha256": "02f9bb1a71321b13c148b8aabce287918ff112ef684f21df0dd25115bc251441"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2022\\transitions.csv",
+        "sha256": "f7817264003a02a3fd3465c0e7b0bd961a861832c0774486bb9de51b20436a92"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2022\\transitions.tif",
+        "sha256": "7cce2d5f8b9b4d9226e7b898a01265cdc3e918570f7e814a893bdc11a887d8ae"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2021-2022\\changes.geojson",
+        "sha256": "7d09e532fc380630caac6b4b1b5174a7a9f7a308f6544bcb79eefb97b1e12306"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2021-2022\\report.json",
+        "sha256": "203103d4203b41870258d6e3d7ca72b30f51e3233a65f1593568f3504757cf68"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2021-2022\\transitions.csv",
+        "sha256": "61f41b98db793ae6e8746d7fecb361d5bbc9059c66517be94e328606abfeb815"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2021-2022\\transitions.tif",
+        "sha256": "e9421f8b1c010378762308b48ccfb3a0414583ebe7958771d7cefa4240f8cab7"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\timeseries.json",
+        "sha256": "c1c9eb2b844487a03e77b2986a0d5c3484f7664eae58c3bb5b26577fc17bb57e"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\years\\2020\\classification.tif",
+        "sha256": "182515ba3ab76b9a4412f4f7609285d48f09bc595504efe90c021e1c31301e46"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\years\\2021\\classification.tif",
+        "sha256": "f30657f9ed7f679d9b45ff901788d237b8ecaf0e7bf74e6f1c5747ae778688da"
+      },
+      {
+        "path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\years\\2022\\classification.tif",
+        "sha256": "f30657f9ed7f679d9b45ff901788d237b8ecaf0e7bf74e6f1c5747ae778688da"
+      }
+    ],
+    "scientific_accuracy_validated": false,
+    "standard_gmais_result": false,
+    "report_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\timeseries.json",
+    "admission_pins": {
+      "model": "1d28a05abf19ecebb8e036b1f925aba6a58742714c080c2c911a3f9b9ea14659",
+      "2020": "1c8c7c924494bad5d2147054c678c5e3c5109c7605a818176f141a824268918a",
+      "2021": "62340aa7e093573cbebe846fe28e415fab27d060d4edd87e760229d1df58c05c",
+      "2022": "43815eb60851267c305477691fbc8ed38f3e5cff27c7af57347e6bdf7c6af953"
+    },
+    "finished_at": "2026-10-17T16:43:35.481999+00:00",
+    "replayed": false
+  },
+  "report": {
+    "years": [
+      2020,
+      2021,
+      2022
+    ],
+    "baseline_year": 2020,
+    "classifications": {
+      "2020": {
+        "year": 2020,
+        "classification_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\years\\2020\\classification.tif",
+        "valid_pixels": 256,
+        "checkpoint_path": "models\\fixture\\best.pt",
+        "class_names": [
+          "water",
+          "trees",
+          "grass",
+          "flooded_vegetation",
+          "crops",
+          "shrub_and_scrub",
+          "built",
+          "bare",
+          "snow_and_ice"
+        ],
+        "label_taxonomy_signature": null,
+        "normalization_provenance": {},
+        "quality_mask_path": null,
+        "quality_mask_basis": "input_nodata_only"
+      },
+      "2021": {
+        "year": 2021,
+        "classification_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\years\\2021\\classification.tif",
+        "valid_pixels": 256,
+        "checkpoint_path": "models\\fixture\\best.pt",
+        "class_names": [
+          "water",
+          "trees",
+          "grass",
+          "flooded_vegetation",
+          "crops",
+          "shrub_and_scrub",
+          "built",
+          "bare",
+          "snow_and_ice"
+        ],
+        "label_taxonomy_signature": null,
+        "normalization_provenance": {},
+        "quality_mask_path": null,
+        "quality_mask_basis": "input_nodata_only"
+      },
+      "2022": {
+        "year": 2022,
+        "classification_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\years\\2022\\classification.tif",
+        "valid_pixels": 256,
+        "checkpoint_path": "models\\fixture\\best.pt",
+        "class_names": [
+          "water",
+          "trees",
+          "grass",
+          "flooded_vegetation",
+          "crops",
+          "shrub_and_scrub",
+          "built",
+          "bare",
+          "snow_and_ice"
+        ],
+        "label_taxonomy_signature": null,
+        "normalization_provenance": {},
+        "quality_mask_path": null,
+        "quality_mask_basis": "input_nodata_only"
+      }
+    },
+    "class_names": [
+      "water",
+      "trees",
+      "grass",
+      "flooded_vegetation",
+      "crops",
+      "shrub_and_scrub",
+      "built",
+      "bare",
+      "snow_and_ice"
+    ],
+    "label_taxonomy_signature": null,
+    "adjacent_pairs": [
+      "2020-2021",
+      "2021-2022"
+    ],
+    "adjacent_observation_pairs": [
+      "2020-2021",
+      "2021-2022"
+    ],
+    "baseline_pairs": [
+      "2020-2021",
+      "2020-2022"
+    ],
+    "changes": {
+      "2020-2021": {
+        "from_year": 2020,
+        "to_year": 2021,
+        "transition_pixels": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            256,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "transition_area_m2": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            25600.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "valid_pixels": 256,
+        "excluded_pixels": 0,
+        "class_names": [
+          "water",
+          "trees",
+          "grass",
+          "flooded_vegetation",
+          "crops",
+          "shrub_and_scrub",
+          "built",
+          "bare",
+          "snow_and_ice"
+        ],
+        "total_area_m2": 25600.0,
+        "changed_area_m2": 25600.0,
+        "change_rate": 1.0,
+        "area_method": "projected_grid_area_m2",
+        "class_net_area_m2": [
+          0.0,
+          -25600.0,
+          25600.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "warning": "계절·센서·구름 잔존 및 두 분류지도의 오차가 가짜 변화로 나타날 수 있습니다. 투영면적은 CRS 왜곡의 영향을 받습니다.",
+        "geojson_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2021\\changes.geojson",
+        "geometry": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      0.0008983152841195213,
+                      0.0017966305679443192
+                    ],
+                    [
+                      0.0008983152841195213,
+                      0.0003593261136397527
+                    ],
+                    [
+                      0.0023356197387107555,
+                      0.0003593261136397527
+                    ],
+                    [
+                      0.0023356197387107555,
+                      0.0017966305679443192
+                    ],
+                    [
+                      0.0008983152841195213,
+                      0.0017966305679443192
+                    ]
+                  ]
+                ]
+              },
+              "properties": {
+                "from_class": 1,
+                "to_class": 2,
+                "transition_code": 11,
+                "quality": "comparison_of_classifications; unverified_change"
+              }
+            }
+          ]
+        },
+        "vector_feature_count": 1,
+        "vector_truncated": false,
+        "vector_inline_omitted": false,
+        "statistics_basis": "full_valid_raster; vector truncation does not affect statistics",
+        "geotiff_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2021\\transitions.tif",
+        "csv_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2021\\transitions.csv"
+      },
+      "2021-2022": {
+        "from_year": 2021,
+        "to_year": 2022,
+        "transition_pixels": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            256,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "transition_area_m2": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            25600.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "valid_pixels": 256,
+        "excluded_pixels": 0,
+        "class_names": [
+          "water",
+          "trees",
+          "grass",
+          "flooded_vegetation",
+          "crops",
+          "shrub_and_scrub",
+          "built",
+          "bare",
+          "snow_and_ice"
+        ],
+        "total_area_m2": 25600.0,
+        "changed_area_m2": 0.0,
+        "change_rate": 0.0,
+        "area_method": "projected_grid_area_m2",
+        "class_net_area_m2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "warning": "계절·센서·구름 잔존 및 두 분류지도의 오차가 가짜 변화로 나타날 수 있습니다. 투영면적은 CRS 왜곡의 영향을 받습니다.",
+        "geojson_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2021-2022\\changes.geojson",
+        "geometry": {
+          "type": "FeatureCollection",
+          "features": []
+        },
+        "vector_feature_count": 0,
+        "vector_truncated": false,
+        "vector_inline_omitted": false,
+        "statistics_basis": "full_valid_raster; vector truncation does not affect statistics",
+        "geotiff_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2021-2022\\transitions.tif",
+        "csv_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2021-2022\\transitions.csv"
+      },
+      "2020-2022": {
+        "from_year": 2020,
+        "to_year": 2022,
+        "transition_pixels": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            256,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "transition_area_m2": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            25600.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "valid_pixels": 256,
+        "excluded_pixels": 0,
+        "class_names": [
+          "water",
+          "trees",
+          "grass",
+          "flooded_vegetation",
+          "crops",
+          "shrub_and_scrub",
+          "built",
+          "bare",
+          "snow_and_ice"
+        ],
+        "total_area_m2": 25600.0,
+        "changed_area_m2": 25600.0,
+        "change_rate": 1.0,
+        "area_method": "projected_grid_area_m2",
+        "class_net_area_m2": [
+          0.0,
+          -25600.0,
+          25600.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "warning": "계절·센서·구름 잔존 및 두 분류지도의 오차가 가짜 변화로 나타날 수 있습니다. 투영면적은 CRS 왜곡의 영향을 받습니다.",
+        "geojson_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2022\\changes.geojson",
+        "geometry": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      0.0008983152841195213,
+                      0.0017966305679443192
+                    ],
+                    [
+                      0.0008983152841195213,
+                      0.0003593261136397527
+                    ],
+                    [
+                      0.0023356197387107555,
+                      0.0003593261136397527
+                    ],
+                    [
+                      0.0023356197387107555,
+                      0.0017966305679443192
+                    ],
+                    [
+                      0.0008983152841195213,
+                      0.0017966305679443192
+                    ]
+                  ]
+                ]
+              },
+              "properties": {
+                "from_class": 1,
+                "to_class": 2,
+                "transition_code": 11,
+                "quality": "comparison_of_classifications; unverified_change"
+              }
+            }
+          ]
+        },
+        "vector_feature_count": 1,
+        "vector_truncated": false,
+        "vector_inline_omitted": false,
+        "statistics_basis": "full_valid_raster; vector truncation does not affect statistics",
+        "geotiff_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2022\\transitions.tif",
+        "csv_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\changes\\2020-2022\\transitions.csv"
+      }
+    },
+    "provenance": [
+      {
+        "year": 2020,
+        "image_path": "image-2020.tif",
+        "sha256": "50a459a05168e1e3e23bf36d3fb44c2d55164f7e215772a1ce9f3016e15a366e",
+        "valid_input_pixels": 256,
+        "source": "mock admission raster",
+        "license": "test only",
+        "acquisition_date": null
+      },
+      {
+        "year": 2021,
+        "image_path": "image-2021.tif",
+        "sha256": "7ea3204be5ad1dd8c0c91e9f36ad610d4616735e6d7dfcb53d204ff4b657e76d",
+        "valid_input_pixels": 256,
+        "source": "mock admission raster",
+        "license": "test only",
+        "acquisition_date": null
+      },
+      {
+        "year": 2022,
+        "image_path": "image-2022.tif",
+        "sha256": "7ea3204be5ad1dd8c0c91e9f36ad610d4616735e6d7dfcb53d204ff4b657e76d",
+        "valid_input_pixels": 256,
+        "source": "mock admission raster",
+        "license": "test only",
+        "acquisition_date": null
+      }
+    ],
+    "checkpoint_path": "models\\fixture\\best.pt",
+    "checkpoint_sha256": "bad399d527b9ef1f13fcde2e8ca9a8ea5285d73fec0f680518aa76a2af9c0077",
+    "architecture": "tiny_unet",
+    "dataset_version": "fixture-training-v1",
+    "synthetic": false,
+    "reference_kind": "worldcover_weak_label",
+    "quality": {
+      "grid_alignment": "verified",
+      "missing_years": [],
+      "annual_coverage_complete": true,
+      "adjacent_pairs_definition": "calendar-year gap exactly 1; adjacent_observation_pairs may span missing years",
+      "cloud_shadow_mask": "per-year external binary mask when provided; otherwise input_nodata_only",
+      "warning": "연차 차이는 계절·센서·구름·모델 오류를 포함할 수 있습니다. 실제 관측연도만 분석하며 누락 연도를 생성하지 않습니다."
+    },
+    "report_path": "results\\lcluc-workflows\\0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3\\timeseries.json"
+  },
+  "geojson": {
+    "2020-2021": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0.0008983152841195213,
+                  0.0017966305679443192
+                ],
+                [
+                  0.0008983152841195213,
+                  0.0003593261136397527
+                ],
+                [
+                  0.0023356197387107555,
+                  0.0003593261136397527
+                ],
+                [
+                  0.0023356197387107555,
+                  0.0017966305679443192
+                ],
+                [
+                  0.0008983152841195213,
+                  0.0017966305679443192
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "from_class": 1,
+            "to_class": 2,
+            "transition_code": 11,
+            "quality": "comparison_of_classifications; unverified_change"
+          }
+        }
+      ]
+    },
+    "2021-2022": {
+      "type": "FeatureCollection",
+      "features": []
+    },
+    "2020-2022": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0.0008983152841195213,
+                  0.0017966305679443192
+                ],
+                [
+                  0.0008983152841195213,
+                  0.0003593261136397527
+                ],
+                [
+                  0.0023356197387107555,
+                  0.0003593261136397527
+                ],
+                [
+                  0.0023356197387107555,
+                  0.0017966305679443192
+                ],
+                [
+                  0.0008983152841195213,
+                  0.0017966305679443192
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "from_class": 1,
+            "to_class": 2,
+            "transition_code": 11,
+            "quality": "comparison_of_classifications; unverified_change"
+          }
+        }
+      ]
+    }
+  }
+}

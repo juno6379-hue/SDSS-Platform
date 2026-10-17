@@ -1,0 +1,136 @@
+TAP version 13
+# Subtest: unit presentation preserves counts and converts only m² to ha
+ok 1 - unit presentation preserves counts and converts only m² to ha
+  ---
+  duration_ms: 27.082
+  type: 'test'
+  ...
+# Subtest: actual report renders full9x9 pixels matrix, before rows, after columns and totals
+ok 2 - actual report renders full9x9 pixels matrix, before rows, after columns and totals
+  ---
+  duration_ms: 38.9798
+  type: 'test'
+  ...
+# Subtest: m² and ha use the real area matrix and net areas rather than relabeling pixels
+ok 3 - m² and ha use the real area matrix and net areas rather than relabeling pixels
+  ---
+  duration_ms: 90.7441
+  type: 'test'
+  ...
+# Subtest: unchanged pair shows diagonal counts, zero change and real class labels without another request
+ok 4 - unchanged pair shows diagonal counts, zero change and real class labels without another request
+  ---
+  duration_ms: 22.2308
+  type: 'test'
+  ...
+# Subtest: legend uses all actual names and ID stable palette; no invented classification names
+ok 5 - legend uses all actual names and ID stable palette; no invented classification names
+  ---
+  duration_ms: 20.4415
+  type: 'test'
+  ...
+# Subtest: duplicate actual names keep class IDs; HTML-looking names are escaped by React
+ok 6 - duplicate actual names keep class IDs; HTML-looking names are escaped by React
+  ---
+  duration_ms: 22.4202
+  type: 'test'
+  ...
+# Subtest: truncated vector warning remains separate from full raster transition statistics
+ok 7 - truncated vector warning remains separate from full raster transition statistics
+  ---
+  duration_ms: 23.2192
+  type: 'test'
+  ...
+# Subtest: matrix and class tables have captions, scoped row/column headings and keyboard scroll regions
+ok 8 - matrix and class tables have captions, scoped row/column headings and keyboard scroll regions
+  ---
+  duration_ms: 22.8066
+  type: 'test'
+  ...
+# Subtest: map stats gate is local-only, controls read eligibility, and uses to_class palette without changing118 fetch client
+ok 9 - map stats gate is local-only, controls read eligibility, and uses to_class palette without changing118 fetch client
+  ---
+  duration_ms: 1.7921
+  type: 'test'
+  ...
+# Subtest: stored real CPU three-year fixture yields pinned full-raster nonempty and unchanged statistics
+ok 10 - stored real CPU three-year fixture yields pinned full-raster nonempty and unchanged statistics
+  ---
+  duration_ms: 6.2992
+  type: 'test'
+  ...
+# Subtest: empty full raster has exact zero matrices null rate and zero totals
+ok 11 - empty full raster has exact zero matrices null rate and zero totals
+  ---
+  duration_ms: 1.778
+  type: 'test'
+  ...
+# Subtest: ordered actual labels including duplicates are retained by ID and colors are frozen display-only
+ok 12 - ordered actual labels including duplicates are retained by ID and colors are frozen display-only
+  ---
+  duration_ms: 2.7562
+  type: 'test'
+  ...
+# Subtest: output matrices labels selection and derived classes are detached without input mutation
+ok 13 - output matrices labels selection and derived classes are detached without input mutation
+  ---
+  duration_ms: 4.516
+  type: 'test'
+  ...
+# Subtest: truncated vector preview never reduces full raster totals
+ok 14 - truncated vector preview never reduces full raster totals
+  ---
+  duration_ms: 1.733
+  type: 'test'
+  ...
+# Subtest: known projected and actual ellipsoidal area units only
+ok 15 - known projected and actual ellipsoidal area units only
+  ---
+  duration_ms: 3.747
+  type: 'test'
+  ...
+# Subtest: corrupt totals rates net and full-raster basis reject without echoing payload
+ok 16 - corrupt totals rates net and full-raster basis reject without echoing payload
+  ---
+  duration_ms: 23.2579
+  type: 'test'
+  ...
+# Subtest: matrix dimensions sparse arrays unsafe sum and finite accumulation are bounded
+ok 17 - matrix dimensions sparse arrays unsafe sum and finite accumulation are bounded
+  ---
+  duration_ms: 10.5647
+  type: 'test'
+  ...
+# Subtest: label exact order length controls blank lone-surrogate and type violations reject
+ok 18 - label exact order length controls blank lone-surrogate and type violations reject
+  ---
+  duration_ms: 12.9138
+  type: 'test'
+  ...
+# Subtest: floating accumulation tolerance is area-relative while rate remains dimensionless
+ok 19 - floating accumulation tolerance is area-relative while rate remains dimensionless
+  ---
+  duration_ms: 2.9341
+  type: 'test'
+  ...
+# Subtest: zero rate nonzero total and total0/null invariant cannot be disguised by tolerance
+ok 20 - zero rate nonzero total and total0/null invariant cannot be disguised by tolerance
+  ---
+  duration_ms: 3.1265
+  type: 'test'
+  ...
+# Subtest: same receipt report identity pair and artifact namespace remain required
+ok 21 - same receipt report identity pair and artifact namespace remain required
+  ---
+  duration_ms: 3.35
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1680.6607

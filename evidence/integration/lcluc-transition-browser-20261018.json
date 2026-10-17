@@ -1,0 +1,66 @@
+{
+  "recorded_at": "2026-10-17T16:51:30.108Z",
+  "scope": "TESTED_SYNTHETIC_GENERATED_RASTERS_HAND_SET_UNTRAINED_NETWORK_MOCK_APPROVAL",
+  "fixture_ports": [
+    5175,
+    8003
+  ],
+  "workflow_id": "0746c9187354de7eafc6418462e84ee67bea7773980eb1e4f536c681008264c3",
+  "trace_id": "trace-transition-119",
+  "observations": {
+    "initial_pair_empty": true,
+    "initial_matrix_absent": true,
+    "pair": "2020-2021",
+    "pixel_tree_row": [
+      "0",
+      "0",
+      "256",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "256"
+    ],
+    "m2_tree_row": [
+      "0",
+      "0",
+      "25,600",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "25,600"
+    ],
+    "ha_trees_net_minus2_56": true,
+    "ha_grass_net_plus2_56": true,
+    "class_names_from_report": true,
+    "grass_to_class_color": "rgb(132, 204, 22)",
+    "lime_polygon_visually_verified": true,
+    "unchanged_pair_2021_2022_matrix_and_zero_rate": true,
+    "unchanged_grass_ha_before_after_2_56_net0": true,
+    "pair_change_old_map_removed": true,
+    "empty_geometry_message_matrix_retained": true,
+    "first_last_pair_matrix_2020_2022": true,
+    "back_lcluc_without_old_matrix_map": true,
+    "original_user_tab_preserved": true
+  },
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "limitations": [
+    "No mobile viewport test or forced network delay injection.",
+    "Fixture browser token empty; prior mocked Bearer client and API tests are separate evidence.",
+    "No corrupted matrix report or null-rate zero-valid report injected through the browser; negative and zero-valid cases are unit tests.",
+    "No truncated=true browser fixture; full-raster/vector distinction is documented and unit/source checked.",
+    "Arithmetic/hash/rendering checks are not independent model accuracy or agency approval."
+  ],
+  "evidence": [
+    "evidence/integration/lcluc-transition-matrix-final-20261018.png",
+    "evidence/integration/lcluc-transition-class-map-20261018.png",
+    "evidence/integration/lcluc-transition-ha-dom-20261018.txt",
+    "evidence/integration/lcluc-transition-unchanged-dom-20261018.txt",
+    "evidence/integration/lcluc-transition-pixels-dom-20261018.txt"
+  ]
+}

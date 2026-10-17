@@ -1,0 +1,114 @@
+TAP version 13
+# Subtest: stored real CPU three-year fixture yields pinned full-raster nonempty and unchanged statistics
+ok 1 - stored real CPU three-year fixture yields pinned full-raster nonempty and unchanged statistics
+  ---
+  duration_ms: 6.7338
+  type: 'test'
+  ...
+# Subtest: empty full raster has exact zero matrices null rate and zero totals
+ok 2 - empty full raster has exact zero matrices null rate and zero totals
+  ---
+  duration_ms: 2.3338
+  type: 'test'
+  ...
+# Subtest: ordered actual labels including duplicates are retained by ID and colors are frozen display-only
+ok 3 - ordered actual labels including duplicates are retained by ID and colors are frozen display-only
+  ---
+  duration_ms: 3.9842
+  type: 'test'
+  ...
+# Subtest: output matrices labels selection and derived classes are detached without input mutation
+ok 4 - output matrices labels selection and derived classes are detached without input mutation
+  ---
+  duration_ms: 4.0911
+  type: 'test'
+  ...
+# Subtest: truncated vector preview never reduces full raster totals
+ok 5 - truncated vector preview never reduces full raster totals
+  ---
+  duration_ms: 1.2335
+  type: 'test'
+  ...
+# Subtest: known projected and actual ellipsoidal area units only
+ok 6 - known projected and actual ellipsoidal area units only
+  ---
+  duration_ms: 2.4397
+  type: 'test'
+  ...
+# Subtest: corrupt totals rates net and full-raster basis reject without echoing payload
+not ok 7 - corrupt totals rates net and full-raster basis reject without echoing payload
+  ---
+  duration_ms: 17.5301
+  type: 'test'
+  location: 'E:\\GeoAI–MLOps–SDSS\\frontend\\src\\lclucTransitionAdapter.test.mjs:39:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /^Error: 고정 변화쌍의 전체 래스터 전이 통계를 확인할 수 없습니다\.$/. Input:
+    
+    'Error: 변화쌍의 고정 산출물 또는 지도 형식을 확인할 수 없습니다.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+  error: '변화쌍의 고정 산출물 또는 지도 형식을 확인할 수 없습니다.'
+  stack: |-
+    fail (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/lclucChangeMapAdapter.ts:23:29)
+    need (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/lclucChangeMapAdapter.ts:24:42)
+    workflowChangePair (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/lclucChangeMapAdapter.ts:42:2)
+    workflowTransitionStats (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/lclucTransitionAdapter.ts:32:18)
+    stats (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/lclucTransitionAdapter.test.mjs:8:16)
+    file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/lclucTransitionAdapter.test.mjs:44:87
+    getActual (node:assert:530:5)
+    Function.throws (node:assert:676:24)
+    TestContext.<anonymous> (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/lclucTransitionAdapter.test.mjs:44:76)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/lclucTransitionAdapter.test.mjs:44:76)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: matrix dimensions sparse arrays unsafe sum and finite accumulation are bounded
+ok 8 - matrix dimensions sparse arrays unsafe sum and finite accumulation are bounded
+  ---
+  duration_ms: 6.8702
+  type: 'test'
+  ...
+# Subtest: label exact order length controls blank lone-surrogate and type violations reject
+ok 9 - label exact order length controls blank lone-surrogate and type violations reject
+  ---
+  duration_ms: 9.2257
+  type: 'test'
+  ...
+# Subtest: floating accumulation tolerance is area-relative while rate remains dimensionless
+ok 10 - floating accumulation tolerance is area-relative while rate remains dimensionless
+  ---
+  duration_ms: 2.9087
+  type: 'test'
+  ...
+# Subtest: zero rate nonzero total and total0/null invariant cannot be disguised by tolerance
+ok 11 - zero rate nonzero total and total0/null invariant cannot be disguised by tolerance
+  ---
+  duration_ms: 3.2347
+  type: 'test'
+  ...
+# Subtest: same receipt report identity pair and artifact namespace remain required
+ok 12 - same receipt report identity pair and artifact namespace remain required
+  ---
+  duration_ms: 3.5201
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 11
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 300.2106

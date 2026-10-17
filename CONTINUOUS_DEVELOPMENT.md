@@ -1,5 +1,21 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 같은 변화쌍의 전체 래스터 전이행렬·클래스 범례 연결 (119)
+
+118의 같은 receipt/report·선택 변화쌍에9×9 전이행렬, 클래스별 이전/이후/순변화, 픽셀·m²·ha 단위와 실제 class_names 범례를 연결했다. 계약 담당은 합계·비대각 면적·순증감·변화율·클래스 원문 검증, UI 담당은 표/단위/접근성/이후 클래스 색상과 기존 지도 연결, Root는 독립·실제 브라우저·보존·문서/Git, 이해 에이전트는 완료 소스의 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다.
+
+사용자가 이미 수동으로 읽은 고정 보고서에서 pair를 선택하면 로컬 검산 후 표를 표시한다. 새 요청을 자동 생성하지 않고 지도 asset GET은 기존 명시 버튼에서만 수행한다. 행=이전/열=이후이며 픽셀 합=유효픽셀, 면적 합=전체면적, 비대각 합=변화면적, 열합−행합=클래스 순면적과 변화율을 검산한다. 면적 허용오차는 max(10⁻⁶m²,10⁻⁸×max(1,전체m²)), 무차원 변화율 오차는 별도10⁻⁸이다. 유효0/전체면적0의 변화율은null이며0%를 발명하지 않는다. 불일치하면 표와 지도 읽기를 거부하고 원본을 추정·보정하지 않는다.
+
+클래스 이름9개는 보고서 원문·순서를 보존하고 같은 이름도 숫자 ID로 구분한다. 색상은 이후 to_class ID별 표시용 팔레트이며 공식 taxonomy·모델 정확도를 뜻하지 않는다. 전체 래스터 전이행렬은 두 연도 분류 결과의 전이이며 독립 정답과 대조하는 정확도 혼동행렬이 아니다. 지도 벡터의 최대5000개 부분 도형과 전체 래스터 통계는 구분한다. 1ha=10000m²이며 면적 화면은 소수6자리까지 반올림한다. 기존 상단 PNG 지도·KPI·다른5모델·실행/인증 API는 바꾸지 않았다.
+
+계약 신규12 PASS/0.427초, 합동front21 PASS/1.681초(UI9+계약12), Root 독립8 PASS/0.604초다. 전체 frontend250 PASS/29.208초, build104modules/19.37초/exit0이다. 초기 집중 진단·MapLibre expression TypeScript 오류와 최종 정정을 원로그로 보존했다. 기존 backend 전체1170건/1169 PASS·기존1 SKIP/389.307초는118의 이력이며 이번에 재실행한 결과가 아니다. backend/API source 바이트가 모두 불변이라 frontend 전체·실제 임시 CPU/브라우저 경로를 검증했다. 중복 시험 묶음을 합산하지 않는다.
+
+격리5175→8003의3연도 생성 영상·손으로 고정한 비학습 TinyUNet·명시 mock 승인 metadata에서 실제 CPU 결과를 조회했다. 브라우저에서trees→grass256픽셀=25600m²=2.56ha, 클래스별 순변화−2.56/+2.56ha, 실제9이름/ID·grass 색상과 지도 Polygon을 확인했다.2021-2022는 변화0%·이전/이후2.56ha·순변화0이며0도형 안내와 전이행렬을 함께 유지했다. pair 전환·기준연도 쌍 갱신과 뒤로 가기 후 이전 표/지도 미표시를 확인했다. 모바일·강제 지연·Bearer·변조 보고서/유효0null·truncated=true는 실제 브라우저 재현이 아니며 별도 단위/소스 시험과 구분한다. 임시 fixture의 실제 계산은 과학 정확도·기관 승인 근거가 아니다.
+
+보호141·기존증거952·catalog14 canonical·backend/API/client/118adapter/상단Workspace는 보존됐고 기존 source269개 중 허용한 UI2파일만 변경됐다. 원본·원장·예약136314880B·lock·분할·운영 모델은 그대로이며 운영 수집·학습·등록·배포·Workflow 실행0이다. 보고예약 ACTIVE와 실제 담당/서비스·수집·학습 실행을 구분한다. 운영 Draft·독립라벨 미확보·6밴드 per_scene/구름mask·다른5실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/기관UAT는 미완료다.
+
+다음 내부 후보120은 ML112 오류분석 산출물의 고정 모델 참조·인증 조회·화면 연결이다. 자료가 없는 기존 모델은 미확보로 표시하고 임의 정확도나 독립 평가를 만들지 않는다. 단일 UI 완료를 전체 개발 완료로 처리하지 않고 지속 개발·10분 역할 보고를 유지한다. 근거: `docs/implementation/119_lcluc_transition_matrix.md`, `evidence/integration/lcluc-transition-ui-tests-20261018.log`, `evidence/integration/lcluc-transition-ui-build-20261018.log`, `evidence/integration/lcluc-transition-independent-20261018.log`, `evidence/integration/lcluc-transition-browser-20261018.json`, `evidence/integration/lcluc-transition-live-integrity-20261018.json`. 최종 감사·스냅샷은 `evidence/integration/lcluc-transition-closeout-20261018.json`을 따른다.
+
 ## 2026-10-18 — 고정 실행 결과의 명시 변화쌍 지도 연결 (118)
 
 116·117의 성공 receipt와 수동으로 읽은 보고서에서 변화쌍을 직접 선택해 지도에 연결했다. 계약 담당은 같은 실행·trace·연도·보고서 경로·artifact index/SHA와 Polygon/MultiPolygon 검증을, UI 담당은 인증 GET·8MiB stream·browser SHA·중립 MapLibre 지도·빈 결과/부분벡터/수명 처리를 구현했다. Root는 독립 검증·실제 브라우저·기존 코어 결함 수정·전체 회귀·보존·문서/Git을, 이해 에이전트는 완료 소스·시험 근거의 설명·발표·FAQ·INDEX·변경이력을 맡았다.

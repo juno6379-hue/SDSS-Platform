@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T01:38:33.769568+09:00",
-  "source_commit": "ed53f43bbbf905a0d204ab5c5d0b74d45b4162be",
-  "source_commit_reason": "Published116/117 baseline plus118 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T01:54:22.746632+09:00",
+  "source_commit": "984666cac6529f6034fab84171461dbf7c51f8b6",
+  "source_commit_reason": "Published118 baseline plus119 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -124,7 +124,12 @@
     "lcluc_change_map_nonempty_tuple_json_core_bug_fixed_with_type_tamper_regression": true,
     "lcluc_change_map_same_receipt_bounded_sha_geometry_and_lifetime_verified": true,
     "lcluc_change_map_protected141_old_evidence925_catalog14_preserved": true,
-    "lcluc_change_map_docs_and_understanding_updated": true
+    "lcluc_change_map_docs_and_understanding_updated": true,
+    "lcluc_transition_front250_build104_verified": true,
+    "lcluc_transition_actual_labels_units_matrix_and_rate_checked": true,
+    "lcluc_transition_backend_all_sources_unchanged_no_new_full_backend_claim": true,
+    "lcluc_transition_protected141_prior_evidence952_catalog14_preserved": true,
+    "lcluc_transition_docs_and_understanding_updated": true
   },
   "reported_status": {
     "ready_for_training": false,
@@ -2588,6 +2593,100 @@
       "next_unit": "119_SAME_CHANGE_PAIR_FULL_RASTER_TRANSITION_MATRIX_AND_CLASS_LEGEND",
       "understanding_updated": true,
       "snapshot_files": 1425
+    },
+    "latest_lcluc_transition_matrix": {
+      "recorded_at": "2026-10-18T01:54:22.746632+09:00",
+      "status": "119_SAME_RECEIPT_FULL_RASTER_TRANSITION_MATRIX_AND_CLASS_LEGEND_CONNECTED",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T01:53:41.719089+09:00",
+        "understanding_markdown": 87,
+        "implementation_markdown": 1,
+        "local_links": 361,
+        "metadata_evidence_references": 9144,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true,
+        "template_files_checked": [
+          "docs/understanding/GATE_TEMPLATE.md"
+        ]
+      },
+      "adapter_focused": {
+        "passed": 12,
+        "seconds": 0.426728
+      },
+      "joint_frontend": {
+        "passed": 21,
+        "seconds": 1.681,
+        "composition": "12 adapter +9 UI tests, not additive"
+      },
+      "root_independent": {
+        "passed": 8,
+        "seconds": 0.6036717
+      },
+      "frontend_full": {
+        "passed": 250,
+        "seconds": 29.208
+      },
+      "build": {
+        "modules": 104,
+        "seconds": 19.37,
+        "exit_code": 0
+      },
+      "previous_backend_regression": {
+        "unit": 118,
+        "tests_run": 1170,
+        "passed": 1169,
+        "skipped": 1,
+        "seconds": 389.307,
+        "rerun_this_unit": false,
+        "reason": "All backend/API sources unchanged; frontend full suite and actual TempStore CPU browser fixture exercised."
+      },
+      "backend_regression_rerun_this_unit": false,
+      "integrity": {
+        "recorded_at": "2026-10-18T01:51:13.351238+09:00",
+        "scope": "119_FRONTEND_LOCAL_MATRIX_ARITHMETIC_AND_CLASS_LEGEND_ONLY",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 269,
+        "authorized_existing_source_changes": [
+          "frontend/src/LclucWorkflowChangeMap.tsx",
+          "frontend/src/lcluc-workflow.css"
+        ],
+        "unexpected_existing_source_changes": [],
+        "previous_evidence_checked": 952,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "catalog_matches_prior": true,
+        "backend_all_sources_unchanged": true,
+        "previous_backend_regression": {
+          "unit": 118,
+          "tests_run": 1170,
+          "passed": 1169,
+          "skipped": 1,
+          "seconds": 389.307,
+          "rerun_this_unit": false,
+          "reason": "All backend/API sources unchanged; frontend full suite and actual TempStore CPU browser fixture exercised."
+        },
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "browser_proof": "evidence/integration/lcluc-transition-browser-20261018.json",
+      "original_user_tab_preserved": true,
+      "owned_fixture_tabs_and_servers_closed": true,
+      "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+      "scientific_accuracy_validated": false,
+      "standard_gmais_result": false,
+      "upper_png_map_and_kpi_connected": false,
+      "same_receipt_pair_full_raster_matrix_and_actual_class_legend_connected": true,
+      "area_tolerance_m2": "max(1e-6,1e-8*max(1,total_m2))",
+      "dimensionless_rate_absolute_tolerance": 1e-08,
+      "null_rate_for_zero_total_not_zero_percent": true,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_unit": "120_PINNED_MODEL_ERROR_ANALYSIS_AUTHENTICATED_ARTIFACT_READ_AND_UI",
+      "understanding_updated": true,
+      "snapshot_files": 1453
     }
   },
   "files": {
@@ -2604,8 +2703,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "dc70c5924c3a394caa04b9f58b8dae6f3fc612af3b7921aad5ad296d3f6ae3c9",
-      "bytes": 327926
+      "sha256": "a00672f07e8b41ee14dab2ca5ac6daae773f1d6652634cc506a03a76b1c953c7",
+      "bytes": 332638
     },
     "README.md": {
       "sha256": "78cf42da9ef93f2ceaa89f1c4f762e2167506ec5f2614908160e534ca88030a3",
@@ -2984,8 +3083,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "6bb0ad0b640251a87377739dd92a2659b07f32d8802fd2109c787d5f3c6148c9",
-      "bytes": 335067
+      "sha256": "6dd728fb07148820dc5f4531d97f4ce0d26d43d2d6b99a06b389f64faf27bb3d",
+      "bytes": 339779
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -3060,12 +3159,16 @@
       "bytes": 13488
     },
     "docs/implementation/117_lcluc_workflow_ui.md": {
-      "sha256": "4de683fbaafd5b747a3ee50bcc485e1f93f8463b08cfa93f869e3efef4897944",
-      "bytes": 10479
+      "sha256": "64fda0f15572c617539e1dd5d48960d59850f533bf5c47c374ef6413dd0e1569",
+      "bytes": 11160
     },
     "docs/implementation/118_lcluc_workflow_change_map.md": {
-      "sha256": "61db7b1af1374c9406c101b572cd6a30dad9213a06d02c63761f6bc845c3d1c1",
-      "bytes": 10234
+      "sha256": "a693ace67fc741846477eba86707d590293662a8ef1e273d584659a56e5ae854",
+      "bytes": 10915
+    },
+    "docs/implementation/119_lcluc_transition_matrix.md": {
+      "sha256": "29afeff9173a9479a8a80bc41a2e4201d4339938a0e60d58f095359f1455ae01",
+      "bytes": 8981
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -3380,48 +3483,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "9fe4bc468c2b6dc7a7ee4c88a2aa594068aaa2d617a7e59c972c67036de72c09",
-      "bytes": 139232
+      "sha256": "de8c47441497eb81bfec3bc1b4ade7d58022e15e22f5bf6a83d917cfbd2e6ad1",
+      "bytes": 140497
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "b404a9c1cf462fe268f2109a3e823fa184c36689f62e87a76ba75037296059c4",
-      "bytes": 108062
+      "sha256": "76e1e07797d17e357c4c0652c7351068da13542f267c0d1313afb6f9fc10da38",
+      "bytes": 109343
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "129c37906f4b15a0b689e2cb3cd78b4da4b77a5ae1d4476900fbe0dc48eb8873",
-      "bytes": 79466
+      "sha256": "672b4a027fe1de1cdc6a6f8fbb12ead8e86a183ca6a2beaa40c8dd3741e2f613",
+      "bytes": 80703
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "af30f115c2bd854929c279b51142c7a98fdba957f23e95f91e0d2c61bb7987d9",
-      "bytes": 62614
+      "sha256": "9c66a2bd38509c4303f7652a83e97093c83af9f186510946b4e32e8dad8b7f90",
+      "bytes": 63880
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "8121b69e2a5b2047332514f6d14503ba8b91204fe3aa69aa9aedab02c728f5d3",
-      "bytes": 27915
+      "sha256": "d93f37a4a9b173de0682fa31151d431e497dd1a89af3520f3c95f17346d69cac",
+      "bytes": 29133
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "7c296ef4db8037229f67321c050b9c9ef55755b2835003bc1954d1fe4ac4b743",
-      "bytes": 66054
+      "sha256": "fd3d428114fd208e1d7a8dea0dd1fce62c606ed2649274985b2ccb4c46be7bfd",
+      "bytes": 67298
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "35369f7e6629cbb710980971398802483554c4fca7a7e240a6c84a22d959d1ae",
-      "bytes": 195211
+      "sha256": "f53e007a07426a1daec473ef461dafea1f89705b976ade84d80c4d4d24ddb683",
+      "bytes": 197701
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "71313f9aa6c247d85666baa0c0e2d5ea5e3d91c6d2ab3d7d3a23bf3dd66c750f",
-      "bytes": 163880
+      "sha256": "763f35e24995230fca61ef285e20c9dba46c62755ee33bc670ec7a5db68e667a",
+      "bytes": 165353
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "04a8e711b36f9c4f13b5d9e7f80623be932680d586fd31d435378ec91c6cfcb2",
-      "bytes": 102936
+      "sha256": "25cc4279c5281dbbf747a3bd9983386cf7fb817fb0c222610cd645f8212792f1",
+      "bytes": 104284
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "13d9676733d0b6d8765923f7a3cbb748aedb577e943673c36200c8844b410f9f",
-      "bytes": 171609
+      "sha256": "70fb1bd33997e148a10ecc297853192de4b2774b683e353306c140df33a96deb",
+      "bytes": 173273
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -3558,6 +3661,10 @@
     "docs/understanding/gate-notes/GATE_LCLUC_PIPELINE_GEOLLM_REVIEW_20261018.md": {
       "sha256": "f1057e25bcd03ec1d67e1b0e6d90446a7f8bdd3dd9e6746b10cfd31fda01062e",
       "bytes": 15579
+    },
+    "docs/understanding/gate-notes/GATE_LCLUC_TRANSITION_SUMMARY_20261018.md": {
+      "sha256": "d736152131b266cad0d6411ebd819aae83e0357970e8cf829e956dd1f8a16ad5",
+      "bytes": 10458
     },
     "docs/understanding/gate-notes/GATE_LCLUC_WORKFLOW_API_UI_20261018.md": {
       "sha256": "f403fdbc4e0f7bb8b7a7e85ae47081194fe376e6e06cb3b434ce5bb994655f84",
@@ -3712,16 +3819,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "3d1cdf5108bc0d29fe0bde0979e2f17d95c06055d5703bb62e37e59b8c5051f2",
-      "bytes": 179778
+      "sha256": "2fff84d81dfde9d6bbe75950c1007c5f28132a32ba58ba162e2bf0b015f186a6",
+      "bytes": 181185
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "6396e940ae0a3e2f5eeae0e2feb6bdd705b27823113bb69ee46cd9511cb1b203",
-      "bytes": 118841
+      "sha256": "57d41b6baf09d28c520fec0de208688c8ca0e551daae040092004f3d3cf739b6",
+      "bytes": 120278
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "f155515c14f6883595a307a8128cc78c6ef7ea658fbdb578b59bb14047256fb7",
-      "bytes": 141041
+      "sha256": "eeb7b710405a2c7e8daa0f63917288b35f83754ea0b242f2e65245bccce83d79",
+      "bytes": 142413
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -4954,6 +5061,94 @@
     "evidence/integration/lcluc-ml-original-service-20261018.py": {
       "sha256": "212b6c41cb2bc54094f084fa08df9bf0d9ac5634ccaec81b35068b6b7a3e767b",
       "bytes": 35767
+    },
+    "evidence/integration/lcluc-transition-adapter-focused-20261018.log": {
+      "sha256": "c973cd3e30017aabc75d69e9f08c5614f3f9334eae8722a154684268752951a2",
+      "bytes": 4904
+    },
+    "evidence/integration/lcluc-transition-adapter-focused-final-20261018.log": {
+      "sha256": "96761e41054827ac3b7b3b0035b20a4e327295ac9fd9ab347dbf4c6d67e2f88c",
+      "bytes": 2886
+    },
+    "evidence/integration/lcluc-transition-browser-20261018.json": {
+      "sha256": "0bb3fbe5ea1faebd9a200a1b42075fc5b622722bbc8c02debddd5c7a1a724f28",
+      "bytes": 2233
+    },
+    "evidence/integration/lcluc-transition-class-map-20261018.png": {
+      "sha256": "793b738289034222a5bdc2c3f037ec9b7ee29ffd910e2d60a784d35db089694a",
+      "bytes": 82802
+    },
+    "evidence/integration/lcluc-transition-closeout-20261018.json": {
+      "sha256": "1f8c141a4c805032cf28f87f9c307078c1bcdc34012c3713321c03d6c1f4073d",
+      "bytes": 3364
+    },
+    "evidence/integration/lcluc-transition-documentation-audit-20261018.json": {
+      "sha256": "9bfd7c542d8968299e5a19d65ec30c88ea424ab5cdd0a6229a7c589d8edff51b",
+      "bytes": 355
+    },
+    "evidence/integration/lcluc-transition-generated-fixture-20261018.json": {
+      "sha256": "abc353e87c425a2f7f123f0d384e9e31408bd398e647c1e289843e8e7c5f8f48",
+      "bytes": 32423
+    },
+    "evidence/integration/lcluc-transition-ha-20261018.png": {
+      "sha256": "3e0be01666fa2cfd192e6bc646bb8650e7776278ff4de2a39da46d6bd071b436",
+      "bytes": 90823
+    },
+    "evidence/integration/lcluc-transition-ha-dom-20261018.txt": {
+      "sha256": "9d52fc6c0c3a2e21166f598a91537f9737750c28eb5d915747fa4ceba7d57714",
+      "bytes": 27424
+    },
+    "evidence/integration/lcluc-transition-independent-20261018.log": {
+      "sha256": "97cdc411664dcce9ddb29316fa26e68d1f04cff9ad23fda62b79d39e27d33f82",
+      "bytes": 1978
+    },
+    "evidence/integration/lcluc-transition-independent-20261018.test.mjs": {
+      "sha256": "fbb41997a7593941de5acd0048f8b1eeebda28752cb11a401f21ce9ee46c6c87",
+      "bytes": 4310
+    },
+    "evidence/integration/lcluc-transition-live-integrity-20261018.json": {
+      "sha256": "2243f8d85f4275765943d9d1b2d62d346bfe62133b22aad4e740cf0ca5c02b33",
+      "bytes": 1064
+    },
+    "evidence/integration/lcluc-transition-matrix-final-20261018.png": {
+      "sha256": "aa8d6d51e8f69b1f444bed11251fd3c0c0bd22163c790a4c81f6b32c78898c71",
+      "bytes": 92395
+    },
+    "evidence/integration/lcluc-transition-original-LclucWorkflowChangeMap.tsx-20261018.txt": {
+      "sha256": "e8ea422c13148ef2a7aab76fb750205d6cfcd7a16a4217caa1fe993c956f00a2",
+      "bytes": 7531
+    },
+    "evidence/integration/lcluc-transition-original-lcluc-workflow.css-20261018.txt": {
+      "sha256": "f2738e71d2edea79e7c852ec1ea9b263c97b729211aca94cff1b2a19fb493d15",
+      "bytes": 4219
+    },
+    "evidence/integration/lcluc-transition-pixels-dom-20261018.txt": {
+      "sha256": "cffa7ecbbc735853311670501293c13fe6150c63aa9a587764f419e50183d5db",
+      "bytes": 27428
+    },
+    "evidence/integration/lcluc-transition-preflight-20261018.json": {
+      "sha256": "e7bce295258a5be1b566f48c05fccd57a25a66f92d2415a31c1536dbb2d8b383",
+      "bytes": 411938
+    },
+    "evidence/integration/lcluc-transition-ui-build-20261018.log": {
+      "sha256": "eecbc9273a81c53dc0d101c9e5635344e2ac782f005a7572752ce8f5439fd67a",
+      "bytes": 755
+    },
+    "evidence/integration/lcluc-transition-ui-build-initial-20261018.log": {
+      "sha256": "9c053c42611a3f9e1da07ff855d7ba093b0db0b6e430a78eb9b987c485b1d59c",
+      "bytes": 998
+    },
+    "evidence/integration/lcluc-transition-ui-related-20261018.log": {
+      "sha256": "45b6b69841c1150b321c9ec7c0b201d1088d64f43d4e51b5daac4b559877d66d",
+      "bytes": 5112
+    },
+    "evidence/integration/lcluc-transition-ui-tests-20261018.log": {
+      "sha256": "3190e83e7906d378ef6e59f65d5d2918bf18b8d1070f38b9a1b4d2f26b0f78f3",
+      "bytes": 61179
+    },
+    "evidence/integration/lcluc-transition-unchanged-dom-20261018.txt": {
+      "sha256": "f233794f9052e98121a8d117b6429f781c1d78a1f1fb05c69775e42d177c7bda",
+      "bytes": 27403
     },
     "evidence/integration/lcluc-workflow-api-closeout-20261018.json": {
       "sha256": "2b45b31bd591c608948658f87ae17e24eb933e6280e2ff169c13cd1c67b8a06a",
@@ -7619,9 +7814,17 @@
       "sha256": "8505a3c3db38cbbf9f246e666cf854d929f4354bd0f81efb0ceb1fd7000a8538",
       "bytes": 7334
     },
+    "frontend/src/LclucTransitionSummary.test.mjs": {
+      "sha256": "fcac74bb7270bb4307d3f16af133c5f262b01f74dc78910097942f0b8036129b",
+      "bytes": 5805
+    },
+    "frontend/src/LclucTransitionSummary.tsx": {
+      "sha256": "6dc01e5fe70727d0c236a72c7ce0785a7ecb38459222c529ad39560877d1a5e8",
+      "bytes": 4532
+    },
     "frontend/src/LclucWorkflowChangeMap.tsx": {
-      "sha256": "e8ea422c13148ef2a7aab76fb750205d6cfcd7a16a4217caa1fe993c956f00a2",
-      "bytes": 7531
+      "sha256": "2fab77a41d38c8bb4c778e42aa2630b8c735e0a784784835f901a5741d6684ae",
+      "bytes": 8750
     },
     "frontend/src/LclucWorkflowPanel.tsx": {
       "sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
@@ -7772,8 +7975,8 @@
       "bytes": 6834
     },
     "frontend/src/lcluc-workflow.css": {
-      "sha256": "f2738e71d2edea79e7c852ec1ea9b263c97b729211aca94cff1b2a19fb493d15",
-      "bytes": 4219
+      "sha256": "503e000b4802a094f91d58c80ab31c5a0ae8bc5333b0f25d2010c57583f02f1b",
+      "bytes": 5863
     },
     "frontend/src/lclucChangeMapAdapter.test.mjs": {
       "sha256": "953ebbe0bca9fb4c6de52a8e674e9135a739ea70d97d1eaa1c2f48424e30096f",
@@ -7782,6 +7985,14 @@
     "frontend/src/lclucChangeMapAdapter.ts": {
       "sha256": "5119c9844d0e157feff353bdf29d43feaaaad5940ebb96aabaa2327384c58329",
       "bytes": 6582
+    },
+    "frontend/src/lclucTransitionAdapter.test.mjs": {
+      "sha256": "2e792b16f140dab63776ed7231558d1662604d110f65f8ad9ac042f826e72e11",
+      "bytes": 6366
+    },
+    "frontend/src/lclucTransitionAdapter.ts": {
+      "sha256": "4c0009423fa736487d122996b51571ca7253aed7a1c00d2cc3f776d271e897b7",
+      "bytes": 4643
     },
     "frontend/src/lclucWorkflowAdapter.test.mjs": {
       "sha256": "6375169deac1ac18c6f74922ae95c68a2e0b130b33ef04f454ba9e7b7008c83c",
@@ -8293,11 +8504,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T01:38:02.685896+09:00",
-    "understanding_markdown": 86,
+    "checked_at": "2026-10-18T01:53:41.719089+09:00",
+    "understanding_markdown": 87,
     "implementation_markdown": 1,
-    "local_links": 356,
-    "metadata_evidence_references": 8946,
+    "local_links": 361,
+    "metadata_evidence_references": 9144,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true,

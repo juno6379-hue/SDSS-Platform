@@ -1,0 +1,7 @@
+
+> indonesia-climate-sdss-web@0.1.0 build
+> tsc -b && vite build
+
+src/LclucWorkflowChangeMap.tsx(24,20): error TS2352: Conversion of type '["match", ["get", "to_class"], ...(number | "#2563eb" | "#15803d" | "#84cc16" | "#14b8a6" | "#eab308" | "#a16207" | "#dc2626" | "#a8a29e" | "#a5d8f3")[], string]' to type 'ExpressionSpecification' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '["match", ["get", "to_class"], ...(number | "#2563eb" | "#15803d" | "#84cc16" | "#14b8a6" | "#eab308" | "#a16207" | "#dc2626" | "#a8a29e" | "#a5d8f3")[], string]' is not comparable to type '["match", string | number | ExpressionSpecification, string | number | string[] | number[], ExpressionSpecification | ExpressionInputType | null, ...(string[] | ... 3 more ... | null)[], ExpressionSpecification | ... 1 more ... | null]'.
+    Source provides no match for required element at position 2 in target.
