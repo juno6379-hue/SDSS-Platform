@@ -1,0 +1,77 @@
+{
+  "scope": "SYNTHETIC_TEMP_CALLER_RATIONAL_POLICY_PLUS_MOCKED_COUNTS_BOUNDARY",
+  "tests": 7,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 28.670307499996852,
+  "passed": true,
+  "source_sha256": "ebf3db476613101732c4b1db0b2c41e45148dc76ebbec078031668d286541b9c",
+  "test_sha256": "78a42535d9506ddf93e268ae6ec366af80b4f73b8aaa7344da9b165996ea6b26",
+  "frozen_source_matches": true,
+  "frozen_test_matches": true,
+  "baseline_commit": "9a14fc62f7dd5dda6b1df8b2b0b241a17a12f28d",
+  "old_source_byte_checks": [
+    {
+      "path": "backend/app/ml/annual_quality_mask_diagnostics.py",
+      "baseline_sha256": "c7dcf589ead5abd94365cf816314f5a2936e029ce9c23bdac12dd2d63afe6abe",
+      "current_sha256": "c7dcf589ead5abd94365cf816314f5a2936e029ce9c23bdac12dd2d63afe6abe",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/registered_binary_mask_values.py",
+      "baseline_sha256": "5b19a4590b2a395c63d25c6a3e0aadbe36e54c0521b7c551396ea0083dec80d2",
+      "current_sha256": "5b19a4590b2a395c63d25c6a3e0aadbe36e54c0521b7c551396ea0083dec80d2",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/registry_spatial_normalization.py",
+      "baseline_sha256": "3044f176093c462eb2a407cc4a3b7310ae115b8700c0f71735f05c245ac5c108",
+      "current_sha256": "3044f176093c462eb2a407cc4a3b7310ae115b8700c0f71735f05c245ac5c108",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/dataset_registry.py",
+      "baseline_sha256": "f12e015383fbbbd2d415f04658104892d445bb81976d207bd8342f4688adb8bd",
+      "current_sha256": "f12e015383fbbbd2d415f04658104892d445bb81976d207bd8342f4688adb8bd",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/lcluc_workflow.py",
+      "baseline_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "current_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "baseline_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "current_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/LclucWorkflowPanel.tsx",
+      "baseline_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "current_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/lclucWorkflowAdapter.ts",
+      "baseline_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "current_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "unchanged": true
+    }
+  ],
+  "tracked_source_differences": [],
+  "operating_Store_API_registration_checkpoint_reads_or_writes": 0,
+  "image_pixel_reads": 0,
+  "intrinsic_mask_reads": 0,
+  "training_inference_calls": 0,
+  "UI_API_changes": 0,
+  "frontend_build_browser_runs": 0,
+  "limitations": [
+    "Actual2/6-year TempStore/GTiff/untrained checkpoint paths are separate from explicitly mocked nested count/flag boundary cases; no fabricated counts claimed as measured.",
+    "Caller-explicit integer rational threshold and every-year comparison only, not agency QA policy approval, semantic truth, actual annual completeness, scientific/model/execution approval.",
+    "Policy failure follows all successful134 mask reads. Policy NOT_CHECKED after invalid counts means no135 arithmetic, not no historical134 IO.",
+    "No extra IO beyond134; sequential snapshot/resource/authority limits remain. Internal unwired helper, no API/UI/front/build/browser/full-backend rerun. Prior1184 is historical; do not sum overlapping suites."
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "scope": "TESTED_SYNTHETIC_ACTUAL_TEMP_ANNUAL_CALLER_RATIONAL_MASK_POLICY",
+  "checks_passed": [
+    {
+      "case": "boundary",
+      "status": "CALLER_POLICY_MET_UNVERIFIED",
+      "issue": null,
+      "policy_rows": [
+        "MET",
+        "MET",
+        "MET"
+      ],
+      "store_gets": 19,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 3,
+      "caller_policy_evaluated": true,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "below_second",
+      "status": "CALLER_POLICY_NOT_MET",
+      "issue": {
+        "code": "CALLER_POLICY_NOT_MET",
+        "field": "minimum_valid_ratio",
+        "year": 2022
+      },
+      "policy_rows": [
+        "MET",
+        "NOT_MET",
+        "MET"
+      ],
+      "store_gets": 19,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 3,
+      "caller_policy_evaluated": true,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "zero_threshold",
+      "status": "CALLER_POLICY_MET_UNVERIFIED",
+      "issue": null,
+      "policy_rows": [
+        "MET",
+        "MET",
+        "MET"
+      ],
+      "store_gets": 19,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 3,
+      "caller_policy_evaluated": true,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "zero_positive",
+      "status": "CALLER_POLICY_NOT_MET",
+      "issue": {
+        "code": "CALLER_POLICY_NOT_MET",
+        "field": "minimum_valid_ratio",
+        "year": 2021
+      },
+      "policy_rows": [
+        "NOT_MET",
+        "NOT_MET",
+        "NOT_MET"
+      ],
+      "store_gets": 19,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 3,
+      "caller_policy_evaluated": true,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "invalid_policy",
+      "status": "INVALID_INPUT",
+      "issue": {
+        "code": "INVALID_INPUT",
+        "field": "request_or_policy",
+        "year": null
+      },
+      "policy_rows": [],
+      "store_gets": 0,
+      "torch_loads": 0,
+      "actual_mask_pixel_reads": 0,
+      "caller_policy_evaluated": false,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "parent_bad_second",
+      "status": "ANNUAL_DIAGNOSTICS_BLOCKED",
+      "issue": {
+        "code": "MASK_VALUES_NOT_BINARY",
+        "field": "mask",
+        "year": 2022
+      },
+      "policy_rows": [
+        "NOT_CHECKED",
+        "NOT_CHECKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 16,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 2,
+      "caller_policy_evaluated": false,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "registry_changed",
+      "status": "ANNUAL_DIAGNOSTICS_BLOCKED",
+      "issue": {
+        "code": "REGISTRY_IMAGE_MANIFEST_CHANGED",
+        "field": "image_manifest",
+        "year": 2022
+      },
+      "policy_rows": [
+        "NOT_CHECKED",
+        "NOT_CHECKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 16,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 2,
+      "caller_policy_evaluated": false,
+      "all_fixture_files_database_unchanged": true
+    }
+  ],
+  "torch_version": "2.14.0+cpu",
+  "all_fixtures_files_and_registry_bytes_unchanged_during_reader": true,
+  "temporary_untrained_model_checkpoint_loaded": true,
+  "operating_model_loaded": false,
+  "training_inference_executed": false,
+  "operating_registry_contact": false,
+  "scientific_accuracy_validated": false,
+  "registry_aoi_verified": false,
+  "caller_policy_met_is_not_quality_authority_or_execution_approval": true
+}

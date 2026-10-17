@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T04:37:39.265806+09:00",
-  "source_commit": "c8ce70a082705fe270806515efbea94a9f4ed07c",
-  "source_commit_reason": "Published133 baseline plus134 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T04:46:21.964225+09:00",
+  "source_commit": "9a14fc62f7dd5dda6b1df8b2b0b241a17a12f28d",
+  "source_commit_reason": "Published134 baseline plus135 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -4269,6 +4269,167 @@
       "collector_training_processes_observed": 0,
       "next_internal_candidate": "135_EXPLICIT_MASK_QUALITY_THRESHOLD_POLICY_SEPARATE_FROM_SCIENTIFIC_APPROVAL",
       "snapshot_files": 1743
+    },
+    "latest_explicit_caller_rational_mask_policy_diagnostic": {
+      "recorded_at": "2026-10-18T04:46:21.964225+09:00",
+      "status": "135_EXPLICIT_CALLER_RATIONAL_MASK_POLICY_DIAGNOSTICS",
+      "focused": {
+        "passed": 8,
+        "seconds": 5.938,
+        "log": "evidence/integration/annual-mask-policy-agent-20261018-focused.log"
+      },
+      "related": {
+        "passed": 26,
+        "seconds": 42.071,
+        "composition": "8 new policy +9 annual join +9 binary mask"
+      },
+      "independent": {
+        "passed": 7,
+        "skipped": 0,
+        "seconds": 28.670307499996852
+      },
+      "root_actual_temp_file_scenarios": 7,
+      "overlapping_test_bundles_are_not_additive": true,
+      "source_sha256": "ebf3db476613101732c4b1db0b2c41e45148dc76ebbec078031668d286541b9c",
+      "test_sha256": "78a42535d9506ddf93e268ae6ec366af80b4f73b8aaa7344da9b165996ea6b26",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T04:46:21.964225+09:00",
+        "understanding_markdown": 102,
+        "implementation_markdown": 1,
+        "local_links": 445,
+        "metadata_evidence_references": 11485,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T04:43:48.920029+09:00",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 303,
+        "existing_source_changes": [],
+        "previous_evidence_checked": 1200,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "reserved_bytes_preserved": 136314880,
+        "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "operating_inventory": {
+        "recorded_at": "2026-10-18T04:41:35.876405+09:00",
+        "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+        "counts_by_kind": {
+          "analyses": 3,
+          "datasets": 6,
+          "gmais_idempotency": 2,
+          "gmais_jobs": 2,
+          "models": 1
+        },
+        "dataset_versions_count": 0,
+        "operating_writes": 0,
+        "model_or_raster_files_loaded": false
+      },
+      "live_processes": {
+        "checked_at": "2026-10-18T04:45:59.0124318+09:00",
+        "processes": [
+          {
+            "ProcessId": 27268,
+            "Name": "ollama app.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\""
+          },
+          {
+            "ProcessId": 27860,
+            "Name": "ollama.exe",
+            "CommandLine": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve"
+          },
+          {
+            "ProcessId": 32224,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000"
+          },
+          {
+            "ProcessId": 26912,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001"
+          },
+          {
+            "ProcessId": 35032,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend"
+          },
+          {
+            "ProcessId": 36060,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\""
+          },
+          {
+            "ProcessId": 32876,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -"
+          }
+        ],
+        "collector_training_processes_observed": 0,
+        "observation_limit": "Process command patterns; test Python processes are not collectors or training",
+        "automation_status": "ACTIVE",
+        "automation_interval_minutes": 10,
+        "automation_was_not_modified": true
+      },
+      "exact20_output_and_nine_unverified_flags_always_false": true,
+      "caller_explicit_exact_four_key_policy_required_without_default": true,
+      "numerator_zero_to_denominator_integer_denominator_one_to_million": true,
+      "bool_float_string_policy_counts_not_coerced": true,
+      "full_request_and_policy_snapshotted_before_any_io": true,
+      "parent134_full_success_before_all_counts_validation_and_policy_evaluation": true,
+      "all_counts_exact_three_builtin_integers_and_sum_pixel_bound_validated_before_any_policy_comparison": true,
+      "integer_cross_product_comparison_without_division_or_rounding": true,
+      "all_years_evaluated_even_if_one_policy_threshold_not_met": true,
+      "policy_not_met_still_has_all_parent134_file_and_mask_io_completed": true,
+      "nested_parent134_preserved_and_aggregate_artifact_true_only_if_all_policy_rows_met": true,
+      "additional_registry_file_checkpoint_pixel_reads_over134": 0,
+      "model_checkpoint_load_valid_path": 1,
+      "store_get_calls_valid_path_formula": "1+6N",
+      "mask_read_calls_valid_path_formula": "N",
+      "image_pixel_read_calls": 0,
+      "quality_report_verified": false,
+      "quality_mask_verified": false,
+      "mask_semantics_verified": false,
+      "registry_aoi_verified": false,
+      "source_authority_verified": false,
+      "scientific_accuracy_validated": false,
+      "execution_authorized": false,
+      "state_dict_verified": false,
+      "workflow_supported": false,
+      "threshold_selection_and_agency_quality_policy_authority_not_verified": true,
+      "runtime_api_ui_connected": false,
+      "store_database_json_predecode_not_bounded_by_postdecode_tree_limit": true,
+      "gdal_parser_cpu_rss_time_and_all_external_io_not_os_isolated": true,
+      "ambient_torch_allowlist_unchanged_and_not_cpu_rss_time_isolated": true,
+      "sequential_registry_and_file_snapshots_are_not_atomic": true,
+      "frontend_build_browser_rerun_this_unit": false,
+      "backend_full_rerun_this_unit": false,
+      "reason_no_full_rerun": "Previous sources unchanged. New unconnected rational policy diagnostic covered by focused, related and independent actual Temp files/untrained checkpoint; no external API/UI contract change.",
+      "previous_backend_regression": {
+        "unit": "120/121",
+        "tests_run": 1184,
+        "passed": 1183,
+        "skipped": 1,
+        "seconds": 399.529
+      },
+      "previous_frontend_regression": {
+        "unit": "120/121",
+        "passed": 261,
+        "build_modules": 108,
+        "build_seconds": 21.85
+      },
+      "understanding_updated": true,
+      "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+      "operating_model_or_raster_load": 0,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_internal_candidate": "136_EXPLICIT_PER_SCENE_DIAGNOSTIC_SERVICE_CONTRACT_WITHOUT_EXECUTION_OR_APPROVAL",
+      "snapshot_files": 1762
     }
   },
   "files": {
@@ -4285,8 +4446,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "fc998ed2f40d1869f68387de6d9413ad83a391b261b2d692b280b60090f4c310",
-      "bytes": 408368
+      "sha256": "71867a58532f745291f34eebb9e44e4b1ca576e70c40ec1f181c9ff26846cc06",
+      "bytes": 414551
     },
     "README.md": {
       "sha256": "0d213fdb1da768b59dd402c3af248fa902c00a078c3072703337effadc542c56",
@@ -4471,6 +4632,10 @@
     "backend/app/main.py": {
       "sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
       "bytes": 22061
+    },
+    "backend/app/ml/annual_mask_policy.py": {
+      "sha256": "ebf3db476613101732c4b1db0b2c41e45148dc76ebbec078031668d286541b9c",
+      "bytes": 6035
     },
     "backend/app/ml/annual_quality_mask_diagnostics.py": {
       "sha256": "c7dcf589ead5abd94365cf816314f5a2936e029ce9c23bdac12dd2d63afe6abe",
@@ -4729,8 +4894,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "5a28161a304061d1bab071690414a7157a5908a13d955b84648689df7c4d5264",
-      "bytes": 415509
+      "sha256": "aaa1063603993ba2bd10eadbc099ce64bb7b1ae4f386a829a4da01c742cba27b",
+      "bytes": 421692
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -4873,8 +5038,12 @@
       "bytes": 10562
     },
     "docs/implementation/134_annual_quality_mask_diagnostics.md": {
-      "sha256": "d3f50809f54ad5224029661555b059efbca256c684ff2b7bc1706e9d5ef4a1e2",
-      "bytes": 10468
+      "sha256": "4e467dbb10dcd9ac0d19e650069ba96ac59894cb7c404b4426e717d3338fc81d",
+      "bytes": 10814
+    },
+    "docs/implementation/135_annual_mask_policy.md": {
+      "sha256": "21507b786bf28faae3b42b53db04d4742cf49664e5a593128fb31064cef0adaa",
+      "bytes": 10147
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -5189,52 +5358,56 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "230920335ff44dfdf3824949d391d9f7de6e4434e69a9d38cccfd0daffa19013",
-      "bytes": 155893
+      "sha256": "365994e3d995270bcd355b6edc5714bc3084d39724074d8cb1d62ff2e8a22476",
+      "bytes": 156874
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "c20d03dea215d26abf978582f7b51881ed64617db22fc343a43059d2839abdd9",
-      "bytes": 125725
+      "sha256": "61058570149d46501306a393ea87670fd0f92cb34e2508aa4241a30d7f6ecb17",
+      "bytes": 126702
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "eb85b8a58e1ff0f456c3953b70f91b5126c167e883295e3d3235a405a83d13dd",
-      "bytes": 96119
+      "sha256": "b64030104e9039d8e8510627313749a91dd0530121c4cb3ef19ab30d746e6292",
+      "bytes": 97104
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "550af49ac72933118e939e22f8727cea4d72f677a0ce89f178ccf43eed3adc26",
-      "bytes": 79127
+      "sha256": "d97ba7882490e4f6d8262ddf589e83dd46cd380432f1eb6bfaaf50ee1f1f1e4c",
+      "bytes": 80121
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "de9f62480810ce2e38132e56aa3004a72a2adba987bf0b5097338b2d2476a220",
-      "bytes": 44034
+      "sha256": "684fbf53b9338a3cc5a27b2273f15678f82285f10bc51d272d17931e581466ad",
+      "bytes": 44986
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "d897d8e115dfc5ef76fc8332dfba05d1000e6d42d1ac1916f8ef798579632d7d",
-      "bytes": 82275
+      "sha256": "b658c6bcd39234a0afc97df6fc460601e6f5a26f94c5c9ae4bbefc4d1d10e5bf",
+      "bytes": 83242
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "fd2e4e6fffefe519549187e1177f7431650bfb89430153520ffc6750c37715a3",
-      "bytes": 226928
+      "sha256": "cb8046fa124b731051d990d4e30c512445a2b2d1bb176a1055d329f5ae5b7627",
+      "bytes": 228342
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "3cee247c6353dd6e47c38a2215c4a346bcb2964d65ea6e87f2656fbc5e6e1f2f",
-      "bytes": 186324
+      "sha256": "108980194ad8f93e99a5f32fa7d4e604933c5ea2f3ee70058044249ce57910bf",
+      "bytes": 187278
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "38f311cca7b245a4d6cd0b9069c93a33f71f2e291f36c9bc3fb989c5bb542125",
-      "bytes": 119975
+      "sha256": "e5ed638f3a1be59a7bf513320e629de0cd41e6a3ed733facfab7261dd91be2bb",
+      "bytes": 121110
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "1aec73f9b3a370b6706b208748e0351575a2154d7577e59e1a3c5ab50f370420",
-      "bytes": 197448
+      "sha256": "87f9e3252331fc015949846e17b6d6b808dd96f36d9d6e1a95babf532cd8940e",
+      "bytes": 198849
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
       "bytes": 9292
+    },
+    "docs/understanding/gate-notes/GATE_ANNUAL_MASK_POLICY_20261018.md": {
+      "sha256": "75516b76c12e26e36f81eba4d6359206f8f6c88af2d2f32a92ab3012950af4d7",
+      "bytes": 10595
     },
     "docs/understanding/gate-notes/GATE_ANNUAL_QUALITY_MASK_DIAGNOSTICS_20261018.md": {
       "sha256": "f83559347a556a6449b4fed62d579d176a60a308adc5aa44de2b57d085b35ef9",
@@ -5581,16 +5754,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "34a0e6cd1851c778f557acfde0334ee157cd6c6cf4237df80d305c71253ed6c7",
-      "bytes": 199021
+      "sha256": "c0a68e43b1ce89a82dade6990b4f67b096596e9f68d88def63de37c80b2fc445",
+      "bytes": 200361
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "856e7f4f33bc9fe0d185c0bcb54313eef71585f1e718a633b5d3964b76f37d86",
-      "bytes": 135436
+      "sha256": "4050c9c7d5800bb505eca7bed1615b25fd24926515f5c839c1b3a0e379bbb0cf",
+      "bytes": 136373
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "2f87baac56a204c54bdc0ee04feba6506fd56eee626c1107c5372a609fb7c629",
-      "bytes": 161830
+      "sha256": "92166e9175e67db52502394ca2418081231d64b48fdfc75bc6cfea34ef7209e4",
+      "bytes": 163010
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -5703,6 +5876,10 @@
     "evidence/integration/annual-mask-operating-inventory-20261018.json": {
       "sha256": "4a57e44f43bd9d7fc94ae608c69948c92ec2f95a1e2bf1afa0538cbeea40e03e",
       "bytes": 352
+    },
+    "evidence/integration/annual-mask-policy-agent-20261018-focused.log": {
+      "sha256": "3e2715a3cbfed359622892d628299375d6dacbfeb1c333d493bcaa26ae6d5adb",
+      "bytes": 1773
     },
     "evidence/integration/annual-mask-preflight-20261018.json": {
       "sha256": "931e9e21d95e9d12f8adf884badd5dc11ebbb70f712791b6bcc07d576b757a0f",
@@ -7391,6 +7568,62 @@
     "evidence/integration/mask-grid-runtime-20261018.py": {
       "sha256": "1dea82486344e65e69da45ee015cb8c66f641800a770e201ded15a9b3eca03f5",
       "bytes": 6931
+    },
+    "evidence/integration/mask-policy-closeout-20261018.json": {
+      "sha256": "b4b87f74ee9366c7bad588909c7b249f435764dc94e19287cca5af7a7fa5e6e6",
+      "bytes": 6965
+    },
+    "evidence/integration/mask-policy-closeout-20261018.py": {
+      "sha256": "1053a455b1246e0bb81e8f3538d383a70a85ad3519f778ec1a4da0658d3534b6",
+      "bytes": 8851
+    },
+    "evidence/integration/mask-policy-independent-20261018.json": {
+      "sha256": "fb7b68ba1025999a2aba77b8b7867db497be4d9f4e6db84b1ea1c5cd8779a67b",
+      "bytes": 3829
+    },
+    "evidence/integration/mask-policy-independent-20261018.log": {
+      "sha256": "2d6913f0ecca1ab0b9792443bfd64488afd322422c374b4bec4dd10e945fd07f",
+      "bytes": 5010
+    },
+    "evidence/integration/mask-policy-independent-20261018.py": {
+      "sha256": "5d3e0ddfe0e339372c38b7654021d4e7ea19a4f2ec756a08ded2d3510475951c",
+      "bytes": 13500
+    },
+    "evidence/integration/mask-policy-integrity-20261018.py": {
+      "sha256": "9bde0694d4c99a63406d6abca712261700633e52691c13cebb0296055129f01c",
+      "bytes": 2488
+    },
+    "evidence/integration/mask-policy-live-integrity-20261018.json": {
+      "sha256": "a39af8ed3a26d1346887ae6f0b67fcee25ccd34e081dc425928c1a3de93a2e97",
+      "bytes": 577
+    },
+    "evidence/integration/mask-policy-live-processes-20261018.json": {
+      "sha256": "e76df5ebdc6ffdbe0abd72b5d2e2c5c5376ff5f849607c6bf844be06d6463a8a",
+      "bytes": 1895
+    },
+    "evidence/integration/mask-policy-operating-inventory-20261018.json": {
+      "sha256": "aa818bd6d8acb650b7d327fec673c53cf315a4ccfddc60d370f6c3006b18391f",
+      "bytes": 352
+    },
+    "evidence/integration/mask-policy-preflight-20261018.json": {
+      "sha256": "616f23c46f7550dd897499e78dbbd0ad5cfddd789b78130ca55321eb9abe6f41",
+      "bytes": 552845
+    },
+    "evidence/integration/mask-policy-root-related-20261018.log": {
+      "sha256": "d1199c0f6f0b343a4363da13cd1c8a93ed758aff0554bd747e2f08b321457de5",
+      "bytes": 5359
+    },
+    "evidence/integration/mask-policy-runtime-20261018.json": {
+      "sha256": "82bd9f3cc978d1b6b9634437b9c4e468d1be159c7b1078d6dcf0292e3f852ca8",
+      "bytes": 3710
+    },
+    "evidence/integration/mask-policy-runtime-20261018.log": {
+      "sha256": "12413336dc560af6e5aa8f1f5ba6b30c37c1752506a16ed01bdbe670b491f79d",
+      "bytes": 92
+    },
+    "evidence/integration/mask-policy-runtime-20261018.py": {
+      "sha256": "696ce5390882a1299636471d3f9b51a95d4decfeb0dbc18469d59c44395e8e74",
+      "bytes": 11162
     },
     "evidence/integration/ml-readiness-resume-20261017.json": {
       "sha256": "75aea76a4afa1d46813d7e7b8b4a71e6e542c5647ca5fb2702338aaeca9ae114",
@@ -10908,6 +11141,10 @@
       "sha256": "7c3ef2d9e5de16469ebd909adaa4b9aa75663e6df70d3f8205eba62aefff83c4",
       "bytes": 10384
     },
+    "tests/test_annual_mask_policy.py": {
+      "sha256": "78a42535d9506ddf93e268ae6ec366af80b4f73b8aaa7344da9b165996ea6b26",
+      "bytes": 8375
+    },
     "tests/test_annual_quality_mask_diagnostics.py": {
       "sha256": "0bba28e14244f6dc2d753bab6bc14ee3b1e7e0f6639016b40f1ef71ac5d11f38",
       "bytes": 11497
@@ -11246,11 +11483,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T04:37:39.265806+09:00",
-    "understanding_markdown": 101,
+    "checked_at": "2026-10-18T04:46:21.964225+09:00",
+    "understanding_markdown": 102,
     "implementation_markdown": 1,
-    "local_links": 437,
-    "metadata_evidence_references": 11345,
+    "local_links": 445,
+    "metadata_evidence_references": 11485,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true

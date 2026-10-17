@@ -1,5 +1,27 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 호출자 명시 최소 유효율의 연차 정책 진단 (135)
+
+구현 담당은 신규 `backend/app/ml/annual_mask_policy.py`, 집중시험과 문서135를 맡았다. 독립 담당은 별도 실제 임시 연차 자료·마스크·미훈련 checkpoint로 유리수 경계, 정책/입력 선검사, 계수 오염과 무쓰기를 검증한다. Root는 관련 회귀·실파일 시나리오·운영 조회·보존·공통 문서·Git을 담당하고 이해 담당은 완료된 소스·시험으로 해설·발표 대본·FAQ·INDEX·변경 이력을 갱신한다. 시작 시 이전 작업자는 모두 완료 상태였고 실제 수집·학습 프로세스는 관측되지 않았다. API·Ollama 및 보고 예약 ACTIVE/10분은 수집·학습 실행과 구분한다.
+
+`inspect_annual_mask_policy(store, model_ref, training_report_sha256, requested_years, policy)`는 정책과 전체2~6개 연차 요청을 I/O 전에 검증하고 사본으로 고정한다. policy는 schema_version=1, minimum_valid_numerator, minimum_valid_denominator, comparison=greater_than_or_equal의 정확히4개 키다. 분모는1~1000000, 분자는0~분모의 실제 정수만 허용하며 bool/float/string을 변환하지 않는다. 정책 누락 시 임의 기본 기준을 넣지 않는다. 호출자가 선택한 기준이며 공식 기관 정책이나 운영 채택 승인이 아니다.
+
+134의 연차 공간·고정 참조·마스크 진단을 한 번 모두 통과한 뒤에만 정책을 평가한다. 부모의 전체 성공 flag·행별 연도/상태/join·133 성공 flag와 counts를 모두 선검사한다. counts는 정확히 valid_pixels/invalid_pixels/total_pixels 세 실제 정수이며 total은1~1024², 각 계수는0~total이고 합이 total이어야 한다. 오염된 계수는 정책 평가를 시작하지 않고 차단한다. 유효율은 valid_pixels*denominator >= total_pixels*numerator의 정수 교차곱으로 비교하며 나눗셈·반올림은 없다.
+
+exact20 출력은 parent_annual_observation을 보존하고 정책 사본·모든 연도의 계수와 MET/NOT_MET를 반환한다. 한 연도가 미달해도 나머지 정책 행을 모두 평가하며 issue는 첫 미달 연도를 가리킨다. caller_policy_evaluated는 대조 완료, caller_policy_met는 전체 연도 충족이고 상위 artifact_bytes_verified는 전체 정책 충족 때만 true다. 정책 미달에도 이미 부모134의 모든 영상·마스크 I/O가 완료됐을 수 있으며 nested byte 성공 이력은 남는다. counts 오염 시 정책 행 NOT_CHECKED도 실제 파일 미읽음을 뜻하지 않는다. 품질 보고서·품질 마스크·의미 진실·실제 AOI·기관 권위·과학 정확도·실행·state_dict·Workflow9개 flag는 항상 false다.
+
+정책 분자가0이면 전부0인 마스크도 충족할 수 있고, 양수면 미달한다. 이는 명시 기준의 수학적 대조이며 구름/유효영역의 정답성·임계값 적정성·기관 승인·독립 정확도·모델 승인이 아니다. 추가 get·파일·checkpoint·픽셀 읽기를 하지 않으며 정상N행의134 이력은 모델 load1회·get1+6N회·maskN회이고 원 영상 픽셀·학습·추론은 없다. 임시 checkpoint는 실제 훈련 모델이 아닌 합성 fixture다.
+
+집중8 PASS/5.938초, 관련26 PASS/42.071초(신규135의8+134의9+133의9), 독립7 PASS/0 SKIP/28.670307초, exit0이다. 중복 묶음을 합산하지 않는다. 집중 원로그는 annual-mask-policy-agent-20261018-focused.log이며 다른 증거의 mask-policy 접두어와 구분해 실제 경로를 유지했다. Root 실제 Temp7시나리오는3년 정확한1/2 경계 충족, 두번째32767/65536의 미달에도 MET/NOT_MET/MET 전행 평가, all0의0기준 충족/양수기준 미달, bool정책 I/O0, 부모255·단계 간 manifest 변경 차단을 확인했다. 정상과 정책 미달은1load/19get/mask3회이며 DB/전체 파일 불변·영상 픽셀/훈련/추론0이다. 독립 실제2/6행은13/37get·load1·maskN회로 추가 I/O가 없고 실제0.5마스크에500001/1000000 정책은 전6행 미달을 확인했다.1/3 정수 경계와 counts/flags 오염은 명시 mock으로 별도 검증했으며 실제 측정으로 표현하지 않는다.
+
+보호141개·기존 소스303개·이전 증거1200개·catalog14행 canonical SHA·예약136314880바이트를 보존했다.04:41 KST URI mode=ro 운영 조회는 dataset_versions0이다. 원본·원장·lock·분할·운영 모델·예약은 그대로이며 운영 수집·등록·학습·추론·배포·Workflow dispatch는0이다.
+
+다중 Registry·파일의 순차 관측은 원자 snapshot이 아니다. Store 원문 JSON predecode 상한, Torch ambient allowlist/시간·메모리 격리, GDAL parser CPU/RSS/시간 hardcap·전체 외부 I/O OS 격리와 mapped drive·TOCTOU 한계는 상속한다. PUBLIC 선언은 실제 ACL 인증이 아니다.130의 표본 envelope 포함과133의0/1 값 확인도 주 전체 자료 확보나 실제 품질을 증명하지 않는다.
+
+정책 계약·사용법·시험 근거·인계와 이해자료를 같은 단위로 갱신한다.134와 내부 연결했지만115 실행/API/UI에는 미연결이므로 이번 화면 계약 변경·UI 적용·frontend/build/browser와 전체 backend 재실행은 없다. 관련 회귀·독립 실제 임시 파일을 이번 근거로 사용하며120/121 전체 시험은 이전 이력이다. 다음136은 실행·승인과 분리한 명시 진단 서비스 계약 후보이다. 원자료 수집 재개·독립 라벨·품질/모델 승인·다른5개 실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/기관 UAT는 미완료다. 단일 정책 진단을 전체 개발 완료로 보거나10분 보고 예약을 중단하지 않는다.
+
+근거: `docs/implementation/135_annual_mask_policy.md`, `evidence/integration/annual-mask-policy-agent-20261018-focused.log`, `mask-policy-root-related-20261018.log`, `mask-policy-independent-20261018.json`, `mask-policy-runtime-20261018.json`, `mask-policy-live-integrity-20261018.json`, `mask-policy-operating-inventory-20261018.json`, 최종 `mask-policy-closeout-20261018.json`.
+
 ## 2026-10-18 — 연차 공간 진단과 명시 마스크의 고정 참조 연결 (134)
 
 구현 담당은 신규 `backend/app/ml/annual_quality_mask_diagnostics.py`, 집중시험과 문서134를 맡았다. 독립 담당은 별도 실제 임시 GeoTIFF·등록 참조·미훈련 checkpoint로 전체 요청 선검사, 단계 간 manifest 연결, 행별 실패와 무쓰기를 검증한다. Root는 관련 회귀·실파일 시나리오·운영 조회·보존·공통 문서·Git을 담당하고 이해 담당은 완료된 구현과 증거로 해설·발표·FAQ·INDEX·변경 이력을 갱신한다. 시작 시 기존 작업자는 모두 완료 상태였으며 실제 수집·학습 프로세스는 관측되지 않았다. API·Ollama 및 보고 예약 ACTIVE/10분을 수집·학습 실행과 구분한다.

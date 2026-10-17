@@ -53,3 +53,7 @@ Root 관련 최종 **28 PASS / 69.773초 / exit 0**는 `evidence/integration/ann
 독립 **7 PASS / 0 SKIP / 24.295825초 / exit 0**는 `evidence/integration/annual-mask-independent-20261018.py`와 같은 stem `.json`·`.log`에 동결했다. 별도 Temp6개 영상 GeoTIFF·30 Registry·미훈련 CPU checkpoint로2/6행의 get13/37회·모델 load1회·mask read N회·영상 픽셀0과 DB/전체 파일 불변을 확인했다. 여섯 번째 행의 입력 불량은 Store I/O0이며 중간255 실패는130 전체 성공 뒤 get25회·mask read2회에서 failfast했다.
 
 동일한 영상 파일 SHA를 유지한 채 두 번째 Registry 관측의 institution과 canonical digest를 바꿨을 때 join이 차단됐다. 이때 nested133 counts의 이전 성공을 남기고 상위 flags는 false로 유지했다. 실제 normalization evidence의 scale을 numeric string으로 오염한 경우130에서 차단되고 mask 호출0이었다. pin·모델 변조·all0·caller snapshot도 확인했다. exact22/10false와 최종 source/test SHA가 일치하며 Git c8ce70a의 기존 핵심8개 source SHA·tracked source는 불변이다. 추가 제품 지적은 없다. 운영·훈련·추론 없이 부분 관측·비원자성·QA/최소 정책·실행 미승인의 범위를 유지한다. 최종 증거 반영 후 본 문서를 동결했다.
+
+## 후속135
+
+호출자 명시 최소 유효율의 연차 진단은 `135_annual_mask_policy.md`와 신규 `annual_mask_policy.py`에서 수행한다. 134 전체 관측을 보존하고 추가 자료 읽기 없이 정수 교차곱으로 정책을 대조한다. 정책 충족과 실제 의미·품질·기관/모델·실행 승인은 구분한다.

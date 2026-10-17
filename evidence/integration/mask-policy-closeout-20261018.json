@@ -1,0 +1,161 @@
+{
+  "recorded_at": "2026-10-18T04:46:21.964225+09:00",
+  "status": "135_EXPLICIT_CALLER_RATIONAL_MASK_POLICY_DIAGNOSTICS",
+  "focused": {
+    "passed": 8,
+    "seconds": 5.938,
+    "log": "evidence/integration/annual-mask-policy-agent-20261018-focused.log"
+  },
+  "related": {
+    "passed": 26,
+    "seconds": 42.071,
+    "composition": "8 new policy +9 annual join +9 binary mask"
+  },
+  "independent": {
+    "passed": 7,
+    "skipped": 0,
+    "seconds": 28.670307499996852
+  },
+  "root_actual_temp_file_scenarios": 7,
+  "overlapping_test_bundles_are_not_additive": true,
+  "source_sha256": "ebf3db476613101732c4b1db0b2c41e45148dc76ebbec078031668d286541b9c",
+  "test_sha256": "78a42535d9506ddf93e268ae6ec366af80b4f73b8aaa7344da9b165996ea6b26",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T04:46:21.964225+09:00",
+    "understanding_markdown": 102,
+    "implementation_markdown": 1,
+    "local_links": 445,
+    "metadata_evidence_references": 11485,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T04:43:48.920029+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 303,
+    "existing_source_changes": [],
+    "previous_evidence_checked": 1200,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T04:41:35.876405+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "live_processes": {
+    "checked_at": "2026-10-18T04:45:59.0124318+09:00",
+    "processes": [
+      {
+        "ProcessId": 27268,
+        "Name": "ollama app.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\""
+      },
+      {
+        "ProcessId": 27860,
+        "Name": "ollama.exe",
+        "CommandLine": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve"
+      },
+      {
+        "ProcessId": 32224,
+        "Name": "python.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000"
+      },
+      {
+        "ProcessId": 26912,
+        "Name": "python.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001"
+      },
+      {
+        "ProcessId": 35032,
+        "Name": "python.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend"
+      },
+      {
+        "ProcessId": 36060,
+        "Name": "python.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\""
+      },
+      {
+        "ProcessId": 32876,
+        "Name": "python.exe",
+        "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -"
+      }
+    ],
+    "collector_training_processes_observed": 0,
+    "observation_limit": "Process command patterns; test Python processes are not collectors or training",
+    "automation_status": "ACTIVE",
+    "automation_interval_minutes": 10,
+    "automation_was_not_modified": true
+  },
+  "exact20_output_and_nine_unverified_flags_always_false": true,
+  "caller_explicit_exact_four_key_policy_required_without_default": true,
+  "numerator_zero_to_denominator_integer_denominator_one_to_million": true,
+  "bool_float_string_policy_counts_not_coerced": true,
+  "full_request_and_policy_snapshotted_before_any_io": true,
+  "parent134_full_success_before_all_counts_validation_and_policy_evaluation": true,
+  "all_counts_exact_three_builtin_integers_and_sum_pixel_bound_validated_before_any_policy_comparison": true,
+  "integer_cross_product_comparison_without_division_or_rounding": true,
+  "all_years_evaluated_even_if_one_policy_threshold_not_met": true,
+  "policy_not_met_still_has_all_parent134_file_and_mask_io_completed": true,
+  "nested_parent134_preserved_and_aggregate_artifact_true_only_if_all_policy_rows_met": true,
+  "additional_registry_file_checkpoint_pixel_reads_over134": 0,
+  "model_checkpoint_load_valid_path": 1,
+  "store_get_calls_valid_path_formula": "1+6N",
+  "mask_read_calls_valid_path_formula": "N",
+  "image_pixel_read_calls": 0,
+  "quality_report_verified": false,
+  "quality_mask_verified": false,
+  "mask_semantics_verified": false,
+  "registry_aoi_verified": false,
+  "source_authority_verified": false,
+  "scientific_accuracy_validated": false,
+  "execution_authorized": false,
+  "state_dict_verified": false,
+  "workflow_supported": false,
+  "threshold_selection_and_agency_quality_policy_authority_not_verified": true,
+  "runtime_api_ui_connected": false,
+  "store_database_json_predecode_not_bounded_by_postdecode_tree_limit": true,
+  "gdal_parser_cpu_rss_time_and_all_external_io_not_os_isolated": true,
+  "ambient_torch_allowlist_unchanged_and_not_cpu_rss_time_isolated": true,
+  "sequential_registry_and_file_snapshots_are_not_atomic": true,
+  "frontend_build_browser_rerun_this_unit": false,
+  "backend_full_rerun_this_unit": false,
+  "reason_no_full_rerun": "Previous sources unchanged. New unconnected rational policy diagnostic covered by focused, related and independent actual Temp files/untrained checkpoint; no external API/UI contract change.",
+  "previous_backend_regression": {
+    "unit": "120/121",
+    "tests_run": 1184,
+    "passed": 1183,
+    "skipped": 1,
+    "seconds": 399.529
+  },
+  "previous_frontend_regression": {
+    "unit": "120/121",
+    "passed": 261,
+    "build_modules": 108,
+    "build_seconds": 21.85
+  },
+  "understanding_updated": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "operating_model_or_raster_load": 0,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_internal_candidate": "136_EXPLICIT_PER_SCENE_DIAGNOSTIC_SERVICE_CONTRACT_WITHOUT_EXECUTION_OR_APPROVAL",
+  "snapshot_files": 1762
+}

@@ -1,0 +1,15 @@
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+test_actual_two_six_rows_exact20_no_extra_io_counts_or_model_load (test_annual_mask_policy.AnnualMaskPolicyTests.test_actual_two_six_rows_exact20_no_extra_io_counts_or_model_load) ... ok
+test_all_counts_prevalidated_no_partial_policy_evaluation (test_annual_mask_policy.AnnualMaskPolicyTests.test_all_counts_prevalidated_no_partial_policy_evaluation) ... ok
+test_allzero_threshold_zero_pass_positive_threshold_fails (test_annual_mask_policy.AnnualMaskPolicyTests.test_allzero_threshold_zero_pass_positive_threshold_fails) ... ok
+test_first_deficit_issue_but_every_year_evaluated_and_nested_unchanged (test_annual_mask_policy.AnnualMaskPolicyTests.test_first_deficit_issue_but_every_year_evaluated_and_nested_unchanged) ... ok
+test_integer_exact_boundary_no_rounding_all_years_evaluated (test_annual_mask_policy.AnnualMaskPolicyTests.test_integer_exact_boundary_no_rounding_all_years_evaluated) ... ok
+test_parent_year_status_join_and_fullflags_strict_true (test_annual_mask_policy.AnnualMaskPolicyTests.test_parent_year_status_join_and_fullflags_strict_true) ... ok
+test_policy_and_last_row_invalid_all_rejected_pre_io (test_annual_mask_policy.AnnualMaskPolicyTests.test_policy_and_last_row_invalid_all_rejected_pre_io) ... ok
+test_request_policy_snapshot_and_fixed_stage_error (test_annual_mask_policy.AnnualMaskPolicyTests.test_request_policy_snapshot_and_fixed_stage_error) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 5.938s
+
+OK
