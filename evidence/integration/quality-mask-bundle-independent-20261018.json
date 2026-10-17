@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "scope": "INDEPENDENT_QUALITY_MASK_BUNDLE_TEMP_FIXTURES_ONLY",
+  "status": "TESTED_SYNTHETIC",
+  "tests_run": 7,
+  "tests": 7,
+  "passed": 7,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 1.4408524999889778,
+  "seconds": 1.4408524999889778,
+  "source_sha256": "72750fe9f1299a878a589e66ac1e0d53b01eddfc3af6237915e6e16bce623945",
+  "test_sha256": "1bfa06a5a21346af4c8d30390c6deaaf4690138eced2e6e99eccf46c5c70ffa6",
+  "git_baseline": "f01752a699497e94bece097865c862e1173d5bf1",
+  "separate_git_baseline_matches": {
+    "backend/app/dataset_registry.py": true,
+    "backend/app/ml/per_scene_normalization_files.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_quality_mask_grid.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "scripts/collect_samples.py": true,
+    "scripts/collect_training_grid.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "existing_source_unchanged": {
+    "backend/app/dataset_registry.py": true,
+    "backend/app/ml/per_scene_normalization_files.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_quality_mask_grid.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "scripts/collect_samples.py": true,
+    "scripts/collect_training_grid.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "observations": [
+    {
+      "fixture": "actual fresh TempStore SQLite +6bandGTiff+checkerboardGTiff+reportbytes",
+      "registry_fixture_setup_writes": 3,
+      "consumer_gets": 6,
+      "counts": {
+        "valid_pixels": 128,
+        "invalid_pixels": 128,
+        "total_pixels": 256
+      },
+      "source_manifest_quality": "RAW",
+      "mask_manifest_quality": "STAGED",
+      "database_and_all_files_unchanged_after_consumption": true,
+      "preparer_registry_or_file_operations": 0,
+      "scientific_accuracy_validated": false,
+      "execution_authorized": false
+    },
+    {
+      "counterexample": "nodata0",
+      "prepared": true,
+      "consumer_status": "BLOCKED",
+      "issue": "MASK_INTRINSIC_VALIDITY_UNSUPPORTED",
+      "all_files_unchanged": true
+    },
+    {
+      "counterexample": "value255",
+      "prepared": true,
+      "consumer_status": "BLOCKED",
+      "issue": "MASK_VALUES_NOT_BINARY",
+      "all_files_unchanged": true
+    },
+    {
+      "counterexample": "restricted",
+      "prepared": true,
+      "consumer_status": "BLOCKED",
+      "issue": "ACCESS_DECLARATION_BLOCKED",
+      "all_files_unchanged": true
+    }
+  ],
+  "fixture_scope": {
+    "actual": "fresh temporary GTiff files/report bytes and SQLite DatasetVersion registry; readonly SQL consumption",
+    "mocked": "I/O denial guards, write denial guards, call counters and custom type poison only; no mocked successful consumer responses"
+  },
+  "operating_data_access": false,
+  "operating_writes": 0,
+  "training": 0,
+  "inference": 0,
+  "api_or_ui_changed": false,
+  "frontend_build_browser_required": false,
+  "limitations": [
+    "Producer prepares bytes/drafts only; explicit test caller supplies missing report metadata.",
+    "TempStore registration setup is synthetic fixture creation, not preparation or operating registration.",
+    "128/256 is binary syntax/count evidence, not semantic quality, scientific accuracy, or a minimum policy approval.",
+    "Legacy nodata=0, missing image descriptions and label/AOI-combined collector masks remain unresolved.",
+    "No source files, old tests, operating data, main or UI were edited."
+  ]
+}

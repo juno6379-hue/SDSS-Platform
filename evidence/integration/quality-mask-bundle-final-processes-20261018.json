@@ -1,0 +1,103 @@
+﻿{
+    "checked_at":  "2026-10-18T05:52:49.8329371+09:00",
+    "processes":  [
+                      {
+                          "pid":  27268,
+                          "parent_pid":  31440,
+                          "name":  "ollama app.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+                          "created":  "\/Date(1792194023427)\/",
+                          "cpu":  27.640625,
+                          "working_set":  89022464
+                      },
+                      {
+                          "pid":  27860,
+                          "parent_pid":  27268,
+                          "name":  "ollama.exe",
+                          "command_line":  "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+                          "created":  "\/Date(1792194025549)\/",
+                          "cpu":  10.109375,
+                          "working_set":  84893696
+                      },
+                      {
+                          "pid":  2060,
+                          "parent_pid":  14348,
+                          "name":  "node.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =\u003e\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) =\u003e entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node\u0027s canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" \u0026\u0026 error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node\u0027s ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" --experimental-vm-modules c:\\Temp\\.tmpxMLdb7\\kernel.js --session-id b9c3e259a941427ba4c2d16ab02f8369 --working-dir E:\\GeoAI–MLOps–SDSS",
+                          "created":  "\/Date(1792194142317)\/",
+                          "cpu":  6.734375,
+                          "working_set":  98107392
+                      },
+                      {
+                          "pid":  29716,
+                          "parent_pid":  14348,
+                          "name":  "node.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =\u003e\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) =\u003e entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node\u0027s canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" \u0026\u0026 error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node\u0027s ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" c:\\Temp\\.tmpxMLdb7\\trusted-worker.js E:\\GeoAI–MLOps–SDSS",
+                          "created":  "\/Date(1792194142373)\/",
+                          "cpu":  100.96875,
+                          "working_set":  155938816
+                      },
+                      {
+                          "pid":  30944,
+                          "parent_pid":  2712,
+                          "name":  "node.exe",
+                          "command_line":  "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1",
+                          "created":  "\/Date(1792194210869)\/",
+                          "cpu":  33.609375,
+                          "working_set":  54415360
+                      },
+                      {
+                          "pid":  32224,
+                          "parent_pid":  24092,
+                          "name":  "python.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
+                          "created":  "\/Date(1792194462900)\/",
+                          "cpu":  453.640625,
+                          "working_set":  17395712
+                      },
+                      {
+                          "pid":  26912,
+                          "parent_pid":  3392,
+                          "name":  "python.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001",
+                          "created":  "\/Date(1792198361777)\/",
+                          "cpu":  380.390625,
+                          "working_set":  32227328
+                      },
+                      {
+                          "pid":  15608,
+                          "parent_pid":  29584,
+                          "name":  "node.exe",
+                          "command_line":  "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1 --port 5174",
+                          "created":  "\/Date(1792198475813)\/",
+                          "cpu":  89,
+                          "working_set":  102359040
+                      },
+                      {
+                          "pid":  35032,
+                          "parent_pid":  22796,
+                          "name":  "python.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend",
+                          "created":  "\/Date(1792199087513)\/",
+                          "cpu":  10697.90625,
+                          "working_set":  21442560
+                      },
+                      {
+                          "pid":  38740,
+                          "parent_pid":  35032,
+                          "name":  "python.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\"",
+                          "created":  "\/Date(1792270169062)\/",
+                          "cpu":  2.703125,
+                          "working_set":  55672832
+                      }
+                  ],
+    "collector_training_processes_observed":  0,
+    "collector_training_command_matches":  [
+
+                                           ],
+    "observation_limit":  "Process command patterns only; unittest interpreters and temporary API fixtures are not operating training",
+    "automation_status":  "ACTIVE",
+    "automation_interval_minutes":  10,
+    "automation_was_not_modified":  true
+}

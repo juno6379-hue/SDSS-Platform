@@ -1,5 +1,21 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 품질 보고서 바이트와 미등록 참조 초안의 순수 준비 함수 (138)
+
+구현 담당은 새 backend/app/data/quality_mask_bundle.py·집중시험·문서138을, 독립 담당은 실제 임시 파일/Registry와131·133 소비 호환 및 경계 검증을 맡았다. Root는 관련 회귀·운영 조회·보존·문서/증거·Git을, 이해 담당은 완료된 구현과 시험을 읽어 해설·발표 대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시 이전 작업자는 완료 상태였고 API/Ollama 외 운영 수집·학습 프로세스는 관측되지 않았다. 보고 예약 ACTIVE/10분은 실제 실행과 구분한다.
+
+prepare_quality_mask_bundle는 호출자가 명시한 image/mask manifest와 report identity에서 LCLUC_QUALITY_MASK_EVIDENCE exact5 JSON bytes·SHA,세 고정 참조,image/mask 선언 사본과 exact7 report_manifest_patch를 준비한다. 보고서의 source/spatial/temporal/quality_status/access_class를 발명하거나 이미지에서 자동 복사하지 않는다. 이5개 caller metadata가 필요하므로 REPORT_METADATA_REQUIRED_UNREGISTERED 상태이며 완전한 등록 manifest나 운영 등록 성공이 아니다. 기존 이미지의 다른 보고서 참조와 충돌·세 identity 중복·보고서와 이미지/마스크의 문자열 경로 충돌은 거부하며 입력을 바꾸지 않는다.
+
+선언은 bounded builtin JSON subset·명시 RAW/STAGED·상대 경로 문법·고정 버전/SHA·명시 binary mask semantics를 확인한다. 전체 upstream schema 준수·실파일 존재/바이트·헤더·마스크값·의미 진실·기관/ACL·품질·과학/실행 승인은 이 함수가 검증하지 않는다. cold schema reader·Store·파일/네트워크·Torch/GDAL 호출 없이 순수 준비 범위로 제한한다. 로컬 보고서 바이트 SHA는 실제 이미지/마스크의 진위나 QA 승인이 아니다. image/mask 사이의 물리적 alias·case/link 등은 미검증이며 보고서의 정규화 문자열 경로 충돌 검사와 구분한다.
+
+최종 집중9 PASS/1.103초, Root 관련39 PASS/9.865초다. 독립7 PASS/0 SKIP/1.4408525초이며 별도 JSON/로그에 실제 Temp/모의 경계를 기록했고 중복 묶음을 합산하지 않는다. 독립 시험에서만 caller report metadata를 명시해 완전 manifest로 병합하고96 schema를 교차 확인한 뒤 실제 Temp 파일·임시 Registry에 연결해131/133 소비를 확인했다. 준비 함수가 스스로 등록하거나 TIFF를 썼다는 의미가 아니다.
+
+보호141개·기존 소스314개·이전 증거1275개·catalog14행 canonicalSHA·dataset_versions0·예약136314880바이트가 불변이다. 별도 갱신된 docs16/20은05:52 관측 시각과 정체 기간만 바뀌었음을 quality-mask-bundle-separate-status-docs-20261018.json으로 검산했다. 누계·manifest/원장 SHA는 그대로이며138의 수집 재개 성과로 표현하지 않는다. 원본·원장·lock·분할·운영 모델·예약 보존,운영 수집/등록/학습/추론/승인/배포/Workflow dispatch0이다. 기존 endpoint/main/137 UI·요청·응답 및 실행 gate는 변경하지 않았다. 내부 Python 준비 함수로 아직 화면/HTTP/실제 writer에 연결하지 않았으므로 이번 frontend/build/browser 재실행은 없고,137의 전체backend1358 PASS/1SKIP 및front271은 이전 근거다. 새 함수·기존 소비자·Registry의 관련/독립 검증을 이번 근거로 사용한다.
+
+관련 설계·내부 계약·사용법·시험 근거·인계와 이해자료14개를 같은 단위로 갱신한다. 기존 수집 마스크의 nodata0 및 label/AOI 결합,band descriptions 누락 가능성은 해결되지 않았고 기존 mask를 새 의미로 소급 선언하지 않는다. 다음139 후보는 caller가 제공하는 누락 보고서 metadata와 patch의 안전한 결합 계약이며,별도 derived raster·명시 파일 저장/Registry 연결은 후속이다. 독립 라벨/품질·모델 승인·다른5개 실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/UAT는 계속 미완료다. 단일 내부 준비 기능을 전체 프로젝트 완료로 보지 않는다.
+
+근거: docs/implementation/138_quality_mask_bundle.md 및 evidence/integration/quality-mask-bundle-agent-20261018.log, quality-mask-bundle-root-related-20261018.log, quality-mask-bundle-independent-20261018.json, quality-mask-bundle-live-integrity-final-20261018.json, 최종 quality-mask-bundle-closeout-20261018.json.
+
 ## 2026-10-18 — 인증된 연차 입력 진단 API와 수동 UI 연결 (137)
 
 API 담당은 신규 annual_diagnostics_api.py·시험과 main의 라우터 두 배선 및 단일 인증 비교의 UTF8 bytes 보강을 완료했다. UI 담당은 AnnualInputDiagnostics·strict adapter/client·전용 CSS/시험과 ModelReview의 import/render만 연결했다. 두 담당은 상대 영역을 읽어 계약을 교차 검토했고 차단 지적0이다. 이해 담당은 완료된 구현·시험으로 쉬운 설명·발표 대본·FAQ·INDEX·변경 이력과 새 Gate를 갱신했다. Root는 실제 HTTP/브라우저·전체 백엔드·보존·인계·Git을 맡았다. 이전 에이전트는 시작 시 완료 상태였고 진행 중인 수집·학습을 중복 실행하지 않았다.
