@@ -1,0 +1,79 @@
+{
+  "recorded_at": "2026-10-18T02:35:49.734733+09:00",
+  "status": "123_BOUNDED_READ_ONLY_PER_SCENE_FILE_SNAPSHOTS_VERIFIED",
+  "focused": {
+    "passed": 14,
+    "seconds": 0.81
+  },
+  "related": {
+    "passed": 28,
+    "seconds": 1.309,
+    "composition": "14 new reader +14 existing122 pure tests"
+  },
+  "independent": {
+    "passed": 9,
+    "skipped": 0,
+    "seconds": 1.294835200002126
+  },
+  "root_actual_temp_raster_comparison_scenarios": 6,
+  "overlapping_test_bundles_are_not_additive": true,
+  "source_sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+  "test_sha256": "b5bae5db47e7ed4178ae2c41cebcd4481400c1bce40445afcfd1cfea57284c8b",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T02:35:49.734733+09:00",
+    "understanding_markdown": 90,
+    "implementation_markdown": 1,
+    "local_links": 376,
+    "metadata_evidence_references": 9709,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T02:32:20.429861+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 279,
+    "existing_source_changes": [],
+    "previous_evidence_checked": 1019,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "initial_independent_environment_test_error_preserved_and_fixed_without_product_change": true,
+  "actual_windows_junction_rejection_and_target_preservation_tested": true,
+  "caller_sha_scope_not_registry_id_version_or_checkpoint_binding": true,
+  "artifact_bytes_verified_true_scope": "Only three sequential role byte hashes and122 declaration consistency, not raster validity or a simultaneous snapshot.",
+  "api_ui_workflow_runtime_connected": false,
+  "execution_authorized": false,
+  "checkpoint_artifact_verified": false,
+  "source_authority_verified": false,
+  "scientific_accuracy_validated": false,
+  "workflow_supported": false,
+  "frontend_build_browser_rerun_this_unit": false,
+  "backend_full_rerun_this_unit": false,
+  "reason_no_full_rerun": "All279 previous source files are byte-identical. New unconnected internal reader tested with independent filesystem boundaries,122 related tests and actual Temp raster comparison. No API/UI contract change.",
+  "previous_backend_regression": {
+    "unit": "120/121",
+    "tests_run": 1184,
+    "passed": 1183,
+    "skipped": 1,
+    "seconds": 399.529
+  },
+  "previous_frontend_regression": {
+    "unit": "120/121",
+    "passed": 261,
+    "build_modules": 108,
+    "build_seconds": 21.85
+  },
+  "understanding_updated": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_internal_candidate": "124_REGISTRY_AND_MODEL_FIXED_REFERENCE_BINDING_AND_ALL_YEAR_PREFLIGHT_CONTRACT",
+  "snapshot_files": 1532
+}

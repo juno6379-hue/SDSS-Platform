@@ -1,0 +1,94 @@
+test_actual_windows_junction_is_rejected_and_target_preserved (__main__.Independent.test_actual_windows_junction_is_rejected_and_target_preserved) ... ok
+test_declaration_mismatch_stops_before_image (__main__.Independent.test_declaration_mismatch_stops_before_image) ... ok
+test_each_file_limit_and_missing_or_nonregular (__main__.Independent.test_each_file_limit_and_missing_or_nonregular) ... ok
+test_global_1_to_16_and_missing_declaration_have_no_file_io (__main__.Independent.test_global_1_to_16_and_missing_declaration_have_no_file_io) ... ok
+test_growth_stream_limit_not_just_pre_stat (__main__.Independent.test_growth_stream_limit_not_just_pre_stat) ... ok
+test_path_escape_and_alias_spellings (__main__.Independent.test_path_escape_and_alias_spellings) ... ok
+test_role_sha_mismatch_and_partial_binding_priority (__main__.Independent.test_role_sha_mismatch_and_partial_binding_priority) ... ok
+test_strict_json_before_semantics (__main__.Independent.test_strict_json_before_semantics) ... ok
+test_three_role_success_is_bytes_only_and_input_immutable (__main__.Independent.test_three_role_success_is_bytes_only_and_input_immutable) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.294s
+
+OK
+{
+  "scope": "SYNTHETIC_TEMP_FILE_SNAPSHOTS_ONLY",
+  "tests": 9,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 1.294835200002126,
+  "passed": true,
+  "source_sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+  "frozen_source_matches": true,
+  "baseline_commit": "9c5acb431392f3e94e7e6e361737c0e8ef4002ed",
+  "old_source_byte_checks": [
+    {
+      "path": "backend/app/ml/per_scene_normalization_contract.py",
+      "baseline_sha256": "b2f1f79c5b9773d9588d4e9b560f9df12ed94d2c1e5301b638cc9c432090f8ea",
+      "current_sha256": "b2f1f79c5b9773d9588d4e9b560f9df12ed94d2c1e5301b638cc9c432090f8ea",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/lcluc_workflow.py",
+      "baseline_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "current_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/normalization.py",
+      "baseline_sha256": "390f5b673fd694b3f7c1002a091f8c0a443bc400a728784426cca4064bf4bd83",
+      "current_sha256": "390f5b673fd694b3f7c1002a091f8c0a443bc400a728784426cca4064bf4bd83",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/service.py",
+      "baseline_sha256": "f2a44674f22632315cf21959e5c6adf1bb9bf88097fb44d2998aa525cb2e661b",
+      "current_sha256": "f2a44674f22632315cf21959e5c6adf1bb9bf88097fb44d2998aa525cb2e661b",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "baseline_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "current_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/LclucWorkflowPanel.tsx",
+      "baseline_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "current_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/lclucWorkflowAdapter.ts",
+      "baseline_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "current_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/api.ts",
+      "baseline_sha256": "a145655eef679b406de56330935b11e3c23b7c2feea9a0c5a33079cad5d8bb44",
+      "current_sha256": "a145655eef679b406de56330935b11e3c23b7c2feea9a0c5a33079cad5d8bb44",
+      "unchanged": true
+    }
+  ],
+  "tracked_source_differences": [],
+  "windows_junction": {
+    "attempted": true,
+    "created": true,
+    "link_only_removed": true,
+    "target_preserved": true
+  },
+  "operating_Store_API_reads_or_writes": 0,
+  "raster_header_reads": 0,
+  "inference_training_downloads": 0,
+  "UI_API_changes": 0,
+  "frontend_build_browser_runs": 0,
+  "limitations": [
+    "Three sequential snapshots, not an atomic file set or complete TOCTOU elimination.",
+    "Opaque image bytes deliberately pass hash observation; no raster header/mask/calibration/authority/approval/science claim.",
+    "Checkpoint manifest bytes are not read or authenticated. Mapped-drive physical locality is not established.",
+    "Unwired helper requires no UI/API changes or frontend/browser rerun. Existing1184 backend is historical, not rerun here. Do not sum overlapping suites."
+  ]
+}

@@ -1,5 +1,7 @@
 # 122 — per_scene 정규화 선언의 순수 호환성 관측
 
+후속123은 [세 역할 실제 파일 SHA reader](123_per_scene_normalization_files.md)를 별도 추가했다.122 pure helper의5개 false와 동작은 바꾸지 않았다.123만 읽은 바이트/선언 일치에 제한해 artifact_bytes_verified=true를 제공하며 Registry·checkpoint 신원·권위·실행 검증을 부여하지 않는다.
+
 ## 쉬운 설명
 
 6밴드 모델과 추론 장면의 정규화 설명이 서로 맞는지, 파일을 열거나 모델을 실행하지 않고 비교한다. `DECLARATIONS_CONSISTENT_UNVERIFIED`는 제공된 설명의 형식과 값이 맞는다는 뜻이다. 영상·보정 근거·원 metadata의 실제 SHA 확인, 기관 권위, 실행 승인 또는 과학 정확도를 뜻하지 않는다.

@@ -1,0 +1,16 @@
+{
+  "scope": "TESTED_SYNTHETIC_ACTUAL_TEMP_RASTER_AND_METADATA_BYTES_NO_INFERENCE",
+  "checks_passed": [
+    "new_reader_and_existing_file_verifier_match_same_actual_temp_six_band_fixture",
+    "image_actual_byte_tamper_rejected_without_implicit_repin_or_write",
+    "normalization_evidence_actual_byte_tamper_rejected_without_implicit_repin_or_write",
+    "source_metadata_actual_byte_tamper_rejected_without_implicit_repin_or_write",
+    "repinned_changed_evidence_still_rejected_when_product_declaration_disagrees",
+    "matching_non_raster_bytes_demonstrate_header_and_scientific_validity_not_checked"
+  ],
+  "fixture_files_and_input_metadata_restored": true,
+  "checkpoint_loaded": false,
+  "training_inference_executed": false,
+  "operating_data_contact": false,
+  "scientific_accuracy_validated": false
+}

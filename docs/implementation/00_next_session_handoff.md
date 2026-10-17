@@ -1,5 +1,25 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 제품별 정규화의 세 역할 파일 SHA 읽기 검증 (123)
+
+계약 담당은 신규 `backend/app/ml/per_scene_normalization_files.py`·집중시험·문서123, 독립 검토 담당은 실제 junction/경로·stream/JSON·상태와 UI/API 영향 검토, Root는 실제 GeoTIFF 대조·122 관련 시험·보존·공통 문서/Git, 이해 담당은 완료 코드에 근거한 쉬운 설명·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 기존 에이전트는 유휴였고 수집·학습 프로세스는 관측되지 않았다. 보고예약 ACTIVE/10분과 실제 작업 상태를 구분한다.
+
+신규 `verify_per_scene_normalization_files(data_root, checkpoint_manifest, source_scene, normalization, image_path)`는 명시한 기존 root 아래 영상·보정 JSON·원 metadata의 각 역할 SHA를 caller가 제공한 선언과 대조한다. Registry ID/version/ref나 실제 checkpoint 파일을 조회·결합하는 기능은 아니다. checkpoint_manifest도 caller가 제공한 metadata이며 모델 신원·기관 인증 근거가 아니다.
+
+먼저122로 source/normalization 형식을 검사하고 보정 JSON을 읽어 SHA·strict JSON을 확인한 뒤122의 전체 선언을 검산한다. 이후 영상·원 metadata의 SHA를 각각 확인한다. 한도는 영상64MiB/보정2MiB/원 metadata2MiB다. 상대 경로·root containment·파일종류·링크·읽기 전/열린 fd/후의 식별자·크기·수정시각을 검사하고 escape·과대/성장 파일·변경·SHA 불일치·중복키/비유한 JSON을 고정 오류로 거부한다. UNC root는 stat 전 거부하지만 mapped drive의 실제 매체를 증명하지 않는다. source_url은 HTTP로 조회하지 않는다.
+
+정상 `FILES_MATCHED_UNVERIFIED`에서만 artifact_bytes_verified=true이며 이는 읽은 세 역할의 바이트와 선언 일치 범위다. checkpoint_artifact_verified·source_authority_verified·scientific_accuracy_validated·execution_authorized·workflow_supported는 항상 false다.122 내부 관측의5개 false도 그대로다. 중간 실패에 남는 MATCH는 해당 역할의 읽기 이력이며 전체 성공이 아니다. 순차 세 파일 읽기는 동시 원자 snapshot이 아니고 TOCTOU/FIFO open blocking을 완전히 제거하지 않는다. 같은 역할 경로를 재사용할 수 있으며 SHA 일치만으로 래스터 형식·실물 밴드·CRS·구름 mask·보정 물리값·float32 안전성을 확인하지 않는다.
+
+집중 최종14 PASS/0.810초·Root 관련28 PASS/1.309초(신규14+122의14)·독립9 PASS/0 SKIP/1.294835초다. 중복 묶음을 합산하지 않는다. 독립 시험은 실제 Windows junction 생성/차단/링크만 비재귀 해제/target 보존을 확인했다. 초기 독립 시험의 Path.is_junction API 부재 오류는 원로그/JSON으로 보존하고 시험의 lstat reparse 확인만 고쳤다. 제품 코드는 동결 후 바꾸지 않았다.
+
+Root의 합성 Temp6밴드 GeoTIFF·보정JSON·XML 대조6시나리오도 통과했다. 정상은 기존 파일 verifier와 함께 통과하고 세 역할의 실제 바이트 변조는 거부했다. 보정 SHA를 다시 고정해도 제품ID 불일치는 거부했다. 반대로 비래스터 바이트도 선언 SHA가 맞으면 성공하는 시험으로 헤더/과학 검증 부재를 명시적으로 증명했다. 훈련·추론·checkpoint load·운영 Store/API 접촉은 하지 않았다.
+
+보호141개·기존소스279개 전체·이전증거1019개·catalog14행 canonical SHA·예약136314880B를 보존했다. 기존 Workflow/서비스/normalization/Registry/API/UI·원본·원장·lock·분할·운영 모델은 그대로다. 미연결 내부 reader이므로 frontend/build/browser와 전체 backend는 이번에 재실행하지 않았다. 전체 backend1184(1183 PASS·기존1 SKIP)·frontend261/build는120/121의 이전 근거이며 최신 전체 회귀라고 다시 표시하지 않는다.
+
+다음 내부 후보124는 Registry/실제 모델 고정 참조와 장면별 정규화 metadata를 결합하는 계약 및 전 연차 사전검증 연계다. 현재115의 global1~16밴드 지원/per_scene 차단은 그대로이며 이번 helper를 실행 gate나 승인으로 자동 전달하지 않는다. 실제 수집·학습·등록·배포·Workflow dispatch0이다. 독립 라벨·운영 승인·다른5실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/UAT 등 전체 미완료 범위를 유지한다.
+
+근거: `docs/implementation/123_per_scene_normalization_files.md`, `evidence/integration/per-scene-files-focused-final-20261018.log`, `per-scene-files-related-20261018.log`, `per-scene-files-independent-20261018.json`, `per-scene-files-runtime-comparison-20261018.json`, `per-scene-files-live-integrity-20261018.json`, 최종 `per-scene-files-closeout-20261018.json`. 관련 계약·사용법·시험 근거·인계와 이해자료를 함께 갱신했다.
+
 ## 2026-10-18 — 6밴드 제품별 정규화 선언의 순수 계약 진단 (122)
 
 계약 담당은 신규 `backend/app/ml/per_scene_normalization_contract.py`·집중시험·문서122, 독립 검토 담당은 수치/상태/무I/O·기존 UI/API 영향 검토, Root는 기존 경계 회귀·실제 Temp 파일 대조·보존·공통 문서/Git, 이해 담당은 완료 코드 기반 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다. 기존 작업자는 유휴였으며 중복 실행하지 않았다.
