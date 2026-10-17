@@ -221,7 +221,13 @@ def materialize_patches(report, batch, output):
                         target = path / f"{name}.tif"
                         with rasterio.open(target, "w", **{**profile, "count": data.shape[0], "dtype": data.dtype, "nodata": 0}) as dst:
                             dst.write(data)
+                            if name == "image":
+                                for index, description in enumerate(image.descriptions, 1):
+                                    if description is not None:
+                                        dst.set_band_description(index, description)
                     row = copy.deepcopy(source)
+                    row.pop("quality_mask_semantics", None)
+                    row["training_support_mask_semantics"] = {"schema_version": 1, "kind": "training_support", "valid_value": 1, "invalid_value": 0}
                     row.update(aoi=batch["province"], province=batch["province"], split=batch["split"],
                         source_group=f"{batch['province']}/{source['scene_id']}",
                         spatial_location_id=f"{batch['province']}/{batch.get('spatial_window_id', batch['key'].rsplit('-g', 1)[-1])}/r{r}-c{c}",

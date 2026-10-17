@@ -72,3 +72,7 @@ Root 관련 16개 모듈은 **156 실행 / 155 PASS / 1 SKIP / 69.832초 / exit 
 새 밴드/scene-mask metadata는 기존 main/HTTP/137 계약·UI·모델 metadata를 바꾸지 않는다. 이번 frontend/build/browser 재실행은 필요하지 않고 기존 UI 수치를 새 결과로 표현하지 않는다. 실제 운영 프로세스가 이 새 코드를 적용해 수집했다는 검증도 없다. 원본·분할·모델·원장·lock·예약을 보존하며, 독립 라벨·전연차 확보·기관 품질 및 모델 승인·정식 per_scene 실행은 여전히 별도 후속이다.
 
 후속 145 후보는 patch image의 band description 전파와 label 지원 mask·순수 scene 품질 mask의 구분을 실제 producer/consumer에서 검토하는 단계다. 이번 144는 그 patch 경로를 수정하지 않았으며, label/AOI 결합 mask를 scene binary validity와 같은 의미라고 재분류하지 않는다.
+
+## 후속145 patch 선언
+
+[145 격자 패치 보강](145_grid_patch_declarations.md)은 원본 영상 밴드 description을 전파하고 label/AOI가 결합된 patch 지원 마스크를 scene 순수품질 선언과 구분한다. 기존 원본/scene 보고서·운영 파일을 재작성하지 않았고 기존 materializer의 지정 경로 덮어쓰기 가능성은 유지한다.

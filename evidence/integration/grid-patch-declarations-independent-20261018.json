@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "scope": "INDEPENDENT_GRID_PATCH_DECLARATIONS_TEMP_ONLY",
+  "git_baseline": "a3f4a94a69ad0f5c54a9af76bf6af82053e1a419",
+  "tests": 7,
+  "passed": 7,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 4.2726165000058245,
+  "source_sha256": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+  "test_sha256": "f183ba9e6469e5fff225d2ebd163fea2c54bcadf3f6bc604f53046aa2af38805",
+  "test_names": [
+    "test_00_source_hash_and_ast_scope",
+    "test_01_actual_descriptions_none_unknown_and_permutation_unchanged",
+    "test_02_baseline_arrays_profiles_label_quality_bytes_and_rows_equal",
+    "test_03_no_scene_semantics_still_training_support_and_detached",
+    "test_04_actual_pixel_intersection_label_support_and_class_counts",
+    "test_05_actual_aoi_intersection_matches_baseline_no_default_reclassification",
+    "test_06_actual_low_level_consumer_header_and_intrinsic_nodata_boundary"
+  ],
+  "old_sources_unchanged": {
+    "scripts/collect_samples.py": true,
+    "scripts/collect_training_parallel.py": true,
+    "backend/app/data/budget.py": true,
+    "backend/app/main.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/ml/registry_raster_grid_normalization.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "separate_git_baseline_matches": {
+    "scripts/collect_samples.py": true,
+    "scripts/collect_training_parallel.py": true,
+    "backend/app/data/budget.py": true,
+    "backend/app/main.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/ml/registry_raster_grid_normalization.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "observations": [
+    {
+      "actual": "six ordered/None/mixed unknown/permuted image descriptions, two patches each",
+      "label_and_quality_descriptions": [
+        null
+      ],
+      "source_inputs_and_report_unchanged": true
+    },
+    {
+      "actual_baseline_comparison": "isolated Git module with same Temp inputs",
+      "patches": 2,
+      "image_arrays_profiles_equal": true,
+      "label_quality_raw_bytes_equal": true,
+      "rows_split_classcounts_equal_except_explicit_declarations_paths_and_hashes": true
+    },
+    {
+      "actual_low_level_consumers": {
+        "129_header": "MATCHED ordered six-band header only",
+        "129_permutation": "RASTER_BAND_SIGNATURE_INVALID",
+        "133_binary_counts": "MASK_INTRINSIC_VALIDITY_UNSUPPORTED"
+      },
+      "full_registry_consumer_executed": false,
+      "Store_calls": 0,
+      "training_support_is_not_pure_quality_mask": true
+    }
+  ],
+  "actual_scope": "Temp source GTiffs/scene-report/explicit boundary fixture; native patch writer and baseline pixel/profile/label-quality bytes; low-level129/133 readers only",
+  "mock_scope": "Only module ROOT redirected to explicit Temp provenance GeoJSON and socket network denial guard; no mocked raster arrays or full Registry success claim",
+  "operating_writes": 0,
+  "operating_collection": 0,
+  "network_requests": 0,
+  "Store_calls": 0,
+  "training": 0,
+  "inference": 0,
+  "api_ui_changed": false,
+  "frontend_build_browser_required": false,
+  "limitations": [
+    "Patch quality is training support combining label/AOI/source quality and image finite/nonzero, not a pure image validity or GMAIS approval.",
+    "materialize_patches already uses mkdir(exist_ok=True) and open(w); this change does not enforce new-file-only or no-overwrite semantics.",
+    "No existing datasets/headers/scene reports are migrated and no scientific/model/execution approval is granted.",
+    "Low-level129 header/133 intrinsic-validity checks do not execute full Registry consumers or verify complete source semantics."
+  ]
+}

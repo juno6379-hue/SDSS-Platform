@@ -1,0 +1,44 @@
+{
+  "recorded_at": "2026-10-18T07:23:48.611615+09:00",
+  "baseline_scope": "ALL_TRACKED_SOURCE_FILES_PLUS_PUBLISHED_SNAPSHOT",
+  "baseline_commit": "a3f4a94a69ad0f5c54a9af76bf6af82053e1a419",
+  "tracked_source_baseline_count": 431,
+  "protected_files_checked": 141,
+  "protected_changes": [],
+  "existing_source_checked": 431,
+  "existing_source_changes": [
+    {
+      "path": "scripts/collect_training_grid.py",
+      "before": {
+        "sha256": "3cdcc6c0baa785b9df8a1396b5898d6134851b6b4f9ad864e48daec8a77ba994",
+        "bytes": 24789
+      },
+      "after": {
+        "sha256": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+        "bytes": 25287
+      }
+    }
+  ],
+  "unexpected_existing_source_changes": [],
+  "expected_changed_existing_sources": [
+    {
+      "path": "scripts/collect_training_grid.py",
+      "before": {
+        "sha256": "3cdcc6c0baa785b9df8a1396b5898d6134851b6b4f9ad864e48daec8a77ba994",
+        "bytes": 24789
+      },
+      "after": {
+        "sha256": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+        "bytes": 25287
+      }
+    }
+  ],
+  "unchanged_existing_source_files": 430,
+  "previous_evidence_checked": 1399,
+  "previous_evidence_changes": [],
+  "catalog_rows": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "reserved_bytes_preserved": 136314880,
+  "existing_execution_workflow_model_and_other_sources_unchanged": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0
+}

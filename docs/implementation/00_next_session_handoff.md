@@ -1,5 +1,23 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 격자 패치 밴드 설명·학습 지원 마스크 의미 구분 (145)
+
+구현 담당은 collect_training_grid.py의 materialize_patches·신규 집중시험·문서145를, 독립 담당은 실제 Temp GTiff와 published144 baseline 비교를 맡았다. Root는 범위 검토·관련/전체 백엔드 회귀·보존 감사·인계·Git을, 이해 담당은 검증 완료 후 쉬운 설명·대본·FAQ·INDEX·변경 이력14개를 갱신했다. 시작 시144 작업자는 완료 상태였고 운영 수집·학습 프로세스0이었다. ACTIVE/10분 보고 예약과 API/Ollama 프로세스는 실제 수집·학습 재개가 아니다.
+
+패치 image.tif에 원본 image.descriptions의 None 아닌 값을 원래 index 그대로 전파한다. 순서 변경·밴드명 추정·unknown 이름 보정·label/quality에 영상밴드 전파는 하지 않는다. 원본에 description이 없으면 None이 유지되므로 엄격한 영상 header 계약은 계속 차단될 수 있다. description 전파는 물리적 밴드/교정/반사도/과학 정확도 검증이 아니다.
+
+패치 quality는 기존 그대로 scene quality AND AOI inside AND label!=0 AND finite/nonzero image를 결합한 학습 지원 범위다. source row에서 상속되던 quality_mask_semantics를 patch row에서는 제거하고 별도 training_support_mask_semantics exact4(schema_version1/kind training_support/valid1/invalid0)를 기록한다. 이를 순수 image-quality binary_validity나 GMAIS source.mask_semantics로 자동 변환하지 않는다. 원본 scene 선언은 원본 report에 그대로 남으며 source_window 이력 구조는 바꾸지 않았다. nodata0·valid식·라벨 픽셀·품질 threshold·split·계수·예산·다운로드/재개 정책과 main/API/UI는 그대로다.
+
+집중6 PASS/2.778초, 관련171건 중170 PASS/1 SKIP/79.284초, 독립7 PASS/0 SKIP/4.2726165초, 이번 전체 backend 1432건 중1431 PASS/1 SKIP/332.72초다. 중복 시험 수를 합산하지 않는다. native 래스터와 패치 생성은 Temp 합성 자료이며 실제 운영 수집·학습·배포나 독립 정확도 검증이 아니다. 독립 저수준129 header/133 binary 검사는 전체 Registry 등록/소비 시험과 구분한다. 개별 fixture 계수와 초기 실패·SKIP의 정확한 원인은 문서145·원로그·독립 JSON을 따른다.
+
+보호141개·기존 tracked 소스431개 중 허용 materializer1개 외430개·이전 증거1399개·catalog14행 SHA·운영 dataset_versions0·예약136314880바이트를 보존했다. 이번 preflight는 이전 snapshot1989개와 모든 tracked source431개의 원바이트 baseline을 함께 확보해144의 누락 집계 문제를 예방했다. 다른 top-level AST와 원래 LF도 보존했다. 원본·원장·lock·분할·모델·예약과 운영 Registry 변경0이다.
+
+기존 materialize_patches의 mkdir exist_ok/open(w) 동작은 유지한다. 지정한 기존 patch 경로에 다시 호출하면 덮어쓸 수 있으므로 이번 변경을 새 파일 전용 강제/덮어쓰기 방지 기능으로 표현하지 않는다. 이번에는 운영 경로에 호출하지 않았다. HTTP/UI 계약 변경이 없는 내부 materializer 보강이므로 frontend/build/browser는 재실행하지 않았고137의 frontend271 PASS/build112는 이전 이력이다. 전체 backend 최신 근거는 이번145 시험이고144 전체1425 PASS/1 SKIP는 이전 이력이다.
+
+설계·입출력/사용법·시험 근거·인계·이해자료14개를 같은 단위로 갱신했다. 전체 개발은 미완료이며 운영 수집 재개, 연차별 데이터 확보, 독립 라벨·학습/오류분석·모델 승인, GeoLLM/RAG/PostGIS, staging/보안/UAT는 별도 후속이다. 다음146 우선 후보는 caller가 완성한 source raster manifest1개를 고정 Registry 버전으로 명시 등록하는 사용자 CLI다. 현재142/143은 이미 등록된 image/mask2건을 요구하지만 통합시험은 별도 Python setup에 의존한다. 기존96 불변성·SHA·RAW/STAGED·명시 root·등록 미확정 처리를 보존하고 추정 metadata나 기존 patch 역채움은 하지 않는 방향을 검토한다. 독립 후속 후보는 GeoLLM 근거 화면에서 검증된 local LCLUC workflow 완료 보고서를 명시 조회하는 연결이며 LLM/RAG 완성으로 표현하지 않는다.
+
+근거: docs/implementation/145_grid_patch_declarations.md, evidence/integration/grid-patch-declarations-agent-20261018.log, grid-patch-declarations-root-related-20261018.log, grid-patch-declarations-full-20261018.log, grid-patch-declarations-independent-20261018.json, grid-patch-declarations-source-scope-20261018.json, grid-patch-declarations-live-integrity-final-20261018.json 및 grid-patch-declarations-closeout-20261018.json.
+
 ## 2026-10-18 — 신규 수집 영상 밴드·이진 품질 마스크 선언 (144)
 
 구현 담당은 collect_samples.py의 지정 producer 부분·집중시험·문서144, 독립 담당은 실제 임시 GeoTIFF와 baseline 비교·소비 호환을 맡았다. Root는 변경 범위 재구성·관련/전체 백엔드 회귀·원본 보존·공통 문서·인계·Git을, 이해 담당은 완료 소스·시험으로 설명·대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시143 작업자는 완료 상태였고 운영 수집·학습은 관측되지 않았다. API/Ollama 프로세스와 ACTIVE/10분 예약은 실제 수집·학습 실행과 구분한다.
