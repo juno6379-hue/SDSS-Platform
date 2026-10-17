@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T00:57:32.506940+09:00",
-  "source_commit": "d264f81378f7fd3a2b07ab69b9193e8b3d651bc9",
-  "source_commit_reason": "Published baseline plus the new115 files pinned by raw SHA; the baseline does not contain115. Subsequent Git publication preserves these bytes.",
+  "updated_at": "2026-10-18T01:21:33.924696+09:00",
+  "source_commit": "b5b18ebbef60faf61871a5ae20020504c136c710",
+  "source_commit_reason": "Published115 baseline plus116/117 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -113,7 +113,13 @@
     "candidate_readiness_qa_139_protected_31_contracts_4_inputs_catalog14_unchanged": true,
     "candidate_readiness_qa_previous_tracked_code_data_frontend_changes_zero": true,
     "candidate_readiness_qa_same_policy_signature_and_four_class_blockers_verified": true,
-    "candidate_readiness_qa_docs_understanding_updated": true
+    "candidate_readiness_qa_docs_understanding_updated": true,
+    "lcluc_workflow_api_ui_full1168_front206_verified": true,
+    "lcluc_workflow_api_ui_protected141_catalog14_previous_evidence889_preserved": true,
+    "lcluc_workflow_api_ui_exact_main_two_ast_additions_auth_preserved": true,
+    "lcluc_workflow_api_ui_temp_cpu_receipt_report_download_sha_browser_verified": true,
+    "lcluc_workflow_api_ui_operating_dispatch_zero": true,
+    "lcluc_workflow_api_ui_documentation_understanding_updated": true
   },
   "reported_status": {
     "ready_for_training": false,
@@ -2388,6 +2394,101 @@
       "front_build_browser_rerun": false,
       "next_unit": "116_API_UI_BINDING_AND_PINNED_PER_SCENE_INPUT_CONTRACT_REVIEW",
       "snapshot_files": 1346
+    },
+    "latest_lcluc_workflow_api_ui": {
+      "recorded_at": "2026-10-18T01:21:33.924696+09:00",
+      "status": "LOCAL_LCLUC_WORKFLOW_API_UI_CONNECTED_NOT_OPERATING_ACCEPTANCE",
+      "scope": "EXPLICIT_PINNED_POST_HISTORICAL_READ_AND_HASHED_INDEX_DOWNLOAD",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T01:20:51.014458+09:00",
+        "understanding_markdown": 85,
+        "implementation_markdown": 2,
+        "local_links": 351,
+        "metadata_evidence_references": 8701,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true,
+        "template_files_checked": [
+          "docs/understanding/GATE_TEMPLATE.md"
+        ],
+        "scope": "Root metadata/local-path audit; evidence execution results are recorded in linked logs, not inferred from link existence."
+      },
+      "backend_full": {
+        "tests_run": 1168,
+        "passed": 1167,
+        "skipped": 1,
+        "seconds": 406.54,
+        "exit_code": 0
+      },
+      "api_focused": {
+        "passed": 15,
+        "seconds": 18.676
+      },
+      "api_related": {
+        "passed": 59,
+        "seconds": 29.615
+      },
+      "root_independent": {
+        "passed": 23,
+        "seconds": 20.003,
+        "composition": "6 new independent checks +17 existing core tests, not additive"
+      },
+      "route_preservation": {
+        "passed": 24,
+        "seconds": 2.756
+      },
+      "frontend": {
+        "focused_passed": 15,
+        "focused_seconds": 12.831,
+        "full_passed": 206,
+        "full_seconds": 24.216,
+        "build_modules": 100,
+        "build_seconds": 13.01,
+        "build_exit_code": 0,
+        "final_css_only_no_behavior_change": true
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T01:16:43.291060",
+        "scope": "LOCAL_API_UI_TEMP_FIXTURE_NOT_OPERATING_DISPATCH",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 258,
+        "authorized_existing_source_changes": [
+          "backend/app/main.py",
+          "frontend/src/ModelAnalysisWorkspace.tsx",
+          "tests/test_model_registration_provenance_api.py",
+          "tests/test_workflow_job_model_record_handoff_api.py"
+        ],
+        "unexpected_existing_source_changes": [],
+        "previous_evidence_checked": 889,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "catalog_matches_prior": true,
+        "operating_collection_training_deployment_dispatch": 0
+      },
+      "API_UI_connected": true,
+      "live_ui_port": 5174,
+      "live_api_port": 8002,
+      "fixture_browser_ports": [
+        5175,
+        8003
+      ],
+      "fixture_browser_and_servers_closed": true,
+      "original_user_tab_preserved": true,
+      "operating_collection_training_jobs_registry_deployment_workflow_dispatch": 0,
+      "scientific_accuracy_validated": false,
+      "standard_gmais_result": false,
+      "six_band_per_scene_normalization_supported": false,
+      "pair_map_connected": false,
+      "mobile_tested": false,
+      "browser_delayed_response_injection_tested": false,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_unit": "118_EXPLICIT_CHANGE_PAIR_AND_SAME_RECEIPT_GEOJSON_MAP_BINDING",
+      "understanding_updated": true,
+      "snapshot_files": 1392
     }
   },
   "files": {
@@ -2404,8 +2505,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "ea0bb099eb46817eccb868b15058e2ee42061032a57453ef1fb69f32600c0a3f",
-      "bytes": 319638
+      "sha256": "c909f5a3153b82389ea2ccc886ef0b00a0ecf8e4369d6712dc0b3052765e207c",
+      "bytes": 323664
     },
     "README.md": {
       "sha256": "78cf42da9ef93f2ceaa89f1c4f762e2167506ec5f2614908160e534ca88030a3",
@@ -2575,6 +2676,10 @@
       "sha256": "354ceaa5355125c4a8f17addc1782d41ef41843c29e448fcc4d4823edd726f0d",
       "bytes": 15094
     },
+    "backend/app/lcluc_workflow_api.py": {
+      "sha256": "fd42bfe71edbdded3faa233a4580868a69744e84b42d35e7342c7309f402eaff",
+      "bytes": 13566
+    },
     "backend/app/lifecycle.py": {
       "sha256": "1468fb03f744262d1e28a862b617b45945a9a67544f44a1bbba477a8aeba69cc",
       "bytes": 1543
@@ -2584,8 +2689,8 @@
       "bytes": 3119
     },
     "backend/app/main.py": {
-      "sha256": "4c4a0d1b96bf2472ee01a2af6597aea221b8cae07a9d9932fbd7d6c16f665e4a",
-      "bytes": 21793
+      "sha256": "067dccc01c9d4bf8f0638ecf65959dc5bf25c04aa30d011ea97f4dfbe8debe83",
+      "bytes": 21918
     },
     "backend/app/ml/bare_class_requirements.py": {
       "sha256": "05bd49bd101442726c3f3bcc2f745e9932aa069d3273cdb913d0983f7a4bf45f",
@@ -2780,8 +2885,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "5f9c76b3987203a18095f14b66b46aa06bc66253c67530d5d0b3c7ee673fac3c",
-      "bytes": 326779
+      "sha256": "0b7e98d287169b0197f36c089b8a5fb9c6110d8121149e852c99e6703f7821b1",
+      "bytes": 330805
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -2840,16 +2945,24 @@
       "bytes": 8026
     },
     "docs/implementation/113_lcluc_integration_acceptance.md": {
-      "sha256": "467ec526ee136759b9f839c4ce3e1abdaa6ccded0d5164156e10071a54ddea00",
-      "bytes": 11387
+      "sha256": "52cc281bcb5bd83676c779ffdf394c2b6474ce4eb28bba26f8babacca306ea9a",
+      "bytes": 12092
     },
     "docs/implementation/114_geollm_technical_review.md": {
-      "sha256": "ef4e1adb8c07ff98271144454be8f1153d9bb6ce041e4d7210e1b624d1a44014",
-      "bytes": 24633
+      "sha256": "3edddfbdc5a502c7b676bec00b4b9893f6357d5ca51eb7666eba53abdd8c1222",
+      "bytes": 25338
     },
     "docs/implementation/115_lcluc_workflow_executor.md": {
-      "sha256": "e5602e4f169c615a65ca96249d0198a17deddebcd6b5ecdd1bfc9658605fce4a",
-      "bytes": 14958
+      "sha256": "f797af2f12f05f51519c947a4d22438f5537fbb52dc59bf91770984faeb566be",
+      "bytes": 15659
+    },
+    "docs/implementation/116_lcluc_workflow_api.md": {
+      "sha256": "c37f5d1324ba71dbbadfb2dd1da17ebfeab63f5184f53ad1d299f323303f9698",
+      "bytes": 12796
+    },
+    "docs/implementation/117_lcluc_workflow_ui.md": {
+      "sha256": "b24d15c53c78ba30a5df126d58c58d9151b8bbd82b2316f44e91d36d9b0f9724",
+      "bytes": 9787
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -3164,48 +3277,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "d2bff9d1d8c39c442d77da37d1a7b6c6b0aa2e9160b84b247854409b16d650e9",
-      "bytes": 135770
+      "sha256": "994228619810c83d0bf9791e4447d9329c4f720d11e9c234847d0d03974ef8e2",
+      "bytes": 137770
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "cf9dc382a37ab231515ef7ce2f887490f98dd3ead1c1575a10fbce7713eb2fe1",
-      "bytes": 104490
+      "sha256": "b4b8a336772801e67137f2fdb74565b80a454cfd9fa84eedcea701cc36e79b1b",
+      "bytes": 106511
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "ef27bbe0482a674d79a93c6b0f8b08d9d048c055b02a603b2bdb425d34b749d7",
-      "bytes": 75935
+      "sha256": "5fac197c52a9971d19a4ad22d83af15410156bdac5acb90245189bcedc10232b",
+      "bytes": 77916
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "921c5261fa3b409da1d127bb07e33a763c48b9e296a774dfb901e06a8cb2ebcb",
-      "bytes": 58634
+      "sha256": "1b4855111f32bc1f5cf6d9ef544b7c6d6ae7ff23a86678234a5c41c6fa2bda4c",
+      "bytes": 61143
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "f7ee0c7a9dd52e825981a775b8bb3545d867e96b58f94abe89dc7c61a9784634",
-      "bytes": 24392
+      "sha256": "665d556ce2136f4393cb5b0927cf1e6d86b29960a2c73810e1e4d18fc2423967",
+      "bytes": 26438
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "c42d6b55e3bbf0bccf5191695659595582c10e6896ec9b40b3ed0b554c55e97a",
-      "bytes": 62074
+      "sha256": "60360910baf6dc97e8a891ca29fb5d01997fd40b0e6431e1376acffc09cfaffe",
+      "bytes": 64127
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "6d4fd64e5e0d1d024c6d482b8bf054c04bca4aa658a543aae0e9e8d51790d89b",
-      "bytes": 189391
+      "sha256": "16967b16713e0038befbaf7178682fa2c5000f075d466caf78dd0184e9ee6a47",
+      "bytes": 192578
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "07bc62da05be1c15920a7c1ae1a517fbdccedee4d2753b2d4e257ae9d2324fe1",
-      "bytes": 158983
+      "sha256": "27950d63d28bea51bac249cc4004b41d4a63b487dd39d6af2aaeb661d9ab15b0",
+      "bytes": 161763
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "ea8f3ffc5e87bf98e23f69a62edc0db661680fae05d4b40b1e8b40e0490b3cde",
-      "bytes": 99234
+      "sha256": "7ae907de53a204b7add64b81fc3461a9046ee48e92287791fb57de57ae6f8086",
+      "bytes": 101344
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "4b4197a9aead6073cad3af5fde239230a6793157daa5fcc38f00afafac1bd2e7",
-      "bytes": 166780
+      "sha256": "59eedd52dc0a4454428a397471af0aa7b42ee2ee51ef46b51c3f51652f3fe416",
+      "bytes": 169447
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -3338,6 +3451,10 @@
     "docs/understanding/gate-notes/GATE_LCLUC_PIPELINE_GEOLLM_REVIEW_20261018.md": {
       "sha256": "f1057e25bcd03ec1d67e1b0e6d90446a7f8bdd3dd9e6746b10cfd31fda01062e",
       "bytes": 15579
+    },
+    "docs/understanding/gate-notes/GATE_LCLUC_WORKFLOW_API_UI_20261018.md": {
+      "sha256": "f403fdbc4e0f7bb8b7a7e85ae47081194fe376e6e06cb3b434ce5bb994655f84",
+      "bytes": 12291
     },
     "docs/understanding/gate-notes/GATE_ML_SPLIT_PLAN_VALIDATION_20261017.md": {
       "sha256": "6a49ea008e9118ce0dff94471f818c5b47847faf0043f8a11a2e5e1426cdc157",
@@ -3488,16 +3605,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "2d33fa5350247fe71374e80632b880cc7cc88c8505feb963d0793e9d3c0b8e60",
-      "bytes": 176021
+      "sha256": "631522dec4da2373406e3beb5fdb6766ec3b58e165e8ae4ea20c4df9211d0cf3",
+      "bytes": 178178
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "d05cc2997622135a58c458b2b21eaac4fd290d896261b66bab72054285a954c4",
-      "bytes": 114135
+      "sha256": "953b49d1c164470cabc25dc22631dc2e622cc04f2fddc3f4a71f691734ce517f",
+      "bytes": 116824
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "f5792ad27e472222f742593c77422357b48dd3c0fe69f409e4c48b86d8663266",
-      "bytes": 136364
+      "sha256": "aa9fc8a30fe5aa597eba8058514bd14839127a084174013c0c62713010ff766f",
+      "bytes": 138992
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -4623,6 +4740,70 @@
       "sha256": "212b6c41cb2bc54094f084fa08df9bf0d9ac5634ccaec81b35068b6b7a3e767b",
       "bytes": 35767
     },
+    "evidence/integration/lcluc-workflow-api-closeout-20261018.json": {
+      "sha256": "2b45b31bd591c608948658f87ae17e24eb933e6280e2ff169c13cd1c67b8a06a",
+      "bytes": 3192
+    },
+    "evidence/integration/lcluc-workflow-api-documentation-audit-20261018.json": {
+      "sha256": "5c1d7bec4fd67d9d126ba60e598ffad921e652f63ac676d5ff30ba123eefca93",
+      "bytes": 492
+    },
+    "evidence/integration/lcluc-workflow-api-focused-20261018.log": {
+      "sha256": "f10343803b707098945f15f2ff8f05288dad1c221d62bbe36537b2415a58e197",
+      "bytes": 5831
+    },
+    "evidence/integration/lcluc-workflow-api-focused-final-20261018.log": {
+      "sha256": "e7830644eb3cf08ca02fa1ec79f7de2cfaaa79e670aff3aacf2f12f5233dcfec",
+      "bytes": 8466
+    },
+    "evidence/integration/lcluc-workflow-api-focused-final2-20261018.log": {
+      "sha256": "6c8ee180f425c4b1cf37eb99b74e35879c5f9c1ddc15b721b3f0699be2737ae1",
+      "bytes": 7231
+    },
+    "evidence/integration/lcluc-workflow-api-full-tests-20261018.log": {
+      "sha256": "fbc8f13cf3ee3759fbd2be55320ad69044c4c57ae21add85bff8ce9a0bc403c6",
+      "bytes": 231926
+    },
+    "evidence/integration/lcluc-workflow-api-independent-tests-20261018.log": {
+      "sha256": "ba745400aa8d346d0c215abb0713495982abadb82e93d6a4b480ff554bceaaf8",
+      "bytes": 6556
+    },
+    "evidence/integration/lcluc-workflow-api-live-integrity-20261018.json": {
+      "sha256": "074d2d5aec0087e12e82c38ef9649088979541f8cb07496c24ae1be776929a36",
+      "bytes": 788
+    },
+    "evidence/integration/lcluc-workflow-api-live-route-20261018.json": {
+      "sha256": "e4100258412da09425ec9b6c2aa7a00d1e541ae04a5ce15abbbe64f8de55fc25",
+      "bytes": 954
+    },
+    "evidence/integration/lcluc-workflow-api-original-ModelAnalysisWorkspace.tsx-20261018.txt": {
+      "sha256": "0c74a73fedaf1f57f2ba8b745083e058ddc8b6ff546f80b7be7518e52228acdf",
+      "bytes": 26889
+    },
+    "evidence/integration/lcluc-workflow-api-original-main.py-20261018.py": {
+      "sha256": "4c4a0d1b96bf2472ee01a2af6597aea221b8cae07a9d9932fbd7d6c16f665e4a",
+      "bytes": 21793
+    },
+    "evidence/integration/lcluc-workflow-api-original-test_model_registration_provenance_api.py-20261018.py": {
+      "sha256": "7204f6cc6601b66a45ef5af1af5db6d3852aedd7289c917abe84b27e7003fb11",
+      "bytes": 10983
+    },
+    "evidence/integration/lcluc-workflow-api-original-test_workflow_job_model_record_handoff_api.py-20261018.py": {
+      "sha256": "47d9de178ab0b04f71048312e55e393e712dc4fb2f67bef591014c39b7399f7f",
+      "bytes": 20642
+    },
+    "evidence/integration/lcluc-workflow-api-preflight-20261018.json": {
+      "sha256": "569f7db686cfb395664014510cbf9956e64abf67cd244af2d8628b3c731d06a7",
+      "bytes": 388419
+    },
+    "evidence/integration/lcluc-workflow-api-related-20261018.log": {
+      "sha256": "e2996004eb05a8585875aa09bfeddf33ddafa4b31ed43053b740a4ff5c0b96e2",
+      "bytes": 16233
+    },
+    "evidence/integration/lcluc-workflow-api-route-preservation-tests-20261018.log": {
+      "sha256": "20376d4a5c2bd8038d305564569b0159b5a3a517c31ad7986840ab9aee4e80b6",
+      "bytes": 5592
+    },
     "evidence/integration/lcluc-workflow-closeout-20261018.json": {
       "sha256": "13f606ae5a74d84483ee2a40e218131b5f4166560160c65927b1482212e1d8c7",
       "bytes": 1842
@@ -4714,6 +4895,86 @@
     "evidence/integration/lcluc-workflow-source-freeze-20261018.json": {
       "sha256": "5e0443e6f89e6be1fa9793e674218dff2882eaee975aba36b9248b97b244249c",
       "bytes": 567
+    },
+    "evidence/integration/lcluc-workflow-ui-browser-20261018.json": {
+      "sha256": "71d0029eb8215c1940cd16edb5decd7afc316b3eb536b8c3589292e148298508",
+      "bytes": 14778
+    },
+    "evidence/integration/lcluc-workflow-ui-build-20261018.log": {
+      "sha256": "f526bfe3502a8dcd402e3382a17560ab5ef5415e332b2420fff1c78eb1c67304",
+      "bytes": 755
+    },
+    "evidence/integration/lcluc-workflow-ui-build-final-20261018.log": {
+      "sha256": "6ccb31be98a4cedf029f78c6d0f507b3c22e20505d8f477383813517848b8214",
+      "bytes": 755
+    },
+    "evidence/integration/lcluc-workflow-ui-build-final2-20261018.log": {
+      "sha256": "30b9a72d09f3ea45efd5bfb6fc22a4de17098d12c6dafa743c96ad22476edd58",
+      "bytes": 755
+    },
+    "evidence/integration/lcluc-workflow-ui-build-final3-20261018.log": {
+      "sha256": "46b79ad7ad55d0494223c58fd38f9fb525b5e80445879603e588cd2b069160c4",
+      "bytes": 755
+    },
+    "evidence/integration/lcluc-workflow-ui-build-initial-20261018.log": {
+      "sha256": "b1264612cab0e5fe11a151b874f57ed8794acf5e37e645722e07aed5cef1771a",
+      "bytes": 755
+    },
+    "evidence/integration/lcluc-workflow-ui-live-invalid-20261018.png": {
+      "sha256": "df7b05a225650d03f8fcc1c87cb87a9faac1cca904e584e8010f6de0cce50c88",
+      "bytes": 93846
+    },
+    "evidence/integration/lcluc-workflow-ui-live-invalid-dom-20261018.txt": {
+      "sha256": "9851593672906379b943f0af17962907fb0f7e9c80235fb70c960233f222bce7",
+      "bytes": 12557
+    },
+    "evidence/integration/lcluc-workflow-ui-related-20261018.log": {
+      "sha256": "183292cde6c3299067cdacd6f0bad6c95531397ce977c0a2ecaae1d471927c47",
+      "bytes": 3044
+    },
+    "evidence/integration/lcluc-workflow-ui-related-final-20261018.log": {
+      "sha256": "de8cfab69f218a452e970ca802cbcae2c2fc73c7d40aca667bd05af574779b1d",
+      "bytes": 3516
+    },
+    "evidence/integration/lcluc-workflow-ui-related-final2-20261018.log": {
+      "sha256": "962c8a51689d2e1e92a579c2f4002e54e17e3b266c35852888b15ed4ee3724ab",
+      "bytes": 3748
+    },
+    "evidence/integration/lcluc-workflow-ui-related-final3-20261018.log": {
+      "sha256": "f6a2c672c134fd95e8fcdbea0e7cc53ee92d249c88f99c3611d23737de0d2fa9",
+      "bytes": 3746
+    },
+    "evidence/integration/lcluc-workflow-ui-synthetic-desktop-20261018.png": {
+      "sha256": "5bf5062252f8970cd0651d0ead334d7119aed2851a66d4d43907e19fb4aec6d5",
+      "bytes": 100660
+    },
+    "evidence/integration/lcluc-workflow-ui-synthetic-desktop-final-20261018.png": {
+      "sha256": "9863a93f6e94b9835050382eadade07d53e7020914250b8f228d7d9a6f1e83ed",
+      "bytes": 99516
+    },
+    "evidence/integration/lcluc-workflow-ui-synthetic-desktop-final2-20261018.png": {
+      "sha256": "6e8690277f89ef7b75c4ec6ab8e0ccd37a680b2902ccdc0a97779e4284a7ccd1",
+      "bytes": 98969
+    },
+    "evidence/integration/lcluc-workflow-ui-synthetic-report-dom-20261018.txt": {
+      "sha256": "85fa78e7d281de7b0a90460f6687489bcb2663d34df3b08e186c36d18dcfeaaf",
+      "bytes": 15129
+    },
+    "evidence/integration/lcluc-workflow-ui-tests-20261018.log": {
+      "sha256": "9cca0cc8369dfc4196ed3b19a30e542298026344f8c99905a5f74e8c61005d15",
+      "bytes": 49880
+    },
+    "evidence/integration/lcluc-workflow-ui-tests-final-20261018.log": {
+      "sha256": "53e7a8ae641c90c606b34d37362460ab60e74949d33c755049acbfb993e7332c",
+      "bytes": 50365
+    },
+    "evidence/integration/lcluc-workflow-ui-tests-final2-20261018.log": {
+      "sha256": "ed48eaae6cc82fdd0c61ee7202f7e1bd3784bae00f3099d223048b32c9c5603c",
+      "bytes": 50609
+    },
+    "evidence/integration/lcluc_workflow_api_independent_20261018.py": {
+      "sha256": "51be700ce4f573676c5e45888c03e3b2178e23dd8b59f3ec1833122e18acf546",
+      "bytes": 5062
     },
     "evidence/integration/ml-readiness-resume-20261017.json": {
       "sha256": "75aea76a4afa1d46813d7e7b8b4a71e6e542c5647ca5fb2702338aaeca9ae114",
@@ -7143,9 +7404,13 @@
       "sha256": "8505a3c3db38cbbf9f246e666cf854d929f4354bd0f81efb0ceb1fd7000a8538",
       "bytes": 7334
     },
+    "frontend/src/LclucWorkflowPanel.tsx": {
+      "sha256": "c342e4597ba296e1f5fcf253e4f8206a8e0cb487be4c69d472a12374083de0d1",
+      "bytes": 7449
+    },
     "frontend/src/ModelAnalysisWorkspace.tsx": {
-      "sha256": "0c74a73fedaf1f57f2ba8b745083e058ddc8b6ff546f80b7be7518e52228acdf",
-      "bytes": 26889
+      "sha256": "137a48fe30a9974a3ea5f9b5a2de0211881b3b91ae01aaa86ef4a203e3750324",
+      "bytes": 26991
     },
     "frontend/src/ModelRegistrationProvenance.tsx": {
       "sha256": "050160d936ddbe6879e4565c6d5037ac8adba053def7bc409dbab399d3221c0f",
@@ -7286,6 +7551,22 @@
     "frontend/src/jobLineageAdapter.ts": {
       "sha256": "d22149073f43003f57a872d9e5dd4c7d70170fbe7fd1b77dc0ac6f92ca25c426",
       "bytes": 6834
+    },
+    "frontend/src/lcluc-workflow.css": {
+      "sha256": "bd4d543db862d4b270741921f0b2cd1acf2c56980afc119936b2e51fe65069ee",
+      "bytes": 2906
+    },
+    "frontend/src/lclucWorkflowAdapter.test.mjs": {
+      "sha256": "6375169deac1ac18c6f74922ae95c68a2e0b130b33ef04f454ba9e7b7008c83c",
+      "bytes": 11428
+    },
+    "frontend/src/lclucWorkflowAdapter.ts": {
+      "sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "bytes": 9954
+    },
+    "frontend/src/lclucWorkflowClient.ts": {
+      "sha256": "2a644fdc76bd83e371476f3db4aea6d0de60f221d0085af57582c36de3b923d4",
+      "bytes": 1630
     },
     "frontend/src/lineageVerificationAdapter.test.mjs": {
       "sha256": "6a4eb0ea968c8038c1512f8182677b5cfdab77655e3ba4ab72753f7fbc78eacc",
@@ -7591,6 +7872,10 @@
       "sha256": "ef6286e1ae791ff3de47b213be2ea0cf3c39b7a3776e3c7e26d55be164cc9900",
       "bytes": 19542
     },
+    "tests/test_lcluc_workflow_api.py": {
+      "sha256": "515bb8570763657e6573b7caf9aa3da06eab094fef5336b692cf8f87e47aae30",
+      "bytes": 13199
+    },
     "tests/test_ml_error_analysis.py": {
       "sha256": "d60c75ec75bfc0a35be3265d1efc4e5ea75d2dab773e423bb2583ca2f3966544",
       "bytes": 9617
@@ -7616,8 +7901,8 @@
       "bytes": 10550
     },
     "tests/test_model_registration_provenance_api.py": {
-      "sha256": "7204f6cc6601b66a45ef5af1af5db6d3852aedd7289c917abe84b27e7003fb11",
-      "bytes": 10983
+      "sha256": "171b786ff5ed9512516d9f37bfa933f4039d14cb9dbcf2428e8c086db90080df",
+      "bytes": 11144
     },
     "tests/test_model_version_declaration.py": {
       "sha256": "3c7cab05dce5f22ec0e3681641d53a8e428c0b6a49023ec32e310e7c19f87447",
@@ -7740,8 +8025,8 @@
       "bytes": 12667
     },
     "tests/test_workflow_job_model_record_handoff_api.py": {
-      "sha256": "47d9de178ab0b04f71048312e55e393e712dc4fb2f67bef591014c39b7399f7f",
-      "bytes": 20642
+      "sha256": "6be85b2d392cbb20ef771f5ba8010fecbf6473c786e70f0b348cc269af925aee",
+      "bytes": 21127
     },
     "tests/test_workflow_job_registration_handoff.py": {
       "sha256": "b3ff28b8bed3740995b4b3fcbdd69630cf0c03c6d6800264cd48cb0ebbb0a787",
@@ -7777,13 +8062,17 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T00:57:32.506940+09:00",
-    "understanding_markdown": 84,
-    "implementation_markdown": 1,
-    "local_links": 347,
-    "metadata_evidence_references": 8351,
+    "checked_at": "2026-10-18T01:20:51.014458+09:00",
+    "understanding_markdown": 85,
+    "implementation_markdown": 2,
+    "local_links": 351,
+    "metadata_evidence_references": 8701,
     "numbered_faq": 10,
     "errors": [],
-    "reference_templates_byte_identical": true
+    "reference_templates_byte_identical": true,
+    "template_files_checked": [
+      "docs/understanding/GATE_TEMPLATE.md"
+    ],
+    "scope": "Root metadata/local-path audit; evidence execution results are recorded in linked logs, not inferred from link existence."
   }
 }

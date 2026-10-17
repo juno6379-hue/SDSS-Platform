@@ -1,0 +1,18 @@
+
+> indonesia-climate-sdss-web@0.1.0 build
+> tsc -b && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 100 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.43 kB │ gzip:   0.31 kB
+dist/assets/index-BRv6fdlb.css    192.58 kB │ gzip:  34.49 kB
+dist/assets/index-DMtjB7mI.js   1,648.56 kB │ gzip: 463.06 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 27.25s

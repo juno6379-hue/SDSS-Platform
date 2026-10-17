@@ -92,11 +92,13 @@ class ModelRegistrationProvenanceApiTests(unittest.TestCase):
         added = [node for node in after.body if isinstance(node, ast.FunctionDef) and node.name == ROUTE_NAME]
         self.assertEqual(len(added), 1)
         after.body = [node for node in after.body if node not in added]
-        # 105 explicitly adds exactly these two statements. Keep every other
+        # 105 and 116 each add an explicit import/include pair. Keep every other
         # original node and its order under the existing full-module guard.
         authorized_router_nodes = ast.parse(
             'from .workflow_job_model_record_handoff_api import create_workflow_job_model_record_handoff_router\n'
-            'app.include_router(create_workflow_job_model_record_handoff_router())\n').body
+            'app.include_router(create_workflow_job_model_record_handoff_router())\n'
+            'from .lcluc_workflow_api import create_lcluc_workflow_router\n'
+            'app.include_router(create_lcluc_workflow_router(lambda: store))\n').body
         for expected in authorized_router_nodes:
             matches = [node for node in after.body if ast.dump(node) == ast.dump(expected)]
             self.assertEqual(len(matches), 1)

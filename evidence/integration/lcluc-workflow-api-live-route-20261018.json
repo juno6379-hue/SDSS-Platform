@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-10-18T01:13:17.230383",
+  "scope": "OPERATING_API_SAFE_MISSING_GET_AND_INVALID_POST_ONLY",
+  "observations": [
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/0000000000000000000000000000000000000000000000000000000000000000",
+      "status": 404,
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "LCLUC Workflow 또는 산출물이 없습니다.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/v1/lcluc/workflows",
+      "status": 400,
+      "response": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "LCLUC Workflow 요청 형식이 올바르지 않습니다.",
+          "retryable": false
+        }
+      }
+    }
+  ],
+  "catalog_rows_before": 14,
+  "catalog_rows_after": 14,
+  "catalog_canonical_unchanged": true,
+  "operating_dispatch_count": 0
+}

@@ -1,0 +1,95 @@
+{
+  "recorded_at": "2026-10-18T01:21:33.924696+09:00",
+  "status": "LOCAL_LCLUC_WORKFLOW_API_UI_CONNECTED_NOT_OPERATING_ACCEPTANCE",
+  "scope": "EXPLICIT_PINNED_POST_HISTORICAL_READ_AND_HASHED_INDEX_DOWNLOAD",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T01:20:51.014458+09:00",
+    "understanding_markdown": 85,
+    "implementation_markdown": 2,
+    "local_links": 351,
+    "metadata_evidence_references": 8701,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true,
+    "template_files_checked": [
+      "docs/understanding/GATE_TEMPLATE.md"
+    ],
+    "scope": "Root metadata/local-path audit; evidence execution results are recorded in linked logs, not inferred from link existence."
+  },
+  "backend_full": {
+    "tests_run": 1168,
+    "passed": 1167,
+    "skipped": 1,
+    "seconds": 406.54,
+    "exit_code": 0
+  },
+  "api_focused": {
+    "passed": 15,
+    "seconds": 18.676
+  },
+  "api_related": {
+    "passed": 59,
+    "seconds": 29.615
+  },
+  "root_independent": {
+    "passed": 23,
+    "seconds": 20.003,
+    "composition": "6 new independent checks +17 existing core tests, not additive"
+  },
+  "route_preservation": {
+    "passed": 24,
+    "seconds": 2.756
+  },
+  "frontend": {
+    "focused_passed": 15,
+    "focused_seconds": 12.831,
+    "full_passed": 206,
+    "full_seconds": 24.216,
+    "build_modules": 100,
+    "build_seconds": 13.01,
+    "build_exit_code": 0,
+    "final_css_only_no_behavior_change": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T01:16:43.291060",
+    "scope": "LOCAL_API_UI_TEMP_FIXTURE_NOT_OPERATING_DISPATCH",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 258,
+    "authorized_existing_source_changes": [
+      "backend/app/main.py",
+      "frontend/src/ModelAnalysisWorkspace.tsx",
+      "tests/test_model_registration_provenance_api.py",
+      "tests/test_workflow_job_model_record_handoff_api.py"
+    ],
+    "unexpected_existing_source_changes": [],
+    "previous_evidence_checked": 889,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "catalog_matches_prior": true,
+    "operating_collection_training_deployment_dispatch": 0
+  },
+  "API_UI_connected": true,
+  "live_ui_port": 5174,
+  "live_api_port": 8002,
+  "fixture_browser_ports": [
+    5175,
+    8003
+  ],
+  "fixture_browser_and_servers_closed": true,
+  "original_user_tab_preserved": true,
+  "operating_collection_training_jobs_registry_deployment_workflow_dispatch": 0,
+  "scientific_accuracy_validated": false,
+  "standard_gmais_result": false,
+  "six_band_per_scene_normalization_supported": false,
+  "pair_map_connected": false,
+  "mobile_tested": false,
+  "browser_delayed_response_injection_tested": false,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_unit": "118_EXPLICIT_CHANGE_PAIR_AND_SAME_RECEIPT_GEOJSON_MAP_BINDING",
+  "understanding_updated": true,
+  "snapshot_files": 1392
+}

@@ -1,0 +1,410 @@
+- banner:
+  - button "SDSS 홈"
+  - strong:
+    - text: 데이터로 만드는 더 안전한 오늘,
+    - text: 지속 가능한 내일
+  - generic: Data for a Resilient Indonesia
+  - textbox "플랫폼 데이터 검색":
+    - /placeholder: "지역, 데이터, 키워드로 검색하세요  (예: Indonesia, land cover, mangrove)"
+  - button "데이터 카탈로그 검색":
+  - button "실제 작업·알림 보기":
+  - button "서버 연결 설정":
+  - button "서버 상태 새로고침":
+    - generic: ●
+    - strong: SDSS Indonesia
+    - generic: 로컬 분석 서버 연결됨
+    - generic: ⌄
+  - text: Sustainable Indonesia
+  - strong: for a Better Tomorrow
+- complementary:
+  - navigation "전체 플랫폼 메뉴":
+    - button "대시보드":
+      - generic: 대시보드
+    - button "데이터 카탈로그":
+      - generic: 데이터 카탈로그
+    - button "GeoAI 툴박스":
+      - generic: GeoAI 툴박스
+    - button "WebGIS 분석":
+      - generic: WebGIS 분석
+    - button "GeoLLM Assistant":
+      - generic: GeoLLM Assistant
+    - button "모델 & MLOps":
+      - generic: 모델 & MLOps
+    - button "리포트 & RDTR":
+      - generic: 리포트 & RDTR
+  - paragraph:
+    - text: AI와 공간데이터로
+    - text: 인도네시아의
+    - text: 기후행동을 지원합니다.
+- main:
+  - generic "현재 위치":
+    - text: ⌂
+    - generic: ›
+    - text: GeoAI Toolbox
+    - generic: ›
+    - text: LCLUC › Analysis Workspace
+  - status:
+    - strong: 합성 통합시험 전용 · 실제 정확도 아님
+    - generic: 운영 API·카탈로그와 분리된 임시 시험 화면입니다.
+  - generic: ♠
+  - heading "LCLUC Workspace" [level=1]
+  - paragraph: 인도네시아의 토지피복 및 토지이용 변화 분석을 통한 지속가능한 국토관리와 기후행동을 지원합니다.
+  - text: Land Cover and Land Use Change Analysis for a Sustainable Indonesia
+  - button "LCLUC Workspace 분석 도움말":
+    - strong: LCLUC 분석이 처음이신가요?
+    - paragraph: 분석 방법과 데이터·모델 검증 근거를 가이드에서 확인하세요.
+  - text: 지역 (Province)
+  - combobox "지역 (Province)":
+    - option "South Sulawesi" [selected]
+    - option "West Java"
+    - option "East Java"
+    - option "Banten"
+    - option "Gorontalo"
+    - option "Southeast Sulawesi"
+    - option "Papua"
+    - option "DKI Jakarta"
+    - option "Central Java"
+    - option "East Kalimantan"
+  - text: 세부 지역 (AOI)
+  - combobox "세부 지역 (AOI)":
+    - option "연구 bbox" [selected]
+    - option "주 전체 참조"
+  - text: 시작 연도
+  - combobox "시작 연도":
+    - option "2020" [selected]
+    - option "2021"
+    - option "2022"
+    - option "2023"
+    - option "2024"
+    - option "2025"
+  - text: 종료 연도
+  - combobox "종료 연도":
+    - option "2020"
+    - option "2021"
+    - option "2022"
+    - option "2023"
+    - option "2024"
+    - option "2025" [selected]
+  - text: 표시 모드
+  - combobox "표시 모드":
+    - option "스와이프 비교" [selected]
+    - option "지도 + 통계"
+    - option "단일 지도"
+  - text: 데이터 유형
+  - combobox "데이터 유형":
+    - option "토지피복 분류도" [selected]
+    - option "변화 지도"
+    - option "전이행렬"
+  - button "분석 실행":
+    - generic: 분석 실행
+  - button "비교 분석":
+    - generic: 비교 분석
+  - button "리포트 생성":
+    - generic: 리포트 생성
+  - navigation "분야별 분석 기능":
+    - button "지도 분석":
+      - text: 지도 분석
+    - button "시계열 분석":
+      - text: 시계열 분석
+    - button "변화 탐지":
+      - text: 변화 탐지
+    - button "전환 행렬":
+      - text: 전환 행렬
+    - button "핫스팟 분석":
+      - text: 핫스팟 분석
+    - button "지역 비교":
+      - text: 지역 비교
+    - button "결과 내보내기":
+      - text: 결과 내보내기
+  - heading "인도네시아 토지피복 변화 비교 · South Sulawesi" [level=3]:
+    - text: 인도네시아 토지피복 변화 비교 · South Sulawesi
+  - button "WebGIS":
+    - text: WebGIS
+  - region "Map"
+  - generic: 1000 km
+  - generic "Toggle attribution"
+  - generic: "Tiles © Esri · Sources: Esri, Maxar, Earthstar Geographics and the GIS User Community"
+  - text: 지도 분석 · South Sulawesi
+  - generic: 위성 기저지도 · 분석 결과 미연결
+  - group "지도 조작":
+    - button "지도 확대":
+    - button "지도 축소":
+    - button "인도네시아 전체 보기":
+    - button "연구 bbox 표시 전환" [pressed]:
+    - button "선택 연구범위 확대":
+  - strong: 분석 범례 · 결과 대기
+  - generic: 산림 (Forest)
+  - generic: 맹그로브 (Mangrove)
+  - generic: 농지 (Cropland)
+  - generic: 플랜테이션 (Plantation)
+  - generic: 시가화 (Built-up)
+  - generic: 습지 (Wetland)
+  - generic: 나지 (Bare land)
+  - generic: 수체 (Water)
+  - generic: "점선: 연구 bbox · 공식 경계 아님"
+  - generic: 과학모델 레이어 미연결
+  - heading "주요 지표 (South Sulawesi)" [level=3]:
+    - text: 주요 지표 (South Sulawesi)
+  - button "검증 근거 ›"
+  - article:
+    - generic: 산림 면적
+    - strong: — ha
+    - generic: —
+    - generic: 검증 결과 미연결
+  - article:
+    - generic: 맹그로브 면적
+    - strong: — ha
+    - generic: —
+    - generic: 검증 결과 미연결
+  - article:
+    - generic: 시가화 면적
+    - strong: — ha
+    - generic: —
+    - generic: 검증 결과 미연결
+  - article:
+    - generic: 총 지역 면적
+    - strong: — ha
+    - generic: —
+    - generic: 검증 결과 미연결
+  - heading "주요 변화 요약" [level=3]:
+    - text: 주요 변화 요약
+  - button "상세 결과 ›"
+  - table:
+    - rowgroup:
+      - row "변화 유형 증감 면적 주요 전환":
+        - columnheader "변화 유형"
+        - columnheader "증감 면적"
+        - columnheader "주요 전환"
+    - rowgroup:
+      - row "산림 감소 — —":
+        - cell "산림 감소"
+        - cell "—"
+        - cell "—"
+      - row "시가지 증가 — —":
+        - cell "시가지 증가"
+        - cell "—"
+        - cell "—"
+      - row "농지 증가 — —":
+        - cell "농지 증가"
+        - cell "—"
+        - cell "—"
+      - row "맹그로브 증가 — —":
+        - cell "맹그로브 증가"
+        - cell "—"
+        - cell "—"
+      - row "습지 감소 — —":
+        - cell "습지 감소"
+        - cell "—"
+        - cell "—"
+  - heading "연도별 토지피복 면적 변화 (South Sulawesi)" [level=3]:
+    - text: 연도별 토지피복 면적 변화 (South Sulawesi)
+  - combobox "차트 지표":
+    - option "산림 면적" [selected]
+    - option "맹그로브 면적"
+    - option "시가화 면적"
+    - option "총 지역 면적"
+  - generic: 2020 – 2025
+  - generic: ha
+  - img "분석 데이터 대기 중인 빈 그래프":
+    - generic: —
+    - generic: —
+    - generic: —
+    - generic: "2020"
+    - generic: "2021"
+    - generic: "2022"
+    - generic: "2023"
+    - generic: "2024"
+    - generic: "2025"
+    - generic: 검증된 분석 데이터 대기
+  - generic: 산림 (Forest)
+  - generic: 맹그로브 (Mangrove)
+  - generic: 농지 (Cropland)
+  - generic: 플랜테이션 (Plantation)
+  - heading "토지피복 구성" [level=3]:
+    - text: 토지피복 구성
+  - text: 총 면적
+  - strong: —
+  - text: 분석 결과 대기
+  - text: 산림 (Forest)
+  - generic: — ha / — %
+  - text: 맹그로브 (Mangrove)
+  - generic: — ha / — %
+  - text: 농지 (Cropland)
+  - generic: — ha / — %
+  - text: 플랜테이션 (Plantation)
+  - generic: — ha / — %
+  - text: 시가화 (Built-up)
+  - generic: — ha / — %
+  - text: 습지 (Wetland)
+  - generic: — ha / — %
+  - heading "토지피복 전환 행렬" [level=3]:
+    - text: 토지피복 전환 행렬
+  - table:
+    - rowgroup:
+      - row "전환 산림 농지 시가화 합계":
+        - columnheader "전환"
+        - columnheader "산림"
+        - columnheader "농지"
+        - columnheader "시가화"
+        - columnheader "합계"
+    - rowgroup:
+      - row "산림 — — — —":
+        - cell "산림"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+      - row "농지 — — — —":
+        - cell "농지"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+      - row "플랜테이션 — — — —":
+        - cell "플랜테이션"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+      - row "시가화 — — — —":
+        - cell "시가화"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+      - row "기타 — — — —":
+        - cell "기타"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+      - row "합계 — — — —":
+        - cell "합계"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+        - cell "—"
+  - heading "변화 핫스팟" [level=3]:
+    - text: 변화 핫스팟
+  - table:
+    - rowgroup:
+      - row "# 지역 변화 면적":
+        - columnheader "#"
+        - columnheader "지역"
+        - columnheader "변화 면적"
+    - rowgroup:
+      - row "1 East Kalimantan —":
+        - cell "1":
+          - generic: "1"
+        - cell "East Kalimantan"
+        - cell "—"
+      - row "2 Riau Islands —":
+        - cell "2":
+          - generic: "2"
+        - cell "Riau Islands"
+        - cell "—"
+      - row "3 Papua —":
+        - cell "3":
+          - generic: "3"
+        - cell "Papua"
+        - cell "—"
+      - row "4 Central Java —":
+        - cell "4":
+          - generic: "4"
+        - cell "Central Java"
+        - cell "—"
+      - row "5 South Sulawesi —":
+        - cell "5":
+          - generic: "5"
+        - cell "South Sulawesi"
+        - cell "—"
+  - generic: 입력 초안 · 위성 기저지도 외 과학모델 결과 미연결 · 수치·그래프는 검증 Result 연결 후 표시
+  - button "모델 허브"
+  - button "입력·Expert"
+  - button "실제 결과·보고서"
+  - button "검증·근거·Job"
+  - button "실행 이력"
+  - heading "입력 초안·Expert API" [level=2]
+  - generic "Expert · 기존 공간 추론 API 입력"
+  - generic "LCLUC 고정 입력 실행 · 상태와 산출물":
+    - text: LCLUC 고정 입력 실행 · 상태와 산출물
+  - region "LCLUC 로컬 Workflow 실행":
+    - heading "고정 Registry 입력으로 로컬 시계열 실행" [level=3]:
+      - text: 고정 Registry 입력으로 로컬 시계열 실행
+    - paragraph: 현재 모델은 Draft이며 독립 라벨 미확보 상태입니다. Deployed 모델·현재 체크포인트에 결합된 독립 평가·VALIDATED/PUBLIC 연차 자료가 필요합니다. 위 지역·연도 초안에서 요청을 자동 생성하지 않습니다.
+    - paragraph: global 정규화만 지원합니다. per_scene 공식 제품 정규화·6밴드 제품·구름 mask 연결은 차단/후속입니다. 로컬 완료는 과학 정확도 또는 표준 GMAIS Result 인증이 아닙니다.
+    - text: 명시 실행 요청 JSON (exact6 · 최대 16KiB)
+    - textbox "명시 실행 요청 JSON (exact6 · 최대 16KiB)":
+      - /placeholder: schema_version, capability, trace_id, idempotency_key, model_ref(id/version/sha256), images(year/input_ref/quality_report_sha256)를 직접 입력
+    - button "명시 요청 실행" [disabled]:
+      - text: 명시 요청 실행
+    - generic: 클릭할 때만 POST · 자동 제출·재시도·재개 없음
+    - text: 저장된 실행 ID (SHA-256 64자리)
+    - textbox "저장된 실행 ID (SHA-256 64자리)":
+      - /placeholder: 조회할 실행 ID를 직접 입력
+      - text: 6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01
+    - button "저장 상태 조회":
+      - text: 저장 상태 조회
+    - status: 로컬 실행 완료
+    - term: 실행 ID
+    - definition:
+      - code: 6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01
+    - term: Trace
+    - definition: trace-fixture
+    - term: 재생 여부
+    - definition: 과거 상태 읽기 · 새 실행 승인 아님
+    - term: 관측 범위
+    - definition: 로컬 LCLUC · 과학 인증 false · GMAIS 표준 결과 false
+    - button "검증된 보고서 읽기":
+      - text: 검증된 보고서 읽기
+    - heading "인증을 유지하는 산출물 다운로드" [level=4]
+    - list:
+      - text: changes/2020-2021/changes.geojson
+      - generic: SHA 7d09e532fc380630caac6b4b1b5174a7a9f7a308f6544bcb79eefb97b1e12306
+      - button "다운로드 1":
+        - text: 다운로드 1
+      - text: changes/2020-2021/report.json
+      - generic: SHA 7d31cfe6ed777cdb24fd27a88aea04cfbd405c4a4e9f93be2954380ba3b03321
+      - button "다운로드 2":
+        - text: 다운로드 2
+      - text: changes/2020-2021/transitions.csv
+      - generic: SHA bb8f6a00c74cc8fce6cab598e8500d7c35d9ae57739bb2c4f8ae429877651ad2
+      - button "다운로드 3":
+        - text: 다운로드 3
+      - text: changes/2020-2021/transitions.tif
+      - generic: SHA 62f5828edbaa9da2a3e3a3ac8d6941061159b5ae7c374db0d79766912ea45e0f
+      - button "다운로드 4":
+        - text: 다운로드 4
+      - text: timeseries.json
+      - generic: SHA dfbdad24029b7ac9997d39589be8dbf588b69f5fc11f362d734caf3ccd2d2a37
+      - button "다운로드 5":
+        - text: 다운로드 5
+      - text: years/2020/classification.tif
+      - generic: SHA 182515ba3ab76b9a4412f4f7609285d48f09bc595504efe90c021e1c31301e46
+      - button "다운로드 6":
+        - text: 다운로드 6
+      - text: years/2021/classification.tif
+      - generic: SHA 182515ba3ab76b9a4412f4f7609285d48f09bc595504efe90c021e1c31301e46
+      - button "다운로드 7":
+        - text: 다운로드 7
+    - heading "실제 보고서 요약" [level=4]
+    - paragraph: "관측 연도: 2020, 2021 · 지도 변화쌍 표시는 후속입니다."
+    - table:
+      - rowgroup:
+        - row "변화쌍 유효 픽셀 변화 면적 (m²)":
+          - columnheader "변화쌍"
+          - columnheader "유효 픽셀"
+          - columnheader "변화 면적 (m²)"
+      - rowgroup:
+        - row "2020-2021 256 0":
+          - cell "2020-2021"
+          - cell "256"
+          - cell "0"
+    - paragraph: 시점·센서·계절·구름·모델 오차를 포함할 수 있으며 독립 정확도 검증이 아닙니다.
+    - paragraph: 입력 편집·이동·뒤로 가기·표시 중단은 늦은 응답 표시만 폐기합니다. 서버 실행을 취소하거나 파일·DB 변경을 롤백하지 않습니다. 조회·보고서·다운로드도 자동 실행하지 않습니다.
+  - generic "서버 연결 설정 · /api"
+  - strong: ◉ SDSS
+  - generic: Spatial Decision Support System for Climate Action & GeoAI
+  - generic: 독립 검증·운영 승인 전 분석 결과 게시 차단
+  - text: ◎ KO ⌄
+  - generic: ❧ Together for a Resilient Indonesia

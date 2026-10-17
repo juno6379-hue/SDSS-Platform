@@ -1,5 +1,21 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — LCLUC 명시 실행 API와 UI 연결 완료 (116·117)
+
+115의 실행 코어를 새 로컬 확장 API와 LCLUC 입력 화면에 연결했다. API 담당은 명시 POST·저장 상태 GET·보고서·인증 유지 index 다운로드와 계약시험, UI 담당은 접힌 실행 패널·엄격한 요청/응답 검사·이동 시 늦은 응답 폐기·SVG·연도별 파일 구분을 구현했다. Root는 기존 main에 import/include 두 문장만 추가하고, 기존 인증·라우트 AST 보존·독립/전체 회귀·실제 브라우저·보존·Git을 검증했다. 이해 에이전트는 완료 소스와 증거를 읽어 쉬운 설명·이론·발표대본·FAQ·INDEX·변경이력을 갱신했다.
+
+`POST /v1/lcluc/workflows`는 exact6·16KiB의 고정 Registry/모델/품질 SHA 요청을 명시 클릭으로만 실행한다. preclaim BLOCKED는409/저장없음/GET404, claimed RUNNING·FAILED·SUCCEEDED는200이며 동일 키 재생은 자동 재시도·재개가 아니다. 성공 GET은 과거 산출물 SHA를 검사하며 현재 모델의 새 실행 승인이 아니다. 보고서와 index 다운로드는 저장된 namespace·allowlist·SHA와 일치하는 복사 바이트만 반환한다. 기존 전역 인증은 유지되며 RBAC·공식 GMAIS Result·운영 승인으로 확대하지 않는다. Windows 경로 원문을 보존하며 UI 내부 검증만 정규화한다.
+
+API 신규15 PASS/18.676초, 관련59 PASS/29.615초, Root 독립23 PASS/20.003초(신규6+기존17), 기존 라우트 보존24 PASS/2.756초다. 전체 backend는 **1168건 중1167 PASS·기존 Windows1 SKIP/406.540초/exit0**다. UI 신규15 PASS/12.831초·전체206 PASS/24.216초이며 production build100modules 성공이다. 중복된 시험 묶음을 합산하지 않는다. 초기 시험 오류와 최종 통과 로그를 함께 보존한다.
+
+별도 임시5175→8003에서 생성16×16 영상2개와 명시 mock 승인 metadata로 실제 CPU POST→성공7파일→과거상태 조회→2020/2021 보고서(256픽셀·0m²)→CSV 다운로드936B/SHA 일치를 확인했다. 이것은 독립 정확도·실제 승인 자료가 아니다. 브라우저 뒤로 가기 복귀에 이전 영수증이 남지 않고 다른5모델에는 패널이 없다. 기존 실행 중5174 화면에도 새 패널과 잘못된 JSON 실행 차단이 적용됐으며 사용자 원래 탭은 유지했다. 모바일·브라우저 지연 주입은 미시험이며 늦은 응답/인증은 별도 adapter·API 시험 근거와 구분한다. 표시 중단은 서버 취소·롤백이 아니다.
+
+보호141·기존증거889·운영 catalog14 canonical은 불변이고 기존 source258개 중 허용한4파일만 변경됐다. 원본·원장·예약136314880B·lock·분할·모델과 운영 Draft 상태를 보존했다. 운영 API에는 누락 ID GET/잘못된 POST만 확인했으며 **운영 수집·학습·배포·Workflow 실행0**이다. 예약 ACTIVE는 실제 작업자 실행과 구별한다.
+
+다음 내부 단위는 같은 receipt의 명시 변화쌍과 검증 GeoJSON을 지도에 연결하는 것이다. 현재 지도/KPI는 자동으로 성공 수치로 채우지 않는다. 6밴드 per_scene 제품 보정·구름mask, 실제 독립 라벨·모델 승인, 다른5실행기, 운영 GeoLLM/RAG·PostGIS 연결, Kubernetes staging/RBAC/기관UAT는 여전히 미완료다. 단일 API/UI 완료를 전체 개발 완료로 처리하지 않고 지속 개발·10분 역할 보고를 유지한다.
+
+근거: `docs/implementation/116_lcluc_workflow_api.md`, `docs/implementation/117_lcluc_workflow_ui.md`, `evidence/integration/lcluc-workflow-api-full-tests-20261018.log`, `evidence/integration/lcluc-workflow-ui-browser-20261018.json`, `evidence/integration/lcluc-workflow-api-live-route-20261018.json`, `evidence/integration/lcluc-workflow-api-live-integrity-20261018.json`. 최종 이해자료 감사·스냅샷·공개 근거는 `evidence/integration/lcluc-workflow-api-closeout-20261018.json`을 따른다.
+
 ## 2026-10-18 — LCLUC 전용 로컬 실행 코어·명시 CLI 완료 (115)
 
 고정 Registry 입력과 버전 선언이 있는 배포 모델을 검사한 뒤 기존 `analyze_timeseries`를 실제 호출하는 새 `lcluc_workflow.py`와 명시 실행 CLI를 구현했다. 기존 main/gmais/ML/Store/Registry·frontend는 수정하지 않았다. 구현 담당이 코어·CLI·시험·문서115, 독립 담당이 별도 경계/관련 시험, Root가 보존·전체 회귀·문서/인계·Git, 이해 에이전트가 완료 소스·증거 해설을 맡았다.

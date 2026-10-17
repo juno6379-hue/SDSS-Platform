@@ -1,0 +1,502 @@
+{
+  "recorded_at": "2026-10-18T01:16:43.341597",
+  "scope": "TESTED_SYNTHETIC_FABRICATED_APPROVAL_NOT_OPERATING_DATA",
+  "request": {
+    "schema_version": 1,
+    "capability": "landcover.change_detection",
+    "trace_id": "trace-fixture",
+    "idempotency_key": "key-fixture",
+    "model_ref": {
+      "id": "fixture-model",
+      "version": "v1",
+      "sha256": "6548af371ef7415f9dffcf8c4dfe0806ae0f8bfc81cf7214cfd39349293ecb29"
+    },
+    "images": [
+      {
+        "year": 2020,
+        "input_ref": {
+          "id": "fixture-input-2020",
+          "version": "v1",
+          "sha256": "50a459a05168e1e3e23bf36d3fb44c2d55164f7e215772a1ce9f3016e15a366e"
+        },
+        "quality_report_sha256": "eb7d50d4fc8095be821852078abf8bcb4ed5e47c8f28fded7686186140394455"
+      },
+      {
+        "year": 2021,
+        "input_ref": {
+          "id": "fixture-input-2021",
+          "version": "v1",
+          "sha256": "7ea3204be5ad1dd8c0c91e9f36ad610d4616735e6d7dfcb53d204ff4b657e76d"
+        },
+        "quality_report_sha256": "eb7d50d4fc8095be821852078abf8bcb4ed5e47c8f28fded7686186140394455"
+      }
+    ]
+  },
+  "stored_receipt": {
+    "admission_pins": {
+      "2020": "1c8c7c924494bad5d2147054c678c5e3c5109c7605a818176f141a824268918a",
+      "2021": "62340aa7e093573cbebe846fe28e415fab27d060d4edd87e760229d1df58c05c",
+      "model": "5895152693563b5bf9da2e368dd63aa6cb277e9c4086456b10026b6ff09b4760"
+    },
+    "artifacts": [
+      {
+        "path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\changes\\2020-2021\\changes.geojson",
+        "sha256": "7d09e532fc380630caac6b4b1b5174a7a9f7a308f6544bcb79eefb97b1e12306"
+      },
+      {
+        "path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\changes\\2020-2021\\report.json",
+        "sha256": "7d31cfe6ed777cdb24fd27a88aea04cfbd405c4a4e9f93be2954380ba3b03321"
+      },
+      {
+        "path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\changes\\2020-2021\\transitions.csv",
+        "sha256": "bb8f6a00c74cc8fce6cab598e8500d7c35d9ae57739bb2c4f8ae429877651ad2"
+      },
+      {
+        "path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\changes\\2020-2021\\transitions.tif",
+        "sha256": "62f5828edbaa9da2a3e3a3ac8d6941061159b5ae7c374db0d79766912ea45e0f"
+      },
+      {
+        "path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\timeseries.json",
+        "sha256": "dfbdad24029b7ac9997d39589be8dbf588b69f5fc11f362d734caf3ccd2d2a37"
+      },
+      {
+        "path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\years\\2020\\classification.tif",
+        "sha256": "182515ba3ab76b9a4412f4f7609285d48f09bc595504efe90c021e1c31301e46"
+      },
+      {
+        "path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\years\\2021\\classification.tif",
+        "sha256": "182515ba3ab76b9a4412f4f7609285d48f09bc595504efe90c021e1c31301e46"
+      }
+    ],
+    "created_at": "2026-10-17T16:11:15.745518+00:00",
+    "finished_at": "2026-10-17T16:11:16.311224+00:00",
+    "id": "6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01",
+    "issue": null,
+    "report_path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\timeseries.json",
+    "request_sha256": "36338db2623ec423834e7e0d003c0bc076354c1bf31bdde3310716d18b569777",
+    "request_snapshot": {
+      "capability": "landcover.change_detection",
+      "images": [
+        {
+          "input_ref": {
+            "id": "fixture-input-2020",
+            "sha256": "50a459a05168e1e3e23bf36d3fb44c2d55164f7e215772a1ce9f3016e15a366e",
+            "version": "v1"
+          },
+          "quality_report_sha256": "eb7d50d4fc8095be821852078abf8bcb4ed5e47c8f28fded7686186140394455",
+          "year": 2020
+        },
+        {
+          "input_ref": {
+            "id": "fixture-input-2021",
+            "sha256": "7ea3204be5ad1dd8c0c91e9f36ad610d4616735e6d7dfcb53d204ff4b657e76d",
+            "version": "v1"
+          },
+          "quality_report_sha256": "eb7d50d4fc8095be821852078abf8bcb4ed5e47c8f28fded7686186140394455",
+          "year": 2021
+        }
+      ],
+      "model_ref": {
+        "id": "fixture-model",
+        "sha256": "6548af371ef7415f9dffcf8c4dfe0806ae0f8bfc81cf7214cfd39349293ecb29",
+        "version": "v1"
+      },
+      "schema_version": 1,
+      "trace_id": "trace-fixture"
+    },
+    "schema_version": 1,
+    "scientific_accuracy_validated": false,
+    "scope": "LOCAL_LCLUC_WORKFLOW_ONLY",
+    "standard_gmais_result": false,
+    "status": "SUCCEEDED",
+    "trace_id": "trace-fixture"
+  },
+  "raw_report": {
+    "years": [
+      2020,
+      2021
+    ],
+    "baseline_year": 2020,
+    "classifications": {
+      "2020": {
+        "year": 2020,
+        "classification_path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\years\\2020\\classification.tif",
+        "valid_pixels": 256,
+        "checkpoint_path": "models\\fixture\\best.pt",
+        "class_names": [
+          "water",
+          "trees",
+          "grass",
+          "flooded_vegetation",
+          "crops",
+          "shrub_and_scrub",
+          "built",
+          "bare",
+          "snow_and_ice"
+        ],
+        "label_taxonomy_signature": null,
+        "normalization_provenance": {},
+        "quality_mask_path": null,
+        "quality_mask_basis": "input_nodata_only"
+      },
+      "2021": {
+        "year": 2021,
+        "classification_path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\years\\2021\\classification.tif",
+        "valid_pixels": 256,
+        "checkpoint_path": "models\\fixture\\best.pt",
+        "class_names": [
+          "water",
+          "trees",
+          "grass",
+          "flooded_vegetation",
+          "crops",
+          "shrub_and_scrub",
+          "built",
+          "bare",
+          "snow_and_ice"
+        ],
+        "label_taxonomy_signature": null,
+        "normalization_provenance": {},
+        "quality_mask_path": null,
+        "quality_mask_basis": "input_nodata_only"
+      }
+    },
+    "class_names": [
+      "water",
+      "trees",
+      "grass",
+      "flooded_vegetation",
+      "crops",
+      "shrub_and_scrub",
+      "built",
+      "bare",
+      "snow_and_ice"
+    ],
+    "label_taxonomy_signature": null,
+    "adjacent_pairs": [
+      "2020-2021"
+    ],
+    "adjacent_observation_pairs": [
+      "2020-2021"
+    ],
+    "baseline_pairs": [
+      "2020-2021"
+    ],
+    "changes": {
+      "2020-2021": {
+        "from_year": 2020,
+        "to_year": 2021,
+        "transition_pixels": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            256,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "transition_area_m2": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            25600.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "valid_pixels": 256,
+        "excluded_pixels": 0,
+        "class_names": [
+          "water",
+          "trees",
+          "grass",
+          "flooded_vegetation",
+          "crops",
+          "shrub_and_scrub",
+          "built",
+          "bare",
+          "snow_and_ice"
+        ],
+        "total_area_m2": 25600.0,
+        "changed_area_m2": 0.0,
+        "change_rate": 0.0,
+        "area_method": "projected_grid_area_m2",
+        "class_net_area_m2": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "warning": "계절·센서·구름 잔존 및 두 분류지도의 오차가 가짜 변화로 나타날 수 있습니다. 투영면적은 CRS 왜곡의 영향을 받습니다.",
+        "geojson_path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\changes\\2020-2021\\changes.geojson",
+        "geometry": {
+          "type": "FeatureCollection",
+          "features": []
+        },
+        "vector_feature_count": 0,
+        "vector_truncated": false,
+        "vector_inline_omitted": false,
+        "statistics_basis": "full_valid_raster; vector truncation does not affect statistics",
+        "geotiff_path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\changes\\2020-2021\\transitions.tif",
+        "csv_path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\changes\\2020-2021\\transitions.csv"
+      }
+    },
+    "provenance": [
+      {
+        "year": 2020,
+        "image_path": "image-2020.tif",
+        "sha256": "50a459a05168e1e3e23bf36d3fb44c2d55164f7e215772a1ce9f3016e15a366e",
+        "valid_input_pixels": 256,
+        "source": "mock admission raster",
+        "license": "test only",
+        "acquisition_date": null
+      },
+      {
+        "year": 2021,
+        "image_path": "image-2021.tif",
+        "sha256": "7ea3204be5ad1dd8c0c91e9f36ad610d4616735e6d7dfcb53d204ff4b657e76d",
+        "valid_input_pixels": 256,
+        "source": "mock admission raster",
+        "license": "test only",
+        "acquisition_date": null
+      }
+    ],
+    "checkpoint_path": "models\\fixture\\best.pt",
+    "checkpoint_sha256": "6548af371ef7415f9dffcf8c4dfe0806ae0f8bfc81cf7214cfd39349293ecb29",
+    "architecture": "tiny_unet",
+    "dataset_version": "fixture-training-v1",
+    "synthetic": false,
+    "reference_kind": "worldcover_weak_label",
+    "quality": {
+      "grid_alignment": "verified",
+      "missing_years": [],
+      "annual_coverage_complete": true,
+      "adjacent_pairs_definition": "calendar-year gap exactly 1; adjacent_observation_pairs may span missing years",
+      "cloud_shadow_mask": "per-year external binary mask when provided; otherwise input_nodata_only",
+      "warning": "연차 차이는 계절·센서·구름·모델 오류를 포함할 수 있습니다. 실제 관측연도만 분석하며 누락 연도를 생성하지 않습니다."
+    },
+    "report_path": "results\\lcluc-workflows\\6d6545826e555d2c296ef13f96d2050d6120d53b3b5eff44c234d0c16113cf01\\timeseries.json"
+  },
+  "operating_dispatch_count": 0,
+  "browser": {
+    "local_fixture_ports": [
+      5175,
+      8003
+    ],
+    "live_ui_port": 5174,
+    "live_api_port": 8002,
+    "explicit_post_succeeded": true,
+    "artifact_count": 7,
+    "historical_lookup_replayed_true": true,
+    "report_years": [
+      2020,
+      2021
+    ],
+    "valid_pixels": 256,
+    "changed_area_m2": 0,
+    "download_csv_bytes": 936,
+    "download_csv_sha256": "bb8f6a00c74cc8fce6cab598e8500d7c35d9ae57739bb2c4f8ae429877651ad2",
+    "download_sha_matches_receipt": true,
+    "back_returned_lcluc_without_old_receipt": true,
+    "other_five_models_lcluc_panel_absent": true,
+    "live_ui_invalid_submit_disabled": true,
+    "user_original_tab_unchanged": true,
+    "mobile_tested": false,
+    "delayed_response_browser_injection": false
+  },
+  "limitations": [
+    "Mock approval metadata and generated imagery do not validate independent scientific accuracy.",
+    "Browser download completed; API auth tested in isolated TestClient, fixture browser token empty.",
+    "Late-response rejection is adapter-level tested; browser navigation/back observed without network delay injection.",
+    "No mobile viewport test."
+  ]
+}

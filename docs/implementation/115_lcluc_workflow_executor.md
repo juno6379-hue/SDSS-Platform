@@ -1,5 +1,9 @@
 # 115 — 고정 Registry 입력을 실제 LCLUC 시계열 추론에 연결
 
+## 116·117 후속 상태 — 명시 실행 API·화면 연결 완료
+
+[116 API](116_lcluc_workflow_api.md)와 [117 UI](117_lcluc_workflow_ui.md)에서 115 코어를 수동 제출·상태/보고서 조회·검증 산출물 다운로드에 연결했다. 임시 합성 자료의 실제 CPU 실행과 기존5174/8002 반영은 검증됐으며 운영 실행은0이다. 아래 API/UI 미연결·미착수 표현은 당시 이력이다. 현재도 독립 정확도·공식 GMAIS Result·운영 배포 인수·6밴드 per_scene·선택 변화쌍 지도 연결은 미완료이며, GeoLLM 서비스의 기존 NO-LLM fallback은 그대로다. 최신 시험·보존·후속은 인계서와116·117을 따른다.
+
 상태: **TESTED_SYNTHETIC / 운영 실행 미수행**. `backend/app/lcluc_workflow.py`와 명시 CLI `scripts/run_lcluc_workflow.py`는 로컬 DatasetVersion·모델 admission을 검사하고 기존 `ml.service.analyze_timeseries`를 실제 호출한다. 별도 진단만 추가한 기능이 아니다. 격리 TempStore에서 작은 실제 GeoTIFF·TinyUNet CPU 추론·변화/전환 행렬·report와 SHA 연결을 시험했다. 승인 metadata는 시험이 만든 **명시 mock 경계**이며 독립 과학 평가·실제 모델 승인 증거가 아니다.
 
 ## 구현 범위

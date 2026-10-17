@@ -6,6 +6,7 @@ import type { EvidenceRecord } from './integrationAdapter';
 import './model-workspace.css';
 import AnalysisIcon from './AnalysisIcon';
 import { Icon } from './Icon';
+import LclucWorkflowPanel from './LclucWorkflowPanel';
 
 type Bounds = [number,number,number,number];
 type Config = {title:string;subtitle:string;english:string;symbol:string;map:string;tabs:string[];kpis:[string,string,string][];summary:string;columns:string[];rows:string[];bottom:string[];legend:[string,string][];fields:[string,string[]][]};
@@ -67,5 +68,6 @@ export default function ModelAnalysisWorkspace({agentId,tab,onTab,onBack,onNavig
   </div>
   <div className="mw-evidence-footer"><span>입력 초안 · 위성 기저지도 외 과학모델 결과 미연결 · 수치·그래프는 검증 Result 연결 후 표시</span><div><button onClick={onBack}>모델 허브</button>{[['input','입력·Expert'],['result','실제 결과·보고서'],['evidence','검증·근거·Job'],['history','실행 이력']].map(([id,label])=><button key={id} className={tab===id?'active':''} onClick={()=>onTab(id)}>{label}</button>)}</div></div>
   <div className="mw-live-panels"><h2>{tab==='input'?'입력 초안·Expert API':tab==='result'?'실제 결과·보고서':tab==='evidence'?'검증·근거·Job':'실행 이력'}</h2>{agentId!=='lcluc'&&(tab==='input'||tab==='result')&&<p className="mw-disconnected">외부 기관 모델 Adapter·검증된 데이터·모델 참조 연결 대기. 승인된 과학모델 결과가 없습니다.</p>}{tools.length===0&&tab==='evidence'&&<p className="mw-disconnected">Agent Registry 실제 응답을 확인하세요.</p>}{children}</div>
+  {agentId==='lcluc'&&<LclucWorkflowPanel/>}
  </div>;
 }

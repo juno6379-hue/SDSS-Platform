@@ -27,6 +27,7 @@ from .stored_current_binding_preflight_api import create_stored_current_binding_
 from .workflow_node_input_handoff_api import create_workflow_node_input_handoff_router
 from .workflow_job_request_handoff_api import create_workflow_job_request_handoff_router
 from .workflow_job_model_record_handoff_api import create_workflow_job_model_record_handoff_router
+from .lcluc_workflow_api import create_lcluc_workflow_router
 from .store import Store, now
 
 ROOT = Path(os.getenv('GEOAI_DATA_ROOT', str(Path(__file__).resolve().parents[2] / 'data')))
@@ -432,3 +433,4 @@ app.include_router(create_stored_current_binding_preflight_router(lambda: store)
 app.include_router(create_workflow_node_input_handoff_router())
 app.include_router(create_workflow_job_request_handoff_router())
 app.include_router(create_workflow_job_model_record_handoff_router())
+app.include_router(create_lcluc_workflow_router(lambda: store))

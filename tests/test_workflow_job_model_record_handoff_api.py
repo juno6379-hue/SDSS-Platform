@@ -271,6 +271,13 @@ class WorkflowJobModelRecordHandoffApiTests(unittest.TestCase):
         self.assertEqual(hashlib.sha256(ORIGINAL_MAIN.read_bytes()).hexdigest(), ORIGINAL_SHA)
         before = ast.parse(ORIGINAL_MAIN.read_text(encoding='utf-8-sig'))
         after = ast.parse((ROOT / 'backend/app/main.py').read_text(encoding='utf-8-sig'))
+        # 116 adds only this explicit import/include pair; preserve the old 105 guard.
+        authorized = ast.parse('from .lcluc_workflow_api import create_lcluc_workflow_router\n'
+            'app.include_router(create_lcluc_workflow_router(lambda: store))\n').body
+        for expected in authorized:
+            matches = [node for node in after.body if ast.dump(node) == ast.dump(expected)]
+            self.assertEqual(len(matches), 1)
+            after.body.remove(matches[0])
         kept, additions, auth_app = [], [], []
         for node in after.body:
             is_import = isinstance(node, ast.ImportFrom) and node.module == 'workflow_job_model_record_handoff_api'
