@@ -1,0 +1,102 @@
+{
+  "recorded_at": "2026-10-18T03:21:38.091130+09:00",
+  "status": "127_ONE_MODEL_READ_AND_REQUESTED_YEAR_BATCH_READ_VERIFIED",
+  "focused": {
+    "passed": 9,
+    "seconds": 8.756
+  },
+  "related": {
+    "passed": 46,
+    "seconds": 19.993,
+    "composition": "9 new annual batch +10 prior126 composition +14 model manifest +13 registered scene tests"
+  },
+  "independent": {
+    "passed": 7,
+    "skipped": 0,
+    "seconds": 7.603356399995391
+  },
+  "root_actual_temp_registered_scene_scenarios": 6,
+  "overlapping_test_bundles_are_not_additive": true,
+  "source_sha256": "4589a70425dcdfc1e6f7b9a065929f74860f572284cf9fd8c021a8fb5fc81953",
+  "test_sha256": "319a390b4ad3bf3e2c8c2859c66c07dc1107370b78b34f0038ecf80ca93d27c5",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T03:21:38.091130+09:00",
+    "understanding_markdown": 94,
+    "implementation_markdown": 1,
+    "local_links": 397,
+    "metadata_evidence_references": 10291,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T03:19:45.518853+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 287,
+    "existing_source_changes": [],
+    "previous_evidence_checked": 1080,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T03:16:18.872347+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "one_checkpoint_load_per_valid_batch": true,
+  "requested_year_labels_are_not_verified_manifest_or_header_years": true,
+  "distinct_image_registry_keys_do_not_prove_distinct_physical_scenes_or_temporal_independence": true,
+  "explicit_scene_extensions_and_lineage_roles_are_internal_contract_not_official_authority": true,
+  "public_declaration_read_policy_is_not_acl_and_quality_state_is_not_qa_approval": true,
+  "store_database_json_predecode_is_not_memory_bounded_by_new_postdecode_tree_checks": true,
+  "checkpoint_manifest_is_caller_metadata": false,
+  "actual124_model_join_completed": true,
+  "requested_year_batch_read_completed": true,
+  "temporal_year_verified": false,
+  "temporary_untrained_checkpoint_loaded_with_cpu_weights_only": true,
+  "all_year_quality_mask_or_runtime_binding_completed": false,
+  "api_ui_workflow_runtime_connected": false,
+  "execution_authorized": false,
+  "state_dict_verified": false,
+  "source_authority_verified": false,
+  "scientific_accuracy_validated": false,
+  "workflow_supported": false,
+  "frontend_build_browser_rerun_this_unit": false,
+  "backend_full_rerun_this_unit": false,
+  "reason_no_full_rerun": "All287 previous source files are byte-identical. New internal requested-year batch composition tested with actual Temp CPU checkpoint/Registry/rasters, independent failures and124/125 related regressions. No API/UI contract change.",
+  "previous_backend_regression": {
+    "unit": "120/121",
+    "tests_run": 1184,
+    "passed": 1183,
+    "skipped": 1,
+    "seconds": 399.529
+  },
+  "previous_frontend_regression": {
+    "unit": "120/121",
+    "passed": 261,
+    "build_modules": 108,
+    "build_seconds": 21.85
+  },
+  "understanding_updated": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "operating_model_or_raster_load": 0,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_internal_candidate": "128_IMAGE_MANIFEST_TEMPORAL_WINDOW_AND_REQUESTED_YEAR_BINDING",
+  "snapshot_files": 1609
+}

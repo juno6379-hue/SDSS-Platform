@@ -1,5 +1,29 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 모델 한 번 읽기로 요청 연도2~6개 장면 일괄 사전검증 (127)
+
+계약 담당은 신규 `backend/app/ml/pinned_annual_normalization.py`·집중시험·문서127, 독립 담당은 별도 실제 Temp2/6장면·실패/라벨/alias 검증과 UI/API 영향, Root는 실제 GeoTIFF 묶음·관련 회귀·운영 조회·보존·공통 문서/Git, 이해 담당은 완료 소스의 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 이전 작업자는 모두 완료 상태였으며 수집·학습 프로세스는 관측되지 않았다. API/Ollama 서비스 실행과 보고예약 ACTIVE/10분은 실제 수집·학습 진행과 구분한다.
+
+`inspect_pinned_annual_normalization(store, model_ref, training_report_sha256, requested_years)`는2~6개 exact 요청 행(year/image_ref/evidence_ref/metadata_ref)을 선검사한다. year는1900~2200 exactint·엄격 오름차순/유일, ref는고정id/version/SHA이며 세역할키·연차간image키 중복을 거부한다. 잘못된 마지막 행도 Store/file 읽기 전에 INVALID_INPUT으로 차단하고 요청 원형 snapshot을 복사한다.
+
+유효한 묶음은124의 실제 checkpoint/report를 정확1회 읽고 그 동일 manifest 객체로125를 각 행에 순차 호출한다.126을N회 반복해 모델N번 load하지 않는다. 정상 get은model1+dataset3×N이며 실제2/6행 시험의7/19get과1torch.load를 확인했다. 모델 실패는장면0, 유효 global은 모델 읽기 후OUT_OF_SCOPE/장면0이고 잘못된 global 요청은 선검사 I/O0이다. 첫 장면 실패 뒤는NOT_CHECKED/null로 보존한다.
+
+exact24 반환은 모델 관측·행별MATCHED_UNVERIFIED/BLOCKED/NOT_CHECKED와 고정 오류·호출/checked_rows를 포함한다. checked_rows는 실패 행을 포함한 시도 수로 성공 수가 아니다. 모델artifact의 부분 true는 읽기 이력이고 바깥registry/artifact집계는 전체 행 성공에서만true다. 상태PINNED_YEARS_MATCHED_UNVERIFIED도 state_dict/header/QA/mask/기관/ACL/기타부모/과학/실행/Workflow와 temporal_year_verified11개는 항상false다.
+
+요청 연도는 라벨이며 Registry temporal·실물 관측연도와 대조하지 않는다. 서로다른image id/version도 동일SHA/경로/물리영상을 가리킬 수 있어 연차/장면 독립성을 증명하지 않는다. 실제 시험에서 이 불일치·alias가 관측 일치를 유지하면서 temporalfalse임을 확인해 한계를 명시했다.128은 요청year와image manifest temporal 범위 결합을 후속으로 하며 취득일 진위·공간정합/grid/mask·독립 과학검증·실행 승인은 별도다.
+
+기존124/125/123의 파일·JSON·ZIP/CPU weights_only 한도와 Store 원문 predecode/RSS·Torch ambient allowlist/CPU/시간 격리 한계를 상속한다. 다중 연차는 순차 관측이지 전역 원자 snapshot이 아니며 끝에서 모델을 다시 읽거나 전체 파일 동시 현재 상태를 보장하지 않는다. PUBLIC/quality 선언과 보정 근거 문서 일치는 ACL·품질·기관권위·물리 보정값 독립 검증이 아니다. trusted-local 내부 읽기이며 source_url HTTP 조회·쓰기·retry·실행 payload를 추가하지 않았다.
+
+집중9 PASS/8.756초·Root 관련46 PASS/19.993초(신규9+126의10+124의14+125의13)·독립7 PASS/0 SKIP/7.603356초다. 중복 묶음을 합산하지 않는다. 독립 별도Temp18버전+TinyUNet CPU 시험은2/6행·동일manifestN회·무쓰기/DB불변·입력변경snapshot·사전검사·중간/마지막변조failfast·고정 오류와11false를 확인했다. 제품 결함 지적이나 이번 실패는 없다.
+
+Root 실제 Temp6밴드GeoTIFF3개·등록9참조·학습하지 않은CPUcheckpoint의6시나리오도 통과했다. 실제1torch.load/10get·보고서decoy무시, manifest2021/요청2021~23의 미검증 경계, boolyear I/O0, 마지막파일변조의앞2행 보존과첫파일변조의뒤2행 NOT_CHECKED를 검증했다. 합성자료·랜덤초기화모델의 실제 파일 읽기이며 훈련·추론·독립 정확도·기관 승인 근거가 아니다.
+
+보호141개·기존소스287개·이전증거1080개·catalog14행 canonical SHA·예약136314880바이트를 보존했다.03:16 KST URI mode=ro 운영 조회는 legacy datasets6/models1·dataset_versions0이다. 운영checkpoint/래스터load·수집·등록·학습·추론·배포·Workflow dispatch0, 원본·원장·lock·기존분할·운영모델 그대로다. 미연결 내부함수로 API/UI 변경이 없어 이번 frontend/build/browser·전체backend는 재실행하지 않았다.120/121의 전체1184(1183 PASS·기존1 SKIP)/frontend261/build는 이전 이력이다.
+
+관련 계약·사용법·시험·인계와 이해자료를 함께 갱신했다. 다음 내부 후보128은image manifest temporal과요청연도 결합이다. 운영등록·QA/구름mask·115 per_scene실행·독립라벨/승인·다른5실행기·운영GeoLLM/RAG/PostGIS·staging/RBAC/기관UAT는 미완료이며 단일 내부사전검증을 전체 개발 완료로 처리하지 않는다.
+
+근거: `docs/implementation/127_pinned_annual_normalization.md`, `evidence/integration/annual-normalization-agent-20261018-focused.log`, `annual-normalization-root-related-20261018.log`, `annual-normalization-independent-20261018.json`, `annual-normalization-runtime-20261018.json`, `annual-normalization-live-integrity-20261018.json`, `annual-normalization-operating-inventory-20261018.json`, 최종 `annual-normalization-closeout-20261018.json`.
+
 ## 2026-10-18 — 실제 모델 manifest와 등록 단일 장면 정규화 자동 연결 (126)
 
 계약 담당은 신규 `backend/app/ml/pinned_scene_normalization.py`·집중시험·문서126, 독립 담당은 별도 실제 Temp checkpoint/Registry 결합 검증과 UI/API 영향, Root는 실제 GeoTIFF 대조·관련 회귀·운영 조회·보존·공통 문서/Git, 이해 담당은 완료 소스의 쉬운 설명·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 기존 작업자는 모두 완료 상태였고 수집·학습 프로세스는 관측되지 않았다. API·UI·Ollama 서비스의 실행과 보고예약 ACTIVE/10분을 수집·학습 실행과 구분한다.

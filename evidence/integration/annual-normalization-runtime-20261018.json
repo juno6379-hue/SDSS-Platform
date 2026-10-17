@@ -1,0 +1,19 @@
+{
+  "scope": "TESTED_SYNTHETIC_TEMP_CPU_MODEL_THREE_GEOTIFFS_NINE_REGISTERED_ROLES",
+  "checks_passed": [
+    "three_actual_temp_geotiffs_with_nine_registered_role_versions_match_pinned_model",
+    "one_actual_checkpoint_load_and_one_model_plus_nine_dataset_record_reads_ignore_report_decoy",
+    "request_year_labels_do_not_claim_registry_temporal_or_actual_observation_year_verification",
+    "boolean_year_rejected_before_any_registry_or_model_io",
+    "actual_image_2_tamper_failfast_preserves_partial_rows_and_unchecked_count_0",
+    "actual_image_0_tamper_failfast_preserves_partial_rows_and_unchecked_count_2"
+  ],
+  "torch_version": "2.14.0+cpu",
+  "fixture_files_restored_inputs_unchanged": true,
+  "one_checkpoint_load_per_valid_batch": true,
+  "requested_years_are_not_verified_observation_years": true,
+  "operating_model_loaded": false,
+  "operating_registry_contact": false,
+  "training_inference_executed": false,
+  "scientific_accuracy_validated": false
+}

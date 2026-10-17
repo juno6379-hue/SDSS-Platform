@@ -1,5 +1,7 @@
 # 126 — 실제 고정 모델 manifest와 한 장면 Registry 정규화의 자동 읽기 결합
 
+> 후속127: 본 단일 장면 계약 다음으로 실제 모델을 한 번 읽는2~6개 요청 연도 묶음 관측을 `127_pinned_annual_normalization.md`에서 구현·검증했다. 요청 연도와 실제 temporal 대조·실행 승인은128 이후 미완료다.
+
 ## 쉬운 설명과 구현 범위
 
 124는 실제 checkpoint 바이트에서 모델 manifest를 읽고125는 caller manifest와 세 Registry 참조를 결합했다. 신규 `backend/app/ml/pinned_scene_normalization.py`의 `inspect_pinned_scene_normalization(store, model_ref, training_report_sha256, image_ref, evidence_ref, metadata_ref)`는124가 실제로 읽은 manifest만125에 전달한다. caller checkpoint_manifest 인수를 제거했으며 보고서의 input_signature/copied manifest로 대체하지 않는다.

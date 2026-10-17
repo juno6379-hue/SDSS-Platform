@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T03:13:37.687499+09:00",
-  "source_commit": "2a980f91eeb86ff61df65eed5c4f2d266aa5f540",
-  "source_commit_reason": "Published125 baseline plus126 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T03:21:38.091130+09:00",
+  "source_commit": "49d0531440fc062e30e2307a58c9d6c7846a0548",
+  "source_commit_reason": "Published126 baseline plus127 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -3215,6 +3215,108 @@
       "collector_training_processes_observed": 0,
       "next_internal_candidate": "127_ALL_YEAR_PINNED_NORMALIZATION_READ_ONLY_PREFLIGHT_CONTRACT",
       "snapshot_files": 1591
+    },
+    "latest_pinned_requested_year_batch_read": {
+      "recorded_at": "2026-10-18T03:21:38.091130+09:00",
+      "status": "127_ONE_MODEL_READ_AND_REQUESTED_YEAR_BATCH_READ_VERIFIED",
+      "focused": {
+        "passed": 9,
+        "seconds": 8.756
+      },
+      "related": {
+        "passed": 46,
+        "seconds": 19.993,
+        "composition": "9 new annual batch +10 prior126 composition +14 model manifest +13 registered scene tests"
+      },
+      "independent": {
+        "passed": 7,
+        "skipped": 0,
+        "seconds": 7.603356399995391
+      },
+      "root_actual_temp_registered_scene_scenarios": 6,
+      "overlapping_test_bundles_are_not_additive": true,
+      "source_sha256": "4589a70425dcdfc1e6f7b9a065929f74860f572284cf9fd8c021a8fb5fc81953",
+      "test_sha256": "319a390b4ad3bf3e2c8c2859c66c07dc1107370b78b34f0038ecf80ca93d27c5",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T03:21:38.091130+09:00",
+        "understanding_markdown": 94,
+        "implementation_markdown": 1,
+        "local_links": 397,
+        "metadata_evidence_references": 10291,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T03:19:45.518853+09:00",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 287,
+        "existing_source_changes": [],
+        "previous_evidence_checked": 1080,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "reserved_bytes_preserved": 136314880,
+        "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "operating_inventory": {
+        "recorded_at": "2026-10-18T03:16:18.872347+09:00",
+        "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+        "counts_by_kind": {
+          "analyses": 3,
+          "datasets": 6,
+          "gmais_idempotency": 2,
+          "gmais_jobs": 2,
+          "models": 1
+        },
+        "dataset_versions_count": 0,
+        "operating_writes": 0,
+        "model_or_raster_files_loaded": false
+      },
+      "one_checkpoint_load_per_valid_batch": true,
+      "requested_year_labels_are_not_verified_manifest_or_header_years": true,
+      "distinct_image_registry_keys_do_not_prove_distinct_physical_scenes_or_temporal_independence": true,
+      "explicit_scene_extensions_and_lineage_roles_are_internal_contract_not_official_authority": true,
+      "public_declaration_read_policy_is_not_acl_and_quality_state_is_not_qa_approval": true,
+      "store_database_json_predecode_is_not_memory_bounded_by_new_postdecode_tree_checks": true,
+      "checkpoint_manifest_is_caller_metadata": false,
+      "actual124_model_join_completed": true,
+      "requested_year_batch_read_completed": true,
+      "temporal_year_verified": false,
+      "temporary_untrained_checkpoint_loaded_with_cpu_weights_only": true,
+      "all_year_quality_mask_or_runtime_binding_completed": false,
+      "api_ui_workflow_runtime_connected": false,
+      "execution_authorized": false,
+      "state_dict_verified": false,
+      "source_authority_verified": false,
+      "scientific_accuracy_validated": false,
+      "workflow_supported": false,
+      "frontend_build_browser_rerun_this_unit": false,
+      "backend_full_rerun_this_unit": false,
+      "reason_no_full_rerun": "All287 previous source files are byte-identical. New internal requested-year batch composition tested with actual Temp CPU checkpoint/Registry/rasters, independent failures and124/125 related regressions. No API/UI contract change.",
+      "previous_backend_regression": {
+        "unit": "120/121",
+        "tests_run": 1184,
+        "passed": 1183,
+        "skipped": 1,
+        "seconds": 399.529
+      },
+      "previous_frontend_regression": {
+        "unit": "120/121",
+        "passed": 261,
+        "build_modules": 108,
+        "build_seconds": 21.85
+      },
+      "understanding_updated": true,
+      "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+      "operating_model_or_raster_load": 0,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_internal_candidate": "128_IMAGE_MANIFEST_TEMPORAL_WINDOW_AND_REQUESTED_YEAR_BINDING",
+      "snapshot_files": 1609
     }
   },
   "files": {
@@ -3231,8 +3333,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "23e6f2d3179bf5c88151dd7363592d61481a76f45ebabf6feba7b6ac99d317c4",
-      "bytes": 362383
+      "sha256": "09e9f7a437c56ae0dc8f6705cc576fe17ce5e2f93b99ba50d6d93f2a13584760",
+      "bytes": 367963
     },
     "README.md": {
       "sha256": "0d213fdb1da768b59dd402c3af248fa902c00a078c3072703337effadc542c56",
@@ -3466,6 +3568,10 @@
       "sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
       "bytes": 9136
     },
+    "backend/app/ml/pinned_annual_normalization.py": {
+      "sha256": "4589a70425dcdfc1e6f7b9a065929f74860f572284cf9fd8c021a8fb5fc81953",
+      "bytes": 5045
+    },
     "backend/app/ml/pinned_scene_normalization.py": {
       "sha256": "b4553a8c3163f8f7213e745b8f8b4ccb989300fd48e49286e0eecadbb900b9e1",
       "bytes": 2782
@@ -3643,8 +3749,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "88e4a138ec805f7a71cefcce8a71af9c372c7d63bdda0c86c67dedb039ce225f",
-      "bytes": 369524
+      "sha256": "26ce91b9293c0d2da0a093346114fa7f4eb952ac8f6a4deca2f97a71f1fcc680",
+      "bytes": 375104
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -3755,8 +3861,12 @@
       "bytes": 12342
     },
     "docs/implementation/126_pinned_scene_normalization.md": {
-      "sha256": "4d14e1e93f5631bed6b83e9b89261f975134534246a82992e87ce7236b81530a",
-      "bytes": 10183
+      "sha256": "c4bbb6e556752cab12cc6fdddb4b3b8f5fe942f2de1b3e2e35ba0618f0ab4145",
+      "bytes": 10451
+    },
+    "docs/implementation/127_pinned_annual_normalization.md": {
+      "sha256": "3aa4e6da2d64c344728813df3e391f1cb2b4ce08e083f9d4c92e3ed86a83101a",
+      "bytes": 10512
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -4071,48 +4181,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "3e2172232bc1705697d0c29728264d796cf94c11579bf7820fe724e8bdf82b41",
-      "bytes": 147407
+      "sha256": "30b08faa2c9d6ccc49814616dd46bfc8853f66b48fa35b1d0f34c6c365ce6830",
+      "bytes": 148441
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "41ab4280805460432dc516460b7410b70dc8ace24d0fd22c5bb140067b41c03d",
-      "bytes": 117424
+      "sha256": "38f0861b76b45512e8e4d5e33507d115ee2b5ee206933f995ccd957e7569cc75",
+      "bytes": 118462
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "2fdb9a23251e88475959540d1df9a75fcb989e00469125ccd116b55a7cf047cb",
-      "bytes": 87807
+      "sha256": "e5e3441bf2cf624a16c0833826eb29816b4063ef877af73317fa16fc9e3c431f",
+      "bytes": 88805
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "f7c268b92f36840036b87e7df6d54c5828af71eb7fda85cb0aa91de34d8adb27",
-      "bytes": 70812
+      "sha256": "8d6ed52250888a14058b8cf8622a29c49eaa44f0f6575ea525bb206056a47fb5",
+      "bytes": 71803
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "b95420e49115cbf22d7bb00f5acca232e2c6dbae93a103166290a437c07a7187",
-      "bytes": 35911
+      "sha256": "fd878d826b78d57222796996baf4b8ba937e9af3dab0ed2772dd2d766930a05d",
+      "bytes": 36921
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "4168217f9fe9b766e2d176ba2a5b3b341d68d23a4ae6f6ceea6c6ea64825b1d9",
-      "bytes": 74339
+      "sha256": "8c8e3e9b390b8ed4f670c79bfcb610571c5ceb27eb9ed4681cfdf260427cd88c",
+      "bytes": 75291
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "12846737fb1619f81b0f8bd1fedd924caa5873b12ea9630df8e0b416c690f2ab",
-      "bytes": 212123
+      "sha256": "0e6e7a187875a6e2202b832ee82f1482a3f8cb3eb1eb03e3ca4a6acb810165e6",
+      "bytes": 214450
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "ba022524935bdedc307177eb27c401d293481f4bef118ec8d2894b7dea5148c6",
-      "bytes": 174675
+      "sha256": "1aaf34205f84111a4a4a271cfe304a71482d31cb12ec58eae5ee41cbe990b873",
+      "bytes": 176271
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "c8013ff79af5cd4af97c4b241173f0d2753c8dad6faa23aa25847f607a836ae6",
-      "bytes": 111310
+      "sha256": "74e1531fd3aac70102690f6e4cbe33e8389ae72d378a7e871d496939a9d5521b",
+      "bytes": 112313
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "46680d4c295e0f3058062f257b1d3f94d3f52c15ccf6c568021be7653361dd0a",
-      "bytes": 184041
+      "sha256": "1d2f9bdd06f20c896b1347960a03c0337cfeab0a780355a0bc9c3a722a63e0cb",
+      "bytes": 185807
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -4302,6 +4412,10 @@
       "sha256": "ef5758c22d2f3369b887864998bfd59c3cee37faa147f4d626c2df8c36f8daf4",
       "bytes": 10638
     },
+    "docs/understanding/gate-notes/GATE_PINNED_ANNUAL_NORMALIZATION_20261018.md": {
+      "sha256": "7edbcdde317506ed4cf33103047b449e3ecba6fd087373f4d45fee5234b14a50",
+      "bytes": 10389
+    },
     "docs/understanding/gate-notes/GATE_PINNED_SCENE_NORMALIZATION_20261018.md": {
       "sha256": "2a338e2db9603fc7f1833945d6998e583913430fbc76581ff9acca662f6656be",
       "bytes": 9711
@@ -4431,16 +4545,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "42b9076d93eb10d123fa6fa0b706ba1a6988a8351c9431af6c36c21a82144aa4",
-      "bytes": 189010
+      "sha256": "68186945c568a0b77682f785afbcdf525159c3b0c9753f0f1a94d9e4ac3684eb",
+      "bytes": 190183
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "b7fa3ffb866976226d6e997b748be95cb56e969f85fb6bf6d48eb63d2e252ad3",
-      "bytes": 127350
+      "sha256": "830d79a1a45b6d81697b62393040f4adb6cf0a66313e2c6e803b63e7c6b39669",
+      "bytes": 128331
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "18cb82dba7edded16cad6c3bc42ce368cb669cb2ec34a5f3392455e7760e9235",
-      "bytes": 150661
+      "sha256": "ff017930e16341193a4eb75cfc5a35d176d0ac9633f69a0ca835aa99fd0881dc",
+      "bytes": 152034
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -4509,6 +4623,62 @@
     "evidence/integration/agent-capability-source-runtime-check-20261017.py": {
       "sha256": "cf9d319d964150d4508327a1f91640add6d7d07dddf5ae9ff7c0629767d1a71a",
       "bytes": 1539
+    },
+    "evidence/integration/annual-normalization-agent-20261018-focused.log": {
+      "sha256": "13af7be2324a63747fc70a7edbaf13874982adb83ad2033f2a8e1f08e1e93b31",
+      "bytes": 2051
+    },
+    "evidence/integration/annual-normalization-closeout-20261018.json": {
+      "sha256": "f30970210e8ae6d61f57653eeb9d48a26c0b8c28d2c96d7e1a08abcd70f97ddf",
+      "bytes": 4199
+    },
+    "evidence/integration/annual-normalization-closeout-20261018.py": {
+      "sha256": "8400c4b0c24ed2e3aef6acb51afaac9173b4cbe20c8f76d2c1d840323571711b",
+      "bytes": 8161
+    },
+    "evidence/integration/annual-normalization-independent-20261018.json": {
+      "sha256": "345597b74e97404674d99bf5e4c392ebdce65eab13b88822acf534dafd35073b",
+      "bytes": 3543
+    },
+    "evidence/integration/annual-normalization-independent-20261018.log": {
+      "sha256": "4ace4e8406c52ad1f46cc4e9c5a70d7c9961fb3b45f4b4a4951c5f9a1a629ee5",
+      "bytes": 4683
+    },
+    "evidence/integration/annual-normalization-independent-20261018.py": {
+      "sha256": "470aaff3086325e0c4039b8abcde3f30fd62fd890914bfa50ad4d6701966705c",
+      "bytes": 16309
+    },
+    "evidence/integration/annual-normalization-integrity-20261018.py": {
+      "sha256": "ba1584dd1be2e731d1c6dc30c172b586322e80c422faa70266f16725fdba0317",
+      "bytes": 2506
+    },
+    "evidence/integration/annual-normalization-live-integrity-20261018.json": {
+      "sha256": "76b20196b1987f43fdd43f453c1864371f1d016e7404acbd63ad5c696eac6bc5",
+      "bytes": 577
+    },
+    "evidence/integration/annual-normalization-operating-inventory-20261018.json": {
+      "sha256": "58053410cef4d5d941aab816259981a7628daaec9534b02d9aec00cdbbad9ba8",
+      "bytes": 352
+    },
+    "evidence/integration/annual-normalization-preflight-20261018.json": {
+      "sha256": "f048eaac583b372564557ada49e1a1c533601363a2bbb05cc04774ddd99c472b",
+      "bytes": 472359
+    },
+    "evidence/integration/annual-normalization-root-related-20261018.log": {
+      "sha256": "18ee5162ec3f32b1aedfb2cab664590388c68482eb94618032cac03106f81c94",
+      "bytes": 9822
+    },
+    "evidence/integration/annual-normalization-runtime-20261018.json": {
+      "sha256": "e943b9d7b6050f81858897ae2650bcae08710d7f7e70229cf3dc2e58d05b3af9",
+      "bytes": 991
+    },
+    "evidence/integration/annual-normalization-runtime-20261018.log": {
+      "sha256": "55d38bbcc4493a91ca83039e041225de74557e13f5663a5c70bd0a2c985684bc",
+      "bytes": 84
+    },
+    "evidence/integration/annual-normalization-runtime-20261018.py": {
+      "sha256": "d21679483819bfd12ec4d2541949dc7bb5682e20009c4a164c071a725b27eb46",
+      "bytes": 7074
     },
     "evidence/integration/bare-class-patch-feasibility-closeout-20261017.json": {
       "sha256": "671e8ea94564752a8f5d85b2981728d5ca34d8b6a772f0ed2f1519eefd082725",
@@ -9426,6 +9596,10 @@
       "sha256": "b5bae5db47e7ed4178ae2c41cebcd4481400c1bce40445afcfd1cfea57284c8b",
       "bytes": 12604
     },
+    "tests/test_pinned_annual_normalization.py": {
+      "sha256": "319a390b4ad3bf3e2c8c2859c66c07dc1107370b78b34f0038ecf80ca93d27c5",
+      "bytes": 10486
+    },
     "tests/test_pinned_scene_normalization.py": {
       "sha256": "08435da8362f375b0f4afc97d2b54044a4562a15d57aacc31557aea644a26ab4",
       "bytes": 10749
@@ -9584,11 +9758,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T03:13:37.687499+09:00",
-    "understanding_markdown": 93,
+    "checked_at": "2026-10-18T03:21:38.091130+09:00",
+    "understanding_markdown": 94,
     "implementation_markdown": 1,
-    "local_links": 392,
-    "metadata_evidence_references": 10149,
+    "local_links": 397,
+    "metadata_evidence_references": 10291,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true
