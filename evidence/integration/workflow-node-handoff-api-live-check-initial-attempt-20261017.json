@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-10-17T19:49:07.152732+09:00",
+  "status": "EVIDENCE_CHECKER_BASELINE_SERIALIZATION_MISMATCH_FIXED",
+  "new_endpoint_checks_passed": 11,
+  "old_diagnostic_posts_attempted": 2,
+  "reason": "Initial checker sent compact JSON instead of the original spaced baseline body; old lineage request_sha256 therefore differed. Final checker reuses exact baseline serialization. No application code changed.",
+  "new_job_posts": 0
+}

@@ -1,0 +1,322 @@
+{
+  "recorded_at": "2026-10-17T01:56:48.587183+00:00",
+  "scope": "READ_ONLY_MISSING_SHARED_REF_EMPTY_NODE_AND_INVALID_REQUESTS",
+  "checks": [
+    {
+      "status": 200,
+      "cache_control": "no-store",
+      "sent_body_sha256": "2ef47f8d95addc83219ca3bb46850b27f959f94b843ec63b5e5301d4c5f4726f",
+      "body": {
+        "extension": "greenblue.workflow-lineage-validation.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "present_in_upstream_openapi": false,
+        "evaluation_scope": "CURRENT_WORKFLOW_TRANSITIVE_LINEAGE_PLAN_ONLY",
+        "request_sha256": "2ef47f8d95addc83219ca3bb46850b27f959f94b843ec63b5e5301d4c5f4726f",
+        "assessment_started_at": "2026-10-17T01:56:48.432Z",
+        "assessment_finished_at": "2026-10-17T01:56:48.456Z",
+        "schema_version": 1,
+        "workflow_run_id": "workflow-lineage-live-read-only-20261017",
+        "trace_id": "trace-workflow-lineage-live-read-only-20261017",
+        "mode": "PLAN_ONLY",
+        "status": "BLOCKED",
+        "execution_started": false,
+        "can_execute": false,
+        "available": true,
+        "reason": "CURRENT_LINEAGE_CHECKED",
+        "dag_validated": true,
+        "topological_order": [
+          "empty",
+          "source",
+          "dependent"
+        ],
+        "bindings": [
+          {
+            "node_id": "source",
+            "input_index": 0,
+            "ref": {
+              "id": "workflow-unregistered-lineage-live-check",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "diagnostic_index": 0,
+            "reused": false,
+            "checked": true
+          },
+          {
+            "node_id": "dependent",
+            "input_index": 0,
+            "ref": {
+              "id": "workflow-unregistered-lineage-live-check",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "diagnostic_index": 0,
+            "reused": true,
+            "checked": true
+          }
+        ],
+        "diagnostics": [
+          {
+            "schema_version": 1,
+            "scope": "DATASET_LINEAGE_INTEGRITY_ONLY",
+            "status": "BLOCKED",
+            "root_ref": {
+              "id": "workflow-unregistered-lineage-live-check",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "nodes": [
+              {
+                "id": "workflow-unregistered-lineage-live-check",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "status": "BLOCKED",
+                "integrity_verified": false,
+                "expanded": false,
+                "authorization_verified": false,
+                "blocker_codes": [
+                  "DATASET_VERSION_NOT_FOUND"
+                ]
+              }
+            ],
+            "edges": [],
+            "edge_direction": "PARENT_TO_CHILD",
+            "blockers": [
+              {
+                "code": "DATASET_VERSION_NOT_FOUND",
+                "ref": {
+                  "id": "workflow-unregistered-lineage-live-check",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            ],
+            "limits": {
+              "max_depth": 32,
+              "max_nodes": 64,
+              "root_depth": 0,
+              "hard_max_depth": 64,
+              "hard_max_nodes": 1024,
+              "depth_limit_reached": false,
+              "node_limit_reached": false
+            },
+            "lineage_integrity_verified": false,
+            "current_assets_revalidated": true,
+            "authorization_verified": false,
+            "execution_authorized": false,
+            "scientific_approval": false,
+            "network_requests": 0,
+            "source_files_written": 0
+          }
+        ],
+        "nodes": [
+          {
+            "node_id": "source",
+            "bindings": [
+              {
+                "node_id": "source",
+                "input_index": 0,
+                "ref": {
+                  "id": "workflow-unregistered-lineage-live-check",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "diagnostic_index": 0,
+                "reused": false,
+                "checked": true
+              }
+            ],
+            "blockers": [
+              {
+                "node_id": "source",
+                "input_index": 0,
+                "code": "DATASET_VERSION_NOT_FOUND"
+              }
+            ],
+            "inputs_complete": false,
+            "status": "BLOCKED",
+            "execution_authorized": false
+          },
+          {
+            "node_id": "dependent",
+            "bindings": [
+              {
+                "node_id": "dependent",
+                "input_index": 0,
+                "ref": {
+                  "id": "workflow-unregistered-lineage-live-check",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "diagnostic_index": 0,
+                "reused": true,
+                "checked": true
+              }
+            ],
+            "blockers": [
+              {
+                "node_id": "dependent",
+                "input_index": 0,
+                "code": "DATASET_VERSION_NOT_FOUND"
+              }
+            ],
+            "inputs_complete": false,
+            "status": "BLOCKED",
+            "execution_authorized": false
+          },
+          {
+            "node_id": "empty",
+            "bindings": [],
+            "blockers": [
+              {
+                "node_id": "empty",
+                "input_index": null,
+                "code": "INPUT_REFS_REQUIRED"
+              }
+            ],
+            "inputs_complete": false,
+            "status": "BLOCKED",
+            "execution_authorized": false
+          }
+        ],
+        "blockers": [
+          {
+            "node_id": "source",
+            "input_index": 0,
+            "code": "DATASET_VERSION_NOT_FOUND"
+          },
+          {
+            "node_id": "dependent",
+            "input_index": 0,
+            "code": "DATASET_VERSION_NOT_FOUND"
+          },
+          {
+            "node_id": "empty",
+            "input_index": null,
+            "code": "INPUT_REFS_REQUIRED"
+          }
+        ],
+        "limits": {
+          "max_depth": 32,
+          "max_nodes_per_root": 64,
+          "max_total_nodes": 256,
+          "max_input_refs": 64,
+          "max_unique_roots": 32,
+          "max_workflow_nodes": 128,
+          "node_checks_performed": 1,
+          "unique_roots_checked": 1
+        },
+        "current_assets_revalidated": true,
+        "lineage_integrity_verified": false,
+        "authorization_verified": false,
+        "execution_authorized": false,
+        "scientific_approval": false,
+        "network_requests": 0,
+        "source_files_written": 0
+      }
+    },
+    {
+      "status": 400,
+      "cache_control": "no-store",
+      "sent_body_sha256": "626827915fde3695e55a48b84b1a471f05e04edb788afe7336ef08fb65145799",
+      "body": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Workflow 형식·의존 관계·검사 한도를 확인하세요.",
+          "trace_id": "unknown",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "status": 400,
+      "cache_control": "no-store",
+      "sent_body_sha256": "715df5599b1ee0c839a797e6de3c72a25c52c1cc6921fe96192128c838394e34",
+      "body": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Workflow JSON 요청을 읽을 수 없습니다.",
+          "trace_id": "unknown",
+          "retryable": false
+        }
+      }
+    }
+  ],
+  "raw_request_hash_matches": true,
+  "protected_before": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "data/first-group/readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "contracts/upstream/GMAIS-v0.2/api/openapi.yaml": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44"
+  },
+  "protected_after": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "data/first-group/readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "contracts/upstream/GMAIS-v0.2/api/openapi.yaml": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44"
+  },
+  "protected_unchanged": true,
+  "existing_jobs_unchanged": true,
+  "job_count_after": 2,
+  "new_execution_records_created": 0,
+  "scientific_success_not_tested": true,
+  "browser_checks": {
+    "workflow_run_id": "workflow-lineage-live-read-only-20261017",
+    "status": "PLAN_ONLY / BLOCKED",
+    "raw_body_sha_verified_by_ui": true,
+    "explicit_read_button": true,
+    "shared_diagnostic_count": 1,
+    "shared_node_checks": 1,
+    "dependent_reused": true,
+    "empty_input_blocker": "INPUT_REFS_REQUIRED",
+    "json_edit_cleared_prior_result": true,
+    "invalid_json_read_disabled": true,
+    "prior_draft_restored_exactly": true,
+    "prior_draft_characters": 823,
+    "desktop_requested": [
+      1440,
+      1000
+    ],
+    "mobile_requested": [
+      390,
+      844
+    ],
+    "mobile_scroll_width": 375,
+    "mobile_viewport_width": 390,
+    "viewport_reset": true,
+    "existing_plan_policy_input_cards_preserved": true,
+    "restored_draft_plan_review_mode": "FAIL_ALL / PLAN_ONLY / BLOCKED"
+  },
+  "screenshots": [
+    "evidence/ui-20261017/workflow-current-lineage-desktop.png",
+    "evidence/ui-20261017/workflow-current-lineage-shared-desktop.png",
+    "evidence/ui-20261017/workflow-current-lineage-mobile.png"
+  ],
+  "full_regression": {
+    "tests_run": 321,
+    "passed": 320,
+    "skipped": 1,
+    "seconds": 72.556,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-lineage-full-tests-20261017.log"
+  },
+  "ui_validation": {
+    "build_modules": 66,
+    "build_seconds": 19.37,
+    "exit_code": 0,
+    "adapter_passed": 38,
+    "adapter_milliseconds": 961.1713,
+    "log": "evidence/integration/workflow-lineage-ui-build-20261017.log"
+  },
+  "runtime_observation": {
+    "observed_at": "2026-10-17T11:01:47+09:00",
+    "api_reloader_pid": 35032,
+    "api_worker_pid": 7252,
+    "ui_pid": 15608,
+    "collector_or_trainer_processes": 0,
+    "report_schedule": "ACTIVE; FREQ=MINUTELY;INTERVAL=10",
+    "original_servers_preserved": true
+  }
+}

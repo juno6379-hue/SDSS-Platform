@@ -1,0 +1,40 @@
+{
+  "recorded_at": "2026-10-17T08:25:56.700351+00:00",
+  "scope": "VERIFIED_REAL_LOCAL_BROWSER_STORED_COMPARISON_NOT_NEW_QA",
+  "url": "http://127.0.0.1:5174/#/view/24?model=lcluc&tab=evidence",
+  "viewport": {
+    "width": 1449,
+    "height": 1087
+  },
+  "horizontal_overflow_pixels": 0,
+  "manual_success": {
+    "original_eligible": 1111,
+    "candidate_eligible": 1095,
+    "original_blockers": 5,
+    "candidate_blockers": 4,
+    "reference_class_imbalance_frequency": 3,
+    "bare_validation_pixels": 209,
+    "bare_contributing_patches_each_split": 0,
+    "original_physical_scene_count": "NOT_PERSISTED/null",
+    "stage_rows_declared": [
+      1384,
+      1368
+    ],
+    "candidate_stored_qa_capture": 1368
+  },
+  "input_change_clears_previous_result": true,
+  "wrong_pin_shows_http409_without_stale_result": true,
+  "back_forward_back_returns_without_stale_result": true,
+  "after_fix_reload_starts_without_result": true,
+  "after_fix_hub_back_clears_result_and_manual_requery_succeeds": true,
+  "header_justify_after_fix": "flex-start",
+  "initial_duplicate_key_error_count": 6,
+  "duplicate_key_fix": "candidate-qa: key namespace plus React sibling-key regression test",
+  "post_fix_console_since": "2026-10-17T08:24:15.000Z",
+  "post_fix_new_console_errors": 0,
+  "console_before_fix": "evidence/integration/candidate-qa-comparison-ui-console-before-fix-20261017.json",
+  "console_after_fix": "evidence/integration/candidate-qa-comparison-ui-console-after-fix-20261017.json",
+  "screenshot": "evidence/integration/candidate-qa-comparison-ui-desktop-20261017.jpg",
+  "responsive_breakpoint_test_performed_in_this_unit": false,
+  "new_qa_or_training_executed": false
+}

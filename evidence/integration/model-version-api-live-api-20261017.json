@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-17T21:41:55.063865+09:00",
+  "scope": "LIVE_NEGATIVE_ONLY_MISSING_REPORT_ERROR_PRECEDES_VERSION_VALIDATION",
+  "requests": [
+    {
+      "case": "omitted",
+      "status": 422,
+      "response": {
+        "detail": "데이터 루트 안의 실제 실험 산출물이 필요합니다."
+      }
+    },
+    {
+      "case": "explicit_fixed",
+      "status": 422,
+      "response": {
+        "detail": "데이터 루트 안의 실제 실험 산출물이 필요합니다."
+      }
+    },
+    {
+      "case": "explicit_null",
+      "status": 422,
+      "response": {
+        "detail": "데이터 루트 안의 실제 실험 산출물이 필요합니다."
+      }
+    },
+    {
+      "case": "alias",
+      "status": 422,
+      "response": {
+        "detail": "데이터 루트 안의 실제 실험 산출물이 필요합니다."
+      }
+    }
+  ],
+  "catalog_before": {
+    "records": 14,
+    "sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b"
+  },
+  "catalog_after": {
+    "records": 14,
+    "sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b"
+  },
+  "successful_operating_registrations": 0,
+  "positive_version_branch_proven_here": false,
+  "positive_evidence": "AST-isolated actual route and TempStore/mock tests, not operating registration",
+  "browser_requests_separate": true
+}

@@ -17,6 +17,16 @@ from fastapi.responses import FileResponse, PlainTextResponse, Response
 
 from .lifecycle import deploy, transition
 from .gmais_api import create_router
+from .dataset_lineage_api import create_dataset_lineage_router
+from .job_lineage_api import create_job_lineage_router
+from .workflow_lineage_api import create_workflow_lineage_router
+from .readiness_source_identity_api import create_readiness_source_identity_router
+from .candidate_qa_comparison_api import create_candidate_qa_comparison_router
+from .job_execution_binding_capture_api import create_job_execution_binding_capture_router
+from .stored_current_binding_preflight_api import create_stored_current_binding_preflight_router
+from .workflow_node_input_handoff_api import create_workflow_node_input_handoff_router
+from .workflow_job_request_handoff_api import create_workflow_job_request_handoff_router
+from .workflow_job_model_record_handoff_api import create_workflow_job_model_record_handoff_router
 from .store import Store, now
 
 ROOT = Path(os.getenv('GEOAI_DATA_ROOT', str(Path(__file__).resolve().parents[2] / 'data')))
@@ -186,6 +196,17 @@ def models():
     return store.list('models')
 
 
+@app.get('/api/models/{identifier}/registration-provenance')
+def model_registration_provenance(identifier: str):
+    try:
+        from .model_registration_provenance import inspect_model_registration_provenance
+        return inspect_model_registration_provenance(record('models', identifier))
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(503, '등록 선언 관측을 완료할 수 없습니다.') from exc
+
+
 @app.get('/api/models/{identifier}/readiness')
 def model_readiness(identifier: str):
     model = record('models', identifier)
@@ -228,6 +249,8 @@ def register_completed_experiment(payload: dict = Body(...)):
     from .experiment_registry import register_experiment
     try:
         with registry_lock:
+            if 'model_version' in payload:
+                return register_experiment(store, payload.get('report_path'), model_version=payload['model_version'])
             return register_experiment(store, payload.get('report_path'))
     except (ValueError, OSError, KeyError, TypeError) as exc:
         raise HTTPException(422, str(exc)) from exc
@@ -399,3 +422,13 @@ def artifact(relative_path: str):
 
 # GMAIS v0.2 내부 검토 계약 Adapter. 제안 규격의 공식 승인 또는 LCLUC 검증을 뜻하지 않는다.
 app.include_router(create_router(lambda: store))
+app.include_router(create_dataset_lineage_router(lambda: store))
+app.include_router(create_job_lineage_router(lambda: store))
+app.include_router(create_workflow_lineage_router(lambda: store))
+app.include_router(create_readiness_source_identity_router(lambda: store))
+app.include_router(create_candidate_qa_comparison_router(lambda: store))
+app.include_router(create_job_execution_binding_capture_router(lambda: store))
+app.include_router(create_stored_current_binding_preflight_router(lambda: store))
+app.include_router(create_workflow_node_input_handoff_router())
+app.include_router(create_workflow_job_request_handoff_router())
+app.include_router(create_workflow_job_model_record_handoff_router())

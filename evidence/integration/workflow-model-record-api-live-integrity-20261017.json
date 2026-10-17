@@ -1,0 +1,105 @@
+{
+  "recorded_at": "2026-10-17T23:07:05.897694+09:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 73,
+  "existing_contract_changes": [
+    "frontend/src/GeoQuery.tsx"
+  ],
+  "previous_tracked_code_data_test_frontend_changes": [
+    "backend/app/main.py",
+    "frontend/src/GeoQuery.tsx",
+    "tests/test_model_registration_provenance_api.py"
+  ],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "live_new_job_posts": 0,
+  "capture_backfills": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 1060,
+    "passed": 1059,
+    "skipped": 1,
+    "seconds": 364.175,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-model-record-api-full-tests-final-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "related": {
+    "passed": 101,
+    "seconds": 6.697,
+    "log": "evidence/integration/workflow-model-record-api-related-20261017.log"
+  },
+  "independent": {
+    "passed": 15,
+    "seconds": 2.894,
+    "log": "evidence/integration/workflow-model-record-api-independent-20261017.log"
+  },
+  "additional_existing_code_baseline_source": "main.py and GeoQuery.tsx present in prior snapshot; pre-edit copies retained",
+  "additional_existing_code_baselines_checked": 0,
+  "previous_evidence_files_checked": 736,
+  "previous_evidence_file_changes": [],
+  "new_function_evidence_class": "REAL_HTTP_AND_BROWSER_WITH_SYNTHETIC_NONMUTATING_DIAGNOSTIC_INPUTS_NOT_REAL_WORKFLOW_OR_MODEL_EXECUTION",
+  "authorized_test_compatibility_change": {
+    "source": "tests/test_model_registration_provenance_api.py",
+    "baseline": {
+      "recorded_at": "2026-10-17T22:56:09.5816022+09:00",
+      "source": "tests/test_model_registration_provenance_api.py",
+      "pre_edit_copy": "evidence/integration/workflow-model-record-api-test-compat-original-20261017.py",
+      "pre_edit_sha256": "e4380845692e87a3a4e0847d6339646457706527704ec8a4100e50909fc2eb81",
+      "pre_edit_bytes": 10349,
+      "initial_full_log": "evidence/integration/workflow-model-record-api-full-tests-20261017.log",
+      "initial_full_log_sha256": "a5bd5a644347dd91e1f18675e73d8f53c29b7c61d69991a283ccfb9260549ac7",
+      "initial_full_log_bytes": 208333,
+      "reason": "Exact 101 AST preservation guard rejects the two explicitly authorized 105 router statements."
+    },
+    "reason": "Exact authorized router import/include allowed; remaining full AST and node order preserved; no product correction."
+  },
+  "existing_contract_authorized_changes": [
+    "frontend/src/GeoQuery.tsx"
+  ],
+  "existing_contract_unchanged_count": 72,
+  "ui_only_exact_import_and_sibling_added": true,
+  "initial_full_regression": {
+    "tests_run": 1060,
+    "failures": 1,
+    "skipped": 1,
+    "seconds": 409.58,
+    "log": "evidence/integration/workflow-model-record-api-full-tests-20261017.log",
+    "preserved": true
+  },
+  "new_qa_or_training_executed_scope": "No new operating project QA or formal training; synthetic fixture tests remain included in full regression",
+  "synthetic_fixture_tests_in_full_regression": true,
+  "direct_ui_change": true,
+  "direct_ui_change_reason": "Separate manual Workflow/full Job/provided-record observation POST; no Job creation, registry lookup or approval. New panel preserves original raw drafts and stale-response protection.",
+  "live_job_submission_tested": false,
+  "successful_operating_model_registrations": 0,
+  "live_api_evidence": "evidence/integration/workflow-model-record-api-live-api-20261017.json",
+  "live_ui_evidence": "evidence/integration/workflow-model-record-api-live-ui-20261017.json",
+  "frontend": {
+    "related": {
+      "passed": 19,
+      "log": "evidence/integration/workflow-model-record-ui-related-20261017.log"
+    },
+    "all_tests": {
+      "passed": 191,
+      "log": "evidence/integration/workflow-model-record-ui-tests-20261017.log"
+    },
+    "independent": {
+      "passed": 19,
+      "log": "evidence/integration/workflow-model-record-ui-independent-20261017.log"
+    },
+    "production_build": {
+      "modules": 96,
+      "seconds": 28.34,
+      "log": "evidence/integration/workflow-model-record-ui-build-20261017.log",
+      "existing_chunk_size_warning": true
+    }
+  }
+}

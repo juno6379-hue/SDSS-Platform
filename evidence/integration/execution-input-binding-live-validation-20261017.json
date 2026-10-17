@@ -1,0 +1,345 @@
+{
+  "recorded_at": "2026-10-17T08:49:54.796881+00:00",
+  "scope": "REAL_STORED_REQUEST_DECLARATIONS_WITH_LOCAL_REPLAY_NOT_EXECUTOR_CAPTURE",
+  "root_catalog_read_only": true,
+  "stored_jobs_checked": 2,
+  "local_replay_observations": 8,
+  "unit_tests_included_in_count": false,
+  "stored_jobs": [
+    {
+      "stored_job_ordinal": 1,
+      "record_body_sha256": "8ab072778a2e00cd1399534ad5a4a4657c6d34e9c238015a3a89aa8f15d92a51",
+      "legacy_submission_snapshot_not_recorded": true,
+      "recorded_manifest_pins": 0,
+      "input_count": 1,
+      "request_uri_excluded_from_minimal_binding_contract": true,
+      "expected_from_stored_request_not_trusted_submission_capture": true,
+      "supplied_from_local_replay_not_executor_capture": true,
+      "observations": [
+        {
+          "scenario": "SAME_STORED_DECLARATIONS_LOCAL_REPLAY",
+          "expected_status": "UNKNOWN",
+          "observed": {
+            "schema_version": 1,
+            "scope": "ORDERED_BINDING_DECLARATIONS_ONLY",
+            "status": "UNKNOWN",
+            "issues": [
+              {
+                "side": "expected",
+                "input_index": 0,
+                "code": "LEGACY_MANIFEST_PIN_NOT_RECORDED"
+              }
+            ],
+            "expected_bindings_sha256": "b3131e1b2a8f68cffb58e92f1dca08f043a5061005047228c24b690a87341b89",
+            "expected_binding_count": 1,
+            "supplied_binding_count": 1,
+            "missing_expected_manifest_pin_count": 1,
+            "declarations_match": false,
+            "network_requests": 0,
+            "source_files_written": 0,
+            "database_calls": 0,
+            "resolver_calls": 0,
+            "executor_calls": 0,
+            "execution_authorized": false,
+            "ready_for_execution": false,
+            "ready_for_training": false,
+            "scientific_approval": false,
+            "acl_verified": false,
+            "registry_verified": false,
+            "training_authorized": false,
+            "pixels_verified": false,
+            "toc_tou_protected": false,
+            "executor_connected": false,
+            "artifact_bytes_verified": false,
+            "manifest_bytes_verified": false
+          }
+        },
+        {
+          "scenario": "SYNTHETIC_MANIFEST_PIN_ADDED_LOCAL_REPLAY",
+          "expected_status": "UNKNOWN",
+          "observed": {
+            "schema_version": 1,
+            "scope": "ORDERED_BINDING_DECLARATIONS_ONLY",
+            "status": "UNKNOWN",
+            "issues": [
+              {
+                "side": "expected",
+                "input_index": 0,
+                "code": "LEGACY_MANIFEST_PIN_NOT_RECORDED"
+              }
+            ],
+            "expected_bindings_sha256": "b3131e1b2a8f68cffb58e92f1dca08f043a5061005047228c24b690a87341b89",
+            "expected_binding_count": 1,
+            "supplied_binding_count": 1,
+            "missing_expected_manifest_pin_count": 1,
+            "declarations_match": false,
+            "network_requests": 0,
+            "source_files_written": 0,
+            "database_calls": 0,
+            "resolver_calls": 0,
+            "executor_calls": 0,
+            "execution_authorized": false,
+            "ready_for_execution": false,
+            "ready_for_training": false,
+            "scientific_approval": false,
+            "acl_verified": false,
+            "registry_verified": false,
+            "training_authorized": false,
+            "pixels_verified": false,
+            "toc_tou_protected": false,
+            "executor_connected": false,
+            "artifact_bytes_verified": false,
+            "manifest_bytes_verified": false
+          }
+        },
+        {
+          "scenario": "SYNTHETIC_VERSION_CHANGE_LOCAL_REPLAY",
+          "expected_status": "BLOCKED",
+          "observed": {
+            "schema_version": 1,
+            "scope": "ORDERED_BINDING_DECLARATIONS_ONLY",
+            "status": "BLOCKED",
+            "issues": [
+              {
+                "side": "comparison",
+                "input_index": 0,
+                "code": "BINDING_VERSION_MISMATCH"
+              }
+            ],
+            "expected_bindings_sha256": "b3131e1b2a8f68cffb58e92f1dca08f043a5061005047228c24b690a87341b89",
+            "expected_binding_count": 1,
+            "supplied_binding_count": 1,
+            "missing_expected_manifest_pin_count": 1,
+            "declarations_match": false,
+            "network_requests": 0,
+            "source_files_written": 0,
+            "database_calls": 0,
+            "resolver_calls": 0,
+            "executor_calls": 0,
+            "execution_authorized": false,
+            "ready_for_execution": false,
+            "ready_for_training": false,
+            "scientific_approval": false,
+            "acl_verified": false,
+            "registry_verified": false,
+            "training_authorized": false,
+            "pixels_verified": false,
+            "toc_tou_protected": false,
+            "executor_connected": false,
+            "artifact_bytes_verified": false,
+            "manifest_bytes_verified": false
+          }
+        },
+        {
+          "scenario": "SYNTHETIC_TRACE_CHANGE_LOCAL_REPLAY",
+          "expected_status": "BLOCKED",
+          "observed": {
+            "schema_version": 1,
+            "scope": "ORDERED_BINDING_DECLARATIONS_ONLY",
+            "status": "BLOCKED",
+            "issues": [
+              {
+                "side": "comparison",
+                "input_index": null,
+                "code": "TRACE_ID_MISMATCH"
+              }
+            ],
+            "expected_bindings_sha256": "b3131e1b2a8f68cffb58e92f1dca08f043a5061005047228c24b690a87341b89",
+            "expected_binding_count": 1,
+            "supplied_binding_count": 1,
+            "missing_expected_manifest_pin_count": 1,
+            "declarations_match": false,
+            "network_requests": 0,
+            "source_files_written": 0,
+            "database_calls": 0,
+            "resolver_calls": 0,
+            "executor_calls": 0,
+            "execution_authorized": false,
+            "ready_for_execution": false,
+            "ready_for_training": false,
+            "scientific_approval": false,
+            "acl_verified": false,
+            "registry_verified": false,
+            "training_authorized": false,
+            "pixels_verified": false,
+            "toc_tou_protected": false,
+            "executor_connected": false,
+            "artifact_bytes_verified": false,
+            "manifest_bytes_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "stored_job_ordinal": 2,
+      "record_body_sha256": "e940f2e2e7e6b49a7d42d4d7b6daba32fbfa6b4ade92a904853be3ba875aa847",
+      "legacy_submission_snapshot_not_recorded": true,
+      "recorded_manifest_pins": 0,
+      "input_count": 1,
+      "request_uri_excluded_from_minimal_binding_contract": true,
+      "expected_from_stored_request_not_trusted_submission_capture": true,
+      "supplied_from_local_replay_not_executor_capture": true,
+      "observations": [
+        {
+          "scenario": "SAME_STORED_DECLARATIONS_LOCAL_REPLAY",
+          "expected_status": "UNKNOWN",
+          "observed": {
+            "schema_version": 1,
+            "scope": "ORDERED_BINDING_DECLARATIONS_ONLY",
+            "status": "UNKNOWN",
+            "issues": [
+              {
+                "side": "expected",
+                "input_index": 0,
+                "code": "LEGACY_MANIFEST_PIN_NOT_RECORDED"
+              }
+            ],
+            "expected_bindings_sha256": "69d22643a88fb83055d9b7dc4365a45fa65b7e6616ba441e01e8164ad72329b0",
+            "expected_binding_count": 1,
+            "supplied_binding_count": 1,
+            "missing_expected_manifest_pin_count": 1,
+            "declarations_match": false,
+            "network_requests": 0,
+            "source_files_written": 0,
+            "database_calls": 0,
+            "resolver_calls": 0,
+            "executor_calls": 0,
+            "execution_authorized": false,
+            "ready_for_execution": false,
+            "ready_for_training": false,
+            "scientific_approval": false,
+            "acl_verified": false,
+            "registry_verified": false,
+            "training_authorized": false,
+            "pixels_verified": false,
+            "toc_tou_protected": false,
+            "executor_connected": false,
+            "artifact_bytes_verified": false,
+            "manifest_bytes_verified": false
+          }
+        },
+        {
+          "scenario": "SYNTHETIC_MANIFEST_PIN_ADDED_LOCAL_REPLAY",
+          "expected_status": "UNKNOWN",
+          "observed": {
+            "schema_version": 1,
+            "scope": "ORDERED_BINDING_DECLARATIONS_ONLY",
+            "status": "UNKNOWN",
+            "issues": [
+              {
+                "side": "expected",
+                "input_index": 0,
+                "code": "LEGACY_MANIFEST_PIN_NOT_RECORDED"
+              }
+            ],
+            "expected_bindings_sha256": "69d22643a88fb83055d9b7dc4365a45fa65b7e6616ba441e01e8164ad72329b0",
+            "expected_binding_count": 1,
+            "supplied_binding_count": 1,
+            "missing_expected_manifest_pin_count": 1,
+            "declarations_match": false,
+            "network_requests": 0,
+            "source_files_written": 0,
+            "database_calls": 0,
+            "resolver_calls": 0,
+            "executor_calls": 0,
+            "execution_authorized": false,
+            "ready_for_execution": false,
+            "ready_for_training": false,
+            "scientific_approval": false,
+            "acl_verified": false,
+            "registry_verified": false,
+            "training_authorized": false,
+            "pixels_verified": false,
+            "toc_tou_protected": false,
+            "executor_connected": false,
+            "artifact_bytes_verified": false,
+            "manifest_bytes_verified": false
+          }
+        },
+        {
+          "scenario": "SYNTHETIC_VERSION_CHANGE_LOCAL_REPLAY",
+          "expected_status": "BLOCKED",
+          "observed": {
+            "schema_version": 1,
+            "scope": "ORDERED_BINDING_DECLARATIONS_ONLY",
+            "status": "BLOCKED",
+            "issues": [
+              {
+                "side": "comparison",
+                "input_index": 0,
+                "code": "BINDING_VERSION_MISMATCH"
+              }
+            ],
+            "expected_bindings_sha256": "69d22643a88fb83055d9b7dc4365a45fa65b7e6616ba441e01e8164ad72329b0",
+            "expected_binding_count": 1,
+            "supplied_binding_count": 1,
+            "missing_expected_manifest_pin_count": 1,
+            "declarations_match": false,
+            "network_requests": 0,
+            "source_files_written": 0,
+            "database_calls": 0,
+            "resolver_calls": 0,
+            "executor_calls": 0,
+            "execution_authorized": false,
+            "ready_for_execution": false,
+            "ready_for_training": false,
+            "scientific_approval": false,
+            "acl_verified": false,
+            "registry_verified": false,
+            "training_authorized": false,
+            "pixels_verified": false,
+            "toc_tou_protected": false,
+            "executor_connected": false,
+            "artifact_bytes_verified": false,
+            "manifest_bytes_verified": false
+          }
+        },
+        {
+          "scenario": "SYNTHETIC_TRACE_CHANGE_LOCAL_REPLAY",
+          "expected_status": "BLOCKED",
+          "observed": {
+            "schema_version": 1,
+            "scope": "ORDERED_BINDING_DECLARATIONS_ONLY",
+            "status": "BLOCKED",
+            "issues": [
+              {
+                "side": "comparison",
+                "input_index": null,
+                "code": "TRACE_ID_MISMATCH"
+              }
+            ],
+            "expected_bindings_sha256": "69d22643a88fb83055d9b7dc4365a45fa65b7e6616ba441e01e8164ad72329b0",
+            "expected_binding_count": 1,
+            "supplied_binding_count": 1,
+            "missing_expected_manifest_pin_count": 1,
+            "declarations_match": false,
+            "network_requests": 0,
+            "source_files_written": 0,
+            "database_calls": 0,
+            "resolver_calls": 0,
+            "executor_calls": 0,
+            "execution_authorized": false,
+            "ready_for_execution": false,
+            "ready_for_training": false,
+            "scientific_approval": false,
+            "acl_verified": false,
+            "registry_verified": false,
+            "training_authorized": false,
+            "pixels_verified": false,
+            "toc_tou_protected": false,
+            "executor_connected": false,
+            "artifact_bytes_verified": false,
+            "manifest_bytes_verified": false
+          }
+        }
+      ]
+    }
+  ],
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_and_job_bodies_unchanged": true,
+  "actual_executor_connected": false,
+  "actual_job_executed": false,
+  "manifest_or_artifact_bytes_verified": false,
+  "training_executed": false
+}

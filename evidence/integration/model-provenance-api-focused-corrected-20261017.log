@@ -1,0 +1,18 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_all_five_states_are_200_exact_helper_response_get_once_write_zero (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_all_five_states_are_200_exact_helper_response_get_once_write_zero) ... ok
+test_auth_denies_before_store_and_retains_existing_bearer_policy (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_auth_denies_before_store_and_retains_existing_bearer_policy) ... ok
+test_existing_models_list_body_and_headers_preserved (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_existing_models_list_body_and_headers_preserved) ... ok
+test_helper_exceptions_are_fixed503_and_existing_http_exception_is_preserved (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_helper_exceptions_are_fixed503_and_existing_http_exception_is_preserved) ... ok
+test_local_import_error_is_also_safe503_before_store (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_local_import_error_is_also_safe503_before_store) ... ok
+test_missing_model_preserves_404_fixed_detail_and_no_helper_or_write (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_missing_model_preserves_404_fixed_detail_and_no_helper_or_write) ... ok
+test_no_checkpoint_report_source_write_network_or_registration_calls (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_no_checkpoint_report_source_write_network_or_registration_calls) ... Error on reading from the event loop self pipe
+loop: <ProactorEventLoop running=True closed=False debug=False>
+Traceback (most recent call last):
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 801, in _loop_self_reading
+    f = self._proactor.recv(self._ssock, 4096)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 462, in recv
+    if isinstance(conn, socket.socket):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union

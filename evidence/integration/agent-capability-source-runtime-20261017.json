@@ -1,0 +1,86 @@
+{
+  "recorded_at": "2026-10-17T20:43:22.773872+09:00",
+  "status": "TESTED_SYNTHETIC",
+  "scope": "fresh process actual local configured manifests; no app.main import, Store construction or HTTP submission",
+  "registered_agents": 6,
+  "cases": [
+    {
+      "agent_id": "climate-downscaling-agent",
+      "capability_id": "climate-downscaling",
+      "issue": null,
+      "manifest_readiness_unchanged": "NOT_IMPLEMENTED"
+    },
+    {
+      "agent_id": "climate-downscaling-agent",
+      "capability_id": "unregistered-capability",
+      "issue": "INVALID_REQUEST",
+      "manifest_readiness_unchanged": "NOT_IMPLEMENTED"
+    },
+    {
+      "agent_id": "lcluc-agent",
+      "capability_id": "landcover.change_detection",
+      "issue": null,
+      "manifest_readiness_unchanged": "BLOCKED"
+    },
+    {
+      "agent_id": "lcluc-agent",
+      "capability_id": "unregistered-capability",
+      "issue": "INVALID_REQUEST",
+      "manifest_readiness_unchanged": "BLOCKED"
+    },
+    {
+      "agent_id": "net-carbon-footprint-agent",
+      "capability_id": "net-carbon-footprint",
+      "issue": null,
+      "manifest_readiness_unchanged": "NOT_IMPLEMENTED"
+    },
+    {
+      "agent_id": "net-carbon-footprint-agent",
+      "capability_id": "unregistered-capability",
+      "issue": "INVALID_REQUEST",
+      "manifest_readiness_unchanged": "NOT_IMPLEMENTED"
+    },
+    {
+      "agent_id": "biodiversity-agent",
+      "capability_id": "biodiversity",
+      "issue": null,
+      "manifest_readiness_unchanged": "NOT_IMPLEMENTED"
+    },
+    {
+      "agent_id": "biodiversity-agent",
+      "capability_id": "unregistered-capability",
+      "issue": "INVALID_REQUEST",
+      "manifest_readiness_unchanged": "NOT_IMPLEMENTED"
+    },
+    {
+      "agent_id": "sea-level-subsidence-agent",
+      "capability_id": "sea-level-subsidence",
+      "issue": null,
+      "manifest_readiness_unchanged": "NOT_IMPLEMENTED"
+    },
+    {
+      "agent_id": "sea-level-subsidence-agent",
+      "capability_id": "unregistered-capability",
+      "issue": "INVALID_REQUEST",
+      "manifest_readiness_unchanged": "NOT_IMPLEMENTED"
+    },
+    {
+      "agent_id": "flood-drought-agent",
+      "capability_id": "flood-drought",
+      "issue": null,
+      "manifest_readiness_unchanged": "NOT_IMPLEMENTED"
+    },
+    {
+      "agent_id": "flood-drought-agent",
+      "capability_id": "unregistered-capability",
+      "issue": "INVALID_REQUEST",
+      "manifest_readiness_unchanged": "NOT_IMPLEMENTED"
+    }
+  ],
+  "absent_agent_issue": "AGENT_NOT_IMPLEMENTED",
+  "source_manifests_unchanged": true,
+  "live_operating_job_posts": 0,
+  "store_calls": 0,
+  "approval_or_execution_granted": false,
+  "runtime_server_code_application": "UNVERIFIED; source-process observation only"
+}

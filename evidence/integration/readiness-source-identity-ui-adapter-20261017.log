@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: 수동 요청은 명시 핀3개만 가지며 latest·경로·불완전 SHA를 거부한다
+ok 1 - 수동 요청은 명시 핀3개만 가지며 latest·경로·불완전 SHA를 거부한다
+  ---
+  duration_ms: 3.5007
+  type: 'test'
+  ...
+# Subtest: 저장선언의 회원28/넓은400/선언28/zero3/patch25를 개별 투영하며 승인으로 승격하지 않는다
+ok 2 - 저장선언의 회원28/넓은400/선언28/zero3/patch25를 개별 투영하며 승인으로 승격하지 않는다
+  ---
+  duration_ms: 1.2661
+  type: 'test'
+  ...
+# Subtest: 보고서·manifest·token SHA가 요청과 다르면 결과를 폐기한다
+ok 3 - 보고서·manifest·token SHA가 요청과 다르면 결과를 폐기한다
+  ---
+  duration_ms: 2.8114
+  type: 'test'
+  ...
+# Subtest: 8개 승인·해소 false 필드는 true·0·문자열·누락을 허용하지 않는다
+ok 4 - 8개 승인·해소 false 필드는 true·0·문자열·누락을 허용하지 않는다
+  ---
+  duration_ms: 0.8411
+  type: 'test'
+  ...
+# Subtest: 알 수 없는 상태·schema·scope·추가필드와 bool형 계수는 failclosed다
+ok 5 - 알 수 없는 상태·schema·scope·추가필드와 bool형 계수는 failclosed다
+  ---
+  duration_ms: 1.0484
+  type: 'test'
+  ...
+# Subtest: 단서 없는 두 상태는 선택4계수 null만 허용하고0·누락과 혼동하지 않는다
+ok 6 - 단서 없는 두 상태는 선택4계수 null만 허용하고0·누락과 혼동하지 않는다
+  ---
+  duration_ms: 0.6274
+  type: 'test'
+  ...
+# Subtest: 회원·후보 교차계수 모순과 누락을 거부하며 zero patch를 삭제하지 않는다
+ok 7 - 회원·후보 교차계수 모순과 누락을 거부하며 zero patch를 삭제하지 않는다
+  ---
+  duration_ms: 0.8713
+  type: 'test'
+  ...
+# Subtest: 입력·선택·메뉴·재조회 이후 늦은 성공/실패는 무효이고 같은 요청만 현재다
+ok 8 - 입력·선택·메뉴·재조회 이후 늦은 성공/실패는 무효이고 같은 요청만 현재다
+  ---
+  duration_ms: 0.4201
+  type: 'test'
+  ...
+# Subtest: HTTP400/409/413/429/503/404/권한/연결 오류는 원본정보없이 서로 구분한다
+ok 9 - HTTP400/409/413/429/503/404/권한/연결 오류는 원본정보없이 서로 구분한다
+  ---
+  duration_ms: 0.9475
+  type: 'test'
+  ...
+# Subtest: 토큰 hash는 대소문자·UTF8 원문에 의존하고 응답 원문token을 투영하지 않는다
+ok 10 - 토큰 hash는 대소문자·UTF8 원문에 의존하고 응답 원문token을 투영하지 않는다
+  ---
+  duration_ms: 13.4561
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 302.8698

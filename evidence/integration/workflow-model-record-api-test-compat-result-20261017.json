@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-10-17T22:57:23.0396512+09:00",
+  "source": "tests/test_model_registration_provenance_api.py",
+  "pre_edit_sha256": "e4380845692e87a3a4e0847d6339646457706527704ec8a4100e50909fc2eb81",
+  "post_edit_sha256": "7204f6cc6601b66a45ef5af1af5db6d3852aedd7289c917abe84b27e7003fb11",
+  "post_edit_bytes": 10983,
+  "focused_log": "evidence/integration/workflow-model-record-api-test-compat-focused-20261017.log",
+  "focused_tests": 24,
+  "focused_pass": 24,
+  "focused_seconds": 4.702,
+  "production_files_changed": 0,
+  "new_test_methods": 0,
+  "allowed_ast_additions": [
+    "from .workflow_job_model_record_handoff_api import create_workflow_job_model_record_handoff_router",
+    "app.include_router(create_workflow_job_model_record_handoff_router())"
+  ],
+  "initial_full_log_preserved": true
+}

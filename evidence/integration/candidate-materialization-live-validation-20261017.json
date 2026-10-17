@@ -1,0 +1,58 @@
+{
+  "recorded_at": "2026-10-17T16:34:09.555195+09:00",
+  "scope": "VERIFIED_REAL_METADATA_ONLY",
+  "cli_exit_code": 0,
+  "artifacts": {
+    "receipt": {
+      "sha256": "889c549d8c8620a33fb90503313157313c520088809f2e16304c1d7fdcc3be51",
+      "bytes": 3936
+    },
+    "plan": {
+      "sha256": "ccdc704ead412d7aee069fb4f61f30a2baf9c9944458b858efcc28ba4197dfbf",
+      "bytes": 22298
+    },
+    "candidate": {
+      "sha256": "2ff7be093db3930d99f10cdc7687809222ef7f525ec6e9cf6248ec144725d158",
+      "bytes": 53247999
+    }
+  },
+  "independent_typed_retained_rows_match": true,
+  "new_plan_byte_identical_to_saved_plan": true,
+  "original_rows": 1384,
+  "candidate_rows": 1368,
+  "excluded_in_candidate_only": 16,
+  "original_eligible": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "candidate_projected_eligible": {
+    "train": 628,
+    "val": 217,
+    "test": 250
+  },
+  "candidate_projected_eligible_total": 1095,
+  "all_false_flags_checked": [
+    "raster_readiness_rechecked",
+    "source_rows_modified_or_reassigned",
+    "executed",
+    "learning_ready",
+    "ready_for_training",
+    "scientific_accuracy_validated",
+    "source_authenticity_verified",
+    "exact_row_binding_verified",
+    "spatial_overlap_rechecked",
+    "exact_class_counts_recomputed",
+    "training_split_leakage_resolved",
+    "execution_authorized",
+    "registry_called",
+    "settlement_authorized",
+    "automatic_resume_allowed"
+  ],
+  "input_pins_match": true,
+  "receipt_outputs_sha_size_match": true,
+  "raster_or_geometry_or_exact_class_qa_performed": false,
+  "registry_written": false,
+  "training_executed": false,
+  "atomic_snapshot_guaranteed": false
+}

@@ -1,0 +1,660 @@
+{
+  "scope": "TEMPSTORE_SYNTHETIC_POST_CHANGE_NOT_LIVE_API",
+  "old_response_and_job_without_capture_deep_equal": true,
+  "cases": [
+    {
+      "case": "PUBLIC_REGISTERED",
+      "legacy_resolution": {
+        "schema_version": 1,
+        "scope": "INPUT_INTEGRITY_ONLY",
+        "status": "INTEGRITY_VERIFIED",
+        "input_integrity_verified": true,
+        "resolved": [
+          {
+            "input_index": 0,
+            "integrity_verified": true,
+            "authorization_verified": false,
+            "status": "VERIFIED",
+            "blocker_codes": [],
+            "id": "contract-fixture",
+            "version": "1",
+            "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+            "quality_status": "VALIDATED",
+            "access_class": "PUBLIC"
+          }
+        ],
+        "blockers": [],
+        "ready_for_execution": false,
+        "scientific_approval": false,
+        "network_requests": 0,
+        "source_files_written": 0
+      },
+      "status_code": 409,
+      "response": {
+        "error": {
+          "code": "MODEL_NOT_READY",
+          "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+          "trace_id": "trace-explicit-contract-fixture",
+          "retryable": false,
+          "details": {
+            "job_id": "job-fixed-capture-compat",
+            "job_status": {
+              "schema_version": "0.2.0",
+              "job_id": "job-fixed-capture-compat",
+              "agent_id": "lcluc-agent",
+              "status": "BLOCKED",
+              "trace_id": "trace-explicit-contract-fixture",
+              "submitted_at": "2026-10-17T00:00:00.000Z",
+              "progress": 0.0,
+              "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+              "error_code": "MODEL_NOT_READY"
+            },
+            "input_resolution": {
+              "extension": "greenblue.job-input-resolution.rfc1",
+              "approval_status": "INTERNAL_REVIEW",
+              "evaluated_at": "2026-10-17T00:00:00.000Z",
+              "evaluation_scope": "SUBMISSION_SNAPSHOT_NOT_EXECUTION_AUTHORIZATION",
+              "schema_version": 1,
+              "scope": "INPUT_INTEGRITY_ONLY",
+              "status": "INTEGRITY_VERIFIED",
+              "input_integrity_verified": true,
+              "resolved": [
+                {
+                  "input_index": 0,
+                  "integrity_verified": true,
+                  "authorization_verified": false,
+                  "status": "VERIFIED",
+                  "blocker_codes": [],
+                  "id": "contract-fixture",
+                  "version": "1",
+                  "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+                  "quality_status": "VALIDATED",
+                  "access_class": "PUBLIC"
+                }
+              ],
+              "blockers": [],
+              "ready_for_execution": false,
+              "scientific_approval": false,
+              "network_requests": 0,
+              "source_files_written": 0
+            }
+          }
+        }
+      },
+      "location": "/v1/jobs/job-fixed-capture-compat",
+      "stored_job_without_capture": {
+        "id": "job-fixed-capture-compat",
+        "job_id": "job-fixed-capture-compat",
+        "agent_id": "lcluc-agent",
+        "status": {
+          "schema_version": "0.2.0",
+          "job_id": "job-fixed-capture-compat",
+          "agent_id": "lcluc-agent",
+          "status": "BLOCKED",
+          "trace_id": "trace-explicit-contract-fixture",
+          "submitted_at": "2026-10-17T00:00:00.000Z",
+          "progress": 0.0,
+          "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+          "error_code": "MODEL_NOT_READY"
+        },
+        "request": {
+          "schema_version": "0.2.0",
+          "agent_id": "lcluc-agent",
+          "capability_id": "landcover.change_detection",
+          "input_refs": [
+            {
+              "id": "contract-fixture",
+              "version": "1",
+              "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+              "uri": "contract-fixture.json",
+              "role": "T1"
+            }
+          ],
+          "aoi": {
+            "bbox": [
+              106.1,
+              -6.8,
+              106.2,
+              -6.7
+            ],
+            "crs": "OGC:CRS84"
+          },
+          "requested_outputs": [
+            "COG",
+            "JSON"
+          ],
+          "execution_context": {
+            "trace_id": "trace-explicit-contract-fixture",
+            "workflow_run_id": "workflow-explicit-fixture",
+            "purpose": "contract-test",
+            "environment": "development"
+          }
+        },
+        "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+        "result_id": null,
+        "input_resolution": {
+          "extension": "greenblue.job-input-resolution.rfc1",
+          "approval_status": "INTERNAL_REVIEW",
+          "evaluated_at": "2026-10-17T00:00:00.000Z",
+          "evaluation_scope": "SUBMISSION_SNAPSHOT_NOT_EXECUTION_AUTHORIZATION",
+          "schema_version": 1,
+          "scope": "INPUT_INTEGRITY_ONLY",
+          "status": "INTEGRITY_VERIFIED",
+          "input_integrity_verified": true,
+          "resolved": [
+            {
+              "input_index": 0,
+              "integrity_verified": true,
+              "authorization_verified": false,
+              "status": "VERIFIED",
+              "blocker_codes": [],
+              "id": "contract-fixture",
+              "version": "1",
+              "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+              "quality_status": "VALIDATED",
+              "access_class": "PUBLIC"
+            }
+          ],
+          "blockers": [],
+          "ready_for_execution": false,
+          "scientific_approval": false,
+          "network_requests": 0,
+          "source_files_written": 0
+        },
+        "created_at": "2026-10-17T00:00:00.000Z"
+      },
+      "resolution_calls_for_submission": 1,
+      "submission_put_kinds": [
+        "gmais_jobs",
+        "gmais_idempotency"
+      ],
+      "replay_identical_and_no_resolution_or_write": true,
+      "capture": {
+        "schema_version": 1,
+        "extension": "greenblue.execution-input-binding-capture.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "scope": "SUBMISSION_EXPECTED_BINDING_METADATA",
+        "captured_at": "2026-10-17T00:00:00.000Z",
+        "status": "RECORDED",
+        "expected_envelope": {
+          "job_id": "job-fixed-capture-compat",
+          "agent_id": "lcluc-agent",
+          "trace_id": "trace-explicit-contract-fixture",
+          "bindings": [
+            {
+              "input_index": 0,
+              "id": "contract-fixture",
+              "version": "1",
+              "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+              "manifest_sha256": "58405c4db059b0ed7fabe02cf99a34dd2d56e21643af7c21332394e6a56ab44b",
+              "role": "T1"
+            }
+          ]
+        },
+        "expected_bindings_sha256": "44cd70dc17abe0977c5a4240680bfef109f6623f8e720321c9d6512ba4c54dda",
+        "issues": [],
+        "pin_source": "SAME_RESOLVE_VERSION_RETURN",
+        "additional_registry_queries": 0,
+        "additional_artifact_reads": 0,
+        "additional_database_writes": 0,
+        "execution_authorized": false,
+        "ready_for_execution": false,
+        "ready_for_training": false,
+        "scientific_approval": false,
+        "acl_verified": false,
+        "registry_verified": false,
+        "training_authorized": false,
+        "pixels_verified": false,
+        "toc_tou_protected": false,
+        "executor_connected": false,
+        "artifact_bytes_verified": false,
+        "manifest_bytes_verified": false
+      }
+    },
+    {
+      "case": "RESTRICTED_REGISTERED",
+      "legacy_resolution": {
+        "schema_version": 1,
+        "scope": "INPUT_INTEGRITY_ONLY",
+        "status": "BLOCKED",
+        "input_integrity_verified": true,
+        "resolved": [
+          {
+            "input_index": 0,
+            "integrity_verified": true,
+            "authorization_verified": false,
+            "status": "BLOCKED",
+            "blocker_codes": [
+              "INPUT_ACL_NOT_IMPLEMENTED"
+            ],
+            "id": "contract-fixture",
+            "version": "1",
+            "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+            "quality_status": "VALIDATED",
+            "access_class": "RESTRICTED"
+          }
+        ],
+        "blockers": [
+          {
+            "input_index": 0,
+            "code": "INPUT_ACL_NOT_IMPLEMENTED"
+          }
+        ],
+        "ready_for_execution": false,
+        "scientific_approval": false,
+        "network_requests": 0,
+        "source_files_written": 0
+      },
+      "status_code": 409,
+      "response": {
+        "error": {
+          "code": "MODEL_NOT_READY",
+          "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+          "trace_id": "trace-explicit-contract-fixture",
+          "retryable": false,
+          "details": {
+            "job_id": "job-fixed-capture-compat",
+            "job_status": {
+              "schema_version": "0.2.0",
+              "job_id": "job-fixed-capture-compat",
+              "agent_id": "lcluc-agent",
+              "status": "BLOCKED",
+              "trace_id": "trace-explicit-contract-fixture",
+              "submitted_at": "2026-10-17T00:00:00.000Z",
+              "progress": 0.0,
+              "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+              "error_code": "MODEL_NOT_READY"
+            },
+            "input_resolution": {
+              "extension": "greenblue.job-input-resolution.rfc1",
+              "approval_status": "INTERNAL_REVIEW",
+              "evaluated_at": "2026-10-17T00:00:00.000Z",
+              "evaluation_scope": "SUBMISSION_SNAPSHOT_NOT_EXECUTION_AUTHORIZATION",
+              "schema_version": 1,
+              "scope": "INPUT_INTEGRITY_ONLY",
+              "status": "BLOCKED",
+              "input_integrity_verified": true,
+              "resolved": [
+                {
+                  "input_index": 0,
+                  "integrity_verified": true,
+                  "authorization_verified": false,
+                  "status": "BLOCKED",
+                  "blocker_codes": [
+                    "INPUT_ACL_NOT_IMPLEMENTED"
+                  ],
+                  "id": "contract-fixture",
+                  "version": "1",
+                  "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+                  "quality_status": "VALIDATED",
+                  "access_class": "RESTRICTED"
+                }
+              ],
+              "blockers": [
+                {
+                  "input_index": 0,
+                  "code": "INPUT_ACL_NOT_IMPLEMENTED"
+                }
+              ],
+              "ready_for_execution": false,
+              "scientific_approval": false,
+              "network_requests": 0,
+              "source_files_written": 0
+            }
+          }
+        }
+      },
+      "location": "/v1/jobs/job-fixed-capture-compat",
+      "stored_job_without_capture": {
+        "id": "job-fixed-capture-compat",
+        "job_id": "job-fixed-capture-compat",
+        "agent_id": "lcluc-agent",
+        "status": {
+          "schema_version": "0.2.0",
+          "job_id": "job-fixed-capture-compat",
+          "agent_id": "lcluc-agent",
+          "status": "BLOCKED",
+          "trace_id": "trace-explicit-contract-fixture",
+          "submitted_at": "2026-10-17T00:00:00.000Z",
+          "progress": 0.0,
+          "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+          "error_code": "MODEL_NOT_READY"
+        },
+        "request": {
+          "schema_version": "0.2.0",
+          "agent_id": "lcluc-agent",
+          "capability_id": "landcover.change_detection",
+          "input_refs": [
+            {
+              "id": "contract-fixture",
+              "version": "1",
+              "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+              "uri": "contract-fixture.json",
+              "role": "T1"
+            }
+          ],
+          "aoi": {
+            "bbox": [
+              106.1,
+              -6.8,
+              106.2,
+              -6.7
+            ],
+            "crs": "OGC:CRS84"
+          },
+          "requested_outputs": [
+            "COG",
+            "JSON"
+          ],
+          "execution_context": {
+            "trace_id": "trace-explicit-contract-fixture",
+            "workflow_run_id": "workflow-explicit-fixture",
+            "purpose": "contract-test",
+            "environment": "development"
+          }
+        },
+        "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+        "result_id": null,
+        "input_resolution": {
+          "extension": "greenblue.job-input-resolution.rfc1",
+          "approval_status": "INTERNAL_REVIEW",
+          "evaluated_at": "2026-10-17T00:00:00.000Z",
+          "evaluation_scope": "SUBMISSION_SNAPSHOT_NOT_EXECUTION_AUTHORIZATION",
+          "schema_version": 1,
+          "scope": "INPUT_INTEGRITY_ONLY",
+          "status": "BLOCKED",
+          "input_integrity_verified": true,
+          "resolved": [
+            {
+              "input_index": 0,
+              "integrity_verified": true,
+              "authorization_verified": false,
+              "status": "BLOCKED",
+              "blocker_codes": [
+                "INPUT_ACL_NOT_IMPLEMENTED"
+              ],
+              "id": "contract-fixture",
+              "version": "1",
+              "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+              "quality_status": "VALIDATED",
+              "access_class": "RESTRICTED"
+            }
+          ],
+          "blockers": [
+            {
+              "input_index": 0,
+              "code": "INPUT_ACL_NOT_IMPLEMENTED"
+            }
+          ],
+          "ready_for_execution": false,
+          "scientific_approval": false,
+          "network_requests": 0,
+          "source_files_written": 0
+        },
+        "created_at": "2026-10-17T00:00:00.000Z"
+      },
+      "resolution_calls_for_submission": 1,
+      "submission_put_kinds": [
+        "gmais_jobs",
+        "gmais_idempotency"
+      ],
+      "replay_identical_and_no_resolution_or_write": true,
+      "capture": {
+        "schema_version": 1,
+        "extension": "greenblue.execution-input-binding-capture.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "scope": "SUBMISSION_EXPECTED_BINDING_METADATA",
+        "captured_at": "2026-10-17T00:00:00.000Z",
+        "status": "RECORDED",
+        "expected_envelope": {
+          "job_id": "job-fixed-capture-compat",
+          "agent_id": "lcluc-agent",
+          "trace_id": "trace-explicit-contract-fixture",
+          "bindings": [
+            {
+              "input_index": 0,
+              "id": "contract-fixture",
+              "version": "1",
+              "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+              "manifest_sha256": "f77f10d0d38763b939a5d20aa82fd0d9fa4aec273e5ca8f3d2174a91f10faa2f",
+              "role": "T1"
+            }
+          ]
+        },
+        "expected_bindings_sha256": "b26523248b3f5c8c1cd9ee42dab3eb3c1201386c40429a18eeef28baa0f9f55d",
+        "issues": [],
+        "pin_source": "SAME_RESOLVE_VERSION_RETURN",
+        "additional_registry_queries": 0,
+        "additional_artifact_reads": 0,
+        "additional_database_writes": 0,
+        "execution_authorized": false,
+        "ready_for_execution": false,
+        "ready_for_training": false,
+        "scientific_approval": false,
+        "acl_verified": false,
+        "registry_verified": false,
+        "training_authorized": false,
+        "pixels_verified": false,
+        "toc_tou_protected": false,
+        "executor_connected": false,
+        "artifact_bytes_verified": false,
+        "manifest_bytes_verified": false
+      }
+    },
+    {
+      "case": "UNREGISTERED",
+      "legacy_resolution": {
+        "schema_version": 1,
+        "scope": "INPUT_INTEGRITY_ONLY",
+        "status": "BLOCKED",
+        "input_integrity_verified": false,
+        "resolved": [
+          {
+            "input_index": 0,
+            "integrity_verified": false,
+            "authorization_verified": false,
+            "status": "BLOCKED",
+            "blocker_codes": [
+              "DATASET_VERSION_NOT_FOUND"
+            ],
+            "id": "contract-fixture",
+            "version": "1",
+            "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9"
+          }
+        ],
+        "blockers": [
+          {
+            "input_index": 0,
+            "code": "DATASET_VERSION_NOT_FOUND"
+          }
+        ],
+        "ready_for_execution": false,
+        "scientific_approval": false,
+        "network_requests": 0,
+        "source_files_written": 0
+      },
+      "status_code": 409,
+      "response": {
+        "error": {
+          "code": "MODEL_NOT_READY",
+          "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+          "trace_id": "trace-explicit-contract-fixture",
+          "retryable": false,
+          "details": {
+            "job_id": "job-fixed-capture-compat",
+            "job_status": {
+              "schema_version": "0.2.0",
+              "job_id": "job-fixed-capture-compat",
+              "agent_id": "lcluc-agent",
+              "status": "BLOCKED",
+              "trace_id": "trace-explicit-contract-fixture",
+              "submitted_at": "2026-10-17T00:00:00.000Z",
+              "progress": 0.0,
+              "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+              "error_code": "MODEL_NOT_READY"
+            },
+            "input_resolution": {
+              "extension": "greenblue.job-input-resolution.rfc1",
+              "approval_status": "INTERNAL_REVIEW",
+              "evaluated_at": "2026-10-17T00:00:00.000Z",
+              "evaluation_scope": "SUBMISSION_SNAPSHOT_NOT_EXECUTION_AUTHORIZATION",
+              "schema_version": 1,
+              "scope": "INPUT_INTEGRITY_ONLY",
+              "status": "BLOCKED",
+              "input_integrity_verified": false,
+              "resolved": [
+                {
+                  "input_index": 0,
+                  "integrity_verified": false,
+                  "authorization_verified": false,
+                  "status": "BLOCKED",
+                  "blocker_codes": [
+                    "DATASET_VERSION_NOT_FOUND"
+                  ],
+                  "id": "contract-fixture",
+                  "version": "1",
+                  "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9"
+                }
+              ],
+              "blockers": [
+                {
+                  "input_index": 0,
+                  "code": "DATASET_VERSION_NOT_FOUND"
+                }
+              ],
+              "ready_for_execution": false,
+              "scientific_approval": false,
+              "network_requests": 0,
+              "source_files_written": 0
+            }
+          }
+        }
+      },
+      "location": "/v1/jobs/job-fixed-capture-compat",
+      "stored_job_without_capture": {
+        "id": "job-fixed-capture-compat",
+        "job_id": "job-fixed-capture-compat",
+        "agent_id": "lcluc-agent",
+        "status": {
+          "schema_version": "0.2.0",
+          "job_id": "job-fixed-capture-compat",
+          "agent_id": "lcluc-agent",
+          "status": "BLOCKED",
+          "trace_id": "trace-explicit-contract-fixture",
+          "submitted_at": "2026-10-17T00:00:00.000Z",
+          "progress": 0.0,
+          "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+          "error_code": "MODEL_NOT_READY"
+        },
+        "request": {
+          "schema_version": "0.2.0",
+          "agent_id": "lcluc-agent",
+          "capability_id": "landcover.change_detection",
+          "input_refs": [
+            {
+              "id": "contract-fixture",
+              "version": "1",
+              "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9",
+              "uri": "contract-fixture.json",
+              "role": "T1"
+            }
+          ],
+          "aoi": {
+            "bbox": [
+              106.1,
+              -6.8,
+              106.2,
+              -6.7
+            ],
+            "crs": "OGC:CRS84"
+          },
+          "requested_outputs": [
+            "COG",
+            "JSON"
+          ],
+          "execution_context": {
+            "trace_id": "trace-explicit-contract-fixture",
+            "workflow_run_id": "workflow-explicit-fixture",
+            "purpose": "contract-test",
+            "environment": "development"
+          }
+        },
+        "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+        "result_id": null,
+        "input_resolution": {
+          "extension": "greenblue.job-input-resolution.rfc1",
+          "approval_status": "INTERNAL_REVIEW",
+          "evaluated_at": "2026-10-17T00:00:00.000Z",
+          "evaluation_scope": "SUBMISSION_SNAPSHOT_NOT_EXECUTION_AUTHORIZATION",
+          "schema_version": 1,
+          "scope": "INPUT_INTEGRITY_ONLY",
+          "status": "BLOCKED",
+          "input_integrity_verified": false,
+          "resolved": [
+            {
+              "input_index": 0,
+              "integrity_verified": false,
+              "authorization_verified": false,
+              "status": "BLOCKED",
+              "blocker_codes": [
+                "DATASET_VERSION_NOT_FOUND"
+              ],
+              "id": "contract-fixture",
+              "version": "1",
+              "sha256": "0a5bcd56eb821a05eb8b099c0bab30dc03292d4aeac7d5fb7e958a46103545d9"
+            }
+          ],
+          "blockers": [
+            {
+              "input_index": 0,
+              "code": "DATASET_VERSION_NOT_FOUND"
+            }
+          ],
+          "ready_for_execution": false,
+          "scientific_approval": false,
+          "network_requests": 0,
+          "source_files_written": 0
+        },
+        "created_at": "2026-10-17T00:00:00.000Z"
+      },
+      "resolution_calls_for_submission": 1,
+      "submission_put_kinds": [
+        "gmais_jobs",
+        "gmais_idempotency"
+      ],
+      "replay_identical_and_no_resolution_or_write": true,
+      "capture": {
+        "schema_version": 1,
+        "extension": "greenblue.execution-input-binding-capture.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "scope": "SUBMISSION_EXPECTED_BINDING_METADATA",
+        "captured_at": "2026-10-17T00:00:00.000Z",
+        "status": "UNAVAILABLE",
+        "expected_envelope": null,
+        "expected_bindings_sha256": null,
+        "issues": [
+          {
+            "code": "CAPTURE_ROWS_UNAVAILABLE",
+            "input_index": null
+          }
+        ],
+        "pin_source": "SAME_RESOLVE_VERSION_RETURN",
+        "additional_registry_queries": 0,
+        "additional_artifact_reads": 0,
+        "additional_database_writes": 0,
+        "execution_authorized": false,
+        "ready_for_execution": false,
+        "ready_for_training": false,
+        "scientific_approval": false,
+        "acl_verified": false,
+        "registry_verified": false,
+        "training_authorized": false,
+        "pixels_verified": false,
+        "toc_tou_protected": false,
+        "executor_connected": false,
+        "artifact_bytes_verified": false,
+        "manifest_bytes_verified": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-17T18:56:30.215533+09:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 44,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "live_new_job_posts": 0,
+  "capture_backfills": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 844,
+    "passed": 843,
+    "skipped": 1,
+    "seconds": 342.991,
+    "exit_code": 0,
+    "log": "evidence/integration/stored-binding-store-adapter-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "related": {
+    "passed": 12,
+    "seconds": 1.416,
+    "log": "evidence/integration/stored-binding-store-adapter-related-20261017.log"
+  },
+  "independent": {
+    "passed": 12,
+    "seconds": 1.084,
+    "log": "evidence/integration/stored-binding-store-adapter-independent-20261017.log"
+  },
+  "live_validation_evidence": "evidence/integration/stored-binding-store-adapter-live-validation-20261017.json",
+  "direct_ui_change": false,
+  "direct_ui_change_reason": "Internal Store read adapter without API or executor binding; existing 79/80 response and card unchanged."
+}

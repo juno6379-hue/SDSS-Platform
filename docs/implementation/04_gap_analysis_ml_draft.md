@@ -1,5 +1,7 @@
 # ML·Model Type·MLOps Gap Analysis 초안
 
+2026-10-17 후속 구현·현행 QA는 [23_ml_readiness_resume_20261017.md](23_ml_readiness_resume_20261017.md)를 참조한다. 본문의 77/664패치 수치는 과거 관측이며 최신 학습 준비도 근거로 사용하지 않는다. Esri 연간 기간 표기 호환 차이와 고정 holdout 통계/수집 SHA/주 경계 충분성 계수 gap은 후속 구현으로 보완했다. 실제 scene 누출·bare 클래스 대표성 및 독립 과학검증 gap은 해결된 것으로 보지 않는다.
+
 root 통합 `04_gap_analysis.md`에 병합할 ML 담당 초안이다. 기준 원문은 `GreenBlue_CODEX_Master_Prompt_GMAIS_Integrated_Platform_v1.0.md`이며 원문이 내부 지시 초안이라는 효력을 유지한다. TECH-4·GMAIS 원문과 추가 설계를 같은 출처로 표시하지 않는다. 상세 SOP/준비도 분리는 `08_model_type_validation_sops.md`, 실제 관측 snapshot과 코드 SHA는 `data/audits/gmais-ml-current-inventory.json`을 참조한다. 소유권은 root 통합 관리 파일에 전달했다.
 
 | requirement_id | source_section | source_type | subsystem | owner_proposed | acceptance_evidence | current_state | gap | decision_required |

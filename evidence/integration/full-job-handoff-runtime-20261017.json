@@ -1,0 +1,32 @@
+{
+  "observed_at": "2026-10-17T20:10:25.3249516+09:00",
+  "listeners": [
+    {
+      "LocalPort": 8002,
+      "OwningProcess": 35032
+    },
+    {
+      "LocalPort": 8001,
+      "OwningProcess": 26912
+    },
+    {
+      "LocalPort": 8000,
+      "OwningProcess": 32224
+    },
+    {
+      "LocalPort": 5174,
+      "OwningProcess": 15608
+    },
+    {
+      "LocalPort": 5173,
+      "OwningProcess": 30944
+    }
+  ],
+  "project_workers": [],
+  "all_python_node_operation_candidates": [],
+  "worker_observation_scope": "Python/node command line train/collect/run_qa/candidate_qa pattern after full tests; no hidden or remote worker assurance",
+  "automation_status": [
+    "status = \"ACTIVE\"",
+    "rrule = \"FREQ=MINUTELY;INTERVAL=10\""
+  ]
+}

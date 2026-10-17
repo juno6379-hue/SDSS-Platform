@@ -1,5 +1,9 @@
 # 플랫폼 구현 진행 상황
 
+## 최신 갱신 — 2026-10-17 KST
+
+멀티 에이전트로 수집 복구 진단·ML gate 보완·UI v2 및 Result→SDSS 계약 slice를 통합했다. 최신 상세와 다음 순서는 [인계서](00_next_session_handoff.md) 첫 절, [UI](23_ui_completion.md), [ML](23_ml_readiness_resume_20261017.md)를 따른다. 물리1,384/manifest 적격1,111, 분할628/233/250이며 수집기 없음·lock/pending2건 보존. frontend build/adapter5 PASS, backend 회귀197 PASS. 독립평가·학습 승인·실제 표준 Result·외부5 실행기·공식 RDTR·운영 배포는 완료하지 않았다. 아래 10-16 스냅샷은 과거 이력이다.
+
 최종 갱신: 2026-10-16 16:54 KST. 다음 세션은 [인계서](00_next_session_handoff.md)를 먼저 읽는다. 현황은 구현, 로컬 계약시험, 실제 수집, 과학검증, 기관 승인을 별개로 보고한다.
 
 | 작업흐름 | 상태 | 증거·다음 단계 |

@@ -1,0 +1,106 @@
+{
+  "recorded_at": "2026-10-17T17:08:15.498012+09:00",
+  "status": "VERIFIED_REAL_CANDIDATE_QA_COMPLETED_BLOCKED_FOUR",
+  "protected_references_checked": 139,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 31,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [],
+  "four_input_pins_unchanged": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "full_regression": {
+    "tests_run": 744,
+    "passed": 743,
+    "skipped": 1,
+    "seconds": 356.067,
+    "exit_code": 0,
+    "log": "evidence/integration/candidate-readiness-qa-full-tests-20261017.log"
+  },
+  "related": {
+    "passed": 19,
+    "seconds": 12.065
+  },
+  "independent": {
+    "passed": 19,
+    "seconds": 12.236
+  },
+  "live_validation": {
+    "recorded_at": "2026-10-17T17:06:18.620038+09:00",
+    "scope": "VERIFIED_REAL_CANDIDATE_QA_NOT_SCIENTIFIC_APPROVAL",
+    "report": {
+      "sha256": "847343e1aa4ab9b67fd3bba36a2a9f91d716c2fd411af244e55bbfe1a8414019",
+      "bytes": 11842410
+    },
+    "qa_receipt": {
+      "sha256": "7b5ea8bba57bfc359076a0db27adce554b28c7d1796ae352b82ef9d94d79e38d",
+      "bytes": 3030
+    },
+    "four_input_pins_unchanged": true,
+    "same_policy_and_input_signature": true,
+    "observed_status": "blocked",
+    "blocker_count": 4,
+    "new_blockers_exactly_equal_old_class_related_four": true,
+    "saved_original_blocker_count": 5,
+    "shared_source_blocker_absent_in_candidate_report": true,
+    "complete_leakage_resolution_claimed": false,
+    "patch_counts_by_split": {
+      "train": 628,
+      "val": 217,
+      "test": 250
+    },
+    "eligible_total": 1095,
+    "captured_scenes": 1368,
+    "verified_file_records": 4285,
+    "common_verified_file_records_with_same_sha_kind": 4284,
+    "added_verified_records": [
+      "first-group-candidate-qa-stage-20261017\\candidate.json"
+    ],
+    "removed_previous_verified_records": 51,
+    "bbox_pairs_evaluated": 935028,
+    "captured_fixed_split_conflicts": 0,
+    "complete_declared_identities": 1368,
+    "bare_pixels": {
+      "train": 1418,
+      "val": 209,
+      "test": 1025
+    },
+    "bare_contributing_patches": {
+      "train": 0,
+      "val": 0,
+      "test": 0
+    },
+    "receipt_false_fields_verified": [
+      "full_plan_recomputation_performed",
+      "package_revalidated",
+      "prepared_dataset_registered",
+      "training_executed",
+      "execution_authorized",
+      "ready_for_training",
+      "scientific_accuracy_validated",
+      "source_authenticity_verified",
+      "exact_row_binding_verified",
+      "training_split_leakage_resolved",
+      "registry_called",
+      "resume_requested",
+      "settlement_authorized",
+      "automatic_resume_allowed"
+    ],
+    "execution_elapsed_seconds": 202.344,
+    "sampled_peak_rss_bytes": 532074496,
+    "os_atomic_snapshot": false,
+    "extra_raster_reads_in_root_comparison": false
+  },
+  "candidate_qa_performed": true,
+  "candidate_readiness": "BLOCKED",
+  "candidate_blockers": 4,
+  "saved_original_blockers": 5,
+  "candidate_registered": false,
+  "original_rows_modified": false,
+  "source_images_or_labels_copied": false,
+  "training_executed": false,
+  "prepared_or_inference_executed": false,
+  "full_workspace_inventory": false,
+  "atomic_snapshot_guaranteed": false
+}

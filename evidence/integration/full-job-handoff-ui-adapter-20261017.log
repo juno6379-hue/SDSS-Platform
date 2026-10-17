@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: whole RAW request SHA binds exact four keys and original decimal/exponent/negative zero text
+ok 1 - whole RAW request SHA binds exact four keys and original decimal/exponent/negative zero text
+  ---
+  duration_ms: 25.886
+  type: 'test'
+  ...
+# Subtest: full Job server observed hash is not compared to JavaScript canonical draft
+ok 2 - full Job server observed hash is not compared to JavaScript canonical draft
+  ---
+  duration_ms: 5.0892
+  type: 'test'
+  ...
+# Subtest: fullJob strict parsing remains server authority: duplicates underflow and malformed raw preserved
+ok 3 - fullJob strict parsing remains server authority: duplicates underflow and malformed raw preserved
+  ---
+  duration_ms: 5.5432
+  type: 'test'
+  ...
+# Subtest: UTF8 budgets and explicit node are bounded without automatic trim or Job generation
+ok 4 - UTF8 budgets and explicit node are bounded without automatic trim or Job generation
+  ---
+  duration_ms: 4.1137
+  type: 'test'
+  ...
+# Subtest: exact wrapper rejects extension status retarget and unknown properties
+ok 5 - exact wrapper rejects extension status retarget and unknown properties
+  ---
+  duration_ms: 4.8566
+  type: 'test'
+  ...
+# Subtest: 24 flags must be false and 7 I/O counts typed numeric zero
+ok 6 - 24 flags must be false and 7 I/O counts typed numeric zero
+  ---
+  duration_ms: 5.0996
+  type: 'test'
+  ...
+# Subtest: schema read null not fake zero, exact stage booleans/calls/status
+ok 7 - schema read null not fake zero, exact stage booleans/calls/status
+  ---
+  duration_ms: 2.523
+  type: 'test'
+  ...
+# Subtest: schema invalid and before-validator bounds preserve legitimate BLOCKED stages
+ok 8 - schema invalid and before-validator bounds preserve legitimate BLOCKED stages
+  ---
+  duration_ms: 3.5929
+  type: 'test'
+  ...
+# Subtest: bbox model and optional workflow mismatch stages stay separate from metadata
+ok 9 - bbox model and optional workflow mismatch stages stay separate from metadata
+  ---
+  duration_ms: 3.813
+  type: 'test'
+  ...
+# Subtest: resource failure maps to HTTP503; 200 resource payload is rejected
+ok 10 - resource failure maps to HTTP503; 200 resource payload is rejected
+  ---
+  duration_ms: 3.951
+  type: 'test'
+  ...
+# Subtest: inner 86 mismatch hashes safe codes and indices remain validated
+ok 11 - inner 86 mismatch hashes safe codes and indices remain validated
+  ---
+  duration_ms: 5.1727
+  type: 'test'
+  ...
+# Subtest: stale generation raw input revision route response is ignored
+ok 12 - stale generation raw input revision route response is ignored
+  ---
+  duration_ms: 0.4508
+  type: 'test'
+  ...
+# Subtest: independent details child has one manual POST and no lookup-triggered submission
+ok 13 - independent details child has one manual POST and no lookup-triggered submission
+  ---
+  duration_ms: 47.0047
+  type: 'test'
+  ...
+# Subtest: Python89 real helper cross-language stages include 257 scalar metadata and 65 refs
+ok 14 - Python89 real helper cross-language stages include 257 scalar metadata and 65 refs
+  ---
+  duration_ms: 2041.8872
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3122.0076

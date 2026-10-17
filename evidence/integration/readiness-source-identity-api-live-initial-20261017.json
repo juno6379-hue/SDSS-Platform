@@ -1,0 +1,14 @@
+{
+  "url": "http://127.0.0.1:8002/v1/diagnostics/readiness-source-identity",
+  "status": 409,
+  "seconds": 8.625,
+  "response_bytes": 122,
+  "cache_control": null,
+  "response": {
+    "error": {
+      "code": "PINNED_INPUT_CONFLICT",
+      "message": "Pinned diagnostic inputs changed or do not match.",
+      "retryable": false
+    }
+  }
+}

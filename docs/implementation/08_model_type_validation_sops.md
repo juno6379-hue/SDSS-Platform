@@ -1,5 +1,25 @@
 # Model Type별 검증 SOP와 준비도 대조
 
+## 2026-10-17 — 모델 버전 선언의 수동 등록 검토 절차 (98/99)
+
+기존 완료 실험 → Draft 등록 폼에서 모델 버전 선언은 기본 off·빈 입력이다. report 경로와 버전은 사용자가 직접 입력하며 자동 등록·데이터 버전에서의 추정·trim을 하지 않는다. 선택 해제 시 요청은 기존 `{report_path}` 그대로다. API는 `model_version` 키 존재 여부로 분기하여 부재는 기존 두 인자 호출, 명시 null은 명시한 잘못된 값으로 처리한다. 기존 파일·완료·SHA·출처·중복 ID 검사와 인증/lock·201/422 계약을 유지한다.
+
+등록 중 report/선언/버전/모델 선택을 비활성화한다. 이동·뒤로가기·unmount 후 과거 setId/error는 표시하지 않지만 성공한 서버 변경의 목록 refresh는 수행한다. 201 이후 refresh 실패 안내는 이미 등록되었을 가능성을 분리하여 재등록 대신 목록 확인을 요구한다. 화면 이동은 등록 취소·rollback이 아니다. 등록 결과는 계속 Draft·독립 평가 false·과학 검증 false이며 버전 선언을 승인이나 권위 있는 불변 모델 버전으로 해석하지 않는다.
+
+검증 근거는 API 관련 48 PASS/독립 11 PASS, UI 관련 16 PASS/독립 16 PASS/전체 153 PASS와 89 modules build다. 성공 등록은 합성 checkpoint/report와 TempStore·mock 시험 범위다. 실제 API의 없는 report 경로 4회는 모두 422였고 catalog 14행은 같았다([근거](../../evidence/integration/model-version-api-live-api-20261017.json)). 운영 성공 등록·학습·승인 시험을 수행한 것이 아니다. 브라우저 오류 입력·뒤로가기 및 layout 최종 확인은 Root의 별도 증거가 확정되기 전까지 진행 중으로 남긴다.
+
+상세 계약은 [98 API](98_model_version_registration_api.md), [99 UI](99_model_version_registration_ui.md), [97 내부 선언](97_model_version_declaration.md)을 따른다. 아래 97의 미연결 설명은 당시 내부 구현 범위를 보존한 이력이다.
+
+## 2026-10-17 — 향후 내부 등록의 명시 모델 버전 선언 (97)
+
+`register_experiment(store, report_path, *, model_version=...)`에서 호출자가 명시한 미래 버전을 선택적으로 보존한다. 옵션 생략은 기존 응답·레코드 바이트와 raw training의 임의 필드 복사를 그대로 유지한다. 명시할 때만 96 문자 검증과 보고서 필드 충돌 검사를 거쳐 모델 레코드의 exact5 `model_version_declaration`에 버전 원문·기존 checkpoint SHA·훈련 report SHA를 연결한다. 잘못된 명시 값은 기존 검사가 끝난 뒤 첫 Store.put 전에 거부한다.
+
+기존 main/API·훈련 producer·UI는 이 옵션을 전달하지 않는다. 따라서 현재 공개 요청·화면의 동작은 그대로다. 명시 선언은 caller metadata이며 기관 권위·원본 인증·과학/모델/실행 승인이 아니다. 같은 모양의 raw 필드도 생략 경로에서 복사될 수 있으므로 키/source만으로 명시 호출이 생성했다고 인증하지 않는다. 기존 model_id 또는 dataset_id 중복 거부·Draft·독립평가 false·쓰기 순서를 유지한다.
+
+기존 기록의 dataset_version을 모델 버전으로 대체하거나 역채움하지 않는다. 두 번 쓰기의 비트랜잭션·동시경쟁/전역 immutable 한계도 해결했다고 표현하지 않는다. 사용법·충돌 규칙·합성 임시 Store 시험·한계는 [문서97](97_model_version_declaration.md)를 따른다.
+
+2026-10-17 재개 검증은 [23_ml_readiness_resume_20261017.md](23_ml_readiness_resume_20261017.md)를 우선 참조한다. 아래 2026-10-16 수집/77패치/중간집계는 역사적 관측이다. Esri 연간 URL 호환, 고정 split 충돌 통계, 수집 기록 SHA 대조, 주 경계 포함률 조건을 보완했으며 신규 실자료 학습은 시작하지 않았다.
+
 검토일 2026-10-16. 작업자 `ml_pipeline`; 소유권과 공동 파일 변경 규칙은 `workstream_ownership.md`를 따른다. 본 문서는 새 마스터 §4/§5/§7을 현행 구현과 대조한 G0/G2 초안이다. API·DB·공통 Schema를 수정하거나 과학적 승인 상태를 생성하지 않았다. `backend/app/main.py`는 root와 협의하기 전까지 읽기 전용이다.
 
 ## 1. 출처 및 확인 범위
@@ -104,3 +124,15 @@ python scripts/run_experiment.py --manifest data/first-group-training-esri-v1/an
 3. model_type별 조건부 delivery/검증근거·approval 입력 계약. 외부5개는 NOT_IMPLEMENTED/owner TBD로 계약시험만 가능하게 한다.
 4. 이미 구현한 차단 Job trace/idempotency를 기반으로 실제 승인 실행·workflow·timeout/retry/cancel·고정 결과 참조를 기존 LCLUC 서비스 위에 비파괴적으로 확장한다.
 5. 실제 적격 데이터와 분리 검증이 충족된 경우에만 LCLUC 새 실험을 진행한다. 운영 승인·배포는 추가 독립 전문가/인프라 검증이 필요하다.
+
+## 98/99 최종 통합 검증 보충
+
+최종 전체 회귀는 [corrected 로그](../../evidence/integration/model-version-api-full-tests-corrected-20261017.log)의998건/997 PASS/기존Windows1 SKIP/366.134초다. 최초 PYTHONPATH누락648건/import31오류 로그는 보존하며 통과 근거와 구분한다. [실제 화면](../../evidence/integration/model-version-api-live-ui-20261017.json)8체크·음성등록1회422·뒤로가기복귀·겹침/넘침0을 확인하고 최종layout build90 modules/27.52초를 실제로그로 정정했다(초기89와 구분). [보존 근거](../../evidence/integration/model-version-api-live-integrity-20261017.json)의 보호141·core70·이전증거631·catalog14 변경0이다. 성공등록은 격리시험만이며 운영성공등록0, caller선언≠승인을 유지한다.
+
+## 101/102 읽기 전용 API·화면 후속
+
+[API101](101_model_registration_provenance_api.md)과 [UI102](102_model_registration_provenance_ui.md)는100pure관측을기존선택모델에서수동조회하게연결한다. 5상태200·기존auth/404·고정503,응답상태/binding/issue·4false정합과세대방어를적용했다. 실제API/브라우저는기존모델ABSENT와없는모델404를읽기확인했고등록/실행/승인0이다. 타상태와오염·지연응답은합성시험만이다. [통합시험·보존](../../evidence/integration/model-provenance-api-live-integrity-20261017.json)과 [실제화면](../../evidence/integration/model-provenance-api-live-ui-20261017.json)을따른다. 관측4false는기존모델필드변경이아니며세대방어는응답모델신원인증이아니다. 기존선택시readiness의실파일검증과새metadataendpoint의artifact읽기0은구분한다.
+
+### 105/106 후속 연결 및 검증
+
+별도 비변경 진단 API와 수동 UI를 연결했다. 기존 RFC1/RFC2 결과·승인 경계를 유지한다. 새 계약·원문/한도·생산과 검증 호출 수·실제/합성 시험 및 한계는 [API105](105_workflow_job_model_record_handoff_api.md), [UI106](106_workflow_model_record_handoff_ui.md)를 따른다. 최종 전체 회귀·브라우저·보존 근거는 `evidence/integration/workflow-model-record-api-live-integrity-20261017.json`과 `evidence/integration/workflow-model-record-api-live-ui-20261017.json`이다. 이해자료·인계서도 같은 단위로 갱신했다. metadata 일치는 실바이트·권위·과학/실행 승인이 아니며 운영 Job 생성/등록은 없다.

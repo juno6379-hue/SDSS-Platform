@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "kind": "RECOVERY_SAVED_READINESS_PHYSICAL_CORNER_SCOPE_COMPARISON",
+  "mode": "READ_ONLY",
+  "status": "BLOCKED",
+  "comparison_status": "CONSISTENT_SAVED_SCOPE_METADATA",
+  "inputs": {
+    "manifest": {
+      "path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+      "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f"
+    },
+    "readiness": {
+      "path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group\\readiness-resume-20261017.json",
+      "sha256": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db"
+    },
+    "corner_report": {
+      "path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\evidence\\integration\\recovery-source-split-overlap-live-final-20261017.json",
+      "sha256": "ce78468e38d432a1bfb3894fc80c2d3c04751d4458728c0db44a141de862846b"
+    }
+  },
+  "fixed_split_policy": {
+    "function": "readiness.default_policy.province_splits",
+    "implementation_path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\backend\\app\\ml\\readiness.py",
+    "implementation_sha256": "42945e3d864a0e63dab4d3100355bcd3506eecf2ada8bc654d573521ea1fdff2",
+    "province_splits": {
+      "south_sulawesi": "train",
+      "gorontalo": "train",
+      "southeast_sulawesi": "train",
+      "east_java": "train",
+      "banten": "val",
+      "west_java": "test"
+    },
+    "policy_map_sha256": "557e5dd998dcb4c99eff2ec45c8a7bbac405bf11e245528b46f0b02275e0579b"
+  },
+  "physical_row_count": 1384,
+  "physical_row_counts_by_fixed_split": {
+    "train": 848,
+    "val": 272,
+    "test": 264
+  },
+  "saved_eligible_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "physical_minus_saved_eligible_by_split": {
+    "train": 220,
+    "val": 39,
+    "test": 14
+  },
+  "saved_readiness_blockers": [
+    {
+      "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+      "detail": "\uac19\uc740 \uc6d0\ubcf8/\uc911\ucca9 \uacf5\uac04\uc774 \uc11c\ub85c \ub2e4\ub978 \uace0\uc815 split\uc5d0 \uac78\uce69\ub2c8\ub2e4.",
+      "scene": "west_java"
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 \ud53d\uc140",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "saved_readiness_blocker_count": 5,
+  "saved_group_splits": {
+    "south_sulawesi": "train",
+    "gorontalo": "train",
+    "southeast_sulawesi": "train",
+    "east_java": "train",
+    "banten": "val",
+    "west_java": "test"
+  },
+  "saved_province_groups": {
+    "south_sulawesi": "south_sulawesi",
+    "gorontalo": "gorontalo",
+    "southeast_sulawesi": "southeast_sulawesi",
+    "banten": "banten",
+    "west_java": "banten",
+    "east_java": "east_java"
+  },
+  "saved_component_mapping_is_branch_witness": false,
+  "saved_prepared_payload_is_null": true,
+  "eligible_scene_witness_status": "UNKNOWN_NOT_PERSISTED",
+  "shared_source_token_or_bbox_branch_cause": "UNKNOWN_NOT_PERSISTED",
+  "readiness_blocker_root_cause_recomputed": false,
+  "corner_snapshot_complete_and_consistent": true,
+  "stored_corner_all_cross_pairs_disjoint": true,
+  "stored_corner_no_cross_split_candidates": true,
+  "planned_source_count": 91,
+  "planned_cross_split_pair_count": 2227,
+  "within_split_pairs_out_of_scope": 1868,
+  "snapshot_evidence_only": true,
+  "current_headers_or_geometry_revalidated": false,
+  "current_source_content_sha_revalidated": false,
+  "eligibility_recomputed": false,
+  "readiness_assess_called": false,
+  "boundary_status": "BOUNDARY_NOT_USED",
+  "issues": [],
+  "exactly_once_applied": "UNKNOWN",
+  "ready_for_training": false,
+  "training_executed": false,
+  "scientific_accuracy_validated": false,
+  "training_split_leakage_resolved": false,
+  "settlement_authorized": false,
+  "execution_authorized": false,
+  "automatic_resume_allowed": false,
+  "proposed_refund_bytes": 0,
+  "network_requests": 0,
+  "source_files_written": 0,
+  "limitation": "Pinned JSON snapshot consistency only. Physical corner proxies and saved eligible weak-label readiness have different scopes; absent eligible-scene/token/bbox witnesses leave the blocker branch UNKNOWN. No current raster, geometry, eligible leakage, official accuracy, or operational approval is verified."
+}

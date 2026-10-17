@@ -1,0 +1,223 @@
+{
+  "recorded_at": "2026-10-17T19:44:59.578543+09:00",
+  "scope": "OLD_READ_ONLY_PLAN_DIAGNOSTICS_NO_JOB_CREATION",
+  "request": {
+    "schema_version": "0.2.0",
+    "workflow_run_id": "handoff-connection-check-20261017",
+    "trace_id": "handoff-connection-trace",
+    "nodes": [
+      {
+        "node_id": "n1",
+        "agent_id": "lcluc-agent",
+        "capability_id": "landcover.change_detection",
+        "depends_on": [],
+        "input_bindings": []
+      }
+    ],
+    "policy": {
+      "on_blocked": "STOP_DEPENDENTS",
+      "max_parallel": 1,
+      "require_human_approval": true
+    }
+  },
+  "post_calls": 2,
+  "job_posts": 0,
+  "records": [
+    {
+      "path": "/v1/workflows/plan",
+      "status": 200,
+      "response_without_volatile_timestamps": {
+        "extension": {
+          "id": "greenblue.workflow-plan.rfc1",
+          "contract_basis": "GMAIS v0.2 workflow-plan schema",
+          "present_in_upstream_openapi": false,
+          "approval_status": "INTERNAL_REVIEW"
+        },
+        "workflow_run_id": "handoff-connection-check-20261017",
+        "trace_id": "handoff-connection-trace",
+        "mode": "PLAN_ONLY",
+        "execution_started": false,
+        "can_execute": false,
+        "status": "BLOCKED",
+        "topological_order": [
+          "n1"
+        ],
+        "nodes": [
+          {
+            "node_id": "n1",
+            "agent_id": "lcluc-agent",
+            "capability_id": "landcover.change_detection",
+            "depends_on": [],
+            "status": "BLOCKED",
+            "blockers": [
+              {
+                "code": "MODEL_NOT_READY",
+                "message": "Agent readiness가 READY가 아니므로 실행할 수 없습니다."
+              },
+              {
+                "code": "DATA_MISSING",
+                "detail_code": "INPUT_REFS_REQUIRED",
+                "input_index": null,
+                "message": "고정 입력의 무결성·품질·접근 정책 진단을 통과하지 못했습니다."
+              }
+            ],
+            "execution_authorized": false,
+            "input_resolution": {
+              "extension": "greenblue.workflow-input-resolution.rfc1",
+              "approval_status": "INTERNAL_REVIEW",
+              "evaluation_scope": "PLAN_REQUEST_SNAPSHOT_NOT_EXECUTION_AUTHORIZATION",
+              "schema_version": 1,
+              "scope": "INPUT_INTEGRITY_ONLY",
+              "status": "BLOCKED",
+              "input_integrity_verified": false,
+              "resolved": [],
+              "blockers": [
+                {
+                  "input_index": null,
+                  "code": "INPUT_REFS_REQUIRED"
+                }
+              ],
+              "ready_for_execution": false,
+              "scientific_approval": false,
+              "network_requests": 0,
+              "source_files_written": 0
+            },
+            "dependency_resolution": {
+              "node_id": "n1",
+              "local_blockers": [
+                {
+                  "code": "DATA_MISSING",
+                  "detail_code": "INPUT_REFS_REQUIRED",
+                  "input_index": null,
+                  "message": "고정 입력의 무결성·품질·접근 정책 진단을 통과하지 못했습니다."
+                },
+                {
+                  "code": "MODEL_NOT_READY",
+                  "message": "Agent readiness가 READY가 아니므로 실행할 수 없습니다."
+                }
+              ],
+              "upstream_blocked_by": [],
+              "policy_blocked_by": [],
+              "blocking_cause_node_ids": [
+                "n1"
+              ],
+              "diagnostic_status": "BLOCKING_CAUSES_PRESENT",
+              "execution_authorized": false
+            }
+          }
+        ],
+        "policy_resolution": {
+          "extension": "greenblue.workflow-blocking-policy.rfc1",
+          "approval_status": "INTERNAL_REVIEW",
+          "schema_version": 1,
+          "scope": "PLAN_ONLY_DEPENDENCY_DIAGNOSTICS",
+          "on_blocked": "STOP_DEPENDENTS",
+          "topological_order": [
+            "n1"
+          ],
+          "local_blocking_node_ids": [
+            "n1"
+          ],
+          "nodes": [
+            {
+              "node_id": "n1",
+              "local_blockers": [
+                {
+                  "code": "DATA_MISSING",
+                  "detail_code": "INPUT_REFS_REQUIRED",
+                  "input_index": null,
+                  "message": "고정 입력의 무결성·품질·접근 정책 진단을 통과하지 못했습니다."
+                },
+                {
+                  "code": "MODEL_NOT_READY",
+                  "message": "Agent readiness가 READY가 아니므로 실행할 수 없습니다."
+                }
+              ],
+              "upstream_blocked_by": [],
+              "policy_blocked_by": [],
+              "blocking_cause_node_ids": [
+                "n1"
+              ],
+              "diagnostic_status": "BLOCKING_CAUSES_PRESENT",
+              "execution_authorized": false
+            }
+          ],
+          "execution_authorized": false
+        },
+        "blockers": [
+          "Agent 실제 실행기·과학 검증·모델/배포 승인 gate가 아직 준비되지 않았습니다."
+        ],
+        "limitations": [
+          "이 RFC 확장은 계획 검사만 수행하며 Job/Result/지도/보고서를 생성하지 않습니다.",
+          "GMAIS v0.2와 기관의 공식 승인 계약으로 해석하지 않습니다."
+        ]
+      }
+    },
+    {
+      "path": "/v1/workflows/lineage-validation",
+      "status": 200,
+      "response_without_volatile_timestamps": {
+        "extension": "greenblue.workflow-lineage-validation.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "present_in_upstream_openapi": false,
+        "evaluation_scope": "CURRENT_WORKFLOW_TRANSITIVE_LINEAGE_PLAN_ONLY",
+        "request_sha256": "b55d62934066151206e76f25d2a005a418832d7439a78af98f652cec19cf7338",
+        "schema_version": 1,
+        "workflow_run_id": "handoff-connection-check-20261017",
+        "trace_id": "handoff-connection-trace",
+        "mode": "PLAN_ONLY",
+        "status": "BLOCKED",
+        "execution_started": false,
+        "can_execute": false,
+        "available": true,
+        "reason": "CURRENT_LINEAGE_CHECKED",
+        "dag_validated": true,
+        "topological_order": [
+          "n1"
+        ],
+        "bindings": [],
+        "diagnostics": [],
+        "nodes": [
+          {
+            "node_id": "n1",
+            "bindings": [],
+            "blockers": [
+              {
+                "node_id": "n1",
+                "input_index": null,
+                "code": "INPUT_REFS_REQUIRED"
+              }
+            ],
+            "inputs_complete": false,
+            "status": "BLOCKED",
+            "execution_authorized": false
+          }
+        ],
+        "blockers": [
+          {
+            "node_id": "n1",
+            "input_index": null,
+            "code": "INPUT_REFS_REQUIRED"
+          }
+        ],
+        "limits": {
+          "max_depth": 32,
+          "max_nodes_per_root": 64,
+          "max_total_nodes": 256,
+          "max_input_refs": 64,
+          "max_unique_roots": 32,
+          "max_workflow_nodes": 128,
+          "node_checks_performed": 0,
+          "unique_roots_checked": 0
+        },
+        "current_assets_revalidated": false,
+        "lineage_integrity_verified": false,
+        "authorization_verified": false,
+        "execution_authorized": false,
+        "scientific_approval": false,
+        "network_requests": 0,
+        "source_files_written": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-10-17T21:14:45.158814+09:00",
+  "status": "PLANNED",
+  "reviewer": "catalog_navigation_review",
+  "scope": "read-only next-unit selection; no source/tests/operating API actions",
+  "source_files": [
+    "backend/app/experiment_registry.py",
+    "backend/app/ml/service.py",
+    "backend/app/main.py"
+  ],
+  "observed_gap": "registration copies trained report fields but no authoritative model_version declaration currently exists; dataset_version must not replace model_ref.version",
+  "candidate": "Optional explicit model_version declaration at future internal register_experiment call only",
+  "proposed_scope": [
+    "keyword-only OMITTED sentinel; omission preserves old record/response exactly and adds no field",
+    "explicit null/bool/blank/latest/current/over256 rejected before first store.put",
+    "valid caller text preserved and linked to already verified checkpoint SHA and training report SHA in versioned declaration",
+    "keep existing rejection if model_id OR dataset_id already exists, even same/new version",
+    "resolve report model_version conflicts and reserved declaration-field collisions explicitly before implementation",
+    "keep raw report model_version carry-over distinct from caller-explicit structured declaration; never promote legacy fields by inference",
+    "TempStore/tiny synthetic completed report/checkpoint tests only; main/API/train producer/UI unchanged"
+  ],
+  "limits": [
+    "caller declaration is not institutional authority, model approval, scientific independence or original source authentication",
+    "existing generic Store.put/2writes are not global immutability or transactional registration",
+    "no same-id re-registration/composite family policy, no dataset version substitution/backfill"
+  ],
+  "implementation_started": false,
+  "actual_model_registry_resolution": "BLOCKED_PENDING_EXPLICIT_VERSION_CONTRACT_AND_BINDING_POLICY"
+}

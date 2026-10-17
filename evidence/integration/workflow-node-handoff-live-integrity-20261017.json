@@ -1,0 +1,44 @@
+{
+  "recorded_at": "2026-10-17T19:40:18.753194+09:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 48,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "live_new_job_posts": 0,
+  "capture_backfills": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 882,
+    "passed": 881,
+    "skipped": 1,
+    "seconds": 346.255,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-node-handoff-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "related": {
+    "passed": 13,
+    "seconds": 0.058,
+    "log": "evidence/integration/workflow-node-handoff-related-20261017.log"
+  },
+  "independent": {
+    "passed": 13,
+    "seconds": 0.05,
+    "log": "evidence/integration/workflow-node-handoff-independent-20261017.log"
+  },
+  "live_validation_evidence": "evidence/integration/workflow-node-handoff-runtime-start-20261017.json",
+  "catalog_observation_evidence": "evidence/integration/workflow-node-handoff-catalog-observation-20261017.json",
+  "api_calls_for_new_function": 0,
+  "new_function_evidence_class": "TESTED_SYNTHETIC",
+  "direct_ui_change": false,
+  "direct_ui_change_reason": "Pure selected Workflow node to proposed Job metadata declaration comparison, not connected to public API/UI/actual Job/executor; existing 84/85 unchanged."
+}

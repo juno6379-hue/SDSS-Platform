@@ -1,0 +1,36 @@
+{
+  "recorded_at": "2026-10-17T21:27:12.117255+09:00",
+  "status": "PLANNED",
+  "reviewer": "catalog_navigation_review",
+  "scope": "read-only API/UI next-unit selection; no source/test/API actions",
+  "candidate": "Optional explicit model version in existing completed-experiment Draft registration flow",
+  "source_files": [
+    "backend/app/main.py",
+    "backend/app/experiment_registry.py",
+    "frontend/src/ModelReview.tsx"
+  ],
+  "proposed_api": [
+    "if model_version key absent call register_experiment with original2 positional args; if present pass exact keyword including explicit null for97 rejection",
+    "preserve registry_lock/currentauthentication/201success/422errors/existing completed-source-checksum-duplicate gates/Draft flags",
+    "do not interpret caller status/approval/dataset_version as authority or model_version"
+  ],
+  "proposed_ui": [
+    "inside existing registration details add default-off model version option with empty text",
+    "off sends exact old report_path body; on adds caller model_version without trim, inference or autofill",
+    "manual existing register action only; busy/read-only or generation guards prevent late reply selecting wrong model/draft",
+    "cancel/navigation does not undo server registration; keep existing onChanged refresh semantics clear"
+  ],
+  "verification": [
+    "TempStore tiny completed fixture only for successful registration, hash-bound declaration/Draftfalse/records/duplicate/conflict paths",
+    "isolated existing route with mocked registrar verifies omission vs explicit keyword/null and auth/error/status contracts",
+    "actual operating browser tests input/invalid/missing safe report422 only; do not successfully register against operating catalog",
+    "record actual catalog/model body before-after unchanged",
+    "positive success UI branch stays isolated/mock/TempStore evidence, never present it as operating registration"
+  ],
+  "limits": [
+    "rawsame-shape/source cannot authenticate explicit registration provenance",
+    "caller declaration is not model authority/scientific approval/immutable global version registration",
+    "same model_id OR dataset_id re-registration remains rejected"
+  ],
+  "implementation_started": false
+}

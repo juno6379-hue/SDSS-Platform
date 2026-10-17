@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: whole RAW request SHA binds exact four keys and original decimal/exponent/negative zero text
+ok 1 - whole RAW request SHA binds exact four keys and original decimal/exponent/negative zero text
+  ---
+  duration_ms: 143.7478
+  type: 'test'
+  ...
+# Subtest: full Job server observed hash is not compared to JavaScript canonical draft
+ok 2 - full Job server observed hash is not compared to JavaScript canonical draft
+  ---
+  duration_ms: 33.6545
+  type: 'test'
+  ...
+# Subtest: fullJob strict parsing remains server authority: duplicates underflow and malformed raw preserved
+ok 3 - fullJob strict parsing remains server authority: duplicates underflow and malformed raw preserved
+  ---
+  duration_ms: 24.1632
+  type: 'test'
+  ...
+# Subtest: UTF8 budgets and explicit node are bounded without automatic trim or Job generation
+ok 4 - UTF8 budgets and explicit node are bounded without automatic trim or Job generation
+  ---
+  duration_ms: 27.2156
+  type: 'test'
+  ...
+# Subtest: exact wrapper rejects extension status retarget and unknown properties
+ok 5 - exact wrapper rejects extension status retarget and unknown properties
+  ---
+  duration_ms: 26.8527
+  type: 'test'
+  ...
+# Subtest: 24 flags must be false and 7 I/O counts typed numeric zero
+ok 6 - 24 flags must be false and 7 I/O counts typed numeric zero
+  ---
+  duration_ms: 42.0663
+  type: 'test'
+  ...
+# Subtest: schema read null not fake zero, exact stage booleans/calls/status
+ok 7 - schema read null not fake zero, exact stage booleans/calls/status
+  ---
+  duration_ms: 7.9347
+  type: 'test'
+  ...
+# Subtest: schema invalid and before-validator bounds preserve legitimate BLOCKED stages
+ok 8 - schema invalid and before-validator bounds preserve legitimate BLOCKED stages
+  ---
+  duration_ms: 17.8409
+  type: 'test'
+  ...
+# Subtest: bbox model and optional workflow mismatch stages stay separate from metadata
+ok 9 - bbox model and optional workflow mismatch stages stay separate from metadata
+  ---
+  duration_ms: 11.8508
+  type: 'test'
+  ...
+# Subtest: resource failure maps to HTTP503; 200 resource payload is rejected
+ok 10 - resource failure maps to HTTP503; 200 resource payload is rejected
+  ---
+  duration_ms: 11.4271
+  type: 'test'
+  ...
+# Subtest: inner 86 mismatch hashes safe codes and indices remain validated
+ok 11 - inner 86 mismatch hashes safe codes and indices remain validated
+  ---
+  duration_ms: 10.4613
+  type: 'test'
+  ...
+# Subtest: stale generation raw input revision route response is ignored
+ok 12 - stale generation raw input revision route response is ignored
+  ---
+  duration_ms: 0.8362
+  type: 'test'
+  ...
+# Subtest: independent details child has one manual POST and no lookup-triggered submission
+ok 13 - independent details child has one manual POST and no lookup-triggered submission
+  ---
+  duration_ms: 112.1055
+  type: 'test'
+  ...
+# Subtest: Python89 real helper cross-language stages include 257 scalar metadata and 65 refs
+ok 14 - Python89 real helper cross-language stages include 257 scalar metadata and 65 refs
+  ---
+  duration_ms: 5854.3838
+  type: 'test'
+  ...
+# Subtest: RFC2 uses exact five keys version integer and whole body SHA while RFC1 stays four
+ok 15 - RFC2 uses exact five keys version integer and whole body SHA while RFC1 stays four
+  ---
+  duration_ms: 87.9493
+  type: 'test'
+  ...
+# Subtest: RFC2 wrapper and request identity cannot accept RFC1 or retargeted response
+ok 16 - RFC2 wrapper and request identity cannot accept RFC1 or retargeted response
+  ---
+  duration_ms: 17.0067
+  type: 'test'
+  ...
+# Subtest: all three checked registration statuses preserve independent inner MATCH and outer truth
+ok 17 - all three checked registration statuses preserve independent inner MATCH and outer truth
+  ---
+  duration_ms: 13.9939
+  type: 'test'
+  ...
+# Subtest: inner BLOCKED requires NOT_RUN false and cannot claim registration checked
+ok 18 - inner BLOCKED requires NOT_RUN false and cannot claim registration checked
+  ---
+  duration_ms: 6.6497
+  type: 'test'
+  ...
+# Subtest: RFC2 result registration shape flags and phase types are exact
+ok 19 - RFC2 result registration shape flags and phase types are exact
+  ---
+  duration_ms: 11.4595
+  type: 'test'
+  ...
+# Subtest: RFC2 cannot bypass inner24 false typed7zero null schema or metadata hash checks
+ok 20 - RFC2 cannot bypass inner24 false typed7zero null schema or metadata hash checks
+  ---
+  duration_ms: 13.6709
+  type: 'test'
+  ...
+# Subtest: RFC2 full Job hash remains server observation and raw invalid transport stays server authority
+ok 21 - RFC2 full Job hash remains server observation and raw invalid transport stays server authority
+  ---
+  duration_ms: 32.8909
+  type: 'test'
+  ...
+# Subtest: UI checkbox defaults off version enters stale identity and single manual dispatch stays owned by inspect
+ok 22 - UI checkbox defaults off version enters stale identity and single manual dispatch stays owned by inspect
+  ---
+  duration_ms: 107.5038
+  type: 'test'
+  ...
+# Subtest: version edits and route revision response generations invalidate same raw draft
+ok 23 - version edits and route revision response generations invalidate same raw draft
+  ---
+  duration_ms: 1.232
+  type: 'test'
+  ...
+# Subtest: Python94 producer cross-language registered unknown capability and NOT_RUN stages
+ok 24 - Python94 producer cross-language registered unknown capability and NOT_RUN stages
+  ---
+  duration_ms: 5744.8417
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 24406.859

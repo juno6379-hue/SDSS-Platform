@@ -1,0 +1,27 @@
+test_adapter_boundary_exception_and_import_exception_preserve_gate (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_adapter_boundary_exception_and_import_exception_preserve_gate) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\ml\readiness.py:231: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  point=ip['transform']*(x,y)
+ok
+test_component_mismatch_is_diagnostic_only (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_component_mismatch_is_diagnostic_only) ... ok
+test_custom_test_policy_not_captured_but_ready_gate_unchanged (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_custom_test_policy_not_captured_but_ready_gate_unchanged) ... ok
+test_default_off_has_identical_keys_and_never_calls_adapter (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_default_off_has_identical_keys_and_never_calls_adapter) ... ok
+test_exact_bool_flag_rejected_before_any_file_processing (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_exact_bool_flag_rejected_before_any_file_processing) ... ok
+test_falsy_group_skips_both_tokens_without_losing_bbox (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_falsy_group_skips_both_tokens_without_losing_bbox) ... ok
+test_helper_exception_does_not_change_gate_or_add_blocker (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_helper_exception_does_not_change_gate_or_add_blocker) ... ok
+test_helper_mutate_policy_then_raise_cannot_change_gate_or_pure_adapter_input (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_helper_mutate_policy_then_raise_cannot_change_gate_or_pure_adapter_input) ... ok
+test_mutate_then_raise_capture_cannot_modify_ready_gate_inputs_or_payload (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_mutate_then_raise_capture_cannot_modify_ready_gate_inputs_or_payload) ... ok
+test_no_additional_data_file_pixel_hash_or_text_calls (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_no_additional_data_file_pixel_hash_or_text_calls) ... ok
+test_numeric_and_none_scene_id_str_semantics_preserved (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_numeric_and_none_scene_id_str_semantics_preserved) ... ok
+test_pure_adapter_input_invariance_zero_witness_and_safe_failure_flags (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_pure_adapter_input_invariance_zero_witness_and_safe_failure_flags) ... ok
+test_required_province_order_unsupported_preserves_original_gate_event_order (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_required_province_order_unsupported_preserves_original_gate_event_order) ... ok
+test_true_capture_only_adds_field_and_components_match (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_true_capture_only_adds_field_and_components_match) ... ok
+test_unsupported_bounds_and_budget_preserve_gate (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_unsupported_bounds_and_budget_preserve_gate) ... ok
+test_unsupported_metadata_not_captured_without_filtering_scene (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_unsupported_metadata_not_captured_without_filtering_scene) ... ok
+test_zero_patch_scene_remains_critical_token_conflict_bridge (test_readiness_connectivity_adapter.ReadinessConnectivityAdapterTests.test_zero_patch_scene_remains_critical_token_conflict_bridge) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 4.435s
+
+OK
+Independent graph oracle: 200 deterministic synthetic cases; scalar truthiness/str shared namespace, last-owner, strict positive bbox, zero-patch inclusion, component match and caller input invariance PASS. Not additional unittest cases; no data or assess IO.

@@ -1,0 +1,47 @@
+{
+  "recorded_at": "2026-10-17T19:52:53.906639+09:00",
+  "status": "TESTED_SYNTHETIC_DECLARATIONS_ON_REAL_LOCAL_UI_API",
+  "url": "http://127.0.0.1:5174/#/view/15",
+  "synthetic_workflow_run_id": "synthetic-ui-handoff-20261017",
+  "checks": {
+    "empty_node_and_proposal_disabled": true,
+    "no_automatic_result_on_edit": true,
+    "manual_unicode_match": true,
+    "role_presence_drift_blocked": true,
+    "missing_node_blocked_with_null_counts": true,
+    "duplicate_json_rejected_locally": true,
+    "plan_query_preserves_handoff_result": true,
+    "completed_lineage_query_preserves_handoff_result": true,
+    "proposal_edit_clears_result": true,
+    "node_edit_clears_result": true,
+    "workflow_edit_clears_result": true,
+    "back_and_forward_clears_result": true,
+    "manual_fields_empty_after_route_return": true,
+    "original_workflow_draft_restored_after_verification": true,
+    "synthetic_node_and_proposal_cleared_after_verification": true
+  },
+  "new_comparison_posts": 6,
+  "old_diagnostic_posts": 2,
+  "viewport": {
+    "width": 1449,
+    "height": 1087
+  },
+  "document_horizontal_overflow_px": 0,
+  "panel_horizontal_overflow_px": 0,
+  "console_errors": [],
+  "header_after_css_fix": {
+    "icon_x": 292.62652587890625,
+    "icon_width": 24.999998092651367,
+    "text_x": 329.6229248046875
+  },
+  "screenshot": "evidence/integration/workflow-node-handoff-ui-desktop-20261017.jpg",
+  "limits": [
+    "No operating Workflow or actual Job was created/executed. Synthetic input URI was not opened by the new comparison.",
+    "Existing plan/lineage independent diagnostics may read Registry; new comparison 7 IO counters0 is separate scope.",
+    "Mobile viewport, forced delayed reply/cancel race, HTTP503 and authentication failure were not tested in browser; isolated tests cover respective guards.",
+    "5173 tab deployment was not inspected. Screenshot shows synthetic test before original draft restoration."
+  ],
+  "new_job_posts": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false
+}

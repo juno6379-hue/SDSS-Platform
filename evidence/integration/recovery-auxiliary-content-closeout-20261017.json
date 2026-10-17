@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-17T12:37:06.430456+09:00",
+  "unit": "recovery_auxiliary_content",
+  "status": "BLOCKED",
+  "implementation_tests": {
+    "passed": 14,
+    "seconds": 3.996
+  },
+  "independent_tests": {
+    "passed": 14,
+    "seconds": 3.534
+  },
+  "full_regression": {
+    "tests_run": 432,
+    "passed": 431,
+    "skipped": 1,
+    "seconds": 103.139,
+    "exit_code": 0
+  },
+  "live_result": "evidence/integration/recovery-auxiliary-content-live-final-20261017.json",
+  "integrity": "evidence/integration/recovery-auxiliary-content-live-integrity-20261017.json",
+  "documentation_validation": {
+    "markdown_files": 33,
+    "local_links_checked": 133,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "ui_reason": "Internal read-only CLI; no public API, screen state or navigation contract change",
+  "next_unit": "Pinned explicitly referenced auxiliary GTiff headers/alignment; legacy UNKNOWN preserved; no semantics/approval/training"
+}

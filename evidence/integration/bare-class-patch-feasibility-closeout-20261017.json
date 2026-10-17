@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-17T23:37:39.660836+09:00",
+  "status": "COMPLETED_STORED_BARE_PATCH_BOUNDS_NOT_QA_OR_PROJECT_COMPLETION",
+  "documentation_validation": {
+    "checked_at": "2026-10-17T23:37:39.660836+09:00",
+    "markdown_files": 81,
+    "local_links": 334,
+    "evidence_references": 7530,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "previous_full_regression": {
+    "tests_run": 1069,
+    "passed": 1068,
+    "skipped": 1,
+    "seconds": 354.65,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-dependency-order-full-tests-20261017.log"
+  },
+  "full_regression_rerun_in_latest_unit": false,
+  "related": {
+    "passed": 66,
+    "seconds": 24.207,
+    "log": "evidence/integration/bare-class-patch-feasibility-related-corrected-20261017.log",
+    "exit_code": 0
+  },
+  "independent": {
+    "passed": 26,
+    "seconds": 10.286,
+    "log": "evidence/integration/bare-class-patch-feasibility-independent-20261017.log",
+    "exit_code": 0
+  },
+  "protected_references_checked": 141,
+  "catalog_records": 14,
+  "understanding_updated": true,
+  "new_qa_or_training_executed": false,
+  "next_unit": "PLANNED_NEXT_WORKFLOW_INPUT_BINDING_QUEUE_REVIEW",
+  "snapshot_file": "docs/understanding/EVIDENCE_SNAPSHOT.json",
+  "snapshot_files": 1238
+}

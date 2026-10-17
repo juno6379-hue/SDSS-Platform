@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-17T18:45:40.0410503+09:00",
+  "listeners": [
+    {
+      "LocalPort": 8002,
+      "OwningProcess": 35032
+    },
+    {
+      "LocalPort": 8001,
+      "OwningProcess": 26912
+    },
+    {
+      "LocalPort": 8000,
+      "OwningProcess": 32224
+    },
+    {
+      "LocalPort": 5174,
+      "OwningProcess": 15608
+    },
+    {
+      "LocalPort": 5173,
+      "OwningProcess": 30944
+    }
+  ],
+  "project_workers": [],
+  "automation_status": [
+    "status = \"ACTIVE\"",
+    "rrule = \"FREQ=MINUTELY;INTERVAL=10\""
+  ],
+  "scope": "Read-only runtime observation; ACTIVE reservation is not collection or training execution."
+}

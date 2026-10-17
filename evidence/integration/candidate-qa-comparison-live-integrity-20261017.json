@@ -1,0 +1,44 @@
+{
+  "recorded_at": "2026-10-17T08:27:52.028119+00:00",
+  "scope": "TRACKED_INPUTS_AND_CORE_CONTRACTS_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 32,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [
+    "backend/app/main.py",
+    "frontend/src/AgentCenter.tsx"
+  ],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "new_qa_or_training_executed": false,
+  "full_regression": {
+    "tests_run": 761,
+    "passed": 760,
+    "skipped": 1,
+    "seconds": 398.767,
+    "exit_code": 0,
+    "log": "evidence/integration/candidate-qa-comparison-full-tests-20261017.log"
+  },
+  "related": {
+    "passed": 17,
+    "seconds": 14.4
+  },
+  "independent": {
+    "passed": 17,
+    "seconds": 17.124
+  },
+  "ui": {
+    "new_passed": 13,
+    "total_passed": 72,
+    "milliseconds": 1137.5072,
+    "independent_passed": 13,
+    "independent_milliseconds": 382.2987,
+    "build_modules": 75,
+    "build_seconds": 18.69
+  },
+  "live_http": "evidence/integration/candidate-qa-comparison-live-http-20261017.json",
+  "live_browser": "evidence/integration/candidate-qa-comparison-ui-live-20261017.json"
+}

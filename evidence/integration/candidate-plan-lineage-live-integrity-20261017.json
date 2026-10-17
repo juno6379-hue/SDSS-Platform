@@ -1,0 +1,54 @@
+{
+  "recorded_at": "2026-10-17T16:08:17.373118+09:00",
+  "status": "VERIFIED_REAL_FIXED_JSON_METADATA_ONLY",
+  "protected_references_checked": 134,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 26,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [],
+  "pinned_inputs_checked": 5,
+  "pinned_input_changes": [],
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "full_regression": {
+    "tests_run": 671,
+    "passed": 670,
+    "skipped": 1,
+    "seconds": 246.659,
+    "exit_code": 0,
+    "log": "evidence/integration/candidate-plan-lineage-full-tests-20261017.log"
+  },
+  "related": {
+    "passed": 19,
+    "seconds": 9.466
+  },
+  "independent": {
+    "passed": 19,
+    "seconds": 9.834
+  },
+  "cli_output": {
+    "exists": true,
+    "sha256": "ee49f84c2b1e4a0aff72db321185b4d6d442f9878cca138dd7af116a0bf1760c",
+    "bytes": 19766
+  },
+  "source_rows": 1384,
+  "planned_retained_rows": 1368,
+  "planned_excluded_rows": 16,
+  "original_eligible_patches": 1111,
+  "projected_eligible_patches": 1095,
+  "query_members": 28,
+  "query_planned_excluded": 16,
+  "query_planned_retained": 12,
+  "query_zero_patch": 3,
+  "query_eligible_patches": 25,
+  "saved_blockers": 5,
+  "val_bare_upper_pixels": 209,
+  "full_planner_recomputation": "NOT_PERFORMED",
+  "candidate_manifest_created": false,
+  "source_rows_excluded_or_reassigned": false,
+  "registry_written": false,
+  "training_executed": false,
+  "atomic_snapshot_guaranteed": false,
+  "full_workspace_inventory": false
+}

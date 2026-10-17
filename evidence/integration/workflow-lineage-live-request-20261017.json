@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.2.0",
+  "workflow_run_id": "workflow-lineage-live-read-only-20261017",
+  "trace_id": "trace-workflow-lineage-live-read-only-20261017",
+  "nodes": [
+    {
+      "node_id": "source",
+      "agent_id": "lcluc-agent",
+      "capability_id": "landcover.change_detection",
+      "depends_on": [],
+      "input_bindings": [
+        {
+          "id": "workflow-unregistered-lineage-live-check",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    },
+    {
+      "node_id": "dependent",
+      "agent_id": "lcluc-agent",
+      "capability_id": "landcover.change_detection",
+      "depends_on": [
+        "source"
+      ],
+      "input_bindings": [
+        {
+          "id": "workflow-unregistered-lineage-live-check",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    },
+    {
+      "node_id": "empty",
+      "agent_id": "lcluc-agent",
+      "capability_id": "landcover.change_detection",
+      "depends_on": [],
+      "input_bindings": []
+    }
+  ],
+  "policy": {
+    "on_blocked": "STOP_DEPENDENTS",
+    "max_parallel": 1,
+    "require_human_approval": true
+  }
+}

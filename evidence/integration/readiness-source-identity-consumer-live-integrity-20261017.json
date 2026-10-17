@@ -1,0 +1,67 @@
+{
+  "recorded_at": "2026-10-17T15:26:49.188717+09:00",
+  "protected_reference_count": 133,
+  "protected_reference_changes": [],
+  "unchanged_contract_count": 24,
+  "existing_contract_sha_changes": [],
+  "previously_tracked_code_data_test_changes": [
+    "tests/test_readiness_connectivity_adapter.py",
+    "backend/app/data/readiness_connectivity_lineage.py",
+    "tests/test_readiness_connectivity_lineage.py"
+  ],
+  "lineage_before_sha256": "a4a65e187142850b2d145dc45b2aa1be1e24e69bb273faec243ec91f286746df",
+  "lineage_after": {
+    "exists": true,
+    "sha256": "4aceebfdee6c1b36a4a81128663877d21fe84e07502478fc22a17c48719f7032",
+    "bytes": 28439
+  },
+  "producer_adapter_readiness_assess_and_cli_unchanged": true,
+  "pinned_manifest_and_current_report_unchanged": true,
+  "saved_blockers_exactly_preserved": true,
+  "saved_blocker_count": 5,
+  "saved_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "legacy_validation": {
+    "legacy_cli_exit_code": 0,
+    "legacy_output_bytes": 57548,
+    "legacy_output_sha256": "cff1fb4b566cb8d9be4625df253411d3776ae1f0e485854798ac36673aac2a8e",
+    "prior_unit63_output_byte_identical": true,
+    "identity_refinement_absent_for_legacy_report": true,
+    "actual_member_count": 28,
+    "candidate_links": 400,
+    "unique_raw_candidates": 28,
+    "binding_status_counts": {
+      "AMBIGUOUS_MATCH_SET": 28
+    },
+    "exact_row_binding_verified": false,
+    "source_rasters_read_or_assess_rerun": false
+  },
+  "new_identity_consumer_real_report_verified": false,
+  "source_rasters_read_or_assess_rerun": false,
+  "full_regression": {
+    "tests_run": 638,
+    "passed": 637,
+    "skipped": 1,
+    "seconds": 190.384,
+    "exit_code": 0,
+    "skip_reason": "Existing OS symlink creation permission; deterministic boundary test passed"
+  },
+  "related": {
+    "lineage_passed": 24,
+    "lineage_seconds": 8.893,
+    "compatibility_passed": 1,
+    "compatibility_seconds": 0.579
+  },
+  "independent": {
+    "lineage_passed": 24,
+    "lineage_seconds": 8.2,
+    "compatibility_passed": 1,
+    "compatibility_seconds": 0.419
+  },
+  "new_unittest_increment": 8,
+  "atomic_snapshot_guaranteed": false,
+  "full_workspace_inventory_guaranteed": false
+}

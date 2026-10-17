@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-10-17T12:17:04.486052+09:00",
+  "documentation_validation": {
+    "checked_at": "2026-10-17T12:17:04.486052+09:00",
+    "markdown_files_including_template": 31,
+    "local_links_checked": 125,
+    "faq_questions": 10,
+    "missing_metadata_or_links": [],
+    "reference_role_copy_identical": true,
+    "reference_template_copy_identical": true
+  },
+  "protected_132_references_unchanged_at_closeout": true,
+  "existing_contract_nine_sha_unchanged": true,
+  "raster_stat_prefix16_and_directory_inventory_unchanged": true,
+  "full_raster_sha_verified": false,
+  "full_regression": {
+    "log": "evidence/integration/recovery-raster-headers-full-tests-20261017.log",
+    "tests_run": 403,
+    "passed": 402,
+    "skipped": 1,
+    "seconds": 95.828,
+    "exit_code": 0,
+    "skip_reason": "OS symlink creation permission; deterministic boundary test passed"
+  },
+  "new_real_collection_or_training_executed": false,
+  "scheduler": {
+    "id": "geoai-2",
+    "status": "ACTIVE",
+    "interval_minutes": 10
+  }
+}

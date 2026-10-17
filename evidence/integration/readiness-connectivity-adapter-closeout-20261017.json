@@ -1,0 +1,54 @@
+{
+  "recorded_at": "2026-10-17T14:28:13.295716+09:00",
+  "unit": "OPTIONAL_READINESS_CONNECTIVITY_ADAPTER",
+  "implementation_status": "TESTED_SYNTHETIC",
+  "real_data_capture_status": "IMPLEMENTED_UNVERIFIED",
+  "default_capture_enabled": false,
+  "existing_gate_ast_preserved_except_optional_entry_exit": true,
+  "live_scope": "SAVED_REPORT_PRESERVATION_ABSENCE_AND_SOURCE_AST_ONLY",
+  "full_regression": {
+    "tests_run": 589,
+    "passed": 588,
+    "skipped": 1,
+    "seconds": 164.51,
+    "exit_code": 0
+  },
+  "related_tests": 17,
+  "independent_tests": 17,
+  "independent_graph_cases": 200,
+  "existing_readiness_file_intentionally_changed": true,
+  "readiness_raw_sha256": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc",
+  "readiness_normalized_text_sha256": "2f70b1f3757186e24a24e3275dc36a6d6592e5c0560291af80eb4441a3b6d366",
+  "original_snapshot_readiness_sha256": "42945e3d864a0e63dab4d3100355bcd3506eecf2ada8bc654d573521ea1fdff2",
+  "hash_record_correction": "Raw file bytes and newline-normalized text separately labeled; no source/test changes for correction",
+  "saved_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "saved_union_scene_count": "UNKNOWN_NOT_PERSISTED",
+  "historical_saved_reports_regenerated": false,
+  "documentation_validation": {
+    "markdown_files": 43,
+    "local_links_checked": 173,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "new_cli_api_ui_exposure": false,
+  "persistent_storage_or_envelope_integration": false,
+  "overall_project_complete": false,
+  "next_unit": "Default-off run_experiment CLI diagnostics option/summary and new-output protection; synthetic validation; no real training/run authorization inferred",
+  "runtime_listeners": {
+    "5173": 30944,
+    "5174": 15608,
+    "8000": 32224,
+    "8001": 26912,
+    "8002": 35032
+  },
+  "collection_training_process_observed": false,
+  "schedule_status": "ACTIVE",
+  "schedule_interval_minutes": 10
+}

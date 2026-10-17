@@ -1,0 +1,75 @@
+{
+  "recorded_at": "2026-10-17T02:19:33.710Z",
+  "screens": [
+    {
+      "view": "metadata",
+      "url": "http://127.0.0.1:5174/#/catalog/insights/metadata?dataset=baseline2021_cpu_v1_dataset",
+      "heading": ""
+    },
+    {
+      "view": "inputs",
+      "url": "http://127.0.0.1:5174/#/catalog/insights/inputs?dataset=baseline2021_cpu_v1_dataset",
+      "heading": "카탈로그 활용 인사이트 | GeoAI 모델 입력자료 확인"
+    },
+    {
+      "view": "terms",
+      "url": "http://127.0.0.1:5174/#/catalog/insights/terms?dataset=baseline2021_cpu_v1_dataset",
+      "heading": "카탈로그 활용 인사이트 | 다운로드 전 이용조건 확인"
+    },
+    {
+      "view": "toolbox",
+      "url": "http://127.0.0.1:5174/#/catalog/insights/toolbox?dataset=baseline2021_cpu_v1_dataset",
+      "heading": "카탈로그 활용 인사이트 | GeoAI Toolbox로 전환"
+    },
+    {
+      "view": "webgis",
+      "url": "http://127.0.0.1:5174/#/catalog/insights/webgis?dataset=baseline2021_cpu_v1_dataset",
+      "heading": "카탈로그 활용 인사이트 | WebGIS 공간범위 연계"
+    }
+  ],
+  "checks": {
+    "filter_six_to_one": true,
+    "checked_selection_preserved": true,
+    "detail_hash_id": true,
+    "browser_back_to_filtered_list": true,
+    "browser_forward_detail_restored": true,
+    "reload_filter_selection_detail_restored": true,
+    "app_previous_to_detail_restored": true,
+    "single_selected_context_passed": true,
+    "metadata_detail_cta": true,
+    "five_insights_visited": true,
+    "workspace_climate_url": true,
+    "workspace_back_dataset_preserved": true,
+    "workspace_forward_reload_preserved": true,
+    "workspace_back_model_climate_preserved_after_fix": true,
+    "reference_region_gorontalo_preserved": true,
+    "webgis_existing_view_back_preserved": true,
+    "direct_missing_dataset_removed_by_replace": true,
+    "direct_entry_previous_catalog_fallback": true,
+    "invalid_route_catalog_fallback": true
+  },
+  "responsive": {
+    "requested": [
+      390,
+      844
+    ],
+    "observed": [
+      390,
+      845
+    ],
+    "document_scroll_width": 375,
+    "views": [
+      "webgis",
+      "metadata"
+    ]
+  },
+  "console_errors": {
+    "qa": 0,
+    "direct": 0
+  },
+  "limitations": [
+    "Metadata presence is not quality, license permission, model compatibility or AOI approval.",
+    "Opening a Workspace is navigation only; selected data is not injected and no Job is executed.",
+    "Backend sources unchanged; prior backend321 tests were not rerun."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-17T22:39:14.008889+09:00",
+  "status": "COMPLETED_INTERNAL_WORKFLOW_MODEL_RECORD_WRAPPER_NOT_AUTHORITY_OR_PROJECT_COMPLETION",
+  "documentation_validation": {
+    "checked_at": "2026-10-17T22:39:14.008889+09:00",
+    "markdown_files": 78,
+    "local_links": 321,
+    "evidence_references": 6870,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "tests": {
+    "focused": {
+      "passed": 12,
+      "seconds": 0.128,
+      "log": "evidence/integration/workflow-model-record-focused-20261017.log"
+    },
+    "related": {
+      "passed": 61,
+      "seconds": 0.887,
+      "log": "evidence/integration/workflow-model-record-related-20261017.log"
+    },
+    "independent": {
+      "passed": 12,
+      "seconds": 0.182,
+      "log": "evidence/integration/workflow-model-record-independent-20261017.log"
+    }
+  },
+  "full_regression_rerun_in_latest_unit": false,
+  "previous_full_regression": {
+    "tests_run": 1019,
+    "passed": 1018,
+    "skipped": 1,
+    "seconds": 381.288,
+    "log": "evidence/integration/model-provenance-api-full-tests-20261017.log"
+  },
+  "protected_references_checked": 141,
+  "existing_contracts_checked": 72,
+  "catalog_records": 14,
+  "understanding_updated": true,
+  "direct_ui_change": false,
+  "next_unit": "PLANNED_READ_ONLY_WORKFLOW_MODEL_RECORD_API_CONTRACT_REVIEW",
+  "snapshot_files": 1147
+}

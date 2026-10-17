@@ -1,5 +1,13 @@
 # Indonesia GeoAI–MLOps–SDSS
 
+GitHub 연결 및 게시 범위는 [Git 게시 기록](docs/implementation/git_publication_20261017.md), 담당 영역별 남은 핵심 작업은 [완료·잔여 과제 감사](docs/implementation/109_area_completion_audit.md)를 확인하세요.
+
+개발 원리와 발표 준비는 [이해 에이전트 자료](docs/understanding/INDEX.md)에서 시작하세요. [1분·5분 발표 대본](docs/understanding/presentations/1MIN_5MIN_SCRIPT.md), [예상 질문](docs/understanding/presentations/FAQ.md), [역할 규격](docs/agents/UNDERSTANDING_AGENT.md)을 제공합니다. 의미 있는 개발 Gate 이후 갱신하는 문서형 역할이며 백그라운드 서비스가 아닙니다.
+
+2026-10-17: `UI/` 참조 7개 메뉴·6개 모델 Workspace와 검증 Result 어댑터를 통합했습니다. [UI 구현·제약](docs/implementation/23_ui_completion.md), [최신 재개 인계서](docs/implementation/00_next_session_handoff.md)를 확인하세요. 실자료 학습·과학 검증·기관 운영 승인은 별도 gate입니다.
+
+추가 요청에 따라 PNG6종의 SDSS 헤더·사진 메뉴·분야별 분석 대시보드를 재현했습니다. 실제 위성 기저지도와 검증 대기 값으로 동작하며 시안의 가상 분석 수치를 표시하지 않습니다.
+
 > 다음 세션을 이어갈 때는 [마스터 프롬프트 기준 구축 현황·재개 인계서](docs/implementation/00_next_session_handoff.md)를 먼저 읽으세요. 최신 실행상태를 다시 확인한 후 문서에 지정된 담당 경로별로 병렬 작업을 재개합니다.
 
 인도네시아 기후행동 플랫폼의 LCLUC 우선 개발 체크포인트입니다. 데이터 수집, 실제 PyTorch CPU 학습·추론, 변화면적 계산, FastAPI, React/MapLibre를 구현했습니다. 전체 계약사업 완료 또는 실자료 독립 정확도 검증을 의미하지 않습니다.

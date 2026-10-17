@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-10-17T20:44:41.141695+09:00",
+  "status": "PLANNED",
+  "reviewer": "catalog_navigation_review",
+  "scope": "read-only next-unit design; no source/test/API execution",
+  "observed_gap": "RFC1 fullJob metadata equality may MATCH identical unregistered Agent/capability; actual submit rejects registration mismatch",
+  "source_files": [
+    "backend/app/workflow_job_request_handoff.py",
+    "backend/app/workflow_job_request_handoff_api.py",
+    "backend/app/gmais_api.py",
+    "frontend/src/fullJobHandoffAdapter.ts",
+    "frontend/src/FullJobHandoff.tsx"
+  ],
+  "proposal": {
+    "mode": "explicit caller opt-in RFC2 on existing manual fullJob diagnostic; preserve absent-version RFC1",
+    "request": "existing four keys unchanged for RFC1; proposed exact five keys with explicit contract_version 2 only for RFC2",
+    "versioning": "separate extension/schema_version and exact safe shape; never infer version",
+    "core": "reuse unchanged89; run local registration observation only after RFC1 MATCH; otherwise NOT_RUN",
+    "local_registration": "same Job firstmatch and93 membership over LOCAL_STATIC_AGENT_MANIFESTS; REGISTERED/AGENT_UNKNOWN/CAPABILITY_UNREGISTERED/NOT_RUN; no rawmanifest leakage",
+    "ui": "explicit version choice within existing details; no automatic POST; version identity/raw request SHA and edit/back/stale guards",
+    "unchanged_false_axes": [
+      "agent_capability_verified",
+      "actual_capability_supported",
+      "science",
+      "institution_acl",
+      "execution_approval"
+    ]
+  },
+  "required_tests": [
+    "RFC1 exact request/response equality",
+    "identical unregistered metadata RFC1MATCH vs opted-in RFC2BLOCKED",
+    "Agent known capability wrong and duplicate firstmatch",
+    "registered but BLOCKED or NOT_IMPLEMENTED never approval",
+    "unsupported/bool/wrong versions rejected",
+    "safe exact response/hash/phase privacy and budgets",
+    "version switch/edit/back late response invalidation",
+    "actual browser after API/UI together"
+  ],
+  "implementation_started": false,
+  "contract_finalized": false,
+  "new_operating_job_posts": 0
+}

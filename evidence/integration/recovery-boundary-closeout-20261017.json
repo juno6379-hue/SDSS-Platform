@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-17T12:58:03.308366+09:00",
+  "unit": "recovery_boundary",
+  "status": "BLOCKED",
+  "implementation_tests": {
+    "passed": 16,
+    "seconds": 2.365
+  },
+  "independent_tests": {
+    "passed": 16,
+    "seconds": 2.304
+  },
+  "full_regression": {
+    "tests_run": 462,
+    "passed": 461,
+    "skipped": 1,
+    "seconds": 107.796,
+    "exit_code": 0
+  },
+  "live_result": "evidence/integration/recovery-boundary-live-final-20261017.json",
+  "integrity": "evidence/integration/recovery-boundary-live-integrity-20261017.json",
+  "documentation_validation": {
+    "markdown_files": 35,
+    "local_links_checked": 141,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "ui_reason": "Internal read-only CLI; no public API, screen state or navigation contract change",
+  "next_unit": "PLANNED bounded boundary topology diagnostics; no automatic geometry repair/official authority/inside/independence approval"
+}

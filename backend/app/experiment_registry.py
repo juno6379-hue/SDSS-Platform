@@ -4,6 +4,11 @@ import json
 from pathlib import Path
 import re
 
+from .model_reference_contract import model_reference_issue
+
+
+_OMITTED = object()
+
 
 def checked_path(root, value):
     path = (root / str(value)).resolve()
@@ -20,7 +25,7 @@ def digest(path):
     return checksum.hexdigest()
 
 
-def register_experiment(store, report_path):
+def register_experiment(store, report_path, *, model_version=_OMITTED):
     root = Path(store.root).resolve()
     path = checked_path(root, report_path)
     report = json.loads(path.read_text(encoding='utf-8'))
@@ -47,9 +52,23 @@ def register_experiment(store, report_path):
         raise ValueError('학습 데이터셋 버전과 실험의 출처가 다릅니다.')
     lineage = {'experiment_report_path': str(path.relative_to(root)), 'experiment_report_sha256': digest(path),
                'dataset_manifest_sha256': digest(manifest_path), 'training_report_sha256': digest(training_report_path)}
+    model_extra = {}
+    if model_version is not _OMITTED:
+        issue = model_reference_issue({'id': model_id, 'version': model_version})
+        if issue is not None:
+            raise ValueError('명시한 model_version 선언이 유효하지 않습니다: ' + issue)
+        if 'model_version' in trained and (type(trained['model_version']) is not str or trained['model_version'] != model_version):
+            raise ValueError('학습 보고서의 model_version과 명시한 선언이 다릅니다.')
+        if 'model_version_declaration' in trained:
+            raise ValueError('학습 보고서의 model_version_declaration을 덮어쓰지 않습니다.')
+        model_extra['model_version_declaration'] = {
+            'schema_version': 1, 'source': 'CALLER_EXPLICIT_REGISTRATION',
+            'version': model_version, 'checkpoint_sha256': checkpoint_hash,
+            'training_report_sha256': lineage['training_report_sha256'],
+        }
     dataset = store.put('datasets', {**prepared, 'id': dataset_id, 'kind': 'prepared-training-dataset', **lineage})
     model = store.put('models', {**trained, 'id': model_id, 'status': 'Draft', 'independent_evaluation': False,
         'scientific_accuracy_validated': False, 'history': [], 'training_history': trained.get('history', []),
         'checkpoint_path': str(checkpoint.relative_to(root)), 'checkpoint_sha256': checkpoint_hash,
-        'dataset_id': dataset['id'], **lineage})
+        'dataset_id': dataset['id'], **lineage, **model_extra})
     return {'model': model, 'dataset': dataset, 'claim': '의사라벨 실험 등록이며 독립 검증·승인·배포가 아닙니다.'}

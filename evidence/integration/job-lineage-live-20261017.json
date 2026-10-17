@@ -1,0 +1,198 @@
+{
+  "recorded_at": "2026-10-17T01:46:09.379181+00:00",
+  "scope": "EXISTING_JOB_READ_ONLY_LOOPBACK_HTTP",
+  "checks": [
+    {
+      "job_id": "job-00893a5fc1014e4db9eea3d8a7fa238f",
+      "status": 200,
+      "cache_control": "no-store",
+      "body": {
+        "extension": "greenblue.job-lineage-validation.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "present_in_upstream_openapi": false,
+        "evaluation_scope": "CURRENT_TRANSITIVE_LINEAGE_NOT_SUBMISSION_SNAPSHOT",
+        "assessment_started_at": "2026-10-17T01:46:09.241Z",
+        "assessment_finished_at": "2026-10-17T01:46:09.244Z",
+        "schema_version": 1,
+        "job_id": "job-00893a5fc1014e4db9eea3d8a7fa238f",
+        "trace_id": "live-http-contract-check",
+        "available": true,
+        "reason": "CURRENT_LINEAGE_CHECKED",
+        "status": "BLOCKED",
+        "bindings": [
+          {
+            "input_index": 0,
+            "ref": {
+              "id": "contract-fixture",
+              "version": "1",
+              "sha256": "9f1a2345e4d56746f64c13915df3dc6a0c91e58fcffa28fcb0bbaf4e6c1abe75"
+            },
+            "diagnostic_index": 0,
+            "reused": false,
+            "checked": true
+          }
+        ],
+        "diagnostics": [
+          {
+            "schema_version": 1,
+            "scope": "DATASET_LINEAGE_INTEGRITY_ONLY",
+            "status": "BLOCKED",
+            "root_ref": {
+              "id": "contract-fixture",
+              "version": "1",
+              "sha256": "9f1a2345e4d56746f64c13915df3dc6a0c91e58fcffa28fcb0bbaf4e6c1abe75"
+            },
+            "nodes": [
+              {
+                "id": "contract-fixture",
+                "version": "1",
+                "sha256": "9f1a2345e4d56746f64c13915df3dc6a0c91e58fcffa28fcb0bbaf4e6c1abe75",
+                "status": "BLOCKED",
+                "integrity_verified": false,
+                "expanded": false,
+                "authorization_verified": false,
+                "blocker_codes": [
+                  "DATASET_VERSION_NOT_FOUND"
+                ]
+              }
+            ],
+            "edges": [],
+            "edge_direction": "PARENT_TO_CHILD",
+            "blockers": [
+              {
+                "code": "DATASET_VERSION_NOT_FOUND",
+                "ref": {
+                  "id": "contract-fixture",
+                  "version": "1",
+                  "sha256": "9f1a2345e4d56746f64c13915df3dc6a0c91e58fcffa28fcb0bbaf4e6c1abe75"
+                }
+              }
+            ],
+            "limits": {
+              "max_depth": 32,
+              "max_nodes": 64,
+              "root_depth": 0,
+              "hard_max_depth": 64,
+              "hard_max_nodes": 1024,
+              "depth_limit_reached": false,
+              "node_limit_reached": false
+            },
+            "lineage_integrity_verified": false,
+            "current_assets_revalidated": true,
+            "authorization_verified": false,
+            "execution_authorized": false,
+            "scientific_approval": false,
+            "network_requests": 0,
+            "source_files_written": 0
+          }
+        ],
+        "blockers": [
+          {
+            "input_index": 0,
+            "code": "DATASET_VERSION_NOT_FOUND"
+          }
+        ],
+        "limits": {
+          "max_depth": 32,
+          "max_nodes_per_root": 64,
+          "max_total_nodes": 256,
+          "max_input_refs": 64,
+          "max_unique_roots": 32,
+          "node_checks_performed": 1,
+          "unique_roots_checked": 1
+        },
+        "current_assets_revalidated": true,
+        "lineage_integrity_verified": false,
+        "authorization_verified": false,
+        "execution_authorized": false,
+        "scientific_approval": false,
+        "network_requests": 0,
+        "source_files_written": 0
+      }
+    },
+    {
+      "job_id": "job-lineage-not-found-live-check",
+      "status": 404,
+      "cache_control": "no-store",
+      "body": {
+        "error": {
+          "code": "JOB_NOT_FOUND",
+          "message": "Job이 없습니다.",
+          "trace_id": "unknown",
+          "retryable": false
+        }
+      }
+    }
+  ],
+  "protected_before": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "data/first-group/readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "contracts/upstream/GMAIS-v0.2/api/openapi.yaml": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44"
+  },
+  "protected_after": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "data/first-group/readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "contracts/upstream/GMAIS-v0.2/api/openapi.yaml": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44"
+  },
+  "protected_unchanged": true,
+  "existing_jobs_unchanged": true,
+  "job_count_after": 2,
+  "new_execution_records_created": 0,
+  "scientific_success_not_tested": true,
+  "browser_checks": {
+    "existing_job_id": "job-00893a5fc1014e4db9eea3d8a7fa238f",
+    "submission_snapshot": "LEGACY",
+    "current_companion": "BLOCKED / DATASET_VERSION_NOT_FOUND",
+    "explicit_read_button": true,
+    "no_current_result_before_explicit_click": true,
+    "current_scope_and_kst_assessment_times_displayed": true,
+    "current_attempt_not_success_displayed": true,
+    "authorization_execution_science_not_granted_displayed": true,
+    "job_id_edit_cleared_prior_current_result": true,
+    "second_existing_job_status_queried_without_auto_lineage": true,
+    "desktop_requested": [
+      1440,
+      1000
+    ],
+    "mobile_requested": [
+      390,
+      844
+    ],
+    "mobile_scroll_width": 375,
+    "mobile_viewport_width": 390,
+    "viewport_reset": true
+  },
+  "screenshots": [
+    "evidence/ui-20261017/job-current-lineage-desktop.png",
+    "evidence/ui-20261017/job-current-lineage-reason-desktop.png",
+    "evidence/ui-20261017/job-current-lineage-mobile.png"
+  ],
+  "ui_validation": {
+    "build_modules": 63,
+    "build_seconds": 24.15,
+    "exit_code": 0,
+    "adapter_passed": 32,
+    "adapter_milliseconds": 1129.7804,
+    "log": "evidence/integration/job-lineage-ui-build-20261017.log"
+  },
+  "full_regression": {
+    "tests_run": 310,
+    "passed": 309,
+    "skipped": 1,
+    "seconds": 101.622,
+    "exit_code": 0,
+    "log": "evidence/integration/job-lineage-full-tests-20261017.log"
+  },
+  "runtime_observation": {
+    "api_reloader_pid": 35032,
+    "api_worker_pid": 35700,
+    "ui_pid": 15608,
+    "collector_or_trainer_processes": 0,
+    "report_schedule": "ACTIVE; FREQ=MINUTELY;INTERVAL=10",
+    "original_servers_preserved": true
+  }
+}

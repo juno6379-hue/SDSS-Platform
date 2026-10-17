@@ -1,0 +1,400 @@
+TAP version 13
+# node:internal/modules/esm/resolve:274
+#     throw new ERR_MODULE_NOT_FOUND(
+#           ^
+# Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'E:\\GeoAI–MLOps–SDSS\\frontend\\src\\inputDiagnosticsAdapter' imported from E:\\GeoAI–MLOps–SDSS\\frontend\\src\\catalogReferenceAdapter.ts
+#     at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+#     at moduleResolve (node:internal/modules/esm/resolve:859:10)
+#     at defaultResolve (node:internal/modules/esm/resolve:983:11)
+#     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:783:12)
+#     at \#cachedDefaultResolve (node:internal/modules/esm/loader:707:25)
+#     at ModuleLoader.resolve (node:internal/modules/esm/loader:690:38)
+#     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:307:38)
+#     at ModuleJob._link (node:internal/modules/esm/module_job:183:49) {
+#   code: 'ERR_MODULE_NOT_FOUND',
+#   url: 'file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/inputDiagnosticsAdapter'
+# }
+# Node.js v22.18.0
+# Subtest: frontend\\src\\catalogReferenceAdapter.test.mjs
+not ok 1 - frontend\\src\\catalogReferenceAdapter.test.mjs
+  ---
+  duration_ms: 400.7294
+  type: 'test'
+  location: 'E:\\GeoAI–MLOps–SDSS\\frontend\\src\\catalogReferenceAdapter.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+ok 2 - 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+  ---
+  duration_ms: 8.6892
+  type: 'test'
+  ...
+# Subtest: 입력 품질·기관 ACL 차단코드를 보존한다
+ok 3 - 입력 품질·기관 ACL 차단코드를 보존한다
+  ---
+  duration_ms: 5.1573
+  type: 'test'
+  ...
+# Subtest: 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+ok 4 - 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+  ---
+  duration_ms: 3.368
+  type: 'test'
+  ...
+# Subtest: 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+ok 5 - 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+  ---
+  duration_ms: 3.6762
+  type: 'test'
+  ...
+# Subtest: 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+ok 6 - 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+  ---
+  duration_ms: 0.701
+  type: 'test'
+  ...
+# Subtest: 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+ok 7 - 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+  ---
+  duration_ms: 0.7307
+  type: 'test'
+  ...
+# Subtest: legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+ok 8 - legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+  ---
+  duration_ms: 0.5514
+  type: 'test'
+  ...
+# Subtest: ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+ok 9 - ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+  ---
+  duration_ms: 1.5994
+  type: 'test'
+  ...
+# Subtest: 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+ok 10 - 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+  ---
+  duration_ms: 5.2216
+  type: 'test'
+  ...
+# Subtest: 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+ok 11 - 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+  ---
+  duration_ms: 1.4547
+  type: 'test'
+  ...
+# Subtest: 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+ok 12 - 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+  ---
+  duration_ms: 0.7393
+  type: 'test'
+  ...
+# Subtest: Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+ok 13 - Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+  ---
+  duration_ms: 2.5696
+  type: 'test'
+  ...
+# Subtest: SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+ok 14 - SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+  ---
+  duration_ms: 1.6411
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 13
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 620.8795
+
+> indonesia-climate-sdss-web@0.1.0 build
+> tsc -b && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 57 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.43 kB │ gzip:   0.31 kB
+dist/assets/index-9uGDd4dJ.css    152.05 kB │ gzip:  27.98 kB
+dist/assets/index-CMzwg9IO.js   1,457.77 kB │ gzip: 411.40 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 22.57s
+TAP version 13
+# Subtest: 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+ok 1 - 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+  ---
+  duration_ms: 2.7687
+  type: 'test'
+  ...
+# Subtest: 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+ok 2 - 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+  ---
+  duration_ms: 1.3639
+  type: 'test'
+  ...
+# Subtest: 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+ok 3 - 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+  ---
+  duration_ms: 0.4256
+  type: 'test'
+  ...
+# Subtest: 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+ok 4 - 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+  ---
+  duration_ms: 0.3325
+  type: 'test'
+  ...
+# Subtest: CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+ok 5 - CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+  ---
+  duration_ms: 1.2096
+  type: 'test'
+  ...
+# Subtest: 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+ok 6 - 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+  ---
+  duration_ms: 0.3998
+  type: 'test'
+  ...
+# Subtest: 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+ok 7 - 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+  ---
+  duration_ms: 4.8949
+  type: 'test'
+  ...
+# Subtest: 입력 품질·기관 ACL 차단코드를 보존한다
+ok 8 - 입력 품질·기관 ACL 차단코드를 보존한다
+  ---
+  duration_ms: 1.4448
+  type: 'test'
+  ...
+# Subtest: 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+ok 9 - 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+  ---
+  duration_ms: 0.3475
+  type: 'test'
+  ...
+# Subtest: 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+ok 10 - 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+  ---
+  duration_ms: 0.8484
+  type: 'test'
+  ...
+# Subtest: 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+ok 11 - 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+  ---
+  duration_ms: 0.3267
+  type: 'test'
+  ...
+# Subtest: 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+ok 12 - 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+  ---
+  duration_ms: 0.3934
+  type: 'test'
+  ...
+# Subtest: legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+ok 13 - legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+  ---
+  duration_ms: 0.255
+  type: 'test'
+  ...
+# Subtest: ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+ok 14 - ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+  ---
+  duration_ms: 0.2006
+  type: 'test'
+  ...
+# Subtest: 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+ok 15 - 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+  ---
+  duration_ms: 4.0879
+  type: 'test'
+  ...
+# Subtest: 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+ok 16 - 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+  ---
+  duration_ms: 0.993
+  type: 'test'
+  ...
+# Subtest: 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+ok 17 - 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+  ---
+  duration_ms: 0.3142
+  type: 'test'
+  ...
+# Subtest: Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+ok 18 - Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+  ---
+  duration_ms: 1.8196
+  type: 'test'
+  ...
+# Subtest: SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+ok 19 - SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+  ---
+  duration_ms: 1.3109
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 330.3837
+
+> indonesia-climate-sdss-web@0.1.0 build
+> tsc -b && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 57 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.43 kB │ gzip:   0.31 kB
+dist/assets/index-DDptYmcv.css    153.06 kB │ gzip:  28.14 kB
+dist/assets/index-4gw_oAeN.js   1,459.97 kB │ gzip: 412.10 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 19.20s
+TAP version 13
+# Subtest: 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+ok 1 - 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+  ---
+  duration_ms: 8.9921
+  type: 'test'
+  ...
+# Subtest: 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+ok 2 - 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+  ---
+  duration_ms: 6.5639
+  type: 'test'
+  ...
+# Subtest: 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+ok 3 - 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+  ---
+  duration_ms: 1.6425
+  type: 'test'
+  ...
+# Subtest: 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+ok 4 - 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+  ---
+  duration_ms: 1.1801
+  type: 'test'
+  ...
+# Subtest: CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+ok 5 - CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+  ---
+  duration_ms: 6.6191
+  type: 'test'
+  ...
+# Subtest: 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+ok 6 - 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+  ---
+  duration_ms: 2.6129
+  type: 'test'
+  ...
+# Subtest: 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+ok 7 - 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+  ---
+  duration_ms: 7.369
+  type: 'test'
+  ...
+# Subtest: 입력 품질·기관 ACL 차단코드를 보존한다
+ok 8 - 입력 품질·기관 ACL 차단코드를 보존한다
+  ---
+  duration_ms: 4.2607
+  type: 'test'
+  ...
+# Subtest: 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+ok 9 - 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+  ---
+  duration_ms: 1.0404
+  type: 'test'
+  ...
+# Subtest: 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+ok 10 - 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+  ---
+  duration_ms: 4.5615
+  type: 'test'
+  ...
+# Subtest: 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+ok 11 - 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+  ---
+  duration_ms: 0.8112
+  type: 'test'
+  ...
+# Subtest: 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+ok 12 - 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+  ---
+  duration_ms: 0.9234
+  type: 'test'
+  ...
+# Subtest: legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+ok 13 - legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+  ---
+  duration_ms: 0.6311
+  type: 'test'
+  ...
+# Subtest: ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+ok 14 - ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+  ---
+  duration_ms: 0.6165
+  type: 'test'
+  ...
+# Subtest: 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+ok 15 - 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+  ---
+  duration_ms: 3.5653
+  type: 'test'
+  ...
+# Subtest: 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+ok 16 - 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+  ---
+  duration_ms: 1.1965
+  type: 'test'
+  ...
+# Subtest: 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+ok 17 - 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+  ---
+  duration_ms: 0.6424
+  type: 'test'
+  ...
+# Subtest: Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+ok 18 - Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+  ---
+  duration_ms: 2.1713
+  type: 'test'
+  ...
+# Subtest: SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+ok 19 - SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+  ---
+  duration_ms: 1.3939
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1334.4995

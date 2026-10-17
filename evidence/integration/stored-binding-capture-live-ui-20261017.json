@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-17T18:30:41.656365+09:00",
+  "scope": "VERIFIED_REAL running Vite5174 + API8002 existing legacy Job manual read; no synthetic live Job",
+  "url": "http://127.0.0.1:5174/#/view/24?model=lcluc&tab=evidence",
+  "checks": {
+    "empty_job_button_disabled": true,
+    "input_alone_does_not_show_result": true,
+    "explicit_get_legacy_display": true,
+    "legacy_request_count": 1,
+    "legacy_capture_manifest_counts_display": "미기록·미확인, not zero",
+    "input_change_clears_previous_result": true,
+    "missing_job_http404_safe_message": true,
+    "leading_space_id_not_trimmed_button_disabled": true,
+    "model_hub_back_clears_result_and_job_input": true,
+    "forward_then_back_clears_result_and_job_input": true,
+    "agent_selection_change_clears_previous_result": true,
+    "explicit_requery_after_return_succeeds": true
+  },
+  "viewport": {
+    "width": 1449,
+    "height": 1087
+  },
+  "document_horizontal_overflow": 0,
+  "card_horizontal_overflow": 0,
+  "console_error_entries_observed": [],
+  "screenshot": "evidence/integration/stored-binding-capture-ui-desktop-20261017.jpg",
+  "not_live_tested": [
+    "RECORDED production capture generation",
+    "UNAVAILABLE or INVALID stored Job production rendering",
+    "forced delayed network race",
+    "mobile breakpoint"
+  ],
+  "covered_synthetically": [
+    "RECORDED/UNAVAILABLE/INVALID schema and counts/hash/flags",
+    "late response generation/route/input checks",
+    "React sibling key namespaces"
+  ],
+  "actual_job_posts": 0,
+  "capture_backfills": 0,
+  "qa_or_training_started": false
+}

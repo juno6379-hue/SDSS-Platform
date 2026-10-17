@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-17T14:17:00.626636+09:00",
+  "verification_scope": "CURRENT_SOURCE_INSPECTION_ONLY_NOT_HISTORICAL_POPULATION_RECONSTRUCTION",
+  "current_readiness_source_sha256": "42945e3d864a0e63dab4d3100355bcd3506eecf2ada8bc654d573521ea1fdff2",
+  "observations": {
+    "patch_count_initialized_to_zero": true,
+    "scenes_append_not_guarded_by_positive_patch_count": true,
+    "token_and_bbox_loops_use_scenes_population": true,
+    "patch_counts_sum_scene_eligible_patches": true
+  },
+  "source_line_ranges": {
+    "patch_count_and_append": [
+      221,
+      242
+    ],
+    "connectivity_loops": [
+      263,
+      281
+    ],
+    "patch_count_aggregation": [
+      295,
+      303
+    ]
+  },
+  "saved_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "saved_union_scene_count": "UNKNOWN_NOT_PERSISTED",
+  "historical_zero_patch_scenes_present": "UNKNOWN_NOT_PERSISTED",
+  "current_source_identity_proves_historical_generating_code": false,
+  "independent_source_reading_confirmed": true,
+  "real_assess_executed": false,
+  "additional_unit_tests_run": 0,
+  "integration_constraints": [
+    "Do not filter scenes by eligible_patches>0 when preserving current connectivity semantics",
+    "Do not infer historical union scene count from saved patch totals",
+    "Do not truncate scene population to satisfy witness budgets; report unsupported/budget scope separately without changing gate decision"
+  ]
+}

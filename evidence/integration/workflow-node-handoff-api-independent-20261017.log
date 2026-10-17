@@ -1,0 +1,22 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_byte_depth_and_atom_budgets (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_byte_depth_and_atom_budgets) ... ok
+test_core_exception_safe_503_and_no_exception_leak (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_core_exception_safe_503_and_no_exception_leak) ... ok
+test_core_existing_contract_and_source_objects_remain_unchanged (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_core_existing_contract_and_source_objects_remain_unchanged) ... ok
+test_inherited_auth_dependency (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_inherited_auth_dependency) ... ok
+test_inner_multibyte_utf8_byte_cap (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_inner_multibyte_utf8_byte_cap) ... ok
+test_malformed_response_false_types_hash_counts_raw_and_cycles (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_malformed_response_false_types_hash_counts_raw_and_cycles) ... ok
+test_match_wrapper_raw_sha_one_worker_call_no_store_and_immutable (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_match_wrapper_raw_sha_one_worker_call_no_store_and_immutable) ... ok
+test_nonfinite_float_big_integer_and_scalar_controls (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_nonfinite_float_big_integer_and_scalar_controls) ... ok
+test_outer_and_inner_duplicate_keys_rejected_before_core (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_outer_and_inner_duplicate_keys_rejected_before_core) ... ok
+test_outer_exact_type_keys_and_invalid_utf8 (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_outer_exact_type_keys_and_invalid_utf8) ... ok
+test_raw_whitespace_changes_outer_sha_not_semantic_workflow_pin (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_raw_whitespace_changes_outer_sha_not_semantic_workflow_pin) ... ok
+test_response_issue_actual_list_indices_and_unknown_codes_rejected (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_response_issue_actual_list_indices_and_unknown_codes_rejected) ... ok
+test_supported_core_subsets_pass_without_dag_or_execution_claim (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_supported_core_subsets_pass_without_dag_or_execution_claim) ... ok
+test_unicode_golden_fixture (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_unicode_golden_fixture) ... ok
+test_valid_blocked_and_pin_mismatch_are_200_not_job_validation (test_workflow_node_input_handoff_api.WorkflowNodeHandoffApiTests.test_valid_blocked_and_pin_mismatch_are_200_not_job_validation) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.250s
+
+OK

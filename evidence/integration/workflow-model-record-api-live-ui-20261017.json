@@ -1,0 +1,73 @@
+{
+  "recorded_at": "2026-10-17T13:56:08.687Z",
+  "scope": "REAL_BROWSER_SYNTHETIC_DIAGNOSTIC_INPUTS_NOT_REAL_WORKFLOW_OR_MODELS",
+  "checks": [
+    {
+      "check": "new_panel_closed_and_old_rfc_panel_present",
+      "pass": true
+    },
+    {
+      "check": "empty_fields_disabled_no_result",
+      "pass": true
+    },
+    {
+      "check": "editing_inputs_creates_no_visible_result",
+      "pass": true
+    },
+    {
+      "check": "omitted_record_displays_not_provided_without_lookup_claim",
+      "pass": true
+    },
+    {
+      "check": "record_edit_immediately_clears_old_result",
+      "pass": true
+    },
+    {
+      "check": "synthetic_match_is_explicitly_unverified_with_three_matching_bindings",
+      "pass": true
+    },
+    {
+      "name": "whitespace_preserved_and_safe_400",
+      "pass": true
+    },
+    {
+      "name": "raw_null_displays_not_provided",
+      "pass": true
+    },
+    {
+      "name": "workflow_edit_clears_result_and_restores_original",
+      "pass": true
+    },
+    {
+      "name": "route_back_original_preserved_and_new_panel_empty",
+      "pass": true
+    },
+    {
+      "name": "svg_and_desktop_layout",
+      "pass": true
+    }
+  ],
+  "layout": {
+    "documentOverflow": 0,
+    "height": 1087,
+    "noHeadingOverlap": true,
+    "panelOverflow": 0,
+    "svgButton": true,
+    "svgHeading": true,
+    "width": 1449
+  },
+  "manual_diagnostic_posts": 4,
+  "job_creation_posts": 0,
+  "operating_model_registrations": 0,
+  "original_workflow_restored_exact": true,
+  "new_draft_fields_empty_after_route_back": true,
+  "console_recent_20_since_start": [],
+  "screenshot": "evidence/integration/workflow-model-record-ui-desktop-20261017.png",
+  "limits": [
+    "Completed-response route/back tested; delayed concurrency covered by isolated tests, not this browser run.",
+    "No-visible-result-on-edit is not full network instrumentation.",
+    "Diagnostic metadata match is not model bytes, scientific accuracy, authority or execution approval.",
+    "Initial header-svg selector missed H3; actual H3 SVG read-only DOM check passed.",
+    "One cleanup label locator temporarily missed; fresh snapshot and role locator completed cleanup."
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "endpoint": "http://127.0.0.1:8002/v1/diagnostics/readiness-source-identity",
+  "cases": [
+    {
+      "case": "current_pinned_report",
+      "status": 200,
+      "seconds": 18.797,
+      "bytes": 1065,
+      "cache_control": "no-store",
+      "response": {
+        "schema_version": 1,
+        "status": "BLOCKED",
+        "diagnostic_status": "OBSERVED_DECLARATIONS",
+        "scope": "PINNED_STORED_REPORT_DECLARATIONS_ONLY",
+        "report_sha256": "6bc86c9883716565946cff1700780db98aea005bca2e8da2c225520501dda642",
+        "manifest_sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+        "query_token_sha256": "3a0b764a73479fc5fdfe7dbdbbaf2aa43c2a581e0fbc40eccfc33f2c13837279",
+        "counts": {
+          "scene_count": 1384,
+          "complete_identity_scene_count": 1384,
+          "saved_blocker_count": 5,
+          "query_member_count": 28,
+          "query_active_token_member_count": 28,
+          "query_zero_patch_scene_count": 3,
+          "query_eligible_patch_count": 25,
+          "broad_candidate_link_count": 400,
+          "broad_unique_raw_row_count": 28,
+          "refined_candidate_link_count": 28,
+          "refined_unique_raw_row_count": 28,
+          "refined_unique_member_count": 28
+        },
+        "output_truncated": false,
+        "automatic_resume_allowed": false,
+        "exact_row_binding_verified": false,
+        "execution_authorized": false,
+        "ready_for_training": false,
+        "scientific_accuracy_validated": false,
+        "settlement_authorized": false,
+        "source_authenticity_verified": false,
+        "training_split_leakage_resolved": false
+      }
+    },
+    {
+      "case": "bad_bool_pin",
+      "status": 400,
+      "seconds": 0.032,
+      "bytes": 94,
+      "cache_control": "no-store",
+      "response": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Invalid diagnostic request.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "wrong_report_pin",
+      "status": 409,
+      "seconds": 9.625,
+      "bytes": 122,
+      "cache_control": "no-store",
+      "response": {
+        "error": {
+          "code": "PINNED_INPUT_CONFLICT",
+          "message": "Pinned diagnostic inputs changed or do not match.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "oversized_body",
+      "status": 413,
+      "seconds": 0.015,
+      "bytes": 107,
+      "cache_control": "no-store",
+      "response": {
+        "error": {
+          "code": "REQUEST_TOO_LARGE",
+          "message": "Diagnostic request exceeds body limit.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "get_not_supported",
+      "status": 405,
+      "seconds": 0.031,
+      "bytes": 31,
+      "cache_control": null,
+      "response": {
+        "detail": "Method Not Allowed"
+      }
+    }
+  ],
+  "paths_or_raw_token_exposed": false,
+  "source_assess_or_job_executed": false
+}

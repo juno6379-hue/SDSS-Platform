@@ -1,0 +1,55 @@
+{
+  "recorded_at": "2026-10-17T17:10:45.597706+09:00",
+  "status": "BOUNDED_UNIT_COMPLETE_PROJECT_CONTINUES",
+  "unit": 73,
+  "full_regression": {
+    "tests_run": 744,
+    "passed": 743,
+    "skipped": 1,
+    "seconds": 356.067,
+    "exit_code": 0,
+    "log": "evidence/integration/candidate-readiness-qa-full-tests-20261017.log"
+  },
+  "preservation_evidence": "evidence/integration/candidate-readiness-qa-live-integrity-20261017.json",
+  "actual_validation_evidence": "evidence/integration/candidate-readiness-qa-live-validation-20261017.json",
+  "execution_evidence": "evidence/integration/candidate-readiness-qa-live-execution-20261017.json",
+  "qa_directory": "data/first-group-candidate-readiness-qa-20261017",
+  "candidate_readiness": "BLOCKED",
+  "candidate_blockers": 4,
+  "candidate_eligible_patches": 1095,
+  "saved_original_readiness_blockers": 5,
+  "saved_original_eligible_patches": 1111,
+  "qa_performed": true,
+  "candidate_registered": false,
+  "training_executed": false,
+  "documentation_and_understanding_updated": true,
+  "related_implementation_docs": [
+    72,
+    73
+  ],
+  "documentation_validation": {
+    "checked_at": "2026-10-17T17:10:45.597706+09:00",
+    "markdown_files": 55,
+    "local_links": 224,
+    "evidence_references": 3479,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "new_api_ui_contract": false,
+  "ui_change_reason": "Internal pinned QA-only CLI; no public API/UI integration or browser verification. Next comparison API and manual UI are planned.",
+  "next": "PLANNED: pinned four-JSON original/candidate report comparison core and read-only API, then explicit web_ui handoff, manual comparison card and live-browser validation. No auto assessment, training or approval.",
+  "scheduler": "geoai-2 ACTIVE FREQ=MINUTELY;INTERVAL=10; not evidence of collection/training",
+  "runtime_pids": {
+    "vite": [
+      30944,
+      15608
+    ],
+    "api": [
+      32224,
+      26912,
+      35032
+    ]
+  },
+  "collectors_trainers_or_qa_processes_observed_after_completion": false
+}

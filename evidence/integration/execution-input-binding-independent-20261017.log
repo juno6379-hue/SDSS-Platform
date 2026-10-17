@@ -1,0 +1,20 @@
+test_canonical_scope_and_input_immutable_no_io (test_execution_input_binding.ExecutionInputBindingTests.test_canonical_scope_and_input_immutable_no_io) ... ok
+test_exact_keys_cycles_and_budget (test_execution_input_binding.ExecutionInputBindingTests.test_exact_keys_cycles_and_budget) ... ok
+test_expected_manifest_missing_or_changed_supplied (test_execution_input_binding.ExecutionInputBindingTests.test_expected_manifest_missing_or_changed_supplied) ... ok
+test_job_agent_trace_each_mismatch (test_execution_input_binding.ExecutionInputBindingTests.test_job_agent_trace_each_mismatch) ... ok
+test_legacy_manifest_not_backfilled (test_execution_input_binding.ExecutionInputBindingTests.test_legacy_manifest_not_backfilled) ... ok
+test_match_different_versions_and_all_false (test_execution_input_binding.ExecutionInputBindingTests.test_match_different_versions_and_all_false) ... ok
+test_missing_and_extra (test_execution_input_binding.ExecutionInputBindingTests.test_missing_and_extra) ... ok
+test_order_and_indices (test_execution_input_binding.ExecutionInputBindingTests.test_order_and_indices) ... ok
+test_role_presence_and_hash (test_execution_input_binding.ExecutionInputBindingTests.test_role_presence_and_hash) ... ok
+test_safe_output_no_raw_identity_or_exception (test_execution_input_binding.ExecutionInputBindingTests.test_safe_output_no_raw_identity_or_exception) ... ok
+test_same_identity_conflict_both_sides (test_execution_input_binding.ExecutionInputBindingTests.test_same_identity_conflict_both_sides) ... ok
+test_same_identity_repeated_equal_allowed (test_execution_input_binding.ExecutionInputBindingTests.test_same_identity_repeated_equal_allowed) ... ok
+test_strict_scalar_types_and_huge_values (test_execution_input_binding.ExecutionInputBindingTests.test_strict_scalar_types_and_huge_values) ... ok
+test_text_limits_controls_and_surrogates (test_execution_input_binding.ExecutionInputBindingTests.test_text_limits_controls_and_surrogates) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.014s
+
+OK
+Independent valid-envelope decision matrix: 648 cases PASS; states {'MATCH': 6, 'UNKNOWN': 9, 'BLOCKED': 633} . Separate synthetic experiment, not additional unittest cases; no registry/DB/files/resolver/executor calls.

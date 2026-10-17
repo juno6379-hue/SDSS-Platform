@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-17T12:47:03.224208+09:00",
+  "unit": "recovery_auxiliary_headers",
+  "status": "BLOCKED",
+  "implementation_tests": {
+    "passed": 14,
+    "seconds": 5.58
+  },
+  "independent_tests": {
+    "passed": 14,
+    "seconds": 9.72
+  },
+  "full_regression": {
+    "tests_run": 446,
+    "passed": 445,
+    "skipped": 1,
+    "seconds": 116.342,
+    "exit_code": 0
+  },
+  "live_result": "evidence/integration/recovery-auxiliary-headers-live-final-20261017.json",
+  "integrity": "evidence/integration/recovery-auxiliary-headers-live-integrity-20261017.json",
+  "documentation_validation": {
+    "markdown_files": 34,
+    "local_links_checked": 137,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "ui_reason": "Internal read-only CLI; no public API, screen state or navigation contract change",
+  "next_unit": "PLANNED pinned explicitly referenced boundary JSON structure/source diagnostics; legacy UNKNOWN preserved; no authority/science/training"
+}

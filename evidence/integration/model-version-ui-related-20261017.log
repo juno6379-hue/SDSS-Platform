@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: default off is exact legacy body even when optional input holds null or invalid text
+ok 1 - default off is exact legacy body even when optional input holds null or invalid text
+  ---
+  duration_ms: 5.6097
+  type: 'test'
+  ...
+# Subtest: explicit preserves caller padding and never infers or normalizes model/dataset version
+ok 2 - explicit preserves caller padding and never infers or normalizes model/dataset version
+  ---
+  duration_ms: 1.4829
+  type: 'test'
+  ...
+# Subtest: explicit null is rejected rather than treated as omitted
+ok 3 - explicit null is rejected rather than treated as omitted
+  ---
+  duration_ms: 0.7434
+  type: 'test'
+  ...
+# Subtest: fixed references reject alias case and Python whitespace padding
+ok 4 - fixed references reject alias case and Python whitespace padding
+  ---
+  duration_ms: 0.5798
+  type: 'test'
+  ...
+# Subtest: code point bounds accept supplementary Unicode at 256 and reject 257
+ok 5 - code point bounds accept supplementary Unicode at 256 and reject 257
+  ---
+  duration_ms: 0.5909
+  type: 'test'
+  ...
+# Subtest: blank control and lone surrogate declarations are rejected without echoing unsafe input
+ok 6 - blank control and lone surrogate declarations are rejected without echoing unsafe input
+  ---
+  duration_ms: 0.8333
+  type: 'test'
+  ...
+# Subtest: client Unicode and alias policy agrees with real Python96 pure contract
+ok 7 - client Unicode and alias policy agrees with real Python96 pure contract
+  ---
+  duration_ms: 379.644
+  type: 'test'
+  ...
+# Subtest: mock successful registration refreshes before selecting returned Draft model ID
+ok 8 - mock successful registration refreshes before selecting returned Draft model ID
+  ---
+  duration_ms: 1.2787
+  type: 'test'
+  ...
+# Subtest: synchronous in-flight prevents double registration before React busy render
+ok 9 - synchronous in-flight prevents double registration before React busy render
+  ---
+  duration_ms: 0.7149
+  type: 'test'
+  ...
+# Subtest: server 422 remains visible and settles current form without refresh
+ok 10 - server 422 remains visible and settles current form without refresh
+  ---
+  duration_ms: 1.1211
+  type: 'test'
+  ...
+# Subtest: route change discards stale success but always refreshes a successful server mutation
+ok 11 - route change discards stale success but always refreshes a successful server mutation
+  ---
+  duration_ms: 0.4785
+  type: 'test'
+  ...
+# Subtest: back-forward to same route and unmount invalidate the generation
+ok 12 - back-forward to same route and unmount invalidate the generation
+  ---
+  duration_ms: 0.3752
+  type: 'test'
+  ...
+# Subtest: stale rejected request cannot clear busy or append error in replacement form
+ok 13 - stale rejected request cannot clear busy or append error in replacement form
+  ---
+  duration_ms: 0.4419
+  type: 'test'
+  ...
+# Subtest: navigation during refresh also discards selection, and current refresh failure is reported
+ok 14 - navigation during refresh also discards selection, and current refresh failure is reported
+  ---
+  duration_ms: 0.6671
+  type: 'test'
+  ...
+# Subtest: response model ID access never claims declaration authority or changes record
+ok 15 - response model ID access never claims declaration authority or changes record
+  ---
+  duration_ms: 0.2957
+  type: 'test'
+  ...
+# Subtest: component wiring stays manual, default off/empty, disables registration inputs and shares SVG
+ok 16 - component wiring stays manual, default off/empty, disables registration inputs and shares SVG
+  ---
+  duration_ms: 1.094
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 856.2352

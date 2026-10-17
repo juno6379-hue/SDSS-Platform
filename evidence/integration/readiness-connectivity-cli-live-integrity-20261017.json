@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-10-17T14:38:30.972261+09:00",
+  "protected_reference_count": 132,
+  "protected_reference_changes": [],
+  "unchanged_contract_count": 23,
+  "existing_contract_sha_changes": [],
+  "previously_tracked_code_data_contract_changes": [],
+  "run_experiment_was_tracked_in_previous_snapshot": false,
+  "intended_existing_code_changes_verified_from_explicit_preflight": [
+    "scripts/run_experiment.py"
+  ],
+  "current_run_experiment_raw_sha256": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3",
+  "previous_run_experiment_raw_sha256": "0e3ae07d2fb540547e746170d2c414c57537e852b5ae818945c36e19ac79b1c1",
+  "original_execute_gate_training_resume_inference_tail_ast_unchanged": true,
+  "saved_readiness_sha_unchanged": true,
+  "saved_blockers_exactly_preserved": true,
+  "saved_blocker_count": 5,
+  "saved_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "saved_union_scene_count": "UNKNOWN_NOT_PERSISTED",
+  "historical_cause_branch": "UNKNOWN_NOT_PERSISTED",
+  "source_rasters_read_in_this_unit": false,
+  "readiness_assess_rerun_on_real_data": false,
+  "historical_saved_reports_regenerated": false,
+  "actual_cli_help_verified": true,
+  "full_regression": {
+    "tests_run": 608,
+    "passed": 607,
+    "skipped": 1,
+    "seconds": 207.921,
+    "exit_code": 0
+  },
+  "frozen_new_script_and_tests_raw_sha_unchanged": true,
+  "verification_scope": "Protected references,23 pinned contracts,previously tracked files and explicit run_experiment baseline; not a full-workspace or atomic snapshot guarantee",
+  "atomic_snapshot_guaranteed": false
+}

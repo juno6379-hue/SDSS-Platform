@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-17T08:54:51.393729+00:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_AND_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 35,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [],
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "related": {
+    "passed": 14,
+    "seconds": 0.037
+  },
+  "independent": {
+    "passed": 14,
+    "seconds": 0.014,
+    "separate_synthetic_matrix_cases": 648,
+    "matrix_status_counts": {
+      "MATCH": 6,
+      "UNKNOWN": 9,
+      "BLOCKED": 633
+    }
+  },
+  "live_validation": "evidence/integration/execution-input-binding-live-validation-20261017.json",
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 789,
+    "passed": 788,
+    "skipped": 1,
+    "seconds": 346.172,
+    "exit_code": 0,
+    "log": "evidence/integration/execution-input-binding-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "post_full_preservation_rechecked_at": "2026-10-17T08:55:15.412717+00:00"
+}

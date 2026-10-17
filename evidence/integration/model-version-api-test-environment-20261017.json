@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-10-17T21:48:47.562882+09:00",
+  "initial": {
+    "command": "python -m unittest discover -s tests -v",
+    "log": "evidence/integration/model-version-api-full-tests-20261017.log",
+    "tests_run": 648,
+    "seconds": 327.484,
+    "import_errors": 31,
+    "status": "FAILED_ENVIRONMENT_PYTHONPATH_OMITTED",
+    "examples": [
+      "fastapi missing",
+      ".runtime jsonschema missing",
+      "app missing"
+    ]
+  },
+  "corrected": {
+    "command": "$env:PYTHONPATH = \".runtime;backend;tests\"; python -m unittest discover -s tests -v",
+    "log": "evidence/integration/model-version-api-full-tests-corrected-20261017.log",
+    "status": "PASSED",
+    "tests_run": 998,
+    "passed": 997,
+    "skipped": 1,
+    "seconds": 366.134,
+    "exit_code": 0
+  },
+  "product_changes_for_environment_failure": 0,
+  "original_failed_log_preserved": true
+}

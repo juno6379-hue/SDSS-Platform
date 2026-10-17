@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-17T13:06:41.171554+09:00",
+  "unit": "recovery_boundary_topology",
+  "status": "BLOCKED",
+  "implementation_tests": {
+    "passed": 13,
+    "seconds": 1.829
+  },
+  "independent_tests": {
+    "passed": 13,
+    "seconds": 1.809
+  },
+  "full_regression": {
+    "tests_run": 475,
+    "passed": 474,
+    "skipped": 1,
+    "seconds": 103.359,
+    "exit_code": 0
+  },
+  "live_result": "evidence/integration/recovery-boundary-topology-live-final-20261017.json",
+  "integrity": "evidence/integration/recovery-boundary-topology-live-integrity-20261017.json",
+  "documentation_validation": {
+    "markdown_files": 36,
+    "local_links_checked": 145,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "ui_reason": "Internal read-only CLI; no public API, screen state or navigation contract change",
+  "next_unit": "PLANNED bounded cross-feature contact/area-overlap diagnostics; no repair/official authority/inside/independence approval"
+}

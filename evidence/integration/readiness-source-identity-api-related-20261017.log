@@ -1,0 +1,21 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_body_stream_limit_and_no_client_path (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_body_stream_limit_and_no_client_path) ... ok
+test_cancelled_request_does_not_release_running_worker (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_cancelled_request_does_not_release_running_worker) ... ok
+test_get_not_available_and_summary_ascii (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_get_not_available_and_summary_ascii) ... ok
+test_legacy_absence_and_not_captured_have_null_counts (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_legacy_absence_and_not_captured_have_null_counts) ... ok
+test_metadata_second_read_sha_and_retarget_fail_closed (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_metadata_second_read_sha_and_retarget_fail_closed) ... ok
+test_new_fixed_report_not_old_default_and_allowlisted_projection (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_new_fixed_report_not_old_default_and_allowlisted_projection) ... ok
+test_only_json_reads_no_store_mutation_assess_or_pixel_calls (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_only_json_reads_no_store_mutation_assess_or_pixel_calls) ... ok
+test_openapi_declares_exact_response_contract (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_openapi_declares_exact_response_contract) ... ok
+test_pin_conflict_and_errors_do_not_disclose_paths (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_pin_conflict_and_errors_do_not_disclose_paths) ... ok
+test_projection_false_flags_typed_counts_and_limits_fail_closed (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_projection_false_flags_typed_counts_and_limits_fail_closed) ... ok
+test_refinement_version_protocol_status_and_cross_counts_fail_closed (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_refinement_version_protocol_status_and_cross_counts_fail_closed) ... ok
+test_strict_request_rejection_before_worker (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_strict_request_rejection_before_worker) ... ok
+test_truncation_preserved_and_missing_member_not_counted (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_truncation_preserved_and_missing_member_not_counted) ... ok
+test_worker_exclusive_busy_and_release_after_error (test_readiness_source_identity_api.ReadinessSourceIdentityAPITests.test_worker_exclusive_busy_and_release_after_error) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 6.055s
+
+OK

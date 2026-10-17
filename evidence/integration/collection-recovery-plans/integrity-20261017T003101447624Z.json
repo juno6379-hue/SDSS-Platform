@@ -1,0 +1,96 @@
+{
+  "assessed_at": "2026-10-17T00:31:01.447624+00:00",
+  "plan_id": "collection-recovery-8c3a33bff71ffbaad911ca44bc1ff5a9e831c257a8c3b7eaef5299b1770ef5b5",
+  "snapshot_before_after_equal": true,
+  "protected_source_references": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+      "exists": true,
+      "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+      "bytes": 53868103
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json",
+      "exists": true,
+      "sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+      "bytes": 51204
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\run-result.json",
+      "exists": true,
+      "sha256": "0e8dd6ef449e5e7397d02393def95a54cafedc5a58722ec93df56e39dc554a86",
+      "bytes": 613
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.execution.lock",
+      "exists": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.lock",
+      "exists": false
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-annual\\run-result.json",
+      "exists": true,
+      "sha256": "8513b6da3d8d2816a4ed9af147a4c799084f7b11eca73be96bfa35306cab7df5",
+      "bytes": 606,
+      "expected_sha256": "8513b6da3d8d2816a4ed9af147a4c799084f7b11eca73be96bfa35306cab7df5",
+      "matches_ledger": true
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-recovery32\\run-result.json",
+      "exists": true,
+      "sha256": "9563d8b82300c15a4093b34306658d8eb1a317f914ff7338dde3b4d4eb95371e",
+      "bytes": 1024,
+      "expected_sha256": "9563d8b82300c15a4093b34306658d8eb1a317f914ff7338dde3b4d4eb95371e",
+      "matches_ledger": true
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\config.json",
+      "exists": true,
+      "sha256": "d9e7bf2e9e18398205653d518d3fe0dcf15b7ab305ca58520d0ba3c3e135abc6",
+      "bytes": 3441
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\window-state.json",
+      "exists": true,
+      "sha256": "1b5821692d52a13fd6c3e7e2bc72d2051c38ac7ac2eb5d8fec0d86cec3925700",
+      "bytes": 220
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\worker-result.json",
+      "exists": false
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\annual-window-report.json",
+      "exists": false
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\config.json",
+      "exists": true,
+      "sha256": "5619b92481919e29d5b2b557514e8a2439d2b1659f8b575323aebabec63c56a3",
+      "bytes": 3460
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\window-state.json",
+      "exists": true,
+      "sha256": "4a46982041d039dfccba4a7acf9df715db489e027e800bab5057d852d098e55f",
+      "bytes": 220
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\worker-result.json",
+      "exists": false
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\annual-window-report.json",
+      "exists": false
+    }
+  ],
+  "ledger_sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+  "manifest_sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+  "network_requests": 0,
+  "source_files_written": 0,
+  "scope_note": "원장/합산manifest/run-result/lock/과거원장/pending config와state 및 terminal/partial 증거의 전후 내용 비교. 모든 raster 재해시를 뜻하지 않는다."
+}

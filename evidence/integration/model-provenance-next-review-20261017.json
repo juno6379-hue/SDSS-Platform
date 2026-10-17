@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-10-17T22:04:32.553597+09:00",
+  "status": "PLANNED_CONTRACT_REVIEW_ONLY",
+  "candidate": "Read-only stored model registration metadata observation endpoint",
+  "possible_path": "GET /api/models/{identifier}/registration-provenance",
+  "candidate_constraints": [
+    "Use existing authentication and stored-model 404 behavior",
+    "Delegate only to pure helper; no record update or artifact file reads",
+    "Do not claim authority or approval from CONSISTENT_UNVERIFIED",
+    "Preserve ABSENT/INVALID/CONFLICT/UNKNOWN meanings",
+    "No model_ref resolver or dataset_version fallback",
+    "Before implementation review error, response and UI manual-read/stale-state contract"
+  ],
+  "implementation_changes": 0,
+  "endpoint_added": false,
+  "ui_added": false,
+  "operating_registrations": 0
+}

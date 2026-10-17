@@ -1,0 +1,48 @@
+{
+  "workflow_request": {
+    "schema_version": "0.2.0",
+    "workflow_run_id": "인도네시아-🌏",
+    "trace_id": "추적-é- ",
+    "nodes": [
+      {
+        "node_id": "선택-𐀀",
+        "agent_id": "분석-é",
+        "capability_id": "토지피복",
+        "depends_on": [],
+        "input_bindings": [
+          {
+            "id": "위성-🛰",
+            "version": "v1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "role": "영상",
+            "uri": "file:///자료/é/🌏.tif"
+          }
+        ]
+      }
+    ],
+    "policy": {
+      "on_blocked": "STOP_DEPENDENTS",
+      "max_parallel": 1,
+      "require_human_approval": true
+    }
+  },
+  "canonical_json": "{\"nodes\":[{\"agent_id\":\"분석-é\",\"capability_id\":\"토지피복\",\"depends_on\":[],\"input_bindings\":[{\"id\":\"위성-🛰\",\"role\":\"영상\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"uri\":\"file:///자료/é/🌏.tif\",\"version\":\"v1\"}],\"node_id\":\"선택-𐀀\"}],\"policy\":{\"max_parallel\":1,\"on_blocked\":\"STOP_DEPENDENTS\",\"require_human_approval\":true},\"schema_version\":\"0.2.0\",\"trace_id\":\"추적-é- \",\"workflow_run_id\":\"인도네시아-🌏\"}",
+  "sha256": "5d4127f653d37c853004ea43efadf61117af1b4f3703875facf3e28d143b281c",
+  "selected_node_id": "선택-𐀀",
+  "proposed_job_metadata": {
+    "agent_id": "분석-é",
+    "capability_id": "토지피복",
+    "execution_context": {
+      "trace_id": "추적-é- "
+    },
+    "input_refs": [
+      {
+        "id": "위성-🛰",
+        "version": "v1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "role": "영상",
+        "uri": "file:///자료/é/🌏.tif"
+      }
+    ]
+  }
+}

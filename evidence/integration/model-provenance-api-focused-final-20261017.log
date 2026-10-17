@@ -1,0 +1,16 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_all_five_states_are_200_exact_helper_response_get_once_write_zero (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_all_five_states_are_200_exact_helper_response_get_once_write_zero) ... ok
+test_auth_denies_before_store_and_retains_existing_bearer_policy (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_auth_denies_before_store_and_retains_existing_bearer_policy) ... ok
+test_existing_models_list_body_and_headers_preserved (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_existing_models_list_body_and_headers_preserved) ... ok
+test_helper_exceptions_are_fixed503_and_existing_http_exception_is_preserved (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_helper_exceptions_are_fixed503_and_existing_http_exception_is_preserved) ... ok
+test_local_import_error_is_also_safe503_before_store (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_local_import_error_is_also_safe503_before_store) ... ok
+test_missing_model_preserves_404_fixed_detail_and_no_helper_or_write (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_missing_model_preserves_404_fixed_detail_and_no_helper_or_write) ... ok
+test_no_checkpoint_report_source_write_network_or_registration_calls (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_no_checkpoint_report_source_write_network_or_registration_calls) ... ok
+test_only_new_route_ast_added_all_existing_main_nodes_unchanged (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_only_new_route_ast_added_all_existing_main_nodes_unchanged) ... ok
+test_store_exceptions_are_fixed503_with_no_private_details (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_store_exceptions_are_fixed503_with_no_private_details) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.858s
+
+OK

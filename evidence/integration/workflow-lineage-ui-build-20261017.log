@@ -1,0 +1,256 @@
+
+> indonesia-climate-sdss-web@0.1.0 build
+> tsc -b && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 66 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.43 kB │ gzip:   0.31 kB
+dist/assets/index-CLktHDrI.css    161.47 kB │ gzip:  29.58 kB
+dist/assets/index-BBzbCaXw.js   1,498.35 kB │ gzip: 421.35 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 19.37s
+TAP version 13
+# Subtest: 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+ok 1 - 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+  ---
+  duration_ms: 5.9313
+  type: 'test'
+  ...
+# Subtest: 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+ok 2 - 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+  ---
+  duration_ms: 3.2851
+  type: 'test'
+  ...
+# Subtest: 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+ok 3 - 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+  ---
+  duration_ms: 1.5234
+  type: 'test'
+  ...
+# Subtest: 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+ok 4 - 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+  ---
+  duration_ms: 0.8113
+  type: 'test'
+  ...
+# Subtest: CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+ok 5 - CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+  ---
+  duration_ms: 7.4822
+  type: 'test'
+  ...
+# Subtest: 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+ok 6 - 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+  ---
+  duration_ms: 1.2288
+  type: 'test'
+  ...
+# Subtest: 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+ok 7 - 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+  ---
+  duration_ms: 6.9569
+  type: 'test'
+  ...
+# Subtest: 입력 품질·기관 ACL 차단코드를 보존한다
+ok 8 - 입력 품질·기관 ACL 차단코드를 보존한다
+  ---
+  duration_ms: 3.5571
+  type: 'test'
+  ...
+# Subtest: 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+ok 9 - 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+  ---
+  duration_ms: 0.9758
+  type: 'test'
+  ...
+# Subtest: 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+ok 10 - 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+  ---
+  duration_ms: 1.995
+  type: 'test'
+  ...
+# Subtest: 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+ok 11 - 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+  ---
+  duration_ms: 0.7695
+  type: 'test'
+  ...
+# Subtest: 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+ok 12 - 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+  ---
+  duration_ms: 0.8829
+  type: 'test'
+  ...
+# Subtest: legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+ok 13 - legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+  ---
+  duration_ms: 5.7844
+  type: 'test'
+  ...
+# Subtest: ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+ok 14 - ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+  ---
+  duration_ms: 1.4105
+  type: 'test'
+  ...
+# Subtest: 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+ok 15 - 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+  ---
+  duration_ms: 4.348
+  type: 'test'
+  ...
+# Subtest: 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+ok 16 - 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+  ---
+  duration_ms: 2.0725
+  type: 'test'
+  ...
+# Subtest: 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+ok 17 - 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+  ---
+  duration_ms: 1.3817
+  type: 'test'
+  ...
+# Subtest: Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+ok 18 - Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+  ---
+  duration_ms: 13.9714
+  type: 'test'
+  ...
+# Subtest: SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+ok 19 - SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+  ---
+  duration_ms: 8.8306
+  type: 'test'
+  ...
+# Subtest: Job현재계보는같은Job·Trace와현재검사scope를확인한다
+ok 20 - Job현재계보는같은Job·Trace와현재검사scope를확인한다
+  ---
+  duration_ms: 7.6526
+  type: 'test'
+  ...
+# Subtest: 저장요청없는legacy·잘못된요청·상한선차단을현재통과로추정하지않는다
+ok 21 - 저장요청없는legacy·잘못된요청·상한선차단을현재통과로추정하지않는다
+  ---
+  duration_ms: 1.1155
+  type: 'test'
+  ...
+# Subtest: 부분검사와checked/current_assets_revalidated true를전체성공으로바꾸지않는다
+ok 22 - 부분검사와checked/current_assets_revalidated true를전체성공으로바꾸지않는다
+  ---
+  duration_ms: 5.6237
+  type: 'test'
+  ...
+# Subtest: 중복참조진단재사용과고정ref연결을구별한다
+ok 23 - 중복참조진단재사용과고정ref연결을구별한다
+  ---
+  duration_ms: 3.1038
+  type: 'test'
+  ...
+# Subtest: 무결성집계는모든진단·입력근거가있어야하고실행·권한·과학승인은거부한다
+ok 24 - 무결성집계는모든진단·입력근거가있어야하고실행·권한·과학승인은거부한다
+  ---
+  duration_ms: 3.5608
+  type: 'test'
+  ...
+# Subtest: 검사예산초과·형식오류·쓰기근거가있는응답을표시하지않는다
+ok 25 - 검사예산초과·형식오류·쓰기근거가있는응답을표시하지않는다
+  ---
+  duration_ms: 0.9573
+  type: 'test'
+  ...
+# Subtest: Job·Agent전환과이전명시조회응답은요청세대guard로거부한다
+ok 26 - Job·Agent전환과이전명시조회응답은요청세대guard로거부한다
+  ---
+  duration_ms: 0.6186
+  type: 'test'
+  ...
+# Subtest: 미상·별칭·형식이 다른 고정참조와 잘못된 검사한도는 제출하지 않는다
+ok 27 - 미상·별칭·형식이 다른 고정참조와 잘못된 검사한도는 제출하지 않는다
+  ---
+  duration_ms: 6.4956
+  type: 'test'
+  ...
+# Subtest: HTTP200 BLOCKED와 current_assets_revalidated 시도를 성공으로 바꾸지 않는다
+ok 28 - HTTP200 BLOCKED와 current_assets_revalidated 시도를 성공으로 바꾸지 않는다
+  ---
+  duration_ms: 1.0131
+  type: 'test'
+  ...
+# Subtest: 같은 고정 ID·버전·SHA 응답만 표시한다
+ok 29 - 같은 고정 ID·버전·SHA 응답만 표시한다
+  ---
+  duration_ms: 0.736
+  type: 'test'
+  ...
+# Subtest: wrapper와 diagnostic의 기관·실행·과학 승인 불변조건을 검증한다
+ok 30 - wrapper와 diagnostic의 기관·실행·과학 승인 불변조건을 검증한다
+  ---
+  duration_ms: 0.5609
+  type: 'test'
+  ...
+# Subtest: 계보 일치는 일관된 노드·차단 근거가 있어야 하고 과학 승인과 구별한다
+ok 31 - 계보 일치는 일관된 노드·차단 근거가 있어야 하고 과학 승인과 구별한다
+  ---
+  duration_ms: 1.0104
+  type: 'test'
+  ...
+# Subtest: 입력 수정·다른 상세창·늦은 응답은 세대와 입력키로 거부한다
+ok 32 - 입력 수정·다른 상세창·늦은 응답은 세대와 입력키로 거부한다
+  ---
+  duration_ms: 0.3701
+  type: 'test'
+  ...
+# Subtest: 해시는실제agentApi JSON.stringify UTF8본문이며키정렬canonical이아니다
+ok 33 - 해시는실제agentApi JSON.stringify UTF8본문이며키정렬canonical이아니다
+  ---
+  duration_ms: 32.698
+  type: 'test'
+  ...
+# Subtest: WorkflowID·Trace·실제본문SHA가모두일치하는현재진단만표시한다
+ok 34 - WorkflowID·Trace·실제본문SHA가모두일치하는현재진단만표시한다
+  ---
+  duration_ms: 4.1658
+  type: 'test'
+  ...
+# Subtest: 공유ref재사용·빈노드·상충참조무해시진단을실행성공으로바꾸지않는다
+ok 35 - 공유ref재사용·빈노드·상충참조무해시진단을실행성공으로바꾸지않는다
+  ---
+  duration_ms: 1.1992
+  type: 'test'
+  ...
+# Subtest: 계보무결성일치여도Workflow는항상PLAN_ONLY/BLOCKED·비실행이다
+ok 36 - 계보무결성일치여도Workflow는항상PLAN_ONLY/BLOCKED·비실행이다
+  ---
+  duration_ms: 3.1144
+  type: 'test'
+  ...
+# Subtest: 선행상한·부분검사·노드순서와고정binding신원을검증한다
+ok 37 - 선행상한·부분검사·노드순서와고정binding신원을검증한다
+  ---
+  duration_ms: 1.3191
+  type: 'test'
+  ...
+# Subtest: JSON수정·메뉴이동·같은JSON복귀에도이전응답은세대로거부한다
+ok 38 - JSON수정·메뉴이동·같은JSON복귀에도이전응답은세대로거부한다
+  ---
+  duration_ms: 0.8654
+  type: 'test'
+  ...
+1..38
+# tests 38
+# suites 0
+# pass 38
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 961.1713

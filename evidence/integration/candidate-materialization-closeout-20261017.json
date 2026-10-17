@@ -1,0 +1,51 @@
+{
+  "recorded_at": "2026-10-17T16:36:25.402723+09:00",
+  "status": "BOUNDED_UNIT_COMPLETE_PROJECT_CONTINUES",
+  "unit": 71,
+  "full_regression": {
+    "tests_run": 706,
+    "passed": 705,
+    "skipped": 1,
+    "seconds": 329.107,
+    "exit_code": 0,
+    "log": "evidence/integration/candidate-materialization-full-tests-20261017.log"
+  },
+  "preservation_evidence": "evidence/integration/candidate-materialization-live-integrity-20261017.json",
+  "actual_validation_evidence": "evidence/integration/candidate-materialization-live-validation-20261017.json",
+  "candidate_package": "evidence/integration/candidate-materialization-live-20261017",
+  "candidate_created": true,
+  "candidate_registered": false,
+  "candidate_readiness": "NOT_ASSESSED",
+  "documentation_and_understanding_updated": true,
+  "related_implementation_docs": [
+    25,
+    44,
+    70,
+    71
+  ],
+  "documentation_validation": {
+    "checked_at": "2026-10-17T16:36:25.402723+09:00",
+    "markdown_files": 53,
+    "local_links": 216,
+    "evidence_references": 3229,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "new_api_ui_contract": false,
+  "ui_change_reason": "Internal evidence-only candidate CLI; no Registry or API/UI integration. No browser verification claimed.",
+  "next": "PLANNED: strict receipt consumer then identical-SHA metadata-only exclusive DATA staging for existing noexecute readiness QA. Do not widen DATA root; no --readiness-only flag exists.",
+  "scheduler": "geoai-2 ACTIVE FREQ=MINUTELY;INTERVAL=10; not evidence of collection/training",
+  "runtime_pids": {
+    "vite": [
+      30944,
+      15608
+    ],
+    "api": [
+      32224,
+      26912,
+      35032
+    ]
+  },
+  "collectors_trainers_or_materialization_processes_observed_after_completion": false
+}

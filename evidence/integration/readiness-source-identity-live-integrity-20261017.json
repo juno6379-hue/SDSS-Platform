@@ -1,0 +1,49 @@
+{
+  "recorded_at": "2026-10-17T15:15:16.992512+09:00",
+  "protected_reference_count": 133,
+  "protected_reference_changes": [],
+  "unchanged_contract_count": 24,
+  "existing_contract_sha_changes": [],
+  "previously_tracked_code_data_test_changes": [
+    "backend/app/ml/readiness_connectivity_adapter.py",
+    "tests/test_readiness_connectivity_adapter.py"
+  ],
+  "intended_adapter_before_sha256": "dd084f4577f74e6117a40ef8c6d84d17a92ff7e50b404c7e777eb16ed1fd8400",
+  "adapter_after": {
+    "exists": true,
+    "sha256": "42490200e4e46a583bef0853912bf6fb49ec6f57843ee83a0a71494e98fdc3d2",
+    "bytes": 9373
+  },
+  "readiness_assess_and_cli_unchanged": true,
+  "pinned_current_report_unchanged": true,
+  "pinned_manifest_unchanged": true,
+  "saved_blockers_exactly_preserved": true,
+  "saved_blocker_count": 5,
+  "saved_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "existing_actual_report_source_identity_absent": true,
+  "existing_lineage_28_ambiguous_not_resolved": true,
+  "source_rasters_read_or_assess_rerun": false,
+  "new_actual_readiness_report_generated": false,
+  "full_regression": {
+    "tests_run": 630,
+    "passed": 629,
+    "skipped": 1,
+    "seconds": 192.06,
+    "exit_code": 0,
+    "skip_reason": "Existing OS symlink creation permission; deterministic boundary test passed"
+  },
+  "related_tests": {
+    "passed": 23,
+    "seconds": 6.047
+  },
+  "independent_tests": {
+    "passed": 23,
+    "seconds": 5.827
+  },
+  "atomic_snapshot_guaranteed": false,
+  "full_workspace_inventory_guaranteed": false
+}

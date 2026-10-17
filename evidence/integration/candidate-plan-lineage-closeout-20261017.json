@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-10-17T16:09:39.876665+09:00",
+  "status": "BOUNDED_UNIT_COMPLETE_PROJECT_CONTINUES",
+  "unit": 69,
+  "full_regression": {
+    "tests_run": 671,
+    "passed": 670,
+    "skipped": 1,
+    "seconds": 246.659,
+    "exit_code": 0,
+    "log": "evidence/integration/candidate-plan-lineage-full-tests-20261017.log"
+  },
+  "preservation_evidence": "evidence/integration/candidate-plan-lineage-live-integrity-20261017.json",
+  "documentation_and_understanding_updated": true,
+  "documentation_validation": {
+    "checked_at": "2026-10-17T16:09:39.876665+09:00",
+    "markdown_files": 51,
+    "local_links": 208,
+    "evidence_references": 2997,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "new_api_ui_contract": false,
+  "ui_change_reason": "Internal PLAN_ONLY reference CLI; existing API/UI unchanged. No browser verification claimed for this unit.",
+  "next": "Read-only design review: reuse existing split writer/validator for exclusive evidence-only candidate materialization and roundtrip verification. No candidate created.",
+  "scheduler": "geoai-2 ACTIVE FREQ=MINUTELY;INTERVAL=10; not evidence of training",
+  "collectors_or_trainers_observed": false
+}

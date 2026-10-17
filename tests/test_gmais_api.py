@@ -184,6 +184,64 @@ class GmaisApiTests(unittest.TestCase):
         self.assertEqual(main.store.list('gmais_results'), [])
         self.assertEqual(main.store.list('analyses'), [])
 
+    def register_input_fixture(self, payload, access_class='PUBLIC'):
+        from app.dataset_registry import register_version
+        ref = payload['input_refs'][0]
+        (self.root / 'quality.json').write_text('{}', encoding='utf-8')
+        return register_version(main.store, {
+            'schema_version': '0.2.0', 'dataset_id': ref['id'], 'version': ref['version'],
+            'source': {'institution': 'contract fixture', 'product': 'document', 'license': 'test only'},
+            'data_type': 'document', 'spatial': payload['aoi'],
+            'temporal': {'start': '2024-01-01T00:00:00Z', 'end': '2024-12-31T00:00:00Z', 'calendar': 'gregorian'},
+            'quality_status': 'VALIDATED', 'quality_report_ref': 'quality.json',
+            'access_class': access_class, 'sha256': ref['sha256'], 'artifact_uri': ref['uri'], 'lineage': [],
+        })
+
+    def test_registered_inputs_are_diagnosed_without_approving_job_or_changing_status_schema(self):
+        payload = self.request()
+        self.register_input_fixture(payload)
+        response, job = self.submit_blocked('registered-input', payload)
+        report = response.json()['error']['details']['input_resolution']
+        self.assertTrue(report['input_integrity_verified'])
+        self.assertFalse(report['ready_for_execution'])
+        self.assertFalse(report['scientific_approval'])
+        self.assertEqual(report['evaluation_scope'], 'SUBMISSION_SNAPSHOT_NOT_EXECUTION_AUTHORIZATION')
+        self.assertEqual(job['error_code'], 'MODEL_NOT_READY')
+        self.assertNotIn('input_resolution', job)
+        self.assertEqual(main.store.get('gmais_jobs', job['job_id'])['input_resolution'], report)
+        self.assertEqual(main.store.list('gmais_results'), [])
+
+    def test_idempotency_replays_original_diagnostic_after_artifact_changes(self):
+        payload = self.request()
+        self.register_input_fixture(payload)
+        first, _ = self.submit_blocked('diagnostic-snapshot', payload)
+        (self.root / payload['input_refs'][0]['uri']).write_bytes(b'changed after submission')
+        replay, _ = self.submit_blocked('diagnostic-snapshot', payload)
+        self.assertEqual(first.json(), replay.json())
+        fresh, _ = self.submit_blocked('diagnostic-fresh', payload)
+        self.assertFalse(fresh.json()['error']['details']['input_resolution']['input_integrity_verified'])
+
+    def test_restricted_input_diagnostic_does_not_expose_artifact_or_grant_access(self):
+        payload = self.request()
+        self.register_input_fixture(payload, access_class='CONFIDENTIAL')
+        response, _ = self.submit_blocked('restricted-diagnostic', payload)
+        report = response.json()['error']['details']['input_resolution']
+        self.assertEqual(report['status'], 'BLOCKED')
+        self.assertFalse(report['resolved'][0]['authorization_verified'])
+        self.assertNotIn(payload['input_refs'][0]['uri'], json.dumps(report))
+        self.assertNotIn(str(self.root), json.dumps(report))
+
+    def test_legacy_idempotent_job_without_diagnostic_is_replayed_without_rechecking(self):
+        payload = self.request()
+        _, job = self.submit_blocked('legacy-no-diagnostic', payload)
+        stored = main.store.get('gmais_jobs', job['job_id'])
+        stored.pop('input_resolution')
+        main.store.put('gmais_jobs', stored)
+        with patch('app.job_inputs.resolve_job_inputs', side_effect=AssertionError('Replay must not recheck')):
+            replay, replay_job = self.submit_blocked('legacy-no-diagnostic', payload)
+        self.assertEqual(replay_job, job)
+        self.assertNotIn('input_resolution', replay.json()['error']['details'])
+
     def test_external_agent_job_is_blocked_without_invoking_scientific_model(self):
         external = next(item for item in self.client.get('/v1/agents').json()['items']
                         if item['agent_id'] != 'lcluc-agent')

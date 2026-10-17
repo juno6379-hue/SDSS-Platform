@@ -1,0 +1,254 @@
+{
+  "normal": {
+    "schema_version": 1,
+    "job_id": "job-current-fixture",
+    "trace_id": "trace-current-fixture",
+    "available": true,
+    "reason": "CURRENT_LINEAGE_CHECKED",
+    "status": "INTEGRITY_VERIFIED",
+    "bindings": [
+      {
+        "input_index": 0,
+        "ref": {
+          "id": "job-root",
+          "version": "1",
+          "sha256": "283b857ebd2a8b30f0aaf39f39e534f17e9fb1ee549eb4b024f4ef35d0fda2ad"
+        },
+        "diagnostic_index": 0,
+        "reused": false,
+        "checked": true
+      }
+    ],
+    "diagnostics": [
+      {
+        "schema_version": 1,
+        "scope": "DATASET_LINEAGE_INTEGRITY_ONLY",
+        "status": "INTEGRITY_VERIFIED",
+        "root_ref": {
+          "id": "job-root",
+          "version": "1",
+          "sha256": "283b857ebd2a8b30f0aaf39f39e534f17e9fb1ee549eb4b024f4ef35d0fda2ad"
+        },
+        "nodes": [
+          {
+            "id": "job-root",
+            "version": "1",
+            "sha256": "283b857ebd2a8b30f0aaf39f39e534f17e9fb1ee549eb4b024f4ef35d0fda2ad",
+            "status": "VERIFIED",
+            "integrity_verified": true,
+            "expanded": true,
+            "authorization_verified": false,
+            "blocker_codes": [],
+            "quality_status": "VALIDATED",
+            "access_class": "PUBLIC"
+          }
+        ],
+        "edges": [],
+        "edge_direction": "PARENT_TO_CHILD",
+        "blockers": [],
+        "limits": {
+          "max_depth": 32,
+          "max_nodes": 64,
+          "root_depth": 0,
+          "hard_max_depth": 64,
+          "hard_max_nodes": 1024,
+          "depth_limit_reached": false,
+          "node_limit_reached": false
+        },
+        "lineage_integrity_verified": true,
+        "current_assets_revalidated": true,
+        "authorization_verified": false,
+        "execution_authorized": false,
+        "scientific_approval": false,
+        "network_requests": 0,
+        "source_files_written": 0
+      }
+    ],
+    "blockers": [],
+    "limits": {
+      "max_depth": 32,
+      "max_nodes_per_root": 64,
+      "max_total_nodes": 256,
+      "max_input_refs": 64,
+      "max_unique_roots": 32,
+      "node_checks_performed": 1,
+      "unique_roots_checked": 1
+    },
+    "current_assets_revalidated": true,
+    "lineage_integrity_verified": true,
+    "authorization_verified": false,
+    "execution_authorized": false,
+    "scientific_approval": false,
+    "network_requests": 0,
+    "source_files_written": 0
+  },
+  "budget_cache": {
+    "schema_version": 1,
+    "job_id": "job-current-fixture",
+    "trace_id": "trace-current-fixture",
+    "available": true,
+    "reason": "CHECK_LIMIT_REACHED",
+    "status": "BLOCKED",
+    "bindings": [
+      {
+        "input_index": 0,
+        "ref": {
+          "id": "job-root",
+          "version": "1",
+          "sha256": "283b857ebd2a8b30f0aaf39f39e534f17e9fb1ee549eb4b024f4ef35d0fda2ad"
+        },
+        "diagnostic_index": 0,
+        "reused": false,
+        "checked": true
+      },
+      {
+        "input_index": 1,
+        "ref": {
+          "id": "job-other",
+          "version": "1",
+          "sha256": "97d8339b8daebff6dac092c8778c1da236ab1621750c9caf91449612c1848bd7"
+        },
+        "diagnostic_index": null,
+        "reused": false,
+        "checked": false
+      },
+      {
+        "input_index": 2,
+        "ref": {
+          "id": "job-root",
+          "version": "1",
+          "sha256": "283b857ebd2a8b30f0aaf39f39e534f17e9fb1ee549eb4b024f4ef35d0fda2ad"
+        },
+        "diagnostic_index": 0,
+        "reused": true,
+        "checked": true
+      }
+    ],
+    "diagnostics": [
+      {
+        "schema_version": 1,
+        "scope": "DATASET_LINEAGE_INTEGRITY_ONLY",
+        "status": "INTEGRITY_VERIFIED",
+        "root_ref": {
+          "id": "job-root",
+          "version": "1",
+          "sha256": "283b857ebd2a8b30f0aaf39f39e534f17e9fb1ee549eb4b024f4ef35d0fda2ad"
+        },
+        "nodes": [
+          {
+            "id": "job-root",
+            "version": "1",
+            "sha256": "283b857ebd2a8b30f0aaf39f39e534f17e9fb1ee549eb4b024f4ef35d0fda2ad",
+            "status": "VERIFIED",
+            "integrity_verified": true,
+            "expanded": true,
+            "authorization_verified": false,
+            "blocker_codes": [],
+            "quality_status": "VALIDATED",
+            "access_class": "PUBLIC"
+          }
+        ],
+        "edges": [],
+        "edge_direction": "PARENT_TO_CHILD",
+        "blockers": [],
+        "limits": {
+          "max_depth": 32,
+          "max_nodes": 1,
+          "root_depth": 0,
+          "hard_max_depth": 64,
+          "hard_max_nodes": 1024,
+          "depth_limit_reached": false,
+          "node_limit_reached": false
+        },
+        "lineage_integrity_verified": true,
+        "current_assets_revalidated": true,
+        "authorization_verified": false,
+        "execution_authorized": false,
+        "scientific_approval": false,
+        "network_requests": 0,
+        "source_files_written": 0
+      }
+    ],
+    "blockers": [
+      {
+        "input_index": 1,
+        "code": "JOB_TOTAL_NODE_CHECK_LIMIT"
+      }
+    ],
+    "limits": {
+      "max_depth": 32,
+      "max_nodes_per_root": 1,
+      "max_total_nodes": 1,
+      "max_input_refs": 64,
+      "max_unique_roots": 32,
+      "node_checks_performed": 1,
+      "unique_roots_checked": 1
+    },
+    "current_assets_revalidated": true,
+    "lineage_integrity_verified": false,
+    "authorization_verified": false,
+    "execution_authorized": false,
+    "scientific_approval": false,
+    "network_requests": 0,
+    "source_files_written": 0
+  },
+  "conflict": {
+    "schema_version": 1,
+    "job_id": "job-current-fixture",
+    "trace_id": "trace-current-fixture",
+    "available": true,
+    "reason": "CURRENT_LINEAGE_CHECKED",
+    "status": "BLOCKED",
+    "bindings": [
+      {
+        "input_index": 0,
+        "ref": {
+          "id": "job-root",
+          "version": "1",
+          "sha256": "283b857ebd2a8b30f0aaf39f39e534f17e9fb1ee549eb4b024f4ef35d0fda2ad"
+        },
+        "diagnostic_index": null,
+        "reused": false,
+        "checked": false
+      },
+      {
+        "input_index": 1,
+        "ref": {
+          "id": "job-root",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "diagnostic_index": null,
+        "reused": false,
+        "checked": false
+      }
+    ],
+    "diagnostics": [],
+    "blockers": [
+      {
+        "input_index": 0,
+        "code": "JOB_INPUT_REFERENCE_CONFLICT"
+      },
+      {
+        "input_index": 1,
+        "code": "JOB_INPUT_REFERENCE_CONFLICT"
+      }
+    ],
+    "limits": {
+      "max_depth": 32,
+      "max_nodes_per_root": 64,
+      "max_total_nodes": 256,
+      "max_input_refs": 64,
+      "max_unique_roots": 32,
+      "node_checks_performed": 0,
+      "unique_roots_checked": 0
+    },
+    "current_assets_revalidated": false,
+    "lineage_integrity_verified": false,
+    "authorization_verified": false,
+    "execution_authorized": false,
+    "scientific_approval": false,
+    "network_requests": 0,
+    "source_files_written": 0
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-17T14:22:17.292348+09:00",
+  "verification_scope": "PINNED_SAVED_REPORT_PRESERVATION_AND_ABSENCE_ONLY",
+  "saved_readiness_sha256": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+  "saved_connectivity_diagnostics_present": false,
+  "saved_prepared_payload_is_null": true,
+  "saved_blockers_preserved": [
+    {
+      "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+      "detail": "같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.",
+      "scene": "west_java"
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 픽셀",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "saved_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "saved_union_scene_count": "UNKNOWN_NOT_PERSISTED",
+  "historical_zero_patch_scene_presence": "UNKNOWN_NOT_PERSISTED",
+  "new_optional_capture_run_on_real_data": false,
+  "source_rasters_read": false,
+  "historical_saved_report_regenerated": false,
+  "current_code_change_does_not_prove_historical_generating_code": true
+}

@@ -1,0 +1,81 @@
+{
+  "recorded_at": "2026-10-17T16:49:24.849113+09:00",
+  "status": "VERIFIED_REAL_METADATA_STAGED_QA_NOT_PERFORMED",
+  "protected_references_checked": 137,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 30,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [],
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "full_regression": {
+    "tests_run": 725,
+    "passed": 724,
+    "skipped": 1,
+    "seconds": 338.008,
+    "exit_code": 0,
+    "log": "evidence/integration/candidate-staging-full-tests-20261017.log"
+  },
+  "related": {
+    "passed": 19,
+    "seconds": 23.74
+  },
+  "independent": {
+    "passed": 19,
+    "seconds": 25.51
+  },
+  "live_validation": {
+    "recorded_at": "2026-10-17T16:47:13.056680+09:00",
+    "scope": "VERIFIED_REAL_METADATA_STAGING_ONLY",
+    "cli_exit_code": 0,
+    "staged_candidate": {
+      "sha256": "2ff7be093db3930d99f10cdc7687809222ef7f525ec6e9cf6248ec144725d158",
+      "bytes": 53247999
+    },
+    "staging_receipt": {
+      "sha256": "b8224cb3eb5c5ef0accf0cab10359401d792719e6fd8cae0b610279e759404dd",
+      "bytes": 3675
+    },
+    "independent_streamed_sha_size_matches_evidence_candidate": true,
+    "input_pins_and_package_reference_match": true,
+    "windows_native_relative_path_verified": true,
+    "candidate_row_count": 1368,
+    "source_row_count": 1384,
+    "projected_eligible_total": 1095,
+    "false_fields_verified": [
+      "qa_performed",
+      "readiness_assess_called",
+      "registered",
+      "registry_called",
+      "executed",
+      "learning_ready",
+      "ready_for_training",
+      "scientific_accuracy_validated",
+      "source_authenticity_verified",
+      "exact_row_binding_verified",
+      "spatial_overlap_rechecked",
+      "exact_class_counts_recomputed",
+      "execution_authorized",
+      "settlement_authorized",
+      "automatic_resume_allowed",
+      "training_split_leakage_resolved",
+      "source_rows_modified_or_reassigned"
+    ],
+    "qa_status": "NOT_PERFORMED",
+    "registered": false,
+    "training_executed": false,
+    "source_images_or_labels_copied": false,
+    "atomic_snapshot_guaranteed": false
+  },
+  "metadata_staged": true,
+  "candidate_qa_performed": false,
+  "candidate_registered": false,
+  "original_rows_modified": false,
+  "source_images_or_labels_copied": false,
+  "training_executed": false,
+  "saved_original_blockers": 5,
+  "latest_candidate_readiness": "NOT_ASSESSED",
+  "full_workspace_inventory": false,
+  "atomic_snapshot_guaranteed": false
+}

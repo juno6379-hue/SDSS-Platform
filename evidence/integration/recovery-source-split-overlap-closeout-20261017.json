@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-10-17T13:39:59.248090+09:00",
+  "unit": "recovery_source_split_overlap",
+  "status": "BLOCKED",
+  "implementation_tests": {
+    "passed": 15,
+    "seconds": 9.129
+  },
+  "independent_tests": {
+    "passed": 15,
+    "seconds": 10.368
+  },
+  "separate_synthetic_plan_experiment": {
+    "cases": 40,
+    "candidate_pairs_compared": 4532,
+    "passed": true,
+    "included_in_unittest_total": false
+  },
+  "full_regression": {
+    "tests_run": 521,
+    "passed": 520,
+    "skipped": 1,
+    "seconds": 160.195,
+    "exit_code": 0
+  },
+  "live_result": "evidence/integration/recovery-source-split-overlap-live-final-20261017.json",
+  "integrity": "evidence/integration/recovery-source-split-overlap-live-integrity-20261017.json",
+  "documentation_validation": {
+    "markdown_files": 39,
+    "local_links_checked": 157,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "ui_reason": "Internal read-only CLI; no public API, screen state or navigation contract change",
+  "next_unit": "PLANNED saved-readiness token/eligible-bbox evidence vs physical corner-diagnostic scope comparison; no blocker reclassification/removal, policy/split/training change"
+}

@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: legacy는UNKNOWN/current미실행/null이며0개통과나현재Registry역채움으로표시하지않는다
+ok 1 - legacy는UNKNOWN/current미실행/null이며0개통과나현재Registry역채움으로표시하지않는다
+  ---
+  duration_ms: 8.1048
+  type: 'test'
+  ...
+# Subtest: 저장UNAVAILABLE/INVALID/URI미지원은정확한원인과미실행상태를보존한다
+ok 2 - 저장UNAVAILABLE/INVALID/URI미지원은정확한원인과미실행상태를보존한다
+  ---
+  duration_ms: 1.9516
+  type: 'test'
+  ...
+# Subtest: 제한된currentMATCH는3축관측·집계만투영하며실행/ACL승인을생성하지않는다
+ok 3 - 제한된currentMATCH는3축관측·집계만투영하며실행/ACL승인을생성하지않는다
+  ---
+  duration_ms: 2.536
+  type: 'test'
+  ...
+# Subtest: 현재접근/품질BLOCKED는innerpinMATCH여도전체BLOCKED를유지한다
+ok 4 - 현재접근/품질BLOCKED는innerpinMATCH여도전체BLOCKED를유지한다
+  ---
+  duration_ms: 1.6704
+  type: 'test'
+  ...
+# Subtest: 현재무결성통과도저장pin불일치면BLOCKED이며내부원인·집계가분리된다
+ok 5 - 현재무결성통과도저장pin불일치면BLOCKED이며내부원인·집계가분리된다
+  ---
+  duration_ms: 1.2505
+  type: 'test'
+  ...
+# Subtest: Job literal SHA와top35키·scope/state/저장조회typed횟수를엄격히대조한다
+ok 6 - Job literal SHA와top35키·scope/state/저장조회typed횟수를엄격히대조한다
+  ---
+  duration_ms: 1.3934
+  type: 'test'
+  ...
+# Subtest: top15false와inner15false·7IO정수0은범위를섞거나bool/승인으로정규화하지않는다
+ok 7 - top15false와inner15false·7IO정수0은범위를섞거나bool/승인으로정규화하지않는다
+  ---
+  duration_ms: 15.2961
+  type: 'test'
+  ...
+# Subtest: 현재계수·무결성<=품질관측·품질PUBLICbool양방향과차단합계를검사한다
+ok 8 - 현재계수·무결성<=품질관측·품질PUBLICbool양방향과차단합계를검사한다
+  ---
+  duration_ms: 1.7592
+  type: 'test'
+  ...
+# Subtest: 현재차단768상한·safe코드·index와반복빈도보존을검사한다
+ok 9 - 현재차단768상한·safe코드·index와반복빈도보존을검사한다
+  ---
+  duration_ms: 3.2557
+  type: 'test'
+  ...
+# Subtest: 현재진단무효와capture실패는미실행null과기관측계수를각각보존한다
+ok 10 - 현재진단무효와capture실패는미실행null과기관측계수를각각보존한다
+  ---
+  duration_ms: 3.3444
+  type: 'test'
+  ...
+# Subtest: inner81의exact형태/count/hash/issue범위와MATCH논리·null상태를검사한다
+ok 11 - inner81의exact형태/count/hash/issue범위와MATCH논리·null상태를검사한다
+  ---
+  duration_ms: 2.3217
+  type: 'test'
+  ...
+# Subtest: Job·메뉴·재조회·표시중단후늦은성공과오류를폐기한다
+ok 12 - Job·메뉴·재조회·표시중단후늦은성공과오류를폐기한다
+  ---
+  duration_ms: 1.0956
+  type: 'test'
+  ...
+# Subtest: 400/404/429/503/인증·연결오류는안전하게구별하고429는서버검사수명을설명한다
+ok 13 - 400/404/429/503/인증·연결오류는안전하게구별하고429는서버검사수명을설명한다
+  ---
+  duration_ms: 1.0014
+  type: 'test'
+  ...
+# Subtest: 저장카드로컬상태/성공/실패와child identity·수동GET범위가독립이다
+ok 14 - 저장카드로컬상태/성공/실패와child identity·수동GET범위가독립이다
+  ---
+  duration_ms: 133.6052
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1802.7215

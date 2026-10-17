@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-10-17T14:05:55.935787+09:00",
+  "unit": "PROSPECTIVE_READINESS_CONNECTIVITY_WITNESS_PURE_HELPER",
+  "implementation_status": "TESTED_SYNTHETIC",
+  "live_scope": "PINNED_SAVED_REPORT_WITNESS_ABSENCE_AND_HELPER_NONE_ONLY",
+  "historical_cause": "UNKNOWN_NOT_PERSISTED",
+  "full_regression": {
+    "tests_run": 554,
+    "passed": 553,
+    "skipped": 1,
+    "seconds": 197.097,
+    "exit_code": 0
+  },
+  "related_tests": 16,
+  "independent_tests": 16,
+  "independent_graph_bfs_cases": 300,
+  "independent_event_checks": 3917,
+  "documentation_validation": {
+    "markdown_files": 41,
+    "local_links_checked": 165,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "reason": "Pure function without CLI/API/UI contracts; no live readiness integration",
+  "gate_or_policy_changed": false,
+  "persistent_witness_storage_implemented": false,
+  "overall_project_complete": false,
+  "next_unit": "Input provenance/eligible-scene identity and bounded persistence-envelope contract; no retroactive witness reconstruction",
+  "runtime_listeners": {
+    "5173": 30944,
+    "5174": 15608,
+    "8000": 32224,
+    "8001": 26912,
+    "8002": 35032
+  },
+  "collection_training_process_observed": false,
+  "schedule_status": "ACTIVE",
+  "schedule_interval_minutes": 10
+}

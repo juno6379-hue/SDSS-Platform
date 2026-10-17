@@ -1,0 +1,301 @@
+--- run-experiment-before.py
++++ run-experiment-after.py
+@@ -1,102 +1,196 @@
+-"""충분성 gate를 통과한 경우에만 새 의사라벨 실험을 실행한다. 기본 동작은 읽기 전용 QA이다."""
+-import argparse
+-import json
+-import re
+-import sys
+-from datetime import datetime,timezone
+-from pathlib import Path
+-
+-PROJECT_ROOT=Path(__file__).resolve().parents[1]
+-sys.path.insert(0,str(PROJECT_ROOT))
+-from backend.app.ml.readiness import assess, verify_files, default_policy
+-from backend.app.ml.service import prepare_dataset, train_model, infer_raster
+-from backend.app.ml.raster import safe_path
+-from backend.app.ml.dataset import file_digest
+-
+-
+-def run(manifests,root,readiness_path,policy=None,execute=False,run_id=None,epochs=20,resume=False,max_seconds=1800,epochs_per_call=20):
+-    root=root.resolve()
+-    result=assess([Path(path).resolve() for path in manifests],root,policy)
+-    result['assessed_at']=datetime.now(timezone.utc).isoformat()
+-    readiness_path=safe_path(root,readiness_path)
+-    readiness_path.parent.mkdir(parents=True,exist_ok=True)
+-    readiness_path.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+-    if not execute or not result['ready_for_training']:
+-        return result
+-    if not run_id or not re.fullmatch('[A-Za-z0-9_-]{1,80}',run_id):
+-        raise ValueError('execute에는 고유한 영문/숫자 run-id가 필요합니다.')
+-    destination=safe_path(root,f'results/{run_id}')
+-    if destination.exists() and not resume:
+-        raise ValueError('기존 실험을 덮어쓰지 않습니다. 새 run-id를 지정하세요.')
+-    verify_files(result['verified_files'],root)
+-    if resume:
+-        previous=json.loads((destination/'experiment.json').read_text(encoding='utf-8'))
+-        if previous['status'] not in ('paused_training','training_started'):
+-            raise ValueError('중단된 동일 실험만 재개할 수 있습니다.')
+-        prepared=previous['dataset']
+-        # 재개 시 새 계획을 기존 가중치의 실험 범위로 잘못 표시하지 않는다.
+-        frozen=json.loads(safe_path(root,prepared['manifest_path']).read_text(encoding='utf-8'))['readiness_contract']
+-        current=result['prepared_payload']['readiness_contract']
+-        if frozen['policy']!=current['policy'] or {r['path']:r['sha256'] for r in frozen['verified_files']}!={r['path']:r['sha256'] for r in current['verified_files']}:
+-            raise ValueError('재개 시 이전 실험의 계획·입력 출처를 변경할 수 없습니다.')
+-    else:
+-        prepared=prepare_dataset({**result['prepared_payload'],'dataset_id':run_id+'_dataset'},root)
+-    destination.mkdir(parents=True,exist_ok=True)
+-    base={'schema_version':1,'run_id':run_id,'status':'training_started','dataset':prepared,
+-          'model_status':'Draft','independent_evaluation':False,'scientific_accuracy_validated':False,
+-          'user_full_period_target_met':result['coverage']['available_cells']==36 and result['policy']['required_years']==list(range(2020,2026)),
+-          'experiment_years':result['policy']['required_years'],'readiness_path':str(readiness_path.relative_to(root))}
+-    (destination/'experiment.json').write_text(json.dumps(base,ensure_ascii=False,indent=2),encoding='utf-8')
+-    trained=train_model({'dataset_path':prepared['manifest_path'],'model_id':run_id+'_model',
+-                         'epochs':epochs,'device':'cpu','batch_size':1,'seed':result['policy']['seed'],
+-                         'resume':resume,'max_seconds':max_seconds,'epochs_per_call':epochs_per_call},root)
+-    if trained.get('training_state')=='paused':
+-        report={**base,'status':'paused_training','training':trained,'finished_at':datetime.now(timezone.utc).isoformat()}
+-        (destination/'experiment.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+-        return report
+-    predictions=[]
+-    for index,scene in enumerate(result['prepared_payload']['scenes']):
+-        predictions.append({'province':scene['province'],'year':scene['year'],'group':scene['group'],
+-                            **infer_raster({'image_path':scene['image_path'],'checkpoint_path':trained['checkpoint_path'],
+-                                             'normalization':scene['normalization'],'quality_mask_path':scene['quality_mask_path'],
+-                                             'source_scene':{'scene_id':scene['scene_id'],'image_sha256':scene['image_sha256'],'band_names':result['policy']['band_names']},
+-                                             'output_id':f'{run_id}/predictions/{index}'},root)})
+-    accepted=trained['weak_label_experiment_output_accepted']
+-    report={**base,'schema_version':1,'run_id':run_id,'status':'completed_weak_label_experiment' if accepted else 'completed_rejected_prediction_collapse',
+-            'model_status':'Draft','independent_evaluation':False,'scientific_accuracy_validated':False,
+-            'claim':'의사라벨 일치도 실험입니다. 독립 지상정답 정확도나 운영 승인이 아닙니다.',
+-            'readiness_path':str(readiness_path.relative_to(root)),'readiness_sha256':file_digest(readiness_path),
+-            'dataset':prepared,'training':trained,'predictions':predictions,'output_accepted':accepted,
+-            'finished_at':datetime.now(timezone.utc).isoformat()}
+-    destination.mkdir(parents=True,exist_ok=True)
+-    (destination/'experiment.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+-    return report
+-
+-
+-def main():
+-    if hasattr(sys.stdout,'reconfigure'):
+-        sys.stdout.reconfigure(encoding='utf-8')
+-    parser=argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument('--manifest',type=Path,nargs='+',required=True)
+-    parser.add_argument('--data-root',type=Path,default=PROJECT_ROOT/'data')
+-    parser.add_argument('--readiness-output',type=Path,default=PROJECT_ROOT/'data/first-group/training-readiness.json')
+-    parser.add_argument('--plan',type=Path,help='범위/밴드/클래스/패치 기준을 명시한 JSON. 실자료 1000개 하한은 낮출 수 없음')
+-    parser.add_argument('--write-default-plan',type=Path)
+-    parser.add_argument('--execute',action='store_true')
+-    parser.add_argument('--run-id')
+-    parser.add_argument('--epochs',type=int,default=20)
+-    parser.add_argument('--resume',action='store_true',help='동일 dataset/config의 마지막 완료 epoch부터 재개')
+-    parser.add_argument('--max-seconds',type=float,default=1800,help='호출별 학습/평가 시간 예산; 미완료 epoch는 재개 때 다시 실행')
+-    parser.add_argument('--epochs-per-call',type=int,default=20)
+-    args=parser.parse_args()
+-    if args.write_default_plan:
+-        args.write_default_plan.write_text(json.dumps(default_policy(),ensure_ascii=False,indent=2),encoding='utf-8')
+-    policy=json.loads(args.plan.read_text(encoding='utf-8')) if args.plan else None
+-    result=run(args.manifest,args.data_root,args.readiness_output,policy,args.execute,args.run_id,args.epochs,args.resume,args.max_seconds,args.epochs_per_call)
+-    print(json.dumps({'status':result['status'],'ready_for_training':result.get('ready_for_training',False),
+-                      'blocker_count':len(result.get('blockers',[])),'scientific_accuracy_validated':False},ensure_ascii=False))
+-    return 2 if args.execute and result.get('status')=='blocked' else 0
+-
+-
+-if __name__=='__main__':
+-    raise SystemExit(main())
++"""충분성 gate를 통과한 경우에만 새 의사라벨 실험을 실행한다. 기본 동작은 읽기 전용 QA이다."""
++import argparse
++import json
++import re
++import sys
++from datetime import datetime,timezone
++from pathlib import Path,PureWindowsPath
++
++PROJECT_ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(PROJECT_ROOT))
++from backend.app.ml.readiness import assess, verify_files, default_policy
++from backend.app.ml.service import prepare_dataset, train_model, infer_raster
++from backend.app.ml.raster import safe_path
++from backend.app.ml.dataset import file_digest
++
++
++def _local_path(value):
++    text=str(value)
++    if text.startswith(('\\\\','//')) or re.match(r'^[A-Za-z][A-Za-z0-9+.-]*:',text) and not re.match(r'^[A-Za-z]:[\\/]',text):
++        raise ValueError('Diagnostic paths must be local')
++    remainder=text[2:] if re.match(r'^[A-Za-z]:[\\/]',text) else text
++    if ':' in remainder:raise ValueError('Diagnostic paths cannot use alternate data streams')
++    path=Path(value)
++    devices={'CON','PRN','AUX','NUL','CONIN$','CONOUT$'}|{prefix+number for prefix in ('COM','LPT') for number in '123456789¹²³'}
++    windows=PureWindowsPath(text)
++    for part in windows.parts:
++        if part in (windows.anchor,'.','..'):continue
++        if part.rstrip(' .')!=part or part.split('.')[0].strip(' .').upper() in devices:
++            raise ValueError('Ambiguous or reserved Windows diagnostic path')
++    return path
++
++
++def _directory_identity(path):
++    if not path.is_dir():raise ValueError('Diagnostic parent is not a directory')
++    stat=path.stat()
++    return (stat.st_dev,stat.st_ino)
++
++
++def _diagnostic_output(root,value,inputs):
++    logical=_local_path(value)
++    logical=logical if logical.is_absolute() else root/logical
++    if logical.is_symlink() or logical.exists():raise ValueError('Diagnostic readiness output must be a new file')
++    target=safe_path(root,logical)
++    protected={_local_path(path).resolve() for path in inputs}
++    if target in protected:raise ValueError('Diagnostic output aliases an input or plan')
++    parent=logical.parent.resolve()
++    anchor=logical.parent
++    while not anchor.exists():
++        if anchor.is_symlink():raise ValueError('Broken diagnostic parent symlink')
++        anchor=anchor.parent
++    return {'logical':logical,'target':target,'parent':parent,'anchor':anchor,'anchor_identity':_directory_identity(anchor)}
++
++
++def _recheck_diagnostic_output(root,output):
++    logical=output['logical']
++    if logical.is_symlink() or logical.exists():raise ValueError('Diagnostic readiness output appeared during assessment')
++    if safe_path(root,logical)!=output['target'] or logical.parent.resolve()!=output['parent'] or _directory_identity(output['anchor'])!=output['anchor_identity']:
++        raise ValueError('Diagnostic output parent/target changed during assessment')
++
++
++def _connectivity_summary(result):
++    diagnostic=result.get('connectivity_diagnostics')
++    known={'CAPTURED_COMPONENTS_MATCH','CAPTURED_COMPONENT_MISMATCH','NOT_CAPTURED_UNSUPPORTED_POLICY','NOT_CAPTURED_BUDGET','NOT_CAPTURED_UNSUPPORTED_METADATA','FAILED_DIAGNOSTIC','FAILED_ADAPTER_BOUNDARY'}
++    status='NOT_REPORTED';scenes=None;patches=None
++    if type(diagnostic) is dict:
++        reported=diagnostic.get('capture_status')
++        status=reported if type(reported) is str and reported in known else 'UNKNOWN_CAPTURE_STATUS'
++        count=diagnostic.get('scene_count')
++        if type(count) is int and count>=0:scenes=count
++        count=diagnostic.get('supplied_eligible_patch_sum')
++        if type(count) is int and count>=0:patches=count
++    counts=result.get('patch_counts_by_split')
++    if patches is None and type(counts) is dict and set(counts)=={'train','val','test'} and all(type(v) is int and v>=0 for v in counts.values()):patches=sum(counts.values())
++    return {'connectivity_capture_status':status,'connectivity_scene_count':scenes,'eligible_patch_count':patches,'connectivity_is_training_authorization':False}
++
++
++def run(manifests,root,readiness_path,policy=None,execute=False,run_id=None,epochs=20,resume=False,max_seconds=1800,epochs_per_call=20,*,connectivity_diagnostics=False):
++    if type(connectivity_diagnostics) is not bool:
++        raise ValueError('connectivity_diagnostics must be an exact bool')
++    if connectivity_diagnostics:
++        _local_path(root)
++    root=root.resolve()
++    if connectivity_diagnostics:
++        normalized=[_local_path(path).resolve() for path in manifests]
++        output=_diagnostic_output(root,readiness_path,normalized)
++        result=assess(normalized,root,policy,connectivity_diagnostics=True)
++    else:
++        result=assess([Path(path).resolve() for path in manifests],root,policy)
++    result['assessed_at']=datetime.now(timezone.utc).isoformat()
++    if connectivity_diagnostics:
++        _recheck_diagnostic_output(root,output)
++        readiness_path=output['target']
++        readiness_path.parent.mkdir(parents=True,exist_ok=True)
++        _recheck_diagnostic_output(root,output)
++        with readiness_path.open('x',encoding='utf-8') as stream:
++            json.dump(result,stream,ensure_ascii=False,indent=2,allow_nan=False)
++    else:
++        readiness_path=safe_path(root,readiness_path)
++        readiness_path.parent.mkdir(parents=True,exist_ok=True)
++        readiness_path.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
++    if not execute or not result['ready_for_training']:
++        return result
++    if not run_id or not re.fullmatch('[A-Za-z0-9_-]{1,80}',run_id):
++        raise ValueError('execute에는 고유한 영문/숫자 run-id가 필요합니다.')
++    destination=safe_path(root,f'results/{run_id}')
++    if destination.exists() and not resume:
++        raise ValueError('기존 실험을 덮어쓰지 않습니다. 새 run-id를 지정하세요.')
++    verify_files(result['verified_files'],root)
++    if resume:
++        previous=json.loads((destination/'experiment.json').read_text(encoding='utf-8'))
++        if previous['status'] not in ('paused_training','training_started'):
++            raise ValueError('중단된 동일 실험만 재개할 수 있습니다.')
++        prepared=previous['dataset']
++        # 재개 시 새 계획을 기존 가중치의 실험 범위로 잘못 표시하지 않는다.
++        frozen=json.loads(safe_path(root,prepared['manifest_path']).read_text(encoding='utf-8'))['readiness_contract']
++        current=result['prepared_payload']['readiness_contract']
++        if frozen['policy']!=current['policy'] or {r['path']:r['sha256'] for r in frozen['verified_files']}!={r['path']:r['sha256'] for r in current['verified_files']}:
++            raise ValueError('재개 시 이전 실험의 계획·입력 출처를 변경할 수 없습니다.')
++    else:
++        prepared=prepare_dataset({**result['prepared_payload'],'dataset_id':run_id+'_dataset'},root)
++    destination.mkdir(parents=True,exist_ok=True)
++    base={'schema_version':1,'run_id':run_id,'status':'training_started','dataset':prepared,
++          'model_status':'Draft','independent_evaluation':False,'scientific_accuracy_validated':False,
++          'user_full_period_target_met':result['coverage']['available_cells']==36 and result['policy']['required_years']==list(range(2020,2026)),
++          'experiment_years':result['policy']['required_years'],'readiness_path':str(readiness_path.relative_to(root))}
++    (destination/'experiment.json').write_text(json.dumps(base,ensure_ascii=False,indent=2),encoding='utf-8')
++    trained=train_model({'dataset_path':prepared['manifest_path'],'model_id':run_id+'_model',
++                         'epochs':epochs,'device':'cpu','batch_size':1,'seed':result['policy']['seed'],
++                         'resume':resume,'max_seconds':max_seconds,'epochs_per_call':epochs_per_call},root)
++    if trained.get('training_state')=='paused':
++        report={**base,'status':'paused_training','training':trained,'finished_at':datetime.now(timezone.utc).isoformat()}
++        (destination/'experiment.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
++        return report
++    predictions=[]
++    for index,scene in enumerate(result['prepared_payload']['scenes']):
++        predictions.append({'province':scene['province'],'year':scene['year'],'group':scene['group'],
++                            **infer_raster({'image_path':scene['image_path'],'checkpoint_path':trained['checkpoint_path'],
++                                             'normalization':scene['normalization'],'quality_mask_path':scene['quality_mask_path'],
++                                             'source_scene':{'scene_id':scene['scene_id'],'image_sha256':scene['image_sha256'],'band_names':result['policy']['band_names']},
++                                             'output_id':f'{run_id}/predictions/{index}'},root)})
++    accepted=trained['weak_label_experiment_output_accepted']
++    report={**base,'schema_version':1,'run_id':run_id,'status':'completed_weak_label_experiment' if accepted else 'completed_rejected_prediction_collapse',
++            'model_status':'Draft','independent_evaluation':False,'scientific_accuracy_validated':False,
++            'claim':'의사라벨 일치도 실험입니다. 독립 지상정답 정확도나 운영 승인이 아닙니다.',
++            'readiness_path':str(readiness_path.relative_to(root)),'readiness_sha256':file_digest(readiness_path),
++            'dataset':prepared,'training':trained,'predictions':predictions,'output_accepted':accepted,
++            'finished_at':datetime.now(timezone.utc).isoformat()}
++    destination.mkdir(parents=True,exist_ok=True)
++    (destination/'experiment.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
++    return report
++
++
++def main():
++    if hasattr(sys.stdout,'reconfigure'):
++        sys.stdout.reconfigure(encoding='utf-8')
++    parser=argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--manifest',type=Path,nargs='+',required=True)
++    parser.add_argument('--data-root',type=Path,default=PROJECT_ROOT/'data')
++    parser.add_argument('--readiness-output',type=Path,help='진단 옵션에는 data-root 안의 명시적인 새 파일 필요')
++    parser.add_argument('--connectivity-diagnostics',action='store_true',help='연결 근거 관측을 추가; 학습 승인이 아님')
++    parser.add_argument('--plan',type=Path,help='범위/밴드/클래스/패치 기준을 명시한 JSON. 실자료 1000개 하한은 낮출 수 없음')
++    parser.add_argument('--write-default-plan',type=Path)
++    parser.add_argument('--execute',action='store_true')
++    parser.add_argument('--run-id')
++    parser.add_argument('--epochs',type=int,default=20)
++    parser.add_argument('--resume',action='store_true',help='동일 dataset/config의 마지막 완료 epoch부터 재개')
++    parser.add_argument('--max-seconds',type=float,default=1800,help='호출별 학습/평가 시간 예산; 미완료 epoch는 재개 때 다시 실행')
++    parser.add_argument('--epochs-per-call',type=int,default=20)
++    args=parser.parse_args()
++    if args.connectivity_diagnostics:
++        if args.write_default_plan:
++            parser.error('--connectivity-diagnostics cannot be combined with --write-default-plan')
++        if args.readiness_output is None:
++            parser.error('--connectivity-diagnostics requires an explicit new --readiness-output')
++        try:
++            _local_path(args.data_root)
++            _diagnostic_output(args.data_root.resolve(),args.readiness_output,[*args.manifest,*([args.plan] if args.plan else [])])
++            policy=json.loads(args.plan.read_text(encoding='utf-8')) if args.plan else None
++            result=run(args.manifest,args.data_root,args.readiness_output,policy,args.execute,args.run_id,args.epochs,args.resume,args.max_seconds,args.epochs_per_call,connectivity_diagnostics=True)
++        except (ValueError,OSError,TypeError,KeyError,RecursionError,OverflowError) as exc:
++            print(('Connectivity diagnostics failed: '+str(exc)).encode('ascii',errors='backslashreplace').decode('ascii'),file=sys.stderr)
++            return 1
++    else:
++        if args.write_default_plan:
++            args.write_default_plan.write_text(json.dumps(default_policy(),ensure_ascii=False,indent=2),encoding='utf-8')
++        policy=json.loads(args.plan.read_text(encoding='utf-8')) if args.plan else None
++        result=run(args.manifest,args.data_root,args.readiness_output or PROJECT_ROOT/'data/first-group/training-readiness.json',policy,args.execute,args.run_id,args.epochs,args.resume,args.max_seconds,args.epochs_per_call)
++    summary={'status':result['status'],'ready_for_training':result.get('ready_for_training',False),
++             'blocker_count':len(result.get('blockers',[])),'scientific_accuracy_validated':False}
++    if args.connectivity_diagnostics:summary.update(_connectivity_summary(result))
++    print(json.dumps(summary,ensure_ascii=args.connectivity_diagnostics))
++    return 2 if args.execute and result.get('status')=='blocked' else 0
++
++
++if __name__=='__main__':
++    raise SystemExit(main())

@@ -1,0 +1,67 @@
+{
+  "observed_at": "2026-10-17T12:44:15.722Z",
+  "url": "http://127.0.0.1:5174/#/view/6",
+  "checks": [
+    {
+      "check": "default_off_blank_report_button_disabled",
+      "pass": true
+    },
+    {
+      "check": "opt_in_blank_version_disabled_and_guidance",
+      "pass": true
+    },
+    {
+      "check": "latest_alias_local_disabled",
+      "pass": true
+    },
+    {
+      "check": "padded_fixed_version_preserved_and_enabled",
+      "pass": true
+    },
+    {
+      "check": "missing_report_422_no_success_and_controls_reenabled",
+      "pass": true
+    },
+    {
+      "check": "opt_out_hides_version_and_old_registration_enabled",
+      "pass": true
+    },
+    {
+      "check": "back_navigation_fresh_blank_form_no_old_error",
+      "pass": true
+    },
+    {
+      "check": "layout_no_overlap_no_horizontal_overflow_svg",
+      "pass": true
+    }
+  ],
+  "layout": {
+    "firstHelpTop": 439.8372802734375,
+    "height": 1087,
+    "noSummaryOverlap": true,
+    "overflow": 0,
+    "summaryBottom": 427.8408851623535,
+    "svg": true,
+    "width": 1449
+  },
+  "screenshot": "evidence/integration/model-version-ui-desktop-final-20261017.png",
+  "initial_screenshot": "evidence/integration/model-version-ui-desktop-20261017.png",
+  "negative_browser_registration_clicks": 1,
+  "successful_operating_registrations": 0,
+  "final_report_empty": true,
+  "final_option_off": true,
+  "console_logs": [
+    {
+      "level": "error",
+      "message": "[vite] Failed to reload /src/ModelReview.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)",
+      "timestamp": "2026-10-17T12:43:18.402Z",
+      "url": "http://127.0.0.1:5174/@vite/client"
+    }
+  ],
+  "console_limit": "One transient Vite reload error during import-before-new-CSS edit; reloaded final page renders and API inventory returns. No claim of zero historical errors.",
+  "limits": [
+    "Positive registration, delayed responses, duplicate-click concurrency and refresh failure tested in isolated tests only; no operating successful registration",
+    "Browser back checked after completed 422, not in-flight server cancellation"
+  ],
+  "status": "VERIFIED_REAL_NEGATIVE_UI_ONLY"
+}

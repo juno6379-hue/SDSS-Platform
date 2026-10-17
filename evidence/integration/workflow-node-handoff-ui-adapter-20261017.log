@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: Python shared Unicode golden canonical/SHA includes nonBMP·accent·Hangul·U2028
+ok 1 - Python shared Unicode golden canonical/SHA includes nonBMP·accent·Hangul·U2028
+  ---
+  duration_ms: 16.2865
+  type: 'test'
+  ...
+# Subtest: canonical sorts keys by codepoint and numeric keys lexically without JS object re-enumeration
+ok 2 - canonical sorts keys by codepoint and numeric keys lexically without JS object re-enumeration
+  ---
+  duration_ms: 0.4995
+  type: 'test'
+  ...
+# Subtest: request preserves whitespace/escape raw JSON and hashes actual JSON.stringify outer body
+ok 3 - request preserves whitespace/escape raw JSON and hashes actual JSON.stringify outer body
+  ---
+  duration_ms: 5.5227
+  type: 'test'
+  ...
+# Subtest: strict parser refuses duplicates including escaped keys, floats/exponents/nonfinite/int32/type syntax
+ok 4 - strict parser refuses duplicates including escaped keys, floats/exponents/nonfinite/int32/type syntax
+  ---
+  duration_ms: 1.3633
+  type: 'test'
+  ...
+# Subtest: strict scalar/depth/UTF8 limits and Unicode codepoint length are explicit
+ok 5 - strict scalar/depth/UTF8 limits and Unicode codepoint length are explicit
+  ---
+  duration_ms: 1.3561
+  type: 'test'
+  ...
+# Subtest: valid server MATCH requires exact wrapper/result and all hashes/counts/20false7typed0
+ok 6 - valid server MATCH requires exact wrapper/result and all hashes/counts/20false7typed0
+  ---
+  duration_ms: 8.3741
+  type: 'test'
+  ...
+# Subtest: typed status rejects coercible arrays and MATCH inconsistencies
+ok 7 - typed status rejects coercible arrays and MATCH inconsistencies
+  ---
+  duration_ms: 5.6679
+  type: 'test'
+  ...
+# Subtest: server metadata mismatch BLOCKED is displayed with exact local proposal digest
+ok 8 - server metadata mismatch BLOCKED is displayed with exact local proposal digest
+  ---
+  duration_ms: 2.3682
+  type: 'test'
+  ...
+# Subtest: core invalid Workflow HTTP200 BLOCKED keeps null diagnostics, not fake zero pass
+ok 9 - core invalid Workflow HTTP200 BLOCKED keeps null diagnostics, not fake zero pass
+  ---
+  duration_ms: 2.7423
+  type: 'test'
+  ...
+# Subtest: unknown selection / empty selected inputs / invalid proposal preserve legitimate BLOCKED stages
+ok 10 - unknown selection / empty selected inputs / invalid proposal preserve legitimate BLOCKED stages
+  ---
+  duration_ms: 6.291
+  type: 'test'
+  ...
+# Subtest: comparison per-ref indices must be in both selected and proposed input ranges
+ok 11 - comparison per-ref indices must be in both selected and proposed input ranges
+  ---
+  duration_ms: 2.3012
+  type: 'test'
+  ...
+# Subtest: stale reply ignores generation/raw inputs/revision/route differences and safe errors stay bounded
+ok 12 - stale reply ignores generation/raw inputs/revision/route differences and safe errors stay bounded
+  ---
+  duration_ms: 0.6651
+  type: 'test'
+  ...
+# Subtest: component has only manual POST, independent state and route/unmount guards; parent mount avoids plan result keys
+ok 13 - component has only manual POST, independent state and route/unmount guards; parent mount avoids plan result keys
+  ---
+  duration_ms: 40.2208
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1400.1225

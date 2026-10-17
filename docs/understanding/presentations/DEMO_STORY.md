@@ -1,0 +1,496 @@
+# 발표 시연: 보이는 것과 검증된 것을 구분하기
+
+| 필드 | 값 |
+|---|---|
+| updated_at | 2026-10-17 23:36 KST — 108 최종 근거·Git 상태 반영 |
+| source_commit | Git 연결됨; 문서 작성 시 변경분 미커밋, evidence snapshot SHA로 추적 (원격 기준 d483d25) |
+| evidence_paths | `docs/implementation/00_next_session_handoff.md`; `docs/implementation/23_ml_readiness_resume_20261017.md`; `docs/implementation/23_ui_completion.md`; `evidence/integration/ml-readiness-resume-20261017.json`; `evidence/integration/resume-tests-script-20261017.log`; `docs/implementation/30_workflow_diagnostics_ui.md`; `frontend/src/InputDiagnostics.tsx`; `frontend/src/inputDiagnosticsAdapter.ts`; `evidence/integration/workflow-policy-ui-build-20261017.log`; `evidence/integration/workflow-policy-live-ui-20261017.json`; `evidence/ui-20261017/workflow-diagnostics-live.png`; `backend/app/job_snapshot.py`; `docs/implementation/31_job_input_snapshot_read.md`; `docs/implementation/32_job_snapshot_ui.md`; `evidence/integration/job-snapshot-tests-20261017.log`; `evidence/integration/job-snapshot-full-tests-20261017.log`; `evidence/integration/job-snapshot-ui-build-20261017.log`; `evidence/integration/job-snapshot-live-ui-20261017.json`; `docs/implementation/33_dashboard_reference_ui.md`; `docs/implementation/34_data_catalog_reference_ui.md`; `evidence/integration/dashboard-reference-build-20261017.log`; `evidence/integration/data-catalog-reference-build-20261017.log`; `evidence/integration/reference-ui-live-20261017.json`; `backend/app/dataset_lineage_api.py`; `docs/implementation/36_dataset_lineage_api_plan.md`; `docs/implementation/37_dataset_lineage_ui.md`; `evidence/integration/dataset-lineage-api-independent-tests-20261017.log`; `evidence/integration/dataset-lineage-api-full-tests-20261017.log`; `evidence/integration/dataset-lineage-ui-build-20261017.log`; `evidence/integration/dataset-lineage-api-live-20261017.json`; `backend/app/job_lineage.py`; `backend/app/job_lineage_api.py`; `docs/implementation/38_job_lineage_validation.md`; `docs/implementation/39_job_lineage_ui.md`; `evidence/integration/job-lineage-tests-20261017.log`; `evidence/integration/job-lineage-full-tests-20261017.log`; `evidence/integration/job-lineage-ui-build-20261017.log`; `evidence/integration/job-lineage-live-20261017.json`; `backend/app/workflow_lineage.py`; `backend/app/workflow_lineage_api.py`; `backend/app/lineage_batch.py`; `docs/implementation/40_workflow_lineage_validation.md`; `docs/implementation/41_workflow_lineage_ui.md`; `evidence/integration/workflow-lineage-independent-tests-20261017.log`; `evidence/integration/workflow-lineage-full-tests-20261017.log`; `evidence/integration/workflow-lineage-ui-build-20261017.log`; `evidence/integration/workflow-lineage-live-20261017.json`; `docs/implementation/42_catalog_insights_navigation.md`; `docs/implementation/43_catalog_insight_data_contract.md`; `frontend/src/CatalogInsights.tsx`; `frontend/src/catalogNavigation.ts`; `evidence/integration/catalog-insights-navigation-tests-20261017.log`; `evidence/integration/catalog-navigation-independent-ui-tests-20261017.log`; `evidence/integration/catalog-insights-navigation-build-20261017.log`; `evidence/integration/catalog-insights-browser-20261017.json`; `backend/app/ml/split_validation.py`; `scripts/validate_training_split_repair.py`; `docs/implementation/44_ml_split_repair_validation.md`; `evidence/integration/ml-split-validation-tests-20261017.log`; `evidence/integration/ml-split-validation-independent-20261017.log`; `evidence/integration/ml-split-validation-full-tests-20261017.log`; `evidence/integration/ml-split-repair-validation-live-final-20261017.json`; `evidence/integration/ml-split-validation-live-integrity-20261017.json`; `backend/app/data/recovery_terminal.py`; `scripts/inspect_recovery_terminal.py`; `docs/implementation/45_recovery_terminal_reconciliation.md`; `evidence/integration/recovery-terminal-tests-20261017.log`; `evidence/integration/recovery-terminal-independent-20261017.log`; `evidence/integration/recovery-terminal-full-tests-20261017.log`; `evidence/integration/recovery-terminal-live-final-20261017.json`; `evidence/integration/recovery-terminal-live-integrity-20261017.json`; `backend/app/data/recovery_aggregate.py`; `scripts/inspect_recovery_aggregate.py`; `docs/implementation/46_recovery_aggregate_reconciliation.md`; `evidence/integration/recovery-aggregate-tests-20261017.log`; `evidence/integration/recovery-aggregate-independent-20261017.log`; `evidence/integration/recovery-aggregate-full-tests-20261017.log`; `evidence/integration/recovery-aggregate-live-final-20261017.json`; `evidence/integration/recovery-aggregate-live-integrity-20261017.json`; `backend/app/data/recovery_crop.py`; `scripts/inspect_recovery_crop.py`; `docs/implementation/47_recovery_crop_reconciliation.md`; `evidence/integration/recovery-crop-tests-20261017.log`; `evidence/integration/recovery-crop-independent-20261017.log`; `evidence/integration/recovery-crop-full-tests-20261017.log`; `evidence/integration/recovery-crop-live-final-20261017.json`; `evidence/integration/recovery-crop-live-integrity-20261017.json`; `backend/app/data/recovery_raster_headers.py`; `scripts/inspect_recovery_raster_headers.py`; `docs/implementation/48_recovery_raster_header_validation.md`; `evidence/integration/recovery-raster-headers-tests-20261017.log`; `evidence/integration/recovery-raster-headers-independent-20261017.log`; `evidence/integration/recovery-raster-headers-live-final-20261017.json`; `evidence/integration/recovery-raster-headers-full-tests-20261017.log`; `evidence/integration/recovery-raster-headers-live-integrity-20261017.json`; `backend/app/data/recovery_raster_content.py`; `scripts/inspect_recovery_raster_content.py`; `docs/implementation/49_recovery_raster_content_validation.md`; `evidence/integration/recovery-raster-content-tests-20261017.log`; `evidence/integration/recovery-raster-content-independent-20261017.log`; `evidence/integration/recovery-raster-content-live-final-20261017.json`; `evidence/integration/recovery-raster-content-full-tests-20261017.log`; `evidence/integration/recovery-raster-content-live-integrity-20261017.json`; `backend/app/data/recovery_auxiliary_content.py`; `scripts/inspect_recovery_auxiliary_content.py`; `docs/implementation/50_recovery_auxiliary_content_validation.md`; `evidence/integration/recovery-auxiliary-content-tests-20261017.log`; `evidence/integration/recovery-auxiliary-content-independent-20261017.log`; `evidence/integration/recovery-auxiliary-content-live-final-20261017.json`; `evidence/integration/recovery-auxiliary-content-full-tests-20261017.log`; `evidence/integration/recovery-auxiliary-content-live-integrity-20261017.json`; `backend/app/data/recovery_auxiliary_headers.py`; `scripts/inspect_recovery_auxiliary_headers.py`; `docs/implementation/51_recovery_auxiliary_headers_validation.md`; `evidence/integration/recovery-auxiliary-headers-tests-20261017.log`; `evidence/integration/recovery-auxiliary-headers-independent-20261017.log`; `evidence/integration/recovery-auxiliary-headers-live-final-20261017.json`; `evidence/integration/recovery-auxiliary-headers-full-tests-20261017.log`; `evidence/integration/recovery-auxiliary-headers-live-integrity-20261017.json`; `backend/app/data/recovery_boundary.py`; `scripts/inspect_recovery_boundary.py`; `docs/implementation/52_recovery_boundary_validation.md`; `evidence/integration/recovery-boundary-tests-20261017.log`; `evidence/integration/recovery-boundary-independent-20261017.log`; `evidence/integration/recovery-boundary-live-final-20261017.json`; `evidence/integration/recovery-boundary-full-tests-20261017.log`; `evidence/integration/recovery-boundary-live-integrity-20261017.json`; `backend/app/data/recovery_boundary_topology.py`; `scripts/inspect_recovery_boundary_topology.py`; `docs/implementation/53_recovery_boundary_topology_validation.md`; `evidence/integration/recovery-boundary-topology-tests-20261017.log`; `evidence/integration/recovery-boundary-topology-independent-20261017.log`; `evidence/integration/recovery-boundary-topology-live-final-20261017.json`; `evidence/integration/recovery-boundary-topology-full-tests-20261017.log`; `evidence/integration/recovery-boundary-topology-live-integrity-20261017.json`; `backend/app/data/recovery_boundary_relations.py`; `scripts/inspect_recovery_boundary_relations.py`; `docs/implementation/54_recovery_boundary_relations_validation.md`; `evidence/integration/recovery-boundary-relations-tests-20261017.log`; `evidence/integration/recovery-boundary-relations-independent-20261017.log`; `evidence/integration/recovery-boundary-relations-live-final-20261017.json`; `evidence/integration/recovery-boundary-relations-full-tests-20261017.log`; `evidence/integration/recovery-boundary-relations-live-integrity-20261017.json`; `backend/app/data/recovery_source_footprints.py`; `scripts/inspect_recovery_source_footprints.py`; `docs/implementation/55_recovery_source_footprints_validation.md`; `evidence/integration/recovery-source-footprints-tests-20261017.log`; `evidence/integration/recovery-source-footprints-independent-20261017.log`; `evidence/integration/recovery-source-footprints-live-final-20261017.json`; `evidence/integration/recovery-source-footprints-full-tests-20261017.log`; `evidence/integration/recovery-source-footprints-live-integrity-20261017.json`; `backend/app/data/recovery_source_split_overlap.py`; `scripts/inspect_recovery_source_split_overlap.py`; `docs/implementation/56_recovery_source_split_overlap_validation.md`; `evidence/integration/recovery-source-split-overlap-tests-20261017.log`; `evidence/integration/recovery-source-split-overlap-independent-20261017.log`; `evidence/integration/recovery-source-split-overlap-plan-check-20261017.log`; `evidence/integration/recovery-source-split-overlap-live-final-20261017.json`; `evidence/integration/recovery-source-split-overlap-full-tests-20261017.log`; `evidence/integration/recovery-source-split-overlap-live-integrity-20261017.json`; `backend/app/data/recovery_readiness_comparison.py`; `scripts/inspect_recovery_readiness_comparison.py`; `docs/implementation/57_recovery_readiness_comparison_validation.md`; `evidence/integration/recovery-readiness-comparison-tests-20261017.log`; `evidence/integration/recovery-readiness-comparison-independent-20261017.log`; `evidence/integration/recovery-readiness-comparison-live-final-20261017.json`; `evidence/integration/recovery-readiness-comparison-full-tests-20261017.log`; `evidence/integration/recovery-readiness-comparison-live-integrity-20261017.json`; `backend/app/data/readiness_connectivity_witness.py`; `tests/test_readiness_connectivity_witness.py`; `docs/implementation/58_readiness_connectivity_witness_validation.md`; `evidence/integration/readiness-connectivity-witness-related-20261017.log`; `evidence/integration/readiness-connectivity-witness-independent-20261017.log`; `evidence/integration/readiness-connectivity-witness-live-absence-20261017.json`; `evidence/integration/readiness-connectivity-witness-full-tests-20261017.log`; `evidence/integration/readiness-connectivity-witness-live-integrity-20261017.json`; `backend/app/data/readiness_connectivity_envelope.py`; `tests/test_readiness_connectivity_envelope.py`; `docs/implementation/59_readiness_connectivity_envelope_validation.md`; `evidence/integration/readiness-connectivity-envelope-related-20261017.log`; `evidence/integration/readiness-connectivity-envelope-independent-20261017.log`; `evidence/integration/readiness-connectivity-envelope-live-absence-20261017.json`; `evidence/integration/readiness-connectivity-envelope-live-validation-20261017.json`; `evidence/integration/readiness-connectivity-envelope-full-tests-20261017.log`; `evidence/integration/readiness-connectivity-envelope-live-integrity-20261017.json`; `backend/app/ml/readiness.py`; `backend/app/ml/readiness_connectivity_adapter.py`; `tests/test_readiness_connectivity_adapter.py`; `docs/implementation/60_readiness_connectivity_adapter_validation.md`; `evidence/integration/readiness-connectivity-adapter-related-20261017.log`; `evidence/integration/readiness-connectivity-adapter-independent-20261017.log`; `evidence/integration/readiness-connectivity-adapter-ast-parity-20261017.json`; `evidence/integration/readiness-connectivity-adapter-live-saved-state-20261017.json`; `evidence/integration/readiness-connectivity-adapter-full-tests-20261017.log`; `evidence/integration/readiness-connectivity-adapter-live-integrity-20261017.json`; `scripts/run_experiment.py`; `tests/test_readiness_connectivity_cli.py`; `docs/implementation/61_readiness_connectivity_cli_validation.md`; `evidence/integration/readiness-connectivity-cli-related-20261017.log`; `evidence/integration/readiness-connectivity-cli-independent-20261017.log`; `evidence/integration/readiness-connectivity-cli-live-help-20261017.json`; `evidence/integration/readiness-connectivity-cli-ast-parity-20261017.json`; `evidence/integration/readiness-connectivity-cli-full-tests-20261017.log`; `evidence/integration/readiness-connectivity-cli-live-integrity-20261017.json`; `docs/implementation/62_readiness_connectivity_real_validation.md`; `data/first-group/readiness-connectivity-20261017.json`; `evidence/integration/readiness-connectivity-real-preflight-20261017.json`; `evidence/integration/readiness-connectivity-real-execution-20261017.json`; `evidence/integration/readiness-connectivity-real-validation-20261017.json`; `evidence/integration/readiness-connectivity-real-independent-20261017.log`; `evidence/integration/readiness-connectivity-real-token-membership-20261017.json`; `evidence/integration/readiness-connectivity-real-live-integrity-20261017.json`; `backend/app/data/readiness_connectivity_lineage.py`; `scripts/inspect_readiness_connectivity_lineage.py`; `tests/test_readiness_connectivity_lineage.py`; `docs/implementation/63_readiness_connectivity_lineage_validation.md`; `evidence/integration/readiness-connectivity-lineage-related-20261017.log`; `evidence/integration/readiness-connectivity-lineage-independent-20261017.log`; `evidence/integration/readiness-connectivity-lineage-live-cli-20261017.log`; `evidence/integration/readiness-connectivity-lineage-live-20261017.json`; `evidence/integration/readiness-connectivity-lineage-full-tests-20261017.log`; `evidence/integration/readiness-connectivity-lineage-live-integrity-20261017.json`; `docs/implementation/64_readiness_source_identity_contract.md`; `evidence/integration/readiness-source-identity-related-20261017.log`; `evidence/integration/readiness-source-identity-independent-20261017.log`; `evidence/integration/readiness-source-identity-full-tests-20261017.log`; `evidence/integration/readiness-source-identity-live-integrity-20261017.json`; `docs/implementation/65_readiness_source_identity_consumer.md`; `evidence/integration/readiness-source-identity-consumer-related-20261017.log`; `evidence/integration/readiness-source-identity-consumer-independent-20261017.log`; `evidence/integration/readiness-source-identity-consumer-live-cli-20261017.log`; `evidence/integration/readiness-source-identity-consumer-live-legacy-20261017.json`; `evidence/integration/readiness-source-identity-consumer-live-legacy-validation-20261017.json`; `evidence/integration/readiness-source-identity-consumer-full-tests-20261017.log`; `evidence/integration/readiness-source-identity-consumer-live-integrity-20261017.json`; `data/first-group/readiness-source-identity-20261017.json`; `evidence/integration/readiness-source-identity-real-preflight-20261017.json`; `evidence/integration/readiness-source-identity-real-execution-20261017.json`; `evidence/integration/readiness-source-identity-real-cli-20261017.log`; `evidence/integration/readiness-source-identity-real-lineage-20261017.json`; `evidence/integration/readiness-source-identity-real-lineage-cli-20261017.log`; `evidence/integration/readiness-source-identity-real-validation-20261017.json`; `evidence/integration/readiness-source-identity-real-independent-20261017.json`; `evidence/integration/readiness-source-identity-real-live-integrity-20261017.json`; `docs/implementation/66_readiness_source_identity_real_validation.md`; `backend/app/readiness_source_identity_api.py`; `backend/app/main.py`; `tests/test_readiness_source_identity_api.py`; `frontend/src/AgentCenter.tsx`; `frontend/src/ReadinessSourceIdentityDiagnostics.tsx`; `frontend/src/readinessSourceIdentityAdapter.ts`; `frontend/src/readinessSourceIdentityAdapter.test.mjs`; `frontend/src/readiness-source-identity.css`; `docs/implementation/67_readiness_source_identity_api.md`; `docs/implementation/68_readiness_source_identity_ui.md`; `evidence/integration/readiness-source-identity-api-related-20261017.log`; `evidence/integration/readiness-source-identity-api-independent-20261017.log`; `evidence/integration/readiness-source-identity-api-live-20261017.json`; `evidence/integration/readiness-source-identity-api-ui-full-tests-20261017.log`; `evidence/integration/readiness-source-identity-ui-adapter-20261017.log`; `evidence/integration/readiness-source-identity-ui-tests-20261017.log`; `evidence/integration/readiness-source-identity-ui-build-20261017.log`; `evidence/integration/readiness-source-identity-ui-independent-20261017.log`; `evidence/integration/readiness-source-identity-ui-live-20261017.json`; `evidence/integration/readiness-source-identity-ui-console-20261017.json`; `evidence/integration/readiness-source-identity-api-ui-live-integrity-20261017.json`; `backend/app/ml/candidate_plan_lineage.py`; `scripts/inspect_candidate_plan_lineage.py`; `tests/test_candidate_plan_lineage.py`; `docs/implementation/69_candidate_plan_lineage.md`; `evidence/integration/candidate-plan-lineage-related-20261017.log`; `evidence/integration/candidate-plan-lineage-independent-20261017.log`; `evidence/integration/candidate-plan-lineage-live-20261017.json`; `evidence/integration/candidate-plan-lineage-live-cli-20261017.log`; `evidence/integration/candidate-plan-lineage-full-tests-20261017.log`; `evidence/integration/candidate-plan-lineage-live-integrity-20261017.json`; `backend/app/ml/split_planning.py`; `backend/app/ml/split_json_io.py`; `tests/test_split_bounded_io.py`; `docs/implementation/70_split_bounded_io.md`; `evidence/integration/split-bounded-io-related-20261017.log`; `evidence/integration/split-bounded-io-independent-20261017.log`; `evidence/integration/split-bounded-io-live-20261017.json`; `evidence/integration/split-bounded-io-live-run-20261017.log`; `evidence/integration/split-bounded-io-full-tests-20261017.log`; `evidence/integration/split-bounded-io-live-integrity-20261017.json`; `backend/app/ml/candidate_materialization.py`; `scripts/materialize_split_candidate.py`; `tests/test_candidate_materialization.py`; `docs/implementation/71_candidate_materialization.md`; `evidence/integration/candidate-materialization-related-20261017.log`; `evidence/integration/candidate-materialization-independent-20261017.log`; `evidence/integration/candidate-materialization-live-cli-20261017.log`; `evidence/integration/candidate-materialization-live-validation-20261017.json`; `evidence/integration/candidate-materialization-full-tests-20261017.log`; `evidence/integration/candidate-materialization-live-integrity-20261017.json`; `evidence/integration/candidate-materialization-live-20261017/plan.json`; `evidence/integration/candidate-materialization-live-20261017/candidate.json`; `evidence/integration/candidate-materialization-live-20261017/receipt.json`; `backend/app/ml/candidate_staging.py`; `scripts/stage_split_candidate.py`; `tests/test_candidate_staging.py`; `docs/implementation/72_candidate_staging.md`; `evidence/integration/candidate-staging-related-20261017.log`; `evidence/integration/candidate-staging-independent-20261017.log`; `evidence/integration/candidate-staging-live-cli-20261017.log`; `evidence/integration/candidate-staging-live-validation-20261017.json`; `evidence/integration/candidate-staging-full-tests-20261017.log`; `evidence/integration/candidate-staging-live-integrity-20261017.json`; `data/first-group-candidate-qa-stage-20261017/candidate.json`; `data/first-group-candidate-qa-stage-20261017/staging-receipt.json`; `backend/app/ml/candidate_readiness_qa.py`; `scripts/assess_staged_candidate.py`; `tests/test_candidate_readiness_qa.py`; `docs/implementation/73_candidate_readiness_qa.md`; `evidence/integration/candidate-readiness-qa-related-20261017.log`; `evidence/integration/candidate-readiness-qa-independent-20261017.log`; `evidence/integration/candidate-readiness-qa-live-cli-20261017.log`; `evidence/integration/candidate-readiness-qa-live-execution-20261017.json`; `evidence/integration/candidate-readiness-qa-live-validation-20261017.json`; `evidence/integration/candidate-readiness-qa-full-tests-20261017.log`; `evidence/integration/candidate-readiness-qa-live-integrity-20261017.json`; `data/first-group-candidate-readiness-qa-20261017/readiness.json`; `data/first-group-candidate-readiness-qa-20261017/qa-receipt.json`; `backend/app/ml/candidate_qa_comparison.py`; `backend/app/candidate_qa_comparison_api.py`; `tests/test_candidate_qa_comparison.py`; `frontend/src/CandidateQaComparisonDiagnostics.tsx`; `frontend/src/candidateQaComparisonAdapter.ts`; `frontend/src/candidateQaComparisonAdapter.test.mjs`; `frontend/src/candidate-qa-comparison.css`; `docs/implementation/74_candidate_qa_comparison_api.md`; `docs/implementation/75_candidate_qa_comparison_ui.md`; `evidence/integration/candidate-qa-comparison-related-20261017.log`; `evidence/integration/candidate-qa-comparison-independent-20261017.log`; `evidence/integration/candidate-qa-comparison-ui-adapter-20261017.log`; `evidence/integration/candidate-qa-comparison-ui-tests-20261017.log`; `evidence/integration/candidate-qa-comparison-ui-build-20261017.log`; `evidence/integration/candidate-qa-comparison-ui-independent-20261017.log`; `evidence/integration/candidate-qa-comparison-live-http-20261017.json`; `evidence/integration/candidate-qa-comparison-ui-live-20261017.json`; `evidence/integration/candidate-qa-comparison-ui-console-before-fix-20261017.json`; `evidence/integration/candidate-qa-comparison-ui-console-after-fix-20261017.json`; `evidence/integration/candidate-qa-comparison-full-tests-20261017.log`; `evidence/integration/candidate-qa-comparison-live-integrity-20261017.json`; `backend/app/ml/bare_class_requirements.py`; `scripts/inspect_bare_class_requirements.py`; `tests/test_bare_class_requirements.py`; `docs/implementation/76_bare_class_requirements.md`; `evidence/integration/bare-class-requirements-related-20261017.log`; `evidence/integration/bare-class-requirements-independent-20261017.log`; `evidence/integration/bare-class-requirements-independent-arithmetic-20261017.json`; `evidence/integration/bare-class-requirements-live-20261017.json`; `evidence/integration/bare-class-requirements-live-cli-20261017.log`; `evidence/integration/bare-class-requirements-live-validation-20261017.json`; `evidence/integration/bare-class-requirements-full-tests-20261017.log`; `evidence/integration/bare-class-requirements-live-integrity-20261017.json`; `backend/app/execution_input_binding.py`; `tests/test_execution_input_binding.py`; `docs/implementation/77_execution_input_binding.md`; `evidence/integration/execution-input-binding-related-20261017.log`; `evidence/integration/execution-input-binding-independent-20261017.log`; `evidence/integration/execution-input-binding-live-validation-20261017.json`; `evidence/integration/execution-input-binding-live-replay-20261017.py`; `evidence/integration/execution-input-binding-full-tests-20261017.log`; `evidence/integration/execution-input-binding-live-integrity-20261017.json`; `backend/app/execution_binding_capture.py`; `backend/app/job_inputs.py`; `backend/app/gmais_api.py`; `tests/test_execution_binding_capture.py`; `docs/implementation/78_submission_binding_capture.md`; `evidence/integration/submission-binding-capture-related-20261017.log`; `evidence/integration/submission-binding-capture-independent-20261017.log`; `evidence/integration/submission-binding-capture-compat-before-20261017.json`; `evidence/integration/submission-binding-capture-compat-after-20261017.json`; `evidence/integration/submission-binding-capture-compat-runner-20261017.py`; `evidence/integration/submission-binding-capture-live-legacy-20261017.json`; `evidence/integration/submission-binding-capture-full-tests-20261017.log`; `evidence/integration/submission-binding-capture-live-integrity-20261017.json`; `backend/app/job_execution_binding_capture.py`; `backend/app/job_execution_binding_capture_api.py`; `tests/test_job_execution_binding_capture.py`; `frontend/src/StoredExecutionBindingCapture.tsx`; `frontend/src/storedExecutionBindingCaptureAdapter.ts`; `frontend/src/storedExecutionBindingCaptureAdapter.test.mjs`; `frontend/src/stored-execution-binding-capture.css`; `docs/implementation/79_stored_binding_capture_api.md`; `docs/implementation/80_stored_binding_capture_ui.md`; `evidence/integration/stored-binding-capture-related-20261017.log`; `evidence/integration/stored-binding-capture-live-api-20261017.json`; `evidence/integration/stored-binding-capture-live-ui-20261017.json`; `evidence/integration/stored-binding-capture-ui-adapter-20261017.log`; `evidence/integration/stored-binding-capture-ui-tests-20261017.log`; `evidence/integration/stored-binding-capture-ui-build-20261017.log`; `evidence/integration/job-execution-binding-capture-independent-20261017.log`; `evidence/integration/stored-execution-binding-capture-ui-independent-20261017.log`; `evidence/integration/stored-binding-capture-full-tests-20261017.log`; `evidence/integration/stored-binding-capture-live-integrity-20261017.json`; `backend/app/stored_job_binding_handoff.py`; `tests/test_stored_job_binding_handoff.py`; `docs/implementation/81_stored_job_binding_handoff.md`; `evidence/integration/stored-job-binding-handoff-related-20261017.log`; `evidence/integration/stored-binding-handoff-independent-20261017.log`; `evidence/integration/stored-binding-handoff-live-validation-20261017.json`; `evidence/integration/stored-binding-handoff-live-replay-20261017.py`; `evidence/integration/stored-binding-handoff-full-tests-20261017.log`; `evidence/integration/stored-binding-handoff-live-integrity-20261017.json`; `backend/app/stored_job_binding_handoff_store.py`; `tests/test_stored_job_binding_handoff_store.py`; `docs/implementation/82_stored_job_binding_handoff_store.md`; `evidence/integration/stored-binding-store-adapter-related-20261017.log`; `evidence/integration/stored-binding-store-adapter-independent-20261017.log`; `evidence/integration/stored-binding-store-adapter-live-validation-20261017.json`; `evidence/integration/stored-binding-store-adapter-live-check-20261017.py`; `evidence/integration/stored-binding-store-adapter-full-tests-20261017.log`; `evidence/integration/stored-binding-store-adapter-live-integrity-20261017.json`; `backend/app/stored_current_binding_preflight.py`; `tests/test_stored_current_binding_preflight.py`; `docs/implementation/83_stored_current_binding_preflight.md`; `evidence/integration/stored-current-binding-preflight-related-20261017.log`; `evidence/integration/stored-current-binding-independent-20261017.log`; `evidence/integration/stored-current-binding-live-validation-20261017.json`; `evidence/integration/stored-current-binding-live-check-20261017.py`; `evidence/integration/stored-current-binding-full-tests-20261017.log`; `evidence/integration/stored-current-binding-live-integrity-20261017.json`; `backend/app/stored_current_binding_preflight_api.py`; `tests/test_stored_current_binding_preflight_api.py`; `docs/implementation/84_current_input_preflight_api.md`; `docs/implementation/85_current_input_preflight_ui.md`; `frontend/src/CurrentInputPreflight.tsx`; `frontend/src/currentInputPreflightAdapter.ts`; `frontend/src/currentInputPreflightAdapter.test.mjs`; `frontend/src/current-input-preflight.css`; `evidence/integration/current-input-preflight-api-related-20261017.log`; `evidence/integration/stored-current-binding-api-independent-20261017.log`; `evidence/integration/current-input-preflight-live-api-20261017.json`; `evidence/integration/current-input-preflight-live-ui-20261017.json`; `evidence/integration/current-input-preflight-ui-desktop-20261017.jpg`; `evidence/integration/current-input-preflight-ui-adapter-20261017.log`; `evidence/integration/current-input-preflight-ui-tests-20261017.log`; `evidence/integration/current-input-preflight-ui-independent-20261017.log`; `evidence/integration/current-input-preflight-ui-build-20261017.log`; `evidence/integration/current-input-preflight-full-tests-20261017.log`; `evidence/integration/current-input-preflight-live-integrity-20261017.json`; `backend/app/workflow_node_input_handoff.py`; `tests/test_workflow_node_input_handoff.py`; `docs/implementation/86_workflow_node_input_handoff.md`; `evidence/integration/workflow-node-handoff-related-20261017.log`; `evidence/integration/workflow-node-handoff-independent-20261017.log`; `evidence/integration/workflow-node-handoff-full-tests-20261017.log`; `evidence/integration/workflow-node-handoff-live-integrity-20261017.json`; `evidence/integration/workflow-node-handoff-catalog-observation-20261017.json`; `evidence/integration/workflow-node-handoff-runtime-start-20261017.json`; `evidence/integration/workflow-node-handoff-full-interrupted-before-final-freeze-20261017.log`; `backend/app/workflow_node_input_handoff_api.py`; `tests/test_workflow_node_input_handoff_api.py`; `docs/implementation/87_workflow_node_handoff_api.md`; `docs/implementation/88_workflow_node_handoff_ui.md`; `frontend/src/WorkflowNodeHandoff.tsx`; `frontend/src/workflowNodeHandoffAdapter.ts`; `frontend/src/workflowNodeHandoffAdapter.test.mjs`; `frontend/src/workflow-node-handoff.css`; `frontend/src/GeoQuery.tsx`; `evidence/integration/workflow-node-handoff-canonical-fixture-20261017.json`; `evidence/integration/workflow-node-handoff-api-related-20261017.log`; `evidence/integration/workflow-node-handoff-api-independent-20261017.log`; `evidence/integration/workflow-node-handoff-api-live-api-20261017.json`; `evidence/integration/workflow-node-handoff-api-live-ui-20261017.json`; `evidence/integration/workflow-node-handoff-api-full-tests-20261017.log`; `evidence/integration/workflow-node-handoff-api-live-integrity-20261017.json`; `evidence/integration/workflow-node-handoff-ui-adapter-20261017.log`; `evidence/integration/workflow-node-handoff-ui-tests-20261017.log`; `evidence/integration/workflow-node-handoff-ui-independent-20261017.log`; `evidence/integration/workflow-node-handoff-ui-build-20261017.log`; `evidence/integration/workflow-node-handoff-ui-desktop-20261017.jpg`; `backend/app/workflow_job_request_handoff.py`; `tests/test_workflow_job_request_handoff.py`; `docs/implementation/89_workflow_job_request_handoff.md`; `evidence/integration/full-job-handoff-related-20261017.log`; `evidence/integration/full-job-handoff-independent-20261017.log`; `evidence/integration/full-job-handoff-initial-format-gap-20261017.log`; `evidence/integration/full-job-handoff-full-tests-20261017.log`; `evidence/integration/full-job-handoff-live-integrity-20261017.json`; `evidence/integration/full-job-handoff-catalog-observation-20261017.json`; `evidence/integration/full-job-handoff-runtime-start-20261017.json`; `backend/app/workflow_job_request_handoff_api.py`; `tests/test_workflow_job_request_handoff_api.py`; `docs/implementation/90_full_job_handoff_api.md`; `docs/implementation/91_full_job_handoff_ui.md`; `frontend/src/FullJobHandoff.tsx`; `frontend/src/fullJobHandoffAdapter.ts`; `frontend/src/fullJobHandoffAdapter.test.mjs`; `frontend/src/full-job-handoff.css`; `evidence/integration/full-job-handoff-api-related-20261017.log`; `evidence/integration/full-job-handoff-api-independent-20261017.log`; `evidence/integration/full-job-handoff-api-live-api-20261017.json`; `evidence/integration/full-job-handoff-api-live-ui-20261017.json`; `evidence/integration/full-job-handoff-api-full-tests-20261017.log`; `evidence/integration/full-job-handoff-api-live-integrity-20261017.json`; `evidence/integration/full-job-handoff-ui-adapter-20261017.log`; `evidence/integration/full-job-handoff-ui-tests-20261017.log`; `evidence/integration/full-job-handoff-ui-independent-20261017.log`; `evidence/integration/full-job-handoff-ui-build-20261017.log`; `evidence/integration/full-job-handoff-ui-desktop-20261017.jpg`; `backend/app/schema_formats.py`; `tests/test_schema_formats.py`; `docs/implementation/92_common_datetime_validation.md`; `evidence/integration/common-datetime-related-20261017.log`; `evidence/integration/common-datetime-independent-20261017.log`; `evidence/integration/common-datetime-source-runtime-20261017.json`; `evidence/integration/common-datetime-catalog-observation-20261017.json`; `evidence/integration/common-datetime-next-review-20261017.json`; `evidence/integration/common-datetime-full-tests-20261017.log`; `evidence/integration/common-datetime-live-integrity-20261017.json`; `backend/app/agent_capability_contract.py`; `tests/test_agent_capability_contract.py`; `docs/implementation/93_agent_capability_contract.md`; `evidence/integration/agent-capability-original-gmais-20261017.py`; `evidence/integration/agent-capability-related-20261017.log`; `evidence/integration/agent-capability-independent-20261017.log`; `evidence/integration/agent-capability-source-runtime-20261017.json`; `evidence/integration/agent-capability-next-review-20261017.json`; `evidence/integration/agent-capability-full-tests-20261017.log`; `evidence/integration/agent-capability-live-integrity-20261017.json`; `backend/app/workflow_job_registration_handoff.py`; `tests/test_workflow_job_registration_handoff.py`; `tests/test_workflow_job_registration_handoff_api.py`; `docs/implementation/94_full_job_registration_api.md`; `docs/implementation/95_full_job_registration_ui.md`; `frontend/src/fullJobRegistrationAdapter.ts`; `frontend/src/fullJobRegistrationAdapter.test.mjs`; `evidence/integration/full-job-registration-api-related-20261017.log`; `evidence/integration/full-job-registration-api-independent-20261017.log`; `evidence/integration/full-job-registration-api-live-api-20261017.json`; `evidence/integration/full-job-registration-api-live-ui-20261017.json`; `evidence/integration/full-job-registration-api-full-tests-20261017.log`; `evidence/integration/full-job-registration-api-live-integrity-20261017.json`; `evidence/integration/full-job-registration-api-original-20261017.py`; `evidence/integration/full-job-registration-ui-related-20261017.log`; `evidence/integration/full-job-registration-ui-tests-20261017.log`; `evidence/integration/full-job-registration-ui-independent-20261017.log`; `evidence/integration/full-job-registration-ui-build-20261017.log`; `evidence/integration/full-job-registration-ui-desktop-20261017.png`; `evidence/integration/full-job-registration-ui-blocked-20261017.png`; `backend/app/model_reference_contract.py`; `tests/test_model_reference_contract.py`; `docs/implementation/96_model_reference_contract.md`; `evidence/integration/model-ref-related-20261017.log`; `evidence/integration/model-ref-independent-20261017.log`; `evidence/integration/model-ref-source-runtime-20261017.json`; `evidence/integration/model-ref-full-tests-20261017.log`; `evidence/integration/model-ref-live-integrity-20261017.json`; `evidence/integration/model-ref-next-review-20261017.json`; `evidence/integration/model-ref-original-gmais-20261017.py`; `evidence/integration/model-ref-original-handoff-20261017.py`; `backend/app/experiment_registry.py`; `tests/test_model_version_declaration.py`; `docs/implementation/97_model_version_declaration.md`; `evidence/integration/model-version-related-20261017.log`; `evidence/integration/model-version-independent-20261017.log`; `evidence/integration/model-version-catalog-observation-20261017.json`; `evidence/integration/model-version-original-registry-20261017.py`; `evidence/integration/model-version-initial-tests-20261017.log`; `evidence/integration/model-version-full-tests-20261017.log`; `evidence/integration/model-version-live-integrity-20261017.json`; `evidence/integration/model-version-next-review-20261017.json`; `frontend/src/ModelReview.tsx`; `frontend/src/modelVersionRegistrationAdapter.ts`; `frontend/src/modelVersionRegistrationAdapter.test.mjs`; `frontend/src/model-version-registration.css`; `docs/implementation/98_model_version_registration_api.md`; `docs/implementation/99_model_version_registration_ui.md`; `evidence/integration/model-version-api-related-20261017.log`; `evidence/integration/model-version-api-independent-20261017.log`; `evidence/integration/model-version-api-live-api-20261017.json`; `evidence/integration/model-version-api-live-ui-20261017.json`; `evidence/integration/model-version-api-full-tests-20261017.log`; `evidence/integration/model-version-api-full-tests-corrected-20261017.log`; `evidence/integration/model-version-api-live-integrity-20261017.json`; `evidence/integration/model-version-api-original-main-20261017.py`; `evidence/integration/model-version-api-original-ui-20261017.tsx`; `evidence/integration/model-version-api-next-review-20261017.json`; `evidence/integration/model-version-ui-related-20261017.log`; `evidence/integration/model-version-ui-tests-20261017.log`; `evidence/integration/model-version-ui-independent-20261017.log`; `evidence/integration/model-version-ui-build-20261017.log`; `evidence/integration/model-version-ui-related-layout-20261017.log`; `evidence/integration/model-version-ui-tests-layout-20261017.log`; `evidence/integration/model-version-ui-build-layout-20261017.log`; `evidence/integration/model-version-ui-desktop-final-20261017.png`; `backend/app/model_registration_provenance.py`; `tests/test_model_registration_provenance.py`; `docs/implementation/100_model_registration_provenance_observation.md`; `evidence/integration/model-provenance-focused-20261017.log`; `evidence/integration/model-provenance-related-20261017.log`; `evidence/integration/model-provenance-independent-20261017.log`; `evidence/integration/model-provenance-catalog-observation-20261017.json`; `evidence/integration/model-provenance-live-integrity-20261017.json`; `tests/test_model_registration_provenance_api.py`; `docs/implementation/101_model_registration_provenance_api.md`; `docs/implementation/102_model_registration_provenance_ui.md`; `frontend/src/ModelRegistrationProvenance.tsx`; `frontend/src/modelRegistrationProvenanceAdapter.ts`; `frontend/src/modelRegistrationProvenanceAdapter.test.mjs`; `frontend/src/model-registration-provenance.css`; `evidence/integration/model-provenance-api-focused-20261017.log`; `evidence/integration/model-provenance-api-focused-corrected-20261017.log`; `evidence/integration/model-provenance-api-focused-final-20261017.log`; `evidence/integration/model-provenance-api-related-20261017.log`; `evidence/integration/model-provenance-api-independent-20261017.log`; `evidence/integration/model-provenance-api-live-api-20261017.json`; `evidence/integration/model-provenance-api-live-ui-20261017.json`; `evidence/integration/model-provenance-api-full-tests-20261017.log`; `evidence/integration/model-provenance-api-live-integrity-20261017.json`; `evidence/integration/model-provenance-api-next-review-20261017.json`; `evidence/integration/model-provenance-ui-related-20261017.log`; `evidence/integration/model-provenance-ui-tests-20261017.log`; `evidence/integration/model-provenance-ui-independent-20261017.log`; `evidence/integration/model-provenance-ui-build-20261017.log`; `evidence/integration/model-provenance-ui-desktop-20261017.png`; `backend/app/model_reference_record_comparison.py`; `tests/test_model_reference_record_comparison.py`; `docs/implementation/103_model_reference_record_comparison.md`; `evidence/integration/model-reference-record-focused-20261017.log`; `evidence/integration/model-reference-record-related-20261017.log`; `evidence/integration/model-reference-record-independent-20261017.log`; `evidence/integration/model-reference-record-catalog-observation-20261017.json`; `evidence/integration/model-reference-record-live-integrity-20261017.json`; `backend/app/workflow_job_model_record_handoff.py`; `tests/test_workflow_job_model_record_handoff.py`; `docs/implementation/104_workflow_job_model_record_handoff.md`; `evidence/integration/workflow-model-record-focused-20261017.log`; `evidence/integration/workflow-model-record-related-20261017.log`; `evidence/integration/workflow-model-record-independent-20261017.log`; `evidence/integration/workflow-model-record-catalog-observation-20261017.json`; `evidence/integration/workflow-model-record-live-integrity-20261017.json`; `backend/app/workflow_job_model_record_handoff_api.py`; `tests/test_workflow_job_model_record_handoff_api.py`; `docs/implementation/105_workflow_job_model_record_handoff_api.md`; `docs/implementation/106_workflow_model_record_handoff_ui.md`; `frontend/src/WorkflowModelRecordHandoff.tsx`; `frontend/src/workflowModelRecordHandoffAdapter.ts`; `frontend/src/workflowModelRecordHandoffAdapter.test.mjs`; `frontend/src/workflow-model-record-handoff.css`; `evidence/integration/workflow-model-record-api-focused-20261017.log`; `evidence/integration/workflow-model-record-api-related-20261017.log`; `evidence/integration/workflow-model-record-api-independent-20261017.log`; `evidence/integration/workflow-model-record-api-full-tests-20261017.log`; `evidence/integration/workflow-model-record-api-full-tests-final-20261017.log`; `evidence/integration/workflow-model-record-api-live-api-20261017.json`; `evidence/integration/workflow-model-record-api-live-ui-20261017.json`; `evidence/integration/workflow-model-record-api-live-integrity-20261017.json`; `evidence/integration/workflow-model-record-api-test-compat-baseline-20261017.json`; `evidence/integration/workflow-model-record-api-test-compat-focused-20261017.log`; `evidence/integration/workflow-model-record-api-test-compat-original-20261017.py`; `evidence/integration/workflow-model-record-api-test-compat-result-20261017.json`; `evidence/integration/workflow-model-record-api-next-queue-review-20261017.json`; `evidence/integration/workflow-model-record-ui-related-initial-failure-20261017.log`; `evidence/integration/workflow-model-record-ui-related-20261017.log`; `evidence/integration/workflow-model-record-ui-independent-20261017.log`; `evidence/integration/workflow-model-record-ui-tests-20261017.log`; `evidence/integration/workflow-model-record-ui-build-20261017.log`; `evidence/integration/workflow-model-record-ui-desktop-20261017.png`; `backend/app/workflow_dependency_order.py`; `tests/test_workflow_dependency_order.py`; `backend/app/workflow_policy.py`; `docs/implementation/107_workflow_dependency_order.md`; `evidence/integration/workflow-dependency-order-focused-20261017.log`; `evidence/integration/workflow-dependency-order-focused-final-20261017.log`; `evidence/integration/workflow-dependency-order-related-20261017.log`; `evidence/integration/workflow-dependency-order-independent-20261017.log`; `evidence/integration/workflow-dependency-order-independent-review-20261017.json`; `evidence/integration/workflow-dependency-order-full-tests-20261017.log`; `evidence/integration/workflow-dependency-order-live-integrity-20261017.json`; `evidence/integration/workflow-dependency-order-preflight-20261017.json`; `evidence/integration/workflow-dependency-order-original-gmais_api-20261017.py`; `evidence/integration/workflow-dependency-order-original-workflow_lineage-20261017.py`; `evidence/integration/workflow-dependency-order-original-workflow_policy-20261017.py`; `backend/app/ml/bare_patch_feasibility.py`; `scripts/inspect_bare_patch_feasibility.py`; `tests/test_bare_patch_feasibility.py`; `docs/implementation/108_bare_patch_feasibility.md`; `evidence/integration/bare-class-patch-feasibility-focused-20261017.log`; `evidence/integration/bare-class-patch-feasibility-related-20261017.log`; `evidence/integration/bare-class-patch-feasibility-related-corrected-20261017.log`; `evidence/integration/bare-class-patch-feasibility-independent-20261017.log`; `evidence/integration/bare-class-patch-feasibility-independent-review-20261017.json`; `evidence/integration/bare-class-patch-feasibility-live-20261017.json`; `evidence/integration/bare-class-patch-feasibility-live-cli-20261017.log`; `evidence/integration/bare-class-patch-feasibility-live-integrity-20261017.json`; `evidence/integration/bare-class-patch-feasibility-collection-next-review-20261017.json` |
+| confidence | 중간: 현재 소스·기존 로그 기반; 신규 시험·학습·운영 승인 미수행 |
+| status | IMPLEMENTED_UNVERIFIED |
+
+> 발표 기준은 2026-10-17 기록이다. 시험 통과는 기존 로그의 역사적 결과이며 이번 문서화에서 재실행한 결과가 아니다. [현재성 대조](../EVIDENCE_SNAPSHOT.json).
+
+## 1분 시연 목표
+
+화면은 여섯 분야에 공통 작업대를 제공하고, 실행·게시 자격은 근거로 별도 관리한다는 사실을 보여준다. 백화점의 진열대가 제품 인증서와 다른 것처럼 UI와 과학 검증을 구분한다.
+
+## 준비물
+
+- 개발 서버가 실제 켜진 경우 [현재 검증한 개발 화면](http://127.0.0.1:5174/)을 사용한다. 현재 연결 확인은 아래09:59 KST 기록 범위이며 이후 시연 시 실행 상태를 다시 확인한다. 기존5173은 새API적용 확인 대상이 아니다.
+- [현재 구조도](../CURRENT_ARCHITECTURE.md), [최신 ML 설명](../02_LCLUC_ML.md), [FAQ](FAQ.md)를 별도 창에 둔다.
+- 기준 증거: `evidence/ui-20261017/png-lcluc.jpg`, `png-climate.jpg`, `png-carbon.jpg`, `png-biodiversity.jpg`, `png-coastal.jpg`, `png-flood.jpg`, `panel-map-help-icons.jpg`.
+- 데이터 다운로드·학습·추론·배포·예약을 시연 준비 목적으로 새로 실행하지 않는다. 아래는 읽기·탐색 시연이다.
+
+## 5분 시연 순서
+
+| 시간 | 화면·행동 | 그대로 말할 문장 | 예상 결과·실패 대안 |
+|---|---|---|---|
+| 0:00–0:40 | Dashboard→GeoAI Toolbox | “6개 분야를 한 조작 체계로 묶었습니다.” | 6개 카드; 서버가 안 열리면 PNG 기록 사용 |
+| 0:40–1:30 | LCLUC Workspace, 지도 확대/축소·bbox 전환·도움말 | “실제 위성 기저지도와 연구 범위입니다. 예측 overlay는 미연결입니다.” | SVG 버튼·도움말 상태 변화; tile 오류면 연결오류 표시를 설명 |
+| 1:30–2:10 | 시계열·변화·행렬·핫스팟 탭 | “분석 도구의 화면과 대기 상태입니다. 빈 지표를 실제0으로 읽지 않습니다.” | 탭과 panel 제목 전환; 가상 수치 생성 없음 |
+| 2:10–2:50 | 준비도/Model & MLOps의 실제 기록 조회 | “수량은1,111개이며 누출과 나지 부족으로 학습이 차단됐습니다.” | 보고서 출처·최신성을 확인; 화면이 구형이면 JSON 기록을 기준으로 대조 |
+| 2:50–3:30 | Agent Center 읽기·외부 모델 Workspace 한 개 | “외부5는 화면과 계약이 있고 실행기 연결은 대기입니다.” | readiness/NOT_IMPLEMENTED; 제출 실행은 하지 않음 |
+| 3:30–4:15 | GeoLLM Assistant의 정형 근거 조회 화면 | “현재는 근거 읽기이며 자연어 임의 실행이나 정책 판정을 하지 않습니다.” | 저장 근거가 없으면 없음 표시; 응답을 추정하지 않음 |
+| 4:15–5:00 | 구조도와 다음 단계 | “자료 독립성·대표성 다음에 독립 평가와 승인이 필요합니다.” | blocker5·승인 gate를 짚고 FAQ1·2로 마침 |
+
+## 10분 확장과 실제 코드 연결
+
+추가5분은 `backend/app/data/service.py:search_stac`(목록), `read_cog_window`(바이트), `ml/readiness.py:assess`(자격), `gmais_api.py:create_router`(Job/Trace), `sdss_results.py:project_result`(게시 검사)를 구조도 순서로 보여준다. 코드 위치는 구현 근거이며 해당 코드를 현장에서 실행해 승인 결과를 만든다는 뜻은 아니다.
+
+입력 AOI/기간→정합된 자료→readiness→조건부 모델→Result→지도·보고서의 순서다. 모델 결과가 생성되지 않은 단계는 승인 Result screenshot으로 꾸미지 않는다. 현재 표준 Result→SDSS 경로에는 신원·SHA·독립검증 검사 코드와 fixture 시험이 있으나 실제 승인 Result의 운영 인수 증거는 없다.
+
+## 시험·질문·다음 Gate
+
+로컬 UI 검증은 기존 `docs/implementation/23_ui_completion.md`와 이미지/build 로그를 인용한다. 이 시연 계획 자체를 완료된 UAT로 기록하지 않는다. 전체197 PASS도 역사적 코드시험 기록이다.
+
+Q. 무엇을 직접 본 것인가? A. 실제 켜진 로컬 화면을 보거나, 명시한 날짜의 기록 이미지를 본 것이다. 모델 과학 결과는 별도다.
+
+Q. 서버가 안 열리면? A. 기록 시연이라고 말하고 기존 PNG와 JSON을 설명한다. 서비스가 살아 있다고 말하지 않는다.
+
+다음 Gate에서는 변경된 화면·승인 근거·시연 경로만 갱신하고 예전 screenshot의 기준일을 숨기지 않는다.
+
+## 진단카드 시연 — 09:59 KST 개발 연결 확인
+
+1. [새 UI5174](http://127.0.0.1:5174/)→GeoLLM Assistant→실행계획 검토를 연다. execution유형이 자동으로 열린다. 새 화면은 동일출처DEVproxy로API8001에 연결되며 기존5173/8000을 보존했다.
+2. 사전 검증한 기록은 빈 input_bindings의 source→dependent와 independent3노드 계획이다. 실제자료를 등록하거나 학습을 시작하지 않았다. 빈입력에는 INPUT_REFS_REQUIRED를 표시한다.
+3. STOP_DEPENDENTS에서는 dependent의 선행 원인source와 독립 노드에 선행 원인이 없음을 짚는다. FAIL_ALL에서는 비선행 원인의 정책열이 추가됨을 보여준다. 같은 원인을 실제 선행과 정책으로 혼동하지 않는다.
+4. 검사시각·범위·입력상태와 “계획 검사·실행하지 않음”, PLAN_ONLY/BLOCKED·비활성 실행 버튼을 확인한다. 원인 없음은READY가 아니다.
+5. [STOP_DEPENDENTS 기록](../../../evidence/ui-20261017/workflow-stop-dependents-live.png), [FAIL_ALL 기록](../../../evidence/ui-20261017/workflow-fail-all-live.png), [입력 진단카드 기록](../../../evidence/ui-20261017/workflow-diagnostics-live.png)을 실패 시 기록 시연으로 사용하고 현재 라이브로 확인한 것처럼 말하지 않는다.
+
+발표 문장: “입력과 정책 때문에 멈추는 이유를 화면에서 나눠 확인합니다. 실제 계획API응답이며 모델 실행 결과는 아닙니다.” 최신전체코드시험262건중261PASS·1SKIP, UIadapter10PASS와build52modules/18.95초는 각각 다른 증거다. 실제Catalog·원장·manifest전후SHA는 같고이번신규Job/Result/Trace0이다. 기존gmais_jobs2건은이번새실행이아니다.
+
+개발proxy는productionbuild가제공하는기능이아니다. 운영 배포에는 지정API의CORS/reverse proxy와기관인수가별도로필요하다. 과학·정책판정·기관승인은시연범위가아니다.
+
+## 최신 Job 기록 시연과 현재API — 10:09 KST 기록
+
+현재주소는[UI5174](http://127.0.0.1:5174/)를유지하되동일출처proxy의target은새API8002(--reload)다. 이전8001연결은앞선시점기록이고8000/8001프로세스는보존했다.
+
+AgentCenter에서기존발급JobID를넣고`Job·Trace·입력 기록 실제 조회`를선택한다. 검증한기존2Job은LEGACY/available=false다. “당시저장기록이없으며현재자료로만들어채우지않습니다”라고설명한다. ID편집즉시기존상태·기록이사라지는지확인하고없는ID는404로보이며이전snapshot이남지않는다. [legacy기록](../../../evidence/ui-20261017/job-input-snapshot-legacy-live.png)과[없는Job기록](../../../evidence/ui-20261017/job-input-snapshot-not-found-live.png)을기록시연으로사용할수있다.
+
+정상RECORDEDsnapshot은임시fixture시험범위로만설명한다. 실제성공Job을만들거나현재파일을재검증한시연이아니다. 최신전체274건273 PASS·1 SKIP/70.655초, UI13 PASS·build52modules/15.97초를각각구분한다. 원본Catalog·원장·manifest는전후같고신규실행기록은0이다. 새PNG대시보드는진행중으로현재완료시연에포함하지않는다.
+
+## 최신 대시보드·카탈로그 시연 — 10:29 KST 근거
+
+1. [UI5174](http://127.0.0.1:5174/)의대시보드를연다. 실제6주·6Dataset·6Agent와LCLUC Draft/외부모델대기를설명한다. 위험·운영서비스등미제공값은—이며원본482개/위험지수는실제성과로복제하지않았다.
+2. 지도는공개2017년6주참조경계와기저영상이며공식사업경계/모델위험예측이아님을출처고지와함께말한다. 조회시간과원본자료최신성도구분한다.
+3. 데이터카탈로그에서전체6행을보고baseline2021검색→1행→상세로명시ID/version과미확인metadata를확인한다. CSV는검증기록상UTF-8 BOM/13열/1행이며원본파일다운로드가아니다.
+4. 시작2025/종료2020의역전기간은오류·0행·CSV비활성을표시한다. 초기화로6행에돌아간다. 품질패널은항목기록존재율이며과학정확도와다르다.
+5. 모델허브6개와기존분석/진단메뉴연결을확인한다. 실제학습이나등록을시연목적으로시작하지않는다.
+
+기록대안은[Dashboard desktop](../../../evidence/ui-20261017/dashboard-reference-desktop.png)/[mobile](../../../evidence/ui-20261017/dashboard-reference-mobile.png),[Catalog desktop](../../../evidence/ui-20261017/catalog-reference-desktop.png)/[mobile](../../../evidence/ui-20261017/catalog-reference-mobile.png)다. live로보지않으면기록시연이라고말한다. 요청1672×941/실측1673×941와390×844/실측390×845를구분하며전체수평넘침없음을확인했다. 모바일은세로로카드를쌓고표는내용을탐색한다.
+
+현재API8002연결·UIadapter19 PASS·build57modules/19.20초·backend전체287건286 PASS/1SKIP는각기다른근거다. 보호파일SHA는전후같고신규실행기록은0이다. 과학모델/기관/운영승인이나픽셀완전동일성은시연범위가아니다.
+
+## 최신 계보 읽기 진단 시연
+
+[UI5174](http://127.0.0.1:5174/)→데이터카탈로그→baseline2021상세→`불변 Dataset 계보 읽기 검증(내부 RFC)`를펼친다. 폼은빈값이며현재legacy자료의ID/version/SHA를자동추정하지않는다. 실제검증기록은명시미등록ID와임시고정형식참조로BLOCKED/DATASET_VERSION_NOT_FOUND를확인한것이다. 임시SHA가실제자료의지문이라는뜻이아니다.
+
+검사시각KST·현재자산확인시도≠전체성공·권한/실행/과학승인없음을짚는다. version을latest로바꾸면이전결과가사라지고버튼이비활성,고정1로돌려재조회되는동작을기록했다. 성공계보를새로등록하거나학습을시작하는시연은하지않는다.
+
+기록시연은[차단desktop](../../../evidence/ui-20261017/dataset-lineage-blocked-desktop.png),[차단사유desktop](../../../evidence/ui-20261017/dataset-lineage-reason-desktop.png),[mobile](../../../evidence/ui-20261017/dataset-lineage-reason-mobile.png)을쓴다.1440×1000/390×844요청과mobile dialog351/document375<390을확인했다. current5174→API8002는유지되고보호5SHA같음·신규실행0이다. 전체298건297 PASS/1SKIP·UI25 PASS/build60modules22.09초는각각코드/프론트근거다.
+
+## Job의 과거 기록과 현재 계보를 나란히 설명하기
+
+[UI5174](http://127.0.0.1:5174/)→AgentCenter→기존Job상태·제출기록을조회한다. 검증한Job은제출snapshot이LEGACY다. 이때현재계보카드는아직결과가없어야한다. `이 Job 입력의 현재 계보 읽기 검증`을명시적으로눌러저장원요청의고정refs를검사한다. 기록상현재결과는BLOCKED/DATASET_VERSION_NOT_FOUND다.
+
+“옛점검표는없지만저장된접수요청으로지금자료를검사해미등록을확인했습니다. 현재결과가옛기록을만들거나실행허가를바꾸지는않습니다”라고말한다. checked/reused·한도/수행량·KST·시도≠성공을짚고ID변경즉시clear·다른기존Job상태조회만으로자동현재검사가없음을확인한다. 성공계보를새로등록하는시연은하지않는다.
+
+기록대안은[desktop](../../../evidence/ui-20261017/job-current-lineage-desktop.png),[사유desktop](../../../evidence/ui-20261017/job-current-lineage-reason-desktop.png),[mobile](../../../evidence/ui-20261017/job-current-lineage-mobile.png)다.1440×1000/390×844요청과mobile document375<390·viewport복원을기록했다. 신규실행0·보호5SHA/기존Job2불변이며실제성공계보는fixture를넘어검증하지않았다. 최신전체310건309 PASS/1SKIP·UI32 PASS/build63modules24.15초를각기구분한다.
+
+## Workflow 현재 계보의 명시 조회 시연
+
+[UI5174](http://127.0.0.1:5174/)→GeoLLM Assistant→실행계획검토에서기존계획JSON과기존plan버튼을확인한다. 새`Workflow 입력의 현재 계보 읽기 검증`은별도버튼이다. 실제검증기록은공유미등록ref를쓰는source/dependent2노드와입력빈empty1노드다. 진단1/비용1·dependent재사용·empty의INPUT_REFS_REQUIRED와PLAN_ONLY/BLOCKED를짚는다.
+
+“같은재료는한번확인해공유하지만자료가맞아도작업실행허가는아닙니다”라고설명한다. 화면의본문SHA는실제전송JSON.stringify(parsedPayload)의UTF8bytes를서버wireSHA와비교한것이며원본textarea공백hash가아니다. JSON편집시기존결과clear·invalidJSON비활성·원래823자초안DOM정확복원을기록했다. 기존plan도다시조회해입력/정책카드가그대로이고새계보자동호출없음을확인했다.
+
+기록은[desktop](../../../evidence/ui-20261017/workflow-current-lineage-desktop.png),[공유진단desktop](../../../evidence/ui-20261017/workflow-current-lineage-shared-desktop.png),[mobile](../../../evidence/ui-20261017/workflow-current-lineage-mobile.png)을사용한다.1440×1000/390×844요청·mobile폭375<390·viewport복원을기록했다. 성공계보는fixture,실제는미등록/빈노드차단이며원본/Job2불변·신규실행0이다. 최신전체321건320PASS/1SKIP·UI38PASS/build66modules19.37초를별도로설명한다.
+
+## 카탈로그 활용 인사이트와 뒤로가기 시연
+
+[카탈로그](http://127.0.0.1:5174/#/catalog)에서baseline2021로6행중1행을찾아체크선택하고상세를연다. 브라우저뒤로는검색1·선택1,앞으로는상세ID복귀,새로고침도같은상태를복원한기록이있다. 상세의메타데이터·품질CTA와하단5인사이트는같은명시ID문맥으로연결한다.
+
+입력자료→이용조건→메타데이터/품질→Toolbox→WebGIS의하위화면을보여주며전역7개메뉴는그대로임을설명한다. “책을찾았어도이용조건과서지기록·도구/지도적합성은따로검토합니다. 화면의미확인은0%나통과가아닙니다”라고말한다.5페이지는`#/catalog/insights/{inputs,terms,metadata,toolbox,webgis}`다.
+
+Toolbox에서Climate를고르고Workspace로이동했다가뒤로돌아와Climate·Dataset문맥이유지되는지확인한기록이있다. Gorontalo참조지역·forward/reload·WebGIS왕복도확인했다. Workspace열기는자료자동주입/호환성판정/Job실행이아니다. 없는Datasetquery는최신목록확인후replace로제거하고invalidroute나직접첫진입이전은카탈로그fallback이다.
+
+기록대안은[입력자료](../../../evidence/ui-20261017/catalog-insight-inputs-desktop.png),[이용조건](../../../evidence/ui-20261017/catalog-insight-terms-desktop.png),[메타품질](../../../evidence/ui-20261017/catalog-insight-metadata-desktop.png),[Toolbox](../../../evidence/ui-20261017/catalog-insight-toolbox-desktop.png),[WebGIS](../../../evidence/ui-20261017/catalog-insight-webgis-desktop.png),[없는ID](../../../evidence/ui-20261017/catalog-insight-missing-dataset.png)다. mobile은metadata/WebGIS의390×844요청·390×845실측과폭375<390을기록했다.
+
+최신UI49PASS·독립49PASS/build69modules18.53초다. backend변경없어직전321회귀를이번에반복하지않았다. legacy6행과불변버전0행,미확인권한/품질/기간·공개참조경계≠공식AOI,SEE_COLLECTION_TERMS≠다운로드허가를설명한다. 필터/선택복귀는탭저장소가용성에따르고차단환경reload보존을보장하지않는다.
+
+카탈로그인사이트mobile기록은[메타품질](../../../evidence/ui-20261017/catalog-insight-metadata-mobile.png)과[WebGIS](../../../evidence/ui-20261017/catalog-insight-webgis-mobile.png)다. 원본5PNG/보호5SHA/기존Job2불변·신규실행0과추적backendPython21파일불변은catalog-insights-live JSON을따른다. 이단위에서backend회귀는반복하지않았고QA후원래사용자선택화면/viewport를복원했다. 기록화면을보이면실시간검증으로오인시키지않는다.
+
+## ML 분할계획 검증 설명 시연 — 새 UI 변경 없음
+
+이번단위는내부읽기CLI이므로새버튼이나화면을찾지않는다. [ML설명](../02_LCLUC_ML.md)과문서44·최종`ml-split-repair-validation-live-final-20261017.json`을읽어METADATA_INTEGRITY_VERIFIED·제외16·계획1,095/628·217·250을보여준다. 원본1,111/628·233·250과후보미요청NOT_REQUESTED/null·학습false를나란히설명한다.
+
+“견적서를원장과독립계산식으로검산했으며실제재료나현장을다시검사한것은아닙니다”라고말한다. raster_files_rehashed/spatial_overlap_rechecked/exact_class_counts_recomputed=false를짚는다. 미요청은후보존재판정이아니다. 처음live파일은메타검증후CP949stdout실패이력,final파일은최종명령exit0근거다.
+
+실제CLI를다시실행한척하지말고개발팀의완료근거를읽는시연이라고말한다. --output을사용할경우새evidence경로만허용하며후보를만들거나수집/학습을시작하지않는다. fresh수집복구VALID_BLOCKED·예약136,314,880B보존·보호6SHA불변·전체338건337PASS/1SKIP와API/화면변경없음을함께설명한다.
+
+## terminal 읽기 점검표 시연 — UI 변경 없는 내부 기능
+
+문서45와`recovery-terminal-live-final-20261017.json`을읽어2batch의MISSING/BLOCKED·worker/source파일부재·두config계약각true를보여준다. “운송장과장부형식은대조했지만종료보고서와완전계측이없어정산/재개는보류합니다”라고말한다. raw/normalizedconfigdigest와파일bytesSHA를같은지문으로혼동하지않는다.
+
+각33,554,432B차이를환불액으로읽지않고총예약136,314,880B보존·proposed_refund0·정산/실행/자동재개false를짚는다. source신원binding·완전전송·aggregateexactly-once UNKNOWN·processfalse도설명한다. 메타일치fixture는계속BLOCKED이고실제terminal성공을운영자료로만들지않았다.
+
+최종CP949exit0·전체356건355PASS/1SKIP·관련/독립18시험·보호19refs/기존계약5SHA불변과원래복구계획동일ID VALID_BLOCKED를근거로쓴다. 이번은공개API/화면계약없는CLI라새버튼/브라우저시연을찾지않는다. 원장정산·lock삭제·환불·수집재시작·학습은시연하지않았다.
+
+## Aggregate 읽기 대조 시연 — 화면 변경 없음
+
+문서46과`recovery-aggregate-live-final-20261017.json`의요약을읽는다. 실제113source참조가모두존재하고1,384명세행의두필드쌍이원천row각1개에연결되며patchID/이미지경로중복0·issues0을보여준다. “목록번호연결이맞는지검산했으며실제영상파일을다시검사한것은아닙니다”라고설명한다.
+
+ledger119중현재115(113report+pending2)와다른실험4를구별한다. 같은scene에서16patch를만드는것과patch0report도정상계약이라scene반복/patch0을단순오류로세지않는다. year/province_binding NOT_CHECKED·crop_window_identity_checked=false·raster_files_read0/source_file_hashes_verified=false·exactly_once_appliedUNKNOWN을짚는다.
+
+최종CP949exit0·CONSISTENT_METADATA와statusBLOCKED/환불0/정산·재개false는양립한다. 보호132refs/기존계약7SHA불변·전체372건371PASS/1SKIP·관련/독립16시험은메타/코드근거이며실제복구·학습/운영승인이아니다. 새API/화면계약이없어새UI버튼이나브라우저검증은추가하지않았다.
+
+## Crop 메타데이터를 보여주는 시연
+
+이 단위에는 새 화면이나 API가 없다. 기존 UI를 그대로 두고 `evidence/integration/recovery-crop-live-final-20261017.json`의 요약과 문서47을 보여준다. 명령을 다시 실행하지 않고 보존된 최종 결과임을 먼저 말한다.
+
+“출처113개와 합산1,384행을 연결한 뒤 연도·지역·잘라낸 좌표의 기록을 비교했습니다. 각 항목1,384행이 계약과 맞고 중복0·issue0입니다. 하지만 실제 영상 경계와 픽셀을 검사하지 않아 BLOCKED를 유지합니다.” 이어 `raster_files_read=0`, 경계검사false, exactly-once UNKNOWN·환불0을 보여준다. 전체386건385 PASS·1 SKIP와 보호132참조/계약8SHA 불변은 시험·보존 근거다. UI 재검사·수집·학습은 수행하지 않았다.
+
+## 로컬 헤더 대조를 제시하는 시연
+
+새 화면은 없다. 최종 `evidence/integration/recovery-raster-headers-live-final-20261017.json`의 요약을 열어 고유1,475파일 VALID_HEADER·1,384행 HEADER_CONTRACT_MATCH·issue0·CONSISTENT_HEADERS와 **BLOCKED**를 함께 보여준다. 보존 결과를 읽는 시연이며 CLI/수집/학습을 재실행하지 않는다.
+
+“이번에는 목록만이 아니라 영상 내부의 크기와 좌표표도 읽었습니다. 원본 범위 안의 patch 위치와 좌표 변환이 계약에 맞았습니다. 하지만 픽셀이나 정답 품질·자료 독립성·전체 내용 해시는 검사하지 않아 실행과 학습을 허용하지 않습니다.” 내부 georef·PAM/네트워크 제한과 전체 SHA 미계산을 짚는다. API/화면 계약이 없는 내부CLI이므로 UI 수정·브라우저 재검사는 불필요했다.
+
+시험/보존 근거로403건402 PASS·1 SKIP/95.828초·보호132참조/9SHA 불변과 raster1,475개의 stat/16바이트/목록 관측 변경0을 제시한다. “전체 파일 내용의 SHA를 보존 검증했다”라고 말하지 않는다. streaming 내용SHA는 다음 PLANNED 작업이다.
+
+## 파일 byte SHA 검사를 설명하는 시연
+
+새 화면 대신 content companion의 최종 보존 JSON을 보여주며 명세 pin·예상/관측SHA·실제 반환byte·동일digest경로 진단을 읽는다. 최종 실자료 근거가 확정된 범위만 말하고 대용량 CLI를 시연 중 다시 실행하지 않는다. “지문이 맞는 것과 영상 속 의미·정답 품질·공간 독립성은 다릅니다”를 함께 설명한다. 기존 헤더 보고서의 contentSHAfalse는 과거/모듈 범위 그대로이며 새 companion과 혼동하지 않는다. 내부CLI라 UI 변경·브라우저 재검사는 불필요하다.
+
+확정 시연 수치는1,475 MATCH·RECORDED_SHA_MATCH·실제2,332,461,937B/예산3,000,000,000B·issue0/동일digest경로그룹0·BLOCKED다. 전체418건417 PASS·1 SKIP/92.959초·보호132참조/10SHA 불변을 함께 제시한다. 이번 image fullSHA는 streaming 관측이지만 label/quality·4,335개 전수감사·원자적 snapshot/공간 독립 승인이 아님을 말한다.
+
+## 보조자산의 부분 성공을 보여주는 시연
+
+최종 `evidence/integration/recovery-auxiliary-content-live-final-20261017.json`을 읽고 files2,855 MATCH·계획/실제12,719,583B·issues0과 **RECORDED_AVAILABLE_SHA_MATCH_PARTIAL / INCOMPLETE_REFERENCES / BLOCKED**를 함께 보여준다. role coverage표의 source quality/boundary UNKNOWN각80·총160을 빠뜨리지 않는다.
+
+“명시된 표는 지문이 맞지만 오래된80행의 표 주소와 지문은 기록되지 않았습니다. 없는 정보를 추정하지 않아 부분검증으로 남깁니다.” 동일digest175그룹은 반복 byte이며 누출/공간독립 판정이 아님을 말한다. image+aux4,330을 과거4,335개 fresh 전수감사로 표현하지 않는다. 공개API/화면 계약 없는 내부CLI라 UI 변경·브라우저 재검사는 불필요하며 대용량/보조 CLI도 시연 중 재실행하지 않는다.
+
+최종 시험/보존 슬라이드의 근거는432건431 PASS·1 SKIP/103.139초·보호132참조/계약11SHA 불변·보조2,855 stat/prefix16와1,471부모목록 관측변화0이다. 이 자료는 실제 streaming 관측 범위이며 원자적 snapshot이나 미기재 참조 성공으로 설명하지 않는다.
+
+## 보조 TIFF의 정합을 보여주는 시연
+
+최종 auxiliary headers JSON에서 role별 matched_rows·exact_affine_rows·unknown_rows를 나란히 보여준다. 허용오차 일치와 exact 일치를 구분하고 readiness_full_gate_revalidated=false·raster_content_sha_revalidated=false·BLOCKED를 함께 읽는다. 보존 근거 시연이며 TIFF/CLI를 다시 열거나 실행하지 않는다. sourcequality UNKNOWN과 boundary OUT_OF_SCOPE를 빼지 않는다. 같은 격자가 라벨 의미·QA성능 승인과 다름을 설명한다. 내부CLI/APIUI계약불변이라 UI 변경·브라우저 재검사는 불필요하다.
+
+실제4,329 VALID_HEADER·4,072 pairing/exact 일치와 UNKNOWN80·PARTIAL/BLOCKED를 함께 보여준다. 전체446건445 PASS·1 SKIP/116.342초·보호132참조/계약12SHA·4,329 stat/prefix16/1,475부모목록 관측불변이 근거다. 현재 내용재해시/원자snapshotfalse와 boundary OUT_OF_SCOPE를 유지한다. 다음 boundary 구조/출처 진단은 PLANNED다.
+
+## 경계 구조 진단을 설명하는 시연
+
+최종 boundary JSON에서 raw SHA/구조 결과·feature/vertex 수·region_links·UNKNOWN/coverage를 함께 보여준다. “주소표가 잘 읽히고 지역명이 내부키에 연결됩니다. 공식 경계·권한·자기교차·raster포함은 다른 검사입니다”라고 설명한다. 보존근거만 읽고 CLI를 재실행하지 않는다. 기존auxiliary 헤더의 boundary OUT_OF_SCOPE는 그모듈 범위이며 새companion과 구분한다. 공개API/UI계약 없는 내부CLI라 화면수정·브라우저 재검사는 불필요하다.
+
+확정 시연 수치는1파일482,365B SHA/구조일치·6feature/17,940position·1,304지역연결·UNKNOWN80/부분coverage·BLOCKED다. 전체462건461 PASS·1 SKIP/107.796초·보호132참조/13SHA·boundary stat/prefix16/부모목록 불변을 함께 제시한다. `.is_valid` topology는 아직 PLANNED이며 geometry자동수정이나 공식승인으로 말하지 않는다.
+
+## 경계 topology를 설명하는 시연
+
+최종 topology JSON에서 geometry_runtime·feature_checks·validity_reason·평면 degree²·UNKNOWN/coverage와BLOCKED를 함께 읽는다. 파일구조 STRUCTURE_MATCH와 feature VALID_TOPOLOGY를 구분한다. “도형마다 꼬임을 진단했지만 서로다른지역간중첩·공식권한·영상포함·공간독립성은 검사하지 않았습니다”라고 설명한다. 자동repair/재투영없음·입력상한은 hard CPU시간 보장아님을 말한다. 보존근거 시연이며 CLI재실행·원본수정·새화면은 없다. 내부CLI/APIUI불변으로 UI변경·브라우저 재검사는 불필요하다.
+
+확정시연은 Shapely2.1.2/GEOS3.13.1의6 VALID_TOPOLOGY/6시도·지역연결1,304/UNKNOWN80·부분coverage/BLOCKED다. 전체475건474 PASS·1 SKIP/103.359초·보호132참조/계약14SHA·boundary stat/prefix16/부모목록불변을 함께 제시한다. 평면degree²면적숫자는 사업면적으로 제시하지 않는다. 교차feature접촉/면적중첩진단은 다음PLANNED다.
+
+## 경계쌍 관계를 보여주는 시연
+
+최종relations JSON의pair_scope·planned/attemptcount·pair_results와 area_overlap_findings·UNKNOWN/coverage/BLOCKED를함께읽는다. 접촉쌍은교차면적0이어도nonempty이므로DISJOINT와다르다고설명한다. finding을기관경계오류로단정하지않고 평면degree²를사업면적으로제시하지않는다. 보존근거시연이며CLI재실행/자동repair는없다. 같은파일범위·다른파일OUT_OF_SCOPE와 내부CLI/APIUI불변 UI변경불필요를말한다.
+
+확정 시연은 계획/시도15쌍=13떨어짐+2접촉+양수면적중첩0이다. 접촉은 South Sulawesi–Southeast Sulawesi와 Banten–West Java이며 빈 교차와 구분한다. UNKNOWN80·부분coverage/BLOCKED와 전체490건489 PASS·1 SKIP/107.418초·보호132참조/15SHA 불변을 함께 제시한다. 원본영상 footprint·주 연결은 다음 PLANNED이며 현재 픽셀 내부 비율을 검증했다고 말하지 않는다.
+
+## 원본영상 네 모서리 진단 시연
+
+최종source-footprints JSON에서 source header·pixel_edge_corners·임시lon/lat geometry·명시주관계와UNKNOWN/coverage/BLOCKED를함께읽는다. “사진의네모서리를지도에옮긴직선근사이며 픽셀포함비율이나정확footprint는아닙니다”라고설명한다. 변환중offline·finally복원과sourceSHA재해시false를제시한다. 원본영상/경계를재투영저장하거나CLI를시연중재실행하지않는다. 내부CLI/APIUI계약불변으로UI변경·브라우저재검사는불필요하다.
+
+확정 시연은 source91개 유효헤더/직선근사와 고유86관계 양수교차, UNKNOWN80·부분coverage/BLOCKED다. pyproj3.7.2/PROJ9.5.1·network false→false/복원true와 전체506건505 PASS·1 SKIP/161.521초·보호132참조/16SHA불변을 제시한다. 양수교차를 영상전체가 주 안에 있거나 픽셀비율이 확보된 결과로 말하지 않는다. 다음 source간/고정split후보 진단은 PLANNED다.
+
+## Source 고정split 후보 시연
+
+최종 source-split-overlap JSON에서 scope_rows·physical_row_counts_by_fixed_split·fixedpolicy/SHA와 적격/readiness재계산false를 먼저 보여준다. sharedsource finding·plannedpair·diagnosticrecord·intersectionattempt를 구분하고 NOT_CHECKED를 성공으로 읽지 않는다. 같은split범위밖·boundary미사용·corner근사한계·BLOCKED를 함께 제시한다. 보존근거 시연이며 CLI재실행·원본분할재배정·후보발행은 없다. 내부CLI/APIUI계약불변으로 UI변경·브라우저재검사는 불필요하다.
+
+확정 시연은 물리1,384행/91source·고정split848·272·264와 교차2,227계획/진단/실시도 모두DISJOINT, sharedcanonicalcrosssplit0·같은단일split1,868범위밖이다. 전체521건520 PASS·1 SKIP/160.195초·보호132참조/17SHA불변·BLOCKED를 함께 제시한다. 적격1,111/628·233·250을 다시평가한결과가 아니며 기존readiness token/bbox검사와 다르다고 설명한다. 기존차단의 원인분기는 추측하지 않는다.
+
+## 저장 readiness와 corner 범위를 함께 보여주는 시연
+
+최종comparison JSON에서 세입력SHA·comparison_status·저장blockers/적격계수와물리계수·corner완료/요약을 함께읽는다. eligible_scene_witness_status와shared_source_token_or_bbox_branch_cause가 UNKNOWN_NOT_PERSISTED인지보여준다. “문서가맞물리는것과당시실제차단원인증명은다릅니다”라고설명한다. 저장header/runtime를현재영상/엔진재검증이라하지않고 snapshot_evidence_only·현재재검증false·BLOCKED를제시한다. 보존근거시연이며CLI/영상검사를재실행하지않는다. 내부CLI/APIUI불변으로UI변경·브라우저재검사는불필요하다.
+
+확정 시연은 세JSON일관/issue0·저장5차단 원형보존·적격628/233/250과물리848/272/264·차이220/39/14(산술만)·원인UNKNOWN이다. 저장corner2,227 recorded DISJOINT true와 현재raster/GEOS/assessfalse·BLOCKED를 함께 제시한다. 전체538건537 PASS·1 SKIP/174.829초·보호132참조/18SHA·입력3JSON불변을 읽는다. 향후witness계약/helper는 계획이며 과거원인소급복원이 아니다.
+
+## Witness helper와 실제부재를 설명하는 시연
+
+실제live-absence JSON의saved_report_SHA·prepared_payloadnull·scene/witness부재와 helper(None)의UNKNOWN·union_completefalse를읽는다. 합성예시의연결edge는실제과거장면근거가아님을먼저말한다. “앞으로명시입력을받을순수도구를만들었으며 과거빈공책을채운것은아닙니다”라고설명한다. 실제helper재실행이나gate재평가는하지않는다. callerasserted적격성·저장truncation/전체union·None/empty를구분한다. CLI/API/UI연결없는순수함수라 새화면적용대상이없다.
+
+최종시험/보존근거는554건553 PASS·1 SKIP/197.097초·보호132참조/기존19계약SHA·저장readiness불변이다. 실제부재확인과 합성16/독립16·별도BFS300사례를 구분한다. 실제적격scene연결을 수행하지 않았고 None→UNKNOWN/union미완료만 확인했다. 반환edge는 메모리목록이며 영속저장·assess/화면통합은 계획이다.
+
+## None envelope byte왕복 시연
+
+live-validation audit에서독립구성한None/None/defaultlimits의expectedinputpin·3,385bytes·byte_identical_reencode=true와provenance/실행코드인증false를읽는다. rawenvelope의UNKNOWN witness와5blocker/적격계수보존을연결한다. “봉투가일관된것과실제출처서명·적격성은다릅니다”라고설명한다. Root의evidence파일작성과모듈영속저장을구분하고새CLI/화면을실행하지않는다. 실제eligible장면/과거원인복원·assess통합은없으며 새UI대상은없다.
+
+최종시험/보존근거는572건571 PASS·1 SKIP/158.325초·보호132참조/20계약SHA·저장readiness/5blocker불변이다. 관련18/독립18·별도signedzero와 실제None3,385bytes왕복은 구분한다. 실자료장면이나 출처/실행코드를 인증한결과로 설명하지 않는다. 순수메모리기능이며 Root증거쓰기≠모듈저장, adapter/실제gate연결은계획이다.
+
+## 기본 off adapter를 설명하는 시연
+
+새화면이없으므로 문서60·합성on/off동등성로그·AST parity와saved-state를보여준다. “내부옵션연결은구현됐지만실제전체자료의재평가결과는아닙니다”라고말한다. 합성0patchbridge·copy변조후raise격리사례와실제저장reportSHA/diagnostics부재·역사scene수UNKNOWN을구분한다. childBLOCKED는별도진단권한없음이며outergate추가차단이아님을설명한다. 기본자동활성화·실자료CLI재실행은하지않고 공개API/UI계약없음으로화면변경도불필요하다.
+
+최종시험/보존근거는589건588 PASS·1 SKIP/164.510초·보호132참조/21진단계약SHA·저장report불변이다. 의도한기존코드변경은readiness.py뿐이며 현재raw90b6b3...와정규화text2f70b1...를구분한다. 기본off·합성17/독립17·별도200사례·AST와실자료미재평가를 함께말한다. 저장patch1,111을역사scene수로설명하지않는다. CLI노출/envelope검토는계획이다.
+
+## CLI help와 합성 출력보호 시연
+
+실제live-help JSON/log에서새flag노출·exit0와실자료assess/학습false를보여준다. 합성output보호로그의새파일/입력별칭·writer경쟁·부분파일보존·Windows14path거부를실자료결과와구분한다. CP949환경변수가있어도기존stdoutUTF8재설정을유지했고 새요약이ASCII라는사실만말한다. 실제자료명령을시연중실행하거나자동진단을켜지않는다. 공개API/UI계약이없어화면변경은불필요하다.
+
+최종시험/보존근거는608건607 PASS·1 SKIP/207.921초·보호132참조/23계약·저장report불변이다. 이전추적파일변경0과별도preflight의run_experiment.py변경을구분해 전체workspace무변경으로말하지않는다. 관련19/독립19·별도14path·실제help는실자료assess/학습실행과다르다. 다음실자료진단범위/입력SHA·자원계획또는envelope검토는PLANNED다.
+
+## 새실자료 보고서 시연
+
+보존된 `readiness-connectivity-20261017.json`과문서62를열어1,384scene/0patch273/patch1,111·CAPTURED_COMPONENTS_MATCH와5 blocker/BLOCKED를함께보여준다. 현재tokenevent1096→303 다음에전체28회원(Banten16positive·WestJava9positive/3zero)을보여주어0patch만의문제로단정하지않는다. index는assess내부순번이며rawmanifest행binding은아직미검증이다.
+
+현재helper는957,036 bbox쌍/2,768 token을처리했고 event15,019개(token2,595+bbox12,424)중10,000개를저장해5,019개가생략됐지만 union_complete=true다. 독립graph/BFS 검토가현재전체projected JSONmetadata에서모든계수·첫10,000필드·component를대조해 cross-split bbox0/token1을확인했다. 이는잘린prefix만의추론도 원본영상/정확기하독립성검사도아니다. 문서validation20항목은새unittest20개가아니다.
+
+생산코드변경0·보호132참조/24코드계약SHA·기존savedreport/원장/lock/분할/모델은불변이다. 새보고서는11,132,483bytes·SHA `95f7622ac72ef6a3d43aafc35a3607a4e9f39ed2912ac01280a07cc62c854e35`다.135회표본의peak tree RSS214,724,608B·감시기준timeout600초/RSS2GiB·중지없음은관측값이며 hard memory cap/순간최대보장이아니다. **이번62단위새unittest/full회귀실행은없다.**608건607 PASS·1 SKIP/207.921초는직전61코드단위로그이며 실제CLI1회/독립JSON검증을거기에합산하지않는다. 이해에이전트는보고서만읽고실행·독립계산을재수행하지않았다.
+
+기존UI는oldreadiness5차단상태이며새witness카드는연결하지않았다. CLI를재실행하거나장면삭제/정책변경을시연하지않는다.
+
+## 모호한 원본후보를 정직하게 보여주는 시연
+
+새lineage evidence의OBSERVED_METADATA_MEMBERSHIP·report/raw회원28·candidate_links400/고유raw28·AMBIGUOUS28·exact_row_binding=false를함께보여준다. “원본후보를모두찾았지만단일행으로인증할단서가부족합니다”라고말한다. 내부index와rawrow를같게고르지않고 선언imagepath/hash를실제파일검증으로표현하지않는다. 전체projected/raw조회와잘린witnessprefix·event재생을구분한다. CLI를재실행하거나원본/정책/분할을수정하지않고 공개API/UI계약없음으로화면변경도불필요하다.
+
+## Source identity 계약 설명 시연 — 실자료 화면 변화 없음
+
+새 Gate의 상태표를 열어 부재·부분·무효·전체 선언을 설명한다. optional 객체의 경로·지문은 파일 인증 결과가 아니라 이미 계산한 단서 전달임을 먼저 말한다. 기존 projected5키·helper/gate 유지와 추가 IO0을 설명하고 현재63 결과28장면 전원 모호성과 비교한다. 실자료 재assess/새 보고서·소비자 연결·새 화면은 없으므로 개선된 원본행 결과를 보여주는 시연은 하지 않는다. 다음 소비자는 PLANNED다.
+
+## 선언 단서 소비 시연 범위
+
+새 Gate의 원후보/별도 refinement 상태표를 열어 비교 불가 시 집합 전체를 유지하는 이유를 설명한다. 합성 singleton도 원본 인증이 아님을 먼저 말한다. 실제 기존 보고서는 단서 없는 legacy라28모호성이 그대로이며, 현재 실제 결과를 개선된 새 보고서처럼 시연하지 않는다. 새 API/UI 변화는 없고 다음 noexecute 보고서 관측은 PLANNED다.
+
+## 66 실자료 선언 대조 시연
+
+새 Gate의 두 후보표를 함께 보여준다. 넓은28회원/400연결·전원모호성과 별도28연결·전원유일선언후보를 나란히 설명하고 exact binding false를 바로 읽는다. 새 보고서1,384선언 coverage는 token28대조보다 넓은 필드 존재 범위이며 전체 원본 인증이 아님을 말한다. 실제 검사85.641초·RSS표본과 직전638코드회귀를 구분한다. UI 자동연결·새 모델 결과가 없으므로 화면 상태를 바꾸거나 학습을 실행하지 않는다.
+
+## 저장 진단의 Agent Center 명시 조회 시연 — 실제 연결 확인
+
+Agent Center LCLUC의 ‘저장된 출처 대조 진단’ 카드가 새 화면 연결 지점이다. 고정 핀과 token입력을 확인하고 명시 버튼으로만 조회하는 흐름을 설명한다. 결과에서 넓은 후보/유일선언/0패치/패치·저장차단을 구분한다. 입력을 바꾸면 이전 결과가 사라지는 의미와 경로 비노출을 말한다. 최종 실제 API/브라우저 근거에서 새5174/8002 연결을 확인했다. 빌드·어댑터시험과 실제 수동조회를 분리한다.
+
+### 실제 적용 확인 후 시연 경로
+
+`http://127.0.0.1:5174/#/view/24?model=lcluc&tab=evidence`에서 저장 출처 대조 카드를 찾는다. 입력핀/token확인→명시조회→28/400/28·0patch3/patch25·차단5를 함께 읽는다. 입력을 바꾸면 결과가 지워지고 틀린핀은409안내임을 설명한다. 허브 back/forward에서는 이전결과가 유지되지 않는다. [실제 desktop근거](../../../evidence/integration/readiness-source-identity-ui-desktop-20261017.jpg)·[mobile근거](../../../evidence/integration/readiness-source-identity-ui-mobile-20261017.jpg)는 Root확인 기록이다. 기존5173서버의 적용으로 설명하지 않으며 학습/Job 제출 버튼을 누르는 시연은 하지 않는다.
+
+## 후보계획 참조 묶음 설명 시연
+
+다섯 입력참조와 선택metadata 범위를 새 Gate에서 보여준다. 선언 유일후보의 내부sceneindex/raw후보행index를 구분해 저장계획의 유지/제외 예정 집합을 설명한다. 실제 원본에서 행을 지우거나 새 Dataset을 등록한 것으로 말하지 않는다. NOT_PERFORMED전체planner와 CONSERVATIVE_BOUNDS_ONLY클래스, 원본인증false를 함께 읽는다. 이번새API/UI없음이며 기존저장조회화면에서 후보가발행된것으로시연하지 않는다.
+
+### 69 실제 관측 확인 후 설명
+
+실제 참조패키지에서 source1384/계획1368유지16제외·query28의16제외12유지를 읽는다. projected1095와 현재1111을 나란히 설명하고 val bare상한209·원본제외0/미발행/BLOCKED를 함께 말한다. 다섯JSON pin확인은 전체planner재계산이 아니며 새 API/UI화면으로연결된것도 아니다.
+
+## Split bounded IO 설명 시연
+
+새 Gate에서 None기본경로/opt-in을비교하고 source/readiness/saved_plan/candidate역할과plan/candidate출력한도를보여준다. 개별bytecap을RAM/CPU/누적IO로설명하지않고사전측정후부분새파일가능성을말한다. 이번실제검증은후보미지정validator범위이며새후보발행/원본제외/학습이나새화면이아니다.
+
+### 70 실제결과 설명
+
+실제3JSON validator결과METADATA_INTEGRITY_VERIFIED·NOT_REQUESTED/null을함께읽는다. 계획16제외예정/1095는현재1111과별개이고이번은readonly재계산이다.69의전체planner미수행과70재계산수행을단위별로구분한다. writer의바이트동일/부분파일은합성근거이며실제후보생성시연이아니다. 다음3pin/새evidence/roundtripreceipt연결은PLANNED다.
+
+## 후보·receipt 설명 시연 — 실제metadata생성 확인
+
+새 Gate의세입력핀과plan/candidate/receipt순서를보여준다. receipt없으면미완료이며파일이있다는것만으로완료로표시하지않는다. exactmetadata왕복과raster/과학승인차이를읽고70미생성은당시이력으로구분한다. 실제71의candidate1368행/receipt생성·typed일치를확인했다. 운영등록/학습은시연하지않고candidate실제QA는NOT_ASSESSED라고말한다.
+
+### 71 실제산출물확인
+
+`evidence/integration/candidate-materialization-live-20261017`의plan/candidate/receipt를설명하되대용량JSON을다시실행/생성하지않는다. source1384→candidate1368·16개후보에서만제외·projected1095/원본1111과receipt성공을함께읽는다. 파일존재만인증하지않고Root검증JSON의SHA/size/typed일치를근거로한다. 후보의실제rasterQA/차단수는미확인이며다음DATAstaging/QA는PLANNED다.
+
+## DATA staging 설명 시연 — 실제metadata준비 확인
+
+71receipt/외부3핀→기존fullcandidate검증→candidateJSON만DATA새경로→같은SHA/size→stagingreceipt순서를보여준다. 영상원본복사나QA성공시연을하지않고NOT_PERFORMED를읽는다. 실제DATA후보와evidence원후보의같은SHA/size및3675Bstagingreceipt를확인했다. 새API/UI없어기존카드가후보QA를표시하는것으로설명하지않는다.
+
+### 72실제산출물설명
+
+`data/first-group-candidate-qa-stage-20261017`의candidate와stagingreceipt를설명하되생성명령을반복하지않는다. 같은SHA/size·1368행/projected1095와QA NOT_PERFORMED를함께읽는다. 원본영상복제·후보준비성성공이나차단수5로설명하지않고원본5차단/후보미검사를구분한다. 다음73guard/QA는PLANNED다.
+
+## 후보readiness QA 설명 시연 — 실제4차단 확인
+
+새 Gate에서4외부핀·동일effectivepolicy/oldsignature→기존run noexecute/noresume→새readiness/QA완료receipt를설명한다. 이전72미검사와새73실제QA완료를구분하고후보4차단/원본5차단·누출완전해소미승인을함께말한다. BLOCKED도검사완료지만학습/등록승인이아님을함께읽는다. 새API/UI없어저장원본카드가새후보결과로자동바뀐것처럼시연하지않는다.
+
+### 73실제보고서설명
+
+`data/first-group-candidate-readiness-qa-20261017`의readiness/qaReceipt를근거로QA_COMPLETED·blocked/readyfalse·class7관련4차단·628/217/250를읽는다. 기존저장조회UI는원본보고서기준이므로후보4차단과혼동하지않는다. bare기여patch0/val209한계를말하고학습/등록을시연하지않는다. 다음74수동비교UI는PLANNED이며원본물리장면수old미저장은null로표시할계획이다.
+
+## 원본·후보저장QA비교시연 — 실제적용 확인
+
+LCLUC전용네핀폼에서명시조회하는흐름과1111→1095/5→4·코드빈도/나지부족을설명한다. 원본물리장면미저장은null이며stage선언/후보캡처를분리해읽는다. 표시중단을서버취소라고하지않는다. 최종실제5174→8002조회와build/시험을분리확인했다. 이번모바일실측은없다.
+
+### 실제수동비교시연경로
+
+`http://127.0.0.1:5174/#/view/24?model=lcluc&tab=evidence`의원본·후보준비성비교에서네핀을확인하고명시조회한다.1111→1095/5→4·나지부족·원본물리미저장/선언/캡처를함께읽는다. 입력변경/허브왕복으로결과가폐기되며응답표시중단은서버취소가아님을설명한다. [수정후desktop근거](../../../evidence/integration/candidate-qa-comparison-ui-desktop-20261017.jpg)는Root관측이며기존5173적용/모바일실측/새QA실행근거가아니다. 다음나지데이터요구계약은PLANNED다.
+
+## 나지요구조건 설명 시연 — 실제저장산술 확인
+
+새 Gate의픽셀부족0/47/0과기여patch부족5각·9클래스분모/낮은bare비율을나란히읽는다.47만채우기/새15patch를확정수집계획으로표현하지않는다. 순수balance재계산은새영상/라벨QA가아니며현재4차단화면은유지한다. 내부CLI출력이새UI요구카드로연결된것도아니다.
+
+### 76실제출력설명
+
+`evidence/integration/bare-class-requirements-live-20261017.json`의0/47/0·5각·0.003532%/0.001494%/0.006307%와정책0.5%를읽는다. ratio분모9클래스합과기여patch의최소256픽셀을구분한다. 실제출력은새자료수집표나새UI카드가아니고저장통계산술이다. 명령을반복하거나47픽셀/15새patch충족으로학습완료를시연하지않는다.
+
+## 실행입력binding 설명 시연 — 최종전체/보존 확인
+
+새 Gate의주문서/전달목록과BLOCKED/UNKNOWN/MATCH상태표를읽는다. expected미기록manifestpin은supplied새값으로채우지않는다. bindingshash와Jobidentity를구분하고실제legacy2기록/로컬8replay를executorcapture와동일시하지않는다. 새API/UI/실행연결이없어실행시연/Job제출을하지않는다.
+
+### 77최종근거설명
+
+localreplay근거의실제저장참조와로컬복사/변조를구분하고UNKNOWN4/BLOCKED4·실제MATCH없음을읽는다. helper무IO와RootreadonlyDB조회범위를섞지않는다.789건788 PASS·1 SKIP와별도648/8을합산하지않으며다음78비공개제출capture는PLANNED다. DB/Job/실행기작동시연은하지않는다.
+
+## 제출binding capture 설명 시연 — 최종근거 확인
+
+기존resolver공개결과와새내부capture를분리해설명한다. samepasspin/추가IO0·RECORDED와quality/ACL차단을나란히읽고기존HTTP/UI는그대로임을말한다. TempStore호환3사례는운영POST성공으로설명하지않으며legacy역채움·실제executor시연을하지않는다. 최종전체805/804PASS1SKIP와실제legacy4GET보존을확인했으며신규운영capture생성은미관측이다.
+
+### 78최종근거설명
+
+TempStorebefore/after3사례의공개호환과실제2legacyJob GET4회호환을별도읽는다. 새capture생성을운영POST나실제executor전달로설명하지않고기존legacy미기록/역채움없음을보여준다. 다음79safeprojection/API·수동UI는PLANNED이며현재공개화면에새capture가노출되는시연은하지않는다.
+
+## 저장capture API·UI 설명 — 실제legacy 확인
+
+네상태와null≠0·요청hash/배열hash·14false를새Gate에서읽는다. 실제2legacy관측을RECORDED실자료조회로설명하지않고큰원문/식별자/경로노출이없음을말한다. 80코드/프론트/실제legacy수동조회를확인했다. 나머지상태/강제late/mobile은실환경검증범위가아니다. 저장조회가현재files/executor검사나학습승인은아니다.
+
+### 실제저장capture수동시연
+
+`http://127.0.0.1:5174/#/view/24?model=lcluc&tab=evidence`의표준JobID에기존ID를명시하고‘저장된입력연결기록조회’를누른다. request1과capture/pin의미기록·미확인/null을읽고0개나현재파일인증으로설명하지않는다. [실제desktop근거](../../../evidence/integration/stored-binding-capture-ui-desktop-20261017.jpg)는Root관측이며신규운영RECORDED·모바일·실제executor근거가아니다. 입력/Agent/메뉴가바뀌면결과를지우며표시중단은서버취소아니다.
+
+## 저장expected handoff 설명 — 최종전체/보존 확인
+
+79저장검증→RECORDED안의expected만77비교와legacyvisiblemismatch차단을상태표로설명한다. 실제2기록/로컬8replay를실제executor포착으로말하지않고passedJoboriginfalse/현재filesfalse를함께읽는다. 새API/UI/DB연결이없어실행/Job제출/화면변경시연을하지않는다.
+
+### 81최종근거설명
+
+storedcapture가RECORDED일때만기준expected를꺼내는흐름과legacyvisiblemismatch차단을읽는다. 실제선언/localreplay와실제executor를섞지않고832건831 PASS·1 SKIP·141보호42코어를근거로말한다. 다음configuredStoreget1adapter는PLANNED이며실제Job쓰기/실행/새화면시연은하지않는다.
+
+## 82 Store handoff adapter 설명 — 최종 근거 확인
+
+네Store상태와inner세binding상태를분리해읽는다. validget1/invalid0·malformedOBSERVED/innerBLOCKED·실제readonlyget9/local8replay범위를설명하고운영MATCH/실행과섞지않는다. 기존전체DB파싱/출처인증false·새API/UI없음을함께말하고실제DB쓰기/실행시연은하지않는다.
+
+
+82 최종 증거: 관련·독립 각 12개 통과, 전체 844건 중 843 PASS·기존 1 SKIP/342.991초다. 실제 Store.get 9회와 로컬 재생 8회는 별도 관측이며 실제 실행기 전달은 아니다. 보호 141참조·44코어·카탈로그 14기록·기존 Job 본문을 보존했다. 공개 API·화면이 바뀌지 않아 이번 단위의 새 화면 시연은 없다. 다음 저장-vs현재 pin preflight는 PLANNED다.
+
+
+## 83 내부 preflight 설명 — 최종 근거 확인
+
+저장 근거·현재 입력 진단·선언 대조의 세 축을 설명한다. 같은 pin도 품질 차단이면 출고하지 않는 비유를 사용한다. 실제 기존 legacy 두 Job은 UNKNOWN/current NOT_RUN이고 Store.get 총3회·resolver/Registry get0이었다. 현재 positive 검증은 격리 합성시험으로 구분한다. 새 공개 API·UI가 없으므로 기존 카드에서 새 기능을 실행하는 시연은 하지 않는다.
+
+
+83 최종 근거는 전체 856건 중 855 PASS·기존 1 SKIP/343.921초다. 보호 141참조·45코어·카탈로그 14기록·기존 Job 본문을 보존했다. 현재 positive는 합성 시험, 실제 legacy는 UNKNOWN/NOT_RUN이며 공개 API·UI·Workflow·실행기는 아직 연결하지 않았다. 다음 수동 API+UI는 PLANNED로만 설명한다.
+
+
+## 84/85 현재 입력 재검증 — 실제 데스크톱 legacy 확인
+
+저장 메모 조회와 현재 직접 입력 검사의 차이를 먼저 설명한다. API 실제 legacy 두 Job은 UNKNOWN/current NOT_RUN이고 기존 6응답은 baseline과 같았다. current positive와 busy/cancel은 합성 증거다. UI5174에서 명시 버튼으로 legacy UNKNOWN·3축·미확인 값을 보여준다. 저장 조회 독립과 입력/Agent/Registry/뒤로 이동 시 제거를 확인했으며 실제 current positive/busy/cancel/mobile은 시연 근거가 아니다.
+
+
+## 86 Workflow 선택 입력 전달 계약 — 최종 합성·회귀 확인
+
+전체 작업 지시서에서 한 작업의 재료 목록을 전달 초안과 비교하는 비유를 사용한다. 합성 순수 함수이며 실제 Workflow 제출·Job 생성·화면 실행은 하지 않는다. 순환이어도 목록만 같으면 MATCH일 수 있고20false/7IO0·dag_validated=false를 유지한다. 기존84/85 화면에서 새 기능이 작동한다고 시연하지 않는다.
+
+
+86 최종 회귀는882건 중881 PASS·기존1 SKIP/346.255초다. 관련·독립 각13개는 반복 검증으로 별도다. 보호141참조·48코어·catalog14·기존Job 본문을 보존했다. 실제 저장Workflow0건은 환경 관측이고 새 handoff 성공을 뜻하지 않는다. API/UI 연결은 다음 PLANNED이므로 기존 화면에서 전달 실행을 시연하지 않는다.
+
+
+## 87/88 원문 handoff 비교 — 실제 합성 선언 시연 확인
+
+원지시서와전달초안의비교창구를설명한다. 원문두JSON을보존하고callerpin과outerrawSHA를나눈다. 실제HTTP의UnicodeMATCH와driftBLOCKED도합성선언범위다. 실제5174/#/view/15에서 합성 수동 MATCH·role drift BLOCKED·없는node/null·중복JSON 로컬 거부를 확인했다. 기존plan/lineage와독립이며편집/뒤로이동결과를버린다. 테스트후원초안복원·합성입력제거를완료했고스크린샷은복원전시연이다.
+
+
+## 89 full Job 초안 companion — 최종 합성·회귀 확인
+
+전체주문서양식확인후재료목록만꺼내는비유를쓴다. 내부합성helper이며기존87/88화면을fullJob검사로시연하지않는다. 원schema coldread와자산읽기0을나누고전체초안관측hash·metadatahash·callerWorkflowpin을구분한다.
+
+
+89 최종 전체912건/911PASS/기존1SKIP/359.738초, 관련·독립각15개는반복검증이다. 보호141참조·57코어/원schema·catalog14·Job2본문을보존했다. 운영fullJob전달을확인한것이아니며기존87/88화면에서새helper가동작한다고시연하지않는다. 날짜보완은89전용이고공통API날짜개선은별도계획이다.
+
+
+## 90/91 full Job 수동 검사 — 실제 합성 초안 확인
+
+원문전체초안을검사하는접수창구비유를쓴다. Workflowpin·outerrawSHA·serverfullJob관측hash를나누고Job생성과다름을설명한다. 실제5174에서 소수·지수·음0 MATCH와날짜/role차단·dupe400·없는node/null을합성초안으로확인했다. 기존세조회와독립이고접기/편집/이동상태를확인했다. 원초안복원·합성필드제거완료이며스크린샷은복원전이다.
+
+
+## 92 공통 날짜 검사 — source·최종 회귀 확인
+
+공통달력검사기제작법을설명한다. freshsource합성정상6/invalid13과운영서버적용을구분한다. 기존UI/오류계약이같아직접새화면시연은없고8002reload만으로날짜동작을확인했다고말하지않는다.
+
+
+92 최종전체937건/936PASS/기존1SKIP/345.696초,관련67·독립40은반복검증이다. 보호141참조·57코어/schema·catalog14·Job본문을보존했다. 새source의날짜지원은확인했지만운영HTTP제출/실행서버날짜적용과브라우저재검사는없다. 이전90/91화면시연을이번날짜운영검증으로표현하지않는다.
+
+
+## 93 등록관계 공통화 — 최종 합성·회귀 확인
+
+두접수창구의명부확인비유를쓴다. SHA고정원handler와격리response/Store순서/기록동등을설명하고운영제출성공으로확대하지않는다. 공개화면/오류계약이같아새직접화면시연은없다.
+
+
+93 최종전체948건/947PASS/기존1SKIP/381.129초,관련78·독립21은반복검증이다. 보호141참조·59코어/schema·catalog14·Job본문·이전증거559파일을보존했다. 새source의등록관계일치와운영서버행동/실능력검증은다르다. 공개계약과화면이같아직접새시연은없다.
+
+
+## 94/95 선택형 등록관계 — 최종 합성·화면 확인
+
+주문서검사뒤명부를선택확인하는비유를쓴다. 기본RFC1/명시RFC2와innerMATCH·outerBLOCKED를나누고REGISTERED를실지원승인으로말하지않는다. 실제5174에서13check를확인했고원Workflow/빈입력/defaultoff로복원했다. 기록된fullJob9클릭·기존88의1클릭은네트워크계측수가아니다. 기존진단수동POST는유지하며새RFC2자동요청만없다.
+
+
+## 96 model_ref 선언 범위 — 최종 합성·회귀 확인
+
+모델주문에최신별칭대신고정문자를적는비유를쓴다. GMAIS입력범위축소와89정상결과보존을나누고실modelresolver검증으로확대하지않는다. 기존UI가400/modelcode를지원해이번직접화면재시험은없다.
+
+
+96 최종전체977건/976PASS/기존1SKIP/348.393초,관련112·독립41은반복검증이다. 보호141참조·66코어/schema·catalog14·Job본문·기존599증거파일을보존했다. source새거부와운영모델/서버검증은다르며직접UI재시험은없다. 이전95화면시연을96에서다시실행했다고설명하지않는다.
+
+
+## 97 내부 선택 버전 메모 — 최종 합성·회귀 확인
+
+실험보관시담당자의선택메모비유를쓴다. 생략동등과합성명시추가를나누고모양/source만으로출처인증하지않는다. catalog기존version부재·science부재/null을그대로말한다. API/UI옵션미연결로직접새화면시연은없다.
+
+
+97 최종전체987/986PASS/기존1SKIP/380.835초·관련37/독립13은반복이다. 보호141/core70/catalog14·기존Job본문/616증거는보존했다. registry사전핀보충의비교범위를설명하고실제운영등록성공이나globalimmutable로확대하지않는다. 기존API/UI옵션미연결이므로직접새시연은없다.
+
+
+## 98/99 선택 모델 버전 등록 — 실제 음성·최종 회귀 확인
+
+기본off/빈입력·원형값전달·201뒤refresh분리를설명한다. 성공은격리근거만사용하고운영에서는안전한없는보고서422까지만확인한다. 실제5174에서기본off/빈값·local안내·없는report422·완료뒤back과레이아웃을확인했다. 성공등록을시연하지않으며최종입력은빈값/off다. HMR오류1이력후reload정상과corrected전체근거를분리한다.
+
+
+## 100 등록메모 관측 — 최종 관련·보존 확인
+
+파일대신모델카드만보는비유를쓴다. 실제기존모델ABSENT와합성일관미검증을구분하고진단4false를기존필드수정으로설명하지않는다. API/UI미연결이므로직접새시연/전체/build/browser재실행은없고998전체는이전이력이다.
+
+
+100 최종집중12/관련47/독립12 PASS와보호141/core70/기존제품0변경·이전662증거불변을확인했다. API/UI미연결이므로새화면/전체회귀재실행없음이다. 실제ABSENT와진단false의범위를설명하고998전체를100의새실행으로표현하지않는다.
+
+
+## 101/102 선택모델 선언 조회 — 실제ABSENT·최종 회귀 확인
+
+모델카드를읽는수동창비유를쓴다. 실제기존ABSENT·없는404와격리나머지상태/auth503을나누고4false를기존평가값으로읽지않는다. 실제5174에서모델선택뒤수동ABSENT/3NOT_CHECKED와선택/route/back결과제거를확인했다. 타상태/오류경합은합성이며조회는등록/승인이아니다.
+
+
+101/102 최종전체1019/1018PASS/기존1SKIP/381.288초·UI172/build93·28.54를확인했다. 보호141/core71/catalog14·기존679증거는불변이다. 실제ABSENT/404와합성타상태·원본과학미검증을나누며기존readinesscheckpoint읽기를새metadataIO0으로숨기지않는다.
+
+
+## 103 발표 시연 — 화면 추가 없이 계약을 설명
+
+기존101/102 수동 등록 메모 창은 유지한다. 새103 비교는 API/UI에 연결하지 않았으므로 화면에서 성공했다고 시연하지 않는다. 대신 Gate의 흐름으로 명시 참조·제공 카드·내부 메모·버전/지문 대조를 설명한다. 카드 미제공을 DB 미발견으로 말하지 않는다. 합성 성공과 실제catalog14 보존 관측을 구분한다. 새 운영 등록·resolver·훈련은 없다.
+
+
+
+## 104 화면 없는 내부 연결 설명
+
+새 wrapper는 현재 화면/API에 연결하지 않았다. 기존 화면에서 새 모델 대조가 된 것처럼 시연하지 않는다. Gate의 흐름도로89 차단→추가 접근 중단, 참조 부재→대조 생략, 참조 존재→103 대조를 보여준다. OBSERVED와 nested 결과를 함께 읽고 None 카드는 미제공이라고 설명한다. 실제catalog 보존을 운영 Workflow 검증으로 말하지 않는다. 이번 프론트/build/브라우저 재시험은 없다.
+
+
+
+## 105/106 수동 모델 카드 대조 시연 순서
+
+5174의 GeoLLM 실행계획에서 ‘모델 레코드 초안 대조’를 펼친다. 기본 빈 node·Job·카드와 비활성 버튼을 확인한다. 준비된 합성 주문서와 카드를 명시 입력하고 수동 대조한다. 바깥 수행 상태와 안쪽 미제공·오류·충돌·일치 미검증을 별도로 읽는다. 실제 모델 목록에서 가져온 카드나 운영 Workflow라고 설명하지 않는다. 입력을 바꿔 이전 결과가 사라지는 점과 기존 패널 상태 독립을 보여준다. 표시중단은 서버 취소가 아니다. 새 모델 등록·Job 제출·학습은 하지 않는다.
+
+
+실제 확인은11체크·수동POST4회·1449×1087 넘침/겹침0·SVG·최근20시각필터 오류0이다. 원 Workflow를 정확 복원하고 route/back 뒤 새 세 필드를 비웠다. PNG는 합성 일치 미검증 상태다. 모바일·강제지연·브라우저503/auth·5173은 이번 실제 확인 범위가 아니다.
+
+
+## 107 화면 없는 공통 정렬 설명
+
+새 UI 시연을 추가하지 않는다. a와z가 준비되고 b는a 뒤에 가능하다는 종이 예로[a,z,b] 계층 정렬을 설명한다. 기존 세 호출부 응답과 오류·자료 읽기 순서는 유지한다. 수정 전 소스 사본 대비 격리 시험을 근거로 사용하고 이전105/106 브라우저를107의 실제 서버 적용 증거로 재사용하지 않는다. 실제 실행·새 Job·학습은 없다.
+
+
+
+## 108 화면 대신 저장 산술표 설명
+
+새 UI 시연은 없다. Gate 표에서 나지 총량·저장 기여0·가능한 범위를 먼저 나눈다. train상한5를 실제5개로 말하지 않는다. val1071과76의47을 각 조건으로 설명하고 미래수집량으로 환산하지 않는다. 실제CLI는 고정 JSON 산술이며 영상·라벨/새QA를 검사하지 않았다. 이전1069 전체와 이전 화면 근거는 각 역사로 유지한다.
+

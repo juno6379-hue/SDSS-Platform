@@ -1,0 +1,17 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_cached_validators_reuse_and_draft_wrapper_do_not_mutate (test_schema_formats.SchemaFormatTests.test_cached_validators_reuse_and_draft_wrapper_do_not_mutate) ... ok
+test_factory_instances_and_global_registry_are_independent (test_schema_formats.SchemaFormatTests.test_factory_instances_and_global_registry_are_independent) ... ok
+test_invalid_calendar_clock_zone_and_unsupported_forms (test_schema_formats.SchemaFormatTests.test_invalid_calendar_clock_zone_and_unsupported_forms) ... ok
+test_invalid_submission_returns_existing_400_before_any_store_access (test_schema_formats.SchemaFormatTests.test_invalid_submission_returns_existing_400_before_any_store_access) ... ok
+test_non_string_format_is_neutral_and_type_keyword_rejects (test_schema_formats.SchemaFormatTests.test_non_string_format_is_neutral_and_type_keyword_rejects) ... ok
+test_optional_date_time_registration_is_not_required (test_schema_formats.SchemaFormatTests.test_optional_date_time_registration_is_not_required) ... ok
+test_supported_zoned_calendar_forms (test_schema_formats.SchemaFormatTests.test_supported_zoned_calendar_forms) ... ok
+test_valid_submission_preserves_existing_blocked_response_and_records (test_schema_formats.SchemaFormatTests.test_valid_submission_preserves_existing_blocked_response_and_records) ... ok
+test_vendored_job_start_and_end_reject_invalid_date_time (test_schema_formats.SchemaFormatTests.test_vendored_job_start_and_end_reject_invalid_date_time) ... ok
+test_workflow_schema_and_plan_response_remain_equal_without_format_fields (test_schema_formats.SchemaFormatTests.test_workflow_schema_and_plan_response_remain_equal_without_format_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.055s
+
+OK

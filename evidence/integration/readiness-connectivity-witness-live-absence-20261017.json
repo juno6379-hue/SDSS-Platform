@@ -1,0 +1,110 @@
+{
+  "recorded_at": "2026-10-17T14:00:51.659295+09:00",
+  "verification_scope": "SAVED_REPORT_WITNESS_ABSENCE_ONLY",
+  "saved_report_path": "data\\first-group\\readiness-resume-20261017.json",
+  "saved_report_sha256": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+  "saved_report_bytes": 1116048,
+  "saved_prepared_payload_is_null": true,
+  "saved_report_contains_eligible_scene_witness": false,
+  "saved_blockers_preserved": [
+    {
+      "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+      "detail": "같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.",
+      "scene": "west_java"
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 픽셀",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "saved_eligible_counts": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "saved_province_groups": {
+    "south_sulawesi": "south_sulawesi",
+    "gorontalo": "gorontalo",
+    "southeast_sulawesi": "southeast_sulawesi",
+    "banten": "banten",
+    "west_java": "banten",
+    "east_java": "east_java"
+  },
+  "historical_branch_cause": "UNKNOWN_NOT_PERSISTED",
+  "actual_eligible_scene_input_used": false,
+  "assess_rerun": false,
+  "source_data_or_rasters_read": false,
+  "prospective_helper_result": {
+    "schema_version": 1,
+    "kind": "PROSPECTIVE_ELIGIBLE_METADATA_CONNECTIVITY_WITNESS",
+    "mode": "PURE_DIAGNOSTIC",
+    "status": "BLOCKED",
+    "input_eligibility": "UNKNOWN_NOT_PERSISTED",
+    "eligibility_verified": false,
+    "historical_readiness_cause_reconstructed": false,
+    "fixed_province_splits": null,
+    "scope": "SUPPLIED_ELIGIBLE_METADATA_ONLY",
+    "source_files_read": 0,
+    "pixel_arrays_read": false,
+    "geometry_engine_called": false,
+    "readiness_assess_called": false,
+    "source_files_written": 0,
+    "network_requests": 0,
+    "ready_for_training": false,
+    "scientific_accuracy_validated": false,
+    "training_executed": false,
+    "training_split_leakage_resolved": false,
+    "settlement_authorized": false,
+    "execution_authorized": false,
+    "automatic_resume_allowed": false,
+    "proposed_refund_bytes": 0,
+    "exactly_once_applied": "UNKNOWN",
+    "complete_spatial_separation_claimed": false,
+    "limits": {
+      "max_scenes": 2000,
+      "max_bbox_pairs": 1000000,
+      "max_witness_edges": 10000
+    },
+    "limitation": "Prospective caller-asserted eligible metadata only; not recovered historical eligible scenes, token/bbox causes, exact geometry independence, split leakage resolution, scientific or operational approval.",
+    "diagnostic_status": "UNKNOWN_NOT_PERSISTED",
+    "scene_count": null,
+    "bbox_pair_plan_count": null,
+    "bbox_pairs_evaluated": 0,
+    "token_occurrences_processed": 0,
+    "union_complete": false,
+    "union_change_count": null,
+    "witness_edges": [],
+    "witness_edge_count_total": 0,
+    "witness_edge_count_stored": 0,
+    "witness_edge_counts_by_kind": {
+      "TOKEN_SHARED_NAMESPACE": null,
+      "BBOX_STRICT_POSITIVE_OVERLAP": null
+    },
+    "witness_edges_truncated": false,
+    "witness_edge_coverage": "NOT_STARTED",
+    "input_token_metadata_complete": null,
+    "province_components": null,
+    "components": null,
+    "fixed_split_conflicts": null,
+    "fixed_split_conflict_events": null,
+    "fixed_split_assignments_changed": false,
+    "no_cross_split_connectivity_found_in_supplied_metadata": null,
+    "issues": []
+  }
+}

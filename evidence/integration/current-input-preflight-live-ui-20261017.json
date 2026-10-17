@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-10-17T19:26:59.047111+09:00",
+  "status": "VERIFIED_REAL_LEGACY_UI_ONLY",
+  "url": "http://127.0.0.1:5174/#/view/24?model=lcluc&tab=evidence",
+  "job_id": "job-00893a5fc1014e4db9eea3d8a7fa238f",
+  "checks": {
+    "empty_id_disabled": true,
+    "id_entry_does_not_query": true,
+    "manual_get_legacy_unknown": true,
+    "three_axes_rendered": true,
+    "null_counts_not_zero": true,
+    "resolver_pass_calls": 0,
+    "stored_get_keeps_current_result": true,
+    "job_change_clears_old_results": true,
+    "missing_job_safe_http404": true,
+    "leading_blank_disabled_without_trim": true,
+    "agent_change_clears_result": true,
+    "registry_refresh_clears_result": true,
+    "back_clears_result": true,
+    "forward_returns_model_hub": true,
+    "back_returns_workspace": true
+  },
+  "viewport": {
+    "width": 1449,
+    "height": 1087
+  },
+  "document_horizontal_overflow_px": 0,
+  "panel_horizontal_overflow_px": 0,
+  "console_errors": [],
+  "screenshot": "evidence/integration/current-input-preflight-ui-desktop-20261017.jpg",
+  "limits": [
+    "Current recorded MATCH/BLOCKED, HTTP429/503, cancellation and delayed-response race are synthetic tests, not operating-data browser verification.",
+    "No mobile viewport verification.",
+    "Display stop does not cancel server work."
+  ],
+  "new_job_posts": 0,
+  "capture_backfills": 0,
+  "new_qa_or_training_executed": false
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "kind": "RECOVERY_TERMINAL_METADATA_RECONCILIATION",
+  "status": "BLOCKED",
+  "mode": "READ_ONLY",
+  "artifacts": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json",
+      "exists": true,
+      "sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+      "bytes": 51204
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\config.json",
+      "exists": true,
+      "sha256": "d9e7bf2e9e18398205653d518d3fe0dcf15b7ab305ca58520d0ba3c3e135abc6",
+      "bytes": 3441
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\window-state.json",
+      "exists": true,
+      "sha256": "1b5821692d52a13fd6c3e7e2bc72d2051c38ac7ac2eb5d8fec0d86cec3925700",
+      "bytes": 220
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\worker-result.json",
+      "exists": false
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\annual-window-report.json",
+      "exists": false
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\config.json",
+      "exists": true,
+      "sha256": "5619b92481919e29d5b2b557514e8a2439d2b1659f8b575323aebabec63c56a3",
+      "bytes": 3460
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\window-state.json",
+      "exists": true,
+      "sha256": "4a46982041d039dfccba4a7acf9df715db489e027e800bab5057d852d098e55f",
+      "bytes": 220
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\worker-result.json",
+      "exists": false
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\annual-window-report.json",
+      "exists": false
+    }
+  ],
+  "pending_batches": [
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "classification": "MISSING",
+      "status": "BLOCKED",
+      "issues": [
+        {
+          "code": "WORKER_RESULT_JSON_MISSING",
+          "kind": "MISSING"
+        },
+        {
+          "code": "ANNUAL_WINDOW_REPORT_JSON_MISSING",
+          "kind": "MISSING"
+        }
+      ],
+      "artifact_states": {
+        "config.json": "PRESENT",
+        "window-state.json": "PRESENT",
+        "worker-result.json": "MISSING",
+        "annual-window-report.json": "MISSING"
+      },
+      "reserved_bytes_preserved": 68157440,
+      "charged_bytes_preserved": 68157440,
+      "raw_config_matches_ledger": true,
+      "normalized_config_matches_window_state": true,
+      "observed_worker_charged_bytes": null,
+      "complete_transfer_accounting": "UNKNOWN",
+      "cog_unmeasured_or_reserved_bytes": 33554432,
+      "metadata_unmeasured_or_reserved_bytes": null,
+      "source_report_identity_binding": "UNKNOWN_NO_CONFIG_DIGEST_IN_REPORT",
+      "aggregate_applied_exactly_once": "UNKNOWN",
+      "process_exit_verified": false,
+      "settlement_authorized": false,
+      "execution_authorized": false,
+      "automatic_resume_allowed": false,
+      "proposed_refund_bytes": 0,
+      "action": "PRESERVE_FULL_RESERVATION"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "classification": "MISSING",
+      "status": "BLOCKED",
+      "issues": [
+        {
+          "code": "WORKER_RESULT_JSON_MISSING",
+          "kind": "MISSING"
+        },
+        {
+          "code": "ANNUAL_WINDOW_REPORT_JSON_MISSING",
+          "kind": "MISSING"
+        }
+      ],
+      "artifact_states": {
+        "config.json": "PRESENT",
+        "window-state.json": "PRESENT",
+        "worker-result.json": "MISSING",
+        "annual-window-report.json": "MISSING"
+      },
+      "reserved_bytes_preserved": 68157440,
+      "charged_bytes_preserved": 68157440,
+      "raw_config_matches_ledger": true,
+      "normalized_config_matches_window_state": true,
+      "observed_worker_charged_bytes": null,
+      "complete_transfer_accounting": "UNKNOWN",
+      "cog_unmeasured_or_reserved_bytes": 33554432,
+      "metadata_unmeasured_or_reserved_bytes": null,
+      "source_report_identity_binding": "UNKNOWN_NO_CONFIG_DIGEST_IN_REPORT",
+      "aggregate_applied_exactly_once": "UNKNOWN",
+      "process_exit_verified": false,
+      "settlement_authorized": false,
+      "execution_authorized": false,
+      "automatic_resume_allowed": false,
+      "proposed_refund_bytes": 0,
+      "action": "PRESERVE_FULL_RESERVATION"
+    }
+  ],
+  "ledger_internal_sum_matches": true,
+  "ledger_budget_in_bounds": true,
+  "pending_reserved_bytes_preserved": 136314880,
+  "settlement_authorized": false,
+  "execution_authorized": false,
+  "automatic_resume_allowed": false,
+  "process_health_verified": false,
+  "aggregate_applied_exactly_once": "UNKNOWN",
+  "proposed_refund_bytes": 0,
+  "network_requests": 0,
+  "source_files_written": 0,
+  "limitation": "Consistent metadata does not establish complete transfer measurement, process exit, source identity or exactly-once aggregate application."
+}

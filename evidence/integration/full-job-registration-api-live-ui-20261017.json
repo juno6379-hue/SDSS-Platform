@@ -1,0 +1,90 @@
+{
+  "recorded_at": "2026-10-17T12:01:05.290Z",
+  "status": "TESTED_SYNTHETIC",
+  "scope": "Actual localhost5174 UI synthetic drafts; no operating Job/Workflow submission or execution",
+  "checks": [
+    {
+      "case": "rfc1_unknown_metadata_match",
+      "pass": true
+    },
+    {
+      "case": "version_switch_clears_result",
+      "pass": true
+    },
+    {
+      "case": "rfc2_unknown_blocks_inner_still_match",
+      "pass": true
+    },
+    {
+      "case": "known_agent_wrong_capability_blocks",
+      "pass": true
+    },
+    {
+      "case": "registered_relation_matches_without_execution_approval",
+      "pass": true
+    },
+    {
+      "case": "schema_invalid_registration_not_run",
+      "pass": true
+    },
+    {
+      "case": "duplicate_json_http400_ui",
+      "pass": true
+    },
+    {
+      "case": "old88_and_rfc2_result_independent",
+      "pass": true
+    },
+    {
+      "case": "opt_out_uses_original_rfc1_result",
+      "pass": true
+    },
+    {
+      "case": "fold_reopen_keeps_rfc2_selection_result",
+      "pass": true
+    },
+    {
+      "case": "node_edit_clears_rfc2_result",
+      "pass": true
+    },
+    {
+      "case": "back_return_empty_default_off_no_stale_result",
+      "pass": true
+    },
+    {
+      "case": "original_workflow_restored_exactly",
+      "pass": true
+    }
+  ],
+  "manual_full_job_clicks": 9,
+  "manual_old88_clicks": 1,
+  "layout": {
+    "documentOverflow": 0,
+    "height": 1087,
+    "panelOverflow": [
+      0,
+      0
+    ],
+    "width": 1449
+  },
+  "console": [],
+  "workflow_restored_exactly": true,
+  "final_inputs": {
+    "checked": false,
+    "job": "",
+    "node": "",
+    "statusCount": 0
+  },
+  "screenshots": [
+    "evidence/integration/full-job-registration-ui-desktop-20261017.png",
+    "evidence/integration/full-job-registration-ui-blocked-20261017.png"
+  ],
+  "not_tested": [
+    "mobile",
+    "forced delayed/cancelled browser response",
+    "browser503/auth",
+    "5173 application",
+    "forward navigation in this unit"
+  ],
+  "operating_job_posts": 0
+}

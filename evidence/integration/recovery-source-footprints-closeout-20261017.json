@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-17T13:29:00.803418+09:00",
+  "unit": "recovery_source_footprints",
+  "status": "BLOCKED",
+  "implementation_tests": {
+    "passed": 16,
+    "seconds": 9.217
+  },
+  "independent_tests": {
+    "passed": 16,
+    "seconds": 10.829
+  },
+  "full_regression": {
+    "tests_run": 506,
+    "passed": 505,
+    "skipped": 1,
+    "seconds": 161.521,
+    "exit_code": 0
+  },
+  "live_result": "evidence/integration/recovery-source-footprints-live-final-20261017.json",
+  "integrity": "evidence/integration/recovery-source-footprints-live-integrity-20261017.json",
+  "documentation_validation": {
+    "markdown_files": 38,
+    "local_links_checked": 153,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "ui_reason": "Internal read-only CLI; no public API, screen state or navigation contract change",
+  "next_unit": "PLANNED bounded source-to-source corner-proxy/fixed-split mapping and overlap candidates; no reassignment/publication/training or independent-sample approval"
+}

@@ -1,0 +1,87 @@
+{
+  "recorded_at": "2026-10-17T10:29:12.999030+09:00",
+  "scope": "UI_BROWSER_AND_READ_ONLY_METADATA_ONLY",
+  "ui_url": "http://127.0.0.1:5174/",
+  "api_target": "http://127.0.0.1:8002",
+  "desktop": {
+    "requested": [
+      1672,
+      941
+    ],
+    "observed": [
+      1673,
+      941
+    ],
+    "dashboard_scroll_height": 941,
+    "catalog_scroll_height": 941,
+    "horizontal_overflow": false
+  },
+  "mobile": {
+    "requested": [
+      390,
+      844
+    ],
+    "observed": [
+      390,
+      845
+    ],
+    "dashboard_scroll_height": 2941,
+    "catalog_scroll_height": 2607,
+    "document_scroll_width": 375,
+    "horizontal_overflow": false
+  },
+  "catalog_checks": {
+    "initial_rows": 6,
+    "query": "baseline2021",
+    "filtered_rows": 1,
+    "detail_opened": true,
+    "csv_columns": 13,
+    "csv_data_rows": 1,
+    "invalid_period": [
+      2025,
+      2020
+    ],
+    "invalid_period_rows": 0,
+    "invalid_period_message": true,
+    "invalid_period_csv_disabled": true,
+    "reset_rows": 6
+  },
+  "model_hub_navigation_verified": true,
+  "actual_registered_datasets": 6,
+  "actual_registered_agents": 6,
+  "local_job_count": 0,
+  "preexisting_standard_jobs": 2,
+  "new_execution_records_created": 0,
+  "protected_before": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f"
+  },
+  "protected_after": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f"
+  },
+  "protected_unchanged": true,
+  "screenshots": [
+    "evidence/ui-20261017/dashboard-reference-desktop.png",
+    "evidence/ui-20261017/dashboard-reference-mobile.png",
+    "evidence/ui-20261017/catalog-reference-desktop.png",
+    "evidence/ui-20261017/catalog-reference-mobile.png"
+  ],
+  "limitations": [
+    "Reference layout/font/SVG applied; not a pixel identity claim.",
+    "Reference illustrative values are replaced by actual registry metadata or unknown/pending.",
+    "Public 2017 boundaries are not approved project boundaries.",
+    "No new scientific output, collection, training, deployment or approval."
+  ],
+  "build": {
+    "modules": 57,
+    "seconds": 19.2,
+    "exit_code": 0
+  },
+  "ui_adapter_tests": {
+    "passed": 19,
+    "milliseconds": 1334.4995
+  }
+}

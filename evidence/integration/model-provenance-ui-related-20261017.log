@@ -1,0 +1,124 @@
+TAP version 13
+# Subtest: five Korean states and five binding labels are explicit; consistent is unverified
+ok 1 - five Korean states and five binding labels are explicit; consistent is unverified
+  ---
+  duration_ms: 2.7803
+  type: 'test'
+  ...
+# Subtest: exact ten envelope fields reject addition deletion wrong scope/schema and inherited enum keys
+ok 2 - exact ten envelope fields reject addition deletion wrong scope/schema and inherited enum keys
+  ---
+  duration_ms: 2.1523
+  type: 'test'
+  ...
+# Subtest: four flags must be typed false, never authority even on consistent result
+ok 3 - four flags must be typed false, never authority even on consistent result
+  ---
+  duration_ms: 0.4372
+  type: 'test'
+  ...
+# Subtest: exact three bindings reject extra/missing and coerced arrays or objects
+ok 4 - exact three bindings reject extra/missing and coerced arrays or objects
+  ---
+  duration_ms: 0.3829
+  type: 'test'
+  ...
+# Subtest: ABSENT requires false key presence, null issue and all not checked
+ok 5 - ABSENT requires false key presence, null issue and all not checked
+  ---
+  duration_ms: 0.8771
+  type: 'test'
+  ...
+# Subtest: INVALID fixed code/field pairs and record versus ID key presence are enforced
+ok 6 - INVALID fixed code/field pairs and record versus ID key presence are enforced
+  ---
+  duration_ms: 0.4772
+  type: 'test'
+  ...
+# Subtest: all permitted INVALID declaration and parent fields are accepted without leaking values
+ok 7 - all permitted INVALID declaration and parent fields are accepted without leaking values
+  ---
+  duration_ms: 0.5446
+  type: 'test'
+  ...
+# Subtest: INVALID never claims completed binding comparison
+ok 8 - INVALID never claims completed binding comparison
+  ---
+  duration_ms: 0.2079
+  type: 'test'
+  ...
+# Subtest: conflict requires mismatch and first checkpoint then report then version issue
+ok 9 - conflict requires mismatch and first checkpoint then report then version issue
+  ---
+  duration_ms: 0.6633
+  type: 'test'
+  ...
+# Subtest: unknown binding requires no conflict and first missing parent hash
+ok 10 - unknown binding requires no conflict and first missing parent hash
+  ---
+  duration_ms: 0.7726
+  type: 'test'
+  ...
+# Subtest: consistent requires matched parent hashes and optional matched or not recorded version
+ok 11 - consistent requires matched parent hashes and optional matched or not recorded version
+  ---
+  duration_ms: 0.5858
+  type: 'test'
+  ...
+# Subtest: real Python100 helper outputs cross-language absent invalid conflict unknown consistent stages
+ok 12 - real Python100 helper outputs cross-language absent invalid conflict unknown consistent stages
+  ---
+  duration_ms: 350.5598
+  type: 'test'
+  ...
+# Subtest: manual read uses encoded model path and exactly one concurrent GET
+ok 13 - manual read uses encoded model path and exactly one concurrent GET
+  ---
+  duration_ms: 1.7944
+  type: 'test'
+  ...
+# Subtest: selected model change or route change discards late success
+ok 14 - selected model change or route change discards late success
+  ---
+  duration_ms: 0.4772
+  type: 'test'
+  ...
+# Subtest: back to same route and unmount invalidate generation for late success and error
+ok 15 - back to same route and unmount invalidate generation for late success and error
+  ---
+  duration_ms: 0.5181
+  type: 'test'
+  ...
+# Subtest: old response cannot clear busy or replace new request after generation reset
+ok 16 - old response cannot clear busy or replace new request after generation reset
+  ---
+  duration_ms: 0.3886
+  type: 'test'
+  ...
+# Subtest: contaminated response gives fixed safe failure with no result
+ok 17 - contaminated response gives fixed safe failure with no result
+  ---
+  duration_ms: 0.3917
+  type: 'test'
+  ...
+# Subtest: 404/auth/503 transport errors map to fixed Korean messages without raw server text
+ok 18 - 404/auth/503 transport errors map to fixed Korean messages without raw server text
+  ---
+  duration_ms: 1.6526
+  type: 'test'
+  ...
+# Subtest: empty model never queries, opening component does not GET, and keyed selected child clears old result
+ok 19 - empty model never queries, opening component does not GET, and keyed selected child clears old result
+  ---
+  duration_ms: 3.3939
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 705.4679

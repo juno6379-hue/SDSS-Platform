@@ -1,0 +1,150 @@
+{
+  "recorded_at": "2026-10-17T01:35:57.903071+00:00",
+  "scope": "ACTUAL_LOOPBACK_HTTP_MISSING_AND_INVALID_ONLY",
+  "ui_proxy": "http://127.0.0.1:5174",
+  "checks": [
+    {
+      "status": 200,
+      "cache_control": "no-store",
+      "body": {
+        "extension": "greenblue.dataset-lineage-verification.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "present_in_upstream_openapi": false,
+        "evaluation_scope": "CURRENT_LOCAL_ASSET_CHECK_NOT_EXECUTION_AUTHORIZATION",
+        "assessment_started_at": "2026-10-17T01:35:57.659Z",
+        "assessment_finished_at": "2026-10-17T01:35:57.696Z",
+        "diagnostic": {
+          "schema_version": 1,
+          "scope": "DATASET_LINEAGE_INTEGRITY_ONLY",
+          "status": "BLOCKED",
+          "root_ref": {
+            "id": "unregistered-lineage-live-check",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "nodes": [
+            {
+              "id": "unregistered-lineage-live-check",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "status": "BLOCKED",
+              "integrity_verified": false,
+              "expanded": false,
+              "authorization_verified": false,
+              "blocker_codes": [
+                "DATASET_VERSION_NOT_FOUND"
+              ]
+            }
+          ],
+          "edges": [],
+          "edge_direction": "PARENT_TO_CHILD",
+          "blockers": [
+            {
+              "code": "DATASET_VERSION_NOT_FOUND",
+              "ref": {
+                "id": "unregistered-lineage-live-check",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              }
+            }
+          ],
+          "limits": {
+            "max_depth": 32,
+            "max_nodes": 256,
+            "root_depth": 0,
+            "hard_max_depth": 64,
+            "hard_max_nodes": 1024,
+            "depth_limit_reached": false,
+            "node_limit_reached": false
+          },
+          "lineage_integrity_verified": false,
+          "current_assets_revalidated": true,
+          "authorization_verified": false,
+          "execution_authorized": false,
+          "scientific_approval": false,
+          "network_requests": 0,
+          "source_files_written": 0
+        },
+        "authorization_verified": false,
+        "execution_authorized": false,
+        "scientific_approval": false
+      }
+    },
+    {
+      "status": 400,
+      "cache_control": "no-store",
+      "body": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "고정 자료 참조와 허용 범위의 검사 한도가 필요합니다.",
+          "trace_id": "unknown",
+          "retryable": false
+        }
+      }
+    }
+  ],
+  "protected_before": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "data/first-group/readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "contracts/upstream/GMAIS-v0.2/api/openapi.yaml": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44"
+  },
+  "protected_after": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "data/first-group/readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "contracts/upstream/GMAIS-v0.2/api/openapi.yaml": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44"
+  },
+  "protected_unchanged": true,
+  "record_counts": {
+    "gmais_jobs": 2
+  },
+  "new_execution_records_created": 0,
+  "scientific_success_not_tested": true,
+  "browser_checks": {
+    "catalog_detail": "baseline2021_cpu_v1_dataset",
+    "manual_inputs_initially_empty": true,
+    "explicit_unregistered_id": "unregistered-lineage-live-check",
+    "http200_display": "BLOCKED / DATASET_VERSION_NOT_FOUND",
+    "latest_version_disabled": true,
+    "input_edit_clears_prior_result": true,
+    "requery_after_fixed_version_restored": true,
+    "authorization_execution_science_not_granted_displayed": true,
+    "current_revalidation_attempt_not_success_displayed": true,
+    "desktop_requested": [
+      1440,
+      1000
+    ],
+    "mobile_requested": [
+      390,
+      844
+    ],
+    "mobile_dialog_width": 351,
+    "mobile_document_scroll_width": 375,
+    "mobile_viewport_width": 390,
+    "viewport_reset": true
+  },
+  "screenshots": [
+    "evidence/ui-20261017/dataset-lineage-blocked-desktop.png",
+    "evidence/ui-20261017/dataset-lineage-reason-desktop.png",
+    "evidence/ui-20261017/dataset-lineage-reason-mobile.png"
+  ],
+  "full_regression": {
+    "tests_run": 298,
+    "passed": 297,
+    "skipped": 1,
+    "seconds": 88.188,
+    "exit_code": 0,
+    "log": "evidence/integration/dataset-lineage-api-full-tests-20261017.log"
+  },
+  "ui_validation": {
+    "build_modules": 60,
+    "build_seconds": 22.09,
+    "build_exit_code": 0,
+    "adapter_passed": 25,
+    "adapter_milliseconds": 341.057,
+    "log": "evidence/integration/dataset-lineage-ui-build-20261017.log"
+  }
+}

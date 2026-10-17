@@ -1,0 +1,47 @@
+test_any_preexisting_declaration_key_conflicts_even_same_shape_or_null (test_model_version_declaration.ModelVersionDeclarationTests.test_any_preexisting_declaration_key_conflicts_even_same_shape_or_null) ... ok
+test_duplicate_model_or_dataset_keeps_old_error_and_zero_new_puts (test_model_version_declaration.ModelVersionDeclarationTests.test_duplicate_model_or_dataset_keeps_old_error_and_zero_new_puts) ... ok
+test_existing_raw_model_version_requires_exact_string_match (test_model_version_declaration.ModelVersionDeclarationTests.test_existing_raw_model_version_requires_exact_string_match) ... ok
+test_explicit_model_only_exact_five_fields_and_existing_hashes_draft (test_model_version_declaration.ModelVersionDeclarationTests.test_explicit_model_only_exact_five_fields_and_existing_hashes_draft) ... ok
+test_explicit_parameter_is_keyword_only (test_model_version_declaration.ModelVersionDeclarationTests.test_explicit_parameter_is_keyword_only) ... ok
+test_explicit_reuses_existing_digest_reads_and_no_inferred_dataset_version (test_model_version_declaration.ModelVersionDeclarationTests.test_explicit_reuses_existing_digest_reads_and_no_inferred_dataset_version) ... FAIL
+test_invalid_explicit_values_fail_before_first_put_without_file_changes (test_model_version_declaration.ModelVersionDeclarationTests.test_invalid_explicit_values_fail_before_first_put_without_file_changes) ... ok
+test_omitted_exact_original_response_records_and_file_bytes (test_model_version_declaration.ModelVersionDeclarationTests.test_omitted_exact_original_response_records_and_file_bytes) ... ok
+test_prior_file_hash_completion_report_and_manifest_errors_win (test_model_version_declaration.ModelVersionDeclarationTests.test_prior_file_hash_completion_report_and_manifest_errors_win) ... ok
+test_second_write_failure_remains_nontransactional_without_model_record (test_model_version_declaration.ModelVersionDeclarationTests.test_second_write_failure_remains_nontransactional_without_model_record) ... ok
+
+======================================================================
+FAIL: test_explicit_reuses_existing_digest_reads_and_no_inferred_dataset_version (test_model_version_declaration.ModelVersionDeclarationTests.test_explicit_reuses_existing_digest_reads_and_no_inferred_dataset_version)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_model_version_declaration.py", line 109, in test_explicit_reuses_existing_digest_reads_and_no_inferred_dataset_version
+    self.assertEqual(calls, ['models/fixture_model/best.pt', 'experiment.json',
+AssertionError: Lists differ: ['models\\fixture_model\\best.pt', 'experiment.js[81 chars]son'] != ['models/fixture_model/best.pt', 'experiment.json[75 chars]son']
+
+First differing element 0:
+'models\\fixture_model\\best.pt'
+'models/fixture_model/best.pt'
+
+- ['models\\fixture_model\\best.pt',
+?         ^^             ^^
+
++ ['models/fixture_model/best.pt',
+?         ^             ^
+
+   'experiment.json',
+-  'datasets\\fixture_dataset\\manifest.json',
+?           ^^               ^^
+
++  'datasets/fixture_dataset/manifest.json',
+?           ^               ^
+
+-  'models\\fixture_model\\report.json']
+?         ^^             ^^
+
++  'models/fixture_model/report.json']
+?         ^             ^
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 7.217s
+
+FAILED (failures=1)

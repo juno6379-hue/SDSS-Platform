@@ -1,0 +1,15 @@
+test_all_quality_states_and_restricted_classes_never_authorize (test_job_inputs.JobInputTests.test_all_quality_states_and_restricted_classes_never_authorize) ... ok
+test_corrupt_catalog_record_and_missing_asset_are_structured (test_job_inputs.JobInputTests.test_corrupt_catalog_record_and_missing_asset_are_structured) ... ok
+test_different_hashes_for_one_fixed_version_block_every_conflicting_ref (test_job_inputs.JobInputTests.test_different_hashes_for_one_fixed_version_block_every_conflicting_ref) ... ok
+test_distinct_fixed_versions_of_one_dataset_are_valid_temporal_inputs (test_job_inputs.JobInputTests.test_distinct_fixed_versions_of_one_dataset_are_valid_temporal_inputs) ... ok
+test_dynamic_and_malformed_refs_are_structured_and_do_not_skip_later_inputs (test_job_inputs.JobInputTests.test_dynamic_and_malformed_refs_are_structured_and_do_not_skip_later_inputs) ... ok
+test_missing_asset_or_quality_evidence_and_manifest_hash_as_asset_hash_are_rejected (test_job_inputs.JobInputTests.test_missing_asset_or_quality_evidence_and_manifest_hash_as_asset_hash_are_rejected) ... ok
+test_missing_corrupt_hash_and_changed_asset_fail_closed (test_job_inputs.JobInputTests.test_missing_corrupt_hash_and_changed_asset_fail_closed) ... ok
+test_public_validated_checks_artifact_sha_without_granting_execution_or_science (test_job_inputs.JobInputTests.test_public_validated_checks_artifact_sha_without_granting_execution_or_science) ... ok
+test_registry_failure_returns_no_raw_error_or_path (test_job_inputs.JobInputTests.test_registry_failure_returns_no_raw_error_or_path) ... ok
+test_uri_cannot_replace_registered_asset_or_fetch_remote_content (test_job_inputs.JobInputTests.test_uri_cannot_replace_registered_asset_or_fetch_remote_content) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.663s
+
+OK

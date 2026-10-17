@@ -4,7 +4,7 @@ import json
 import re
 import sys
 from datetime import datetime,timezone
-from pathlib import Path
+from pathlib import Path,PureWindowsPath
 
 PROJECT_ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(PROJECT_ROOT))
@@ -14,13 +14,90 @@ from backend.app.ml.raster import safe_path
 from backend.app.ml.dataset import file_digest
 
 
-def run(manifests,root,readiness_path,policy=None,execute=False,run_id=None,epochs=20,resume=False,max_seconds=1800,epochs_per_call=20):
+def _local_path(value):
+    text=str(value)
+    if text.startswith(('\\\\','//')) or re.match(r'^[A-Za-z][A-Za-z0-9+.-]*:',text) and not re.match(r'^[A-Za-z]:[\\/]',text):
+        raise ValueError('Diagnostic paths must be local')
+    remainder=text[2:] if re.match(r'^[A-Za-z]:[\\/]',text) else text
+    if ':' in remainder:raise ValueError('Diagnostic paths cannot use alternate data streams')
+    path=Path(value)
+    devices={'CON','PRN','AUX','NUL','CONIN$','CONOUT$'}|{prefix+number for prefix in ('COM','LPT') for number in '123456789¹²³'}
+    windows=PureWindowsPath(text)
+    for part in windows.parts:
+        if part in (windows.anchor,'.','..'):continue
+        if part.rstrip(' .')!=part or part.split('.')[0].strip(' .').upper() in devices:
+            raise ValueError('Ambiguous or reserved Windows diagnostic path')
+    return path
+
+
+def _directory_identity(path):
+    if not path.is_dir():raise ValueError('Diagnostic parent is not a directory')
+    stat=path.stat()
+    return (stat.st_dev,stat.st_ino)
+
+
+def _diagnostic_output(root,value,inputs):
+    logical=_local_path(value)
+    logical=logical if logical.is_absolute() else root/logical
+    if logical.is_symlink() or logical.exists():raise ValueError('Diagnostic readiness output must be a new file')
+    target=safe_path(root,logical)
+    protected={_local_path(path).resolve() for path in inputs}
+    if target in protected:raise ValueError('Diagnostic output aliases an input or plan')
+    parent=logical.parent.resolve()
+    anchor=logical.parent
+    while not anchor.exists():
+        if anchor.is_symlink():raise ValueError('Broken diagnostic parent symlink')
+        anchor=anchor.parent
+    return {'logical':logical,'target':target,'parent':parent,'anchor':anchor,'anchor_identity':_directory_identity(anchor)}
+
+
+def _recheck_diagnostic_output(root,output):
+    logical=output['logical']
+    if logical.is_symlink() or logical.exists():raise ValueError('Diagnostic readiness output appeared during assessment')
+    if safe_path(root,logical)!=output['target'] or logical.parent.resolve()!=output['parent'] or _directory_identity(output['anchor'])!=output['anchor_identity']:
+        raise ValueError('Diagnostic output parent/target changed during assessment')
+
+
+def _connectivity_summary(result):
+    diagnostic=result.get('connectivity_diagnostics')
+    known={'CAPTURED_COMPONENTS_MATCH','CAPTURED_COMPONENT_MISMATCH','NOT_CAPTURED_UNSUPPORTED_POLICY','NOT_CAPTURED_BUDGET','NOT_CAPTURED_UNSUPPORTED_METADATA','FAILED_DIAGNOSTIC','FAILED_ADAPTER_BOUNDARY'}
+    status='NOT_REPORTED';scenes=None;patches=None
+    if type(diagnostic) is dict:
+        reported=diagnostic.get('capture_status')
+        status=reported if type(reported) is str and reported in known else 'UNKNOWN_CAPTURE_STATUS'
+        count=diagnostic.get('scene_count')
+        if type(count) is int and count>=0:scenes=count
+        count=diagnostic.get('supplied_eligible_patch_sum')
+        if type(count) is int and count>=0:patches=count
+    counts=result.get('patch_counts_by_split')
+    if patches is None and type(counts) is dict and set(counts)=={'train','val','test'} and all(type(v) is int and v>=0 for v in counts.values()):patches=sum(counts.values())
+    return {'connectivity_capture_status':status,'connectivity_scene_count':scenes,'eligible_patch_count':patches,'connectivity_is_training_authorization':False}
+
+
+def run(manifests,root,readiness_path,policy=None,execute=False,run_id=None,epochs=20,resume=False,max_seconds=1800,epochs_per_call=20,*,connectivity_diagnostics=False):
+    if type(connectivity_diagnostics) is not bool:
+        raise ValueError('connectivity_diagnostics must be an exact bool')
+    if connectivity_diagnostics:
+        _local_path(root)
     root=root.resolve()
-    result=assess([Path(path).resolve() for path in manifests],root,policy)
+    if connectivity_diagnostics:
+        normalized=[_local_path(path).resolve() for path in manifests]
+        output=_diagnostic_output(root,readiness_path,normalized)
+        result=assess(normalized,root,policy,connectivity_diagnostics=True)
+    else:
+        result=assess([Path(path).resolve() for path in manifests],root,policy)
     result['assessed_at']=datetime.now(timezone.utc).isoformat()
-    readiness_path=safe_path(root,readiness_path)
-    readiness_path.parent.mkdir(parents=True,exist_ok=True)
-    readiness_path.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+    if connectivity_diagnostics:
+        _recheck_diagnostic_output(root,output)
+        readiness_path=output['target']
+        readiness_path.parent.mkdir(parents=True,exist_ok=True)
+        _recheck_diagnostic_output(root,output)
+        with readiness_path.open('x',encoding='utf-8') as stream:
+            json.dump(result,stream,ensure_ascii=False,indent=2,allow_nan=False)
+    else:
+        readiness_path=safe_path(root,readiness_path)
+        readiness_path.parent.mkdir(parents=True,exist_ok=True)
+        readiness_path.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     if not execute or not result['ready_for_training']:
         return result
     if not run_id or not re.fullmatch('[A-Za-z0-9_-]{1,80}',run_id):
@@ -79,7 +156,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--manifest',type=Path,nargs='+',required=True)
     parser.add_argument('--data-root',type=Path,default=PROJECT_ROOT/'data')
-    parser.add_argument('--readiness-output',type=Path,default=PROJECT_ROOT/'data/first-group/training-readiness.json')
+    parser.add_argument('--readiness-output',type=Path,help='진단 옵션에는 data-root 안의 명시적인 새 파일 필요')
+    parser.add_argument('--connectivity-diagnostics',action='store_true',help='연결 근거 관측을 추가; 학습 승인이 아님')
     parser.add_argument('--plan',type=Path,help='범위/밴드/클래스/패치 기준을 명시한 JSON. 실자료 1000개 하한은 낮출 수 없음')
     parser.add_argument('--write-default-plan',type=Path)
     parser.add_argument('--execute',action='store_true')
@@ -89,12 +167,28 @@ def main():
     parser.add_argument('--max-seconds',type=float,default=1800,help='호출별 학습/평가 시간 예산; 미완료 epoch는 재개 때 다시 실행')
     parser.add_argument('--epochs-per-call',type=int,default=20)
     args=parser.parse_args()
-    if args.write_default_plan:
-        args.write_default_plan.write_text(json.dumps(default_policy(),ensure_ascii=False,indent=2),encoding='utf-8')
-    policy=json.loads(args.plan.read_text(encoding='utf-8')) if args.plan else None
-    result=run(args.manifest,args.data_root,args.readiness_output,policy,args.execute,args.run_id,args.epochs,args.resume,args.max_seconds,args.epochs_per_call)
-    print(json.dumps({'status':result['status'],'ready_for_training':result.get('ready_for_training',False),
-                      'blocker_count':len(result.get('blockers',[])),'scientific_accuracy_validated':False},ensure_ascii=False))
+    if args.connectivity_diagnostics:
+        if args.write_default_plan:
+            parser.error('--connectivity-diagnostics cannot be combined with --write-default-plan')
+        if args.readiness_output is None:
+            parser.error('--connectivity-diagnostics requires an explicit new --readiness-output')
+        try:
+            _local_path(args.data_root)
+            _diagnostic_output(args.data_root.resolve(),args.readiness_output,[*args.manifest,*([args.plan] if args.plan else [])])
+            policy=json.loads(args.plan.read_text(encoding='utf-8')) if args.plan else None
+            result=run(args.manifest,args.data_root,args.readiness_output,policy,args.execute,args.run_id,args.epochs,args.resume,args.max_seconds,args.epochs_per_call,connectivity_diagnostics=True)
+        except (ValueError,OSError,TypeError,KeyError,RecursionError,OverflowError) as exc:
+            print(('Connectivity diagnostics failed: '+str(exc)).encode('ascii',errors='backslashreplace').decode('ascii'),file=sys.stderr)
+            return 1
+    else:
+        if args.write_default_plan:
+            args.write_default_plan.write_text(json.dumps(default_policy(),ensure_ascii=False,indent=2),encoding='utf-8')
+        policy=json.loads(args.plan.read_text(encoding='utf-8')) if args.plan else None
+        result=run(args.manifest,args.data_root,args.readiness_output or PROJECT_ROOT/'data/first-group/training-readiness.json',policy,args.execute,args.run_id,args.epochs,args.resume,args.max_seconds,args.epochs_per_call)
+    summary={'status':result['status'],'ready_for_training':result.get('ready_for_training',False),
+             'blocker_count':len(result.get('blockers',[])),'scientific_accuracy_validated':False}
+    if args.connectivity_diagnostics:summary.update(_connectivity_summary(result))
+    print(json.dumps(summary,ensure_ascii=args.connectivity_diagnostics))
     return 2 if args.execute and result.get('status')=='blocked' else 0
 
 

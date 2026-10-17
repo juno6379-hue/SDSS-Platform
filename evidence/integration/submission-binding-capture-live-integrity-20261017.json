@@ -1,0 +1,44 @@
+{
+  "recorded_at": "2026-10-17T09:11:54.607867+00:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 36,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [
+    "backend/app/gmais_api.py",
+    "backend/app/job_inputs.py"
+  ],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "live_new_job_posts": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "related": {
+    "tests_run": 50,
+    "passed": 50,
+    "new_tests": 16,
+    "existing_tests": 34,
+    "seconds": 15.44
+  },
+  "independent": {
+    "passed": 16,
+    "seconds": 6.243
+  },
+  "compatibility_cases": 3,
+  "live_legacy_get_requests": 4,
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 805,
+    "passed": 804,
+    "skipped": 1,
+    "seconds": 327.813,
+    "exit_code": 0,
+    "log": "evidence/integration/submission-binding-capture-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "post_full_preservation_rechecked_at": "2026-10-17T09:13:30.878870+00:00"
+}

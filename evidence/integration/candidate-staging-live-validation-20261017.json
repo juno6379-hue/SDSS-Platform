@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-10-17T16:47:13.056680+09:00",
+  "scope": "VERIFIED_REAL_METADATA_STAGING_ONLY",
+  "cli_exit_code": 0,
+  "staged_candidate": {
+    "sha256": "2ff7be093db3930d99f10cdc7687809222ef7f525ec6e9cf6248ec144725d158",
+    "bytes": 53247999
+  },
+  "staging_receipt": {
+    "sha256": "b8224cb3eb5c5ef0accf0cab10359401d792719e6fd8cae0b610279e759404dd",
+    "bytes": 3675
+  },
+  "independent_streamed_sha_size_matches_evidence_candidate": true,
+  "input_pins_and_package_reference_match": true,
+  "windows_native_relative_path_verified": true,
+  "candidate_row_count": 1368,
+  "source_row_count": 1384,
+  "projected_eligible_total": 1095,
+  "false_fields_verified": [
+    "qa_performed",
+    "readiness_assess_called",
+    "registered",
+    "registry_called",
+    "executed",
+    "learning_ready",
+    "ready_for_training",
+    "scientific_accuracy_validated",
+    "source_authenticity_verified",
+    "exact_row_binding_verified",
+    "spatial_overlap_rechecked",
+    "exact_class_counts_recomputed",
+    "execution_authorized",
+    "settlement_authorized",
+    "automatic_resume_allowed",
+    "training_split_leakage_resolved",
+    "source_rows_modified_or_reassigned"
+  ],
+  "qa_status": "NOT_PERFORMED",
+  "registered": false,
+  "training_executed": false,
+  "source_images_or_labels_copied": false,
+  "atomic_snapshot_guaranteed": false
+}

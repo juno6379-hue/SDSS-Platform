@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-10-17T22:00:14.886547+09:00",
+  "status": "VERIFIED_REAL_LOCAL_STORED_METADATA_ONLY",
+  "catalog_records": 14,
+  "catalog_sha256_before": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_sha256_after": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "models_observed": 1,
+  "observations": [
+    {
+      "schema_version": 1,
+      "scope": "LOCAL_MODEL_REGISTRATION_METADATA_OBSERVATION_ONLY",
+      "status": "ABSENT",
+      "declaration_present": false,
+      "bindings": {
+        "checkpoint_sha256": "NOT_CHECKED",
+        "training_report_sha256": "NOT_CHECKED",
+        "model_version": "NOT_CHECKED"
+      },
+      "issue": null,
+      "authority_verified": false,
+      "artifact_bytes_verified": false,
+      "execution_authorized": false,
+      "scientific_accuracy_validated": false
+    }
+  ],
+  "scope": "Only in-memory stored metadata observation. No source bytes, registration authenticity, institutional authority or scientific execution approval established.",
+  "catalog_unchanged": true,
+  "operating_registrations": 0,
+  "model_resolver_connected": false
+}

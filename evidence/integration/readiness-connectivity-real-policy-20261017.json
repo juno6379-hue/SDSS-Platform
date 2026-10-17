@@ -1,0 +1,65 @@
+{
+  "required_provinces": [
+    "south_sulawesi",
+    "gorontalo",
+    "southeast_sulawesi",
+    "banten",
+    "west_java",
+    "east_java"
+  ],
+  "required_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "band_names": [
+    "B02",
+    "B03",
+    "B04",
+    "B08",
+    "B11",
+    "B12"
+  ],
+  "patch_size": 256,
+  "min_valid_fraction": 0.8,
+  "min_patches": 1000,
+  "min_patches_per_split": {
+    "train": 600,
+    "val": 100,
+    "test": 100
+  },
+  "required_classes": [
+    0,
+    1,
+    2,
+    4,
+    6,
+    7
+  ],
+  "min_class_pixels_per_split": 256,
+  "class_weighting": "inverse_sqrt_train",
+  "max_prediction_dominance": 0.995,
+  "seed": 42,
+  "max_patches": 3000,
+  "min_patches_per_train_province": 50,
+  "min_unique_train_locations": 32,
+  "max_reference_class_dominance": 0.9,
+  "min_required_class_ratio": 0.005,
+  "min_class_patches_per_split": 5,
+  "min_class_pixels_per_patch": 256,
+  "min_province_inside_fraction": 0.95,
+  "limited_period_experiment": false,
+  "scope_statement": "2020-2025 six-province full target",
+  "province_splits": {
+    "south_sulawesi": "train",
+    "gorontalo": "train",
+    "southeast_sulawesi": "train",
+    "east_java": "train",
+    "banten": "val",
+    "west_java": "test"
+  },
+  "label_source": "esri_io"
+}

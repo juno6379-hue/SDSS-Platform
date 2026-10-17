@@ -15,8 +15,13 @@ from pathlib import Path
 from typing import Callable
 
 from fastapi import APIRouter, Header, Request
-from fastapi.responses import JSONResponse
-from jsonschema import Draft202012Validator, FormatChecker
+from fastapi.responses import JSONResponse, StreamingResponse
+from jsonschema import Draft202012Validator
+
+from .schema_formats import create_format_checker
+from .agent_capability_contract import agent_capability_issue
+from .model_reference_contract import model_reference_issue
+from .workflow_dependency_order import topological_order
 
 
 def _now() -> str:
@@ -71,7 +76,7 @@ def _job_request_validator():
         if path.is_file():
             schema = json.loads(path.read_text(encoding='utf-8'))
             Draft202012Validator.check_schema(schema)
-            return Draft202012Validator(schema, format_checker=FormatChecker())
+            return Draft202012Validator(schema, format_checker=create_format_checker())
     raise RuntimeError('GMAIS v0.2 job-request 원문 schema를 찾을 수 없습니다.')
 
 
@@ -83,7 +88,7 @@ def _workflow_plan_validator():
         if path.is_file():
             schema = json.loads(path.read_text(encoding='utf-8'))
             Draft202012Validator.check_schema(schema)
-            return Draft202012Validator(schema, format_checker=FormatChecker())
+            return Draft202012Validator(schema, format_checker=create_format_checker())
     raise RuntimeError('GMAIS v0.2 workflow-plan 원문 schema를 찾을 수 없습니다.')
 
 
@@ -139,6 +144,11 @@ def _validate_job(payload: object, path_agent_id: str, idempotency_key: str | No
             return None, 'model_ref는 고정 id/version/sha256를 포함해야 합니다.'
         if not re.fullmatch(r'[a-f0-9]{64}', str(ref.get('sha256', ''))):
             return None, 'model_ref SHA-256 형식이 올바르지 않습니다.'
+        issue = model_reference_issue(ref)
+        if issue == 'MODEL_REFERENCE_INVALID':
+            return None, 'model_ref의 id/version/role은 유효한 고정 문자열이어야 합니다.'
+        if issue == 'MODEL_VERSION_NOT_PINNED':
+            return None, 'model_ref version은 latest/current 별칭이 아닌 고정 버전이어야 합니다.'
     return payload, None
 
 
@@ -214,9 +224,10 @@ def create_router(get_store: Callable[[], object]) -> APIRouter:
         if invalid_reason:
             return _error('INVALID_REQUEST', invalid_reason, trace_id, status=400)
         selected = next((a for a in _agent_manifests() if a['agent_id'] == agent_id), None)
-        if selected is None:
+        capability_issue = agent_capability_issue(selected, payload['capability_id'])
+        if capability_issue == 'AGENT_NOT_IMPLEMENTED':
             return _error('AGENT_NOT_IMPLEMENTED', 'Agent가 Registry에 없습니다.', trace_id, status=409)
-        if payload['capability_id'] not in [c['capability_id'] for c in selected['capabilities']]:
+        if capability_issue == 'INVALID_REQUEST':
             return _error('INVALID_REQUEST', '등록되지 않은 capability_id입니다.', trace_id, status=400)
         store = get_store()
         digest = hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')).hexdigest()
@@ -227,7 +238,8 @@ def create_router(get_store: Callable[[], object]) -> APIRouter:
             job = store.get('gmais_jobs', previous['job_id'])
             code = job['status'].get('error_code', 'MODEL_NOT_READY')
             return JSONResponse({'error': {'code': code, 'message': job['message'], 'trace_id': trace_id,
-                                           'retryable': False, 'details': {'job_id': job['job_id'], 'job_status': job['status']}}},
+                                           'retryable': False, 'details': {'job_id': job['job_id'], 'job_status': job['status'],
+                                               **({'input_resolution': job['input_resolution']} if 'input_resolution' in job else {})}}},
                                 status_code=409, headers={'Location': f"/v1/jobs/{job['job_id']}"})
         job_id = 'job-' + uuid.uuid4().hex
         stamp = _now()
@@ -242,10 +254,24 @@ def create_router(get_store: Callable[[], object]) -> APIRouter:
             code, message = 'MODEL_NOT_READY', 'LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.'
         status['message'] = message
         status['error_code'] = code
-        store.put('gmais_jobs', {'id': job_id, 'job_id': job_id, 'agent_id': agent_id, 'status': status, 'request': payload, 'message': message, 'result_id': None})
+        # RFC 진단은 제출 시점 snapshot이며 과학/모델/배포 gate를 해제하지 않는다.
+        # 원문 Job Status schema에는 확장 필드를 삽입하지 않는다.
+        from .job_inputs import resolve_job_inputs_with_capture
+        resolution, binding_capture = resolve_job_inputs_with_capture(
+            store, payload['input_refs'], job_id=job_id, agent_id=agent_id,
+            trace_id=trace_id, captured_at=stamp)
+        input_resolution = {
+            'extension': 'greenblue.job-input-resolution.rfc1',
+            'approval_status': 'INTERNAL_REVIEW', 'evaluated_at': stamp,
+            'evaluation_scope': 'SUBMISSION_SNAPSHOT_NOT_EXECUTION_AUTHORIZATION',
+            **resolution,
+        }
+        store.put('gmais_jobs', {'id': job_id, 'job_id': job_id, 'agent_id': agent_id, 'status': status, 'request': payload, 'message': message, 'result_id': None,
+                                 'input_resolution': input_resolution,
+                                 'execution_input_binding_capture': binding_capture})
         store.put('gmais_idempotency', {'id': hashlib.sha256(idempotency_key.encode()).hexdigest(), 'key': idempotency_key, 'request_sha256': digest, 'job_id': job_id})
         return JSONResponse({'error': {'code': code, 'message': message, 'trace_id': trace_id, 'retryable': False,
-                                       'details': {'job_id': job_id, 'job_status': status}}}, status_code=409,
+                                       'details': {'job_id': job_id, 'job_status': status, 'input_resolution': input_resolution}}}, status_code=409,
                             headers={'Location': f'/v1/jobs/{job_id}'})
 
     @router.post('/v1/workflows/plan')
@@ -273,44 +299,65 @@ def create_router(get_store: Callable[[], object]) -> APIRouter:
                 return _error('INVALID_REQUEST', f"{node['node_id']}의 의존 노드가 없거나 자기 자신을 가리킵니다.", trace_id)
         # Kahn 순서로 DAG 여부를 검사한다. 사이클은 실행계획으로 승인하지 않는다.
         remaining = {node['node_id']: set(node['depends_on']) for node in nodes}
-        ordered = []
-        while remaining:
-            ready = sorted(node_id for node_id, deps in remaining.items() if not deps)
-            if not ready:
-                return _error('INVALID_REQUEST', 'Workflow dependency graph에 cycle이 있습니다.', trace_id)
-            ordered.extend(ready)
-            for node_id in ready:
-                remaining.pop(node_id)
-            for deps in remaining.values():
-                deps.difference_update(ready)
+        ordered = topological_order(remaining)
+        if ordered is None:
+            return _error('INVALID_REQUEST', 'Workflow dependency graph에 cycle이 있습니다.', trace_id)
         manifests = {agent['agent_id']: agent for agent in _agent_manifests()}
+        from .job_inputs import resolve_job_inputs
+        store = get_store()
+        assessed_at = _now()
+        input_error_codes = {
+            'INPUT_REFS_REQUIRED': 'DATA_MISSING', 'DATASET_VERSION_NOT_FOUND': 'DATA_MISSING',
+            'INPUT_ACL_NOT_IMPLEMENTED': 'FORBIDDEN', 'DATASET_REGISTRY_UNAVAILABLE': 'RESOURCE_UNAVAILABLE',
+            'INPUT_REF_SCHEMA_MISMATCH': 'SCHEMA_MISMATCH', 'INPUT_REF_NOT_PINNED': 'SCHEMA_MISMATCH',
+            'INPUT_REF_CONFLICT': 'SCHEMA_MISMATCH', 'INPUT_URI_MISMATCH': 'SCHEMA_MISMATCH',
+        }
         reviewed_nodes = []
         for node in nodes:
             agent = manifests.get(node['agent_id'])
+            capability_issue = agent_capability_issue(agent, node['capability_id'])
             blockers = []
-            if agent is None:
+            if capability_issue == 'AGENT_NOT_IMPLEMENTED':
                 blockers.append({'code': 'AGENT_NOT_IMPLEMENTED', 'message': 'Registry에 없는 Agent입니다.'})
-            elif node['capability_id'] not in [c['capability_id'] for c in agent['capabilities']]:
+            elif capability_issue == 'INVALID_REQUEST':
                 blockers.append({'code': 'INVALID_REQUEST', 'message': 'Agent에 등록되지 않은 capability입니다.'})
             elif agent['readiness'] != 'READY':
                 code = 'MODEL_NOT_READY' if agent['agent_id'] == 'lcluc-agent' else 'AGENT_NOT_IMPLEMENTED'
                 blockers.append({'code': code, 'message': 'Agent readiness가 READY가 아니므로 실행할 수 없습니다.'})
-            if not node['input_bindings']:
-                blockers.append({'code': 'DATA_MISSING', 'message': '고정 ID/version/SHA로 지정된 입력 데이터 참조가 없습니다.'})
-            else:
-                # 현재 Catalog는 GMAIS 공통 Dataset ID/version/SHA projection이 없어 바인딩을 승인하지 않는다.
-                blockers.append({'code': 'DATA_MISSING', 'message': '입력 참조를 표준 Dataset Registry에서 해석하는 adapter가 아직 없습니다.'})
+            input_resolution = {
+                'extension': 'greenblue.workflow-input-resolution.rfc1',
+                'approval_status': 'INTERNAL_REVIEW', 'evaluated_at': assessed_at,
+                'evaluation_scope': 'PLAN_REQUEST_SNAPSHOT_NOT_EXECUTION_AUTHORIZATION',
+                **resolve_job_inputs(store, node['input_bindings']),
+            }
+            for issue in input_resolution['blockers']:
+                blockers.append({'code': input_error_codes.get(issue['code'], 'DATA_QUALITY'),
+                                 'detail_code': issue['code'], 'input_index': issue['input_index'],
+                                 'message': '고정 입력의 무결성·품질·접근 정책 진단을 통과하지 못했습니다.'})
+            if not blockers:
+                blockers.append({'code': 'MODEL_NOT_READY', 'message': '계획 검사만 지원하며 승인된 실제 실행기는 아직 연결되지 않았습니다.'})
             reviewed_nodes.append({
                 'node_id': node['node_id'], 'agent_id': node['agent_id'], 'capability_id': node['capability_id'],
-                'depends_on': node['depends_on'], 'status': 'BLOCKED' if blockers else 'READY', 'blockers': blockers,
+                'depends_on': node['depends_on'], 'status': 'BLOCKED', 'blockers': blockers,
+                'execution_authorized': False, 'input_resolution': input_resolution,
             })
+        from .workflow_policy import diagnose_workflow_blocking
+        policy_resolution = {
+            'extension': 'greenblue.workflow-blocking-policy.rfc1',
+            'approval_status': 'INTERNAL_REVIEW', 'evaluated_at': assessed_at,
+            **diagnose_workflow_blocking(reviewed_nodes, payload['policy']),
+        }
+        dependency_by_id = {item['node_id']: item for item in policy_resolution['nodes']}
+        for node in reviewed_nodes:
+            node['dependency_resolution'] = dependency_by_id[node['node_id']]
         return {
             'extension': {'id': 'greenblue.workflow-plan.rfc1', 'contract_basis': 'GMAIS v0.2 workflow-plan schema',
                           'present_in_upstream_openapi': False, 'approval_status': 'INTERNAL_REVIEW'},
             'workflow_run_id': payload['workflow_run_id'], 'trace_id': trace_id,
             'mode': 'PLAN_ONLY', 'execution_started': False, 'can_execute': False,
             'status': 'BLOCKED', 'topological_order': ordered, 'nodes': reviewed_nodes,
-            'blockers': ['Agent 실행과 GMAIS Dataset Registry의 호환이 아직 준비되지 않았습니다.'],
+            'policy_resolution': policy_resolution,
+            'blockers': ['Agent 실제 실행기·과학 검증·모델/배포 승인 gate가 아직 준비되지 않았습니다.'],
             'limitations': ['이 RFC 확장은 계획 검사만 수행하며 Job/Result/지도/보고서를 생성하지 않습니다.',
                             'GMAIS v0.2와 기관의 공식 승인 계약으로 해석하지 않습니다.'],
         }
@@ -321,6 +368,16 @@ def create_router(get_store: Callable[[], object]) -> APIRouter:
             return get_store().get('gmais_jobs', job_id)['status']
         except KeyError:
             return _error('JOB_NOT_FOUND', 'Job이 없습니다.', status=404)
+
+    @router.get('/v1/jobs/{job_id}/input-resolution')
+    def job_input_snapshot(job_id: str):
+        """저장된 제출 시점 진단만 읽는다. 현재 입력을 재조회하거나 승인하지 않는다."""
+        from .job_snapshot import project_job_input_snapshot
+        try:
+            job = get_store().get('gmais_jobs', job_id)
+        except KeyError:
+            return _error('JOB_NOT_FOUND', 'Job이 없습니다.', status=404)
+        return project_job_input_snapshot(job, job_id)
 
     @router.get('/v1/jobs/{job_id}/results')
     def job_results(job_id: str):
@@ -349,5 +406,41 @@ def create_router(get_store: Callable[[], object]) -> APIRouter:
             return get_store().get('gmais_results', result_id)
         except KeyError:
             return _error('JOB_NOT_FOUND', 'Result가 없습니다.', status=404)
+
+    @router.get('/v1/results/{result_id}/sdss')
+    def sdss_result(result_id: str):
+        """RFC 확장: 검증에 성공한 Result만 SDSS 자산 목록으로 투영한다."""
+        from .sdss_results import project_result
+        try:
+            return project_result(get_store(), result_id)
+        except KeyError:
+            return _error('JOB_NOT_FOUND', 'Result가 없습니다.', status=404)
+
+    @router.get('/v1/results/{result_id}/assets/{asset_index}')
+    def result_asset(result_id: str, asset_index: int):
+        """다운로드 직전에도 전체 gate와 파일 해시를 다시 확인한다."""
+        from .sdss_results import download_snapshot
+        store = get_store()
+        try:
+            projection, snapshot, filename = download_snapshot(store, result_id, asset_index)
+        except KeyError:
+            return _error('JOB_NOT_FOUND', 'Result가 없습니다.', status=404)
+        except IndexError:
+            return _error('INVALID_REQUEST', '자산 번호가 없습니다.', status=404)
+        except (ValueError, OSError):
+            return _error('INVALID_REQUEST', '자산 내용 또는 경로를 검증할 수 없습니다.', status=409)
+        if not projection['publishable']:
+            return _error('MODEL_NOT_READY', '검증되지 않은 Result 자산은 제공하지 않습니다.',
+                          projection.get('trace_id') or 'unknown', status=409,
+                          details={'blockers': projection['blockers']})
+        def chunks():
+            try:
+                yield from iter(lambda: snapshot.read(1024 * 1024), b'')
+            finally:
+                snapshot.close()
+        from urllib.parse import quote
+        return StreamingResponse(chunks(), media_type='application/octet-stream',
+                                 headers={'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-store',
+                                          'Content-Disposition': "attachment; filename*=UTF-8''" + quote(filename, safe='')})
 
     return router

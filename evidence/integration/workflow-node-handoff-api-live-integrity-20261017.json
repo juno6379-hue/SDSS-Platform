@@ -1,0 +1,67 @@
+{
+  "recorded_at": "2026-10-17T19:55:23.985730+09:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 51,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [
+    "backend/app/main.py",
+    "frontend/src/GeoQuery.tsx"
+  ],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "live_new_job_posts": 0,
+  "capture_backfills": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 897,
+    "passed": 896,
+    "skipped": 1,
+    "seconds": 382.27,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-node-handoff-api-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "related": {
+    "passed": 15,
+    "seconds": 0.842,
+    "log": "evidence/integration/workflow-node-handoff-api-related-20261017.log"
+  },
+  "independent": {
+    "passed": 15,
+    "seconds": 1.25,
+    "log": "evidence/integration/workflow-node-handoff-api-independent-20261017.log"
+  },
+  "live_api_evidence": "evidence/integration/workflow-node-handoff-api-live-api-20261017.json",
+  "live_ui_evidence": "evidence/integration/workflow-node-handoff-api-live-ui-20261017.json",
+  "direct_ui_change": true,
+  "frontend": {
+    "new_adapter": {
+      "passed": 13,
+      "duration_ms": 1400.1225,
+      "log": "evidence/integration/workflow-node-handoff-ui-adapter-20261017.log"
+    },
+    "all_tests": {
+      "passed": 113,
+      "duration_ms": 2260.0008,
+      "log": "evidence/integration/workflow-node-handoff-ui-tests-20261017.log"
+    },
+    "independent": {
+      "passed": 13,
+      "duration_ms": 2073.8207,
+      "log": "evidence/integration/workflow-node-handoff-ui-independent-20261017.log"
+    },
+    "production_build": {
+      "modules": 84,
+      "seconds": 19.17,
+      "log": "evidence/integration/workflow-node-handoff-ui-build-20261017.log",
+      "existing_chunk_size_warning": true
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "recorded_at": "2026-10-17T19:16:38.855566+09:00",
+  "scope": "Before new route: existing legacy capture/status/input-resolution exact response baseline",
+  "cases": [
+    {
+      "request_job_sha256": "58eed27a8d023f698f08b087c74c0665de1d32ebebc3459335451f758f4ea39d",
+      "outputs": {
+        "execution-input-binding": {
+          "http_status": 200,
+          "body": {
+            "schema_version": 1,
+            "extension": "greenblue.stored-execution-input-binding.rfc1",
+            "approval_status": "INTERNAL_REVIEW",
+            "scope": "STORED_SUBMISSION_BINDING_ONLY",
+            "status": "LEGACY",
+            "request_job_sha256": "58eed27a8d023f698f08b087c74c0665de1d32ebebc3459335451f758f4ea39d",
+            "request_binding_count": 1,
+            "capture_binding_count": null,
+            "manifest_pin_count": null,
+            "expected_bindings_sha256": null,
+            "stored_binding_integrity_match": false,
+            "issues": [
+              {
+                "code": "LEGACY_CAPTURE_NOT_RECORDED",
+                "input_index": null
+              }
+            ],
+            "current_files_revalidated": false,
+            "executor_bindings_compared": false,
+            "execution_authorized": false,
+            "ready_for_execution": false,
+            "ready_for_training": false,
+            "scientific_approval": false,
+            "acl_verified": false,
+            "registry_verified": false,
+            "training_authorized": false,
+            "pixels_verified": false,
+            "toc_tou_protected": false,
+            "executor_connected": false,
+            "artifact_bytes_verified": false,
+            "manifest_bytes_verified": false
+          }
+        },
+        "status": {
+          "http_status": 200,
+          "body": {
+            "schema_version": "0.2.0",
+            "job_id": "job-00893a5fc1014e4db9eea3d8a7fa238f",
+            "agent_id": "lcluc-agent",
+            "status": "BLOCKED",
+            "trace_id": "live-http-contract-check",
+            "submitted_at": "2026-10-16T07:02:06.589Z",
+            "progress": 0.0,
+            "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+            "error_code": "MODEL_NOT_READY"
+          }
+        },
+        "input-resolution": {
+          "http_status": 200,
+          "body": {
+            "extension": "greenblue.job-input-snapshot.rfc1",
+            "approval_status": "INTERNAL_REVIEW",
+            "job_id": "job-00893a5fc1014e4db9eea3d8a7fa238f",
+            "trace_id": "live-http-contract-check",
+            "available": false,
+            "reason": "LEGACY_SNAPSHOT_NOT_RECORDED",
+            "snapshot": null,
+            "current_files_revalidated": false,
+            "execution_authorized": false,
+            "scientific_approval": false
+          }
+        }
+      }
+    },
+    {
+      "request_job_sha256": "f8d87ca2b15f51d0f280ea1f5e1807b1a4550fb8770580ba489610436c260a91",
+      "outputs": {
+        "execution-input-binding": {
+          "http_status": 200,
+          "body": {
+            "schema_version": 1,
+            "extension": "greenblue.stored-execution-input-binding.rfc1",
+            "approval_status": "INTERNAL_REVIEW",
+            "scope": "STORED_SUBMISSION_BINDING_ONLY",
+            "status": "LEGACY",
+            "request_job_sha256": "f8d87ca2b15f51d0f280ea1f5e1807b1a4550fb8770580ba489610436c260a91",
+            "request_binding_count": 1,
+            "capture_binding_count": null,
+            "manifest_pin_count": null,
+            "expected_bindings_sha256": null,
+            "stored_binding_integrity_match": false,
+            "issues": [
+              {
+                "code": "LEGACY_CAPTURE_NOT_RECORDED",
+                "input_index": null
+              }
+            ],
+            "current_files_revalidated": false,
+            "executor_bindings_compared": false,
+            "execution_authorized": false,
+            "ready_for_execution": false,
+            "ready_for_training": false,
+            "scientific_approval": false,
+            "acl_verified": false,
+            "registry_verified": false,
+            "training_authorized": false,
+            "pixels_verified": false,
+            "toc_tou_protected": false,
+            "executor_connected": false,
+            "artifact_bytes_verified": false,
+            "manifest_bytes_verified": false
+          }
+        },
+        "status": {
+          "http_status": 200,
+          "body": {
+            "schema_version": "0.2.0",
+            "job_id": "job-4c21cb611db54fffb798879453d2ffc6",
+            "agent_id": "lcluc-agent",
+            "status": "BLOCKED",
+            "trace_id": "ui-contract-5d69cd44a4c14e26aa1a699df2372487",
+            "submitted_at": "2026-10-16T07:03:54.370Z",
+            "progress": 0.0,
+            "message": "LCLUC 데이터 준비도·독립 검증·승인된 배포 모델 gate를 통과하지 못했습니다.",
+            "error_code": "MODEL_NOT_READY"
+          }
+        },
+        "input-resolution": {
+          "http_status": 200,
+          "body": {
+            "extension": "greenblue.job-input-snapshot.rfc1",
+            "approval_status": "INTERNAL_REVIEW",
+            "job_id": "job-4c21cb611db54fffb798879453d2ffc6",
+            "trace_id": "ui-contract-5d69cd44a4c14e26aa1a699df2372487",
+            "available": false,
+            "reason": "LEGACY_SNAPSHOT_NOT_RECORDED",
+            "snapshot": null,
+            "current_files_revalidated": false,
+            "execution_authorized": false,
+            "scientific_approval": false
+          }
+        }
+      }
+    }
+  ],
+  "get_requests": 6,
+  "catalog_rows": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b"
+}

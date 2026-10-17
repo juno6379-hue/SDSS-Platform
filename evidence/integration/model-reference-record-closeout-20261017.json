@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-17T22:30:29.583391+09:00",
+  "status": "COMPLETED_PURE_IDENTITY_RECORD_COMPARISON_NOT_AUTHORITY_OR_PROJECT_COMPLETION",
+  "documentation_validation": {
+    "checked_at": "2026-10-17T22:30:29.583391+09:00",
+    "markdown_files": 77,
+    "local_links": 317,
+    "evidence_references": 6782,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "tests": {
+    "focused": {
+      "passed": 14,
+      "seconds": 0.381,
+      "log": "evidence/integration/model-reference-record-focused-20261017.log"
+    },
+    "related": {
+      "passed": 50,
+      "seconds": 16.59,
+      "log": "evidence/integration/model-reference-record-related-20261017.log"
+    },
+    "independent": {
+      "passed": 14,
+      "seconds": 0.319,
+      "log": "evidence/integration/model-reference-record-independent-20261017.log"
+    }
+  },
+  "full_regression_rerun_in_latest_unit": false,
+  "previous_full_regression": {
+    "tests_run": 1019,
+    "passed": 1018,
+    "skipped": 1,
+    "seconds": 381.288,
+    "log": "evidence/integration/model-provenance-api-full-tests-20261017.log"
+  },
+  "protected_references_checked": 141,
+  "existing_contracts_checked": 71,
+  "catalog_records": 14,
+  "understanding_updated": true,
+  "direct_ui_change": false,
+  "next_unit": "PLANNED_WORKFLOW_MODEL_REFERENCE_RECORD_WRAPPER_CONTRACT_REVIEW",
+  "snapshot_files": 1128
+}

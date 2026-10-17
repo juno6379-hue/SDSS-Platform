@@ -1,0 +1,928 @@
+TAP version 13
+# Subtest: 수동 요청은4고정 SHA만 허용하고 bool·누락·latest·추가필드·대문자를 거부한다
+ok 1 - 수동 요청은4고정 SHA만 허용하고 bool·누락·latest·추가필드·대문자를 거부한다
+  ---
+  duration_ms: 50.6172
+  type: 'test'
+  ...
+# Subtest: 1111→1095와split628/233/250→628/217/250 및차단5→4·나지부족을분리한다
+ok 2 - 1111→1095와split628/233/250→628/217/250 및차단5→4·나지부족을분리한다
+  ---
+  duration_ms: 3.9704
+  type: 'test'
+  ...
+# Subtest: 요청4핀중하나라도다르거나 응답pins가누락·추가되면폐기한다
+ok 3 - 요청4핀중하나라도다르거나 응답pins가누락·추가되면폐기한다
+  ---
+  duration_ms: 1.3734
+  type: 'test'
+  ...
+# Subtest: 10개의승인·실행false는true·bool유사값·누락을허용하지않는다
+ok 4 - 10개의승인·실행false는true·bool유사값·누락을허용하지않는다
+  ---
+  duration_ms: 3.4736
+  type: 'test'
+  ...
+# Subtest: 알수없는scope/schema/status·원문detail/path같은추가필드는폐기한다
+ok 5 - 알수없는scope/schema/status·원문detail/path같은추가필드는폐기한다
+  ---
+  duration_ms: 1.0386
+  type: 'test'
+  ...
+# Subtest: 분할별typedint·3000상한·합계·10000차단상한을검사한다
+ok 6 - 분할별typedint·3000상한·합계·10000차단상한을검사한다
+  ---
+  duration_ms: 1.4699
+  type: 'test'
+  ...
+# Subtest: 중복코드빈도3을보존하고정렬·유일코드·빈도합·문자열길이를검사한다
+ok 7 - 중복코드빈도3을보존하고정렬·유일코드·빈도합·문자열길이를검사한다
+  ---
+  duration_ms: 1.8916
+  type: 'test'
+  ...
+# Subtest: 출처공유미관측은독립성승인이아니며관측boolean과빈도를대조한다
+ok 8 - 출처공유미관측은독립성승인이아니며관측boolean과빈도를대조한다
+  ---
+  duration_ms: 1.0164
+  type: 'test'
+  ...
+# Subtest: 원본physicalnull·stage선언·새QA캡처를섞지않고미캡처는null로유지한다
+ok 9 - 원본physicalnull·stage선언·새QA캡처를섞지않고미캡처는null로유지한다
+  ---
+  duration_ms: 5.2992
+  type: 'test'
+  ...
+# Subtest: 나지7·정수픽셀·패치·바닥·부족관측계약을검사하며미해소false를유지한다
+ok 10 - 나지7·정수픽셀·패치·바닥·부족관측계약을검사하며미해소false를유지한다
+  ---
+  duration_ms: 8.9582
+  type: 'test'
+  ...
+# Subtest: 입력·메뉴·재조회·표시중단이후늦은성공·오류를무효화한다
+ok 11 - 입력·메뉴·재조회·표시중단이후늦은성공·오류를무효화한다
+  ---
+  duration_ms: 1.5897
+  type: 'test'
+  ...
+# Subtest: HTTP오류를구분하고원문보고서·경로·상세를투영하지않는다
+ok 12 - HTTP오류를구분하고원문보고서·경로·상세를투영하지않는다
+  ---
+  duration_ms: 1.4507
+  type: 'test'
+  ...
+# Subtest: AgentCenter의두진단카드는같은선택에서도독립React key를갖고선택변경시재마운트한다
+ok 13 - AgentCenter의두진단카드는같은선택에서도독립React key를갖고선택변경시재마운트한다
+  ---
+  duration_ms: 11.689
+  type: 'test'
+  ...
+# Subtest: 5개의 목적별 직접 URL과 데이터 ID는 새로고침에서도 정확히 왕복한다
+ok 14 - 5개의 목적별 직접 URL과 데이터 ID는 새로고침에서도 정확히 왕복한다
+  ---
+  duration_ms: 9.7861
+  type: 'test'
+  ...
+# Subtest: 잘못된 URL은 안전한 카탈로그로 정규화하고 알 수 없는 모델·탭을 차단한다
+ok 15 - 잘못된 URL은 안전한 카탈로그로 정규화하고 알 수 없는 모델·탭을 차단한다
+  ---
+  duration_ms: 9.3259
+  type: 'test'
+  ...
+# Subtest: 상세 닫기와 검색 복귀 경로는 같은 검색 화면을 가리킨다
+ok 16 - 상세 닫기와 검색 복귀 경로는 같은 검색 화면을 가리킨다
+  ---
+  duration_ms: 1.1792
+  type: 'test'
+  ...
+# Subtest: 불완전·오염 저장값은 제한된 필터와 유일한 ID만 복구한다
+ok 17 - 불완전·오염 저장값은 제한된 필터와 유일한 ID만 복구한다
+  ---
+  duration_ms: 5.0137
+  type: 'test'
+  ...
+# Subtest: 선택·필터의 session 복귀는 실제 최신 자료를 다시 검색한다
+ok 18 - 선택·필터의 session 복귀는 실제 최신 자료를 다시 검색한다
+  ---
+  duration_ms: 5.9468
+  type: 'test'
+  ...
+# Subtest: 잘못된 JSON과 브라우저 저장 차단으로 검색 화면이 실패하지 않는다
+ok 19 - 잘못된 JSON과 브라우저 저장 차단으로 검색 화면이 실패하지 않는다
+  ---
+  duration_ms: 1.7947
+  type: 'test'
+  ...
+# Subtest: 외부·오염 history 표식은 이전 이동을 승인하지 않는다
+ok 20 - 외부·오염 history 표식은 이전 이동을 승인하지 않는다
+  ---
+  duration_ms: 2.914
+  type: 'test'
+  ...
+# Subtest: 이동후 늦은 성공·오류는 새 화면을 덮지 않고 같은 요청의 응답은 표시한다
+ok 21 - 이동후 늦은 성공·오류는 새 화면을 덮지 않고 같은 요청의 응답은 표시한다
+  ---
+  duration_ms: 1.2057
+  type: 'test'
+  ...
+# Subtest: 인사이트는 명시상세 또는 정확히 한개의 실제선택만 전달한다
+ok 22 - 인사이트는 명시상세 또는 정확히 한개의 실제선택만 전달한다
+  ---
+  duration_ms: 2.1682
+  type: 'test'
+  ...
+# Subtest: Climate→Workspace→뒤로에서 모델·참조지역을 복구하고 필터저장과 독립적이다
+ok 23 - Climate→Workspace→뒤로에서 모델·참조지역을 복구하고 필터저장과 독립적이다
+  ---
+  duration_ms: 3.5526
+  type: 'test'
+  ...
+# Subtest: 모델·지역은 허용목록만 복원하고 오염 JSON·차단저장소에서 안전하게 복귀한다
+ok 24 - 모델·지역은 허용목록만 복원하고 오염 JSON·차단저장소에서 안전하게 복귀한다
+  ---
+  duration_ms: 1.5447
+  type: 'test'
+  ...
+# Subtest: 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+ok 25 - 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+  ---
+  duration_ms: 6.0257
+  type: 'test'
+  ...
+# Subtest: 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+ok 26 - 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+  ---
+  duration_ms: 3.3844
+  type: 'test'
+  ...
+# Subtest: 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+ok 27 - 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+  ---
+  duration_ms: 1.3001
+  type: 'test'
+  ...
+# Subtest: 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+ok 28 - 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+  ---
+  duration_ms: 6.7017
+  type: 'test'
+  ...
+# Subtest: CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+ok 29 - CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+  ---
+  duration_ms: 2.623
+  type: 'test'
+  ...
+# Subtest: 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+ok 30 - 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+  ---
+  duration_ms: 1.0026
+  type: 'test'
+  ...
+# Subtest: legacy는UNKNOWN/current미실행/null이며0개통과나현재Registry역채움으로표시하지않는다
+ok 31 - legacy는UNKNOWN/current미실행/null이며0개통과나현재Registry역채움으로표시하지않는다
+  ---
+  duration_ms: 6.4161
+  type: 'test'
+  ...
+# Subtest: 저장UNAVAILABLE/INVALID/URI미지원은정확한원인과미실행상태를보존한다
+ok 32 - 저장UNAVAILABLE/INVALID/URI미지원은정확한원인과미실행상태를보존한다
+  ---
+  duration_ms: 2.5072
+  type: 'test'
+  ...
+# Subtest: 제한된currentMATCH는3축관측·집계만투영하며실행/ACL승인을생성하지않는다
+ok 33 - 제한된currentMATCH는3축관측·집계만투영하며실행/ACL승인을생성하지않는다
+  ---
+  duration_ms: 2.202
+  type: 'test'
+  ...
+# Subtest: 현재접근/품질BLOCKED는innerpinMATCH여도전체BLOCKED를유지한다
+ok 34 - 현재접근/품질BLOCKED는innerpinMATCH여도전체BLOCKED를유지한다
+  ---
+  duration_ms: 1.1572
+  type: 'test'
+  ...
+# Subtest: 현재무결성통과도저장pin불일치면BLOCKED이며내부원인·집계가분리된다
+ok 35 - 현재무결성통과도저장pin불일치면BLOCKED이며내부원인·집계가분리된다
+  ---
+  duration_ms: 11.5018
+  type: 'test'
+  ...
+# Subtest: Job literal SHA와top35키·scope/state/저장조회typed횟수를엄격히대조한다
+ok 36 - Job literal SHA와top35키·scope/state/저장조회typed횟수를엄격히대조한다
+  ---
+  duration_ms: 1.8343
+  type: 'test'
+  ...
+# Subtest: top15false와inner15false·7IO정수0은범위를섞거나bool/승인으로정규화하지않는다
+ok 37 - top15false와inner15false·7IO정수0은범위를섞거나bool/승인으로정규화하지않는다
+  ---
+  duration_ms: 8.6528
+  type: 'test'
+  ...
+# Subtest: 현재계수·무결성<=품질관측·품질PUBLICbool양방향과차단합계를검사한다
+ok 38 - 현재계수·무결성<=품질관측·품질PUBLICbool양방향과차단합계를검사한다
+  ---
+  duration_ms: 0.8148
+  type: 'test'
+  ...
+# Subtest: 현재차단768상한·safe코드·index와반복빈도보존을검사한다
+ok 39 - 현재차단768상한·safe코드·index와반복빈도보존을검사한다
+  ---
+  duration_ms: 1.249
+  type: 'test'
+  ...
+# Subtest: 현재진단무효와capture실패는미실행null과기관측계수를각각보존한다
+ok 40 - 현재진단무효와capture실패는미실행null과기관측계수를각각보존한다
+  ---
+  duration_ms: 1.6426
+  type: 'test'
+  ...
+# Subtest: inner81의exact형태/count/hash/issue범위와MATCH논리·null상태를검사한다
+ok 41 - inner81의exact형태/count/hash/issue범위와MATCH논리·null상태를검사한다
+  ---
+  duration_ms: 1.7146
+  type: 'test'
+  ...
+# Subtest: Job·메뉴·재조회·표시중단후늦은성공과오류를폐기한다
+ok 42 - Job·메뉴·재조회·표시중단후늦은성공과오류를폐기한다
+  ---
+  duration_ms: 0.8059
+  type: 'test'
+  ...
+# Subtest: 400/404/429/503/인증·연결오류는안전하게구별하고429는서버검사수명을설명한다
+ok 43 - 400/404/429/503/인증·연결오류는안전하게구별하고429는서버검사수명을설명한다
+  ---
+  duration_ms: 0.8829
+  type: 'test'
+  ...
+# Subtest: 저장카드로컬상태/성공/실패와child identity·수동GET범위가독립이다
+ok 44 - 저장카드로컬상태/성공/실패와child identity·수동GET범위가독립이다
+  ---
+  duration_ms: 237.2082
+  type: 'test'
+  ...
+# Subtest: whole RAW request SHA binds exact four keys and original decimal/exponent/negative zero text
+ok 45 - whole RAW request SHA binds exact four keys and original decimal/exponent/negative zero text
+  ---
+  duration_ms: 99.9936
+  type: 'test'
+  ...
+# Subtest: full Job server observed hash is not compared to JavaScript canonical draft
+ok 46 - full Job server observed hash is not compared to JavaScript canonical draft
+  ---
+  duration_ms: 17.5462
+  type: 'test'
+  ...
+# Subtest: fullJob strict parsing remains server authority: duplicates underflow and malformed raw preserved
+ok 47 - fullJob strict parsing remains server authority: duplicates underflow and malformed raw preserved
+  ---
+  duration_ms: 17.2463
+  type: 'test'
+  ...
+# Subtest: UTF8 budgets and explicit node are bounded without automatic trim or Job generation
+ok 48 - UTF8 budgets and explicit node are bounded without automatic trim or Job generation
+  ---
+  duration_ms: 13.9948
+  type: 'test'
+  ...
+# Subtest: exact wrapper rejects extension status retarget and unknown properties
+ok 49 - exact wrapper rejects extension status retarget and unknown properties
+  ---
+  duration_ms: 5.3731
+  type: 'test'
+  ...
+# Subtest: 24 flags must be false and 7 I/O counts typed numeric zero
+ok 50 - 24 flags must be false and 7 I/O counts typed numeric zero
+  ---
+  duration_ms: 21.4162
+  type: 'test'
+  ...
+# Subtest: schema read null not fake zero, exact stage booleans/calls/status
+ok 51 - schema read null not fake zero, exact stage booleans/calls/status
+  ---
+  duration_ms: 12.5852
+  type: 'test'
+  ...
+# Subtest: schema invalid and before-validator bounds preserve legitimate BLOCKED stages
+ok 52 - schema invalid and before-validator bounds preserve legitimate BLOCKED stages
+  ---
+  duration_ms: 9.5798
+  type: 'test'
+  ...
+# Subtest: bbox model and optional workflow mismatch stages stay separate from metadata
+ok 53 - bbox model and optional workflow mismatch stages stay separate from metadata
+  ---
+  duration_ms: 18.9418
+  type: 'test'
+  ...
+# Subtest: resource failure maps to HTTP503; 200 resource payload is rejected
+ok 54 - resource failure maps to HTTP503; 200 resource payload is rejected
+  ---
+  duration_ms: 8.7249
+  type: 'test'
+  ...
+# Subtest: inner 86 mismatch hashes safe codes and indices remain validated
+ok 55 - inner 86 mismatch hashes safe codes and indices remain validated
+  ---
+  duration_ms: 16.6414
+  type: 'test'
+  ...
+# Subtest: stale generation raw input revision route response is ignored
+ok 56 - stale generation raw input revision route response is ignored
+  ---
+  duration_ms: 0.9197
+  type: 'test'
+  ...
+# Subtest: independent details child has one manual POST and no lookup-triggered submission
+ok 57 - independent details child has one manual POST and no lookup-triggered submission
+  ---
+  duration_ms: 101.7778
+  type: 'test'
+  ...
+# Subtest: Python89 real helper cross-language stages include 257 scalar metadata and 65 refs
+ok 58 - Python89 real helper cross-language stages include 257 scalar metadata and 65 refs
+  ---
+  duration_ms: 4279.6846
+  type: 'test'
+  ...
+# Subtest: RFC2 uses exact five keys version integer and whole body SHA while RFC1 stays four
+ok 59 - RFC2 uses exact five keys version integer and whole body SHA while RFC1 stays four
+  ---
+  duration_ms: 61.5071
+  type: 'test'
+  ...
+# Subtest: RFC2 wrapper and request identity cannot accept RFC1 or retargeted response
+ok 60 - RFC2 wrapper and request identity cannot accept RFC1 or retargeted response
+  ---
+  duration_ms: 6.748
+  type: 'test'
+  ...
+# Subtest: all three checked registration statuses preserve independent inner MATCH and outer truth
+ok 61 - all three checked registration statuses preserve independent inner MATCH and outer truth
+  ---
+  duration_ms: 10.335
+  type: 'test'
+  ...
+# Subtest: inner BLOCKED requires NOT_RUN false and cannot claim registration checked
+ok 62 - inner BLOCKED requires NOT_RUN false and cannot claim registration checked
+  ---
+  duration_ms: 4.0985
+  type: 'test'
+  ...
+# Subtest: RFC2 result registration shape flags and phase types are exact
+ok 63 - RFC2 result registration shape flags and phase types are exact
+  ---
+  duration_ms: 8.4771
+  type: 'test'
+  ...
+# Subtest: RFC2 cannot bypass inner24 false typed7zero null schema or metadata hash checks
+ok 64 - RFC2 cannot bypass inner24 false typed7zero null schema or metadata hash checks
+  ---
+  duration_ms: 20.9457
+  type: 'test'
+  ...
+# Subtest: RFC2 full Job hash remains server observation and raw invalid transport stays server authority
+ok 65 - RFC2 full Job hash remains server observation and raw invalid transport stays server authority
+  ---
+  duration_ms: 19.5514
+  type: 'test'
+  ...
+# Subtest: UI checkbox defaults off version enters stale identity and single manual dispatch stays owned by inspect
+ok 66 - UI checkbox defaults off version enters stale identity and single manual dispatch stays owned by inspect
+  ---
+  duration_ms: 75.8203
+  type: 'test'
+  ...
+# Subtest: version edits and route revision response generations invalidate same raw draft
+ok 67 - version edits and route revision response generations invalidate same raw draft
+  ---
+  duration_ms: 0.8534
+  type: 'test'
+  ...
+# Subtest: Python94 producer cross-language registered unknown capability and NOT_RUN stages
+ok 68 - Python94 producer cross-language registered unknown capability and NOT_RUN stages
+  ---
+  duration_ms: 4246.1782
+  type: 'test'
+  ...
+# Subtest: 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+ok 69 - 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+  ---
+  duration_ms: 6.9987
+  type: 'test'
+  ...
+# Subtest: 입력 품질·기관 ACL 차단코드를 보존한다
+ok 70 - 입력 품질·기관 ACL 차단코드를 보존한다
+  ---
+  duration_ms: 3.448
+  type: 'test'
+  ...
+# Subtest: 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+ok 71 - 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+  ---
+  duration_ms: 0.9246
+  type: 'test'
+  ...
+# Subtest: 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+ok 72 - 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+  ---
+  duration_ms: 2.6276
+  type: 'test'
+  ...
+# Subtest: 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+ok 73 - 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+  ---
+  duration_ms: 0.7292
+  type: 'test'
+  ...
+# Subtest: 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+ok 74 - 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+  ---
+  duration_ms: 0.9282
+  type: 'test'
+  ...
+# Subtest: legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+ok 75 - legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+  ---
+  duration_ms: 0.5677
+  type: 'test'
+  ...
+# Subtest: ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+ok 76 - ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+  ---
+  duration_ms: 0.4664
+  type: 'test'
+  ...
+# Subtest: 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+ok 77 - 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+  ---
+  duration_ms: 5.2755
+  type: 'test'
+  ...
+# Subtest: 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+ok 78 - 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+  ---
+  duration_ms: 0.8747
+  type: 'test'
+  ...
+# Subtest: 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+ok 79 - 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+  ---
+  duration_ms: 0.4875
+  type: 'test'
+  ...
+# Subtest: Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+ok 80 - Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+  ---
+  duration_ms: 3.1897
+  type: 'test'
+  ...
+# Subtest: SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+ok 81 - SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+  ---
+  duration_ms: 0.7749
+  type: 'test'
+  ...
+# Subtest: Job현재계보는같은Job·Trace와현재검사scope를확인한다
+ok 82 - Job현재계보는같은Job·Trace와현재검사scope를확인한다
+  ---
+  duration_ms: 5.6657
+  type: 'test'
+  ...
+# Subtest: 저장요청없는legacy·잘못된요청·상한선차단을현재통과로추정하지않는다
+ok 83 - 저장요청없는legacy·잘못된요청·상한선차단을현재통과로추정하지않는다
+  ---
+  duration_ms: 43.0914
+  type: 'test'
+  ...
+# Subtest: 부분검사와checked/current_assets_revalidated true를전체성공으로바꾸지않는다
+ok 84 - 부분검사와checked/current_assets_revalidated true를전체성공으로바꾸지않는다
+  ---
+  duration_ms: 1.8013
+  type: 'test'
+  ...
+# Subtest: 중복참조진단재사용과고정ref연결을구별한다
+ok 85 - 중복참조진단재사용과고정ref연결을구별한다
+  ---
+  duration_ms: 0.8941
+  type: 'test'
+  ...
+# Subtest: 무결성집계는모든진단·입력근거가있어야하고실행·권한·과학승인은거부한다
+ok 86 - 무결성집계는모든진단·입력근거가있어야하고실행·권한·과학승인은거부한다
+  ---
+  duration_ms: 1.1293
+  type: 'test'
+  ...
+# Subtest: 검사예산초과·형식오류·쓰기근거가있는응답을표시하지않는다
+ok 87 - 검사예산초과·형식오류·쓰기근거가있는응답을표시하지않는다
+  ---
+  duration_ms: 0.677
+  type: 'test'
+  ...
+# Subtest: Job·Agent전환과이전명시조회응답은요청세대guard로거부한다
+ok 88 - Job·Agent전환과이전명시조회응답은요청세대guard로거부한다
+  ---
+  duration_ms: 0.5884
+  type: 'test'
+  ...
+# Subtest: 미상·별칭·형식이 다른 고정참조와 잘못된 검사한도는 제출하지 않는다
+ok 89 - 미상·별칭·형식이 다른 고정참조와 잘못된 검사한도는 제출하지 않는다
+  ---
+  duration_ms: 11.0498
+  type: 'test'
+  ...
+# Subtest: HTTP200 BLOCKED와 current_assets_revalidated 시도를 성공으로 바꾸지 않는다
+ok 90 - HTTP200 BLOCKED와 current_assets_revalidated 시도를 성공으로 바꾸지 않는다
+  ---
+  duration_ms: 1.3826
+  type: 'test'
+  ...
+# Subtest: 같은 고정 ID·버전·SHA 응답만 표시한다
+ok 91 - 같은 고정 ID·버전·SHA 응답만 표시한다
+  ---
+  duration_ms: 0.9495
+  type: 'test'
+  ...
+# Subtest: wrapper와 diagnostic의 기관·실행·과학 승인 불변조건을 검증한다
+ok 92 - wrapper와 diagnostic의 기관·실행·과학 승인 불변조건을 검증한다
+  ---
+  duration_ms: 0.7351
+  type: 'test'
+  ...
+# Subtest: 계보 일치는 일관된 노드·차단 근거가 있어야 하고 과학 승인과 구별한다
+ok 93 - 계보 일치는 일관된 노드·차단 근거가 있어야 하고 과학 승인과 구별한다
+  ---
+  duration_ms: 1.4867
+  type: 'test'
+  ...
+# Subtest: 입력 수정·다른 상세창·늦은 응답은 세대와 입력키로 거부한다
+ok 94 - 입력 수정·다른 상세창·늦은 응답은 세대와 입력키로 거부한다
+  ---
+  duration_ms: 0.5613
+  type: 'test'
+  ...
+# Subtest: default off is exact legacy body even when optional input holds null or invalid text
+ok 95 - default off is exact legacy body even when optional input holds null or invalid text
+  ---
+  duration_ms: 7.6797
+  type: 'test'
+  ...
+# Subtest: explicit preserves caller padding and never infers or normalizes model/dataset version
+ok 96 - explicit preserves caller padding and never infers or normalizes model/dataset version
+  ---
+  duration_ms: 1.5806
+  type: 'test'
+  ...
+# Subtest: explicit null is rejected rather than treated as omitted
+ok 97 - explicit null is rejected rather than treated as omitted
+  ---
+  duration_ms: 1.2625
+  type: 'test'
+  ...
+# Subtest: fixed references reject alias case and Python whitespace padding
+ok 98 - fixed references reject alias case and Python whitespace padding
+  ---
+  duration_ms: 0.9233
+  type: 'test'
+  ...
+# Subtest: code point bounds accept supplementary Unicode at 256 and reject 257
+ok 99 - code point bounds accept supplementary Unicode at 256 and reject 257
+  ---
+  duration_ms: 1.1955
+  type: 'test'
+  ...
+# Subtest: blank control and lone surrogate declarations are rejected without echoing unsafe input
+ok 100 - blank control and lone surrogate declarations are rejected without echoing unsafe input
+  ---
+  duration_ms: 1.9452
+  type: 'test'
+  ...
+# Subtest: client Unicode and alias policy agrees with real Python96 pure contract
+ok 101 - client Unicode and alias policy agrees with real Python96 pure contract
+  ---
+  duration_ms: 1600.5056
+  type: 'test'
+  ...
+# Subtest: mock successful registration refreshes before selecting returned Draft model ID
+ok 102 - mock successful registration refreshes before selecting returned Draft model ID
+  ---
+  duration_ms: 2.4364
+  type: 'test'
+  ...
+# Subtest: synchronous in-flight prevents double registration before React busy render
+ok 103 - synchronous in-flight prevents double registration before React busy render
+  ---
+  duration_ms: 1.7431
+  type: 'test'
+  ...
+# Subtest: server 422 remains visible and settles current form without refresh
+ok 104 - server 422 remains visible and settles current form without refresh
+  ---
+  duration_ms: 2.7208
+  type: 'test'
+  ...
+# Subtest: route change discards stale success but always refreshes a successful server mutation
+ok 105 - route change discards stale success but always refreshes a successful server mutation
+  ---
+  duration_ms: 1.2677
+  type: 'test'
+  ...
+# Subtest: back-forward to same route and unmount invalidate the generation
+ok 106 - back-forward to same route and unmount invalidate the generation
+  ---
+  duration_ms: 0.9782
+  type: 'test'
+  ...
+# Subtest: stale rejected request cannot clear busy or append error in replacement form
+ok 107 - stale rejected request cannot clear busy or append error in replacement form
+  ---
+  duration_ms: 1.4403
+  type: 'test'
+  ...
+# Subtest: navigation during refresh also discards selection, and current refresh failure is reported
+ok 108 - navigation during refresh also discards selection, and current refresh failure is reported
+  ---
+  duration_ms: 1.7841
+  type: 'test'
+  ...
+# Subtest: response model ID access never claims declaration authority or changes record
+ok 109 - response model ID access never claims declaration authority or changes record
+  ---
+  duration_ms: 0.7842
+  type: 'test'
+  ...
+# Subtest: component wiring stays manual, default off/empty, disables registration inputs and shares SVG
+ok 110 - component wiring stays manual, default off/empty, disables registration inputs and shares SVG
+  ---
+  duration_ms: 29.829
+  type: 'test'
+  ...
+# Subtest: 수동 요청은 명시 핀3개만 가지며 latest·경로·불완전 SHA를 거부한다
+ok 111 - 수동 요청은 명시 핀3개만 가지며 latest·경로·불완전 SHA를 거부한다
+  ---
+  duration_ms: 7.0539
+  type: 'test'
+  ...
+# Subtest: 저장선언의 회원28/넓은400/선언28/zero3/patch25를 개별 투영하며 승인으로 승격하지 않는다
+ok 112 - 저장선언의 회원28/넓은400/선언28/zero3/patch25를 개별 투영하며 승인으로 승격하지 않는다
+  ---
+  duration_ms: 16.7853
+  type: 'test'
+  ...
+# Subtest: 보고서·manifest·token SHA가 요청과 다르면 결과를 폐기한다
+ok 113 - 보고서·manifest·token SHA가 요청과 다르면 결과를 폐기한다
+  ---
+  duration_ms: 0.5706
+  type: 'test'
+  ...
+# Subtest: 8개 승인·해소 false 필드는 true·0·문자열·누락을 허용하지 않는다
+ok 114 - 8개 승인·해소 false 필드는 true·0·문자열·누락을 허용하지 않는다
+  ---
+  duration_ms: 0.823
+  type: 'test'
+  ...
+# Subtest: 알 수 없는 상태·schema·scope·추가필드와 bool형 계수는 failclosed다
+ok 115 - 알 수 없는 상태·schema·scope·추가필드와 bool형 계수는 failclosed다
+  ---
+  duration_ms: 0.5795
+  type: 'test'
+  ...
+# Subtest: 단서 없는 두 상태는 선택4계수 null만 허용하고0·누락과 혼동하지 않는다
+ok 116 - 단서 없는 두 상태는 선택4계수 null만 허용하고0·누락과 혼동하지 않는다
+  ---
+  duration_ms: 0.4373
+  type: 'test'
+  ...
+# Subtest: 회원·후보 교차계수 모순과 누락을 거부하며 zero patch를 삭제하지 않는다
+ok 117 - 회원·후보 교차계수 모순과 누락을 거부하며 zero patch를 삭제하지 않는다
+  ---
+  duration_ms: 0.6668
+  type: 'test'
+  ...
+# Subtest: 입력·선택·메뉴·재조회 이후 늦은 성공/실패는 무효이고 같은 요청만 현재다
+ok 118 - 입력·선택·메뉴·재조회 이후 늦은 성공/실패는 무효이고 같은 요청만 현재다
+  ---
+  duration_ms: 0.4056
+  type: 'test'
+  ...
+# Subtest: HTTP400/409/413/429/503/404/권한/연결 오류는 원본정보없이 서로 구분한다
+ok 119 - HTTP400/409/413/429/503/404/권한/연결 오류는 원본정보없이 서로 구분한다
+  ---
+  duration_ms: 0.9139
+  type: 'test'
+  ...
+# Subtest: 토큰 hash는 대소문자·UTF8 원문에 의존하고 응답 원문token을 투영하지 않는다
+ok 120 - 토큰 hash는 대소문자·UTF8 원문에 의존하고 응답 원문token을 투영하지 않는다
+  ---
+  duration_ms: 22.439
+  type: 'test'
+  ...
+# Subtest: Job ID는명시ASCII subset만허용하고빈값·공백·경로·추정trim을거부한다
+ok 121 - Job ID는명시ASCII subset만허용하고빈값·공백·경로·추정trim을거부한다
+  ---
+  duration_ms: 3.0332
+  type: 'test'
+  ...
+# Subtest: Job 원문UTF8SHA는독립node해시와일치하고공백·대소문자를정규화하지않는다
+ok 122 - Job 원문UTF8SHA는독립node해시와일치하고공백·대소문자를정규화하지않는다
+  ---
+  duration_ms: 47.7519
+  type: 'test'
+  ...
+# Subtest: RECORDED는저장연결계수·집계만투영하고현재파일/승인/개별핀을추가하지않는다
+ok 123 - RECORDED는저장연결계수·집계만투영하고현재파일/승인/개별핀을추가하지않는다
+  ---
+  duration_ms: 3.1985
+  type: 'test'
+  ...
+# Subtest: LEGACY는request수와미기록null을분리하고0건/무결성일치로바꾸지않는다
+ok 124 - LEGACY는request수와미기록null을분리하고0건/무결성일치로바꾸지않는다
+  ---
+  duration_ms: 1.3346
+  type: 'test'
+  ...
+# Subtest: UNAVAILABLE의6원인은별도상태이고행미기록만입력범위index를허용한다
+ok 125 - UNAVAILABLE의6원인은별도상태이고행미기록만입력범위index를허용한다
+  ---
+  duration_ms: 2.616
+  type: 'test'
+  ...
+# Subtest: INVALID는Job오염requestnull과capture오염request수를구별한다
+ok 126 - INVALID는Job오염requestnull과capture오염request수를구별한다
+  ---
+  duration_ms: 0.8665
+  type: 'test'
+  ...
+# Subtest: 모든상태의요청JobSHA가달라지거나null이면이전/다른Job결과를거부한다
+ok 127 - 모든상태의요청JobSHA가달라지거나null이면이전/다른Job결과를거부한다
+  ---
+  duration_ms: 1.4781
+  type: 'test'
+  ...
+# Subtest: 12승인과현재파일/실행자대조2개는정확false만허용한다
+ok 128 - 12승인과현재파일/실행자대조2개는정확false만허용한다
+  ---
+  duration_ms: 2.7118
+  type: 'test'
+  ...
+# Subtest: RECORDED typedcount1..64/동일3계수/해시/빈issues/무결성true를검사한다
+ok 129 - RECORDED typedcount1..64/동일3계수/해시/빈issues/무결성true를검사한다
+  ---
+  duration_ms: 2.5602
+  type: 'test'
+  ...
+# Subtest: 나머지3상태는capture/핀/hashnull·무결성false·정확1원인만허용한다
+ok 130 - 나머지3상태는capture/핀/hashnull·무결성false·정확1원인만허용한다
+  ---
+  duration_ms: 2.8599
+  type: 'test'
+  ...
+# Subtest: 잘못된schema/status/scope·형제API키·원본id/path/URI같은추가정보를거부한다
+ok 131 - 잘못된schema/status/scope·형제API키·원본id/path/URI같은추가정보를거부한다
+  ---
+  duration_ms: 1.3071
+  type: 'test'
+  ...
+# Subtest: 입력/메뉴/재조회/표시중단후늦은성공과오류는무효이고현재요청만반영한다
+ok 132 - 입력/메뉴/재조회/표시중단후늦은성공과오류는무효이고현재요청만반영한다
+  ---
+  duration_ms: 11.583
+  type: 'test'
+  ...
+# Subtest: 3개의형제진단카드key를분리하고모든선택context변경시새key를사용한다
+ok 133 - 3개의형제진단카드key를분리하고모든선택context변경시새key를사용한다
+  ---
+  duration_ms: 17.6759
+  type: 'test'
+  ...
+# Subtest: 404/503/401/403과연결실패는안전한별도안내를사용하고원문error를전달하지않는다
+ok 134 - 404/503/401/403과연결실패는안전한별도안내를사용하고원문error를전달하지않는다
+  ---
+  duration_ms: 0.8662
+  type: 'test'
+  ...
+# Subtest: 해시는실제agentApi JSON.stringify UTF8본문이며키정렬canonical이아니다
+ok 135 - 해시는실제agentApi JSON.stringify UTF8본문이며키정렬canonical이아니다
+  ---
+  duration_ms: 172.7316
+  type: 'test'
+  ...
+# Subtest: WorkflowID·Trace·실제본문SHA가모두일치하는현재진단만표시한다
+ok 136 - WorkflowID·Trace·실제본문SHA가모두일치하는현재진단만표시한다
+  ---
+  duration_ms: 4.5149
+  type: 'test'
+  ...
+# Subtest: 공유ref재사용·빈노드·상충참조무해시진단을실행성공으로바꾸지않는다
+ok 137 - 공유ref재사용·빈노드·상충참조무해시진단을실행성공으로바꾸지않는다
+  ---
+  duration_ms: 1.3006
+  type: 'test'
+  ...
+# Subtest: 계보무결성일치여도Workflow는항상PLAN_ONLY/BLOCKED·비실행이다
+ok 138 - 계보무결성일치여도Workflow는항상PLAN_ONLY/BLOCKED·비실행이다
+  ---
+  duration_ms: 2.0946
+  type: 'test'
+  ...
+# Subtest: 선행상한·부분검사·노드순서와고정binding신원을검증한다
+ok 139 - 선행상한·부분검사·노드순서와고정binding신원을검증한다
+  ---
+  duration_ms: 1.1425
+  type: 'test'
+  ...
+# Subtest: JSON수정·메뉴이동·같은JSON복귀에도이전응답은세대로거부한다
+ok 140 - JSON수정·메뉴이동·같은JSON복귀에도이전응답은세대로거부한다
+  ---
+  duration_ms: 0.5438
+  type: 'test'
+  ...
+# Subtest: Python shared Unicode golden canonical/SHA includes nonBMP·accent·Hangul·U2028
+ok 141 - Python shared Unicode golden canonical/SHA includes nonBMP·accent·Hangul·U2028
+  ---
+  duration_ms: 28.0443
+  type: 'test'
+  ...
+# Subtest: canonical sorts keys by codepoint and numeric keys lexically without JS object re-enumeration
+ok 142 - canonical sorts keys by codepoint and numeric keys lexically without JS object re-enumeration
+  ---
+  duration_ms: 1.2992
+  type: 'test'
+  ...
+# Subtest: request preserves whitespace/escape raw JSON and hashes actual JSON.stringify outer body
+ok 143 - request preserves whitespace/escape raw JSON and hashes actual JSON.stringify outer body
+  ---
+  duration_ms: 12.0661
+  type: 'test'
+  ...
+# Subtest: strict parser refuses duplicates including escaped keys, floats/exponents/nonfinite/int32/type syntax
+ok 144 - strict parser refuses duplicates including escaped keys, floats/exponents/nonfinite/int32/type syntax
+  ---
+  duration_ms: 2.4977
+  type: 'test'
+  ...
+# Subtest: strict scalar/depth/UTF8 limits and Unicode codepoint length are explicit
+ok 145 - strict scalar/depth/UTF8 limits and Unicode codepoint length are explicit
+  ---
+  duration_ms: 2.4227
+  type: 'test'
+  ...
+# Subtest: valid server MATCH requires exact wrapper/result and all hashes/counts/20false7typed0
+ok 146 - valid server MATCH requires exact wrapper/result and all hashes/counts/20false7typed0
+  ---
+  duration_ms: 20.2332
+  type: 'test'
+  ...
+# Subtest: typed status rejects coercible arrays and MATCH inconsistencies
+ok 147 - typed status rejects coercible arrays and MATCH inconsistencies
+  ---
+  duration_ms: 7.7686
+  type: 'test'
+  ...
+# Subtest: server metadata mismatch BLOCKED is displayed with exact local proposal digest
+ok 148 - server metadata mismatch BLOCKED is displayed with exact local proposal digest
+  ---
+  duration_ms: 11.5374
+  type: 'test'
+  ...
+# Subtest: core invalid Workflow HTTP200 BLOCKED keeps null diagnostics, not fake zero pass
+ok 149 - core invalid Workflow HTTP200 BLOCKED keeps null diagnostics, not fake zero pass
+  ---
+  duration_ms: 11.3692
+  type: 'test'
+  ...
+# Subtest: unknown selection / empty selected inputs / invalid proposal preserve legitimate BLOCKED stages
+ok 150 - unknown selection / empty selected inputs / invalid proposal preserve legitimate BLOCKED stages
+  ---
+  duration_ms: 12.2994
+  type: 'test'
+  ...
+# Subtest: comparison per-ref indices must be in both selected and proposed input ranges
+ok 151 - comparison per-ref indices must be in both selected and proposed input ranges
+  ---
+  duration_ms: 6.2476
+  type: 'test'
+  ...
+# Subtest: stale reply ignores generation/raw inputs/revision/route differences and safe errors stay bounded
+ok 152 - stale reply ignores generation/raw inputs/revision/route differences and safe errors stay bounded
+  ---
+  duration_ms: 1.6234
+  type: 'test'
+  ...
+# Subtest: component has only manual POST, independent state and route/unmount guards; parent mount avoids plan result keys
+ok 153 - component has only manual POST, independent state and route/unmount guards; parent mount avoids plan result keys
+  ---
+  duration_ms: 104.1615
+  type: 'test'
+  ...
+1..153
+# tests 153
+# suites 0
+# pass 153
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8686.1211

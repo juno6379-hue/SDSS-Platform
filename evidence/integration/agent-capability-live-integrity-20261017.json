@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-10-17T20:49:03.163822+09:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 59,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [
+    "backend/app/gmais_api.py"
+  ],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "live_new_job_posts": 0,
+  "capture_backfills": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 948,
+    "passed": 947,
+    "skipped": 1,
+    "seconds": 381.129,
+    "exit_code": 0,
+    "log": "evidence/integration/agent-capability-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "related": {
+    "passed": 78,
+    "seconds": 8.925,
+    "log": "evidence/integration/agent-capability-related-20261017.log"
+  },
+  "independent": {
+    "passed": 21,
+    "seconds": 5.512,
+    "log": "evidence/integration/agent-capability-independent-20261017.log"
+  },
+  "previous_evidence_files_checked": 559,
+  "previous_evidence_file_changes": [],
+  "new_function_evidence_class": "TESTED_SYNTHETIC",
+  "new_qa_or_training_executed_scope": "No new operating project QA or formal training; synthetic fixture tests remain included in full regression",
+  "synthetic_fixture_tests_in_full_regression": true,
+  "direct_ui_change": false,
+  "direct_ui_change_reason": "Existing Job submit and Workflow plan status/message/selection/readiness contracts unchanged; independent UI impact read review only. No frontend change or new browser test.",
+  "live_job_submission_tested": false
+}

@@ -1,0 +1,50 @@
+{
+  "recorded_at": "2026-10-17T21:30:13.421246+09:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 70,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [
+    "backend/app/experiment_registry.py"
+  ],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "live_new_job_posts": 0,
+  "capture_backfills": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 987,
+    "passed": 986,
+    "skipped": 1,
+    "seconds": 380.835,
+    "exit_code": 0,
+    "log": "evidence/integration/model-version-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "related": {
+    "passed": 37,
+    "seconds": 14.006,
+    "log": "evidence/integration/model-version-related-20261017.log"
+  },
+  "independent": {
+    "passed": 13,
+    "seconds": 9.575,
+    "log": "evidence/integration/model-version-independent-20261017.log"
+  },
+  "additional_existing_code_baseline_source": "pre-edit pinned registry copy, absent from earlier snapshot",
+  "additional_existing_code_baselines_checked": 1,
+  "previous_evidence_files_checked": 616,
+  "previous_evidence_file_changes": [],
+  "new_function_evidence_class": "TESTED_SYNTHETIC",
+  "new_qa_or_training_executed_scope": "No new operating project QA or formal training; synthetic fixture tests remain included in full regression",
+  "synthetic_fixture_tests_in_full_regression": true,
+  "direct_ui_change": false,
+  "direct_ui_change_reason": "Internal optional register_experiment parameter only; main/API/UI omit it and preserve existing records/response. No new frontend or browser test.",
+  "live_job_submission_tested": false
+}

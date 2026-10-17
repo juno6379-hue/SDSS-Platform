@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-10-17T21:05:06.346656+09:00",
+  "status": "PLANNED",
+  "reviewer": "catalog_navigation_review",
+  "scope": "read-only selection; source/tests/API execution zero",
+  "observed_gap": "GMAIS model_ref says fixed id/version/sha256 but accepts floating latest/current/blank values which89 draft supported checks reject",
+  "source_files": [
+    "backend/app/gmais_api.py",
+    "backend/app/workflow_job_request_handoff.py",
+    "backend/app/main.py",
+    "backend/app/experiment_registry.py"
+  ],
+  "candidate": "Shared pure model_ref fixed-string declaration validation; explicit supported-input narrowing, not behavior-neutral refactor",
+  "required_scope": [
+    "Align declared model id/version/role text support with89 and reject floating aliases before Store using existing400 envelope",
+    "Preserve vendored schema, SHA validation, valid pinned-reference409BLOCKED behavior/Store ordering,89/90/RFC1/RFC2 response contracts",
+    "Use isolated synthetic fixtures only; no operating model resolver, Registry/checkpoint read, new UI/card or approval flags"
+  ],
+  "actual_model_registry_connection": "BLOCKED_PENDING_AUTHORITATIVE_MODEL_VERSION_FIELD_AND_IMMUTABLE_REGISTRATION_POLICY",
+  "forbidden_assumption": "Do not substitute dataset_version for model_ref.version; no backfill of old records",
+  "implementation_started": false
+}

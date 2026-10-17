@@ -1,0 +1,60 @@
+{
+  "recorded_at": "2026-10-17T15:55:15.109109+09:00",
+  "protected_reference_count": 134,
+  "protected_reference_changes": [],
+  "unchanged_contract_count": 25,
+  "existing_contract_sha_changes": [],
+  "existing_tracked_code_data_frontend_changes": [
+    "backend/app/main.py",
+    "frontend/src/AgentCenter.tsx"
+  ],
+  "main_only_two_wiring_lines_changed_verified_against_raw_baseline": true,
+  "catalog_records_count": 14,
+  "catalog_kind_counts": {
+    "analyses": 3,
+    "datasets": 6,
+    "gmais_idempotency": 2,
+    "gmais_jobs": 2,
+    "models": 1
+  },
+  "catalog_canonical_records_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_records_digest_unchanged": true,
+  "full_regression": {
+    "tests_run": 652,
+    "passed": 651,
+    "skipped": 1,
+    "seconds": 258.461,
+    "exit_code": 0,
+    "skip_reason": "Existing OS symlink creation permission; deterministic boundary test passed"
+  },
+  "api_related": {
+    "passed": 14,
+    "seconds": 6.055
+  },
+  "api_independent": {
+    "passed": 14,
+    "seconds": 4.934
+  },
+  "frontend": {
+    "new_adapter_passed": 10,
+    "new_adapter_ms": 302.8698,
+    "independent_new_adapter_passed": 10,
+    "independent_ms": 447.0061,
+    "all_ui_passed": 59,
+    "all_ui_ms": 1317.2334,
+    "build_modules": 72,
+    "build_seconds": 16.95,
+    "build_exit_code": 0
+  },
+  "actual_api_evidence": "evidence/integration/readiness-source-identity-api-live-20261017.json",
+  "actual_ui_evidence": "evidence/integration/readiness-source-identity-ui-live-20261017.json",
+  "new_source_assess_job_training_or_collection_executed": false,
+  "saved_blockers": 5,
+  "saved_patch_counts": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "atomic_snapshot_guaranteed": false,
+  "full_workspace_inventory_guaranteed": false
+}

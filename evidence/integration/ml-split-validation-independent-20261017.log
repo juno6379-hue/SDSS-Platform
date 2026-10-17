@@ -1,0 +1,69 @@
+test_boolean_integer_and_float_integer_confusion_rejected (test_ml_split_validation.SplitValidationTests.test_boolean_integer_and_float_integer_confusion_rejected) ... ok
+test_candidate_tampering_rows_lineage_flags_and_sha_rejected (test_ml_split_validation.SplitValidationTests.test_candidate_tampering_rows_lineage_flags_and_sha_rejected) ... ok
+test_change_during_recomputation_is_rejected (test_ml_split_validation.SplitValidationTests.test_change_during_recomputation_is_rejected) ... ok
+test_cli_output_outside_evidence_is_rejected (test_ml_split_validation.SplitValidationTests.test_cli_output_outside_evidence_is_rejected) ... ok
+test_cli_stdout_new_output_and_existing_input_paths_protected (test_ml_split_validation.SplitValidationTests.test_cli_stdout_new_output_and_existing_input_paths_protected) ... ok
+test_cli_tampered_plan_does_not_create_evidence (test_ml_split_validation.SplitValidationTests.test_cli_tampered_plan_does_not_create_evidence) ... ok
+test_exact_candidate_metadata_match_is_separate_from_readiness (test_ml_split_validation.SplitValidationTests.test_exact_candidate_metadata_match_is_separate_from_readiness) ... ok
+test_independent_caller_policy_mismatch_is_rejected (test_ml_split_validation.SplitValidationTests.test_independent_caller_policy_mismatch_is_rejected) ... ok
+test_metadata_plan_recomputed_without_claiming_candidate_check_or_training (test_ml_split_validation.SplitValidationTests.test_metadata_plan_recomputed_without_claiming_candidate_check_or_training) ... ok
+test_missing_candidate_and_unpaired_parameters_never_succeed (test_ml_split_validation.SplitValidationTests.test_missing_candidate_and_unpaired_parameters_never_succeed) ... ok
+test_nonfinite_and_duplicate_keys_are_rejected (test_ml_split_validation.SplitValidationTests.test_nonfinite_and_duplicate_keys_are_rejected) ... ok
+test_readiness_binding_and_stale_readiness_are_checked (test_ml_split_validation.SplitValidationTests.test_readiness_binding_and_stale_readiness_are_checked) ... ok
+test_rehashed_tampered_plan_indices_policy_and_approval_rejected (test_ml_split_validation.SplitValidationTests.test_rehashed_tampered_plan_indices_policy_and_approval_rejected) ... ok
+test_stale_source_and_caller_sha_cannot_be_taken_from_plan (test_ml_split_validation.SplitValidationTests.test_stale_source_and_caller_sha_cannot_be_taken_from_plan) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 5.687s
+
+OK
+Traceback (most recent call last):
+  File "<stdin>", line 18, in <module>
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xe2 in position 257: illegal multibyte sequence
+Independent adversarial additions PASS: resolved source alias rejected; hardlinked existing output preserves source; candidate bool/int rejected; overflow number rejected; duplicate caller policy rejected with no output. Temporary synthetic fixtures only. Prior ad hoc cp949 decode error corrected with explicit UTF-8; no product defect.
+test_boolean_float_whitespace_and_invalid_string_years_are_rejected (test_ml_split_validation.SplitValidationTests.test_boolean_float_whitespace_and_invalid_string_years_are_rejected) ... ok
+test_boolean_integer_and_float_integer_confusion_rejected (test_ml_split_validation.SplitValidationTests.test_boolean_integer_and_float_integer_confusion_rejected) ... ok
+test_candidate_tampering_rows_lineage_flags_and_sha_rejected (test_ml_split_validation.SplitValidationTests.test_candidate_tampering_rows_lineage_flags_and_sha_rejected) ... ok
+test_change_during_recomputation_is_rejected (test_ml_split_validation.SplitValidationTests.test_change_during_recomputation_is_rejected) ... ok
+test_cli_output_outside_evidence_is_rejected (test_ml_split_validation.SplitValidationTests.test_cli_output_outside_evidence_is_rejected) ... ok
+test_cli_stdout_new_output_and_existing_input_paths_protected (test_ml_split_validation.SplitValidationTests.test_cli_stdout_new_output_and_existing_input_paths_protected) ... ok
+test_cli_tampered_plan_does_not_create_evidence (test_ml_split_validation.SplitValidationTests.test_cli_tampered_plan_does_not_create_evidence) ... ok
+test_exact_candidate_metadata_match_is_separate_from_readiness (test_ml_split_validation.SplitValidationTests.test_exact_candidate_metadata_match_is_separate_from_readiness) ... ok
+test_four_digit_string_years_preserve_source_rows_without_coercion (test_ml_split_validation.SplitValidationTests.test_four_digit_string_years_preserve_source_rows_without_coercion) ... ok
+test_independent_caller_policy_mismatch_is_rejected (test_ml_split_validation.SplitValidationTests.test_independent_caller_policy_mismatch_is_rejected) ... ok
+test_metadata_plan_recomputed_without_claiming_candidate_check_or_training (test_ml_split_validation.SplitValidationTests.test_metadata_plan_recomputed_without_claiming_candidate_check_or_training) ... ok
+test_missing_candidate_and_unpaired_parameters_never_succeed (test_ml_split_validation.SplitValidationTests.test_missing_candidate_and_unpaired_parameters_never_succeed) ... ok
+test_nonfinite_and_duplicate_keys_are_rejected (test_ml_split_validation.SplitValidationTests.test_nonfinite_and_duplicate_keys_are_rejected) ... ok
+test_readiness_binding_and_stale_readiness_are_checked (test_ml_split_validation.SplitValidationTests.test_readiness_binding_and_stale_readiness_are_checked) ... ok
+test_rehashed_tampered_plan_indices_policy_and_approval_rejected (test_ml_split_validation.SplitValidationTests.test_rehashed_tampered_plan_indices_policy_and_approval_rejected) ... ok
+test_stale_source_and_caller_sha_cannot_be_taken_from_plan (test_ml_split_validation.SplitValidationTests.test_stale_source_and_caller_sha_cannot_be_taken_from_plan) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 6.628s
+
+OK
+test_boolean_float_whitespace_and_invalid_string_years_are_rejected (test_ml_split_validation.SplitValidationTests.test_boolean_float_whitespace_and_invalid_string_years_are_rejected) ... ok
+test_boolean_integer_and_float_integer_confusion_rejected (test_ml_split_validation.SplitValidationTests.test_boolean_integer_and_float_integer_confusion_rejected) ... ok
+test_candidate_tampering_rows_lineage_flags_and_sha_rejected (test_ml_split_validation.SplitValidationTests.test_candidate_tampering_rows_lineage_flags_and_sha_rejected) ... ok
+test_change_during_recomputation_is_rejected (test_ml_split_validation.SplitValidationTests.test_change_during_recomputation_is_rejected) ... ok
+test_cli_cp949_console_stdout_and_stderr_are_ascii_safe (test_ml_split_validation.SplitValidationTests.test_cli_cp949_console_stdout_and_stderr_are_ascii_safe) ... ok
+test_cli_output_outside_evidence_is_rejected (test_ml_split_validation.SplitValidationTests.test_cli_output_outside_evidence_is_rejected) ... ok
+test_cli_stdout_new_output_and_existing_input_paths_protected (test_ml_split_validation.SplitValidationTests.test_cli_stdout_new_output_and_existing_input_paths_protected) ... ok
+test_cli_tampered_plan_does_not_create_evidence (test_ml_split_validation.SplitValidationTests.test_cli_tampered_plan_does_not_create_evidence) ... ok
+test_exact_candidate_metadata_match_is_separate_from_readiness (test_ml_split_validation.SplitValidationTests.test_exact_candidate_metadata_match_is_separate_from_readiness) ... ok
+test_four_digit_string_years_preserve_source_rows_without_coercion (test_ml_split_validation.SplitValidationTests.test_four_digit_string_years_preserve_source_rows_without_coercion) ... ok
+test_independent_caller_policy_mismatch_is_rejected (test_ml_split_validation.SplitValidationTests.test_independent_caller_policy_mismatch_is_rejected) ... ok
+test_metadata_plan_recomputed_without_claiming_candidate_check_or_training (test_ml_split_validation.SplitValidationTests.test_metadata_plan_recomputed_without_claiming_candidate_check_or_training) ... ok
+test_missing_candidate_and_unpaired_parameters_never_succeed (test_ml_split_validation.SplitValidationTests.test_missing_candidate_and_unpaired_parameters_never_succeed) ... ok
+test_nonfinite_and_duplicate_keys_are_rejected (test_ml_split_validation.SplitValidationTests.test_nonfinite_and_duplicate_keys_are_rejected) ... ok
+test_readiness_binding_and_stale_readiness_are_checked (test_ml_split_validation.SplitValidationTests.test_readiness_binding_and_stale_readiness_are_checked) ... ok
+test_rehashed_tampered_plan_indices_policy_and_approval_rejected (test_ml_split_validation.SplitValidationTests.test_rehashed_tampered_plan_indices_policy_and_approval_rejected) ... ok
+test_stale_source_and_caller_sha_cannot_be_taken_from_plan (test_ml_split_validation.SplitValidationTests.test_stale_source_and_caller_sha_cannot_be_taken_from_plan) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 8.900s
+
+OK

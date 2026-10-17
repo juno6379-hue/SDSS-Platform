@@ -1,0 +1,101 @@
+{
+  "recorded_at": "2026-10-17T23:31:42.714368+09:00",
+  "status": "TESTED_SYNTHETIC",
+  "independent_tests": {
+    "modules": [
+      "test_bare_patch_feasibility",
+      "test_bare_class_requirements"
+    ],
+    "total": 26,
+    "seconds": 10.286,
+    "passed": true,
+    "log": "evidence/integration/bare-class-patch-feasibility-independent-20261017.log"
+  },
+  "exhaustive_oracle": {
+    "eligible_range": [
+      0,
+      4
+    ],
+    "capacity_range": [
+      1,
+      6
+    ],
+    "threshold_range": "1..capacity inclusive",
+    "all_patch_integer_allocations_checked": 29001,
+    "aggregate_models_checked": 1015,
+    "all_computed_lower_upper_equal_actual_minimum_maximum": true,
+    "not_additional_unittest_cases": true
+  },
+  "current_saved_count_math": {
+    "train": {
+      "eligible_patches": 628,
+      "bare_pixels": 1418,
+      "lower": 0,
+      "upper": 5,
+      "stored_observed_patches": 0,
+      "stored_within_bounds": true,
+      "required_contributing_patches": 5,
+      "necessary_total_bare_pixels": 1280,
+      "necessary_aggregate_shortfall": 0,
+      "existing76_pixel_floor_shortfall": 0
+    },
+    "val": {
+      "eligible_patches": 217,
+      "bare_pixels": 209,
+      "lower": 0,
+      "upper": 0,
+      "stored_observed_patches": 0,
+      "stored_within_bounds": true,
+      "required_contributing_patches": 5,
+      "necessary_total_bare_pixels": 1280,
+      "necessary_aggregate_shortfall": 1071,
+      "existing76_pixel_floor_shortfall": 47
+    },
+    "test": {
+      "eligible_patches": 250,
+      "bare_pixels": 1025,
+      "lower": 0,
+      "upper": 4,
+      "stored_observed_patches": 0,
+      "stored_within_bounds": true,
+      "required_contributing_patches": 5,
+      "necessary_total_bare_pixels": 1280,
+      "necessary_aggregate_shortfall": 255,
+      "existing76_pixel_floor_shortfall": 0
+    }
+  },
+  "derivation": {
+    "assumption": "For the SAME counted eligible patches, integer x_i in 0..C, sum B, q=count(x_i>=T), 1<=T<=C and 0<=B<=E*C.",
+    "lower": "max(0,ceil((B-E*(T-1))/(C-T+1))) from B<=q*C+(E-q)*(T-1)",
+    "upper": "min(E,B//T) from q*T<=B",
+    "necessary_total": "required*T is necessary but not sufficient; existing saved P=0 remains authoritative metadata, no redistribution inferred",
+    "capacity_semantics": "C=65536 upper bound for an eligible 256x256 patch; not ratio denominator or actual valid pixel count"
+  },
+  "source_sha256": {
+    "backend/app/ml/bare_patch_feasibility.py": "4722c829630e45d3c3880c38bde95c8cca5f47403f5d7b335e822900e3cf2df8",
+    "scripts/inspect_bare_patch_feasibility.py": "3e86975db0e8914bb91d62856d1ac75482bbd7263bb827ad6ed61f81309b07c8",
+    "tests/test_bare_patch_feasibility.py": "f8001191530a9cfb8fb74ed43c3cb1971e108ad094c86543ed5016c6da767e23",
+    "backend/app/ml/bare_class_requirements.py": "05bd49bd101442726c3f3bcc2f745e9932aa069d3273cdb913d0983f7a4bf45f",
+    "backend/app/ml/readiness.py": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc"
+  },
+  "review": {
+    "existing76_reused_once": "pure build OR pinned reader; nested result and pin_validation retained",
+    "reader_scope": "single saved report two bounded reads; no current pixel/label/manifest/source QA",
+    "new_wrapper_io": "no extra file/network reads beyond existing76 reader",
+    "UI_change_required": false,
+    "UI_reason": "New standalone module and CLI only; no main/API/QA-comparison/ModelReview adapter or readiness gate connection, no new screen contract.",
+    "front_tests_run": false,
+    "build_run": false,
+    "browser_run": false,
+    "findings": []
+  },
+  "limitations": [
+    "Bounds ignore other-class spatial distribution and do not reconstruct actual per-patch counts.",
+    "Necessary aggregate shortfall is not future label/pixel/scene/download volume and does not authorize redistribution or collection.",
+    "Eligible capacity E<required is distinct from insufficient aggregate B; B>=1280 does not guarantee five represented patches.",
+    "Stored eligible/split/count metadata is not current physical file verification or scientific/training approval."
+  ],
+  "operating_collection_runs": 0,
+  "operating_training_runs": 0,
+  "source_or_docs_edited": false
+}

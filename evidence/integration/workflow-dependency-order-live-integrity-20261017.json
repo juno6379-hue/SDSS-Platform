@@ -1,0 +1,62 @@
+{
+  "recorded_at": "2026-10-17T23:19:22.305679",
+  "status": "VERIFIED_PRESERVATION_WITH_SYNTHETIC_BEHAVIOR_TESTS",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "previous_evidence_files_checked": 771,
+  "previous_evidence_file_changes": [],
+  "authorized_existing_code_changes": [
+    "backend/app/gmais_api.py",
+    "backend/app/workflow_lineage.py",
+    "backend/app/workflow_policy.py"
+  ],
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "live_job_posts": 0,
+  "operating_model_registrations": 0,
+  "new_operating_qa_training_collection_deployment": false,
+  "frontend_changed": false,
+  "ui_change_reason": "Internal dependency ordering extraction only; caller output/error/I/O contracts preserved and differentially tested. No new API or UI path.",
+  "focused": {
+    "tests_run": 9,
+    "passed": 9,
+    "skipped": 0,
+    "seconds": 4.453,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-dependency-order-focused-final-20261017.log"
+  },
+  "related": {
+    "tests_run": 61,
+    "passed": 61,
+    "skipped": 0,
+    "seconds": 13.116,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-dependency-order-related-20261017.log"
+  },
+  "independent": {
+    "tests_run": 61,
+    "passed": 61,
+    "skipped": 0,
+    "seconds": 13.845,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-dependency-order-independent-20261017.log"
+  },
+  "full-tests": {
+    "tests_run": 1069,
+    "passed": 1068,
+    "skipped": 1,
+    "seconds": 354.65,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-dependency-order-full-tests-20261017.log"
+  },
+  "scope": "Previously tracked files and explicit protected references; not full-workspace or atomic filesystem assurance.",
+  "full_regression": {
+    "tests_run": 1069,
+    "passed": 1068,
+    "skipped": 1,
+    "seconds": 354.65,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-dependency-order-full-tests-20261017.log"
+  }
+}

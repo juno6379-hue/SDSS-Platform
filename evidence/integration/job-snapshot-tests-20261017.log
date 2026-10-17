@@ -1,0 +1,19 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_corrupt_job_trace_agent_and_job_identity_are_rejected_without_echo (test_job_input_snapshot.JobInputSnapshotTests.test_corrupt_job_trace_agent_and_job_identity_are_rejected_without_echo) ... ok
+test_corrupt_snapshot_types_metadata_indices_and_ref_identity_are_rejected (test_job_input_snapshot.JobInputSnapshotTests.test_corrupt_snapshot_types_metadata_indices_and_ref_identity_are_rejected) ... ok
+test_impossible_empty_failure_and_dynamic_verified_snapshots_are_rejected (test_job_input_snapshot.JobInputSnapshotTests.test_impossible_empty_failure_and_dynamic_verified_snapshots_are_rejected) ... ok
+test_legacy_without_snapshot_is_explicit_and_does_not_revalidate (test_job_input_snapshot.JobInputSnapshotTests.test_legacy_without_snapshot_is_explicit_and_does_not_revalidate) ... ok
+test_missing_and_null_snapshot_are_distinct (test_job_input_snapshot.JobInputSnapshotTests.test_missing_and_null_snapshot_are_distinct) ... ok
+test_missing_job_uses_existing_error_contract (test_job_input_snapshot.JobInputSnapshotTests.test_missing_job_uses_existing_error_contract) ... ok
+test_nested_extensions_are_removed_and_approval_fields_are_forced_false (test_job_input_snapshot.JobInputSnapshotTests.test_nested_extensions_are_removed_and_approval_fields_are_forced_false) ... ok
+test_new_route_inherits_existing_token_dependency (test_job_input_snapshot.JobInputSnapshotTests.test_new_route_inherits_existing_token_dependency) ... ok
+test_output_is_detached_from_stored_object (test_job_input_snapshot.JobInputSnapshotTests.test_output_is_detached_from_stored_object) ... ok
+test_quality_and_acl_contradictions_cannot_claim_verified_snapshot (test_job_input_snapshot.JobInputSnapshotTests.test_quality_and_acl_contradictions_cannot_claim_verified_snapshot) ... ok
+test_real_source_generated_missing_dynamic_conflict_and_acl_snapshots_remain_readable (test_job_input_snapshot.JobInputSnapshotTests.test_real_source_generated_missing_dynamic_conflict_and_acl_snapshots_remain_readable) ... ok
+test_recorded_snapshot_survives_asset_deletion_and_preserves_status_schema (test_job_input_snapshot.JobInputSnapshotTests.test_recorded_snapshot_survives_asset_deletion_and_preserves_status_schema) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 6.726s
+
+OK

@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-17T13:15:59.550134+09:00",
+  "unit": "recovery_boundary_relations",
+  "status": "BLOCKED",
+  "implementation_tests": {
+    "passed": 15,
+    "seconds": 1.791
+  },
+  "independent_tests": {
+    "passed": 15,
+    "seconds": 1.764
+  },
+  "full_regression": {
+    "tests_run": 490,
+    "passed": 489,
+    "skipped": 1,
+    "seconds": 107.418,
+    "exit_code": 0
+  },
+  "live_result": "evidence/integration/recovery-boundary-relations-live-final-20261017.json",
+  "integrity": "evidence/integration/recovery-boundary-relations-live-integrity-20261017.json",
+  "documentation_validation": {
+    "markdown_files": 37,
+    "local_links_checked": 149,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "ui_reason": "Internal read-only CLI; no public API, screen state or navigation contract change",
+  "next_unit": "PLANNED bounded source-image header footprint/province-link diagnostics; no pixel inclusion/area accuracy/spatial independence approval"
+}

@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-17T13:53:50.783813+09:00",
+  "unit": "recovery_readiness_comparison",
+  "status": "BLOCKED",
+  "implementation_tests": {
+    "passed": 17,
+    "seconds": 9.343
+  },
+  "independent_tests": {
+    "passed": 17,
+    "seconds": 8.723
+  },
+  "full_regression": {
+    "tests_run": 538,
+    "passed": 537,
+    "skipped": 1,
+    "seconds": 174.829,
+    "exit_code": 0
+  },
+  "live_result": "evidence/integration/recovery-readiness-comparison-live-final-20261017.json",
+  "integrity": "evidence/integration/recovery-readiness-comparison-live-integrity-20261017.json",
+  "documentation_validation": {
+    "markdown_files": 40,
+    "local_links_checked": 161,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "ui_reason": "Internal read-only CLI; no public API, screen state or navigation contract change",
+  "next_unit": "PLANNED bounded future connectivity-witness contract/pure helper; no historical cause reconstruction or assess/gate/policy/split integration/re-execution"
+}

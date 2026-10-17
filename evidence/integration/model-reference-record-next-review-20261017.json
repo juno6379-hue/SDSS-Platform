@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-10-17T22:28:22.544765+09:00",
+  "status": "PLANNED_CONTRACT_REVIEW_ONLY",
+  "candidate": "Separate Workflow full Job model_ref projection-to-supplied-record wrapper",
+  "proposed_order": [
+    "Call existing 89 full Job handoff exactly once with unchanged arguments and result",
+    "If inner BLOCKED, do not extract or compare model metadata",
+    "If MATCH and model_ref absent, distinguish no declaration without calling103",
+    "If MATCH with schema-validated model_ref, explicitly extract id/version/sha256 and call103 once with caller-supplied record"
+  ],
+  "constraints": [
+    "No existing89/94 output/false-flag modification",
+    "Original schema validates role/URI before projection;103 is not whole-model-ref validation",
+    "Caller-supplied record, no Registry lookup/resolver or auto-selection",
+    "None supplied record means not provided, not real registry-not-found",
+    "Preserve original schema file-read and comparator evidence limits",
+    "All identity/authority/file/scientific/execution approvals remain false"
+  ],
+  "implementation_changes": 0,
+  "workflow_or_job_posts": 0,
+  "actual_model_resolver_connected": false
+}

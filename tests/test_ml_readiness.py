@@ -8,6 +8,7 @@ import rasterio
 from rasterio.transform import from_origin
 from backend.app.ml.readiness import assess, train_only_weights, prediction_check, verify_files, validate_prepared_training, balance_diagnostics, default_policy
 from backend.app.ml.readiness import reference_labels, FIRST_GROUP
+from backend.app.ml.readiness import esri_reference_matches_year
 from backend.app.ml.raster import ESRI_IO_CLASS_NAMES
 from backend.app.ml.dataset import file_digest
 
@@ -78,6 +79,31 @@ class ReadinessTests(unittest.TestCase):
         self.assertFalse(report['ready_for_training'])
         self.assertIn('SCENE_QA_ERROR',[row['code'] for row in report['blockers']])
 
+    def test_recorded_collection_hashes_are_checked_against_actual_files(self):
+        row=self.rows[0]
+        hashes={key:file_digest(self.root/row[field]) for key,field in
+                [('image','image_path'),('label','label_path'),('quality','quality_mask_path')]}
+        row['patch_sha256']=hashes;self.save()
+        self.assertTrue(assess([self.manifest],self.root,self.policy,test_mode=True)['ready_for_training'])
+        for key in hashes:
+            with self.subTest(kind=key):
+                row['patch_sha256']={**hashes,key:'0'*64};self.save()
+                result=assess([self.manifest],self.root,self.policy,test_mode=True)
+                self.assertFalse(result['ready_for_training'])
+                self.assertTrue(any(b['code']=='SCENE_QA_ERROR' and 'SHA-256' in b['detail'] for b in result['blockers']))
+
+    def test_province_boundary_ineligible_patch_does_not_increase_training_totals(self):
+        for row in self.rows:
+            row['province_inside_fraction']=.95
+        self.save()
+        self.assertTrue(assess([self.manifest],self.root,self.policy,test_mode=True)['ready_for_training'])
+        self.rows[0]['province_inside_fraction']=.949;self.save()
+        result=assess([self.manifest],self.root,self.policy,test_mode=True)
+        self.assertFalse(result['ready_for_training'])
+        self.assertEqual(sum(result['patch_counts_by_split'].values()),2)
+        self.assertEqual(result['province_patch_counts']['a'],0)
+        self.assertEqual(result['province_unique_locations']['a'],0)
+
     def test_inference_product_contract_checks_actual_image_and_metadata(self):
         from backend.app.ml.normalization import verify_inference_normalization
         row=self.rows[0];image=self.root/row['image_path']
@@ -137,6 +163,16 @@ class ReadinessTests(unittest.TestCase):
         self.assertEqual(report['province_groups']['a'],report['province_groups']['b'])
         self.assertIn('SPLIT_INDEPENDENCE',[row['code'] for row in report['blockers']])
 
+    def test_fixed_split_conflict_blocks_without_reassigning_holdout_statistics(self):
+        self.rows[1]['source_group']=self.rows[0]['scene_id'];self.save()
+        policy={**self.policy,'province_splits':{'a':'train','b':'val','c':'test'}}
+        report=assess([self.manifest],self.root,policy,test_mode=True)
+        self.assertFalse(report['ready_for_training'])
+        self.assertIn('SHARED_SOURCE_CROSSES_FIXED_SPLIT',[row['code'] for row in report['blockers']])
+        self.assertEqual(report['patch_counts_by_split'],{'train':1,'val':1,'test':1})
+        self.assertEqual(report['group_splits'],policy['province_splits'])
+        self.assertEqual(report['province_groups']['a'],report['province_groups']['b'])
+
     def test_weights_are_train_only_and_absent_classes_are_zero(self):
         counts=[0]*9;counts[1]=100;counts[4]=25
         weights=train_only_weights(counts)
@@ -170,6 +206,31 @@ class ReadinessTests(unittest.TestCase):
         codes=[entry['code'] for entry in result['blockers']]
         self.assertIn('MIXED_LABEL_TAXONOMY',codes)
         self.assertIn('ESRI_REFERENCE_YEAR',codes)
+
+    def test_esri_annual_filename_accepts_both_end_date_conventions(self):
+        for year,end in [(2020,'20210101'),(2024,'20241231'),(2025,'20251231')]:
+            with self.subTest(year=year):
+                self.assertTrue(esri_reference_matches_year(f'https://example.invalid/lulc/48M_{year}0101-{end}.tif?download=1',year))
+        for filename in ['48M_20240101-20241230.tif','48M_20240201-20241231.tif',
+                         '48M_20230101-20231231.tif','48M_20240101-20251231.tif',
+                         '48M_20240101-20250101.tif.exe']:
+            with self.subTest(filename=filename):
+                self.assertFalse(esri_reference_matches_year(f'https://example.invalid/{filename}',2024))
+        self.assertFalse(esri_reference_matches_year('https://example.invalid/48M_20240101-20241231.tif/other.tif',2024))
+        self.assertFalse(esri_reference_matches_year('https://example.invalid/other.tif?ref=48M_20240101-20241231.tif',2024))
+
+    def test_esri_same_year_december_end_reaches_full_readiness_gate(self):
+        for row in self.rows:
+            row.update(year=2024,datetime='2024-06-01T00:00:00Z',label_year=2024,
+                       label_source='esri_io',label_dataset_version='EsriIOv003',
+                       label_source_url='https://example.invalid/48M_20240101-20241231.tif')
+        # 동일 임시 파일에서 Esri trees/crops 원래 코드를 사용한다.
+        for i in range(3):
+            with rasterio.open(self.root/f'label{i}.tif','r+') as dst:
+                labels=dst.read();labels[:,:,:128]=2;labels[:,:,128:]=5;dst.write(labels)
+        self.save()
+        result=assess([self.manifest],self.root,{**self.policy,'required_years':[2024]},test_mode=True)
+        self.assertTrue(result['ready_for_training'],result['blockers'])
 
     def test_duplicate_spatial_observation_same_year_is_not_new_sample(self):
         self.rows[0]['spatial_location_id']='same-location'

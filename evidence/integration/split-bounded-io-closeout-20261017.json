@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-17T16:23:50.012591+09:00",
+  "status": "BOUNDED_UNIT_COMPLETE_PROJECT_CONTINUES",
+  "unit": 70,
+  "full_regression": {
+    "tests_run": 691,
+    "passed": 690,
+    "skipped": 1,
+    "seconds": 298.655,
+    "exit_code": 0,
+    "log": "evidence/integration/split-bounded-io-full-tests-20261017.log"
+  },
+  "preservation_evidence": "evidence/integration/split-bounded-io-live-integrity-20261017.json",
+  "documentation_and_understanding_updated": true,
+  "related_implementation_docs": [
+    25,
+    44,
+    70
+  ],
+  "documentation_validation": {
+    "checked_at": "2026-10-17T16:23:50.012591+09:00",
+    "markdown_files": 52,
+    "local_links": 212,
+    "evidence_references": 3099,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "new_api_ui_contract": false,
+  "ui_change_reason": "Internal opt-in JSON IO policy; existing public API/UI unchanged. No browser verification claimed for this unit.",
+  "next": "PLANNED: three explicit caller pins and fixed six-province map -> existing bounded validator/writer -> exact candidate roundtrip -> exclusive completion receipt. No candidate created.",
+  "scheduler": "geoai-2 ACTIVE FREQ=MINUTELY;INTERVAL=10; not evidence of training",
+  "runtime_pids": {
+    "vite": [
+      30944,
+      15608
+    ],
+    "api": [
+      32224,
+      26912,
+      35032
+    ]
+  },
+  "collectors_or_trainers_observed": false
+}

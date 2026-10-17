@@ -1,0 +1,56 @@
+{
+  "recorded_at": "2026-10-17T14:11:54.884385+09:00",
+  "verification_scope": "PINNED_SAVED_REPORT_WITNESS_ABSENCE_SERIALIZATION_ROUNDTRIP_ONLY",
+  "caller_input_pin_source": "Independently constructed None/None/default limits before build, not extracted from untrusted envelope",
+  "expected_input_sha256": "1695dfea33470864d1e4a869ddd04437f93d868b9e4db55c6d13e0737f0c65c7",
+  "envelope_bytes": 3385,
+  "envelope_file_sha256": "dcdec8ae28b7cc4e6e7e7ab01f3985a0cb65843b0b4186e6631d6933aad14696",
+  "envelope_sha256": "e5904cf70c2499d046c921975df2c41c640a84d85403c9a73b7b558087798910",
+  "byte_identical_reencode": true,
+  "provenance": {
+    "source_report_sha256": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "source_manifest_sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "eligible_scene_reference_sha256": null
+  },
+  "declared_helper_sha256": "6c56cca4ce94d6ebeec1808b3ec82b4ba77a9e7744bb1442bb943cac17c2760e",
+  "saved_blockers_preserved": [
+    {
+      "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+      "detail": "같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.",
+      "scene": "west_java"
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 픽셀",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "saved_eligible_counts": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "actual_eligible_scene_input_used": false,
+  "historical_branch_cause": "UNKNOWN_NOT_PERSISTED",
+  "source_rasters_or_assess_read": false,
+  "module_persistent_storage_implemented": false,
+  "root_wrote_new_evidence_artifact": true,
+  "provenance_verified_by_envelope": false,
+  "executing_code_identity_verified_by_envelope": false,
+  "ready_for_training": false
+}

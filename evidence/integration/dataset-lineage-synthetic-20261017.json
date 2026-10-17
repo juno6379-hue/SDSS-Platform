@@ -1,0 +1,181 @@
+{
+  "assessed_at": "2026-10-17T01:18:16.486241+00:00",
+  "evidence_scope": "TESTED_SYNTHETIC_ONLY",
+  "note": "Temporary Dataset Registry and explicit local contract fixtures; no operational dataset registration or scientific approval.",
+  "implementation_sha256": "6fe44e0e2419414c36bdb6e1257bcaf4f678484e5f8a5026edd5f19c38e72492",
+  "public_chain": {
+    "schema_version": 1,
+    "scope": "DATASET_LINEAGE_INTEGRITY_ONLY",
+    "status": "INTEGRITY_VERIFIED",
+    "root_ref": {
+      "id": "synthetic-root",
+      "version": "1",
+      "sha256": "38fe1446d83bb7e647b3a8fa53c5b0bb39ed08fff76c2a3e2fd2aa69ba80170d"
+    },
+    "nodes": [
+      {
+        "id": "synthetic-leaf",
+        "version": "1",
+        "sha256": "8398ea32289d4783da8c111cca04ca6f08f4f1d75a4593325f1b9bf7743aebd3",
+        "status": "VERIFIED",
+        "integrity_verified": true,
+        "authorization_verified": false,
+        "expanded": true,
+        "blocker_codes": [],
+        "quality_status": "VALIDATED",
+        "access_class": "PUBLIC"
+      },
+      {
+        "id": "synthetic-parent",
+        "version": "1",
+        "sha256": "0a9e091709d8d3114a1b2801c0b894b2fbf7c0778fe171b20ef7e81e0a8159a8",
+        "status": "VERIFIED",
+        "integrity_verified": true,
+        "authorization_verified": false,
+        "expanded": true,
+        "blocker_codes": [],
+        "quality_status": "VALIDATED",
+        "access_class": "PUBLIC"
+      },
+      {
+        "id": "synthetic-root",
+        "version": "1",
+        "sha256": "38fe1446d83bb7e647b3a8fa53c5b0bb39ed08fff76c2a3e2fd2aa69ba80170d",
+        "status": "VERIFIED",
+        "integrity_verified": true,
+        "authorization_verified": false,
+        "expanded": true,
+        "blocker_codes": [],
+        "quality_status": "VALIDATED",
+        "access_class": "PUBLIC"
+      }
+    ],
+    "edges": [
+      {
+        "source": {
+          "id": "synthetic-leaf",
+          "version": "1",
+          "sha256": "8398ea32289d4783da8c111cca04ca6f08f4f1d75a4593325f1b9bf7743aebd3"
+        },
+        "target": {
+          "id": "synthetic-parent",
+          "version": "1",
+          "sha256": "0a9e091709d8d3114a1b2801c0b894b2fbf7c0778fe171b20ef7e81e0a8159a8"
+        }
+      },
+      {
+        "source": {
+          "id": "synthetic-parent",
+          "version": "1",
+          "sha256": "0a9e091709d8d3114a1b2801c0b894b2fbf7c0778fe171b20ef7e81e0a8159a8"
+        },
+        "target": {
+          "id": "synthetic-root",
+          "version": "1",
+          "sha256": "38fe1446d83bb7e647b3a8fa53c5b0bb39ed08fff76c2a3e2fd2aa69ba80170d"
+        }
+      }
+    ],
+    "edge_direction": "PARENT_TO_CHILD",
+    "blockers": [],
+    "lineage_integrity_verified": true,
+    "current_assets_revalidated": true,
+    "authorization_verified": false,
+    "execution_authorized": false,
+    "scientific_approval": false,
+    "network_requests": 0,
+    "source_files_written": 0,
+    "limits": {
+      "max_depth": 32,
+      "max_nodes": 256,
+      "root_depth": 0,
+      "hard_max_depth": 64,
+      "hard_max_nodes": 1024,
+      "depth_limit_reached": false,
+      "node_limit_reached": false
+    }
+  },
+  "restricted_chain": {
+    "schema_version": 1,
+    "scope": "DATASET_LINEAGE_INTEGRITY_ONLY",
+    "status": "BLOCKED",
+    "root_ref": {
+      "id": "synthetic-public-root",
+      "version": "1",
+      "sha256": "bf87af8b215eab0c1d915255921d99299954624a437e207c371cf539276622c9"
+    },
+    "nodes": [
+      {
+        "id": "synthetic-public-root",
+        "version": "1",
+        "sha256": "bf87af8b215eab0c1d915255921d99299954624a437e207c371cf539276622c9",
+        "status": "VERIFIED",
+        "integrity_verified": true,
+        "authorization_verified": false,
+        "expanded": true,
+        "blocker_codes": [],
+        "quality_status": "VALIDATED",
+        "access_class": "PUBLIC"
+      },
+      {
+        "id": "synthetic-restricted",
+        "version": "1",
+        "sha256": "981523639f5965db017f08629404e89c5193ddabc50cd622697c4c29d5c51c74",
+        "status": "BLOCKED",
+        "integrity_verified": true,
+        "authorization_verified": false,
+        "expanded": false,
+        "blocker_codes": [
+          "LINEAGE_ACL_NOT_IMPLEMENTED"
+        ],
+        "quality_status": "VALIDATED",
+        "access_class": "RESTRICTED"
+      }
+    ],
+    "edges": [
+      {
+        "source": {
+          "id": "synthetic-restricted",
+          "version": "1",
+          "sha256": "981523639f5965db017f08629404e89c5193ddabc50cd622697c4c29d5c51c74"
+        },
+        "target": {
+          "id": "synthetic-public-root",
+          "version": "1",
+          "sha256": "bf87af8b215eab0c1d915255921d99299954624a437e207c371cf539276622c9"
+        }
+      }
+    ],
+    "edge_direction": "PARENT_TO_CHILD",
+    "blockers": [
+      {
+        "code": "LINEAGE_ACL_NOT_IMPLEMENTED",
+        "ref": {
+          "id": "synthetic-restricted",
+          "version": "1",
+          "sha256": "981523639f5965db017f08629404e89c5193ddabc50cd622697c4c29d5c51c74"
+        }
+      }
+    ],
+    "lineage_integrity_verified": false,
+    "current_assets_revalidated": true,
+    "authorization_verified": false,
+    "execution_authorized": false,
+    "scientific_approval": false,
+    "network_requests": 0,
+    "source_files_written": 0,
+    "limits": {
+      "max_depth": 32,
+      "max_nodes": 256,
+      "root_depth": 0,
+      "hard_max_depth": 64,
+      "hard_max_nodes": 1024,
+      "depth_limit_reached": false,
+      "node_limit_reached": false
+    }
+  },
+  "fixture_sources_and_database_unchanged": true,
+  "restricted_ancestor_identity_not_disclosed": true,
+  "production_data_modified": false,
+  "network_requests": 0
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "INDEPENDENT_PINNED_JSON_ONLY_SOURCE_IDENTITY_VERIFICATION",
+  "status": "VERIFIED_REAL_JSON_METADATA_ONLY",
+  "inputs": {
+    "manifest": {
+      "path": "data/first-group-training-esri-v1/annual-window-report.json",
+      "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+      "bytes": 53868103
+    },
+    "report": {
+      "path": "data/first-group/readiness-source-identity-20261017.json",
+      "sha256": "6bc86c9883716565946cff1700780db98aea005bca2e8da2c225520501dda642",
+      "bytes": 11858020
+    },
+    "consumer": {
+      "path": "evidence/integration/readiness-source-identity-real-lineage-20261017.json",
+      "sha256": "4f6f62356f568d5d8de482a66f5cd492079b3230de98b01021656fb1b65091bb",
+      "bytes": 88245
+    }
+  },
+  "checks": {
+    "all_1384_identity_records_order_types_complete_status": true,
+    "all_1384_path_sha_declared_pairs_match_one_raw_metadata_candidate": true,
+    "no_raw_index_assumed": true,
+    "all_query_members_broad_and_refined_lists_exact": true,
+    "first_and_final_input_sha_equal": true,
+    "authorizations_and_authenticity_remain_false": true
+  },
+  "scene_count": 1384,
+  "zero_patch_scene_count": 273,
+  "eligible_patch_counts": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "query_token": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+  "query_member_count": 28,
+  "query_members_by_province": {
+    "banten": {
+      "members": 16,
+      "eligible_patches": 16,
+      "zero_patch_members": 0
+    },
+    "west_java": {
+      "members": 12,
+      "eligible_patches": 9,
+      "zero_patch_members": 3
+    }
+  },
+  "query_zero_patch_members": 3,
+  "query_eligible_patch_sum": 25,
+  "broad_candidate_links": 400,
+  "broad_unique_raw_candidates": 28,
+  "refined_candidate_links": 28,
+  "refined_unique_raw_candidates": 28,
+  "refined_match_status": "UNIQUE_DECLARED_METADATA_CANDIDATE_ALL_28",
+  "truncated": false,
+  "source_images_read": false,
+  "helper_consumer_assess_called": false,
+  "new_unittest_or_full_regression": false,
+  "limitation": "Three pinned JSON snapshots only. Lexical path+declared SHA singleton is metadata-only, not exact original row/file/product authentication. Raw row ordering was not used to choose candidates. No source raster/header/hash/113 other manifests, historical cause reconstruction, counterfactual deletion, training or gate modification."
+}

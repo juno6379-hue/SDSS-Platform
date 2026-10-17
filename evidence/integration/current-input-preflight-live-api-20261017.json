@@ -1,0 +1,147 @@
+{
+  "recorded_at": "2026-10-17T19:19:40.538008+09:00",
+  "scope": "Actual existing legacy route observations only; MATCH/blocked current file verification and429/503/cancellation remain synthetic tests",
+  "jobs": [
+    {
+      "request_job_sha256": "58eed27a8d023f698f08b087c74c0665de1d32ebebc3459335451f758f4ea39d",
+      "http_status": 200,
+      "cache_control": "no-store",
+      "preflight": {
+        "schema_version": 1,
+        "scope": "STORED_TO_CURRENT_DIRECT_INPUT_PREFLIGHT_ONLY",
+        "status": "UNKNOWN",
+        "store_status": "OBSERVED",
+        "store_read_attempted": true,
+        "store_read_observed": true,
+        "store_get_calls": 1,
+        "request_job_sha256": "58eed27a8d023f698f08b087c74c0665de1d32ebebc3459335451f758f4ea39d",
+        "stored_capture_status": "LEGACY",
+        "resolver_pass_calls": 0,
+        "current_resolution_status": "NOT_RUN",
+        "current_capture_status": "NOT_RUN",
+        "current_input_count": null,
+        "current_integrity_verified_count": null,
+        "current_quality_public_observed_count": null,
+        "current_quality_public_diagnostics_passed": null,
+        "current_blocker_count": null,
+        "current_blockers": [],
+        "binding_comparison": null,
+        "issues": [
+          {
+            "code": "LEGACY_EXPECTED_BINDING_NOT_RECORDED"
+          }
+        ],
+        "executor_bindings_compared": false,
+        "stored_job_origin_verified": false,
+        "transitive_lineage_verified": false,
+        "execution_authorized": false,
+        "ready_for_execution": false,
+        "ready_for_training": false,
+        "scientific_approval": false,
+        "acl_verified": false,
+        "registry_verified": false,
+        "training_authorized": false,
+        "pixels_verified": false,
+        "toc_tou_protected": false,
+        "executor_connected": false,
+        "artifact_bytes_verified": false,
+        "manifest_bytes_verified": false
+      },
+      "old_capture_status_input_resolution_exact_match": true
+    },
+    {
+      "request_job_sha256": "f8d87ca2b15f51d0f280ea1f5e1807b1a4550fb8770580ba489610436c260a91",
+      "http_status": 200,
+      "cache_control": "no-store",
+      "preflight": {
+        "schema_version": 1,
+        "scope": "STORED_TO_CURRENT_DIRECT_INPUT_PREFLIGHT_ONLY",
+        "status": "UNKNOWN",
+        "store_status": "OBSERVED",
+        "store_read_attempted": true,
+        "store_read_observed": true,
+        "store_get_calls": 1,
+        "request_job_sha256": "f8d87ca2b15f51d0f280ea1f5e1807b1a4550fb8770580ba489610436c260a91",
+        "stored_capture_status": "LEGACY",
+        "resolver_pass_calls": 0,
+        "current_resolution_status": "NOT_RUN",
+        "current_capture_status": "NOT_RUN",
+        "current_input_count": null,
+        "current_integrity_verified_count": null,
+        "current_quality_public_observed_count": null,
+        "current_quality_public_diagnostics_passed": null,
+        "current_blocker_count": null,
+        "current_blockers": [],
+        "binding_comparison": null,
+        "issues": [
+          {
+            "code": "LEGACY_EXPECTED_BINDING_NOT_RECORDED"
+          }
+        ],
+        "executor_bindings_compared": false,
+        "stored_job_origin_verified": false,
+        "transitive_lineage_verified": false,
+        "execution_authorized": false,
+        "ready_for_execution": false,
+        "ready_for_training": false,
+        "scientific_approval": false,
+        "acl_verified": false,
+        "registry_verified": false,
+        "training_authorized": false,
+        "pixels_verified": false,
+        "toc_tou_protected": false,
+        "executor_connected": false,
+        "artifact_bytes_verified": false,
+        "manifest_bytes_verified": false
+      },
+      "old_capture_status_input_resolution_exact_match": true
+    }
+  ],
+  "safe_errors": [
+    {
+      "case": "missing",
+      "http_status": 404,
+      "body": {
+        "error": {
+          "code": "JOB_NOT_FOUND",
+          "message": "Job was not found.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "oversized",
+      "http_status": 400,
+      "body": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Invalid preflight request.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "control",
+      "http_status": 400,
+      "body": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Invalid preflight request.",
+          "retryable": false
+        }
+      }
+    }
+  ],
+  "get_requests": 11,
+  "old_api_baseline_get_requests": 6,
+  "catalog_rows": 14,
+  "catalog_canonical_sha256_before": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_canonical_sha256_after": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "old_api_responses_unchanged": true,
+  "actual_resolver_passes_for_legacy": 0,
+  "new_job_posts": 0,
+  "capture_backfills": 0,
+  "qa_or_training_started": false,
+  "actual_executor_connected": false
+}

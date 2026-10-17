@@ -1,0 +1,74 @@
+{
+  "recorded_at": "2026-10-17T22:18:43.275226+09:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 71,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [
+    "backend/app/main.py",
+    "frontend/src/ModelReview.tsx"
+  ],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "live_new_job_posts": 0,
+  "capture_backfills": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 1019,
+    "passed": 1018,
+    "skipped": 1,
+    "seconds": 381.288,
+    "exit_code": 0,
+    "log": "evidence/integration/model-provenance-api-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "related": {
+    "passed": 56,
+    "seconds": 17.124,
+    "log": "evidence/integration/model-provenance-api-related-20261017.log"
+  },
+  "independent": {
+    "passed": 9,
+    "seconds": 2.156,
+    "log": "evidence/integration/model-provenance-api-independent-20261017.log"
+  },
+  "additional_existing_code_baseline_source": "Both existing sources already present in prior snapshot; pre-edit original copies retained",
+  "additional_existing_code_baselines_checked": 0,
+  "previous_evidence_files_checked": 679,
+  "previous_evidence_file_changes": [],
+  "new_function_evidence_class": "TESTED_SYNTHETIC_AND_SEPARATE_VERIFIED_REAL_READ_ONLY_GETS",
+  "new_qa_or_training_executed_scope": "No new operating project QA or formal training; synthetic fixture tests remain included in full regression",
+  "synthetic_fixture_tests_in_full_regression": true,
+  "direct_ui_change": true,
+  "direct_ui_change_reason": "Manual selected-model metadata observation GET; no automatic query, mutation or approval. Response validation and stale presentation protection with actual read-only browser evidence.",
+  "live_job_submission_tested": false,
+  "successful_operating_model_registrations": 0,
+  "live_api_evidence": "evidence/integration/model-provenance-api-live-api-20261017.json",
+  "live_ui_evidence": "evidence/integration/model-provenance-api-live-ui-20261017.json",
+  "frontend": {
+    "related": {
+      "passed": 19,
+      "log": "evidence/integration/model-provenance-ui-related-20261017.log"
+    },
+    "all_tests": {
+      "passed": 172,
+      "log": "evidence/integration/model-provenance-ui-tests-20261017.log"
+    },
+    "independent": {
+      "passed": 19,
+      "log": "evidence/integration/model-provenance-ui-independent-20261017.log"
+    },
+    "production_build": {
+      "modules": 93,
+      "seconds": 28.54,
+      "log": "evidence/integration/model-provenance-ui-build-20261017.log",
+      "existing_chunk_size_warning": true
+    }
+  }
+}

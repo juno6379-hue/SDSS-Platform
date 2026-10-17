@@ -1,0 +1,156 @@
+{
+  "recorded_at": "2026-10-17T23:28:36.113665+09:00",
+  "status": "VERIFIED_REAL_LOCAL_JSON_METADATA_ONLY",
+  "ledger": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json",
+    "exists": true,
+    "bytes": 51204,
+    "sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8"
+  },
+  "run_result": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\run-result.json",
+    "exists": true,
+    "bytes": 613,
+    "sha256": "0e8dd6ef449e5e7397d02393def95a54cafedc5a58722ec93df56e39dc554a86"
+  },
+  "new_charged_bytes": 1933512405,
+  "remaining_additional_bytes": 2361454891,
+  "run_new_charged_upper_bound_bytes": 1865354965,
+  "ledger_minus_run_bytes": 68157440,
+  "pending_count": 2,
+  "pending_reserved_bytes": 136314880,
+  "pending": [
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes_preserved": 68157440,
+      "artifacts": {
+        "config.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\config.json",
+          "exists": true,
+          "bytes": 3441,
+          "sha256": "d9e7bf2e9e18398205653d518d3fe0dcf15b7ab305ca58520d0ba3c3e135abc6"
+        },
+        "window-state.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\window-state.json",
+          "exists": true,
+          "bytes": 220,
+          "sha256": "1b5821692d52a13fd6c3e7e2bc72d2051c38ac7ac2eb5d8fec0d86cec3925700"
+        },
+        "worker-result.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\worker-result.json",
+          "exists": false
+        },
+        "annual-window-report.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\annual-window-report.json",
+          "exists": false
+        }
+      },
+      "raw_config_matches_ledger": true,
+      "normalized_config_matches_window_state": true,
+      "state_upper_bytes": 52151987,
+      "state_measured_bytes": 18597555,
+      "upper_minus_measured_bytes": 33554432,
+      "gap_is_refund_amount": false
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes_preserved": 68157440,
+      "artifacts": {
+        "config.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\config.json",
+          "exists": true,
+          "bytes": 3460,
+          "sha256": "5619b92481919e29d5b2b557514e8a2439d2b1659f8b575323aebabec63c56a3"
+        },
+        "window-state.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\window-state.json",
+          "exists": true,
+          "bytes": 220,
+          "sha256": "4a46982041d039dfccba4a7acf9df715db489e027e800bab5057d852d098e55f"
+        },
+        "worker-result.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\worker-result.json",
+          "exists": false
+        },
+        "annual-window-report.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\annual-window-report.json",
+          "exists": false
+        }
+      },
+      "raw_config_matches_ledger": true,
+      "normalized_config_matches_window_state": true,
+      "state_upper_bytes": 44105728,
+      "state_measured_bytes": 10551296,
+      "upper_minus_measured_bytes": 33554432,
+      "gap_is_refund_amount": false
+    }
+  ],
+  "locks": {
+    "global-ledger.execution.lock": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.execution.lock",
+      "exists": true,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "global-ledger.lock": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.lock",
+      "exists": false
+    }
+  },
+  "blockers": [
+    "Both pending batches lack worker-result and annual source report",
+    "Complete transfer measurement and process-exit authority are unverified",
+    "Settlement/aggregate exactly-once coordinator is not implemented"
+  ],
+  "proposal": {
+    "status": "PLANNED",
+    "implemented": false,
+    "name": "Pure recovery commit phase and idempotency contract",
+    "gap": "collector finalize saves budget settlement before aggregate and run-result JSON; budget rejects already-settled retry. Docs24/45/46 inspect snapshots/terminal/aggregate but do not implement a durable commit journal.",
+    "code_evidence": [
+      "scripts/collect_training_parallel.py:finalize",
+      "backend/app/data/budget.py:CollectionLedger.settle"
+    ],
+    "proposed_new_files": [
+      "backend/app/data/recovery_commit_contract.py",
+      "tests/test_recovery_commit_contract.py"
+    ],
+    "minimal_scope": "Validate caller-provided operation identity, batch/config and before/after pins, phase ordering and repeated observation without IO. No ledger/journal writes or recovery execution.",
+    "hypothetical_phases": [
+      "PREPARED",
+      "LEDGER_RECORDED",
+      "AGGREGATE_RECORDED",
+      "COMMITTED"
+    ],
+    "actual_crash_observed": false,
+    "existing_run_ledger_difference_proves_specific_crash": false,
+    "deferred": [
+      "durable journal format approval",
+      "atomic apply coordinator",
+      "process exit evidence",
+      "complete transfer measurement",
+      "operating reconciliation"
+    ],
+    "always_no_authorization": [
+      "settlement",
+      "refund",
+      "restart",
+      "execution"
+    ],
+    "exactly_once_applied": "UNKNOWN"
+  },
+  "other_completed_companions_not_reproposed": "47-57 crop/raster/boundary/footprint/split/readiness inspectors already exist.",
+  "operating_actions": {
+    "downloads": 0,
+    "collection_runs": 0,
+    "store_constructor_calls": 0,
+    "ledger_writes": 0,
+    "lock_deletes": 0,
+    "restarts": 0
+  },
+  "ledger_unchanged_during_read": true
+}

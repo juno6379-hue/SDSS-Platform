@@ -1,0 +1,747 @@
+{
+  "recorded_at": "2026-10-17T14:41:54.556129+09:00",
+  "protected_references": {
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json": {
+      "exists": true,
+      "sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+      "bytes": 51204
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\run-result.json": {
+      "exists": true,
+      "sha256": "0e8dd6ef449e5e7397d02393def95a54cafedc5a58722ec93df56e39dc554a86",
+      "bytes": 613
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+      "bytes": 53868103
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.execution.lock": {
+      "exists": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.lock": {
+      "exists": false
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-annual\\run-result.json": {
+      "exists": true,
+      "sha256": "8513b6da3d8d2816a4ed9af147a4c799084f7b11eca73be96bfa35306cab7df5",
+      "bytes": 606
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-recovery32\\run-result.json": {
+      "exists": true,
+      "sha256": "9563d8b82300c15a4093b34306658d8eb1a317f914ff7338dde3b4d4eb95371e",
+      "bytes": 1024
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\config.json": {
+      "exists": true,
+      "sha256": "d9e7bf2e9e18398205653d518d3fe0dcf15b7ab305ca58520d0ba3c3e135abc6",
+      "bytes": 3441
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\window-state.json": {
+      "exists": true,
+      "sha256": "1b5821692d52a13fd6c3e7e2bc72d2051c38ac7ac2eb5d8fec0d86cec3925700",
+      "bytes": 220
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\worker-result.json": {
+      "exists": false
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\annual-window-report.json": {
+      "exists": false
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\config.json": {
+      "exists": true,
+      "sha256": "5619b92481919e29d5b2b557514e8a2439d2b1659f8b575323aebabec63c56a3",
+      "bytes": 3460
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\window-state.json": {
+      "exists": true,
+      "sha256": "4a46982041d039dfccba4a7acf9df715db489e027e800bab5057d852d098e55f",
+      "bytes": 220
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\worker-result.json": {
+      "exists": false
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\annual-window-report.json": {
+      "exists": false
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\catalog.sqlite3": {
+      "exists": true,
+      "sha256": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+      "bytes": 155648
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group\\readiness-resume-20261017.json": {
+      "exists": true,
+      "sha256": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+      "bytes": 1116048
+    },
+    "E:\\GeoAI–MLOps–SDSS\\contracts\\upstream\\GMAIS-v0.2\\api\\openapi.yaml": {
+      "exists": true,
+      "sha256": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44",
+      "bytes": 4604
+    },
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\ml-split-repair-plan-20261017.json": {
+      "exists": true,
+      "sha256": "ccdc704ead412d7aee069fb4f61f30a2baf9c9944458b858efcc28ba4197dfbf",
+      "bytes": 22298
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\grid-esri_io-south_sulawesi-2020-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "c2f0be36fef23db82f2f8578fb23fbe1f84755a3d19a15c338103ed1b290d31a",
+      "bytes": 3506
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\grid-esri_io-gorontalo-2020-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "661a006689931b370087043373208c8414ffcc12f550f67184abbd0002ae4efe",
+      "bytes": 26951
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\grid-esri_io-southeast_sulawesi-2020-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "0f2eb1acd0d467f6dcd2b72de4ac7d9c04932472db4c95c46e1b1256bf9129c4",
+      "bytes": 27125
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\grid-esri_io-east_java-2020-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "f17407e7f9b6898b14021b5112d937337882f52f2c451a7f541b172eec20b3f5",
+      "bytes": 26784
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\grid-esri_io-banten-2020-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "131cc73925267b2171ce8791b4064af9ae9b612ada88325adbc59d9ace0467ab",
+      "bytes": 27091
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\grid-esri_io-west_java-2020-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "bd53eab877b1b931c9a530fbb279c59c6dc8902610c431f347e2ac247e37b08f",
+      "bytes": 27056
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2020-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "0731fc32942a62e9fe606b10fb15cd0e32170192a78c869ddbc08d5709bd6241",
+      "bytes": 27935
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2021-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "23975dffb7897d7495febac1093125937467dfe8cae27f3e24649071cb162b9e",
+      "bytes": 28313
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2022-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "ec5c9a9f4bf7189eb9cc7adc7685baaaec02cc6ef8498a006f6c8840db40ae37",
+      "bytes": 5991
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2021-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "add31aca147e11bc48112dbe60c8fc3e33a554da462bad6bcd81a093efc1d4f5",
+      "bytes": 28183
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2021-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "f4aea6d3ce0898c8409aa97409c7597e39c5d639200b7d3fb1675f41b69c41d7",
+      "bytes": 28051
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2020-v2-laneB-banten-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "26660ac713b4df4935bc9101e04ea32068d1bfbcc8e36b098c3d715ac6874bd5",
+      "bytes": 27899
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "8426ea04d161a1a270000ada8c3ad3d408b6c35c8213f43661811a9664796070",
+      "bytes": 28108
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "399a0cb74a0e834ef143cdcd919cbae1648dd3a51f368b22ae83d5640f983b0b",
+      "bytes": 28076
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2023-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "79f7552416135260d67d21042893ac4d4c4217575d169b5138a3e682a4517b40",
+      "bytes": 5989
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "84728f3481473f7424dda03db31a544168768bf19cbe9bf341635f10692b7361",
+      "bytes": 27976
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2022-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "629c0c5b712d919ec12330028d3e3bc18a28eff9c1645ffa96c35f2860532eab",
+      "bytes": 27892
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "ddacffeef99fb22104829439c4fe440fdb13c9030e4e48efe6d5372a1fb46805",
+      "bytes": 27917
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "4ce8a4d1f6d83c49c92933eed1dd80ba6d79d45651d4d4a758830d8f5e2f47a3",
+      "bytes": 12521
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "819b19d19f6dbfa1a904630c42a5010861da2b7cfa1d32b2122bf7b4298aa772",
+      "bytes": 28100
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "66c09af1cc87f5eec470ba88f9c9f5be8c01d00d7a39a9f8464bd116552c1608",
+      "bytes": 6611
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "0673796e638df6ac7da78cf598f14cff33239fa2660bd73947fdd409706a6aed",
+      "bytes": 27923
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "0c39d43ea9a3c84f5a2d7bdb2990208f44ac8a3ca508ec61d7c75c7a47b80963",
+      "bytes": 28021
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "43f6d6aa258c027af26accd6a37eda0a5058489243b06e8579673827b22e2da3",
+      "bytes": 27703
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2021-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "3381991932e9f2044d4bc0468348ec3222532d10ad53dcb8ad681f171828944f",
+      "bytes": 27744
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2021-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "a290cedf3823235f27f59fadd672aee4c637d377897c5b99d48da72d0c1e6b12",
+      "bytes": 27690
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "8fde5e3080e4221983412f52bfae32fa5905239be477ed0e4b41d8b67496c679",
+      "bytes": 6408
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2024-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "b26ab6f05a0e2e2c7ee58ec0ec58fd898f9d461d206829be838b720cb6db6025",
+      "bytes": 6110
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2024-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "6f301d0caedcb9b8ec4b815c481f1027fa0b246e4dd15e41f5c00e2b3667af35",
+      "bytes": 27826
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "0bfe6d010b4d518f54c061cf13c8f6d85defe5712196826d3ea74eef9a1949eb",
+      "bytes": 27966
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "e466e8277c350f43502caa01d71adad6896a6805de7b92140a405d97f60561e3",
+      "bytes": 27984
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "cf4ee603fcb759f86f9772060ddd3ff935164b0f70b23cf23e1a1a7936d0ced1",
+      "bytes": 28131
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2025-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "e7c653988a5774d731cf40cc53eeff6fe707e1e2ad4ee9a37e52ea7764380118",
+      "bytes": 29359
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2020-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "b6b72b4cfc7b3fdac076df5c605534e68aea750698201eadc99ba429a9919429",
+      "bytes": 27628
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "6ce14551c1c3583ed864ccb19805b4b677bed868f0ffb51e93852946064ab4b3",
+      "bytes": 27890
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2022-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "69df5904951513ff069c3bd43c443f5d18a633da9e2508069316f26ee9493ee5",
+      "bytes": 27606
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2022-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "0dd5f75c5b41edad89f46b78400b1e1c01c961b273a562aa3d3a34ac89aec50b",
+      "bytes": 29069
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2022-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "98fdfa4778b5d4ffd2ec524de498f9358128c708db02a854fe43a50c612bb2bd",
+      "bytes": 27724
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2020-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "b99cb1823caecf48478a1133bcbfabeb2928d6a5a4fda43f26f48a32cfff2383",
+      "bytes": 27853
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2021-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "cb1060ddf794ee044e48bb77c53c9cbc946233bd37c611b68516c1f8bfdf02f3",
+      "bytes": 28022
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2020-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "e805761e3a0124db8ba4a1869ceb9f385b7b59cd9c0f400f95720f17524e98ec",
+      "bytes": 28625
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "cd7a27a9513d3865684b31f157c186f5dea7f00b2f9e33bb80d4936c83c0d7da",
+      "bytes": 27877
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "459a6d666a780dc91fabc2c50bde6c8f7e53eeec39a558831d0c9a55defa0e73",
+      "bytes": 27960
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "d96f71dac8aae52ea5bd479acc24f1f8b45f71b8a97498f30bd3b2cd692a969a",
+      "bytes": 27994
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2021-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "66671d8c093246d2286d0a306bac7b76fad09b4a3531e65b7512ee7366acfc23",
+      "bytes": 27871
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2022-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "a6f31e999e1fad6957fd024655f79fa74c80ce1dc95d7709b2cdf6a0d0dcfac4",
+      "bytes": 27622
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2021-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "e5abb2e7d44dc1ef2ef60a02822e7558d37062905f71c45e7364f7f5fa424bda",
+      "bytes": 27933
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2023-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "0cf3197b149067c5cd7dccbd553b8f9be328cbe1bfe91ad80b69cdc2ea12e60b",
+      "bytes": 27456
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2023-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "d75ff31ae23388a465a38a39905982882c9d0ff77e4866cd0901fce2f607c465",
+      "bytes": 27710
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2023-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "0712134e31045a113777f4bd41ae76981633248308f538875b5413dcd350c97e",
+      "bytes": 27522
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "646583e0c673640c748f8ae28e84703f124ae4ada56935ace1311d10e3aef229",
+      "bytes": 27899
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2023-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "00941665ab491f22e81e7c5b67add273b9c3fccb5d79535995ee2ae51de95fef",
+      "bytes": 27612
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2022-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "c0ccf22fa0b78cc9e21304cdd6f411a55473e60c4f3f93be30694a63f1f88f65",
+      "bytes": 27898
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "89123636253a7916676512b951d414ea414de8f05b2942d0680abf5772f7d53a",
+      "bytes": 28031
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2024-v2-laneB-east_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "2597608c6f9f98b1df451f8775821de5e753b42771157e82c1ed010e9ddb4e20",
+      "bytes": 12527
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "6026b30a43781256b3e83698ee4040dcbc432bd0ba826968c36ad2d4bae5337c",
+      "bytes": 27933
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "70d8c535c9c490281903ee67aa7a02366b490312eb4208c30a425d2a30717326",
+      "bytes": 27783
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "f0af4a4b726f8e8d29f1fdbaf1ee6e85f55438e0a996f4bad92a1d660c969070",
+      "bytes": 27482
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "2f0089596a75002d2cc56af5bd070a2bfb8ff7138cd10c5f071b1f574815a72d",
+      "bytes": 30581
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2024-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "6571f800e444b5b7dfb31e0063c18af7b411e34fcb0053e8d68ff35d77c42345",
+      "bytes": 27593
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2024-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "4fde24cbd7882959479fedc586cb0dc447059aeca79f51c414a7598c23c3893d",
+      "bytes": 27538
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2024-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "bbf7448e14984483bbb8814b86dcfe6eafdfde0c543704460de5ede73a337f51",
+      "bytes": 27611
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2024-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "c769532786d23141b40fb3bf260660dad0ecccc4d8062eaea2d498139f5547de",
+      "bytes": 27716
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "49789125db2d8ae6bee8943797860948bc971c87efb6698c1d9c0bc2c64ed3b9",
+      "bytes": 15383
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2024-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "39eb95a481c9847d511911eb65bb38d968fdf9a9e3341d3d442c9ca20eb6119f",
+      "bytes": 6108
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2025-v2-laneB-banten-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "b0154486be7d2fed29e8d7867b58a08b2ec1a57a43cc9a23d897d75995f7d644",
+      "bytes": 15509
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "8b63a922b22f888f5b1e4402b5161dbfd8cb4a09dcaa3284f7fd1076664097a2",
+      "bytes": 12381
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "1739826e693adfddb2ec788ed0104445d1f0f89ea28fefaf2ba2e29d52d050ce",
+      "bytes": 27932
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2020-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "bda5eaff9cd723fceee76b56da7517887e081ec34ef111c8f5332d7b8623407b",
+      "bytes": 15017
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2025-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "64d7c71c7a923e0f8fb31cdf21bafc6f93feab4b86422473d60d5d313d665eb2",
+      "bytes": 27738
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "c7f8ac939ded7e4ca5f048f230942865c301f35aca188e95ab27844f86ef8c63",
+      "bytes": 27812
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2025-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "184f96491fca54a44d816b0ae80a0ef776bc27b40320d9d58c826e2f3edc6209",
+      "bytes": 27415
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2025-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "ab8c4dd5b946f584bc153bdb54c3db4cd46f3f7b13de99d9a42cb031b3df6bc6",
+      "bytes": 28248
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g00\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "1f3160b8bc70219fcba012c716540abdbd15af96b4d77d9f178608b51aeb67a5",
+      "bytes": 27501
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2021-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "d266702a0955232069865a84d903dadc10f63feba46dab6c6b595a571eafe0c8",
+      "bytes": 14338
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2020-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "fcf5664ed2290a9ba2bd38d8a87454823672b517aadeb9d22494968dd2baf572",
+      "bytes": 27860
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2020-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "15463c15041f7bb32e50b4910b2d40e61e0d631087ab19403cf47661020be2fd",
+      "bytes": 27926
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2020-v2-laneB-banten-boundary-01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "4f80ca688516d8e3ec843b1f9b4d6b807ae66e6e3d878063bd5fd2b871f129da",
+      "bytes": 28515
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "4506589d17418ddf80f7cbe39e9002912112cd3f9b8fe1e093e9e22bce28613f",
+      "bytes": 12515
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "bd3b2632b871a083372e189b2c9369a1148ff83d779044b31222024916212654",
+      "bytes": 28078
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2022-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "eea747207d4a269115e449d0f2b5108f406e50634cfd2ae33797b85d778e3fb7",
+      "bytes": 13883
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2021-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "49ae53a0b92c180ac76bd4daeaf767012e7c793a78e9f524c584da362e6e0ff5",
+      "bytes": 6109
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2021-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "2306a83847582fe345a6115fd906ee44d9b2a6c2249984560623f273fcfe21e0",
+      "bytes": 27882
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2020-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "bb6fc30002ceb09ca4d0440d2ab7da0c7501d5e3e7c034fb4704975a5f5c750b",
+      "bytes": 27635
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2020-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "21d9985db7928ffb2f840dd558c65f58ea897f5856d27c6bcc3a1c00e3778e05",
+      "bytes": 12409
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2020-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "8013f96aa5a798bad06ea5d84fb9c2b79d3916e1b3fb2d2445059f3ceb0f213a",
+      "bytes": 27724
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "5c5a957969c6de329da0327a0d4fdb6c03a534dafd81a096ac0fe57b870e0e21",
+      "bytes": 27855
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2023-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "a8942dfa8823729c1e3fa7df5ee270e4cb664da00e2d2e1e8d9c314f2feee897",
+      "bytes": 27548
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2022-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "707269bc00f1e8c769069cf04f3273d4f610a2d624a2543db3f7b0c41c602bdd",
+      "bytes": 27839
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "6df058573335934e317a0b2d9729c8f01cb1ee94b8eec2f731046549eee37a1e",
+      "bytes": 29169
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "dfb71fd343874597a427c7cb1da09895451bb27bc426526c5a3b6a60ca46c6ac",
+      "bytes": 12516
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "a6b13545e214c0428df77979763914958a26539328df80d5622eb1d5b5b54f98",
+      "bytes": 28063
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "05976dc402f09d8c8224f5072e57f75008ec95d7c5da54db3587da0b3c866244",
+      "bytes": 27785
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "a17f3490b4c42d252a8cc8e349e0868bae691392e14d3be1073544433f91b797",
+      "bytes": 27416
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "bfacfb8c772e388036af821a888076741947730e433a0f390628203bc6c694f8",
+      "bytes": 30677
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2021-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "7350029b288f0093e28fa0fa6d68e4afe682086cff8f7b72fa09de20bf1cc030",
+      "bytes": 12409
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2021-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "5f04f24c5f7f7f6d5aba9d74e8413f0eaadfd9e1cbb7052c16308bf7b58a73eb",
+      "bytes": 12413
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "1d1fab40fac5dc47d2f5207dd84a90dfe924bc92cc2a6881bfc4df6c319bbe74",
+      "bytes": 27598
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2024-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "358c818b48cbe9ab6fefbd61c22373d669eeae440035f2a52e858d87f79a3269",
+      "bytes": 27910
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "58f7f040d454912ce035a1cbc6c26b4b3338bb841f0d460f87f9682f2949f689",
+      "bytes": 27444
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2024-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "8a24d0752c76e3fc76bd01c70ff0d04ca65155791fa163dd1dbec336e5c90583",
+      "bytes": 30513
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "e1423ef1ae2052d40a2cc4230deca28a2b6fa9e22164e5fc7217165d7c89d048",
+      "bytes": 27783
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "6105e0596b1fbb1f23997bf4340cfecf6312d6d631481208b7061b34430690e3",
+      "bytes": 14132
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "8eac27990d08d83b607e50f584af71edf7313e06b6714beb0cd379f2fd2dc679",
+      "bytes": 30899
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2025-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "25120c87c0f9eaf5c6824b175e6c71b4bbf8af4afc084fc27d268baa4f585af1",
+      "bytes": 27680
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2020-g03\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "194ca4d698c68f46b91224b201992ac1dffeaf31d2316301a85df796379265d1",
+      "bytes": 27613
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "d37e47b651d933a8dac339c23adf93e444db9fd51ba9469be7ca0d7d8920206b",
+      "bytes": 27827
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2022-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "9b753a08b2863f6ba0294bbb60c35a72b8f9f9d947e0a3b5d7ff8efc8cea2f6a",
+      "bytes": 27646
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2022-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "0421df2c0947cc7acb43252947964b54591fdb82011d12bfce60734ff3c0f62c",
+      "bytes": 27690
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2022-g01\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "d2b209f7f4d91a59a2179bb43698fe3d15e122e27147c119014d21ed1f10fb0d",
+      "bytes": 27492
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2020-g03\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "0d84f94578475e7e5945c828a0aa759fa8a375f102e01cff05f23699990ba67f",
+      "bytes": 28534
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2021-g03\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "38efc1ef7ab2b61e8dc1fc06fc001709afc5d31ca9e484de60ca32ab7c32d497",
+      "bytes": 27655
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2020-g03\\annual-window-report.json": {
+      "exists": true,
+      "sha256": "ecfea1a112d4367992b89c5b98038307c47adb2151da24cd71d1930e601ae537",
+      "bytes": 27954
+    }
+  },
+  "unchanged_contract_baseline": {
+    "backend/app/data/recovery.py": "49f81b866d7f80ea835438a4ef2bce7fc31b91d1b58d2a8273b45c7a9f24eeba",
+    "backend/app/data/recovery_terminal.py": "c4467989dbfc36ce2940d1b0ebb2a84c04acda1b17c6a8ea0d9c046e81fdaf2e",
+    "backend/app/data/budget.py": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+    "scripts/collect_training_grid.py": "3cdcc6c0baa785b9df8a1396b5898d6134851b6b4f9ad864e48daec8a77ba994",
+    "scripts/collect_training_parallel.py": "9fc5923dfe752ea2a5f07f00761c8d5b60f72f21896ef134c4415e07664653e7",
+    "scripts/collect_samples.py": "418a0237d80c77fe0f70ca52feef1144192e9ac8916696888a7ee9b5b34946e6",
+    "evidence/integration/collection-recovery-plans/collection-recovery-8c3a33bff71ffbaad911ca44bc1ff5a9e831c257a8c3b7eaef5299b1770ef5b5.json": "65ad73576a83aee43af56b3e8dcc9579153b6ac6260fc029f040fd747610fee8",
+    "backend/app/data/recovery_aggregate.py": "353e2463bd74421ec51bbd38a72bb96b1382efadfec5ae4ad71bea62811701d7",
+    "backend/app/data/recovery_crop.py": "ca8f4749b655ede76cc9c6a8fc917e94d46263a43760125ef2cb1efc2338ce01",
+    "backend/app/data/recovery_raster_headers.py": "b17b46b4c83b0c08436fca4c469f7a7521bb879eb132e9b81e34484c1eb320cd",
+    "backend/app/data/recovery_raster_content.py": "a828229dd5a1c61d5781e38738bec3a5e84fb8d396ffefd108d8439b04e5f4b8",
+    "backend/app/data/recovery_auxiliary_content.py": "f40f1476cd2a1b204034b3df8fef51b9878a996d31e1d6e43564c54db73ba97b",
+    "backend/app/data/recovery_auxiliary_headers.py": "52c6dae80fa926abab58aba53e6eb05e83004896455edafd48a14edb8a90920e",
+    "backend/app/data/recovery_boundary.py": "d711ef6a450e308d5edddfd86c3e18a864b3c290cbd9756a0639a99ea8622c13",
+    "backend/app/data/recovery_boundary_topology.py": "032e75b077df55bf9ab27f3c02a1d75fe8ee672f8b9f391374b64e2e7068916d",
+    "backend/app/data/recovery_boundary_relations.py": "8ba83281643f204c296cfc0b994a288bcb5c259ee9202a220347542c42da5ce1",
+    "backend/app/data/recovery_source_footprints.py": "b82669e48b5acb8784b9714fccc98db4800acec23b1ee9faf3b3aca703c5ab9d",
+    "backend/app/data/recovery_source_split_overlap.py": "1b2d98031dfb7d014283c66c4f33a49567849c4a2d86bb300509b5efc0aaaf97",
+    "backend/app/data/recovery_readiness_comparison.py": "345ac0a86a58f73829a1ad47d62ac1746ae0d4e9846ec0ceba1feac824e6041d",
+    "backend/app/data/readiness_connectivity_witness.py": "6c56cca4ce94d6ebeec1808b3ec82b4ba77a9e7744bb1442bb943cac17c2760e",
+    "backend/app/data/readiness_connectivity_envelope.py": "f909143eed5eb931bda9671fb51c816e1575d6b28ebb9b3f6ef607078322fcb2",
+    "backend/app/ml/readiness.py": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc",
+    "backend/app/ml/readiness_connectivity_adapter.py": "dd084f4577f74e6117a40ef8c6d84d17a92ff7e50b404c7e777eb16ed1fd8400",
+    "scripts/run_experiment.py": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3"
+  },
+  "saved_readiness": {
+    "exists": true,
+    "sha256": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "bytes": 1116048
+  },
+  "saved_blockers": [
+    {
+      "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+      "detail": "같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.",
+      "scene": "west_java"
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 픽셀",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "saved_patch_counts": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "input_manifest": {
+    "exists": true,
+    "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "bytes": 53868103
+  },
+  "policy_source": "Exact copied saved_readiness.policy; no policy changes",
+  "new_policy_path": "evidence\\integration\\readiness-connectivity-real-policy-20261017.json",
+  "new_policy_file": {
+    "exists": true,
+    "sha256": "d5f67ac1e3168a9ea2e03aec7d82097d8944a826f5c144f45594d2a9241e4866",
+    "bytes": 1347
+  },
+  "output_path": "data\\first-group\\readiness-connectivity-20261017.json",
+  "output_did_not_exist": true,
+  "saved_verified_file_unique_paths": 4335,
+  "saved_inventory_total_stat_bytes": 1269465244,
+  "largest_stat_file_bytes": 53868103,
+  "resource_plan": {
+    "timeout_seconds": 600,
+    "working_set_budget_bytes": 2147483648,
+    "disk_free_bytes": 1996373004288,
+    "logical_io_count_not_hard_limited": true,
+    "expected_inventory_is_saved_report_not_reverified_hashes_yet": true
+  },
+  "execute": false,
+  "resume": false,
+  "training": false,
+  "download": false,
+  "historical_union_scene_count": "UNKNOWN_NOT_PERSISTED"
+}

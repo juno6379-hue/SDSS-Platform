@@ -1,0 +1,19 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_actual_main_auth_status_and_submission_snapshot_are_preserved (test_job_lineage.JobLineageTests.test_actual_main_auth_status_and_submission_snapshot_are_preserved) ... ok
+test_asset_change_is_current_failure_while_job_and_snapshot_stay_unchanged (test_job_lineage.JobLineageTests.test_asset_change_is_current_failure_while_job_and_snapshot_stay_unchanged) ... ok
+test_conflicting_fixed_hashes_are_structurally_blocked_without_fake_file_checks (test_job_lineage.JobLineageTests.test_conflicting_fixed_hashes_are_structurally_blocked_without_fake_file_checks) ... ok
+test_current_check_does_not_depend_on_or_modify_stored_snapshot (test_job_lineage.JobLineageTests.test_current_check_does_not_depend_on_or_modify_stored_snapshot) ... ok
+test_duplicate_roots_reuse_diagnostics_and_preserve_binding_indices (test_job_lineage.JobLineageTests.test_duplicate_roots_reuse_diagnostics_and_preserve_binding_indices) ... ok
+test_http_companion_contract_no_store_missing_and_safe_runtime_errors (test_job_lineage.JobLineageTests.test_http_companion_contract_no_store_missing_and_safe_runtime_errors) ... ok
+test_legacy_bad_request_and_identity_mismatch_do_not_run_lineage (test_job_lineage.JobLineageTests.test_legacy_bad_request_and_identity_mismatch_do_not_run_lineage) ... ok
+test_missing_dynamic_and_acl_lineage_blockers_remain_non_approving (test_job_lineage.JobLineageTests.test_missing_dynamic_and_acl_lineage_blockers_remain_non_approving) ... ok
+test_preflight_caps_preserve_trace_and_do_not_clone_large_ref_list (test_job_lineage.JobLineageTests.test_preflight_caps_preserve_trace_and_do_not_clone_large_ref_list) ... ok
+test_remaining_global_budget_is_passed_into_partial_root_traversal (test_job_lineage.JobLineageTests.test_remaining_global_budget_is_passed_into_partial_root_traversal) ... ok
+test_shared_ancestors_across_distinct_roots_are_counted_as_repeated_work (test_job_lineage.JobLineageTests.test_shared_ancestors_across_distinct_roots_are_counted_as_repeated_work) ... ok
+test_total_budget_stops_new_roots_but_allows_cached_root_after_exhaustion (test_job_lineage.JobLineageTests.test_total_budget_stops_new_roots_but_allows_cached_root_after_exhaustion) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 4.066s
+
+OK

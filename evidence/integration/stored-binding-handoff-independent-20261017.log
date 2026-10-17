@@ -1,0 +1,20 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_bounded_issues_and_no_identity_or_exception_leak (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_bounded_issues_and_no_identity_or_exception_leak) ... ok
+test_digest_is_ordered_bindings_only_not_whole_identity (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_digest_is_ordered_bindings_only_not_whole_identity) ... ok
+test_invalid_supplied_wins_over_legacy_unavailable (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_invalid_supplied_wins_over_legacy_unavailable) ... ok
+test_joint_invalid_safe_reasons_and_job_hash (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_joint_invalid_safe_reasons_and_job_hash) ... ok
+test_legacy_unavailable_unknown_not_filled_from_supplied_pins (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_legacy_unavailable_unknown_not_filled_from_supplied_pins) ... ok
+test_legacy_unavailable_visible_identity_mismatch_blocks (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_legacy_unavailable_visible_identity_mismatch_blocks) ... ok
+test_no_caller_expected_parameter (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_no_caller_expected_parameter) ... ok
+test_no_io_registry_or_input_mutation (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_no_io_registry_or_input_mutation) ... ok
+test_order_count_and_index_prevent_handoff (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_order_count_and_index_prevent_handoff) ... ok
+test_recorded_job_or_capture_invalid_cannot_be_expected (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_recorded_job_or_capture_invalid_cannot_be_expected) ... ok
+test_recorded_manifest_pin_missing_changed_or_bad (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_recorded_manifest_pin_missing_changed_or_bad) ... ok
+test_recorded_match_and_all_false_no_executor_claim (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_recorded_match_and_all_false_no_executor_claim) ... ok
+test_supplied_types_limits_cycles_and_conflicts (test_stored_job_binding_handoff.StoredJobBindingHandoffTests.test_supplied_types_limits_cycles_and_conflicts) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.056s
+
+OK

@@ -1,0 +1,37 @@
+--- preflight-pinned-gmais
++++ current-gmais
+@@ -19,6 +19,7 @@
+ from jsonschema import Draft202012Validator
+ 
+ from .schema_formats import create_format_checker
++from .agent_capability_contract import agent_capability_issue
+ 
+ 
+ def _now() -> str:
+@@ -216,9 +217,10 @@
+         if invalid_reason:
+             return _error('INVALID_REQUEST', invalid_reason, trace_id, status=400)
+         selected = next((a for a in _agent_manifests() if a['agent_id'] == agent_id), None)
+-        if selected is None:
++        capability_issue = agent_capability_issue(selected, payload['capability_id'])
++        if capability_issue == 'AGENT_NOT_IMPLEMENTED':
+             return _error('AGENT_NOT_IMPLEMENTED', 'Agent가 Registry에 없습니다.', trace_id, status=409)
+-        if payload['capability_id'] not in [c['capability_id'] for c in selected['capabilities']]:
++        if capability_issue == 'INVALID_REQUEST':
+             return _error('INVALID_REQUEST', '등록되지 않은 capability_id입니다.', trace_id, status=400)
+         store = get_store()
+         digest = hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')).hexdigest()
+@@ -313,10 +315,11 @@
+         reviewed_nodes = []
+         for node in nodes:
+             agent = manifests.get(node['agent_id'])
++            capability_issue = agent_capability_issue(agent, node['capability_id'])
+             blockers = []
+-            if agent is None:
++            if capability_issue == 'AGENT_NOT_IMPLEMENTED':
+                 blockers.append({'code': 'AGENT_NOT_IMPLEMENTED', 'message': 'Registry에 없는 Agent입니다.'})
+-            elif node['capability_id'] not in [c['capability_id'] for c in agent['capabilities']]:
++            elif capability_issue == 'INVALID_REQUEST':
+                 blockers.append({'code': 'INVALID_REQUEST', 'message': 'Agent에 등록되지 않은 capability입니다.'})
+             elif agent['readiness'] != 'READY':
+                 code = 'MODEL_NOT_READY' if agent['agent_id'] == 'lcluc-agent' else 'AGENT_NOT_IMPLEMENTED'

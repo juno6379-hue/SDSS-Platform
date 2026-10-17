@@ -1,0 +1,54 @@
+{
+  "recorded_at": "2026-10-17T14:40:07.021751+09:00",
+  "unit": "OPTIONAL_CONNECTIVITY_CLI_NEW_OUTPUT_GUARD",
+  "implementation_status": "TESTED_SYNTHETIC",
+  "real_data_capture_status": "IMPLEMENTED_UNVERIFIED",
+  "default_capture_enabled": false,
+  "actual_cli_help_only_verified": true,
+  "original_execute_training_resume_inference_tail_ast_preserved": true,
+  "full_regression": {
+    "tests_run": 608,
+    "passed": 607,
+    "skipped": 1,
+    "seconds": 207.921,
+    "exit_code": 0
+  },
+  "related_tests": 19,
+  "independent_tests": 19,
+  "additional_windows_path_preflight_cases": 14,
+  "existing_run_experiment_intentionally_changed_from_explicit_baseline": true,
+  "previous_snapshot_tracked_code_data_contract_changes": [],
+  "run_experiment_previously_tracked": false,
+  "current_run_experiment_raw_sha256": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3",
+  "saved_union_scene_count": "UNKNOWN_NOT_PERSISTED",
+  "saved_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "historical_saved_reports_regenerated": false,
+  "documentation_validation": {
+    "markdown_files": 44,
+    "local_links_checked": 177,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "cli_opt_in_available": true,
+  "new_api_ui_exposure": false,
+  "persistent_envelope_integration": false,
+  "overall_project_complete": false,
+  "next_unit": "Verify pinned inputs/policy,new output and resource scope,then one no-training real-data connectivity assessment; currently not run",
+  "runtime_listeners": {
+    "5173": 30944,
+    "5174": 15608,
+    "8000": 32224,
+    "8001": 26912,
+    "8002": 35032
+  },
+  "collection_training_process_observed": false,
+  "schedule_status": "ACTIVE",
+  "schedule_interval_minutes": 10
+}

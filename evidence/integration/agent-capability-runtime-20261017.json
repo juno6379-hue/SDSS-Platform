@@ -1,0 +1,59 @@
+{
+  "observed_at": "2026-10-17T20:49:05.0792978+09:00",
+  "listeners": [
+    {
+      "LocalPort": 8002,
+      "OwningProcess": 35032
+    },
+    {
+      "LocalPort": 8001,
+      "OwningProcess": 26912
+    },
+    {
+      "LocalPort": 8000,
+      "OwningProcess": 32224
+    },
+    {
+      "LocalPort": 5174,
+      "OwningProcess": 15608
+    },
+    {
+      "LocalPort": 5173,
+      "OwningProcess": 30944
+    }
+  ],
+  "api_processes": [
+    {
+      "ProcessId": 32224,
+      "ParentProcessId": 24092,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000"
+    },
+    {
+      "ProcessId": 26912,
+      "ParentProcessId": 3392,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001"
+    },
+    {
+      "ProcessId": 35032,
+      "ParentProcessId": 22796,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend"
+    },
+    {
+      "ProcessId": 36812,
+      "ParentProcessId": 35032,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=472)\" \"--multiprocessing-fork\""
+    }
+  ],
+  "all_python_node_operation_candidates": [],
+  "worker_observation_scope": "Local Python/node command-line patterns only; no remote or hidden-worker assurance",
+  "automation_status": [
+    "status = \"ACTIVE\"",
+    "rrule = \"FREQ=MINUTELY;INTERVAL=10\""
+  ],
+  "non_reload_api_8000_8001_new_code_loaded": "UNVERIFIED; processes retained, no restart or Job submission performed",
+  "reload_api_8002_new_code_loaded": "UNVERIFIED until read-only runtime observation; reload configuration alone is not proof"
+}

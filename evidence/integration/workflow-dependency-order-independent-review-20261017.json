@@ -1,0 +1,85 @@
+{
+  "recorded_at": "2026-10-17T23:14:27.283897+09:00",
+  "status": "TESTED_SYNTHETIC",
+  "source_review": {
+    "gmais_api": {
+      "original_sha256": "18f1b7185a4d458d968b0c484f22ae29233cb6617aeb3f63f14ec1e9054f6aed",
+      "current_sha256": "716a7576a05e0e648a3ec0912641f26b4db749c63058d67add66de8eecdfc1a9",
+      "ast_equal_except_loop_and_import_including_same_cycle_error": true
+    },
+    "workflow_lineage": {
+      "original_sha256": "26230f2619ed32442b9dfb2187ae8972d74d3a260e6b7d018ed4a859236c56bf",
+      "current_sha256": "953f08c51407f1438728fd6e8de2c2bf14571fa43ebe45c0dec4c08865b12499",
+      "ast_equal_except_loop_and_import_including_same_cycle_error": true
+    },
+    "workflow_policy": {
+      "original_sha256": "c75e8e5e46e71a42f6e15c290f51c9c5ad08b3219bc825b7b598520e8f999205",
+      "current_sha256": "e28fd28a4b793eac0aa61167074cf11f055bdff00a591b09f90fd6d6fef7e806",
+      "ast_equal_except_loop_and_import_including_same_cycle_error": true
+    }
+  },
+  "independent_tests": {
+    "modules": [
+      "test_workflow_dependency_order",
+      "test_workflow_policy",
+      "test_workflow_lineage",
+      "test_gmais_workflow_extension",
+      "test_gmais_api"
+    ],
+    "total": 61,
+    "seconds": 13.845,
+    "passed": true,
+    "operating_store_used": false,
+    "bootstrap": "test_gmais_api imports main under TemporaryDirectory GEOAI_DATA_ROOT; individual stores are temporary fixtures",
+    "log": "evidence/integration/workflow-dependency-order-independent-20261017.log"
+  },
+  "contract": {
+    "ready_layers_example": {
+      "graph": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "z": []
+      },
+      "preserved": [
+        "a",
+        "z",
+        "b"
+      ],
+      "not_heap_order": [
+        "a",
+        "b",
+        "z"
+      ]
+    },
+    "helper_scope": "already validated dependency map; no new schema policy",
+    "empty_result": [],
+    "cycle_result": null,
+    "input_sets_copied": true,
+    "caller_priority": "schema/limits/duplicate/self/unknown and blocker-copy priorities remain at original sites; cycle before manifest/Store/lineage access",
+    "existing_handoff_dag_flags_unchanged": true
+  },
+  "ui_impact": {
+    "change_required": false,
+    "consumers": [
+      "frontend/src/InputDiagnostics.tsx",
+      "frontend/src/WorkflowLineageDiagnostics.tsx",
+      "frontend/src/workflowLineageAdapter.ts"
+    ],
+    "reason": "Same topological_order, dag_validated, policy_resolution and errors; no new route, field, state, button or request. Exact backend caller equivalence supports no frontend/build/browser rerun.",
+    "front_tests_run": false,
+    "build_run": false,
+    "browser_run": false
+  },
+  "limitations": [
+    "Synthetic fixture API/Store operations do not verify current operating server adoption.",
+    "No new scheduling, predecessor Result binding, resolver, science/authority/execution approval."
+  ],
+  "review_history": [
+    "Initial ad hoc AST normalization omitted AsyncFunctionDef and failed to normalize nested async plan_workflow; normalization corrected, no product source changed."
+  ],
+  "source_or_docs_edited": false,
+  "operating_api_calls": 0,
+  "findings": []
+}

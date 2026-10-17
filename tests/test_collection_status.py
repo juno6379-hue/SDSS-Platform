@@ -106,6 +106,58 @@ class CollectionStatusTests(unittest.TestCase):
             self.assertEqual(run['rate_limited_cells'], 0)
             self.assertEqual(run['complete_windows'], 0)
 
+    def test_current_inventory_is_separate_from_stale_readiness_counts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            old = self.write(root, 'old-manifest.json', {})
+            image = root / 'image.tif'
+            image.write_bytes(b'fixture')
+            entry = lambda path: {'path': path.name, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
+            self.write(root, 'first-group/training-readiness.json', {'schema_version': 1,
+                'status': 'ready_for_weak_label_experiment', 'ready_for_training': True,
+                'input_manifests': [entry(old)], 'verified_files': [entry(image)],
+                'patch_counts_by_split': {'train': 45, 'val': 16, 'test': 16},
+                'class_counts_by_split': {'train': [1] * 9}})
+            current = self.write(root, 'first-group-training-esri-v1/annual-window-report.json', {'scenes': [
+                {'province': 'banten', 'year': 2023, 'split': split, 'quality_status': quality}
+                for split, quality in [('train', 'quality_eligible'), ('val', 'quality_eligible'), ('test', 'quality_ineligible')]]})
+            result = collection_status(root)
+            self.assertFalse(result['summary']['learning_ready'])
+            self.assertEqual(result['training_readiness']['freshness'], 'stale_or_missing')
+            self.assertFalse(result['training_readiness']['manifest_matches_current'])
+            inventory = result['patch_inventory']
+            self.assertEqual(inventory['total'], 2)
+            self.assertEqual(inventory['physical_total'], 3)
+            self.assertEqual(inventory['by_split'], {'train': 1, 'val': 1, 'test': 0})
+            self.assertEqual(inventory['by_class'], {})
+            self.assertFalse(inventory['verified'])
+            self.assertEqual(inventory['manifest_sha256'], hashlib.sha256(current.read_bytes()).hexdigest())
+
+    def test_latest_explicit_readiness_is_selected_and_invalidated_by_current_manifest_change(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            current = self.write(root, 'first-group-training-esri-v1/annual-window-report.json', {'scenes': []})
+            image = root / 'image.tif'
+            image.write_bytes(b'fixture')
+            self.write(root, 'first-group/training-readiness.json', {'patch_counts_by_split': {'train': 77}})
+            report = {'schema_version': 1, 'status': 'blocked', 'ready_for_training': False,
+                'patch_counts_by_split': {'train': 0, 'val': 0, 'test': 0},
+                'input_manifests': [{'path': str(current.relative_to(root)), 'sha256': hashlib.sha256(current.read_bytes()).hexdigest()}],
+                'verified_files': [{'path': image.name, 'sha256': hashlib.sha256(image.read_bytes()).hexdigest()}]}
+            latest = self.write(root, 'first-group/readiness-resume-20261017.json', report)
+            # 파일시스템의 수정시각 분해능과 무관하게 선택 순서를 고정한다.
+            import os
+            os.utime(latest, ns=(current.stat().st_mtime_ns + 1000000000,) * 2)
+            result = collection_status(root)
+            self.assertEqual(result['training_readiness']['source_report'], 'first-group/readiness-resume-20261017.json')
+            self.assertEqual(result['training_readiness']['freshness'], 'current')
+            self.assertTrue(result['training_readiness']['evidence_matched'])
+            self.assertFalse(result['summary']['learning_ready'])
+            current.write_text('{"scenes":[], "changed":true}', encoding='utf-8')
+            result = collection_status(root)
+            self.assertEqual(result['training_readiness']['freshness'], 'stale_or_missing')
+            self.assertFalse(result['patch_inventory']['verified'])
+
 
 if __name__ == '__main__':
     unittest.main()

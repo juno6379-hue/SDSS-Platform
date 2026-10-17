@@ -1,0 +1,36 @@
+Baseline raw SHA256: 0e3ae07d2fb540547e746170d2c414c57537e852b5ae818945c36e19ac79b1c1
+run execute gate/resume/prepare/train/infer/return tail AST unchanged: PASS. Static only; no training or assess execution.
+'synthetic.json:diagnostic' PREFLIGHT_ACCEPTED 'synthetic.json:diagnostic' REJECTED UnicodeEncodeError
+'NUL' REJECTED ValueError
+'CON.json' PREFLIGHT_ACCEPTED 'CON.json' REJECTED UnicodeEncodeError
+Preflight-only synthetic path review; no ADS/device writes or actual assess/training.
+'synthetic.json:diagnostic' PREFLIGHT_ACCEPTED
+'NUL' REJECTED ValueError
+'CON.json' PREFLIGHT_ACCEPTED
+ASCII-safe preflight-only repeat; no ADS/device writes, no actual assess or training.
+test_assess_created_output_race_preserves_winner (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_assess_created_output_race_preserves_winner) ... ok
+test_cli_write_default_plan_conflict_and_missing_explicit_output (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_cli_write_default_plan_conflict_and_missing_explicit_output) ... ok
+test_default_off_assess_call_shape_and_legacy_existing_output_write (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_default_off_assess_call_shape_and_legacy_existing_output_write) ... ok
+test_diagnostics_cannot_bypass_original_run_id_validation (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_diagnostics_cannot_bypass_original_run_id_validation) ... ok
+test_existing_file_directory_broken_symlink_and_alias_rejected_before_assess (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_existing_file_directory_broken_symlink_and_alias_rejected_before_assess) ... ok
+test_final_symlink_is_rejected_before_following_exists (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_final_symlink_is_rejected_before_following_exists) ... ok
+test_invalid_bool_before_assess_or_output (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_invalid_bool_before_assess_or_output) ... ok
+test_main_off_summary_keyset_and_assess_run_call_shape_preserved (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_main_off_summary_keyset_and_assess_run_call_shape_preserved) ... ok
+test_main_plan_alias_rejected_before_plan_read_or_assess (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_main_plan_alias_rejected_before_plan_read_or_assess) ... ok
+test_outside_root_or_remote_diagnostic_path_precheck (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_outside_root_or_remote_diagnostic_path_precheck) ... ok
+test_parent_identity_or_logical_resolution_change_rejected (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_parent_identity_or_logical_resolution_change_rejected) ... ok
+test_partial_new_file_is_retained_without_cleanup (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_partial_new_file_is_retained_without_cleanup) ... ok
+test_ready_without_execute_and_blocked_with_execute_never_train (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_ready_without_execute_and_blocked_with_execute_never_train) ... ok
+test_real_synthetic_cli_blocked_execute_exit2_without_training (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_real_synthetic_cli_blocked_execute_exit2_without_training) ... ok
+test_real_synthetic_cli_cp949_ascii_summary_and_new_utf8_file (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_real_synthetic_cli_cp949_ascii_summary_and_new_utf8_file) ... ok
+test_summary_unknown_missing_and_invalid_counts_do_not_imply_success (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_summary_unknown_missing_and_invalid_counts_do_not_imply_success) ... ok
+test_true_flag_only_passed_when_opted_in_and_new_utf8_output (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_true_flag_only_passed_when_opted_in_and_new_utf8_output) ... ok
+test_windows_ads_device_and_normalization_aliases_rejected_before_assess (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_windows_ads_device_and_normalization_aliases_rejected_before_assess) ... ok
+test_xmode_final_race_does_not_overwrite_winner (test_readiness_connectivity_cli.ReadinessConnectivityCliTests.test_xmode_final_race_does_not_overwrite_winner) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 5.636s
+
+OK
+Final preflight-only ADS/reserved-device/space-dot aliases: 14 rejected; no device/ADS writes. Initial acceptance reproduced earlier is resolved.
+Final execute/resume/prepare/train/infer tail AST unchanged; baseline raw SHA256=0e3ae07d2fb540547e746170d2c414c57537e852b5ae818945c36e19ac79b1c1

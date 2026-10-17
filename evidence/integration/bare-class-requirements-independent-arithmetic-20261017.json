@@ -1,0 +1,61 @@
+{
+  "recorded_at": "2026-10-17T08:33:32.920962+00:00",
+  "scope": "ROOT_INDEPENDENT_STORED_REPORT_ARITHMETIC_NO_PRODUCTION_HELPER_NO_RASTER",
+  "input_sha256": "847343e1aa4ab9b67fd3bba36a2a9f91d716c2fd411af244e55bbfe1a8414019",
+  "input_bytes": 11842410,
+  "expected_by_split": {
+    "train": {
+      "eligible_patches": 628,
+      "bare_pixels": 1418,
+      "split_pixel_shortfall": 0,
+      "contributing_class_patches": 0,
+      "contributing_patch_shortfall": 5,
+      "reference_class_pixel_total": 40149113,
+      "bare_ratio": 3.531833941138376e-05,
+      "minimum_bare_ratio": 0.005,
+      "bare_ratio_threshold_met": false,
+      "dominant_class_ratio": 0.5824507007166011,
+      "dominance_threshold_met": true,
+      "stored_reference_balance_failures": [
+        "class7_pixel_ratio",
+        "class7_patch_representation"
+      ]
+    },
+    "val": {
+      "eligible_patches": 217,
+      "bare_pixels": 209,
+      "split_pixel_shortfall": 47,
+      "contributing_class_patches": 0,
+      "contributing_patch_shortfall": 5,
+      "reference_class_pixel_total": 13989243,
+      "bare_ratio": 1.4940050723259293e-05,
+      "minimum_bare_ratio": 0.005,
+      "bare_ratio_threshold_met": false,
+      "dominant_class_ratio": 0.43449985106413547,
+      "dominance_threshold_met": true,
+      "stored_reference_balance_failures": [
+        "class7_pixel_ratio",
+        "class7_patch_representation"
+      ]
+    },
+    "test": {
+      "eligible_patches": 250,
+      "bare_pixels": 1025,
+      "split_pixel_shortfall": 0,
+      "contributing_class_patches": 0,
+      "contributing_patch_shortfall": 5,
+      "reference_class_pixel_total": 16252940,
+      "bare_ratio": 6.306551307025068e-05,
+      "minimum_bare_ratio": 0.005,
+      "bare_ratio_threshold_met": false,
+      "dominant_class_ratio": 0.39368409653884157,
+      "dominance_threshold_met": true,
+      "stored_reference_balance_failures": [
+        "class7_pixel_ratio",
+        "class7_patch_representation"
+      ]
+    }
+  },
+  "future_acquisition_amount_estimated": false,
+  "full_gate_completion_claimed": false
+}

@@ -34,3 +34,15 @@ export const pendingIntegration = {
     'Metadata/Policy Evidence with version and ACL', 'Result/Layer/Report identity and scientific status'],
   execution_enabled: false,
 } as const;
+
+// 서버 SHA 판정과 Job·Result·Trace 식별자가 모두 일치할 때만 게시를 제안한다.
+export function sdssPublicationAllowed(adapter: EvidenceRecord, result: EvidenceRecord, job: EvidenceRecord) {
+  return adapter.publishable === true && result.status === 'SCIENTIFIC_VALIDATED' && job.status === 'SUCCEEDED'
+    && !isMockOnly(result) && adapter.result_id === result.result_id && adapter.job_id === result.job_id
+    && adapter.job_id === job.job_id && typeof adapter.trace_id === 'string' && !!adapter.trace_id
+    && adapter.trace_id === job.trace_id && result.provenance !== null && typeof result.provenance === 'object'
+    && adapter.trace_id === (result.provenance as EvidenceRecord).trace_id
+    && result.validation !== null && typeof result.validation === 'object'
+    && (result.validation as EvidenceRecord).validation_level === 'INDEPENDENT_SCIENTIFIC'
+    && Array.isArray(adapter.blockers) && adapter.blockers.length === 0;
+}

@@ -1,0 +1,1710 @@
+{
+  "schema_version": 1,
+  "kind": "PINNED_CURRENT_CONNECTIVITY_TOKEN_LINEAGE",
+  "mode": "READ_ONLY",
+  "status": "BLOCKED",
+  "lineage_status": "OBSERVED_METADATA_MEMBERSHIP",
+  "inputs": {
+    "report": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group\\readiness-connectivity-20261017.json",
+      "sha256": "95f7622ac72ef6a3d43aafc35a3607a4e9f39ed2912ac01280a07cc62c854e35"
+    },
+    "manifest": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+      "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f"
+    }
+  },
+  "token": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+  "token_namespace": "SHARED_SOURCE_GROUP_AND_SCENE_ID_LITERAL_STR",
+  "query_inferred": false,
+  "report_scene_count": 1384,
+  "manifest_row_count": 1384,
+  "patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "report_literal_member_count": 28,
+  "report_active_token_member_count": 28,
+  "report_skipped_literal_member_count": 0,
+  "raw_literal_member_count": 28,
+  "raw_active_token_member_count": 28,
+  "raw_skipped_literal_member_count": 0,
+  "raw_metadata_membership_complete": true,
+  "raw_unknown_row_count": 0,
+  "raw_unknown_examples": [],
+  "binding_status_counts_all_report_literal_members": {
+    "AMBIGUOUS_MATCH_SET": 28
+  },
+  "has_ambiguous_match_sets": true,
+  "candidate_link_count_total": 400,
+  "candidate_link_count_stored": 400,
+  "unique_candidate_raw_row_count": 28,
+  "report_members": [
+    {
+      "scene_index": 288,
+      "eligible_position": 288,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 289,
+      "eligible_position": 289,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 290,
+      "eligible_position": 290,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 291,
+      "eligible_position": 291,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 292,
+      "eligible_position": 292,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 293,
+      "eligible_position": 293,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 294,
+      "eligible_position": 294,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 295,
+      "eligible_position": 295,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 296,
+      "eligible_position": 296,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 297,
+      "eligible_position": 297,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 298,
+      "eligible_position": 298,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 299,
+      "eligible_position": 299,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 300,
+      "eligible_position": 300,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 301,
+      "eligible_position": 301,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 302,
+      "eligible_position": 302,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 303,
+      "eligible_position": 303,
+      "province": "banten",
+      "fixed_split": "val",
+      "eligible_patches": 1,
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 16,
+      "candidate_row_indices": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1096,
+      "eligible_position": 1096,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 0,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1097,
+      "eligible_position": 1097,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 1,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1098,
+      "eligible_position": 1098,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 1,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1099,
+      "eligible_position": 1099,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 1,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1100,
+      "eligible_position": 1100,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 0,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1101,
+      "eligible_position": 1101,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 1,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1102,
+      "eligible_position": 1102,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 1,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1103,
+      "eligible_position": 1103,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 1,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1104,
+      "eligible_position": 1104,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 0,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1105,
+      "eligible_position": 1105,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 1,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1106,
+      "eligible_position": 1106,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 1,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    },
+    {
+      "scene_index": 1107,
+      "eligible_position": 1107,
+      "province": "west_java",
+      "fixed_split": "test",
+      "eligible_patches": 1,
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE",
+      "candidate_status": "AMBIGUOUS_MATCH_SET",
+      "candidate_count": 12,
+      "candidate_row_indices": [
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "candidate_links_truncated": false,
+      "exact_row_binding_verified": false
+    }
+  ],
+  "raw_members": [
+    {
+      "manifest_row_index": 288,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 289,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 290,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 291,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 292,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 293,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 294,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 295,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 296,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 297,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 298,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 299,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 300,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 301,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 302,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 303,
+      "province_declared_by_readiness_fallback": "banten",
+      "normalized_source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1096,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1097,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1098,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1099,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1100,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1101,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1102,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1103,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1104,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1105,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1106,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    },
+    {
+      "manifest_row_index": 1107,
+      "province_declared_by_readiness_fallback": "west_java",
+      "normalized_source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "normalized_scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "literal_roles": [
+        "scene_id"
+      ],
+      "active_token_roles": [
+        "scene_id"
+      ],
+      "token_participation": "ACTIVE"
+    }
+  ],
+  "candidate_rows": [
+    {
+      "manifest_row_index": 288,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r00-c00\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "1d030053283ad077ff1360850ccdf905578aa33ba56c933af257db476e057fd3",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 289,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r00-c01\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "ea389b34fae96b50cc40cbfec589ae41824893d5b38e2f17fd6130e491b82cbf",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 290,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r00-c02\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "609b1fa85d235dbacebe05ac05a5c0eac6f61ebf04bf8e059ab19ef908508cc8",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 291,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r00-c03\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "42551c9c75200280f3e366e35f614bc78d446643a0f0a401288c7e99c2a11468",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 292,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r01-c00\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "cf28b5e78378399a4f1e854deab53043d9e407fd67067b059bd3e99ac773a5ec",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 293,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r01-c01\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "352f1a81c3de6cca76c1655e437391d52c366805df6ac3e9647179486d0a6bd5",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 294,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r01-c02\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "e9a794dc29d2b3198dfa168d88beeccdb2c47fa6fca582d23a254fc3b2d9eeda",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 295,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r01-c03\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "13424921186a1e4717088afaae814de8ad18d610c053d66f4a8d892f95dde1c7",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 296,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r02-c00\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "a58ee0fe345da9d474e92005e3a2494d3f75d5dfae134ade67c6bd236d98b5b5",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 297,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r02-c01\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "0fe2cd4022208d1d62ee614f8c5540e537d3875b86ca7362d7fdf8ab087e9ed6",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 298,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r02-c02\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "8919e9452ae60bb6b19a99fa7b22bee3a0be8bf516cc05f8998f235b75ee393a",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 299,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r02-c03\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "c1dbb2b355cdabb68ecb9cca5bbd3386b7033b05d6e53669ac1a239141e00a90",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 300,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r03-c00\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "3cbfc9946f150740a3de7e63f7d2223d37436cbd44e0de91e7b9133fc3ce3bc2",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 301,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r03-c01\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "ae2ff58b9dc27cfcabfe4c63dc322ed3c7b8745e5e85873488b863f1668e30b6",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 302,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r03-c02\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "b58f3fcd72f32f8f595887f4d4ee7317b3c76491e9347af6696ebe8be4d0271a",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 303,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g00\\r03-c03\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "9c0bf6c8dd7ce9628a86051603556bccbe3d793e949876a692cfa7d62df99969",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1096,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r00-c00\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "b6e59039739c03fc0caa8cf83be173eda2b0f3fc9d2c99d682034dc8af91cc10",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1097,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r00-c01\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "56d30b056c6b51093d339522cdaf0997d9edcff62fcf07f1736a4b6d551b5827",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1098,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r00-c02\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "76b3d5dd8ea67ddfc4fc761b3e38c71c01f7b989b40e451f94717e4fe08b001d",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1099,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r00-c03\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "45848e4ff5583863ed1f21e983f2e48ce4eae4d0a81692c68c0e7e8c61bb7121",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1100,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r01-c00\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "287daa5e5cd37940397f9521e3f22c506a6e18c998efb91caad65b0e3fef8468",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1101,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r01-c01\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "5faa19a60863b3e6cb5f2917a6c17f0912720e9c5946988f61af818725401de0",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1102,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r01-c02\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "8ed61db36426bf9f2703bb5d3aa6af3b30d86513afd4b628a738698e1da4a6d4",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1103,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r01-c03\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "cf1afa89ca5bde575b2bad6fa7fe41c831ec6c70bfd9d822ac479917fd4a170a",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1104,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r02-c00\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "9881ee6e5af0b53a9965a585fa1b86b56d90b4127531a87c6c2ee8971bc8b1fa",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1105,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r02-c01\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "8305a5d269c97547cabd2cbb41cd73d7bd5a92ad64f72d2f2b891c518e213612",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1106,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r02-c02\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "c46af749f341fcb4c028067d52c797b26793bc45bdbf9228b58cb6b773528490",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    },
+    {
+      "manifest_row_index": 1107,
+      "image_path_declared": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r02-c03\\image.tif",
+      "image_path_status": "DECLARED_NOT_FILE_VERIFIED",
+      "declared_patch_image_sha256": "a9feca58032d74ad11be88f96650f01aab967768d1448ee0573cb0e029b3dfbb",
+      "declared_patch_image_sha256_status": "DECLARED_NOT_FILE_VERIFIED",
+      "source_file_read_or_hashed": false,
+      "exact_current_scene_row_binding_verified": false
+    }
+  ],
+  "output_truncated": false,
+  "max_candidates": 1000,
+  "max_members": 2000,
+  "stored_witness_truncated": true,
+  "membership_queried_from_full_projected_and_raw_rows": true,
+  "stored_witness_prefix_used_for_membership": false,
+  "exact_row_binding_verified": false,
+  "raw_row_order_used_as_identity": false,
+  "original_file_or_product_authenticity_verified": false,
+  "executing_code_identity_verified": false,
+  "eligibility_recomputed": false,
+  "historical_readiness_cause_reconstructed": false,
+  "zero_patch_removal_or_blocker_resolution_assessed": false,
+  "assess_called": false,
+  "connectivity_helper_called": false,
+  "source_headers_or_pixels_read": false,
+  "source_content_hashes_revalidated": false,
+  "source_manifests_followed": false,
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "training_split_leakage_resolved": false,
+  "settlement_authorized": false,
+  "execution_authorized": false,
+  "automatic_resume_allowed": false,
+  "proposed_refund_bytes": 0,
+  "exactly_once_applied": "UNKNOWN",
+  "source_files_written": 0,
+  "network_requests": 0,
+  "limitation": "Current pinned JSON literal membership and candidate match sets only. Internal scene indexes are not raw row identities; even one candidate is not authenticated binding. Falsy group skips both token roles. No raw eligibility, historical cause, source truth, geometry independence, removal counterfactual or approval is verified."
+}

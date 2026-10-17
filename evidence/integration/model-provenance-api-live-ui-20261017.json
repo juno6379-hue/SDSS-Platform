@@ -1,0 +1,65 @@
+{
+  "observed_at": "2026-10-17T13:15:23.371Z",
+  "url": "http://127.0.0.1:5174/#/view/6",
+  "status": "VERIFIED_REAL_READ_ONLY_UI_ABSENT",
+  "checks": [
+    {
+      "check": "no_observation_panel_without_selected_model",
+      "pass": true
+    },
+    {
+      "check": "model_selection_displays_unqueried_panel_no_automatic_result",
+      "pass": true
+    },
+    {
+      "check": "manual_get_shows_absent_with_all_three_not_checked",
+      "pass": true
+    },
+    {
+      "check": "diagnostic_scope_explained_existing_transition_and_deploy_disabled",
+      "pass": true
+    },
+    {
+      "check": "clear_model_removes_panel_and_old_result",
+      "pass": true
+    },
+    {
+      "check": "reselect_same_model_has_no_old_result",
+      "pass": true
+    },
+    {
+      "check": "route_away_back_returns_clean_registry_no_old_observation",
+      "pass": true
+    },
+    {
+      "check": "scoped_layout_svg_no_overlap_or_horizontal_overflow",
+      "pass": true
+    }
+  ],
+  "layout": {
+    "descriptionTop": 486.040771484375,
+    "documentOverflow": 0,
+    "headingBottom": 476.0459518432617,
+    "height": 1087,
+    "noHeadingOverlap": true,
+    "panelOverflow": 0,
+    "svgButton": true,
+    "svgHeading": true,
+    "width": 1449
+  },
+  "screenshot": "evidence/integration/model-provenance-ui-desktop-20261017.png",
+  "manual_observation_button_clicks": 2,
+  "successful_operating_registrations": 0,
+  "job_posts": 0,
+  "console_errors_warns_since_test_start": [],
+  "console_scope": "Captured last 20 warning/error entries filtered by test start, not all historical logs.",
+  "final_selected_model": "baseline2021_cpu_v1_model",
+  "final_observation": "ABSENT",
+  "limits": [
+    "Only ABSENT tested against operating model; other states/auth/503/invalid response/delayed in-flight and duplicate concurrency use isolated tests",
+    "Browser back checked after completed read, not in-flight cancellation",
+    "No automatic visible result was observed; absence of background network requests relies on source and isolated tests, not browser traffic instrumentation",
+    "Selecting a model retains existing readiness GET and checkpoint verification; the new metadata endpoint itself performs no artifact reads",
+    "Client generation/selected-model identity is display protection and does not authenticate server response model identity"
+  ]
+}

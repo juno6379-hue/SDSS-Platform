@@ -1,0 +1,24 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_api_busy_worker_lock_and_recovery (test_candidate_qa_comparison.CandidateQAComparisonTests.test_api_busy_worker_lock_and_recovery) ... ok
+test_api_cancelled_request_keeps_worker_busy_until_finished (test_candidate_qa_comparison.CandidateQAComparisonTests.test_api_cancelled_request_keeps_worker_busy_until_finished) ... ok
+test_api_exact_minimal_success_schema_and_no_store (test_candidate_qa_comparison.CandidateQAComparisonTests.test_api_exact_minimal_success_schema_and_no_store) ... ok
+test_api_invalid_requests_before_reader_and_stream_cap (test_candidate_qa_comparison.CandidateQAComparisonTests.test_api_invalid_requests_before_reader_and_stream_cap) ... ok
+test_api_pin_error_privacy_and_recovery (test_candidate_qa_comparison.CandidateQAComparisonTests.test_api_pin_error_privacy_and_recovery) ... ok
+test_code_counter_budget_and_empty_blocked_report_refused (test_candidate_qa_comparison.CandidateQAComparisonTests.test_code_counter_budget_and_empty_blocked_report_refused) ... ok
+test_failed_capture_null_and_bare_shortage_computed_not_assumed (test_candidate_qa_comparison.CandidateQAComparisonTests.test_failed_capture_null_and_bare_shortage_computed_not_assumed) ... ok
+test_huge_integer_float_bool_and_blocker_code_privacy_rejected (test_candidate_qa_comparison.CandidateQAComparisonTests.test_huge_integer_float_bool_and_blocker_code_privacy_rejected) ... ok
+test_policy_signature_stage_qa_schema_false_flags_and_typed_counts (test_candidate_qa_comparison.CandidateQAComparisonTests.test_policy_signature_stage_qa_schema_false_flags_and_typed_counts) ... ok
+test_pure_projection_is_input_immutable_without_io_or_assess (test_candidate_qa_comparison.CandidateQAComparisonTests.test_pure_projection_is_input_immutable_without_io_or_assess) ... ok
+test_qa_saved_counts_blockers_capture_and_scene_scope_consistency (test_candidate_qa_comparison.CandidateQAComparisonTests.test_qa_saved_counts_blockers_capture_and_scene_scope_consistency) ... ok
+test_reader_caps_strict_json_pin_and_stale (test_candidate_qa_comparison.CandidateQAComparisonTests.test_reader_caps_strict_json_pin_and_stale) ... ok
+test_reader_change_after_initial_four_inputs_rejected (test_candidate_qa_comparison.CandidateQAComparisonTests.test_reader_change_after_initial_four_inputs_rejected) ... ok
+test_reader_opens_only_fixed_four_jsons_and_preserves_bytes (test_candidate_qa_comparison.CandidateQAComparisonTests.test_reader_opens_only_fixed_four_jsons_and_preserves_bytes) ... ok
+test_signature_required_class_range_capture_false_and_bare_bounds (test_candidate_qa_comparison.CandidateQAComparisonTests.test_signature_required_class_range_capture_false_and_bare_bounds) ... ok
+test_source_role_pin_path_size_and_receipt_report_crossbinding (test_candidate_qa_comparison.CandidateQAComparisonTests.test_source_role_pin_path_size_and_receipt_report_crossbinding) ... ok
+test_summary_counter_rows_bare_and_all_false_projection (test_candidate_qa_comparison.CandidateQAComparisonTests.test_summary_counter_rows_bare_and_all_false_projection) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 14.400s
+
+OK

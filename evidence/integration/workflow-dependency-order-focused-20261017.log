@@ -1,0 +1,16 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_empty_diamond_disconnected_repeated_edges_and_cycles (test_workflow_dependency_order.WorkflowDependencyOrderTests.test_empty_diamond_disconnected_repeated_edges_and_cycles) ... ok
+test_input_sets_are_copied_aliases_unchanged_and_no_io (test_workflow_dependency_order.WorkflowDependencyOrderTests.test_input_sets_are_copied_aliases_unchanged_and_no_io) ... ok
+test_lineage_real_tempstore_response_io_order_and_layers_unchanged (test_workflow_dependency_order.WorkflowDependencyOrderTests.test_lineage_real_tempstore_response_io_order_and_layers_unchanged) ... ok
+test_lineage_schema_limits_node_limit_and_dag_checks_keep_exact_priority (test_workflow_dependency_order.WorkflowDependencyOrderTests.test_lineage_schema_limits_node_limit_and_dag_checks_keep_exact_priority) ... ok
+test_plan_exact_responses_headers_io_order_layers_and_no_execution (test_workflow_dependency_order.WorkflowDependencyOrderTests.test_plan_exact_responses_headers_io_order_layers_and_no_execution) ... ok
+test_plan_schema_duplicate_unknown_self_cycle_priority_before_manifest_or_store (test_workflow_dependency_order.WorkflowDependencyOrderTests.test_plan_schema_duplicate_unknown_self_cycle_priority_before_manifest_or_store) ... ok
+test_policy_sorted_layers_propagation_modes_and_copied_blockers_unchanged (test_workflow_dependency_order.WorkflowDependencyOrderTests.test_policy_sorted_layers_propagation_modes_and_copied_blockers_unchanged) ... ok
+test_policy_validation_and_blocker_json_failure_before_cycle_preserved (test_workflow_dependency_order.WorkflowDependencyOrderTests.test_policy_validation_and_blocker_json_failure_before_cycle_preserved) ... ok
+test_sorted_ready_layers_are_not_global_heap_order (test_workflow_dependency_order.WorkflowDependencyOrderTests.test_sorted_ready_layers_are_not_global_heap_order) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 5.997s
+
+OK

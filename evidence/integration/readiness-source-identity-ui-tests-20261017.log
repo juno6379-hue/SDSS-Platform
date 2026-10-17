@@ -1,0 +1,364 @@
+TAP version 13
+# Subtest: 5개의 목적별 직접 URL과 데이터 ID는 새로고침에서도 정확히 왕복한다
+ok 1 - 5개의 목적별 직접 URL과 데이터 ID는 새로고침에서도 정확히 왕복한다
+  ---
+  duration_ms: 12.6998
+  type: 'test'
+  ...
+# Subtest: 잘못된 URL은 안전한 카탈로그로 정규화하고 알 수 없는 모델·탭을 차단한다
+ok 2 - 잘못된 URL은 안전한 카탈로그로 정규화하고 알 수 없는 모델·탭을 차단한다
+  ---
+  duration_ms: 7.9222
+  type: 'test'
+  ...
+# Subtest: 상세 닫기와 검색 복귀 경로는 같은 검색 화면을 가리킨다
+ok 3 - 상세 닫기와 검색 복귀 경로는 같은 검색 화면을 가리킨다
+  ---
+  duration_ms: 0.9595
+  type: 'test'
+  ...
+# Subtest: 불완전·오염 저장값은 제한된 필터와 유일한 ID만 복구한다
+ok 4 - 불완전·오염 저장값은 제한된 필터와 유일한 ID만 복구한다
+  ---
+  duration_ms: 16.1707
+  type: 'test'
+  ...
+# Subtest: 선택·필터의 session 복귀는 실제 최신 자료를 다시 검색한다
+ok 5 - 선택·필터의 session 복귀는 실제 최신 자료를 다시 검색한다
+  ---
+  duration_ms: 9.0298
+  type: 'test'
+  ...
+# Subtest: 잘못된 JSON과 브라우저 저장 차단으로 검색 화면이 실패하지 않는다
+ok 6 - 잘못된 JSON과 브라우저 저장 차단으로 검색 화면이 실패하지 않는다
+  ---
+  duration_ms: 1.6841
+  type: 'test'
+  ...
+# Subtest: 외부·오염 history 표식은 이전 이동을 승인하지 않는다
+ok 7 - 외부·오염 history 표식은 이전 이동을 승인하지 않는다
+  ---
+  duration_ms: 1.283
+  type: 'test'
+  ...
+# Subtest: 이동후 늦은 성공·오류는 새 화면을 덮지 않고 같은 요청의 응답은 표시한다
+ok 8 - 이동후 늦은 성공·오류는 새 화면을 덮지 않고 같은 요청의 응답은 표시한다
+  ---
+  duration_ms: 0.9732
+  type: 'test'
+  ...
+# Subtest: 인사이트는 명시상세 또는 정확히 한개의 실제선택만 전달한다
+ok 9 - 인사이트는 명시상세 또는 정확히 한개의 실제선택만 전달한다
+  ---
+  duration_ms: 1.6031
+  type: 'test'
+  ...
+# Subtest: Climate→Workspace→뒤로에서 모델·참조지역을 복구하고 필터저장과 독립적이다
+ok 10 - Climate→Workspace→뒤로에서 모델·참조지역을 복구하고 필터저장과 독립적이다
+  ---
+  duration_ms: 15.4809
+  type: 'test'
+  ...
+# Subtest: 모델·지역은 허용목록만 복원하고 오염 JSON·차단저장소에서 안전하게 복귀한다
+ok 11 - 모델·지역은 허용목록만 복원하고 오염 JSON·차단저장소에서 안전하게 복귀한다
+  ---
+  duration_ms: 2.7733
+  type: 'test'
+  ...
+# Subtest: 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+ok 12 - 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+  ---
+  duration_ms: 5.8192
+  type: 'test'
+  ...
+# Subtest: 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+ok 13 - 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+  ---
+  duration_ms: 3.5839
+  type: 'test'
+  ...
+# Subtest: 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+ok 14 - 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+  ---
+  duration_ms: 1.1569
+  type: 'test'
+  ...
+# Subtest: 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+ok 15 - 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+  ---
+  duration_ms: 1.3676
+  type: 'test'
+  ...
+# Subtest: CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+ok 16 - CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+  ---
+  duration_ms: 2.7923
+  type: 'test'
+  ...
+# Subtest: 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+ok 17 - 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+  ---
+  duration_ms: 1.1538
+  type: 'test'
+  ...
+# Subtest: 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+ok 18 - 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+  ---
+  duration_ms: 40.5281
+  type: 'test'
+  ...
+# Subtest: 입력 품질·기관 ACL 차단코드를 보존한다
+ok 19 - 입력 품질·기관 ACL 차단코드를 보존한다
+  ---
+  duration_ms: 3.3105
+  type: 'test'
+  ...
+# Subtest: 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+ok 20 - 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+  ---
+  duration_ms: 1.4391
+  type: 'test'
+  ...
+# Subtest: 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+ok 21 - 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+  ---
+  duration_ms: 2.1421
+  type: 'test'
+  ...
+# Subtest: 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+ok 22 - 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+  ---
+  duration_ms: 0.7275
+  type: 'test'
+  ...
+# Subtest: 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+ok 23 - 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+  ---
+  duration_ms: 0.887
+  type: 'test'
+  ...
+# Subtest: legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+ok 24 - legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+  ---
+  duration_ms: 0.6984
+  type: 'test'
+  ...
+# Subtest: ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+ok 25 - ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+  ---
+  duration_ms: 0.5181
+  type: 'test'
+  ...
+# Subtest: 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+ok 26 - 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+  ---
+  duration_ms: 3.5163
+  type: 'test'
+  ...
+# Subtest: 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+ok 27 - 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+  ---
+  duration_ms: 1.0585
+  type: 'test'
+  ...
+# Subtest: 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+ok 28 - 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+  ---
+  duration_ms: 0.561
+  type: 'test'
+  ...
+# Subtest: Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+ok 29 - Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+  ---
+  duration_ms: 1.9819
+  type: 'test'
+  ...
+# Subtest: SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+ok 30 - SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+  ---
+  duration_ms: 1.3454
+  type: 'test'
+  ...
+# Subtest: Job현재계보는같은Job·Trace와현재검사scope를확인한다
+ok 31 - Job현재계보는같은Job·Trace와현재검사scope를확인한다
+  ---
+  duration_ms: 8.6471
+  type: 'test'
+  ...
+# Subtest: 저장요청없는legacy·잘못된요청·상한선차단을현재통과로추정하지않는다
+ok 32 - 저장요청없는legacy·잘못된요청·상한선차단을현재통과로추정하지않는다
+  ---
+  duration_ms: 1.1522
+  type: 'test'
+  ...
+# Subtest: 부분검사와checked/current_assets_revalidated true를전체성공으로바꾸지않는다
+ok 33 - 부분검사와checked/current_assets_revalidated true를전체성공으로바꾸지않는다
+  ---
+  duration_ms: 19.1988
+  type: 'test'
+  ...
+# Subtest: 중복참조진단재사용과고정ref연결을구별한다
+ok 34 - 중복참조진단재사용과고정ref연결을구별한다
+  ---
+  duration_ms: 1.4354
+  type: 'test'
+  ...
+# Subtest: 무결성집계는모든진단·입력근거가있어야하고실행·권한·과학승인은거부한다
+ok 35 - 무결성집계는모든진단·입력근거가있어야하고실행·권한·과학승인은거부한다
+  ---
+  duration_ms: 1.6518
+  type: 'test'
+  ...
+# Subtest: 검사예산초과·형식오류·쓰기근거가있는응답을표시하지않는다
+ok 36 - 검사예산초과·형식오류·쓰기근거가있는응답을표시하지않는다
+  ---
+  duration_ms: 12.4194
+  type: 'test'
+  ...
+# Subtest: Job·Agent전환과이전명시조회응답은요청세대guard로거부한다
+ok 37 - Job·Agent전환과이전명시조회응답은요청세대guard로거부한다
+  ---
+  duration_ms: 0.89
+  type: 'test'
+  ...
+# Subtest: 미상·별칭·형식이 다른 고정참조와 잘못된 검사한도는 제출하지 않는다
+ok 38 - 미상·별칭·형식이 다른 고정참조와 잘못된 검사한도는 제출하지 않는다
+  ---
+  duration_ms: 8.0193
+  type: 'test'
+  ...
+# Subtest: HTTP200 BLOCKED와 current_assets_revalidated 시도를 성공으로 바꾸지 않는다
+ok 39 - HTTP200 BLOCKED와 current_assets_revalidated 시도를 성공으로 바꾸지 않는다
+  ---
+  duration_ms: 1.4281
+  type: 'test'
+  ...
+# Subtest: 같은 고정 ID·버전·SHA 응답만 표시한다
+ok 40 - 같은 고정 ID·버전·SHA 응답만 표시한다
+  ---
+  duration_ms: 1.0846
+  type: 'test'
+  ...
+# Subtest: wrapper와 diagnostic의 기관·실행·과학 승인 불변조건을 검증한다
+ok 41 - wrapper와 diagnostic의 기관·실행·과학 승인 불변조건을 검증한다
+  ---
+  duration_ms: 0.7448
+  type: 'test'
+  ...
+# Subtest: 계보 일치는 일관된 노드·차단 근거가 있어야 하고 과학 승인과 구별한다
+ok 42 - 계보 일치는 일관된 노드·차단 근거가 있어야 하고 과학 승인과 구별한다
+  ---
+  duration_ms: 1.5308
+  type: 'test'
+  ...
+# Subtest: 입력 수정·다른 상세창·늦은 응답은 세대와 입력키로 거부한다
+ok 43 - 입력 수정·다른 상세창·늦은 응답은 세대와 입력키로 거부한다
+  ---
+  duration_ms: 0.604
+  type: 'test'
+  ...
+# Subtest: 수동 요청은 명시 핀3개만 가지며 latest·경로·불완전 SHA를 거부한다
+ok 44 - 수동 요청은 명시 핀3개만 가지며 latest·경로·불완전 SHA를 거부한다
+  ---
+  duration_ms: 7.2443
+  type: 'test'
+  ...
+# Subtest: 저장선언의 회원28/넓은400/선언28/zero3/patch25를 개별 투영하며 승인으로 승격하지 않는다
+ok 45 - 저장선언의 회원28/넓은400/선언28/zero3/patch25를 개별 투영하며 승인으로 승격하지 않는다
+  ---
+  duration_ms: 7.6203
+  type: 'test'
+  ...
+# Subtest: 보고서·manifest·token SHA가 요청과 다르면 결과를 폐기한다
+ok 46 - 보고서·manifest·token SHA가 요청과 다르면 결과를 폐기한다
+  ---
+  duration_ms: 1.1012
+  type: 'test'
+  ...
+# Subtest: 8개 승인·해소 false 필드는 true·0·문자열·누락을 허용하지 않는다
+ok 47 - 8개 승인·해소 false 필드는 true·0·문자열·누락을 허용하지 않는다
+  ---
+  duration_ms: 1.8336
+  type: 'test'
+  ...
+# Subtest: 알 수 없는 상태·schema·scope·추가필드와 bool형 계수는 failclosed다
+ok 48 - 알 수 없는 상태·schema·scope·추가필드와 bool형 계수는 failclosed다
+  ---
+  duration_ms: 1.2931
+  type: 'test'
+  ...
+# Subtest: 단서 없는 두 상태는 선택4계수 null만 허용하고0·누락과 혼동하지 않는다
+ok 49 - 단서 없는 두 상태는 선택4계수 null만 허용하고0·누락과 혼동하지 않는다
+  ---
+  duration_ms: 0.9503
+  type: 'test'
+  ...
+# Subtest: 회원·후보 교차계수 모순과 누락을 거부하며 zero patch를 삭제하지 않는다
+ok 50 - 회원·후보 교차계수 모순과 누락을 거부하며 zero patch를 삭제하지 않는다
+  ---
+  duration_ms: 1.4406
+  type: 'test'
+  ...
+# Subtest: 입력·선택·메뉴·재조회 이후 늦은 성공/실패는 무효이고 같은 요청만 현재다
+ok 51 - 입력·선택·메뉴·재조회 이후 늦은 성공/실패는 무효이고 같은 요청만 현재다
+  ---
+  duration_ms: 1.2782
+  type: 'test'
+  ...
+# Subtest: HTTP400/409/413/429/503/404/권한/연결 오류는 원본정보없이 서로 구분한다
+ok 52 - HTTP400/409/413/429/503/404/권한/연결 오류는 원본정보없이 서로 구분한다
+  ---
+  duration_ms: 2.5699
+  type: 'test'
+  ...
+# Subtest: 토큰 hash는 대소문자·UTF8 원문에 의존하고 응답 원문token을 투영하지 않는다
+ok 53 - 토큰 hash는 대소문자·UTF8 원문에 의존하고 응답 원문token을 투영하지 않는다
+  ---
+  duration_ms: 52.2464
+  type: 'test'
+  ...
+# Subtest: 해시는실제agentApi JSON.stringify UTF8본문이며키정렬canonical이아니다
+ok 54 - 해시는실제agentApi JSON.stringify UTF8본문이며키정렬canonical이아니다
+  ---
+  duration_ms: 25.425
+  type: 'test'
+  ...
+# Subtest: WorkflowID·Trace·실제본문SHA가모두일치하는현재진단만표시한다
+ok 55 - WorkflowID·Trace·실제본문SHA가모두일치하는현재진단만표시한다
+  ---
+  duration_ms: 3.2885
+  type: 'test'
+  ...
+# Subtest: 공유ref재사용·빈노드·상충참조무해시진단을실행성공으로바꾸지않는다
+ok 56 - 공유ref재사용·빈노드·상충참조무해시진단을실행성공으로바꾸지않는다
+  ---
+  duration_ms: 0.9768
+  type: 'test'
+  ...
+# Subtest: 계보무결성일치여도Workflow는항상PLAN_ONLY/BLOCKED·비실행이다
+ok 57 - 계보무결성일치여도Workflow는항상PLAN_ONLY/BLOCKED·비실행이다
+  ---
+  duration_ms: 1.81
+  type: 'test'
+  ...
+# Subtest: 선행상한·부분검사·노드순서와고정binding신원을검증한다
+ok 58 - 선행상한·부분검사·노드순서와고정binding신원을검증한다
+  ---
+  duration_ms: 1.2888
+  type: 'test'
+  ...
+# Subtest: JSON수정·메뉴이동·같은JSON복귀에도이전응답은세대로거부한다
+ok 59 - JSON수정·메뉴이동·같은JSON복귀에도이전응답은세대로거부한다
+  ---
+  duration_ms: 0.5547
+  type: 'test'
+  ...
+1..59
+# tests 59
+# suites 0
+# pass 59
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1317.2334

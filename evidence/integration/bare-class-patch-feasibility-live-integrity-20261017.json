@@ -1,0 +1,79 @@
+{
+  "recorded_at": "2026-10-17T23:32:52.512746",
+  "scope": "STORED_METADATA_ARITHMETIC_NOT_NEW_PIXEL_QA_TRAINING_OR_COLLECTION",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "previous_evidence_files_checked": 791,
+  "previous_evidence_file_changes": [],
+  "existing_code_changes": [],
+  "catalog_records": 14,
+  "catalog_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "live_cli_exit_code": 0,
+  "live_result": {
+    "sha256": "e18528ed25ac0a70c32fd08be019cf96c3c6bc3949ba4c1f07514a0dcb942e81",
+    "bytes": 9230
+  },
+  "independent_arithmetic_matches": true,
+  "by_split": {
+    "train": {
+      "range": [
+        0,
+        5
+      ],
+      "observed": 0,
+      "necessary_total_shortfall": 0,
+      "existing_absolute_floor_shortfall": 0
+    },
+    "val": {
+      "range": [
+        0,
+        0
+      ],
+      "observed": 0,
+      "necessary_total_shortfall": 1071,
+      "existing_absolute_floor_shortfall": 47
+    },
+    "test": {
+      "range": [
+        0,
+        4
+      ],
+      "observed": 0,
+      "necessary_total_shortfall": 255,
+      "existing_absolute_floor_shortfall": 0
+    }
+  },
+  "new_operating_qa_training_collection_deployment": false,
+  "live_job_posts": 0,
+  "model_registrations": 0,
+  "ui_changed": false,
+  "full_regression_rerun_in_latest_unit": false,
+  "previous_full_regression": {
+    "tests_run": 1069,
+    "passed": 1068,
+    "skipped": 1,
+    "seconds": 354.65,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-dependency-order-full-tests-20261017.log"
+  },
+  "focused": {
+    "passed": 12,
+    "seconds": 4.474,
+    "log": "evidence/integration/bare-class-patch-feasibility-focused-20261017.log",
+    "exit_code": 0
+  },
+  "related": {
+    "passed": 66,
+    "seconds": 24.207,
+    "log": "evidence/integration/bare-class-patch-feasibility-related-corrected-20261017.log",
+    "exit_code": 0
+  },
+  "independent": {
+    "passed": 26,
+    "seconds": 10.286,
+    "log": "evidence/integration/bare-class-patch-feasibility-independent-20261017.log",
+    "exit_code": 0
+  },
+  "initial_related_command_failure": "Two nonexistent module names; corrected command only, initial log retained; no product or test correction."
+}

@@ -1,0 +1,47 @@
+{
+  "recorded_at": "2026-10-17T22:26:29.508747+09:00",
+  "scope": "NEW_UNWIRED_IDENTITY_COMPARISON_NOT_APPROVAL_OR_RESOLVER",
+  "tests": {
+    "focused": {
+      "passed": 14,
+      "seconds": 0.381,
+      "log": "evidence/integration/model-reference-record-focused-20261017.log"
+    },
+    "related": {
+      "passed": 50,
+      "seconds": 16.59,
+      "log": "evidence/integration/model-reference-record-related-20261017.log"
+    },
+    "independent": {
+      "passed": 14,
+      "seconds": 0.319,
+      "log": "evidence/integration/model-reference-record-independent-20261017.log"
+    }
+  },
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 71,
+  "existing_contract_changes": [],
+  "existing_product_changes": [],
+  "previous_evidence_files_checked": 706,
+  "previous_evidence_changes": [],
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "operating_registrations": 0,
+  "job_posts": 0,
+  "new_qa_or_training_executed": false,
+  "full_regression_rerun_in_latest_unit": false,
+  "previous_full_regression": {
+    "tests_run": 1019,
+    "passed": 1018,
+    "skipped": 1,
+    "seconds": 381.288,
+    "log": "evidence/integration/model-provenance-api-full-tests-20261017.log"
+  },
+  "full_regression_scope_reason": "New identity-to-supplied-record comparator has no existing product callers; targeted contract, registration compatibility and independent tests plus raw-byte preservation are used. Previous whole suite is retained as previous evidence.",
+  "direct_ui_change": false,
+  "frontend_tests_build_browser_rerun": false,
+  "ui_reason": "No endpoint or UI caller introduced; existing ModelReview and approval gates unchanged.",
+  "live_observation": "evidence/integration/model-reference-record-catalog-observation-20261017.json"
+}

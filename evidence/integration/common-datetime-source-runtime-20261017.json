@@ -1,0 +1,128 @@
+{
+  "recorded_at": "2026-10-17T20:30:08.097003+09:00",
+  "status": "TESTED_SYNTHETIC",
+  "scope": "fresh Python process, actual vendored schema and direct common _validate_job; no operating app import, Store or HTTP submission",
+  "optional_default_date_time_registered": false,
+  "shared_checker_date_time_registered": true,
+  "cases": [
+    {
+      "value": "2024-02-29T23:59:59Z",
+      "expected_valid": true,
+      "accepted": true,
+      "schema_errors": 0
+    },
+    {
+      "value": "2000-02-29t00:00:00z",
+      "expected_valid": true,
+      "accepted": true,
+      "schema_errors": 0
+    },
+    {
+      "value": "2026-10-17T00:00:00.123456789Z",
+      "expected_valid": true,
+      "accepted": true,
+      "schema_errors": 0
+    },
+    {
+      "value": "2026-10-17T00:00:00+23:59",
+      "expected_valid": true,
+      "accepted": true,
+      "schema_errors": 0
+    },
+    {
+      "value": "2026-10-17T00:00:00-23:59",
+      "expected_valid": true,
+      "accepted": true,
+      "schema_errors": 0
+    },
+    {
+      "value": "2026-10-17T00:00:00-00:00",
+      "expected_valid": true,
+      "accepted": true,
+      "schema_errors": 0
+    },
+    {
+      "value": "not-a-date",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "2026-02-30T00:00:00Z",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "1900-02-29T00:00:00Z",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "2026-10-17T00:00:00",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "2026-10-17T00:00:00+00:60",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "2026-10-17T00:00:00+01:99",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "2026-10-17T00:00:00+24:00",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "2026-10-17T24:00:00Z",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "2026-10-17T23:59:60Z",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "0000-01-01T00:00:00Z",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "2026-10-17 00:00:00Z",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "2026-10-17T00:00:00Z\n",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    },
+    {
+      "value": "NaN",
+      "expected_valid": false,
+      "accepted": false,
+      "schema_errors": 1
+    }
+  ],
+  "operating_job_posts": 0,
+  "store_calls": 0,
+  "class_registry_unchanged": true,
+  "live_non_reload_process_code_application": "UNVERIFIED",
+  "limits": "supported zoned subset only; leap seconds/year0000 rejected, no interval ordering or science policy"
+}

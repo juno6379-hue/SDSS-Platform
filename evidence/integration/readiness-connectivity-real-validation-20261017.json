@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "kind": "CURRENT_READINESS_CONNECTIVITY_REAL_REPORT_METADATA_VALIDATION",
+  "status": "BLOCKED",
+  "evidence_state": "VERIFIED_REAL_CURRENT_REPORT_METADATA",
+  "validation_status": "PASS",
+  "validation_checks": [
+    {
+      "code": "ORIGINAL_REPORT_KEYS_AND_TYPED_VALUES_UNCHANGED",
+      "passed": true
+    },
+    {
+      "code": "POLICY_EXACT_SAVED_POLICY_COPY",
+      "passed": true
+    },
+    {
+      "code": "BLOCKERS_PRESERVED_EXACTLY",
+      "passed": true
+    },
+    {
+      "code": "OUTER_GATE_REMAINS_BLOCKED",
+      "passed": true
+    },
+    {
+      "code": "INPUT_REFERENCE_SAME_PINNED_MANIFEST",
+      "passed": true
+    },
+    {
+      "code": "CAPTURE_AND_COMPONENTS_AGREE",
+      "passed": true
+    },
+    {
+      "code": "DIAGNOSTIC_SCOPE_ALL_APPENDED_SCENES",
+      "passed": true
+    },
+    {
+      "code": "NO_DIAGNOSTIC_APPROVAL_OR_AUTHENTICITY_CLAIM",
+      "passed": true
+    },
+    {
+      "code": "SCENE_COUNTS_AND_INDICES",
+      "passed": true
+    },
+    {
+      "code": "PROJECTED_SCENE_SCHEMA",
+      "passed": true
+    },
+    {
+      "code": "PATCH_MAPPING_COUNTS_WITH_ZERO_PATCH_SCENES",
+      "passed": true
+    },
+    {
+      "code": "FULL_PAIR_ACCOUNTING_REPORTED",
+      "passed": true
+    },
+    {
+      "code": "WITNESS_STORAGE_AND_TRUNCATION_COUNTS",
+      "passed": true
+    },
+    {
+      "code": "COMPLETE_TOKEN_PREFIX_LAST_OWNER_REFERENCES",
+      "passed": true
+    },
+    {
+      "code": "STORED_BBOX_REFERENCE_AND_STRICT_OVERLAP_METADATA",
+      "passed": true
+    },
+    {
+      "code": "CURRENT_DIRECT_CROSS_SPLIT_SCENE_ID_BRIDGE",
+      "passed": true
+    },
+    {
+      "code": "EXECUTION_RECORD_NONTRAINING_SUCCESS",
+      "passed": true
+    },
+    {
+      "code": "FULL_SUCCESS_ADAPTER_AND_WITNESS_SCHEMA_KEYS",
+      "passed": true
+    },
+    {
+      "code": "EXACT_LIMITS_AND_LITERAL_SCENE_COORDINATE_SCOPE",
+      "passed": true
+    },
+    {
+      "code": "STORED_BBOX_EDGE_EXACT_SCHEMA",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "inputs": [
+    {
+      "path": "data\\first-group\\readiness-resume-20261017.json",
+      "sha256": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+      "bytes": 1116048
+    },
+    {
+      "path": "data\\first-group\\readiness-connectivity-20261017.json",
+      "sha256": "95f7622ac72ef6a3d43aafc35a3607a4e9f39ed2912ac01280a07cc62c854e35",
+      "bytes": 11132483
+    },
+    {
+      "path": "evidence\\integration\\readiness-connectivity-real-execution-20261017.json",
+      "sha256": "d9d25806ae6cd0fea9c7efc993053dd79b39a002b9635afba67f1afd340654fd",
+      "bytes": 1542
+    },
+    {
+      "path": "evidence\\integration\\readiness-connectivity-real-policy-20261017.json",
+      "sha256": "d5f67ac1e3168a9ea2e03aec7d82097d8944a826f5c144f45594d2a9241e4866",
+      "bytes": 1347
+    }
+  ],
+  "actual_cli": {
+    "executed_by": "Root",
+    "execution_count": 1,
+    "exit_code": 0,
+    "elapsed_seconds": 70.437,
+    "peak_observed_tree_rss_bytes": 214724608,
+    "rss_samples": 135,
+    "rss_sampling_not_hard_memory_cap": true,
+    "execute": false,
+    "resume": false,
+    "training_requested": false,
+    "download_requested": false
+  },
+  "old_new_original_fields_equal_excluding": [
+    "connectivity_diagnostics",
+    "assessed_at"
+  ],
+  "changed_original_fields": [],
+  "saved_blockers_preserved": [
+    {
+      "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+      "detail": "같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.",
+      "scene": "west_java"
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 픽셀",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "saved_and_current_ready_for_training": false,
+  "old_saved_scene_witness_status": "UNKNOWN_NOT_PERSISTED",
+  "patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "patch_sum": 1111,
+  "appended_scene_count": 1384,
+  "appended_scene_counts_by_fixed_split": {
+    "train": 848,
+    "val": 272,
+    "test": 264
+  },
+  "zero_eligible_patch_scene_count": 273,
+  "zero_patch_scene_counts_by_fixed_split": {
+    "train": 220,
+    "val": 39,
+    "test": 14
+  },
+  "capture_status": "CAPTURED_COMPONENTS_MATCH",
+  "gate_components_match": true,
+  "province_groups": {
+    "south_sulawesi": "south_sulawesi",
+    "gorontalo": "gorontalo",
+    "southeast_sulawesi": "southeast_sulawesi",
+    "banten": "banten",
+    "west_java": "banten",
+    "east_java": "east_java"
+  },
+  "reported_union_complete": true,
+  "reported_union_change_count": 1,
+  "reported_bbox_pairs_evaluated": 957036,
+  "reported_witness_counts_by_kind": {
+    "TOKEN_SHARED_NAMESPACE": 2595,
+    "BBOX_STRICT_POSITIVE_OVERLAP": 12424
+  },
+  "reported_witness_total": 15019,
+  "stored_witness_total": 10000,
+  "stored_witness_counts_by_kind": {
+    "TOKEN_SHARED_NAMESPACE": 2595,
+    "BBOX_STRICT_POSITIVE_OVERLAP": 7405
+  },
+  "witness_edges_truncated": true,
+  "witness_coverage": "TRUNCATED_UNION_COMPLETE",
+  "all_token_witnesses_stored_and_literal_metadata_checked": true,
+  "all_bbox_witnesses_stored": false,
+  "unstored_bbox_witness_count": 5019,
+  "cross_split_bbox_from_stored_prefix_only": "UNKNOWN_TRUNCATED_WITNESSES",
+  "current_cross_split_token_evidence": [
+    {
+      "kind": "TOKEN_SHARED_NAMESPACE",
+      "token": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "left": {
+        "scene_index": 1096,
+        "eligible_position": 1096,
+        "province": "west_java",
+        "token_role": "scene_id"
+      },
+      "right": {
+        "scene_index": 303,
+        "eligible_position": 303,
+        "province": "banten",
+        "token_role": "scene_id"
+      },
+      "component_union_changed": true
+    }
+  ],
+  "current_token_bridge_scene_metadata": [
+    {
+      "scene_index": 303,
+      "province": "banten",
+      "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "bounds_wgs84": [
+        106.14453090579744,
+        -6.493675375759045,
+        106.16773200523075,
+        -6.470469212392321
+      ]
+    },
+    {
+      "scene_index": 1096,
+      "province": "west_java",
+      "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "bounds_wgs84": [
+        106.35939511443716,
+        -7.270072833236119,
+        106.38264922589468,
+        -7.246852090688603
+      ]
+    }
+  ],
+  "current_token_bridge_scene_patch_mapping": [
+    {
+      "scene_index": 303,
+      "eligible_position": 303,
+      "province": "banten",
+      "eligible_patches": 1,
+      "included_despite_zero_eligible_patches": false,
+      "source_group_original_type": "str",
+      "scene_id_original_type": "str",
+      "token_coercion": "READINESS_TRUTHINESS_AND_STR_SCALARS"
+    },
+    {
+      "scene_index": 1096,
+      "eligible_position": 1096,
+      "province": "west_java",
+      "eligible_patches": 0,
+      "included_despite_zero_eligible_patches": true,
+      "source_group_original_type": "str",
+      "scene_id_original_type": "str",
+      "token_coercion": "READINESS_TRUTHINESS_AND_STR_SCALARS"
+    }
+  ],
+  "stored_bbox_example": {
+    "kind": "BBOX_STRICT_POSITIVE_OVERLAP",
+    "left": {
+      "scene_index": 1,
+      "eligible_position": 1,
+      "province": "gorontalo"
+    },
+    "right": {
+      "scene_index": 0,
+      "eligible_position": 0,
+      "province": "gorontalo"
+    },
+    "left_bounds_wgs84": [
+      122.22207270858415,
+      0.6817419771473051,
+      122.24508210753466,
+      0.7049047284253483
+    ],
+    "right_bounds_wgs84": [
+      122.1990671040458,
+      0.6817381803237004,
+      122.22207648846185,
+      0.704900916989313
+    ],
+    "overlap_bounds_wgs84": [
+      122.22207270858415,
+      0.6817419771473051,
+      122.22207648846185,
+      0.704900916989313
+    ],
+    "comparison": "STRICT_POSITIVE_BOTH_AXES",
+    "component_union_changed": false
+  },
+  "current_observation": "Current assess linked banten(val) and west_java(test) via shared literal scene_id, including west_java scene1096 with zero eligible patches. This is current-execution evidence only, not historical cause authentication.",
+  "validation_scope": "Pinned/observed JSON metadata only; no CLI/assess/helper rerun, no raster/header/pixel/source-content read, no full bbox pair or union recomputation.",
+  "historical_generation_cause_authenticated": false,
+  "geometric_independence_verified": false,
+  "training_split_leakage_resolved": false,
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "settlement_authorized": false,
+  "execution_authorized": false,
+  "automatic_resume_allowed": false,
+  "proposed_refund_bytes": 0,
+  "exactly_once_applied": "UNKNOWN",
+  "production_code_modified": false,
+  "source_files_written": 0,
+  "previous_regression_not_rerun": "608 tests belong to preceding61 code unit, not a newly executed62 regression.",
+  "limitations": [
+    "SHA pins and report equality do not authenticate the old report generating runtime.",
+    "BBox edge storage is truncated; omitted positive-edge/cross-split details cannot be inferred from the stored prefix.",
+    "Root actual assess performed its existing source hash/pixel QA; this validation reads JSON only and adds no source IO.",
+    "No scientific accuracy, exact footprint, leakage resolution, training, settlement or automatic resume approval."
+  ],
+  "independent_exhaustive_metadata_review": {
+    "evidence": "evidence\\integration\\readiness-connectivity-real-independent-20261017.log",
+    "sha256": "6b7766b47e646151e0a89d1d5e3083548ad8725b8acd735bd2818457d56861fe",
+    "all_bbox_pairs_verified": 957036,
+    "all_event_counts_verified": {
+      "TOKEN_SHARED_NAMESPACE": 2595,
+      "BBOX_STRICT_POSITIVE_OVERLAP": 12424
+    },
+    "stored_prefix_exactly_verified": 10000,
+    "cross_split_bbox_event_count": 0,
+    "cross_split_token_event_count": 1,
+    "source": "Independent reviewer exhaustive JSON-only check; not inferred from stored witness prefix; no new CLI/assess/pixel/helper/full-regression execution by this validator."
+  }
+}

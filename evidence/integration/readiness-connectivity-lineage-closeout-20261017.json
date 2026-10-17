@@ -1,0 +1,68 @@
+{
+  "recorded_at": "2026-10-17T15:08:21.439862+09:00",
+  "unit": 63,
+  "status": "BOUNDED_UNIT_COMPLETED_PROJECT_CONTINUES",
+  "integrity_evidence": "evidence/integration/readiness-connectivity-lineage-live-integrity-20261017.json",
+  "full_regression": {
+    "tests_run": 624,
+    "passed": 623,
+    "skipped": 1,
+    "seconds": 176.415,
+    "exit_code": 0
+  },
+  "related_tests": {
+    "passed": 16,
+    "seconds": 4.983
+  },
+  "independent_tests": {
+    "passed": 16,
+    "seconds": 5.564,
+    "separate_synthetic_tamper_rejections": 8,
+    "not_added_to_full_regression": true
+  },
+  "actual_lineage": {
+    "lineage_status": "OBSERVED_METADATA_MEMBERSHIP",
+    "report_members": 28,
+    "raw_active_members": 28,
+    "candidate_links": 400,
+    "unique_raw_candidates": 28,
+    "ambiguous_scene_members": 28,
+    "output_truncated": false,
+    "exact_row_binding_verified": false,
+    "lineage_output_sha256": "cff1fb4b566cb8d9be4625df253411d3776ae1f0e485854798ac36673aac2a8e"
+  },
+  "protected_references_unchanged": 133,
+  "existing_contracts_unchanged": 24,
+  "documentation": {
+    "markdown": 46,
+    "local_links": 184,
+    "faq": 10,
+    "errors": [],
+    "reference_copies_identical": true,
+    "related_docs": [
+      62,
+      63
+    ],
+    "understanding_agent_complete": true
+  },
+  "runtime_last_observed": {
+    "ui_ports": [
+      5173,
+      5174
+    ],
+    "api_ports": [
+      8000,
+      8001,
+      8002
+    ],
+    "collection_or_training_observed": false,
+    "automation": "geoai-2",
+    "automation_status": "ACTIVE",
+    "interval_minutes": 10,
+    "schedule_distinct_from_execution": true
+  },
+  "next_unit": "PLANNED versioned optional source identity hints using existing assess metadata without extra IO; backward compatible lineage synthetic verification. Existing ambiguity unresolved.",
+  "training_or_deployment_performed": false,
+  "originals_ledger_locks_reservations_splits_models_preserved": true,
+  "atomic_snapshot_guaranteed": false
+}

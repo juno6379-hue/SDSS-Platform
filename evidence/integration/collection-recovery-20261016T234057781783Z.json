@@ -1,0 +1,98 @@
+{
+  "ledger": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json",
+    "exists": true,
+    "sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "bytes": 51204
+  },
+  "run_result": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\run-result.json",
+    "exists": true,
+    "sha256": "0e8dd6ef449e5e7397d02393def95a54cafedc5a58722ec93df56e39dc554a86",
+    "bytes": 613
+  },
+  "execution_lock_present": true,
+  "process_health_verified": false,
+  "pending_batches": [
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "reserved_bytes": 68157440,
+      "charged_bytes_preserved": 68157440,
+      "artifacts": {
+        "config.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\config.json",
+          "exists": true,
+          "sha256": "d9e7bf2e9e18398205653d518d3fe0dcf15b7ab305ca58520d0ba3c3e135abc6",
+          "bytes": 3441
+        },
+        "window-state.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\window-state.json",
+          "exists": true,
+          "sha256": "1b5821692d52a13fd6c3e7e2bc72d2051c38ac7ac2eb5d8fec0d86cec3925700",
+          "bytes": 220
+        },
+        "worker-result.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\worker-result.json",
+          "exists": false
+        },
+        "annual-window-report.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\annual-window-report.json",
+          "exists": false
+        }
+      },
+      "config_matches_ledger": true,
+      "window_state_http_body_bytes": 52151987,
+      "window_state_measured_body_bytes": 18597555,
+      "partial_files": [],
+      "worker_terminal_evidence_present": false,
+      "settlement_authorized": false,
+      "action": "PRESERVE_RESERVATION_RECONCILE_MANUALLY"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "reserved_bytes": 68157440,
+      "charged_bytes_preserved": 68157440,
+      "artifacts": {
+        "config.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\config.json",
+          "exists": true,
+          "sha256": "5619b92481919e29d5b2b557514e8a2439d2b1659f8b575323aebabec63c56a3",
+          "bytes": 3460
+        },
+        "window-state.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\window-state.json",
+          "exists": true,
+          "sha256": "4a46982041d039dfccba4a7acf9df715db489e027e800bab5057d852d098e55f",
+          "bytes": 220
+        },
+        "worker-result.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\worker-result.json",
+          "exists": false
+        },
+        "annual-window-report.json": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\annual-window-report.json",
+          "exists": false
+        }
+      },
+      "config_matches_ledger": true,
+      "window_state_http_body_bytes": 44105728,
+      "window_state_measured_body_bytes": 10551296,
+      "partial_files": [],
+      "worker_terminal_evidence_present": false,
+      "settlement_authorized": false,
+      "action": "PRESERVE_RESERVATION_RECONCILE_MANUALLY"
+    }
+  ],
+  "pending_reserved_bytes": 136314880,
+  "ledger_new_charged_bytes": 1933512405,
+  "remaining_budget_bytes": 2361454891,
+  "ledger_internal_sum_matches": true,
+  "run_result_new_charged_bytes": 1865354965,
+  "run_result_ledger_delta_bytes": 68157440,
+  "rate_limit_active": false,
+  "automatic_resume_allowed": false,
+  "network_requests": 0,
+  "source_files_written": 0,
+  "note": "로컬 파일 크기와 window-state는 완전한 네트워크 계측이나 완료 증거가 아니다. lock 존재만으로 프로세스 상태를 판정하지 않는다.",
+  "snapshot_at": "2026-10-16T23:40:57.781783+00:00"
+}

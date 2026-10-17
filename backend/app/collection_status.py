@@ -135,8 +135,23 @@ def collection_status(data_root):
     rows = list(cells.values())
     blockers = ['충분한 패치 및 지역별 검증·시험 자료 부족', '물리 반사도 보정 검증 필요',
                 '독립 참조가 없으면 WorldCover 일치도만 평가 가능']
-    readiness_path = root / 'first-group/training-readiness.json'
+    readiness_candidates = list((root / 'first-group').glob('readiness-*.json'))
+    readiness_candidates += list((root / 'first-group').glob('training-readiness.json'))
+    readiness_path = max(readiness_candidates, key=lambda p: (p.stat().st_mtime_ns, p.name)) if readiness_candidates else root / 'first-group/training-readiness.json'
     readiness = read_report(readiness_path, errors) if readiness_path.exists() else {}
+    readiness_source = readiness_path.relative_to(root).as_posix() if readiness else None
+    current_path = root / 'first-group-training-esri-v1/annual-window-report.json'
+    current_manifest, current_sha = {}, None
+    if current_path.exists():
+        try:
+            raw = current_path.read_bytes()
+            current_manifest = json.loads(raw.decode('utf-8'))
+            if not isinstance(current_manifest, dict):
+                raise ValueError('보고서 객체가 아님')
+            current_sha = hashlib.sha256(raw).hexdigest()
+        except (OSError, ValueError):
+            errors.append(current_path.name)
+            current_manifest = {}
     ready = False
     integrity_status = 'not_checked'
     evidence_matched = False
@@ -147,11 +162,20 @@ def collection_status(data_root):
                                    same_hash(path, entry.get('sha256')) for entry in evidence)
         except OSError:
             evidence_matched = False
+    # 과거 입력이 아직 남아 있더라도 현재 합산 manifest를 검사한 근거가 없으면 최신 검증으로 보지 않는다.
+    manifest_matches_current = not current_path.exists()
+    if current_sha:
+        manifest_matches_current = any(local_file(entry.get('path'), root) == current_path and
+            entry.get('sha256') == current_sha for entry in readiness.get('input_manifests', []))
+    evidence_matched = evidence_matched and manifest_matches_current
+    freshness = 'current' if evidence_matched else ('stale_or_missing' if readiness else 'missing')
+    if readiness:
+        integrity_status = 'matched' if evidence_matched else 'stale_or_missing'
     if readiness.get('schema_version') == 1 and readiness.get('status') == 'ready_for_weak_label_experiment' and readiness.get('ready_for_training') is True:
         ready = evidence_matched
         integrity_status = 'matched' if ready else 'stale_or_missing'
     splits = readiness.get('patch_counts_by_split') or {}
-    counts_by_split = readiness.get('class_counts_by_split') or {}
+    counts_by_split = (readiness.get('class_counts_by_split') or {}) if evidence_matched else {}
     class_counts = {str(index): sum(values[index] for values in counts_by_split.values()
                     if isinstance(values, list) and len(values) == 9) for index in range(9)}
     total_pixels = sum(class_counts.values())
@@ -160,8 +184,21 @@ def collection_status(data_root):
         'class_names': (readiness.get('input_signature') or {}).get('class_names'),
         'label_source': (readiness.get('input_signature') or {}).get('label_source'),
         'class_ratios': {key: value / total_pixels if total_pixels else None for key, value in class_counts.items()},
-        'source_report': 'first-group/training-readiness.json' if readiness else None,
+        'source_report': readiness_source, 'freshness': freshness,
         'scope_note': '실험에 선택한 원본 창에서 품질 조건을 통과한 완전 256픽셀 패치 수. 격자 후보 계획 수나 혼합 RGB 재고 수가 아님.'}
+    if current_sha:
+        manifest_rows = current_manifest.get('scenes', [])
+        eligible = [row for row in manifest_rows if row.get('quality_status') == 'quality_eligible']
+        manifest_splits = {split: sum(row.get('split') == split for row in eligible) for split in ('train', 'val', 'test')}
+        # 재고 개수는 현재 manifest에서 계산하고 readiness의 과거 개수를 가져오지 않는다.
+        counts_match_inventory = splits == manifest_splits
+        if not counts_match_inventory:
+            patch_inventory.update(by_class={}, class_ratios={})
+        patch_inventory.update(total=len(eligible), physical_total=len(manifest_rows), by_split=manifest_splits,
+            verified=evidence_matched and counts_match_inventory, manifest_sha256=current_sha,
+            source_report=current_path.relative_to(root).as_posix(), freshness='current_manifest',
+            count_basis='manifest_quality_status', readiness_source_report=readiness_source,
+            scope_note='현재 합산 manifest의 품질 적격 패치 재고. 파일 무결성·학습 승인 여부는 별도 최신 readiness로 판정한다.')
     return {'schema_version': 1, 'recorded_at': datetime.now(timezone.utc).isoformat(),
         'provinces': [{'id': key, 'name': name} for key, name in PROVINCES], 'years': YEARS, 'cells': rows,
         'summary': {'expected_cells': 36, 'available_image_cells': sum(row['image_available'] for row in rows),
@@ -169,6 +206,9 @@ def collection_status(data_root):
             'quality_eligible_cells': sum(row['quality_eligible'] is True for row in rows),
             'learning_ready': ready, 'readiness_basis': '학습 전 검사 및 입력 해시 일치' if ready else '정식 데이터셋 구축·학습 gate 통과 기록 없음 또는 입력 변경'},
         'training_readiness': {'status': readiness.get('status', 'unknown'), 'integrity_status': integrity_status,
+            'source_report': readiness_source, 'freshness': freshness,
+            'manifest_matches_current': manifest_matches_current, 'evidence_matched': evidence_matched,
+            'current_manifest_sha256': current_sha,
             'ready_for_training': ready, 'blockers': readiness.get('blockers', []),
             'patch_counts_by_split': readiness.get('patch_counts_by_split'),
             'input_signature': readiness.get('input_signature'),

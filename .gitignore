@@ -3,8 +3,12 @@
 __pycache__/
 *.pyc
 .env
-data/
-tmp/
+.env.*
+!.env.example
+/data/
+/tmp/
+/evidence/tmp*/
+*.tsbuildinfo
 frontend/node_modules/
 frontend/dist/
 *.sqlite3

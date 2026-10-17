@@ -1,0 +1,75 @@
+{
+  "recorded_at": "2026-10-17T14:52:21.777815+09:00",
+  "unit": "NO_TRAINING_REAL_READINESS_CONNECTIVITY_CAPTURE",
+  "evidence_state": "VERIFIED_REAL_CURRENT_RUN_ONLY",
+  "production_code_changed": false,
+  "actual_cli_run_count": 1,
+  "actual_cli_exit_code": 0,
+  "actual_elapsed_seconds": 70.437,
+  "peak_observed_tree_rss_bytes": 214724608,
+  "rss_sampling_not_hard_memory_cap": true,
+  "new_report_path": "data/first-group/readiness-connectivity-20261017.json",
+  "new_report_sha256": "95f7622ac72ef6a3d43aafc35a3607a4e9f39ed2912ac01280a07cc62c854e35",
+  "new_report_bytes": 11132483,
+  "metadata_validation_checks_passed": 20,
+  "independent_json_graph_verification": {
+    "bbox_pairs": 957036,
+    "token_occurrences": 2768,
+    "total_events": 15019,
+    "stored_prefix_exact_matches": 10000,
+    "omitted_events": 5019,
+    "cross_split_token_events": 1,
+    "cross_split_bbox_events": 0
+  },
+  "scene_count": 1384,
+  "zero_patch_scenes": 273,
+  "patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "shared_token_members": {
+    "banten": {
+      "scenes": 16,
+      "patches": 16,
+      "zero_patch_scenes": 0
+    },
+    "west_java": {
+      "scenes": 12,
+      "patches": 9,
+      "zero_patch_scenes": 3
+    }
+  },
+  "blocker_count": 5,
+  "ready_for_training": false,
+  "training_executed": false,
+  "download_executed": false,
+  "historical_cause_reconstructed": false,
+  "raw_manifest_row_index_binding_verified": false,
+  "scene_deletion_or_counterfactual_gate_change_applied": false,
+  "new_unittest_runs": 0,
+  "full_regression_rerun": false,
+  "previous_full_regression_log": "evidence/integration/readiness-connectivity-cli-full-tests-20261017.log",
+  "documentation_validation": {
+    "markdown_files": 45,
+    "local_links_checked": 180,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "overall_project_complete": false,
+  "next_unit": "Pinned manifest/current report metadata lineage trace for original rows and whole shared product; retain ambiguity, no assess/pixels/gate change",
+  "runtime_listeners": {
+    "5173": 30944,
+    "5174": 15608,
+    "8000": 32224,
+    "8001": 26912,
+    "8002": 35032
+  },
+  "qa_process_finished": true,
+  "collection_training_process_observed": false,
+  "schedule_status": "ACTIVE",
+  "schedule_interval_minutes": 10
+}

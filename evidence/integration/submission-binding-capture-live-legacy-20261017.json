@@ -1,0 +1,53 @@
+{
+  "recorded_at": "2026-10-17T09:08:29.931975+00:00",
+  "scope": "LIVE_EXISTING_LEGACY_GET_COMPATIBILITY_NEW_CAPTURE_ONLY_TESTED_IN_TEMPSTORE",
+  "api": "http://127.0.0.1:8002",
+  "stored_jobs_checked": 2,
+  "observations": [
+    {
+      "stored_job_ordinal": 1,
+      "record_body_sha256": "8ab072778a2e00cd1399534ad5a4a4657c6d34e9c238015a3a89aa8f15d92a51",
+      "capture_absent_before_and_after": true,
+      "requests": [
+        {
+          "kind": "status",
+          "status_code": 200,
+          "body_sha256": "a6d5e62ab167668dcb231c2867800ff37ef26b30234f774c3978e8034e430c9e",
+          "unchanged_status_or_legacy_unavailable": true
+        },
+        {
+          "kind": "input-snapshot",
+          "status_code": 200,
+          "body_sha256": "c625385243e39bc4ddb3a522f3ba1691c18a1e9cdeaf72a062541983d9a095cf",
+          "unchanged_status_or_legacy_unavailable": true
+        }
+      ]
+    },
+    {
+      "stored_job_ordinal": 2,
+      "record_body_sha256": "e940f2e2e7e6b49a7d42d4d7b6daba32fbfa6b4ade92a904853be3ba875aa847",
+      "capture_absent_before_and_after": true,
+      "requests": [
+        {
+          "kind": "status",
+          "status_code": 200,
+          "body_sha256": "a228ded6644c2243077d841e8ce41517454d821f5c87a65682b7dab694dc4249",
+          "unchanged_status_or_legacy_unavailable": true
+        },
+        {
+          "kind": "input-snapshot",
+          "status_code": 200,
+          "body_sha256": "b500fa94af4df1107d11aec22c8ddf429d6506b9451936be68c568573adb8b20",
+          "unchanged_status_or_legacy_unavailable": true
+        }
+      ]
+    }
+  ],
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_and_existing_job_bodies_unchanged": true,
+  "legacy_capture_backfilled": false,
+  "live_job_post_requests": 0,
+  "actual_executor_calls": 0,
+  "new_qa_or_training_executed": false
+}

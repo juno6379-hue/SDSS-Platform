@@ -1,0 +1,57 @@
+{
+  "recorded_at": "2026-10-17T16:22:20.935238+09:00",
+  "status": "VERIFIED_REAL_FIXED_JSON_METADATA_ONLY",
+  "protected_references_checked": 134,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 26,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_frontend_changes": [
+    "backend/app/ml/split_planning.py",
+    "backend/app/ml/split_validation.py"
+  ],
+  "authorized_existing_code_changes": [
+    "backend/app/ml/split_planning.py",
+    "backend/app/ml/split_validation.py"
+  ],
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "fixed_inputs_checked": 3,
+  "fixed_inputs_unchanged": true,
+  "full_regression": {
+    "tests_run": 691,
+    "passed": 690,
+    "skipped": 1,
+    "seconds": 298.655,
+    "exit_code": 0,
+    "log": "evidence/integration/split-bounded-io-full-tests-20261017.log"
+  },
+  "related": {
+    "passed": 45,
+    "new": 20,
+    "existing": 25,
+    "seconds": 15.56
+  },
+  "independent": {
+    "new_passed": 20,
+    "new_seconds": 5.243,
+    "existing_passed": 25,
+    "existing_seconds": 11.972
+  },
+  "live_result": {
+    "exists": true,
+    "sha256": "f17695093b5be51cfaa34326a6673e7b0711c158a8d127738cc0da6ec834f36a",
+    "bytes": 3929
+  },
+  "live_seconds": 48.609,
+  "whole_typed_result_matches_historical_validator_excluding_cli_caller_policy": true,
+  "candidate_validation_status": "NOT_REQUESTED",
+  "candidate_created": false,
+  "source_rows_excluded_or_reassigned": false,
+  "registry_written": false,
+  "training_executed": false,
+  "full_planner_recomputation": "PERFORMED_METADATA_ONLY",
+  "per_read_byte_cap_not_cumulative_io_or_process_memory_cap": true,
+  "atomic_snapshot_guaranteed": false,
+  "full_workspace_inventory": false
+}

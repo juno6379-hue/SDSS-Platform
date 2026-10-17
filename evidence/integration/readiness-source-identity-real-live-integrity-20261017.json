@@ -1,0 +1,54 @@
+{
+  "recorded_at": "2026-10-17T15:33:54.208723+09:00",
+  "protected_reference_count": 133,
+  "protected_reference_changes": [],
+  "unchanged_contract_count": 25,
+  "existing_contract_sha_changes": [],
+  "previously_tracked_code_data_test_changes": [],
+  "pinned_manifest_unchanged": true,
+  "both_previous_reports_preserved": true,
+  "policy_file_unchanged": true,
+  "new_actual_report": {
+    "exists": true,
+    "sha256": "6bc86c9883716565946cff1700780db98aea005bca2e8da2c225520501dda642",
+    "bytes": 11858020
+  },
+  "new_lineage_output": {
+    "exists": true,
+    "sha256": "4f6f62356f568d5d8de482a66f5cd492079b3230de98b01021656fb1b65091bb",
+    "bytes": 88245
+  },
+  "verified_file_records_exactly_preserved": true,
+  "verified_file_records": 4335,
+  "saved_blockers_exactly_preserved": true,
+  "saved_blocker_count": 5,
+  "saved_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "actual_assess_performed_source_image_label_read_and_hash": true,
+  "optional_adapter_additional_source_io": false,
+  "identity_scene_count": 1384,
+  "identity_complete_declared_scene_count": 1384,
+  "query_broad_candidate_links": 400,
+  "query_refined_candidate_links": 28,
+  "query_unique_raw_candidates": 28,
+  "query_single_declared_matches": 28,
+  "query_zero_patch_members": 3,
+  "query_eligible_patch_sum": 25,
+  "source_authenticity_or_exact_row_binding_verified": false,
+  "training_executed": false,
+  "download_executed": false,
+  "new_full_regression_rerun": false,
+  "previous_full_regression": {
+    "unit": 65,
+    "tests_run": 638,
+    "passed": 637,
+    "skipped": 1,
+    "seconds": 190.384,
+    "exit_code": 0
+  },
+  "atomic_snapshot_guaranteed": false,
+  "full_workspace_inventory_guaranteed": false
+}

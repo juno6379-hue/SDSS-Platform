@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-10-17T19:34:39.174961+09:00",
+  "scope": "READ_ONLY_OPERATING_CATALOG_INVENTORY_NOT_POSITIVE_WORKFLOW_HANDOFF_VERIFICATION",
+  "catalog_records": 14,
+  "record_kinds": {
+    "analyses": 3,
+    "datasets": 6,
+    "gmais_idempotency": 2,
+    "gmais_jobs": 2,
+    "models": 1
+  },
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged_since_start": true,
+  "stored_workflow_records_observed": 0,
+  "live_job_records_observed": 2,
+  "live_workflow_to_job_handoff_executed": false,
+  "evidence_class_for_new_handoff": "TESTED_SYNTHETIC",
+  "database_constructor_called": false,
+  "new_job_posts": 0,
+  "qa_or_training_started": false,
+  "direct_ui_change": false,
+  "ui_impact_review": "web_ui read-only review: pure core has no public API/UI binding; existing plan screen explicitly disables automatic Job execution; 84/85 preserved."
+}

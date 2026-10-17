@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-10-17T20:32:24.019119+09:00",
+  "status": "PLANNED",
+  "reviewer": "catalog_navigation_review",
+  "scope": "read-only candidate selection; implementation/tests/operating API execution zero",
+  "candidate": "shared pure Agent/capability registration relation contract extraction",
+  "evidence": {
+    "source": "backend/app/gmais_api.py",
+    "submit_lines": [
+      219,
+      222
+    ],
+    "workflow_lines": [
+      316,
+      320
+    ],
+    "current_full_job_limit": "Workflow and Job metadata string equality only; agent_capability_verified remains false"
+  },
+  "recommended_scope": [
+    "Extract current relation lookup into pure function reused by Job submission and Workflow plan",
+    "Preserve existing error code/message/status and Store-access ordering; compare whole existing responses using isolated fixtures",
+    "No standalone diagnostic wrapper; no silent new axes or changes to 89/90/91 public result",
+    "Any later fullJob axis/UI integration must be a separate documented/tested unit"
+  ],
+  "not_authorized_by_match": [
+    "READY state",
+    "external institution registration",
+    "ACL",
+    "model approval",
+    "science",
+    "executor"
+  ],
+  "new_policy_added": false
+}

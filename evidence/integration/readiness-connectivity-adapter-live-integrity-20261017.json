@@ -1,0 +1,40 @@
+{
+  "recorded_at": "2026-10-17T14:26:27.436915+09:00",
+  "protected_reference_count": 132,
+  "protected_reference_changes": [],
+  "unchanged_diagnostic_contract_count": 21,
+  "existing_diagnostic_contract_sha_changes": [],
+  "previously_tracked_code_data_contract_changes": [
+    "backend/app/ml/readiness.py"
+  ],
+  "intended_existing_code_changes_only": true,
+  "current_readiness_raw_sha256": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc",
+  "previous_readiness_raw_sha256": "42945e3d864a0e63dab4d3100355bcd3506eecf2ada8bc654d573521ea1fdff2",
+  "current_readiness_normalized_text_sha256": "2f70b1f3757186e24a24e3275dc36a6d6592e5c0560291af80eb4441a3b6d366",
+  "original_assess_ast_preserved_except_optional_entry_exit": true,
+  "all_other_module_ast_and_default_policy_unchanged": true,
+  "saved_readiness_sha_unchanged": true,
+  "saved_blockers_exactly_preserved": true,
+  "saved_blocker_count": 5,
+  "saved_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "saved_union_scene_count": "UNKNOWN_NOT_PERSISTED",
+  "historical_cause_branch": "UNKNOWN_NOT_PERSISTED",
+  "saved_connectivity_diagnostics_present": false,
+  "source_rasters_read_in_this_unit": false,
+  "readiness_assess_rerun_on_real_data": false,
+  "historical_saved_reports_regenerated": false,
+  "full_regression": {
+    "tests_run": 589,
+    "passed": 588,
+    "skipped": 1,
+    "seconds": 164.51,
+    "exit_code": 0
+  },
+  "new_adapter_sha256": "dd084f4577f74e6117a40ef8c6d84d17a92ff7e50b404c7e777eb16ed1fd8400",
+  "new_tests_sha256": "15de8f44650efb4475089038d1e2d9929c5565832cea7ecb26c77d4503668a80",
+  "atomic_snapshot_guaranteed": false
+}

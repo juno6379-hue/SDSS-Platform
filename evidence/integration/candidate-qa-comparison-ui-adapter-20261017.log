@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: 수동 요청은4고정 SHA만 허용하고 bool·누락·latest·추가필드·대문자를 거부한다
+ok 1 - 수동 요청은4고정 SHA만 허용하고 bool·누락·latest·추가필드·대문자를 거부한다
+  ---
+  duration_ms: 4.0478
+  type: 'test'
+  ...
+# Subtest: 1111→1095와split628/233/250→628/217/250 및차단5→4·나지부족을분리한다
+ok 2 - 1111→1095와split628/233/250→628/217/250 및차단5→4·나지부족을분리한다
+  ---
+  duration_ms: 1.7863
+  type: 'test'
+  ...
+# Subtest: 요청4핀중하나라도다르거나 응답pins가누락·추가되면폐기한다
+ok 3 - 요청4핀중하나라도다르거나 응답pins가누락·추가되면폐기한다
+  ---
+  duration_ms: 0.5592
+  type: 'test'
+  ...
+# Subtest: 10개의승인·실행false는true·bool유사값·누락을허용하지않는다
+ok 4 - 10개의승인·실행false는true·bool유사값·누락을허용하지않는다
+  ---
+  duration_ms: 1.3382
+  type: 'test'
+  ...
+# Subtest: 알수없는scope/schema/status·원문detail/path같은추가필드는폐기한다
+ok 5 - 알수없는scope/schema/status·원문detail/path같은추가필드는폐기한다
+  ---
+  duration_ms: 0.4069
+  type: 'test'
+  ...
+# Subtest: 분할별typedint·3000상한·합계·10000차단상한을검사한다
+ok 6 - 분할별typedint·3000상한·합계·10000차단상한을검사한다
+  ---
+  duration_ms: 0.5074
+  type: 'test'
+  ...
+# Subtest: 중복코드빈도3을보존하고정렬·유일코드·빈도합·문자열길이를검사한다
+ok 7 - 중복코드빈도3을보존하고정렬·유일코드·빈도합·문자열길이를검사한다
+  ---
+  duration_ms: 0.7971
+  type: 'test'
+  ...
+# Subtest: 출처공유미관측은독립성승인이아니며관측boolean과빈도를대조한다
+ok 8 - 출처공유미관측은독립성승인이아니며관측boolean과빈도를대조한다
+  ---
+  duration_ms: 0.4389
+  type: 'test'
+  ...
+# Subtest: 원본physicalnull·stage선언·새QA캡처를섞지않고미캡처는null로유지한다
+ok 9 - 원본physicalnull·stage선언·새QA캡처를섞지않고미캡처는null로유지한다
+  ---
+  duration_ms: 2.3882
+  type: 'test'
+  ...
+# Subtest: 나지7·정수픽셀·패치·바닥·부족관측계약을검사하며미해소false를유지한다
+ok 10 - 나지7·정수픽셀·패치·바닥·부족관측계약을검사하며미해소false를유지한다
+  ---
+  duration_ms: 1.2665
+  type: 'test'
+  ...
+# Subtest: 입력·메뉴·재조회·표시중단이후늦은성공·오류를무효화한다
+ok 11 - 입력·메뉴·재조회·표시중단이후늦은성공·오류를무효화한다
+  ---
+  duration_ms: 0.5251
+  type: 'test'
+  ...
+# Subtest: HTTP오류를구분하고원문보고서·경로·상세를투영하지않는다
+ok 12 - HTTP오류를구분하고원문보고서·경로·상세를투영하지않는다
+  ---
+  duration_ms: 0.5447
+  type: 'test'
+  ...
+# Subtest: AgentCenter의두진단카드는같은선택에서도독립React key를갖고선택변경시재마운트한다
+ok 13 - AgentCenter의두진단카드는같은선택에서도독립React key를갖고선택변경시재마운트한다
+  ---
+  duration_ms: 1.9829
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 460.2888

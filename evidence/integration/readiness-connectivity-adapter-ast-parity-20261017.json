@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-10-17T14:21:57.617483+09:00",
+  "before_readiness_sha256": "42945e3d864a0e63dab4d3100355bcd3506eecf2ada8bc654d573521ea1fdff2",
+  "after_readiness_sha256": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc",
+  "original_assess_ast_equal_after_removing_optional_entry_exit": true,
+  "all_other_module_ast_unchanged": true,
+  "default_policy_ast_unchanged": true,
+  "normalization_description": [
+    "Remove exactly the new connectivity_diagnostics=False keyword",
+    "Remove exactly the first exact-bool guard",
+    "Restore original terminal return dict from report assignment and remove optional capture block plus return report"
+  ],
+  "real_data_assess_rerun": false,
+  "historical_saved_report_regenerated": false,
+  "scope": "Static AST equality beyond explicitly added optional entry/exit, not scientific or historical code attestation",
+  "after_normalized_text_sha256": "2f70b1f3757186e24a24e3275dc36a6d6592e5c0560291af80eb4441a3b6d366",
+  "after_readiness_bytes": 32867,
+  "after_readiness_crlf_line_count": 428,
+  "hash_scope": "before/after_readiness_sha256 are raw file bytes; AST parser uses normalized text; normalized text SHA separately labeled",
+  "record_correction": "Initial after SHA used normalized text; corrected to raw bytes without changing source, tests or AST result"
+}

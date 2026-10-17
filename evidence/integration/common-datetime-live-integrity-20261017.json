@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-17T20:37:07.069569+09:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 57,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [
+    "backend/app/gmais_api.py",
+    "backend/app/workflow_job_request_handoff.py"
+  ],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "live_new_job_posts": 0,
+  "capture_backfills": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 937,
+    "passed": 936,
+    "skipped": 1,
+    "seconds": 345.696,
+    "exit_code": 0,
+    "log": "evidence/integration/common-datetime-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "related": {
+    "passed": 67,
+    "seconds": 6.19,
+    "log": "evidence/integration/common-datetime-related-20261017.log"
+  },
+  "independent": {
+    "passed": 40,
+    "seconds": 2.972,
+    "log": "evidence/integration/common-datetime-independent-20261017.log"
+  },
+  "new_function_evidence_class": "TESTED_SYNTHETIC",
+  "direct_ui_change": false,
+  "direct_ui_change_reason": "Existing submit INVALID_REQUEST 400 and full Job draft schema INVALID 200 BLOCKED remain unchanged; UI agent read-only contract review completed. No frontend change or new browser test.",
+  "live_job_submission_tested": false
+}

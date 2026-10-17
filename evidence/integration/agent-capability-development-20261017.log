@@ -1,0 +1,18 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_existing_membership_types_and_malformed_manifest_exceptions (test_agent_capability_contract.AgentCapabilityContractTests.test_existing_membership_types_and_malformed_manifest_exceptions) ... ok
+test_external_registered_agent_retains_not_implemented_blocked_submit (test_agent_capability_contract.AgentCapabilityContractTests.test_external_registered_agent_retains_not_implemented_blocked_submit) ... ok
+test_missing_agent_submit_409_before_store (test_agent_capability_contract.AgentCapabilityContractTests.test_missing_agent_submit_409_before_store) ... ok
+test_normal_blocked_submit_and_replay_keep_all_responses_records_and_access_order (test_agent_capability_contract.AgentCapabilityContractTests.test_normal_blocked_submit_and_replay_keep_all_responses_records_and_access_order) ... ok
+test_pure_registration_only_and_input_immutable (test_agent_capability_contract.AgentCapabilityContractTests.test_pure_registration_only_and_input_immutable) ... ok
+test_ready_manifest_does_not_start_submit_or_workflow_execution (test_agent_capability_contract.AgentCapabilityContractTests.test_ready_manifest_does_not_start_submit_or_workflow_execution) ... ok
+test_schema_rejection_still_precedes_registration (test_agent_capability_contract.AgentCapabilityContractTests.test_schema_rejection_still_precedes_registration) ... ok
+test_submit_keeps_first_matching_manifest_with_duplicate_ids (test_agent_capability_contract.AgentCapabilityContractTests.test_submit_keeps_first_matching_manifest_with_duplicate_ids) ... ok
+test_workflow_keeps_last_matching_manifest_with_duplicate_ids (test_agent_capability_contract.AgentCapabilityContractTests.test_workflow_keeps_last_matching_manifest_with_duplicate_ids) ... ok
+test_workflow_unknown_wrong_capability_and_readiness_keep_full_response (test_agent_capability_contract.AgentCapabilityContractTests.test_workflow_unknown_wrong_capability_and_readiness_keep_full_response) ... ok
+test_wrong_capability_submit_400_before_store (test_agent_capability_contract.AgentCapabilityContractTests.test_wrong_capability_submit_400_before_store) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 4.813s
+
+OK

@@ -1,0 +1,40 @@
+--- readiness-before.py
++++ readiness-after.py
+@@ -100,7 +100,9 @@
+             raise ValueError(f"gate 검증 후 파일이 변경됐습니다: {record['path']}")
+ 
+ 
+-def assess(manifests, root, policy=None, *, test_mode=False):
++def assess(manifests, root, policy=None, *, test_mode=False, connectivity_diagnostics=False):
++    if type(connectivity_diagnostics) is not bool:
++        raise ValueError('connectivity_diagnostics must be an exact bool')
+     supplied_policy=policy or {}
+     root=root.resolve();policy={**default_policy(),**supplied_policy}
+     if not test_mode:
+@@ -339,7 +341,7 @@
+              'patch_size':256,'seed':policy['seed'],'group_splits':assignments,'min_valid_fraction':policy['min_valid_fraction'],
+              'require_full_patches':True,'synthetic':bool(test_mode),'reference_kind':f'{label_source}_weak_label_agreement',
+              'class_names':class_names,'readiness_contract':contract}
+-    return {'schema_version':1,'synthetic':bool(test_mode),'status':'ready_for_weak_label_experiment' if ready else 'blocked','ready_for_training':ready,
++    report={'schema_version':1,'synthetic':bool(test_mode),'status':'ready_for_weak_label_experiment' if ready else 'blocked','ready_for_training':ready,
+             'scientific_accuracy_validated':False,'evaluation_kind':'weak_label_agreement','blockers':blockers,
+             'input_manifests':inputs,'verified_files':verified_files,'policy':policy,
+             'coverage':{'expected_cells':len(expected),'available_cells':len(coverage),'missing':[{'province':p,'year':y} for p,y in missing]},
+@@ -351,6 +353,17 @@
+             'input_signature':{'band_names':bands,'band_indices':list(range(1,len(bands)+1)),'patch_size':256,'normalization_mode':'per_scene_product_metadata',
+                                'label_source':label_source,'class_names':class_names},
+             'prepared_payload':payload if ready else None}
++    if connectivity_diagnostics:
++        try:
++            from copy import deepcopy
++            from .readiness_connectivity_adapter import capture_readiness_connectivity
++            diagnostic_inputs=deepcopy((scenes,policy,report['province_groups'],inputs))
++            report['connectivity_diagnostics']=capture_readiness_connectivity(*diagnostic_inputs)
++        except Exception as exc:
++            report['connectivity_diagnostics']={'schema_version':1,'status':'BLOCKED','capture_status':'FAILED_ADAPTER_BOUNDARY',
++                'error_type':type(exc).__name__,'gate_result_modified':False,'ready_for_training':False,'scientific_accuracy_validated':False,
++                'settlement_authorized':False,'execution_authorized':False,'automatic_resume_allowed':False,'proposed_refund_bytes':0}
++    return report
+ 
+ 
+ def prepared_statistics(manifest, manifest_path, root):

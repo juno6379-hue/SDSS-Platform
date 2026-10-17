@@ -1,0 +1,72 @@
+{
+  "recorded_at": "2026-10-17T21:04:11.254199+09:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_CORE_CATALOG_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 62,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [
+    "backend/app/workflow_job_request_handoff_api.py",
+    "frontend/src/FullJobHandoff.tsx",
+    "frontend/src/full-job-handoff.css"
+  ],
+  "only_authorized_existing_code_changes": true,
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "existing_gmais_job_bodies_unchanged": true,
+  "live_new_job_posts": 0,
+  "capture_backfills": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 966,
+    "passed": 965,
+    "skipped": 1,
+    "seconds": 350.995,
+    "exit_code": 0,
+    "log": "evidence/integration/full-job-registration-api-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked": true,
+  "related": {
+    "passed": 69,
+    "seconds": 8.515,
+    "log": "evidence/integration/full-job-registration-api-related-20261017.log"
+  },
+  "independent": {
+    "passed": 18,
+    "seconds": 1.433,
+    "log": "evidence/integration/full-job-registration-api-independent-20261017.log"
+  },
+  "previous_evidence_files_checked": 576,
+  "previous_evidence_file_changes": [],
+  "new_function_evidence_class": "TESTED_SYNTHETIC",
+  "new_qa_or_training_executed_scope": "No new operating project QA or formal training; synthetic fixture tests remain included in full regression",
+  "synthetic_fixture_tests_in_full_regression": true,
+  "direct_ui_change": true,
+  "direct_ui_change_reason": "Explicit opt-in RFC2 within existing manual fullJob panel; v1 default remains. API/UI tests and actual browser evidence recorded separately.",
+  "live_job_submission_tested": false,
+  "live_api_evidence": "evidence/integration/full-job-registration-api-live-api-20261017.json",
+  "live_ui_evidence": "evidence/integration/full-job-registration-api-live-ui-20261017.json",
+  "frontend": {
+    "related_adapters": {
+      "passed": 24,
+      "log": "evidence/integration/full-job-registration-ui-related-20261017.log"
+    },
+    "all_tests": {
+      "passed": 137,
+      "log": "evidence/integration/full-job-registration-ui-tests-20261017.log"
+    },
+    "independent": {
+      "passed": 24,
+      "log": "evidence/integration/full-job-registration-ui-independent-20261017.log"
+    },
+    "production_build": {
+      "modules": 88,
+      "seconds": 19.48,
+      "log": "evidence/integration/full-job-registration-ui-build-20261017.log",
+      "existing_chunk_size_warning": true
+    }
+  }
+}

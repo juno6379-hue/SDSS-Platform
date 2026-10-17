@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-10-17T08:42:25.141266+00:00",
+  "scope": "TRACKED_PROTECTED_INPUTS_AND_CORE_CONTRACTS_NOT_FULL_WORKSPACE_OR_ATOMIC_SNAPSHOT",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "existing_contracts_checked": 34,
+  "existing_contract_changes": [],
+  "previous_tracked_code_data_test_frontend_changes": [],
+  "catalog_records": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "candidate_qa_report_unchanged": true,
+  "new_qa_or_training_executed": false,
+  "related": {
+    "passed": 14,
+    "seconds": 5.019
+  },
+  "independent": {
+    "passed": 14,
+    "seconds": 5.679
+  },
+  "live_validation": "evidence/integration/bare-class-requirements-live-validation-20261017.json",
+  "full_regression_status": "COMPLETED",
+  "full_regression": {
+    "tests_run": 775,
+    "passed": 774,
+    "skipped": 1,
+    "seconds": 332.522,
+    "exit_code": 0,
+    "log": "evidence/integration/bare-class-requirements-full-tests-20261017.log"
+  },
+  "post_full_preservation_rechecked_at": "2026-10-17T08:42:50.320202+00:00",
+  "post_full_preservation_rechecked": true
+}

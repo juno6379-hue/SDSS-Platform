@@ -1,0 +1,72 @@
+{
+  "observed_at": "2026-10-17T22:11:52.805646+09:00",
+  "scope": "VERIFIED_REAL_READ_ONLY_STORED_METADATA_NOT_BYTES_OR_AUTHORITY",
+  "requests": [
+    {
+      "origin": "http://127.0.0.1:8002",
+      "case": "existing",
+      "status": 200,
+      "response": {
+        "schema_version": 1,
+        "scope": "LOCAL_MODEL_REGISTRATION_METADATA_OBSERVATION_ONLY",
+        "status": "ABSENT",
+        "declaration_present": false,
+        "bindings": {
+          "checkpoint_sha256": "NOT_CHECKED",
+          "training_report_sha256": "NOT_CHECKED",
+          "model_version": "NOT_CHECKED"
+        },
+        "issue": null,
+        "authority_verified": false,
+        "artifact_bytes_verified": false,
+        "execution_authorized": false,
+        "scientific_accuracy_validated": false
+      }
+    },
+    {
+      "origin": "http://127.0.0.1:8002",
+      "case": "missing",
+      "status": 404,
+      "response": {
+        "detail": "항목이 없습니다."
+      }
+    },
+    {
+      "origin": "http://127.0.0.1:5174",
+      "case": "existing",
+      "status": 200,
+      "response": {
+        "schema_version": 1,
+        "scope": "LOCAL_MODEL_REGISTRATION_METADATA_OBSERVATION_ONLY",
+        "status": "ABSENT",
+        "declaration_present": false,
+        "bindings": {
+          "checkpoint_sha256": "NOT_CHECKED",
+          "training_report_sha256": "NOT_CHECKED",
+          "model_version": "NOT_CHECKED"
+        },
+        "issue": null,
+        "authority_verified": false,
+        "artifact_bytes_verified": false,
+        "execution_authorized": false,
+        "scientific_accuracy_validated": false
+      }
+    },
+    {
+      "origin": "http://127.0.0.1:5174",
+      "case": "missing",
+      "status": 404,
+      "response": {
+        "detail": "항목이 없습니다."
+      }
+    }
+  ],
+  "catalog_records": 14,
+  "catalog_sha256_before": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_sha256_after": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "successful_operating_registrations": 0,
+  "job_posts": 0,
+  "operating_503_or_auth_failure_injection": false,
+  "limits": "503, auth401 and non-ABSENT observation states tested in isolated synthetic API tests only; operating Store/data not fault-injected."
+}

@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-17T22:04:45.740513+09:00",
+  "status": "COMPLETED_PURE_METADATA_OBSERVATION_NOT_AUTHORITY_OR_PROJECT_COMPLETION",
+  "documentation_validation": {
+    "checked_at": "2026-10-17T22:04:45.740513+09:00",
+    "markdown_files": 75,
+    "local_links": 309,
+    "evidence_references": 6428,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "tests": {
+    "focused": {
+      "passed": 12,
+      "seconds": 0.302,
+      "log": "evidence/integration/model-provenance-focused-20261017.log"
+    },
+    "related": {
+      "passed": 47,
+      "seconds": 13.447,
+      "log": "evidence/integration/model-provenance-related-20261017.log"
+    },
+    "independent": {
+      "passed": 12,
+      "seconds": 0.185,
+      "log": "evidence/integration/model-provenance-independent-20261017.log"
+    }
+  },
+  "full_regression_rerun_in_latest_unit": false,
+  "previous_full_regression": {
+    "tests_run": 998,
+    "passed": 997,
+    "skipped": 1,
+    "seconds": 366.134,
+    "log": "evidence/integration/model-version-api-full-tests-corrected-20261017.log"
+  },
+  "protected_references_checked": 141,
+  "existing_contracts_checked": 70,
+  "catalog_records": 14,
+  "understanding_updated": true,
+  "direct_ui_change": false,
+  "next_unit": "PLANNED_READ_ONLY_MODEL_PROVENANCE_API_CONTRACT_REVIEW",
+  "snapshot_files": 1074
+}

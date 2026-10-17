@@ -1,0 +1,83 @@
+{
+  "recorded_at": "2026-10-17T15:36:21.676854+09:00",
+  "unit": 66,
+  "status": "BOUNDED_UNIT_COMPLETE_PROJECT_CONTINUES",
+  "scope": "REAL_CURRENT_DECLARATION_CAPTURE_AND_CONSUMER_METADATA_OBSERVATION",
+  "new_actual_report": {
+    "exists": true,
+    "sha256": "6bc86c9883716565946cff1700780db98aea005bca2e8da2c225520501dda642",
+    "bytes": 11858020
+  },
+  "new_lineage_output": {
+    "exists": true,
+    "sha256": "4f6f62356f568d5d8de482a66f5cd492079b3230de98b01021656fb1b65091bb",
+    "bytes": 88245
+  },
+  "execution": {
+    "exit_code": 0,
+    "elapsed_seconds": 85.641,
+    "peak_observed_tree_rss_bytes": 214609920,
+    "rss_samples": 165,
+    "monitor_stop_reason": null,
+    "timeout_seconds": 600,
+    "sampled_rss_budget_bytes": 2147483648,
+    "rss_sampling_not_hard_memory_cap": true
+  },
+  "metadata_checks_passed": 16,
+  "independent_scope": "Three pinned JSON only; all1384 declared identity pairs and query28 broad400/refined28 with zero3/patch25 independently calculated without production helpers.",
+  "protected_references_unchanged": 133,
+  "existing_contracts_unchanged": 25,
+  "previous_tracked_code_data_test_changes": [],
+  "new_unittests": 0,
+  "new_full_regression_rerun": false,
+  "prior_full_regression": {
+    "unit": 65,
+    "tests_run": 638,
+    "passed": 637,
+    "skipped": 1,
+    "seconds": 190.384,
+    "exit_code": 0
+  },
+  "actual_assess_source_read_hash": true,
+  "optional_adapter_additional_source_io": false,
+  "query_broad_links": 400,
+  "query_refined_links": 28,
+  "query_unique_declared_candidates": 28,
+  "source_authenticity_or_exact_row_binding_verified": false,
+  "saved_blockers": 5,
+  "patch_counts": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "documentation": {
+    "markdown": 49,
+    "local_links": 196,
+    "evidence_references": 2645,
+    "faq": 10,
+    "errors": [],
+    "understanding_agent_complete": true,
+    "reference_copies_identical": true
+  },
+  "runtime_observed_at": "2026-10-17T15:35:47+09:00",
+  "runtime": {
+    "ui_ports": [
+      5173,
+      5174
+    ],
+    "api_ports": [
+      8000,
+      8001,
+      8002
+    ],
+    "collector_or_trainer_observed": false,
+    "command_filter": "python with collect_training|collect_samples|run_experiment",
+    "qa_process_finished": true,
+    "automation_status": "ACTIVE",
+    "interval_minutes": 10,
+    "schedule_distinct_from_execution": true
+  },
+  "next_unit": "PLANNED minimal read-only diagnostics API projection and explicit UI query contract; hand off fixed pins/status/errors/minimal disclosure to web_ui. No auto raster assessment or source-path exposure.",
+  "originals_ledger_locks_reservations_splits_models_preserved": true,
+  "atomic_snapshot_guaranteed": false
+}

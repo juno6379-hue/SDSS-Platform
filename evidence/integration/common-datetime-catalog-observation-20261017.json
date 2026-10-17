@@ -1,0 +1,32 @@
+{
+  "recorded_at": "2026-10-17T20:31:45.414403+09:00",
+  "scope": "existing catalog records read-only snapshot, no operating API submission",
+  "records": 14,
+  "by_kind": {
+    "analyses": 3,
+    "datasets": 6,
+    "gmais_idempotency": 2,
+    "gmais_jobs": 2,
+    "models": 1
+  },
+  "canonical_records_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "existing_jobs": [
+    {
+      "id": "job-00893a5fc1014e4db9eea3d8a7fa238f",
+      "body_sha256": "8ab072778a2e00cd1399534ad5a4a4657c6d34e9c238015a3a89aa8f15d92a51",
+      "bytes": 1229,
+      "status": "BLOCKED",
+      "input_capture_present": false
+    },
+    {
+      "id": "job-4c21cb611db54fffb798879453d2ffc6",
+      "body_sha256": "e940f2e2e7e6b49a7d42d4d7b6daba32fbfa6b4ade92a904853be3ba875aa847",
+      "bytes": 1421,
+      "status": "BLOCKED",
+      "input_capture_present": false
+    }
+  ],
+  "new_operating_jobs": 0,
+  "stored_workflows": 0,
+  "source_authentication_or_training_approval": false
+}

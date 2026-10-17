@@ -1,0 +1,68 @@
+{
+  "recorded_at": "2026-10-17T21:11:11.436370+09:00",
+  "status": "TESTED_SYNTHETIC",
+  "scope": "fresh source process common _validate_job vs pinned pre96 module; no full operating route/Store/app.main or submission",
+  "cases": [
+    {
+      "label": "fixed",
+      "old_common_validator_accepted": true,
+      "new_common_validator_accepted": true,
+      "expected_valid": true
+    },
+    {
+      "label": "padded_fixed",
+      "old_common_validator_accepted": true,
+      "new_common_validator_accepted": true,
+      "expected_valid": true
+    },
+    {
+      "label": "boundary256",
+      "old_common_validator_accepted": true,
+      "new_common_validator_accepted": true,
+      "expected_valid": true
+    },
+    {
+      "label": "floating_latest",
+      "old_common_validator_accepted": true,
+      "new_common_validator_accepted": false,
+      "expected_valid": false
+    },
+    {
+      "label": "floating_padded_current",
+      "old_common_validator_accepted": true,
+      "new_common_validator_accepted": false,
+      "expected_valid": false
+    },
+    {
+      "label": "whitespace",
+      "old_common_validator_accepted": true,
+      "new_common_validator_accepted": false,
+      "expected_valid": false
+    },
+    {
+      "label": "control",
+      "old_common_validator_accepted": true,
+      "new_common_validator_accepted": false,
+      "expected_valid": false
+    },
+    {
+      "label": "surrogate",
+      "old_common_validator_accepted": true,
+      "new_common_validator_accepted": false,
+      "expected_valid": false
+    },
+    {
+      "label": "length257",
+      "old_common_validator_accepted": true,
+      "new_common_validator_accepted": false,
+      "expected_valid": false
+    }
+  ],
+  "source_job_immutable": true,
+  "store_calls": 0,
+  "operating_job_posts": 0,
+  "registry_or_checkpoint_reads": 0,
+  "actual_model_version_binding": "BLOCKED_NO_AUTHORITATIVE_MODEL_VERSION_FIELD",
+  "warning": "Old common validator acceptance is not evidence that every old full route would successfully store or run such a request; no operating route exercised",
+  "live_server_common_submit_behavior": "UNVERIFIED"
+}

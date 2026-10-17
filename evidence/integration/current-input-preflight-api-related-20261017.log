@@ -1,0 +1,20 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_baseexception_not_swallowed_in_endpoint (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_baseexception_not_swallowed_in_endpoint) ... ok
+test_cancelled_request_keeps_gate_until_actual_worker_finishes (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_cancelled_request_keeps_gate_until_actual_worker_finishes) ... ok
+test_current_resolver_resource_maps_503 (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_current_resolver_resource_maps_503) ... ok
+test_legacy_unknown_and_old_get_payload_unchanged (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_legacy_unknown_and_old_get_payload_unchanged) ... ok
+test_literal_invalid_400_get_zero_and_auth_inherited (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_literal_invalid_400_get_zero_and_auth_inherited) ... ok
+test_malformed_safe_response_rejected_before_serialization (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_malformed_safe_response_rejected_before_serialization) ... ok
+test_missing_and_resource_errors_safe_no_store (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_missing_and_resource_errors_safe_no_store) ... ok
+test_openapi_getonly_error_contract (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_openapi_getonly_error_contract) ... ok
+test_positive_match_exact_schema_and_current_io (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_positive_match_exact_schema_and_current_io) ... ok
+test_quality_blocked_and_pin_match_remains_200_blocked (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_quality_blocked_and_pin_match_remains_200_blocked) ... ok
+test_quality_integrity_and_same_pass_capture_count_coherence (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_quality_integrity_and_same_pass_capture_count_coherence) ... ok
+test_status_count_null_and_unknown_or_nested_code_contradictions (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_status_count_null_and_unknown_or_nested_code_contradictions) ... ok
+test_worker_thread_and_single_busy_gate (test_stored_current_binding_preflight_api.CurrentInputPreflightApiTests.test_worker_thread_and_single_busy_gate) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 3.779s
+
+OK

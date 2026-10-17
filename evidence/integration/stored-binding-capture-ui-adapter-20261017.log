@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: Job ID는명시ASCII subset만허용하고빈값·공백·경로·추정trim을거부한다
+ok 1 - Job ID는명시ASCII subset만허용하고빈값·공백·경로·추정trim을거부한다
+  ---
+  duration_ms: 4.9212
+  type: 'test'
+  ...
+# Subtest: Job 원문UTF8SHA는독립node해시와일치하고공백·대소문자를정규화하지않는다
+ok 2 - Job 원문UTF8SHA는독립node해시와일치하고공백·대소문자를정규화하지않는다
+  ---
+  duration_ms: 32.3864
+  type: 'test'
+  ...
+# Subtest: RECORDED는저장연결계수·집계만투영하고현재파일/승인/개별핀을추가하지않는다
+ok 3 - RECORDED는저장연결계수·집계만투영하고현재파일/승인/개별핀을추가하지않는다
+  ---
+  duration_ms: 3.0478
+  type: 'test'
+  ...
+# Subtest: LEGACY는request수와미기록null을분리하고0건/무결성일치로바꾸지않는다
+ok 4 - LEGACY는request수와미기록null을분리하고0건/무결성일치로바꾸지않는다
+  ---
+  duration_ms: 1.2327
+  type: 'test'
+  ...
+# Subtest: UNAVAILABLE의6원인은별도상태이고행미기록만입력범위index를허용한다
+ok 5 - UNAVAILABLE의6원인은별도상태이고행미기록만입력범위index를허용한다
+  ---
+  duration_ms: 1.8793
+  type: 'test'
+  ...
+# Subtest: INVALID는Job오염requestnull과capture오염request수를구별한다
+ok 6 - INVALID는Job오염requestnull과capture오염request수를구별한다
+  ---
+  duration_ms: 0.7475
+  type: 'test'
+  ...
+# Subtest: 모든상태의요청JobSHA가달라지거나null이면이전/다른Job결과를거부한다
+ok 7 - 모든상태의요청JobSHA가달라지거나null이면이전/다른Job결과를거부한다
+  ---
+  duration_ms: 1.2161
+  type: 'test'
+  ...
+# Subtest: 12승인과현재파일/실행자대조2개는정확false만허용한다
+ok 8 - 12승인과현재파일/실행자대조2개는정확false만허용한다
+  ---
+  duration_ms: 2.4489
+  type: 'test'
+  ...
+# Subtest: RECORDED typedcount1..64/동일3계수/해시/빈issues/무결성true를검사한다
+ok 9 - RECORDED typedcount1..64/동일3계수/해시/빈issues/무결성true를검사한다
+  ---
+  duration_ms: 2.2584
+  type: 'test'
+  ...
+# Subtest: 나머지3상태는capture/핀/hashnull·무결성false·정확1원인만허용한다
+ok 10 - 나머지3상태는capture/핀/hashnull·무결성false·정확1원인만허용한다
+  ---
+  duration_ms: 2.847
+  type: 'test'
+  ...
+# Subtest: 잘못된schema/status/scope·형제API키·원본id/path/URI같은추가정보를거부한다
+ok 11 - 잘못된schema/status/scope·형제API키·원본id/path/URI같은추가정보를거부한다
+  ---
+  duration_ms: 1.2006
+  type: 'test'
+  ...
+# Subtest: 입력/메뉴/재조회/표시중단후늦은성공과오류는무효이고현재요청만반영한다
+ok 12 - 입력/메뉴/재조회/표시중단후늦은성공과오류는무효이고현재요청만반영한다
+  ---
+  duration_ms: 1.0111
+  type: 'test'
+  ...
+# Subtest: 3개의형제진단카드key를분리하고모든선택context변경시새key를사용한다
+ok 13 - 3개의형제진단카드key를분리하고모든선택context변경시새key를사용한다
+  ---
+  duration_ms: 5.0213
+  type: 'test'
+  ...
+# Subtest: 404/503/401/403과연결실패는안전한별도안내를사용하고원문error를전달하지않는다
+ok 14 - 404/503/401/403과연결실패는안전한별도안내를사용하고원문error를전달하지않는다
+  ---
+  duration_ms: 0.7662
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 544.6393

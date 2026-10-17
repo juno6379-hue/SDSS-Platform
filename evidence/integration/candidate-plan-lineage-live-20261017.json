@@ -1,0 +1,608 @@
+{
+  "schema_version": 1,
+  "kind": "CANDIDATE_PLAN_DECLARED_LINEAGE_REFERENCE",
+  "status": "PLAN_ONLY",
+  "readiness_status": "BLOCKED",
+  "references": {
+    "plan": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\ml-split-repair-plan-20261017.json",
+      "sha256": "ccdc704ead412d7aee069fb4f61f30a2baf9c9944458b858efcc28ba4197dfbf"
+    },
+    "source": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+      "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f"
+    },
+    "old_readiness": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group\\readiness-resume-20261017.json",
+      "sha256": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db"
+    },
+    "new_report": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group\\readiness-source-identity-20261017.json",
+      "sha256": "6bc86c9883716565946cff1700780db98aea005bca2e8da2c225520501dda642"
+    },
+    "lineage": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\readiness-source-identity-real-lineage-20261017.json",
+      "sha256": "4f6f62356f568d5d8de482a66f5cd492079b3230de98b01021656fb1b65091bb"
+    }
+  },
+  "token": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+  "scope": "SAVED_PLAN_SELECTED_METADATA_AND_CURRENT_DECLARED_LINEAGE_ONLY",
+  "pin_validation": "FIVE_INPUT_BYTE_SHA256_VERIFIED_WITH_STABILITY_RECHECK",
+  "full_planner_recomputation": "NOT_PERFORMED",
+  "full_witness_replay": "NOT_PERFORMED",
+  "derived_manifest_version": "split-repair-v1-754e7a5a0569eb9b",
+  "fixed_province_splits": {
+    "south_sulawesi": "train",
+    "gorontalo": "train",
+    "southeast_sulawesi": "train",
+    "east_java": "train",
+    "banten": "val",
+    "west_java": "test"
+  },
+  "keep_split_priority": [
+    "test",
+    "val",
+    "train"
+  ],
+  "priority_scope": "SAVED_POLICY_DECLARATION_NOT_RECOMPUTED",
+  "source_row_count": 1384,
+  "retained_source_row_count": 1368,
+  "excluded_source_row_count": 16,
+  "before": {
+    "eligible_patches_by_split": {
+      "train": 628,
+      "val": 233,
+      "test": 250
+    },
+    "eligible_total": 1111,
+    "eligible_by_province_year": {
+      "banten/2020": 53,
+      "banten/2021": 58,
+      "banten/2022": 51,
+      "banten/2023": 32,
+      "banten/2024": 23,
+      "banten/2025": 16,
+      "east_java/2020": 23,
+      "east_java/2021": 16,
+      "east_java/2022": 34,
+      "east_java/2023": 28,
+      "east_java/2024": 16,
+      "east_java/2025": 14,
+      "gorontalo/2020": 46,
+      "gorontalo/2021": 31,
+      "gorontalo/2022": 14,
+      "gorontalo/2023": 30,
+      "gorontalo/2024": 25,
+      "gorontalo/2025": 8,
+      "south_sulawesi/2020": 53,
+      "south_sulawesi/2021": 32,
+      "south_sulawesi/2022": 29,
+      "south_sulawesi/2023": 36,
+      "south_sulawesi/2024": 36,
+      "south_sulawesi/2025": 30,
+      "southeast_sulawesi/2020": 41,
+      "southeast_sulawesi/2021": 18,
+      "southeast_sulawesi/2022": 26,
+      "southeast_sulawesi/2023": 18,
+      "southeast_sulawesi/2024": 1,
+      "southeast_sulawesi/2025": 23,
+      "west_java/2020": 57,
+      "west_java/2021": 41,
+      "west_java/2022": 56,
+      "west_java/2023": 32,
+      "west_java/2024": 32,
+      "west_java/2025": 32
+    }
+  },
+  "projected_after": {
+    "eligible_patches_by_split": {
+      "train": 628,
+      "val": 217,
+      "test": 250
+    },
+    "eligible_total": 1095,
+    "eligible_by_province_year": {
+      "banten/2020": 53,
+      "banten/2021": 42,
+      "banten/2022": 51,
+      "banten/2023": 32,
+      "banten/2024": 23,
+      "banten/2025": 16,
+      "east_java/2020": 23,
+      "east_java/2021": 16,
+      "east_java/2022": 34,
+      "east_java/2023": 28,
+      "east_java/2024": 16,
+      "east_java/2025": 14,
+      "gorontalo/2020": 46,
+      "gorontalo/2021": 31,
+      "gorontalo/2022": 14,
+      "gorontalo/2023": 30,
+      "gorontalo/2024": 25,
+      "gorontalo/2025": 8,
+      "south_sulawesi/2020": 53,
+      "south_sulawesi/2021": 32,
+      "south_sulawesi/2022": 29,
+      "south_sulawesi/2023": 36,
+      "south_sulawesi/2024": 36,
+      "south_sulawesi/2025": 30,
+      "southeast_sulawesi/2020": 41,
+      "southeast_sulawesi/2021": 18,
+      "southeast_sulawesi/2022": 26,
+      "southeast_sulawesi/2023": 18,
+      "southeast_sulawesi/2024": 1,
+      "southeast_sulawesi/2025": 23,
+      "west_java/2020": 57,
+      "west_java/2021": 41,
+      "west_java/2022": 56,
+      "west_java/2023": 32,
+      "west_java/2024": 32,
+      "west_java/2025": 32
+    }
+  },
+  "saved_blocker_count": 5,
+  "saved_blockers": [
+    {
+      "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+      "detail": "같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.",
+      "scene": "west_java"
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 픽셀",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "class_impact": {
+    "status": "CONSERVATIVE_BOUNDS_ONLY",
+    "exact_after_counts_computed": false,
+    "bare_shortage_resolved": false,
+    "independent_scientific_validation": false,
+    "by_split": {
+      "test": {
+        "removed_eligible_patches": 0,
+        "class_pixel_lower_bounds": [
+          126922,
+          6243038,
+          1528013,
+          12967,
+          1942451,
+          0,
+          6398524,
+          1025,
+          0
+        ],
+        "class_pixel_upper_bounds": [
+          126922,
+          6243038,
+          1528013,
+          12967,
+          1942451,
+          0,
+          6398524,
+          1025,
+          0
+        ],
+        "class_patch_upper_bounds": [
+          38,
+          193,
+          174,
+          7,
+          124,
+          0,
+          184,
+          0,
+          0
+        ],
+        "bare_ratio_upper_bound": 7.82012939453125e-05,
+        "bare_patch_upper_bound": 0,
+        "class_representation_can_worsen": false
+      },
+      "val": {
+        "removed_eligible_patches": 16,
+        "class_pixel_lower_bounds": [
+          0,
+          5090901,
+          0,
+          0,
+          1444515,
+          0,
+          5099929,
+          0,
+          0
+        ],
+        "class_pixel_upper_bounds": [
+          107739,
+          6139477,
+          147793,
+          741,
+          2493091,
+          0,
+          6148505,
+          209,
+          0
+        ],
+        "class_patch_upper_bounds": [
+          79,
+          199,
+          107,
+          1,
+          184,
+          0,
+          208,
+          0,
+          0
+        ],
+        "bare_ratio_upper_bound": 1.8370316325244812e-05,
+        "bare_patch_upper_bound": 0,
+        "class_representation_can_worsen": true
+      },
+      "train": {
+        "removed_eligible_patches": 0,
+        "class_pixel_lower_bounds": [
+          3284571,
+          23384879,
+          3847244,
+          218,
+          7043179,
+          0,
+          2587604,
+          1418,
+          0
+        ],
+        "class_pixel_upper_bounds": [
+          3284571,
+          23384879,
+          3847244,
+          218,
+          7043179,
+          0,
+          2587604,
+          1418,
+          0
+        ],
+        "class_patch_upper_bounds": [
+          138,
+          520,
+          285,
+          0,
+          268,
+          0,
+          285,
+          0,
+          0
+        ],
+        "bare_ratio_upper_bound": 4.306720320586186e-05,
+        "bare_patch_upper_bound": 0,
+        "class_representation_can_worsen": false
+      }
+    }
+  },
+  "current_query": {
+    "report_member_count": 28,
+    "zero_patch_member_count": 3,
+    "eligible_patch_sum": 25,
+    "broad_candidate_link_count": 400,
+    "unique_declared_raw_candidate_count": 28,
+    "excluded_declared_raw_candidate_count": 16,
+    "retained_declared_raw_candidate_count": 12,
+    "member_plan_links": [
+      {
+        "internal_scene_index": 288,
+        "raw_manifest_candidate_row_index": 288,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 289,
+        "raw_manifest_candidate_row_index": 289,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 290,
+        "raw_manifest_candidate_row_index": 290,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 291,
+        "raw_manifest_candidate_row_index": 291,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 292,
+        "raw_manifest_candidate_row_index": 292,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 293,
+        "raw_manifest_candidate_row_index": 293,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 294,
+        "raw_manifest_candidate_row_index": 294,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 295,
+        "raw_manifest_candidate_row_index": 295,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 296,
+        "raw_manifest_candidate_row_index": 296,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 297,
+        "raw_manifest_candidate_row_index": 297,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 298,
+        "raw_manifest_candidate_row_index": 298,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 299,
+        "raw_manifest_candidate_row_index": 299,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 300,
+        "raw_manifest_candidate_row_index": 300,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 301,
+        "raw_manifest_candidate_row_index": 301,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 302,
+        "raw_manifest_candidate_row_index": 302,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 303,
+        "raw_manifest_candidate_row_index": 303,
+        "eligible_patches": 1,
+        "province": "banten",
+        "fixed_split": "val",
+        "planned_membership": "EXCLUDED_FROM_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1096,
+        "raw_manifest_candidate_row_index": 1096,
+        "eligible_patches": 0,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1097,
+        "raw_manifest_candidate_row_index": 1097,
+        "eligible_patches": 1,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1098,
+        "raw_manifest_candidate_row_index": 1098,
+        "eligible_patches": 1,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1099,
+        "raw_manifest_candidate_row_index": 1099,
+        "eligible_patches": 1,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1100,
+        "raw_manifest_candidate_row_index": 1100,
+        "eligible_patches": 0,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1101,
+        "raw_manifest_candidate_row_index": 1101,
+        "eligible_patches": 1,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1102,
+        "raw_manifest_candidate_row_index": 1102,
+        "eligible_patches": 1,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1103,
+        "raw_manifest_candidate_row_index": 1103,
+        "eligible_patches": 1,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1104,
+        "raw_manifest_candidate_row_index": 1104,
+        "eligible_patches": 0,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1105,
+        "raw_manifest_candidate_row_index": 1105,
+        "eligible_patches": 1,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1106,
+        "raw_manifest_candidate_row_index": 1106,
+        "eligible_patches": 1,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      },
+      {
+        "internal_scene_index": 1107,
+        "raw_manifest_candidate_row_index": 1107,
+        "eligible_patches": 1,
+        "province": "west_java",
+        "fixed_split": "test",
+        "planned_membership": "RETAINED_IN_NEW_CANDIDATE_ONLY",
+        "binding": "UNIQUE_DECLARED_METADATA_CANDIDATE",
+        "exact_row_binding_verified": false
+      }
+    ]
+  },
+  "candidate_manifest_created": false,
+  "source_rows_excluded_or_reassigned": false,
+  "registry_called": false,
+  "source_files_read_or_hashed": false,
+  "assess_called": false,
+  "connectivity_helper_called": false,
+  "spatial_overlap_rechecked": false,
+  "exact_class_counts_recomputed": false,
+  "class_shortage_resolved": false,
+  "training_split_leakage_resolved": false,
+  "exact_row_binding_verified": false,
+  "source_authenticity_verified": false,
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "execution_authorized": false,
+  "settlement_authorized": false,
+  "automatic_resume_allowed": false,
+  "proposed_refund_bytes": 0,
+  "exactly_once_applied": "UNKNOWN",
+  "source_files_written": 0,
+  "network_requests": 0
+}

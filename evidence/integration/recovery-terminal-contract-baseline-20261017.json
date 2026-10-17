@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-10-17T02:38:54.348529+00:00",
+  "unchanged_contract_baseline": {
+    "backend/app/data/recovery.py": "49f81b866d7f80ea835438a4ef2bce7fc31b91d1b58d2a8273b45c7a9f24eeba",
+    "backend/app/data/budget.py": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+    "scripts/collect_training_parallel.py": "9fc5923dfe752ea2a5f07f00761c8d5b60f72f21896ef134c4415e07664653e7",
+    "scripts/collect_samples.py": "418a0237d80c77fe0f70ca52feef1144192e9ac8916696888a7ee9b5b34946e6",
+    "evidence/integration/collection-recovery-plans/collection-recovery-8c3a33bff71ffbaad911ca44bc1ff5a9e831c257a8c3b7eaef5299b1770ef5b5.json": "65ad73576a83aee43af56b3e8dcc9579153b6ac6260fc029f040fd747610fee8"
+  },
+  "purpose": "Prove the companion inspector does not change the existing planner, collector, budget writer or saved recovery plan."
+}

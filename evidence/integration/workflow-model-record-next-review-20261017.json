@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-10-17T22:38:42.640596+09:00",
+  "status": "PLANNED_CONTRACT_REVIEW_ONLY",
+  "candidate": "Separate read-only Workflow model-record observation API and later manual UI",
+  "constraints": [
+    "Keep existing RFC1/RFC2 route requests/results unchanged",
+    "Bound and strictly parse Workflow/full Job/provided record JSON; preserve raw decimal handling and caller pin semantics",
+    "Use104 once and validate response independently without calling producer twice",
+    "Provided record remains caller metadata; no Registry lookup, auto-selection, model resolver or authority claims",
+    "Omitted provided record and explicit valid JSON null mean not provided, not Registry missing; define request transport null policy before implementation",
+    "Use existing auth and safe fixed request/resource errors without leaking paths or input values",
+    "Manual UI only, response coherence and stale model/route/back/unmount protections before integration"
+  ],
+  "implementation_changes": 0,
+  "new_endpoint_added": false,
+  "ui_added": false,
+  "operating_workflow_or_job_posts": 0,
+  "model_resolver_connected": false
+}

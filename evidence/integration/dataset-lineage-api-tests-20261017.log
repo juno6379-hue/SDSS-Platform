@@ -1,0 +1,18 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_actual_main_app_inherits_token_dependency_and_preserves_legacy_namespace (test_dataset_lineage_api.DatasetLineageApiTests.test_actual_main_app_inherits_token_dependency_and_preserves_legacy_namespace) ... ok
+test_core_structured_registry_failure_stays_a_sanitized_blocked_diagnostic (test_dataset_lineage_api.DatasetLineageApiTests.test_core_structured_registry_failure_stays_a_sanitized_blocked_diagnostic) ... ok
+test_cycles_conflicting_hashes_and_missing_parent_keep_core_blockers (test_dataset_lineage_api.DatasetLineageApiTests.test_cycles_conflicting_hashes_and_missing_parent_keep_core_blockers) ... ok
+test_depth_and_node_limits_are_forwarded_and_enforced (test_dataset_lineage_api.DatasetLineageApiTests.test_depth_and_node_limits_are_forwarded_and_enforced) ... ok
+test_invalid_body_is_400_before_registry_or_hash_work (test_dataset_lineage_api.DatasetLineageApiTests.test_invalid_body_is_400_before_registry_or_hash_work) ... ok
+test_missing_wrong_hash_and_dynamic_versions_return_blocked_diagnostics (test_dataset_lineage_api.DatasetLineageApiTests.test_missing_wrong_hash_and_dynamic_versions_return_blocked_diagnostics) ... ok
+test_projection_removes_nested_sensitive_extensions (test_dataset_lineage_api.DatasetLineageApiTests.test_projection_removes_nested_sensitive_extensions) ... ok
+test_public_transitive_and_distinct_fixed_versions_are_current_checks (test_dataset_lineage_api.DatasetLineageApiTests.test_public_transitive_and_distinct_fixed_versions_are_current_checks) ... ok
+test_restricted_root_and_parent_never_disclose_or_resolve_private_ancestors (test_dataset_lineage_api.DatasetLineageApiTests.test_restricted_root_and_parent_never_disclose_or_resolve_private_ancestors) ... ok
+test_runtime_errors_and_inconsistent_core_results_fail_closed_without_details (test_dataset_lineage_api.DatasetLineageApiTests.test_runtime_errors_and_inconsistent_core_results_fail_closed_without_details) ... ok
+test_same_request_rechecks_asset_changes_instead_of_replaying_success (test_dataset_lineage_api.DatasetLineageApiTests.test_same_request_rechecks_asset_changes_instead_of_replaying_success) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 3.668s
+
+OK

@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-17T11:36:24.672755+09:00",
+  "protected_files_after_tests": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "data/first-group/readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "contracts/upstream/GMAIS-v0.2/api/openapi.yaml": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44",
+    "evidence/integration/ml-split-repair-plan-20261017.json": "ccdc704ead412d7aee069fb4f61f30a2baf9c9944458b858efcc28ba4197dfbf"
+  },
+  "protected_files_unchanged": true,
+  "documentation_validation": {
+    "checked_at": "2026-10-17T11:36:24.672755+09:00",
+    "markdown_files_including_template": 27,
+    "local_links_checked": 110,
+    "faq_questions": 10,
+    "missing_metadata_or_links": [],
+    "reference_role_copy_identical": true,
+    "reference_template_copy_identical": true
+  },
+  "full_regression": {
+    "log": "evidence/integration/ml-split-validation-full-tests-20261017.log",
+    "tests_run": 338,
+    "passed": 337,
+    "skipped": 1,
+    "seconds": 113.601,
+    "exit_code": 0,
+    "skip_reason": "OS symlink creation permission; deterministic boundary test passed"
+  },
+  "actual_cli_exit_code": 0,
+  "actual_candidate_specified": false,
+  "new_real_collection_or_training_executed": false
+}

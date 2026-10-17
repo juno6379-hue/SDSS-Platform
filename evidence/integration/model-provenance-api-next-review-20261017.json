@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-10-17T22:17:31.936445+09:00",
+  "status": "PLANNED_CONTRACT_REVIEW_ONLY",
+  "candidate": "Separate read-only Workflow full Job model_ref versus stored-model metadata observation",
+  "observed_sources": [
+    "backend/app/workflow_job_request_handoff.py",
+    "backend/app/workflow_job_request_handoff_api.py",
+    "backend/app/model_registration_provenance.py",
+    "backend/app/main.py"
+  ],
+  "observed_gap": "Current full Job draft validates model_ref text/schema and retains model_verified=false; new standalone model observation endpoint does not connect Workflow model_ref.",
+  "constraints": [
+    "Do not change existing full Job result or false flags without explicit new contract",
+    "No model resolver, approval, execution or automatic model selection",
+    "Never replace model version with dataset_version",
+    "Record consistency remains unauthenticated, including forged copied declarations",
+    "Define absent, missing registry, malformed, conflict and unknown cases before implementation"
+  ],
+  "implementation_changes": 0,
+  "workflow_or_job_posts": 0,
+  "model_resolver_connected": false
+}

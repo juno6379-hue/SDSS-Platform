@@ -1,0 +1,59 @@
+{
+  "recorded_at": "2026-10-17T15:16:29.384827+09:00",
+  "unit": 64,
+  "status": "BOUNDED_UNIT_COMPLETE_PROJECT_CONTINUES",
+  "implementation_scope": "OPTIONAL_VERSIONED_DECLARED_SOURCE_IDENTITY_CAPTURE_ONLY",
+  "integrity_evidence": "evidence/integration/readiness-source-identity-live-integrity-20261017.json",
+  "full_regression": {
+    "tests_run": 630,
+    "passed": 629,
+    "skipped": 1,
+    "seconds": 192.06,
+    "exit_code": 0,
+    "skip_reason": "Existing OS symlink creation permission; deterministic boundary test passed"
+  },
+  "related_tests": {
+    "passed": 23,
+    "seconds": 6.047
+  },
+  "independent_tests": {
+    "passed": 23,
+    "seconds": 5.827
+  },
+  "repeated_related_tests_not_added_to_full": true,
+  "protected_references_unchanged": 133,
+  "unchanged_contracts_excluding_intended_adapter": 24,
+  "adapter_before_sha256": "dd084f4577f74e6117a40ef8c6d84d17a92ff7e50b404c7e777eb16ed1fd8400",
+  "adapter_after_sha256": "42490200e4e46a583bef0853912bf6fb49ec6f57843ee83a0a71494e98fdc3d2",
+  "original_report_identity_absent": true,
+  "actual_assess_or_new_actual_report": false,
+  "existing_28_member_ambiguity_unresolved": true,
+  "documentation": {
+    "markdown": 47,
+    "local_links": 188,
+    "evidence_references": 2462,
+    "faq": 10,
+    "errors": [],
+    "reference_copies_identical": true,
+    "understanding_agent_complete": true
+  },
+  "runtime_observed_at": "2026-10-17T15:15:58+09:00",
+  "runtime": {
+    "ui_ports": [
+      5173,
+      5174
+    ],
+    "api_ports": [
+      8000,
+      8001,
+      8002
+    ],
+    "collector_or_trainer_observed": false,
+    "automation_status": "ACTIVE",
+    "interval_minutes": 10,
+    "schedule_distinct_from_execution": true
+  },
+  "next_unit": "PLANNED optional identity version1 validation and declared path/hash candidate matching in lineage reader; backward compatibility and synthetic tests; no source IO, exact authentication, real assess or old report overwrite.",
+  "originals_ledger_locks_reservations_splits_models_preserved": true,
+  "atomic_snapshot_guaranteed": false
+}

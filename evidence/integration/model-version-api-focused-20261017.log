@@ -1,0 +1,18 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_auth_denies_before_lock_or_register_and_accepts_existing_bearer_policy (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_auth_denies_before_lock_or_register_and_accepts_existing_bearer_policy) ... ok
+test_conflict_and_duplicate_ids_still422_without_new_puts (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_conflict_and_duplicate_ids_still422_without_new_puts) ... ok
+test_existing_exception_tuple_converts422_and_releases_lock (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_existing_exception_tuple_converts422_and_releases_lock) ... ok
+test_explicit_real_registration_exact5_hashes_draft_false_and_files_unchanged (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_explicit_real_registration_exact5_hashes_draft_false_and_files_unchanged) ... ok
+test_ignored_unknown_extras_do_not_expand_registration_kwargs (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_ignored_unknown_extras_do_not_expand_registration_kwargs) ... ok
+test_invalid_explicit_values_existing422_detail_before_any_put (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_invalid_explicit_values_existing422_detail_before_any_put) ... ok
+test_non_object_and_missing_body_keep_fastapi422_before_route (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_non_object_and_missing_body_keep_fastapi422_before_route) ... ok
+test_omitted_real_registration_exact_old_response_records_and_order (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_omitted_real_registration_exact_old_response_records_and_order) ... ok
+test_original_auth_app_and_route_metadata_are_unchanged (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_original_auth_app_and_route_metadata_are_unchanged) ... ok
+test_present_null_raw_version_and_omitted_kwargs_inside_lock (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_present_null_raw_version_and_omitted_kwargs_inside_lock) ... ok
+test_prior_missing_path_and_checkpoint_errors_preserved_before_version (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_prior_missing_path_and_checkpoint_errors_preserved_before_version) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 4.881s
+
+OK

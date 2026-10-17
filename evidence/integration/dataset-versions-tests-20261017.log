@@ -1,0 +1,16 @@
+test_concurrent_identical_registration_has_one_record (test_dataset_registry_versions.DatasetVersionTests.test_concurrent_identical_registration_has_one_record) ... ok
+test_corrupt_stored_manifest_is_rejected_on_resolve (test_dataset_registry_versions.DatasetVersionTests.test_corrupt_stored_manifest_is_rejected_on_resolve) ... ok
+test_distinct_versions_preserve_parent_lineage (test_dataset_registry_versions.DatasetVersionTests.test_distinct_versions_preserve_parent_lineage) ... ok
+test_dynamic_version_and_lineage_are_blocked (test_dataset_registry_versions.DatasetVersionTests.test_dynamic_version_and_lineage_are_blocked) ... ok
+test_existing_version_cannot_be_overwritten (test_dataset_registry_versions.DatasetVersionTests.test_existing_version_cannot_be_overwritten) ... ok
+test_idempotent_registration_does_not_modify_other_catalogs (test_dataset_registry_versions.DatasetVersionTests.test_idempotent_registration_does_not_modify_other_catalogs) ... ok
+test_remote_unc_and_traversal_are_rejected (test_dataset_registry_versions.DatasetVersionTests.test_remote_unc_and_traversal_are_rejected) ... ok
+test_schema_spatial_and_temporal_errors_block_registration (test_dataset_registry_versions.DatasetVersionTests.test_schema_spatial_and_temporal_errors_block_registration) ... ok
+test_valid_manifest_from_other_version_cannot_replace_requested_identity (test_dataset_registry_versions.DatasetVersionTests.test_valid_manifest_from_other_version_cannot_replace_requested_identity) ... ok
+test_validated_quality_needs_report_but_never_grants_approval (test_dataset_registry_versions.DatasetVersionTests.test_validated_quality_needs_report_but_never_grants_approval) ... ok
+test_wrong_hash_or_changed_file_is_blocked (test_dataset_registry_versions.DatasetVersionTests.test_wrong_hash_or_changed_file_is_blocked) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.335s
+
+OK

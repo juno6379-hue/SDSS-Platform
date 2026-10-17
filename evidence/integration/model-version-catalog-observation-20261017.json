@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-10-17T21:21:58.145570+09:00",
+  "scope": "read-only operating catalog metadata observation; no registration/model loading",
+  "records": 14,
+  "by_kind": {
+    "analyses": 3,
+    "datasets": 6,
+    "gmais_idempotency": 2,
+    "gmais_jobs": 2,
+    "models": 1
+  },
+  "canonical_records_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "existing_models": [
+    {
+      "id": "baseline2021_cpu_v1_model",
+      "record_body_sha256": "2f409ed55089904bb3efb722ca705b93ae5d1423992f8825a6a101aedc9c6b01",
+      "status": "Draft",
+      "model_version_present": false,
+      "model_version_declaration_present": false,
+      "dataset_version_present": true,
+      "independent_evaluation": false,
+      "scientific_accuracy_validated": null
+    }
+  ],
+  "new_operating_registrations": 0,
+  "operating_job_posts": 0,
+  "backfills": 0,
+  "dataset_version_used_as_model_version": false,
+  "existing_model_versions": "UNKNOWN unless separately evidenced; raw field presence never authority or inferred registration provenance"
+}

@@ -1,0 +1,50 @@
+{
+  "recorded_at": "2026-10-17T16:51:11.707732+09:00",
+  "status": "BOUNDED_UNIT_COMPLETE_PROJECT_CONTINUES",
+  "unit": 72,
+  "full_regression": {
+    "tests_run": 725,
+    "passed": 724,
+    "skipped": 1,
+    "seconds": 338.008,
+    "exit_code": 0,
+    "log": "evidence/integration/candidate-staging-full-tests-20261017.log"
+  },
+  "preservation_evidence": "evidence/integration/candidate-staging-live-integrity-20261017.json",
+  "actual_validation_evidence": "evidence/integration/candidate-staging-live-validation-20261017.json",
+  "staging_directory": "data/first-group-candidate-qa-stage-20261017",
+  "metadata_staged": true,
+  "candidate_registered": false,
+  "candidate_readiness": "NOT_ASSESSED",
+  "qa_performed": false,
+  "documentation_and_understanding_updated": true,
+  "related_implementation_docs": [
+    71,
+    72
+  ],
+  "documentation_validation": {
+    "checked_at": "2026-10-17T16:51:11.707732+09:00",
+    "markdown_files": 54,
+    "local_links": 220,
+    "evidence_references": 3349,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "new_api_ui_contract": false,
+  "ui_change_reason": "Internal strict receipt validation and metadata-only DATA copy CLI. No public API/UI integration or browser verification.",
+  "next": "PLANNED: pinned staged candidate/receipt/policy plus historical readiness normalized-policy equality, fixed noexecute/noresume existing run diagnostics and fresh QA output. No candidate QA yet.",
+  "scheduler": "geoai-2 ACTIVE FREQ=MINUTELY;INTERVAL=10; not evidence of collection/training",
+  "runtime_pids": {
+    "vite": [
+      30944,
+      15608
+    ],
+    "api": [
+      32224,
+      26912,
+      35032
+    ]
+  },
+  "collectors_trainers_or_staging_processes_observed_after_completion": false
+}

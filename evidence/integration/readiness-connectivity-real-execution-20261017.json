@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-17T14:43:54.334613+09:00",
+  "argv": [
+    "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "E:\\GeoAI–MLOps–SDSS\\scripts\\run_experiment.py",
+    "--manifest",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+    "--data-root",
+    "E:\\GeoAI–MLOps–SDSS\\data",
+    "--readiness-output",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group\\readiness-connectivity-20261017.json",
+    "--plan",
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\readiness-connectivity-real-policy-20261017.json",
+    "--connectivity-diagnostics"
+  ],
+  "pid": 35420,
+  "exit_code": 0,
+  "elapsed_seconds": 70.437,
+  "peak_observed_tree_rss_bytes": 214724608,
+  "rss_samples": 135,
+  "monitor_stop_reason": null,
+  "timeout_seconds": 600,
+  "sampled_rss_budget_bytes": 2147483648,
+  "rss_sampling_not_hard_memory_cap": true,
+  "environment_overrides": {
+    "PYTHONIOENCODING": "cp949",
+    "PROJ_NETWORK": "OFF",
+    "GDAL_PAM_ENABLED": "NO",
+    "GDAL_DISABLE_READDIR_ON_OPEN": "EMPTY_DIR",
+    "GDAL_VRT_ENABLE_PYTHON": "NO"
+  },
+  "execute": false,
+  "resume": false,
+  "training_requested": false,
+  "download_requested": false,
+  "output_path": "data\\first-group\\readiness-connectivity-20261017.json",
+  "output_exists": true,
+  "output_bytes": 11132483,
+  "output_sha256": "95f7622ac72ef6a3d43aafc35a3607a4e9f39ed2912ac01280a07cc62c854e35",
+  "historical_saved_report_overwritten": false
+}

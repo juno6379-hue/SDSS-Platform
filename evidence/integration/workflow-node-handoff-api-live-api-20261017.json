@@ -1,0 +1,360 @@
+{
+  "recorded_at": "2026-10-17T19:49:08.080610+09:00",
+  "scope": "REAL_LOCAL_HTTP_WITH_SYNTHETIC_CALLER_DECLARATIONS_NOT_OPERATING_WORKFLOW_EXECUTION",
+  "new_endpoint_posts": 11,
+  "old_diagnostic_posts_after": 2,
+  "old_diagnostic_posts_before": 2,
+  "cases": [
+    {
+      "case": "synthetic_unicode_match",
+      "status": 200,
+      "cache_control": "no-store",
+      "request_sha256": "77a0aad51dba1568d81b79ef7d8605bae5b1c8d49ed3f388c4d032416c73ed4b",
+      "response": {
+        "extension": "greenblue.workflow-node-input-handoff.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "present_in_upstream_openapi": false,
+        "request_sha256": "77a0aad51dba1568d81b79ef7d8605bae5b1c8d49ed3f388c4d032416c73ed4b",
+        "result": {
+          "schema_version": 1,
+          "scope": "WORKFLOW_NODE_TO_PROPOSED_JOB_INPUT_DECLARATIONS_ONLY",
+          "status": "MATCH",
+          "declarations_match": true,
+          "workflow_request_sha256": "5d4127f653d37c853004ea43efadf61117af1b4f3703875facf3e28d143b281c",
+          "pinned_workflow_request_sha256": "5d4127f653d37c853004ea43efadf61117af1b4f3703875facf3e28d143b281c",
+          "selected_node_sha256": "de0d2469a87b101877962fce78750bb7fed10aba75ada2c64ed9334d3704f6d3",
+          "expected_metadata_sha256": "6271c7c6a000584ddb9ffc0270c4e1a74a8c15fddb0dfdb892d331adaca0b0ea",
+          "proposed_metadata_sha256": "6271c7c6a000584ddb9ffc0270c4e1a74a8c15fddb0dfdb892d331adaca0b0ea",
+          "selected_node_index": 0,
+          "expected_input_count": 1,
+          "proposed_input_count": 1,
+          "issues": [],
+          "network_requests": 0,
+          "source_files_read": 0,
+          "source_files_written": 0,
+          "database_calls": 0,
+          "registry_calls": 0,
+          "resolver_calls": 0,
+          "executor_calls": 0,
+          "execution_authorized": false,
+          "ready_for_execution": false,
+          "ready_for_training": false,
+          "scientific_approval": false,
+          "acl_verified": false,
+          "registry_verified": false,
+          "training_authorized": false,
+          "pixels_verified": false,
+          "toc_tou_protected": false,
+          "executor_connected": false,
+          "artifact_bytes_verified": false,
+          "manifest_bytes_verified": false,
+          "workflow_origin_verified": false,
+          "executor_bindings_compared": false,
+          "transitive_lineage_verified": false,
+          "complete_job_validated": false,
+          "aoi_verified": false,
+          "requested_outputs_verified": false,
+          "predecessor_results_bound": false,
+          "dag_validated": false
+        }
+      }
+    },
+    {
+      "case": "role_presence_drift",
+      "status": 200,
+      "cache_control": "no-store",
+      "request_sha256": "5d7aee906c5f85039ffcf03ffd3387e4c70f54579c2df9df7f79f1b1f2184221",
+      "response": {
+        "extension": "greenblue.workflow-node-input-handoff.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "present_in_upstream_openapi": false,
+        "request_sha256": "5d7aee906c5f85039ffcf03ffd3387e4c70f54579c2df9df7f79f1b1f2184221",
+        "result": {
+          "schema_version": 1,
+          "scope": "WORKFLOW_NODE_TO_PROPOSED_JOB_INPUT_DECLARATIONS_ONLY",
+          "status": "BLOCKED",
+          "declarations_match": false,
+          "workflow_request_sha256": "5d4127f653d37c853004ea43efadf61117af1b4f3703875facf3e28d143b281c",
+          "pinned_workflow_request_sha256": "5d4127f653d37c853004ea43efadf61117af1b4f3703875facf3e28d143b281c",
+          "selected_node_sha256": "de0d2469a87b101877962fce78750bb7fed10aba75ada2c64ed9334d3704f6d3",
+          "expected_metadata_sha256": "6271c7c6a000584ddb9ffc0270c4e1a74a8c15fddb0dfdb892d331adaca0b0ea",
+          "proposed_metadata_sha256": "50230f4faab2f57cf76471031453d7d244b8998482aa4e228ed4fb17f4339a48",
+          "selected_node_index": 0,
+          "expected_input_count": 1,
+          "proposed_input_count": 1,
+          "issues": [
+            {
+              "code": "INPUT_ROLE_MISMATCH",
+              "side": "comparison",
+              "node_index": 0,
+              "input_index": 0
+            }
+          ],
+          "network_requests": 0,
+          "source_files_read": 0,
+          "source_files_written": 0,
+          "database_calls": 0,
+          "registry_calls": 0,
+          "resolver_calls": 0,
+          "executor_calls": 0,
+          "execution_authorized": false,
+          "ready_for_execution": false,
+          "ready_for_training": false,
+          "scientific_approval": false,
+          "acl_verified": false,
+          "registry_verified": false,
+          "training_authorized": false,
+          "pixels_verified": false,
+          "toc_tou_protected": false,
+          "executor_connected": false,
+          "artifact_bytes_verified": false,
+          "manifest_bytes_verified": false,
+          "workflow_origin_verified": false,
+          "executor_bindings_compared": false,
+          "transitive_lineage_verified": false,
+          "complete_job_validated": false,
+          "aoi_verified": false,
+          "requested_outputs_verified": false,
+          "predecessor_results_bound": false,
+          "dag_validated": false
+        }
+      }
+    },
+    {
+      "case": "wrong_caller_pin",
+      "status": 200,
+      "cache_control": "no-store",
+      "request_sha256": "ccb95a2131608ef363b6ccd1ed4d38305688563be443f9d61e256f28bb0871b7",
+      "response": {
+        "extension": "greenblue.workflow-node-input-handoff.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "present_in_upstream_openapi": false,
+        "request_sha256": "ccb95a2131608ef363b6ccd1ed4d38305688563be443f9d61e256f28bb0871b7",
+        "result": {
+          "schema_version": 1,
+          "scope": "WORKFLOW_NODE_TO_PROPOSED_JOB_INPUT_DECLARATIONS_ONLY",
+          "status": "BLOCKED",
+          "declarations_match": false,
+          "workflow_request_sha256": "5d4127f653d37c853004ea43efadf61117af1b4f3703875facf3e28d143b281c",
+          "pinned_workflow_request_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "selected_node_sha256": "de0d2469a87b101877962fce78750bb7fed10aba75ada2c64ed9334d3704f6d3",
+          "expected_metadata_sha256": null,
+          "proposed_metadata_sha256": null,
+          "selected_node_index": null,
+          "expected_input_count": null,
+          "proposed_input_count": null,
+          "issues": [
+            {
+              "code": "WORKFLOW_PIN_MISMATCH",
+              "side": "comparison",
+              "node_index": null,
+              "input_index": null
+            }
+          ],
+          "network_requests": 0,
+          "source_files_read": 0,
+          "source_files_written": 0,
+          "database_calls": 0,
+          "registry_calls": 0,
+          "resolver_calls": 0,
+          "executor_calls": 0,
+          "execution_authorized": false,
+          "ready_for_execution": false,
+          "ready_for_training": false,
+          "scientific_approval": false,
+          "acl_verified": false,
+          "registry_verified": false,
+          "training_authorized": false,
+          "pixels_verified": false,
+          "toc_tou_protected": false,
+          "executor_connected": false,
+          "artifact_bytes_verified": false,
+          "manifest_bytes_verified": false,
+          "workflow_origin_verified": false,
+          "executor_bindings_compared": false,
+          "transitive_lineage_verified": false,
+          "complete_job_validated": false,
+          "aoi_verified": false,
+          "requested_outputs_verified": false,
+          "predecessor_results_bound": false,
+          "dag_validated": false
+        }
+      }
+    },
+    {
+      "case": "selected_empty_not_backfilled",
+      "status": 200,
+      "cache_control": "no-store",
+      "request_sha256": "0dc3bd3c31665965b436f401a174367752a7c2dcd616e63e76eed93ca2d0593b",
+      "response": {
+        "extension": "greenblue.workflow-node-input-handoff.rfc1",
+        "approval_status": "INTERNAL_REVIEW",
+        "present_in_upstream_openapi": false,
+        "request_sha256": "0dc3bd3c31665965b436f401a174367752a7c2dcd616e63e76eed93ca2d0593b",
+        "result": {
+          "schema_version": 1,
+          "scope": "WORKFLOW_NODE_TO_PROPOSED_JOB_INPUT_DECLARATIONS_ONLY",
+          "status": "BLOCKED",
+          "declarations_match": false,
+          "workflow_request_sha256": "c8f4d167ffa8cbfcb8dc8f87075ab40a49e25aefeb5caba2b09756b6fe207968",
+          "pinned_workflow_request_sha256": "c8f4d167ffa8cbfcb8dc8f87075ab40a49e25aefeb5caba2b09756b6fe207968",
+          "selected_node_sha256": "de0d2469a87b101877962fce78750bb7fed10aba75ada2c64ed9334d3704f6d3",
+          "expected_metadata_sha256": null,
+          "proposed_metadata_sha256": null,
+          "selected_node_index": null,
+          "expected_input_count": null,
+          "proposed_input_count": null,
+          "issues": [
+            {
+              "code": "SELECTED_INPUTS_REQUIRED",
+              "side": "workflow",
+              "node_index": 0,
+              "input_index": null
+            }
+          ],
+          "network_requests": 0,
+          "source_files_read": 0,
+          "source_files_written": 0,
+          "database_calls": 0,
+          "registry_calls": 0,
+          "resolver_calls": 0,
+          "executor_calls": 0,
+          "execution_authorized": false,
+          "ready_for_execution": false,
+          "ready_for_training": false,
+          "scientific_approval": false,
+          "acl_verified": false,
+          "registry_verified": false,
+          "training_authorized": false,
+          "pixels_verified": false,
+          "toc_tou_protected": false,
+          "executor_connected": false,
+          "artifact_bytes_verified": false,
+          "manifest_bytes_verified": false,
+          "workflow_origin_verified": false,
+          "executor_bindings_compared": false,
+          "transitive_lineage_verified": false,
+          "complete_job_validated": false,
+          "aoi_verified": false,
+          "requested_outputs_verified": false,
+          "predecessor_results_bound": false,
+          "dag_validated": false
+        }
+      }
+    },
+    {
+      "case": "duplicate_outer",
+      "status": 400,
+      "cache_control": "no-store",
+      "request_sha256": "cfc2dc1e6aaa3e0f3cab928793d8619a512b2c04f1d616b96a916db6f313b416",
+      "response": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Invalid handoff request.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "duplicate_workflow_request_json",
+      "status": 400,
+      "cache_control": "no-store",
+      "request_sha256": "cf0027286b12fe60c333501c2ed1d247b0b95f3f613888ecdeb6c7bcadecba32",
+      "response": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Invalid handoff request.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "duplicate_proposed_job_metadata_json",
+      "status": 400,
+      "cache_control": "no-store",
+      "request_sha256": "efb5bb7588aaa3fddb81955e9f299c26e89a0e879872040871a3d05a90e75afd",
+      "response": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Invalid handoff request.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "nonfinite_inner",
+      "status": 400,
+      "cache_control": "no-store",
+      "request_sha256": "ba212f85927954f8f8e59a857bab506a0efacb3858a6463adbb4bfa7e09763c6",
+      "response": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Invalid handoff request.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "invalid_utf8",
+      "status": 400,
+      "cache_control": "no-store",
+      "request_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "response": {
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Invalid handoff request.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "inner_depth_budget",
+      "status": 413,
+      "cache_control": "no-store",
+      "request_sha256": "e75b7b3563d8d8995dc5d6ad57774a35fd5ae00d1b11f8f6da5aceb94e91976c",
+      "response": {
+        "error": {
+          "code": "REQUEST_TOO_LARGE",
+          "message": "Handoff request exceeds limits.",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "case": "body_byte_budget",
+      "status": 413,
+      "cache_control": "no-store",
+      "request_sha256": "9d78de4e5b12fc166bed811cd230621ea1e1e353553fe31b92a73bfbf45d68ee",
+      "response": {
+        "error": {
+          "code": "REQUEST_TOO_LARGE",
+          "message": "Handoff request exceeds limits.",
+          "retryable": false
+        }
+      }
+    }
+  ],
+  "old_response_comparison": [
+    {
+      "path": "/v1/workflows/plan",
+      "status": 200,
+      "parsed_response_unchanged_except_volatile_timestamps": true
+    },
+    {
+      "path": "/v1/workflows/lineage-validation",
+      "status": 200,
+      "parsed_response_unchanged_except_volatile_timestamps": true
+    }
+  ],
+  "catalog_records": 14,
+  "catalog_canonical_sha256_before": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_canonical_sha256_after": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "new_job_posts": 0,
+  "capture_backfills": 0,
+  "actual_executor_connected": false,
+  "new_qa_or_training_executed": false,
+  "limits": [
+    "HTTP503 corruption/failure and auth use isolated tests; no operating Workflow executor verified."
+  ]
+}

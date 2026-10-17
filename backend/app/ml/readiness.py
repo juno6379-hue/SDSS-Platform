@@ -1,6 +1,7 @@
 """실자료 의사라벨 실험의 충분성·출처·분할 gate. 독립 실정확도 승인이 아니다."""
 import json
 import re
+from urllib.parse import urlsplit
 import numpy as np
 from .dataset import file_digest, split_groups
 from .normalization import channel_values
@@ -19,6 +20,7 @@ def default_policy():
             'max_patches':3000,'min_patches_per_train_province':50,'min_unique_train_locations':32,
             'max_reference_class_dominance':.90,'min_required_class_ratio':.005,
             'min_class_patches_per_split':5,'min_class_pixels_per_patch':256,
+            'min_province_inside_fraction':.95,
             'limited_period_experiment':False,'scope_statement':'2020-2025 six-province full target',
             'province_splits':{'south_sulawesi':'train','gorontalo':'train','southeast_sulawesi':'train','east_java':'train','banten':'val','west_java':'test'}}
 
@@ -41,6 +43,18 @@ def reference_labels(labels, valid, source, threshold=.8):
     else:
         raise ValueError('라벨 출처가 지원되지 않습니다.')
     return np.where(valid,mapped,IGNORE).astype('uint8')
+
+
+def esri_reference_matches_year(url, year):
+    """Esri 연간 파일의 익년 1월 1일/동년 12월 31일 종료 표기를 검사한다."""
+    # URL의 쿼리나 상위 경로에 포함된 날짜를 제품 파일 기간으로 오인하지 않는다.
+    try:
+        filename=urlsplit(str(url)).path.rsplit('/',1)[-1]
+    except ValueError:
+        return False
+    interval=re.fullmatch(r'[0-9]{2}[A-Z]_([0-9]{8})-([0-9]{8})\.tif',filename)
+    return bool(interval and interval.group(1)==f'{year}0101'
+                and interval.group(2) in (f'{year+1}0101',f'{year}1231'))
 
 
 def train_only_weights(class_counts):
@@ -86,7 +100,9 @@ def verify_files(records, root):
             raise ValueError(f"gate 검증 후 파일이 변경됐습니다: {record['path']}")
 
 
-def assess(manifests, root, policy=None, *, test_mode=False):
+def assess(manifests, root, policy=None, *, test_mode=False, connectivity_diagnostics=False):
+    if type(connectivity_diagnostics) is not bool:
+        raise ValueError('connectivity_diagnostics must be an exact bool')
     supplied_policy=policy or {}
     root=root.resolve();policy={**default_policy(),**supplied_policy}
     if not test_mode:
@@ -98,6 +114,7 @@ def assess(manifests, root, policy=None, *, test_mode=False):
         policy['min_patches_per_train_province']=max(50,int(policy['min_patches_per_train_province']))
         policy['min_unique_train_locations']=max(32,int(policy['min_unique_train_locations']))
         policy['max_patches']=min(3000,int(policy['max_patches']))
+        policy['min_province_inside_fraction']=max(.95,float(policy['min_province_inside_fraction']))
     else:
         policy['min_patches_per_train_province']=supplied_policy.get('min_patches_per_train_province',1)
         policy['min_unique_train_locations']=supplied_policy.get('min_unique_train_locations',1)
@@ -108,6 +125,8 @@ def assess(manifests, root, policy=None, *, test_mode=False):
             policy['province_splits']={}
     if policy['patch_size']!=256 or not 0<policy['min_valid_fraction']<=1:
         raise ValueError('실험 gate는 256 패치와 0~1의 품질 기준을 사용합니다.')
+    if not 0<policy['min_province_inside_fraction']<=1:
+        raise ValueError('주 경계 포함률 기준은 0보다 크고 1 이하여야 합니다.')
     if not 0<policy['max_reference_class_dominance']<=1 or not 0<=policy['min_required_class_ratio']<1 or policy['min_class_patches_per_split']<1 or not 1<=policy['min_class_pixels_per_patch']<=65536:
         raise ValueError('클래스 균형 정책의 비율·포함 패치·최소 픽셀 기준이 잘못됐습니다.')
     bands=policy['band_names']
@@ -145,7 +164,11 @@ def assess(manifests, root, policy=None, *, test_mode=False):
                 block('FILES_INCOMPLETE','영상 또는 해당 시기 라벨 경로가 없습니다.',key);continue
             try:
                 image_path,image_hash=inventory(row['image_path'],'input_image')
-                label_path,_=inventory(row['label_path'],'label')
+                label_path,label_hash=inventory(row['label_path'],'label')
+                recorded_hashes=row.get('patch_sha256')
+                if recorded_hashes is not None:
+                    if not isinstance(recorded_hashes,dict) or recorded_hashes.get('image')!=image_hash or recorded_hashes.get('label')!=label_hash:
+                        raise ValueError('수집 manifest의 영상/라벨 SHA-256과 실제 파일이 다릅니다.')
                 if image_hash in seen_images:
                     block('DUPLICATE_IMAGE','중복 원본 영상은 충분성에 재집계하지 않습니다.',key);continue
                 seen_images.add(image_hash)
@@ -165,8 +188,7 @@ def assess(manifests, root, policy=None, *, test_mode=False):
                     if not product or (product.group(1),int(product.group(2))) not in [('100',2020),('200',2021)] or int(product.group(2))!=year:
                         block('WORLDCOVER_YEAR_REUSE','WC 원본 제품 연도와 요청 연도가 다르거나 확인되지 않습니다.',key)
                 if row.get('label_source')=='esri_io':
-                    interval=re.search(r'_(20\d{2})0101-(20\d{2})0101',row.get('label_source_url',''))
-                    if not interval or int(interval.group(1))!=year or int(interval.group(2))!=year+1:
+                    if not esri_reference_matches_year(row.get('label_source_url',''),year):
                         block('ESRI_REFERENCE_YEAR','Esri 연간 원본 파일 기간과 요청 연도가 일치해야 합니다.',key)
                     if 'v003' not in str(row.get('label_dataset_version','')).lower():
                         block('ESRI_VERSION_CONTRACT','해당 실험은 동일 Esri v003 분류체계만 사용합니다.',key)
@@ -189,14 +211,21 @@ def assess(manifests, root, policy=None, *, test_mode=False):
                 if not row.get('quality_mask_path'):
                     block('QUALITY_MASK_MISSING','실제 외부 구름/품질 마스크가 필요합니다.',key)
                 else:
-                    qp,_=inventory(row['quality_mask_path'],'quality_mask');q,qv,qprofile=read(qp);assert_aligned(ip,qprofile)
+                    qp,qh=inventory(row['quality_mask_path'],'quality_mask')
+                    if recorded_hashes is not None and recorded_hashes.get('quality')!=qh:
+                        raise ValueError('수집 manifest의 품질 마스크 SHA-256과 실제 파일이 다릅니다.')
+                    q,qv,qprofile=read(qp);assert_aligned(ip,qprofile)
                     valid &= qv & (q[0]>0)
                 mapped=reference_labels(label,valid,row.get('label_source'))
+                inside_fraction=row.get('province_inside_fraction')
+                if inside_fraction is not None and (not isinstance(inside_fraction,(int,float)) or not np.isfinite(inside_fraction) or not 0<=inside_fraction<=1):
+                    raise ValueError('수집 manifest의 주 경계 포함률이 유효하지 않습니다.')
+                inside_eligible=inside_fraction is None or inside_fraction>=policy['min_province_inside_fraction']
                 counts=np.zeros(9,dtype='int64');class_patches=np.zeros(9,dtype='int64');patch_count=0;locations=[]
                 for y in range(0,ip['height']-255,256):
                     for x in range(0,ip['width']-255,256):
                         patch=mapped[y:y+256,x:x+256];pv=patch!=IGNORE
-                        if pv.mean()>=policy['min_valid_fraction']:
+                        if inside_eligible and pv.mean()>=policy['min_valid_fraction']:
                             patch_count+=1;current=np.bincount(patch[pv],minlength=9);counts+=current
                             class_patches+=(current>=policy['min_class_pixels_per_patch'])
                             point=ip['transform']*(x,y)
@@ -253,12 +282,14 @@ def assess(manifests, root, policy=None, *, test_mode=False):
     if declared:
         if set(declared)!=set(parents) or [list(declared.values()).count(s) for s in ('train','val','test')]!=[4,1,1]:
             block('FIXED_PROVINCE_SPLITS','6개 주의 고정 4train/1val/1test 계약이 아닙니다.')
-        assignments={}
+        component_splits={}
         for province in parents:
             component=find(province);value=declared.get(province)
-            if component in assignments and assignments[component]!=value:
+            if component in component_splits and component_splits[component]!=value:
                 block('SHARED_SOURCE_CROSSES_FIXED_SPLIT','같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.',province)
-            assignments[component]=value
+            component_splits[component]=value
+        # 충돌은 차단하되 고정된 지역 holdout의 통계와 이름을 다른 split으로 이동하지 않는다.
+        assignments=dict(declared)
     else:
         try:
             assignments=split_groups({find(p) for p in parents},int(policy['seed']))
@@ -267,7 +298,7 @@ def assess(manifests, root, policy=None, *, test_mode=False):
     split_counts={s:0 for s in ('train','val','test')};class_counts={s:np.zeros(9,dtype='int64') for s in split_counts}
     class_patch_counts={s:np.zeros(9,dtype='int64') for s in split_counts}
     for scene in scenes:
-        scene['group']=find(scene['province']);split=assignments.get(scene['group'])
+        scene['group']=scene['province'] if declared else find(scene['province']);split=assignments.get(scene['group'])
         if split:
             split_counts[split]+=scene['eligible_patches'];class_counts[split]+=scene['class_counts']
             class_patch_counts[split]+=scene['class_patch_counts']
@@ -285,7 +316,7 @@ def assess(manifests, root, policy=None, *, test_mode=False):
                 block('DUPLICATE_SPATIAL_SAMPLE','같은 주·연도의 공간 패치를 반복 집계할 수 없습니다.',str(identity))
             spatial_years.add(identity)
     for province in parents:
-        if assignments.get(find(province))=='train' and (province_patches[province]<policy['min_patches_per_train_province'] or province_locations[province]<policy['min_unique_train_locations']):
+        if assignments.get(province if declared else find(province))=='train' and (province_patches[province]<policy['min_patches_per_train_province'] or province_locations[province]<policy['min_unique_train_locations']):
             block('TRAIN_PROVINCE_REPRESENTATION',f"{province}: {province_patches[province]} patches/{province_locations[province]} distinct locations")
     balance={}
     for split in split_counts:
@@ -310,7 +341,7 @@ def assess(manifests, root, policy=None, *, test_mode=False):
              'patch_size':256,'seed':policy['seed'],'group_splits':assignments,'min_valid_fraction':policy['min_valid_fraction'],
              'require_full_patches':True,'synthetic':bool(test_mode),'reference_kind':f'{label_source}_weak_label_agreement',
              'class_names':class_names,'readiness_contract':contract}
-    return {'schema_version':1,'synthetic':bool(test_mode),'status':'ready_for_weak_label_experiment' if ready else 'blocked','ready_for_training':ready,
+    report={'schema_version':1,'synthetic':bool(test_mode),'status':'ready_for_weak_label_experiment' if ready else 'blocked','ready_for_training':ready,
             'scientific_accuracy_validated':False,'evaluation_kind':'weak_label_agreement','blockers':blockers,
             'input_manifests':inputs,'verified_files':verified_files,'policy':policy,
             'coverage':{'expected_cells':len(expected),'available_cells':len(coverage),'missing':[{'province':p,'year':y} for p,y in missing]},
@@ -322,6 +353,17 @@ def assess(manifests, root, policy=None, *, test_mode=False):
             'input_signature':{'band_names':bands,'band_indices':list(range(1,len(bands)+1)),'patch_size':256,'normalization_mode':'per_scene_product_metadata',
                                'label_source':label_source,'class_names':class_names},
             'prepared_payload':payload if ready else None}
+    if connectivity_diagnostics:
+        try:
+            from copy import deepcopy
+            from .readiness_connectivity_adapter import capture_readiness_connectivity
+            diagnostic_inputs=deepcopy((scenes,policy,report['province_groups'],inputs))
+            report['connectivity_diagnostics']=capture_readiness_connectivity(*diagnostic_inputs)
+        except Exception as exc:
+            report['connectivity_diagnostics']={'schema_version':1,'status':'BLOCKED','capture_status':'FAILED_ADAPTER_BOUNDARY',
+                'error_type':type(exc).__name__,'gate_result_modified':False,'ready_for_training':False,'scientific_accuracy_validated':False,
+                'settlement_authorized':False,'execution_authorized':False,'automatic_resume_allowed':False,'proposed_refund_bytes':0}
+    return report
 
 
 def prepared_statistics(manifest, manifest_path, root):

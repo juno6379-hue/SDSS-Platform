@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "kind": "CURRENT_SOURCE_IDENTITY_REAL_REPORT_CONSUMER_METADATA_VALIDATION",
+  "status": "BLOCKED",
+  "evidence_state": "VERIFIED_REAL_CURRENT_JSON_METADATA",
+  "validation_status": "PASS",
+  "validation_checks": [
+    {
+      "code": "OLD62_AND_NEW66_TYPED_REPORT_IDENTICAL_EXCEPT_TIME_IDENTITY",
+      "passed": true
+    },
+    {
+      "code": "ORIGINAL_POLICY_4335_FILE_INVENTORY_AND_BLOCKERS_PRESERVED",
+      "passed": true
+    },
+    {
+      "code": "GATE_REMAINS_BLOCKED_PATCH_COUNTS_1111",
+      "passed": true
+    },
+    {
+      "code": "CURRENT_SCENES_ORDER_ZERO_PATCH_CAPTURE_PRESERVED",
+      "passed": true
+    },
+    {
+      "code": "IDENTITY_V1_EXACT_SCHEMA_AND_TYPED_COUNTS",
+      "passed": true
+    },
+    {
+      "code": "IDENTITY_ALL_AUTHENTICITY_BINDING_READY_FLAGS_FALSE",
+      "passed": true
+    },
+    {
+      "code": "IDENTITY_RECORDS_ORDER_AND_COMPLETE_DECLARED_PAIRS",
+      "passed": true
+    },
+    {
+      "code": "IDENTITY_PATH_SHA_MATCH_ALREADY_RECORDED_VERIFIED_FILE_METADATA",
+      "passed": true
+    },
+    {
+      "code": "IDENTITY_PATH_AND_HASH_DECLARATION_UNIQUE_COUNT",
+      "passed": true
+    },
+    {
+      "code": "CONSUMER_ORIGINAL_BROAD_RESULT_PRESERVED",
+      "passed": true
+    },
+    {
+      "code": "CONSUMER_REFERENCES_CURRENT_PINNED_REPORT_AND_MANIFEST",
+      "passed": true
+    },
+    {
+      "code": "REFINEMENT_DECLARED_METADATA_ONLY_COMPLETE_COUNTS",
+      "passed": true
+    },
+    {
+      "code": "REFINEMENT_SINGLETON_IS_DECLARATION_NOT_AUTHENTICATION",
+      "passed": true
+    },
+    {
+      "code": "REFINED_PATH_HASH_PAIR_AGREES_WITH_DECLARED_RAW_DETAIL",
+      "passed": true
+    },
+    {
+      "code": "REFINED_INTERNAL_INDEX_PATCH_MAPPING_PRESERVES_ZERO_SCENES",
+      "passed": true
+    },
+    {
+      "code": "READINESS_ACTUAL_EXECUTION_NONTRAINING_ONCE",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "inputs": [
+    {
+      "path": "data\\first-group\\readiness-connectivity-20261017.json",
+      "sha256": "95f7622ac72ef6a3d43aafc35a3607a4e9f39ed2912ac01280a07cc62c854e35",
+      "bytes": 11132483
+    },
+    {
+      "path": "data\\first-group\\readiness-source-identity-20261017.json",
+      "sha256": "6bc86c9883716565946cff1700780db98aea005bca2e8da2c225520501dda642",
+      "bytes": 11858020
+    },
+    {
+      "path": "evidence\\integration\\readiness-source-identity-consumer-live-legacy-20261017.json",
+      "sha256": "cff1fb4b566cb8d9be4625df253411d3776ae1f0e485854798ac36673aac2a8e",
+      "bytes": 57548
+    },
+    {
+      "path": "evidence\\integration\\readiness-source-identity-real-lineage-20261017.json",
+      "sha256": "4f6f62356f568d5d8de482a66f5cd492079b3230de98b01021656fb1b65091bb",
+      "bytes": 88245
+    },
+    {
+      "path": "evidence\\integration\\readiness-source-identity-real-execution-20261017.json",
+      "sha256": "954aeb359951dfde4e4e60617e9887404a5e52b68348bcf6ff9b6a319c22bcdf",
+      "bytes": 1638
+    }
+  ],
+  "actual_execution": {
+    "readiness_cli_execution_count": 1,
+    "readiness_exit_code": 0,
+    "elapsed_seconds": 85.641,
+    "peak_observed_tree_rss_bytes": 214609920,
+    "rss_samples": 165,
+    "sampling_is_not_hard_memory_cap": true,
+    "consumer_cli_execution_count": 1,
+    "execute": false,
+    "resume": false,
+    "training_requested": false,
+    "download_requested": false
+  },
+  "typed_report_difference_allowlist": [
+    "assessed_at",
+    "connectivity_diagnostics.source_identity"
+  ],
+  "all_other_typed_report_fields_preserved": true,
+  "verified_files_count": 4335,
+  "blockers_preserved": [
+    {
+      "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+      "detail": "같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.",
+      "scene": "west_java"
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 픽셀",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "appended_scene_count": 1384,
+  "zero_patch_scene_count": 273,
+  "patch_sum": 1111,
+  "identity_schema_version": 1,
+  "identity_complete_declared_count": 1384,
+  "identity_missing_or_invalid_count": 0,
+  "identity_matches_verified_image_metadata_count": 1384,
+  "broad_token_member_count": 28,
+  "broad_candidate_link_count": 400,
+  "broad_unique_raw_row_count": 28,
+  "broad_ambiguous_member_count": 28,
+  "refined_candidate_link_count": 28,
+  "refined_unique_raw_row_count": 28,
+  "refined_declared_singleton_member_count": 28,
+  "refined_output_truncated": false,
+  "queried_member_zero_patch_count": 3,
+  "zero_patch_refined_member_indexes": [
+    1096,
+    1100,
+    1104
+  ],
+  "scope": "JSON metadata declarations and existing verified_files records only; no assess/connectivity/consumer helper rerun, no source file/hash/header/pixel access by this validator.",
+  "singleton_meaning": "UNIQUE_DECLARED_METADATA_CANDIDATE only; not exact row binding, real source content or product authenticity.",
+  "historical_readiness_cause_authenticated": false,
+  "source_authenticity_verified": false,
+  "exact_original_row_binding_verified": false,
+  "geometry_independence_verified": false,
+  "zero_patch_removal_or_blocker_resolution_assessed": false,
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "settlement_authorized": false,
+  "execution_authorized": false,
+  "automatic_resume_allowed": false,
+  "proposed_refund_bytes": 0,
+  "exactly_once_applied": "UNKNOWN",
+  "production_code_modified": false,
+  "source_files_written": 0,
+  "previous_regression_not_rerun": "This66 metadata execution does not rerun or add previous65 unittest/full-regression counts.",
+  "limitations": [
+    "Current declared path/hash relation only, not actual source-file authentication.",
+    "Old reports are preserved without identity backfill.",
+    "The five blockers and zero-patch participation remain; no removal counterfactual or policy change.",
+    "Root readiness performed existing source IO; this validation reads JSON only and adds no source IO."
+  ],
+  "root_preservation_evidence": {
+    "path": "evidence/integration/readiness-source-identity-real-live-integrity-20261017.json",
+    "root_reported_protected_reference_count": 133,
+    "root_reported_code_contract_count": 25,
+    "root_reported_prior_tracked_code_data_tests_changed": false,
+    "policy_manifest_and_prior_reports_preserved": true,
+    "verification_scope": "Root preservation proof; not a new full regression by this validator."
+  },
+  "next_planned_scope": "Minimal read-only real-diagnostic API projection and explicit-query UI contract/exposure-minimization review; not implemented in66."
+}

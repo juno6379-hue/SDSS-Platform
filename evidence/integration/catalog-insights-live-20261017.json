@@ -1,0 +1,86 @@
+{
+  "recorded_at": "2026-10-17T02:20:50.353989+00:00",
+  "protected_before": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "data/first-group/readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "contracts/upstream/GMAIS-v0.2/api/openapi.yaml": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44"
+  },
+  "protected_after": {
+    "data/catalog.sqlite3": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "data/first-group-training-budget/global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+    "data/first-group-training-esri-v1/annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "data/first-group/readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "contracts/upstream/GMAIS-v0.2/api/openapi.yaml": "8c9f21f89f34c325aa58153b031049c8e0e3c44eb1233ad9b3e003b539f92d44"
+  },
+  "protected_unchanged": true,
+  "existing_jobs_unchanged": true,
+  "job_count_after": 2,
+  "new_execution_records_created": 0,
+  "reference_images_unchanged": true,
+  "browser_evidence": "evidence/integration/catalog-insights-browser-20261017.json",
+  "ui_tests": {
+    "passed": 49,
+    "milliseconds": 477.5108,
+    "log": "evidence/integration/catalog-insights-navigation-tests-20261017.log"
+  },
+  "independent_ui_tests": {
+    "passed": 49,
+    "milliseconds": 545.371,
+    "log": "evidence/integration/catalog-navigation-independent-ui-tests-20261017.log"
+  },
+  "build": {
+    "modules": 69,
+    "seconds": 18.53,
+    "exit_code": 0,
+    "log": "evidence/integration/catalog-insights-navigation-build-20261017.log"
+  },
+  "backend_regression": {
+    "rerun_this_unit": false,
+    "reason": "Frontend and documentation only; backend sources unchanged.",
+    "previous_log": "evidence/integration/workflow-lineage-full-tests-20261017.log",
+    "previous_tests_run": 321,
+    "previous_passed": 320,
+    "previous_skipped": 1
+  },
+  "screenshots": {
+    "evidence/ui-20261017/catalog-insight-inputs-desktop.png": [
+      1433,
+      1447
+    ],
+    "evidence/ui-20261017/catalog-insight-metadata-desktop.png": [
+      1433,
+      1600
+    ],
+    "evidence/ui-20261017/catalog-insight-metadata-mobile.png": [
+      375,
+      3346
+    ],
+    "evidence/ui-20261017/catalog-insight-missing-dataset.png": [
+      1265,
+      711
+    ],
+    "evidence/ui-20261017/catalog-insight-terms-desktop.png": [
+      1433,
+      1457
+    ],
+    "evidence/ui-20261017/catalog-insight-toolbox-desktop.png": [
+      1433,
+      1207
+    ],
+    "evidence/ui-20261017/catalog-insight-webgis-desktop.png": [
+      1265,
+      1251
+    ],
+    "evidence/ui-20261017/catalog-insight-webgis-mobile.png": [
+      375,
+      2425
+    ]
+  },
+  "backend_source_snapshot_check": {
+    "tracked_python_files": 21,
+    "all_unchanged": true,
+    "changed": []
+  }
+}

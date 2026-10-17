@@ -1,0 +1,51 @@
+{
+  "recorded_at": "2026-10-17T14:17:35.298486+09:00",
+  "unit": "READINESS_CONNECTIVITY_ENVELOPE_PURE_SERIALIZATION",
+  "implementation_status": "TESTED_SYNTHETIC",
+  "live_scope": "PINNED_SAVED_REPORT_ABSENCE_NONE_ENVELOPE_BYTES_ROUNDTRIP_ONLY",
+  "envelope_bytes": 3385,
+  "byte_identical_reencode": true,
+  "historical_cause": "UNKNOWN_NOT_PERSISTED",
+  "full_regression": {
+    "tests_run": 572,
+    "passed": 571,
+    "skipped": 1,
+    "seconds": 158.325,
+    "exit_code": 0
+  },
+  "related_tests": 18,
+  "independent_tests": 18,
+  "independent_additional_experiment": "signed-zero witness retarget rejected; not added to unittest total",
+  "saved_patch_counts_by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "saved_union_scene_count": "UNKNOWN_NOT_PERSISTED",
+  "historical_zero_patch_scene_presence": "UNKNOWN_NOT_PERSISTED",
+  "integration_scope_review": "Current source can append zero-patch scenes to connectivity population; do not add positive-patch filtering or population truncation in adapter",
+  "documentation_validation": {
+    "markdown_files": 42,
+    "local_links_checked": 169,
+    "missing_local_links": [],
+    "missing_metadata": [],
+    "faq_count": 10,
+    "reference_role_and_template_copies_identical": true
+  },
+  "ui_change_required": false,
+  "persistent_storage_api_implemented": false,
+  "assess_integration_implemented": false,
+  "root_wrote_new_evidence_files": true,
+  "overall_project_complete": false,
+  "next_unit": "Read current assess scene population/provenance mapping; optional adapter preserving original gate decisions; synthetic parity validation",
+  "runtime_listeners": {
+    "5173": 30944,
+    "5174": 15608,
+    "8000": 32224,
+    "8001": 26912,
+    "8002": 35032
+  },
+  "collection_training_process_observed": false,
+  "schedule_status": "ACTIVE",
+  "schedule_interval_minutes": 10
+}
