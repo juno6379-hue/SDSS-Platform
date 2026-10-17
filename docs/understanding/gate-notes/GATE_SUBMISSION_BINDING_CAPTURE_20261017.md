@@ -3,7 +3,7 @@
 | 필드 | 값 |
 |---|---|
 | updated_at | 2026-10-17 23:36 KST — Git 상태 메타데이터 정정; 본문은 해당 Gate 기준 |
-| source_commit | Git 연결됨; 문서 작성 시 변경분 미커밋, evidence snapshot SHA로 추적 (원격 기준 d483d25) |
+| source_commit | d474d5bce6c2a6c4bd8ba141c9256d15f6004631 (108까지 구현 검토 기준; 이 메타데이터 정리는 후속 문서 커밋) |
 | evidence_paths | `backend/app/execution_binding_capture.py`; `backend/app/job_inputs.py`; `backend/app/gmais_api.py`; `tests/test_execution_binding_capture.py`; `docs/implementation/78_submission_binding_capture.md`; `evidence/integration/submission-binding-capture-related-20261017.log`; `evidence/integration/submission-binding-capture-independent-20261017.log`; `evidence/integration/submission-binding-capture-compat-before-20261017.json`; `evidence/integration/submission-binding-capture-compat-after-20261017.json`; `evidence/integration/submission-binding-capture-compat-runner-20261017.py`; `evidence/integration/submission-binding-capture-live-legacy-20261017.json`; `evidence/integration/submission-binding-capture-full-tests-20261017.log`; `evidence/integration/submission-binding-capture-live-integrity-20261017.json` |
 | confidence | 코드·전체/독립/TempStore호환·실제legacyGET/보존근거; 운영신규capture/실제executor미확인 |
 | status | TESTED_SYNTHETIC: 새capture/TempStore호환·전체회귀; VERIFIED_REAL: legacyGET호환; 실제executor미연결 |

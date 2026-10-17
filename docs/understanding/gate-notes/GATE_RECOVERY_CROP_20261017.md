@@ -3,7 +3,7 @@
 | 필드 | 값 |
 |---|---|
 | updated_at | 2026-10-17 23:36 KST — Git 상태 메타데이터 정정; 본문은 해당 Gate 기준 |
-| source_commit | Git 연결됨; 문서 작성 시 변경분 미커밋, evidence snapshot SHA로 추적 (원격 기준 d483d25) |
+| source_commit | d474d5bce6c2a6c4bd8ba141c9256d15f6004631 (108까지 구현 검토 기준; 이 메타데이터 정리는 후속 문서 커밋) |
 | evidence_paths | `backend/app/data/recovery_crop.py`; `scripts/inspect_recovery_crop.py`; `tests/test_recovery_crop.py`; `docs/implementation/47_recovery_crop_reconciliation.md`; `evidence/integration/recovery-crop-tests-20261017.log`; `evidence/integration/recovery-crop-independent-20261017.log`; `evidence/integration/recovery-crop-full-tests-20261017.log`; `evidence/integration/recovery-crop-live-final-20261017.json`; `evidence/integration/recovery-crop-live-integrity-20261017.json` |
 | confidence | 현재 코드·fixture·보존 실제 JSON 기록; raster/공간/과학/정산 승인 미검증 |
 | status | VERIFIED_REAL: 로컬 메타데이터 대조; TESTED_SYNTHETIC: 경계; 실행/학습 BLOCKED |

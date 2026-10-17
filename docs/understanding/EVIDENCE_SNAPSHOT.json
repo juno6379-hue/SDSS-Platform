@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T23:42:33.105176",
+  "updated_at": "2026-10-17T23:48:57.643933",
   "source_commit": null,
   "source_commit_reason": "Workspace is not a Git repository; file hashes identify this reading snapshot.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
@@ -2193,20 +2193,32 @@
     },
     "git_publication": {
       "repository": "https://github.com/juno6379-hue/SDSS-Platform",
-      "base_commit": "d483d25e190d5fa413f6e5e3ce1075ce1915a487",
-      "status": "PREPARED_NOT_YET_PUSHED",
-      "raw_bytes_preserved": true,
-      "new_data_env_runtime_uploads": false
+      "source_commit": "d474d5bce6c2a6c4bd8ba141c9256d15f6004631",
+      "source_remote_head_verified": "d474d5bce6c2a6c4bd8ba141c9256d15f6004631",
+      "status": "VERIFIED_SOURCE_PUBLISHED_WITH_DOCS_FOLLOWUP",
+      "metadata_commit_scope": "Documentation only; current metadata commit SHA is in Git history."
     }
   },
   "files": {
+    ".gitattributes": {
+      "sha256": "c0c3cdb9f8006650aeaf209ac9c47a79be7754c676cfd715ccc33aac4407a5c1",
+      "bytes": 90
+    },
+    ".gitignore": {
+      "sha256": "cd116448fea4116872cc5e496abb77034b599ee25bb55732ab4f8f4fc8fec928",
+      "bytes": 153
+    },
     "AGENTS.md": {
       "sha256": "19704fc4b88ce3d3ba9345f05ce9608cdd1eebc21d8942461377a2e1c39a7448",
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "e93610d7414e1c64a7f70c94993c10380780d3b9c9215a0e72f8bf2c7b859622",
-      "bytes": 305970
+      "sha256": "8916b34c09e85fae0e8918ad141f38c55ca6af87d70386e65212a23760942797",
+      "bytes": 307184
+    },
+    "README.md": {
+      "sha256": "0d469ac476d3f9cd998b729c4cdc1cfcb6d76881ee49974d6f4d458196ca065e",
+      "bytes": 6016
     },
     "UI/catalogu_insite/ChatGPT 이미지 2026년 10월 17일 오전 10_56_25-1.png": {
       "sha256": "8498cc771a0a9a76dbee6222d112628a6c2fe61091cd70e6dd58b8138f5ab87a",
@@ -2561,8 +2573,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "7cca254f7dda8230ed13ebc98d858612506e03522292fde219de3f9224c7f724",
-      "bytes": 313191
+      "sha256": "6ab67d863441126985588b77c3e7eec1e7318cad9d306d947c8a36dc6931f71d",
+      "bytes": 314405
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -2912,333 +2924,337 @@
       "sha256": "73436764590454f5dc3b44608e82612fa5c19cbbf516d8ee2429a4361256437f",
       "bytes": 8220
     },
+    "docs/implementation/git_publication_20261017.md": {
+      "sha256": "d28901d51c2e76f7d2f91a35a01ea6b025037cd7a5644a46ed365cb1d3cc85fb",
+      "bytes": 3036
+    },
     "docs/implementation/workstream_ownership.md": {
-      "sha256": "c3c537c226e68ac0b16d2fdaf29b6e2ceb66537d8dbd91ab6700a95d93c1285d",
-      "bytes": 285326
+      "sha256": "3a4d06deda5a67677d327242f2e5f228e886f5de3024a0bd145d8d73ad645878",
+      "bytes": 286540
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "5b1c13714a52b64152dd270b63b28c824525eaf79dbd595389fac93c13df81fe",
-      "bytes": 129979
+      "sha256": "a307274eebcd08d0aa8b1e9e12c558330c91539f057a0ae60e32fad038521919",
+      "bytes": 129995
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "e1749cfd903a4829851e82c1e34f902cf1e8e6e087a3ec6a148e51e26f7d232b",
-      "bytes": 98734
+      "sha256": "f481dff192e305cccb2549d4c4c5c156941560b11a87977b938edbd277e09f03",
+      "bytes": 98750
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "f21c49ce6c3cbe4ef1da871f4fe7d971cef72e312b8c908cfce9736feb15abd5",
-      "bytes": 74132
+      "sha256": "3e76d047c522b696feea67060f4e97ee6d2ac9b021bd810b9fb9cd7bce06421a",
+      "bytes": 74148
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "297dca9e0cba2e88152990f9cebd1871194733a2f1a201fb24a02a785e7ad775",
-      "bytes": 53058
+      "sha256": "d93d2414ecbeb56327c34dd106648842992bccd47bc69e17dc75e654a70dd934",
+      "bytes": 53074
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "e469012c7391399a5c92d5379b4cbc33a55c755bdfa894e4c0bf49712ef9b115",
-      "bytes": 18968
+      "sha256": "47ec0458dfa4c8de0daa838cc5f284c9305fd5ae51f4bdf237ed01b37e3e08c7",
+      "bytes": 18984
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "9902fdd9036aa5f9096b2ba4f213ccd4e59f1bde245624c40dc2d286a043e6f1",
-      "bytes": 55952
+      "sha256": "778a21ca50eff6ebf56494edd25dcff5d46aa9d9499bf4b41d9f4774fedf332f",
+      "bytes": 55968
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "5a44a4268fe579d72c14bd3b239dffce97abed6b67612a1f272d9692a0e4cddf",
-      "bytes": 179900
+      "sha256": "2ba358af833dce2f28676e47cecb8af22f81a8b26c03f7102b3ad1c4cf388471",
+      "bytes": 179916
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "3a8f37d841278ed8485b9de43729471c199f5fc118103772c450d8cce3be0f88",
-      "bytes": 153572
+      "sha256": "ef50248db6d993f4c5265ad51cd030a8a8e840233d8e3e51f5d362c00cbe6ae9",
+      "bytes": 153588
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "34e1b7cce919d6552975ae3420a6aabae6e5bd4157afa262da5f44fbac99c478",
-      "bytes": 93355
+      "sha256": "0fc175646a30c2eebbd29a453effda16f4c03d7b573050579a742c24035b3d1f",
+      "bytes": 93371
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "3e33660fc3df39e9de3792ed3b67f2e1406ec062152bf8464ff49331dba1ea8c",
-      "bytes": 159020
+      "sha256": "fbd20b0b1128c7a8e7b88d6dc8fbff1756315d7a4f28abbc352ad0a751127816",
+      "bytes": 159036
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
-      "sha256": "f3c6836c4f01d2fd67370003a03c75e4703d4febe83b81e10a5f4b9513ff7b39",
-      "bytes": 9276
+      "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
+      "bytes": 9292
     },
     "docs/understanding/gate-notes/GATE_AUXILIARY_CONTENT_20261017.md": {
-      "sha256": "e13aaf6283cca8d05cab6db2a4402ac5203e5a8290db99b9ab691f4df12e6ea5",
-      "bytes": 9485
+      "sha256": "c9657f96a05771fbb9be4f88573dd9d6b8df9bccd1410b269292bdd1afa02727",
+      "bytes": 9501
     },
     "docs/understanding/gate-notes/GATE_AUXILIARY_HEADERS_20261017.md": {
-      "sha256": "6f31b3061846f59bc7b84f43c0d2722bff82fa195a9510f8bbe9d0e5a032134e",
-      "bytes": 8423
+      "sha256": "e5e085948ef2acce3724d3403a49111619edab61181beb5aa5ac0c8a42507fa5",
+      "bytes": 8439
     },
     "docs/understanding/gate-notes/GATE_BARE_CLASS_REQUIREMENTS_20261017.md": {
-      "sha256": "9e9e288ca5c16bb623665990ae41bb4993ea1ad64485ee5df74bd8f922343f9e",
-      "bytes": 10537
+      "sha256": "19c70f330c02cc4f87181fd820b098e61104f25c44f027ce99a7a3dff990d517",
+      "bytes": 10553
     },
     "docs/understanding/gate-notes/GATE_BARE_PATCH_FEASIBILITY_20261017.md": {
-      "sha256": "d67d18f9abe89f8c1caa91f9038e7b0224c37e7d7513e925d8adaeb58aac68ce",
-      "bytes": 10021
+      "sha256": "9d5376d338de51ed2520a748dcd33412f3749697ac50518046ee70378c9aa47f",
+      "bytes": 10037
     },
     "docs/understanding/gate-notes/GATE_BOUNDARY_RELATIONS_20261017.md": {
-      "sha256": "2c2dd14597205fc42901f7831a8ceb1cd7b12b5881111c4da4f5d4b991f2d222",
-      "bytes": 9271
+      "sha256": "e5d3df121a9faf9f14d315b57e3ab0a05cb8453adf10cb5394fe916a36fd626f",
+      "bytes": 9287
     },
     "docs/understanding/gate-notes/GATE_BOUNDARY_STRUCTURE_20261017.md": {
-      "sha256": "403a39fa2c72e5c9c92880114246f4d35223d0e556197ece6a7ef069cfa3371d",
-      "bytes": 9320
+      "sha256": "99302c6009159e9c520cc0589fb7cdc36b3e40716fb99ed72dd74fca23fdecc4",
+      "bytes": 9336
     },
     "docs/understanding/gate-notes/GATE_BOUNDARY_TOPOLOGY_20261017.md": {
-      "sha256": "7543b3d2a89cc111274ea7bd2c7fffb0db5ebd5bf7f9afe784df03507afd13d7",
-      "bytes": 9123
+      "sha256": "f6ed46753c3173ba343f726bdc080293db3e688c449deeac83e44fcdb75be5f7",
+      "bytes": 9139
     },
     "docs/understanding/gate-notes/GATE_CANDIDATE_MATERIALIZATION_20261017.md": {
-      "sha256": "f4247fa21e96e2a335c7a11344ca936f4185c6cd714094d8023a530a16e02566",
-      "bytes": 10970
+      "sha256": "92278b04b92feb214e394db571ac2ae4274049e770fe48cc2bb90c50aef79fa6",
+      "bytes": 10986
     },
     "docs/understanding/gate-notes/GATE_CANDIDATE_PLAN_LINEAGE_20261017.md": {
-      "sha256": "fb5640498bb505d16b9d865aaa0342023d7bc2b27c4b8e9a8c49d4857a524e20",
-      "bytes": 10334
+      "sha256": "acd0bd0f4eaa4facc3563ceb0151a33f98d91a9da5fc5cd914393533f234c136",
+      "bytes": 10350
     },
     "docs/understanding/gate-notes/GATE_CANDIDATE_QA_COMPARISON_20261017.md": {
-      "sha256": "5d8896225d243239004e30b5c6b0bf0ec285636244ef76e1e151e8e88b09ae73",
-      "bytes": 12787
+      "sha256": "b4680d992d5eec87082d97c7da8dcb867402936f881106fcd435fa16e91a8f8d",
+      "bytes": 12803
     },
     "docs/understanding/gate-notes/GATE_CANDIDATE_READINESS_QA_20261017.md": {
-      "sha256": "b5b8cd45c7841a5ab8cb8d4b8784bac913753e2e95156745e7cb798495e264ec",
-      "bytes": 12392
+      "sha256": "11eb6a6edba47686d9a006883e8cdb324a5a5542015e5751ab3d58ea5e40bb2e",
+      "bytes": 12408
     },
     "docs/understanding/gate-notes/GATE_CANDIDATE_STAGING_20261017.md": {
-      "sha256": "bd4b4a8aaa7731d6a72015fc3f8be0bdba798a885e3116178c29b714ffceef17",
-      "bytes": 10377
+      "sha256": "70c859c5c761911d712e459750c634552188563b6d21f80f1af2b09a80b27b63",
+      "bytes": 10393
     },
     "docs/understanding/gate-notes/GATE_CATALOG_INSIGHTS_20261017.md": {
-      "sha256": "cce171e4538be9ad3f778d65610876ed6f940ea40b3a07c2c5c6455dca848782",
-      "bytes": 6962
+      "sha256": "ded9e57d9586ee3c36cffd5014a711914a34ac57e53ee4338f1934878a3ded52",
+      "bytes": 6978
     },
     "docs/understanding/gate-notes/GATE_COMMON_DATETIME_20261017.md": {
-      "sha256": "018a0deac2f938e885c0cd43da8749604eedf2ad3073b8ce5b6feb129ba2ea7f",
-      "bytes": 9443
+      "sha256": "4d25b8e0f69b949c94ca68f2caaf2e83673bc866601bab0412879e6f2d89e7a7",
+      "bytes": 9459
     },
     "docs/understanding/gate-notes/GATE_CONNECTIVITY_ADAPTER_20261017.md": {
-      "sha256": "e1961cfc9b0f21372eb2310f51fc3b7b78871545a84ed2855381f0b7574a9fed",
-      "bytes": 10444
+      "sha256": "f27d05d802c0312bd304ea1b02a4d35d3f9e90437360dc91eaffd5cdd438bcd5",
+      "bytes": 10460
     },
     "docs/understanding/gate-notes/GATE_CONNECTIVITY_CLI_20261017.md": {
-      "sha256": "4721ef5e7ff6beee10580f16c590728a175f7430af8937a327643b82a3100293",
-      "bytes": 9419
+      "sha256": "d7996a24fc9221cf0f098ee58bbc8e84765b2f8e4317599244c959cc6c2296ef",
+      "bytes": 9435
     },
     "docs/understanding/gate-notes/GATE_CONNECTIVITY_ENVELOPE_20261017.md": {
-      "sha256": "89c44762d5ba700a7e0b55dd2dd94e0afd759a2ac03b9b3c92fbfddfa4eb83ab",
-      "bytes": 10529
+      "sha256": "e04824c85b844c3a8b760d2b6114891b9ec881bde12069e7baf5258aa672fa81",
+      "bytes": 10545
     },
     "docs/understanding/gate-notes/GATE_CONNECTIVITY_LINEAGE_20261017.md": {
-      "sha256": "e0c7af1f3fad9cf46322217c9d2f1c50cdae2aebca2be5bf3f1bac84a8df17a1",
-      "bytes": 9317
+      "sha256": "8defccc81b8d05c8cb4b741875faac86939e6e59c442920e2d6d8800a889c718",
+      "bytes": 9333
     },
     "docs/understanding/gate-notes/GATE_CONNECTIVITY_WITNESS_20261017.md": {
-      "sha256": "622c29aa48cebebd7c5247ead9d15ee442eb2f96c8b2a87ec887ffd947834d99",
-      "bytes": 9394
+      "sha256": "27b6f9f66a59fce4bef663b53fa06ea5e7689408e4e9f5c75afe199cd0a4a438",
+      "bytes": 9410
     },
     "docs/understanding/gate-notes/GATE_CONTINUOUS_20261017.md": {
-      "sha256": "4f21336c0ec51285a0840ca97639cb017e9037fe846874b9caea0ce69c6d1891",
-      "bytes": 8261
+      "sha256": "b08bdc1d903fc54303e4416a730984b359a4b7b8467e31f52bd89a65833a2597",
+      "bytes": 8277
     },
     "docs/understanding/gate-notes/GATE_CURRENT_INPUT_PREFLIGHT_UI_20261017.md": {
-      "sha256": "04b5fa73afc15472c96e857c63676fc7aeb86c9aa70f4f2b8a00006a8421ac62",
-      "bytes": 11151
+      "sha256": "8dfc7c07257b8f5086026f0b65d3fdf5347ac2ba1188499123fff3b39df95280",
+      "bytes": 11167
     },
     "docs/understanding/gate-notes/GATE_DATASET_LINEAGE_20261017.md": {
-      "sha256": "028ba0cc18636f7185e499419b7be80cdcc3c7ac4c5a8d59f8b63f239ec54f45",
-      "bytes": 4945
+      "sha256": "718c682ec4580ebec30fd3980f8efe11146297c41966647ed1c791884f0e7e89",
+      "bytes": 4961
     },
     "docs/understanding/gate-notes/GATE_DATASET_LINEAGE_API_UI_20261017.md": {
-      "sha256": "a3d0afcc9695b9b3943c45cba4bc44bd49cd7b17bbeed605f898a0718a95a7d9",
-      "bytes": 5495
+      "sha256": "995b955cd698573e5b3c521bdb614e334e82d9d7db5a3fd87e99353f936356a6",
+      "bytes": 5511
     },
     "docs/understanding/gate-notes/GATE_EXECUTION_INPUT_BINDING_20261017.md": {
-      "sha256": "2e430c607b66caba6d8c2025d50acaedc82f1091ff76b1de193aa73a9bf45c1b",
-      "bytes": 10184
+      "sha256": "61362085de03b12531f26cc6cdbd1c65c90dcfbad3f97b1bb213a96929cfeeef",
+      "bytes": 10200
     },
     "docs/understanding/gate-notes/GATE_FULL_JOB_HANDOFF_20261017.md": {
-      "sha256": "cfa4704eceb9a4dce3ffa5f308975aa892241051a9860279e71cb97d711b13a7",
-      "bytes": 10923
+      "sha256": "a49fa4f1067a670f866e03c78d86627b5268fbe455619b10b16427462b308718",
+      "bytes": 10939
     },
     "docs/understanding/gate-notes/GATE_FULL_JOB_HANDOFF_API_UI_20261017.md": {
-      "sha256": "db6e34d14b6ecf72304412d65f1c29bfbc6048a5ef9a245f004f0d4f90533283",
-      "bytes": 11361
+      "sha256": "2294725200b25fb3dcfab8259f83ae2e896caa1640d81ba759735971b6119d61",
+      "bytes": 11377
     },
     "docs/understanding/gate-notes/GATE_FULL_JOB_REGISTRATION_20261017.md": {
-      "sha256": "cef909dfd8c29d95ab130b37036a7d926d5c77c32d377448aac9b2bcff557b5b",
-      "bytes": 11817
+      "sha256": "e34ab7a77af8a08131f8f5ca693cac515610db5b3041a0b6e69167a37df84134",
+      "bytes": 11833
     },
     "docs/understanding/gate-notes/GATE_JOB_CURRENT_LINEAGE_20261017.md": {
-      "sha256": "ad03114b8b758aabf4f23c7de4c834e87717fed7770a5cca96d6881acb2e1bab",
-      "bytes": 6372
+      "sha256": "87b83118e66c6f6824edb7f54b9578558d156fcbc73c72f4c5b4c67825ed9fe3",
+      "bytes": 6388
     },
     "docs/understanding/gate-notes/GATE_JOB_INPUT_20261017.md": {
-      "sha256": "b681d6c6d6f114502709dbce723845843b7bc860fbf46173a28f6ef9eea6b853",
-      "bytes": 5703
+      "sha256": "fc8b466da5fa5714252ffc26afad5c6b97d5d341ef9f2baa446cab88822ab298",
+      "bytes": 5719
     },
     "docs/understanding/gate-notes/GATE_JOB_SNAPSHOT_20261017.md": {
-      "sha256": "b89ad5b786b312cd7d00f9a36a10b6de41d72c390bb0756404a0fae3eae289e0",
-      "bytes": 4929
+      "sha256": "9dcd49f61963239fca880b8c9b8ffd2cfd957e24eb524d1a06956e5b57c36ac0",
+      "bytes": 4945
     },
     "docs/understanding/gate-notes/GATE_ML_SPLIT_PLAN_VALIDATION_20261017.md": {
-      "sha256": "7090489ef86f29b67fd0cebd69b958c9de16d701e8996c56fe7e71daa4700928",
-      "bytes": 6190
+      "sha256": "6a49ea008e9118ce0dff94471f818c5b47847faf0043f8a11a2e5e1426cdc157",
+      "bytes": 6206
     },
     "docs/understanding/gate-notes/GATE_MODEL_PROVENANCE_20261017.md": {
-      "sha256": "2f7445623933a7717f7497e7e5eb7d7ab39a855c4985188802a2de66dcaedeb4",
-      "bytes": 8709
+      "sha256": "677a2d6403de9d5593b68303e9af392295c529a4be58e738428012edfceb856f",
+      "bytes": 8725
     },
     "docs/understanding/gate-notes/GATE_MODEL_PROVENANCE_API_UI_20261017.md": {
-      "sha256": "892ac99b39987680b462d0c8d6341d757ed1ad9f0877556d81bb42c077de4a08",
-      "bytes": 11087
+      "sha256": "6e7c2fd7a70e1a3cdafd86a46073e9713aa02487afad5f1774c602663a8df9a6",
+      "bytes": 11103
     },
     "docs/understanding/gate-notes/GATE_MODEL_REFERENCE_20261017.md": {
-      "sha256": "c46354ff1b2b69d823c0a6cb931096e687d4be15fbd496cf26b5d1b788fc581b",
-      "bytes": 9173
+      "sha256": "73333ec506b111cfddc527feff0edd37ff367fc77241286d94388e777ce32a90",
+      "bytes": 9189
     },
     "docs/understanding/gate-notes/GATE_MODEL_REFERENCE_RECORD_20261017.md": {
-      "sha256": "30734b9a1dde9276af20fefa5285bbb2ea57f95a3e589da2b4ba12af3a1e2411",
-      "bytes": 8183
+      "sha256": "2daac81d208819af1b814d2b23bcc8d61961ea2beb55c592513522a9fedb8da1",
+      "bytes": 8199
     },
     "docs/understanding/gate-notes/GATE_MODEL_VERSION_DECLARATION_20261017.md": {
-      "sha256": "64e92bccc9ec7bf83dcfc36eca408525337aabc57b8e892b776ebe4cc624eb3b",
-      "bytes": 9598
+      "sha256": "ff461fc319e77d31e88cba4474a0f75be85e564496a899b49dc942335da23038",
+      "bytes": 9614
     },
     "docs/understanding/gate-notes/GATE_MODEL_VERSION_REGISTRATION_UI_20261017.md": {
-      "sha256": "578dd75b7f7f171bf03cec3d33c4308244f7458add7ff6bc8ea78274424f4e48",
-      "bytes": 12005
+      "sha256": "b85646337e4c1b402824b6209a6bca38f772960aaab3189353c7ad874ed33e7e",
+      "bytes": 12021
     },
     "docs/understanding/gate-notes/GATE_RASTER_CONTENT_20261017.md": {
-      "sha256": "14acd8b714ba51045875f287998f5f8d7d68207abad0370fe035602b597f6c5c",
-      "bytes": 9690
+      "sha256": "5a06ac70e1caa44d6bc6895f28f473334281b87fa11d240d3e357eed9be7af5a",
+      "bytes": 9706
     },
     "docs/understanding/gate-notes/GATE_RASTER_HEADERS_20261017.md": {
-      "sha256": "48374e734628d07b8f17aa1c6a5c88ae7c76e810ecafe74bf7e788cf34ec967f",
-      "bytes": 8942
+      "sha256": "caf60ff2743e47ff72f93cced33092ec0cdab76de49ee209ed7681cccbf90d5a",
+      "bytes": 8958
     },
     "docs/understanding/gate-notes/GATE_READINESS_COMPARISON_20261017.md": {
-      "sha256": "29b4ce35eb9d29529ed49a870b76793d922a05252f52336bd25b5a047acabe3a",
-      "bytes": 9547
+      "sha256": "3e6365575f175478116283831339e82f253d8ab6b57b8dd05dbffd77e81f9d1c",
+      "bytes": 9563
     },
     "docs/understanding/gate-notes/GATE_READINESS_REAL_DIAGNOSTIC_20261017.md": {
-      "sha256": "cfd0dc52392edd2527a666c4c419d0c15a1eb6a88e9249e76a9a601d38c363ff",
-      "bytes": 10964
+      "sha256": "462b83d33fae1ef07ac3b3c7ccdb005b1a0561cd90346b114d9896b819e2e2f8",
+      "bytes": 10980
     },
     "docs/understanding/gate-notes/GATE_RECOVERY_AGGREGATE_20261017.md": {
-      "sha256": "05726702245e5ddb87ce6bf473ab645875f50241ba0c8e1b36ef5d9d906bee57",
-      "bytes": 6169
+      "sha256": "889725ce1e8a6aecc153cb266af2b3bff8bd1e361863cd7ded6e94351ce33520",
+      "bytes": 6185
     },
     "docs/understanding/gate-notes/GATE_RECOVERY_CROP_20261017.md": {
-      "sha256": "6efff37a708654fcf04eff34347ad463decb586bab6c8574600e542413416eab",
-      "bytes": 8903
+      "sha256": "33c6e3f4b8e6eb9842b03e9732968e3eb8b46af30f669e016f45490c96cee483",
+      "bytes": 8919
     },
     "docs/understanding/gate-notes/GATE_RECOVERY_TERMINAL_20261017.md": {
-      "sha256": "f249bf630c520898e3fc7e25f9b74bd05ea63d8e0049cfc612346a34aa9bc9fd",
-      "bytes": 6115
+      "sha256": "a73e44860ac5272883ab6296492b57bc471820151b6ea2a64c31a6de737ecc69",
+      "bytes": 6131
     },
     "docs/understanding/gate-notes/GATE_REFERENCE_UI_20261017.md": {
-      "sha256": "060e218144ddc109771b2f776e47014830548d5ef0471e0d339821bdea7d2521",
-      "bytes": 5007
+      "sha256": "9a9e58baf574af7ff64500ebefbee5fd6e296e661d00806ca46533c98a01c03d",
+      "bytes": 5023
     },
     "docs/understanding/gate-notes/GATE_RESUME_20261017.md": {
-      "sha256": "7b851254f0b531e833c23612d0c1f1d2d1c5ce761a611f22b93e13342afec6bc",
-      "bytes": 7440
+      "sha256": "a18cc659c91fd6b6b6276d4bdd8dca83ea2d3c647484e23b39d03ac9d8b87d80",
+      "bytes": 7456
     },
     "docs/understanding/gate-notes/GATE_SOURCE_FOOTPRINTS_20261017.md": {
-      "sha256": "95ae689047307c2a28705c99b456f68cee021a53990305537568a344818e425f",
-      "bytes": 10287
+      "sha256": "5f7ef46046d1d07a6f0ba2bccaf47fea4e695036163e183f3180ad32ff199c56",
+      "bytes": 10303
     },
     "docs/understanding/gate-notes/GATE_SOURCE_IDENTITY_API_UI_20261017.md": {
-      "sha256": "07697e03430a8a071554851f9487c7b9b9f076064644764d54ae97e07dc03e25",
-      "bytes": 12873
+      "sha256": "7adf14ba6d7d231276468f3149c4aafc5b84670ce8316bb32bf2b8e45a58c050",
+      "bytes": 12889
     },
     "docs/understanding/gate-notes/GATE_SOURCE_IDENTITY_CONSUMER_20261017.md": {
-      "sha256": "54eb55eba3d78072b234bbb80f5dab90abe307361fd9b1010d51e9be82754d3c",
-      "bytes": 9143
+      "sha256": "ee9310ea7e6ce452786dcbc29557ee65416d38448e7e0716a5c776f5407518b7",
+      "bytes": 9159
     },
     "docs/understanding/gate-notes/GATE_SOURCE_IDENTITY_CONTRACT_20261017.md": {
-      "sha256": "cf70521583a8f150b74a881b42c389c9d605fc9f1aa126bb1afa047afa6be3ba",
-      "bytes": 8022
+      "sha256": "95d31927cb59141c09a7e05f22a9d32390535cdf1e6c126ef01c4a2e6a0eb9cd",
+      "bytes": 8038
     },
     "docs/understanding/gate-notes/GATE_SOURCE_IDENTITY_REAL_20261017.md": {
-      "sha256": "cf7be1ccdc56bd62cb870a585c3b3ee87c89357e7935f65477bd5c829bc2963f",
-      "bytes": 9142
+      "sha256": "23e0f539521adb5d2503a2378904b70eb254fb539ea01c3adf02ba7943a340ff",
+      "bytes": 9158
     },
     "docs/understanding/gate-notes/GATE_SOURCE_SPLIT_OVERLAP_20261017.md": {
-      "sha256": "66c8c58f13a22af173ea59c228994200daf202e793ddf9582cfe89248d3a047e",
-      "bytes": 10184
+      "sha256": "7962b3cf103dd401ef8e236f2a9c30a066e591bf787cb4b44593a6a1df113e79",
+      "bytes": 10200
     },
     "docs/understanding/gate-notes/GATE_SPLIT_BOUNDED_IO_20261017.md": {
-      "sha256": "1f25bde780795f491db71c0f0f8a83b81f02404803c2ac254da4ba2a288fa750",
-      "bytes": 10550
+      "sha256": "f5a642e6d8a20b4c90a4fb3f0f5139ad54a48cc8162af1f532856dce4fcc87ec",
+      "bytes": 10566
     },
     "docs/understanding/gate-notes/GATE_STORED_BINDING_CAPTURE_20261017.md": {
-      "sha256": "0daebd96c0a13a7cbf2646e358cc4bbb1f6162b46ec396e26617cdcc0df49481",
-      "bytes": 12711
+      "sha256": "fa2a053c9d78c10294e16bcd25f7e467a9c19bd36c700f2417398e223c9bbbe8",
+      "bytes": 12727
     },
     "docs/understanding/gate-notes/GATE_STORED_BINDING_HANDOFF_20261017.md": {
-      "sha256": "1a5e6da43f400e675403607019aaee7e70bc54409141ecaf861de22505473204",
-      "bytes": 9156
+      "sha256": "11854caa5f367416bfa3bcc015624b1cae902c747f2a76fcc758df5be55857ae",
+      "bytes": 9172
     },
     "docs/understanding/gate-notes/GATE_STORED_BINDING_STORE_20261017.md": {
-      "sha256": "c4ced9523d3a9e4224c4a41219db9ddf5e1c09d365a6bc45f029ab470d011068",
-      "bytes": 10608
+      "sha256": "bb6d29de544ca4d6dbe09bde7d6be18e047d917e994abd71db4d149c7a52ed42",
+      "bytes": 10624
     },
     "docs/understanding/gate-notes/GATE_STORED_CURRENT_BINDING_20261017.md": {
-      "sha256": "73e6ac2c068d0d8778d17b9a7473eac5be48513eaf6f96947b2ee578cef88096",
-      "bytes": 10030
+      "sha256": "db26977c0eeb1419f246bd3ac9292a5fabd94b859fdc072bc8e662296a1ee3cb",
+      "bytes": 10046
     },
     "docs/understanding/gate-notes/GATE_SUBMISSION_BINDING_CAPTURE_20261017.md": {
-      "sha256": "3ead5fa5e75ee6e0d48187be88b726b50731f51a8e43e2eaa96490bd44b5ae2e",
-      "bytes": 10819
+      "sha256": "56fc0cbaac35432a3b6ec1e4d4456c15ee5a5e96d7b113bcc2c4ade6b82dfbbb",
+      "bytes": 10835
     },
     "docs/understanding/gate-notes/GATE_WORKFLOW_CURRENT_LINEAGE_20261017.md": {
-      "sha256": "985c1a4cd7bdac45bccd360d7c8e8124cde1a80b695c39b3c4e24760afee0beb",
-      "bytes": 6691
+      "sha256": "b5124b39778c9f7c09487e7a2cb0262760b51c0bdde654e6fe125a195a2ada82",
+      "bytes": 6707
     },
     "docs/understanding/gate-notes/GATE_WORKFLOW_DEPENDENCY_ORDER_20261017.md": {
-      "sha256": "eb06cc30c54950ccfeb7011bfc359933891d539269d945bb184977114c6d8144",
-      "bytes": 10431
+      "sha256": "cd5e9e3e8735ddce692c1de8eb108ba573578924c6a13b03bcbab951897879e4",
+      "bytes": 10447
     },
     "docs/understanding/gate-notes/GATE_WORKFLOW_HANDOFF_API_UI_20261017.md": {
-      "sha256": "7daf7e654390c0eb341e0d20522a609052519e674a180a2d3aa64e52a466d755",
-      "bytes": 12133
+      "sha256": "cf446d6b99081dbdb0a089c4bf008b9d9bf8f78521527f5f370b23f6660a7431",
+      "bytes": 12149
     },
     "docs/understanding/gate-notes/GATE_WORKFLOW_INPUT_20261017.md": {
-      "sha256": "27bc2150b10ef7a50300c2f13f96b6ff84ff059ea6382f2c23d2d5faa646dfe3",
-      "bytes": 6855
+      "sha256": "da3e85bf68ae9080cfb01c24969afaccc1f996ea8a71fe66f4ccdbbf7abc14fa",
+      "bytes": 6871
     },
     "docs/understanding/gate-notes/GATE_WORKFLOW_MODEL_RECORD_20261017.md": {
-      "sha256": "1e41c537bdc99b96df8eef1bd7511bd860c0f0a7e5f8543a3158211af2036f3b",
-      "bytes": 8154
+      "sha256": "7ed685a55d957c59a4fe5caef8804f677f8411b72d0072626057d5a6c8045b22",
+      "bytes": 8170
     },
     "docs/understanding/gate-notes/GATE_WORKFLOW_MODEL_RECORD_API_UI_20261017.md": {
-      "sha256": "702e0499247d2e08fe3f67a79fd7a08d64134062e39cd51dceedb717f94fd429",
-      "bytes": 13174
+      "sha256": "816895057528ff97bf189763846c648194425fa9a9b92f166306ebd784af9dc2",
+      "bytes": 13190
     },
     "docs/understanding/gate-notes/GATE_WORKFLOW_NODE_HANDOFF_20261017.md": {
-      "sha256": "c28a55a73b2b6d84a1125a63958522cb2be8d8f0a69f5d0b0d7b2c5e3532168c",
-      "bytes": 10133
+      "sha256": "0da322588514aa762767c7b2c0798f7a2670ada420b7091ef2b284d59393dab6",
+      "bytes": 10149
     },
     "docs/understanding/gate-notes/GATE_WORKFLOW_POLICY_20261017.md": {
-      "sha256": "10c884aec9de9e47b928d6e35d58d16259cd09f11d831c2a2c196d7499aa4a2f",
-      "bytes": 7164
+      "sha256": "0aa88fd53fede33d782dcf28df902f524977e7e471390b2fddc4f84019c7854f",
+      "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "c74c09ce33f649f284aab001d90058f73a2e6e127bdc1ee0b405f4abfeefd5fe",
-      "bytes": 166635
+      "sha256": "3ea0362db1e4a0ab4e6b6e0bdae36358080048e935b2594fb9e36d8da9b614a8",
+      "bytes": 166651
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "a156927b43ab72eb4bf8a931bb806b4842a57fc6811f5efe2fcafc624392657e",
-      "bytes": 108847
+      "sha256": "ac7bf1b7c8892fece48f313c848f2f45d93776225591fb5df9aeae454bb33f40",
+      "bytes": 108863
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "a1259d29c23c65efb76b6578dd8b5f886dc6b6b76236ea45b9e651be95abdaed",
-      "bytes": 129105
+      "sha256": "2ea2697f95575b1c9c6899b8e4023e526c8e3f4b7867e83a7f178164e9fcaa73",
+      "bytes": 129121
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -4143,6 +4159,10 @@
     "evidence/integration/full-job-registration-ui-tests-20261017.log": {
       "sha256": "1c426f8db094e7297715bad65c9edc5dfc307ae9ae8eb388455d676503c58d43",
       "bytes": 34210
+    },
+    "evidence/integration/git-publication-verification-20261017.json": {
+      "sha256": "4d5719221e71c88cf6b9b592987340374d89ca7acbc7bd6fd04844f9ab274d05",
+      "bytes": 988
     },
     "evidence/integration/job-execution-binding-capture-independent-20261017.log": {
       "sha256": "ab4765567a1b9fcbb0663b9cd22d04fbcfea8fcbd978c3683417ff65d7acec5b",
@@ -7151,22 +7171,6 @@
     "tests/test_workflow_policy.py": {
       "sha256": "5e7a9bc15074be2f17593110aca7eb2de9a27de8fede8c2e8ef6cbf0b9914fcb",
       "bytes": 6813
-    },
-    ".gitignore": {
-      "sha256": "cd116448fea4116872cc5e496abb77034b599ee25bb55732ab4f8f4fc8fec928",
-      "bytes": 153
-    },
-    "docs/implementation/git_publication_20261017.md": {
-      "sha256": "85af398d445932fa511759130c8f5f9f14d6040e1e128b15a16dc3a534bebd51",
-      "bytes": 2568
-    },
-    ".gitattributes": {
-      "sha256": "c0c3cdb9f8006650aeaf209ac9c47a79be7754c676cfd715ccc33aac4407a5c1",
-      "bytes": 90
-    },
-    "README.md": {
-      "sha256": "0d469ac476d3f9cd998b729c4cdc1cfcb6d76881ee49974d6f4d458196ca065e",
-      "bytes": 6016
     }
   },
   "documentation_validation": {

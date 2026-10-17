@@ -3,7 +3,7 @@
 | 필드 | 값 |
 |---|---|
 | updated_at | 2026-10-17 23:36 KST — Git 상태 메타데이터 정정; 본문은 해당 Gate 기준 |
-| source_commit | Git 연결됨; 문서 작성 시 변경분 미커밋, evidence snapshot SHA로 추적 (원격 기준 d483d25) |
+| source_commit | d474d5bce6c2a6c4bd8ba141c9256d15f6004631 (108까지 구현 검토 기준; 이 메타데이터 정리는 후속 문서 커밋) |
 | evidence_paths | `docs/implementation/00_next_session_handoff.md`; `docs/implementation/23_ml_readiness_resume_20261017.md`; `docs/implementation/23_ui_completion.md`; `evidence/integration/ml-readiness-resume-20261017.json`; `evidence/integration/resume-tests-script-20261017.log` |
 | confidence | 중간: 현재 소스·기존 로그 기반; 신규 시험·학습·운영 승인 미수행 |
 | status | BLOCKED: 최신 실자료 학습; 이해·발표 문서 작성 완료 |

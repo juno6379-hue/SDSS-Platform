@@ -1,5 +1,11 @@
 # 병렬 작업 파일 소유권
 
+## GitHub 구현 게시 확인 — 문서 후속 정리
+
+사용자 지정 origin `https://github.com/juno6379-hue/SDSS-Platform`의 기존 main 이력을 이어 구현 기준 `d474d5bce6c2a6c4bd8ba141c9256d15f6004631`을 push했고 원격 HEAD 일치를 확인했다. 이해자료80개의 source_commit을 이 구현 기준으로 정정하고 별도 문서 커밋으로 남긴다. 원본 data/·모델/영상·로컬 환경/인증·runtime/cache/임시 시험 폴더는 새로 추가하지 않았다. backend/app/data 소스가 누락되지 않도록 root 데이터 제외 규칙을 수정했고 고정 SHA 원문은 .gitattributes로 보존했다. 원격 기존 데이터는 수정·삭제하지 않았다.
+
+영역별 잔여 핵심 작업은 `docs/implementation/109_area_completion_audit.md`의 수락 조건을 따른다. 수집 복구의 commit/멱등 절차는 후속 내부 후보, 클래스7 보강자료·실제 QA·학습·독립평가/승인·외부5개 실행기·실제 DAG 운영은 미완료/차단이다. Git push를 전체 프로젝트 완료로 보지 않으며 지속 개발과10분 보고를 유지한다. 게시 근거: `evidence/integration/git-publication-verification-20261017.json`.
+
 ## 108 — 저장된 나지 기여 패치 수의 산술 진단 완료
 
 기존76 부족 조건을 보존하고 같은 적격 patch 집계의 기여 개수 하한/상한을 계산하는 순수 helper·고정 보고서 reader wrapper·수동 CLI를 추가했다. E개 patch·bare B픽셀·patch상한C65536·기여 문턱T256에서 lower=max(0,ceil((B−E(T−1))/(C−T+1))), upper=min(E,floor(B/T))이다. 이는 정수 capacity 모형이며 실제 분포 재구성·라벨 재배치 권고·미래 수집량 추정이 아니다.

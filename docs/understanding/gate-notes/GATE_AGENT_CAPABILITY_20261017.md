@@ -3,7 +3,7 @@
 | 필드 | 값 |
 |---|---|
 | updated_at | 2026-10-17 23:36 KST — Git 상태 메타데이터 정정; 본문은 해당 Gate 기준 |
-| source_commit | Git 연결됨; 문서 작성 시 변경분 미커밋, evidence snapshot SHA로 추적 (원격 기준 d483d25) |
+| source_commit | d474d5bce6c2a6c4bd8ba141c9256d15f6004631 (108까지 구현 검토 기준; 이 메타데이터 정리는 후속 문서 커밋) |
 | evidence_paths | `backend/app/agent_capability_contract.py`; `backend/app/gmais_api.py`; `tests/test_agent_capability_contract.py`; `docs/implementation/93_agent_capability_contract.md`; `evidence/integration/agent-capability-related-20261017.log`; `evidence/integration/agent-capability-original-gmais-20261017.py`; `evidence/integration/agent-capability-independent-20261017.log`; `evidence/integration/agent-capability-source-runtime-20261017.json`; `evidence/integration/agent-capability-next-review-20261017.json`; `evidence/integration/agent-capability-full-tests-20261017.log`; `evidence/integration/agent-capability-live-integrity-20261017.json` |
 | confidence | 완료 코드·원 핸들러 바이트핀과 격리 합성 동등성; 운영 제출·실행 미검증 |
 | status | TESTED_SYNTHETIC; 내부 중복 추출·공개 계약 유지; 전체 개발 진행 중 |
