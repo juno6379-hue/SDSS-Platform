@@ -1,0 +1,74 @@
+- banner:
+  - button "SDSS 홈"
+  - strong:
+    - text: 데이터로 만드는 더 안전한 오늘,
+    - text: 지속 가능한 내일
+  - generic: Data for a Resilient Indonesia
+  - textbox "플랫폼 데이터 검색":
+    - /placeholder: "지역, 데이터, 키워드로 검색하세요  (예: Indonesia, land cover, mangrove)"
+  - button "데이터 카탈로그 검색":
+  - button "실제 작업·알림 보기":
+  - button "서버 연결 설정":
+  - button "서버 상태 새로고침":
+    - generic: ●
+    - strong: SDSS Indonesia
+    - generic: 로컬 분석 서버 연결됨
+    - generic: ⌄
+  - text: Sustainable Indonesia
+  - strong: for a Better Tomorrow
+- complementary:
+  - navigation "전체 플랫폼 메뉴":
+    - button "대시보드":
+      - generic: 대시보드
+    - button "데이터 카탈로그":
+      - generic: 데이터 카탈로그
+    - button "GeoAI 툴박스":
+      - generic: GeoAI 툴박스
+    - button "WebGIS 분석":
+      - generic: WebGIS 분석
+    - button "GeoLLM Assistant":
+      - generic: GeoLLM Assistant
+    - button "모델 & MLOps":
+      - generic: 모델 & MLOps
+    - button "리포트 & RDTR":
+      - generic: 리포트 & RDTR
+  - paragraph:
+    - text: AI와 공간데이터로
+    - text: 인도네시아의
+    - text: 기후행동을 지원합니다.
+- main:
+  - generic "현재 위치":
+    - text: ⌂
+    - generic: ›
+    - text: Model & MLOps
+    - generic: ›
+    - text: 승인·배포
+  - text: SPATIAL DECISION SUPPORT SYSTEM
+  - heading "승인·배포" [level=1]
+  - paragraph: 인도네시아 기후행동을 위한 데이터, 분석, 검증과 의사결정.
+  - generic: ◎ INDONESIA
+  - navigation "현재 메뉴의 세부 기능":
+    - button "Model Registry" [active]
+    - button "재학습·재보정"
+    - button "승인·배포"
+    - button "운영 모니터링"
+  - text: REGISTRY → REVIEW → DEPLOY
+  - heading "실제 모델의 검증·배포 검토" [level=2]
+  - generic "실제 완료 실험 보고서로 Draft 등록"
+  - text: 등록 모델
+  - combobox "등록 모델":
+    - option "모델을 선택하세요" [selected]
+    - option "TESTED_SYNTHETIC137_TEMP_ONLY_NO_TRAINING · Draft"
+  - generic "연차 입력 진단":
+    - text: 연차 입력 진단
+  - generic "서버 연결 설정 · /api"
+  - paragraph: 공유 서버에 GEOAI_API_TOKEN을 설정한 경우에만 입력합니다. 토큰은 현재 탭의 세션에 보관됩니다.
+  - text: API 토큰
+  - textbox "API 토큰"
+  - button "토큰 적용 / 빈 값으로 해제"
+  - status: 토큰 설정을 적용했습니다.
+  - strong: ◉ SDSS
+  - generic: Spatial Decision Support System for Climate Action & GeoAI
+  - generic: 독립 검증·운영 승인 전 분석 결과 게시 차단
+  - text: ◎ KO ⌄
+  - generic: ❧ Together for a Resilient Indonesia

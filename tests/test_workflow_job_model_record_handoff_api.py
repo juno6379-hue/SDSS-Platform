@@ -42,6 +42,19 @@ def matching_request():
     return request_value(fixture()[2])
 
 
+def normalize_authorized_comparison(node):
+    """137 allows only the exact UTF-8 argument change; keep all other AST."""
+    calls = [item for item in ast.walk(node) if isinstance(item, ast.Call)
+             and isinstance(item.func, ast.Attribute) and isinstance(item.func.value, ast.Name)
+             and item.func.value.id == 'secrets' and item.func.attr == 'compare_digest']
+    expected = ast.parse("secrets.compare_digest((authorization or '').encode('utf-8'), f'Bearer {token}'.encode('utf-8'))", mode='eval').body
+    if len(calls) != 1 or ast.dump(calls[0]) != ast.dump(expected):
+        raise AssertionError('Only the exact authorized UTF-8 comparison is allowed')
+    original = ast.parse("secrets.compare_digest(authorization or '', f'Bearer {token}')", mode='eval').body
+    calls[0].args = original.args
+    return node
+
+
 class WorkflowJobModelRecordHandoffApiTests(unittest.TestCase):
     def setUp(self):
         app = FastAPI()
@@ -271,11 +284,13 @@ class WorkflowJobModelRecordHandoffApiTests(unittest.TestCase):
         self.assertEqual(hashlib.sha256(ORIGINAL_MAIN.read_bytes()).hexdigest(), ORIGINAL_SHA)
         before = ast.parse(ORIGINAL_MAIN.read_text(encoding='utf-8-sig'))
         after = ast.parse((ROOT / 'backend/app/main.py').read_text(encoding='utf-8-sig'))
-        # 116/120 add only these explicit import/include pairs; preserve the old 105 guard.
+        # 116/120/137 add exact import/include pairs; preserve the old 105 guard.
         authorized = ast.parse('from .lcluc_workflow_api import create_lcluc_workflow_router\n'
             'app.include_router(create_lcluc_workflow_router(lambda: store))\n'
             'from .model_error_analysis_api import create_model_error_analysis_router\n'
-            'app.include_router(create_model_error_analysis_router(lambda: store))\n').body
+            'app.include_router(create_model_error_analysis_router(lambda: store))\n'
+            'from .annual_diagnostics_api import create_annual_diagnostics_router\n'
+            'app.include_router(create_annual_diagnostics_router(lambda: store))\n').body
         for expected in authorized:
             matches = [node for node in after.body if ast.dump(node) == ast.dump(expected)]
             self.assertEqual(len(matches), 1)
@@ -291,7 +306,11 @@ class WorkflowJobModelRecordHandoffApiTests(unittest.TestCase):
             if isinstance(node, ast.FunctionDef) and node.name == 'authorized': auth_app.append(node)
             elif isinstance(node, ast.Assign) and any(isinstance(target, ast.Name) and target.id == 'app' for target in node.targets): auth_app.append(node)
         self.assertEqual(len(additions), 2); after.body = kept
-        self.assertEqual(ast.dump(after), ast.dump(before))
+        normalized = copy.deepcopy(after)
+        auth = [node for node in normalized.body if isinstance(node, ast.FunctionDef) and node.name == 'authorized']
+        self.assertEqual(len(auth), 1)
+        normalize_authorized_comparison(auth[0])
+        self.assertEqual(ast.dump(normalized), ast.dump(before))
         namespace = dict(FastAPI=FastAPI, Depends=Depends, Header=Header, Request=Request,
             HTTPException=HTTPException, os=os, secrets=secrets)
         exec(compile(ast.Module(body=auth_app, type_ignores=[]), 'isolated-auth', 'exec'), namespace)

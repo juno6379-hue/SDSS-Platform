@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "capability": "landcover.input_diagnostics",
+  "model_ref": {
+    "id": "fixture",
+    "version": "model-v1",
+    "sha256": "aa62def0a27a6bb7db527315a64368a066b77eedde32c029ffc68ac02d05c972"
+  },
+  "training_report_sha256": "4ab48941cdddc1a6824289fa2db6cba516a6e578f32ae79c6b1c730c9b8c7d13",
+  "requested_years": [
+    {
+      "year": 2020,
+      "image_ref": {
+        "id": "image-2020",
+        "version": "v1",
+        "sha256": "d2a07027a226f8bf73220935d5aa42e6af9628f9add439b3237e65229d0ee74a"
+      },
+      "evidence_ref": {
+        "id": "evidence-2020",
+        "version": "v1",
+        "sha256": "1bc18648f4d90075e86542357b8b946caefb946a0cfa055be071537c90933d86"
+      },
+      "metadata_ref": {
+        "id": "metadata-2020",
+        "version": "v1",
+        "sha256": "a963190bf81710cb03e80852d4d6f5436042d6d2424759b481fcce65be82fc58"
+      },
+      "quality_report_ref": {
+        "id": "quality-2020",
+        "version": "v1",
+        "sha256": "ad8b1b01f8a6032b2a16f4968c33379920a38af13911e71f7459d5cc5e8a6c5a"
+      },
+      "mask_ref": {
+        "id": "mask-2020",
+        "version": "v1",
+        "sha256": "48db241e66f7e0bb4dcffcbaf2b5e611f67fed3914bebd3f292a5d2b2ccd7317"
+      }
+    },
+    {
+      "year": 2021,
+      "image_ref": {
+        "id": "image-2021",
+        "version": "v1",
+        "sha256": "d2a07027a226f8bf73220935d5aa42e6af9628f9add439b3237e65229d0ee74a"
+      },
+      "evidence_ref": {
+        "id": "evidence-2021",
+        "version": "v1",
+        "sha256": "d8a681fa7cb4a62ac4298a3655d924b6966598be136be968c0020d8aa94b7a64"
+      },
+      "metadata_ref": {
+        "id": "metadata-2021",
+        "version": "v1",
+        "sha256": "30dfb3a936bc1637ab33ee02545e8540420c1e5318329a65f394731940b76378"
+      },
+      "quality_report_ref": {
+        "id": "quality-2021",
+        "version": "v1",
+        "sha256": "cae0beab4103b1a230e6b09a15e29f5e0bb4f196f8388c416fcc0ea3b1d7b50d"
+      },
+      "mask_ref": {
+        "id": "mask-2021",
+        "version": "v1",
+        "sha256": "48db241e66f7e0bb4dcffcbaf2b5e611f67fed3914bebd3f292a5d2b2ccd7317"
+      }
+    }
+  ],
+  "policy": {
+    "schema_version": 1,
+    "minimum_valid_numerator": 1,
+    "minimum_valid_denominator": 2,
+    "comparison": "greater_than_or_equal"
+  }
+}

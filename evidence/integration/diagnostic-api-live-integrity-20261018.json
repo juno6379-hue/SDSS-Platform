@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-10-18T05:28:23.854059+09:00",
+  "protected_files_checked": 141,
+  "protected_changes": [],
+  "existing_source_checked": 307,
+  "existing_source_changes": [],
+  "expected_changed_existing_sources": [
+    {
+      "path": "backend/app/main.py",
+      "before": {
+        "sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+        "bytes": 22061
+      },
+      "after": {
+        "sha256": "d5efc3acb269ab1397ff0e32b829f7ce8820799bcb16ed3e64d59121ccc27467",
+        "bytes": 22232
+      }
+    },
+    {
+      "path": "frontend/src/ModelReview.tsx",
+      "before": {
+        "sha256": "6c02add1ab58e0a39e5ededc6087c8dfa456eeaa84565967a36433046416a6a9",
+        "bytes": 11087
+      },
+      "after": {
+        "sha256": "c845118bed7dc06b5f84fedc8960c18d16015677bfeb968f88c304decc0e94fd",
+        "bytes": 11215
+      }
+    }
+  ],
+  "unchanged_existing_source_files": 305,
+  "previous_evidence_checked": 1235,
+  "previous_evidence_changes": [],
+  "catalog_rows": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "reserved_bytes_preserved": 136314880,
+  "existing_execution_workflow_model_and_other_sources_unchanged": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0
+}

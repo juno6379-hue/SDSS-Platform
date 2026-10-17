@@ -28,6 +28,7 @@ from .workflow_node_input_handoff_api import create_workflow_node_input_handoff_
 from .workflow_job_request_handoff_api import create_workflow_job_request_handoff_router
 from .workflow_job_model_record_handoff_api import create_workflow_job_model_record_handoff_router
 from .lcluc_workflow_api import create_lcluc_workflow_router
+from .annual_diagnostics_api import create_annual_diagnostics_router
 from .model_error_analysis_api import create_model_error_analysis_router
 from .store import Store, now
 
@@ -42,7 +43,7 @@ def authorized(request: Request, authorization: str | None = Header(default=None
     if request.url.path in {'/healthz', '/readyz'}:
         return
     token = os.getenv('GEOAI_API_TOKEN')
-    if token and not secrets.compare_digest(authorization or '', f'Bearer {token}'):
+    if token and not secrets.compare_digest((authorization or '').encode('utf-8'), f'Bearer {token}'.encode('utf-8')):
         raise HTTPException(401, '인증 토큰이 필요합니다.')
 
 
@@ -435,4 +436,5 @@ app.include_router(create_workflow_node_input_handoff_router())
 app.include_router(create_workflow_job_request_handoff_router())
 app.include_router(create_workflow_job_model_record_handoff_router())
 app.include_router(create_lcluc_workflow_router(lambda: store))
+app.include_router(create_annual_diagnostics_router(lambda: store))
 app.include_router(create_model_error_analysis_router(lambda: store))

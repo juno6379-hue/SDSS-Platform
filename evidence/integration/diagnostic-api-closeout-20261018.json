@@ -1,0 +1,396 @@
+{
+  "recorded_at": "2026-10-18T05:43:05.470895+09:00",
+  "status": "137_AUTHENTICATED_READ_ONLY_ANNUAL_DIAGNOSTIC_API_AND_MANUAL_UI",
+  "confidence": "TESTED_SYNTHETIC_TEMP_ACTUAL_HTTP_AND_UI_OPERATING_DIAGNOSTIC_BLOCKED",
+  "focused": {
+    "run": 11,
+    "passed": 11,
+    "skipped": 0,
+    "seconds": 6.292,
+    "log": "evidence/integration/diagnostic-api-agent-20261018-focused-final3.log"
+  },
+  "compatibility_tests": {
+    "run": 36,
+    "passed": 36,
+    "skipped": 0,
+    "seconds": 6.983,
+    "log": "evidence/integration/diagnostic-api-compat-tests-final2-20261018.log"
+  },
+  "full_backend": {
+    "run": 1359,
+    "passed": 1358,
+    "skipped": 1,
+    "seconds": 484.77,
+    "log": "evidence/integration/diagnostic-api-root-full-backend-final2-20261018.log"
+  },
+  "initial_full_backend": {
+    "log": "evidence/integration/diagnostic-api-root-full-backend-20261018.log",
+    "run": 1358,
+    "passed": 1354,
+    "legacy_ast_guard_failures": 3,
+    "skipped": 1,
+    "seconds": 490.787,
+    "preserved": true
+  },
+  "frontend": {
+    "passed": 271,
+    "failed": 0,
+    "seconds": 25.6785829,
+    "focused10_included": true,
+    "build_modules": 112,
+    "build_seconds": 13.48
+  },
+  "overlapping_test_bundles_are_not_additive": true,
+  "source_records": {
+    "backend/app/annual_diagnostics_api.py": {
+      "sha256": "c110dd9c70bfafcb2a7dfdf2ee0f1c0f3b1f30e1b2f7f0c4651eb300cda6dfd8",
+      "bytes": 7364
+    },
+    "backend/app/main.py": {
+      "sha256": "d5efc3acb269ab1397ff0e32b829f7ce8820799bcb16ed3e64d59121ccc27467",
+      "bytes": 22232
+    },
+    "tests/test_annual_diagnostics_api.py": {
+      "sha256": "25204c7c4db8357e2653979f828e3754fbc5f53e00788de5dc2ac95c28ba5eae",
+      "bytes": 13420
+    },
+    "frontend/src/AnnualInputDiagnostics.tsx": {
+      "sha256": "0746f331ebbb08ef9a010a21000bf1eb6c0ee2466aa325f417c9d72e79d46779",
+      "bytes": 8022
+    },
+    "frontend/src/annualInputDiagnosticsAdapter.ts": {
+      "sha256": "292de1baed285f0a8a2ebd300735457edafe3b427b6c0b7fc0102e815a74c86b",
+      "bytes": 10681
+    },
+    "frontend/src/annualInputDiagnosticsClient.ts": {
+      "sha256": "bb0c3d3aa37b3411250f15017ec56a5e3d0877dc9700bc0fc69228f07fe6c2f8",
+      "bytes": 1575
+    },
+    "frontend/src/annual-input-diagnostics.css": {
+      "sha256": "58b3b4ac0e75ca20c52d45c112dd21bf36c4b98ffb8f259f4be51178aab5afa9",
+      "bytes": 2443
+    },
+    "frontend/src/annualInputDiagnosticsAdapter.test.mjs": {
+      "sha256": "b6674d5c465b394ff99d5aa0b62c14ebef76124c6798f53c5c1db3c800a92634",
+      "bytes": 10504
+    },
+    "frontend/src/ModelReview.tsx": {
+      "sha256": "c845118bed7dc06b5f84fedc8960c18d16015677bfeb968f88c304decc0e94fd",
+      "bytes": 11215
+    },
+    "tests/test_model_registration_provenance_api.py": {
+      "sha256": "54128292af789549c334899800bca249049a44cd6f5c04d0b86dd25fcfa2c81e",
+      "bytes": 13355
+    },
+    "tests/test_model_version_registration_api.py": {
+      "sha256": "c115202858f631bcb358f8fb6c57e984f1667e9ca8733419a96d7085f90a0f73",
+      "bytes": 13244
+    },
+    "tests/test_workflow_job_model_record_handoff_api.py": {
+      "sha256": "1abdf3a475e5e48559b2f1039bf06e8995c08edf00cc4162cb9f92ccf4f91ed5",
+      "bytes": 22558
+    }
+  },
+  "documentation_validation": {
+    "checked_at": "2026-10-18T05:43:05.470895+09:00",
+    "understanding_markdown": 104,
+    "implementation_markdown": 1,
+    "local_links": 464,
+    "metadata_evidence_references": 12011,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T05:41:35.157451+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 307,
+    "existing_source_changes": [],
+    "expected_changed_existing_sources": [
+      {
+        "path": "backend/app/main.py",
+        "before": {
+          "sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+          "bytes": 22061
+        },
+        "after": {
+          "sha256": "d5efc3acb269ab1397ff0e32b829f7ce8820799bcb16ed3e64d59121ccc27467",
+          "bytes": 22232
+        }
+      },
+      {
+        "path": "frontend/src/ModelReview.tsx",
+        "before": {
+          "sha256": "6c02add1ab58e0a39e5ededc6087c8dfa456eeaa84565967a36433046416a6a9",
+          "bytes": 11087
+        },
+        "after": {
+          "sha256": "c845118bed7dc06b5f84fedc8960c18d16015677bfeb968f88c304decc0e94fd",
+          "bytes": 11215
+        }
+      },
+      {
+        "path": "tests/test_model_registration_provenance_api.py",
+        "before": {
+          "sha256": "a54a491c49d22b99f4ef09bce503eaf68e772516526572d0447c2bf1aedcf1b4",
+          "bytes": 11317
+        },
+        "after": {
+          "sha256": "54128292af789549c334899800bca249049a44cd6f5c04d0b86dd25fcfa2c81e",
+          "bytes": 13355
+        }
+      },
+      {
+        "path": "tests/test_model_version_registration_api.py",
+        "before": {
+          "sha256": "7c76f7cf320fd7e9e81c880a71d029d4c6147e9badb989c1deff188fadf7f08a",
+          "bytes": 12354
+        },
+        "after": {
+          "sha256": "c115202858f631bcb358f8fb6c57e984f1667e9ca8733419a96d7085f90a0f73",
+          "bytes": 13244
+        }
+      },
+      {
+        "path": "tests/test_workflow_job_model_record_handoff_api.py",
+        "before": {
+          "sha256": "bbe6298df53fff05cbc062fd0f08c8d4a15acd72dd5100c95537784b5e7ccad3",
+          "bytes": 21307
+        },
+        "after": {
+          "sha256": "1abdf3a475e5e48559b2f1039bf06e8995c08edf00cc4162cb9f92ccf4f91ed5",
+          "bytes": 22558
+        }
+      }
+    ],
+    "unchanged_existing_source_files": 302,
+    "previous_evidence_checked": 1235,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_execution_workflow_model_and_other_sources_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T05:12:54.430557+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "live_processes": {
+    "checked_at": "2026-10-18T05:41:31.8174145+09:00",
+    "processes": [
+      {
+        "pid": 27268,
+        "parent_pid": 31440,
+        "name": "ollama app.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+        "created": "/Date(1792194023427)/",
+        "cpu": 27.5625,
+        "working_set": 89632768
+      },
+      {
+        "pid": 27860,
+        "parent_pid": 27268,
+        "name": "ollama.exe",
+        "command_line": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+        "created": "/Date(1792194025549)/",
+        "cpu": 10.03125,
+        "working_set": 84848640
+      },
+      {
+        "pid": 2060,
+        "parent_pid": 14348,
+        "name": "node.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" --experimental-vm-modules c:\\Temp\\.tmpxMLdb7\\kernel.js --session-id b9c3e259a941427ba4c2d16ab02f8369 --working-dir E:\\GeoAI–MLOps–SDSS",
+        "created": "/Date(1792194142317)/",
+        "cpu": 6.734375,
+        "working_set": 98045952
+      },
+      {
+        "pid": 29716,
+        "parent_pid": 14348,
+        "name": "node.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" c:\\Temp\\.tmpxMLdb7\\trusted-worker.js E:\\GeoAI–MLOps–SDSS",
+        "created": "/Date(1792194142373)/",
+        "cpu": 100.921875,
+        "working_set": 156446720
+      },
+      {
+        "pid": 30944,
+        "parent_pid": 2712,
+        "name": "node.exe",
+        "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1",
+        "created": "/Date(1792194210869)/",
+        "cpu": 33.59375,
+        "working_set": 54292480
+      },
+      {
+        "pid": 32224,
+        "parent_pid": 24092,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
+        "created": "/Date(1792194462900)/",
+        "cpu": 452.546875,
+        "working_set": 17289216
+      },
+      {
+        "pid": 26912,
+        "parent_pid": 3392,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001",
+        "created": "/Date(1792198361777)/",
+        "cpu": 379.421875,
+        "working_set": 32083968
+      },
+      {
+        "pid": 15608,
+        "parent_pid": 29584,
+        "name": "node.exe",
+        "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1 --port 5174",
+        "created": "/Date(1792198475813)/",
+        "cpu": 88.71875,
+        "working_set": 102289408
+      },
+      {
+        "pid": 35032,
+        "parent_pid": 22796,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend",
+        "created": "/Date(1792199087513)/",
+        "cpu": 10591.34375,
+        "working_set": 21372928
+      },
+      {
+        "pid": 12584,
+        "parent_pid": 35032,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\"",
+        "created": "/Date(1792268284125)/",
+        "cpu": 4.71875,
+        "working_set": 58757120
+      },
+      {
+        "pid": 39836,
+        "parent_pid": 25768,
+        "name": "python.exe",
+        "command_line": "python  evidence/integration/diagnostic-api-integrity-20261018.py",
+        "created": "/Date(1792269688527)/",
+        "cpu": 2.765625,
+        "working_set": 19484672
+      }
+    ],
+    "collector_training_processes_observed": 0,
+    "collector_training_command_matches": [],
+    "observation_limit": "Process command patterns only; unittest interpreters and temporary API fixtures are not operating training",
+    "automation_status": "ACTIVE",
+    "automation_interval_minutes": 10,
+    "automation_was_not_modified": true
+  },
+  "actual_http_evidence": "evidence/integration/diagnostic-api-live-http-20261018.json",
+  "browser": {
+    "recorded_at": "2026-10-17T20:25:47.078Z",
+    "scope": "TESTED_SYNTHETIC_ACTUAL_TEMP_MAIN_HTTP_AND_BROWSER",
+    "passed": true,
+    "checks": [
+      {
+        "name": "blank_policy_and_refs_disabled",
+        "passed": true
+      },
+      {
+        "name": "actual_1_over_2_met_counts_and_sha",
+        "passed": true
+      },
+      {
+        "name": "input_edit_discards_previous_result",
+        "passed": true
+      },
+      {
+        "name": "actual_policy_not_met_all_rows_counts_and_sha",
+        "passed": true
+      },
+      {
+        "name": "menu_and_back_discard_results_without_error",
+        "passed": true
+      },
+      {
+        "name": "operating_5174_model_missing_pins_disabled",
+        "passed": true
+      }
+    ],
+    "original_user_tab_untouched": true,
+    "operating_writes": 0,
+    "console_error_entries": [],
+    "uncaught_javascript_errors": 0,
+    "screenshots": [
+      "evidence/integration/diagnostic-api-operating-ui-20261018.png",
+      "evidence/integration/diagnostic-api-browser-met-20261018.png",
+      "evidence/integration/diagnostic-api-browser-not-met-20261018.png"
+    ],
+    "operating_scope": "Existing Draft missing model/report pins; diagnostic disabled; no operating writes or approval",
+    "synthetic_scope": "Actual temporary SQLite/GTiff and random untrained CPU checkpoint; no scientific validation"
+  },
+  "temporary_server_cleanup": {
+    "schema_version": 1,
+    "scope": "TESTED_SYNTHETIC_137_OWN_TEMP_FIXTURE_CLEANUP_ONLY",
+    "utc": "2026-10-17T20:28:27.7297489Z",
+    "session_id": 60295,
+    "fixture_pid": 13024,
+    "fixture_port": 18037,
+    "ctrl_c_session_exit_code": 1,
+    "finally_cleanup_message_observed": false,
+    "process_alive_after": false,
+    "port_listening_after": false,
+    "fixture_root": "C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmp4mjakj62",
+    "temp_exists_after": false,
+    "initial_recursive_cleanup_automatic_review_rejected": true,
+    "rejection_reason": "blocked by policy; no detailed reason provided",
+    "subsequent_cleanup_method": "Verified exact fixture root and parent; rejected all reparse points and outside paths; removed36 regular files individually and11 empty directories individually without recursive deletion flags.",
+    "subsequent_cleanup_tool_exit_code": 0,
+    "regular_files_removed": 36,
+    "empty_directories_removed": 11,
+    "parent_stop_deletion_message_received_after_cleanup_completed": true,
+    "further_deletion_attempts_after_stop_message": 0,
+    "operating_server_stop_calls": 0,
+    "operating_data_writes": 0,
+    "existing_evidence_overwrites": 0
+  },
+  "cross_review_blocking_findings": 0,
+  "existing_global_401_detail_and_absent_cache_headers_preserved": true,
+  "whitespace_truthy_global_token_may_401_before_strict_router_configuration_503": true,
+  "new_router_own_responses_no_store_nosniff": true,
+  "new_api_strict_authentication_required": true,
+  "request_response_16kib_limits": true,
+  "worker_limit_one_per_process_not_global": true,
+  "client_abort_or_route_change_does_not_guarantee_server_read_cancellation": true,
+  "manual_policy_and_refs_no_default_no_automatic_post_or_retry": true,
+  "operating_model_missing_pins_disables_query": true,
+  "quality_report_verified": false,
+  "quality_mask_verified": false,
+  "mask_semantics_verified": false,
+  "registry_aoi_verified": false,
+  "source_authority_verified": false,
+  "scientific_accuracy_validated": false,
+  "execution_authorized": false,
+  "state_dict_verified": false,
+  "workflow_supported": false,
+  "sequential_file_registry_observations_not_atomic": true,
+  "store_predecode_and_native_parser_resources_not_os_isolated": true,
+  "operating_collection_training_registry_approval_deployment_workflow_dispatch": 0,
+  "original_published136_process_evidence_restored_from_git_new137_observation_preserved": true,
+  "understanding_updated": true,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "next_internal_candidate": "138_REVIEW_LCLUC_PRODUCER_QUALITY_MASK_AND_PINNED_INPUT_CONTRACT_GAPS",
+  "snapshot_files": 1837
+}

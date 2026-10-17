@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-10-17T20:25:47.078Z",
+  "scope": "TESTED_SYNTHETIC_ACTUAL_TEMP_MAIN_HTTP_AND_BROWSER",
+  "passed": true,
+  "checks": [
+    {
+      "name": "blank_policy_and_refs_disabled",
+      "passed": true
+    },
+    {
+      "name": "actual_1_over_2_met_counts_and_sha",
+      "passed": true
+    },
+    {
+      "name": "input_edit_discards_previous_result",
+      "passed": true
+    },
+    {
+      "name": "actual_policy_not_met_all_rows_counts_and_sha",
+      "passed": true
+    },
+    {
+      "name": "menu_and_back_discard_results_without_error",
+      "passed": true
+    },
+    {
+      "name": "operating_5174_model_missing_pins_disabled",
+      "passed": true
+    }
+  ],
+  "original_user_tab_untouched": true,
+  "operating_writes": 0,
+  "console_error_entries": [],
+  "uncaught_javascript_errors": 0,
+  "screenshots": [
+    "evidence/integration/diagnostic-api-operating-ui-20261018.png",
+    "evidence/integration/diagnostic-api-browser-met-20261018.png",
+    "evidence/integration/diagnostic-api-browser-not-met-20261018.png"
+  ],
+  "operating_scope": "Existing Draft missing model/report pins; diagnostic disabled; no operating writes or approval",
+  "synthetic_scope": "Actual temporary SQLite/GTiff and random untrained CPU checkpoint; no scientific validation"
+}

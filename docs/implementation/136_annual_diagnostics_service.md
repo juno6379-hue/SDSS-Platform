@@ -67,3 +67,7 @@ Root 최종 관련 **28 PASS / 119.021초 / exit 0**는 `evidence/integration/di
 별도 명시 mock에서는 private nested·issue·예외·status/counts/flags를 노출하지 않음, str subclass callback0, core policy/year 변조가 fingerprint/검산 기준을 바꾸지 못하고 불일치 시 OUTPUT_INVALID가 됨을 검증했다. 이는 실제135 정상 입력 수정이 아니라136의 불신 출력 경계 시험이다. 재동결 source/test/schema 두 개 SHA가 모두 일치하고 Git4c14031의 기존 핵심8개 SHA·tracked source는 불변이다. 검토 보완 두 건은 종결했고 추가 제품 지적은 없다.
 
 모델 import 전 시작 지연과 unittest 본문 시간은 별개이며 위 시간은 서비스 latency SLA·운영 응답 보장이 아니다. 장시간 진행 중 실제 CPU 사용과 부모 프로세스 존재·중복/orphan0을 확인했고 단일 세션 완료 후 추가 시험을 중복 실행하지 않았다. 운영·훈련·추론·API/UI/frontend/build/browser 재실행 없이 내부 서비스·schema·제한된 Temp/오염 시험 범위로 마감한다. 최종 증거를 반영한 뒤 본 문서를 동결했다.
+
+## 후속137 연결
+
+137에서 인증 필수 진단 POST와 ModelReview의 수동 연차 입력 진단 패널을 연결했다.136 서비스/Schema와135 이하 진단·실행기는 그대로다. 설계·사용법·실HTTP/브라우저·전체 회귀·제한은 [137 연결 문서](137_annual_diagnostics_api_ui.md)를 참조한다. 정책 충족은 품질·모델·실행 승인이 아니며 기존 운영 Draft 모델은 핀 미확보로 조회가 차단된다.

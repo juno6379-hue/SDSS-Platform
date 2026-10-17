@@ -1,0 +1,49 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_all_five_states_are_200_exact_helper_response_get_once_write_zero (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_all_five_states_are_200_exact_helper_response_get_once_write_zero) ... ok
+test_auth_denies_before_store_and_retains_existing_bearer_policy (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_auth_denies_before_store_and_retains_existing_bearer_policy) ... ok
+test_existing_models_list_body_and_headers_preserved (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_existing_models_list_body_and_headers_preserved) ... ok
+test_helper_exceptions_are_fixed503_and_existing_http_exception_is_preserved (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_helper_exceptions_are_fixed503_and_existing_http_exception_is_preserved) ... ok
+test_local_import_error_is_also_safe503_before_store (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_local_import_error_is_also_safe503_before_store) ... ok
+test_missing_model_preserves_404_fixed_detail_and_no_helper_or_write (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_missing_model_preserves_404_fixed_detail_and_no_helper_or_write) ... ok
+test_no_checkpoint_report_source_write_network_or_registration_calls (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_no_checkpoint_report_source_write_network_or_registration_calls) ... ok
+test_only_new_route_ast_added_all_existing_main_nodes_unchanged (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_only_new_route_ast_added_all_existing_main_nodes_unchanged) ... FAIL
+test_store_exceptions_are_fixed503_with_no_private_details (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_store_exceptions_are_fixed503_with_no_private_details) ... ok
+test_auth_denies_before_lock_or_register_and_accepts_existing_bearer_policy (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_auth_denies_before_lock_or_register_and_accepts_existing_bearer_policy) ... ok
+test_conflict_and_duplicate_ids_still422_without_new_puts (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_conflict_and_duplicate_ids_still422_without_new_puts) ... ok
+test_existing_exception_tuple_converts422_and_releases_lock (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_existing_exception_tuple_converts422_and_releases_lock) ... ok
+test_explicit_real_registration_exact5_hashes_draft_false_and_files_unchanged (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_explicit_real_registration_exact5_hashes_draft_false_and_files_unchanged) ... ok
+test_ignored_unknown_extras_do_not_expand_registration_kwargs (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_ignored_unknown_extras_do_not_expand_registration_kwargs) ... ok
+test_invalid_explicit_values_existing422_detail_before_any_put (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_invalid_explicit_values_existing422_detail_before_any_put) ... ok
+test_non_object_and_missing_body_keep_fastapi422_before_route (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_non_object_and_missing_body_keep_fastapi422_before_route) ... ok
+test_omitted_real_registration_exact_old_response_records_and_order (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_omitted_real_registration_exact_old_response_records_and_order) ... ok
+test_original_auth_app_and_route_metadata_are_unchanged (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_original_auth_app_and_route_metadata_are_unchanged) ... FAIL
+test_present_null_raw_version_and_omitted_kwargs_inside_lock (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_present_null_raw_version_and_omitted_kwargs_inside_lock) ... ok
+test_prior_missing_path_and_checkpoint_errors_preserved_before_version (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_prior_missing_path_and_checkpoint_errors_preserved_before_version) ... ok
+
+======================================================================
+FAIL: test_only_new_route_ast_added_all_existing_main_nodes_unchanged (test_model_registration_provenance_api.ModelRegistrationProvenanceApiTests.test_only_new_route_ast_added_all_existing_main_nodes_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_model_registration_provenance_api.py", line 108, in test_only_new_route_ast_added_all_existing_main_nodes_unchanged
+    self.assertEqual(ast.dump(after), ast.dump(before))
+AssertionError: 'Modu[2467 chars]le=\'annual_diagnostics_api\', names=[alias(na[73299 chars]=[])' != 'Modu[2467 chars]le=\'store\', names=[alias(name=\'Store\'), al[72630 chars]=[])'
+
+======================================================================
+FAIL: test_original_auth_app_and_route_metadata_are_unchanged (test_model_version_registration_api.ModelVersionRegistrationApiTests.test_original_auth_app_and_route_metadata_are_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_model_version_registration_api.py", line 87, in test_original_auth_app_and_route_metadata_are_unchanged
+    self.assertEqual([ast.dump(node) for node in before[:2]], [ast.dump(node) for node in after[:2]])
+AssertionError: Lists differ: ["Fun[1044 chars]rgs=[BoolOp(op=Or(), values=[Name(id='authoriz[744 chars]]))"] != ["Fun[1044 chars]rgs=[Call(func=Attribute(value=BoolOp(op=Or(),[944 chars]]))"]
+
+First differing element 0:
+"Func[1043 chars]rgs=[BoolOp(op=Or(), values=[Name(id='authoriz[343 chars]=[])"
+"Func[1043 chars]rgs=[Call(func=Attribute(value=BoolOp(op=Or(),[543 chars]=[])"
+
+Diff is 2617 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 20 tests in 4.608s
+
+FAILED (failures=2)

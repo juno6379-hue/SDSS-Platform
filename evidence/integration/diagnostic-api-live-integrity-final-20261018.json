@@ -1,0 +1,72 @@
+{
+  "recorded_at": "2026-10-18T05:41:35.157451+09:00",
+  "protected_files_checked": 141,
+  "protected_changes": [],
+  "existing_source_checked": 307,
+  "existing_source_changes": [],
+  "expected_changed_existing_sources": [
+    {
+      "path": "backend/app/main.py",
+      "before": {
+        "sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+        "bytes": 22061
+      },
+      "after": {
+        "sha256": "d5efc3acb269ab1397ff0e32b829f7ce8820799bcb16ed3e64d59121ccc27467",
+        "bytes": 22232
+      }
+    },
+    {
+      "path": "frontend/src/ModelReview.tsx",
+      "before": {
+        "sha256": "6c02add1ab58e0a39e5ededc6087c8dfa456eeaa84565967a36433046416a6a9",
+        "bytes": 11087
+      },
+      "after": {
+        "sha256": "c845118bed7dc06b5f84fedc8960c18d16015677bfeb968f88c304decc0e94fd",
+        "bytes": 11215
+      }
+    },
+    {
+      "path": "tests/test_model_registration_provenance_api.py",
+      "before": {
+        "sha256": "a54a491c49d22b99f4ef09bce503eaf68e772516526572d0447c2bf1aedcf1b4",
+        "bytes": 11317
+      },
+      "after": {
+        "sha256": "54128292af789549c334899800bca249049a44cd6f5c04d0b86dd25fcfa2c81e",
+        "bytes": 13355
+      }
+    },
+    {
+      "path": "tests/test_model_version_registration_api.py",
+      "before": {
+        "sha256": "7c76f7cf320fd7e9e81c880a71d029d4c6147e9badb989c1deff188fadf7f08a",
+        "bytes": 12354
+      },
+      "after": {
+        "sha256": "c115202858f631bcb358f8fb6c57e984f1667e9ca8733419a96d7085f90a0f73",
+        "bytes": 13244
+      }
+    },
+    {
+      "path": "tests/test_workflow_job_model_record_handoff_api.py",
+      "before": {
+        "sha256": "bbe6298df53fff05cbc062fd0f08c8d4a15acd72dd5100c95537784b5e7ccad3",
+        "bytes": 21307
+      },
+      "after": {
+        "sha256": "1abdf3a475e5e48559b2f1039bf06e8995c08edf00cc4162cb9f92ccf4f91ed5",
+        "bytes": 22558
+      }
+    }
+  ],
+  "unchanged_existing_source_files": 302,
+  "previous_evidence_checked": 1235,
+  "previous_evidence_changes": [],
+  "catalog_rows": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "reserved_bytes_preserved": 136314880,
+  "existing_execution_workflow_model_and_other_sources_unchanged": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0
+}

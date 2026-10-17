@@ -1,5 +1,23 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 인증된 연차 입력 진단 API와 수동 UI 연결 (137)
+
+API 담당은 신규 annual_diagnostics_api.py·시험과 main의 라우터 두 배선 및 단일 인증 비교의 UTF8 bytes 보강을 완료했다. UI 담당은 AnnualInputDiagnostics·strict adapter/client·전용 CSS/시험과 ModelReview의 import/render만 연결했다. 두 담당은 상대 영역을 읽어 계약을 교차 검토했고 차단 지적0이다. 이해 담당은 완료된 구현·시험으로 쉬운 설명·발표 대본·FAQ·INDEX·변경 이력과 새 Gate를 갱신했다. Root는 실제 HTTP/브라우저·전체 백엔드·보존·인계·Git을 맡았다. 이전 에이전트는 시작 시 완료 상태였고 진행 중인 수집·학습을 중복 실행하지 않았다.
+
+POST /v1/lcluc/input-diagnostics는136 strict JSON 서비스에 연결한다. 새 router는 필수 Bearer 인증, 요청/응답16KiB 제한, 안전한 exact19 요약, 고정 오류, no-store/nosniff, 프로세스 로컬 worker1과 점유 시429를 적용한다. client 표시 중단이 이미 시작한 서버 파일 읽기의 취소·rollback을 뜻하지 않는다. main 기존 optional/global 인증 정책은 보존했다. 실제 main의 잘못된 Bearer401은 기존 detail envelope가 router보다 먼저 나가며 UI는 원문을 표시하지 않는다. 공백 token도 기존 global의 truthy 설정 때문에401이 먼저 나갈 수 있다. 공백을 global 미설정으로 바꿔 다른 endpoint를 무인증 통과시키지 않는다. 새 router 단독의 빈/공백 설정503과 assembled app의 선행401 차이를 문서화했다.
+
+승인·배포 화면의 연차 입력 진단은 기본 접힘이며 사용자 명시 분자/분모·실제2~6연차 고정 참조 배열이 모두 있어야 수동 조회된다. 자동 기본 정책·추정 모델 버전·자동 POST/재시도·Job/Workflow 실행은 없다. 저장 모델의 실제 버전 선언·체크포인트/학습 보고서 SHA가 없으면 조회를 막는다. 요청 canonicalSHA·정수 정책 교차곱·응답 상태/행/계수합·9개 false를 UI에서도 검산한다. 화면은 미승인 경계를 그룹 안내하며9개 필드를 전부 개별 출력하지는 않는다. 입력/모델/route/back/unmount 변경은 이전 결과와 늦은 응답 표시를 폐기한다.
+
+API 집중 11 PASS/6.292초, 전체 백엔드 1359 run/1358 PASS/1 SKIP/484.77초, 전체 frontend271 PASS/25.6785829초, 빌드112modules/13.48초다. UI 집중10은271에 포함되고 API 집중도 전체 backend와 중복되므로 합산하지 않는다. 초기 build 타입 오류와 focused null-prototype 비교 오류의 원로그를 보존했으며 최종 통과 근거와 구별한다. 실제 임시 CPU 랜덤 미훈련 checkpoint·GTiff·SQLite와 실제 main/no-reload HTTP 서버를 사용한 검증은 TESTED_SYNTHETIC이고 운영 모델 학습·정확도·승인 근거가 아니다. 실브라우저에서 운영5174의 고정 참조 미확보 차단과 격리15137의 정책 충족/미달·입력 변경 결과 폐기·뒤로 가기 동작을 확인했다. 자세한 HTTP 상태와 UI 증거는 새 live-http/browser JSON 및 PNG/DOM 기록에 있다.
+
+최초 전체 백엔드는1358 run/1354 PASS/3 FAIL/1 SKIP/490.787초였다. 과거 provenance/model version/Workflow 모델 인계의 AST 보존 guard 세 건이 이번 정확한 라우터 배선·단일 UTF8 비교를 허용하지 않아 실패했다. 제품을 추가 변경하지 않고 세 guard가 정확한 변경 노드만 검증·정규화하도록 갱신했다. 인증 함수 전체를 비교에서 빼거나 움직이는 HEAD로 baseline을 옮기지 않았다. 최초 전체 로그와 최종 재실행 로그를 별도로 보존했다. SKIP은 기존 Windows symlink 생성 권한 제한이다.
+
+보호141개·기존 소스307개 중 허용된 main/ModelReview와 AST 시험3개(합계5) 변경·나머지302개 불변·이전 증거1235개 원바이트·catalog14행 canonicalSHA·dataset_versions0·예약136314880바이트를 확인했다. 초기 상태 조회 스크립트가136 증거 경로를 재사용한 것은 즉시 새137 파일에 관측을 보존하고136 파일을 published blob 원바이트로 복원했다. preflight에 복원 및 이전 snapshot1788개 SHA 검산을 기록했다. 원본·원장·lock·기존 분할·운영 모델·예약·보고 자동화를 변경하지 않았다.
+
+관련 설계·HTTP/JSON 계약·사용법·시험 근거·인계와 이해자료를 같은 단위로 갱신한다. 운영의 기존 Draft 모델은 핀이 없어 진단 disabled이고 독립평가/배포도 차단 상태다. 실제 수집·학습·추론·등록·승인·배포·Workflow dispatch는 이 단위에서0이다. API/Ollama 프로세스와 예약 ACTIVE/10분을 실제 수집·학습으로 표현하지 않는다. 순차 파일 관측·Store predecode·Torch/GDAL parser 자원/OS 격리 한계는 상속한다. 원자료 수집 재개·독립 라벨·품질/모델 승인·다른5개 실행기·운영 GeoLLM/RAG/PostGIS·Kubernetes staging/RBAC/기관 UAT는 미완료다. 다음 작업은 실제 LCLUC 입력 생산자의 품질 마스크/고정 참조 출력 계약과138 연결 가능 범위를 확인해 작은 내부 단위부터 이어간다. 단일 진단 UI/API를 전체 프로젝트 완료로 간주하지 않는다.
+
+근거: docs/implementation/137_annual_diagnostics_api_ui.md, evidence/integration/diagnostic-api-agent-20261018-focused-final3.log, diagnostic-api-root-full-backend-20261018.log(최초), diagnostic-api-root-full-backend-final2-20261018.log(최종), annual-input-diagnostics-ui-front-20261018.log, annual-input-diagnostics-ui-build-final2-20261018.log, diagnostic-api-live-http-20261018.json, diagnostic-api-browser-20261018.json, diagnostic-api-live-integrity-final-20261018.json, 최종 diagnostic-api-closeout-20261018.json.
+
 ## 2026-10-18 — 연차 입력 진단의 제한된 JSON 서비스와 안전한 요약 계약 (136)
 
 구현 담당은 신규 `backend/app/annual_diagnostics_service.py`, 집중시험, 내부 요청·응답 JSON Schema와 문서136을 맡았다. 독립 담당은 별도 실제 임시 연차 자료·미훈련 checkpoint, strict JSON과 오염된 부모 응답을 구분해 검증한다. Root는 관련 회귀·실파일 시나리오·운영 조회·보존·공통 문서·Git을 담당하고 이해 담당은 완료 소스와 시험으로 해설·발표 대본·FAQ·INDEX·변경 이력을 갱신한다. 시작 시 기존 작업자는 모두 완료 상태였고 수집·학습 프로세스는 관측되지 않았다. API·Ollama와 보고 예약 ACTIVE/10분은 실제 수집·학습 실행과 구분한다.

@@ -1,0 +1,283 @@
+TAP version 13
+# (node:31852) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: explicit stored pins and policy only, Unicode/padding preserve, no inferred version/default
+ok 1 - explicit stored pins and policy only, Unicode/padding preserve, no inferred version/default
+  ---
+  duration_ms: 2.383
+  type: 'test'
+  ...
+# Subtest: strict raw JSON duplicate/float/bool/nonfinite/depth/string/surrogate and byte limits
+ok 2 - strict raw JSON duplicate/float/bool/nonfinite/depth/string/surrogate and byte limits
+  ---
+  duration_ms: 3.2553
+  type: 'test'
+  ...
+# Subtest: 2..6 sorted exact rows/refs and pair namespaces before transport
+ok 3 - 2..6 sorted exact rows/refs and pair namespaces before transport
+  ---
+  duration_ms: 5.4097
+  type: 'test'
+  ...
+# Subtest: canonical digest stable across property order and raw whitespace, pins/policy bound
+ok 4 - canonical digest stable across property order and raw whitespace, pins/policy bound
+  ---
+  duration_ms: 5.4702
+  type: 'test'
+  ...
+# Subtest: MET/NOTMET counts and exact cross product; allzero zero-policy accepted only explicitly
+ok 5 - MET/NOTMET counts and exact cross product; allzero zero-policy accepted only explicitly
+  ---
+  duration_ms: 0.8306
+  type: 'test'
+  ...
+# Subtest: contaminated exact19/status/9false/digest/counts/sums/arithmetic/year/issue rejected
+ok 6 - contaminated exact19/status/9false/digest/counts/sums/arithmetic/year/issue rejected
+  ---
+  duration_ms: 0.9344
+  type: 'test'
+  ...
+# Subtest: SOURCE_BLOCKED safe waiting vs zero, INVALID422/OUTPUT503 consistency and fixed transport errors
+ok 7 - SOURCE_BLOCKED safe waiting vs zero, INVALID422/OUTPUT503 consistency and fixed transport errors
+  ---
+  duration_ms: 0.9675
+  type: 'test'
+  ...
+# Subtest: synchronous double-click one request and edit/model/route/unmount stale discarded
+ok 8 - synchronous double-click one request and edit/model/route/unmount stale discarded
+  ---
+  duration_ms: 0.6004
+  type: 'test'
+  ...
+# Subtest: client exact POST/Bearer/AbortSignal/no-store bounded copy and 401 safe ignore detail
+not ok 9 - client exact POST/Bearer/AbortSignal/no-store bounded copy and 401 safe ignore detail
+  ---
+  duration_ms: 3.3474
+  type: 'test'
+  location: 'E:\\GeoAI–MLOps–SDSS\\frontend\\src\\annualInputDiagnosticsAdapter.test.mjs:21:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    ... Skipped lines
+    
+      {
+        capability: 'landcover.input_diagnostics',
+        model_ref: {
+          id: 'model_137',
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    ...
+        requested_years: [
+    +     {
+    +       evidence_ref: {
+    -     [Object: null prototype] {
+    -       evidence_ref: [Object: null prototype] {
+              id: 'evidence0',
+              sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              version: ' 고정 v1 '
+            },
+    +       image_ref: {
+    -       image_ref: [Object: null prototype] {
+              id: 'image0',
+              sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              version: ' 고정 v1 '
+            },
+    +       mask_ref: {
+    -       mask_ref: [Object: null prototype] {
+              id: 'mask0',
+              sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              version: ' 고정 v1 '
+            },
+    +       metadata_ref: {
+    -       metadata_ref: [Object: null prototype] {
+              id: 'metadata0',
+              sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              version: ' 고정 v1 '
+            },
+    +       quality_report_ref: {
+    -       quality_report_ref: [Object: null prototype] {
+              id: 'quality0',
+              sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              version: ' 고정 v1 '
+            },
+            year: 2020
+          },
+    +     {
+    +       evidence_ref: {
+    -     [Object: null prototype] {
+    -       evidence_ref: [Object: null prototype] {
+              id: 'evidence1',
+              sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              version: ' 고정 v1 '
+            },
+    +       image_ref: {
+    -       image_ref: [Object: null prototype] {
+              id: 'image1',
+              sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              version: ' 고정 v1 '
+            },
+    +       mask_ref: {
+    -       mask_ref: [Object: null prototype] {
+              id: 'mask1',
+              sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              version: ' 고정 v1 '
+            },
+    +       metadata_ref: {
+    -       metadata_ref: [Object: null prototype] {
+              id: 'metadata1',
+              sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              version: ' 고정 v1 '
+            },
+    +       quality_report_ref: {
+    -       quality_report_ref: [Object: null prototype] {
+              id: 'quality1',
+              sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              version: ' 고정 v1 '
+            },
+            year: 2021
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    schema_version: 1
+    capability: 'landcover.input_diagnostics'
+    model_ref:
+      id: 'model_137'
+      version: ' v1 '
+      sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    training_report_sha256: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
+    requested_years:
+      0:
+        year: 2020
+        image_ref:
+          id: 'image0'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        evidence_ref:
+          id: 'evidence0'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        metadata_ref:
+          id: 'metadata0'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        quality_report_ref:
+          id: 'quality0'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        mask_ref:
+          id: 'mask0'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+      1:
+        year: 2021
+        image_ref:
+          id: 'image1'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        evidence_ref:
+          id: 'evidence1'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        metadata_ref:
+          id: 'metadata1'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        quality_report_ref:
+          id: 'quality1'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        mask_ref:
+          id: 'mask1'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    policy:
+      schema_version: 1
+      minimum_valid_numerator: 1
+      minimum_valid_denominator: 2
+      comparison: 'greater_than_or_equal'
+  actual:
+    schema_version: 1
+    capability: 'landcover.input_diagnostics'
+    model_ref:
+      id: 'model_137'
+      version: ' v1 '
+      sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    training_report_sha256: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
+    requested_years:
+      0:
+        year: 2020
+        image_ref:
+          id: 'image0'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        evidence_ref:
+          id: 'evidence0'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        metadata_ref:
+          id: 'metadata0'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        quality_report_ref:
+          id: 'quality0'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        mask_ref:
+          id: 'mask0'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+      1:
+        year: 2021
+        image_ref:
+          id: 'image1'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        evidence_ref:
+          id: 'evidence1'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        metadata_ref:
+          id: 'metadata1'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        quality_report_ref:
+          id: 'quality1'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        mask_ref:
+          id: 'mask1'
+          version: ' 고정 v1 '
+          sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    policy:
+      schema_version: 1
+      minimum_valid_numerator: 1
+      minimum_valid_denominator: 2
+      comparison: 'greater_than_or_equal'
+  operator: 'deepStrictEqual'
+  stack: |-
+    fetch (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/annualInputDiagnosticsAdapter.test.mjs:21:696)
+    Module.readAnnualInputDiagnostics (data:text/javascript;base64,Y29uc3QgQVBJX0JBU0U9Jy9hcGknOwpjb25zdCBzdHJpY3RBbm51YWxKU09OPWdsb2JhbFRoaXMuZml4dHVyZVN0cmljdEpTT047CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIHJlYWRBbm51YWxJbnB1dERpYWdub3N0aWNzKHJlcXVlc3QgICAgICAgICAgICAgICxzaWduYWwgICAgICAgICAgICAsbGl2ZSAgICAgICAgICAgICl7CiBpZighbGl2ZSgpKXJldHVybjtjb25zdCB0b2tlbj1zZXNzaW9uU3RvcmFnZS5nZXRJdGVtKCdnZW9haV90b2tlbicpOwogY29uc3QgcmVzcG9uc2U9YXdhaXQgZmV0Y2gobmV3IFVSTChBUElfQkFTRSx3aW5kb3cubG9jYXRpb24uaHJlZikub3JpZ2luKycvdjEvbGNsdWMvaW5wdXQtZGlhZ25vc3RpY3MnLHttZXRob2Q6J1BPU1QnLGhlYWRlcnM6eydDb250ZW50LVR5cGUnOidhcHBsaWNhdGlvbi9qc29uJywuLi4odG9rZW4/e0F1dGhvcml6YXRpb246YEJlYXJlciAke3Rva2VufWB9Ont9KX0sYm9keTpKU09OLnN0cmluZ2lmeShyZXF1ZXN0KSxjYWNoZTonbm8tc3RvcmUnLHNpZ25hbH0pOwogaWYocmVzcG9uc2Uuc3RhdHVzPT09NDAxKXthd2FpdCByZXNwb25zZS5ib2R5Py5jYW5jZWwoKTtyZXR1cm4ge3N0YXR1czo0MDEsdmFsdWU6bnVsbH07fQogaWYoIXJlc3BvbnNlLmJvZHkpdGhyb3cgbmV3IEVycm9yKCfsp4Tri6gg7J2R64u17J2EIOydveydhCDsiJgg7JeG7Iq164uI64ukLicpO2NvbnN0IHJlYWRlcj1yZXNwb25zZS5ib2R5LmdldFJlYWRlcigpLGNodW5rcyAgICAgICAgICAgICA9W107bGV0IHNpemU9MDsKIHRyeXtjb25zdCBsZW5ndGg9cmVzcG9uc2UuaGVhZGVycy5nZXQoJ2NvbnRlbnQtbGVuZ3RoJyk7aWYobGVuZ3RoJiYvXlxkKyQvLnRlc3QobGVuZ3RoKSYmTnVtYmVyKGxlbmd0aCk+MTYzODQpdGhyb3cgbmV3IEVycm9yKCdsaW1pdCcpO3doaWxlKHRydWUpe2NvbnN0IHBhcnQ9YXdhaXQgcmVhZGVyLnJlYWQoKTtpZighbGl2ZSgpKXthd2FpdCByZWFkZXIuY2FuY2VsKCk7cmV0dXJuO31pZihwYXJ0LmRvbmUpYnJlYWs7c2l6ZSs9cGFydC52YWx1ZS5ieXRlTGVuZ3RoO2lmKHNpemU+MTYzODQpdGhyb3cgbmV3IEVycm9yKCdsaW1pdCcpO2NodW5rcy5wdXNoKHBhcnQudmFsdWUpO319CiBjYXRjaChlKXt0cnl7YXdhaXQgcmVhZGVyLmNhbmNlbCgpO31jYXRjaHsvKiBDYW5jZWxsYXRpb24gb25seSBzdG9wcyBsb2NhbCB0cmFuc3BvcnQuICovfXRocm93IGU7fWZpbmFsbHl7cmVhZGVyLnJlbGVhc2VMb2NrKCk7fQogY29uc3QgYnl0ZXM9bmV3IFVpbnQ4QXJyYXkoc2l6ZSk7bGV0IG9mZnNldD0wO2Zvcihjb25zdCBjaHVuayBvZiBjaHVua3Mpe2J5dGVzLnNldChjaHVuayxvZmZzZXQpO29mZnNldCs9Y2h1bmsuYnl0ZUxlbmd0aDt9CiBpZighbGl2ZSgpKXJldHVybjtyZXR1cm4ge3N0YXR1czpyZXNwb25zZS5zdGF0dXMsdmFsdWU6c3RyaWN0QW5udWFsSlNPTihuZXcgVGV4dERlY29kZXIoJ3V0Zi04Jyx7ZmF0YWw6dHJ1ZX0pLmRlY29kZShieXRlcykpfTsKfQo=:6:23)
+    TestContext.<anonymous> (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/frontend/src/annualInputDiagnosticsAdapter.test.mjs:21:1067)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: panel manual collapsed/blank policy/refs, model-unselected guidance and namespaced sibling; no execution call
+ok 10 - panel manual collapsed/blank policy/refs, model-unselected guidance and namespaced sibling; no execution call
+  ---
+  duration_ms: 1.572
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 9
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 189.0568

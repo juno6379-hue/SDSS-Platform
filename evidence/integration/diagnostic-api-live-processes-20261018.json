@@ -1,0 +1,70 @@
+﻿{
+    "checked_at":  "2026-10-18T05:12:29.9717420+09:00",
+    "processes":  [
+                      {
+                          "pid":  27268,
+                          "parent_pid":  31440,
+                          "parent_exists":  true,
+                          "name":  "ollama app.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+                          "created":  "\/Date(1792194023427)\/",
+                          "cpu":  27.203125,
+                          "working_set":  88915968
+                      },
+                      {
+                          "pid":  27860,
+                          "parent_pid":  27268,
+                          "parent_exists":  true,
+                          "name":  "ollama.exe",
+                          "command_line":  "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+                          "created":  "\/Date(1792194025549)\/",
+                          "cpu":  9.953125,
+                          "working_set":  85024768
+                      },
+                      {
+                          "pid":  32224,
+                          "parent_pid":  24092,
+                          "parent_exists":  true,
+                          "name":  "python.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
+                          "created":  "\/Date(1792194462900)\/",
+                          "cpu":  449.484375,
+                          "working_set":  17285120
+                      },
+                      {
+                          "pid":  26912,
+                          "parent_pid":  3392,
+                          "parent_exists":  true,
+                          "name":  "python.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001",
+                          "created":  "\/Date(1792198361777)\/",
+                          "cpu":  376.46875,
+                          "working_set":  32079872
+                      },
+                      {
+                          "pid":  35032,
+                          "parent_pid":  22796,
+                          "parent_exists":  true,
+                          "name":  "python.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend",
+                          "created":  "\/Date(1792199087513)\/",
+                          "cpu":  10233.515625,
+                          "working_set":  21368832
+                      },
+                      {
+                          "pid":  8748,
+                          "parent_pid":  35032,
+                          "parent_exists":  true,
+                          "name":  "python.exe",
+                          "command_line":  "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\"",
+                          "created":  "\/Date(1792267164822)\/",
+                          "cpu":  18.671875,
+                          "working_set":  55332864
+                      }
+                  ],
+    "collector_training_processes_observed":  0,
+    "observation_limit":  "Process command patterns; test interpreters are distinct from collection/training",
+    "automation_status":  "ACTIVE",
+    "automation_interval_minutes":  10,
+    "automation_was_not_modified":  true
+}

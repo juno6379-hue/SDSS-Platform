@@ -37,6 +37,19 @@ def fragments(path):
     return selected
 
 
+def normalize_authorized_comparison(node):
+    """137 allows only the exact UTF-8 argument change; keep all other AST."""
+    calls = [item for item in ast.walk(node) if isinstance(item, ast.Call)
+             and isinstance(item.func, ast.Attribute) and isinstance(item.func.value, ast.Name)
+             and item.func.value.id == 'secrets' and item.func.attr == 'compare_digest']
+    expected = ast.parse("secrets.compare_digest((authorization or '').encode('utf-8'), f'Bearer {token}'.encode('utf-8'))", mode='eval').body
+    if len(calls) != 1 or ast.dump(calls[0]) != ast.dump(expected):
+        raise AssertionError('Only the exact authorized UTF-8 comparison is allowed')
+    original = ast.parse("secrets.compare_digest(authorization or '', f'Bearer {token}')", mode='eval').body
+    calls[0].args = original.args
+    return node
+
+
 class RecordingLock:
     def __init__(self):
         self.inner = RLock()
@@ -84,6 +97,7 @@ class ModelVersionRegistrationApiTests(unittest.TestCase):
 
     def test_original_auth_app_and_route_metadata_are_unchanged(self):
         before, after = fragments(ORIGINAL), fragments(MAIN)
+        normalize_authorized_comparison(after[0])
         self.assertEqual([ast.dump(node) for node in before[:2]], [ast.dump(node) for node in after[:2]])
         old_route, new_route = before[-1], after[-1]
         self.assertEqual([ast.dump(node) for node in old_route.decorator_list],

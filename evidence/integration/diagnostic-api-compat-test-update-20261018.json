@@ -1,0 +1,30 @@
+{
+  "scope": "TEST_ONLY_EXACT_AUTH_AND_ROUTER_AST_PRESERVATION_COMPATIBILITY",
+  "files": [
+    {
+      "path": "tests/test_model_registration_provenance_api.py",
+      "baseline": "evidence\\integration\\diagnostic-api-compat-original-provenance-test-20261018.py",
+      "before_sha256": "a54a491c49d22b99f4ef09bce503eaf68e772516526572d0447c2bf1aedcf1b4",
+      "after_sha256": "54128292af789549c334899800bca249049a44cd6f5c04d0b86dd25fcfa2c81e",
+      "original_newline": "LF",
+      "newline_preserved": true
+    },
+    {
+      "path": "tests/test_model_version_registration_api.py",
+      "baseline": "evidence\\integration\\diagnostic-api-compat-original-registration-test-20261018.py",
+      "before_sha256": "7c76f7cf320fd7e9e81c880a71d029d4c6147e9badb989c1deff188fadf7f08a",
+      "after_sha256": "c115202858f631bcb358f8fb6c57e984f1667e9ca8733419a96d7085f90a0f73",
+      "original_newline": "LF",
+      "newline_preserved": true
+    },
+    {
+      "path": "tests/test_workflow_job_model_record_handoff_api.py",
+      "baseline": "evidence\\integration\\diagnostic-api-compat-original-workflow-test-20261018.py",
+      "before_sha256": "bbe6298df53fff05cbc062fd0f08c8d4a15acd72dd5100c95537784b5e7ccad3",
+      "after_sha256": "1abdf3a475e5e48559b2f1039bf06e8995c08edf00cc4162cb9f92ccf4f91ed5",
+      "original_newline": "LF",
+      "newline_preserved": true
+    }
+  ],
+  "product_source_changes": 0
+}

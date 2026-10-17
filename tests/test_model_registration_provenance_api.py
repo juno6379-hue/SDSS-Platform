@@ -45,6 +45,19 @@ def isolated_app(source, store):
     return namespace['app']
 
 
+def normalize_authorized_comparison(node):
+    """137 allows only the exact UTF-8 argument change; keep all other AST."""
+    calls = [item for item in ast.walk(node) if isinstance(item, ast.Call)
+             and isinstance(item.func, ast.Attribute) and isinstance(item.func.value, ast.Name)
+             and item.func.value.id == 'secrets' and item.func.attr == 'compare_digest']
+    expected = ast.parse("secrets.compare_digest((authorization or '').encode('utf-8'), f'Bearer {token}'.encode('utf-8'))", mode='eval').body
+    if len(calls) != 1 or ast.dump(calls[0]) != ast.dump(expected):
+        raise AssertionError('Only the exact authorized UTF-8 comparison is allowed')
+    original = ast.parse("secrets.compare_digest(authorization or '', f'Bearer {token}')", mode='eval').body
+    calls[0].args = original.args
+    return node
+
+
 class RecordingStore(Store):
     def __init__(self, root):
         self.accesses = []
@@ -92,7 +105,7 @@ class ModelRegistrationProvenanceApiTests(unittest.TestCase):
         added = [node for node in after.body if isinstance(node, ast.FunctionDef) and node.name == ROUTE_NAME]
         self.assertEqual(len(added), 1)
         after.body = [node for node in after.body if node not in added]
-        # 105, 116 and 120 add explicit import/include pairs. Keep every other
+        # 105, 116, 120 and 137 add exact import/include pairs. Keep every other
         # original node and its order under the existing full-module guard.
         authorized_router_nodes = ast.parse(
             'from .workflow_job_model_record_handoff_api import create_workflow_job_model_record_handoff_router\n'
@@ -100,12 +113,30 @@ class ModelRegistrationProvenanceApiTests(unittest.TestCase):
             'from .lcluc_workflow_api import create_lcluc_workflow_router\n'
             'app.include_router(create_lcluc_workflow_router(lambda: store))\n'
             'from .model_error_analysis_api import create_model_error_analysis_router\n'
-            'app.include_router(create_model_error_analysis_router(lambda: store))\n').body
+            'app.include_router(create_model_error_analysis_router(lambda: store))\n'
+            'from .annual_diagnostics_api import create_annual_diagnostics_router\n'
+            'app.include_router(create_annual_diagnostics_router(lambda: store))\n').body
         for expected in authorized_router_nodes:
             matches = [node for node in after.body if ast.dump(node) == ast.dump(expected)]
             self.assertEqual(len(matches), 1)
             after.body.remove(matches[0])
+        auth = [node for node in after.body if isinstance(node, ast.FunctionDef) and node.name == 'authorized']
+        self.assertEqual(len(auth), 1)
+        normalize_authorized_comparison(auth[0])
         self.assertEqual(ast.dump(after), ast.dump(before))
+
+    def test_auth_normalizer_rejects_unexpected_comparison_or_duplicate(self):
+        original = next(node for node in tree(MAIN).body if isinstance(node, ast.FunctionDef) and node.name == 'authorized')
+        for duplicate in (False, True):
+            candidate = ast.parse(ast.unparse(original)).body[0]
+            call = next(node for node in ast.walk(candidate) if isinstance(node, ast.Call)
+                        and isinstance(node.func, ast.Attribute) and node.func.attr == 'compare_digest')
+            if duplicate:
+                candidate.body.append(ast.Expr(value=ast.parse(ast.unparse(call), mode='eval').body))
+            else:
+                call.args[0] = ast.Constant(value='unexpected')
+            with self.assertRaises(AssertionError):
+                normalize_authorized_comparison(candidate)
 
     def test_all_five_states_are_200_exact_helper_response_get_once_write_zero(self):
         cases = []

@@ -1,0 +1,186 @@
+{
+  "scope": "TESTED_SYNTHETIC_TEMP_ACTUAL_MAIN_HTTP_NO_TRAINING_NO_INFERENCE",
+  "fixture_pid": 13024,
+  "port": 18037,
+  "data_root": "C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmp4mjakj62",
+  "model_ref": {
+    "id": "fixture",
+    "version": "model-v1",
+    "sha256": "aa62def0a27a6bb7db527315a64368a066b77eedde32c029ffc68ac02d05c972"
+  },
+  "model_status": "Draft",
+  "model_name": "TESTED_SYNTHETIC137_TEMP_ONLY_NO_TRAINING",
+  "checks": {
+    "missing_token": {
+      "http_status": 401,
+      "body": {
+        "detail": "인증 토큰이 필요합니다."
+      },
+      "cache_control": null
+    },
+    "wrong_token": {
+      "http_status": 401,
+      "body": {
+        "detail": "인증 토큰이 필요합니다."
+      },
+      "cache_control": null
+    },
+    "policy_met": {
+      "http_status": 200,
+      "body": {
+        "schema_version": 1,
+        "scope": "LCLUC_ANNUAL_DIAGNOSTIC_SUMMARY_READ_ONLY",
+        "status": "CALLER_POLICY_MET_UNVERIFIED",
+        "request_sha256": "5715e0d9e7fcb359d99d5fbf39e466a33ab2d4dc975d88e24c66c494cfb5f124",
+        "blocking_stage": null,
+        "issue": null,
+        "per_year_observations": [
+          {
+            "year": 2020,
+            "status": "MET",
+            "counts": {
+              "valid_pixels": 128,
+              "invalid_pixels": 128,
+              "total_pixels": 256
+            },
+            "policy_met": true
+          },
+          {
+            "year": 2021,
+            "status": "MET",
+            "counts": {
+              "valid_pixels": 128,
+              "invalid_pixels": 128,
+              "total_pixels": 256
+            },
+            "policy_met": true
+          }
+        ],
+        "caller_policy_evaluated": true,
+        "caller_policy_met": true,
+        "artifact_bytes_verified": true,
+        "quality_report_verified": false,
+        "quality_mask_verified": false,
+        "mask_semantics_verified": false,
+        "registry_aoi_verified": false,
+        "source_authority_verified": false,
+        "scientific_accuracy_validated": false,
+        "execution_authorized": false,
+        "state_dict_verified": false,
+        "workflow_supported": false
+      },
+      "cache_control": "no-store"
+    },
+    "policy_not_met": {
+      "http_status": 200,
+      "body": {
+        "schema_version": 1,
+        "scope": "LCLUC_ANNUAL_DIAGNOSTIC_SUMMARY_READ_ONLY",
+        "status": "CALLER_POLICY_NOT_MET",
+        "request_sha256": "ebb544e38c99aef2a94e8794a76ad3b2fabbe7d64ad2001102a40636efb41040",
+        "blocking_stage": "POLICY",
+        "issue": {
+          "code": "CALLER_POLICY_NOT_MET",
+          "year": 2020
+        },
+        "per_year_observations": [
+          {
+            "year": 2020,
+            "status": "NOT_MET",
+            "counts": {
+              "valid_pixels": 128,
+              "invalid_pixels": 128,
+              "total_pixels": 256
+            },
+            "policy_met": false
+          },
+          {
+            "year": 2021,
+            "status": "NOT_MET",
+            "counts": {
+              "valid_pixels": 128,
+              "invalid_pixels": 128,
+              "total_pixels": 256
+            },
+            "policy_met": false
+          }
+        ],
+        "caller_policy_evaluated": true,
+        "caller_policy_met": false,
+        "artifact_bytes_verified": false,
+        "quality_report_verified": false,
+        "quality_mask_verified": false,
+        "mask_semantics_verified": false,
+        "registry_aoi_verified": false,
+        "source_authority_verified": false,
+        "scientific_accuracy_validated": false,
+        "execution_authorized": false,
+        "state_dict_verified": false,
+        "workflow_supported": false
+      },
+      "cache_control": "no-store"
+    },
+    "invalid": {
+      "http_status": 422,
+      "body": {
+        "schema_version": 1,
+        "scope": "LCLUC_ANNUAL_DIAGNOSTIC_SUMMARY_READ_ONLY",
+        "status": "INVALID_REQUEST",
+        "request_sha256": null,
+        "blocking_stage": "REQUEST",
+        "issue": {
+          "code": "INVALID_REQUEST",
+          "year": null
+        },
+        "per_year_observations": [],
+        "caller_policy_evaluated": false,
+        "caller_policy_met": false,
+        "artifact_bytes_verified": false,
+        "quality_report_verified": false,
+        "quality_mask_verified": false,
+        "mask_semantics_verified": false,
+        "registry_aoi_verified": false,
+        "source_authority_verified": false,
+        "scientific_accuracy_validated": false,
+        "execution_authorized": false,
+        "state_dict_verified": false,
+        "workflow_supported": false
+      },
+      "cache_control": "no-store"
+    },
+    "oversize": {
+      "http_status": 413,
+      "body": {
+        "schema_version": 1,
+        "scope": "LCLUC_ANNUAL_DIAGNOSTIC_HTTP_ERROR",
+        "error": {
+          "code": "REQUEST_TOO_LARGE"
+        }
+      },
+      "cache_control": "no-store"
+    }
+  },
+  "operating_8002_read_only_observation": {
+    "openapi_status": 200,
+    "endpoint_present": true,
+    "unauthenticated_empty_request": {
+      "http_status": 503,
+      "body": {
+        "schema_version": 1,
+        "scope": "LCLUC_ANNUAL_DIAGNOSTIC_HTTP_ERROR",
+        "error": {
+          "code": "AUTH_CONFIGURATION_REQUIRED"
+        }
+      },
+      "cache_control": "no-store"
+    }
+  },
+  "operating_writes": 0,
+  "operating_token_read": false,
+  "training_inference": 0,
+  "limitations": [
+    "Random untrained Temp checkpoint; weights-only manifest load, no model forward.",
+    "Binary128/128 is a constructed fixture, not real QA/accuracy/authority or readiness.",
+    "Actual main is imported only after GEOAI_DATA_ROOT points to TempStore."
+  ]
+}

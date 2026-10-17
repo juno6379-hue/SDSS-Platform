@@ -1,0 +1,20 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_actual_main_authorized_dependency_ascii_and_nonascii_safe401 (test_annual_diagnostics_api.AnnualDiagnosticsApiTests.test_actual_main_authorized_dependency_ascii_and_nonascii_safe401) ... ok
+test_actual_temp_two_years_service_and_response_copy (test_annual_diagnostics_api.AnnualDiagnosticsApiTests.test_actual_temp_two_years_service_and_response_copy) ... C:\Users\√÷¡ÿø¿\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_auth_configuration_required_and_wrong_bearer_no_factory_or_service (test_annual_diagnostics_api.AnnualDiagnosticsApiTests.test_auth_configuration_required_and_wrong_bearer_no_factory_or_service) ... ok
+test_busy_nonblocking_and_worker_release_after_exception (test_annual_diagnostics_api.AnnualDiagnosticsApiTests.test_busy_nonblocking_and_worker_release_after_exception) ... ok
+test_invalid_service_request_422_no_store_get (test_annual_diagnostics_api.AnnualDiagnosticsApiTests.test_invalid_service_request_422_no_store_get) ... ok
+test_main_ast_only_authorized_import_and_include_added (test_annual_diagnostics_api.AnnualDiagnosticsApiTests.test_main_ast_only_authorized_import_and_include_added) ... ok
+test_media_and_size_limits_pre_factory (test_annual_diagnostics_api.AnnualDiagnosticsApiTests.test_media_and_size_limits_pre_factory) ... ok
+test_response_key_budget_and_source_year_must_belong_to_rows (test_annual_diagnostics_api.AnnualDiagnosticsApiTests.test_response_key_budget_and_source_year_must_belong_to_rows) ... ok
+test_service_output_status_mapping_schema_and_malformed_fixed503 (test_annual_diagnostics_api.AnnualDiagnosticsApiTests.test_service_output_status_mapping_schema_and_malformed_fixed503) ... ok
+test_cancellation_does_not_free_a_running_worker_slot (test_annual_diagnostics_api.AsyncRouterBoundaryTests.test_cancellation_does_not_free_a_running_worker_slot) ... ok
+test_chunked_oversize_disconnect_and_nonascii_auth_safe (test_annual_diagnostics_api.AsyncRouterBoundaryTests.test_chunked_oversize_disconnect_and_nonascii_auth_safe) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 6.292s
+
+OK
