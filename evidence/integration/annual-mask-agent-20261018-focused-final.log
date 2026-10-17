@@ -1,0 +1,16 @@
+test_actual_two_six_rows_one_model_get1plus6n_full_flags (test_annual_quality_mask_diagnostics.AnnualQualityMaskDiagnosticsTests.test_actual_two_six_rows_one_model_get1plus6n_full_flags) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_all_rows_validated_before_any_store_io (test_annual_quality_mask_diagnostics.AnnualQualityMaskDiagnosticsTests.test_all_rows_validated_before_any_store_io) ... ok
+test_global_model_wrapped_and_stage_exception_sanitized (test_annual_quality_mask_diagnostics.AnnualQualityMaskDiagnosticsTests.test_global_model_wrapped_and_stage_exception_sanitized) ... ok
+test_input_snapshot_survives_mutation_and_no_writes_during_success (test_annual_quality_mask_diagnostics.AnnualQualityMaskDiagnosticsTests.test_input_snapshot_survives_mutation_and_no_writes_during_success) ... ok
+test_join_missing_malformed_digests_or_temporal_year_fail_closed (test_annual_quality_mask_diagnostics.AnnualQualityMaskDiagnosticsTests.test_join_missing_malformed_digests_or_temporal_year_fail_closed) ... ok
+test_middle_mask_failure_partial_and_later_not_checked_after_all130_io (test_annual_quality_mask_diagnostics.AnnualQualityMaskDiagnosticsTests.test_middle_mask_failure_partial_and_later_not_checked_after_all130_io) ... ok
+test_missing_or_duplicate_image_bindings_fail_closed_no_join (test_annual_quality_mask_diagnostics.AnnualQualityMaskDiagnosticsTests.test_missing_or_duplicate_image_bindings_fail_closed_no_join) ... ok
+test_registry_metadata_change_same_filepins_rejected_after_count_observation (test_annual_quality_mask_diagnostics.AnnualQualityMaskDiagnosticsTests.test_registry_metadata_change_same_filepins_rejected_after_count_observation) ... ok
+test_spatial_fail_prevents_all_mask_calls_but_retains_original (test_annual_quality_mask_diagnostics.AnnualQualityMaskDiagnosticsTests.test_spatial_fail_prevents_all_mask_calls_but_retains_original) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 33.800s
+
+OK

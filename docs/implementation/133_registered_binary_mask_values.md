@@ -59,3 +59,7 @@ Root 관련 **40 PASS / 16.334초 / exit 0**는 `evidence/integration/binary-mas
 독립 **8 PASS / 0 SKIP / 6.724950초 / exit 0**는 `evidence/integration/binary-mask-independent-20261018.py`와 같은 stem `.json`·`.log`에 동결했다. 별도 실제 checkerboard의128/128 계수, all0/all1과 최소 비율 정책 부재,255 실패 시 counts 미출력, missing/SCL/bool/추가 키 선언과 nodata·실제 내장 mask 거부를 검증했다. 정상 get3회·영상 두 번/마스크 세 번 파일 관측·mask `read(1, masked=False)` 한 번, image 픽셀/read_masks0과 DB/전체 파일 불변을 확인했다.
 
 132 실패·131 quality_report 오류 field 보존·invalid Store I/O0,132 이후 변경의 세 번째 SHA 차단·동일 get copy·dtype/shape guard·exact19/10false와 nested 관측 범위도 확인했다. 최종 source와 test SHA가 일치하며 Git45d4000의 기존 핵심8개 SHA·tracked source는 불변이다. 독립 로그 끝의 test SHA 추가는 metadata 확인 기록이며 재시험이나 제품 변경이 아니다. 추가 제품 지적은 없다. 운영 모델 load·훈련·추론·API/UI/frontend/build/browser 실행 없이 의미의 진실성·QA·최소 정책·비원자성 한계를 유지한다. 최종 근거 반영 후 본 문서를 동결했다.
+
+## 후속134
+
+연차 공간 진단과 명시 마스크의 고정 참조 연결은 `134_annual_quality_mask_diagnostics.md` 및 신규 `annual_quality_mask_diagnostics.py`에서 수행한다. 133의 계수 관측을 보존하고 단계 간 영상 manifest SHA를 대조하며 실제 의미·품질·실행 승인은 별도로 유지한다.

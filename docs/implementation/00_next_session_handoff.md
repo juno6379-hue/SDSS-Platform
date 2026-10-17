@@ -1,5 +1,25 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 연차 공간 진단과 명시 마스크의 고정 참조 연결 (134)
+
+구현 담당은 신규 `backend/app/ml/annual_quality_mask_diagnostics.py`, 집중시험과 문서134를 맡았다. 독립 담당은 별도 실제 임시 GeoTIFF·등록 참조·미훈련 checkpoint로 전체 요청 선검사, 단계 간 manifest 연결, 행별 실패와 무쓰기를 검증한다. Root는 관련 회귀·실파일 시나리오·운영 조회·보존·공통 문서·Git을 담당하고 이해 담당은 완료된 구현과 증거로 해설·발표·FAQ·INDEX·변경 이력을 갱신한다. 시작 시 기존 작업자는 모두 완료 상태였으며 실제 수집·학습 프로세스는 관측되지 않았다. API·Ollama 및 보고 예약 ACTIVE/10분을 수집·학습 실행과 구분한다.
+
+`inspect_annual_quality_mask_diagnostics(store, model_ref, training_report_sha256, requested_years)`는 전체2~6행을 I/O 전에 고정 사본으로 검사한다. 각 행은 year/image_ref/evidence_ref/metadata_ref/quality_report_ref/mask_ref의 정확히6개 키다. 기존127의 정렬·고유 연도와 고정 모델/영상/정규화/메타데이터 참조 선검사에 품질 보고서·마스크 참조 검사를 추가한다. 영상·품질 보고서·마스크의 등록 키는 행 안에서 서로 달라야 한다. 누락한 참조를 추정하거나 legacy Registry를 역채우지 않는다.
+
+130의 전체 연차 공간 진단을 한 번 통과한 뒤에만 연도별133을 한 번씩 호출한다. 영상의 canonical manifest SHA는130의129/128 시간 관측과133의132/131 Registry 관측 사이에서 일치해야 한다. 파일 SHA가 같아도 두 단계 사이 Registry 메타데이터가 바뀌면 차단한다. 추가 get 없이 이미 얻은 관측을 연결하며 정상N행은 모델 읽기/Torch load1회, Store.get 1+6N회, 마스크 픽셀 읽기N회다. 원 영상 픽셀·학습·추론·state_dict 적용은 없다. 임시 checkpoint는 실제 훈련 결과가 아닌 합성 fixture다.
+
+exact22 출력은 원 annual_spatial_observation과 행별 mask_observation을 보존한다. checked_rows에는 실패한 마스크 행도 포함되며 첫 실패 후 나머지 행은 NOT_CHECKED다. 이 상태는 마스크 단계 미수행이며130이 이미 해당 영상·헤더·파일을 읽었을 수 있다.133의 counts가 성공해 남아도 후속 manifest 연결 실패 시 전체 성공이 아니다. 상위 artifact_bytes_verified/mask_values_verified/registry_manifest_join_verified는 모든 행이 통과할 때만 true다. 품질 보고서·품질 마스크·의미 진실·최소 유효율 정책·실제 AOI·기관 권위·과학 정확도·실행·state_dict·Workflow10개 flag는 항상 false다.
+
+집중 최종9 PASS/33.800초, 관련28 PASS/69.773초(신규9+130의10+133의9), 독립7 PASS/0 SKIP/24.295825초, exit0이다. 보강 전 집중8 PASS/28.923초 원로그를 보존하며 중복 묶음을 합산하지 않는다. Root 검토에서 양쪽 누락 digest의 단순 동등 비교 가능성을 확인해 새134 안의 유효 SHA 검사·bounded selector와 회귀를 보강했다. Root 실제 Temp7시나리오는3년 정상/all0의1load·19get·mask3회, 두번째255·선언 누락·격자 이동의 failfast·후속 NOT_CHECKED, 공간 실패의 mask0, 같은 파일 SHA/변경 Registry manifest의 join 차단을 확인했다. Registry 변경은 새 임시 Store 응답에 주입했으며 DB/전체 파일은 불변이다. 독립2/6행은13/37get·모델load1회·maskN회와6번째 입력 오류의I/O0, 중간 실패·실제 정규화 scale의 문자열 오염 차단을 확인했다. 원 영상 픽셀·훈련·추론은 없다. 모든 자료는 합성 fixture이고 실제 품질·독립 라벨 정확도·운영 승인 근거가 아니다.
+
+보호141개·기존 소스301개·이전 증거1184개·catalog14행 canonical SHA·예약136314880바이트를 보존했다. 이번 이전 증거1184개와 역사적 전체 backend1184개 시험은 서로 다른 집계다.04:31 KST URI mode=ro 운영 조회는 dataset_versions0이다. 운영 원본·원장·lock·분할·모델·예약은 그대로이며 운영 수집·등록·훈련·추론·배포·Workflow dispatch는0이다.
+
+연결은 순차 관측이며 다중 Registry·파일의 같은 시점 원자성을 보장하지 않는다. GDAL parser의 CPU/RSS/시간 hardcap·전체 외부 I/O OS 격리, Store 원문 JSON predecode 상한, Torch의 ambient allowlist·메모리/시간 격리와 mapped drive·TOCTOU 한계는 유지한다. PUBLIC은 선언 조건이며 실제 ACL 인증이 아니다.130의 표본 경계 envelope 포함은 주 전체 coverage·정확 footprint의 수학적 상한·물리 관측 진실이 아니다.133의 실제0/1 계수는 구름/유효영역의 정답성이나 QA 승인이 아니다.
+
+관련 설계·입출력 계약·사용법·시험·인계와 이해자료를 같은 단위로 갱신한다.115 실행/API/UI에 연결하지 않은 내부 진단이므로 화면 계약 변경·UI 적용·frontend/build/browser와 전체 backend 재실행은 없다. 관련 회귀·독립 실제 임시 파일을 이번 근거로 사용하며120/121 전체 시험은 이전 이력이다. 다음135는 명시적인 최소 유효율 정책의 별도 진단 후보이며 과학/전문가 승인과 구분한다. 원자료 수집 재개·독립 라벨·품질/모델 승인·다른5개 실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/기관 UAT는 미완료다. 단일 내부 연결을 전체 개발 완료로 보거나10분 보고 예약을 중단하지 않는다.
+
+근거: `docs/implementation/134_annual_quality_mask_diagnostics.md`, `evidence/integration/annual-mask-agent-20261018-focused.log`, `annual-mask-root-related-20261018.log`, `annual-mask-independent-20261018.json`, `annual-mask-runtime-20261018.json`, `annual-mask-live-integrity-20261018.json`, `annual-mask-operating-inventory-20261018.json`, 최종 `annual-mask-closeout-20261018.json`.
+
 ## 2026-10-18 — 명시 이진 유효 마스크의 실제 값과 개수 진단 (133)
 
 구현 담당은 신규 `backend/app/ml/registered_binary_mask_values.py`, 집중시험과 문서133을 맡았다. 독립 담당은 별도 임시 실제 GeoTIFF의 선언·값·내장 유효성·변조·읽기 횟수·무쓰기를 검증한다. Root는 관련 회귀·실파일 시나리오·운영 조회·보존·공통 문서·Git을 담당하고 이해 담당은 완료된 소스와 증거를 읽어 설명·발표·FAQ·INDEX·변경 이력을 갱신한다. 시작 시 이전 작업자는 모두 완료 상태였다. API·Ollama 실행 및 보고 예약 ACTIVE/10분과 실제 수집·학습 실행을 구분한다.

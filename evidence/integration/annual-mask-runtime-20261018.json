@@ -1,0 +1,139 @@
+{
+  "scope": "TESTED_SYNTHETIC_ACTUAL_TEMP_ANNUAL_SPATIAL_AND_MASK_DIAGNOSTICS",
+  "checks_passed": [
+    {
+      "case": "valid",
+      "status": "ANNUAL_QUALITY_MASK_MATCHED_UNVERIFIED",
+      "issue": null,
+      "mask_rows": [
+        "MATCHED_UNVERIFIED",
+        "MATCHED_UNVERIFIED",
+        "MATCHED_UNVERIFIED"
+      ],
+      "store_gets": 19,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 3,
+      "checked_rows": 3,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "all_zero",
+      "status": "ANNUAL_QUALITY_MASK_MATCHED_UNVERIFIED",
+      "issue": null,
+      "mask_rows": [
+        "MATCHED_UNVERIFIED",
+        "MATCHED_UNVERIFIED",
+        "MATCHED_UNVERIFIED"
+      ],
+      "store_gets": 19,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 3,
+      "checked_rows": 3,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "bad_second_values",
+      "status": "MASK_BLOCKED",
+      "issue": {
+        "code": "MASK_VALUES_NOT_BINARY",
+        "field": "mask",
+        "year": 2022
+      },
+      "mask_rows": [
+        "MATCHED_UNVERIFIED",
+        "BLOCKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 16,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 2,
+      "checked_rows": 2,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "second_missing_declaration",
+      "status": "MASK_BLOCKED",
+      "issue": {
+        "code": "MASK_DECLARATION_INVALID",
+        "field": "mask_semantics",
+        "year": 2022
+      },
+      "mask_rows": [
+        "MATCHED_UNVERIFIED",
+        "BLOCKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 16,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 1,
+      "checked_rows": 2,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "second_shift",
+      "status": "MASK_BLOCKED",
+      "issue": {
+        "code": "IMAGE_MASK_GRID_MISMATCH",
+        "field": "grid",
+        "year": 2022
+      },
+      "mask_rows": [
+        "MATCHED_UNVERIFIED",
+        "BLOCKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 16,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 1,
+      "checked_rows": 2,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "spatial_outside",
+      "status": "ANNUAL_SPATIAL_BLOCKED",
+      "issue": {
+        "code": "REGISTRY_BBOX_DOES_NOT_CONTAIN_ENVELOPE",
+        "field": "containment",
+        "year": 2021
+      },
+      "mask_rows": [
+        "NOT_CHECKED",
+        "NOT_CHECKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 10,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 0,
+      "checked_rows": 0,
+      "all_fixture_files_database_unchanged": true
+    },
+    {
+      "case": "registry_changed",
+      "status": "MASK_BLOCKED",
+      "issue": {
+        "code": "REGISTRY_IMAGE_MANIFEST_CHANGED",
+        "field": "image_manifest",
+        "year": 2022
+      },
+      "mask_rows": [
+        "MATCHED_UNVERIFIED",
+        "BLOCKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 16,
+      "torch_loads": 1,
+      "actual_mask_pixel_reads": 2,
+      "checked_rows": 2,
+      "all_fixture_files_database_unchanged": true
+    }
+  ],
+  "torch_version": "2.14.0+cpu",
+  "all_fixtures_files_and_registry_bytes_unchanged_during_reader": true,
+  "temporary_untrained_model_checkpoint_loaded": true,
+  "operating_model_loaded": false,
+  "training_inference_executed": false,
+  "operating_registry_contact": false,
+  "scientific_accuracy_validated": false,
+  "registry_aoi_verified": false,
+  "literal_counts_and_registry_join_are_not_quality_or_execution_approval": true
+}
