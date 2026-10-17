@@ -1,5 +1,23 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 두 새 품질 보고서 파일의 덮어쓰기 없는 저장 (140)
+
+구현 담당은 신규 quality_report_storage.py·집중시험·문서140, 독립 담당은 실제 임시 파일/SQLite 소비 및 저장 실패 경계를 맡았다. Root는 경로 사전 거부 보강 검토·관련 회귀·원본 보존·공통 문서·Git을, 이해 담당은 검증된 소스로 해설·대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시139 작업자는 완료 상태였으며 실행 중인 수집·학습은 관측되지 않았다. API/Ollama 프로세스와 보고 예약 ACTIVE/10분은 실제 데이터 수집·학습 실행과 구분한다.
+
+write_quality_report_files는 호출자가 명시한 절대 data_root와 같은 기존 부모의 새 report/manifest 경로만 사용한다.139 명시 입력과 결과를 신뢰 기준 사본으로 대조하고, 고정 사본의 report bytes와 canonical manifest JSON을 O_EXCL로 순차 생성한다. 경로의 선존재·입력 영상/마스크 충돌·manifest와 기존 quality_report_ref 충돌·예약 장치명·ADS·제어문자·Windows 부적합 문자를 거부한다. image의 quality_report_ref가 이번 새 report 경로와 같은 정상 초안은 허용하되 실존 파일은 동일 bytes여도 거부한다. mkdir·삭제·덮어쓰기·rollback·자동 재시도·Registry 등록·운영 연결은 없다.
+
+부모 디렉터리/조상 reparse와 identity를 점검하고 생성 fd 및 읽기 fd의 identity·크기·SHA를 재확인한다. 성공은 FILES_WRITTEN_UNREGISTERED, 두 파일의 stored_outputs_verified이며 영상/마스크 artifact_bytes_verified를 비롯한 기존10개 승인·검증·실행 flag는 모두 false다. 중간 실패는 생성한 일부 파일과 타 작성자의 승자 파일을 보존하며 PARTIAL_FILES_PRESERVED로 알린다. 이때 기대 SHA/ref는 성공 증거가 아니고 outputs의 개별 created/verified를 함께 봐야 한다. 두 파일은 트랜잭션이 아니며 directory fsync 내구성·악의적 동시 부모 교체에 대한 완전한 경로 격리·OS sandbox·ACL·시간/RSS 보장을 주장하지 않는다.
+
+최종 집중10 PASS/2.185초, 관련58 PASS/12.861초, 독립11 PASS/1 SKIP/6.8652800초다. 중복 묶음은 합산하지 않는다. 실제 임시6밴드 GTiff·mask·새 보고서/manifest와 별도 임시 Registry setup3건을 통해96 schema 및131/133 읽기 소비128/128/256·원본/DB 불변을 검증했다. 저장 함수의 원본 영상/마스크 open 및 Registry 호출은0이다. nodata0·255·RESTRICTED는 저장되더라도 소비 단계에서 차단된다. 오염된139·검산 직후 parent mutation·EXCL 경쟁·부분 write·reparse attribute는 명시 Mock이고 실제 symlink는 Windows1314 권한 제한으로 SKIP하여 구분했다.
+
+독립 초기11건의9 PASS/1 ERROR/1 SKIP는 시험 snapshot helper에 str을 넘긴 준비 오류였으며 초기 py/json/log를 보존했다. 수정 후 제품 경로 보강 전12건11 PASS/1 SKIP도 별도 보존했다. Windows native lstat은 부적합6문자를 이미 새 파일0으로 차단했다. 이번 사전 검사는 플랫폼의 native 실패에 의존하지 않도록 보강한 것으로, 실제 부분 파일 사고가 발생했다고 기록하지 않는다. 초기 집중·관련 로그도 최종과 분리 보존한다.
+
+보호141개·기존 소스318개·이전 증거1309개·catalog14행 SHA·dataset_versions0·예약136314880바이트를 보존했다. 원본·원장·lock·분할·모델·예약 변경0이다. 기존139 이하/main/API/137UI·실행 gate 변경0이며 이번 UI/build/browser 및 전체backend 재실행은 없다. 최신 전체137의1358 PASS/1 SKIP·frontend271 PASS는 이전 이력으로 남기고 이번 관련·독립 파일 시험을 현재 근거로 사용한다.
+
+설계·내부 API/계약·사용법·시험 근거·인계서와 이해자료14개를 같은 단위로 갱신했다. 전체 프로젝트는 계속 미완료다. 다음141 후보는 caller 명시 저장 파일을 읽고 schema·SHA·고정 ref를 검증하는 등록 전 점검이며 운영 Registry 자동 등록은 별도다. collector nodata0/label-AOI 결합·실제 밴드 description·독립 라벨·품질/모델 승인·다른5개 실행기·GeoLLM/RAG/PostGIS·staging/RBAC/UAT 후속을 유지한다. 저장 성공을 연차별 데이터 확보·기관 승인·학습/배포 준비로 확대하지 않는다.
+
+근거: docs/implementation/140_quality_report_storage.md 및 evidence/integration/quality-report-storage-agent-20261018.log, quality-report-storage-root-related-final-20261018.log, quality-report-storage-independent-20261018.json, quality-report-storage-live-integrity-final-20261018.json, 최종 quality-report-storage-closeout-20261018.json.
+
 ## 2026-10-18 — 호출자 명시 메타데이터로 품질 보고서 manifest 초안 완성 (139)
 
 구현 담당은 신규 quality_report_completion.py·집중시험·문서139를,독립 담당은 별도 실제 Temp 소비 호환과 오염된138 출력 경계를 맡았다. Root는 관련 회귀·운영 조회·보존·공통 문서·Git을,이해 담당은 완료 소스·시험으로 해설·발표 대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시 이전 작업자는 완료 상태였고 실제 운영 수집·학습 프로세스는 없었다. API/Ollama 및 보고 예약 ACTIVE/10분은 실제 실행과 구분한다.

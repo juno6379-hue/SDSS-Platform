@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "scope": "INDEPENDENT_EXCLUSIVE_REPORT_STORAGE_TEMP_ONLY",
+  "status": "FAILED",
+  "tests": 11,
+  "passed": 9,
+  "skipped": 1,
+  "skip_reasons": [
+    "actual Windows directory symlink unavailable: winerror=1314, errno=22"
+  ],
+  "failures": 0,
+  "errors": 1,
+  "seconds": 2.6194644999923185,
+  "test_names": [
+    "test_01_frozen_sources_and_no_store_registry_or_raster_import",
+    "test_02_actual_two_new_files_and_readonly_temp_registry_consumers",
+    "test_03_each_preexisting_file_even_identical_refuses_every_write",
+    "test_04_invalid_path_alias_reserved_ads_unicode_and_no_auto_mkdir",
+    "test_05_untrusted_completion_rejected_before_file_open",
+    "test_06_postvalidation_producer_mutation_does_not_change_written_files",
+    "test_07_second_output_creation_race_preserves_other_winner",
+    "test_08_partial_second_write_preserved_and_no_automatic_retry",
+    "test_09_parent_identity_change_and_reparse_guard_mock",
+    "test_10_actual_directory_symlink_rejected_or_permission_skip",
+    "test_11_files_written_is_not_binary_or_access_approval"
+  ],
+  "source_sha256": "9fea7abb338e0c752f3fb7eb7b1e69d909627b3b48ada9319307fc15a5771f92",
+  "test_sha256": "ab063a3d53ac9dcbd8b51c7b9c683bc3ac001f60770d3574cd076e1acd6a38d9",
+  "git_baseline": "7b538b90c069789ca24dca0a1e237bf6dec47a8c",
+  "separate_git_baseline_matches": {
+    "backend/app/data/quality_mask_bundle.py": true,
+    "backend/app/data/quality_report_completion.py": true,
+    "tests/test_quality_mask_bundle.py": true,
+    "tests/test_quality_report_completion.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_quality_mask_grid.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "old_sources_unchanged": {
+    "backend/app/data/quality_mask_bundle.py": true,
+    "backend/app/data/quality_report_completion.py": true,
+    "tests/test_quality_mask_bundle.py": true,
+    "tests/test_quality_report_completion.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_quality_mask_grid.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "observations": [
+    {
+      "actual": "fresh Temp6bandGTiff/mask/report+manifest output and separate SQLite fixture registration",
+      "writer_new_files": 2,
+      "writer_source_artifact_opens": 0,
+      "writer_registry_calls": 0,
+      "fixture_registry_setup_writes": 3,
+      "consumer_counts": {
+        "valid_pixels": 128,
+        "invalid_pixels": 128,
+        "total_pixels": 256
+      },
+      "all_source_bytes_unchanged": true,
+      "consumer_db_and_files_unchanged": true
+    },
+    {
+      "explicit_mock_race": "other creator wins manifest EXCL after report succeeds",
+      "winner_bytes_preserved": true,
+      "status": "PARTIAL_FILES_PRESERVED",
+      "filesystem_atomicity_claim": false
+    },
+    {
+      "explicit_mock": "second file wrote11bytes then OSError",
+      "partial_files_preserved": true,
+      "retry_refused_without_modification": true,
+      "atomic_or_rollback_claim": false
+    },
+    {
+      "guard_mock": "parent inode changed and Windows reparse attr/tag",
+      "actual_reparse_object_created": false
+    },
+    {
+      "actual_symlink": "SKIPPED",
+      "reason": "actual Windows directory symlink unavailable: winerror=1314, errno=22"
+    },
+    {
+      "actual_counterexample": "nodata0",
+      "new_files_written": 2,
+      "consumer": "BLOCKED",
+      "code": "MASK_INTRINSIC_VALIDITY_UNSUPPORTED",
+      "writer_source_inspection_or_registration": false
+    },
+    {
+      "actual_counterexample": "255",
+      "new_files_written": 2,
+      "consumer": "BLOCKED",
+      "code": "MASK_VALUES_NOT_BINARY",
+      "writer_source_inspection_or_registration": false
+    },
+    {
+      "actual_counterexample": "restricted",
+      "new_files_written": 2,
+      "consumer": "BLOCKED",
+      "code": "ACCESS_DECLARATION_BLOCKED",
+      "writer_source_inspection_or_registration": false
+    }
+  ],
+  "actual_scope": "fresh temporary GTiff/report/manifest files and separate SQLite registry fixture setup; readonly131/133 consumers",
+  "mock_scope": "139 contamination/postvalidation mutation, EXCL winner race, partial os.write, changed parent inode, reparse attrs; no mocked consumer successes",
+  "operating_data_access": false,
+  "operating_writes": 0,
+  "training": 0,
+  "inference": 0,
+  "api_ui_changed": false,
+  "frontend_build_browser_required": false,
+  "limitations": [
+    "Writes only report and manifest files; no actual image/mask validation, Registry registration, approval or execution.",
+    "Sequential EXCL files are not a transaction; partial files remain and repeated call refuses existing outputs.",
+    "Directory checks cannot establish complete hostile concurrent filesystem confinement or OS sandbox security.",
+    "File fsync/readback is not directory fsync durability, CPU/RSS/time SLA or atomic multi-file snapshot.",
+    "Actual symlink permission skip is distinct from synthetic reparse guard tests."
+  ]
+}

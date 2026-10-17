@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T06:03:43.532199+09:00",
-  "source_commit": "200d22c3c7f146f795c26442eec1bd971733770d",
-  "source_commit_reason": "Published138 baseline plus139 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T06:17:40.067189+09:00",
+  "source_commit": "7b538b90c069789ca24dca0a1e237bf6dec47a8c",
+  "source_commit_reason": "Published139 baseline plus140 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -5678,6 +5678,475 @@
         "build_seconds": 13.48
       },
       "snapshot_files": 1879
+    },
+    "latest_exclusive_quality_report_storage": {
+      "status": "140_EXCLUSIVE_NEW_QUALITY_REPORT_FILES_ONLY",
+      "focused": {
+        "passed": 10,
+        "seconds": 2.185,
+        "log": "evidence/integration/quality-report-storage-agent-20261018.log"
+      },
+      "related": {
+        "passed": 58,
+        "seconds": 12.861,
+        "log": "evidence/integration/quality-report-storage-root-related-final-20261018.log"
+      },
+      "independent": {
+        "schema_version": 1,
+        "scope": "INDEPENDENT_EXCLUSIVE_REPORT_STORAGE_TEMP_ONLY",
+        "status": "TESTED_SYNTHETIC",
+        "tests": 12,
+        "passed": 11,
+        "skipped": 1,
+        "skip_reasons": [
+          "actual Windows directory symlink unavailable: winerror=1314, errno=22"
+        ],
+        "failures": 0,
+        "errors": 0,
+        "seconds": 6.865279999998165,
+        "test_names": [
+          "test_01_frozen_sources_and_no_store_registry_or_raster_import",
+          "test_02_actual_two_new_files_and_readonly_temp_registry_consumers",
+          "test_03_each_preexisting_file_even_identical_refuses_every_write",
+          "test_04_invalid_path_alias_reserved_ads_unicode_and_no_auto_mkdir",
+          "test_05_untrusted_completion_rejected_before_file_open",
+          "test_06_postvalidation_producer_mutation_does_not_change_written_files",
+          "test_07_second_output_creation_race_preserves_other_winner",
+          "test_08_partial_second_write_preserved_and_no_automatic_retry",
+          "test_09_parent_identity_change_and_reparse_guard_mock",
+          "test_10_actual_directory_symlink_rejected_or_permission_skip",
+          "test_11_files_written_is_not_binary_or_access_approval",
+          "test_12_explicit_windows_character_guard_before_native_file_io"
+        ],
+        "source_sha256": "220910abb10c19a07b0af458b6cdf163c16f9864c36dd123a622dbd11db91622",
+        "test_sha256": "61548f8234d2cb2d5ec4428e9fa39dc789b5d138785a9ea75ffb6faeae63cbaa",
+        "git_baseline": "7b538b90c069789ca24dca0a1e237bf6dec47a8c",
+        "separate_git_baseline_matches": {
+          "backend/app/data/quality_mask_bundle.py": true,
+          "backend/app/data/quality_report_completion.py": true,
+          "tests/test_quality_mask_bundle.py": true,
+          "tests/test_quality_report_completion.py": true,
+          "backend/app/dataset_registry.py": true,
+          "backend/app/ml/registered_quality_mask_files.py": true,
+          "backend/app/ml/registered_quality_mask_grid.py": true,
+          "backend/app/ml/registered_binary_mask_values.py": true,
+          "backend/app/main.py": true,
+          "frontend/src/AnnualInputDiagnostics.tsx": true
+        },
+        "old_sources_unchanged": {
+          "backend/app/data/quality_mask_bundle.py": true,
+          "backend/app/data/quality_report_completion.py": true,
+          "tests/test_quality_mask_bundle.py": true,
+          "tests/test_quality_report_completion.py": true,
+          "backend/app/dataset_registry.py": true,
+          "backend/app/ml/registered_quality_mask_files.py": true,
+          "backend/app/ml/registered_quality_mask_grid.py": true,
+          "backend/app/ml/registered_binary_mask_values.py": true,
+          "backend/app/main.py": true,
+          "frontend/src/AnnualInputDiagnostics.tsx": true
+        },
+        "observations": [
+          {
+            "actual": "fresh Temp6bandGTiff/mask/report+manifest output and separate SQLite fixture registration",
+            "writer_new_files": 2,
+            "writer_source_artifact_opens": 0,
+            "writer_registry_calls": 0,
+            "fixture_registry_setup_writes": 3,
+            "consumer_counts": {
+              "valid_pixels": 128,
+              "invalid_pixels": 128,
+              "total_pixels": 256
+            },
+            "all_source_bytes_unchanged": true,
+            "consumer_db_and_files_unchanged": true
+          },
+          {
+            "explicit_mock_race": "other creator wins manifest EXCL after report succeeds",
+            "winner_bytes_preserved": true,
+            "status": "PARTIAL_FILES_PRESERVED",
+            "filesystem_atomicity_claim": false
+          },
+          {
+            "explicit_mock": "second file wrote11bytes then OSError",
+            "partial_files_preserved": true,
+            "retry_refused_without_modification": true,
+            "atomic_or_rollback_claim": false
+          },
+          {
+            "guard_mock": "parent inode changed and Windows reparse attr/tag",
+            "actual_reparse_object_created": false
+          },
+          {
+            "actual_symlink": "SKIPPED",
+            "reason": "actual Windows directory symlink unavailable: winerror=1314, errno=22"
+          },
+          {
+            "actual_counterexample": "nodata0",
+            "new_files_written": 2,
+            "consumer": "BLOCKED",
+            "code": "MASK_INTRINSIC_VALIDITY_UNSUPPORTED",
+            "writer_source_inspection_or_registration": false
+          },
+          {
+            "actual_counterexample": "255",
+            "new_files_written": 2,
+            "consumer": "BLOCKED",
+            "code": "MASK_VALUES_NOT_BINARY",
+            "writer_source_inspection_or_registration": false
+          },
+          {
+            "actual_counterexample": "restricted",
+            "new_files_written": 2,
+            "consumer": "BLOCKED",
+            "code": "ACCESS_DECLARATION_BLOCKED",
+            "writer_source_inspection_or_registration": false
+          },
+          {
+            "explicit_windows_invalid_character_guard": [
+              {
+                "character": "<",
+                "role": "report",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "report_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": "<",
+                "role": "manifest",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "manifest_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": ">",
+                "role": "report",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "report_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": ">",
+                "role": "manifest",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "manifest_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": "\"",
+                "role": "report",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "report_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": "\"",
+                "role": "manifest",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "manifest_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": "|",
+                "role": "report",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "report_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": "|",
+                "role": "manifest",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "manifest_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": "?",
+                "role": "report",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "report_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": "?",
+                "role": "manifest",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "manifest_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": "*",
+                "role": "report",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "report_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              },
+              {
+                "character": "*",
+                "role": "manifest",
+                "status": "BLOCKED",
+                "fixed_issue": {
+                  "code": "PATH_INVALID",
+                  "field": "manifest_output_uri"
+                },
+                "native_file_open_calls": 0,
+                "new_file_count": 0,
+                "original_files_unchanged": true
+              }
+            ],
+            "complete_native_or_filesystem_sandbox_claim": false
+          }
+        ],
+        "actual_scope": "fresh temporary GTiff/report/manifest files and separate SQLite registry fixture setup; readonly131/133 consumers",
+        "mock_scope": "139 contamination/postvalidation mutation, EXCL winner race, partial os.write, changed parent inode, reparse attrs; no mocked consumer successes",
+        "operating_data_access": false,
+        "operating_writes": 0,
+        "training": 0,
+        "inference": 0,
+        "api_ui_changed": false,
+        "frontend_build_browser_required": false,
+        "limitations": [
+          "Writes only report and manifest files; no actual image/mask validation, Registry registration, approval or execution.",
+          "Sequential EXCL files are not a transaction; partial files remain and repeated call refuses existing outputs.",
+          "Directory checks cannot establish complete hostile concurrent filesystem confinement or OS sandbox security.",
+          "File fsync/readback is not directory fsync durability, CPU/RSS/time SLA or atomic multi-file snapshot.",
+          "Actual symlink permission skip is distinct from synthetic reparse guard tests."
+        ]
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T06:15:32.834786+09:00",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 318,
+        "existing_source_changes": [],
+        "expected_changed_existing_sources": [],
+        "unchanged_existing_source_files": 318,
+        "previous_evidence_checked": 1309,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "reserved_bytes_preserved": 136314880,
+        "existing_execution_workflow_model_and_other_sources_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "understanding_updated": true,
+      "ui_api_connected": false,
+      "backend_full_rerun_this_unit": false,
+      "frontend_build_browser_rerun_this_unit": false,
+      "operating_collection_training_registry_approval_deployment_workflow_dispatch": 0,
+      "automatic_quality_promotion": false,
+      "artifact_bytes_verified": false,
+      "source_authority_verified": false,
+      "scientific_accuracy_validated": false,
+      "execution_authorized": false,
+      "workflow_supported": false,
+      "multi_file_transaction": false,
+      "hostile_parent_swap_confinement": false,
+      "directory_fsync_durability": false,
+      "next_internal_candidate": "141_EXPLICIT_STORED_REPORT_READONLY_REGISTRATION_PREFLIGHT",
+      "recorded_at": "2026-10-18T06:17:40.067189+09:00",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T06:17:40.067189+09:00",
+        "understanding_markdown": 107,
+        "implementation_markdown": 1,
+        "local_links": 489,
+        "metadata_evidence_references": 12571,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true
+      },
+      "source_records": {
+        "backend/app/data/quality_report_storage.py": {
+          "sha256": "220910abb10c19a07b0af458b6cdf163c16f9864c36dd123a622dbd11db91622",
+          "bytes": 8799
+        },
+        "tests/test_quality_report_storage.py": {
+          "sha256": "61548f8234d2cb2d5ec4428e9fa39dc789b5d138785a9ea75ffb6faeae63cbaa",
+          "bytes": 10140
+        }
+      },
+      "live_processes": {
+        "checked_at": "2026-10-18T06:17:11.2114368+09:00",
+        "processes": [
+          {
+            "pid": 27268,
+            "parent_pid": 31440,
+            "name": "ollama app.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+            "created": "/Date(1792194023427)/",
+            "cpu": 27.71875,
+            "working_set": 88784896
+          },
+          {
+            "pid": 27860,
+            "parent_pid": 27268,
+            "name": "ollama.exe",
+            "command_line": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+            "created": "/Date(1792194025549)/",
+            "cpu": 10.15625,
+            "working_set": 84852736
+          },
+          {
+            "pid": 2060,
+            "parent_pid": 14348,
+            "name": "node.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" --experimental-vm-modules c:\\Temp\\.tmpxMLdb7\\kernel.js --session-id b9c3e259a941427ba4c2d16ab02f8369 --working-dir E:\\GeoAI–MLOps–SDSS",
+            "created": "/Date(1792194142317)/",
+            "cpu": 6.734375,
+            "working_set": 98066432
+          },
+          {
+            "pid": 29716,
+            "parent_pid": 14348,
+            "name": "node.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" c:\\Temp\\.tmpxMLdb7\\trusted-worker.js E:\\GeoAI–MLOps–SDSS",
+            "created": "/Date(1792194142373)/",
+            "cpu": 101.3125,
+            "working_set": 155918336
+          },
+          {
+            "pid": 30944,
+            "parent_pid": 2712,
+            "name": "node.exe",
+            "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1",
+            "created": "/Date(1792194210869)/",
+            "cpu": 33.65625,
+            "working_set": 54444032
+          },
+          {
+            "pid": 32224,
+            "parent_pid": 24092,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
+            "created": "/Date(1792194462900)/",
+            "cpu": 455.84375,
+            "working_set": 17358848
+          },
+          {
+            "pid": 26912,
+            "parent_pid": 3392,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001",
+            "created": "/Date(1792198361777)/",
+            "cpu": 382.640625,
+            "working_set": 32186368
+          },
+          {
+            "pid": 15608,
+            "parent_pid": 29584,
+            "name": "node.exe",
+            "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1 --port 5174",
+            "created": "/Date(1792198475813)/",
+            "cpu": 89.34375,
+            "working_set": 102318080
+          },
+          {
+            "pid": 35032,
+            "parent_pid": 22796,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend",
+            "created": "/Date(1792199087513)/",
+            "cpu": 10946.21875,
+            "working_set": 21413888
+          },
+          {
+            "pid": 36992,
+            "parent_pid": 35032,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\"",
+            "created": "/Date(1792271616274)/",
+            "cpu": 2.84375,
+            "working_set": 55640064
+          }
+        ],
+        "collector_training_processes_observed": 0,
+        "collector_training_command_matches": [],
+        "observation_limit": "Process command patterns only; unittest interpreters and temporary API fixtures are not operating training",
+        "automation_status": "ACTIVE",
+        "automation_interval_minutes": 10,
+        "automation_was_not_modified": true
+      },
+      "operating_inventory": {
+        "recorded_at": "2026-10-18T06:06:39.450002+09:00",
+        "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+        "counts_by_kind": {
+          "analyses": 3,
+          "datasets": 6,
+          "gmais_idempotency": 2,
+          "gmais_jobs": 2,
+          "models": 1
+        },
+        "dataset_versions_count": 0,
+        "operating_writes": 0,
+        "model_or_raster_files_loaded": false
+      },
+      "previous_full_backend": {
+        "unit": 137,
+        "passed": 1358,
+        "skipped": 1,
+        "seconds": 484.77
+      },
+      "previous_frontend": {
+        "unit": 137,
+        "passed": 271,
+        "build_modules": 112,
+        "build_seconds": 13.48
+      },
+      "snapshot_files": 1905
     }
   },
   "files": {
@@ -5694,8 +6163,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "ca1385b770090aba1bc800688fa70d22c93264dfc5d283c9e7a0fa1500d9b8e7",
-      "bytes": 436415
+      "sha256": "8fbfcffb4343248862d27f0ab281f51667468a5fec60d8231a1cefadbc670c79",
+      "bytes": 441237
     },
     "README.md": {
       "sha256": "0d213fdb1da768b59dd402c3af248fa902c00a078c3072703337effadc542c56",
@@ -5752,6 +6221,10 @@
     "backend/app/data/quality_report_completion.py": {
       "sha256": "d98c9d52e8add04b5a620d78d4e988e633477f761003ae646f6dc99906efab39",
       "bytes": 8030
+    },
+    "backend/app/data/quality_report_storage.py": {
+      "sha256": "220910abb10c19a07b0af458b6cdf163c16f9864c36dd123a622dbd11db91622",
+      "bytes": 8799
     },
     "backend/app/data/readiness_connectivity_envelope.py": {
       "sha256": "f909143eed5eb931bda9671fb51c816e1575d6b28ebb9b3f6ef607078322fcb2",
@@ -6166,8 +6639,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "cb50876e27c1b5704388cf0bf7b56432bfddc36204894719686015115498ffdc",
-      "bytes": 443556
+      "sha256": "55cc55c81272ddfc20557eed615bf7c7aff3e71725e0fbc73c868f8331bf25ec",
+      "bytes": 448378
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -6330,8 +6803,12 @@
       "bytes": 13325
     },
     "docs/implementation/139_quality_report_completion.md": {
-      "sha256": "3b60f5efb7c756c1b1833918675b20963e8d7583bcd450779f4313dd133cbc8e",
-      "bytes": 13032
+      "sha256": "bc536eecb2a1cc60645b97f469eb056727331355814140f8b490422d94f7419f",
+      "bytes": 13386
+    },
+    "docs/implementation/140_quality_report_storage.md": {
+      "sha256": "9157c6c359858d8cf2642f5e561b9dbb422d8ace47d464bff08462cc7f2e59f3",
+      "bytes": 12194
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -6646,48 +7123,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "d9f8ce7ce7605c61cf41dbca9b5fbd1b10bc3adb3ff7a403c31ea5e64bd527c0",
-      "bytes": 163918
+      "sha256": "c46cb66deba454bcef7281d9884e0718d566baeb4aa8107597edcacbf11829d7",
+      "bytes": 165395
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "1dc95d71fc6df5d4b6d244c50cf99801cf8cc29e1c3dc095b6f2d55d48f544a9",
-      "bytes": 132492
+      "sha256": "a2fb521b6c4a048f4efbcbb6ae5391fbe5ecb2628d223ee4a4c829444d7a5d8c",
+      "bytes": 133971
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "889d641ef50115c812d69fdb5b2809e033166fc435aa881416acbb8a910c64e4",
-      "bytes": 102818
+      "sha256": "548f7fd9761f7c7710f37b79792950e692c43429b9c430e1a84624180940f22d",
+      "bytes": 104269
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "7326cd92d42b3d157c2a9f278a8eead2ebd19aecd6a30ab9c6046c068dba9c94",
-      "bytes": 85823
+      "sha256": "754916e8c7f1e3342a10c7c39c6d15af47eef8462d20db3e4523dc2fcd3436db",
+      "bytes": 87288
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "ecc47511db3049174215b2813d98c5149cca502c1604667231a2264776a177ae",
-      "bytes": 50626
+      "sha256": "6086bf010864004730ece64c767efa6d0001ca18eb6fab7490be0c02aee353ac",
+      "bytes": 52111
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "c2f255e73b32b3c47fc1da13c4a90ffc4bc138ec6e7a5837d4eba9a906549daf",
-      "bytes": 89713
+      "sha256": "6690e94648c39b11424dd8f5e30c4ec4e7bedfd589597010f72a530ba1e738ce",
+      "bytes": 91165
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "e8101be2cc3190fc2042bfe02837a24b1c8154421ce49be0866321d4670d2633",
-      "bytes": 237215
+      "sha256": "385ede520427a093f4266e7b8a4efa741a26994de98560e72870978088ba6ed2",
+      "bytes": 239310
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "81639adc6933d84dcbfa7141da24dbb8b39fce3e7cd81734210c8c22f1d8acb7",
-      "bytes": 193756
+      "sha256": "6cd69f0301f699a0e7de118f3e9d25079c49837de01444cf6f581f6bf20e0a91",
+      "bytes": 195230
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "7641ebbe9d01d1eacd3ae0b796fea14fb4218fc323f2e044278886e31b076a03",
-      "bytes": 127384
+      "sha256": "1c1a0d97a8bfc25d4f0380c7fdcafa39b7a9d12f63c877d9ec5372bdff57585b",
+      "bytes": 129003
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "3305ab836828b34aec1278caefdb081486e26e704989d03cf88aacdf8e31cef0",
-      "bytes": 207198
+      "sha256": "7f0d51a1ee43cec03374f989dd4b48696b3dbc2f7751bcdfb2a4c68e3f4a8749",
+      "bytes": 209340
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -6909,6 +7386,10 @@
       "sha256": "a66d00fdacc0a95d66efa8361777eaeb5ded79f7557c3cd9762cf2b0cdcb2038",
       "bytes": 12913
     },
+    "docs/understanding/gate-notes/GATE_QUALITY_REPORT_STORAGE_20261018.md": {
+      "sha256": "85003802c755a8d73cbe632cdf090975b66cb5d51aefc116c4977a88e606a014",
+      "bytes": 13886
+    },
     "docs/understanding/gate-notes/GATE_RASTER_CONTENT_20261017.md": {
       "sha256": "5a06ac70e1caa44d6bc6895f28f473334281b87fa11d240d3e357eed9be7af5a",
       "bytes": 9706
@@ -7058,16 +7539,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "1b1ef7c1126e41bad5c2a6abb3c99c198f3a9f6fec499aec05abbed0ede8642a",
-      "bytes": 208397
+      "sha256": "1f85349380d868d15ed2495e32cc7e6407ba48ad504b042a35542d1b2981be61",
+      "bytes": 210219
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "a8c24453d7241f6299d788f1fbded7d2dd2fc903f81b2de9d8b1949c8741c9f7",
-      "bytes": 143180
+      "sha256": "91ae1f93b1f68162ca78673e213a28cf53dbd8bc5ccb51e3182542f14c58c173",
+      "bytes": 144679
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "c674905f92e84b4e7eece3c6f46c136c615b89d2057b353948a2684b996fb8d9",
-      "bytes": 170107
+      "sha256": "51f6a9e6788fd9da6db77661e88452b33b4bbb245da26934423b4c24a36d0067",
+      "bytes": 171734
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -10257,6 +10738,94 @@
       "sha256": "0a16891db57236ab8c5d26ca6507164515465645e2ea77668a7468fc85a4f005",
       "bytes": 9389
     },
+    "evidence/integration/quality-report-storage-agent-20261018.log": {
+      "sha256": "7ccfe7c6ad8a748275488f148462208acdfe877d2ee62d2e61832e951a5622be",
+      "bytes": 2312
+    },
+    "evidence/integration/quality-report-storage-agent-initial-20261018.log": {
+      "sha256": "205df74f22b50523d355bed008a9ecc0061ca0ab15bcfe1a1db87f1e1a2a8505",
+      "bytes": 2312
+    },
+    "evidence/integration/quality-report-storage-closeout-20261018.json": {
+      "sha256": "7ccac925ba7794d79594be031f8f5c40c23541142f89e15f12bd18c48a27577c",
+      "bytes": 22447
+    },
+    "evidence/integration/quality-report-storage-closeout-20261018.py": {
+      "sha256": "d5c51ccdcc4a25679871d9db69aa39d127cf7bbed30871f1ae9b245be17b3175",
+      "bytes": 14273
+    },
+    "evidence/integration/quality-report-storage-final-processes-20261018.json": {
+      "sha256": "352b3aa0298de7be6d393f6da342d337d8d6cf2360b535f18c425368aed4ed3c",
+      "bytes": 10581
+    },
+    "evidence/integration/quality-report-storage-independent-20261018.json": {
+      "sha256": "5a678763590873a9a3bd4ed337b5522f50926158655ed326915314078145b1d4",
+      "bytes": 9908
+    },
+    "evidence/integration/quality-report-storage-independent-20261018.log": {
+      "sha256": "d898196e9489e6c5f2e97d1c24b78a25a44baed90d598100276a71c9c7e58692",
+      "bytes": 2043
+    },
+    "evidence/integration/quality-report-storage-independent-20261018.py": {
+      "sha256": "85a495508f07d3785634aba6d4b98e15bd54d4b1fa412768214b86507f6c4c59",
+      "bytes": 21983
+    },
+    "evidence/integration/quality-report-storage-independent-initial-20261018.json": {
+      "sha256": "be5fefed36120f8ab73b47f6025c26e8ee5b84e1bf0884d491223516abd35819",
+      "bytes": 5464
+    },
+    "evidence/integration/quality-report-storage-independent-initial-20261018.log": {
+      "sha256": "1046cbec2aef44536cdc8a0a985c465ab4ee60cb60605345c2b645c2197c354a",
+      "bytes": 3288
+    },
+    "evidence/integration/quality-report-storage-independent-initial-20261018.py": {
+      "sha256": "dde164c2611759c77486cc3b1f534d7d5f44c4aff890eab68fc385fc932518be",
+      "bytes": 20806
+    },
+    "evidence/integration/quality-report-storage-independent-pre-native-guard-20261018.json": {
+      "sha256": "22e02d80a70203f4f451403cf2507b017c6404ad38096130ab98483bfa30c5cf",
+      "bytes": 7338
+    },
+    "evidence/integration/quality-report-storage-independent-pre-native-guard-20261018.log": {
+      "sha256": "ff108d1ef201bd68a98d6057bd0334d5b7cc1508330ce82c01c74dccda918628",
+      "bytes": 2043
+    },
+    "evidence/integration/quality-report-storage-independent-pre-native-guard-20261018.py": {
+      "sha256": "86610b92956e2856f8c7c69cf8bceeffcc19f3a27d46ab52f931e1906559ce04",
+      "bytes": 22302
+    },
+    "evidence/integration/quality-report-storage-integrity-20261018.py": {
+      "sha256": "bc398dbc217dfc0a855f902261551436c97da3fc17041d9ad96cb8a48c5cdf76",
+      "bytes": 2819
+    },
+    "evidence/integration/quality-report-storage-live-integrity-final-20261018.json": {
+      "sha256": "1da24ce4e71342e5cee82c0642576ba66e471529804f28ebb815a85f038254da",
+      "bytes": 667
+    },
+    "evidence/integration/quality-report-storage-live-processes-20261018.json": {
+      "sha256": "779363b7d14b020e8fbd336637140da53d237b7883dc3dd2f8526f5cd843214e",
+      "bytes": 10584
+    },
+    "evidence/integration/quality-report-storage-operating-inventory-20261018.json": {
+      "sha256": "ee3297f4c77cbf844b4a1bf8a603efa7e4b44dc5382865fd380732647b8d2833",
+      "bytes": 352
+    },
+    "evidence/integration/quality-report-storage-preflight-20261018.json": {
+      "sha256": "d2a8269a3430cde5574b76239233eac2a1286d98fe4b3c6676501e8b5c7cee6e",
+      "bytes": 659608
+    },
+    "evidence/integration/quality-report-storage-root-related-20261018.log": {
+      "sha256": "f0881e5bf44241bd38ab6ed5618ce4100c56e54f40a83b8d86171e9bc4e60ba8",
+      "bytes": 11327
+    },
+    "evidence/integration/quality-report-storage-root-related-final-20261018.log": {
+      "sha256": "04e80262a7ef4c4b42b98bdc460a201e1d42ab39f8b429cbe13886abe9e0f0f9",
+      "bytes": 11327
+    },
+    "evidence/integration/quality-report-storage-root-related-initial-20261018.log": {
+      "sha256": "f0881e5bf44241bd38ab6ed5618ce4100c56e54f40a83b8d86171e9bc4e60ba8",
+      "bytes": 11327
+    },
     "evidence/integration/raster-grid-agent-20261018-focused-final.log": {
       "sha256": "1734629aa29eecf46667eda0b19ac942a3e282c7e40ab63e027547016e21fae8",
       "bytes": 2840
@@ -13021,6 +13590,10 @@
       "sha256": "86f3f04a7778bd688ccb922e9dc59108dee6340d9ffbce0fa97b1894b51be07d",
       "bytes": 11148
     },
+    "tests/test_quality_report_storage.py": {
+      "sha256": "61548f8234d2cb2d5ec4428e9fa39dc789b5d138785a9ea75ffb6faeae63cbaa",
+      "bytes": 10140
+    },
     "tests/test_readiness_connectivity_adapter.py": {
       "sha256": "7d1958c004dabaaf427495e90d2c431952c3caa399712285a2778c4e374efa91",
       "bytes": 19959
@@ -13199,11 +13772,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T06:03:43.532199+09:00",
-    "understanding_markdown": 106,
+    "checked_at": "2026-10-18T06:17:40.067189+09:00",
+    "understanding_markdown": 107,
     "implementation_markdown": 1,
-    "local_links": 480,
-    "metadata_evidence_references": 12347,
+    "local_links": 489,
+    "metadata_evidence_references": 12571,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true

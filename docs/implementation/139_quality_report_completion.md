@@ -67,3 +67,7 @@ untrusted138 출력의 typed 오염16종·custom equality callback0·인자 사�
 Root 최종 관련 **48 PASS / 12.067초 / exit 0**는 `evidence/integration/quality-report-completion-root-related-final2-20261018.log`다. expected bytes 보완 전 관련47건의 `quality-report-completion-root-related-20261018.log`와 구분해 보존한다. 초기 집중8·관련47·독립7과 최종 집중9·관련48·독립8을 중복 합산하지 않는다.
 
 `evidence/integration/quality-report-completion-live-integrity-final-20261018.json`은 보호141개·기존 source316개·이전 증거1291개·catalog14행 SHA·예약136314880바이트 불변을 기록한다. 기존 제품 source 변경은0이며 운영 원본·원장·모델·분할·예약을 보존했다. 순수 새 함수의 집중·관련·독립·Temp 소비 검증으로 마감하며 전체 backend/frontend/build/browser를 이번에 다시 실행한 것으로 표현하지 않는다. 이해 담당에게 완료 코드·실제 시험·미등록/미승인 및 합성 재현의 한계를 전달했다. 최종 근거 반영 후 본 문서를 동결했다.
+
+## 후속140 새 경로 저장
+
+[140 저장 계약](140_quality_report_storage.md)은 호출자 명시 두 새 경로에 report와 canonical manifest를 EXCL 생성한다.139 선언/bytes는 유지하며 기존 파일은 동일 내용도 거부한다. 부분 생성은 보존하고 등록·QA/ACL·승인·실행을 자동으로 수행하지 않는다.

@@ -1,0 +1,31 @@
+test_01_frozen_sources_and_no_store_registry_or_raster_import (__main__.Independent.test_01_frozen_sources_and_no_store_registry_or_raster_import) ... ok
+test_02_actual_two_new_files_and_readonly_temp_registry_consumers (__main__.Independent.test_02_actual_two_new_files_and_readonly_temp_registry_consumers) ... ok
+test_03_each_preexisting_file_even_identical_refuses_every_write (__main__.Independent.test_03_each_preexisting_file_even_identical_refuses_every_write) ... ok
+test_04_invalid_path_alias_reserved_ads_unicode_and_no_auto_mkdir (__main__.Independent.test_04_invalid_path_alias_reserved_ads_unicode_and_no_auto_mkdir) ... ERROR
+test_05_untrusted_completion_rejected_before_file_open (__main__.Independent.test_05_untrusted_completion_rejected_before_file_open) ... ok
+test_06_postvalidation_producer_mutation_does_not_change_written_files (__main__.Independent.test_06_postvalidation_producer_mutation_does_not_change_written_files) ... ok
+test_07_second_output_creation_race_preserves_other_winner (__main__.Independent.test_07_second_output_creation_race_preserves_other_winner) ... ok
+test_08_partial_second_write_preserved_and_no_automatic_retry (__main__.Independent.test_08_partial_second_write_preserved_and_no_automatic_retry) ... ok
+test_09_parent_identity_change_and_reparse_guard_mock (__main__.Independent.test_09_parent_identity_change_and_reparse_guard_mock) ... ok
+test_10_actual_directory_symlink_rejected_or_permission_skip (__main__.Independent.test_10_actual_directory_symlink_rejected_or_permission_skip) ... skipped 'actual Windows directory symlink unavailable: winerror=1314, errno=22'
+test_11_files_written_is_not_binary_or_access_approval (__main__.Independent.test_11_files_written_is_not_binary_or_access_approval) ... ok
+
+======================================================================
+ERROR: test_04_invalid_path_alias_reserved_ads_unicode_and_no_auto_mkdir (__main__.Independent.test_04_invalid_path_alias_reserved_ads_unicode_and_no_auto_mkdir)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\evidence\integration\quality-report-storage-independent-20261018.py", line 143, in test_04_invalid_path_alias_reserved_ads_unicode_and_no_auto_mkdir
+    args=list(self.fixture());args[0]=str(args[0])+'\u200b';self.assert_blocked_no_files(args,'ROOT_INVALID')
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\evidence\integration\quality-report-storage-independent-20261018.py", line 79, in assert_blocked_no_files
+    before=files(args[0]);old=copy.deepcopy(args[1:])
+           ^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\evidence\integration\quality-report-storage-independent-20261018.py", line 40, in files
+    def files(root):return {p.relative_to(root).as_posix():sha(p.read_bytes()) for p in root.rglob('*') if p.is_file()}
+                                                                                        ^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'rglob'
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.619s
+
+FAILED (errors=1, skipped=1)
