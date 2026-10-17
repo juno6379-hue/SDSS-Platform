@@ -1,0 +1,31 @@
+C:\Users\√÷¡ÿø¿\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+test_actual_report_insert_exact22_sources_unchanged_then_readonly_consumer (test_quality_report_registration.QualityReportRegistrationTests.test_actual_report_insert_exact22_sources_unchanged_then_readonly_consumer) ... FAIL
+test_bad_preflight_and_mutation_after_validation_uses_expected_snapshot (test_quality_report_registration.QualityReportRegistrationTests.test_bad_preflight_and_mutation_after_validation_uses_expected_snapshot) ... ok
+test_caller_manifest_mismatch_and_untrusted_resolve_records_no_insert (test_quality_report_registration.QualityReportRegistrationTests.test_caller_manifest_mismatch_and_untrusted_resolve_records_no_insert) ... ok
+test_conflicting_same_report_version_preserved_outcome_unconfirmed (test_quality_report_registration.QualityReportRegistrationTests.test_conflicting_same_report_version_preserved_outcome_unconfirmed) ... ok
+test_missing_db_root_mismatch_and_nonexact_store_zero_connect_register (test_quality_report_registration.QualityReportRegistrationTests.test_missing_db_root_mismatch_and_nonexact_store_zero_connect_register) ... ok
+test_missing_source_or_native_bytes_changed_no_registration_attempt (test_quality_report_registration.QualityReportRegistrationTests.test_missing_source_or_native_bytes_changed_no_registration_attempt) ... ok
+test_post_commit_exception_preserves_inserted_row_no_retry_or_false_rollback (test_quality_report_registration.QualityReportRegistrationTests.test_post_commit_exception_preserves_inserted_row_no_retry_or_false_rollback) ... ok
+test_register_return_invalid_and_readback_failure_after_real_commit (test_quality_report_registration.QualityReportRegistrationTests.test_register_return_invalid_and_readback_failure_after_real_commit) ... ok
+test_replay_same_record_same_registered_at_database_and_files_unchanged (test_quality_report_registration.QualityReportRegistrationTests.test_replay_same_record_same_registered_at_database_and_files_unchanged) ... ok
+test_root_retarget_between_source_resolves_blocked_before_register (test_quality_report_registration.QualityReportRegistrationTests.test_root_retarget_between_source_resolves_blocked_before_register) ... ok
+
+======================================================================
+FAIL: test_actual_report_insert_exact22_sources_unchanged_then_readonly_consumer (test_quality_report_registration.QualityReportRegistrationTests.test_actual_report_insert_exact22_sources_unchanged_then_readonly_consumer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_quality_report_registration.py", line 58, in test_actual_report_insert_exact22_sources_unchanged_then_readonly_consumer
+    self.assertEqual(observed['counts'],{'valid_pixels':128,'invalid_pixels':128,'total_pixels':256})
+AssertionError: {'valid_pixels': 0, 'invalid_pixels': 256, 'total_pixels': 256} != {'valid_pixels': 128, 'invalid_pixels': 128, 'total_pixels': 256}
+- {'invalid_pixels': 256, 'total_pixels': 256, 'valid_pixels': 0}
+?                     ^^                                       ^
+
++ {'invalid_pixels': 128, 'total_pixels': 256, 'valid_pixels': 128}
+?                    + ^                                       ^^^
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 5.038s
+
+FAILED (failures=1)

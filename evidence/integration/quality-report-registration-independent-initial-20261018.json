@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "scope": "INDEPENDENT_EXPLICIT_REPORT_REGISTRATION_TEMP_ONLY",
+  "status": "FAILED",
+  "tests": 13,
+  "passed": 5,
+  "skipped": 1,
+  "skip_reasons": [
+    "actual Windows symlink unavailable: winerror=1314, errno=22"
+  ],
+  "failures": 0,
+  "errors": 7,
+  "seconds": 10.365923300007125,
+  "test_names": [
+    "test_01_frozen_sha_and_no_store_constructor_or_native_raster_call",
+    "test_02_actual_report_only_insert_and_byte_identical_replay_then_consumers",
+    "test_03_missing_source_manifest_mismatch_and_actual_source_hash_change_no_report_attempt",
+    "test_04_store_root_and_missing_or_retargeted_db_rejected_before_sql_calls",
+    "test_05_untrusted_preflight_and_postvalidation_parent_mutation",
+    "test_06_contaminated_source_resolution_never_registers_report",
+    "test_07_existing_conflicting_report_is_not_overwritten",
+    "test_08_register_exception_before_and_after_commit_are_distinguished_by_actual_rows",
+    "test_09_bad_register_return_no_commit_and_readback_failure_do_not_claim_success",
+    "test_10_mutable_register_return_is_copied_before_later_mutation",
+    "test_11_store_retarget_or_db_inode_replaced_between_resolve_and_write_is_blocked",
+    "test_12_actual_catalog_symlink_rejected_or_permission_skip",
+    "test_13_report_registration_does_not_rewrite_source_link_or_grant_access"
+  ],
+  "source_sha256": "f401dbe295655e9b47b9b75d02cf9d1c7c28574e88386adb9fcabc7d714f475f",
+  "test_sha256": "4e6eda4fee0e94c7cd68fc4dfc45e4370c4985f03edf67e2a7130e112ce413d3",
+  "git_baseline": "4f55aeb492bd81911d389ef681172265bad2b418",
+  "separate_git_baseline_matches": {
+    "backend/app/data/quality_report_preflight.py": true,
+    "tests/test_quality_report_preflight.py": true,
+    "backend/app/data/quality_report_storage.py": true,
+    "backend/app/data/quality_report_completion.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/store.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "old_sources_unchanged": {
+    "backend/app/data/quality_report_preflight.py": true,
+    "tests/test_quality_report_preflight.py": true,
+    "backend/app/data/quality_report_storage.py": true,
+    "backend/app/data/quality_report_completion.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/store.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "observations": [
+    {
+      "actual": "fresh Temp140files +2source fixture registrations +142report insertion +byte-identical replay +131133RO",
+      "source_setup_registry_writes": 2,
+      "adapter_new_report_rows_observed": 1,
+      "normal_gets": 3,
+      "normal_resolves": 2,
+      "normal_register_calls": 1,
+      "replay_entire_db_and_files_unchanged": true,
+      "source_rows_and_raster_bytes_unchanged": true,
+      "counts": {
+        "valid_pixels": 128,
+        "invalid_pixels": 128,
+        "total_pixels": 256
+      },
+      "scientific_accuracy_validated": false,
+      "execution_authorized": false
+    },
+    {
+      "actual_pre_registration_source_failures": [
+        "missing_image",
+        "missing_mask",
+        "raw_manifest_mismatch",
+        "source_sha_changed"
+      ],
+      "report_register_calls": 0,
+      "database_and_files_unchanged_during_adapter": true
+    },
+    {
+      "actual": "conflicting existing report same id/version",
+      "overwritten": false,
+      "returned_status": "REGISTRATION_OUTCOME_UNCONFIRMED",
+      "registration_attempted": true,
+      "database_unchanged": true
+    },
+    {
+      "explicit_fault_injection": "before_commit",
+      "status": "REGISTRATION_OUTCOME_UNCONFIRMED",
+      "actual_rows_after": 2,
+      "commit_observed": false,
+      "automatic_retry_calls": 0,
+      "rollback_or_absence_claim": false
+    },
+    {
+      "explicit_fault_injection": "after_commit",
+      "status": "REGISTRATION_OUTCOME_UNCONFIRMED",
+      "actual_rows_after": 3,
+      "commit_observed": true,
+      "automatic_retry_calls": 0,
+      "rollback_or_absence_claim": false
+    },
+    {
+      "explicit_fault_injection": "bad_return_after_commit",
+      "status": "REGISTRATION_OUTCOME_UNCONFIRMED",
+      "actual_report_row_present": true
+    },
+    {
+      "explicit_fault_injection": "valid_return_without_commit",
+      "status": "REGISTRATION_OUTCOME_UNCONFIRMED",
+      "actual_report_row_present": false
+    },
+    {
+      "explicit_fault_injection": "readback_raises",
+      "status": "REGISTRATION_OUTCOME_UNCONFIRMED",
+      "actual_report_row_present": true
+    },
+    {
+      "explicit_fault_injection": "readback_changed",
+      "status": "REGISTRATION_OUTCOME_UNCONFIRMED",
+      "actual_report_row_present": true
+    },
+    {
+      "explicit_fault_injection": "Store root/db retarget or SQLite inode replacement after source resolves",
+      "registration_calls": 0,
+      "reports_inserted": 0,
+      "operating_roots_accessed": false
+    },
+    {
+      "actual_catalog_symlink": "SKIPPED",
+      "reason": "actual Windows symlink unavailable: winerror=1314, errno=22"
+    },
+    {
+      "actual_counterexample": "missing_image_quality_report_ref",
+      "report_row_registered": true,
+      "consumer131": "BLOCKED",
+      "consumer_issue": {
+        "code": "PATH_INVALID",
+        "field": "quality_report"
+      },
+      "source_versions_not_rewritten": true,
+      "quality_or_access_approval": false
+    },
+    {
+      "actual_counterexample": "restricted_image_public_report",
+      "report_row_registered": true,
+      "consumer131": "BLOCKED",
+      "consumer_issue": {
+        "code": "ACCESS_DECLARATION_BLOCKED",
+        "field": "image"
+      },
+      "source_versions_not_rewritten": true,
+      "quality_or_access_approval": false
+    }
+  ],
+  "actual_scope": "fresh Temp files/GTiff/SQLite; two preexisting source fixture versions; adapter report insert and exact replay; readonly131133",
+  "mock_scope": "preflight/resolve/register/get output contamination, explicit before/after-commit faults, mutable outputs and Store/db retarget fault injections",
+  "operating_store_access": false,
+  "operating_registration_calls": 0,
+  "operating_writes": 0,
+  "training": 0,
+  "inference": 0,
+  "api_ui_changed": false,
+  "frontend_build_browser_required": false,
+  "limitations": [
+    "Successful source hashes and report/schema checks are historical sequential observations, not an atomic source/DB/filesystem transaction.",
+    "Source legacy hash reads and Store JSON predecode have no new hard source-size/CPU/RSS/time sandbox guarantee.",
+    "UNCONFIRMED may follow a real commit; no absence, rollback, retry or deletion is claimed.",
+    "Report-only registration does not rewrite source versions, assure consumer backlinks or grant QA/access/scientific/execution approval.",
+    "All writes are explicit temporary fixture setup or adapter operations in those temporary roots; no operating Store is opened."
+  ]
+}

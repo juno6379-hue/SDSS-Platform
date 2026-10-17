@@ -1,5 +1,27 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 명시적 품질 보고서 등록 어댑터 (142)
+
+구현 담당은 신규 quality_report_registration.py·집중시험·문서142, 독립 담당은 실제 임시 Registry 등록/소비와 실패·결과 미확정 경계를 맡았다. Root는 계약 검토·관련 회귀·원본 보존·공통 문서·인계·Git을, 이해 담당은 완료 소스·시험 근거로 쉬운 설명·발표·FAQ·INDEX·변경 이력을 갱신했다. 시작 시141 작업자는 모두 완료였고 운영 수집·학습 프로세스는 관측되지 않았다. API/Ollama 프로세스와 보고 예약 ACTIVE/10분은 실제 수집·학습 실행과 구분한다.
+
+register_stored_quality_report(store,data_root,image_manifest,mask_manifest,report_identity,report_metadata,manifest_output_uri)는 caller가 이미 초기화한 exact Store와 명시 root/db만 사용한다. 기존 catalog.sqlite3와 root/부모 identity·regular/reparse 경계를 확인하며 Store 생성·디렉터리 생성·입력 파일 수정·자동 source 등록은 하지 않는다.141의 기대 exact23을 고정 사본으로 재구성·typed 대조한 뒤 영상/마스크 두 기존 버전을96 resolve_version으로 확인하고 caller 원형 manifest 및 실제 자산 SHA와 대조한다. 영상/마스크 바이트의 읽기는 이 어댑터 범위에 명시적으로 포함되며 GDAL/Torch·픽셀 의미/정확도·실행 승인은 별도다.
+
+보고서만 기존96 register_version을1회 호출한다. 기존 immutable dataset_id/version 규칙을 유지하므로 다른 manifest 덮어쓰기는 거부하며 동일 내용 재호출은 기존 등록을 확인할 수 있다. 반환과 Registry readback의 bounded exact6 record·manifest/digest·timestamp·명시 false 승인 상태를 확인한 뒤 분리된 사본을 반환한다.141 및 등록 함수의 가변 결과를 검산 뒤 다시 읽어 확정 payload로 사용하지 않는다.
+
+결과는 exact22이며 성공 REPORT_REGISTERED_UNAPPROVED에서만 registry_registered와 registry_outcome_verified가 true다. source_dataset_refs_verified·stored_report_files_verified·manifest_schema_verified는 각각 제한된 관측 범위이고 나머지 기존9개 artifact/품질/과학/모델/실행 flags는 false다. registration_attempted는 register_version 호출 직전에 true가 된다. 등록 전 실패는 BLOCKED, 등록 시도 뒤 예외·오염 반환·readback 실패는 REGISTRATION_OUTCOME_UNCONFIRMED다. 후자는 실제 DB 반영이 끝났을 수 있으므로 쓰기0·rollback 성공으로 표시하지 않고 기존 DB/파일을 보존한다. 자동 retry·삭제·복구는 없다. 잔존 기대 ref/digest는 확인할 계획 값이며 등록 확정 증거가 아니다.
+
+집중10 PASS/5.983초, 관련79 PASS/18.854초, 독립12 PASS/1 SKIP/10.4445115초다. 중복 묶음은 합산하지 않는다. 실제 임시140 저장→source2버전 setup→142 report등록→131/133 소비와 기존 입력/rows 보존, 같은 보고서 재호출, 충돌·고정 ref/SHA·결과 미확정 경계를 검증했다. 실제 임시 자료·명시 Mock/fault injection·초기 실패·권한 제외 구분은 문서142와 독립 JSON/원로그를 따른다. 운영 Registry에 등록한 성과가 아니며 실제 Registry 쓰기는 임시 시험에서만 수행했다.
+
+집중 fixture는 all-zero mask의 valid0/invalid256/total256, 독립 정상 fixture는 checkerboard의128/128/256으로 서로 다른 관측이다. source image에 보고서 연결이 없거나 source가 RESTRICTED이면 report 등록 자체는 가능해도 기존131 소비는 차단되며 원본 버전은 자동 수정하지 않는다. 초기 두 집중 실행의 각9 PASS/1 FAIL은133 status 약칭 및 fixture 계수 기대 오류였고, 초기 독립13건의5 PASS/7 ERROR/1 SKIP는 시험용 SQLite 연결 미close로 인한 Windows Temp cleanup 오류였다. 원로그와 초기 독립 py/json/log를 보존했고 제품 source를 바꾸지 않았다. 최종 독립 cleanup 오류는0이다. 초기 로그의 정확한7개 Temp 이름을 명시 TEMP 부모 안에서 읽기 조회한 결과 현재 모두 미존재였으며, 재귀삭제·lock 정리0이고 사라진 원인은 추정하지 않는다.
+
+보호141개·기존 소스322개·이전 증거1348개·catalog14행 SHA·운영 dataset_versions0·예약136314880바이트를 보존했다. 원본·원장·lock·분할·모델·예약 변경0이며 기존141 이하/main/API/137UI·실행 gate 변경0이다. 내부 함수는 HTTP/UI/collector에 배선하지 않아 이번 전체backend/frontend/build/browser 재실행은 없다.137 전체1358 PASS/1 SKIP·frontend271 PASS는 이전 이력이며 이번 관련·독립 시험이 현재 근거다.
+
+source 조회·파일 검증·등록은 하나의 원자 transaction이 아니며 parent 동시 치환/반환 후 불변/OS sandbox/CPU·RSS·시간 SLA를 보장하지 않는다. 등록 전 source 조회는 기존 Store/SQLite 동작을 재사용한다. 호출0/정상 임시 rows 불변 관측을 SQLite의 모든 복구·외부 프로세스까지 포함한 물리 쓰기0 보장으로 확대하지 않는다. 설치 schema/checker 수용 범위와 기존141의 시간대 표기 한계도 그대로다.
+
+설계·내부 API/계약·사용법·시험·인계와 이해자료14개를 같은 단위로 갱신했다. 전체 개발은 미완료다. 다음143 후보는 caller의 명시적 CLI 진입점이며 운영 자동 호출은 별도다. 실제 collector 품질 mask/band description·연차별 데이터 확보·독립 라벨·모델/기관 승인·다른5개 실행기·GeoLLM/RAG/PostGIS·staging/RBAC/UAT 후속은 남아 있다. 보고서 등록을 운영 영상 검증·학습·모델 승인·배포 완료로 확대하지 않는다.
+
+근거: docs/implementation/142_quality_report_registration.md 및 evidence/integration/quality-report-registration-agent-20261018.log, quality-report-registration-root-related-20261018.log, quality-report-registration-independent-20261018.json, quality-report-registration-live-integrity-final-20261018.json, 최종 quality-report-registration-closeout-20261018.json.
+
 ## 2026-10-18 — 저장 품질 보고서의 읽기 전용 등록 전 점검 (141)
 
 구현 담당은 신규 quality_report_preflight.py·집중시험·문서141, 독립 담당은 실제 임시 저장/소비와 파일 변조·실패 경계를 맡았다. Root는 관련 회귀·원본 보존·공통 문서·인계·Git을, 이해 담당은 완료 소스와 검증 근거로 설명·대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시140 작업자는 모두 완료였고 실제 운영 수집·학습 프로세스는 관측되지 않았다. API/Ollama 프로세스 및 ACTIVE/10분 예약과 실제 수집·학습 실행은 구분한다.
