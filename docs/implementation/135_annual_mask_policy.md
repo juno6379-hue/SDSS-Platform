@@ -67,3 +67,7 @@ Root 최종 관련 **26 PASS / 42.071초 / exit 0**는 `evidence/integration/mas
 별도 명시 mock에서는349525/1048576과349526/1048576의1/3 경계를 정확한 정수식으로 구별했다. 이 경계는 실측 mask가 아니라 정책 산술의 합성 입력 검증이다. counts exact3의 int/type/합/음수/0/상한과 strictTrue 오염은 모든 정책 행 NOT_CHECKED로 차단했다. all0의 기준0, policy/ref snapshot,134 실패도 검증했다. exact20/9false와 최종 source/test SHA, Git9a14fc6의 기존 핵심8개 source SHA·tracked source 불변이며 제품 지적은 없다. 운영·API/UI/frontend/build/browser 실행 없이 실측·mock과 caller 정책 충족·기관 승인 범위를 구분한다.
 
 집중·관련·독립·실제 Temp 대조와 보존 근거를 반영한 뒤 문서를 동결했다.115/API/UI 미연결과 기관/과학/실행 false 범위는 그대로 유지한다.
+
+## 후속136
+
+제한된 JSON 요청과 안전한 요약 서비스는 `136_annual_diagnostics_service.md` 및 신규 `annual_diagnostics_service.py`에서 수행한다. 135 출력의 일관성을 다시 대조하고 nested Registry/경로/원문 오류는 응답에서 제외한다. HTTP endpoint/UI 연결은137 후속이며 이번에는 운영 승인·실행을 허용하지 않는다.

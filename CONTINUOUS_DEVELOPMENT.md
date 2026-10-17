@@ -1,5 +1,27 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 연차 입력 진단의 제한된 JSON 서비스와 안전한 요약 계약 (136)
+
+구현 담당은 신규 `backend/app/annual_diagnostics_service.py`, 집중시험, 내부 요청·응답 JSON Schema와 문서136을 맡았다. 독립 담당은 별도 실제 임시 연차 자료·미훈련 checkpoint, strict JSON과 오염된 부모 응답을 구분해 검증한다. Root는 관련 회귀·실파일 시나리오·운영 조회·보존·공통 문서·Git을 담당하고 이해 담당은 완료 소스와 시험으로 해설·발표 대본·FAQ·INDEX·변경 이력을 갱신한다. 시작 시 기존 작업자는 모두 완료 상태였고 수집·학습 프로세스는 관측되지 않았다. API·Ollama와 보고 예약 ACTIVE/10분은 실제 수집·학습 실행과 구분한다.
+
+`read_annual_diagnostic_service(store, request_json)`는 bytes 요청의 최대16KiB를 먼저 확인한다. strict UTF8·중복 키·float/nonfinite·정수 token16자리/53bit·depth16·nodes4096·문자열512·surrogate 경계로 제한한 뒤 정확히6개 키(schema_version1, capability=landcover.input_diagnostics, model_ref, training_report_sha256, requested_years, policy)를 검증한다. 기존134/135의 전체 고정 참조·연도·명시 정책을 사본으로 고정한 후135를 한 번 호출한다. 잘못된 요청은 자료 읽기 전에 INVALID_REQUEST와 null fingerprint로 반환한다.
+
+request_sha256은 검증된 사본을 sorted strict UTF8 JSON으로 canonical 직렬화한 SHA다. 키 순서·불필요한 공백에 독립적이며 원문 바이트 SHA·서명·호출자 인증·권한 증명이 아니다. 실제 문자열 값을 임의로 정규화하지 않는다. 요청·응답 Draft2020-12 Schema는 contracts/internal/lcluc-annual-diagnostics-request.schema.json과 같은 response.schema.json으로 추가했다. JSON Schema integer는1.0을 허용할 수 있지만 runtime은 lexical float를 거부하므로 스키마만으로 runtime의 모든 제한을 대체하지 못한다.
+
+서비스는135의 정확한 출력 키·schema/scope/status/counter/policy 사본·9개 false flag·행별 연도/상태/counts·정수 정책 판정을 다시 대조한 뒤 정확히19키의 작은 요약을 반환한다. 원 nested135·Registry 원문·artifact 경로·예외 원문을 노출하지 않는다. 상태는 INVALID_REQUEST/OUTPUT_INVALID/SOURCE_BLOCKED/CALLER_POLICY_MET_UNVERIFIED/CALLER_POLICY_NOT_MET이고 blocking_stage는 고정 enum, issue는 고정 code와 요청에 있는 유효 year만 사용한다. 오염되거나 모순된 부모 응답은 고정 OUTPUT_INVALID로 닫는다.
+
+정책 evaluated/met와 전체 artifact flag는 수학적 대조 이력이다. 정책 미달도 부모134의 모든 자료 읽기 뒤일 수 있고 source blocked의 정책 NOT_CHECKED도 부모 단계 I/O0을 의미하지 않는다. 품질 보고서·품질 마스크·의미 진실·실제 AOI·기관 권위·과학 정확도·실행·state_dict·Workflow9개 flag는 항상 false다. caller 정책 충족은 기준의 적정성·기관/전문가·모델·실행 승인이 아니다.135 위에 추가 Registry/파일/checkpoint/픽셀 읽기는 없으며 정상N행은 모델 load1회·get1+6N회·maskN회다. 원 영상 픽셀·훈련·추론은 수행하지 않는다.
+
+집중 최종11 PASS/64.474초, 관련28 PASS/119.021초, 독립7 PASS/0 SKIP/88.681709초, exit0이다. 중복 묶음을 합산하지 않는다. 검토에서136 요약의 일반 문자열 타입 경계와 core 인자 사본 분리를 보강하고 str subclass의 equality 우회·사본 변경·escape 회귀를 확인했다. 기존135 이하는 변경하지 않았다. 초기 담당 PS는 중단되어 완료값과 로그 파일이 없고, 첫 cmd 환경변수 지정 오류의 focused-final.log와 최종 통과 focused-final2.log를 구분해 보존했다. Root 초기 runtime/related는 중단 exit1·완료값 없음의0바이트 원로그를 보존했다. 실행/import 전 지연은 unittest의 Ran 소요와 별도이며 제품 시험 실패나 통과로 표현하지 않는다. Root 실제 Temp7시나리오는 정확한1/2 경계·미달 전행 평가·all0의0/양수 기준·invalid policy I/O0·부모 마스크/manifest 차단, canonicalSHA·경로 비노출·DB/전체 파일 불변을 확인했다. 정상3년은19get/load1/mask3회, SOURCE_BLOCKED는16get, INVALID_REQUEST는0이다. 실제 임시 자료와 malformed 부모/정수 경계의 명시 mock은 구분하며 원 영상 픽셀·학습·추론·운영 모델 읽기는 수행하지 않았다.
+
+보호141개·기존 소스305개·이전 증거1215개·catalog14행 canonical SHA·예약136314880바이트를 보존했다.04:51 KST URI mode=ro 운영 조회는 dataset_versions0이다. 원본·원장·lock·분할·운영 모델·예약은 그대로이며 운영 수집·등록·학습·추론·배포·Workflow dispatch는0이다. 별도로 갱신된 docs16/20의04:54 상태 문서는 관측 시각과 정체 기간만 바뀌었음을 diagnostic-service-separate-status-docs-20261018.json으로 검산했다. 누계·manifest/원장 SHA는 같으며 이 단위가 작성한 성과나 수집 재개로 표현하지 않는다.
+
+다중 Registry·파일의 순차 관측은 원자 snapshot이 아니다. Store DB JSON predecode 상한, Torch ambient allowlist와 CPU/RSS/시간 격리, GDAL parser 자원 hardcap·전체 외부 I/O OS 격리·mapped drive·TOCTOU 한계는 상속한다. PUBLIC 선언은 실제 ACL 인증이 아니다. strict 요청·안전한 출력은 그러한 native parser 격리나 실제 데이터 품질·독립 정확도를 증명하지 않는다.
+
+관련 서비스 설계·요청/응답 계약·사용법·시험·인계와 이해자료를 같은 단위로 갱신한다.136은 HTTP 라우터·main·115 실행·UI에 아직 연결하지 않은 내부 서비스 경계이므로 이번 기존 endpoint/화면 계약 변경·UI 적용·frontend/build/browser와 전체 backend 재실행은 없다. 관련 회귀·독립 실제 임시 파일 및 parser/부모 출력 경계를 이번 근거로 사용하며120/121 전체 시험은 이전 이력이다. 다음137은 인증된 진단 endpoint와 UI 연결이다. 원자료 수집 재개·독립 라벨·품질/모델 승인·다른5개 실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/기관 UAT는 미완료다. 단일 서비스 경계를 전체 개발 완료로 보거나10분 보고 예약을 중단하지 않는다.
+
+근거: `docs/implementation/136_annual_diagnostics_service.md`, `evidence/integration/diagnostic-service-agent-20261018-focused-final2.log`, `diagnostic-service-root-related-final-20261018.log`, `diagnostic-service-independent-20261018.json`, `diagnostic-service-runtime-20261018.json`, `diagnostic-service-live-integrity-20261018.json`, `diagnostic-service-operating-inventory-20261018.json`, 최종 `diagnostic-service-closeout-20261018.json`.
+
 ## 2026-10-18 — 호출자 명시 최소 유효율의 연차 정책 진단 (135)
 
 구현 담당은 신규 `backend/app/ml/annual_mask_policy.py`, 집중시험과 문서135를 맡았다. 독립 담당은 별도 실제 임시 연차 자료·마스크·미훈련 checkpoint로 유리수 경계, 정책/입력 선검사, 계수 오염과 무쓰기를 검증한다. Root는 관련 회귀·실파일 시나리오·운영 조회·보존·공통 문서·Git을 담당하고 이해 담당은 완료된 소스·시험으로 해설·발표 대본·FAQ·INDEX·변경 이력을 갱신한다. 시작 시 이전 작업자는 모두 완료 상태였고 실제 수집·학습 프로세스는 관측되지 않았다. API·Ollama 및 보고 예약 ACTIVE/10분은 수집·학습 실행과 구분한다.

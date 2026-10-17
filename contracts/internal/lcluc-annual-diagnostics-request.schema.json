@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Internal LCLUC annual diagnostic request; runtime integer typing is stricter",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "capability", "model_ref", "training_report_sha256", "requested_years", "policy"],
+  "properties": {
+    "schema_version": {"const": 1, "type": "integer"},
+    "capability": {"const": "landcover.input_diagnostics"},
+    "model_ref": {"allOf": [{"$ref": "#/$defs/ref"}, {"properties": {"id": {"pattern": "^[A-Za-z0-9_-]{1,100}$"}}}]},
+    "training_report_sha256": {"$ref": "#/$defs/sha"},
+    "requested_years": {"type": "array", "minItems": 2, "maxItems": 6, "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["year", "image_ref", "evidence_ref", "metadata_ref", "quality_report_ref", "mask_ref"],
+      "properties": {"year": {"type": "integer", "minimum": 1900, "maximum": 2200},
+        "image_ref": {"$ref": "#/$defs/ref"}, "evidence_ref": {"$ref": "#/$defs/ref"},
+        "metadata_ref": {"$ref": "#/$defs/ref"}, "quality_report_ref": {"$ref": "#/$defs/ref"}, "mask_ref": {"$ref": "#/$defs/ref"}}
+    }},
+    "policy": {"type": "object", "additionalProperties": false,
+      "required": ["schema_version", "minimum_valid_numerator", "minimum_valid_denominator", "comparison"],
+      "properties": {"schema_version": {"type": "integer", "const": 1},
+        "minimum_valid_numerator": {"type": "integer", "minimum": 0, "maximum": 1000000},
+        "minimum_valid_denominator": {"type": "integer", "minimum": 1, "maximum": 1000000},
+        "comparison": {"const": "greater_than_or_equal"}}}
+  },
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "text": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[^\\u0000-\\u001f\\u007f-\\u009f\\ud800-\\udfff]+$"},
+    "ref": {"type": "object", "additionalProperties": false, "required": ["id", "version", "sha256"],
+      "properties": {"id": {"$ref": "#/$defs/text"}, "version": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha"}}}
+  }
+}

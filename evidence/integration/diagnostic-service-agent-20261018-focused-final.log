@@ -1,0 +1,17 @@
+test_annual_diagnostics_service (unittest.loader._FailedTest.test_annual_diagnostics_service) ... ERROR
+
+======================================================================
+ERROR: test_annual_diagnostics_service (unittest.loader._FailedTest.test_annual_diagnostics_service)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_annual_diagnostics_service
+Traceback (most recent call last):
+  File "C:\Users\√÷¡ÿø¿\AppData\Local\Programs\Python\Python311\Lib\unittest\loader.py", line 162, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'test_annual_diagnostics_service'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+FAILED (errors=1)

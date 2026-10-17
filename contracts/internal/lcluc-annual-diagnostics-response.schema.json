@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Internal safe LCLUC annual diagnostic summary",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "scope", "status", "request_sha256", "blocking_stage", "issue", "per_year_observations", "caller_policy_evaluated", "caller_policy_met", "artifact_bytes_verified", "quality_report_verified", "quality_mask_verified", "mask_semantics_verified", "registry_aoi_verified", "source_authority_verified", "scientific_accuracy_validated", "execution_authorized", "state_dict_verified", "workflow_supported"],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1}, "scope": {"const": "LCLUC_ANNUAL_DIAGNOSTIC_SUMMARY_READ_ONLY"},
+    "status": {"enum": ["INVALID_REQUEST", "OUTPUT_INVALID", "SOURCE_BLOCKED", "CALLER_POLICY_MET_UNVERIFIED", "CALLER_POLICY_NOT_MET"]},
+    "request_sha256": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9a-f]{64}$"}]},
+    "blocking_stage": {"enum": [null, "REQUEST", "OUTPUT", "ANNUAL", "COUNTS", "POLICY"]},
+    "issue": {"anyOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["code", "year"],
+      "properties": {"code": {"enum": ["INVALID_REQUEST", "OUTPUT_INVALID", "SOURCE_BLOCKED", "CALLER_POLICY_NOT_MET"]}, "year": {"anyOf": [{"type": "null"}, {"type": "integer", "minimum": 1900, "maximum": 2200}]}}}]},
+    "per_year_observations": {"type": "array", "maxItems": 6, "items": {"type": "object", "additionalProperties": false,
+      "required": ["year", "status", "counts", "policy_met"], "properties": {"year": {"type": "integer", "minimum": 1900, "maximum": 2200},
+        "status": {"enum": ["NOT_CHECKED", "MET", "NOT_MET"]}, "counts": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/counts"}]},
+        "policy_met": {"type": ["boolean", "null"]}}}},
+    "caller_policy_evaluated": {"type": "boolean"}, "caller_policy_met": {"type": "boolean"}, "artifact_bytes_verified": {"type": "boolean"},
+    "quality_report_verified": {"const": false}, "quality_mask_verified": {"const": false}, "mask_semantics_verified": {"const": false},
+    "registry_aoi_verified": {"const": false}, "source_authority_verified": {"const": false}, "scientific_accuracy_validated": {"const": false},
+    "execution_authorized": {"const": false}, "state_dict_verified": {"const": false}, "workflow_supported": {"const": false}
+  },
+  "$defs": {"counts": {"type": "object", "additionalProperties": false, "required": ["valid_pixels", "invalid_pixels", "total_pixels"],
+    "properties": {"valid_pixels": {"type": "integer", "minimum": 0, "maximum": 1048576}, "invalid_pixels": {"type": "integer", "minimum": 0, "maximum": 1048576}, "total_pixels": {"type": "integer", "minimum": 1, "maximum": 1048576}}}}
+}

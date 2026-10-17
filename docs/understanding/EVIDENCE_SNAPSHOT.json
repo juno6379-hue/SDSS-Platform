@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T04:46:21.964225+09:00",
-  "source_commit": "9a14fc62f7dd5dda6b1df8b2b0b241a17a12f28d",
-  "source_commit_reason": "Published134 baseline plus135 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T05:09:07.173034+09:00",
+  "source_commit": "4c14031cbc46384423dd4761d1bec01ea8e2222e",
+  "source_commit_reason": "Published135 baseline plus136 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -4430,6 +4430,226 @@
       "collector_training_processes_observed": 0,
       "next_internal_candidate": "136_EXPLICIT_PER_SCENE_DIAGNOSTIC_SERVICE_CONTRACT_WITHOUT_EXECUTION_OR_APPROVAL",
       "snapshot_files": 1762
+    },
+    "latest_bounded_json_annual_diagnostic_service": {
+      "recorded_at": "2026-10-18T05:09:07.173034+09:00",
+      "status": "136_BOUNDED_JSON_ANNUAL_DIAGNOSTIC_SERVICE_SAFE_SUMMARY",
+      "focused": {
+        "passed": 11,
+        "seconds": 64.474,
+        "log": "evidence/integration/diagnostic-service-agent-20261018-focused-final2.log"
+      },
+      "related": {
+        "passed": 28,
+        "seconds": 119.021,
+        "log": "evidence/integration/diagnostic-service-root-related-final-20261018.log"
+      },
+      "independent": {
+        "passed": 7,
+        "skipped": 0,
+        "seconds": 88.68170859999373
+      },
+      "root_actual_temp_file_scenarios": 7,
+      "overlapping_test_bundles_are_not_additive": true,
+      "source_sha256": "709e011bc7abbd050b316e8ac5586a2f9421ed2019a7ca66f31e9090db65f98e",
+      "test_sha256": "40776b85f4c8562312d1df06b22531389ec75845e59342b24ea2cf066b752558",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T05:09:07.173034+09:00",
+        "understanding_markdown": 103,
+        "implementation_markdown": 1,
+        "local_links": 455,
+        "metadata_evidence_references": 11709,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T05:08:33.938642+09:00",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 305,
+        "existing_source_changes": [],
+        "previous_evidence_checked": 1215,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "reserved_bytes_preserved": 136314880,
+        "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "operating_inventory": {
+        "recorded_at": "2026-10-18T04:52:31.512784+09:00",
+        "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+        "counts_by_kind": {
+          "analyses": 3,
+          "datasets": 6,
+          "gmais_idempotency": 2,
+          "gmais_jobs": 2,
+          "models": 1
+        },
+        "dataset_versions_count": 0,
+        "operating_writes": 0,
+        "model_or_raster_files_loaded": false
+      },
+      "live_processes": {
+        "checked_at": "2026-10-18T05:09:06.7166079+09:00",
+        "processes": [
+          {
+            "pid": 27268,
+            "parent_pid": 31440,
+            "parent_exists": true,
+            "name": "ollama app.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+            "created": "/Date(1792194023427)/",
+            "cpu": 27.203125,
+            "working_set": 88948736
+          },
+          {
+            "pid": 27860,
+            "parent_pid": 27268,
+            "parent_exists": true,
+            "name": "ollama.exe",
+            "command_line": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+            "created": "/Date(1792194025549)/",
+            "cpu": 9.953125,
+            "working_set": 85024768
+          },
+          {
+            "pid": 32224,
+            "parent_pid": 24092,
+            "parent_exists": true,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
+            "created": "/Date(1792194462900)/",
+            "cpu": 449.15625,
+            "working_set": 17285120
+          },
+          {
+            "pid": 26912,
+            "parent_pid": 3392,
+            "parent_exists": true,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001",
+            "created": "/Date(1792198361777)/",
+            "cpu": 376.09375,
+            "working_set": 32079872
+          },
+          {
+            "pid": 35032,
+            "parent_pid": 22796,
+            "parent_exists": true,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend",
+            "created": "/Date(1792199087513)/",
+            "cpu": 10201.390625,
+            "working_set": 21368832
+          },
+          {
+            "pid": 8748,
+            "parent_pid": 35032,
+            "parent_exists": true,
+            "name": "python.exe",
+            "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\"",
+            "created": "/Date(1792267164822)/",
+            "cpu": 18.125,
+            "working_set": 55312384
+          }
+        ],
+        "collector_training_processes_observed": 0,
+        "observation_limit": "Process command patterns; test interpreters are distinct from collection/training",
+        "automation_status": "ACTIVE",
+        "automation_interval_minutes": 10,
+        "automation_was_not_modified": true
+      },
+      "separately_updated_status_documents_reviewed": {
+        "recorded_at": "2026-10-18T05:02:24.008839+09:00",
+        "attribution": "Separately updated status documents reviewed and integrated; not authored as this service implementation.",
+        "not_evidence_of_collection_or_training_resumption": true,
+        "files": [
+          {
+            "path": "docs/16_충분학습자료_단계별수집계획.md",
+            "before_sha256": "b993c3eaada306a5d73a14199345af3e3a3852d5748e896085d49465fd5d7323",
+            "after_sha256": "337892e64ee66698c26fbd001ee6c995a787345726d1037c0691ef377e9691fe",
+            "only_observation_time_and_stagnation_duration_changed": true,
+            "collection_counters_and_manifest_ledger_hashes_unchanged": true
+          },
+          {
+            "path": "docs/20_대량수집_학습_통합실행.md",
+            "before_sha256": "bdd32f6f4946a5d0c730a2de80fe0065963ab4206b044e20c146ae164f6d3788",
+            "after_sha256": "d4489ef012548a6851f7e8e693136aa1d2c17d422e5a8e114d5f42caf53deeed",
+            "only_observation_time_and_stagnation_duration_changed": true,
+            "collection_counters_and_manifest_ledger_hashes_unchanged": true
+          }
+        ]
+      },
+      "initial_root_attempts_interrupted_before_final_refreeze": {
+        "runtime_log": "evidence/integration/diagnostic-service-runtime-20261018.log",
+        "related_log": "evidence/integration/diagnostic-service-root-related-20261018.log",
+        "completed_result": false,
+        "interrupted_exit_code": 1,
+        "raw_logs_preserved": true
+      },
+      "review_hardening": {
+        "exact_builtin_scope_and_row_status_before_projection": true,
+        "independent_core_argument_copies_preserve_fingerprint_and_verification_baseline": true,
+        "escaping_regression_added": true,
+        "old135_and_below_sources_unchanged": true
+      },
+      "schema_sha256": {
+        "contracts/internal/lcluc-annual-diagnostics-request.schema.json": "c1e90cc402f08a5d08d19ca76832d54727b756a6048b0a03b973d790f66a8f94",
+        "contracts/internal/lcluc-annual-diagnostics-response.schema.json": "56d5a0110de527f68d326f6af90f33fc2289f209d7ada002f5f860061544b8c6"
+      },
+      "strict_bytes_16kib_utf8_duplicate_float_nonfinite_bigint_surrogate_depth_node_string_limits": true,
+      "request_exact_six_keys_capability_and_all_refs_policy_prevalidated_before_io": true,
+      "canonical_valid_request_sha256_is_order_and_whitespace_independent_not_authentication": true,
+      "parent135_exact_bounded_output_and_full_rows_counts_cross_product_false_flags_revalidated": true,
+      "response_exact19_safe_summary_without_nested_registry_paths_or_raw_exception": true,
+      "request_and_response_json_schema_draft202012_added": true,
+      "runtime_rejects_lexical_float_integer_that_json_schema_can_accept": true,
+      "additional_registry_file_checkpoint_pixel_reads_over135": 0,
+      "model_checkpoint_load_valid_path": 1,
+      "store_get_calls_valid_path_formula": "1+6N",
+      "mask_read_calls_valid_path_formula": "N",
+      "image_pixel_read_calls": 0,
+      "quality_report_verified": false,
+      "quality_mask_verified": false,
+      "mask_semantics_verified": false,
+      "registry_aoi_verified": false,
+      "source_authority_verified": false,
+      "scientific_accuracy_validated": false,
+      "execution_authorized": false,
+      "state_dict_verified": false,
+      "workflow_supported": false,
+      "threshold_selection_and_agency_quality_policy_authority_not_verified": true,
+      "http_router_main_endpoint_ui_or_workflow_connected": false,
+      "store_database_json_predecode_not_bounded_by_postdecode_tree_limit": true,
+      "gdal_parser_cpu_rss_time_and_all_external_io_not_os_isolated": true,
+      "ambient_torch_allowlist_unchanged_and_not_cpu_rss_time_isolated": true,
+      "sequential_registry_and_file_snapshots_are_not_atomic": true,
+      "frontend_build_browser_rerun_this_unit": false,
+      "backend_full_rerun_this_unit": false,
+      "reason_no_full_rerun": "Previous sources unchanged. New nonrouted bounded JSON service and schemas covered by focused, related and independent actual Temp files plus parser/unsafe-parent cases. No external endpoint/UI contract change.",
+      "previous_backend_regression": {
+        "unit": "120/121",
+        "tests_run": 1184,
+        "passed": 1183,
+        "skipped": 1,
+        "seconds": 399.529
+      },
+      "previous_frontend_regression": {
+        "unit": "120/121",
+        "passed": 261,
+        "build_modules": 108,
+        "build_seconds": 21.85
+      },
+      "understanding_updated": true,
+      "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+      "operating_model_or_raster_load": 0,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_internal_candidate": "137_AUTHENTICATED_DIAGNOSTIC_ENDPOINT_AND_UI_INTEGRATION_WITHOUT_EXECUTION_OR_APPROVAL",
+      "snapshot_files": 1788
     }
   },
   "files": {
@@ -4446,8 +4666,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "71867a58532f745291f34eebb9e44e4b1ca576e70c40ec1f181c9ff26846cc06",
-      "bytes": 414551
+      "sha256": "ef0745e50a99be331b419d7f5792acb4f0ec61fe0c0c968c3282ad82ba2a25d9",
+      "bytes": 421506
     },
     "README.md": {
       "sha256": "0d213fdb1da768b59dd402c3af248fa902c00a078c3072703337effadc542c56",
@@ -4476,6 +4696,10 @@
     "backend/app/agent_capability_contract.py": {
       "sha256": "aa6659bfa5d2746da63e614e01cb5fb873a70023c1bc22a90446e6410e1aac75",
       "bytes": 742
+    },
+    "backend/app/annual_diagnostics_service.py": {
+      "sha256": "709e011bc7abbd050b316e8ac5586a2f9421ed2019a7ca66f31e9090db65f98e",
+      "bytes": 7812
     },
     "backend/app/candidate_qa_comparison_api.py": {
       "sha256": "6268dd381198309daee474598788a9c2a1eb385eb0cee9c4f9e60ad1085f1a5b",
@@ -4837,6 +5061,14 @@
       "sha256": "e28fd28a4b793eac0aa61167074cf11f055bdff00a591b09f90fd6d6fef7e806",
       "bytes": 4104
     },
+    "contracts/internal/lcluc-annual-diagnostics-request.schema.json": {
+      "sha256": "c1e90cc402f08a5d08d19ca76832d54727b756a6048b0a03b973d790f66a8f94",
+      "bytes": 2112
+    },
+    "contracts/internal/lcluc-annual-diagnostics-response.schema.json": {
+      "sha256": "56d5a0110de527f68d326f6af90f33fc2289f209d7ada002f5f860061544b8c6",
+      "bytes": 2795
+    },
     "contracts/upstream/GMAIS-v0.2/schemas/dataset-manifest.schema.json": {
       "sha256": "080f6e157ad9c51a840ebccce4845e4444d01d2d2d8da077f4ccd714b6b58819",
       "bytes": 3795
@@ -4882,11 +5114,11 @@
       "bytes": 11858020
     },
     "docs/16_충분학습자료_단계별수집계획.md": {
-      "sha256": "b993c3eaada306a5d73a14199345af3e3a3852d5748e896085d49465fd5d7323",
+      "sha256": "337892e64ee66698c26fbd001ee6c995a787345726d1037c0691ef377e9691fe",
       "bytes": 19411
     },
     "docs/20_대량수집_학습_통합실행.md": {
-      "sha256": "bdd32f6f4946a5d0c730a2de80fe0065963ab4206b044e20c146ae164f6d3788",
+      "sha256": "d4489ef012548a6851f7e8e693136aa1d2c17d422e5a8e114d5f42caf53deeed",
       "bytes": 15732
     },
     "docs/agents/UNDERSTANDING_AGENT.md": {
@@ -4894,8 +5126,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "aaa1063603993ba2bd10eadbc099ce64bb7b1ae4f386a829a4da01c742cba27b",
-      "bytes": 421692
+      "sha256": "7d1c3b06253eaf8415bdfd9f25b3ee643d05fa719dff2b296e8a20809b2029dd",
+      "bytes": 428647
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -5042,8 +5274,12 @@
       "bytes": 10814
     },
     "docs/implementation/135_annual_mask_policy.md": {
-      "sha256": "21507b786bf28faae3b42b53db04d4742cf49664e5a593128fb31064cef0adaa",
-      "bytes": 10147
+      "sha256": "30019f69b7b13ef951821d7b9cf45dc6d0293db9a8dece886beececa4245d180",
+      "bytes": 10535
+    },
+    "docs/implementation/136_annual_diagnostics_service.md": {
+      "sha256": "b26b6cb15f09e024891fa878bef9c9528c3996f692a8c75f12d47ad62efb3aba",
+      "bytes": 13225
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -5358,52 +5594,56 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "365994e3d995270bcd355b6edc5714bc3084d39724074d8cb1d62ff2e8a22476",
-      "bytes": 156874
+      "sha256": "51d3f21d53bb250861d54b24f5ec05fbacfc9ad8c724851b7af2d3e4520935d4",
+      "bytes": 158335
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "61058570149d46501306a393ea87670fd0f92cb34e2508aa4241a30d7f6ecb17",
-      "bytes": 126702
+      "sha256": "a3f433d4672f0dca18573cecdd915f581d93681728b15cf9ff7a2c34564704e4",
+      "bytes": 128211
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "b64030104e9039d8e8510627313749a91dd0530121c4cb3ef19ab30d746e6292",
-      "bytes": 97104
+      "sha256": "37983d429454f3d5625445c4cd06541e66bb40c2c6a22f6f2e14e2718b47e48a",
+      "bytes": 98535
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "d97ba7882490e4f6d8262ddf589e83dd46cd380432f1eb6bfaaf50ee1f1f1e4c",
-      "bytes": 80121
+      "sha256": "8a6a14177c9ff3d1a9cc2d5bfadc91503a100a2f76950425c733f80da27e86ff",
+      "bytes": 81618
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "684fbf53b9338a3cc5a27b2273f15678f82285f10bc51d272d17931e581466ad",
-      "bytes": 44986
+      "sha256": "d9bf14b7b6ec028d0ed756b5c7d3c686b9bbfb07e7ac2bfea56367c97d7c5673",
+      "bytes": 46454
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "b658c6bcd39234a0afc97df6fc460601e6f5a26f94c5c9ae4bbefc4d1d10e5bf",
-      "bytes": 83242
+      "sha256": "5b2a01e7ac0f48b7e67efea047b257d9fd8d6f726b9c5a3ffd1ecfb59359f845",
+      "bytes": 84734
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "cb8046fa124b731051d990d4e30c512445a2b2d1bb176a1055d329f5ae5b7627",
-      "bytes": 228342
+      "sha256": "d1a1d8af3bfb3752100df442ec3a95a47230e8fc206584a889b40de0aa20d223",
+      "bytes": 230330
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "108980194ad8f93e99a5f32fa7d4e604933c5ea2f3ee70058044249ce57910bf",
-      "bytes": 187278
+      "sha256": "f55ddcf3f3975061dfcc69155cc8a4d3715dc1c47232f06e2ca8cfa112b959ea",
+      "bytes": 188772
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "e5ed638f3a1be59a7bf513320e629de0cd41e6a3ed733facfab7261dd91be2bb",
-      "bytes": 121110
+      "sha256": "29a9e6e0ffb5a3987c3bb888e148681eae60dde55ef57329f013f1344728996d",
+      "bytes": 122746
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "87f9e3252331fc015949846e17b6d6b808dd96f36d9d6e1a95babf532cd8940e",
-      "bytes": 198849
+      "sha256": "11adf9f1511a07360a543120cd97484ab091298c80ccf3c6c19e75fa0130e348",
+      "bytes": 200891
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
       "bytes": 9292
+    },
+    "docs/understanding/gate-notes/GATE_ANNUAL_DIAGNOSTICS_SERVICE_20261018.md": {
+      "sha256": "719a00a93adabce219a4cc49c6c3e8e314c59870514ae80fb153efd048913e45",
+      "bytes": 13409
     },
     "docs/understanding/gate-notes/GATE_ANNUAL_MASK_POLICY_20261018.md": {
       "sha256": "75516b76c12e26e36f81eba4d6359206f8f6c88af2d2f32a92ab3012950af4d7",
@@ -5754,16 +5994,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "c0a68e43b1ce89a82dade6990b4f67b096596e9f68d88def63de37c80b2fc445",
-      "bytes": 200361
+      "sha256": "5638e120b77f301d6474b89aec7d740ecb6573d531a05dbbcee85fe443ddccfb",
+      "bytes": 202185
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "4050c9c7d5800bb505eca7bed1615b25fd24926515f5c839c1b3a0e379bbb0cf",
-      "bytes": 136373
+      "sha256": "04891dbbbe3b68080c84d1389019a3038e27d83163b05895aa586115feccd803",
+      "bytes": 137821
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "92166e9175e67db52502394ca2418081231d64b48fdfc75bc6cfea34ef7209e4",
-      "bytes": 163010
+      "sha256": "9a591418e5b43ff88959fa4fa11cf9742b978b820b22b07ca208061f85a8b631",
+      "bytes": 164646
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -6636,6 +6876,86 @@
     "evidence/integration/dataset-versions-tests-20261017.log": {
       "sha256": "a9c1979ed369846a4d7f3aca63b2eab1e20e588c24eab80851d69f722f0d7c63",
       "bytes": 1939
+    },
+    "evidence/integration/diagnostic-service-agent-20261018-focused-final.log": {
+      "sha256": "46377c7ef2461c606aa39f96fe88dab4ca79c6dc61ee655f6a0444c12a7ebcd4",
+      "bytes": 853
+    },
+    "evidence/integration/diagnostic-service-agent-20261018-focused-final2.log": {
+      "sha256": "fc0a24d6b0c73bb400c60a8d9b454ef550b5af0d87352739f3c9873f98adb604",
+      "bytes": 2647
+    },
+    "evidence/integration/diagnostic-service-closeout-20261018.json": {
+      "sha256": "c3c726426b0dd97f6859f9478ff5d023e3847c7c5fa60b84c80f13d8c2d09778",
+      "bytes": 9711
+    },
+    "evidence/integration/diagnostic-service-closeout-20261018.py": {
+      "sha256": "169bae904bfb566ac950029345b56de74e1e42b83bad8e8f0e4ee533bb491bd4",
+      "bytes": 9733
+    },
+    "evidence/integration/diagnostic-service-independent-20261018.json": {
+      "sha256": "ca5f40dae0105a44cfff8a9c48f32a7c8567008f8e439986fa5c5f513634ed72",
+      "bytes": 4140
+    },
+    "evidence/integration/diagnostic-service-independent-20261018.log": {
+      "sha256": "c70485484fa7e8bea2e3e19b709e72765813849465578261cb0e6c251505f5e4",
+      "bytes": 5413
+    },
+    "evidence/integration/diagnostic-service-independent-20261018.py": {
+      "sha256": "3846acedae3a7efc485e5d90f9780017426ecb9653fc0a6f7139e8c236ff3f44",
+      "bytes": 15910
+    },
+    "evidence/integration/diagnostic-service-integrity-20261018.py": {
+      "sha256": "876d9d11d284b069efa50fac7e3d593c11588dea92edf2c7531ddffe6856c713",
+      "bytes": 2502
+    },
+    "evidence/integration/diagnostic-service-live-integrity-20261018.json": {
+      "sha256": "eacb9d82ea30377354df4202dc2db3fc57bf6b548ba529e312915ef2923aaeae",
+      "bytes": 577
+    },
+    "evidence/integration/diagnostic-service-live-processes-20261018.json": {
+      "sha256": "c25cfde7eddbaf3b0486893aaeab1af2f87b5947a3b2836e1ae195c591993bc7",
+      "bytes": 3910
+    },
+    "evidence/integration/diagnostic-service-operating-inventory-20261018.json": {
+      "sha256": "bdb5b314754bf2c694de9ae5a65637a4f04e802aeb9ee727f4f3e45c152851af",
+      "bytes": 352
+    },
+    "evidence/integration/diagnostic-service-preflight-20261018.json": {
+      "sha256": "462fb1f4bbfaef49a5c5546a30c16db8faa13b597bff7eeb5575863b8cf3ad36",
+      "bytes": 564402
+    },
+    "evidence/integration/diagnostic-service-review-updates-20261018.py": {
+      "sha256": "b23b7efbcf4f3df07e7b93c715c3df3a231a2a45ee3998d601d32e4bc82eac15",
+      "bytes": 1511
+    },
+    "evidence/integration/diagnostic-service-root-related-20261018.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evidence/integration/diagnostic-service-root-related-final-20261018.log": {
+      "sha256": "061db2919de61615b3d0b7f784156db212feaf0bc1be161744a1ea77284ad5b8",
+      "bytes": 5891
+    },
+    "evidence/integration/diagnostic-service-runtime-20261018.json": {
+      "sha256": "990d6dacb992860c2912887c0c2e7cdf9d2473ccffaf35c538e30eca328c4408",
+      "bytes": 3486
+    },
+    "evidence/integration/diagnostic-service-runtime-20261018.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evidence/integration/diagnostic-service-runtime-20261018.py": {
+      "sha256": "5b5743ef7fe30f3c97a8071c21279341ea8d19dc69954863cc4f74c95c69217c",
+      "bytes": 11875
+    },
+    "evidence/integration/diagnostic-service-runtime-final-20261018.log": {
+      "sha256": "c052c467edd3d42b47e723c3b29046db9b14187fc51288a470036f524509be87",
+      "bytes": 104
+    },
+    "evidence/integration/diagnostic-service-separate-status-docs-20261018.json": {
+      "sha256": "f105757ee048a34f3d1e0143b66cba48ce2f2d88910b7580fef9dca01184c483",
+      "bytes": 1079
     },
     "evidence/integration/execution-input-binding-closeout-20261017.json": {
       "sha256": "97b627dc8aadb5e6a5d74123841afb3a93eb53d5d5c9f89ac11c805a4ec6d14d",
@@ -11141,6 +11461,10 @@
       "sha256": "7c3ef2d9e5de16469ebd909adaa4b9aa75663e6df70d3f8205eba62aefff83c4",
       "bytes": 10384
     },
+    "tests/test_annual_diagnostics_service.py": {
+      "sha256": "40776b85f4c8562312d1df06b22531389ec75845e59342b24ea2cf066b752558",
+      "bytes": 11360
+    },
     "tests/test_annual_mask_policy.py": {
       "sha256": "78a42535d9506ddf93e268ae6ec366af80b4f73b8aaa7344da9b165996ea6b26",
       "bytes": 8375
@@ -11483,11 +11807,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T04:46:21.964225+09:00",
-    "understanding_markdown": 102,
+    "checked_at": "2026-10-18T05:09:07.173034+09:00",
+    "understanding_markdown": 103,
     "implementation_markdown": 1,
-    "local_links": 445,
-    "metadata_evidence_references": 11485,
+    "local_links": 455,
+    "metadata_evidence_references": 11709,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true
