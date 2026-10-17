@@ -1,0 +1,92 @@
+{
+  "recorded_at": "2026-10-18T02:14:51.834192+09:00",
+  "status": "120_121_PINNED_MODEL_ERROR_ANALYSIS_API_AND_UI_VERIFIED",
+  "api_focused": {
+    "passed": 14,
+    "seconds": 2.695
+  },
+  "api_related": {
+    "passed": 48,
+    "seconds": 7.665
+  },
+  "route_guards": {
+    "passed": 24,
+    "seconds": 4.333
+  },
+  "root_independent_live_http_scenarios": 6,
+  "backend_full": {
+    "tests_run": 1184,
+    "passed": 1183,
+    "skipped": 1,
+    "seconds": 399.529,
+    "exit_code": 0
+  },
+  "frontend_focused": {
+    "passed": 11,
+    "seconds": 4.141
+  },
+  "frontend_full": {
+    "passed": 261,
+    "seconds": 26.266159
+  },
+  "build": {
+    "modules": 108,
+    "seconds": 21.85,
+    "exit_code": 0
+  },
+  "overlapping_test_bundles_are_not_additive": true,
+  "documentation_validation": {
+    "checked_at": "2026-10-18T02:14:51.834192+09:00",
+    "understanding_markdown": 88,
+    "implementation_markdown": 2,
+    "local_links": 366,
+    "metadata_evidence_references": 9398,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T02:10:38.652559+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 270,
+    "authorized_existing_source_changes": [
+      "backend/app/main.py",
+      "frontend/src/ModelReview.tsx",
+      "tests/test_model_registration_provenance_api.py",
+      "tests/test_workflow_job_model_record_handoff_api.py"
+    ],
+    "unexpected_existing_source_changes": [],
+    "previous_evidence_checked": 974,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "operating_models_read_only_observations": [
+      {
+        "id": "baseline2021_cpu_v1_model",
+        "status": "Draft",
+        "version_declaration_present": false,
+        "training_report_sha_present": false,
+        "saved_report_exists": true,
+        "saved_report_error_analysis_present": false
+      }
+    ],
+    "reserved_bytes_preserved": 136314880,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "browser_proof": "evidence/integration/model-error-read-browser-20261018.json",
+  "browser_scope": "TESTED_SYNTHETIC_CONSTRUCTED_REPORT_NO_TRAINING_NO_EXECUTABLE_CHECKPOINT",
+  "operating_5174_legacy_missing_pins_read_disabled_verified": true,
+  "original_user_tab_preserved": true,
+  "owned_fixture_tabs_and_servers_closed": true,
+  "browser_bearer_delay_cancel_corruption_mobile_not_exercised": true,
+  "understanding_updated": true,
+  "scientific_accuracy_validated": false,
+  "standard_gmais_result": false,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_internal_candidate": "122_LCLUC_SIX_BAND_PER_SCENE_WORKFLOW_CONTRACT_REVIEW_NO_GATE_RELAXATION",
+  "snapshot_files": 1495
+}

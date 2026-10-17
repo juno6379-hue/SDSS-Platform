@@ -1,5 +1,19 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 고정 학습 모델의 val/test 오류 분석 조회·화면 연결 (120/121)
+
+ML112가 생성한 보관 오류 분석을 고정 모델 ID·명시 버전·checkpoint SHA·training report SHA로 읽는 인증 API와 Model & MLOps 화면을 연결했다. API 담당은 기존 파일 조회·의미 검산·고정 index 다운로드, UI 담당은 클래스별 FP/FN·Precision/Recall·분모 null·오분류쌍과 검증 다운로드, Root는 main 연결·독립 HTTP·전체 회귀·실제 브라우저·보존·문서/Git, 이해 담당은 완료 소스의 해설·발표·FAQ·INDEX·변경이력을 맡았다.
+
+`POST /v1/models/error-analysis`와 `/assets/{0|1|2}`는 동일 고정 참조를 받는다. 기존 best.pt/report.json/오류 JSON·CSV3종의 한도·SHA·선택 epoch·val/test 혼동 집계를 검사하고 파일 경로나 실행 API를 노출하지 않는다. Draft도 읽을 수 있지만 조회는 평가·승인·훈련·배포를 수행하지 않는다. 요청16KiB·report/각 export8MiB·checkpoint64MiB 한도다. 파일이 없으면 UNAVAILABLE이며 생성·backfill·자동 재시도를 하지 않는다. CSV는 고정 원문 바이트를 확인하며 내용을 재직렬화한 별도 의미 검산은 아니다. 다중파일 원자성·기관 권위·파일시스템 경쟁의 완전 제거를 보장하지 않는다.
+
+UI는 저장 metadata에서 일치하는 선언과 부모 SHA가 있을 때만 버튼을 활성화한다. 조회 성공 전/후 시점을 구분하고 모델 변경·이동·뒤로 가기에 이전 표시와 늦은 응답을 폐기한다. 행=참조/열=예측인 오류 분석은119의 행=이전 시점/열=이후 시점 전이행렬과 다르다. 분모 없는 비율은 null/평가 불가이며0%가 아니다. 인증 POST 다운로드는 크기·SHA 확인 후 저장한다. 운영5174의 기존 Draft 모델은 선언·학습 report SHA·error_analysis가 없어 미확보·버튼 비활성으로 표시됨을 실제 브라우저에서 확인했다. 원본 사용자 탭은 보존했다.
+
+API 집중14 PASS/2.695초·관련48 PASS/7.665초, 기존 경로 보호24 PASS/4.333초, Root 실제 main HTTP6시나리오 통과다. 최신 전체 backend1184실행/1183 PASS·기존1 SKIP/399.529초/exit0, UI 집중11 PASS/4.141초·전체 front261 PASS/26.266초·build108 modules/21.85초/exit0이다. 중복 묶음을 합산하지 않는다. 브라우저에서 합성 구성표의 val12/오분류5·test10/오분류3, water precision60%/recall75%, bare의 val precision null/recall0과 test 모두 null, JSON/CSV 다운로드 SHA, 모델 변경·뒤로 가기와 최종 콘솔 오류0을 확인했다. 초기 동일 sibling key 경고는 보존하고 신규 key prefix로 수정했다. 구성표·임의 non-executable checkpoint는 훈련·추론·독립 정확도 근거가 아니다. 브라우저 Bearer·강제 지연·취소·변조파일·모바일은 미재현이며 단위 시험 근거와 구분한다.
+
+보호141개·기존증거974개·catalog14행 canonical SHA는 불변이다. 기존 소스270개 중 main/ModelReview/두 경로 보호시험의 허용4파일만 변경됐으며 원본·원장·예약136314880B·lock·분할·운영 모델을 보존했다. 운영 수집·학습·등록·배포·Workflow 실행0이다. 보고예약 ACTIVE/10분과 실제 작업자·서비스·수집/학습 상태는 구분한다. 독립 라벨·bare 학습 기여·6밴드 per_scene 실행·다른5실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/기관UAT는 미완료다.
+
+다음 내부 후보122는 LCLUC Workflow의6밴드 per_scene 입력·checkpoint 정규화 계약을 기존 코드/시험과 대조하여 안전한 연계 범위를 확정하는 일이다. 실제 수집·훈련·배포나 gate 완화 없이 진행한다. API/UI 완료를 전체 개발 완료로 처리하지 않는다. 근거는 `docs/implementation/120_model_error_analysis_read.md`, `121_model_error_analysis_ui.md`와 `evidence/integration/model-error-read-{independent,browser,live-integrity,closeout}-20261018.json`, `model-error-read-backend-all-20261018.log`, `model-error-analysis-ui-tests-final-20261018.log`를 따른다. 관련 설계·사용법·시험 근거·인계와 이해자료를 함께 갱신했다.
+
 ## 2026-10-18 — 같은 변화쌍의 전체 래스터 전이행렬·클래스 범례 연결 (119)
 
 118의 같은 receipt/report·선택 변화쌍에9×9 전이행렬, 클래스별 이전/이후/순변화, 픽셀·m²·ha 단위와 실제 class_names 범례를 연결했다. 계약 담당은 합계·비대각 면적·순증감·변화율·클래스 원문 검증, UI 담당은 표/단위/접근성/이후 클래스 색상과 기존 지도 연결, Root는 독립·실제 브라우저·보존·문서/Git, 이해 에이전트는 완료 소스의 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다.

@@ -1,0 +1,32 @@
+{
+  "scope": "TESTED_SYNTHETIC_CONSTRUCTED_TRAINING_REPORT_NO_TRAINING_NOT_EXECUTABLE_CHECKPOINT",
+  "checks_passed": [
+    "main_app_live_pinned_response_matches_actual_writer_fixture",
+    "independent_hand_computed_denominators_and_null_not_zero",
+    "all_three_live_downloads_match_pinned_bytes_and_sha",
+    "live_conflicting_training_report_pin_rejected",
+    "live_unknown_model_and_out_of_range_asset_rejected",
+    "live_duplicate_json_and_body_limit_rejected"
+  ],
+  "downloads": [
+    {
+      "filename": "error-analysis.json",
+      "bytes": 12276,
+      "sha256": "38e044870676bf5e32386e8cf81ff18c917fd4238e1de79aac468159e1801def"
+    },
+    {
+      "filename": "error-analysis-classes.csv",
+      "bytes": 1616,
+      "sha256": "2514d7da7b856861a58d5efc31a9247015d67dff98d94ea51c96f4926e31dea9"
+    },
+    {
+      "filename": "error-analysis-confusions.csv",
+      "bytes": 301,
+      "sha256": "a7ddf4f8fcaab298329d0459f747e5caa853d4ffe9436b29cf9ce2f98a047f12"
+    }
+  ],
+  "scientific_accuracy_validated": false,
+  "standard_gmais_result": false,
+  "training_inference_checkpoint_load": 0,
+  "operating_api_requests": 0
+}

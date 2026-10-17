@@ -1,0 +1,38 @@
+{
+  "scope": "TESTED_SYNTHETIC_CONSTRUCTED_REPORT_NO_TRAINING_NO_EXECUTABLE_CHECKPOINT",
+  "fixture_origin": "http://127.0.0.1:5175",
+  "fixture_api": "http://127.0.0.1:8003",
+  "validation": {
+    "reference_pixels": 12,
+    "misclassified_pixels": 5,
+    "water_precision": 0.6,
+    "water_recall": 0.75,
+    "bare_precision": null,
+    "bare_recall": 0
+  },
+  "test": {
+    "reference_pixels": 10,
+    "misclassified_pixels": 3,
+    "bare_precision": null,
+    "bare_recall": null
+  },
+  "final_panel_text": "선택한 모델의 보관 오류 분석 읽기\n\n행은 참조 라벨, 열은 예측 클래스입니다.119의 이전 시점→이후 시점 전이행렬과 다릅니다. weak label 일치도는 독립 정확도가 아니며 읽기만으로 모델 검증·승인·학습·배포 상태를 바꾸지 않습니다.\n\n저장 metadata의 고정 버전 v1을 사용합니다. 아래 결과는 해당 읽기 시점의 실제 보관 파일·SHA 검증 응답입니다. 이후 현재 파일 상태·기관 권위를 보장하지 않습니다. 버전 선언은 입력자 metadata이며 기관 권위 인증이 아닙니다.\n\n모델 ID\nerror-analysis-fixture\n체크포인트 SHA\n0228019668ed0be9c9b27677756265a2ab37269572032d6518aca2bb551c13d2\n학습 보고서 SHA\nd0f7d264522a896c6e443100d49a97bf85042d6c7a090275861adcf5073d6975\n고정 참조로 오류 분석 읽기\n선택 epoch 1 · 참조 유형 synthetic_fixture\n\nbest epoch를 validation으로 고정한 뒤의 val/test 집계입니다. test는 epoch 선택에 사용하지 않았습니다. 과학 정확도 인증 false · 표준 GMAIS Result false · 공간 오류 지도 생성 false.\n\nValidation (선택 epoch) · 참조 12픽셀 · 오분류 5픽셀\nval · 행=참조 / 열=예측 · 미관측 비율은 0%가 아닙니다\nID · 실제 클래스\t관측 상태\t참조\t예측\tTP\tFN\tFP\tPrecision\tRecall\t누락률\t오포함률\n0 · water\t참조·예측 관측\t4\t5\t3\t1\t2\t60%\t75%\t25%\t40%\n1 · trees\t참조·예측 관측\t6\t7\t4\t2\t3\t57.1429%\t66.6667%\t33.3333%\t42.8571%\n2 · grass\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n3 · flooded_vegetation\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n4 · crops\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n5 · shrub_and_scrub\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n6 · built\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n7 · bare\t참조 있음 · 예측 없음\t2\t0\t0\t2\t0\t미관측 · 평가 불가\t0%\t100%\t미관측 · 평가 불가\n8 · snow_and_ice\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n오분류쌍 · 참조 클래스 → 예측 클래스\n해당 참조 클래스 내 비율 · 면적/시점 전이 아님\n참조\t예측\t픽셀\t참조 클래스 내 비율\n1 · trees\t0 · water\t2\t33.3333%\n7 · bare\t1 · trees\t2\t100%\n0 · water\t1 · trees\t1\t25%\nTest (최종 고정 모델) · 참조 10픽셀 · 오분류 3픽셀\ntest · 행=참조 / 열=예측 · 미관측 비율은 0%가 아닙니다\nID · 실제 클래스\t관측 상태\t참조\t예측\tTP\tFN\tFP\tPrecision\tRecall\t누락률\t오포함률\n0 · water\t참조·예측 관측\t4\t5\t3\t1\t2\t60%\t75%\t25%\t40%\n1 · trees\t참조·예측 관측\t6\t5\t4\t2\t1\t80%\t66.6667%\t33.3333%\t20%\n2 · grass\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n3 · flooded_vegetation\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n4 · crops\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n5 · shrub_and_scrub\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n6 · built\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n7 · bare\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n8 · snow_and_ice\t참조·예측 모두 미관측\t0\t0\t0\t0\t0\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\t미관측 · 평가 불가\n오분류쌍 · 참조 클래스 → 예측 클래스\n해당 참조 클래스 내 비율 · 면적/시점 전이 아님\n참조\t예측\t픽셀\t참조 클래스 내 비율\n1 · trees\t0 · water\t2\t33.3333%\n0 · water\t1 · trees\t1\t25%\n검증된 보관 파일 다운로드\nerror-analysis.json · 12,276B\nSHA 38e044870676bf5e32386e8cf81ff18c917fd4238e1de79aac468159e1801def\n다운로드\nerror-analysis-classes.csv · 1,616B\nSHA 2514d7da7b856861a58d5efc31a9247015d67dff98d94ea51c96f4926e31dea9\n다운로드\nerror-analysis-confusions.csv · 301B\nSHA a7ddf4f8fcaab298329d0459f747e5caa853d4ffe9436b29cf9ce2f98a047f12\n다운로드\n\n다운로드는 같은 고정 참조를 POST로 다시 확인하고8MiB 이내 바이트·크기·SHA를 검사합니다. 원본 경로를 다운로드 URL로 노출하지 않습니다.\n\n선택 모델·고정 참조·화면 이동·뒤로 가기·표시 중단은 이전 결과와 늦은 응답 표시를 폐기합니다. 이미 진행한 서버 읽기 자체를 롤백하지 않습니다. 자동 조회·파일 생성·Job 제출·학습·독립평가·배포는 하지 않습니다.",
+  "model_selection_cleared_result": true,
+  "navigation_back_cleared_result": true,
+  "final_fixture_console_errors": [],
+  "csv_download": {
+    "bytes": 1616,
+    "sha256": "2514d7da7b856861a58d5efc31a9247015d67dff98d94ea51c96f4926e31dea9"
+  },
+  "final_json_download": {
+    "bytes": 12276,
+    "sha256": "38e044870676bf5e32386e8cf81ff18c917fd4238e1de79aac468159e1801def"
+  },
+  "legacy_origin": "http://127.0.0.1:5174",
+  "legacy_read_disabled": true,
+  "legacy_panel_text": "선택한 모델의 보관 오류 분석 읽기\n\n행은 참조 라벨, 열은 예측 클래스입니다.119의 이전 시점→이후 시점 전이행렬과 다릅니다. weak label 일치도는 독립 정확도가 아니며 읽기만으로 모델 검증·승인·학습·배포 상태를 바꾸지 않습니다.\n\n고정 참조 미확보 · 실제 오류 분석 artifact 존재 미확인. 명시 버전 선언과 체크포인트/학습 보고서 SHA가 일치해야 합니다. latest·데이터 버전·임의 경로에서 추정하지 않습니다.\n\n고정 참조로 오류 분석 읽기\n\n선택 모델·고정 참조·화면 이동·뒤로 가기·표시 중단은 이전 결과와 늦은 응답 표시를 폐기합니다. 이미 진행한 서버 읽기 자체를 롤백하지 않습니다. 자동 조회·파일 생성·Job 제출·학습·독립평가·배포는 하지 않습니다.",
+  "legacy_console_errors": [],
+  "browser_bearer_delay_cancel_corrupt_asset_mobile_not_exercised": true,
+  "operating_writes": 0,
+  "scientific_accuracy_validated": false
+}

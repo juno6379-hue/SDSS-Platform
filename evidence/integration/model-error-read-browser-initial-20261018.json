@@ -1,0 +1,25 @@
+{
+  "scope": "TESTED_SYNTHETIC_CONSTRUCTED_REPORT_NO_TRAINING",
+  "initial_duplicate_sibling_key_errors": [
+    {
+      "level": "error",
+      "message": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. error-analysis-fixture",
+      "timestamp": "2026-10-17T17:06:19.864Z",
+      "url": "http://127.0.0.1:5175/node_modules/.vite/deps/react-dom_client.js?v=b095d049"
+    },
+    {
+      "level": "error",
+      "message": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. error-analysis-fixture",
+      "timestamp": "2026-10-17T17:06:19.955Z",
+      "url": "http://127.0.0.1:5175/node_modules/.vite/deps/react-dom_client.js?v=b095d049"
+    }
+  ],
+  "download": {
+    "filename": "error-analysis-classes.csv",
+    "bytes": 1616,
+    "sha256": "2514d7da7b856861a58d5efc31a9247015d67dff98d94ea51c96f4926e31dea9"
+  },
+  "navigation_back_cleared_result": true,
+  "operating_legacy_panel_text": "선택한 모델의 보관 오류 분석 읽기\n\n행은 참조 라벨, 열은 예측 클래스입니다.119의 이전 시점→이후 시점 전이행렬과 다릅니다. weak label 일치도는 독립 정확도가 아니며 읽기만으로 모델 검증·승인·학습·배포 상태를 바꾸지 않습니다.\n\n고정 참조 미확보 · 실제 오류 분석 artifact 존재 미확인. 명시 버전 선언과 체크포인트/학습 보고서 SHA가 일치해야 합니다. latest·데이터 버전·임의 경로에서 추정하지 않습니다.\n\n고정 참조로 오류 분석 읽기\n\n선택 모델·고정 참조·화면 이동·뒤로 가기·표시 중단은 이전 결과와 늦은 응답 표시를 폐기합니다. 이미 진행한 서버 읽기 자체를 롤백하지 않습니다. 자동 조회·파일 생성·Job 제출·학습·독립평가·배포는 하지 않습니다.",
+  "operating_legacy_read_disabled": true
+}

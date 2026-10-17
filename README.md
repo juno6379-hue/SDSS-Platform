@@ -1,5 +1,7 @@
 # Indonesia GeoAI–MLOps–SDSS
 
+2026-10-18: [고정 모델 오류 분석 조회](docs/implementation/120_model_error_analysis_read.md)·[MLOps 화면 연결](docs/implementation/121_model_error_analysis_ui.md)을 검증했습니다. val/test FP/FN과 분모 null을 구분하고 파일 SHA를 확인합니다. 자료가 없는 운영 모델은 미확보로 표시하며 모델 승인·독립 정확도 완료를 의미하지 않습니다.
+
 GitHub 연결 및 게시 범위는 [Git 게시 기록](docs/implementation/git_publication_20261017.md), 담당 영역별 남은 핵심 작업은 [완료·잔여 과제 감사](docs/implementation/109_area_completion_audit.md)를 확인하세요.
 
 개발 원리와 발표 준비는 [이해 에이전트 자료](docs/understanding/INDEX.md)에서 시작하세요. [1분·5분 발표 대본](docs/understanding/presentations/1MIN_5MIN_SCRIPT.md), [예상 질문](docs/understanding/presentations/FAQ.md), [역할 규격](docs/agents/UNDERSTANDING_AGENT.md)을 제공합니다. 의미 있는 개발 Gate 이후 갱신하는 문서형 역할이며 백그라운드 서비스가 아닙니다.
