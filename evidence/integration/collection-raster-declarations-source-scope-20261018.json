@@ -1,0 +1,27 @@
+{
+  "recorded_at": "2026-10-18T06:59:32.806460+09:00",
+  "scope": "APPROVED_COLLECT_WINDOWS_EDITS_ONLY",
+  "baseline_commit": "bd03292ea12f642839c96b753b752061725ef8d2",
+  "path": "scripts/collect_samples.py",
+  "before_sha256": "418a0237d80c77fe0f70ca52feef1144192e9ac8916696888a7ee9b5b34946e6",
+  "after_sha256": "a78d0293736780e70402b85714f38964c2ef09e1253cf7453e292ca9a2551c98",
+  "exact_reconstruction_from_three_declared_edits": true,
+  "other_top_level_ast_unchanged": true,
+  "raw_lf_preserved": true,
+  "approved_edits": [
+    {
+      "before": "                with rasterio.open(image_path, \"w\", **profile) as dst:\n                    dst.write(np.stack(arrays))\n                valid = np.all(np.stack(arrays) != 0, axis=0)\n",
+      "after": "                stack = np.stack(arrays)\n                with rasterio.open(image_path, \"w\", **profile) as dst:\n                    dst.write(stack)\n                    for index, asset in enumerate(bands, 1):\n                        dst.set_band_description(index, pc_band_keys.get(asset, asset))\n                valid = np.all(np.isfinite(stack) & (stack != 0), axis=0)\n"
+    },
+    {
+      "before": "                with rasterio.open(quality_path, \"w\", **{**profile, \"count\": 1, \"dtype\": \"uint8\", \"nodata\": 0}) as dst:\n                    dst.write(valid.astype(\"uint8\"), 1)\n",
+      "after": "                with rasterio.open(quality_path, \"w\", **{**profile, \"count\": 1, \"dtype\": \"uint8\", \"nodata\": None}) as dst:\n                    dst.write(valid.astype(\"uint8\"), 1)\n                    dst.set_band_description(1, \"binary_validity\")\n"
+    },
+    {
+      "before": "                           reflectance_conversion_verified=False, quality_mask_path=str(quality_path),\n",
+      "after": "                           reflectance_conversion_verified=False, quality_mask_path=str(quality_path),\n                           quality_mask_semantics={\"schema_version\": 1, \"kind\": \"binary_validity\", \"valid_value\": 1, \"invalid_value\": 0},\n"
+    }
+  ],
+  "baseline_or_operating_collection_executed": false,
+  "data_files_written_by_this_audit": 0
+}

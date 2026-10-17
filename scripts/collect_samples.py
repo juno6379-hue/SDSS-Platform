@@ -473,9 +473,12 @@ def collect_windows(config, root, execute=False, selection_context=None):
                     arrays = [array.astype("float32") for array in arrays]
                     profile.update(dtype="float32")
                 profile.update(count=len(bands), nodata=0)
+                stack = np.stack(arrays)
                 with rasterio.open(image_path, "w", **profile) as dst:
-                    dst.write(np.stack(arrays))
-                valid = np.all(np.stack(arrays) != 0, axis=0)
+                    dst.write(stack)
+                    for index, asset in enumerate(bands, 1):
+                        dst.set_band_description(index, pc_band_keys.get(asset, asset))
+                valid = np.all(np.isfinite(stack) & (stack != 0), axis=0)
                 scl_key = "SCL" if pc else "scl"
                 if scl_key in item["assets"]:
                     scl, scl_profile = selected_scl if selected_scl is not None else fetch(item["assets"][scl_key]["href"], aoi["bbox"], side)
@@ -488,11 +491,13 @@ def collect_windows(config, root, execute=False, selection_context=None):
                 else:
                     row["quality_mask"] = "nodata_only_cloud_unverified"
                 quality_path = directory / "quality-mask.tif"
-                with rasterio.open(quality_path, "w", **{**profile, "count": 1, "dtype": "uint8", "nodata": 0}) as dst:
+                with rasterio.open(quality_path, "w", **{**profile, "count": 1, "dtype": "uint8", "nodata": None}) as dst:
                     dst.write(valid.astype("uint8"), 1)
+                    dst.set_band_description(1, "binary_validity")
                 row.update(status="rgb_window_downloaded", image_path=str(image_path), bands=bands,
                            logical_bands=list(config["bands"]), band_processing=band_processing,
                            reflectance_conversion_verified=False, quality_mask_path=str(quality_path),
+                           quality_mask_semantics={"schema_version": 1, "kind": "binary_validity", "valid_value": 1, "invalid_value": 0},
                            valid_pixel_ratio=float(valid.mean()), pixel_count=int(valid.size),
                            minimum_valid_fraction=minimum_valid,
                            quality_status=("quality_unverified" if scl_key not in item["assets"] else

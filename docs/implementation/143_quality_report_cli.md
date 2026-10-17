@@ -86,3 +86,7 @@ Root 관련 회귀는 **90 PASS / 37.707초 / exit 0**, `quality-report-cli-root
 ## 별도 상태 문서 검토
 
 별도로 갱신된 docs16/20은06:51 관측 시각과 정체 기간37시간50분 표기만 바뀌었음을 quality-report-cli-separate-status-docs-20261018.json으로 원바이트 검산했다. 누계·manifest/원장 SHA는 그대로이며143의 수집 재개 성과가 아니다.
+
+## 후속144 신규 producer 선언
+
+[144 producer 보강](144_collection_raster_declarations.md)은 앞으로 생성하는 scene 영상의 실제 밴드 설명과 이진 품질 mask/nodata를 기록하고 NaN/Inf를 제외한다. 기존143 CLI·원본 산출물은 그대로이며 새 파일의 caller 명시 manifest/보고서 작성·등록·승인은 별도다.

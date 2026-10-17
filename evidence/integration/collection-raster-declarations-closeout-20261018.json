@@ -1,0 +1,377 @@
+{
+  "status": "144_NEW_COLLECTION_RASTER_DECLARATIONS",
+  "focused": {
+    "tests": 7,
+    "passed": 7,
+    "skipped": 0,
+    "seconds": 3.086,
+    "log": "evidence/integration/collection-raster-declarations-agent-20261018.log"
+  },
+  "related": {
+    "tests": 156,
+    "passed": 155,
+    "skipped": 1,
+    "seconds": 69.832,
+    "log": "evidence/integration/collection-raster-declarations-root-related-20261018.log"
+  },
+  "full_backend": {
+    "tests": 1426,
+    "passed": 1425,
+    "skipped": 1,
+    "seconds": 296.344,
+    "log": "evidence/integration/collection-raster-declarations-full-20261018.log"
+  },
+  "independent": {
+    "schema_version": 1,
+    "scope": "INDEPENDENT_NEW_COLLECT_WINDOWS_DECLARATIONS_TEMP_ONLY",
+    "git_baseline": "bd03292ea12f642839c96b753b752061725ef8d2",
+    "tests": 7,
+    "passed": 7,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 4.489371699994081,
+    "source_sha256": "a78d0293736780e70402b85714f38964c2ef09e1253cf7453e292ca9a2551c98",
+    "test_sha256": "469ff453b37a91a4f6d7cf890e5721b9c0aeec31df2a28b215c1017e9f8c821e",
+    "test_names": [
+      "test_00_frozen_source_test_and_only_collect_windows_ast_changed",
+      "test_01_pc_six_bands_actual_descriptions_nodata_and_values",
+      "test_02_finite_nonzero_without_scl_and_original_crops_preserved",
+      "test_03_scl_codes_separate_from_finite_predicate",
+      "test_04_earth_search_logical_order_unknown_and_permutation_not_repaired",
+      "test_05_actual_new_outputs_explicit_setup_report_registration_and_consumption",
+      "test_06_baseline_comparison_raw_source_bytes_and_old_nan_limitation"
+    ],
+    "old_sources_unchanged": {
+      "backend/app/data/quality_report_preflight.py": true,
+      "tests/test_quality_report_preflight.py": true,
+      "backend/app/data/quality_report_storage.py": true,
+      "backend/app/data/quality_report_completion.py": true,
+      "backend/app/dataset_registry.py": true,
+      "backend/app/store.py": true,
+      "backend/app/ml/registered_quality_mask_files.py": true,
+      "backend/app/ml/registered_binary_mask_values.py": true,
+      "backend/app/main.py": true,
+      "frontend/src/AnnualInputDiagnostics.tsx": true,
+      "backend/app/data/quality_report_registration.py": true,
+      "tests/test_quality_report_registration.py": true,
+      "scripts/collect_training_grid.py": true,
+      "scripts/collect_training_parallel.py": true,
+      "backend/app/data/budget.py": true
+    },
+    "separate_git_baseline_matches": {
+      "backend/app/data/quality_report_preflight.py": true,
+      "tests/test_quality_report_preflight.py": true,
+      "backend/app/data/quality_report_storage.py": true,
+      "backend/app/data/quality_report_completion.py": true,
+      "backend/app/dataset_registry.py": true,
+      "backend/app/store.py": true,
+      "backend/app/ml/registered_quality_mask_files.py": true,
+      "backend/app/ml/registered_binary_mask_values.py": true,
+      "backend/app/main.py": true,
+      "frontend/src/AnnualInputDiagnostics.tsx": true,
+      "backend/app/data/quality_report_registration.py": true,
+      "tests/test_quality_report_registration.py": true,
+      "scripts/collect_training_grid.py": true,
+      "scripts/collect_training_parallel.py": true,
+      "backend/app/data/budget.py": true
+    },
+    "observations": [
+      {
+        "source_AST": "all top-level nodes other than collect_windows unchanged against baseline",
+        "baseline": "bd03292ea12f642839c96b753b752061725ef8d2"
+      },
+      {
+        "actual": "collect_windows execute=True on new Temp GTiffs",
+        "network": "search_stac/read_cog_window explicitly mocked",
+        "normal_mask_counts": {
+          "valid": 16,
+          "invalid": 0,
+          "total": 16
+        },
+        "model_approval": false
+      },
+      {
+        "actual": "PC and EarthSearch ordered names plus unknown/permuted inputs",
+        "unknown_asset": "preserved verbatim",
+        "permuted_129_gate": "BLOCKED; producer did not reorder"
+      },
+      {
+        "actual": "new collector outputs -> explicit caller manifest/metadata/semantics ->140141142 ->133 readonly",
+        "separate_setup_registry_writes": 2,
+        "report_registration": 1,
+        "counts": {
+          "valid_pixels": 9,
+          "invalid_pixels": 7,
+          "total_pixels": 16
+        },
+        "automatic_collector_registration": false,
+        "calibration_units_and_scientific_approval": false
+      },
+      {
+        "actual_baseline_comparison": "same mocked arrays, separate Temp outputs; baseline module loaded from git bytes without product edits",
+        "raw_source_crop_bytes_identical": 6,
+        "baseline_nonzero_nan_inf_valid_pixels": 15,
+        "new_finite_nonzero_valid_pixels": 12,
+        "total_pixels": 16
+      }
+    ],
+    "actual_scope": "new temporary GTiff header and pixel outputs; separate caller metadata and temporary report storage/registration/readonly consumption",
+    "mock_scope": "STAC search and COG window arrays are explicit service mocks; socket network guard; no real collection or source download",
+    "operating_collection": 0,
+    "operating_writes": 0,
+    "network_requests": 0,
+    "training": 0,
+    "inference": 0,
+    "api_ui_changed": false,
+    "frontend_build_browser_required": false,
+    "limitations": [
+      "Band names preserve requested order and unknown asset names; no taxonomy/calibration/unit or physical source authenticity is established.",
+      "Explicit binary mask validity is finite/nonzero and existing SCL exclusions, not independent quality truth or scientific/model/execution approval.",
+      "Integration manifests/metadata and Registry source setup are explicit temporary caller steps, not automatic collector registration.",
+      "Only new collect_windows outputs change. Existing datasets/raw source crops/grid label masks and operating ledgers/reservations are not migrated."
+    ]
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T07:10:00.299981+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "snapshot_existing_source_checked": 326,
+    "supplemental_git_baseline_source": "scripts/collect_samples.py",
+    "baseline_commit": "bd03292ea12f642839c96b753b752061725ef8d2",
+    "initial_audit_scope_correction": "Published snapshot omitted collector; initial 326-source unchanged count excluded it. Pinned Git blob supplements that scope; initial JSON is preserved.",
+    "existing_source_checked": 327,
+    "existing_source_changes": [
+      {
+        "path": "scripts/collect_samples.py",
+        "before": {
+          "sha256": "418a0237d80c77fe0f70ca52feef1144192e9ac8916696888a7ee9b5b34946e6",
+          "bytes": 46016
+        },
+        "after": {
+          "sha256": "a78d0293736780e70402b85714f38964c2ef09e1253cf7453e292ca9a2551c98",
+          "bytes": 46415
+        }
+      }
+    ],
+    "unexpected_existing_source_changes": [],
+    "expected_changed_existing_sources": [
+      {
+        "path": "scripts/collect_samples.py",
+        "before": {
+          "sha256": "418a0237d80c77fe0f70ca52feef1144192e9ac8916696888a7ee9b5b34946e6",
+          "bytes": 46016
+        },
+        "after": {
+          "sha256": "a78d0293736780e70402b85714f38964c2ef09e1253cf7453e292ca9a2551c98",
+          "bytes": 46415
+        }
+      }
+    ],
+    "unchanged_existing_source_files": 326,
+    "previous_evidence_checked": 1381,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_execution_workflow_model_and_other_sources_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "understanding_updated": true,
+  "web_ui_api_changed": false,
+  "backend_full_rerun_this_unit": true,
+  "frontend_build_browser_rerun_this_unit": false,
+  "operating_collection_training_registry_approval_deployment_workflow_dispatch": 0,
+  "existing_outputs_backfilled": false,
+  "raw_existing_source_files_rewritten": false,
+  "future_derived_labels_can_change_at_nonfinite_pixels": true,
+  "scientific_accuracy_validated": false,
+  "execution_authorized": false,
+  "workflow_supported": false,
+  "next_internal_candidate": "145_GRID_PATCH_BAND_DESCRIPTION_AND_IMAGE_QUALITY_VS_LABEL_SUPPORT_SEPARATION_REVIEW",
+  "recorded_at": "2026-10-18T07:10:44.951887+09:00",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T07:10:44.951887+09:00",
+    "understanding_markdown": 111,
+    "implementation_markdown": 1,
+    "local_links": 513,
+    "metadata_evidence_references": 13312,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "source_records": {
+    "scripts/collect_samples.py": {
+      "sha256": "a78d0293736780e70402b85714f38964c2ef09e1253cf7453e292ca9a2551c98",
+      "bytes": 46415
+    },
+    "tests/test_collection_raster_declarations.py": {
+      "sha256": "469ff453b37a91a4f6d7cf890e5721b9c0aeec31df2a28b215c1017e9f8c821e",
+      "bytes": 11953
+    }
+  },
+  "live_processes": {
+    "checked_at": "2026-10-18T07:06:49.9537596+09:00",
+    "processes": [
+      {
+        "pid": 27268,
+        "parent_pid": 31440,
+        "name": "ollama app.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+        "created": "/Date(1792194023427)/",
+        "cpu": 28.03125,
+        "working_set": 88993792
+      },
+      {
+        "pid": 27860,
+        "parent_pid": 27268,
+        "name": "ollama.exe",
+        "command_line": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+        "created": "/Date(1792194025549)/",
+        "cpu": 10.40625,
+        "working_set": 84852736
+      },
+      {
+        "pid": 2060,
+        "parent_pid": 14348,
+        "name": "node.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" --experimental-vm-modules c:\\Temp\\.tmpxMLdb7\\kernel.js --session-id b9c3e259a941427ba4c2d16ab02f8369 --working-dir E:\\GeoAI–MLOps–SDSS",
+        "created": "/Date(1792194142317)/",
+        "cpu": 6.734375,
+        "working_set": 98066432
+      },
+      {
+        "pid": 29716,
+        "parent_pid": 14348,
+        "name": "node.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe\" --eval \"// Windows may deny ancestor metadata even when the configured folder is readable.\nconst fs = require(\\\"node:fs\\\");\nconst pathApi = require(\\\"node:path\\\");\nconst { fileURLToPath } = require(\\\"node:url\\\");\n\nconst originalRealpathSync = fs.realpathSync;\nconst key = (path) =>\n  pathApi.toNamespacedPath(pathApi.resolve(path)).toLowerCase();\nconst roots = new Set(\n  [\n    pathApi.dirname(process.argv[1]),\n    ...(process.env.NODE_REPL_NODE_MODULE_DIRS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .map((entry) => entry.trim()),\n    ...(process.env.NODE_REPL_TRUSTED_CODE_PATHS ?? \\\"\\\")\n      .split(pathApi.delimiter)\n      .filter(pathApi.isAbsolute),\n  ]\n    .filter(Boolean)\n    .map(key),\n);\n\nfs.realpathSync = function realpathSync(path, options) {\n  try {\n    // Preserve Node's canonical paths (including short names and links) when possible.\n    return originalRealpathSync.native(path, options);\n  } catch (error) {\n    if (error.code !== \\\"EPERM\\\" && error.code !== \\\"EACCES\\\") {\n      throw error;\n    }\n    if (path instanceof URL) {\n      path = fileURLToPath(path);\n    }\n    if (Buffer.isBuffer(path)) {\n      path = path.toString();\n    }\n\n    const filename = pathApi.resolve(path);\n    // Only accept paths below a configured root. A junction or symlink could\n    // point outside that root, so it must not receive the lexical fallback.\n    for (let current = filename; ; current = pathApi.dirname(current)) {\n      if (fs.lstatSync(current).isSymbolicLink()) {\n        throw error;\n      }\n      if (roots.has(key(current))) {\n        const encoding =\n          typeof options === \\\"string\\\" ? options : options?.encoding;\n        const buffer = Buffer.from(filename);\n        return encoding === \\\"buffer\\\"\n          ? buffer\n          : buffer.toString(encoding ?? \\\"utf8\\\");\n      }\n      if (pathApi.dirname(current) === current) {\n        throw error;\n      }\n    }\n  }\n};\nfs.realpathSync.native = fs.realpathSync;\n\n// --eval leaves the script at argv[1]. Use Node's ordinary main-module loader\n// so argv, require.main, and relative imports keep their normal meaning.\nrequire(\\\"node:module\\\").runMain();\n\" c:\\Temp\\.tmpxMLdb7\\trusted-worker.js E:\\GeoAI–MLOps–SDSS",
+        "created": "/Date(1792194142373)/",
+        "cpu": 101.671875,
+        "working_set": 155955200
+      },
+      {
+        "pid": 30944,
+        "parent_pid": 2712,
+        "name": "node.exe",
+        "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1",
+        "created": "/Date(1792194210869)/",
+        "cpu": 33.6875,
+        "working_set": 54558720
+      },
+      {
+        "pid": 32224,
+        "parent_pid": 24092,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
+        "created": "/Date(1792194462900)/",
+        "cpu": 460.40625,
+        "working_set": 17387520
+      },
+      {
+        "pid": 26912,
+        "parent_pid": 3392,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001",
+        "created": "/Date(1792198361777)/",
+        "cpu": 387.265625,
+        "working_set": 32190464
+      },
+      {
+        "pid": 15608,
+        "parent_pid": 29584,
+        "name": "node.exe",
+        "command_line": "\"node\"   \"E:\\GeoAI–MLOps–SDSS\\frontend\\node_modules\\.bin\\\\..\\vite\\bin\\vite.js\" --host 127.0.0.1 --host 127.0.0.1 --port 5174",
+        "created": "/Date(1792198475813)/",
+        "cpu": 90.1875,
+        "working_set": 102318080
+      },
+      {
+        "pid": 35032,
+        "parent_pid": 22796,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend",
+        "created": "/Date(1792199087513)/",
+        "cpu": 11521.828125,
+        "working_set": 21463040
+      },
+      {
+        "pid": 38668,
+        "parent_pid": 35032,
+        "name": "python.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\"",
+        "created": "/Date(1792272738405)/",
+        "cpu": 7.1875,
+        "working_set": 55660544
+      },
+      {
+        "pid": 4236,
+        "parent_pid": 23380,
+        "name": "python.exe",
+        "command_line": "python  evidence/integration/collection-raster-declarations-integrity-20261018.py",
+        "created": "/Date(1792274807189)/",
+        "cpu": 2.640625,
+        "working_set": 20185088
+      }
+    ],
+    "collector_training_processes_observed": 0,
+    "collector_training_command_matches": [],
+    "observation_limit": "Process command patterns only; unittest interpreters and temporary API fixtures are not operating training",
+    "automation_status": "ACTIVE",
+    "automation_interval_minutes": 10,
+    "automation_was_not_modified": true
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T06:56:51.695885+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "previous_full_backend": {
+    "unit": 137,
+    "passed": 1358,
+    "skipped": 1,
+    "seconds": 484.77
+  },
+  "previous_frontend": {
+    "unit": 137,
+    "passed": 271,
+    "build_modules": 112,
+    "build_seconds": 13.48
+  },
+  "approved_source_scope": {
+    "recorded_at": "2026-10-18T06:59:32.806460+09:00",
+    "scope": "APPROVED_COLLECT_WINDOWS_EDITS_ONLY",
+    "baseline_commit": "bd03292ea12f642839c96b753b752061725ef8d2",
+    "path": "scripts/collect_samples.py",
+    "before_sha256": "418a0237d80c77fe0f70ca52feef1144192e9ac8916696888a7ee9b5b34946e6",
+    "after_sha256": "a78d0293736780e70402b85714f38964c2ef09e1253cf7453e292ca9a2551c98",
+    "exact_reconstruction_from_three_declared_edits": true,
+    "other_top_level_ast_unchanged": true,
+    "raw_lf_preserved": true,
+    "approved_edits": [
+      {
+        "before": "                with rasterio.open(image_path, \"w\", **profile) as dst:\n                    dst.write(np.stack(arrays))\n                valid = np.all(np.stack(arrays) != 0, axis=0)\n",
+        "after": "                stack = np.stack(arrays)\n                with rasterio.open(image_path, \"w\", **profile) as dst:\n                    dst.write(stack)\n                    for index, asset in enumerate(bands, 1):\n                        dst.set_band_description(index, pc_band_keys.get(asset, asset))\n                valid = np.all(np.isfinite(stack) & (stack != 0), axis=0)\n"
+      },
+      {
+        "before": "                with rasterio.open(quality_path, \"w\", **{**profile, \"count\": 1, \"dtype\": \"uint8\", \"nodata\": 0}) as dst:\n                    dst.write(valid.astype(\"uint8\"), 1)\n",
+        "after": "                with rasterio.open(quality_path, \"w\", **{**profile, \"count\": 1, \"dtype\": \"uint8\", \"nodata\": None}) as dst:\n                    dst.write(valid.astype(\"uint8\"), 1)\n                    dst.set_band_description(1, \"binary_validity\")\n"
+      },
+      {
+        "before": "                           reflectance_conversion_verified=False, quality_mask_path=str(quality_path),\n",
+        "after": "                           reflectance_conversion_verified=False, quality_mask_path=str(quality_path),\n                           quality_mask_semantics={\"schema_version\": 1, \"kind\": \"binary_validity\", \"valid_value\": 1, \"invalid_value\": 0},\n"
+      }
+    ],
+    "baseline_or_operating_collection_executed": false,
+    "data_files_written_by_this_audit": 0
+  },
+  "snapshot_files": 1989
+}

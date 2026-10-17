@@ -1,5 +1,23 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 신규 수집 영상 밴드·이진 품질 마스크 선언 (144)
+
+구현 담당은 collect_samples.py의 지정 producer 부분·집중시험·문서144, 독립 담당은 실제 임시 GeoTIFF와 baseline 비교·소비 호환을 맡았다. Root는 변경 범위 재구성·관련/전체 백엔드 회귀·원본 보존·공통 문서·인계·Git을, 이해 담당은 완료 소스·시험으로 설명·대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시143 작업자는 완료 상태였고 운영 수집·학습은 관측되지 않았다. API/Ollama 프로세스와 ACTIVE/10분 예약은 실제 수집·학습 실행과 구분한다.
+
+collect_windows가 앞으로 생성할 image.tif는 원래 asset 순서 그대로 B02/B03/B04/B08/B11/B12 등의 description을 기록한다. 알려진 logical alias만 기존 pc_band_keys로 대응하며 unknown 이름을 발명하거나 밴드를 재배열하지 않는다. stack을 한 번 만들고 finite AND nonzero를 valid에 적용하여 NaN/Inf를 제외하며 기존 SCL nearest와 제외코드[0,1,3,8,9,10,11]는 그대로다. 신규 scene quality-mask.tif는 uint8의0/1 모두 저장값이므로 nodata=None·all_valid와 binary_validity description, row의 exact4 quality_mask_semantics 선언을 기록한다. 이 선언은 GMAIS source.mask_semantics 자동 생성이나 report/Registry 등록·기관 품질 승인이 아니다.
+
+기존 DN nodata0·배열 순서·SWIR bilinear·반사도 미검증 상태·threshold·예산·원장·예약·재개 정책과 raw source crops는 유지한다. 기존 SHA skip 경로의 구파일/row는 재작성·역채움하지 않는다. collect_training_grid의 label/AOI 결합 mask는 이번 순수 scene quality-mask와 구분하며 수정·재분류하지 않는다. 라벨 작성 코드 자체는 그대로지만 새 valid를 기존 aligned[~valid]=0이 사용하여 앞으로 생성할 파생 label의 NaN/Inf 위치는0으로 바뀔 수 있다. 이를 기존 원본/구산출물 불변이나 새 label 전체 바이트 동등으로 혼동하지 않는다.
+
+집중7 PASS/3.086초, 관련156건 중155 PASS/1 SKIP/69.832초, 독립7 PASS/0 SKIP/4.4893717초다. 이번 전체 백엔드는1426건 중1425 PASS/1 SKIP/296.344초로 완료했다. 중복 묶음은 합산하지 않는다. STAC/COG는 명시 Mock이고 writer/native GTiff는 실제 Temp 파일이다. 집중5/11/16·독립9/7/16은 서로 다른 fixture의 valid/invalid/total이다. 별도 NaN 비교는 baseline nonzero15→새finite12/16이고 raw crop6개는 실제 bytes 동일이다. 독립 caller metadata·Temp Registry setup과140/141/142→133 읽기 소비를 producer 자체의 운영 등록으로 표현하지 않는다. 초기 집중6 PASS/1 ERROR/4.672초는 시험 read_text의Windows 기본 cp949 사용 오류로 UTF8만 명시 교정했고 원로그를 보존했다.
+
+source-scope.py/json은 pinned baseline의 정확3편집을 재적용하면 최종 source와 일치하고 나머지 top-level AST와 LF가 그대로임을 검산한다. 보호141개·기존 소스327개 중 허용 collector1개 외326개·이전 증거1381개·catalog14행 SHA·운영 dataset_versions0·예약136314880바이트를 보존했다. 원본·원장·lock·분할·모델·예약 및 main/API/137UI 변경0이다. 이번에는 실제 기존 producer를 바꿔 전체 backend를 새로 실행했으며 frontend/build/browser는 변경 범위가 없어 재실행하지 않았다. 이전137 frontend271 PASS/build112는 과거 이력이다.
+
+설계·producer 계약·사용법·시험·인계와 이해자료14개를 같은 단위로 갱신했다. 실제 운영 collector/download/train/Registry/배포 실행0이며 새 header/bitmask를 영상 품질의 과학 검증·독립 라벨·모델/실행 승인으로 확대하지 않는다. 전체 개발은 미완료다. 다음145 후보는 격자 patch image의 밴드 description 전파와 label지원 mask/순수 image-quality 구분 연결 검토다. 운영 수집 재개·연차별 확보·기관/모델 승인·다른5개 실행기·GeoLLM/RAG/PostGIS·staging/RBAC/UAT는 별도 후속이다.
+
+근거: docs/implementation/144_collection_raster_declarations.md 및 evidence/integration/collection-raster-declarations-agent-20261018.log, collection-raster-declarations-root-related-20261018.log, collection-raster-declarations-independent-20261018.json, collection-raster-declarations-full-20261018.log, collection-raster-declarations-source-scope-20261018.json, collection-raster-declarations-live-integrity-final-20261018.json, 최종 collection-raster-declarations-closeout-20261018.json.
+
+감사 범위 보완: 이전 snapshot의 기존 소스326개에는 collect_samples.py가 없었다. 해당 파일은 pinned Git bd03292 blob을 별도 baseline으로 추가해 총327개/허용변경1개/불변326개로 검증했다. 최초326개 불변 집계 JSON도 initial 파일로 보존했고 제품 소스나 시험을 바꾼 교정은 아니다.
+
 ## 2026-10-18 — 명시적 품질 보고서 inspect/register CLI (143)
 
 구현 담당은 신규 scripts/quality_report_cli.py·집중시험·문서143, 독립 담당은 실제 subprocess와 입력/DB/결과 경계를 맡았다. Root는 계약 검토·관련 회귀·원본 보존·공통 문서·인계·Git을, 이해 담당은 완료 소스·시험으로 쉬운 설명·대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시142 작업자는 완료 상태였고 운영 수집·학습 프로세스는 관측되지 않았다. API/Ollama 프로세스와 ACTIVE/10분 보고 예약은 실제 수집·학습과 구분한다.

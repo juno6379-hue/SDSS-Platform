@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-18T07:10:00.299981+09:00",
+  "protected_files_checked": 141,
+  "protected_changes": [],
+  "snapshot_existing_source_checked": 326,
+  "supplemental_git_baseline_source": "scripts/collect_samples.py",
+  "baseline_commit": "bd03292ea12f642839c96b753b752061725ef8d2",
+  "initial_audit_scope_correction": "Published snapshot omitted collector; initial 326-source unchanged count excluded it. Pinned Git blob supplements that scope; initial JSON is preserved.",
+  "existing_source_checked": 327,
+  "existing_source_changes": [
+    {
+      "path": "scripts/collect_samples.py",
+      "before": {
+        "sha256": "418a0237d80c77fe0f70ca52feef1144192e9ac8916696888a7ee9b5b34946e6",
+        "bytes": 46016
+      },
+      "after": {
+        "sha256": "a78d0293736780e70402b85714f38964c2ef09e1253cf7453e292ca9a2551c98",
+        "bytes": 46415
+      }
+    }
+  ],
+  "unexpected_existing_source_changes": [],
+  "expected_changed_existing_sources": [
+    {
+      "path": "scripts/collect_samples.py",
+      "before": {
+        "sha256": "418a0237d80c77fe0f70ca52feef1144192e9ac8916696888a7ee9b5b34946e6",
+        "bytes": 46016
+      },
+      "after": {
+        "sha256": "a78d0293736780e70402b85714f38964c2ef09e1253cf7453e292ca9a2551c98",
+        "bytes": 46415
+      }
+    }
+  ],
+  "unchanged_existing_source_files": 326,
+  "previous_evidence_checked": 1381,
+  "previous_evidence_changes": [],
+  "catalog_rows": 14,
+  "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "reserved_bytes_preserved": 136314880,
+  "existing_execution_workflow_model_and_other_sources_unchanged": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0
+}
