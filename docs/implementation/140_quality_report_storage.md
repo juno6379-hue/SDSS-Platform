@@ -59,3 +59,7 @@ status는 BLOCKED / PARTIAL_FILES_PRESERVED / FILES_WRITTEN_UNREGISTERED다. out
 최종 source SHA `220910abb10c19a07b0af458b6cdf163c16f9864c36dd123a622dbd11db91622`, test SHA `61548f8234d2cb2d5ec4428e9fa39dc789b5d138785a9ea75ffb6faeae63cbaa`로 Root/독립 담당에게 재동결했다. Root는 관련/실파일 대비·보존·공통 인계/Git과 이해 에이전트 작업 배정을 맡는다. 이해 담당은 검증된 코드·시험·부분 실패/미등록/미승인 범위를 해설/발표/FAQ/INDEX/변경 이력에 반영한다. 140은 새 내부 writer이며 CLI/HTTP/main/UI/Registry에 연결하지 않았고 운영 root에 실행하지 않았다. 새 내부 기능의 연결 범위가 이 두 파일 저장에 한정되어 전체 backend/frontend/build/browser는 이번에 재실행하지 않는다. 이전 137 전체 시험은 이전 근거이며 이번 시험으로 표현하지 않는다. 원본·원장·예약·분할·운영 모델은 보존한다.
 
 후속 141 후보는 caller가 명시한 저장 report/manifest의 schema·SHA·ref를 읽기 전용으로 등록 전에 확인하는 단계다. 이번 파일 저장 성공은 해당 점검이나 Registry 등록 완료를 뜻하지 않으며, 운영 자동 등록은 하지 않는다.
+
+## 후속141 저장 파일 재점검
+
+[141 읽기 전용 점검](141_quality_report_preflight.md)은 명시된 report/manifest를 다시 읽고 기대 bytes/SHA·전체 report manifest schema·고정 ref를 확인한다.140 순차 저장 관측을 영구 유효 증명으로 사용하지 않으며 Registry 등록·원본 영상/마스크 검증·승인은 별도다.

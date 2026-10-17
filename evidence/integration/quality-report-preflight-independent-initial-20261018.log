@@ -1,0 +1,33 @@
+test_01_frozen_sources_and_readonly_import_scope (__main__.Independent.test_01_frozen_sources_and_readonly_import_scope) ... ok
+test_02_actual140_files141_schema_then_fixture_registry_readonly_consumption (__main__.Independent.test_02_actual140_files141_schema_then_fixture_registry_readonly_consumption) ... ok
+test_03_missing_partial_tampered_reformatted_oversize_are_readonly_blocked (__main__.Independent.test_03_missing_partial_tampered_reformatted_oversize_are_readonly_blocked) ... ok
+test_04_invalid_paths_alias_and_reparse_mock_before_data_open (__main__.Independent.test_04_invalid_paths_alias_and_reparse_mock_before_data_open) ... ok
+test_05_untrusted139_output_cleared_before_file_reads (__main__.Independent.test_05_untrusted139_output_cleared_before_file_reads) ... ok
+test_06_postvalidation_producer_mutation_cannot_change_expected_return (__main__.Independent.test_06_postvalidation_producer_mutation_cannot_change_expected_return) ... ok
+test_07_schema_failure_and_contaminated_return_clear_entire_result (__main__.Independent.test_07_schema_failure_and_contaminated_return_clear_entire_result) ... ok
+test_08_schema_snapshot_mutation_after_validation_is_not_returned (__main__.Independent.test_08_schema_snapshot_mutation_after_validation_is_not_returned) ... ok
+test_09_first_report_changed_during_second_file_read_is_blocked (__main__.Independent.test_09_first_report_changed_during_second_file_read_is_blocked) ... ok
+test_10_actual_temp_parent_replacement_fault_injection (__main__.Independent.test_10_actual_temp_parent_replacement_fault_injection) ... FAIL
+test_11_actual_directory_symlink_or_permission_skip (__main__.Independent.test_11_actual_directory_symlink_or_permission_skip) ... skipped 'actual Windows symlink unavailable: winerror=1314, errno=22'
+test_12_installed_datetime_format_limit_is_observed_not_scientific_approval (__main__.Independent.test_12_installed_datetime_format_limit_is_observed_not_scientific_approval) ... ok
+test_13_report_files_success_does_not_validate_mask_or_access (__main__.Independent.test_13_report_files_success_does_not_validate_mask_or_access) ... ok
+
+======================================================================
+FAIL: test_10_actual_temp_parent_replacement_fault_injection (__main__.Independent.test_10_actual_temp_parent_replacement_fault_injection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\evidence\integration\quality-report-preflight-independent-20261018.py", line 231, in test_10_actual_temp_parent_replacement_fault_injection
+    with patch.object(api,'_snapshot',side_effect=replace):result,_=self.inspect(args)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\evidence\integration\quality-report-preflight-independent-20261018.py", line 92, in inspect
+    self.assertEqual(attempts,[]);mkdir.assert_not_called();unlink.assert_not_called();remove.assert_not_called()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\√÷¡ÿø¿\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 900, in assert_not_called
+    raise AssertionError(msg)
+AssertionError: Expected 'mkdir' to not have been called. Called 1 times.
+Calls: [call()].
+
+----------------------------------------------------------------------
+Ran 13 tests in 8.980s
+
+FAILED (failures=1, skipped=1)

@@ -1,0 +1,32 @@
+C:\Users\√÷¡ÿø¿\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+test_actual_schema_failure_after_exact_stored_bytes_no_draft_leak (test_quality_report_preflight.QualityReportPreflightTests.test_actual_schema_failure_after_exact_stored_bytes_no_draft_leak) ... FAIL
+test_actual_two_files_exact23_no_writer_store_input_open_or_mutation (test_quality_report_preflight.QualityReportPreflightTests.test_actual_two_files_exact23_no_writer_store_input_open_or_mutation) ... ok
+test_all_path_policies_before_file_open (test_quality_report_preflight.QualityReportPreflightTests.test_all_path_policies_before_file_open) ... ok
+test_change_during_fd_read_is_detected (test_quality_report_preflight.QualityReportPreflightTests.test_change_during_fd_read_is_detected) ... ok
+test_cold_local_schema_read_once_but_no_database_write (test_quality_report_preflight.QualityReportPreflightTests.test_cold_local_schema_read_once_but_no_database_write) ... ok
+test_first_file_changes_while_second_read_final_stat_rejects (test_quality_report_preflight.QualityReportPreflightTests.test_first_file_changes_while_second_read_final_stat_rejects) ... ok
+test_limit_and_growing_read_fail_without_partial_observations (test_quality_report_preflight.QualityReportPreflightTests.test_limit_and_growing_read_fail_without_partial_observations) ... ok
+test_missing_partial_tampered_and_noncanonical_files_closed (test_quality_report_preflight.QualityReportPreflightTests.test_missing_partial_tampered_and_noncanonical_files_closed) ... ok
+test_reparse_and_parent_identity_guards_mock (test_quality_report_preflight.QualityReportPreflightTests.test_reparse_and_parent_identity_guards_mock) ... ok
+test_schema_return_shape_digest_type_and_postvalidation_mutation (test_quality_report_preflight.QualityReportPreflightTests.test_schema_return_shape_digest_type_and_postvalidation_mutation) ... ok
+test_untrusted_completion_output_before_io_and_mutation_after_check (test_quality_report_preflight.QualityReportPreflightTests.test_untrusted_completion_output_before_io_and_mutation_after_check) ... ok
+
+======================================================================
+FAIL: test_actual_schema_failure_after_exact_stored_bytes_no_draft_leak (test_quality_report_preflight.QualityReportPreflightTests.test_actual_schema_failure_after_exact_stored_bytes_no_draft_leak)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_quality_report_preflight.py", line 141, in test_actual_schema_failure_after_exact_stored_bytes_no_draft_leak
+    self.assert_closed(self.inspect(),'MANIFEST_SCHEMA_INVALID')
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_quality_report_preflight.py", line 33, in assert_closed
+    self.assertEqual(result['status'],'BLOCKED'); self.assertEqual(len(result),23)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'STORED_REPORT_FILES_VERIFIED_UNREGISTERED' != 'BLOCKED'
+- STORED_REPORT_FILES_VERIFIED_UNREGISTERED
++ BLOCKED
+
+
+----------------------------------------------------------------------
+Ran 11 tests in 3.514s
+
+FAILED (failures=1)

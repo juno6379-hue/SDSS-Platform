@@ -1,5 +1,25 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 저장 품질 보고서의 읽기 전용 등록 전 점검 (141)
+
+구현 담당은 신규 quality_report_preflight.py·집중시험·문서141, 독립 담당은 실제 임시 저장/소비와 파일 변조·실패 경계를 맡았다. Root는 관련 회귀·원본 보존·공통 문서·인계·Git을, 이해 담당은 완료 소스와 검증 근거로 설명·대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시140 작업자는 모두 완료였고 실제 운영 수집·학습 프로세스는 관측되지 않았다. API/Ollama 프로세스 및 ACTIVE/10분 예약과 실제 수집·학습 실행은 구분한다.
+
+inspect_stored_quality_report(data_root,image_manifest,mask_manifest,report_identity,report_metadata,manifest_output_uri)는140과 같은 명시 경로 정책으로 기존 report/manifest 두 파일만 읽는다.139 명시 입력을 제한된 builtin 사본으로 고정·대조하고, 두 파일을 각각2MiB 한도로 fd/lstat/부모 identity·크기·SHA·전후 signature 점검하여 기대 canonical bytes와 정확히 비교한다. 원본 영상/마스크를 열거나 기존140 writer를 호출하지 않으며 생성·삭제·수정·Store/Registry 연결·다운로드·학습은0이다.
+
+report manifest는 기존96 canonical_manifest를 통해 전체 GMAIS schema/digest를 검증한다. cold local schema 읽기는 허용하며 운영 DB 조회나 원본 raster/native검증과 구분한다. schema/completion의 가변 반환을 그대로 전달하지 않고 고정 기대 사본과 typed 대조한 뒤 사본을 반환한다. 두 번째 읽기 후 첫 파일을 포함한 두 경로와 부모를 재확인한다. 읽기/대조 실패는 고정 오류와 새로운 null payload·false flags로 닫아 일부 draft/SHA/ref를 성공처럼 반환하지 않는다.
+
+성공은 STORED_REPORT_FILES_VERIFIED_UNREGISTERED, exact23의 stored_report_files_verified와 manifest_schema_verified다. 기존10개 artifact/Registry/기관품질/과학정확도/모델/실행 flag는 false이며 등록 권한이나 실행 승인을 부여하지 않는다. 두 파일의 순차 관측 및 최종 stat 재확인은 동시 snapshot·원자성·악의적 디렉터리 교체의 완전 격리·반환 후 불변·OS sandbox·CPU/RSS/시간 SLA를 보장하지 않는다. 실제 등록 시 기존 Registry의 자산 검증과 승인 계약을 생략할 수 없다.
+
+집중11 PASS/2.265초, 관련69 PASS/13.656초, 독립12 PASS/1 SKIP/3.1669690초다. 중복 묶음은 합산하지 않는다. 실제 임시140 저장→141 읽기→별도 Registry setup3건→131/133 읽기 소비와 원본/DB/전체 파일 불변을 확인했다. 실제 임시 자료·명시 Mock·권한 SKIP·초기 오류 이력의 구분은 문서141과 원로그/독립 JSON을 따른다. 임시 등록 setup은 제품 기능이 수행한 운영 등록이 아니다.
+
+초기 집중11건의10 PASS/1 FAIL/3.514초는 설치 FormatChecker가 +00:60을 거부할 것이라는 시험 기대 오류였고, 초기 독립13건의11 PASS/1 FAIL/1 SKIP/8.9813945초는 의도한 fixture parent.mkdir가 제품 mkdir0 guard에 걸린 시험 구성 오류였다. 두 초기 묶음은 원로그 및 독립 py/json/log로 보존하고 최종과 합산하지 않는다. 제품 결함이나 실제 schema 차단 성공으로 확대하지 않는다. 현재 설치 checker는 +09:60도 수용하는 것으로 관측했으며, 최종 schema 실패 시험은 명시적으로 더 엄격한 임시 validator를 주입한 모의 정책이다. manifest_schema_verified는 기존 설치 schema/checker의 수용 범위이며 모든 시간 표기의 의미나 기관 승인을 보장하지 않는다.
+
+보호141개·기존 소스320개·이전 증거1331개·catalog14행 SHA·dataset_versions0·예약136314880바이트를 보존했다. 기존140 이하/main/API/137UI·실행 gate 변경0이다. 이 내부 함수는 HTTP/UI에 연결하지 않았으므로 이번 전체backend/frontend/build/browser 재실행은 없다.137 전체1358 PASS/1 SKIP·frontend271 PASS는 이전 이력이며 이번 관련·독립 시험이 현재 근거다.
+
+설계·내부 API/계약·사용법·시험·인계와 이해자료14개를 같은 단위로 갱신했다. 전체 개발은 미완료다. 다음142 후보는 호출자가 명시적으로 요청하는 보고서 등록 어댑터와 임시 Registry 검증이며 운영 자동 등록은 별도다. 실제 collector 품질 mask/band description·독립 라벨·모델/품질 승인·다른5개 실행기·GeoLLM/RAG/PostGIS·staging/RBAC/UAT 후속은 남아 있다. 보고서 바이트/스키마 점검을 실제 영상 검증·연차별 자료 확보·기관 승인·학습/배포 준비로 확대하지 않는다.
+
+근거: docs/implementation/141_quality_report_preflight.md 및 evidence/integration/quality-report-preflight-agent-20261018.log, quality-report-preflight-root-related-20261018.log, quality-report-preflight-independent-20261018.json, quality-report-preflight-live-integrity-final-20261018.json, 최종 quality-report-preflight-closeout-20261018.json.
+
 ## 2026-10-18 — 두 새 품질 보고서 파일의 덮어쓰기 없는 저장 (140)
 
 구현 담당은 신규 quality_report_storage.py·집중시험·문서140, 독립 담당은 실제 임시 파일/SQLite 소비 및 저장 실패 경계를 맡았다. Root는 경로 사전 거부 보강 검토·관련 회귀·원본 보존·공통 문서·Git을, 이해 담당은 검증된 소스로 해설·대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시139 작업자는 완료 상태였으며 실행 중인 수집·학습은 관측되지 않았다. API/Ollama 프로세스와 보고 예약 ACTIVE/10분은 실제 데이터 수집·학습 실행과 구분한다.

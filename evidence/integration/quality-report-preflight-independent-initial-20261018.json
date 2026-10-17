@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "scope": "INDEPENDENT_READONLY_STORED_REPORT_PREFLIGHT_TEMP_ONLY",
+  "status": "FAILED",
+  "tests": 13,
+  "passed": 11,
+  "skipped": 1,
+  "skip_reasons": [
+    "actual Windows symlink unavailable: winerror=1314, errno=22"
+  ],
+  "failures": 1,
+  "errors": 0,
+  "seconds": 8.981394499991438,
+  "test_names": [
+    "test_01_frozen_sources_and_readonly_import_scope",
+    "test_02_actual140_files141_schema_then_fixture_registry_readonly_consumption",
+    "test_03_missing_partial_tampered_reformatted_oversize_are_readonly_blocked",
+    "test_04_invalid_paths_alias_and_reparse_mock_before_data_open",
+    "test_05_untrusted139_output_cleared_before_file_reads",
+    "test_06_postvalidation_producer_mutation_cannot_change_expected_return",
+    "test_07_schema_failure_and_contaminated_return_clear_entire_result",
+    "test_08_schema_snapshot_mutation_after_validation_is_not_returned",
+    "test_09_first_report_changed_during_second_file_read_is_blocked",
+    "test_10_actual_temp_parent_replacement_fault_injection",
+    "test_11_actual_directory_symlink_or_permission_skip",
+    "test_12_installed_datetime_format_limit_is_observed_not_scientific_approval",
+    "test_13_report_files_success_does_not_validate_mask_or_access"
+  ],
+  "source_sha256": "04758b1ac3e03fb392790e2c0c7d87aa261a9563b160d704cbf06023af09e62a",
+  "test_sha256": "3b4dbf91d37a183cfa282c86a122d0755eae1ae615383a7eb0a303eee91a9a41",
+  "git_baseline": "c2165340a1d5f1cfd253f13bcf9603c843d526d0",
+  "separate_git_baseline_matches": {
+    "backend/app/data/quality_report_storage.py": true,
+    "tests/test_quality_report_storage.py": true,
+    "backend/app/data/quality_report_completion.py": true,
+    "backend/app/data/quality_mask_bundle.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_quality_mask_grid.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "old_sources_unchanged": {
+    "backend/app/data/quality_report_storage.py": true,
+    "tests/test_quality_report_storage.py": true,
+    "backend/app/data/quality_report_completion.py": true,
+    "backend/app/data/quality_mask_bundle.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_quality_mask_grid.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true
+  },
+  "observations": [
+    {
+      "actual": "fresh Temp140stored files +141read-only schema +separate SQLite3version setup/131133RO",
+      "preflight_data_file_opens": 2,
+      "preflight_original_raster_opens": 0,
+      "preflight_registry_calls": 0,
+      "fixture_registry_setup_writes": 3,
+      "counts": {
+        "valid_pixels": 128,
+        "invalid_pixels": 128,
+        "total_pixels": 256
+      },
+      "preflight_and_consumer_db_files_unchanged": true,
+      "schema_repo_read_may_occur_on_cold_cache": true
+    },
+    {
+      "actual_stored_file_fault": "report_missing",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "FILE_UNAVAILABLE",
+        "field": "report"
+      },
+      "checker_file_changes": 0
+    },
+    {
+      "actual_stored_file_fault": "manifest_missing",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "FILE_UNAVAILABLE",
+        "field": "manifest"
+      },
+      "checker_file_changes": 0
+    },
+    {
+      "actual_stored_file_fault": "partial",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "FILE_BYTES_MISMATCH",
+        "field": "manifest"
+      },
+      "checker_file_changes": 0
+    },
+    {
+      "actual_stored_file_fault": "tamper",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "FILE_BYTES_MISMATCH",
+        "field": "report"
+      },
+      "checker_file_changes": 0
+    },
+    {
+      "actual_stored_file_fault": "reformat",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "FILE_BYTES_MISMATCH",
+        "field": "manifest"
+      },
+      "checker_file_changes": 0
+    },
+    {
+      "actual_stored_file_fault": "oversize",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "FILE_LIMIT",
+        "field": "manifest"
+      },
+      "checker_file_changes": 0
+    },
+    {
+      "mock": "reparse attributes/tags only; no actual reparse point created",
+      "blocked": true
+    },
+    {
+      "schema_failure": "explicit stricter Draft202012Validator fixture through real canonical helper",
+      "unchanged_production_schema_rejection_claim": false,
+      "failed_payloads_fully_cleared": true
+    },
+    {
+      "explicit_fault_injection": "test changes first report while second snapshot begins",
+      "checker_detected_final_stat_change": true,
+      "checker_write_calls": 0,
+      "atomic_snapshot_claim": false
+    },
+    {
+      "actual_symlink": "SKIPPED",
+      "reason": "actual Windows symlink unavailable: winerror=1314, errno=22"
+    },
+    {
+      "actual_installed_format_checker": {
+        "timestamp": "2020-01-01T00:00:00+09:60",
+        "conforms": true,
+        "preflight_status": "STORED_REPORT_FILES_VERIFIED_UNREGISTERED"
+      },
+      "full_rfc3339_conformance_or_semantic_temporal_verification_claim": false
+    },
+    {
+      "actual_counterexample": "nodata0",
+      "report_files_preflight": "SUCCESS_UNREGISTERED",
+      "binary_consumer": "BLOCKED",
+      "code": "MASK_INTRINSIC_VALIDITY_UNSUPPORTED"
+    },
+    {
+      "actual_counterexample": "restricted",
+      "report_files_preflight": "SUCCESS_UNREGISTERED",
+      "binary_consumer": "BLOCKED",
+      "code": "ACCESS_DECLARATION_BLOCKED"
+    }
+  ],
+  "actual_scope": "fresh Temp140stored files; actual GTiff/SQLite only designated success/counterexamples; readonly131133 and actual installed96schema",
+  "mock_scope": "139/schema output contamination and postvalidation mutation; stricter test schema; explicit first-file/parent filesystem fault injections; reparse attr guard",
+  "operating_data_access": false,
+  "operating_writes": 0,
+  "training": 0,
+  "inference": 0,
+  "api_ui_changed": false,
+  "frontend_build_browser_required": false,
+  "limitations": [
+    "Two stored data artifacts only; cold trusted local schema read is allowed and separate from source image/mask reads.",
+    "File/stat checks do not establish an atomic snapshot or complete hostile concurrent filesystem confinement.",
+    "Manifest schema verification is not actual raster/mask QA, acquisition/AOI truth, access authority or model/execution approval.",
+    "Installed format-checker permissiveness is recorded; stricter synthetic schema rejection is not a production-schema rejection.",
+    "Registry setup writes occur only in explicit Temp caller fixtures, never in the preflight helper."
+  ]
+}
