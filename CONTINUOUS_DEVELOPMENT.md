@@ -1,5 +1,25 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 명시적 품질 보고서 inspect/register CLI (143)
+
+구현 담당은 신규 scripts/quality_report_cli.py·집중시험·문서143, 독립 담당은 실제 subprocess와 입력/DB/결과 경계를 맡았다. Root는 계약 검토·관련 회귀·원본 보존·공통 문서·인계·Git을, 이해 담당은 완료 소스·시험으로 쉬운 설명·대본·FAQ·INDEX·변경 이력을 갱신했다. 시작 시142 작업자는 완료 상태였고 운영 수집·학습 프로세스는 관측되지 않았다. API/Ollama 프로세스와 ACTIVE/10분 보고 예약은 실제 수집·학습과 구분한다.
+
+quality_report_cli.py는 inspect/register subcommand, 절대 data-root, 명시 image/mask manifest·report identity·report metadata JSON 파일4개와 manifest-output-uri를 요구한다. 기본 운영 경로·환경변수 추정·자동 등록·다운로드/학습/배포는 없다. 각 입력 파일은256KiB 상한·strict UTF-8·중복 key/비유한 수 거부·bounded builtin 사본·파일/부모 경계를 점검한다. --help는 정적 도움말이고 그 외 결과는 UTF-8 JSON 한 개다. 잘못된 인자/입력/예외를 원문 경로나 traceback으로 출력하지 않는다.
+
+inspect는141 읽기 전용 검증만 호출하며 Store 생성이나 DB 조회를 하지 않는다. register만 기존 root/catalog.sqlite3·records schema를 SQLite URI mode=ro로 검사·연결 종료하고, identity를 다시 확인한 뒤 기존 Store(root,recover_jobs=False)와142를 호출한다. 기존 Store의 mkdir/CREATE TABLE IF NOT EXISTS는 정상 기존 root/table에서 no-op이지만 실제 constructor 호출은 수행된다. 초기화 시작 뒤 예외 또는 등록 자식 결과를 검증할 수 없으면 이미 부작용이 있을 가능성을 미확정으로 알린다. 이 경계를 모든 경쟁 조건의 물리 쓰기0 보장으로 확대하지 않는다.
+
+wrapper는 exact6 schema_version/scope/command/status/issue/result다.141 exact23·142 exact22의 필드/type/flags/ref/digest/record를 고정 기준과 비교하고 안전 사본만 출력한다. 정상 검사/등록 exit0, 입력/검증 차단 exit2, 등록 결과 미확정 exit3이다. 정상 등록도 REPORT_REGISTERED_UNAPPROVED이며143은 기관 품질·영상 픽셀/정확도·모델/실행 승인을 추가하지 않는다. invalid 등록 결과는 확정 payload 없이 미확정으로 닫으며 자동 retry·rollback·삭제를 하지 않는다.
+
+집중11 PASS/12.558초, 관련90 PASS/37.707초, 독립9 PASS/1 SKIP/33.0078190초다. 중복 묶음은 합산하지 않는다. 실제 임시 파일/Registry와 subprocess의 inspect/register·재호출·소비, 오류·출력 계약을 검증했다. 실제 호출·명시 Mock/fault injection·초기 오류·권한 SKIP 및 fixture별 계수는 문서143과 독립 JSON/원로그를 따른다. 실사용 CLI 등록 동작도 임시 root에서만 시험했으며 운영 inspect/register는 실행하지 않았다.
+
+보호141개·기존 소스324개·이전 증거1366개·catalog14행 SHA·운영 dataset_versions0·예약136314880바이트를 보존했다. 별도로 갱신된 docs16/20은06:51 관측 시각과 정체 기간37시간50분 표기만 바뀌었음을 quality-report-cli-separate-status-docs-20261018.json으로 원바이트 검산했다. 누계·manifest/원장 SHA는 그대로이며143의 수집 재개 성과가 아니다. 원본·원장·lock·분할·모델·예약 변경0이며 기존142 이하/main/API/137UI·실행 gate 변경0이다. CLI 진입점만 추가했고 HTTP/UI·collector 자동 호출에 배선하지 않아 이번 전체backend/frontend/build/browser 재실행은 없다.137 전체1358 PASS/1 SKIP·frontend271 PASS는 이전 이력이며 이번 관련·독립 CLI 시험이 현재 근거다.
+
+입력 파일·DB·source 조회·등록은 원자 snapshot/OS sandbox가 아니며 반환 후 불변·동시 치환·외부 프로세스·CPU/RSS/시간 SLA를 보장하지 않는다. 직접 JSON 경계와 달리 기존96 source 전체hash와 Store JSON predecode에는 새 hard budget을 부여하지 않았다. 기존141 schema/checker 수용 범위 및142 등록 미확정/소비 차단 한계도 그대로다.
+
+설계·CLI 사용법·내부 계약·시험·인계와 이해자료14개를 같은 단위로 갱신했다. 전체 개발은 미완료다. 다음144 후보는 실제 신규 수집 산출물의 밴드·품질 mask 선언 연결 검토이며 운영 수집 재개는 별도다. 연차별 데이터 확보·독립 라벨·기관/모델 승인·다른5개 실행기·GeoLLM/RAG/PostGIS·staging/RBAC/UAT는 후속이다. CLI 제공을 운영 데이터 등록·학습·승인·배포 완료로 확대하지 않는다.
+
+근거: docs/implementation/143_quality_report_cli.md 및 evidence/integration/quality-report-cli-agent-20261018.log, quality-report-cli-root-related-20261018.log, quality-report-cli-independent-20261018.json, quality-report-cli-live-integrity-final-20261018.json, 최종 quality-report-cli-closeout-20261018.json.
+
 ## 2026-10-18 — 명시적 품질 보고서 등록 어댑터 (142)
 
 구현 담당은 신규 quality_report_registration.py·집중시험·문서142, 독립 담당은 실제 임시 Registry 등록/소비와 실패·결과 미확정 경계를 맡았다. Root는 계약 검토·관련 회귀·원본 보존·공통 문서·인계·Git을, 이해 담당은 완료 소스·시험 근거로 쉬운 설명·발표·FAQ·INDEX·변경 이력을 갱신했다. 시작 시141 작업자는 모두 완료였고 운영 수집·학습 프로세스는 관측되지 않았다. API/Ollama 프로세스와 보고 예약 ACTIVE/10분은 실제 수집·학습 실행과 구분한다.

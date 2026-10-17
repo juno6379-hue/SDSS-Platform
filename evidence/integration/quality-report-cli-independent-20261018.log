@@ -1,0 +1,15 @@
+test_00_frozen_source_and_test_hashes (__main__.Independent.test_00_frozen_source_and_test_hashes) ... ok
+test_01_actual_subprocess_inspect_without_catalog_and_no_store_calls (__main__.Independent.test_01_actual_subprocess_inspect_without_catalog_and_no_store_calls) ... ok
+test_02_actual_register_replay_and_readonly_consumers (__main__.Independent.test_02_actual_register_replay_and_readonly_consumers) ... ok
+test_03_missing_invalid_catalog_and_schema_no_creation (__main__.Independent.test_03_missing_invalid_catalog_and_schema_no_creation) ... ok
+test_04_actual_argument_errors_and_help_do_not_leak_secret (__main__.Independent.test_04_actual_argument_errors_and_help_do_not_leak_secret) ... ok
+test_05_actual_strict_json_and_size_before_constructor (__main__.Independent.test_05_actual_strict_json_and_size_before_constructor) ... ok
+test_05b_repeated_options_and_missing_sources_no_registration (__main__.Independent.test_05b_repeated_options_and_missing_sources_no_registration) ... ok
+test_06_inprocess_inspect_child_tamper_and_mutation (__main__.Independent.test_06_inprocess_inspect_child_tamper_and_mutation) ... ok
+test_07_inprocess_post_constructor_error_and_real_commit_uncertainty (__main__.Independent.test_07_inprocess_post_constructor_error_and_real_commit_uncertainty) ... ok
+test_08_actual_input_symlink_permission_skip (__main__.Independent.test_08_actual_input_symlink_permission_skip) ... skipped 'actual symlink unavailable winerror=1314 errno=22'
+
+----------------------------------------------------------------------
+Ran 10 tests in 33.007s
+
+OK (skipped=1)

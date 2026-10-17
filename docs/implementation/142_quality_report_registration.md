@@ -65,3 +65,7 @@ Root 관련 회귀는 **79 PASS / 18.854초 / exit 0**, `quality-report-registra
 독립 초기 **13 실행 / 5 PASS / 7 ERROR / 1 SKIP / 10.3659233초**는 시험의 DB rows 조회 helper가 SQLite connection을 `with`로만 감싸고 명시 close하지 않아 Windows Temp 정리에서 잠금이 남은 구성 문제였다. 제품 Store.connect는 이미 finally에서 close한다. 초기 py/json/log를 `-initial`로 보존하고 시험 helper만 try/finally close로 교정했으며 제품은 수정하지 않았다. 최종 정리 오류는 0이다. 독립 JSON의 초기 임시 경로 7개는 별도 잔존 관측에서 모두 부재였고 제거 메커니즘을 추정하지 않는다. 원장·lock·운영 경로를 정리하거나 재귀 삭제한 것이 아니다. 초기·최종·관련·집중 수치를 합산하지 않는다.
 
 새 내부 함수는 main/API/137UI·CLI에 연결하지 않아 이번 frontend/build/browser 및 전체 backend는 재실행하지 않는다. 기존 전체 시험은 이전 이력이며 이번 관련·독립 시험과 합산하지 않는다. 운영 Store나 원본 자료에 이 어댑터를 호출하지 않았다. 원본·원장·lock·분할·모델·예약을 보존하며, 품질 보고서 한 건의 명시 등록을 전체 연차 자료 확보·QA 승인·학습/배포 준비로 확대하지 않는다. 후속 143 후보는 caller가 명시적으로 요청하는 CLI 진입점이며 운영 자동 호출은 별도다.
+
+## 후속143 명시적 CLI
+
+[143 CLI](143_quality_report_cli.md)는 명시 inspect/register 명령과 입력 JSON 파일로141/142를 호출한다. inspect는 DB 접속0이며 register만 기존 DB 사전검사 후 기존 Store를 초기화한다.142의 등록 미확정/미승인·원본 보존 계약은 그대로이고 운영 자동 호출은 수행하지 않는다.

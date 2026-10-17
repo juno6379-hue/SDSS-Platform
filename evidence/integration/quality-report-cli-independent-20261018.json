@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "scope": "INDEPENDENT_EXPLICIT_REPORT_CLI_TEMP_ONLY",
+  "git_baseline": "e3262a3acb09f89a48124cfc9f32c20bb923975a",
+  "tests": 10,
+  "passed": 9,
+  "skipped": 1,
+  "skip_reasons": [
+    "actual symlink unavailable winerror=1314 errno=22"
+  ],
+  "failures": 0,
+  "errors": 0,
+  "seconds": 33.00781900000584,
+  "source_sha256": "a6fb6388674ef41ab30329ff55dcb1291e1221cb7d9d8068c7dd6689f5eed87d",
+  "test_sha256": "37dd83beb849cc985ce4539d959be88b5de464731c21194816ec7e3cb8f0c3d1",
+  "test_names": [
+    "test_00_frozen_source_and_test_hashes",
+    "test_01_actual_subprocess_inspect_without_catalog_and_no_store_calls",
+    "test_02_actual_register_replay_and_readonly_consumers",
+    "test_03_missing_invalid_catalog_and_schema_no_creation",
+    "test_04_actual_argument_errors_and_help_do_not_leak_secret",
+    "test_05_actual_strict_json_and_size_before_constructor",
+    "test_05b_repeated_options_and_missing_sources_no_registration",
+    "test_06_inprocess_inspect_child_tamper_and_mutation",
+    "test_07_inprocess_post_constructor_error_and_real_commit_uncertainty",
+    "test_08_actual_input_symlink_permission_skip"
+  ],
+  "separate_git_baseline_matches": {
+    "backend/app/data/quality_report_preflight.py": true,
+    "tests/test_quality_report_preflight.py": true,
+    "backend/app/data/quality_report_storage.py": true,
+    "backend/app/data/quality_report_completion.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/store.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true,
+    "backend/app/data/quality_report_registration.py": true,
+    "tests/test_quality_report_registration.py": true
+  },
+  "old_sources_unchanged": {
+    "backend/app/data/quality_report_preflight.py": true,
+    "tests/test_quality_report_preflight.py": true,
+    "backend/app/data/quality_report_storage.py": true,
+    "backend/app/data/quality_report_completion.py": true,
+    "backend/app/dataset_registry.py": true,
+    "backend/app/store.py": true,
+    "backend/app/ml/registered_quality_mask_files.py": true,
+    "backend/app/ml/registered_binary_mask_values.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/AnnualInputDiagnostics.tsx": true,
+    "backend/app/data/quality_report_registration.py": true,
+    "tests/test_quality_report_registration.py": true
+  },
+  "observations": [
+    {
+      "actual": "subprocess inspect with no catalog.sqlite3",
+      "same_files": true,
+      "inprocess_guard_Store_and_SQL_calls": 0
+    },
+    {
+      "actual": "subprocess report-only registration 2 to 3 rows, byte-identical replay and readonly131133",
+      "counts": {
+        "valid_pixels": 128,
+        "invalid_pixels": 128,
+        "total_pixels": 256
+      },
+      "operating_registration": 0
+    },
+    {
+      "explicit_fault_injection": "constructor / before commit / actual commit then error or contaminated return",
+      "actual_post_commit_rows": 3,
+      "rollback_retry_delete": 0
+    }
+  ],
+  "actual_scope": "Fresh Temp GTiff/SQLite fixture, subprocess inspect/register/replay, readonly131133; no existing product test cases executed.",
+  "mock_scope": "Explicit inprocess constructor and child-output faults, actual-commit-then-error, post-copy mutable output mutation.",
+  "operating_store_access": false,
+  "operating_writes": 0,
+  "training": 0,
+  "inference": 0,
+  "api_ui_changed": false,
+  "frontend_build_browser_required": false,
+  "limitations": [
+    "Store constructor is intentionally used for register after readonly catalog checks; its mkdir/CREATE IF NOT EXISTS are normal no-op intent, not a universal physical-write guarantee.",
+    "Constructor-started or malformed post-registration output can hide a committed report; UNCONFIRMED does not mean rollback or absence.",
+    "Sequential filesystem/SQLite observations are not atomic, an OS sandbox, resource/SLA guarantee or institution/scientific/execution approval.",
+    "Actual symlink creation depends on Windows privilege; permission failures are SKIP, not mock successes."
+  ]
+}
