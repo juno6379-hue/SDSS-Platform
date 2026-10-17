@@ -1,0 +1,184 @@
+{
+  "scope": "TESTED_SYNTHETIC_ACTUAL_TEMP_IMAGE_MASK_BYTES_THREE_REGISTERED_REFERENCES",
+  "checks_passed": [
+    {
+      "case": "valid",
+      "status": "REGISTERED_QUALITY_MASK_MATCHED_UNVERIFIED",
+      "issue": null,
+      "store_gets": 3,
+      "registry_references_verified": true,
+      "report_bindings_verified": true,
+      "file_bindings": [
+        {
+          "role": "image",
+          "status": "MATCH"
+        },
+        {
+          "role": "quality_report",
+          "status": "MATCH"
+        },
+        {
+          "role": "mask",
+          "status": "MATCH"
+        }
+      ]
+    },
+    {
+      "case": "opaque_mask",
+      "status": "REGISTERED_QUALITY_MASK_MATCHED_UNVERIFIED",
+      "issue": null,
+      "store_gets": 3,
+      "registry_references_verified": true,
+      "report_bindings_verified": true,
+      "file_bindings": [
+        {
+          "role": "image",
+          "status": "MATCH"
+        },
+        {
+          "role": "quality_report",
+          "status": "MATCH"
+        },
+        {
+          "role": "mask",
+          "status": "MATCH"
+        }
+      ]
+    },
+    {
+      "case": "report_tamper",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "SHA256_MISMATCH",
+        "field": "quality_report"
+      },
+      "store_gets": 3,
+      "registry_references_verified": true,
+      "report_bindings_verified": false,
+      "file_bindings": [
+        {
+          "role": "image",
+          "status": "NOT_CHECKED"
+        },
+        {
+          "role": "quality_report",
+          "status": "NOT_CHECKED"
+        },
+        {
+          "role": "mask",
+          "status": "NOT_CHECKED"
+        }
+      ]
+    },
+    {
+      "case": "image_tamper",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "SHA256_MISMATCH",
+        "field": "image"
+      },
+      "store_gets": 3,
+      "registry_references_verified": true,
+      "report_bindings_verified": true,
+      "file_bindings": [
+        {
+          "role": "image",
+          "status": "NOT_CHECKED"
+        },
+        {
+          "role": "quality_report",
+          "status": "MATCH"
+        },
+        {
+          "role": "mask",
+          "status": "NOT_CHECKED"
+        }
+      ]
+    },
+    {
+      "case": "mask_tamper",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "SHA256_MISMATCH",
+        "field": "mask"
+      },
+      "store_gets": 3,
+      "registry_references_verified": true,
+      "report_bindings_verified": true,
+      "file_bindings": [
+        {
+          "role": "image",
+          "status": "MATCH"
+        },
+        {
+          "role": "quality_report",
+          "status": "MATCH"
+        },
+        {
+          "role": "mask",
+          "status": "NOT_CHECKED"
+        }
+      ]
+    },
+    {
+      "case": "legacy_report",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "QUALITY_REPORT_INVALID",
+        "field": "quality_report"
+      },
+      "store_gets": 3,
+      "registry_references_verified": true,
+      "report_bindings_verified": false,
+      "file_bindings": [
+        {
+          "role": "image",
+          "status": "NOT_CHECKED"
+        },
+        {
+          "role": "quality_report",
+          "status": "MATCH"
+        },
+        {
+          "role": "mask",
+          "status": "NOT_CHECKED"
+        }
+      ]
+    },
+    {
+      "case": "missing_report_path",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "PATH_INVALID",
+        "field": "quality_report"
+      },
+      "store_gets": 3,
+      "registry_references_verified": true,
+      "report_bindings_verified": false,
+      "file_bindings": [
+        {
+          "role": "image",
+          "status": "NOT_CHECKED"
+        },
+        {
+          "role": "quality_report",
+          "status": "NOT_CHECKED"
+        },
+        {
+          "role": "mask",
+          "status": "NOT_CHECKED"
+        }
+      ]
+    }
+  ],
+  "reader_requested_torch_or_rasterio_import": false,
+  "all_fixture_files_and_database_bytes_unchanged_during_reader": true,
+  "opaque_mask_with_matching_sha_is_not_mask_semantics_or_quality_approval": true,
+  "operating_model_loaded": false,
+  "temporary_model_loaded": false,
+  "operating_registry_contact": false,
+  "training_inference_executed": false,
+  "quality_report_verified": false,
+  "quality_mask_verified": false,
+  "scientific_accuracy_validated": false
+}

@@ -1,5 +1,7 @@
 # 130 — Registry bbox와 실제 래스터 경계 표본의 읽기 전용 대조
 
+> 후속131: 품질 보고서·명시적 마스크의3개 고정 Registry 참조와 바이트를 연결하는 독립 reader를 `131_registered_quality_mask_files.md`에서 구현·검증했다.130 batch 자동 연결이나 실제 마스크·품질 승인은 아니며132 이후 별도 진단이 필요하다.
+
 상태: **TESTED_SYNTHETIC**. 새 `backend/app/ml/registry_spatial_normalization.py`는 고정 모델·장면 참조의 기존129 읽기 결과에 Registry 공간 선언 대조를 추가한다. 운영 실행·API·UI에는 연결하지 않았다. 기존124~129 및 실행 gate를 수정하지 않는다. Registry bbox가 실제 헤더에서 변환한 경계 표본의 근사 envelope를 포함하는지만 관측하며, 실제 AOI·취득 지역·주 전체 자료 확보를 인증하지 않는다.
 
 ## 입력과 같은 관측의 결합

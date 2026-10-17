@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T03:59:01.581293+09:00",
-  "source_commit": "759eac034a0921f898aaf9b5e175421a222ec63f",
-  "source_commit_reason": "Published129 baseline plus130 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T04:08:25.690936+09:00",
+  "source_commit": "e4ed88724aa96b3b08ffb574511e06bd4dc91a80",
+  "source_commit_reason": "Published130 baseline plus131 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -3660,6 +3660,118 @@
       "collector_training_processes_observed": 0,
       "next_internal_candidate": "131_REGISTERED_QUALITY_REPORT_AND_EXPLICIT_MASK_READ_CONTRACT",
       "snapshot_files": 1665
+    },
+    "latest_registered_quality_mask_fixed_reference_read": {
+      "recorded_at": "2026-10-18T04:08:25.690936+09:00",
+      "status": "131_REGISTERED_QUALITY_REPORT_AND_EXPLICIT_OPAQUE_MASK_BYTES_BOUND",
+      "focused": {
+        "passed": 10,
+        "seconds": 5.212
+      },
+      "initial_focused_before_review_field_correction": {
+        "passed": 10,
+        "seconds": 4.242,
+        "raw_log_preserved": true
+      },
+      "related": {
+        "passed": 48,
+        "seconds": 11.419,
+        "composition": "10 new quality reader +11 DatasetVersion +13 registered scene +14 normalization files"
+      },
+      "independent": {
+        "passed": 8,
+        "skipped": 0,
+        "seconds": 3.722738099997514
+      },
+      "root_actual_temp_file_scenarios": 7,
+      "overlapping_test_bundles_are_not_additive": true,
+      "source_sha256": "d20caf38bb67db6374864546e541bd9d2893d1e549c85f4e98c7ddb68145047b",
+      "test_sha256": "6a10deb09606af535512bd61aa5806f0cc3421fbd0b8a577342cc4877cd80b49",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T04:08:25.690936+09:00",
+        "understanding_markdown": 98,
+        "implementation_markdown": 1,
+        "local_links": 417,
+        "metadata_evidence_references": 10896,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T04:08:25.219301+09:00",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 295,
+        "existing_source_changes": [],
+        "previous_evidence_checked": 1138,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "reserved_bytes_preserved": 136314880,
+        "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "operating_inventory": {
+        "recorded_at": "2026-10-18T04:02:24.532159+09:00",
+        "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+        "counts_by_kind": {
+          "analyses": 3,
+          "datasets": 6,
+          "gmais_idempotency": 2,
+          "gmais_jobs": 2,
+          "models": 1
+        },
+        "dataset_versions_count": 0,
+        "operating_writes": 0,
+        "model_or_raster_files_loaded": false
+      },
+      "new_internal_exact_five_key_quality_evidence_envelope_not_upstream_or_official_standard": true,
+      "review_parser_error_role_issue_fixed_and_independently_verified": true,
+      "old123_and124_parser_sources_unchanged": true,
+      "separate_registry_keys_can_alias_same_physical_image_or_mask_bytes": true,
+      "file_not_checked_means_no_recorded_sha_match_not_zero_io": true,
+      "report_binding_or_registry_partial_flags_are_not_all_file_success_or_qa_approval": true,
+      "quality_report_verified": false,
+      "quality_mask_verified": false,
+      "raster_header_verified": false,
+      "state_dict_verified": false,
+      "source_authority_verified": false,
+      "access_authorization_verified": false,
+      "scientific_accuracy_validated": false,
+      "execution_authorized": false,
+      "workflow_supported": false,
+      "image_byte_limit": 67108864,
+      "report_byte_limit": 2097152,
+      "mask_byte_limit": 16777216,
+      "mask_semantics_header_grid_pixels_or_metric_policy_verified": false,
+      "model_or_raster_parsing_performed_by_new_reader": false,
+      "parent130_batch_runtime_api_ui_connected": false,
+      "store_database_json_predecode_not_bounded_by_postdecode_tree_limit": true,
+      "sequential_registry_and_file_snapshots_are_not_atomic": true,
+      "frontend_build_browser_rerun_this_unit": false,
+      "backend_full_rerun_this_unit": false,
+      "reason_no_full_rerun": "All295 previous source files are byte-identical. New unconnected per-scene Registry and bounded byte reader tested with actual Temp rasters/opaque mask and independent fixed references/JSON/limits plus DatasetVersion/125/123 related regressions. No external API/UI contract change.",
+      "previous_backend_regression": {
+        "unit": "120/121",
+        "tests_run": 1184,
+        "passed": 1183,
+        "skipped": 1,
+        "seconds": 399.529
+      },
+      "previous_frontend_regression": {
+        "unit": "120/121",
+        "passed": 261,
+        "build_modules": 108,
+        "build_seconds": 21.85
+      },
+      "understanding_updated": true,
+      "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+      "operating_model_or_raster_load": 0,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_internal_candidate": "132_ACTUAL_MASK_HEADER_AND_IMAGE_GRID_ALIGNMENT_READ_ONLY",
+      "snapshot_files": 1684
     }
   },
   "files": {
@@ -3676,8 +3788,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "ab23b4105c06adb65ddb070ad8aa0443e037d320462bc93fae5d4a5b6eb82070",
-      "bytes": 385814
+      "sha256": "5c026226cd91ba1770e708132bd495fc773ee093b3a338936948be5500612dc4",
+      "bytes": 391806
     },
     "README.md": {
       "sha256": "0d213fdb1da768b59dd402c3af248fa902c00a078c3072703337effadc542c56",
@@ -3931,6 +4043,10 @@
       "sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
       "bytes": 6839
     },
+    "backend/app/ml/registered_quality_mask_files.py": {
+      "sha256": "d20caf38bb67db6374864546e541bd9d2893d1e549c85f4e98c7ddb68145047b",
+      "bytes": 5828
+    },
     "backend/app/ml/registry_raster_grid_normalization.py": {
       "sha256": "17371e6a2a49a9845bf2a5d6b2cb0a777808400ac814b2d14e6347d7eb992501",
       "bytes": 7675
@@ -4104,8 +4220,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "2ad2b5172a10b038fa9b17fafebd0ef896df6fd740968ff3ad4a9f03d14fb806",
-      "bytes": 392955
+      "sha256": "f79f596aaa344f7c46334c514f2895e85e0ca896903fe5998c56503e43608de5",
+      "bytes": 398947
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -4232,8 +4348,12 @@
       "bytes": 12413
     },
     "docs/implementation/130_registry_spatial_normalization.md": {
-      "sha256": "19d6e3df53238a04f520e6ec3b717876c50bd624dfb598b4c3950d5a9aadd9dd",
-      "bytes": 10464
+      "sha256": "4f9adfb37828e2350f91ffb2fa795c1f43bc254b5c2e534ba1552bac7383f213",
+      "bytes": 10774
+    },
+    "docs/implementation/131_registered_quality_mask_files.md": {
+      "sha256": "0d7c0f97960e8f77a297ff59a51b72a4b407867e50b2995de51f0916d49f32f4",
+      "bytes": 12105
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -4548,48 +4668,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "b2af571cdccc9a92b4cba43e16ca2d1cd4cca437a584051966c771ddf2dae4cc",
-      "bytes": 151624
+      "sha256": "15dfd8bf02207af7c90634e22fbf263e0308be5d45c4d9d971f87846cbdf2c67",
+      "bytes": 152668
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "eed4acaa1e7c7f811a98828410c2bdf17467c15ddb603788ac73ec40578a7657",
-      "bytes": 121671
+      "sha256": "43bc12387bf59c90ca4b1847ef2bbb17e5ada2fbd8d4238b5cddd04b59f9f7ee",
+      "bytes": 122652
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "fa1a12d6879790676fefaecf5392f930e1ba1b1a730d001c59ed006f05734b01",
-      "bytes": 91956
+      "sha256": "816fae30c052ce963afd07db4112c8267ce92a1d27d2d84e7b3f9c54aaa1915e",
+      "bytes": 93036
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "099d35cc63776dba1f1e72cfb53d4c733b7aad50ab615cebc43501bd63ba82be",
-      "bytes": 75062
+      "sha256": "964010ac00441925d61976d79270ec77475635b50ab0b0815f762cce568e422d",
+      "bytes": 76057
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "d9d1cda42bb164c61c1c277b1ac9361609e21ce76c0c48786aa8ad716f801373",
-      "bytes": 40014
+      "sha256": "b9ee236c0a3e9c4715141c9ef3b5a9c70785462d8212fed2753b913f12f306dc",
+      "bytes": 40994
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "ecde7a679a15fab178aa7e0c60504443a0840dc2310a98f46f86882f129bca6a",
-      "bytes": 78359
+      "sha256": "a5a08808e0fa0980be9413c467764997e6886e83217d9e5771e580026bd8a841",
+      "bytes": 79302
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "31825490752540d621c2cd8654fb08b7c85fd92c546a845c8ad3dd67a26d7029",
-      "bytes": 220167
+      "sha256": "6240423f53097e51f0cf672738b380bd472d21e90f88015527dd5d39530a900a",
+      "bytes": 222050
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "ebbf9f842e3f3f983af9dad21d2f21c95b1a265d26bd5fc5421c4b8b65e4f99f",
-      "bytes": 181145
+      "sha256": "c9457b294d5614f99cb6ea83037d1405afdfd9370bec74a34d816b10cd0d1185",
+      "bytes": 182684
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "1e79886f6f7e986adeb4d9a66997312c3b3a38877e86c3c09e8c6eefd17a021b",
-      "bytes": 115602
+      "sha256": "c3661674164c95db6af7d6657ac3c2d118307ebe439ef9473ec43800f1c6e072",
+      "bytes": 116635
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "c0ce552d60347616db3afd843a8cf27795509043784b2d184aa8c332f10164b0",
-      "bytes": 190989
+      "sha256": "654134cf781fc425e8444c72ba9b2fe13527a6d5e6ef2b748ef4e67008c541a6",
+      "bytes": 192659
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -4827,6 +4947,10 @@
       "sha256": "6d98b1a041e829bcc816eeb6b86c9c74482112faab44a6e05b6a51f26ab71185",
       "bytes": 10971
     },
+    "docs/understanding/gate-notes/GATE_REGISTERED_QUALITY_MASK_20261018.md": {
+      "sha256": "25828175fac764ee46a36246d4b586888a9b27abafcc7a2f74d79ed9a232be65",
+      "bytes": 11052
+    },
     "docs/understanding/gate-notes/GATE_REGISTRY_RASTER_GRID_20261018.md": {
       "sha256": "d4d0bbd083768b2b3dc3409c4a7e7e4a478690d9c24c394156aff883e3d5c826",
       "bytes": 10853
@@ -4924,16 +5048,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "3743b49191ac3021ac98ec7738fc2bda791693e1561ced058466dcf5782cb62c",
-      "bytes": 193777
+      "sha256": "cee735c6e5dde3fc775ffdf3d1636e6cd2928ac4842ef7e42ce4bf0e1a198894",
+      "bytes": 194933
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "b7bf77b764a7f4f5fe7048ea225e431e708916f134d13b79c1982da02e7ce275",
-      "bytes": 131329
+      "sha256": "f9e230f1317a0f616ecbdd69fc4ddbc81425034d0a17aee24b1bf246c68ab159",
+      "bytes": 132321
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "ad129dfcee7fa7c02d295d870bf97ac59e62009aa6ad5c926af3cf7c962769a4",
-      "bytes": 156489
+      "sha256": "c3a13a0bd752287daad7541ef54501445b4c2b85e0371892be3e50db88aa401f",
+      "bytes": 158043
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -7438,6 +7562,66 @@
     "evidence/integration/pinned-scene-runtime-initial-20261018.log": {
       "sha256": "29508db997158bdfaa53861463a9550ea64550076f7e3b81c0c2d8de60355a7d",
       "bytes": 423
+    },
+    "evidence/integration/quality-mask-agent-20261018-focused-final.log": {
+      "sha256": "c9333fd80cf622e1f01b223cc6d775a99b80ef4f2e8e39a05e53e0e606691726",
+      "bytes": 1970
+    },
+    "evidence/integration/quality-mask-agent-20261018-focused.log": {
+      "sha256": "fe01c9fc84e8a6d490c6f808cfa815d49519d535e6e5198a42d46e795d108e5d",
+      "bytes": 1970
+    },
+    "evidence/integration/quality-mask-closeout-20261018.json": {
+      "sha256": "2eef1260f832aa524521b1386c48ae8d527150bdc556cd929ecddafbc4490ef7",
+      "bytes": 4547
+    },
+    "evidence/integration/quality-mask-closeout-20261018.py": {
+      "sha256": "55d4036fc746aa8e720b3292f5b26e949ed374188f0a3df4c571cb3d4beb1a1f",
+      "bytes": 8119
+    },
+    "evidence/integration/quality-mask-independent-20261018.json": {
+      "sha256": "e15b4e78b323872be7da28b982aa2402a1c0477d9f63fedd68b8f79416ec9802",
+      "bytes": 3620
+    },
+    "evidence/integration/quality-mask-independent-20261018.log": {
+      "sha256": "f1af80899c66dca104587866bd62a2f4ca80dab1054de560d3593288c73512d2",
+      "bytes": 4955
+    },
+    "evidence/integration/quality-mask-independent-20261018.py": {
+      "sha256": "6b6eadd8d96188c95fb41e4d078dd636a07948d9a2bc93e65e094c2cd8955be0",
+      "bytes": 14292
+    },
+    "evidence/integration/quality-mask-integrity-20261018.py": {
+      "sha256": "ff157e9f52cddcc23ecc20659e1a2204acab75e473060e24f3e8b4ae784e6d1e",
+      "bytes": 2490
+    },
+    "evidence/integration/quality-mask-live-integrity-20261018.json": {
+      "sha256": "ca86f887813d43f0c98561c061a4be1891dad93e4f1ceef3847c9e14c0d639d2",
+      "bytes": 577
+    },
+    "evidence/integration/quality-mask-operating-inventory-20261018.json": {
+      "sha256": "d2f726dc08618d2e340072d991a0cad597bc05cc02a632d14a46eae26607c9ce",
+      "bytes": 352
+    },
+    "evidence/integration/quality-mask-preflight-20261018.json": {
+      "sha256": "15af0727207c0c1faf9e3f6392bc2e9d0f457764576a8f5f9559aaafefb61a09",
+      "bytes": 508983
+    },
+    "evidence/integration/quality-mask-root-related-20261018.log": {
+      "sha256": "1ec1ba562b67b9bb396f660b838e18a6f34648d5d53b3ca834cd748b5885215e",
+      "bytes": 9503
+    },
+    "evidence/integration/quality-mask-runtime-20261018.json": {
+      "sha256": "7a5fcf481332d49cb4811c92e699abbe85d646d5bdd572e16d3edd7280d64f5d",
+      "bytes": 4526
+    },
+    "evidence/integration/quality-mask-runtime-20261018.log": {
+      "sha256": "34385492de10935fb8ecef64d8119ad229888067d0403d129250015693c0eb43",
+      "bytes": 99
+    },
+    "evidence/integration/quality-mask-runtime-20261018.py": {
+      "sha256": "6f3f7d2048c1137ad821b9b617a500ca95adeb4a9b827d01c1573b53a6296540",
+      "bytes": 5467
     },
     "evidence/integration/raster-grid-agent-20261018-focused-final.log": {
       "sha256": "1734629aa29eecf46667eda0b19ac942a3e282c7e40ab63e027547016e21fae8",
@@ -10243,6 +10427,10 @@
       "sha256": "04f209ee6fb60b21ad5ab4410329d0277a9b7d5d34620a8cb4da919b31086379",
       "bytes": 12366
     },
+    "tests/test_registered_quality_mask_files.py": {
+      "sha256": "6a10deb09606af535512bd61aa5806f0cc3421fbd0b8a577342cc4877cd80b49",
+      "bytes": 10175
+    },
     "tests/test_registry_raster_grid_normalization.py": {
       "sha256": "ec89b2e7fefd750dbd24562d213fef698d035e0149bab2c19a67bbe17594635f",
       "bytes": 11382
@@ -10325,11 +10513,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T03:59:01.581293+09:00",
-    "understanding_markdown": 97,
+    "checked_at": "2026-10-18T04:08:25.690936+09:00",
+    "understanding_markdown": 98,
     "implementation_markdown": 1,
-    "local_links": 412,
-    "metadata_evidence_references": 10742,
+    "local_links": 417,
+    "metadata_evidence_references": 10896,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true

@@ -1,5 +1,27 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 품질 보고서·명시적 마스크의 등록 참조와 파일 바이트 연결 (131)
+
+구현 담당은 신규 `backend/app/ml/registered_quality_mask_files.py`, 집중시험, 문서131을 맡았다. 독립 담당은 고정 참조·JSON·SHA·크기·무쓰기 경계를 검증했다. Root는 실제 임시 파일 대조, 관련 회귀, 운영 조회, 보존, 공통 문서와 Git을 맡았고, 이해 담당은 완료된 구현과 시험을 읽어 설명·발표·FAQ·INDEX·변경 이력을 갱신했다. 시작 시 이전 작업자는 모두 완료 상태였으며 수집·학습 프로세스는 관측되지 않았다. 보고 예약 ACTIVE/10분과 API·Ollama 실행을 실제 수집·학습 실행과 구분한다.
+
+`read_registered_quality_mask_files(store, image_ref, quality_report_ref, mask_ref)`는 서로 다른3개 고정 id/version/SHA 참조를 선검사한다. 실제 Registry 기록의 canonical manifest·identity·digest·타입(raster/document/raster)·PUBLIC 선언을 모두 파일보다 먼저 검사한다. 보고서 lineage의 quality_input_image·quality_input_mask 역할은 각1개이고 정확한 pin과 일치해야 한다. image의 명시 quality_report_ref 경로는 보고서 artifact_uri와 정규화 후 같아야 하며, 누락된 RAW/legacy 경로를 추정하거나 역채우지 않는다.
+
+보고서는 정확히5키(schema_version1, scope LCLUC_QUALITY_MASK_EVIDENCE, image_ref, mask_ref, quality_status)의 새 내부 선언 형식이다. 기존 GMAIS는 이 본문을 규정하지 않고, 기존 Registry/115도 파일의 존재·SHA만 확인한다. 이번 형식과 lineage 역할을 기관 표준·기존 producer 연결 완료로 표현하지 않는다. 보고서의 영상·마스크 pin 및 quality_status가 영상의 선언과 일치해야 한다. 실제 지표·품질 정책·전문가 판단의 검증은 아니다.
+
+파일 한도는 영상64MiB, 보고서2MiB, 마스크16MiB다. 기존123의 로컬 경로·링크·파일 식별자·변경 검사와 SHA snapshot, strict JSON·bounded tree를 재사용한다. 마스크는 불투명한 바이트로만 확인하며 모델이나 래스터를 해석하지 않는다. 별도 Registry 키라도 영상과 마스크가 동일 URI/SHA를 가리킬 수 있어 실제 mask 의미·독립성·헤더·격자·픽셀값은 미확인이다. 순차 Registry/파일 관측은 원자 snapshot이 아니고 기존 Store 원문 JSON predecode/RSS·TOCTOU·mapped drive 한계도 유지한다.
+
+exact18 출력에서 전체 artifact true는3개 파일이 모두 일치할 때만 가능하다. registry_references_verified와 report_bindings_verified의 부분 true, file MATCH는 완료한 단계의 이력이며 전체 성공·품질 승인이 아니다. NOT_CHECKED는 성공 SHA MATCH가 미확보라는 뜻으로 실제 읽기0을 의미하지 않는다. RAW~REJECTED 상태의 진단도 허용하지만 quality_report·quality_mask·raster_header·state_dict·기관 권위·ACL·과학 정확도·실행·Workflow9개 flag는 항상 false다. PUBLIC 선언 검사는 실제 사용자 권한 검증이 아니다.
+
+집중 최종10 PASS/5.212초, 관련48 PASS/11.419초(신규10+DatasetVersion11+125의13+123의14), 독립8 PASS/0 SKIP/3.722738초다. 중복 묶음을 합산하지 않는다. 검토 전 집중10 PASS/4.242초 원로그도 보존했다. 독립 검토에서 재사용 parser의 오류 field가 normalization_evidence 또는 checkpoint_manifest로 남는 신규 helper 결함을 발견했다.131 안에서 code를 유지하고 quality_report로 재포장했으며 malformed JSON·depth18 회귀와 독립 재검증으로 지적1건을 종결했다. 기존123/124는 변경하지 않았다.
+
+독립 실제 TempStore3개 등록·3get·DB/파일 불변 시험은 참조/lineage/경로/타입/접근 선언, exact5 legacy·명령 extra키·bool schema·잘못된 pin·quality 불일치, 파일 변조·64/2/16MiB 한도·입력 snapshot·부분 flag를 확인했다. 동일 불투명 파일을 다른 영상/마스크 ID로 지정해도 바이트 관측만 성공하고9개 미검증 flag가 유지되는 한계도 확인했다. Root는 각각 새 Temp의 실제 영상/마스크 GeoTIFF와3개 등록 버전으로 정상·불투명 mask·보고서/영상/mask 변조·legacy 본문·경로 누락7시나리오를 확인했다. 읽기 함수의 Torch/Rasterio import 시도는0이며 훈련·추론·모델 읽기는 수행하지 않았다.
+
+보호141개, 기존 소스295개, 이전 증거1138개, catalog14행 canonical SHA와 예약136314880바이트를 보존했다.04:02 KST URI mode=ro 운영 조회는 legacy datasets6/models1, dataset_versions0이다. 원본·원장·lock·기존 분할·운영 모델은 그대로이며 운영 checkpoint/래스터 load·수집·등록·훈련·추론·배포·Workflow dispatch는0이다. API/UI 미연결 독립 reader라 이번 frontend/build/browser·전체 backend는 재실행하지 않았다.120/121의 전체1184(1183 PASS·기존1 SKIP)/frontend261/build는 이전 이력이다.
+
+관련 계약·사용법·시험·인계와 이해자료를 함께 갱신했다. 다음132는 실제 마스크 헤더와 영상 격자의 정합 진단이다. 마스크 값의 명시 의미·품질 정책·130 batch 연결·115 per_scene 실행·독립 라벨/모델 승인·다른5개 실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/기관 UAT는 별도 미완료다. 단일 내부 reader를 전체 완료로 보거나10분 보고 예약을 중단하지 않는다.
+
+근거: `docs/implementation/131_registered_quality_mask_files.md`, `evidence/integration/quality-mask-agent-20261018-focused-final.log`, `quality-mask-agent-20261018-focused.log`, `quality-mask-root-related-20261018.log`, `quality-mask-independent-20261018.json`, `quality-mask-runtime-20261018.json`, `quality-mask-live-integrity-20261018.json`, `quality-mask-operating-inventory-20261018.json`, 최종 `quality-mask-closeout-20261018.json`.
+
 ## 2026-10-18 — 등록 공간 범위와 표본 래스터 영역의 포함관계 진단 (130)
 
 구현 담당은 신규 `backend/app/ml/registry_spatial_normalization.py`, 집중시험, 문서130을 맡았다. 독립 담당은 실제 GeoTIFF의 좌표축·허용오차·읽기 횟수와 실패 이력을 검증했다. Root는 실제 파일 대조, 관련 회귀, 운영 조회, 보존, 공통 문서와 Git을 맡았고, 이해 담당은 완료된 코드와 시험을 읽어 설명·발표·FAQ·INDEX·변경 이력을 갱신했다. 시작 시 기존 작업자는 모두 완료 상태였으며 수집·학습 프로세스는 관측되지 않았다. 보고 예약 ACTIVE/10분과 API·Ollama 서비스 실행을 실제 수집·학습 실행과 구분한다.

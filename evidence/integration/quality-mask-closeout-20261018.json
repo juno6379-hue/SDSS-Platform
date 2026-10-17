@@ -1,0 +1,112 @@
+{
+  "recorded_at": "2026-10-18T04:08:25.690936+09:00",
+  "status": "131_REGISTERED_QUALITY_REPORT_AND_EXPLICIT_OPAQUE_MASK_BYTES_BOUND",
+  "focused": {
+    "passed": 10,
+    "seconds": 5.212
+  },
+  "initial_focused_before_review_field_correction": {
+    "passed": 10,
+    "seconds": 4.242,
+    "raw_log_preserved": true
+  },
+  "related": {
+    "passed": 48,
+    "seconds": 11.419,
+    "composition": "10 new quality reader +11 DatasetVersion +13 registered scene +14 normalization files"
+  },
+  "independent": {
+    "passed": 8,
+    "skipped": 0,
+    "seconds": 3.722738099997514
+  },
+  "root_actual_temp_file_scenarios": 7,
+  "overlapping_test_bundles_are_not_additive": true,
+  "source_sha256": "d20caf38bb67db6374864546e541bd9d2893d1e549c85f4e98c7ddb68145047b",
+  "test_sha256": "6a10deb09606af535512bd61aa5806f0cc3421fbd0b8a577342cc4877cd80b49",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T04:08:25.690936+09:00",
+    "understanding_markdown": 98,
+    "implementation_markdown": 1,
+    "local_links": 417,
+    "metadata_evidence_references": 10896,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T04:08:25.219301+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 295,
+    "existing_source_changes": [],
+    "previous_evidence_checked": 1138,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T04:02:24.532159+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "new_internal_exact_five_key_quality_evidence_envelope_not_upstream_or_official_standard": true,
+  "review_parser_error_role_issue_fixed_and_independently_verified": true,
+  "old123_and124_parser_sources_unchanged": true,
+  "separate_registry_keys_can_alias_same_physical_image_or_mask_bytes": true,
+  "file_not_checked_means_no_recorded_sha_match_not_zero_io": true,
+  "report_binding_or_registry_partial_flags_are_not_all_file_success_or_qa_approval": true,
+  "quality_report_verified": false,
+  "quality_mask_verified": false,
+  "raster_header_verified": false,
+  "state_dict_verified": false,
+  "source_authority_verified": false,
+  "access_authorization_verified": false,
+  "scientific_accuracy_validated": false,
+  "execution_authorized": false,
+  "workflow_supported": false,
+  "image_byte_limit": 67108864,
+  "report_byte_limit": 2097152,
+  "mask_byte_limit": 16777216,
+  "mask_semantics_header_grid_pixels_or_metric_policy_verified": false,
+  "model_or_raster_parsing_performed_by_new_reader": false,
+  "parent130_batch_runtime_api_ui_connected": false,
+  "store_database_json_predecode_not_bounded_by_postdecode_tree_limit": true,
+  "sequential_registry_and_file_snapshots_are_not_atomic": true,
+  "frontend_build_browser_rerun_this_unit": false,
+  "backend_full_rerun_this_unit": false,
+  "reason_no_full_rerun": "All295 previous source files are byte-identical. New unconnected per-scene Registry and bounded byte reader tested with actual Temp rasters/opaque mask and independent fixed references/JSON/limits plus DatasetVersion/125/123 related regressions. No external API/UI contract change.",
+  "previous_backend_regression": {
+    "unit": "120/121",
+    "tests_run": 1184,
+    "passed": 1183,
+    "skipped": 1,
+    "seconds": 399.529
+  },
+  "previous_frontend_regression": {
+    "unit": "120/121",
+    "passed": 261,
+    "build_modules": 108,
+    "build_seconds": 21.85
+  },
+  "understanding_updated": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "operating_model_or_raster_load": 0,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_internal_candidate": "132_ACTUAL_MASK_HEADER_AND_IMAGE_GRID_ALIGNMENT_READ_ONLY",
+  "snapshot_files": 1684
+}
