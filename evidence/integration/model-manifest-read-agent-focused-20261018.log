@@ -1,0 +1,76 @@
+test_actual_checkpoint_manifest_exact15_no_state_or_execution_approval (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_actual_checkpoint_manifest_exact15_no_state_or_execution_approval) ... FAIL
+test_actual_loaded_manifest_invalid_nonjson_architecture_and_state_not_validated (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_actual_loaded_manifest_invalid_nonjson_architecture_and_state_not_validated) ... FAIL
+test_ambient_safe_globals_no_fallback_and_custom_pickle_rejected (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_ambient_safe_globals_no_fallback_and_custom_pickle_rejected) ... ok
+test_archive_and_file_caps_before_load (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_archive_and_file_caps_before_load) ... ok
+test_declaration_absent_conflict_and_original_version_strictness (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_declaration_absent_conflict_and_original_version_strictness) ... ok
+test_each_file_tamper_and_partial_byte_flags (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_each_file_tamper_and_partial_byte_flags) ... ok
+test_global_manifest_can_be_read_without_claiming_workflow_support (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_global_manifest_can_be_read_without_claiming_workflow_support) ... FAIL
+test_invalid_ref_before_store_and_missing_or_body_id_mismatch (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_invalid_ref_before_store_and_missing_or_body_id_mismatch) ... ok
+test_legacy_compressed_duplicate_encrypted_traversal_and_directory_archives_rejected_before_torch (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_legacy_compressed_duplicate_encrypted_traversal_and_directory_archives_rejected_before_torch) ... ok
+test_manifest_bounds_cycles_subclasses_keys_and_detached_budget (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_manifest_bounds_cycles_subclasses_keys_and_detached_budget) ... ok
+test_namespace_and_link_and_missing_private_error (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_namespace_and_link_and_missing_private_error) ... FAIL
+test_rebound_report_wrong_completed_identity_or_sha_and_duplicate_json (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_rebound_report_wrong_completed_identity_or_sha_and_duplicate_json) ... ok
+test_same_hashed_copied_bytesio_loaded_no_state_dict_or_model_forward (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_same_hashed_copied_bytesio_loaded_no_state_dict_or_model_forward) ... FAIL
+
+======================================================================
+FAIL: test_actual_checkpoint_manifest_exact15_no_state_or_execution_approval (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_actual_checkpoint_manifest_exact15_no_state_or_execution_approval)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_model_checkpoint_manifest.py", line 64, in test_actual_checkpoint_manifest_exact15_no_state_or_execution_approval
+    self.assertEqual(result['status'],'MANIFEST_BOUND_UNVERIFIED');self.assertIsNone(result['issue'])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'BLOCKED' != 'MANIFEST_BOUND_UNVERIFIED'
+- BLOCKED
++ MANIFEST_BOUND_UNVERIFIED
+
+
+======================================================================
+FAIL: test_actual_loaded_manifest_invalid_nonjson_architecture_and_state_not_validated (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_actual_loaded_manifest_invalid_nonjson_architecture_and_state_not_validated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_model_checkpoint_manifest.py", line 158, in test_actual_loaded_manifest_invalid_nonjson_architecture_and_state_not_validated
+    self.saved['manifest']=value;self.bind_saved();self.assertEqual(self.read()['issue']['code'],'MANIFEST_INVALID')
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'CHECKPOINT_LOAD_UNAVAILABLE' != 'MANIFEST_INVALID'
+- CHECKPOINT_LOAD_UNAVAILABLE
++ MANIFEST_INVALID
+
+
+======================================================================
+FAIL: test_global_manifest_can_be_read_without_claiming_workflow_support (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_global_manifest_can_be_read_without_claiming_workflow_support)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_model_checkpoint_manifest.py", line 77, in test_global_manifest_can_be_read_without_claiming_workflow_support
+    result=self.read();self.assertEqual(result['status'],'MANIFEST_BOUND_UNVERIFIED');self.assertFalse(result['workflow_supported'])
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'BLOCKED' != 'MANIFEST_BOUND_UNVERIFIED'
+- BLOCKED
++ MANIFEST_BOUND_UNVERIFIED
+
+
+======================================================================
+FAIL: test_namespace_and_link_and_missing_private_error (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_namespace_and_link_and_missing_private_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_model_checkpoint_manifest.py", line 177, in test_namespace_and_link_and_missing_private_error
+    self.assertEqual(self.read()['status'],'MANIFEST_BOUND_UNVERIFIED')
+AssertionError: 'BLOCKED' != 'MANIFEST_BOUND_UNVERIFIED'
+- BLOCKED
++ MANIFEST_BOUND_UNVERIFIED
+
+
+======================================================================
+FAIL: test_same_hashed_copied_bytesio_loaded_no_state_dict_or_model_forward (test_model_checkpoint_manifest.ModelCheckpointManifestTests.test_same_hashed_copied_bytesio_loaded_no_state_dict_or_model_forward)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_model_checkpoint_manifest.py", line 123, in test_same_hashed_copied_bytesio_loaded_no_state_dict_or_model_forward
+    self.assertEqual(self.read()['status'],'MANIFEST_BOUND_UNVERIFIED')
+AssertionError: 'BLOCKED' != 'MANIFEST_BOUND_UNVERIFIED'
+- BLOCKED
++ MANIFEST_BOUND_UNVERIFIED
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 4.323s
+
+FAILED (failures=5)

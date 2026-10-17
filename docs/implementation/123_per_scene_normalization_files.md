@@ -1,5 +1,7 @@
 # 123 — per_scene 정규화 근거의 bounded 읽기 전용 파일 검증
 
+후속124는 [모델 등록 참조와 실제 checkpoint manifest 읽기](124_model_checkpoint_manifest.md)를 별도 추가했다.123의 caller manifest 입력은 바꾸지 않았고 두 helper의 자동 결합·Dataset Registry/전연차/실행 연계는 여전히 후속이다. Temp 수동 대조 성공을 기존 Workflow 연결로 해석하지 않는다.
+
 ## 쉬운 설명
 
 122는 선언 형식과 값만 비교했다. 신규 `backend/app/ml/per_scene_normalization_files.py`의 `verify_per_scene_normalization_files(data_root, checkpoint_manifest, source_scene, normalization, image_path)`는 명시 root 아래 영상 역할·보정 JSON·원 metadata 세 파일을 실제로 읽어 각 역할의 고정 SHA와 비교한다. 보정 JSON의 복사 바이트를 strict 파싱하고122 선언 관측도 재사용한다.

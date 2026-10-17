@@ -1,0 +1,19 @@
+{
+  "scope": "TESTED_SYNTHETIC_UNTRAINED_CPU_TINYUNET_CHECKPOINT_AND_TEMP_RASTER_NO_INFERENCE",
+  "torch_version": "2.14.0+cpu",
+  "checks_passed": [
+    "actual_untrained_six_band_checkpoint_manifest_returned_instead_of_report_decoy_signature",
+    "actual_checkpoint_manifest_manually_composes_with123_temp_scene_files_without_execution_permission",
+    "returned_manifest_is_detached_and_repeat_read_still_matches_unchanged_checkpoint",
+    "checkpoint_byte_tamper_rejected_without_repin_or_model_state_change",
+    "training_report_byte_tamper_rejected_without_repin_or_model_state_change",
+    "padded_explicit_version_preserved_and_unpadded_alias_rejected"
+  ],
+  "checkpoint_manifest_source": "Actual SHA-verified copied checkpoint bytes, not report input_signature",
+  "manual_composition_is_not_workflow_or_api_binding": true,
+  "fixture_files_and_caller_metadata_unchanged_after_restoration": true,
+  "operating_checkpoint_loaded": false,
+  "inference_training_executed": false,
+  "operating_store_contact": false,
+  "scientific_accuracy_validated": false
+}

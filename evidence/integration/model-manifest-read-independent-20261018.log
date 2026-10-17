@@ -1,0 +1,88 @@
+test_actual_cpu_weights_only_snapshot_no_inference_or_state_validation (__main__.Independent.test_actual_cpu_weights_only_snapshot_no_inference_or_state_validation) ... ok
+test_checkpoint_and_report_hash_tampering_before_load (__main__.Independent.test_checkpoint_and_report_hash_tampering_before_load) ... ok
+test_declaration_and_fixed_path_not_inferred (__main__.Independent.test_declaration_and_fixed_path_not_inferred) ... ok
+test_manifest_json_limits_and_not_state_dict_compatibility (__main__.Independent.test_manifest_json_limits_and_not_state_dict_compatibility) ... ok
+test_model_pin_identity_namespace_and_missing (__main__.Independent.test_model_pin_identity_namespace_and_missing) ... ok
+test_report_body_semantics_and_strict_json (__main__.Independent.test_report_body_semantics_and_strict_json) ... ok
+test_unsupported_pickle_no_fallback_or_allowlist_mutation (__main__.Independent.test_unsupported_pickle_no_fallback_or_allowlist_mutation) ... ok
+test_zip_legacy_compressed_duplicate_traversal_and_count_reject_before_load (__main__.Independent.test_zip_legacy_compressed_duplicate_traversal_and_count_reject_before_load) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.921s
+
+OK
+{
+  "scope": "SYNTHETIC_TEMP_CPU_CHECKPOINT_READ_ONLY",
+  "tests": 8,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 1.9214183000003686,
+  "passed": true,
+  "frozen_source_matches": true,
+  "source_sha256": "c62cb01364cc60ab481c16a8b31dfa4d57085f435b1442cb6001ec37325f591d",
+  "baseline_commit": "816515ead72faa53eda2e96a9826748aed0896f7",
+  "old_source_byte_checks": [
+    {
+      "path": "backend/app/ml/per_scene_normalization_files.py",
+      "baseline_sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+      "current_sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/per_scene_normalization_contract.py",
+      "baseline_sha256": "b2f1f79c5b9773d9588d4e9b560f9df12ed94d2c1e5301b638cc9c432090f8ea",
+      "current_sha256": "b2f1f79c5b9773d9588d4e9b560f9df12ed94d2c1e5301b638cc9c432090f8ea",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/lcluc_workflow.py",
+      "baseline_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "current_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/service.py",
+      "baseline_sha256": "f2a44674f22632315cf21959e5c6adf1bb9bf88097fb44d2998aa525cb2e661b",
+      "current_sha256": "f2a44674f22632315cf21959e5c6adf1bb9bf88097fb44d2998aa525cb2e661b",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/normalization.py",
+      "baseline_sha256": "390f5b673fd694b3f7c1002a091f8c0a443bc400a728784426cca4064bf4bd83",
+      "current_sha256": "390f5b673fd694b3f7c1002a091f8c0a443bc400a728784426cca4064bf4bd83",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "baseline_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "current_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/LclucWorkflowPanel.tsx",
+      "baseline_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "current_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/lclucWorkflowAdapter.ts",
+      "baseline_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "current_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "unchanged": true
+    }
+  ],
+  "tracked_source_differences": [],
+  "installed_torch": "2.14.0+cpu",
+  "inherited_safe_globals_count": 73,
+  "operating_Store_API_checkpoint_reads_or_writes": 0,
+  "training_inference_state_load_calls": 0,
+  "UI_API_changes": 0,
+  "frontend_build_browser_runs": 0,
+  "limitations": [
+    "weights_only inherits installed/caller safe_globals; no clear/add/replace or isolation guarantee.",
+    "ZIP and snapshot bounds do not guarantee CPU/RSS/time limits or block every tensor metadata denial of service.",
+    "Checkpoint/report hashes bind snapshots; state_dict compatibility, approval, authority, raster/mask, science and workflow execution remain unverified.",
+    "Internal unwired reader: no frontend/build/browser or full backend rerun;1184 is previous evidence. Do not sum overlapping suites."
+  ]
+}

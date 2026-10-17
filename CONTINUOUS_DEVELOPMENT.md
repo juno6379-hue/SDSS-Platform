@@ -1,5 +1,27 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 모델 등록 참조와 실제 checkpoint manifest 읽기 결합 (124)
+
+계약 담당은 신규 `backend/app/ml/model_checkpoint_manifest.py`·집중시험·문서124, 독립 검토 담당은 실제 Temp checkpoint/ZIP/JSON/ambient 환경·UI/API 영향, Root는 관련 회귀·실제 CPU checkpoint/장면 파일 수동 대조·보존·공통 문서/Git, 이해 담당은 완료 코드 기반 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 이전 작업자는 유휴였고 실제 수집·학습 프로세스는 관측되지 않았다. 보고예약 ACTIVE/10분은 실제 실행과 구분한다.
+
+`read_pinned_model_checkpoint_manifest(store, model_ref, training_report_sha256)`는 Store.get models로 고정id/version/checkpointSHA·명시 버전 선언/부모SHA를 확인하고 고정 namespace의 best.pt와 report.json 복사 바이트를 검사한다. 실제 checkpoint의 동일 복사 BytesIO에서 CPU·weights_only=True로 manifest를 읽으며 보고서 input_signature/copied manifest로 대체하지 않는다. model version은 dataset manifest.version과 별개이고 원형을 보존한다. 운영 구형 모델의 미확보된 명시 버전/보고서SHA를 추정·역채우지 않는다.
+
+checkpoint8MiB/report2MiB, ZIP512항목·총uncompressed32MiB·개별8MiB/data.pkl2MiB·ZIP_STORED만 허용하고 legacy/암호화/압축/중복/탈출 이름을 거부한다. actual manifest는 builtin JSON tree로 깊이16·node65536·dict128키·문자열4096·출력2MiB 한도에서 분리 복사한다. 성공 MANIFEST_BOUND_UNVERIFIED도 state_dict_verified·source_authority_verified·scientific_accuracy_validated·execution_authorized·workflow_supported는 false다. checkpoint/report artifact 플래그 true는 읽은 역할의 SHA 일치 이력이며 후속 BLOCKED에서도 전체 성공·실행 승인이 아니다. 빈 manifest/누락·잘못된 state도 읽기 범위일 수 있으므로 실제 가중치 호환이나 학습 완료를 보증하지 않는다.
+
+제한된 로드는 설치 Torch와 호출 환경의 ambient allowlist를 상속한다. 본 helper는 목록을 추가/clear/replace하거나 weights_only=False/custom pickle fallback을 하지 않는다. CPU/RSS/시간 hardcap, 악성 tensor metadata DoS 차단, 전역 allowlist 동시 변경 격리는 보장하지 않는다. 내부 trusted-local 읽기이며 향후 외부 공개에는 별도 격리 설계가 필요하다. ZIP 한도를 완전한 자원 격리로 표현하지 않는다.
+
+최초 집중13건 중5실패는 신규 empty-allowlist 조건이 설치 Torch 자체 기본 등록도 차단한 제품 조건 오류였다. 전역 설정을 바꾸지 않고 신규 조건을 정정했으며 최초 로그를 보존했다. 최종 집중14 PASS/5.810초, Root 관련40 PASS/7.241초(신규14+provenance12+123파일14), 독립8 PASS/0 SKIP/1.921418초다. 설치 Torch2.14.0+cpu에서 독립시험의 ambient73개 전후 불변·unsupported globals1회 실패/no fallback을 확인했다. 중복 묶음을 합산하지 않는다.
+
+Root Temp6시나리오는 훈련하지 않은 실제 CPU TinyUNet6 checkpoint와 합성 완료상태 보고서를 만들었다. 보고서의 decoy RGB/global 서명과 달리 checkpoint의 실제6밴드/per_scene manifest를 읽고123 Temp GeoTIFF/보정/원 metadata reader에 수동 전달해 성공을 확인했다. 반환 분리 복사·checkpoint/report 바이트 변조·버전 padding 차이를 검사했고 forward/추론·훈련·운영 checkpoint load·Store 쓰기는 수행하지 않았다. 이 수동 대조는 Workflow/API 자동 연결·Dataset Registry·운영 승인 근거가 아니다.
+
+보호141개·기존소스281개 전체·이전증거1035개·catalog14행 canonical SHA·예약136314880B를 보존했다. 원본·원장·lock·분할·운영 모델과 기존 Workflow/API/UI/서비스·122/123은 그대로다. 미연결 내부 읽기 단위라 이번 frontend/build/browser·전체 backend는 재실행하지 않았다. 전체 backend1184(1183 PASS·기존1 SKIP)/frontend261/build는120/121의 이전 이력이며 이번 결과로 재표시하지 않는다.
+
+이번124는 전체 후보 중 **모델 등록 참조→실제 manifest** 부분만 완료했다. 다음125는 Dataset Registry 고정 참조와 장면별 보정/원 metadata를 결합하고 전 연차 사전검증으로 연결하는 계약이다.123 자동 연결·품질/구름 mask·기존115 per_scene 실행은 여전히 미연결이다. 실제 수집·학습·등록·배포·Workflow dispatch0이며 독립 라벨·모델 승인·다른5실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/UAT의 전체 미완료 범위를 유지한다.
+
+동시 상태 갱신 검토: 별도로02:48 KST에 수정된 docs/16_충분학습자료_단계별수집계획.md·docs/20_대량수집_학습_통합실행.md의 변경은 재확인 시각·정체 시간뿐이었다. 원장/manifest SHA·누계 불변 근거와 대조해 함께 게시하며124 구현 담당이 작성한 변경이나 실제 수집 진전으로 표현하지 않는다.
+
+근거: `docs/implementation/124_model_checkpoint_manifest.md`, `evidence/integration/model-manifest-read-agent-focused-final-20261018.log`, `model-manifest-read-root-related-20261018.log`, `model-manifest-read-independent-20261018.json`, `model-manifest-read-runtime-20261018.json`, `model-manifest-read-live-integrity-20261018.json`, 최종 `model-manifest-read-closeout-20261018.json`. 관련 계약·사용법·검증 근거·인계와 이해자료를 함께 갱신했다.
+
 ## 2026-10-18 — 제품별 정규화의 세 역할 파일 SHA 읽기 검증 (123)
 
 계약 담당은 신규 `backend/app/ml/per_scene_normalization_files.py`·집중시험·문서123, 독립 검토 담당은 실제 junction/경로·stream/JSON·상태와 UI/API 영향 검토, Root는 실제 GeoTIFF 대조·122 관련 시험·보존·공통 문서/Git, 이해 담당은 완료 코드에 근거한 쉬운 설명·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 기존 에이전트는 유휴였고 수집·학습 프로세스는 관측되지 않았다. 보고예약 ACTIVE/10분과 실제 작업 상태를 구분한다.
