@@ -55,3 +55,7 @@ Root 최종 관련 **42 PASS / 29.023초 / exit 0**는 `evidence/integration/mas
 `evidence/integration/mask-grid-runtime-20261018.py`와 같은 stem `.json`·`.log`는 실제 Temp 영상·마스크 GeoTIFF와 세 등록 참조의 **7개 시나리오 통과**를 기록한다. 정상은 get 3회와 두 헤더·격자가 일치하고, mask shift/다른 CRS/width, 두 밴드·uint16·opaque mask는 차단했다. 후행 header/grid 실패에도 원131 파일 관측은 성공한 이력으로 남는다. 실제 Temp fixture를 사용한 metadata 대조이며 운영 자료·픽셀 의미·모델 실행 또는 QA 검증은 아니다.
 
 `evidence/integration/mask-grid-live-integrity-20261018.json`은 보호 141개·기존 source 297개·이전 증거 1153개·catalog 14행과 canonical SHA·예약 136314880바이트 불변을 기록한다. 운영 dataset_versions는 0이며 원본·원장·모델·예약·분할을 보존했다. source/tests 최종 동결 SHA를 유지했고 기존 제품 파일은 수정하지 않았다. 새 내부 reader의 집중·관련·독립·실파일 대조 범위로 마감하며 전체 backend/frontend/build/browser를 이번에 재실행한 것으로 표현하지 않는다. 최종 근거를 반영한 뒤 문서를 동결했다.
+
+## 후속133
+
+명시 source.mask_semantics 계약과 실제0/1 값의 개수 진단은 `133_registered_binary_mask_values.md`와 신규 `registered_binary_mask_values.py`에서 수행한다. 132의 헤더·격자 관측을 그대로 보존하며 실제 마스크 의미·최소 유효율·QA 승인은 별도 미완료로 유지한다.

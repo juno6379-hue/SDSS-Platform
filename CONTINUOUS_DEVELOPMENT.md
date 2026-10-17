@@ -1,5 +1,23 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 명시 이진 유효 마스크의 실제 값과 개수 진단 (133)
+
+구현 담당은 신규 `backend/app/ml/registered_binary_mask_values.py`, 집중시험과 문서133을 맡았다. 독립 담당은 별도 임시 실제 GeoTIFF의 선언·값·내장 유효성·변조·읽기 횟수·무쓰기를 검증한다. Root는 관련 회귀·실파일 시나리오·운영 조회·보존·공통 문서·Git을 담당하고 이해 담당은 완료된 소스와 증거를 읽어 설명·발표·FAQ·INDEX·변경 이력을 갱신한다. 시작 시 이전 작업자는 모두 완료 상태였다. API·Ollama 실행 및 보고 예약 ACTIVE/10분과 실제 수집·학습 실행을 구분한다.
+
+`inspect_registered_binary_mask_values(store, image_ref, quality_report_ref, mask_ref)`는 132의 등록 참조·보고서·파일 SHA·실제 헤더·영상/마스크 격자 정합을 먼저 통과해야 한다. 같은 실제 get의 canonical mask manifest를 고정 사본으로 캡처해 추가 get 없이 소비한다. 그 source.mask_semantics는 정확히 schema_version=1, kind=binary_validity, valid_value=1, invalid_value=0 네 키여야 하며 정수에 bool을 허용하지 않는다. 명시 선언이 없거나 다른 코드를 사용하면 추정·역채움 없이 차단한다. 새 내부 선언 계약이며 공식 기관 표준이나 기존 수집 producer 연결 완료가 아니다.
+
+이후 마스크를16MiB 한도 내에서 다시 복사해 고정 SHA를 검산한다. 동일 copied bytes의 GTiff를 한 번 열고 132에서 관측한 헤더와 정확히 같은지 확인한다. 1밴드 uint8·가로세로 최대1024·nodata 없음·GDAL mask flags all_valid만 허용한 후 read(1, masked=False)를 정확히 한 번 수행한다. 0/1 이외 값은 차단하며 실제 valid_pixels/invalid_pixels/total_pixels만 반환한다. 원 영상 픽셀과 read_masks는 읽지 않고 배열도 출력하지 않는다. 정상 get3회, 영상 파일2회·마스크 파일3회 관측이며 순차 재관측은 원자 snapshot이 아니다.
+
+exact19 출력에서 mask_declaration_verified는 명시 선언 대조를 마친 이력이며 후속 실패에도 true일 수 있다. counts는 모든 단계가 성공했을 때만 제공하고 mask_values_verified·artifact_bytes_verified도 그때만 true다. nested132의 기존 false와 관측을 보존한다. mask_values_verified는 지정된 0/1 literal 값 규칙의 확인이며 실제 구름·유효영역 의미의 진실이 아니다. 품질 보고서·품질 마스크·마스크 의미·AOI·기관 권위·최소 유효율 정책·과학 정확도·실행·state_dict·Workflow10개 flag는 항상 false다. 전부0인 마스크도 진단은 성공할 수 있으며 최소 유효율 정책이나 품질 승인을 발명하지 않는다.
+
+집중9 PASS/7.291초, 관련40 PASS/16.334초(신규9+132의10+131의10+DatasetVersion11), exit0이다. 중복 시험 묶음을 합산하지 않는다. Root는 각기 새 실제 임시 GeoTIFF·세 등록 버전으로7시나리오를 확인했다. 혼합32768/32768, 전부0의0/65536, 전부1의65536/0 개수를 확인하고255·선언 누락·nodata·격자 이동은 차단했다. get3회·마스크 읽기1회 또는 차단 전0회·원 영상 픽셀0·DB/파일 불변을 확인했다. 독립8 PASS/0 SKIP/6.724950초, exit0이며 별도 실제 마스크의 선언·내장 유효성·변조·같은 get 사본과 픽셀 읽기 경계를 확인했다. 최종 test SHA는 시험 뒤 메타데이터로 추가했으며 로그에 명시했고 제품 변경이나 시험 재실행은 없었다. 모든 자료는 합성 fixture이며 실제 품질·독립 라벨 정확도·운영 모델 승인이 아니다.
+
+보호141개·기존 소스299개·이전 증거1169개·catalog14행 canonical SHA·예약136314880바이트를 보존했다.04:21 KST URI mode=ro 운영 조회의 dataset_versions는0이다. 원본·원장·lock·분할·운영 모델은 그대로이며 운영 수집·등록·학습·추론·배포·Workflow dispatch는0이다. GDAL parser의 CPU/RSS/시간 hardcap·전체 외부 I/O OS 격리, Store DB JSON predecode 상한·다중 파일 원자성은 확보하지 않았다. PUBLIC 선언은 실제 ACL 인증이 아니다.
+
+관련 계약·사용법·시험·인계와 이해자료를 같은 단위로 갱신한다. 130 연차 배치·115 실행·API/UI에 연결하지 않은 내부 진단이므로 이번 UI 수정·frontend/build/browser·전체 backend 재실행은 없다. 이전120/121의 전체 시험은 역사적 이력이며 관련 회귀와 별도 실제 임시 파일 시험으로 이번 범위를 확인한다. 다음134는 연차 공간 진단과 명시 마스크 진단의 고정 참조 연결 후보이며 실행 승인과 분리한다. 독립 라벨·품질/모델 승인·수집 재개·다른5개 실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/기관 UAT는 여전히 미완료다. 전체 개발 완료로 보거나10분 보고 예약을 중단하지 않는다.
+
+근거: `docs/implementation/133_registered_binary_mask_values.md`, `evidence/integration/binary-mask-agent-20261018-focused.log`, `binary-mask-root-related-20261018.log`, `binary-mask-independent-20261018.json`, `binary-mask-runtime-20261018.json`, `binary-mask-live-integrity-20261018.json`, `binary-mask-operating-inventory-20261018.json`, 최종 `binary-mask-closeout-20261018.json`.
+
 ## 2026-10-18 — 영상·품질 마스크의 실제 헤더와 격자 정합 진단 (132)
 
 구현 담당은 신규 `backend/app/ml/registered_quality_mask_grid.py`와 집중시험·계약 문서132를, 독립 담당은 별도 실제 임시 GeoTIFF 검증을 맡았다. Root는 관련 회귀·실파일 대조·운영 조회·보존·공통 문서·Git을 담당했다. 이해 담당은 완료된 코드와 시험에 맞춰 설명·발표 대본·FAQ·INDEX·변경 이력을 갱신한다. 시작 시 이전 작업자는 완료 상태였고 실제 수집·학습 프로세스는 관측되지 않았다. 예약 ACTIVE/10분은 실제 수집·학습 실행과 구분한다.

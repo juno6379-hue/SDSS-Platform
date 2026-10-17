@@ -1,0 +1,102 @@
+{
+  "scope": "TESTED_SYNTHETIC_ACTUAL_TEMP_EXPLICIT_BINARY_MASK_LITERAL_COUNTS",
+  "checks_passed": [
+    {
+      "case": "mixed",
+      "status": "REGISTERED_BINARY_MASK_VALUES_MATCHED_UNVERIFIED",
+      "issue": null,
+      "store_gets": 3,
+      "counts": {
+        "valid_pixels": 32768,
+        "invalid_pixels": 32768,
+        "total_pixels": 65536
+      },
+      "mask_pixel_read_calls": 1,
+      "image_pixel_reads": 0
+    },
+    {
+      "case": "all_zero",
+      "status": "REGISTERED_BINARY_MASK_VALUES_MATCHED_UNVERIFIED",
+      "issue": null,
+      "store_gets": 3,
+      "counts": {
+        "valid_pixels": 0,
+        "invalid_pixels": 65536,
+        "total_pixels": 65536
+      },
+      "mask_pixel_read_calls": 1,
+      "image_pixel_reads": 0
+    },
+    {
+      "case": "all_one",
+      "status": "REGISTERED_BINARY_MASK_VALUES_MATCHED_UNVERIFIED",
+      "issue": null,
+      "store_gets": 3,
+      "counts": {
+        "valid_pixels": 65536,
+        "invalid_pixels": 0,
+        "total_pixels": 65536
+      },
+      "mask_pixel_read_calls": 1,
+      "image_pixel_reads": 0
+    },
+    {
+      "case": "unexpected255",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "MASK_VALUES_NOT_BINARY",
+        "field": "mask"
+      },
+      "store_gets": 3,
+      "counts": null,
+      "mask_pixel_read_calls": 1,
+      "image_pixel_reads": 0
+    },
+    {
+      "case": "missing_declaration",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "MASK_DECLARATION_INVALID",
+        "field": "mask_semantics"
+      },
+      "store_gets": 3,
+      "counts": null,
+      "mask_pixel_read_calls": 0,
+      "image_pixel_reads": 0
+    },
+    {
+      "case": "nodata_mask",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "MASK_INTRINSIC_VALIDITY_UNSUPPORTED",
+        "field": "mask"
+      },
+      "store_gets": 3,
+      "counts": null,
+      "mask_pixel_read_calls": 0,
+      "image_pixel_reads": 0
+    },
+    {
+      "case": "shift",
+      "status": "BLOCKED",
+      "issue": {
+        "code": "IMAGE_MASK_GRID_MISMATCH",
+        "field": "grid"
+      },
+      "store_gets": 3,
+      "counts": null,
+      "mask_pixel_read_calls": 0,
+      "image_pixel_reads": 0
+    }
+  ],
+  "reader_requested_torch_import": false,
+  "all_fixture_files_and_database_bytes_unchanged_during_reader": true,
+  "literal_binary_value_counts_are_not_physical_semantic_truth_or_quality_approval": true,
+  "operating_model_loaded": false,
+  "temporary_model_loaded": false,
+  "operating_registry_contact": false,
+  "training_inference_executed": false,
+  "quality_report_verified": false,
+  "quality_mask_verified": false,
+  "scientific_accuracy_validated": false
+}

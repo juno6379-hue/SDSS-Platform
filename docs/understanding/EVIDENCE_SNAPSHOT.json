@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T04:18:51.510813+09:00",
-  "source_commit": "e994e834b7630f979d037bb52bf366f19a502a87",
-  "source_commit_reason": "Published131 baseline plus132 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T04:25:12.522277+09:00",
+  "source_commit": "45d4000077ff4746cb6d6e84e68e752be80bfbdc",
+  "source_commit_reason": "Published132 baseline plus133 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -3940,6 +3940,165 @@
       "collector_training_processes_observed": 0,
       "next_internal_candidate": "133_EXPLICIT_MASK_VALUE_SEMANTICS_AND_BOUNDED_DIAGNOSTIC_NOT_QA_APPROVAL",
       "snapshot_files": 1704
+    },
+    "latest_explicit_binary_mask_literal_value_counts": {
+      "recorded_at": "2026-10-18T04:25:12.522277+09:00",
+      "status": "133_EXPLICIT_BINARY_MASK_LITERAL_VALUE_COUNTS_UNVERIFIED",
+      "focused": {
+        "passed": 9,
+        "seconds": 7.291
+      },
+      "related": {
+        "passed": 40,
+        "seconds": 16.334,
+        "composition": "9 new values +10 mask grid +10 quality files +11 DatasetVersion"
+      },
+      "independent": {
+        "passed": 8,
+        "skipped": 0,
+        "seconds": 6.7249496000004
+      },
+      "root_actual_temp_file_scenarios": 7,
+      "overlapping_test_bundles_are_not_additive": true,
+      "source_sha256": "5b19a4590b2a395c63d25c6a3e0aadbe36e54c0521b7c551396ea0083dec80d2",
+      "test_sha256": "f254d55a16fdc593c123decc6251e38b73644cedf3ee529bf0ccdd5041e941ac",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T04:25:12.522277+09:00",
+        "understanding_markdown": 100,
+        "implementation_markdown": 1,
+        "local_links": 429,
+        "metadata_evidence_references": 11191,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T04:23:04.629815+09:00",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 299,
+        "existing_source_changes": [],
+        "previous_evidence_checked": 1169,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "reserved_bytes_preserved": 136314880,
+        "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "operating_inventory": {
+        "recorded_at": "2026-10-18T04:21:27.496048+09:00",
+        "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+        "counts_by_kind": {
+          "analyses": 3,
+          "datasets": 6,
+          "gmais_idempotency": 2,
+          "gmais_jobs": 2,
+          "models": 1
+        },
+        "dataset_versions_count": 0,
+        "operating_writes": 0,
+        "model_or_raster_files_loaded": false
+      },
+      "live_processes": {
+        "checked_at": "2026-10-18T04:24:13.4064574+09:00",
+        "processes": [
+          {
+            "ProcessId": 27268,
+            "Name": "ollama app.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\""
+          },
+          {
+            "ProcessId": 27860,
+            "Name": "ollama.exe",
+            "CommandLine": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve"
+          },
+          {
+            "ProcessId": 32224,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000"
+          },
+          {
+            "ProcessId": 26912,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001"
+          },
+          {
+            "ProcessId": 35032,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend"
+          },
+          {
+            "ProcessId": 32916,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\""
+          },
+          {
+            "ProcessId": 36180,
+            "Name": "python.exe",
+            "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" evidence/integration/binary-mask-independent-20261018.py"
+          }
+        ],
+        "collector_training_processes_observed": 0,
+        "observation_limit": "Process command patterns; no claim of universal scheduler state",
+        "automation_status": "ACTIVE",
+        "automation_interval_minutes": 10,
+        "automation_was_not_modified": true
+      },
+      "exact19_output_and_ten_unverified_flags_always_false": true,
+      "parent132_observation_preserved_and_semantics_false_scope_unchanged": true,
+      "store_get_calls_valid_path": 3,
+      "image_file_snapshots_valid_path": 2,
+      "mask_file_snapshots_valid_path": 3,
+      "requires_full_parent132_success_before_values": true,
+      "third_fixed_sha_snapshot_precedes_mask_values": true,
+      "explicit_source_mask_semantics_exact4_internal_contract_not_official_standard": true,
+      "mask_single_band_uint8_nodata_none_all_valid_flags_required": true,
+      "one_literal_mask_band_read_after_header_recheck": true,
+      "counts_only_when_all_steps_succeed": true,
+      "all_zero_not_automatically_rejected_by_quality_policy": true,
+      "image_pixel_or_read_masks_calls_by_reader": 0,
+      "model_or_torch_load_by_reader": 0,
+      "quality_report_verified": false,
+      "quality_mask_verified": false,
+      "mask_semantics_verified": false,
+      "registry_aoi_verified": false,
+      "source_authority_verified": false,
+      "minimum_validity_policy_verified": false,
+      "scientific_accuracy_validated": false,
+      "execution_authorized": false,
+      "state_dict_verified": false,
+      "workflow_supported": false,
+      "mask_byte_limit": 16777216,
+      "mask_pixel_limit": 1048576,
+      "parent130_batch_runtime_api_ui_connected": false,
+      "store_database_json_predecode_not_bounded_by_postdecode_tree_limit": true,
+      "gdal_parser_cpu_rss_time_and_all_external_io_not_os_isolated": true,
+      "sequential_registry_and_file_snapshots_are_not_atomic": true,
+      "frontend_build_browser_rerun_this_unit": false,
+      "backend_full_rerun_this_unit": false,
+      "reason_no_full_rerun": "Previous sources unchanged. New unconnected binary-mask diagnostic covered by focused, related and independent real Temp files; no external API/UI contract change.",
+      "previous_backend_regression": {
+        "unit": "120/121",
+        "tests_run": 1184,
+        "passed": 1183,
+        "skipped": 1,
+        "seconds": 399.529
+      },
+      "previous_frontend_regression": {
+        "unit": "120/121",
+        "passed": 261,
+        "build_modules": 108,
+        "build_seconds": 21.85
+      },
+      "understanding_updated": true,
+      "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+      "operating_model_or_raster_load": 0,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_internal_candidate": "134_JOIN_ANNUAL_SPATIAL_AND_EXPLICIT_MASK_DIAGNOSTICS_WITHOUT_EXECUTION_APPROVAL",
+      "snapshot_files": 1723
     }
   },
   "files": {
@@ -3956,8 +4115,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "85924d057742747ec7697b0df836dc89d2de6b500379bb2ee50cf7a97cebae2c",
-      "bytes": 396915
+      "sha256": "ed5ad25536557e5b7f4d7224e49163fcda7ae1ac5c952c396d7daa9fc5e6ea44",
+      "bytes": 402343
     },
     "README.md": {
       "sha256": "0d213fdb1da768b59dd402c3af248fa902c00a078c3072703337effadc542c56",
@@ -4207,6 +4366,10 @@
       "sha256": "42490200e4e46a583bef0853912bf6fb49ec6f57843ee83a0a71494e98fdc3d2",
       "bytes": 9373
     },
+    "backend/app/ml/registered_binary_mask_values.py": {
+      "sha256": "5b19a4590b2a395c63d25c6a3e0aadbe36e54c0521b7c551396ea0083dec80d2",
+      "bytes": 6850
+    },
     "backend/app/ml/registered_per_scene_files.py": {
       "sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
       "bytes": 6839
@@ -4392,8 +4555,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "fd7f0e3d357d534d1a3ebbec88e74c7de85ae03864b6de8616b3c1064eaaa7d1",
-      "bytes": 404056
+      "sha256": "7cc94ab315a3a71db8a494f490ee0f2373f0016395ab2a46bcde038568cf828e",
+      "bytes": 409484
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -4528,8 +4691,12 @@
       "bytes": 12450
     },
     "docs/implementation/132_registered_quality_mask_grid.md": {
-      "sha256": "070b8594ccf904dae7c0a72e6a59862d28b83c75b003bc087a7febb6c9c56b13",
-      "bytes": 11174
+      "sha256": "0873a61b2f06883673cee877867fcbc0028e44171f81c44928054b43c2e648de",
+      "bytes": 11511
+    },
+    "docs/implementation/133_registered_binary_mask_values.md": {
+      "sha256": "adc9dd17e7b4ccde1a910e6618540b372b11a62e24ca3e0ced9a2cf1456d1577",
+      "bytes": 10222
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -4844,48 +5011,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "701b5aa5a8a3df72bc6394f11b614c0c5b9245e4a515f15a49f7ec28a7e0a9f7",
-      "bytes": 153667
+      "sha256": "40a7b417ad60f8823a30cff5d6070427541f43a6f2a9b71c1ee33908ce9dd1f3",
+      "bytes": 154697
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "678cb8840ba9c0b43cff471e7f9a69e1e867e7ff51fbb92e4bbabc9814bc29cb",
-      "bytes": 123627
+      "sha256": "51bc3decf3e83cb018157564cc8cadf367bc3bfa0d6af5c39264edfd84931535",
+      "bytes": 124614
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "6375473cfa0cceddfff8931aab33037bb3aa3a1977de37d071dab2f09d2543de",
-      "bytes": 94053
+      "sha256": "78b1fec348f185403d901a9a82b9b31cc1c408eedd09b531e765a4a94924698a",
+      "bytes": 95022
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "230f992795507bb5e2faeb42b83e6f20dd490886126b4e482ea26f8c6e95b63a",
-      "bytes": 77002
+      "sha256": "1136f203ed44feefb63e6b0290652735239774ad8a253f89cda2c8547084bfac",
+      "bytes": 77967
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "9da51a0fa58ebc4379d8cbc608ce285ecbf3b2f8a9da83f67bf826f5d8bd7c1a",
-      "bytes": 41948
+      "sha256": "9bc001103372ad86206e18b6c5c3a6abe11283e05ee6c836ca3d4e9482f5e8be",
+      "bytes": 42913
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "dff93079e58b96bc5029304b5c3943d0542140939ca9bb0c6152332ff8e8bb6f",
-      "bytes": 80218
+      "sha256": "5f0a03752f0eeaf3bd42b6ba10185f49533f8c0f7f49ba2f8062078ccefd891f",
+      "bytes": 81179
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "ab70bb37fe274b54c73a1eab75991a023a70ad2706ed6067a4903e92e2f207f0",
-      "bytes": 223802
+      "sha256": "e1f0d1109a6fc0b5471724ff3fdf99ac430af65f4cfec9f53cfbb488220f754b",
+      "bytes": 225285
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "7e2a977ccac7ab735a0b42ce7f355e8796baf2e1a0aa4de0a7e06bf334b42e03",
-      "bytes": 184146
+      "sha256": "e56f4d0eafafe2ef14f64679740bb37eff4795dd07380884cf286fff7b938237",
+      "bytes": 185168
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "cc54953162f6a13fd9a7fbf504b7217308f01af9052aeb3342f6bbb899c16775",
-      "bytes": 117636
+      "sha256": "2540b610d6d23e09aa82827e18291b6ba3d8f56e4c481ced2c337553cf6f8523",
+      "bytes": 118783
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "09007924899189afffd1dc74ff84c48321c55cbc9370d93ab2a14d33d6ce1757",
-      "bytes": 194294
+      "sha256": "4c66588e0a47367901eb4f99386d4dd38da479bacc1be00e8d1c47210a306681",
+      "bytes": 195762
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -5119,6 +5286,10 @@
       "sha256": "9a9e58baf574af7ff64500ebefbee5fd6e296e661d00806ca46533c98a01c03d",
       "bytes": 5023
     },
+    "docs/understanding/gate-notes/GATE_REGISTERED_BINARY_MASK_VALUES_20261018.md": {
+      "sha256": "e61f031d6e3a084b347a754e2f828b3b10094a12cc140c1fd7f8a1f3fb8e5511",
+      "bytes": 9521
+    },
     "docs/understanding/gate-notes/GATE_REGISTERED_PER_SCENE_FILES_20261018.md": {
       "sha256": "6d98b1a041e829bcc816eeb6b86c9c74482112faab44a6e05b6a51f26ab71185",
       "bytes": 10971
@@ -5228,16 +5399,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "69a0126ebd762e528f6c9b46cf2b330022bcccc0a939f5cd284a16901ed26f38",
-      "bytes": 196075
+      "sha256": "e9f3d5b464b96dad62c064018f676a21bd468373c352880cde9fe27d2dd80474",
+      "bytes": 197468
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "4b033ff0dc438c5b4871c51d9a41c14500f16abd6cb59c3ed211ff507cb693fe",
-      "bytes": 133284
+      "sha256": "12fef0730be81c182287ca8d80f4aef0029d08671f184e3f065969df38132bea",
+      "bytes": 134277
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "71909dd6acf099bbef217b954c2a4328cdd0fafd358d57278424b6b10075cc79",
-      "bytes": 159372
+      "sha256": "987f5bdd757f28b82c5032c4f33696b8892e81220da384c61d13c4cf55704687",
+      "bytes": 160526
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -5478,6 +5649,66 @@
     "evidence/integration/bare-class-requirements-runtime-20261017.json": {
       "sha256": "14c291be1ac0639dfd81f58e949d6d4154774fb00c39d5e65e511ef67449530e",
       "bytes": 742
+    },
+    "evidence/integration/binary-mask-agent-20261018-focused.log": {
+      "sha256": "8d26216147d4e2008fc2964887fe6d67a9eca03aef9e8985e1743674b0f67c5e",
+      "bytes": 2114
+    },
+    "evidence/integration/binary-mask-closeout-20261018.json": {
+      "sha256": "8600ba5826ac0ac362dbf6b42dc680fdc4f00b67978bde740c729ae308733652",
+      "bytes": 6607
+    },
+    "evidence/integration/binary-mask-closeout-20261018.py": {
+      "sha256": "d43b41a1d909ee7b11814b6ac5be8bcc6dae404861c1ffd3e517602c42f70889",
+      "bytes": 8443
+    },
+    "evidence/integration/binary-mask-independent-20261018.json": {
+      "sha256": "ee8ce7addbec4ebe6b009498dfc8db8deb9cb14315085baf478d77cb868a98a8",
+      "bytes": 3637
+    },
+    "evidence/integration/binary-mask-independent-20261018.log": {
+      "sha256": "92b858091b87015fc08ddba021b06411816c09d10aadbb9d8d7697fcbb3de387",
+      "bytes": 5065
+    },
+    "evidence/integration/binary-mask-independent-20261018.py": {
+      "sha256": "c647e16f2534258a6dc7a7eecd2b573222e7c8fb7eaa675b6e52ce505cd5072a",
+      "bytes": 13523
+    },
+    "evidence/integration/binary-mask-integrity-20261018.py": {
+      "sha256": "b17f80d62f3527b988013190dc19df6714115c6e9d99b5f0f6b1abb929d1b71a",
+      "bytes": 2488
+    },
+    "evidence/integration/binary-mask-live-integrity-20261018.json": {
+      "sha256": "329347d5223cf0ac77feed90c389cf850b48f774e96e7a09cc5ce417a2e61abc",
+      "bytes": 577
+    },
+    "evidence/integration/binary-mask-live-processes-20261018.json": {
+      "sha256": "8ed87cf51f58b8e01ba038be506b02064c3568667deb90fb9e96a188d9032b35",
+      "bytes": 1935
+    },
+    "evidence/integration/binary-mask-operating-inventory-20261018.json": {
+      "sha256": "37f19fe7ed0e8493ad7ccdae5f6de21835ada418056d170a056c4e02e07587c2",
+      "bytes": 352
+    },
+    "evidence/integration/binary-mask-preflight-20261018.json": {
+      "sha256": "392e64b2c2377420758855d2d5eaa631ded9c87cbc0484fb3f1445c9f9e1467f",
+      "bytes": 529494
+    },
+    "evidence/integration/binary-mask-root-related-20261018.log": {
+      "sha256": "c531cdf21677314318410020f70827c6bd3eba9e537baf19bf0ff67cf5927a91",
+      "bytes": 7737
+    },
+    "evidence/integration/binary-mask-runtime-20261018.json": {
+      "sha256": "238417576bbf416e48b52d29705355d602b199863f618e353f13fce4c12f43e4",
+      "bytes": 2775
+    },
+    "evidence/integration/binary-mask-runtime-20261018.log": {
+      "sha256": "27f7f6597b6de4bb602daf1292bfad4531784b29ab79477bd8ea4063f3cc86b9",
+      "bytes": 90
+    },
+    "evidence/integration/binary-mask-runtime-20261018.py": {
+      "sha256": "d8a8623a2655e16c4fcad536a9bb99ded30bb31797eb7a19e3407c0adabfcc1d",
+      "bytes": 7144
     },
     "evidence/integration/candidate-materialization-closeout-20261017.json": {
       "sha256": "cff237b24731116c01307e15c0db30eddc0687ebe7576f3ef40ea4f801e60b03",
@@ -10667,6 +10898,10 @@
       "sha256": "4902f323a67fd68edebe092200c9b961b000565b0b6e67f1e54175be0c7407c6",
       "bytes": 13185
     },
+    "tests/test_registered_binary_mask_values.py": {
+      "sha256": "f254d55a16fdc593c123decc6251e38b73644cedf3ee529bf0ccdd5041e941ac",
+      "bytes": 8239
+    },
     "tests/test_registered_per_scene_files.py": {
       "sha256": "04f209ee6fb60b21ad5ab4410329d0277a9b7d5d34620a8cb4da919b31086379",
       "bytes": 12366
@@ -10761,11 +10996,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T04:18:51.510813+09:00",
-    "understanding_markdown": 99,
+    "checked_at": "2026-10-18T04:25:12.522277+09:00",
+    "understanding_markdown": 100,
     "implementation_markdown": 1,
-    "local_links": 422,
-    "metadata_evidence_references": 11051,
+    "local_links": 429,
+    "metadata_evidence_references": 11191,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true

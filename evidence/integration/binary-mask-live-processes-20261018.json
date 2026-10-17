@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-10-18T04:24:13.4064574+09:00",
+  "processes": [
+    {
+      "ProcessId": 27268,
+      "Name": "ollama app.exe",
+      "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\""
+    },
+    {
+      "ProcessId": 27860,
+      "Name": "ollama.exe",
+      "CommandLine": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve"
+    },
+    {
+      "ProcessId": 32224,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8000"
+    },
+    {
+      "ProcessId": 26912,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8001"
+    },
+    {
+      "ProcessId": 35032,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn app.main:app --host 127.0.0.1 --port 8002 --reload --reload-dir backend"
+    },
+    {
+      "ProcessId": 32916,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=35032, pipe_handle=752)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 36180,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" evidence/integration/binary-mask-independent-20261018.py"
+    }
+  ],
+  "collector_training_processes_observed": 0,
+  "observation_limit": "Process command patterns; no claim of universal scheduler state",
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "automation_was_not_modified": true
+}
