@@ -1,0 +1,87 @@
+test_actual_two_and_six_rows_no_extra_store_get_or_image_open (__main__.Independent.test_actual_two_and_six_rows_no_extra_store_get_or_image_open) ... ok
+test_captured_actual_get_copy_used_for_containment_without_reread (__main__.Independent.test_captured_actual_get_copy_used_for_containment_without_reread) ... ok
+test_epsilon_boundary_and_math_failfast_after_all_files_already_read (__main__.Independent.test_epsilon_boundary_and_math_failfast_after_all_files_already_read) ... ok
+test_invalid_global_model_failure_never_spatial_math_or_new_io (__main__.Independent.test_invalid_global_model_failure_never_spatial_math_or_new_io) ... ok
+test_lon_lat_axis_epsg4326_crs84_and_independent_dense_edge_math (__main__.Independent.test_lon_lat_axis_epsg4326_crs84_and_independent_dense_edge_math) ... ok
+test_registry_crs_dateline_polar_and_broad_bbox_policies (__main__.Independent.test_registry_crs_dateline_polar_and_broad_bbox_policies) ... ok
+test_transform_invalid_output_or_network_enabled_fail_closed_without_preference_mutation (__main__.Independent.test_transform_invalid_output_or_network_enabled_fail_closed_without_preference_mutation) ... ok
+test_upstream_header_failure_has_priority_and_skips_all_spatial_math (__main__.Independent.test_upstream_header_failure_has_priority_and_skips_all_spatial_math) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 19.816s
+
+OK
+{
+  "scope": "SYNTHETIC_TEMP_REGISTRY_BBOX_VS_SAMPLED_WGS84_ENVELOPE",
+  "tests": 8,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 19.81681920000119,
+  "passed": true,
+  "source_sha256": "3044f176093c462eb2a407cc4a3b7310ae115b8700c0f71735f05c245ac5c108",
+  "frozen_source_matches": true,
+  "baseline_commit": "759eac034a0921f898aaf9b5e175421a222ec63f",
+  "old_source_byte_checks": [
+    {
+      "path": "backend/app/ml/registry_raster_grid_normalization.py",
+      "baseline_sha256": "17371e6a2a49a9845bf2a5d6b2cb0a777808400ac814b2d14e6347d7eb992501",
+      "current_sha256": "17371e6a2a49a9845bf2a5d6b2cb0a777808400ac814b2d14e6347d7eb992501",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/registry_temporal_normalization.py",
+      "baseline_sha256": "6cc04dcfb2e71745a09ed7a62b17ccc94637e5c9ad12730fe7ac3d8e20b98f15",
+      "current_sha256": "6cc04dcfb2e71745a09ed7a62b17ccc94637e5c9ad12730fe7ac3d8e20b98f15",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/pinned_annual_normalization.py",
+      "baseline_sha256": "4589a70425dcdfc1e6f7b9a065929f74860f572284cf9fd8c021a8fb5fc81953",
+      "current_sha256": "4589a70425dcdfc1e6f7b9a065929f74860f572284cf9fd8c021a8fb5fc81953",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/dataset_registry.py",
+      "baseline_sha256": "f12e015383fbbbd2d415f04658104892d445bb81976d207bd8342f4688adb8bd",
+      "current_sha256": "f12e015383fbbbd2d415f04658104892d445bb81976d207bd8342f4688adb8bd",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/lcluc_workflow.py",
+      "baseline_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "current_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "baseline_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "current_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/LclucWorkflowPanel.tsx",
+      "baseline_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "current_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/lclucWorkflowAdapter.ts",
+      "baseline_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "current_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "unchanged": true
+    }
+  ],
+  "tracked_source_differences": [],
+  "operating_Store_API_registration_checkpoint_reads_or_writes": 0,
+  "inference_training_pixel_mask_read_calls": 0,
+  "UI_API_changes": 0,
+  "frontend_build_browser_runs": 0,
+  "limitations": [
+    "Densify21 finite-sample envelope is not a guaranteed conservative bound or exact raster footprint.",
+    "Registry lon/lat bbox containment within1e-7degree tolerance, not AOI truth, province-wide coverage, acquisition/source authority, QA or execution approval.",
+    "Post-math NOT_CHECKED rows may already have completed every129 file/header read. Capture/base failures have different read histories.",
+    "PROJ network preference is read only; full GDAL/network and CPU/RSS/time isolation, atomic snapshots and inherited Store/Torch limits are not guaranteed.",
+    "Internal unwired observer; no API/UI/frontend/build/browser/full-backend rerun. Prior1184 history is not new. Do not sum overlapping suites."
+  ]
+}

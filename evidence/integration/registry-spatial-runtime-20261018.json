@@ -1,0 +1,130 @@
+{
+  "scope": "TESTED_SYNTHETIC_ACTUAL_TEMP_GEOTIFF_REGISTRY_SPATIAL_POST_DIAGNOSTIC",
+  "checks_passed": [
+    {
+      "case": "valid",
+      "status": "REGISTRY_ENVELOPE_MATCHED_UNVERIFIED",
+      "issue": null,
+      "spatial_rows": [
+        "MATCHED_UNVERIFIED",
+        "MATCHED_UNVERIFIED",
+        "MATCHED_UNVERIFIED"
+      ],
+      "store_gets": 10,
+      "torch_loads": 1,
+      "actual_header_calls": 3,
+      "parent129_completed_all_file_and_header_reads": true
+    },
+    {
+      "case": "outside",
+      "status": "SPATIAL_BLOCKED",
+      "issue": {
+        "code": "REGISTRY_BBOX_DOES_NOT_CONTAIN_ENVELOPE",
+        "field": "containment",
+        "year": 2021
+      },
+      "spatial_rows": [
+        "BLOCKED",
+        "NOT_CHECKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 10,
+      "torch_loads": 1,
+      "actual_header_calls": 3,
+      "parent129_completed_all_file_and_header_reads": true
+    },
+    {
+      "case": "narrow",
+      "status": "SPATIAL_BLOCKED",
+      "issue": {
+        "code": "REGISTRY_BBOX_DOES_NOT_CONTAIN_ENVELOPE",
+        "field": "containment",
+        "year": 2022
+      },
+      "spatial_rows": [
+        "MATCHED_UNVERIFIED",
+        "BLOCKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 10,
+      "torch_loads": 1,
+      "actual_header_calls": 3,
+      "parent129_completed_all_file_and_header_reads": true
+    },
+    {
+      "case": "unsupported",
+      "status": "SPATIAL_BLOCKED",
+      "issue": {
+        "code": "REGISTRY_SPATIAL_CRS_UNSUPPORTED",
+        "field": "crs",
+        "year": 2021
+      },
+      "spatial_rows": [
+        "BLOCKED",
+        "NOT_CHECKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 10,
+      "torch_loads": 1,
+      "actual_header_calls": 3,
+      "parent129_completed_all_file_and_header_reads": true
+    },
+    {
+      "case": "crs84",
+      "status": "REGISTRY_ENVELOPE_MATCHED_UNVERIFIED",
+      "issue": null,
+      "spatial_rows": [
+        "MATCHED_UNVERIFIED",
+        "MATCHED_UNVERIFIED",
+        "MATCHED_UNVERIFIED"
+      ],
+      "store_gets": 10,
+      "torch_loads": 1,
+      "actual_header_calls": 3,
+      "parent129_completed_all_file_and_header_reads": true
+    },
+    {
+      "case": "exact",
+      "status": "REGISTRY_ENVELOPE_MATCHED_UNVERIFIED",
+      "issue": null,
+      "spatial_rows": [
+        "MATCHED_UNVERIFIED",
+        "MATCHED_UNVERIFIED",
+        "MATCHED_UNVERIFIED"
+      ],
+      "store_gets": 10,
+      "torch_loads": 1,
+      "actual_header_calls": 3,
+      "parent129_completed_all_file_and_header_reads": true
+    },
+    {
+      "case": "global",
+      "status": "SPATIAL_BLOCKED",
+      "issue": {
+        "code": "SPATIAL_DATELINE_UNSUPPORTED",
+        "field": "registry_bbox",
+        "year": 2021
+      },
+      "spatial_rows": [
+        "BLOCKED",
+        "NOT_CHECKED",
+        "NOT_CHECKED"
+      ],
+      "store_gets": 10,
+      "torch_loads": 1,
+      "actual_header_calls": 3,
+      "parent129_completed_all_file_and_header_reads": true
+    }
+  ],
+  "torch_version": "2.14.0+cpu",
+  "all_fixtures_files_and_registry_bytes_unchanged_during_reader": true,
+  "temporary_untrained_model_checkpoint_loaded": true,
+  "operating_model_loaded": false,
+  "training_inference_executed": false,
+  "operating_registry_contact": false,
+  "scientific_accuracy_validated": false,
+  "pixel_values_verified": false,
+  "registry_aoi_verified": false,
+  "all_spatial_cases_already_completed129_file_reads_before_postdiagnostic": true,
+  "reference_exact_bbox_uses_installed_rasterio_transform_bounds_not_independent_geodetic_truth": true
+}

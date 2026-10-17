@@ -1,5 +1,7 @@
 # 129 — 실제 GTiff header와 장면 간 엄격 grid 관측
 
+> 후속130: 본 actual header의 bounds/WKT와 같은 Registry spatial copy를 재사용하는 bbox 포함 후진단을 `130_registry_spatial_normalization.md`에서 구현·검증했다. 표본 envelope의 포함은 실제AOI/주전체coverage·QA/실행승인이 아니며 추가파일읽기는 없다.
+
 ## 쉬운 설명과 범위
 
 신규 `backend/app/ml/registry_raster_grid_normalization.py`의 `inspect_registry_raster_grid_normalization(store, model_ref, training_report_sha256, requested_years)`는128의 같은 Registry get 경계에 header 읽기를 결합한다. 영상 고정 SHA와 맞는 bounded 복사 바이트를 Rasterio MemoryFile의 GTiff driver로 열어 metadata만 확인하고 요청 장면끼리 grid를 비교한다.

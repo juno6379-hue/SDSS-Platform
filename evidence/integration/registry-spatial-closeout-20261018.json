@@ -1,0 +1,127 @@
+{
+  "recorded_at": "2026-10-18T03:59:01.581293+09:00",
+  "status": "130_SAMPLED_RASTER_ENVELOPE_AND_REGISTRY_BBOX_CONTAINMENT_VERIFIED",
+  "focused": {
+    "passed": 10,
+    "seconds": 17.669
+  },
+  "related": {
+    "passed": 41,
+    "seconds": 61.722,
+    "composition": "10 new spatial +11 prior129 raster grid +11 prior128 temporal +9 prior127 annual batch"
+  },
+  "independent": {
+    "passed": 8,
+    "skipped": 0,
+    "seconds": 19.81681920000119
+  },
+  "root_actual_temp_registered_scene_scenarios": 7,
+  "overlapping_test_bundles_are_not_additive": true,
+  "source_sha256": "3044f176093c462eb2a407cc4a3b7310ae115b8700c0f71735f05c245ac5c108",
+  "test_sha256": "9e2b162a6a1e7ec2b9ca08deb1949b5b495cd1f750bf25f5fb4172d95e9cdeb7",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T03:59:01.581293+09:00",
+    "understanding_markdown": 97,
+    "implementation_markdown": 1,
+    "local_links": 412,
+    "metadata_evidence_references": 10742,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T03:57:48.035598+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 293,
+    "existing_source_changes": [],
+    "previous_evidence_checked": 1124,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T03:47:33.934437+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "spatial_not_checked_does_not_mean_files_were_unread": true,
+  "finite_edge_densification_is_approximation_not_guaranteed_exact_footprint_bound": true,
+  "registry_bbox_containment_is_not_whole_province_coverage_or_aoi_authority": true,
+  "gtiff_driver_only_header_reads_from_same_sha_checked_copied_bytes": true,
+  "pixel_values_quality_mask_and_registry_aoi_verified": false,
+  "one_checkpoint_load_per_valid_batch": true,
+  "registered_utc_temporal_year_declarations_bound_to_actual_same_image_record": true,
+  "physical_acquisition_year_or_authority_verified": false,
+  "no_extra_temporal_registry_get_calls": true,
+  "distinct_image_registry_keys_do_not_prove_distinct_physical_scenes_or_temporal_independence": true,
+  "explicit_scene_extensions_and_lineage_roles_are_internal_contract_not_official_authority": true,
+  "public_declaration_read_policy_is_not_acl_and_quality_state_is_not_qa_approval": true,
+  "store_database_json_predecode_is_not_memory_bounded_by_new_postdecode_tree_checks": true,
+  "checkpoint_manifest_is_caller_metadata": false,
+  "actual124_model_join_completed": true,
+  "requested_year_batch_read_completed": true,
+  "registry_temporal_year_binding_completed": true,
+  "physical_acquisition_year_verified": false,
+  "parent127_temporal_year_verified_remains_false": true,
+  "temporary_untrained_checkpoint_loaded_with_cpu_weights_only": true,
+  "all_year_quality_mask_or_runtime_binding_completed": false,
+  "api_ui_workflow_runtime_connected": false,
+  "execution_authorized": false,
+  "state_dict_verified": false,
+  "source_authority_verified": false,
+  "scientific_accuracy_validated": false,
+  "workflow_supported": false,
+  "frontend_build_browser_rerun_this_unit": false,
+  "backend_full_rerun_this_unit": false,
+  "reason_no_full_rerun": "All293 previous source files are byte-identical. New internal same-record Registry bbox and sampled-envelope postdiagnostic tested with actual Temp CPU checkpoint/Registry/rasters, independent failures and124/125 related regressions. No API/UI contract change.",
+  "previous_backend_regression": {
+    "unit": "120/121",
+    "tests_run": 1184,
+    "passed": 1183,
+    "skipped": 1,
+    "seconds": 399.529
+  },
+  "previous_frontend_regression": {
+    "unit": "120/121",
+    "passed": 261,
+    "build_modules": 108,
+    "build_seconds": 21.85
+  },
+  "separately_updated_status_documents_reviewed": [
+    {
+      "path": "docs/16_충분학습자료_단계별수집계획.md",
+      "baseline_sha256": "ed4c28907f7297ed4312cb53a8aefe3e926a120ac77bdebcf29b9cb3596d45b1",
+      "reviewed_working_sha256": "b993c3eaada306a5d73a14199345af3e3a3852d5748e896085d49465fd5d7323",
+      "changes": "03:54 KST observation timestamps and stagnation durations only; protected manifest/ledger hashes, counters and reservations unchanged",
+      "authored_by_unit130_implementation_team": false
+    },
+    {
+      "path": "docs/20_대량수집_학습_통합실행.md",
+      "baseline_sha256": "3b9680fb8b5e5725cbd322b656e9fc7b5a093753230061c1635a434063f87882",
+      "reviewed_working_sha256": "bdd32f6f4946a5d0c730a2de80fe0065963ab4206b044e20c146ae164f6d3788",
+      "changes": "03:54 KST observation timestamps and stagnation durations only; protected manifest/ledger hashes, counters and reservations unchanged",
+      "authored_by_unit130_implementation_team": false
+    }
+  ],
+  "understanding_updated": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "operating_model_or_raster_load": 0,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_internal_candidate": "131_REGISTERED_QUALITY_REPORT_AND_EXPLICIT_MASK_READ_CONTRACT",
+  "snapshot_files": 1665
+}

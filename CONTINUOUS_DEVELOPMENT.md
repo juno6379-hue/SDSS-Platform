@@ -1,5 +1,29 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 등록 공간 범위와 표본 래스터 영역의 포함관계 진단 (130)
+
+구현 담당은 신규 `backend/app/ml/registry_spatial_normalization.py`, 집중시험, 문서130을 맡았다. 독립 담당은 실제 GeoTIFF의 좌표축·허용오차·읽기 횟수와 실패 이력을 검증했다. Root는 실제 파일 대조, 관련 회귀, 운영 조회, 보존, 공통 문서와 Git을 맡았고, 이해 담당은 완료된 코드와 시험을 읽어 설명·발표·FAQ·INDEX·변경 이력을 갱신했다. 시작 시 기존 작업자는 모두 완료 상태였으며 수집·학습 프로세스는 관측되지 않았다. 보고 예약 ACTIVE/10분과 API·Ollama 서비스 실행을 실제 수집·학습 실행과 구분한다.
+
+`inspect_registry_spatial_normalization(store, model_ref, training_report_sha256, requested_years)`는 실제 image get에서 검산한 동일 canonical manifest의 spatial을 캡처한다. 기존129를 한 번 호출하고, 전체 성공 후 실제 헤더의 bounds/WKT를 재사용해 Registry bbox와 비교한다. 추가 Store.get·영상 열기·헤더 열기는 없고 픽셀을 재투영하지 않는다. capture 오류는129 도중 조기 차단될 수 있지만, 포함 수학의 실패는129가 모든 파일·헤더를 읽은 뒤 발생한다. 공간 NOT_CHECKED를 파일 미읽음으로 해석하지 않는다.
+
+Registry의 EPSG:4326·OGC:CRS84는 모두 경도/위도 순서로 소비한다. OGC:CRS84 변환은 densify21의 유한한 경계 표본을 이용하며, 포함식의 고정 허용오차는1e-7도다. 양쪽 bbox에 날짜변경선 접촉±180도·폭180도 초과·극지 abs(latitude)>=85도 제한을 적용하는 새 내부 정책이다. 허용 영역 안의 큰 bbox는 통과할 수 있지만 world bbox는 차단된다. 표본 envelope는 근사이고 미표본 극값을 놓칠 수 있으므로 정확한 footprint의 보수 상한이나 주 전체 자료 확보를 증명하지 않는다.
+
+exact17 출력은 원129 관측을 보존한다. 모든 하위 읽기와 공간 대조가 성공해야 REGISTRY_ENVELOPE_MATCHED_UNVERIFIED 및 전체 artifact·bbox 포함 flag가 true다. 실제 AOI·물리 coverage·품질 보고서·마스크·픽셀값·기관 권위·과학 정확도·실행·Workflow의9개 flag는 항상 false다. 원본 bbox나 영상을 자동 수정하지 않으며, header 일치도 nodata·dtype·유효영역·모델 실행 호환성의 검증이 아니다.
+
+PROJ_NETWORK OFF 임시 Env와 pyproj의 network-enabled 읽기 guard를 사용하고 전역 선호는 바꾸지 않는다. 이 설정은 GDAL의 완전한 외부 I/O·CPU/RSS 격리 증명이 아니다. Store 원문 JSON predecode, Torch ambient allowlist, 다중 파일 비원자성, TOCTOU와 mapped drive의 기존 한계도 유지한다.
+
+집중10 PASS/17.669초, 관련41 PASS/61.722초(신규10+129의11+128의11+127의9), 독립8 PASS/0 SKIP/19.816819초다. 중복 묶음을 합산하지 않는다. 독립 실제2/6행은7/19 get, 기존 header+SHA의2N 영상 열기만, header2/6회, DB·파일 불변과 픽셀·마스크 읽기0을 확인했다. 별도101분할 경계 참조와1e-9도 이내 일치,1e-7도 허용/2e-7도 차단, 같은 get의 사본 보호, 하위 실패 우선순위, 좌표계·경계·network guard를 검증했다. 이는 합성 fixture 대조이며 지리적 진실이나 근사의 수학적 상한 증명이 아니다. 제품 지적이나 이번 실패는 없다.
+
+Root는 각기 새 Temp에 실제3개 GeoTIFF·9개 참조·미훈련 CPU checkpoint를 설정한7시나리오를 확인했다. 큰 bbox·정확 bbox·CRS84는 통과하고, 범위 불일치·두번째 행의 좁은 bbox·지원 외 CRS·world bbox는 거부했다. 모든 경우129 전체 성공과1torch.load/10get/3header 호출 뒤 공간 결과를 기록했다. exact bbox 참조는 설치 Rasterio 연산을 재사용한 구현 대조다. 훈련·추론·독립 정확도·기관 승인은 수행하지 않았다.
+
+보호141개, 기존 소스293개, 이전 증거1124개, catalog14행 canonical SHA와 예약136314880바이트를 보존했다.03:47 KST의 URI mode=ro 운영 조회는 legacy datasets6/models1, dataset_versions0이다. 원본·원장·lock·기존 분할·운영 모델은 그대로이며 운영 checkpoint/래스터 load·수집·등록·훈련·추론·배포·Workflow dispatch는0이다. API/UI 미연결 내부 함수라 이번 frontend/build/browser·전체 backend는 재실행하지 않았다.120/121의 전체1184(1183 PASS·기존1 SKIP)/frontend261/build는 이전 이력이다.
+
+관련 계약·사용법·시험·인계와 이해자료를 함께 갱신했다. 다음131은 품질 보고서와 명시 마스크의 고정 참조 읽기 계약이다. 실제 QA/mask,115 per_scene 실행, 독립 라벨·모델 승인, 다른5개 실행기, 운영 GeoLLM/RAG/PostGIS, staging/RBAC/기관 UAT는 미완료다. 단일 내부 진단을 전체 완료로 보거나10분 보고 예약을 중단하지 않는다.
+
+별도 상태 갱신 검토:03:54 KST에 수정된 docs/16_충분학습자료_단계별수집계획.md와 docs/20_대량수집_학습_통합실행.md는 본130 구현팀이 작성한 변경이 아니다. Git 차이는 재확인 시각·정체 기간뿐이며 보호 자료의 SHA·누계·예약 불변과 대조했다. 함께 게시하되 실제 수집 진전으로 표현하지 않는다.
+
+근거: `docs/implementation/130_registry_spatial_normalization.md`, `evidence/integration/registry-spatial-agent-20261018-focused.log`, `registry-spatial-root-related-20261018.log`, `registry-spatial-independent-20261018.json`, `registry-spatial-runtime-20261018.json`, `registry-spatial-live-integrity-20261018.json`, `registry-spatial-operating-inventory-20261018.json`, 최종 `registry-spatial-closeout-20261018.json`.
+
 ## 2026-10-18 — 실제 GTiff 헤더와 장면 간 엄격한 격자 일치 관측 (129)
 
 계약 담당은 신규 `backend/app/ml/registry_raster_grid_normalization.py`·집중시험·문서129, 독립 담당은 별도 실제 GeoTIFF2/6행의 헤더·격자·경쟁·junction 검증과 UI/API 영향, Root는 실제7fixture·관련 회귀·운영 조회·보존·공통 문서/Git, 이해 담당은 완료 소스의 쉬운 설명·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 이전 작업자는 모두 완료 상태이고 수집·학습 프로세스는 관측되지 않았다. API/Ollama 서비스와 보고예약 ACTIVE/10분을 실제 수집·학습 실행과 구분한다.

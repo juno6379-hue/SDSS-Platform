@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-18T03:45:29.300031+09:00",
-  "source_commit": "97e712d4476eb00680469d40972c571172930f3f",
-  "source_commit_reason": "Published128 baseline plus129 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
+  "updated_at": "2026-10-18T03:59:01.581293+09:00",
+  "source_commit": "759eac034a0921f898aaf9b5e175421a222ec63f",
+  "source_commit_reason": "Published129 baseline plus130 working files pinned by raw SHA; subsequent Git publication must preserve these bytes.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
   "checks": {
     "manifest_matches_recorded_evidence": true,
@@ -3533,6 +3533,133 @@
       "collector_training_processes_observed": 0,
       "next_internal_candidate": "130_REGISTRY_SPATIAL_BBOX_AND_ACTUAL_RASTER_EXTENT_RELATION",
       "snapshot_files": 1647
+    },
+    "latest_registry_bbox_sampled_envelope_postdiagnostic": {
+      "recorded_at": "2026-10-18T03:59:01.581293+09:00",
+      "status": "130_SAMPLED_RASTER_ENVELOPE_AND_REGISTRY_BBOX_CONTAINMENT_VERIFIED",
+      "focused": {
+        "passed": 10,
+        "seconds": 17.669
+      },
+      "related": {
+        "passed": 41,
+        "seconds": 61.722,
+        "composition": "10 new spatial +11 prior129 raster grid +11 prior128 temporal +9 prior127 annual batch"
+      },
+      "independent": {
+        "passed": 8,
+        "skipped": 0,
+        "seconds": 19.81681920000119
+      },
+      "root_actual_temp_registered_scene_scenarios": 7,
+      "overlapping_test_bundles_are_not_additive": true,
+      "source_sha256": "3044f176093c462eb2a407cc4a3b7310ae115b8700c0f71735f05c245ac5c108",
+      "test_sha256": "9e2b162a6a1e7ec2b9ca08deb1949b5b495cd1f750bf25f5fb4172d95e9cdeb7",
+      "documentation_validation": {
+        "checked_at": "2026-10-18T03:59:01.581293+09:00",
+        "understanding_markdown": 97,
+        "implementation_markdown": 1,
+        "local_links": 412,
+        "metadata_evidence_references": 10742,
+        "numbered_faq": 10,
+        "errors": [],
+        "reference_templates_byte_identical": true
+      },
+      "integrity": {
+        "recorded_at": "2026-10-18T03:57:48.035598+09:00",
+        "protected_files_checked": 141,
+        "protected_changes": [],
+        "existing_source_checked": 293,
+        "existing_source_changes": [],
+        "previous_evidence_checked": 1124,
+        "previous_evidence_changes": [],
+        "catalog_rows": 14,
+        "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+        "reserved_bytes_preserved": 136314880,
+        "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+        "operating_collection_training_registry_deployment_workflow_dispatch": 0
+      },
+      "operating_inventory": {
+        "recorded_at": "2026-10-18T03:47:33.934437+09:00",
+        "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+        "counts_by_kind": {
+          "analyses": 3,
+          "datasets": 6,
+          "gmais_idempotency": 2,
+          "gmais_jobs": 2,
+          "models": 1
+        },
+        "dataset_versions_count": 0,
+        "operating_writes": 0,
+        "model_or_raster_files_loaded": false
+      },
+      "spatial_not_checked_does_not_mean_files_were_unread": true,
+      "finite_edge_densification_is_approximation_not_guaranteed_exact_footprint_bound": true,
+      "registry_bbox_containment_is_not_whole_province_coverage_or_aoi_authority": true,
+      "gtiff_driver_only_header_reads_from_same_sha_checked_copied_bytes": true,
+      "pixel_values_quality_mask_and_registry_aoi_verified": false,
+      "one_checkpoint_load_per_valid_batch": true,
+      "registered_utc_temporal_year_declarations_bound_to_actual_same_image_record": true,
+      "physical_acquisition_year_or_authority_verified": false,
+      "no_extra_temporal_registry_get_calls": true,
+      "distinct_image_registry_keys_do_not_prove_distinct_physical_scenes_or_temporal_independence": true,
+      "explicit_scene_extensions_and_lineage_roles_are_internal_contract_not_official_authority": true,
+      "public_declaration_read_policy_is_not_acl_and_quality_state_is_not_qa_approval": true,
+      "store_database_json_predecode_is_not_memory_bounded_by_new_postdecode_tree_checks": true,
+      "checkpoint_manifest_is_caller_metadata": false,
+      "actual124_model_join_completed": true,
+      "requested_year_batch_read_completed": true,
+      "registry_temporal_year_binding_completed": true,
+      "physical_acquisition_year_verified": false,
+      "parent127_temporal_year_verified_remains_false": true,
+      "temporary_untrained_checkpoint_loaded_with_cpu_weights_only": true,
+      "all_year_quality_mask_or_runtime_binding_completed": false,
+      "api_ui_workflow_runtime_connected": false,
+      "execution_authorized": false,
+      "state_dict_verified": false,
+      "source_authority_verified": false,
+      "scientific_accuracy_validated": false,
+      "workflow_supported": false,
+      "frontend_build_browser_rerun_this_unit": false,
+      "backend_full_rerun_this_unit": false,
+      "reason_no_full_rerun": "All293 previous source files are byte-identical. New internal same-record Registry bbox and sampled-envelope postdiagnostic tested with actual Temp CPU checkpoint/Registry/rasters, independent failures and124/125 related regressions. No API/UI contract change.",
+      "previous_backend_regression": {
+        "unit": "120/121",
+        "tests_run": 1184,
+        "passed": 1183,
+        "skipped": 1,
+        "seconds": 399.529
+      },
+      "previous_frontend_regression": {
+        "unit": "120/121",
+        "passed": 261,
+        "build_modules": 108,
+        "build_seconds": 21.85
+      },
+      "separately_updated_status_documents_reviewed": [
+        {
+          "path": "docs/16_충분학습자료_단계별수집계획.md",
+          "baseline_sha256": "ed4c28907f7297ed4312cb53a8aefe3e926a120ac77bdebcf29b9cb3596d45b1",
+          "reviewed_working_sha256": "b993c3eaada306a5d73a14199345af3e3a3852d5748e896085d49465fd5d7323",
+          "changes": "03:54 KST observation timestamps and stagnation durations only; protected manifest/ledger hashes, counters and reservations unchanged",
+          "authored_by_unit130_implementation_team": false
+        },
+        {
+          "path": "docs/20_대량수집_학습_통합실행.md",
+          "baseline_sha256": "3b9680fb8b5e5725cbd322b656e9fc7b5a093753230061c1635a434063f87882",
+          "reviewed_working_sha256": "bdd32f6f4946a5d0c730a2de80fe0065963ab4206b044e20c146ae164f6d3788",
+          "changes": "03:54 KST observation timestamps and stagnation durations only; protected manifest/ledger hashes, counters and reservations unchanged",
+          "authored_by_unit130_implementation_team": false
+        }
+      ],
+      "understanding_updated": true,
+      "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+      "operating_model_or_raster_load": 0,
+      "automation_status": "ACTIVE",
+      "automation_interval_minutes": 10,
+      "collector_training_processes_observed": 0,
+      "next_internal_candidate": "131_REGISTERED_QUALITY_REPORT_AND_EXPLICIT_MASK_READ_CONTRACT",
+      "snapshot_files": 1665
     }
   },
   "files": {
@@ -3549,8 +3676,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "d2f23ef99796aad01b0024614ae19f3aa90fc9d989806dc48b967b47a0f2ead3",
-      "bytes": 379956
+      "sha256": "ab23b4105c06adb65ddb070ad8aa0443e037d320462bc93fae5d4a5b6eb82070",
+      "bytes": 385814
     },
     "README.md": {
       "sha256": "0d213fdb1da768b59dd402c3af248fa902c00a078c3072703337effadc542c56",
@@ -3808,6 +3935,10 @@
       "sha256": "17371e6a2a49a9845bf2a5d6b2cb0a777808400ac814b2d14e6347d7eb992501",
       "bytes": 7675
     },
+    "backend/app/ml/registry_spatial_normalization.py": {
+      "sha256": "3044f176093c462eb2a407cc4a3b7310ae115b8700c0f71735f05c245ac5c108",
+      "bytes": 6916
+    },
     "backend/app/ml/registry_temporal_normalization.py": {
       "sha256": "6cc04dcfb2e71745a09ed7a62b17ccc94637e5c9ad12730fe7ac3d8e20b98f15",
       "bytes": 6860
@@ -3961,11 +4092,11 @@
       "bytes": 11858020
     },
     "docs/16_충분학습자료_단계별수집계획.md": {
-      "sha256": "ed4c28907f7297ed4312cb53a8aefe3e926a120ac77bdebcf29b9cb3596d45b1",
+      "sha256": "b993c3eaada306a5d73a14199345af3e3a3852d5748e896085d49465fd5d7323",
       "bytes": 19411
     },
     "docs/20_대량수집_학습_통합실행.md": {
-      "sha256": "3b9680fb8b5e5725cbd322b656e9fc7b5a093753230061c1635a434063f87882",
+      "sha256": "bdd32f6f4946a5d0c730a2de80fe0065963ab4206b044e20c146ae164f6d3788",
       "bytes": 15732
     },
     "docs/agents/UNDERSTANDING_AGENT.md": {
@@ -3973,8 +4104,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "f61c9b197eea1dfd625b14167cf754193779e175e7a3e64fc4b7cc16aa843dec",
-      "bytes": 387097
+      "sha256": "2ad2b5172a10b038fa9b17fafebd0ef896df6fd740968ff3ad4a9f03d14fb806",
+      "bytes": 392955
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -4097,8 +4228,12 @@
       "bytes": 12090
     },
     "docs/implementation/129_registry_raster_grid_normalization.md": {
-      "sha256": "402087c8c78029e0ea4d89f6af61341bc71677a9e990121fa230d8ac2dfa2429",
-      "bytes": 12106
+      "sha256": "41d2937f5e9b537b3282cbc09061ea40931909fd1bbc5929835b63dc69e54c89",
+      "bytes": 12413
+    },
+    "docs/implementation/130_registry_spatial_normalization.md": {
+      "sha256": "19d6e3df53238a04f520e6ec3b717876c50bd624dfb598b4c3950d5a9aadd9dd",
+      "bytes": 10464
     },
     "docs/implementation/24_collection_recovery_plan.md": {
       "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
@@ -4413,48 +4548,48 @@
       "bytes": 298914
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "c0fc2ea1c19d7c9b4304bcd5911538f0b05d909027debfd99ecaed01bf26fc20",
-      "bytes": 150583
+      "sha256": "b2af571cdccc9a92b4cba43e16ca2d1cd4cca437a584051966c771ddf2dae4cc",
+      "bytes": 151624
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "5db9aa8aa4e7781ef5c9f6e0867e3c0a6ba2d83e5f4c553629942e0e777c2a4d",
-      "bytes": 120671
+      "sha256": "eed4acaa1e7c7f811a98828410c2bdf17467c15ddb603788ac73ec40578a7657",
+      "bytes": 121671
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "7660121d6e271b69ce4e447b7142ec35f7d5a611d934c1e64ca112d1e7f86952",
-      "bytes": 90976
+      "sha256": "fa1a12d6879790676fefaecf5392f930e1ba1b1a730d001c59ed006f05734b01",
+      "bytes": 91956
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "a329e043c9e5dae1efb85f70f0bad56009dbbec4f615e23464ba2ef70a4eb6b9",
-      "bytes": 74045
+      "sha256": "099d35cc63776dba1f1e72cfb53d4c733b7aad50ab615cebc43501bd63ba82be",
+      "bytes": 75062
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "ecc61828cc5db9192709b81ef82cbf82938799cf76c00c67dbb2641ab644e3a2",
-      "bytes": 39016
+      "sha256": "d9d1cda42bb164c61c1c277b1ac9361609e21ce76c0c48786aa8ad716f801373",
+      "bytes": 40014
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "81ba0382dcb6c894df1d1f03f5587e01a35b6ca088cf4d7560a187649f86c1a3",
-      "bytes": 77388
+      "sha256": "ecde7a679a15fab178aa7e0c60504443a0840dc2310a98f46f86882f129bca6a",
+      "bytes": 78359
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "96fff577bb8d8d327eddda994b0494776994769f954576e1b526d6632aa85fbd",
-      "bytes": 218282
+      "sha256": "31825490752540d621c2cd8654fb08b7c85fd92c546a845c8ad3dd67a26d7029",
+      "bytes": 220167
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "ab93424c4a39c162387de56770b569abfbf3d14cde1482f9831a1553bc6a05ff",
-      "bytes": 179533
+      "sha256": "ebbf9f842e3f3f983af9dad21d2f21c95b1a265d26bd5fc5421c4b8b65e4f99f",
+      "bytes": 181145
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "a2eea6106ee2d933a313da225918307c28b9c01b042eb295210f8c529891b33e",
-      "bytes": 114505
+      "sha256": "1e79886f6f7e986adeb4d9a66997312c3b3a38877e86c3c09e8c6eefd17a021b",
+      "bytes": 115602
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "90984536432adb19b76e5ec9a291514847b6ac52df3aad2a28475c3dd5069fe1",
-      "bytes": 189238
+      "sha256": "c0ce552d60347616db3afd843a8cf27795509043784b2d184aa8c332f10164b0",
+      "bytes": 190989
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -4696,6 +4831,10 @@
       "sha256": "d4d0bbd083768b2b3dc3409c4a7e7e4a478690d9c24c394156aff883e3d5c826",
       "bytes": 10853
     },
+    "docs/understanding/gate-notes/GATE_REGISTRY_SPATIAL_ENVELOPE_20261018.md": {
+      "sha256": "123ab601508c9339de1bc98875bedb645f8ac0e557ec251253499be29c30fea2",
+      "bytes": 10932
+    },
     "docs/understanding/gate-notes/GATE_REGISTRY_TEMPORAL_NORMALIZATION_20261018.md": {
       "sha256": "afc293d61d7855110140aeb63b7a56f41ee243d118fc69db572af0b45ebf9883",
       "bytes": 10809
@@ -4785,16 +4924,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "62d061c7511c2e27410e882a995c68824f0bd74e7c639f8debdf06023d8dd7b5",
-      "bytes": 192647
+      "sha256": "3743b49191ac3021ac98ec7738fc2bda791693e1561ced058466dcf5782cb62c",
+      "bytes": 193777
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "eda3eb3fe756adb7ab6a02ae907422e1254eefd038d68d42b0f9cc2abe4573a8",
-      "bytes": 130352
+      "sha256": "b7bf77b764a7f4f5fe7048ea225e431e708916f134d13b79c1982da02e7ce275",
+      "bytes": 131329
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "24d3f7bafea50eb5d5123232367961a9c9810b287b58d136202db79a4be103da",
-      "bytes": 154995
+      "sha256": "ad129dfcee7fa7c02d295d870bf97ac59e62009aa6ad5c926af3cf7c962769a4",
+      "bytes": 156489
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -8348,6 +8487,62 @@
       "sha256": "693079cd587f4504ffdb765e28f724c5ae5aff5b34496dbec2c648f0105b3de5",
       "bytes": 6336
     },
+    "evidence/integration/registry-spatial-agent-20261018-focused.log": {
+      "sha256": "ec45badc22632d3aae972ba3ed61d32487e662b2aab66f9a1f8d452ac8c20031",
+      "bytes": 2577
+    },
+    "evidence/integration/registry-spatial-closeout-20261018.json": {
+      "sha256": "2cf6f18179f2fe4da445cec0ec61c35a0bfbf1ef14e2652091e3c72fd0e5210f",
+      "bytes": 5901
+    },
+    "evidence/integration/registry-spatial-closeout-20261018.py": {
+      "sha256": "0d51915bfdb042d2791a2ffe18093cda42af55f6473fd0d9606b4d2c7311a6be",
+      "bytes": 9818
+    },
+    "evidence/integration/registry-spatial-independent-20261018.json": {
+      "sha256": "0035aef405040d9d03a653519eaef6be23f420e3059727310fd9b25c0c3946a2",
+      "bytes": 3646
+    },
+    "evidence/integration/registry-spatial-independent-20261018.log": {
+      "sha256": "578ce3d097ebbcf0a377e9e76ab943c7ac1c7dfb2f0dd48ad19bc58e9b0cc31d",
+      "bytes": 5080
+    },
+    "evidence/integration/registry-spatial-independent-20261018.py": {
+      "sha256": "0f177ca285455689561da071c781c63adea46869613988cb35a89fc1e2962cc0",
+      "bytes": 14804
+    },
+    "evidence/integration/registry-spatial-integrity-20261018.py": {
+      "sha256": "abef617492f564f96407d636bd7755ba626251c7321dbe3d7b937680785572a6",
+      "bytes": 2498
+    },
+    "evidence/integration/registry-spatial-live-integrity-20261018.json": {
+      "sha256": "6054a2ad091d8ce8c901570374d609cf14343bc47daf194c644605944dfc9f11",
+      "bytes": 577
+    },
+    "evidence/integration/registry-spatial-operating-inventory-20261018.json": {
+      "sha256": "6d4d73ac62c7a1139f255e0a632b54ced0114deb621fea1cf10bb74b81d45dac",
+      "bytes": 352
+    },
+    "evidence/integration/registry-spatial-preflight-20261018.json": {
+      "sha256": "e76a6c52ea6d0155e41f8e02c71534f1cea5b3d45fd3718eafb75c82148fb6cb",
+      "bytes": 498784
+    },
+    "evidence/integration/registry-spatial-root-related-20261018.log": {
+      "sha256": "002db5ded4ca825843588efc3ad7e6f3fc84c54b371295a9fd70e0c40a44fb23",
+      "bytes": 9508
+    },
+    "evidence/integration/registry-spatial-runtime-20261018.json": {
+      "sha256": "a2591cdda461f504044ec4ccc994d0699f7cb86cf1ed22926ad924bb31123f1c",
+      "bytes": 3716
+    },
+    "evidence/integration/registry-spatial-runtime-20261018.log": {
+      "sha256": "aadf5c5c0c924ba41e70f23eab13c8b4b27905f4eb1add3c1e9709924cec6baf",
+      "bytes": 101
+    },
+    "evidence/integration/registry-spatial-runtime-20261018.py": {
+      "sha256": "20a1373cc416cecc03a14eecdb1c44d4a0e7e5067206b57c2dcd02c80b507dad",
+      "bytes": 8097
+    },
     "evidence/integration/resume-tests-script-20261017.log": {
       "sha256": "c0bc5fe4090698563c03435df5c00d10a528e5bb363e3b32d421e81ea494f911",
       "bytes": 43977
@@ -10052,6 +10247,10 @@
       "sha256": "ec89b2e7fefd750dbd24562d213fef698d035e0149bab2c19a67bbe17594635f",
       "bytes": 11382
     },
+    "tests/test_registry_spatial_normalization.py": {
+      "sha256": "9e2b162a6a1e7ec2b9ca08deb1949b5b495cd1f750bf25f5fb4172d95e9cdeb7",
+      "bytes": 9358
+    },
     "tests/test_registry_temporal_normalization.py": {
       "sha256": "d6c51b9a6075b381c2840ea8b8bcd059025253ccf92866cf6e391613e4693619",
       "bytes": 10597
@@ -10126,11 +10325,11 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-18T03:45:29.300031+09:00",
-    "understanding_markdown": 96,
+    "checked_at": "2026-10-18T03:59:01.581293+09:00",
+    "understanding_markdown": 97,
     "implementation_markdown": 1,
-    "local_links": 407,
-    "metadata_evidence_references": 10601,
+    "local_links": 412,
+    "metadata_evidence_references": 10742,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true
