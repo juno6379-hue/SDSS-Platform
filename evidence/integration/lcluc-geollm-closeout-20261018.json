@@ -1,0 +1,55 @@
+{
+  "recorded_at": "2026-10-18T00:33:34.949956+09:00",
+  "status": "DATA_REGISTRATION_ML_ERROR_ANALYSIS_AND_GEO_LLM_REVIEW_COMPLETED_NOT_PROJECT_ACCEPTANCE",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T00:33:34.949956+09:00",
+    "understanding_markdown": 83,
+    "new_implementation_markdown": 4,
+    "local_links": 371,
+    "metadata_evidence_references": 8208,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "current_regression": {
+    "tests_run": 1135,
+    "passed": 1134,
+    "skipped": 1,
+    "seconds": 317.642,
+    "exit_code": 0,
+    "log": "evidence/integration/lcluc-geollm-full-tests-20261018.log"
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T00:31:15.208483",
+    "git_base": "be029c15b7966e8f64331349c54bb8508dabe3e8",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "previous_evidence_checked": 829,
+    "previous_evidence_changes": [],
+    "existing_source_changes": [
+      "backend/app/ml/service.py"
+    ],
+    "catalog_rows": 14,
+    "git_tracked_source_changes": [
+      "backend/app/ml/service.py",
+      "scripts/register_collection.py"
+    ],
+    "catalog_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "operating_registrations_collection_training_deployment": 0,
+    "geoquery_main_gmais_frontend_changed": false,
+    "scope": "LOCAL_PROTECTED_BYTES_AND_CATALOG_NOT_REMOTE_OR_ATOMIC_FILESYSTEM_ASSURANCE"
+  },
+  "understanding_updated": true,
+  "actual_geollm_in_app": "NONE_PREDEFINED_PATTERN",
+  "actual_storage": "SQLITE",
+  "qwen3_8b": "CANDIDATE_NOT_INSTALLED_NOT_BENCHMARKED",
+  "BGE_embedding": "REAL_LOCAL_1024_DIM_INTERNAL_CODE_RETRIEVAL_NOT_PRODUCTION_RAG",
+  "actual_lcluc_workflow_executor": "PLANNED_NOT_IMPLEMENTED_IN_THIS_UNIT",
+  "operating_collection_training_registration_jobs_deployment": 0,
+  "frontend_build_browser_rerun": false,
+  "frontend_change": false,
+  "independent_validation_labels": "USER_CONFIRMED_UNAVAILABLE",
+  "other_five_model_runners": "USER_CONFIRMED_NOT_PROVIDED_UNCONNECTED",
+  "next_internal_work": "LCLUC_ONLY_EXECUTOR_AND_GUARDED_OPTIONAL_GEOLLM_PROVIDER_AFTER_ACCEPTANCE_REVIEW",
+  "snapshot_files": 1318
+}

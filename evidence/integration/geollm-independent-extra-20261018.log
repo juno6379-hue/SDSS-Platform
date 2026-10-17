@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<stdin>", line 14, in <module>
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\evaluate_geollm_local.py", line 108, in request_json
+    return strict_json(raw), time.perf_counter() - started
+           ^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\evaluate_geollm_local.py", line 94, in strict_json
+    return json.loads(content, object_pairs_hook=unique, parse_constant=constant, parse_float=finite_float)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 359, in loads
+    return cls(**kw).decode(s)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\evaluate_geollm_local.py", line 81, in unique
+    raise ValueError('Duplicate JSON key')
+ValueError: Duplicate JSON key

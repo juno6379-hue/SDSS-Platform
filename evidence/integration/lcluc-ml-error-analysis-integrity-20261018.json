@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-18T00:20:51.054026+09:00",
+  "status": "TESTED_SYNTHETIC_AND_READ_ONLY_EXISTING_CHECKPOINT",
+  "original_data_model_config_unchanged": {
+    "backend/app/ml/network.py": "51b28410662e4e1da1a04e8952f5e8923cf3c0878e4ff2a83b7b1124ff5bce1b",
+    "scripts/run_experiment.py": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3",
+    "data/models/baseline2021_cpu_v1_model/best.pt": "ad74f5cf5ab4bfd42bffd94b2fa399bf28f3527bc8e9f424d6a9d5339b12cd6c",
+    "data/models/baseline2021_cpu_v1_model/report.json": "d99f4bd22ce96b1c322e99514edb1bedc04944a88f8e9cb85d771cced38fef9f",
+    "data/first-group/experiment-plan.json": "8f10e7bebeb5ddb5285d17a9048e0a1de2ce1166a9f12926cb40e83f371cc901"
+  },
+  "old_service_copy_sha256": "212b6c41cb2bc54094f084fa08df9bf0d9ac5634ccaec81b35068b6b7a3e767b",
+  "new_service_sha256": "f2a44674f22632315cf21959e5c6adf1bb9bf88097fb44d2998aa525cb2e661b",
+  "unchanged_service_function_asts": [
+    "_serialized",
+    "prepare_dataset",
+    "runtime_status",
+    "metrics",
+    "infer_raster",
+    "analyze_change",
+    "analyze_timeseries",
+    "evaluate_model"
+  ],
+  "allowed_change": "train_model final completed-report error-analysis hook only",
+  "new_tests": {
+    "passed": 12,
+    "seconds": 0.494
+  },
+  "related_tests": {
+    "total": 29,
+    "passed": 29,
+    "seconds": 43.79,
+    "includes": "Existing tiny16x16 synthetic CPU training/resume/checkpoint/infer fixtures; no operating dataset training"
+  },
+  "document_links": 13,
+  "document_missing_links": [],
+  "operating_training_runs": 0,
+  "operating_inference_evaluation_runs": 0,
+  "collection_downloads": 0,
+  "old_data_or_model_writes": 0,
+  "UI_contract": "Completed report gains optional error_analysis/three relative CSV-JSON artifact links. No new route or frontend changes. Legacy/paused null/missing remains distinct; authenticated asset delivery/UI contract work is separate."
+}

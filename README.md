@@ -75,3 +75,10 @@ docker compose up --build api
 ```
 
 API 컨테이너만 실행하며 기본 데이터는 호스트 `data`에 보존합니다. PostGIS·MLflow·Kubernetes·기관/RDTR·3D·벡터 RAG는 후속 통합 대상입니다. Docker 이미지 실행은 별도 검증이 필요하며 로컬 Python 시험 결과로 컨테이너 실행을 보장하지 않습니다.
+
+### LCLUC·GeoLLM 개발 검토 (2026-10-18)
+
+- [GeoLLM 실제 모델·RAG·도구 호출·지연 기술검토](docs/implementation/114_geollm_technical_review.md): 현행은 LLM 없는 정형 조회. 설치 모델의 별도 실측과 Qwen3 8B 개발 후보를 구분합니다.
+- [수집 결과→공통 DatasetVersion 등록](docs/implementation/111_data_pipeline_completion.md)
+- [실제 TinyUNet 아키텍처·최종 오류분석](docs/implementation/112_lcluc_ml_completion.md)
+- [LCLUC 통합·staging·보안·UAT 수락 조건](docs/implementation/113_lcluc_integration_acceptance.md)

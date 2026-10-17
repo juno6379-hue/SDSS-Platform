@@ -17,8 +17,19 @@ def main():
     parser.add_argument('--manifest',type=Path,nargs='+',required=True)
     parser.add_argument('--id',required=True)
     parser.add_argument('--data-root',type=Path,default=ROOT/'data')
+    parser.add_argument('--registry-manifest',type=Path,
+                        help='명시한 RAW/STAGED GMAIS Dataset Manifest로 공통 버전에만 등록(legacy 등록과 별도)')
     args=parser.parse_args()
     root=args.data_root.resolve()
+    if args.registry_manifest is not None:
+        from app.data.collection_registration import read_registration_json, register_collection_version
+        if len(args.manifest) != 1:
+            raise ValueError('공통 버전 등록에는 source report 한 개를 명시하십시오.')
+        manifest, _ = read_registration_json(args.registry_manifest)
+        result = register_collection_version(Store(root,recover_jobs=False), args.manifest[0], manifest,
+                                             expected_dataset_id=args.id)
+        print(json.dumps(result,ensure_ascii=False))
+        return
     store=Store(root,recover_jobs=False)
     if any(row['id']==args.id for row in store.list('datasets')):
         raise ValueError('기존 데이터셋을 덮어쓸 수 없습니다. 새 id를 지정하십시오.')

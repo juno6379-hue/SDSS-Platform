@@ -1,0 +1,117 @@
+{
+  "recorded_at": "2026-10-18T00:22:56+0900",
+  "scope": "NATIVE_PLANNING_TOOL_PROPOSAL_NOT_APPROVED_API_EXECUTION",
+  "actual_api": "/v1/agents/lcluc-agent/jobs",
+  "api_called": false,
+  "job_input_refs_available": false,
+  "execution_authorized": false,
+  "tool": {
+    "type": "function",
+    "function": {
+      "name": "propose_lcluc_plan",
+      "description": "Propose a LCLUC plan for a province and period. Planning only; never grants approval or submits a Job.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "province",
+          "start_year",
+          "end_year"
+        ],
+        "properties": {
+          "province": {
+            "type": "string"
+          },
+          "start_year": {
+            "type": "integer"
+          },
+          "end_year": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  },
+  "models": [
+    {
+      "model": "qwen3.5:4b",
+      "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "cases": [
+        {
+          "case": "id-gorontalo",
+          "error_type": "TimeoutError",
+          "http_status": null
+        },
+        {
+          "case": "en-gorontalo",
+          "seconds": 34.7708918999997,
+          "returned_model": "qwen3.5:4b",
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_uh3tf3np",
+              "function": {
+                "index": 0,
+                "name": "propose_lcluc_plan",
+                "arguments": {
+                  "province": "Gorontalo",
+                  "start_year": 2021,
+                  "end_year": 2025
+                }
+              }
+            }
+          ],
+          "correct_planning_call": true,
+          "done_reason": "stop",
+          "tool_executed": false
+        }
+      ]
+    },
+    {
+      "model": "qwen2.5:1.5b",
+      "digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+      "cases": [
+        {
+          "case": "id-gorontalo",
+          "seconds": 21.512215800001286,
+          "returned_model": "qwen2.5:1.5b",
+          "content": "To analyze the land cover change in Gorontalo from 2021 to 2025, we need to propose a LCLUC (Land Cover Land Use Change) plan for the province of Gorontalo. However, I'm unable to propose a plan directly due to the lack of approved models, independent labels, or pinned input references. \n\nI can provide you with a general outline of how to approach this analysis:\n\n1. **Data Collection**: Gather historical land cover data for Gorontalo from 2021 to 2025. This could include satellite imagery, remote sensing data, or",
+          "tool_calls": null,
+          "correct_planning_call": false,
+          "done_reason": "length",
+          "tool_executed": false
+        },
+        {
+          "case": "en-gorontalo",
+          "seconds": 5.503359899994393,
+          "returned_model": "qwen2.5:1.5b",
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_ndb6kd2s",
+              "function": {
+                "index": 0,
+                "name": "propose_lcluc_plan",
+                "arguments": {
+                  "province": "Gorontalo",
+                  "start_year": 2021,
+                  "end_year": 2025
+                }
+              }
+            }
+          ],
+          "correct_planning_call": true,
+          "done_reason": "stop",
+          "tool_executed": false
+        }
+      ]
+    },
+    {
+      "model": "qwen3:8b",
+      "status": "NOT_INSTALLED",
+      "cases": []
+    }
+  ],
+  "tool_executions": 0,
+  "model_installations": 0
+}

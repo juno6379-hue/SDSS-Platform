@@ -1,0 +1,21 @@
+test_corpus_is_repository_source_and_no_policy_authenticity_claim (test_geollm_local_evaluation.LocalEvaluationTests.test_corpus_is_repository_source_and_no_policy_authenticity_claim) ... ok
+test_correct_tool_with_wrong_period_fails_intent (test_geollm_local_evaluation.LocalEvaluationTests.test_correct_tool_with_wrong_period_fails_intent) ... ok
+test_cosine_dimension_zero_and_known_ranking (test_geollm_local_evaluation.LocalEvaluationTests.test_cosine_dimension_zero_and_known_ranking) ... ok
+test_invented_citation_and_empty_citation_fail (test_geollm_local_evaluation.LocalEvaluationTests.test_invented_citation_and_empty_citation_fail) ... ok
+test_json_wrapper_duplicate_and_nonfinite_fail (test_geollm_local_evaluation.LocalEvaluationTests.test_json_wrapper_duplicate_and_nonfinite_fail) ... ok
+test_local_fixed_urls_only_no_network_on_invalid_url (test_geollm_local_evaluation.LocalEvaluationTests.test_local_fixed_urls_only_no_network_on_invalid_url) ... ok
+test_missing_model_never_pulls_or_calls_chat (test_geollm_local_evaluation.LocalEvaluationTests.test_missing_model_never_pulls_or_calls_chat) ... ok
+test_redirect_is_rejected_before_second_request (test_geollm_local_evaluation.LocalEvaluationTests.test_redirect_is_rejected_before_second_request) ... ok
+test_schema_valid_is_not_semantically_correct (test_geollm_local_evaluation.LocalEvaluationTests.test_schema_valid_is_not_semantically_correct) ... ok
+test_transport_rejects_duplicate_and_nonfinite_before_native_tools (test_geollm_local_evaluation.LocalEvaluationTests.test_transport_rejects_duplicate_and_nonfinite_before_native_tools) ... ok
+test_unknown_property_and_wrong_type_fail_schema (test_geollm_local_evaluation.LocalEvaluationTests.test_unknown_property_and_wrong_type_fail_schema) ... ok
+test_valid_blocked_plan (test_geollm_local_evaluation.LocalEvaluationTests.test_valid_blocked_plan) ... ok
+test_execution_tool_is_never_a_planning_success (test_geollm_tool_evaluation.ToolEvaluationTests.test_execution_tool_is_never_a_planning_success) ... ok
+test_generated_path_and_wrong_period_rejected (test_geollm_tool_evaluation.ToolEvaluationTests.test_generated_path_and_wrong_period_rejected) ... ok
+test_malformed_tool_data_is_failure_not_exception (test_geollm_tool_evaluation.ToolEvaluationTests.test_malformed_tool_data_is_failure_not_exception) ... ok
+test_only_exact_single_planning_call_passes (test_geollm_tool_evaluation.ToolEvaluationTests.test_only_exact_single_planning_call_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.009s
+
+OK

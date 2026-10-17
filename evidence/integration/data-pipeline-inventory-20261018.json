@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-17T15:15:24.998964+00:00",
+  "scope": "READ_ONLY_LOCAL_METADATA_6_PROVINCES_2020_2025",
+  "input_pins": {
+    "data/first-group-training-esri-v1/annual-window-report.json": {
+      "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+      "bytes": 53868103
+    },
+    "configs/first-group.collection.json": {
+      "sha256": "8b0c1b2aad13a3344200998ec62a18853c5308adf4ec57b1af835333845fd7e3",
+      "bytes": 7401
+    },
+    "data/first-group-training-budget/global-ledger.json": {
+      "sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+      "bytes": 51204
+    }
+  },
+  "eligible_by_province_year": {
+    "south_sulawesi": {
+      "2020": 53,
+      "2021": 32,
+      "2022": 29,
+      "2023": 36,
+      "2024": 36,
+      "2025": 30
+    },
+    "gorontalo": {
+      "2020": 46,
+      "2021": 31,
+      "2022": 14,
+      "2023": 30,
+      "2024": 25,
+      "2025": 8
+    },
+    "southeast_sulawesi": {
+      "2020": 41,
+      "2021": 18,
+      "2022": 26,
+      "2023": 18,
+      "2024": 1,
+      "2025": 23
+    },
+    "banten": {
+      "2020": 53,
+      "2021": 58,
+      "2022": 51,
+      "2023": 32,
+      "2024": 23,
+      "2025": 16
+    },
+    "west_java": {
+      "2020": 57,
+      "2021": 41,
+      "2022": 56,
+      "2023": 32,
+      "2024": 32,
+      "2025": 32
+    },
+    "east_java": {
+      "2020": 23,
+      "2021": 16,
+      "2022": 34,
+      "2023": 28,
+      "2024": 16,
+      "2025": 14
+    }
+  },
+  "physical_by_province_year": {
+    "south_sulawesi": {
+      "2020": 64,
+      "2021": 48,
+      "2022": 48,
+      "2023": 48,
+      "2024": 48,
+      "2025": 48
+    },
+    "gorontalo": {
+      "2020": 48,
+      "2021": 48,
+      "2022": 16,
+      "2023": 32,
+      "2024": 32,
+      "2025": 16
+    },
+    "southeast_sulawesi": {
+      "2020": 48,
+      "2021": 24,
+      "2022": 32,
+      "2023": 40,
+      "2024": 8,
+      "2025": 40
+    },
+    "banten": {
+      "2020": 64,
+      "2021": 64,
+      "2022": 64,
+      "2023": 32,
+      "2024": 32,
+      "2025": 16
+    },
+    "west_java": {
+      "2020": 64,
+      "2021": 44,
+      "2022": 60,
+      "2023": 32,
+      "2024": 32,
+      "2025": 32
+    },
+    "east_java": {
+      "2020": 32,
+      "2021": 16,
+      "2022": 48,
+      "2023": 32,
+      "2024": 16,
+      "2025": 16
+    }
+  },
+  "physical_patches": 1384,
+  "manifest_quality_eligible_patches": 1111,
+  "covered_eligible_cells": 36,
+  "expected_cells": 36,
+  "by_split": {
+    "train": 628,
+    "val": 233,
+    "test": 250
+  },
+  "planned_aois": [
+    {
+      "id": "south_sulawesi",
+      "bbox": [
+        119.91862781261483,
+        -3.8203196,
+        119.97862781261483,
+        -3.7603196000000003
+      ],
+      "province_bbox": [
+        117.6525941,
+        -7.424191,
+        121.8395718,
+        -1.8824829
+      ]
+    },
+    {
+      "id": "gorontalo",
+      "bbox": [
+        122.2257185311915,
+        0.6422791999999999,
+        122.2857185311915,
+        0.7022792
+      ],
+      "province_bbox": [
+        121.1559965,
+        0.3061748,
+        123.5519226,
+        1.0394659
+      ]
+    },
+    {
+      "id": "southeast_sulawesi",
+      "bbox": [
+        121.78232683218192,
+        -3.8318666,
+        121.84232683218193,
+        -3.7718666000000005
+      ],
+      "province_bbox": [
+        120.8656896,
+        -6.2130512,
+        124.6113545,
+        -2.7102475
+      ]
+    },
+    {
+      "id": "banten",
+      "bbox": [
+        106.10434180551447,
+        -6.46753335,
+        106.16434180551447,
+        -6.40753335
+      ],
+      "province_bbox": [
+        105.099815,
+        -7.0367223,
+        106.7800127,
+        -5.8078104
+      ]
+    },
+    {
+      "id": "west_java",
+      "bbox": [
+        107.62362883177167,
+        -6.8974129,
+        107.68362883177167,
+        -6.8374128999999995
+      ],
+      "province_bbox": [
+        106.3708302,
+        -7.8204266,
+        108.8867652,
+        -5.9147353
+      ]
+    },
+    {
+      "id": "east_java",
+      "bbox": [
+        112.24683100308779,
+        -7.79213925,
+        112.3068310030878,
+        -7.7321392499999995
+      ],
+      "province_bbox": [
+        110.8972111,
+        -8.7808254,
+        116.2703024,
+        -5.0432281
+      ]
+    }
+  ],
+  "catalog_record_counts": {
+    "analyses": 3,
+    "datasets": 6,
+    "gmais_idempotency": 2,
+    "gmais_jobs": 2,
+    "models": 1
+  },
+  "pending_batches": [
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01"
+  ],
+  "pending_reserved_bytes": 136314880,
+  "training_ready": false,
+  "scientific_accuracy_validated": false,
+  "network_requests": 0,
+  "raster_files_read": 0,
+  "catalog_writes": 0,
+  "note": "Counts are stored manifest quality_status, not fresh raster QA, whole-province coverage or independent science."
+}

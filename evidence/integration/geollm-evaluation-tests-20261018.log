@@ -1,0 +1,17 @@
+test_geollm_local_evaluation (unittest.loader._FailedTest.test_geollm_local_evaluation) ... ERROR
+
+======================================================================
+ERROR: test_geollm_local_evaluation (unittest.loader._FailedTest.test_geollm_local_evaluation)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_geollm_local_evaluation
+Traceback (most recent call last):
+  File "C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\unittest\loader.py", line 162, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests.test_geollm_local_evaluation'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

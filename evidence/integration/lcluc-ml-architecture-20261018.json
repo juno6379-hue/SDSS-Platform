@@ -1,0 +1,66 @@
+{
+  "recorded_at": "2026-10-18T00:13:38.669234+09:00",
+  "inspection": "Safe checkpoint weights_only=True CPU read, no pickle globals override, no training or checkpoint rewrite",
+  "architecture": "TinyUNet / tiny_unet",
+  "not_implemented_architecture": "U-Net++",
+  "network": "2 pooling levels; features8/16/32; bilinear upsample with simple skip concatenations; no nested dense skip grid/deep-supervision heads",
+  "checkpoint": {
+    "path": "data/models/baseline2021_cpu_v1_model/best.pt",
+    "architecture": "tiny_unet",
+    "epoch": 3,
+    "input_bands": [
+      1,
+      2,
+      3
+    ],
+    "first_conv_weight_shape": [
+      8,
+      3,
+      3,
+      3
+    ],
+    "head_weight_shape": [
+      9,
+      8,
+      1,
+      1
+    ],
+    "parameter_count": 29833,
+    "all_state_shapes_match_current_TinyUNet_channels3": true,
+    "reference_kind": "worldcover_weak_label",
+    "synthetic": false,
+    "independent_evaluation_report_key": null,
+    "scientific_accuracy_report_key": null,
+    "missing_keys_are_not_asserted_false": true,
+    "weights_only": true,
+    "sha_unchanged_after_read": true
+  },
+  "current_first_group_plan": {
+    "bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "B12"
+    ],
+    "patch_size": 256,
+    "min_patches": 1000,
+    "legacy_checkpoint_is_not_the_six_band_candidate_model": true,
+    "max_patches_key_in_plan": null
+  },
+  "source_sha256": {
+    "backend/app/ml/network.py": "51b28410662e4e1da1a04e8952f5e8923cf3c0878e4ff2a83b7b1124ff5bce1b",
+    "backend/app/ml/service.py": "212b6c41cb2bc54094f084fa08df9bf0d9ac5634ccaec81b35068b6b7a3e767b",
+    "scripts/run_experiment.py": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3",
+    "data/models/baseline2021_cpu_v1_model/best.pt": "ad74f5cf5ab4bfd42bffd94b2fa399bf28f3527bc8e9f424d6a9d5339b12cd6c",
+    "data/models/baseline2021_cpu_v1_model/report.json": "d99f4bd22ce96b1c322e99514edb1bedc04944a88f8e9cb85d771cced38fef9f",
+    "data/first-group/experiment-plan.json": "8f10e7bebeb5ddb5285d17a9048e0a1de2ce1166a9f12926cb40e83f371cc901"
+  },
+  "operating_training": 0,
+  "data_or_model_writes": 0,
+  "target_patch_range_requirement": [
+    1000,
+    3000
+  ]
+}

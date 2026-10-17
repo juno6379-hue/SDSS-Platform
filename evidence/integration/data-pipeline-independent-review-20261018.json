@@ -1,0 +1,56 @@
+{
+  "recorded_at": "2026-10-18T00:24:17.867265+09:00",
+  "status": "TESTED_SYNTHETIC",
+  "independent_tests": {
+    "total": 23,
+    "passed": 23,
+    "seconds": 16.53,
+    "exit_code": 0,
+    "modules": [
+      "test_collection_version_registration",
+      "test_dataset_registry_versions"
+    ],
+    "log": "evidence/integration/data-pipeline-independent-20261018.log",
+    "operating_registration": false
+  },
+  "source_sha256": {
+    "backend/app/data/collection_registration.py": "bf6a77727cfd946bb20b456527412b51a164ae4125833086d2404be29095ccf2",
+    "scripts/register_collection.py": "802c4f72c16c38fc86b161784eefe85c093d1f959889d725988be2cb3414cccb",
+    "tests/test_collection_version_registration.py": "7be07a02510bf351e65d46812fee72328d3f07ba50aa1faab0b5862dceae7f7a",
+    "backend/app/dataset_registry.py": "f12e015383fbbbd2d415f04658104892d445bb81976d207bd8342f4688adb8bd",
+    "docs/implementation/111_data_pipeline_completion.md": "2b02fe7f7b2071564fdbf02506e63dd78773ae81404c8792689d95639d875cb7"
+  },
+  "review": {
+    "explicit_pin": "Source report raw SHA equals caller Dataset Manifest sha256; canonical Registry manifest is separately snapshotted by old core.",
+    "report_contract": "RAW/STAGED document only; caller explicitly supplies version/source/license/access/spatial/temporal/lineage; no auto-creation or semantic certification.",
+    "file_checks": "Every completed source row requires image,label,quality local file and SHA; legacy window-state evidence must resolve to row artifact.",
+    "path_checks": "DATA confinement and remote/UNC rejection; original logical source/report paths re-resolved before register; target stat and report raw SHA checked again.",
+    "source_JSON_bounds": "registry manifest1MiB/report and state64MiB/20000 scenes; duplicate keys/nonfinite/non-object/UTF8 failure rejected. Byte/file bounds are not cumulative CPU or source-file IO budgets.",
+    "registry_write": "One common dataset_versions transaction via old register_version; no legacy datasets write in explicit new branch; same manifest idempotent and conflict rejected.",
+    "lineage": "Direct immutable parent resolution only; not full transitive DAG/ACL proof.",
+    "CLI_legacy": "Omitting registry-manifest preserves old namespace/response/record path under source-pinned comparison test.",
+    "false_gates": [
+      "training_ready",
+      "scientific_accuracy_validated",
+      "deployment_approval"
+    ],
+    "store_initialization": "Explicit CLI may create DB/schema before later registration rejection; not a read-only CLI. No existing Job recovery when recover_jobs=False.",
+    "UI_change_required": false,
+    "UI_reason": "No endpoint or frontend schema changed. Explicit CLI only; no operating record registered and no new UI state. Future source document listing must retain RAW/STAGED/noQA semantics.",
+    "current_findings": []
+  },
+  "limitations": [
+    "Source hash success does not parse raster pixels, verify label year/taxonomy, class7, quality, AOI/temporal semantics, scientific accuracy or training eligibility.",
+    "DatasetVersion object is the report document; images are not registered as immutable copies and DB/file atomic snapshot is not provided.",
+    "No provenance/authority certification from caller manifest or direct-parent hash match."
+  ],
+  "operating_actions": {
+    "downloads": 0,
+    "collection_runs": 0,
+    "operating_store_constructor_calls": 0,
+    "operating_dataset_registration": 0,
+    "training_runs": 0,
+    "source_or_docs_edited_by_reviewer": 0,
+    "API_or_browser_calls": 0
+  }
+}

@@ -72,3 +72,7 @@ Root는 이 대기열에서 실제 배정·구현·시험·보존·관련 문서
 ### 110 후속: commit 단계 선언 검사
 
 [110 구현 문서](110_recovery_commit_contract.md)의 독립 순수 함수가 caller의 단계·세 target SHA·재관측·충돌을 검사한다. 기존 이 문서의 실자료 검사/형식·수집기·예산코드는 바뀌지 않았고 실제 journal/정산·집계/재개 coordinator는 미연결이다. 기존 pending2/예약·원장-run 차이를 해결하거나 exactly-once를 인증한 것이 아니다. 최종 신규14·관련66PASS/1SKIP·독립62PASS/1SKIP·보존 범위는 `evidence/integration/recovery-commit-contract-live-integrity-20261017.json`을 따른다. 해당 내부 선언 검사만 완료이며109의 실제 지속화/복구 수락 조건은 남는다.
+
+### 2026-10-18 후속: 실제 등록·ML 오류분석·GeoLLM 기술검토
+
+[111](111_data_pipeline_completion.md)은 수집 source report를 RAW/STAGED 문서로 공통 버전에 연결한 명시 CLI이며 운영등록/AI-ready 승인이 아니다. [112](112_lcluc_ml_completion.md)는 기존 TinyUNet RGB 체크포인트를 확인하고 완료best 모델의 val/test 오류분석을 실제 학습 report에 연결했다. class7·QA차단과 독립 검증 라벨 미확보를 해제하지 않는다. [113](113_lcluc_integration_acceptance.md)의 LCLUC전용 새 orchestration은 후속PLANNED다. [114](114_geollm_technical_review.md)는 현재 앱에 LLM/RAG 미연결임을 확인하고 설치된 Ollama 모델의 별도 실응답·실패·임베딩과 Qwen3:8b 후보/N/A를 구분한다. 기존 정상 GeoLLM API/UI·운영 DB/원장은 변경하지 않았다. 최신 전체 시험·보존·이해자료·다음 수락 조건은 인계서의111~114 절을 따른다. 이 변경만으로 Data/ML/운영·기관UAT 전체 완료를 선언하지 않는다.

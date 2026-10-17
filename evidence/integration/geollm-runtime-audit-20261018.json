@@ -1,0 +1,97 @@
+{
+  "recorded_at": "2026-10-18T00:30:58.4247295+09:00",
+  "scope": "LOCAL_RUNTIME_AND_SOURCE_AUDIT_NO_DATABASE_LOGIN_OR_SECRET_VALUES",
+  "hardware": {
+    "computer": {
+      "TotalPhysicalMemory": 34078126080
+    },
+    "graphics": {
+      "Name": "Intel(R) Arc(TM) Graphics"
+    },
+    "processor": {
+      "Name": "Intel(R) Core(TM) Ultra 5 125H",
+      "NumberOfCores": 14,
+      "NumberOfLogicalProcessors": 18
+    }
+  },
+  "environment_variable_names": [
+    "OLLAMA_HOST"
+  ],
+  "services": [
+    {
+      "Name": "postgresql-x64-15",
+      "State": "Running",
+      "ProcessId": 5256
+    },
+    {
+      "Name": "postgresql-x64-18",
+      "State": "Running",
+      "ProcessId": 5296
+    }
+  ],
+  "listeners": [
+    {
+      "LocalAddress": "::",
+      "LocalPort": 11434,
+      "OwningProcess": 27860
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 5433,
+      "OwningProcess": 7708
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 5432,
+      "OwningProcess": 8104
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 5433,
+      "OwningProcess": 7708
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 5432,
+      "OwningProcess": 8104
+    }
+  ],
+  "source_files": [
+    {
+      "sha256": "4c4a0d1b96bf2472ee01a2af6597aea221b8cae07a9d9932fbd7d6c16f665e4a",
+      "path": "backend/app/main.py"
+    },
+    {
+      "sha256": "8dc2030ee3103255d1bb02989944a64cc8195e18551197ca4149ed5b977bbc52",
+      "path": "backend/app/store.py"
+    },
+    {
+      "sha256": "716a7576a05e0e648a3ec0912641f26b4db749c63058d67add66de8eecdfc1a9",
+      "path": "backend/app/gmais_api.py"
+    },
+    {
+      "sha256": "6e1d1b1991b56637ea0af09ae3a7f1bebc24bf2d701d3fcfb9d5e3e7076a434a",
+      "path": "frontend/src/GeoQuery.tsx"
+    },
+    {
+      "sha256": "9b37ffac1dde45b3cf24c3a39610517e8cf145ad7fe056e453bcdc2385f77d7d",
+      "path": "compose.yaml"
+    },
+    {
+      "sha256": "cd7bd8d811536d0c2d3cfb1f31b8f8549ccb0a627ea6088a25d2d8a4294dd73d",
+      "path": "backend/requirements.txt"
+    },
+    {
+      "sha256": "1544de21c43391c000e73957bd0ef11c099b22a16198741374299c3b712121dc",
+      "path": "backend/requirements-optional.txt"
+    },
+    {
+      "sha256": "dab091c4f1f4b63cfab63b9b88e114da74ed9b8c4974167d03d729119cf785d9",
+      "path": "frontend/.env.example"
+    }
+  ],
+  "model_pulls": 0,
+  "database_connections": 0,
+  "database_writes": 0,
+  "production_geollm_changes": 0
+}

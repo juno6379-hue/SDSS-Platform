@@ -256,6 +256,8 @@ def train_model(payload: dict, data_root: Path) -> dict:
             'class_names':manifest.get('class_names',CLASS_NAMES),'label_taxonomy_signature':manifest.get('label_taxonomy_signature'),
             'accuracy_claim':'기능시험/의사라벨 일치도. 독립 참조자료 검증 없이는 최종 정확도가 아닙니다.',
             'checkpoint_path':str(checkpoint.relative_to(root)),'checkpoint_sha256':file_digest(checkpoint)}
+    from .error_analysis import write_training_error_analysis
+    report['error_analysis']=write_training_error_analysis(report,destination,root)
     (destination/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     (destination/'progress.json').write_text(json.dumps({'training_state':'completed','completed_epochs':len(history),'selected_epoch':saved['epoch'],'target_epochs':epochs}),encoding='utf-8')
     return report

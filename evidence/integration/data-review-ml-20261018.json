@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "scope": "INDEPENDENT_SYNTHETIC_ML_ERROR_ANALYSIS_REVIEW",
+  "unittest": {
+    "tests": 12,
+    "passed": 12,
+    "seconds": 1.13,
+    "exit_code": 0,
+    "log": "evidence/integration/data-review-ml-20261018.log"
+  },
+  "additional_oracle_cases": 81,
+  "oracle_cases_not_added_to_unittest_count": true,
+  "exact_service_ast_after_removing_two_authorized_statements": true,
+  "selected_epoch_not_last_verified": true,
+  "validation_test_distinct_verified": true,
+  "csv_formula_comma_quote_unicode_verified": true,
+  "identical_artifacts_preserved": true,
+  "partial_failure_limit_verified": "First JSON can remain if second CSV write fails; three artifacts and final service report are not atomic.",
+  "source_pins": {
+    "evidence\\integration\\lcluc-ml-original-service-20261018.py": "212b6c41cb2bc54094f084fa08df9bf0d9ac5634ccaec81b35068b6b7a3e767b",
+    "backend\\app\\ml\\service.py": "f2a44674f22632315cf21959e5c6adf1bb9bf88097fb44d2998aa525cb2e661b",
+    "backend\\app\\ml\\error_analysis.py": "80a579a3fc5034cc4738385462e0df1cd1cae7ca3abb2808d6bf357606ba5673",
+    "tests\\test_ml_error_analysis.py": "d60c75ec75bfc0a35be3265d1efc4e5ea75d2dab773e423bb2583ca2f3966544"
+  },
+  "findings": [],
+  "operating_data_reads": 0,
+  "operating_data_writes": 0,
+  "training_runs": 0,
+  "network_requests": 0,
+  "product_edits": 0
+}
