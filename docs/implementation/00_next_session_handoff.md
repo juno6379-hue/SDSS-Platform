@@ -1,5 +1,25 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 실제 모델 manifest와 등록 단일 장면 정규화 자동 연결 (126)
+
+계약 담당은 신규 `backend/app/ml/pinned_scene_normalization.py`·집중시험·문서126, 독립 담당은 별도 실제 Temp checkpoint/Registry 결합 검증과 UI/API 영향, Root는 실제 GeoTIFF 대조·관련 회귀·운영 조회·보존·공통 문서/Git, 이해 담당은 완료 소스의 쉬운 설명·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 기존 작업자는 모두 완료 상태였고 수집·학습 프로세스는 관측되지 않았다. API·UI·Ollama 서비스의 실행과 보고예약 ACTIVE/10분을 수집·학습 실행과 구분한다.
+
+`inspect_pinned_scene_normalization(store, model_ref, training_report_sha256, image_ref, evidence_ref, metadata_ref)`는124로 실제 고정 checkpoint/report와 등록 모델 선언을 읽고, 그 checkpoint에서 해석한 manifest 객체만125의 세 Registry 참조/장면 파일 검증에 전달한다. caller checkpoint_manifest/source_scene/normalization/파일 경로 입력은 없다. 보고서 복사 input_signature로 대체하지 않는다. 모델 실패는125 호출0, actual global 모델은 모델 읽기 후 OUT_OF_SCOPE로 장면 record/file 읽기0이다. global을 전체 IO0으로 표현하지 않는다.
+
+정상 PINNED_SCENE_MATCHED_UNVERIFIED 외에 MODEL_BLOCKED/SCENE_BLOCKED/OUT_OF_SCOPE를 구분한다. exact20 반환의 nested124/125 관측·고정 세부 오류를 보존하고 외부 issue는 단계별 고정 코드로 처리한다. checkpoint/report/registry의 부분 true는 이전 단계 관측 이력이며 전체 성공이 아니다. artifact_bytes_verified만 모델과 장면 모두 성공할 때 true이고 state_dict·래스터header·QA본문·mask·기관·ACL·기타부모·과학·실행·Workflow10개는 항상 false다.125 내부 checkpoint=false는 그 helper 자체 범위로 보존한다.
+
+124/125/123의 bounded 파일·JSON·ZIP·CPU weights_only 경계를 상속하며 승인/실행 gate를 바꾸지 않는다. Store.get DB 원문 JSON decode는 후행 tree한도 이전이므로 전체 memory hardcap이 아니다. Torch ambient allowlist·CPU/RSS/시간 격리, 악성 metadata DoS, 순차모델/다중파일 원자 snapshot·모델 최종 재검사를 보장하지 않는 trusted-local 내부 읽기다. PUBLIC 선언/quality상태·보정 문서 일치도 ACL·품질·물리 보정값 독립 검증이 아니다.
+
+집중10 PASS/3.261초·Root 관련37 PASS/12.616초(신규10+124의14+125의13)·독립8 PASS/0 SKIP/2.807693초다. 중복 묶음을 합산하지 않는다. 별도 독립 실제 Temp3버전 등록+CPU TinyUNet6 checkpoint 시험은 모델1+장면3get/DB 불변·무쓰기/forward·state load0, 실제 manifest 전달/decoy 무시, global과 모델 실패 조기 차단, ref/각파일 변조·부분 flag·예외 비공개를 확인했다. 신규 제품 결함 지적은 없다.
+
+Root 실제 Temp6밴드 GeoTIFF·학습하지 않은 checkpoint·등록3참조6시나리오도 통과했다. 최초 Root runtime은 PYTHONPATH의 .runtime 누락으로 jsonschema import가 실패했으며 소스 수정 없이 환경만 정정해 성공했다. 초기 원로그를 보존하고 제품 결함과 구분한다. 생성 모델/자료의 파일 읽기 검증은 학습·추론·독립 정확도나 운영 승인 근거가 아니다.
+
+보호141개·기존소스285개·이전증거1065개·catalog14행 canonical SHA·예약136314880바이트를 보존했다.03:09 KST URI mode=ro 운영 조회는 legacy datasets6/models1, dataset_versions0이다. 운영 모델/래스터 load·수집·등록·학습·추론·배포·Workflow dispatch0, 원본·원장·lock·기존 분할·모델은 그대로다. 내부 미연결 helper로 API/UI 변경이 없어 이번 frontend/build/browser·전체 backend는 재실행하지 않았다.120/121 전체1184(1183 PASS·기존1 SKIP)/frontend261/build는 이전 이력이다.
+
+이번126은 단일 장면 자동 연결만 완료했다. 다음127은2~6개 연차의 고정 참조·전체 사전검증 계약이다. 운영 DatasetVersion 등록·QA/구름mask·기존115 per_scene 실행·독립 라벨/모델 승인·다른5실행기·운영 GeoLLM/RAG/PostGIS·staging/RBAC/기관UAT는 미완료다. 이 내부 연결을 전체 개발 완료로 보거나 보고예약을 중단하지 않는다.
+
+근거: `docs/implementation/126_pinned_scene_normalization.md`, `evidence/integration/pinned-scene-agent-20261018-focused.log`, `pinned-scene-root-related-20261018.log`, `pinned-scene-independent-20261018.json`, `pinned-scene-runtime-20261018.json`, `pinned-scene-runtime-initial-20261018.log`, `pinned-scene-live-integrity-20261018.json`, `pinned-scene-operating-inventory-20261018.json`, 최종 `pinned-scene-closeout-20261018.json`. 관련 계약·사용법·시험·인계와 이해자료를 함께 갱신했다.
+
 ## 2026-10-18 — 세 Dataset Registry 고정 참조와 한 장면 정규화 파일 연결 (125)
 
 계약 담당은 신규 `backend/app/ml/registered_per_scene_files.py`·집중시험·문서125, 독립 검토 담당은 실제 Temp 등록/역할·lineage·경쟁/무쓰기·UI/API 영향, Root는 실제 GeoTIFF/등록자료 대조·관련 회귀·운영 조회·보존·공통 문서/Git, 이해 담당은 완료 소스에 근거한 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다. 기존 작업자는 유휴였고 수집·학습 프로세스는 관측되지 않았다. 보고예약 ACTIVE/10분과 실제 실행 상태를 구분한다.

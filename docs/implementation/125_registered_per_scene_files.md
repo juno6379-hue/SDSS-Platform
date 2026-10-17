@@ -1,5 +1,7 @@
 # 125 — 세 Dataset Registry 고정 참조와 한 장면의 정규화 파일 결합
 
+> 후속126: 실제 모델 checkpoint manifest와 본 장면 reader의 자동 연결을 `126_pinned_scene_normalization.md`에서 구현·검증했다. caller manifest 없는 단일 장면 내부 읽기이며 연차 일괄 사전검증·실행 gate는127 이후 미완료다.
+
 ## 쉬운 설명과 이번 범위
 
 123은 caller가 지정한 경로·SHA를 읽었다. 신규 `backend/app/ml/registered_per_scene_files.py`의 `read_registered_per_scene_files(store, checkpoint_manifest, image_ref, evidence_ref, metadata_ref)`는 영상·보정 evidence·원 metadata의 세 **등록 ID/version/SHA**를 받아 Registry record와 canonical manifest를 검산하고 실제 파일 관측123에 연결한다. caller가 source_scene·normalization·원문 경로를 별도로 제출하지 않는다.

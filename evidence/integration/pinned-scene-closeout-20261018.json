@@ -1,0 +1,98 @@
+{
+  "recorded_at": "2026-10-18T03:13:37.687499+09:00",
+  "status": "126_ACTUAL_CHECKPOINT_MANIFEST_AND_REGISTERED_SINGLE_SCENE_JOIN_VERIFIED",
+  "focused": {
+    "passed": 10,
+    "seconds": 3.261
+  },
+  "related": {
+    "passed": 37,
+    "seconds": 12.616,
+    "composition": "10 new composition +14 actual model manifest +13 registered scene tests"
+  },
+  "independent": {
+    "passed": 8,
+    "skipped": 0,
+    "seconds": 2.8076925999921514
+  },
+  "root_actual_temp_registered_scene_scenarios": 6,
+  "overlapping_test_bundles_are_not_additive": true,
+  "source_sha256": "b4553a8c3163f8f7213e745b8f8b4ccb989300fd48e49286e0eecadbb900b9e1",
+  "test_sha256": "08435da8362f375b0f4afc97d2b54044a4562a15d57aacc31557aea644a26ab4",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T03:13:37.687499+09:00",
+    "understanding_markdown": 93,
+    "implementation_markdown": 1,
+    "local_links": 392,
+    "metadata_evidence_references": 10149,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T03:11:29.185996+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 285,
+    "existing_source_changes": [],
+    "previous_evidence_checked": 1065,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_workflow_runtime_api_ui_and_model_files_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T03:09:03.142423+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "root_initial_import_failure_due_to_missing_runtime_pythonpath_preserved_then_environment_corrected_without_source_change": true,
+  "explicit_scene_extensions_and_lineage_roles_are_internal_contract_not_official_authority": true,
+  "public_declaration_read_policy_is_not_acl_and_quality_state_is_not_qa_approval": true,
+  "store_database_json_predecode_is_not_memory_bounded_by_new_postdecode_tree_checks": true,
+  "checkpoint_manifest_is_caller_metadata": false,
+  "actual124_model_join_completed": true,
+  "temporary_untrained_checkpoint_loaded_with_cpu_weights_only": true,
+  "all_year_quality_mask_or_runtime_binding_completed": false,
+  "api_ui_workflow_runtime_connected": false,
+  "execution_authorized": false,
+  "state_dict_verified": false,
+  "source_authority_verified": false,
+  "scientific_accuracy_validated": false,
+  "workflow_supported": false,
+  "frontend_build_browser_rerun_this_unit": false,
+  "backend_full_rerun_this_unit": false,
+  "reason_no_full_rerun": "All285 previous source files are byte-identical. New internal single-scene composition tested with actual Temp CPU checkpoint/Registry/rasters, independent failures and124/125 related regressions. No API/UI contract change.",
+  "previous_backend_regression": {
+    "unit": "120/121",
+    "tests_run": 1184,
+    "passed": 1183,
+    "skipped": 1,
+    "seconds": 399.529
+  },
+  "previous_frontend_regression": {
+    "unit": "120/121",
+    "passed": 261,
+    "build_modules": 108,
+    "build_seconds": 21.85
+  },
+  "understanding_updated": true,
+  "operating_collection_training_registry_deployment_workflow_dispatch": 0,
+  "operating_model_or_raster_load": 0,
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "collector_training_processes_observed": 0,
+  "next_internal_candidate": "127_ALL_YEAR_PINNED_NORMALIZATION_READ_ONLY_PREFLIGHT_CONTRACT",
+  "snapshot_files": 1591
+}

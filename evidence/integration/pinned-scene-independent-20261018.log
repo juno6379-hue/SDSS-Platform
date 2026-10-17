@@ -1,0 +1,87 @@
+test_actual_manifest_forwarded_once_report_decoy_unused_no_execution (__main__.Independent.test_actual_manifest_forwarded_once_report_decoy_unused_no_execution) ... ok
+test_each_scene_asset_tamper_keeps_model_history_but_not_aggregate_success (__main__.Independent.test_each_scene_asset_tamper_keeps_model_history_but_not_aggregate_success) ... ok
+test_global_actual_checkpoint_ignores_invalid_scene_refs (__main__.Independent.test_global_actual_checkpoint_ignores_invalid_scene_refs) ... ok
+test_model_hash_failures_never_call_scene_reader (__main__.Independent.test_model_hash_failures_never_call_scene_reader) ... ok
+test_model_version_pin_conflict_stops_before_scene (__main__.Independent.test_model_version_pin_conflict_stops_before_scene) ... ok
+test_no_caller_manifest_or_path_parameter_exists (__main__.Independent.test_no_caller_manifest_or_path_parameter_exists) ... ok
+test_scene_extension_missing_and_fixed_ref_conflict (__main__.Independent.test_scene_extension_missing_and_fixed_ref_conflict) ... ok
+test_stage_exceptions_have_fixed_safe_issues_and_no_path_leak (__main__.Independent.test_stage_exceptions_have_fixed_safe_issues_and_no_path_leak) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.807s
+
+OK
+{
+  "scope": "SYNTHETIC_TEMP_CPU_CHECKPOINT_AND_REGISTERED_SCENE_COMPOSITION",
+  "tests": 8,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 2.8076925999921514,
+  "passed": true,
+  "source_sha256": "b4553a8c3163f8f7213e745b8f8b4ccb989300fd48e49286e0eecadbb900b9e1",
+  "frozen_source_matches": true,
+  "baseline_commit": "2a980f91eeb86ff61df65eed5c4f2d266aa5f540",
+  "old_source_byte_checks": [
+    {
+      "path": "backend/app/ml/model_checkpoint_manifest.py",
+      "baseline_sha256": "c62cb01364cc60ab481c16a8b31dfa4d57085f435b1442cb6001ec37325f591d",
+      "current_sha256": "c62cb01364cc60ab481c16a8b31dfa4d57085f435b1442cb6001ec37325f591d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/registered_per_scene_files.py",
+      "baseline_sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
+      "current_sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/per_scene_normalization_files.py",
+      "baseline_sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+      "current_sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/dataset_registry.py",
+      "baseline_sha256": "f12e015383fbbbd2d415f04658104892d445bb81976d207bd8342f4688adb8bd",
+      "current_sha256": "f12e015383fbbbd2d415f04658104892d445bb81976d207bd8342f4688adb8bd",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/lcluc_workflow.py",
+      "baseline_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "current_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "baseline_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "current_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/LclucWorkflowPanel.tsx",
+      "baseline_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "current_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/lclucWorkflowAdapter.ts",
+      "baseline_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "current_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "unchanged": true
+    }
+  ],
+  "tracked_source_differences": [],
+  "fixture": "Fresh actual TinyUNet6 CPU torch.save/load and three actual TempStore register_version calls; no training/inference.",
+  "operating_Store_API_registration_checkpoint_reads_or_writes": 0,
+  "inference_training_state_load_calls": 0,
+  "UI_API_changes": 0,
+  "frontend_build_browser_runs": 0,
+  "limitations": [
+    "Composition observes actual pinned manifest and one registered scene only; no execution/approval/raster/mask/QA/authority/science verification.",
+    "Nested partial checkpoint/report/registry true flags are prior role observations, not aggregate success.",
+    "Inherited safe_globals/RSS/time/Store predecode/multifile atomicity limits of124/125 remain.",
+    "Internal helper unwired to API/UI/Workflow; no front/build/browser or full-backend rerun. Prior1184 history is not new. Do not sum overlapping suites."
+  ]
+}

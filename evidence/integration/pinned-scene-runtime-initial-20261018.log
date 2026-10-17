@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\evidence\integration\pinned-scene-runtime-20261018.py", line 11, in <module>
+    from backend.app.dataset_registry import register_version
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\dataset_registry.py", line 8, in <module>
+    from jsonschema import Draft202012Validator, FormatChecker
+ModuleNotFoundError: No module named 'jsonschema'
