@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T23:48:57.643933",
+  "updated_at": "2026-10-18T00:05:50.328337+09:00",
   "source_commit": null,
   "source_commit_reason": "Workspace is not a Git repository; file hashes identify this reading snapshot.",
   "purpose": "Verified code/log/documentation evidence. Read-only diagnostics and pinned saved-JSON scope comparisons do not authorize collection, training, settlement, deployment or scientific approval. Physical corner diagnostics are not eligible readiness, historical blocker-cause reconstruction or current raster/geometry verification. Missing branch witnesses remain UNKNOWN; no blocker removal, independence or atomic snapshot guarantee. Saved patch totals are not evidence of historical union-scene count; current-source inspection does not reconstruct historical zero-patch population. Latest real readiness capture ran once without training on pinned inputs/saved policy; current witnesses and independently checked projected metadata do not authenticate historical causes or scientific independence.",
@@ -2197,6 +2197,91 @@
       "source_remote_head_verified": "d474d5bce6c2a6c4bd8ba141c9256d15f6004631",
       "status": "VERIFIED_SOURCE_PUBLISHED_WITH_DOCS_FOLLOWUP",
       "metadata_commit_scope": "Documentation only; current metadata commit SHA is in Git history."
+    },
+    "latest_recovery_commit_contract": {
+      "recorded_at": "2026-10-18T00:03:47.817512",
+      "scope": "PURE_CALLER_DECLARATION_TESTS_AND_TRACKED_PROTECTED_PRESERVATION_NOT_REAL_JOURNAL_OR_RECOVERY_EXECUTION",
+      "protected_references_checked": 141,
+      "protected_reference_changes": [],
+      "previous_evidence_files_checked": 809,
+      "previous_evidence_file_changes": [],
+      "existing_code_changes": [],
+      "catalog_records": 14,
+      "catalog_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+      "catalog_unchanged": true,
+      "actual_pending_batches": [
+        {
+          "batch": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+          "artifact_exists": {
+            "config.json": true,
+            "window-state.json": true,
+            "worker-result.json": false,
+            "annual-window-report.json": false
+          }
+        },
+        {
+          "batch": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+          "artifact_exists": {
+            "config.json": true,
+            "window-state.json": true,
+            "worker-result.json": false,
+            "annual-window-report.json": false
+          }
+        }
+      ],
+      "new_contract_applied_to_real_pending": false,
+      "reason": "Terminal/reconciliation phase evidence missing; no synthetic operation identity or after-pins invented for real pending batches.",
+      "reserved_bytes_preserved": 136314880,
+      "real_journal_created": false,
+      "collector_or_settle_changed": false,
+      "operating_collection_training_qa_deployment": false,
+      "live_jobs_or_model_registrations": 0,
+      "ui_changed": false,
+      "full_regression_rerun_in_latest_unit": false,
+      "previous_full_regression": {
+        "tests_run": 1069,
+        "passed": 1068,
+        "skipped": 1,
+        "seconds": 354.65,
+        "exit_code": 0,
+        "log": "evidence/integration/workflow-dependency-order-full-tests-20261017.log"
+      },
+      "additional_core_git_baseline_checks": {
+        "scripts/collect_training_parallel.py": {
+          "git_base_commit": "259b5f322ae36d72f21a8aa8b8d903b98550cf4f",
+          "sha256": "9fc5923dfe752ea2a5f07f00761c8d5b60f72f21896ef134c4415e07664653e7",
+          "raw_bytes_unchanged": true
+        },
+        "backend/app/data/budget.py": {
+          "git_base_commit": "259b5f322ae36d72f21a8aa8b8d903b98550cf4f",
+          "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+          "raw_bytes_unchanged": true
+        }
+      },
+      "focused": {
+        "tests_run": 14,
+        "passed": 14,
+        "skipped": 0,
+        "seconds": 0.022,
+        "log": "evidence/integration/recovery-commit-contract-focused-final2-20261017.log",
+        "exit_code": 0
+      },
+      "related": {
+        "tests_run": 67,
+        "passed": 66,
+        "skipped": 1,
+        "seconds": 41.983,
+        "log": "evidence/integration/recovery-commit-contract-related-final2-20261017.log",
+        "exit_code": 0
+      },
+      "independent": {
+        "tests_run": 63,
+        "passed": 62,
+        "skipped": 1,
+        "seconds": 41.636,
+        "log": "evidence/integration/recovery-commit-contract-independent-final3-20261017.log",
+        "exit_code": 0
+      }
     }
   },
   "files": {
@@ -2213,8 +2298,8 @@
       "bytes": 2660
     },
     "CONTINUOUS_DEVELOPMENT.md": {
-      "sha256": "8916b34c09e85fae0e8918ad141f38c55ca6af87d70386e65212a23760942797",
-      "bytes": 307184
+      "sha256": "9e92c570640504dee50560f4da051f6ed9c9d4b03ff53b3157f98df975527c1c",
+      "bytes": 311714
     },
     "README.md": {
       "sha256": "0d469ac476d3f9cd998b729c4cdc1cfcb6d76881ee49974d6f4d458196ca065e",
@@ -2291,6 +2376,10 @@
     "backend/app/data/recovery_boundary_topology.py": {
       "sha256": "032e75b077df55bf9ab27f3c02a1d75fe8ee672f8b9f391374b64e2e7068916d",
       "bytes": 12697
+    },
+    "backend/app/data/recovery_commit_contract.py": {
+      "sha256": "d5c6ba7be180ab4e91454ec9d6d745d791263cedc4f347aaa96651914b13e388",
+      "bytes": 5346
     },
     "backend/app/data/recovery_crop.py": {
       "sha256": "ca8f4749b655ede76cc9c6a8fc917e94d46263a43760125ef2cb1efc2338ce01",
@@ -2573,8 +2662,8 @@
       "bytes": 11415
     },
     "docs/implementation/00_next_session_handoff.md": {
-      "sha256": "6ab67d863441126985588b77c3e7eec1e7318cad9d306d947c8a36dc6931f71d",
-      "bytes": 314405
+      "sha256": "4ea9b917235a7ab120e4550ae453c92b1c14d64b085df9bfbe3490fa5507bc12",
+      "bytes": 318935
     },
     "docs/implementation/07_api_and_agent_compatibility.md": {
       "sha256": "7027116d290a62545773fe335890362f4329703c8cdaac596d3dc2f96b8a0754",
@@ -2617,12 +2706,16 @@
       "bytes": 13509
     },
     "docs/implementation/109_area_completion_audit.md": {
-      "sha256": "16a94339cb580c5dca4c34ded7a37e66ad2f78e7c5c931545b8652cd240cd705",
-      "bytes": 14368
+      "sha256": "ceec441fdbc24383280440fe4bb5ff0ef76a181032c956d3dbc8a78208001de0",
+      "bytes": 15921
+    },
+    "docs/implementation/110_recovery_commit_contract.md": {
+      "sha256": "7fa2be748777a8386d652e31584cd4488790d1e36d2e7f92892f64e0bb23dc58",
+      "bytes": 13681
     },
     "docs/implementation/24_collection_recovery_plan.md": {
-      "sha256": "6992b04f0e73678ed4aaee44d72eb66f723db309bf24a46301af5054dfd873c2",
-      "bytes": 10303
+      "sha256": "500eab1a8723b94f703b1158fd3d680a4d5c6806a2ae5c45adad1d7de9202476",
+      "bytes": 11036
     },
     "docs/implementation/25_ml_split_repair_plan.md": {
       "sha256": "a8b15531b879d5fadc30412ed514eff286deef8a0918613ab32a9176e88d89fb",
@@ -2705,12 +2798,12 @@
       "bytes": 11380
     },
     "docs/implementation/45_recovery_terminal_reconciliation.md": {
-      "sha256": "82d029eb3adf38bd04e84570e7abef3ee0fbcb897f953e8e4f9d39322f6e1271",
-      "bytes": 10557
+      "sha256": "71cd3fbfb743b24741e961d70425f08cbd15d9e5e328b59dc55031d9e14657fe",
+      "bytes": 11290
     },
     "docs/implementation/46_recovery_aggregate_reconciliation.md": {
-      "sha256": "d2c2a7c5743c2e82ab970837c62e3b915c52a91b0d0a7aad99c6fe7c2f073b0f",
-      "bytes": 10573
+      "sha256": "824a405a0bffd7bcb9013ed684ca999299d37e7e1288406da062e81915b0ab85",
+      "bytes": 11306
     },
     "docs/implementation/47_recovery_crop_reconciliation.md": {
       "sha256": "3e94f2483bbf473d4a235b256e724510e37119914a91511196880282df000afe",
@@ -2929,52 +3022,52 @@
       "bytes": 3036
     },
     "docs/implementation/workstream_ownership.md": {
-      "sha256": "3a4d06deda5a67677d327242f2e5f228e886f5de3024a0bd145d8d73ad645878",
-      "bytes": 286540
+      "sha256": "cbf233307cf793841897d64079bf6b107a3b1619515caaaf0c2609e789796e4e",
+      "bytes": 291070
     },
     "docs/understanding/01_DATA_PIPELINE.md": {
-      "sha256": "a307274eebcd08d0aa8b1e9e12c558330c91539f057a0ae60e32fad038521919",
-      "bytes": 129995
+      "sha256": "57d9c22eae0c4b154ad022e45e16d5d26cce27c26743f9fb4d84ddd19bad3070",
+      "bytes": 131853
     },
     "docs/understanding/02_LCLUC_ML.md": {
-      "sha256": "f481dff192e305cccb2549d4c4c5c156941560b11a87977b938edbd277e09f03",
-      "bytes": 98750
+      "sha256": "dd6e2ec1189000d6895599a48c5c854ef7141b9c1a1d83646670364a28a37ead",
+      "bytes": 100562
     },
     "docs/understanding/03_MODEL_AGENT_CONTRACT.md": {
-      "sha256": "3e76d047c522b696feea67060f4e97ee6d2ac9b021bd810b9fb9cd7bce06421a",
-      "bytes": 74148
+      "sha256": "ef27bbe0482a674d79a93c6b0f8b08d9d048c055b02a603b2bdb425d34b749d7",
+      "bytes": 75935
     },
     "docs/understanding/04_ORCHESTRATOR.md": {
-      "sha256": "d93d2414ecbeb56327c34dd106648842992bccd47bc69e17dc75e654a70dd934",
-      "bytes": 53074
+      "sha256": "b08ab47e84ec03a0ffcb0ebd09dcd9d70286d9858556dab20ade982002bc07a3",
+      "bytes": 54794
     },
     "docs/understanding/05_MLOPS_KUBERNETES.md": {
-      "sha256": "47ec0458dfa4c8de0daa838cc5f284c9305fd5ae51f4bdf237ed01b37e3e08c7",
-      "bytes": 18984
+      "sha256": "508bec1ec59ae01a1ace4e3c01c3bcc6b6f7c979c567ee6f70a8e52cbf00e4e1",
+      "bytes": 20664
     },
     "docs/understanding/06_GEOLLM_SDSS.md": {
-      "sha256": "778a21ca50eff6ebf56494edd25dcff5d46aa9d9499bf4b41d9f4774fedf332f",
-      "bytes": 55968
+      "sha256": "03fb0defa2dae4bac1f4ba7e9ef0d778775f574a78814ad382332590b8c291b6",
+      "bytes": 57615
     },
     "docs/understanding/CHANGELOG.md": {
-      "sha256": "2ba358af833dce2f28676e47cecb8af22f81a8b26c03f7102b3ad1c4cf388471",
-      "bytes": 179916
+      "sha256": "eb0940f8baab3240566482c318399094f62c9a1f71844d9d496a5c1dce23f64f",
+      "bytes": 182671
     },
     "docs/understanding/CURRENT_ARCHITECTURE.md": {
-      "sha256": "ef50248db6d993f4c5265ad51cd030a8a8e840233d8e3e51f5d362c00cbe6ae9",
-      "bytes": 153588
+      "sha256": "fc9ddc726cb0c36b4829a48945cc05df3e00a0e478366675f2ecac86bb587183",
+      "bytes": 155359
     },
     "docs/understanding/GATE_TEMPLATE.md": {
       "sha256": "f560d691357978a2b225deec49ddd41eed858094bf4e4140ef61e6a738cf09c2",
       "bytes": 2380
     },
     "docs/understanding/GLOSSARY_KO_EN.md": {
-      "sha256": "0fc175646a30c2eebbd29a453effda16f4c03d7b573050579a742c24035b3d1f",
-      "bytes": 93371
+      "sha256": "e67cd7bd5b798ad8db06dafc3cfbe30a0051f1be2287aa6b8c7ea038e6e08219",
+      "bytes": 95317
     },
     "docs/understanding/INDEX.md": {
-      "sha256": "fbd20b0b1128c7a8e7b88d6dc8fbff1756315d7a4f28abbc352ad0a751127816",
-      "bytes": 159036
+      "sha256": "b6f1ff7d09255e1902e9bc5a5db47f94470007bcf4df9fad83158a566a3011c2",
+      "bytes": 161335
     },
     "docs/understanding/gate-notes/GATE_AGENT_CAPABILITY_20261017.md": {
       "sha256": "7a6fb7a20288e4b72bed8c0526b0df63fc708ff777b532136408636d7b75497a",
@@ -3148,6 +3241,10 @@
       "sha256": "889725ce1e8a6aecc153cb266af2b3bff8bd1e361863cd7ded6e94351ce33520",
       "bytes": 6185
     },
+    "docs/understanding/gate-notes/GATE_RECOVERY_COMMIT_CONTRACT_20261017.md": {
+      "sha256": "f3f32e60cb5ca3345db2f94ad0c9acf463f47d493e9083d12619d1b0e9a93b0e",
+      "bytes": 11705
+    },
     "docs/understanding/gate-notes/GATE_RECOVERY_CROP_20261017.md": {
       "sha256": "33c6e3f4b8e6eb9842b03e9732968e3eb8b46af30f669e016f45490c96cee483",
       "bytes": 8919
@@ -3245,16 +3342,16 @@
       "bytes": 7180
     },
     "docs/understanding/presentations/1MIN_5MIN_SCRIPT.md": {
-      "sha256": "3ea0362db1e4a0ab4e6b6e0bdae36358080048e935b2594fb9e36d8da9b614a8",
-      "bytes": 166651
+      "sha256": "3ff06a0fd381ed65f010c4afaa1fc380a672e84231207145c48deef4d1be11bf",
+      "bytes": 169746
     },
     "docs/understanding/presentations/DEMO_STORY.md": {
-      "sha256": "ac7bf1b7c8892fece48f313c848f2f45d93776225591fb5df9aeae454bb33f40",
-      "bytes": 108863
+      "sha256": "26cae360c1c8cde036d62420c5b99049c8403efc23c8252ea8c7bf3e65eb2859",
+      "bytes": 110555
     },
     "docs/understanding/presentations/FAQ.md": {
-      "sha256": "2ea2697f95575b1c9c6899b8e4023e526c8e3f4b7867e83a7f178164e9fcaa73",
-      "bytes": 129121
+      "sha256": "77e5dde402abb3c9ae97660986831c4264e23509ef8e3d41723ec38470d2222f",
+      "bytes": 131208
     },
     "evidence/integration/agent-capability-closeout-20261017.json": {
       "sha256": "8968fefb8b4df34d214f1b3ded5586ebfd22c7c68910f6d13deadbcc599b0809",
@@ -5368,6 +5465,86 @@
       "sha256": "c3d81c413a1bb6534480d8180163a509c31679acdd30175b2c20d58b89bb951f",
       "bytes": 2638
     },
+    "evidence/integration/recovery-commit-contract-closeout-20261017.json": {
+      "sha256": "bdb1e1eca959efad9f963d86887787a2902441568d0d80c28c4f1644471833db",
+      "bytes": 1450
+    },
+    "evidence/integration/recovery-commit-contract-closeout-check-20261017.py": {
+      "sha256": "b6ec2b8f3302d999d1879b16adf4eda087a29108dc4ebb452dc5fa6d8a8d9a4e",
+      "bytes": 4607
+    },
+    "evidence/integration/recovery-commit-contract-docs-closeout-20261017.py": {
+      "sha256": "d77600daa53d68636e557fbe984bf0a9fc9582b200581e96baa4ffbde4ca7340",
+      "bytes": 5730
+    },
+    "evidence/integration/recovery-commit-contract-external-dependencies-20261017.json": {
+      "sha256": "300b420a43421091a4faad80caf3a126d621b23c50bff37ed2768fc6c8986514",
+      "bytes": 861
+    },
+    "evidence/integration/recovery-commit-contract-focused-20261017.log": {
+      "sha256": "599a2300deb540215507fba46321b09214d8b8cb804526b18f2f6e362a4a13a9",
+      "bytes": 2182
+    },
+    "evidence/integration/recovery-commit-contract-focused-final-20261017.log": {
+      "sha256": "38caf734b090741cd504cd540f822a3c26e8d2f72318828abbb06884906e74d5",
+      "bytes": 2348
+    },
+    "evidence/integration/recovery-commit-contract-focused-final2-20261017.log": {
+      "sha256": "5fbd20e87053195145e6d445dfe5db7516b4c6ef452fb9511436db56252395d1",
+      "bytes": 2516
+    },
+    "evidence/integration/recovery-commit-contract-independent-20261017.log": {
+      "sha256": "7680336558f6937e889a7f15b9e1c4df67c04a80281e74be3de434c951cf04ff",
+      "bytes": 11286
+    },
+    "evidence/integration/recovery-commit-contract-independent-before-key-guard-20261017.log": {
+      "sha256": "d42870626a4a26b047c0a2b31cd26f7fa3a65d93ddf2399ed9c258ac6035c303",
+      "bytes": 11120
+    },
+    "evidence/integration/recovery-commit-contract-independent-final3-20261017.log": {
+      "sha256": "c099f7015fd0db4f9f6216adda628419277549d7245664368cd2d9ca6b35d200",
+      "bytes": 11454
+    },
+    "evidence/integration/recovery-commit-contract-independent-review-20261017.json": {
+      "sha256": "88c5bfa73deb00b991db1617311fbbb30302d02c48ebabede1981a820e24042a",
+      "bytes": 6656
+    },
+    "evidence/integration/recovery-commit-contract-integrity-check-20261017.py": {
+      "sha256": "f831bf59154f4d7e3650ed48e5f7c9ae694b22b23e35bf2e448009407f1c830d",
+      "bytes": 4236
+    },
+    "evidence/integration/recovery-commit-contract-live-integrity-20261017.json": {
+      "sha256": "46f90ece4b5ad8f697fe5afc1ac40aa273c0bd1e8bbc03c95ad7bf3044722399",
+      "bytes": 3004
+    },
+    "evidence/integration/recovery-commit-contract-preflight-20261017.json": {
+      "sha256": "2a5e65810c075db32199543a50c147dd03b3f68e9bd4bfdacd15ac51e950896d",
+      "bytes": 271396
+    },
+    "evidence/integration/recovery-commit-contract-preflight-check-20261017.py": {
+      "sha256": "7ce73ead603e05c77bf9226b19f90e6d1d4c6928d38ee8aa9d5a5692f0c0d085",
+      "bytes": 1777
+    },
+    "evidence/integration/recovery-commit-contract-related-20261017.log": {
+      "sha256": "78986860c6f83fbc9f5aeec39a93ed40b1a0450c74597160defd32fb153bdb56",
+      "bytes": 11706
+    },
+    "evidence/integration/recovery-commit-contract-related-final-20261017.log": {
+      "sha256": "151e1fe689f9961de405a01fc43a2b5bdbfdfe9fdd6a4c3af352a8631af9f53e",
+      "bytes": 11872
+    },
+    "evidence/integration/recovery-commit-contract-related-final2-20261017.log": {
+      "sha256": "c69f76668104641eaac55e1cb872cafcda03a6d97e0449b0f36caf0168cfda09",
+      "bytes": 12040
+    },
+    "evidence/integration/recovery-commit-contract-runtime-check-20261017.ps1": {
+      "sha256": "48ac040f7249d74cfad23ba0cc1543b176e67d62a8c62381826a7443ec549bdd",
+      "bytes": 1376
+    },
+    "evidence/integration/recovery-commit-contract-runtime-start-20261017.json": {
+      "sha256": "d43b95eaeb22bec07fec60d477a80a04a4af65661a5b7c85ea88a39926823f58",
+      "bytes": 2136
+    },
     "evidence/integration/recovery-crop-cli-final-20261017.log": {
       "sha256": "5150f98d7a78dbe5b4aba9b743a6c8537db3f64fb391bfe8bd49335b4cdaf9de",
       "bytes": 702885
@@ -7076,6 +7253,10 @@
       "sha256": "796392859ecfdc893a0407078a3fceba2584d4482f8bbedf2f908ccf11342a51",
       "bytes": 14751
     },
+    "tests/test_recovery_commit_contract.py": {
+      "sha256": "536232af37d06b81045e33a127fdaa4ae234782a1e1c14df592e32e7b0d1c78e",
+      "bytes": 11182
+    },
     "tests/test_recovery_crop.py": {
       "sha256": "00f6098ee275ffcd4c5969e597e090892b64af59feda01ccb6adfec43ff11ee4",
       "bytes": 10864
@@ -7174,10 +7355,10 @@
     }
   },
   "documentation_validation": {
-    "checked_at": "2026-10-17T23:37:39.660836+09:00",
-    "markdown_files": 81,
-    "local_links": 334,
-    "evidence_references": 7530,
+    "checked_at": "2026-10-18T00:05:50.328337+09:00",
+    "markdown_files": 82,
+    "local_links": 339,
+    "evidence_references": 7782,
     "numbered_faq": 10,
     "errors": [],
     "reference_templates_byte_identical": true

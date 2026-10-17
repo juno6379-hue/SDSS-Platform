@@ -64,3 +64,7 @@ python -m unittest discover -s tests -p test_recovery_aggregate.py -v
 ## 후속 연도·지역·crop 메타데이터 companion
 
 [문서47](47_recovery_crop_reconciliation.md)은 이 검사기에서 미검사로 남긴 year/province 원형 타입·값 및 window_in_source의 256px 정수 격자·동일 crop 식별자를 별도로 대조한다. 기존 이 검사기의 출력과 미검사 flags는 바꾸지 않으며, 별도 companion의 결과를 함께 읽어야 한다. 새 검사기도 raster 픽셀·실제 image bounds·다른 파일의 동일 내용·기하 중첩을 증명하지 않는다. 메타데이터 일치를 학습·정산·재개 승인으로 합산하지 않는다.
+
+### 110 후속: commit 단계 선언 검사
+
+[110 구현 문서](110_recovery_commit_contract.md)의 독립 순수 함수가 caller의 단계·세 target SHA·재관측·충돌을 검사한다. 기존 이 문서의 실자료 검사/형식·수집기·예산코드는 바뀌지 않았고 실제 journal/정산·집계/재개 coordinator는 미연결이다. 기존 pending2/예약·원장-run 차이를 해결하거나 exactly-once를 인증한 것이 아니다. 최종 신규14·관련66PASS/1SKIP·독립62PASS/1SKIP·보존 범위는 `evidence/integration/recovery-commit-contract-live-integrity-20261017.json`을 따른다. 해당 내부 선언 검사만 완료이며109의 실제 지속화/복구 수락 조건은 남는다.

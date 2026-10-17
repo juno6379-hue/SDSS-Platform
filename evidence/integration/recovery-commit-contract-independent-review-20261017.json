@@ -1,0 +1,165 @@
+{
+  "recorded_at": "2026-10-18T00:04:08.526512+09:00",
+  "status": "TESTED_SYNTHETIC",
+  "source_freeze": "final3 exact-key and pre-phase-lookup guards",
+  "independent_tests": {
+    "modules": [
+      "test_recovery_commit_contract",
+      "test_collection_recovery",
+      "test_recovery_terminal",
+      "test_recovery_aggregate"
+    ],
+    "total": 63,
+    "passed": 62,
+    "skipped": 1,
+    "skip_reason": "Existing Windows real-symlink permission limitation; deterministic boundary fixtures run.",
+    "seconds": 41.636,
+    "exit_code": 0,
+    "final_log": "evidence/integration/recovery-commit-contract-independent-final3-20261017.log",
+    "previous_logs_not_final_proof": [
+      "evidence/integration/recovery-commit-contract-independent-before-key-guard-20261017.log",
+      "evidence/integration/recovery-commit-contract-independent-20261017.log"
+    ]
+  },
+  "source_sha256": {
+    "backend/app/data/recovery_commit_contract.py": "d5c6ba7be180ab4e91454ec9d6d745d791263cedc4f347aaa96651914b13e388",
+    "tests/test_recovery_commit_contract.py": "536232af37d06b81045e33a127fdaa4ae234782a1e1c14df592e32e7b0d1c78e"
+  },
+  "preserved_existing_files": {
+    "scripts/collect_training_parallel.py": {
+      "sha256": "9fc5923dfe752ea2a5f07f00761c8d5b60f72f21896ef134c4415e07664653e7",
+      "bytes": 16599,
+      "preserved": true,
+      "baseline": "separate Git base raw bytes 259b5f322ae36d72f21a8aa8b8d903b98550cf4f and prior45 source pin in a preflight-pinned evidence file; not claimed as current raw-snapshot list coverage"
+    },
+    "backend/app/data/budget.py": {
+      "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+      "bytes": 5492,
+      "preserved": true,
+      "baseline": "separate Git base raw bytes 259b5f322ae36d72f21a8aa8b8d903b98550cf4f and prior45 source pin in a preflight-pinned evidence file; not claimed as current raw-snapshot list coverage"
+    },
+    "backend/app/data/recovery.py": {
+      "sha256": "49f81b866d7f80ea835438a4ef2bce7fc31b91d1b58d2a8273b45c7a9f24eeba",
+      "bytes": 11994,
+      "preserved": true,
+      "baseline": "current preflight tracked_baseline"
+    },
+    "backend/app/data/recovery_terminal.py": {
+      "sha256": "c4467989dbfc36ce2940d1b0ebb2a84c04acda1b17c6a8ea0d9c046e81fdaf2e",
+      "bytes": 15890,
+      "preserved": true,
+      "baseline": "current preflight tracked_baseline"
+    },
+    "backend/app/data/recovery_aggregate.py": {
+      "sha256": "353e2463bd74421ec51bbd38a72bb96b1382efadfec5ae4ad71bea62811701d7",
+      "bytes": 11747,
+      "preserved": true,
+      "baseline": "current preflight tracked_baseline"
+    },
+    "docs/implementation/24_collection_recovery_plan.md": {
+      "sha256": "6992b04f0e73678ed4aaee44d72eb66f723db309bf24a46301af5054dfd873c2",
+      "bytes": 10303,
+      "preserved": true,
+      "baseline": "current preflight tracked_baseline"
+    },
+    "docs/implementation/45_recovery_terminal_reconciliation.md": {
+      "sha256": "82d029eb3adf38bd04e84570e7abef3ee0fbcb897f953e8e4f9d39322f6e1271",
+      "bytes": 10557,
+      "preserved": true,
+      "baseline": "current preflight tracked_baseline"
+    },
+    "docs/implementation/46_recovery_aggregate_reconciliation.md": {
+      "sha256": "d2c2a7c5743c2e82ab970837c62e3b915c52a91b0d0a7aad99c6fe7c2f073b0f",
+      "bytes": 10573,
+      "preserved": true,
+      "baseline": "current preflight tracked_baseline"
+    }
+  },
+  "review": {
+    "exact_observation_keys": 11,
+    "exact_target_map_keys": [
+      "ledger_sha256",
+      "aggregate_sha256",
+      "run_result_sha256"
+    ],
+    "phases": {
+      "PREPARED": [
+        "before",
+        "before",
+        "before"
+      ],
+      "LEDGER_RECORDED": [
+        "after",
+        "before",
+        "before"
+      ],
+      "AGGREGATE_RECORDED": [
+        "after",
+        "after",
+        "before"
+      ],
+      "COMMITTED": [
+        "after",
+        "after",
+        "after"
+      ]
+    },
+    "observations_validated_before_identity_transition": true,
+    "initial_only_prepared": true,
+    "replay": "Same phase and all11 typed fields identical; changed phase proof rejected on replay but allowed for adjacent phase.",
+    "immutable_identity": [
+      "operation_id",
+      "batch_key",
+      "config_sha256",
+      "terminal_sha256",
+      "reconciliation_sha256",
+      "before",
+      "expected_after"
+    ],
+    "missing_proof_or_observed_hash": "REJECTED/EVIDENCE_MISSING without backfill before transition classification",
+    "no_op_digest_pairs": "Allowed; equal digest does not distinguish actual writes, which remain unverified.",
+    "output": "Always BLOCKED/UNVERIFIED/UNKNOWN; six authorization/execution flags false; refund/source IO/network integer zero",
+    "UI_change_required": false,
+    "UI_reason": "New pure helper only; no collector/budget/API/main/frontend or execution gate caller changed. No new screen/error contract; frontend/build/browser not repeated.",
+    "current_findings": []
+  },
+  "closed_review_boundaries": [
+    {
+      "issue": "Key-set equality accepted non-builtin string subclass keys.",
+      "fix": "Exact count and exact str keys before equality; regression added."
+    },
+    {
+      "issue": "Early phase lookup could invoke equality on a malicious collision key before schema rejection.",
+      "fix": "Exact key validation before phase lookup; poison regression added.",
+      "additional_independent_checks": {
+        "cases": [
+          "CURRENT root",
+          "PREVIOUS root",
+          "before map",
+          "expected_after map",
+          "observed map"
+        ],
+        "setup_equality_calls": 0,
+        "validator_equality_calls": 0,
+        "unittest_total_not_incremented": true
+      }
+    }
+  ],
+  "limitations": [
+    "All fields are caller claims; no artifact bytes, proof authenticity, process exit or complete transfer measurement verified.",
+    "COMMITTED is not durable journal, atomic coordinator, actual commit or operating exactly-once proof.",
+    "Existing pending2/missing artifacts/full reservation and ledger-run difference remain unresolved.",
+    "Current raw snapshot1243 is not every workspace file; separate Git base checks explicitly supplement collector/budget coverage."
+  ],
+  "operating_actions": {
+    "source_or_docs_edited_by_reviewer": 0,
+    "downloads": 0,
+    "collection_runs": 0,
+    "operating_store_constructors": 0,
+    "ledger_writes": 0,
+    "lock_deletes": 0,
+    "API_calls": 0,
+    "browser_runs": 0,
+    "training_runs": 0
+  }
+}

@@ -1,5 +1,27 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 — 복구 commit 단계 선언 검사 완료 (110)
+
+새 순수 함수는 PREPARED→LEDGER_RECORDED→AGGREGATE_RECORDED→COMMITTED의 caller 선언과 ledger/aggregate/run-result 세 target의 before/expected_after/observed SHA를 검사한다. 최초 PREPARED·인접 전이·전체 동일 재관측만 구분하고 누락 근거·다른 작업 혼합·단계 건너뜀/역행·관측 불일치를 거부한다. source/evidence SHA는 caller 선언이며 실제 파일/권위/phase 증명이 아니다. 동일 before/after는 실제 쓰기나 단계 구별을 보장하지 않는다. 모든 결과 BLOCKED/UNVERIFIED·exactly_once UNKNOWN, 정산/환불/재개/쓰기/실행 false다.
+
+입력 키의 exactstr 검사와 phase 표시용 사전 lookup 순서를 독립 검토로 보완했다. 최초·중간 통과 로그는 보존했고 최종 신규14 PASS/.022초·관련67건66PASS/기존1SKIP41.983초·독립63건62PASS/기존1SKIP41.636초를 완료 근거로 사용한다. 별도 poison-key5사례는 시험 건수에 합산하지 않는다. 새 독립 helper/시험/문서만 추가했으며 기존 제품과 API/UI 호출부는 바꾸지 않았다. 이번 전체/front/build/browser 재시험은 없고107 전체1069건은 이전 근거다.
+
+Root 보존 검사는 보호141·이전증거809·catalog14·이전추적코드 불변을 확인했다. 수집기/예산코드는 현 raw snapshot 직접목록에 없어 별도 고정 Git 기준259b5f3의 원문 바이트와 대조해 둘 다 같음을 확인했다. 실제 pending2건에는 worker-result/annual-report가 여전히 없으며 새 helper를 적용할 operation/afterpin을 지어내지 않았다. 실제 journal·coordinator·원자적 정산·집계·재개는 미구현/미연결이다. 원장/run 차이·예약136314880B·원본/lock/분할/모델·QA차단4/학습BLOCKED를 보존한다.
+
+사용자는 외부5개 모델의 API/SDK/code 실행자료와 독립 정확도 검증용 라벨이 별도 준비되지 않았다고 확인했다. 미연결·실행자료 미제공/미구현·독립 검증 라벨 미확보로 관리하고, 이미 있는 약한라벨 학습자료와 구분한다. 외부 의존은 BLOCKED이며 내부 개발은 계속한다. 관련 계약·문서24/45/46/109·gap/SOP·인계서와 이해자료14개(해설·이론·코드·시험·발표·FAQ·INDEX·변경이력)를 함께 갱신했다.
+
+Git은 지정 origin SDSS-Platform/main259b5f3의 게시 확인 상태를 기준으로 이 단위를 별도 커밋/푸시한다. 다음 내부 후보는 실제 journal 지속화·실패 지점별 복구 coordinator 설계/구현이며110의 선언 검사만으로 완료되지 않는다. 전체 프로젝트는 미완료·담당별10분 보고와 지속 개발을 유지한다. 예약ACTIVE와 실제 수집/학습 프로세스는 구분한다.
+
+근거: `evidence/integration/recovery-commit-contract-live-integrity-20261017.json`, `evidence/integration/recovery-commit-contract-independent-review-20261017.json`, `evidence/integration/recovery-commit-contract-external-dependencies-20261017.json`. 최종 문서 감사/파일 snapshot은 `evidence/integration/recovery-commit-contract-closeout-20261017.json`을 따른다.
+
+## 23:52 KST — 수집 복구 commit 단계 관측 계약 착수 (110)
+
+109 영역별 감사의 내부 후보를 새 독립 단위로 시작했다. snapshot1243·보호141·catalog14 보존과 기존담당완료를 확인했다. Git 원격/로컬 main259b5f3 일치와 추적파일 clean 확인 뒤 작업을 분리했다. 기존소스/원장/lock/예약/수집 스크립트는 수정하지 않는다.
+
+구현 담당은새 pure commit-phase metadata 관측 계약/시험/문서110, 독립검토 담당은실제 finalize·settle 순서와형식/전이/replay/충돌·UI 영향, Root는보존·관련시험·문서/인계·Git 게시, 이해에이전트는완료소스·증거이후자료갱신을맡는다. 단계관측·같은선언재관측은 실제 원자성·journal기록·exactly-once 정산/집계 인증이 아니다. 원본missing terminal2/예약136314880B·QA차단4/학습BLOCKED를 유지하고 실행/정산/환불/재개 승인은 주지 않는다. 수집/학습/배포·운영Job/Registry연결0이며전체개발미완료/10분보고를유지한다.
+
+근거: `evidence/integration/recovery-commit-contract-preflight-20261017.json`. 구체계약은구현/독립검토합의뒤새단위만작성하며기존 API/UI·front/build/browser·승인gate 변경0이다.
+
 ## GitHub 구현 게시 확인 — 문서 후속 정리
 
 사용자 지정 origin `https://github.com/juno6379-hue/SDSS-Platform`의 기존 main 이력을 이어 구현 기준 `d474d5bce6c2a6c4bd8ba141c9256d15f6004631`을 push했고 원격 HEAD 일치를 확인했다. 이해자료80개의 source_commit을 이 구현 기준으로 정정하고 별도 문서 커밋으로 남긴다. 원본 data/·모델/영상·로컬 환경/인증·runtime/cache/임시 시험 폴더는 새로 추가하지 않았다. backend/app/data 소스가 누락되지 않도록 root 데이터 제외 규칙을 수정했고 고정 SHA 원문은 .gitattributes로 보존했다. 원격 기존 데이터는 수정·삭제하지 않았다.

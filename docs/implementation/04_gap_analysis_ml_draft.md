@@ -46,3 +46,7 @@ root가 `backend/app/gmais_api.py`와 main router 연결을 구현하고 host에
 이는 내부 검토본 v0.2의 제한적 로컬 호환 구현이다. 실제 workflow 실행, update-ticket, 기관별 RBAC/서명, 실제 성공 과학결과, Production 배포·rollback 및 컨소시엄·BIG 승인은 남은 gap이다. 데이터/독립평가 부족 차단을 해제하지 않았다. 이번 후속은 두 문서만 수정하며 코드·시험·데이터 수집 변경은 없다.
 
 후속 `/v1/workflows/plan`은 로컬 plan-only RFC로 구현됐다. root host에서 `tests/test_gmais_workflow_extension.py` 7개 PASS: upstream Schema 검사, 중복 ID·미지/자기 의존성·cycle 거부, 미등록 Agent/Capability 차단, 안정적 DAG 위상 순서와 Job/Result 미생성을 확인했다. `PLAN_ONLY/BLOCKED`, `execution_started:false`를 유지하며 upstream OpenAPI 미포함·INTERNAL_REVIEW 상태를 명시한다. 계획 검사는 실제 과학 실행이나 운영 승인 증거가 아니다.
+
+### 2026-10-18 사용자 확인: 외부 실행기·독립 검증 라벨 미확보
+
+다른5개 모델 API/SDK/실행코드는 별도 제공·준비되지 않아 미연결·실행기 미구현 상태로 관리한다. 독립 정확도 검증용 라벨도 미확보다. 기존 약한라벨 학습자료는 보존하지만 이를 독립 검증 자료나 과학 승인으로 대체하지 않는다. 유형별 validation/recalibration 요건은 계속 별도 검토하며, 제공되지 않은 물리모델 관측자료까지 새로 확보됐다고 가정하지 않는다. 근거: `evidence/integration/recovery-commit-contract-external-dependencies-20261017.json`; 영역별 잔여 수락 조건은 [109 감사](109_area_completion_audit.md)를 따른다. 전체 사업·모델 운영 승인 완료가 아니다.

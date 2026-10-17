@@ -65,3 +65,7 @@ python -m unittest discover -s tests -p test_collection_recovery.py -v
 [최종 실제 내용 검사](../../evidence/integration/recovery-terminal-live-final-20261017.json)는 두 pending 모두 `MISSING/BLOCKED`다. worker-result/source-report가 각각 없고 raw config→ledger SHA 및 정규화 config→window-state SHA는 모두 일치한다. 각 COG 상한−실측33,554,432B는 미계측 또는 예약 잔액이며 환불 가능액이 아니다. 총136,314,880B 예약을 보존하고 환불 제안은0이다. source report에 config digest가 없으므로 완전한 출처 바인딩, 전체 전송 계측과 aggregate exactly-once 적용은 `UNKNOWN`이다. 이 검사나 전체 메타데이터 일치만으로 정산·lock해제·재개를 승인하지 않는다.
 
 코드와 CLI의 관련18 PASS/7.150초·독립18 PASS/7.545초를 보존했다. 최신 전체 회귀/보호19개 참조 및 기존 계약5개 SHA 검사는 문서45와 최신 인계서에 확정한다. 이번은 내부 CLI 추가이며 공개API/화면 계약 변화가 없어 UI시험49건/build를 반복하지 않았다.
+
+### 110 후속: commit 단계 선언 검사
+
+[110 구현 문서](110_recovery_commit_contract.md)의 독립 순수 함수가 caller의 단계·세 target SHA·재관측·충돌을 검사한다. 기존 이 문서의 실자료 검사/형식·수집기·예산코드는 바뀌지 않았고 실제 journal/정산·집계/재개 coordinator는 미연결이다. 기존 pending2/예약·원장-run 차이를 해결하거나 exactly-once를 인증한 것이 아니다. 최종 신규14·관련66PASS/1SKIP·독립62PASS/1SKIP·보존 범위는 `evidence/integration/recovery-commit-contract-live-integrity-20261017.json`을 따른다. 해당 내부 선언 검사만 완료이며109의 실제 지속화/복구 수락 조건은 남는다.

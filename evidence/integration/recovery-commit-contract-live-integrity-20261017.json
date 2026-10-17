@@ -1,0 +1,85 @@
+{
+  "recorded_at": "2026-10-18T00:03:47.817512",
+  "scope": "PURE_CALLER_DECLARATION_TESTS_AND_TRACKED_PROTECTED_PRESERVATION_NOT_REAL_JOURNAL_OR_RECOVERY_EXECUTION",
+  "protected_references_checked": 141,
+  "protected_reference_changes": [],
+  "previous_evidence_files_checked": 809,
+  "previous_evidence_file_changes": [],
+  "existing_code_changes": [],
+  "catalog_records": 14,
+  "catalog_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "catalog_unchanged": true,
+  "actual_pending_batches": [
+    {
+      "batch": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "artifact_exists": {
+        "config.json": true,
+        "window-state.json": true,
+        "worker-result.json": false,
+        "annual-window-report.json": false
+      }
+    },
+    {
+      "batch": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "artifact_exists": {
+        "config.json": true,
+        "window-state.json": true,
+        "worker-result.json": false,
+        "annual-window-report.json": false
+      }
+    }
+  ],
+  "new_contract_applied_to_real_pending": false,
+  "reason": "Terminal/reconciliation phase evidence missing; no synthetic operation identity or after-pins invented for real pending batches.",
+  "reserved_bytes_preserved": 136314880,
+  "real_journal_created": false,
+  "collector_or_settle_changed": false,
+  "operating_collection_training_qa_deployment": false,
+  "live_jobs_or_model_registrations": 0,
+  "ui_changed": false,
+  "full_regression_rerun_in_latest_unit": false,
+  "previous_full_regression": {
+    "tests_run": 1069,
+    "passed": 1068,
+    "skipped": 1,
+    "seconds": 354.65,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-dependency-order-full-tests-20261017.log"
+  },
+  "additional_core_git_baseline_checks": {
+    "scripts/collect_training_parallel.py": {
+      "git_base_commit": "259b5f322ae36d72f21a8aa8b8d903b98550cf4f",
+      "sha256": "9fc5923dfe752ea2a5f07f00761c8d5b60f72f21896ef134c4415e07664653e7",
+      "raw_bytes_unchanged": true
+    },
+    "backend/app/data/budget.py": {
+      "git_base_commit": "259b5f322ae36d72f21a8aa8b8d903b98550cf4f",
+      "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+      "raw_bytes_unchanged": true
+    }
+  },
+  "focused": {
+    "tests_run": 14,
+    "passed": 14,
+    "skipped": 0,
+    "seconds": 0.022,
+    "log": "evidence/integration/recovery-commit-contract-focused-final2-20261017.log",
+    "exit_code": 0
+  },
+  "related": {
+    "tests_run": 67,
+    "passed": 66,
+    "skipped": 1,
+    "seconds": 41.983,
+    "log": "evidence/integration/recovery-commit-contract-related-final2-20261017.log",
+    "exit_code": 0
+  },
+  "independent": {
+    "tests_run": 63,
+    "passed": 62,
+    "skipped": 1,
+    "seconds": 41.636,
+    "log": "evidence/integration/recovery-commit-contract-independent-final3-20261017.log",
+    "exit_code": 0
+  }
+}

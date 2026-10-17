@@ -63,3 +63,7 @@ python -m unittest discover -s tests -p test_recovery_terminal.py -v
 ## 후속 aggregate 참조 대조
 
 [문서46](46_recovery_aggregate_reconciliation.md)의 별도 읽기 검사기는 aggregate 출처 참조와 원장 보고서의 양방향 연결, patch ID/이미지 경로 중복, source_window.path와 scene_id의 JSON 연결을 대조한다. terminal 계수 검증과 구분되는 부분 검사이며, 두 검사 결과를 합쳐도 완전 전송 계측·출처 파일 무결성·정확히 한 번 반영·정산/재개 승인을 부여하지 않는다. 새 검사기의 실자료와 최신 전체 회귀는 문서46 및 인계서를 참조한다.
+
+### 110 후속: commit 단계 선언 검사
+
+[110 구현 문서](110_recovery_commit_contract.md)의 독립 순수 함수가 caller의 단계·세 target SHA·재관측·충돌을 검사한다. 기존 이 문서의 실자료 검사/형식·수집기·예산코드는 바뀌지 않았고 실제 journal/정산·집계/재개 coordinator는 미연결이다. 기존 pending2/예약·원장-run 차이를 해결하거나 exactly-once를 인증한 것이 아니다. 최종 신규14·관련66PASS/1SKIP·독립62PASS/1SKIP·보존 범위는 `evidence/integration/recovery-commit-contract-live-integrity-20261017.json`을 따른다. 해당 내부 선언 검사만 완료이며109의 실제 지속화/복구 수락 조건은 남는다.

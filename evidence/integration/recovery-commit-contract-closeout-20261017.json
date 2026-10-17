@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-18T00:05:50.328337+09:00",
+  "status": "COMPLETED_PURE_RECOVERY_COMMIT_OBSERVATION_NOT_REAL_RECOVERY_OR_PROJECT_COMPLETION",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T00:05:50.328337+09:00",
+    "markdown_files": 82,
+    "local_links": 339,
+    "evidence_references": 7782,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "previous_full_regression": {
+    "tests_run": 1069,
+    "passed": 1068,
+    "skipped": 1,
+    "seconds": 354.65,
+    "exit_code": 0,
+    "log": "evidence/integration/workflow-dependency-order-full-tests-20261017.log"
+  },
+  "full_regression_rerun_in_latest_unit": false,
+  "related": {
+    "tests_run": 67,
+    "passed": 66,
+    "skipped": 1,
+    "seconds": 41.983,
+    "log": "evidence/integration/recovery-commit-contract-related-final2-20261017.log",
+    "exit_code": 0
+  },
+  "independent": {
+    "tests_run": 63,
+    "passed": 62,
+    "skipped": 1,
+    "seconds": 41.636,
+    "log": "evidence/integration/recovery-commit-contract-independent-final3-20261017.log",
+    "exit_code": 0
+  },
+  "protected_references_checked": 141,
+  "catalog_records": 14,
+  "understanding_updated": true,
+  "new_qa_or_training_executed": false,
+  "next_unit": "PLANNED_NEXT_WORKFLOW_INPUT_BINDING_QUEUE_REVIEW",
+  "snapshot_file": "docs/understanding/EVIDENCE_SNAPSHOT.json",
+  "snapshot_files": 1267
+}
