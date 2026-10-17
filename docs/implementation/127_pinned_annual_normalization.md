@@ -1,5 +1,7 @@
 # 127 — 실제 고정 모델을 한 번 읽는 요청 연도2~6개 정규화 관측
 
+> 후속128: 본 요청 연도 묶음의 실제 image Registry 읽기에 Gregorian UTC 기간 대조를 결합한 `128_registry_temporal_normalization.md`를 구현·검증했다. 원127의 temporal_year_verified=false는 그대로이며 새 registry_temporal_year_verified도 실제 촬영일·기관 권위·실행 승인은 아니다.
+
 ## 쉬운 설명과 범위
 
 신규 `backend/app/ml/pinned_annual_normalization.py`의 `inspect_pinned_annual_normalization(store, model_ref, training_report_sha256, requested_years)`는124로 실제 모델 checkpoint/report를 **한 번** 읽고, 그 동일 manifest 객체를125의 장면 읽기에 순서대로 전달한다.126을 연도 수만큼 호출하여 모델을 반복 load하지 않는다. caller checkpoint_manifest·파일 경로·source_scene·normalization 입력은 없다.

@@ -1,5 +1,27 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — 동일 Registry 읽기에서 요청 UTC 연도와 등록 기간 결합 (128)
+
+계약 담당은 신규 `backend/app/ml/registry_temporal_normalization.py`·집중시험·문서128, 독립 담당은 별도 실제 Temp2/6장면의 UTC/ns·같은get·부분상태·UI/API 영향, Root는 실제 GeoTIFF/등록 묶음·관련 회귀·운영 조회·보존·공통 문서/Git, 이해 담당은 완료 소스의 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 이전 에이전트는 모두 완료 상태이고 실제 수집·학습 프로세스는 관측되지 않았다. API/Ollama 실행과 보고예약 ACTIVE/10분은 수집·학습 실행과 구분한다.
+
+`inspect_registry_temporal_normalization(store, model_ref, training_report_sha256, requested_years)`는127의 요청 snapshot을 선검사하고 읽기 전용 Store proxy로127을 한 번 호출한다. proxy는125가 실제로 읽는 image record의 key/id/version/자산SHA·manifest digest와 bounded canonical copy를 검사하고, 그 동일 copy의 temporal을 요청 연도와 대조한 뒤125에 반환한다. temporal만 별도로 선조회한 뒤 다른 record로 파일 검증하는 틈을 만들지 않는다. 추가get0·모델1load·정상model1+dataset3×N을 유지한다.
+
+신규 내부 소비 정책은 calendar exact gregorian, ASCII uppercaseT/Z 또는 명시±HH:MM, 알려진offset, 소수초1~9자리다. -00:00·naive·윤초60·잘못된문법/달력은 거부한다. UTC 변환 후 정수nanosecond로 start<=end 및 요청연도Jan1<=start<=end<다음연도Jan1을 검사한다. start=end 순간은 허용하고 다음Jan1정각을 끝점으로 둔 기간은 거부한다. RFC3339 전체 지원이나 원GMAIS 규격의 변경·기관 승인으로 표현하지 않는다.
+
+전체입력 선검사 실패의 nested127은 constant-invalid sentinel로 생성하여 caller가 invalid→valid로 동시 변경되어도I/O0을 유지한다. proxy는 보호된125의3get 순서에서 image 역할만 검사하므로 앞 행metadata key가 미래image와 같아도 미래 관측을 조기 생성하지 않는다. 같은get 범위이지 DB/다중파일/모델의 전역 원자 snapshot은 아니며 기존 helper 호출순서가 바뀌면 이 계약도 검토해야 한다.
+
+exact13 출력의 batch_observation은 원127결과 그대로이며 temporal_year_verified=false도 보존한다. 모든 기간·파일·모델 관측이 성공할 때만 REGISTRY_YEARS_MATCHED_UNVERIFIED/registry_temporal_year_verified=true·artifact_bytes_verified=true다. physical_acquisition_year_verified·기관권위·과학·실행·Workflow5개는 항상false다. 파일 실패 뒤 앞선 temporal MATCHED 이력이 있어도 전체 flag는false다. TEMPORAL_BLOCKED는 image-record와year 결합 오류이며 pin/schema오류도 포함한다. BLOCKED의 manifest_sha256은 계산한 후보 digest일 수 있어 저장pin·원schema·기간검증 성공으로 단정하지 않는다.
+
+집중 최종11 PASS/13.072초·Root 관련47 PASS/27.445초(신규11+127의9+124의14+125의13)·독립7 PASS/0 SKIP/9.008356초다. 초기집중10 PASS/12.528초 원로그도 보존하며 중복 합산하지 않는다. 검토에서 신규 invalid재검증 경쟁을 고정sentinel/회귀시험으로 보완하고 ASCII숫자 범위를 명시했다. 기존소스 변경이나 제품결함으로 남은 실패는 없다.
+
+독립 별도Temp18등록·CPUcheckpoint2/6장면은7/19get·각키1회·동일반환copy/DB불변, localyear와다른UTC연도·9자리연말끝·1ns역전·다음Jan1·형식/미상offset/달력·동일get에서기간을변경한record차단·미래image key의앞metadata재사용·failfast/NOT_CHECKED를 확인했다. Root 실제Temp6밴드GeoTIFF3개·등록9역할·학습하지않은CPUcheckpoint7시나리오도 성공했다. 정상3기간/1torch.load10get, boolyear I/O0, 요청2024/등록2023차단, local2021의-01offset→UTC2022통과, 다음Jan1끝점차단/뒤2행미검사, -00차단을 검증했다. 시간변경 시나리오는 반환record mock과그canonical SHA를 바꾼 격리 시험이며 운영DB를 수정하지 않았다.
+
+보호141개·기존소스289개·이전증거1094개·catalog14행 canonical SHA·예약136314880바이트를 보존했다.03:26 KST URI mode=ro 운영조회는 legacydatasets6/models1·dataset_versions0이다. 원본·원장·lock·기존분할·운영모델을 보존했고 운영모델/래스터load·수집·등록·훈련·추론·배포·Workflow dispatch0이다. API/UI에 미연결한 내부함수라 이번 frontend/build/browser·전체backend 재실행은 하지 않았다.120/121의 전체1184(1183 PASS·기존1 SKIP)/frontend261/build는 이전 이력이다.
+
+등록기간 일치는 실제 취득일·출처권위·장면독립성·header/grid/AOI/CRS·QA/구름mask·ACL·물리보정·state_dict 검증이 아니다. inherited Store.get 원문predecode/RSS·Torch ambient allowlist/CPU/시간·TOCTOU/mappeddrive 한계를 유지한다. 다음129는 실제 래스터header와장면간grid/AOI 진단이다. 운영등록·115per_scene실행·독립라벨/모델승인·다른5실행기·운영GeoLLM/RAG/PostGIS·staging/RBAC/기관UAT는 미완료이며 단일단위 완료로 전체개발·보고예약을 중단하지 않는다.
+
+관련 계약·사용법·시험·인계와 이해자료를 함께 갱신했다. 근거: `docs/implementation/128_registry_temporal_normalization.md`, `evidence/integration/temporal-normalization-agent-20261018-focused-final.log`, `temporal-normalization-agent-20261018-focused.log`, `temporal-normalization-root-related-20261018.log`, `temporal-normalization-independent-20261018.json`, `temporal-normalization-runtime-20261018.json`, `temporal-normalization-live-integrity-20261018.json`, `temporal-normalization-operating-inventory-20261018.json`, 최종 `temporal-normalization-closeout-20261018.json`.
+
 ## 2026-10-18 — 모델 한 번 읽기로 요청 연도2~6개 장면 일괄 사전검증 (127)
 
 계약 담당은 신규 `backend/app/ml/pinned_annual_normalization.py`·집중시험·문서127, 독립 담당은 별도 실제 Temp2/6장면·실패/라벨/alias 검증과 UI/API 영향, Root는 실제 GeoTIFF 묶음·관련 회귀·운영 조회·보존·공통 문서/Git, 이해 담당은 완료 소스의 해설·이론·발표·FAQ·INDEX·변경이력을 맡았다. 시작 시 이전 작업자는 모두 완료 상태였으며 수집·학습 프로세스는 관측되지 않았다. API/Ollama 서비스 실행과 보고예약 ACTIVE/10분은 실제 수집·학습 진행과 구분한다.

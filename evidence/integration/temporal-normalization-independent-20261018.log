@@ -1,0 +1,86 @@
+test_actual_two_and_six_rows_same_get_one_model_and_nested_false (__main__.Independent.test_actual_two_and_six_rows_same_get_one_model_and_nested_false) ... ok
+test_boundary_cross_next_year_reversed_and_zero_duration (__main__.Independent.test_boundary_cross_next_year_reversed_and_zero_duration) ... ok
+test_changed_actual_get_record_is_checked_without_stale_preread (__main__.Independent.test_changed_actual_get_record_is_checked_without_stale_preread) ... ok
+test_invalid_global_and_model_failure_never_read_image (__main__.Independent.test_invalid_global_and_model_failure_never_read_image) ... ok
+test_middle_failfast_partial_observations_and_future_alias_not_observed (__main__.Independent.test_middle_failfast_partial_observations_and_future_alias_not_observed) ... ok
+test_strict_subset_nullable_calendar_offset_ascii_and_fraction (__main__.Independent.test_strict_subset_nullable_calendar_offset_ascii_and_fraction) ... ok
+test_timezone_normalized_year_and_nanosecond_endpoint (__main__.Independent.test_timezone_normalized_year_and_nanosecond_endpoint) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 9.008s
+
+OK
+{
+  "scope": "SYNTHETIC_TEMP_SAME_GET_REGISTRY_UTC_YEAR_POLICY",
+  "tests": 7,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 9.008355599988136,
+  "passed": true,
+  "source_sha256": "6cc04dcfb2e71745a09ed7a62b17ccc94637e5c9ad12730fe7ac3d8e20b98f15",
+  "frozen_source_matches": true,
+  "baseline_commit": "0ff71266aae84e14fe8620bdafe56725d7fd5c80",
+  "old_source_byte_checks": [
+    {
+      "path": "backend/app/ml/pinned_annual_normalization.py",
+      "baseline_sha256": "4589a70425dcdfc1e6f7b9a065929f74860f572284cf9fd8c021a8fb5fc81953",
+      "current_sha256": "4589a70425dcdfc1e6f7b9a065929f74860f572284cf9fd8c021a8fb5fc81953",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/model_checkpoint_manifest.py",
+      "baseline_sha256": "c62cb01364cc60ab481c16a8b31dfa4d57085f435b1442cb6001ec37325f591d",
+      "current_sha256": "c62cb01364cc60ab481c16a8b31dfa4d57085f435b1442cb6001ec37325f591d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/ml/registered_per_scene_files.py",
+      "baseline_sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
+      "current_sha256": "8c36bf4f5715784db59c46f378878675702804878ba132d272657e5c86ff2866",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/dataset_registry.py",
+      "baseline_sha256": "f12e015383fbbbd2d415f04658104892d445bb81976d207bd8342f4688adb8bd",
+      "current_sha256": "f12e015383fbbbd2d415f04658104892d445bb81976d207bd8342f4688adb8bd",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/lcluc_workflow.py",
+      "baseline_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "current_sha256": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "unchanged": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "baseline_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "current_sha256": "d7bbf67c108e82e6a67b818a15476bd108946467f5e6b83b72d3ebaf49c6714e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/LclucWorkflowPanel.tsx",
+      "baseline_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "current_sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/src/lclucWorkflowAdapter.ts",
+      "baseline_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "current_sha256": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa",
+      "unchanged": true
+    }
+  ],
+  "tracked_source_differences": [],
+  "operating_Store_API_registration_checkpoint_reads_or_writes": 0,
+  "inference_training_calls": 0,
+  "UI_API_changes": 0,
+  "frontend_build_browser_runs": 0,
+  "limitations": [
+    "Strict internal ASCII uppercase Gregorian known-offset RFC3339 subset; not all RFC3339/calendars.",
+    "Verified Registry-declared UTC year window only, not physical acquisition/header/authority/independent scene proof; nested127 temporal flag remains false.",
+    "BLOCKED temporal manifest_sha256 may be only a computed candidate digest, not a verified Registry pin.",
+    "Same-get record binding prevents this stale preread gap, not all concurrent metadata/filesystem changes or global atomicity.",
+    "Inherited Torch/Store resource, approval/ACL/QA/mask/state limitations remain. Internal unwired helper: no API/UI/front/build/browser/full-backend rerun. Prior1184 history is not new. Do not sum overlapping suites."
+  ]
+}

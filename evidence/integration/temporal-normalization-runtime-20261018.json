@@ -1,0 +1,22 @@
+{
+  "scope": "TESTED_SYNTHETIC_TEMP_MODEL_THREE_GEOTIFFS_NINE_REGISTRY_RECORDS_TEMPORAL_YEAR_BINDING",
+  "checks_passed": [
+    "three_actual_temp_geotiffs_nine_registered_roles_same_record_utc_year_windows_match",
+    "one_checkpoint_load_ten_gets_no_temporal_preread_or_report_signature_substitution",
+    "boolean_request_year_rejected_before_any_registry_or_model_io",
+    "requested2024_vs_actual_registered2023_blocked_with_partial_earlier_rows",
+    "known_offset_local2021_instant_converts_to_requested_utc2022_and_matches",
+    "end_at_next_january1_rejected_first_row_and_two_later_rows_unread",
+    "unknown_negative_zero_offset_rejected_without_assigning_utc_authority"
+  ],
+  "torch_version": "2.14.0+cpu",
+  "fixture_files_restored_inputs_unchanged": true,
+  "one_checkpoint_load_per_valid_batch": true,
+  "no_extra_temporal_registry_reads": true,
+  "changed_record_scenarios_use_mocked_returned_metadata_without_store_writes": true,
+  "registered_temporal_declarations_are_not_physical_acquisition_authority": true,
+  "operating_model_loaded": false,
+  "operating_registry_contact": false,
+  "training_inference_executed": false,
+  "scientific_accuracy_validated": false
+}
