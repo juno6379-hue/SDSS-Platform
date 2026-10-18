@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T02:33:11.635555+00:00",
+  "files": [
+    {
+      "path": "priority164-cohort-20261018/source.json",
+      "sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf"
+    },
+    {
+      "path": "priority164-cohort-20261018/stage/candidate.json",
+      "sha256": "706dbc0a67b9186c21fa579504c74f58bfdd4930530f09209e8e977c992678c3"
+    },
+    {
+      "path": "priority164-cohort-20261018/qa/readiness.json",
+      "sha256": "03ca6e9786ebb639cf72cbf0ad7335d4e9952aacf3cf429405ec53b0e93b7168"
+    }
+  ],
+  "source_manifest_sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+  "by_split": {
+    "train": 720,
+    "val": 249,
+    "test": 250
+  },
+  "blocker_count": 3,
+  "scene_split_conflicts": [],
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "scope": "FROZEN_1536_ROW_SOURCE_NOT_LATER_COLLECTION",
+  "limitations": [
+    "Connectivity witness NOT_CAPTURED_BUDGET; no gate bypass",
+    "Later general/targeted collection excluded"
+  ],
+  "previous_pointer_sha256": "c0a8f4984dc857979dc3c94b68c3a5d5bc2b311f75e1ad829401f5e578fc6ab0"
+}

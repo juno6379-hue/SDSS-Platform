@@ -1,0 +1,14 @@
+[
+  {
+    "ProcessId": 18384,
+    "ParentProcessId": 11244,
+    "Name": "python.exe",
+    "CommandLine": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe E:\\GeoAI–MLOps–SDSS\\scripts\\collect_training_priority.py --max-batches 2 --continue-unrelated-pending --expected-plan-sha256 2bf310007a024dfb434ac9e6048e74ea78536c13d986d4eb459f612c4174cad0 --execute"
+  },
+  {
+    "ProcessId": 29292,
+    "ParentProcessId": 18384,
+    "Name": "python.exe",
+    "CommandLine": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe E:\\GeoAI–MLOps–SDSS\\scripts\\collect_training_parallel.py --execute --priority-deficit --priority-plan-sha256 2bf310007a024dfb434ac9e6048e74ea78536c13d986d4eb459f612c4174cad0 --output E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1 --centers-per-province 4 --max-batches 2 --continue-unrelated-pending"
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "scope": "165 source/tests/docs freeze",
+  "observed_git_head": "8cf7b9421ea3d5916058a9e4622dc19c9075e9f2",
+  "files": {
+    "scripts/audit_priority_increment165.py": "ba4da0b03bd19a0d327200a49eb5c75b28a1f42620be43c84826092c50c661ba",
+    "tests/test_audit_priority_increment165.py": "f4e8f518aaac0090e64c81a9003cbdb9acd6f665747cf08e58a5ad5ea9d29e0a",
+    "docs/implementation/165_priority_increment_quality.md": "2c6255010de7f99f3c104c30ec697ea70ecc9bf137dcd43f9191f8eebf07dbd5"
+  },
+  "tests": 11,
+  "passed": 11,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 12.092,
+  "test_names": [
+    "actual_native_two_patches_and_all_files_unchanged",
+    "pending_and_missing_terminal_are_incomplete_no_native",
+    "old_prefix_pending_and_config_pins_fail_closed",
+    "sha_grid_ratio_and_histogram_reject_including_bool",
+    "nonfinite_pixels_and_nonbinary_support_do_not_pass",
+    "settled_zero_patch_and_scene_failure_not_success",
+    "worker_error_and_scene_error_are_separate",
+    "selected_file_recheck_detects_change_and_paths_never_fetch",
+    "strict_json_and_bound",
+    "stored_and_effective_config_pin_scopes_remain_distinct",
+    "malformed_worker_error_is_fixed_blocked_before_native"
+  ],
+  "actual_scope": "Fixed round6 24 patches/23 eligible/bare0,80 SHA rechecks,14.8720509s; later pool1568/1259 is metadata only",
+  "mock_scope": "Only temporary fixture mutations and injected after-read changes; actual round6 is not mocked",
+  "operating_writes": 0,
+  "limitations": [
+    "Snapshot/legacy native declarations are not scientific or execution approval",
+    "Per-patch class dominance observation is not split class-balance result"
+  ],
+  "source_sha256": "ba4da0b03bd19a0d327200a49eb5c75b28a1f42620be43c84826092c50c661ba",
+  "test_sha256": "f4e8f518aaac0090e64c81a9003cbdb9acd6f665747cf08e58a5ad5ea9d29e0a",
+  "final_native_evidence": "priority165-round6-native-final2-20261018.json",
+  "initial_evidence_preserved": true
+}

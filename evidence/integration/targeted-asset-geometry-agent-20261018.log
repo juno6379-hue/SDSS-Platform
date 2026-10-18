@@ -1,0 +1,17 @@
+test_actual_projected_different_resolution_and_input_files_unchanged (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_actual_projected_different_resolution_and_input_files_unchanged) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_catalog_hint_cannot_override_actual_grid (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_catalog_hint_cannot_override_actual_grid) ... ok
+test_center_inside_but_full_bbox_outside_rejected (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_center_inside_but_full_bbox_outside_rejected) ... ok
+test_changed_sha_and_post_observation_mutation_are_blocked (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_changed_sha_and_post_observation_mutation_are_blocked) ... ok
+test_different_actual_crs_checked_independently (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_different_actual_crs_checked_independently) ... ok
+test_exact_geographic_boundary_is_accepted (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_exact_geographic_boundary_is_accepted) ... ok
+test_image_inside_label_outside_even_with_successful_scl_not_used (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_image_inside_label_outside_even_with_successful_scl_not_used) ... ok
+test_invalid_request_and_year_precede_file_reads (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_invalid_request_and_year_precede_file_reads) ... ok
+test_malformed_tiff_and_projected_boundary_fail_closed (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_malformed_tiff_and_projected_boundary_fail_closed) ... ok
+test_vrt_and_rotated_grid_and_path_escape_rejected (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_vrt_and_rotated_grid_and_path_escape_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.613s
+
+OK

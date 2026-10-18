@@ -1,0 +1,45 @@
+test_concurrent_cap_and_idempotent_replay_when_full (test_targeted_scene_claims.TargetedSceneClaimsTests.test_concurrent_cap_and_idempotent_replay_when_full) ... ok
+test_copy_failure_from_concurrent_caller_mutation_is_fixed_and_recoverable (test_targeted_scene_claims.TargetedSceneClaimsTests.test_copy_failure_from_concurrent_caller_mutation_is_fixed_and_recoverable) ... ok
+test_existing_cross_split_veto_and_multi_split_quarantine (test_targeted_scene_claims.TargetedSceneClaimsTests.test_existing_cross_split_veto_and_multi_split_quarantine) ... ok
+test_invalid_requests_do_not_consume_capacity_or_leak_inputs (test_targeted_scene_claims.TargetedSceneClaimsTests.test_invalid_requests_do_not_consume_capacity_or_leak_inputs) ... ok
+test_invalid_seeds_and_caps_fail_closed_without_partial_state (test_targeted_scene_claims.TargetedSceneClaimsTests.test_invalid_seeds_and_caps_fail_closed_without_partial_state) ... ok
+test_no_io_and_all_unverified_guards_remain_false (test_targeted_scene_claims.TargetedSceneClaimsTests.test_no_io_and_all_unverified_guards_remain_false) ... ok
+test_owner_replay_only_for_same_scene_and_split (test_targeted_scene_claims.TargetedSceneClaimsTests.test_owner_replay_only_for_same_scene_and_split) ... ok
+test_return_value_pollution_and_input_mutation_do_not_change_registry (test_targeted_scene_claims.TargetedSceneClaimsTests.test_return_value_pollution_and_input_mutation_do_not_change_registry) ... ok
+test_same_unseen_scene_cross_split_race_has_exactly_one_claim (test_targeted_scene_claims.TargetedSceneClaimsTests.test_same_unseen_scene_cross_split_race_has_exactly_one_claim) ... ok
+test_separate_coordinators_are_explicitly_not_shared (test_targeted_scene_claims.TargetedSceneClaimsTests.test_separate_coordinators_are_explicitly_not_shared) ... ok
+test_actual_projected_different_resolution_and_input_files_unchanged (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_actual_projected_different_resolution_and_input_files_unchanged) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_catalog_hint_cannot_override_actual_grid (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_catalog_hint_cannot_override_actual_grid) ... ok
+test_center_inside_but_full_bbox_outside_rejected (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_center_inside_but_full_bbox_outside_rejected) ... ok
+test_changed_sha_and_post_observation_mutation_are_blocked (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_changed_sha_and_post_observation_mutation_are_blocked) ... ok
+test_different_actual_crs_checked_independently (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_different_actual_crs_checked_independently) ... ok
+test_exact_geographic_boundary_is_accepted (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_exact_geographic_boundary_is_accepted) ... ok
+test_image_inside_label_outside_even_with_successful_scl_not_used (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_image_inside_label_outside_even_with_successful_scl_not_used) ... ok
+test_invalid_request_and_year_precede_file_reads (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_invalid_request_and_year_precede_file_reads) ... ok
+test_malformed_tiff_and_projected_boundary_fail_closed (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_malformed_tiff_and_projected_boundary_fail_closed) ... ok
+test_vrt_and_rotated_grid_and_path_escape_rejected (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_vrt_and_rotated_grid_and_path_escape_rejected) ... ok
+test_actual_local_pixels_geometry_and_proposal_jobs_not_execution (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_local_pixels_geometry_and_proposal_jobs_not_execution) ... E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_targeted_bare_plan.py:24: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  native=[self.affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py:55: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[t*(0,0),t*(dataset.width,0),t*(dataset.width,dataset.height),t*(0,dataset.height)]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py:151: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*window));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_actual_noneligible_different_year_image_overlap_is_rejected (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_noneligible_different_year_image_overlap_is_rejected) ... ok
+test_bbox_native_window_counts_and_lineage_are_not_inferred (test_targeted_bare_plan.TargetedBarePlanTests.test_bbox_native_window_counts_and_lineage_are_not_inferred) ... ok
+test_changed_label_or_proposal_pin_blocks_no_partial_jobs (test_targeted_bare_plan.TargetedBarePlanTests.test_changed_label_or_proposal_pin_blocks_no_partial_jobs) ... ok
+test_path_escape_does_not_return_original_path_or_partial_payload (test_targeted_bare_plan.TargetedBarePlanTests.test_path_escape_does_not_return_original_path_or_partial_payload) ... ok
+test_same_space_across_requested_years_not_counted_as_independent (test_targeted_bare_plan.TargetedBarePlanTests.test_same_space_across_requested_years_not_counted_as_independent) ... ok
+test_strict_target_count_policy_bool_and_extra_fail_before_file_io (test_targeted_bare_plan.TargetedBarePlanTests.test_strict_target_count_policy_bool_and_extra_fail_before_file_io) ... ok
+test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins (test_targeted_bare_plan.TargetedBarePlanTests.test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 9.204s
+
+OK

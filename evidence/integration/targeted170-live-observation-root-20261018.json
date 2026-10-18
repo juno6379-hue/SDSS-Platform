@@ -1,0 +1,43 @@
+{
+  "at_utc": "2026-10-18T02:29:30.445962+00:00",
+  "launch_at": "2026-10-18T11:27:13.031531+09:00",
+  "launched_maximum_batches": 1,
+  "execute_flag_present": true,
+  "process": {
+    "ProcessId": 19012,
+    "Name": "python.exe"
+  },
+  "lock_present": true,
+  "lock_owner_bytes": "19012",
+  "worker_started_records": [],
+  "worker_finished_records": [],
+  "terminal_records": [],
+  "stdout_bytes": 0,
+  "stderr_bytes": 0,
+  "targeted_ledger_rows": [],
+  "ledger_matches_prelaunch_sha": true,
+  "manifest_matches_prelaunch_sha": true,
+  "old1568rows_canonical_unchanged": true,
+  "oldpending2_unchanged": true,
+  "physical_total": 1568,
+  "eligible_total": 1259,
+  "current_new_charged_bytes": 2172319209,
+  "remaining_budget": 2122648087,
+  "manifest_ledger_two_reads_stable": true,
+  "stage_inference": "Process and execution lock exist; no workerstart/terminal/stdout or new targeted budget row, unchanged ledger/manifest. Consistent with pinned local preflight still running; no actual remote worker start evidenced yet.",
+  "f1_scope": "Current maximum1 job cannot trigger reproduced second-job-reserve failure. Do not claim F1 occurred in this run.",
+  "limits": "Sequential observation, not atomic OS snapshot. Absence of workerstdout is not direct network syscall tracing. No native QA performed; no collector restart/duplicatevalidation.",
+  "source_sha256_now": {
+    "scripts/collect_targeted_bare.py": "d81f1e246c4f0faab9b9b5a64236678e14726d7a3a93792504fbb76c6c993f50",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "backend/app/data/service.py": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787",
+    "backend/app/data/targeted_live_guards.py": "e42728f5a18b76439f5df88af8c0427fcff61f58fcfbac9d12eaf0e7bdaba0ec",
+    "backend/app/data/targeted_inventory.py": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+    "backend/app/data/targeted_bare_plan.py": "4042ca3302581e08c59dee8109ed6bc1d8b21f2fa5decf463747b2cb4b0e845a",
+    "backend/app/data/targeted_scene_claims.py": "e9b07b7363e7aa053e1ad55bc15b0a3fb6680ac611a1c86604edc09abadcdaf7",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d"
+  },
+  "network_calls_by_reviewer": 0,
+  "collection_starts_by_reviewer": 0,
+  "operating_data_writes": 0
+}

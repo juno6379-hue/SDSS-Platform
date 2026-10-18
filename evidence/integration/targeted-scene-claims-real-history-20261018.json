@@ -1,0 +1,58 @@
+{
+  "at_utc": "2026-10-18T01:59:25.114692+00:00",
+  "classification": "VERIFIED_REAL_STORED_SCENE_DECLARATIONS_PRIVATE_MEMORY_OBSERVATION",
+  "source_manifest_sha256_observed_by_caller": "035749c062f9877d38c3117e80ced87ba28945259ac5fdbbca81dc8776868af4",
+  "manifest_rows": 1512,
+  "rows_without_scene_id": 0,
+  "deduplicated_scene_split_records": 95,
+  "distinct_declared_scenes": 94,
+  "quarantine_checks": [
+    {
+      "scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "split": "train",
+      "issue": "SEEDED_SCENE_QUARANTINED"
+    },
+    {
+      "scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "split": "val",
+      "issue": "SEEDED_SCENE_QUARANTINED"
+    },
+    {
+      "scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "split": "test",
+      "issue": "SEEDED_SCENE_QUARANTINED"
+    }
+  ],
+  "single_split_veto_issue": "DECLARED_SPLIT_CONFLICT",
+  "private_registry_snapshot": {
+    "schema_version": 1,
+    "scope": "PROCESS_LOCAL_SCENE_CLAIMS_ONLY",
+    "status": "LOCAL_REGISTRY_INITIALIZED_EXECUTION_BLOCKED",
+    "issue": "EXECUTION_GUARDS_NOT_CONNECTED",
+    "source_manifest_sha256_declaration": "035749c062f9877d38c3117e80ced87ba28945259ac5fdbbca81dc8776868af4",
+    "declared_history_scene_count": 94,
+    "quarantined_scene_count": 1,
+    "maximum_claims": 256,
+    "claim_count": 1,
+    "claims": [
+      {
+        "scene_id": "S2A_MSIL2A_20200623T022331_R103_T50MRA_20201027T080040",
+        "split": "train",
+        "owner_id": "root-private-observer"
+      }
+    ],
+    "execution_supported": false,
+    "inventory_complete": false,
+    "source_pins_verified": false,
+    "pending_verified": false,
+    "footprints_verified": false,
+    "image_aliases_verified": false,
+    "quality_verified": false
+  },
+  "original_manifest_sha_unchanged": true,
+  "source_sha_verification_scope": "This audit pins its one manifest read; the registry itself never verifies files or inventory completeness.",
+  "limitations": "No unaggregated source reports, pending footprints, image aliases, live worker registry, network or cross-process protection checked.",
+  "operating_writes": 0,
+  "network_requests": 0,
+  "collectors_started": 0
+}

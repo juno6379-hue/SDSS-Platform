@@ -1,0 +1,624 @@
+{
+  "schema_version": 1,
+  "scope": "READONLY_FIXED_LAUNCH_INCREMENT_NATIVE_AUDIT",
+  "recorded_at": "2026-10-18T02:11:32.140495+00:00",
+  "status": "COMPLETED_NATIVE_CHECKED",
+  "issue": null,
+  "native_validation_complete": true,
+  "batches": [
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2024-g01",
+      "settled": true,
+      "stored_config_sha256": "ddcf83c7c51b3158631f0e1995106894d322b07368ffc2c8207625701a13d9d4",
+      "effective_config_sha256": "8879efdbcca22f695e385e8def45b248d95cd6568211a1737dfdb8d8fc4c6baa",
+      "charged_bytes": 22317685,
+      "worker_error": false,
+      "worker_error_category": null,
+      "rate_limited": false,
+      "scene_status_counts": {
+        "rgb_window_downloaded": 1
+      },
+      "scene_failure_count": 0,
+      "patches": [
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r0-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 43564,
+            "11": 21972
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.66473388671875,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r0-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 17509,
+            "11": 48027
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7328338623046875,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r0-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 6795,
+            "11": 58741
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8963165283203125,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r0-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65280,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 16444,
+            "11": 48836
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7481004901960784,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r1-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 55706,
+            "11": 9830
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.850006103515625,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r1-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 39286,
+            "11": 26250
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.599456787109375,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r1-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 24090,
+            "11": 41446
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.632415771484375,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r1-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65280,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 29486,
+            "11": 35794
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.5483149509803922,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r2-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 65303,
+            "11": 233
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9964447021484375,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r2-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 60870,
+            "11": 4666
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.928802490234375,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r2-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 22816,
+            "11": 42720
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.65185546875,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r2-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65280,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 63629,
+            "11": 1651
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9747089460784314,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r3-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 54342,
+            "11": 11194
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.829193115234375,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r3-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 38403,
+            "11": 27133
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.5859832763671875,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r3-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 30508,
+            "11": 35028
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.53448486328125,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g01-r3-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65280,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 47921,
+            "11": 17359
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7340839460784314,
+          "maximum_class_fraction_over_90_percent": false
+        }
+      ],
+      "native_patches_checked": 16,
+      "native_eligible_patches": 16,
+      "eligible_bare_pixels": 0,
+      "data_outcome": "PATCHES_NATIVE_CHECKED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2024-g02",
+      "settled": true,
+      "stored_config_sha256": "6eccb3d5daf535ef6b0c52caed74700136d5afee49289415d3014843e9db82f8",
+      "effective_config_sha256": "90433b5c683191dc4b03a4b5ae6f2f12d1a5ad126d64fdb5acb5d9f517203896",
+      "charged_bytes": 7118836,
+      "worker_error": false,
+      "worker_error_category": null,
+      "rate_limited": false,
+      "scene_status_counts": {
+        "rgb_window_downloaded": 1
+      },
+      "scene_failure_count": 0,
+      "patches": [
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g02-r0-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 27675,
+            "7": 18706,
+            "11": 19155
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.4222869873046875,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g02-r0-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 28398,
+            "7": 29660,
+            "11": 7478
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.45257568359375,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g02-r1-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 2,
+            "2": 23807,
+            "5": 5,
+            "7": 24395,
+            "11": 17327
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.3722381591796875,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g02-r1-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 42777,
+            "5": 109,
+            "7": 12600,
+            "11": 10050
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.6527252197265625,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g02-r2-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65535,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 46019,
+            "5": 70,
+            "7": 6481,
+            "11": 12965
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7022049286640726,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g02-r2-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 29837,
+            "4": 364,
+            "5": 6798,
+            "7": 27699,
+            "11": 838
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.4552764892578125,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g02-r3-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 58490,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 35424,
+            "5": 137,
+            "7": 20462,
+            "11": 2467
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.605641990083775,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g02-r3-c1",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 47546,
+          "province_inside_pixels": 47546,
+          "class_histogram": {
+            "1": 1423,
+            "2": 19642,
+            "4": 11,
+            "5": 1437,
+            "7": 18970,
+            "8": 234,
+            "11": 5829
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.41311571951373405,
+          "maximum_class_fraction_over_90_percent": false
+        }
+      ],
+      "native_patches_checked": 8,
+      "native_eligible_patches": 7,
+      "eligible_bare_pixels": 0,
+      "data_outcome": "PATCHES_NATIVE_CHECKED"
+    }
+  ],
+  "native_patches_checked": 24,
+  "native_eligible_patches": 23,
+  "eligible_bare_pixels": 0,
+  "source_or_ledger_writes": 0,
+  "collection_executed": false,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "limitations": [
+    "Sequential observations, not an atomic filesystem/DB snapshot.",
+    "Only selected launch batches get native patch checks; prior rows are canonical metadata checks.",
+    "Esri weak labels and training support masks are not independent truth or QA/model approval.",
+    "Stored whole-pool counts/leakage are metadata only, not whole-pool raster revalidation.",
+    "No HTTP, collection, retries, refunds, reservation edits or source reconstruction."
+  ],
+  "launch_sha256": "de8e975c63f29bffffef23da11a9e68eac5eeab61475dc05bb1fcc73523ca7be",
+  "aggregate_sha256_at_read": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+  "ledger_sha256_at_read": "07be5cce634f896feb6b1c1868382c4ff9a590c1c541cfb59ee1a1fc465a4153",
+  "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+  "old_rows_verified": 1512,
+  "pending_rows_verified": 2,
+  "pending_reserved_bytes": 136314880,
+  "physical_total_at_read": 1536,
+  "eligible_total_at_read": 1235,
+  "execution_lock_present_at_read": true,
+  "cell_gap_total_at_read": 73,
+  "eligible_target_gap_at_read": 0,
+  "selected_ledger_observations": {
+    "parallel-v2-grid-esri_io-east_java-2024-g01": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 22317685,
+      "config_sha256": "ddcf83c7c51b3158631f0e1995106894d322b07368ffc2c8207625701a13d9d4",
+      "report_path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2024-g01\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-east_java-2024-g02": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 7118836,
+      "config_sha256": "6eccb3d5daf535ef6b0c52caed74700136d5afee49289415d3014843e9db82f8",
+      "report_path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2024-g02\\annual-window-report.json"
+    }
+  },
+  "file_sha_rechecks": 80,
+  "external_metadata_changed_during_audit": {
+    "aggregate": false,
+    "ledger": false
+  },
+  "declared_cross_split_scene_ids": [
+    "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+  ],
+  "seconds": 17.15280110000458
+}

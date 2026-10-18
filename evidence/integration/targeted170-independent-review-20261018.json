@@ -1,0 +1,168 @@
+{
+  "at_utc": "2026-10-18T02:27:03.471189+00:00",
+  "status": "WIP_READ_ONLY_SOURCE_REVIEW_NOT_DISPATCH_APPROVAL",
+  "source_sha256": {
+    "scripts/collect_targeted_bare.py": "d81f1e246c4f0faab9b9b5a64236678e14726d7a3a93792504fbb76c6c993f50",
+    "backend/app/data/targeted_live_guards.py": "e42728f5a18b76439f5df88af8c0427fcff61f58fcfbac9d12eaf0e7bdaba0ec",
+    "backend/app/data/parallel.py": "87c32c3a7b90b3b0d2fc1067b3e2adba9c0aff81dc44720675a513382a637280",
+    "backend/app/data/budget.py": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+    "scripts/collect_training_grid.py": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+    "docs/implementation/170_targeted_bare_dispatch.md": "5351157e11d270381b012306124bba46ee46ebc89786df5300828569afd723a2",
+    "tests/test_collect_targeted_bare.py": "5794aa3203325910c4d69891eb03b71395ff9a25771693a58d6dc58b1650c403",
+    "tests/test_targeted_live_guards.py": "ca47b24a940acfff8d8f1423cbd4e49da22269e2d904cfaa2e44c6c5518f0407"
+  },
+  "source_reads_stable": true,
+  "function_lines": {
+    "scripts/collect_targeted_bare.py": {
+      "digest": 26,
+      "validate_request": 30,
+      "run_targeted": 71,
+      "main": 183,
+      "reserve": 93,
+      "work": 110,
+      "finalize": 147
+    },
+    "backend/app/data/targeted_live_guards.py": {
+      "_need": 10,
+      "_bounds": 14,
+      "TargetedWindowClaims": 26,
+      "TargetedLiveGuard": 51,
+      "scene_registry": 103,
+      "__init__": 58,
+      "claim": 33,
+      "on_scene": 62,
+      "on_window": 81
+    },
+    "backend/app/data/parallel.py": {
+      "run_two_workers": 10
+    },
+    "backend/app/data/budget.py": {
+      "sha256": 10,
+      "CollectionLedger": 14,
+      "__init__": 20,
+      "locked": 31,
+      "_read": 42,
+      "_save": 61,
+      "snapshot": 67,
+      "reserve": 71,
+      "settle": 93
+    },
+    "scripts/collect_training_grid.py": {
+      "write_json": 29,
+      "candidate_coverage": 37,
+      "reference_preview": 61,
+      "preview_is_redundant": 99,
+      "spatial_centers": 118,
+      "build_batches": 158,
+      "materialize_patches": 188,
+      "main": 246
+    },
+    "tests/test_collect_targeted_bare.py": {
+      "CollectTargetedBareTests": 21,
+      "setUp": 22,
+      "tearDown": 48,
+      "write": 162,
+      "sha": 55,
+      "checked": 58,
+      "run_mocked": 64,
+      "row": 73,
+      "measured_collect": 77,
+      "test_wrong_request_sha_rejected_before_source_or_ledger_mutation": 83,
+      "test_manifest_pin_drift_rejected_read_only": 91,
+      "test_ledger_pin_drift_rejected_without_refund": 97,
+      "test_existing_global_lock_is_preserved_without_validation_or_dispatch": 104,
+      "test_dry_run_does_not_construct_ledger_reserve_output_or_execute": 111,
+      "test_existing_exclusive_output_even_empty_is_not_reused_or_charged": 119,
+      "test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows": 129,
+      "test_bare_minimum_applies_after_materialization_without_inventing_quality": 142,
+      "test_absent_b02_witness_never_materializes_or_yields_patches": 152,
+      "test_unmeasured_worker_finally_failure_settles_full_reservation": 160,
+      "test_provider_circuit_is_settled_globally_and_stops_future_dispatch": 174,
+      "test_second_output_collision_rolls_back_only_own_empty_first_output": 186,
+      "collect": 176
+    },
+    "tests/test_targeted_live_guards.py": {
+      "TargetedLiveGuardTests": 11,
+      "setUp": 12,
+      "make_guard": 28,
+      "geometry": 33,
+      "select": 44,
+      "test_actual_collector_string_year_selects_scene_and_b02_witness": 47,
+      "test_scene_requery_same_owner_is_rejected_and_claim_kept": 55,
+      "test_cross_split_seed_veto_and_quarantined_seed": 61,
+      "test_failed_b02_check_retains_scene_claim": 71,
+      "test_preselection_scl_observed_but_unselected_imagery_denied": 80,
+      "test_year_matched_esri_reference_reusable_without_b02_witness": 89,
+      "test_b02_alignment_over_one_pixel_rejected_and_exact_boundary_allowed": 102,
+      "test_same_owner_bands_overlap_allowed_other_owner_blocked": 110,
+      "test_historical_support_overlap_denied_but_edge_touch_allowed": 121,
+      "test_concurrent_overlapping_workers_claim_exactly_once": 128,
+      "test_invalid_year_split_aoi_or_grid_fails_without_claim_or_witness": 141,
+      "test_registry_includes_historical_noneligible_split_rows": 160,
+      "claim": 130
+    }
+  },
+  "stored_test_logs_not_rerun": {
+    "evidence/integration/targeted-bare-dispatch-agent-final3-20261018.log": [
+      "",
+      "----------------------------------------------------------------------",
+      "Ran 12 tests in 4.815s",
+      "",
+      "OK"
+    ],
+    "evidence/integration/targeted-bare-dispatch-related-20261018.log": [
+      "",
+      "----------------------------------------------------------------------",
+      "Ran 43 tests in 5.993s",
+      "",
+      "OK"
+    ]
+  },
+  "positive_verified_by_source": [
+    "executeFalse route never constructs ledger/reserves output or calls collector",
+    "executeTrue exclusive existing executionlock before final pinned validation",
+    "157proposal+167inventory and fixedaggregate/ledger doublepins precede dispatch;preserves oldpending and batchkeyreuse veto",
+    "eachjob reserves exclusive source+patch leaf before CollectionLedger.reserve;scene and spatial claims shared across two threads",
+    "live native on_window callback before src.read;candidateSCL spatialchecked before on_scene;B02 exactURLwitness256/10m required",
+    "run_targeted calls existing request2secspacing/sharedcircuit and perworker metadata+COG metering",
+    "newly materialized histogramcode8>=256 needed for aggregateenrollment;under256files+lineage retained in workerreceipt,not quality relabeled",
+    "workerfinally failure becomes full65MiB settlement via unmeasured_worker_failure;existing pending neverrefunded"
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH_BEFORE_REAL_EXECUTION",
+      "function": "run_targeted.reserve / run_two_workers",
+      "condition": "With two jobs, first work is submitted. Second reserve can raise FileExistsError/OSError/RuntimeError; run_two_workers handles only ValueError. Executor waits for running work on exit but skips future.result/finalize. First real HTTP may complete without central settle/aggregate append/terminal. This differs from tested same-job second-leaf collision before any worker starts.",
+      "requested_resolution": "Preflight/atomically reserve all planned outputs before submitting any work, or handle all reserve failures while draining and finalizing every submitted job before returning an explicit stopped/unconfirmed result. Preserve failing reservations and never invent refunds.",
+      "test_proposal": "Two-job actualexecutor+templedger: block firstworker atBarrier; secondjob preexisting output fails; releasefirst and assert exactlyonework/onefinalize, no missing terminal/newpending or falsely successfuloverallresult. Repeat reserveRuntimeError/settlefailure."
+    },
+    {
+      "id": "F2",
+      "severity": "HIGH_OUTCOME_REPORTING",
+      "function": "main exception handler",
+      "condition": "All exceptions print BLOCKED executedFalse, including after executeTrue has reservedbytes and realwork has begun or ledger.settle/aggregatewrite failure. The boundary does not distinguish noHTTP from executionoutcomeunconfirmed.",
+      "requested_resolution": "Track execution boundary and return explicit outcomeunconfirmed with attemptedexecution/possibleHTTP flags after reservation/workerstart; preserve paths/state for manualrecovery without auto-retry.",
+      "test_proposal": "Inject exception after workertransfer or settlement-before-aggregatewrite; CLI must never report definitive executedFalse/noHTTP. Beforevalidationfailure may retain executedFalse."
+    },
+    {
+      "id": "F3",
+      "severity": "MEDIUM_CAP_CONTRACT",
+      "function": "validate_request physical3000 check",
+      "condition": "len(aggregate.scenes)+len(jobs) omits retained physical targeted_unenrolled_patches and other unregistered generated patches. Each unsuccessful baretarget can generate a physicalpatch without aggregateappend. Repeated targets therefore allow physicaldiskpatches above3000 while registeredrows remainunder. Existing tests mockvalidate and do not test cap.",
+      "requested_resolution": "Use a pinned/validated inventory count of all retained physicalpatches including unenrolled receipt/directories plus bounded newnominalpatches;or explicitly redefine/rename cap and preserve userphysical3000limit separately.",
+      "test_proposal": "Nearcap2999registered +1retainedunenrolledphysical +1newtarget mustrejectwithoutreservation/HTTP; include historical/pendingnominalpathaccounting."
+    }
+  ],
+  "other_limits": [
+    "Source/test/doc are observed WIP; hashes are this review snapshot,not a final commit guarantee.",
+    "SceneID aliases and complete outside-inventory history remain bounded to caller/current167scope;fixedsourceSHA is declaration for162,not independenthistoricaltruth.",
+    "160notdirectlycalled by170;liveactualheader consumer provides separate geometrychecks and retains its numerical/onepixelalignment policy.",
+    "Current full integration tests mock validate_request/collect_windows/materialize and do not verify actual157+167+169+170 remote flow or newbarepatchQA.",
+    "Budget429 ordinaryworker failures are covered in storedsynthetic logs; reserve/finalize-exception lifecycle needsF1/F2test before realexecution."
+  ],
+  "network_calls": 0,
+  "collection_starts": 0,
+  "tests_reexecuted": 0,
+  "source_or_operating_data_writes": 0
+}

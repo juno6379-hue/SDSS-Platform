@@ -1,0 +1,70 @@
+{
+  "scope": "READ_ONLY_INDEPENDENT_REVIEW_AND_SYNTHETIC_LOCAL_GEOMETRY_CHECKS",
+  "status": "TESTED_SYNTHETIC_INDEPENDENT_REVIEW_COMPLETE",
+  "source_test_document_edits": 0,
+  "collector_ledger_server_edits": 0,
+  "network_collection_api_calls": 0,
+  "reviewed_source_sha256": {
+    "backend/app/data/targeted_asset_geometry.py": "b74125b93d53d300316843d3f0706d91e3634f6eaf4d180de2317653ff700232",
+    "tests/test_targeted_asset_geometry.py": "2630af294ce6d43a7a538ee4be896119e3fe10ed0d952940a9ba9d2e36930d70",
+    "docs/implementation/160_targeted_asset_geometry.md": "840ae15ff902d6cc0f9c8411f7f3323be38e94ef864a79d5f12e897f9440e12e"
+  },
+  "tests": {
+    "command": "PYTHONPATH=.runtime;.;backend;tests python -m unittest test_targeted_asset_geometry -v",
+    "passed": 10,
+    "failed": 0,
+    "seconds_reported_by_unittest": 1.656,
+    "exit_code": 0,
+    "warning": "Rasterio affine multiplication PendingDeprecationWarning; no test failure"
+  },
+  "additional_independent_temp_probes": {
+    "valid_tiff_magic_corrupt_directory": {
+      "status": "BLOCKED",
+      "issue": "LOCAL_INPUT_UNAVAILABLE",
+      "assets": [],
+      "temporary_path_not_exposed": true
+    },
+    "mocked_nonfinite_transform_bounds": {
+      "status": "BLOCKED",
+      "issue": "TRANSFORM_INVALID",
+      "assets": []
+    }
+  },
+  "reviewed_contracts": {
+    "strict_builtin_request_copy_and_exact_keys": true,
+    "bool_nonfinite_cycle_extra_key_and_year_mismatch_rejected": true,
+    "year_equality_is_declaration_only_not_temporal_provenance": true,
+    "157_pinned_and_123_snapshot_reader_reused": true,
+    "explicit_data_relative_path_and_sha_pins": true,
+    "per_file_64_mib_limit": true,
+    "memory_file_observes_verified_copied_bytes": true,
+    "tiff_magic_and_explicit_gtiff_driver": true,
+    "no_vrt_pam_directory_external_georef_or_proj_network": true,
+    "north_up_finite_grid_and_pixel_outer_edges": true,
+    "center_inside_does_not_substitute_whole_request_envelope": true,
+    "image_and_label_actual_crs_and_resolution_independently_checked": true,
+    "same_epsg4326_exact_edge_contact_accepted": true,
+    "projected_1024_densified_samples_and_16_ulp_outward_roundoff_margin": true,
+    "projected_continuous_curve_coverage_not_mathematically_proven": true,
+    "projected_exact_edge_contact_not_guaranteed_accepted": true,
+    "both_original_files_repinned_after_observations": true,
+    "not_atomic_multifile_snapshot_and_aba_transients_not_claimed_detected": true,
+    "failure_never_returns_partial_assets_or_request_hash": true,
+    "raw_exception_and_input_paths_not_returned": true,
+    "no_pixel_quality_or_taxonomy_observation": true,
+    "no_256_pixel_window_or_10_metre_alignment_claim": true,
+    "same_grid_execution_pending_support_scene_split_quality_temporal_truth_training_always_false": true,
+    "ui_change_not_required_internal_unconnected_helper": true
+  },
+  "review_feedback_sent_to_implementation_owner": [
+    "RESOLVED: full_bbox_contained was replaced by sampled_native_envelope_contained and coverage_method; complete_projection_coverage_proven is always false. Final source and tests were independently reread and rerun.",
+    "16 ULP is a floating-point margin, not a mathematical bound on unsampled projection curvature.",
+    "WGS84 rectangle coverage is not a cropped native256 footprint or resampling/alignment guarantee."
+  ],
+  "limits": [
+    "Tests and probes use actual temporary synthetic GTiffs, not operating observations.",
+    "Finite densification can conservatively reject narrow projected-edge cases and does not prove every point of arbitrary nonlinear projection curves.",
+    "No collector dispatch, downloads, budget settlement, registry write, UI mutation, learning or operating approval was performed.",
+    "SHA pins and the 10-test result refer to the final narrowed observation contract. The earlier 9-test run is superseded, not added to this test count."
+  ]
+}

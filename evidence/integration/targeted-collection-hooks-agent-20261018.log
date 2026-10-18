@@ -1,0 +1,17 @@
+test_allowed_guard_observes_actual_header_window_without_signed_url (test_targeted_collection_hooks.TargetedCollectionHookTests.test_allowed_guard_observes_actual_header_window_without_signed_url) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_candidate_scl_can_precede_scene_veto_and_is_also_window_guarded (test_targeted_collection_hooks.TargetedCollectionHookTests.test_candidate_scl_can_precede_scene_veto_and_is_also_window_guarded) ... ok
+test_collector_window_hook_forwards_url_and_refunds_only_known_measurement (test_targeted_collection_hooks.TargetedCollectionHookTests.test_collector_window_hook_forwards_url_and_refunds_only_known_measurement) ... ok
+test_dry_run_invokes_neither_guard_nor_network (test_targeted_collection_hooks.TargetedCollectionHookTests.test_dry_run_invokes_neither_guard_nor_network) ... ok
+test_header_429_preserves_original_cause_and_does_not_call_guard (test_targeted_collection_hooks.TargetedCollectionHookTests.test_header_429_preserves_original_cause_and_does_not_call_guard) ... ok
+test_header_guard_rejection_precedes_pixel_read_and_keeps_measured_accounting (test_targeted_collection_hooks.TargetedCollectionHookTests.test_header_guard_rejection_precedes_pixel_read_and_keeps_measured_accounting) ... ok
+test_legacy_wrapper_retains_five_positional_impl_arguments (test_targeted_collection_hooks.TargetedCollectionHookTests.test_legacy_wrapper_retains_five_positional_impl_arguments) ... ok
+test_opt_in_wrapper_passes_callback_only_as_keyword (test_targeted_collection_hooks.TargetedCollectionHookTests.test_opt_in_wrapper_passes_callback_only_as_keyword) ... ok
+test_scene_veto_precedes_metadata_and_pixel_fetch (test_targeted_collection_hooks.TargetedCollectionHookTests.test_scene_veto_precedes_metadata_and_pixel_fetch) ... ok
+test_unknown_measurement_keeps_full_reservation_charged (test_targeted_collection_hooks.TargetedCollectionHookTests.test_unknown_measurement_keeps_full_reservation_charged) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.529s
+
+OK

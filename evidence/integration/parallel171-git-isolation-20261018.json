@@ -1,0 +1,33 @@
+{
+  "base": "8cf7b9421ea3d5916058a9e4622dc19c9075e9f2",
+  "commit": "cfd109d5bbf796c667e1afdd214bf5077b5c87a5",
+  "branch": "refs/heads/codex/parallel-finalization-20261018",
+  "files": [
+    "backend/app/data/parallel.py",
+    "tests/test_data_parallel.py",
+    "docs/implementation/171_parallel_finalization_recovery.md",
+    "docs/understanding/171_PARALLEL_FINALIZATION_RECOVERY.md",
+    "evidence/integration/parallel-finalization-recovery-agent-20261018.log",
+    "evidence/integration/parallel171-root-related-20261018.py",
+    "evidence/integration/parallel171-root-related-20261018.json",
+    "evidence/integration/parallel171-root-related-20261018.log",
+    "evidence/integration/parallel171-git-isolation-20261018.py"
+  ],
+  "file_sha256": {
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+    "tests/test_data_parallel.py": "5ca6b310f24b9c1db5c9942d32d5109632d571b5a2bdb3dc053cf3cdd8abb4c7",
+    "docs/implementation/171_parallel_finalization_recovery.md": "c2cb5978cc3513446abcd6c3268b2ac6317bfb139393f276a1c56cdd84d92d65",
+    "docs/understanding/171_PARALLEL_FINALIZATION_RECOVERY.md": "71241bdd90a5b459245696ad83cef1484f9cb89f864ba9de89b261578646c6c0",
+    "evidence/integration/parallel-finalization-recovery-agent-20261018.log": "e7dda636d9c415bd28c9003fee8f4373533cf45de89920673e5059e7ea76b2f2",
+    "evidence/integration/parallel171-root-related-20261018.py": "ef9163e1b32d1f281621707b5f6661ad224e7c2618096d2ca5d53212a061da88",
+    "evidence/integration/parallel171-root-related-20261018.json": "52cf102fe08a55faae06ad01b24e77e66bcf86bcf345d7c0b7218b6a79366d7c",
+    "evidence/integration/parallel171-root-related-20261018.log": "cf41014cd6bfdf8a6a7c3b0a93d29298dabaad6e9a125029c18732185f1d89e8",
+    "evidence/integration/parallel171-git-isolation-20261018.py": "ce13d48e6237bf97a4723c05d5f079aa7eeb76bf374a2c46494903f0a153b87c"
+  },
+  "shared_head_preserved": true,
+  "shared_index_preserved": true,
+  "working_files_preserved": true,
+  "other_targeted_wip_included": false,
+  "pushed": false,
+  "validation_scope": "Shared working tree;50 related synthetic tests include separately owned targeted modules."
+}

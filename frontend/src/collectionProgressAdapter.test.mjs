@@ -56,3 +56,11 @@ test('collection view reuses parent GET while model review has standalone loader
  const component=readFileSync(new URL('./CollectionProgress.tsx',import.meta.url),'utf8'),collection=readFileSync(new URL('./CollectionStatus.tsx',import.meta.url),'utf8'),model=readFileSync(new URL('./ModelReview.tsx',import.meta.url),'utf8');
  assert.match(collection,/CollectionProgressDetails value=\{data.collection_targets\}/);assert.match(collection,/candidateValue=\{data.candidate_quality\}/);assert.match(model,/<CollectionProgress\/>/);assert.match(component,/누출 제외 후보/);assert.match(component,/유효한 고정 후보 현황이 없습니다/);for(const literal of ['1400','1122','278','639','1095'])assert(!component.includes(literal));assert(!component.includes('POST'));assert(!component.includes('setInterval'));assert.match(component,/flight.current.invalidate/);
 });
+
+test('patch validity/province criteria and split class dominance have separate scopes',()=>{
+ const component=readFileSync(new URL('./CollectionProgress.tsx',import.meta.url),'utf8');
+ assert.match(component,/패치 기준: 유효 비율 ≥ \{percent\(data.minValid\)\} · 주 경계 내부 ≥ \{percent\(data.minProvince\)\}\./);
+ assert.match(component,/학습 후보의 분할\(split\) 집계 기준: 최대 단일 클래스 비중 ≤ \{percent\(data.maxDominance\)\}/);
+ assert.match(component,/개별 순림 패치의 클래스 비율만으로 자동 탈락시키지 않습니다/);
+ assert(!component.includes('data.minProvince)} · 최대 단일 클래스'));
+});

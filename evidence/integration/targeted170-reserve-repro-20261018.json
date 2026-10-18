@@ -1,0 +1,22 @@
+{
+  "at_utc": "2026-10-18T02:27:40.512636+00:00",
+  "elapsed_seconds": 0.078,
+  "parallel_source_sha256": "87c32c3a7b90b3b0d2fc1067b3e2adba9c0aff81dc44720675a513382a637280",
+  "exception_type": "FileExistsError",
+  "events": [
+    "reserve:first",
+    "work_enter:first",
+    "reserve:second",
+    "second_reserve_raises_FileExistsError",
+    "work_finished:first"
+  ],
+  "finalize_count": 0,
+  "worker_completed_before_exception_returned": true,
+  "f1_reproduced": true,
+  "scope": "Actual existing run_two_workers/ThreadPoolExecutor, two memory-only fake jobs. No170CLI invocation.",
+  "main_executed_false_claim": "Static review only; not reproduced here.",
+  "network_calls": 0,
+  "ledger_writes": 0,
+  "collector_calls": 0,
+  "operating_data_writes": 0
+}

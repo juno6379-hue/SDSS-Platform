@@ -1,0 +1,60 @@
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": false}
+test_absent_b02_witness_never_materializes_or_yields_patches (test_collect_targeted_bare.CollectTargetedBareTests.test_absent_b02_witness_never_materializes_or_yields_patches) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_bare_minimum_applies_after_materialization_without_inventing_quality (test_collect_targeted_bare.CollectTargetedBareTests.test_bare_minimum_applies_after_materialization_without_inventing_quality) ... ok
+test_dry_run_does_not_construct_ledger_reserve_output_or_execute (test_collect_targeted_bare.CollectTargetedBareTests.test_dry_run_does_not_construct_ledger_reserve_output_or_execute) ... ok
+test_existing_exclusive_output_even_empty_is_not_reused_or_charged (test_collect_targeted_bare.CollectTargetedBareTests.test_existing_exclusive_output_even_empty_is_not_reused_or_charged) ... ok
+test_existing_global_lock_is_preserved_without_validation_or_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_existing_global_lock_is_preserved_without_validation_or_dispatch) ... ok
+test_f2_cli_subprocess_failure_json_and_exit_code_are_phase_sensitive (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_cli_subprocess_failure_json_and_exit_code_are_phase_sensitive) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_f2_publication_failure_distinguishes_successful_financial_settlement (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_publication_failure_distinguishes_successful_financial_settlement) ... ok
+test_f2_reserve_exception_after_write_preserves_unknown_pending_status (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_reserve_exception_after_write_preserves_unknown_pending_status) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_f2_second_reserve_failure_reports_first_worker_settlement (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_second_reserve_failure_reports_first_worker_settlement) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_f2_settlement_failure_stays_pending_and_is_not_false_nonexecution (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_settlement_failure_stays_pending_and_is_not_false_nonexecution) ... ok
+test_f3_counts_unenrolled_receipt_and_unreported_partial_directory (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_counts_unenrolled_receipt_and_unreported_partial_directory) ... ok
+test_f3_duplicate_or_missing_references_and_missing_receipts_fail_closed (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_duplicate_or_missing_references_and_missing_receipts_fail_closed) ... ok
+test_f3_existing_unenrolled_alias_cannot_be_registered_twice (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_existing_unenrolled_alias_cannot_be_registered_twice) ... ok
+test_f3_oversized_source_is_blocked_before_physical_materialization (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_oversized_source_is_blocked_before_physical_materialization) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": false}
+ok
+test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job) ... ERROR
+test_ledger_pin_drift_rejected_without_refund (test_collect_targeted_bare.CollectTargetedBareTests.test_ledger_pin_drift_rejected_without_refund) ... ok
+test_manifest_pin_drift_rejected_read_only (test_collect_targeted_bare.CollectTargetedBareTests.test_manifest_pin_drift_rejected_read_only) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": true}
+test_provider_circuit_is_settled_globally_and_stops_future_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_provider_circuit_is_settled_globally_and_stops_future_dispatch) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 1, "eligible": 1, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows (test_collect_targeted_bare.CollectTargetedBareTests.test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows) ... ok
+test_second_output_collision_rolls_back_only_own_empty_first_output (test_collect_targeted_bare.CollectTargetedBareTests.test_second_output_collision_rolls_back_only_own_empty_first_output) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 68157440, "live_b02_checked": false, "rate_limited": false}
+test_unmeasured_worker_finally_failure_settles_full_reservation (test_collect_targeted_bare.CollectTargetedBareTests.test_unmeasured_worker_finally_failure_settles_full_reservation) ... ok
+test_wrong_request_sha_rejected_before_source_or_ledger_mutation (test_collect_targeted_bare.CollectTargetedBareTests.test_wrong_request_sha_rejected_before_source_or_ledger_mutation) ... ok
+
+======================================================================
+ERROR: test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 256, in test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job
+    checked=self.validate_with_synthetic_plans(2999,[first])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 247, in validate_with_synthetic_plans
+    return module.validate_request(self.root,request,module.digest(request))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 152, in validate_request
+    _need(proof['status']=='LOCAL_INVENTORY_VERIFIED_EXECUTION_BLOCKED','TARGETED_INVENTORY_'+str(proof['issue']))
+                                                                                                  ~~~~~^^^^^^^^^
+KeyError: 'issue'
+
+----------------------------------------------------------------------
+Ran 22 tests in 10.481s
+
+FAILED (errors=1)

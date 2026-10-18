@@ -1,0 +1,124 @@
+{
+  "scope": "READ_ONLY_164_FIXED_COHORT_STAGE_AND_PUBLICATION_REVIEW",
+  "observed_at_utc": "2026-10-18T02:26:49.777186+00:00",
+  "source_test_document_server_edits": 0,
+  "new_preprocessing_qa_or_api_executions": 0,
+  "file_content_reads_limited_to_json_manifests_receipts_logs_no_raster_rehash": true,
+  "source_code_sha256": "8a113c2efa530744662734b31386bf99a41bc31db9d279f53c2074dfc3173ba7",
+  "fixed_snapshot": {
+    "at": "2026-10-18T02:06:45.591998+00:00",
+    "physical": 1536,
+    "source_sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+    "current_file_sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+    "pin_matches": true,
+    "policy_sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+    "scope": "PINNED_COHORT_EXCLUDES_LATER_COLLECTION"
+  },
+  "source_qa": {
+    "sha256": "51ec2003a90c9dc5a2a2cf72de1708bec6ad1b44f10020e2b04c8aa30e71cd9a",
+    "status": "blocked",
+    "patch_counts_by_split": {
+      "train": 720,
+      "val": 265,
+      "test": 250
+    },
+    "eligible_total": 1235,
+    "blockers": [
+      {
+        "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+        "detail": "같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.",
+        "scene": "west_java"
+      },
+      {
+        "code": "REFERENCE_CLASS_IMBALANCE",
+        "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+        "scene": null
+      },
+      {
+        "code": "REFERENCE_CLASS_IMBALANCE",
+        "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+        "scene": null
+      },
+      {
+        "code": "REFERENCE_CLASS_IMBALANCE",
+        "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+        "scene": null
+      }
+    ],
+    "ready_for_training": false,
+    "scientific_accuracy_validated": false,
+    "label": "COMPLETED_SOURCE_QA_NOT_CANDIDATE_QA"
+  },
+  "materialized_and_staged_candidate": {
+    "package_status": "METADATA_ROUNDTRIP_VERIFIED",
+    "package_scope": "PINNED_JSON_METADATA_ONLY_NOT_RASTER_READINESS",
+    "staging_status": "METADATA_STAGED_FOR_QA",
+    "source_physical": 1536,
+    "candidate_physical": 1520,
+    "excluded_rows": 16,
+    "projected_eligible_total": 1219,
+    "projected_by_split": {
+      "test": 250,
+      "val": 249,
+      "train": 720
+    },
+    "candidate_sha256": "706dbc0a67b9186c21fa579504c74f58bfdd4930530f09209e8e977c992678c3",
+    "current_staged_sha256": "706dbc0a67b9186c21fa579504c74f58bfdd4930530f09209e8e977c992678c3",
+    "staged_pin_matches": true,
+    "package_candidate_pin_matches": true,
+    "stage_receipt_qa_performed": false,
+    "stage_receipt_next_step": "NEXT_QA_NOT_PERFORMED",
+    "staging_receipt_not_a_final_qa_receipt": true
+  },
+  "terminal_artifacts": {
+    "evidence\\integration\\priority164-cohort-20261018\\summary.json": {
+      "exists": false,
+      "bytes": null
+    },
+    "data\\priority164-cohort-20261018\\qa\\readiness.json": {
+      "exists": false,
+      "bytes": null
+    },
+    "data\\priority164-cohort-20261018\\qa\\qa-receipt.json": {
+      "exists": false,
+      "bytes": null
+    }
+  },
+  "final_summary_observation": {},
+  "log_tail": [
+    "{\"stage\": \"SNAPSHOT_PINNED\", \"at\": \"2026-10-18T02:06:45.591998+00:00\", \"rows\": 1536, \"source_sha256\": \"0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf\"}",
+    "{\"stage\": \"SOURCE_QA_COMPLETE\", \"seconds\": 303.14, \"eligible\": {\"train\": 720, \"val\": 265, \"test\": 250}}",
+    "{\"stage\": \"CANDIDATE_STAGED\", \"excluded_rows\": 16, \"eligible\": {\"test\": 250, \"val\": 249, \"train\": 720}}"
+  ],
+  "published_pointer": {
+    "sha256": "c0a8f4984dc857979dc3c94b68c3a5d5bc2b311f75e1ad829401f5e578fc6ab0",
+    "recorded_at": "2026-10-18T01:49:48.969661+00:00",
+    "source_sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+    "scope": "FROZEN_1432_ROW_SOURCE_NOT_LATER_COLLECTION",
+    "eligible": 1125,
+    "by_split": {
+      "train": 658,
+      "val": 217,
+      "test": 250
+    },
+    "blockers": 4,
+    "new164_source_published": false
+  },
+  "publication_not_performed_by_reviewer": true,
+  "contract_checks": {
+    "164_script_never_publishes_pointer": true,
+    "candidate_1219_is_stage_projection_until_final_candidate_qa": true,
+    "source_qa_four_blockers_not_assigned_to_final_candidate": true,
+    "separate_final_qa_receipt_required": true,
+    "summary_written_only_after_candidate_qa_post_input_pins_and_actual_file_rehash_checks": true,
+    "explicit_validated_pointer_publication_required_for_ui_replacement": true,
+    "source_snapshot_time_qa_time_publication_time_api_response_time_are_distinct": true,
+    "later_collection_outside_fixed_snapshot_not_included": true
+  },
+  "limits": [
+    "No new QA/preprocessing execution or raster-file hash verification by reviewer.",
+    "Stage numbers are metadata projections unless a completed final summary and QA receipt are observed.",
+    "Existing staging receipt remains qa_performed=false even after separate QA later completes; terminal QA artifacts decide final state.",
+    "No UI publication, training, Registry, settlement or remote collection performed."
+  ]
+}

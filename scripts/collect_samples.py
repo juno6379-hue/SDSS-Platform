@@ -231,7 +231,7 @@ def collect(config, root, execute=False):
     return report
 
 
-def collect_windows(config, root, execute=False, selection_context=None):
+def collect_windows(config, root, execute=False, selection_context=None, collection_guard=None):
     """연차별 실제 RGB/SCL/라벨 창을 수집하되 연차 라벨 부재와 품질을 분리한다."""
     if execute:
         import numpy as np
@@ -298,7 +298,12 @@ def collect_windows(config, root, execute=False, selection_context=None):
             state["http_body_bytes"] += reservation
             history_path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
             try:
-                values, profile, stats = service.read_cog_window(url, bbox, pixels, reservation)
+                if collection_guard is None:
+                    values, profile, stats = service.read_cog_window(url, bbox, pixels, reservation)
+                else:
+                    values, profile, stats = service.read_cog_window(
+                        url, bbox, pixels, reservation,
+                        window_guard=lambda geometry: collection_guard.on_window(url, geometry))
                 state["http_body_bytes"] -= reservation - stats["http_body_bytes"]
                 state["http_body_bytes_measured"] += stats["http_body_bytes"]
                 history_path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -359,6 +364,10 @@ def collect_windows(config, root, execute=False, selection_context=None):
                         continue
                 else:
                     item = result["items"][0]
+                # Candidate SCL reads may already have occurred during selection.
+                # Reject before selected-scene metadata and remaining pixel reads.
+                if collection_guard is not None:
+                    collection_guard.on_scene(item, aoi, year)
                 row.update(scene_id=item["id"], source_group=f"{aoi.get('province_id', aoi['id'])}/{item['id']}", datetime=item["datetime"], cloud_cover=item["cloud_cover"],
                            source_properties=item.get("properties", {}),
                            source_band_metadata={key: {"raster:bands": value.get("raster:bands"), "eo:bands": value.get("eo:bands")} for key, value in item["assets"].items()})

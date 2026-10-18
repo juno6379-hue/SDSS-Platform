@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "scope": "READONLY_FIXED_LAUNCH_INCREMENT_NATIVE_AUDIT",
+  "recorded_at": "2026-10-18T02:10:01.612507+00:00",
+  "status": "INTEGRITY_BLOCKED",
+  "issue": "CONFIG_PIN_MISMATCH",
+  "native_validation_complete": false,
+  "batches": [],
+  "native_patches_checked": 0,
+  "native_eligible_patches": 0,
+  "eligible_bare_pixels": 0,
+  "source_or_ledger_writes": 0,
+  "collection_executed": false,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "limitations": [
+    "Sequential observations, not an atomic filesystem/DB snapshot.",
+    "Only selected launch batches get native patch checks; prior rows are canonical metadata checks.",
+    "Esri weak labels and training support masks are not independent truth or QA/model approval.",
+    "Stored whole-pool counts/leakage are metadata only, not whole-pool raster revalidation.",
+    "No HTTP, collection, retries, refunds, reservation edits or source reconstruction."
+  ],
+  "launch_sha256": "de8e975c63f29bffffef23da11a9e68eac5eeab61475dc05bb1fcc73523ca7be",
+  "aggregate_sha256_at_read": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+  "ledger_sha256_at_read": "07be5cce634f896feb6b1c1868382c4ff9a590c1c541cfb59ee1a1fc465a4153",
+  "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+  "old_rows_verified": 1512,
+  "pending_rows_verified": 2,
+  "pending_reserved_bytes": 136314880,
+  "physical_total_at_read": 1536,
+  "eligible_total_at_read": 1235,
+  "execution_lock_present_at_read": true,
+  "cell_gap_total_at_read": 73,
+  "eligible_target_gap_at_read": 0,
+  "selected_ledger_observations": {
+    "parallel-v2-grid-esri_io-east_java-2024-g01": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 22317685,
+      "config_sha256": "ddcf83c7c51b3158631f0e1995106894d322b07368ffc2c8207625701a13d9d4",
+      "report_path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2024-g01\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-east_java-2024-g02": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 7118836,
+      "config_sha256": "6eccb3d5daf535ef6b0c52caed74700136d5afee49289415d3014843e9db82f8",
+      "report_path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2024-g02\\annual-window-report.json"
+    }
+  },
+  "seconds": 5.391197399992961
+}

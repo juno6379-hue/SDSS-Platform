@@ -1,0 +1,70 @@
+{
+  "at_utc": "2026-10-18T02:42:41.640535+00:00",
+  "status": "VERIFIED_REAL_BOUNDED_NEW_TARGET_PATCH",
+  "elapsed_seconds": 2.853193,
+  "patch_id": "target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc-r0-c0",
+  "province": "banten",
+  "year": 2020,
+  "split": "val",
+  "native": {
+    "patch_id": "target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc-r0-c0",
+    "quality_status": "quality_eligible",
+    "valid_pixels": 64908,
+    "province_inside_pixels": 65536,
+    "class_histogram": {
+      "1": 4046,
+      "2": 28,
+      "5": 25381,
+      "7": 28040,
+      "8": 2199,
+      "11": 5214
+    },
+    "eligible_bare_pixels": 2199,
+    "image_band_descriptions": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "B12"
+    ],
+    "maximum_class_fraction": 0.4319960559561225,
+    "maximum_class_fraction_over_90_percent": false
+  },
+  "actual_grid": {
+    "crs": "EPSG:32748",
+    "transform": [
+      10.0,
+      0.0,
+      683680.0,
+      0.0,
+      -10.0,
+      9326090.0
+    ],
+    "width": 256,
+    "height": 256,
+    "image_bands": 6
+  },
+  "valid_fraction": 0.99041748046875,
+  "inside_fraction": 1.0,
+  "bare_contribution_patch_ge256": true,
+  "actual_final_blue_equals_raw_b02": true,
+  "four_unique_raster_files_sha_verified": {
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\r00-c00\\image.tif": "e7e0c7b6320d39030d00a51d2f6666525af4a150b2bcc26f954a8b5d6784209e",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\r00-c00\\label.tif": "437a789be8d1f1ba961ace3e8a37b98d00af067909db97ef7f7ef5c2b20b77eb",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\r00-c00\\quality.tif": "8c5cde30f5bc3918e6aa0c4b007b016d5409c646a92b0e15936a5b5284f6b7d4",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B02.tif": "aa2ac533c8aba667e63c86e769d3fbaad44d1c1c267c6a9ffb94079854f11fd5"
+  },
+  "boundary_sha_verified": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+  "worker_ledger_settled_bytes": 3827633,
+  "old_pending_two_rows_unchanged": true,
+  "old_pending_reserved_bytes": 136314880,
+  "stored_manifest_physical_count": 1569,
+  "stored_manifest_eligible_count": 1260,
+  "scope_limits": "Only this new image/label/quality/rawB02 and local boundary were natively read. Does not replace ownerPID9664 full4704 prior-file pins/1152support inventory preservation audit. Weak Esri reference, not independent truth; no global bare gate or training clearance.",
+  "scientific_accuracy_validated": false,
+  "training_ready": false,
+  "network_calls": 0,
+  "collection_starts": 0,
+  "operating_data_writes": 0
+}

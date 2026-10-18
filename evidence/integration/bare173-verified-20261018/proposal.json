@@ -1,0 +1,3973 @@
+{
+  "schema_version": 1,
+  "kind": "LOCAL_SIX_PROVINCE_WEAK_LABEL_BARE_DISCOVERY",
+  "status": "LOCAL_LABEL_BYTES_VERIFIED_EXECUTION_UNAPPROVED",
+  "source_manifest_sha256": "6b74cfda9afd8a9ab238406bbf5007e50a2c1162989e2f8953a13a6289f7950c",
+  "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+  "source_row_count": 1569,
+  "scope": "PINNED_SNAPSHOT_EXCLUDES_LATER_COLLECTION",
+  "limits": {
+    "max_files": 256,
+    "max_total_bytes": 805306368,
+    "max_windows": 32768,
+    "max_candidates": 128
+  },
+  "local_label_crops_read": 104,
+  "label_bytes_read": 17796901,
+  "windows_scanned": 6404,
+  "duplicate_sha_windows_excluded": 0,
+  "qualified_dense_inside_windows": 50,
+  "rank_policy": "cell deficit present, bare pixels descending, cell deficit descending, fixed stable ties",
+  "ranked_windows": [
+    {
+      "year": 2021,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03\\southeast_sulawesi-g03-2021\\raw-esri_io.tif",
+      "source_crop_sha256": "a10218846e13f5a03c97987e24a6e5979c59591f28ccf47508ba51e7c63528f3",
+      "local_window_xy": [
+        1536,
+        1792
+      ],
+      "declared_weak_label_bare_pixels": 1112,
+      "bare_density": 0.0169677734375,
+      "cell_eligible_at_snapshot": 27,
+      "cell_deficit_to_28": 1,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        122.00638886030562,
+        -5.411526614603877,
+        122.02953065777287,
+        -5.388333622590284
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          374560.0,
+          0.0,
+          -10.0,
+          9422240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            389920.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9401760.0
+          ],
+          [
+            389920.0,
+            9401760.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02\\southeast_sulawesi-g02-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "220bdd675c59a16adb44223d6beac671e272e368c131835d1356cb9b39151187",
+      "local_window_xy": [
+        512,
+        0
+      ],
+      "declared_weak_label_bare_pixels": 840,
+      "bare_density": 0.0128173828125,
+      "cell_eligible_at_snapshot": 23,
+      "cell_deficit_to_28": 5,
+      "geometric_inside_fraction": 0.9927933426788534,
+      "bbox_wgs84": [
+        123.04026838633663,
+        -4.027072749241323,
+        123.06333214777132,
+        -4.003911310394138
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          499350.0,
+          0.0,
+          -10.0,
+          9557440.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            504470.0,
+            9557440.0
+          ],
+          [
+            507030.0,
+            9557440.0
+          ],
+          [
+            507030.0,
+            9554880.0
+          ],
+          [
+            504470.0,
+            9554880.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2024,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03\\southeast_sulawesi-g03-2024\\raw-esri_io.tif",
+      "source_crop_sha256": "ddfad3eb54ca9d9e9b0e7aa0c4783bb7d93e02fc972f2a28f7002305c076bd81",
+      "local_window_xy": [
+        1536,
+        1792
+      ],
+      "declared_weak_label_bare_pixels": 814,
+      "bare_density": 0.012420654296875,
+      "cell_eligible_at_snapshot": 10,
+      "cell_deficit_to_28": 18,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        122.00638886030562,
+        -5.411526614603877,
+        122.02953065777287,
+        -5.388333622590284
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          374560.0,
+          0.0,
+          -10.0,
+          9422240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            389920.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9401760.0
+          ],
+          [
+            389920.0,
+            9401760.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "east_java",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g03\\east_java-g03-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+      "local_window_xy": [
+        1280,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 620,
+      "bare_density": 0.00946044921875,
+      "cell_eligible_at_snapshot": 27,
+      "cell_deficit_to_28": 1,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        113.36894647768696,
+        -6.960876259265844,
+        113.39221801348748,
+        -6.937622276476812
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32749",
+        "transform": [
+          10.0,
+          0.0,
+          748960.0,
+          0.0,
+          -10.0,
+          9235040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32749",
+        "corners": [
+          [
+            761760.0,
+            9232480.0
+          ],
+          [
+            764320.0,
+            9232480.0
+          ],
+          [
+            764320.0,
+            9229920.0
+          ],
+          [
+            761760.0,
+            9229920.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "east_java",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g03\\east_java-g03-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+      "local_window_xy": [
+        1536,
+        1024
+      ],
+      "declared_weak_label_bare_pixels": 538,
+      "bare_density": 0.008209228515625,
+      "cell_eligible_at_snapshot": 27,
+      "cell_deficit_to_28": 1,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        113.392453280136,
+        -7.030171751955496,
+        113.41573015855187,
+        -7.006915921713875
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32749",
+        "transform": [
+          10.0,
+          0.0,
+          748960.0,
+          0.0,
+          -10.0,
+          9235040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32749",
+        "corners": [
+          [
+            764320.0,
+            9224800.0
+          ],
+          [
+            766880.0,
+            9224800.0
+          ],
+          [
+            766880.0,
+            9222240.0
+          ],
+          [
+            764320.0,
+            9222240.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2021,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03\\southeast_sulawesi-g03-2021\\raw-esri_io.tif",
+      "source_crop_sha256": "a10218846e13f5a03c97987e24a6e5979c59591f28ccf47508ba51e7c63528f3",
+      "local_window_xy": [
+        1536,
+        1024
+      ],
+      "declared_weak_label_bare_pixels": 469,
+      "bare_density": 0.0071563720703125,
+      "cell_eligible_at_snapshot": 27,
+      "cell_deficit_to_28": 1,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        122.00650149549143,
+        -5.342059403469506,
+        122.02964019412917,
+        -5.318866841419304
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          374560.0,
+          0.0,
+          -10.0,
+          9422240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            389920.0,
+            9412000.0
+          ],
+          [
+            392480.0,
+            9412000.0
+          ],
+          [
+            392480.0,
+            9409440.0
+          ],
+          [
+            389920.0,
+            9409440.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "east_java",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g03\\east_java-g03-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+      "local_window_xy": [
+        1536,
+        512
+      ],
+      "declared_weak_label_bare_pixels": 423,
+      "bare_density": 0.0064544677734375,
+      "cell_eligible_at_snapshot": 27,
+      "cell_deficit_to_28": 1,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        113.39221801348748,
+        -6.9838970634566016,
+        113.41549181353973,
+        -6.960641973933996
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32749",
+        "transform": [
+          10.0,
+          0.0,
+          748960.0,
+          0.0,
+          -10.0,
+          9235040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32749",
+        "corners": [
+          [
+            764320.0,
+            9229920.0
+          ],
+          [
+            766880.0,
+            9229920.0
+          ],
+          [
+            766880.0,
+            9227360.0
+          ],
+          [
+            764320.0,
+            9227360.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "east_java",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g03\\east_java-g03-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+      "local_window_xy": [
+        1280,
+        512
+      ],
+      "declared_weak_label_bare_pixels": 390,
+      "bare_density": 0.005950927734375,
+      "cell_eligible_at_snapshot": 27,
+      "cell_deficit_to_28": 1,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        113.36906238184538,
+        -6.984014031690989,
+        113.39233544713981,
+        -6.9607596822366675
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32749",
+        "transform": [
+          10.0,
+          0.0,
+          748960.0,
+          0.0,
+          -10.0,
+          9235040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32749",
+        "corners": [
+          [
+            761760.0,
+            9229920.0
+          ],
+          [
+            764320.0,
+            9229920.0
+          ],
+          [
+            764320.0,
+            9227360.0
+          ],
+          [
+            761760.0,
+            9227360.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "east_java",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g03\\east_java-g03-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+      "local_window_xy": [
+        1792,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 388,
+      "bare_density": 0.00592041015625,
+      "cell_eligible_at_snapshot": 27,
+      "cell_deficit_to_28": 1,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        113.41549181353973,
+        -7.006915921713875,
+        113.43876788536112,
+        -6.983659721875006
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32749",
+        "transform": [
+          10.0,
+          0.0,
+          748960.0,
+          0.0,
+          -10.0,
+          9235040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32749",
+        "corners": [
+          [
+            766880.0,
+            9227360.0
+          ],
+          [
+            769440.0,
+            9227360.0
+          ],
+          [
+            769440.0,
+            9224800.0
+          ],
+          [
+            766880.0,
+            9224800.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "east_java",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g03\\east_java-g03-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+      "local_window_xy": [
+        1792,
+        1280
+      ],
+      "declared_weak_label_bare_pixels": 350,
+      "bare_density": 0.005340576171875,
+      "cell_eligible_at_snapshot": 27,
+      "cell_deficit_to_28": 1,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        113.41573015855187,
+        -7.053189770542601,
+        113.43900932416346,
+        -7.029932822552936
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32749",
+        "transform": [
+          10.0,
+          0.0,
+          748960.0,
+          0.0,
+          -10.0,
+          9235040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32749",
+        "corners": [
+          [
+            766880.0,
+            9222240.0
+          ],
+          [
+            769440.0,
+            9222240.0
+          ],
+          [
+            769440.0,
+            9219680.0
+          ],
+          [
+            766880.0,
+            9219680.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02\\southeast_sulawesi-g02-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "220bdd675c59a16adb44223d6beac671e272e368c131835d1356cb9b39151187",
+      "local_window_xy": [
+        256,
+        0
+      ],
+      "declared_weak_label_bare_pixels": 321,
+      "bare_density": 0.0048980712890625,
+      "cell_eligible_at_snapshot": 23,
+      "cell_deficit_to_28": 5,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        123.01720640338668,
+        -4.027073565042538,
+        123.04026952137654,
+        -4.003912772398084
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          499350.0,
+          0.0,
+          -10.0,
+          9557440.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            501910.0,
+            9557440.0
+          ],
+          [
+            504470.0,
+            9557440.0
+          ],
+          [
+            504470.0,
+            9554880.0
+          ],
+          [
+            501910.0,
+            9554880.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2024,
+      "province": "gorontalo",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-esri_io.tif",
+      "source_crop_sha256": "a6081b2295b7b21636d4f8f6fb48b4d1bc24a6e2136546fb5ce763905cdbbc7d",
+      "local_window_xy": [
+        512,
+        1280
+      ],
+      "declared_weak_label_bare_pixels": 271,
+      "bare_density": 0.0041351318359375,
+      "cell_eligible_at_snapshot": 25,
+      "cell_deficit_to_28": 3,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        123.32065419389514,
+        0.4241303077465705,
+        123.34366155373381,
+        0.44729204612261836
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32651",
+        "transform": [
+          10.0,
+          0.0,
+          530560.0,
+          0.0,
+          -10.0,
+          62240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32651",
+        "corners": [
+          [
+            535680.0,
+            49440.0
+          ],
+          [
+            538240.0,
+            49440.0
+          ],
+          [
+            538240.0,
+            46880.0
+          ],
+          [
+            535680.0,
+            46880.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2024,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03\\southeast_sulawesi-g03-2024\\raw-esri_io.tif",
+      "source_crop_sha256": "ddfad3eb54ca9d9e9b0e7aa0c4783bb7d93e02fc972f2a28f7002305c076bd81",
+      "local_window_xy": [
+        0,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 266,
+      "bare_density": 0.004058837890625,
+      "cell_eligible_at_snapshot": 10,
+      "cell_deficit_to_28": 18,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        121.86793339962946,
+        -5.318669916238935,
+        121.89107519918669,
+        -5.295473352711408
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          374560.0,
+          0.0,
+          -10.0,
+          9422240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            374560.0,
+            9414560.0
+          ],
+          [
+            377120.0,
+            9414560.0
+          ],
+          [
+            377120.0,
+            9412000.0
+          ],
+          [
+            374560.0,
+            9412000.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2020,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-esri_io.tif",
+      "source_crop_sha256": "3f9ccf42be17c17e4f726da083ce3a527778f9f5a54caf927b2c63ccc40d31f4",
+      "local_window_xy": [
+        0,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 3910,
+      "bare_density": 0.059661865234375,
+      "cell_eligible_at_snapshot": 54,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.64824872557232,
+        -6.1290476980015,
+        106.67144732396896,
+        -6.1058275123547805
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          682400.0,
+          0.0,
+          -10.0,
+          9327370.0
+        ],
+        "width": 512,
+        "height": 512
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            682400.0,
+            9324810.0
+          ],
+          [
+            684960.0,
+            9324810.0
+          ],
+          [
+            684960.0,
+            9322250.0
+          ],
+          [
+            682400.0,
+            9322250.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2020,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2020-g01\\banten-g01-2020\\raw-esri_io.tif",
+      "source_crop_sha256": "a18fd0cc4a9120938a138c2d0ecbbd10c8bde03381934a939ba2f273a4004541",
+      "local_window_xy": [
+        1792,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 2411,
+      "bare_density": 0.0367889404296875,
+      "cell_eligible_at_snapshot": 54,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.6597767728676,
+        -6.117528088624942,
+        106.68297509990934,
+        -6.094307668078154
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            683680.0,
+            9326080.0
+          ],
+          [
+            686240.0,
+            9326080.0
+          ],
+          [
+            686240.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9323520.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2025,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2025-g01\\banten-g01-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "553088c3e82295909dab68648521c196bd0cba162099f83565d305d194362ff8",
+      "local_window_xy": [
+        1792,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 1559,
+      "bare_density": 0.0237884521484375,
+      "cell_eligible_at_snapshot": 48,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.6597767728676,
+        -6.117528088624942,
+        106.68297509990934,
+        -6.094307668078154
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            683680.0,
+            9326080.0
+          ],
+          [
+            686240.0,
+            9326080.0
+          ],
+          [
+            686240.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9323520.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2020,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2020-g01\\banten-g01-2020\\raw-esri_io.tif",
+      "source_crop_sha256": "a18fd0cc4a9120938a138c2d0ecbbd10c8bde03381934a939ba2f273a4004541",
+      "local_window_xy": [
+        1792,
+        512
+      ],
+      "declared_weak_label_bare_pixels": 1497,
+      "bare_density": 0.0228424072265625,
+      "cell_eligible_at_snapshot": 54,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.65984805525582,
+        -6.1406767788388015,
+        106.68304765355875,
+        -6.117456104652283
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            683680.0,
+            9323520.0
+          ],
+          [
+            686240.0,
+            9323520.0
+          ],
+          [
+            686240.0,
+            9320960.0
+          ],
+          [
+            683680.0,
+            9320960.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2025,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2025-g01\\banten-g01-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "553088c3e82295909dab68648521c196bd0cba162099f83565d305d194362ff8",
+      "local_window_xy": [
+        1536,
+        512
+      ],
+      "declared_weak_label_bare_pixels": 1180,
+      "bare_density": 0.01800537109375,
+      "cell_eligible_at_snapshot": 48,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.63672073523246,
+        -6.140748038477093,
+        106.65991961301391,
+        -6.117528088624942
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            681120.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9320960.0
+          ],
+          [
+            681120.0,
+            9320960.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2020,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2020-g03\\southeast_sulawesi-g03-2020\\raw-esri_io.tif",
+      "source_crop_sha256": "5ac35d14ce689fec53305eb2d6bf2fff9a342eed251feb1fbd91e5e10ffe3410",
+      "local_window_xy": [
+        1536,
+        1792
+      ],
+      "declared_weak_label_bare_pixels": 1171,
+      "bare_density": 0.0178680419921875,
+      "cell_eligible_at_snapshot": 41,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        122.00638886030562,
+        -5.411526614603877,
+        122.02953065777287,
+        -5.388333622590284
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          374560.0,
+          0.0,
+          -10.0,
+          9422240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            389920.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9401760.0
+          ],
+          [
+            389920.0,
+            9401760.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2021,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-esri_io.tif",
+      "source_crop_sha256": "390de38a69b846b92d43efffe3a836c334e02103014ee2a8cb00a2d822e5e011",
+      "local_window_xy": [
+        1792,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 1129,
+      "bare_density": 0.0172271728515625,
+      "cell_eligible_at_snapshot": 58,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.6597767728676,
+        -6.117528088624942,
+        106.68297509990934,
+        -6.094307668078154
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            683680.0,
+            9326080.0
+          ],
+          [
+            686240.0,
+            9326080.0
+          ],
+          [
+            686240.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9323520.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2022,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2022-g01\\banten-g01-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "56d72f571b65f32f6ae500a9346bab21835f42f1a7abf2cea2ddb2aa23fd69c5",
+      "local_window_xy": [
+        1536,
+        512
+      ],
+      "declared_weak_label_bare_pixels": 993,
+      "bare_density": 0.0151519775390625,
+      "cell_eligible_at_snapshot": 51,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.63672073523246,
+        -6.140748038477093,
+        106.65991961301391,
+        -6.117528088624942
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            681120.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9320960.0
+          ],
+          [
+            681120.0,
+            9320960.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2022,
+      "province": "south_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g02\\south_sulawesi-g02-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "4785440d63d2f262d0a883b8e460d393f523e20279fc2060cd916aa687cfe322",
+      "local_window_xy": [
+        1792,
+        0
+      ],
+      "declared_weak_label_bare_pixels": 961,
+      "bare_density": 0.0146636962890625,
+      "cell_eligible_at_snapshot": 40,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        119.7838077144613,
+        -5.525908690085973,
+        119.80700066665166,
+        -5.502668920736546
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32750",
+        "transform": [
+          10.0,
+          0.0,
+          790550.0,
+          0.0,
+          -10.0,
+          9391040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32750",
+        "corners": [
+          [
+            808470.0,
+            9391040.0
+          ],
+          [
+            811030.0,
+            9391040.0
+          ],
+          [
+            811030.0,
+            9388480.0
+          ],
+          [
+            808470.0,
+            9388480.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2020,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2020-g01\\banten-g01-2020\\raw-esri_io.tif",
+      "source_crop_sha256": "a18fd0cc4a9120938a138c2d0ecbbd10c8bde03381934a939ba2f273a4004541",
+      "local_window_xy": [
+        1536,
+        512
+      ],
+      "declared_weak_label_bare_pixels": 816,
+      "bare_density": 0.012451171875,
+      "cell_eligible_at_snapshot": 54,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.63672073523246,
+        -6.140748038477093,
+        106.65991961301391,
+        -6.117528088624942
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            681120.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9320960.0
+          ],
+          [
+            681120.0,
+            9320960.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2023,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03\\southeast_sulawesi-g03-2023\\raw-esri_io.tif",
+      "source_crop_sha256": "b48754d22e881d0e18d7743961b2ab15084ff3f37015dc2148824898ff20eb0f",
+      "local_window_xy": [
+        1536,
+        1792
+      ],
+      "declared_weak_label_bare_pixels": 816,
+      "bare_density": 0.012451171875,
+      "cell_eligible_at_snapshot": 33,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        122.00638886030562,
+        -5.411526614603877,
+        122.02953065777287,
+        -5.388333622590284
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          374560.0,
+          0.0,
+          -10.0,
+          9422240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            389920.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9401760.0
+          ],
+          [
+            389920.0,
+            9401760.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2024,
+      "province": "west_java",
+      "fixed_split": "test",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2024-g00\\west_java-g00-2024\\raw-esri_io.tif",
+      "source_crop_sha256": "7f913ee5a035c64c4759b71e5f1a5b0473b96dddd10562a0f1f1e2b269b05f8e",
+      "local_window_xy": [
+        256,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 802,
+      "bare_density": 0.012237548828125,
+      "cell_eligible_at_snapshot": 32,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        107.55816476899358,
+        -6.912174092864256,
+        107.58143896536215,
+        -6.888915018614003
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          780150.0,
+          0.0,
+          -10.0,
+          9245440.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            782710.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9235200.0
+          ],
+          [
+            782710.0,
+            9235200.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2020,
+      "province": "west_java",
+      "fixed_split": "test",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\grid-esri_io-west_java-2020-g00\\west_java-g00-2020\\raw-esri_io.tif",
+      "source_crop_sha256": "83d2675c26f31809d441aeb0c7c9d47433193b5698e8552f78bd1f5c61d88275",
+      "local_window_xy": [
+        256,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 797,
+      "bare_density": 0.0121612548828125,
+      "cell_eligible_at_snapshot": 57,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        107.55816476899358,
+        -6.912174092864256,
+        107.58143896536215,
+        -6.888915018614003
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          780150.0,
+          0.0,
+          -10.0,
+          9245440.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            782710.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9235200.0
+          ],
+          [
+            782710.0,
+            9235200.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2022,
+      "province": "south_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g02\\south_sulawesi-g02-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "4785440d63d2f262d0a883b8e460d393f523e20279fc2060cd916aa687cfe322",
+      "local_window_xy": [
+        1280,
+        0
+      ],
+      "declared_weak_label_bare_pixels": 758,
+      "bare_density": 0.011566162109375,
+      "cell_eligible_at_snapshot": 40,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        119.7376379594156,
+        -5.52612353124188,
+        119.76083004324535,
+        -5.502884640547941
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32750",
+        "transform": [
+          10.0,
+          0.0,
+          790550.0,
+          0.0,
+          -10.0,
+          9391040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32750",
+        "corners": [
+          [
+            803350.0,
+            9391040.0
+          ],
+          [
+            805910.0,
+            9391040.0
+          ],
+          [
+            805910.0,
+            9388480.0
+          ],
+          [
+            803350.0,
+            9388480.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2023,
+      "province": "west_java",
+      "fixed_split": "test",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2023-g00\\west_java-g00-2023\\raw-esri_io.tif",
+      "source_crop_sha256": "e225b3f859868bdf5405fd133131a84be0d1e4966193d611bf5e08ac96a44b54",
+      "local_window_xy": [
+        256,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 706,
+      "bare_density": 0.010772705078125,
+      "cell_eligible_at_snapshot": 32,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        107.55816476899358,
+        -6.912174092864256,
+        107.58143896536215,
+        -6.888915018614003
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          780150.0,
+          0.0,
+          -10.0,
+          9245440.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            782710.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9235200.0
+          ],
+          [
+            782710.0,
+            9235200.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2021,
+      "province": "west_java",
+      "fixed_split": "test",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2021-g00\\west_java-g00-2021\\raw-esri_io.tif",
+      "source_crop_sha256": "96345437373fa74aef1288c3769194351c06544bad3a0793fe7e7aca6e47617d",
+      "local_window_xy": [
+        256,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 696,
+      "bare_density": 0.0106201171875,
+      "cell_eligible_at_snapshot": 41,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        107.55816476899358,
+        -6.912174092864256,
+        107.58143896536215,
+        -6.888915018614003
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          780150.0,
+          0.0,
+          -10.0,
+          9245440.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            782710.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9235200.0
+          ],
+          [
+            782710.0,
+            9235200.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2022,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2022-g01\\banten-g01-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "56d72f571b65f32f6ae500a9346bab21835f42f1a7abf2cea2ddb2aa23fd69c5",
+      "local_window_xy": [
+        1792,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 638,
+      "bare_density": 0.009735107421875,
+      "cell_eligible_at_snapshot": 51,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.6597767728676,
+        -6.117528088624942,
+        106.68297509990934,
+        -6.094307668078154
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            683680.0,
+            9326080.0
+          ],
+          [
+            686240.0,
+            9326080.0
+          ],
+          [
+            686240.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9323520.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2022,
+      "province": "south_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g02\\south_sulawesi-g02-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "4785440d63d2f262d0a883b8e460d393f523e20279fc2060cd916aa687cfe322",
+      "local_window_xy": [
+        1792,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 631,
+      "bare_density": 0.0096282958984375,
+      "cell_eligible_at_snapshot": 40,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        119.78391558469393,
+        -5.549040133634638,
+        119.80710989181377,
+        -5.525799926379833
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32750",
+        "transform": [
+          10.0,
+          0.0,
+          790550.0,
+          0.0,
+          -10.0,
+          9391040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32750",
+        "corners": [
+          [
+            808470.0,
+            9388480.0
+          ],
+          [
+            811030.0,
+            9388480.0
+          ],
+          [
+            811030.0,
+            9385920.0
+          ],
+          [
+            808470.0,
+            9385920.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2022,
+      "province": "south_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g02\\south_sulawesi-g02-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "4785440d63d2f262d0a883b8e460d393f523e20279fc2060cd916aa687cfe322",
+      "local_window_xy": [
+        768,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 623,
+      "bare_density": 0.0095062255859375,
+      "cell_eligible_at_snapshot": 40,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        119.69157069993773,
+        -5.549468028082959,
+        119.71476323995037,
+        -5.526229608517774
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32750",
+        "transform": [
+          10.0,
+          0.0,
+          790550.0,
+          0.0,
+          -10.0,
+          9391040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32750",
+        "corners": [
+          [
+            798230.0,
+            9388480.0
+          ],
+          [
+            800790.0,
+            9388480.0
+          ],
+          [
+            800790.0,
+            9385920.0
+          ],
+          [
+            798230.0,
+            9385920.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "west_java",
+      "fixed_split": "test",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2025-g00\\west_java-g00-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "924c52d3f017d8898bdff5edfd5d555e6877b9f2d445fbaa6781104ef346ce10",
+      "local_window_xy": [
+        256,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 603,
+      "bare_density": 0.0092010498046875,
+      "cell_eligible_at_snapshot": 32,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        107.55816476899358,
+        -6.912174092864256,
+        107.58143896536215,
+        -6.888915018614003
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          780150.0,
+          0.0,
+          -10.0,
+          9245440.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            782710.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9235200.0
+          ],
+          [
+            782710.0,
+            9235200.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2021,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-esri_io.tif",
+      "source_crop_sha256": "390de38a69b846b92d43efffe3a836c334e02103014ee2a8cb00a2d822e5e011",
+      "local_window_xy": [
+        1792,
+        512
+      ],
+      "declared_weak_label_bare_pixels": 599,
+      "bare_density": 0.0091400146484375,
+      "cell_eligible_at_snapshot": 58,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.65984805525582,
+        -6.1406767788388015,
+        106.68304765355875,
+        -6.117456104652283
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            683680.0,
+            9323520.0
+          ],
+          [
+            686240.0,
+            9323520.0
+          ],
+          [
+            686240.0,
+            9320960.0
+          ],
+          [
+            683680.0,
+            9320960.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2022,
+      "province": "west_java",
+      "fixed_split": "test",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2022-g00\\west_java-g00-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "d10ffb19802cc8381e972f104a0ca3cf81fc2962d5e3ac4e5c51802a100391c5",
+      "local_window_xy": [
+        256,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 581,
+      "bare_density": 0.0088653564453125,
+      "cell_eligible_at_snapshot": 56,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        107.55816476899358,
+        -6.912174092864256,
+        107.58143896536215,
+        -6.888915018614003
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          780150.0,
+          0.0,
+          -10.0,
+          9245440.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            782710.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9237760.0
+          ],
+          [
+            785270.0,
+            9235200.0
+          ],
+          [
+            782710.0,
+            9235200.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2020,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2020-g03\\southeast_sulawesi-g03-2020\\raw-esri_io.tif",
+      "source_crop_sha256": "5ac35d14ce689fec53305eb2d6bf2fff9a342eed251feb1fbd91e5e10ffe3410",
+      "local_window_xy": [
+        1536,
+        1024
+      ],
+      "declared_weak_label_bare_pixels": 557,
+      "bare_density": 0.0084991455078125,
+      "cell_eligible_at_snapshot": 41,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        122.00650149549143,
+        -5.342059403469506,
+        122.02964019412917,
+        -5.318866841419304
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          374560.0,
+          0.0,
+          -10.0,
+          9422240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            389920.0,
+            9412000.0
+          ],
+          [
+            392480.0,
+            9412000.0
+          ],
+          [
+            392480.0,
+            9409440.0
+          ],
+          [
+            389920.0,
+            9409440.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2021,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-esri_io.tif",
+      "source_crop_sha256": "390de38a69b846b92d43efffe3a836c334e02103014ee2a8cb00a2d822e5e011",
+      "local_window_xy": [
+        1536,
+        512
+      ],
+      "declared_weak_label_bare_pixels": 546,
+      "bare_density": 0.008331298828125,
+      "cell_eligible_at_snapshot": 58,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.63672073523246,
+        -6.140748038477093,
+        106.65991961301391,
+        -6.117528088624942
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            681120.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9323520.0
+          ],
+          [
+            683680.0,
+            9320960.0
+          ],
+          [
+            681120.0,
+            9320960.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2025,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2025-g01\\banten-g01-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "553088c3e82295909dab68648521c196bd0cba162099f83565d305d194362ff8",
+      "local_window_xy": [
+        1792,
+        512
+      ],
+      "declared_weak_label_bare_pixels": 538,
+      "bare_density": 0.008209228515625,
+      "cell_eligible_at_snapshot": 48,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.65984805525582,
+        -6.1406767788388015,
+        106.68304765355875,
+        -6.117456104652283
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            683680.0,
+            9323520.0
+          ],
+          [
+            686240.0,
+            9323520.0
+          ],
+          [
+            686240.0,
+            9320960.0
+          ],
+          [
+            683680.0,
+            9320960.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2023,
+      "province": "east_java",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-00\\east_java-extra-00-2023\\raw-esri_io.tif",
+      "source_crop_sha256": "6c1e1b7245df2877c500d3bdc0686e96e3eb006afa469b117a4c2a0bc614dee4",
+      "local_window_xy": [
+        1536,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 484,
+      "bare_density": 0.00738525390625,
+      "cell_eligible_at_snapshot": 28,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        114.3434014234233,
+        -8.27066511902186,
+        114.36677616119844,
+        -8.247380123467076
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32750",
+        "transform": [
+          10.0,
+          0.0,
+          191980.0,
+          0.0,
+          -10.0,
+          9089940.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32750",
+        "corners": [
+          [
+            207340.0,
+            9087380.0
+          ],
+          [
+            209900.0,
+            9087380.0
+          ],
+          [
+            209900.0,
+            9084820.0
+          ],
+          [
+            207340.0,
+            9084820.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2022,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-00\\banten-extra-08-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "2b5f8ab87689830ee40fc602dc6aea5e0ce22987f472c10b415cc881ddb0b33a",
+      "local_window_xy": [
+        1280,
+        0
+      ],
+      "declared_weak_label_bare_pixels": 451,
+      "bare_density": 0.0068817138671875,
+      "cell_eligible_at_snapshot": 51,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.51976974200568,
+        -6.188750403280286,
+        106.54296749456799,
+        -6.165533704548146
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          655360.0,
+          0.0,
+          -10.0,
+          9318250.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            668160.0,
+            9318250.0
+          ],
+          [
+            670720.0,
+            9318250.0
+          ],
+          [
+            670720.0,
+            9315690.0
+          ],
+          [
+            668160.0,
+            9315690.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2022,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2022-g01\\banten-g01-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "56d72f571b65f32f6ae500a9346bab21835f42f1a7abf2cea2ddb2aa23fd69c5",
+      "local_window_xy": [
+        256,
+        1024
+      ],
+      "declared_weak_label_bare_pixels": 451,
+      "bare_density": 0.0068817138671875,
+      "cell_eligible_at_snapshot": 51,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        106.52121155355884,
+        -6.187389805466016,
+        106.54440927924827,
+        -6.164173073174414
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          665760.0,
+          0.0,
+          -10.0,
+          9328640.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            668320.0,
+            9318400.0
+          ],
+          [
+            670880.0,
+            9318400.0
+          ],
+          [
+            670880.0,
+            9315840.0
+          ],
+          [
+            668320.0,
+            9315840.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2022,
+      "province": "south_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g02\\south_sulawesi-g02-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "4785440d63d2f262d0a883b8e460d393f523e20279fc2060cd916aa687cfe322",
+      "local_window_xy": [
+        1536,
+        0
+      ],
+      "declared_weak_label_bare_pixels": 421,
+      "bare_density": 0.0064239501953125,
+      "cell_eligible_at_snapshot": 40,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        119.76072306474127,
+        -5.526016558402421,
+        119.78391558469393,
+        -5.50277722645198
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32750",
+        "transform": [
+          10.0,
+          0.0,
+          790550.0,
+          0.0,
+          -10.0,
+          9391040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32750",
+        "corners": [
+          [
+            805910.0,
+            9391040.0
+          ],
+          [
+            808470.0,
+            9391040.0
+          ],
+          [
+            808470.0,
+            9388480.0
+          ],
+          [
+            805910.0,
+            9388480.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "south_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2025-g02\\south_sulawesi-g02-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "a436f954a2fbd37887f17d818ed8ed9a21f5595fe317df42b16060d4dd82a08a",
+      "local_window_xy": [
+        1792,
+        0
+      ],
+      "declared_weak_label_bare_pixels": 408,
+      "bare_density": 0.0062255859375,
+      "cell_eligible_at_snapshot": 30,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        119.7838077144613,
+        -5.525908690085973,
+        119.80700066665166,
+        -5.502668920736546
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32750",
+        "transform": [
+          10.0,
+          0.0,
+          790550.0,
+          0.0,
+          -10.0,
+          9391040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32750",
+        "corners": [
+          [
+            808470.0,
+            9391040.0
+          ],
+          [
+            811030.0,
+            9391040.0
+          ],
+          [
+            811030.0,
+            9388480.0
+          ],
+          [
+            808470.0,
+            9388480.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2020,
+      "province": "south_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2020-g02\\south_sulawesi-g02-2020\\raw-esri_io.tif",
+      "source_crop_sha256": "8e000eef3a056951a00f048044dc992bba6bca250e72a48e1f44b0ea0e35232f",
+      "local_window_xy": [
+        1792,
+        0
+      ],
+      "declared_weak_label_bare_pixels": 388,
+      "bare_density": 0.00592041015625,
+      "cell_eligible_at_snapshot": 53,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        119.7838077144613,
+        -5.525908690085973,
+        119.80700066665166,
+        -5.502668920736546
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32750",
+        "transform": [
+          10.0,
+          0.0,
+          790550.0,
+          0.0,
+          -10.0,
+          9391040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32750",
+        "corners": [
+          [
+            808470.0,
+            9391040.0
+          ],
+          [
+            811030.0,
+            9391040.0
+          ],
+          [
+            811030.0,
+            9388480.0
+          ],
+          [
+            808470.0,
+            9388480.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2022,
+      "province": "south_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g02\\south_sulawesi-g02-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "4785440d63d2f262d0a883b8e460d393f523e20279fc2060cd916aa687cfe322",
+      "local_window_xy": [
+        1792,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 388,
+      "bare_density": 0.00592041015625,
+      "cell_eligible_at_snapshot": 40,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        119.78413270372015,
+        -5.595302960142658,
+        119.80732973235995,
+        -5.572061877225028
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32750",
+        "transform": [
+          10.0,
+          0.0,
+          790550.0,
+          0.0,
+          -10.0,
+          9391040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32750",
+        "corners": [
+          [
+            808470.0,
+            9383360.0
+          ],
+          [
+            811030.0,
+            9383360.0
+          ],
+          [
+            811030.0,
+            9380800.0
+          ],
+          [
+            808470.0,
+            9380800.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2025,
+      "province": "banten",
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2025-g02\\banten-g02-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "95eabc4aac265e89b845b0b17eb46a6d11548d6d8253bc254fc63bfd9495321b",
+      "local_window_xy": [
+        768,
+        1024
+      ],
+      "declared_weak_label_bare_pixels": 363,
+      "bare_density": 0.0055389404296875,
+      "cell_eligible_at_snapshot": 48,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        105.62832898664743,
+        -6.753644134272666,
+        105.65152311201663,
+        -6.730457306574381
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32748",
+        "transform": [
+          10.0,
+          0.0,
+          561760.0,
+          0.0,
+          -10.0,
+          9266240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32748",
+        "corners": [
+          [
+            569440.0,
+            9256000.0
+          ],
+          [
+            572000.0,
+            9256000.0
+          ],
+          [
+            572000.0,
+            9253440.0
+          ],
+          [
+            569440.0,
+            9253440.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "BANTEN_157_REVALIDATION_REQUIRED"
+    },
+    {
+      "year": 2020,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2020-g03\\southeast_sulawesi-g03-2020\\raw-esri_io.tif",
+      "source_crop_sha256": "5ac35d14ce689fec53305eb2d6bf2fff9a342eed251feb1fbd91e5e10ffe3410",
+      "local_window_xy": [
+        256,
+        1536
+      ],
+      "declared_weak_label_bare_pixels": 304,
+      "bare_density": 0.004638671875,
+      "cell_eligible_at_snapshot": 41,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        121.89090866500695,
+        -5.388175766214661,
+        121.91405293047826,
+        -5.36497939717601
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          374560.0,
+          0.0,
+          -10.0,
+          9422240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            377120.0,
+            9406880.0
+          ],
+          [
+            379680.0,
+            9406880.0
+          ],
+          [
+            379680.0,
+            9404320.0
+          ],
+          [
+            377120.0,
+            9404320.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2024,
+      "province": "east_java",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2024-g02\\east_java-g02-2024\\raw-esri_io.tif",
+      "source_crop_sha256": "61bd3fa56fd7a86b8f2f1c168036b9b18957d1730f3a8c4f9d7635c2025f03f4",
+      "local_window_xy": [
+        1792,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 282,
+      "bare_density": 0.004302978515625,
+      "cell_eligible_at_snapshot": 39,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        111.1567617645824,
+        -8.142003878037686,
+        111.18000942892301,
+        -8.1188378831397
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32749",
+        "transform": [
+          10.0,
+          0.0,
+          499350.0,
+          0.0,
+          -10.0,
+          9110240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32749",
+        "corners": [
+          [
+            517270.0,
+            9102560.0
+          ],
+          [
+            519830.0,
+            9102560.0
+          ],
+          [
+            519830.0,
+            9100000.0
+          ],
+          [
+            517270.0,
+            9100000.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2023,
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03\\southeast_sulawesi-g03-2023\\raw-esri_io.tif",
+      "source_crop_sha256": "b48754d22e881d0e18d7743961b2ab15084ff3f37015dc2148824898ff20eb0f",
+      "local_window_xy": [
+        0,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 281,
+      "bare_density": 0.0042877197265625,
+      "cell_eligible_at_snapshot": 33,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        121.86793339962946,
+        -5.318669916238935,
+        121.89107519918669,
+        -5.295473352711408
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32751",
+        "transform": [
+          10.0,
+          0.0,
+          374560.0,
+          0.0,
+          -10.0,
+          9422240.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            374560.0,
+            9414560.0
+          ],
+          [
+            377120.0,
+            9414560.0
+          ],
+          [
+            377120.0,
+            9412000.0
+          ],
+          [
+            374560.0,
+            9412000.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    },
+    {
+      "year": 2024,
+      "province": "south_sulawesi",
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2024-g02\\south_sulawesi-g02-2024\\raw-esri_io.tif",
+      "source_crop_sha256": "f8eca0eed4e8a79cc20cb703a3471033ec27dd205621a4218ff2d6e3281dc3ff",
+      "local_window_xy": [
+        1792,
+        0
+      ],
+      "declared_weak_label_bare_pixels": 271,
+      "bare_density": 0.0041351318359375,
+      "cell_eligible_at_snapshot": 36,
+      "cell_deficit_to_28": 0,
+      "geometric_inside_fraction": 1.0,
+      "bbox_wgs84": [
+        119.7838077144613,
+        -5.525908690085973,
+        119.80700066665166,
+        -5.502668920736546
+      ],
+      "source_label_grid": {
+        "crs": "EPSG:32750",
+        "transform": [
+          10.0,
+          0.0,
+          790550.0,
+          0.0,
+          -10.0,
+          9391040.0
+        ],
+        "width": 2048,
+        "height": 2048
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32750",
+        "corners": [
+          [
+            808470.0,
+            9391040.0
+          ],
+          [
+            811030.0,
+            9391040.0
+          ],
+          [
+            811030.0,
+            9388480.0
+          ],
+          [
+            808470.0,
+            9388480.0
+          ]
+        ]
+      },
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false,
+      "spatial_independence_verified": false,
+      "existing_image_overlap_checked": false,
+      "pending_inventory_checked": false,
+      "consumer_scope": "PLANNED_CONSUMER_NOT_CONNECTED"
+    }
+  ],
+  "province_summary": {
+    "south_sulawesi": {
+      "fixed_split": "train",
+      "label_files": 20,
+      "windows_scanned": 1088,
+      "dense_windows": 9,
+      "dense_inside_windows": 9,
+      "maximum_bare_pixels": 961
+    },
+    "gorontalo": {
+      "fixed_split": "train",
+      "label_files": 14,
+      "windows_scanned": 896,
+      "dense_windows": 1,
+      "dense_inside_windows": 1,
+      "maximum_bare_pixels": 271
+    },
+    "southeast_sulawesi": {
+      "fixed_split": "train",
+      "label_files": 19,
+      "windows_scanned": 1216,
+      "dense_windows": 19,
+      "dense_inside_windows": 11,
+      "maximum_bare_pixels": 6918
+    },
+    "east_java": {
+      "fixed_split": "train",
+      "label_files": 14,
+      "windows_scanned": 896,
+      "dense_windows": 11,
+      "dense_inside_windows": 8,
+      "maximum_bare_pixels": 857
+    },
+    "banten": {
+      "fixed_split": "val",
+      "label_files": 20,
+      "windows_scanned": 1220,
+      "dense_windows": 24,
+      "dense_inside_windows": 15,
+      "maximum_bare_pixels": 3910
+    },
+    "west_java": {
+      "fixed_split": "test",
+      "label_files": 17,
+      "windows_scanned": 1088,
+      "dense_windows": 10,
+      "dense_inside_windows": 6,
+      "maximum_bare_pixels": 1708
+    }
+  },
+  "split_qualified_counts": {
+    "train": 29,
+    "val": 15,
+    "test": 6
+  },
+  "inventory": [
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\grid-esri_io-banten-2020-g00\\banten-g00-2020\\raw-esri_io.tif",
+      "sha256": "637557a2922d3b5e9d23983a049a4c9d89c1a219ffbbc33b2e9fe55ab6fb7d4f",
+      "bytes": 188683,
+      "province": "banten",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\grid-esri_io-east_java-2020-g00\\east_java-g00-2020\\raw-esri_io.tif",
+      "sha256": "8a36f29ae84b9426696adcaf0b4e8e0f565e8f16c5b39e5e5e21ac34b064e265",
+      "bytes": 208760,
+      "province": "east_java",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\grid-esri_io-gorontalo-2020-g00\\gorontalo-g00-2020\\raw-esri_io.tif",
+      "sha256": "d261ff47b0ef32a1e77f196c6db361a0b677d140e1edb75ae10164e550406450",
+      "bytes": 100934,
+      "province": "gorontalo",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\grid-esri_io-southeast_sulawesi-2020-g00\\southeast_sulawesi-g00-2020\\raw-esri_io.tif",
+      "sha256": "e7c718e81c4857763fd9df5306cd2d65e5393ac68245d8793bbe2f1cbe78e00c",
+      "bytes": 116681,
+      "province": "southeast_sulawesi",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\grid-esri_io-west_java-2020-g00\\west_java-g00-2020\\raw-esri_io.tif",
+      "sha256": "83d2675c26f31809d441aeb0c7c9d47433193b5698e8552f78bd1f5c61d88275",
+      "bytes": 171010,
+      "province": "west_java",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2020-v2-laneB-banten-boundary-00\\banten-extra-08-2020\\raw-esri_io.tif",
+      "sha256": "f1f6d13a03506164a51d3d423972d639d29c7b978ae65e437e23c44f0302a6fe",
+      "bytes": 218558,
+      "province": "banten",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2020-v2-laneB-banten-boundary-01\\banten-extra-09-2020\\raw-esri_io.tif",
+      "sha256": "a568a790261ebbcd6e62b4c936ed17965bc331897d117ce373edee115a30f7d5",
+      "bytes": 111660,
+      "province": "banten",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-00\\banten-extra-08-2021\\raw-esri_io.tif",
+      "sha256": "b90f7b83c36fbe8f8f2938873ea87ce446c74295edbb9d139866a30a1ac2f2b6",
+      "bytes": 210694,
+      "province": "banten",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-01\\banten-extra-09-2021\\raw-esri_io.tif",
+      "sha256": "5fcf518279a031361b957b17a882e8d5ab41f32680368d575363f4667a23dba9",
+      "bytes": 111420,
+      "province": "banten",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-00\\banten-extra-08-2022\\raw-esri_io.tif",
+      "sha256": "2b5f8ab87689830ee40fc602dc6aea5e0ce22987f472c10b415cc881ddb0b33a",
+      "bytes": 220578,
+      "province": "banten",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-01\\banten-extra-09-2022\\raw-esri_io.tif",
+      "sha256": "991736a100ee926f34a14a34a4071221ce429348cb378dc54ca165ca6e965467",
+      "bytes": 111458,
+      "province": "banten",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\raw-esri_io.tif",
+      "sha256": "cd223cb38294ecdcf5b05989e37b8655e53552c7227d932b3d33a6b5ca7d059d",
+      "bytes": 209173,
+      "province": "banten",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-00\\banten-extra-08-2024\\raw-esri_io.tif",
+      "sha256": "6e7767a575a593c5a633e09070db17699fb7132410f76a7bbf2efe0515c3ff95",
+      "bytes": 211178,
+      "province": "banten",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-00\\east_java-extra-00-2020\\raw-esri_io.tif",
+      "sha256": "4e3965778ecdc3a1bcfaeccdf00031bf3e1d57fa1b5f8655956d5285f24ced47",
+      "bytes": 208806,
+      "province": "east_java",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-00\\east_java-extra-00-2022\\raw-esri_io.tif",
+      "sha256": "0cdd66921d1100f32d3a4d604a56f06502b1e7c27276238cbb4c3659592fa3fc",
+      "bytes": 217037,
+      "province": "east_java",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-00\\east_java-extra-00-2023\\raw-esri_io.tif",
+      "sha256": "6c1e1b7245df2877c500d3bdc0686e96e3eb006afa469b117a4c2a0bc614dee4",
+      "bytes": 217852,
+      "province": "east_java",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-00\\west_java-extra-16-2020\\raw-esri_io.tif",
+      "sha256": "762a9093944691364264582eab537c3d9740bf03ce585f0d194b13af500681a1",
+      "bytes": 227598,
+      "province": "west_java",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-esri_io.tif",
+      "sha256": "ba4631ded3b27dc487faa4e5da0fb668cdde8498d13333024f39d4eacaba37cb",
+      "bytes": 196380,
+      "province": "west_java",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-00\\west_java-extra-16-2021\\raw-esri_io.tif",
+      "sha256": "f9b0db0813576444f4e6b36d13cf2cd258ac464f859b75c3f0520d850c4f0aa1",
+      "bytes": 229758,
+      "province": "west_java",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\raw-esri_io.tif",
+      "sha256": "cdd34e68220851aab0b773f0f4ef1039500acec9527a2a715025527d0a8fbb48",
+      "bytes": 200036,
+      "province": "west_java",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-00\\west_java-extra-16-2022\\raw-esri_io.tif",
+      "sha256": "bb22e38ea25f38e49211c906f9063efbd827eba93dc28d5a691aa7de13dcac27",
+      "bytes": 229313,
+      "province": "west_java",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-01\\west_java-extra-17-2022\\raw-esri_io.tif",
+      "sha256": "1107a6cb3a27f9ca730e1825cd8035c1812710a9486c4e8d5695feffd24b598e",
+      "bytes": 193216,
+      "province": "west_java",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-00\\west_java-extra-16-2023\\raw-esri_io.tif",
+      "sha256": "96744f3602e5aeb56c0000004d80ae59ce5027c9d13ee58483cdb483df3951c7",
+      "bytes": 232276,
+      "province": "west_java",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-00\\west_java-extra-16-2024\\raw-esri_io.tif",
+      "sha256": "62ef2984639b0c568589868ba2f490dccf6de6e99f9d228ef14ef32a0a4dbc83",
+      "bytes": 234847,
+      "province": "west_java",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-00\\west_java-extra-16-2025\\raw-esri_io.tif",
+      "sha256": "a8d61b45ef6863547d70dec6d138c9b33e0924a535bf62bc4bc74f0c9fd90f17",
+      "bytes": 225840,
+      "province": "west_java",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2020-g01\\banten-g01-2020\\raw-esri_io.tif",
+      "sha256": "a18fd0cc4a9120938a138c2d0ecbbd10c8bde03381934a939ba2f273a4004541",
+      "bytes": 181669,
+      "province": "banten",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g00\\banten-g00-2021\\raw-esri_io.tif",
+      "sha256": "8301678431567f7501b6d35ae112c7a0809f7de6c56a8ede9d4ecd1c68d2a29a",
+      "bytes": 212141,
+      "province": "banten",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-esri_io.tif",
+      "sha256": "390de38a69b846b92d43efffe3a836c334e02103014ee2a8cb00a2d822e5e011",
+      "bytes": 182518,
+      "province": "banten",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2022-g00\\banten-g00-2022\\raw-esri_io.tif",
+      "sha256": "4748ee6feea1db54db7326d64d4d1cbd0bd2a320a2ff0af9032e7501e6a5ef5b",
+      "bytes": 216947,
+      "province": "banten",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2022-g01\\banten-g01-2022\\raw-esri_io.tif",
+      "sha256": "56d72f571b65f32f6ae500a9346bab21835f42f1a7abf2cea2ddb2aa23fd69c5",
+      "bytes": 185950,
+      "province": "banten",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2023-g00\\banten-g00-2023\\raw-esri_io.tif",
+      "sha256": "ceef43f7b2c9e258d12ed6cdba34f4091c4688406b30517002b9eb4549808a5a",
+      "bytes": 219431,
+      "province": "banten",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2024-g00\\banten-g00-2024\\raw-esri_io.tif",
+      "sha256": "4b3510419747fa3a78231f23e008b9f391b235c901a245be8641f85c67a5717c",
+      "bytes": 210008,
+      "province": "banten",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2025-g00\\banten-g00-2025\\raw-esri_io.tif",
+      "sha256": "bf64f0131bbe566e2aadbfa3e86d8362f1e6fe17886f691f0a3890488aaea392",
+      "bytes": 211577,
+      "province": "banten",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2025-g01\\banten-g01-2025\\raw-esri_io.tif",
+      "sha256": "553088c3e82295909dab68648521c196bd0cba162099f83565d305d194362ff8",
+      "bytes": 179268,
+      "province": "banten",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2025-g02\\banten-g02-2025\\raw-esri_io.tif",
+      "sha256": "95eabc4aac265e89b845b0b17eb46a6d11548d6d8253bc254fc63bfd9495321b",
+      "bytes": 170131,
+      "province": "banten",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2021-g00\\east_java-g00-2021\\raw-esri_io.tif",
+      "sha256": "5859dade5d34b7a81a1ee21860feab25d1a2469007132135001aa0e867ab8aac",
+      "bytes": 207145,
+      "province": "east_java",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2021-g03\\east_java-g03-2021\\raw-esri_io.tif",
+      "sha256": "d417f503e5274f5e772fe1784b27cd290b72e3b7d4095de74bc62b51cd543e7e",
+      "bytes": 335745,
+      "province": "east_java",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2022-g00\\east_java-g00-2022\\raw-esri_io.tif",
+      "sha256": "3cf0f5b355d4f64cde9b68f2d31ad45748c2c1c421789defdaf9c705d20c009c",
+      "bytes": 208606,
+      "province": "east_java",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2022-g01\\east_java-g01-2022\\raw-esri_io.tif",
+      "sha256": "803987a5d7604076ea1d1a245c78787442d319d82a47affb2b761e57adf6a8ed",
+      "bytes": 176257,
+      "province": "east_java",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2023-g00\\east_java-g00-2023\\raw-esri_io.tif",
+      "sha256": "d47e8d7117b6e1cbe1e4b037dc26a77ca7e1e8618abf3c4a268d55d9760efeab",
+      "bytes": 217101,
+      "province": "east_java",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2024-g00\\east_java-g00-2024\\raw-esri_io.tif",
+      "sha256": "0b13a343db5c9ebb905e9be69c591181b49019c223bbd5712c162bf8336c8287",
+      "bytes": 206891,
+      "province": "east_java",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2024-g01\\east_java-g01-2024\\raw-esri_io.tif",
+      "sha256": "02ba9f27f3535ba9e5f9f9a6a80436d27c6f54e544686c0915d96077e0e0d5c7",
+      "bytes": 185918,
+      "province": "east_java",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2024-g02\\east_java-g02-2024\\raw-esri_io.tif",
+      "sha256": "61bd3fa56fd7a86b8f2f1c168036b9b18957d1730f3a8c4f9d7635c2025f03f4",
+      "bytes": 258540,
+      "province": "east_java",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g00\\east_java-g00-2025\\raw-esri_io.tif",
+      "sha256": "49a736cb76d0bcf39249d6864f61694c768e95071205f409795d907d00f5d18e",
+      "bytes": 212090,
+      "province": "east_java",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g03\\east_java-g03-2025\\raw-esri_io.tif",
+      "sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+      "bytes": 325651,
+      "province": "east_java",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2020-g01\\gorontalo-g01-2020\\raw-esri_io.tif",
+      "sha256": "ba9f9b05491ab52900ae06ebfc57f46d83eb4ec0ac5916e0eae0c83605aac9c9",
+      "bytes": 95704,
+      "province": "gorontalo",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2020-g03\\gorontalo-g03-2020\\raw-esri_io.tif",
+      "sha256": "a8b0a4482da344a9ed5dfece8ea168d1d18d0f6c843f8149a21d7c0cf0aef0d7",
+      "bytes": 246612,
+      "province": "gorontalo",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2021-g00\\gorontalo-g00-2021\\raw-esri_io.tif",
+      "sha256": "33b1979ef4835040c3d5a7a13049ab563270627c6687326fc832ec18a6fe3356",
+      "bytes": 103585,
+      "province": "gorontalo",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2021-g01\\gorontalo-g01-2021\\raw-esri_io.tif",
+      "sha256": "2a6f2b106f4afeadc1b41f29ae5d9c6ae1482e32ec8df8f43017caecbc478536",
+      "bytes": 96055,
+      "province": "gorontalo",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2021-g03\\gorontalo-g03-2021\\raw-esri_io.tif",
+      "sha256": "f5d6202602c82d4f8ae9d1ebfea168208c374d0c4c75c2d1d81fde497d39bf27",
+      "bytes": 245475,
+      "province": "gorontalo",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2022-g01\\gorontalo-g01-2022\\raw-esri_io.tif",
+      "sha256": "ede3f8f413af5b2759f7bea0cfba892fb39e95321a47ebf770feb4b72ad9cfd8",
+      "bytes": 98348,
+      "province": "gorontalo",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2022-g03\\gorontalo-g03-2022\\raw-esri_io.tif",
+      "sha256": "17ca5cf6f5d162efb7eb5daa816870e5416d1a91ae97d2b60874c260b9c08a06",
+      "bytes": 242485,
+      "province": "gorontalo",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2023-g01\\gorontalo-g01-2023\\raw-esri_io.tif",
+      "sha256": "b5a3af35b98526ce90fd2d6d8c23cf846b6538ef87c281da2aacacb20a8a176a",
+      "bytes": 98325,
+      "province": "gorontalo",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2023-g02\\gorontalo-g02-2023\\raw-esri_io.tif",
+      "sha256": "ca2f6794b9d2b9023dcceb4f1bd8e02b573e565b0506d8295d7bc00b7da4b09b",
+      "bytes": 102314,
+      "province": "gorontalo",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-esri_io.tif",
+      "sha256": "a6081b2295b7b21636d4f8f6fb48b4d1bc24a6e2136546fb5ce763905cdbbc7d",
+      "bytes": 99278,
+      "province": "gorontalo",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g02\\gorontalo-g02-2024\\raw-esri_io.tif",
+      "sha256": "af89bcab1bf0e1a6f0aea37592a0a764ad713a02760a491f8965aa710a21c454",
+      "bytes": 101276,
+      "province": "gorontalo",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\raw-esri_io.tif",
+      "sha256": "9ab026ea457e08e4268e39b50ced9f78cb5b0c9d16f2fa6350822e1a9a50b140",
+      "bytes": 97556,
+      "province": "gorontalo",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g03\\gorontalo-g03-2025\\raw-esri_io.tif",
+      "sha256": "e1caf78d9ec63921014ca2f7897c03f6a2df754f25b127197065b64e6867fcd6",
+      "bytes": 252517,
+      "province": "gorontalo",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2020-g00\\south_sulawesi-g00-2020\\raw-esri_io.tif",
+      "sha256": "ebd19ddb3e2a27f816713acf7b769207d756b968845ebca380296f8a111eb0db",
+      "bytes": 129098,
+      "province": "south_sulawesi",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2020-g01\\south_sulawesi-g01-2020\\raw-esri_io.tif",
+      "sha256": "64d89df81a37c4c46e4babae76dc128ae9a63ca978279069b83f245fcb7dae6f",
+      "bytes": 158528,
+      "province": "south_sulawesi",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2020-g02\\south_sulawesi-g02-2020\\raw-esri_io.tif",
+      "sha256": "8e000eef3a056951a00f048044dc992bba6bca250e72a48e1f44b0ea0e35232f",
+      "bytes": 226210,
+      "province": "south_sulawesi",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2020-g03\\south_sulawesi-g03-2020\\raw-esri_io.tif",
+      "sha256": "59c55f29ad7acf81577143e568dd8e1f75ad6df1ee3e9357cc54dfdade587396",
+      "bytes": 97320,
+      "province": "south_sulawesi",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2021-g00\\south_sulawesi-g00-2021\\raw-esri_io.tif",
+      "sha256": "89a5b594a86f4c68f3210673eceea5cf760d059e82a8efb30b423cd8bc9d9e98",
+      "bytes": 133430,
+      "province": "south_sulawesi",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2021-g01\\south_sulawesi-g01-2021\\raw-esri_io.tif",
+      "sha256": "7bbca00b0c2bc33d10bb5719cd630012fed2788cff6836e41eb61407aa97d01d",
+      "bytes": 159165,
+      "province": "south_sulawesi",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2021-g02\\south_sulawesi-g02-2021\\raw-esri_io.tif",
+      "sha256": "373ff5e3e00ebd196c22f03c77125637c623caca0500272181409851b59cff94",
+      "bytes": 231188,
+      "province": "south_sulawesi",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\raw-esri_io.tif",
+      "sha256": "951f32851ac00e79aa319640a367f2645c849c3be7d794b2387214ddbdc47c2c",
+      "bytes": 137495,
+      "province": "south_sulawesi",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g01\\south_sulawesi-g01-2022\\raw-esri_io.tif",
+      "sha256": "4f7b095f14397612c219b84bd1e17b9bd3b88d062d7125ff88cc940f818a07a1",
+      "bytes": 159196,
+      "province": "south_sulawesi",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g02\\south_sulawesi-g02-2022\\raw-esri_io.tif",
+      "sha256": "4785440d63d2f262d0a883b8e460d393f523e20279fc2060cd916aa687cfe322",
+      "bytes": 264999,
+      "province": "south_sulawesi",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g03\\south_sulawesi-g03-2022\\raw-esri_io.tif",
+      "sha256": "e7fcee61ed94153cc3406d37007aa0ee9d86712a3481f29d0eb9a55a741dc3e1",
+      "bytes": 97357,
+      "province": "south_sulawesi",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g00\\south_sulawesi-g00-2023\\raw-esri_io.tif",
+      "sha256": "25ccdc01179f02d19c300c40514c760e452408d080c695cbaaf93966a81e5381",
+      "bytes": 139709,
+      "province": "south_sulawesi",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\raw-esri_io.tif",
+      "sha256": "4e3bea94070a558bb532fab7dc50e098ebe3a9abf5cc855b8b41936a717a56fd",
+      "bytes": 165144,
+      "province": "south_sulawesi",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g02\\south_sulawesi-g02-2023\\raw-esri_io.tif",
+      "sha256": "3a4cb3f46b8efbafaa55c8b98e1803a694a5eeb227f95aa8793d0edb02393144",
+      "bytes": 244127,
+      "province": "south_sulawesi",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2024-g00\\south_sulawesi-g00-2024\\raw-esri_io.tif",
+      "sha256": "3a5a16e4b74c80baba48f9b23f34aa01e2ae334e881c3039b8b0e558b65551f4",
+      "bytes": 139592,
+      "province": "south_sulawesi",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2024-g01\\south_sulawesi-g01-2024\\raw-esri_io.tif",
+      "sha256": "841f5823b8eec75d07d0fbbdc802ee62f0c3e8cb53db6e8715583e25ebd16275",
+      "bytes": 168524,
+      "province": "south_sulawesi",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2024-g02\\south_sulawesi-g02-2024\\raw-esri_io.tif",
+      "sha256": "f8eca0eed4e8a79cc20cb703a3471033ec27dd205621a4218ff2d6e3281dc3ff",
+      "bytes": 233122,
+      "province": "south_sulawesi",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2025-g00\\south_sulawesi-g00-2025\\raw-esri_io.tif",
+      "sha256": "b8b901834d2983291fa97a83d09e5746628cedac907c0d2648cac4fb3beeba1f",
+      "bytes": 137968,
+      "province": "south_sulawesi",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2025-g01\\south_sulawesi-g01-2025\\raw-esri_io.tif",
+      "sha256": "b411e07013f6879fd31bbe61fe0d94068cf18a5f40c2cfd90f7e070a471bc1c8",
+      "bytes": 171020,
+      "province": "south_sulawesi",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2025-g02\\south_sulawesi-g02-2025\\raw-esri_io.tif",
+      "sha256": "a436f954a2fbd37887f17d818ed8ed9a21f5595fe317df42b16060d4dd82a08a",
+      "bytes": 228354,
+      "province": "south_sulawesi",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2020-g01\\southeast_sulawesi-g01-2020\\raw-esri_io.tif",
+      "sha256": "e513c0a66c597ee556fcdff3022750b3df855011fe6ee848576fb84e08944be4",
+      "bytes": 128844,
+      "province": "southeast_sulawesi",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2020-g02\\southeast_sulawesi-g02-2020\\raw-esri_io.tif",
+      "sha256": "af4ad2bef998eabdca4699cd9efcd3b97eef574fdb14f61f0be6156db8b97427",
+      "bytes": 94174,
+      "province": "southeast_sulawesi",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2020-g03\\southeast_sulawesi-g03-2020\\raw-esri_io.tif",
+      "sha256": "5ac35d14ce689fec53305eb2d6bf2fff9a342eed251feb1fbd91e5e10ffe3410",
+      "bytes": 146113,
+      "province": "southeast_sulawesi",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2021-g00\\southeast_sulawesi-g00-2021\\raw-esri_io.tif",
+      "sha256": "59c29b124980b279bc15ff1042c3c2556a5d61f6e02343681b04f156ace3abd5",
+      "bytes": 116692,
+      "province": "southeast_sulawesi",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2021-g01\\southeast_sulawesi-g01-2021\\raw-esri_io.tif",
+      "sha256": "1e73c7a8e9c85a6755555e25a0cfae60f4ca9392a75ebdc8b36079d0bd91b30a",
+      "bytes": 125216,
+      "province": "southeast_sulawesi",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03\\southeast_sulawesi-g03-2021\\raw-esri_io.tif",
+      "sha256": "a10218846e13f5a03c97987e24a6e5979c59591f28ccf47508ba51e7c63528f3",
+      "bytes": 134630,
+      "province": "southeast_sulawesi",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2022-g00\\southeast_sulawesi-g00-2022\\raw-esri_io.tif",
+      "sha256": "a8cc8cfa880ec36d32f3fadb577c632d01721733e1e7d5bdb59d2aaed22320a4",
+      "bytes": 115972,
+      "province": "southeast_sulawesi",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2022-g01\\southeast_sulawesi-g01-2022\\raw-esri_io.tif",
+      "sha256": "d8616600b3d1ce0e53ee2584d8dfee408eca3d57b02b8c836785ca704df61e23",
+      "bytes": 119574,
+      "province": "southeast_sulawesi",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2022-g02\\southeast_sulawesi-g02-2022\\raw-esri_io.tif",
+      "sha256": "10db7e1e8873f1e8cf63b3d79a55aa645e24c7dadf1e67204bb5f9f643cd7718",
+      "bytes": 92318,
+      "province": "southeast_sulawesi",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g00\\southeast_sulawesi-g00-2023\\raw-esri_io.tif",
+      "sha256": "c5c46085551c2ab4c9ec60f8da7a25a7f2c8c664147f853bbeb2b37d03a2e373",
+      "bytes": 114283,
+      "province": "southeast_sulawesi",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g01\\southeast_sulawesi-g01-2023\\raw-esri_io.tif",
+      "sha256": "e2741a50b7286443503108d491adb5d7f2e38bceee7122587ed8438d0e10b858",
+      "bytes": 137367,
+      "province": "southeast_sulawesi",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g02\\southeast_sulawesi-g02-2023\\raw-esri_io.tif",
+      "sha256": "41d170f2557a987169b956d3f51bcdadec25baae4d1df3886c89e43ba7829105",
+      "bytes": 93839,
+      "province": "southeast_sulawesi",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03\\southeast_sulawesi-g03-2023\\raw-esri_io.tif",
+      "sha256": "b48754d22e881d0e18d7743961b2ab15084ff3f37015dc2148824898ff20eb0f",
+      "bytes": 161616,
+      "province": "southeast_sulawesi",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2024-g02\\southeast_sulawesi-g02-2024\\raw-esri_io.tif",
+      "sha256": "7ce8f9bb54cfd5aa6125208122fa510191415cd9caa94aa9c3713e653460e152",
+      "bytes": 94033,
+      "province": "southeast_sulawesi",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03\\southeast_sulawesi-g03-2024\\raw-esri_io.tif",
+      "sha256": "ddfad3eb54ca9d9e9b0e7aa0c4783bb7d93e02fc972f2a28f7002305c076bd81",
+      "bytes": 137580,
+      "province": "southeast_sulawesi",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g00\\southeast_sulawesi-g00-2025\\raw-esri_io.tif",
+      "sha256": "22f5b1bce6e61dbb4a46a6e03648bea1e9fa031bad3a4001aeccd4d2a4ab2abf",
+      "bytes": 114137,
+      "province": "southeast_sulawesi",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g01\\southeast_sulawesi-g01-2025\\raw-esri_io.tif",
+      "sha256": "ee41d1935439c0db8d2179b42a0da8ca0b6f34c062a29eb33225d059c480eb9b",
+      "bytes": 141639,
+      "province": "southeast_sulawesi",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02\\southeast_sulawesi-g02-2025\\raw-esri_io.tif",
+      "sha256": "220bdd675c59a16adb44223d6beac671e272e368c131835d1356cb9b39151187",
+      "bytes": 94530,
+      "province": "southeast_sulawesi",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2020-g01\\west_java-g01-2020\\raw-esri_io.tif",
+      "sha256": "2058d3ce6a158aa222caca577aa86da4060335e987fce43ac1410cdeff81ca31",
+      "bytes": 192044,
+      "province": "west_java",
+      "year": 2020
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2021-g00\\west_java-g00-2021\\raw-esri_io.tif",
+      "sha256": "96345437373fa74aef1288c3769194351c06544bad3a0793fe7e7aca6e47617d",
+      "bytes": 169221,
+      "province": "west_java",
+      "year": 2021
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2022-g00\\west_java-g00-2022\\raw-esri_io.tif",
+      "sha256": "d10ffb19802cc8381e972f104a0ca3cf81fc2962d5e3ac4e5c51802a100391c5",
+      "bytes": 172971,
+      "province": "west_java",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2022-g01\\west_java-g01-2022\\raw-esri_io.tif",
+      "sha256": "338c25ef445c66aab09198905662d6d7d4aa38afbff6c6ea7c5fca0af105c748",
+      "bytes": 185164,
+      "province": "west_java",
+      "year": 2022
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2023-g00\\west_java-g00-2023\\raw-esri_io.tif",
+      "sha256": "e225b3f859868bdf5405fd133131a84be0d1e4966193d611bf5e08ac96a44b54",
+      "bytes": 163095,
+      "province": "west_java",
+      "year": 2023
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2024-g00\\west_java-g00-2024\\raw-esri_io.tif",
+      "sha256": "7f913ee5a035c64c4759b71e5f1a5b0473b96dddd10562a0f1f1e2b269b05f8e",
+      "bytes": 162803,
+      "province": "west_java",
+      "year": 2024
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2025-g00\\west_java-g00-2025\\raw-esri_io.tif",
+      "sha256": "924c52d3f017d8898bdff5edfd5d555e6877b9f2d445fbaa6781104ef346ce10",
+      "bytes": 166418,
+      "province": "west_java",
+      "year": 2025
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-esri_io.tif",
+      "sha256": "3f9ccf42be17c17e4f726da083ce3a527778f9f5a54caf927b2c63ccc40d31f4",
+      "bytes": 14222,
+      "province": "banten",
+      "year": 2020
+    }
+  ],
+  "skipped_row_references": {},
+  "execution_supported": false,
+  "actual_quality_eligible": false,
+  "scientifically_verified_bare": false,
+  "ready_for_training": false,
+  "network_requests": 0,
+  "collection_executed": false,
+  "training_executed": false,
+  "source_files_written": 0,
+  "limitations": [
+    "Weak ESRI labels are not independent field truth.",
+    "Existing image/SCL/B02/pending/support inventory and spatial overlaps require167/170 revalidation.",
+    "Current157 consumer accepts Banten/val only; train/test candidates remain PLANNED and unconnected.",
+    "Only aligned256 windows are searched; sliding or smaller-offset windows are outside this bounded scan."
+  ]
+}

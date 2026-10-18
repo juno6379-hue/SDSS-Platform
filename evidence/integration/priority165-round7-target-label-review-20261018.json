@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T02:22:12.849360+00:00",
+  "scope": "READONLY_LOCAL_BANTEN2020_WEAK_LABEL_WINDOW_ONLY",
+  "status": "LOCAL_LABEL_OBSERVATION_MATCHED_UNVERIFIED",
+  "source_request_sha256": "affc939609d9d68922e1f50db26b63223eb7bb10795f1c7715308b4517be4329",
+  "refs": {
+    "label": {
+      "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-banten-2020-g01/banten-g01-2020/raw-esri_io.tif",
+      "sha256": "a18fd0cc4a9120938a138c2d0ecbbd10c8bde03381934a939ba2f273a4004541"
+    },
+    "lineage": {
+      "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-banten-2020-g01/annual-window-report.json",
+      "sha256": "bb6fc30002ceb09ca4d0440d2ab7da0c7501d5e3e7c034fb4704975a5f5c750b"
+    },
+    "boundary": {
+      "path": "data/first-group-boundaries/selected-six.geojson",
+      "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+    }
+  },
+  "all_three_source_sha_matched": true,
+  "source_files_rechecked_unchanged": 3,
+  "native_window": [
+    1792,
+    256,
+    256,
+    256
+  ],
+  "native_grid": {
+    "crs": "EPSG:32748",
+    "transform": [
+      10.0,
+      0.0,
+      665760.0,
+      0.0,
+      -10.0,
+      9328640.0
+    ],
+    "width": 2048,
+    "height": 2048
+  },
+  "bare_code": 8,
+  "bare_pixels_inside_province": 2411,
+  "province_inside_fraction": 1.0,
+  "class_histogram": {
+    "1": 4105,
+    "2": 40,
+    "5": 25226,
+    "7": 28540,
+    "8": 2411,
+    "11": 5214
+  },
+  "seconds": 0.28230239999538753,
+  "actual_target_image_available_verified": false,
+  "clear_sky_or_scl_verified": false,
+  "independent_accuracy_validated": false,
+  "collection_authorized": false,
+  "learning_ready": false,
+  "operating_writes": 0,
+  "limitations": [
+    "Only existing Esri annual weak reference label, lineage and boundary bytes are checked",
+    "Native label window containing2411 bare pixels does not prove optical image availability or scientific truth",
+    "Existing 165 audit product source unchanged; no collector/GDAL source output/network/Store calls"
+  ]
+}

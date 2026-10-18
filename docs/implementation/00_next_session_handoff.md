@@ -1,5 +1,75 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 11:49 KST 후속 — F2/F3 보강·통합시험·게시 마감
+
+170 F2/F3 후속 소스643a3e...동결: 예약후오류executed:null/단계별정산표시·미등록/고아/부분출력3000계수·참조누락/중복차단. 집중23PASS6.357초/관련61PASS6.731초,Root전체139실행138PASS1SKIP40.869초. 초기추가시험harness NameError는로그보존후harness만교정. 실제새운영inventory는다음표적집행전안정검토필요하며최초원격1batch는이후소스의사고검증이아니다.174 6주범용화설계완료/실행미연결PLANNED. 이해자료8개·612링크검토완료,기존실UI1260/1219/54확인.8차반텐2024g01/g02는현재worker2시작로그확인/최종성과미확정. 다른Toolbox WIP를제외한완료코드·문서·작은증거만curated Git게시한다.
+
+## 11:45 KST 실행 관측 — 8차 실제collector31156
+
+heartbeat-1135-round8-running-20261018.json의11:44:45실측:wrapper8860/collector31156실행·lock존재·시작2/종료0.신규pending2예약136314880B와과거pending2보존136314880B를구분한다.현재예약반영잔여1982505574B·429false·원본1569/1260·부족54·171source핀일치.다음주기는이두작업종료/정산/품질부터새로확인,현재완료로표현하거나중복시작금지.원본/원장/예산/잠금강제조작0이다.
+
+## 11:44 KST 최신 — 8차 실제시작·반텐2199검증·171완료
+
+heartbeat_20261018_1135_audit.md우선. 반텐2020표적실제2199나지/적격1·3827633B정산/이전1568행4704파일pending2보존완료,현재1569/1260·셀54·val기여2다.171소유완료cfd109d / codex/parallel-finalization-20261018(집중12/관련50·로컬push0)와1219실제UI게시확인완료.8차반텐2024g01/g02는wrapper8860/planeb8afd…3717/새parallel핀ff25bf…b6ae3로시작했고worker_started2다.실제process/lock/ledger/terminal을새로확인해중복시작금지.시작전잔여2118820454B는예약전값. 기존개발채팅이coordinator/170F2F3/173확장소유,이채팅은독립검토·공통실행기171완료·실제UI·이해자료소유.13개train나지로컬후보는현재val전용consumer지원밖이므로실제확보로세지않는다.전체학습/운영승인미완료·10분보고유지.
+
+## 2026-10-18 11:49 KST — 수집85→54·나지 실제1건·다음8차 시작
+
+이 채팅 소유164/165/166/167/168/169/170/173을 진행했다. 일반6/7차 +56물리/+47적격으로 부족85→54, 이후170 표적 실제1batch +1적격으로 원본1569/1260(744/266/250)이다. 독립 actual170 감사442.679초: 유효64908/65536=99.0417%·주내100%·나지2199, 기존1568행/4704파일SHA 불변, pending2 전액136314880B 보존, source support1162개에서 자신의새10자산 외 과거겹침0, 추가계상3827633B·429false·lock해제. 원본나지1586/2799/1025·기여0/2/0이며 모든split 비율/기여목표 미달이다. 약한ESRI라벨·수치겹침검사는 독립정답/과학적독립성/학습승인이 아니다.
+
+164는1536행고정source→16누출행제외1520행/1219적격(720/249/250), 차단3·4761파일SHA 불일치0, connectivity NOT_CAPTURED_BUDGET. 게시pointer와 실제5174 IAB에서 원본1260/후보1219·source불일치·차단3·미준비 확인, console0/overflow0.168 split전체90%와개별80/95 문구구분 완료, 공개8cf7b94+두파일격리시험9PASS·120modules build39.58초. 이후수집25적격은이고정후보밖이다.
+
+173은고정1569source/104로컬라벨/6404창에서나지후보50(train29/val15/test6)을발굴·50창실계수재검산0불일치/9PASS. 적격추가50이나집행승인아님. 타주35는157/170미연결PLANNED이며6주범용화174설계검토중이다. F1 parallel정산보완은다른채팅171소유완료(12/50PASS); F2실행후오류표시/F3미등록물리상한은이채팅targeted_execution이170소스·시험·문서보완중. 같은파일중복편집금지.
+
+다음일반8차는반텐2024g01/g02, plan eb8afd1776e53ca23e00f89a7292a27716850819c64adc58217128e522bf3717, wrapperPID8860으로실제시작했다. 아직성과미확정이므로종료로그/원장/lock/독립검사를확인하고중복시작하지않는다. 최대2batch·기존4GiB추가한도·2worker·2초·첫429공유중단·고정split/물리3000보존. 학습/등록/승인/배포0이며 geoai-2 ACTIVE10분보고는실제실행과구별한다. 전체개발미완료·계속진행.
+
+근거: targeted170-independent-20261018.json, priority164-final-verification-20261018.json, priority170-final-ui-20261018.json/txt/png, priority170-root-integrated-tests-final-20261018.log(107실행106PASS1SKIP30.319초), bare173-final-verification-20261018.json, priority-collection-round8-launch-20261018.json. 원본/학습자료는Git에넣지않고완료된코드/문서/허용증거만게시하며다른Toolbox WIP를보존한다.
+
+## 11:39 KST — 170 감사 초기파일 위치 보존 수리
+
+Root가동일PID9664감사재실행없이기존실패출력JSON충돌만수리했다.초기원본은targeted170-independent-initial-output-conflict-preserved-20261018.json으로원바이트보존이동·기존initial백업SHA동일09f792…47cc.진행중감사가기존최종경로에open('x')로자기결과를새로쓸수있다.수리receipt targeted170-output-collision-repair-root-20261018.json.최종경로잠시부재는증거삭제/성공판정이아니며독립최종결과를기다린다.운영원장/데이터/process/소스변경0.
+
+## 11:38 KST — 171 로컬 완료본 인계
+
+F1보완 소유9파일커밋cfd109d5bbf796c667e1afdd214bf5077b5c87a5 / codex/parallel-finalization-20261018,base8cf7b94·공유HEAD/index/WIP보존·push0이다. doc171/understanding171/집중12/관련50시험포함.170소유담당이통합시이동일완료파일을사용하고같은parallel구현을중복하지않는다.1219실제UI는priority1219-ui-root증거로완료,반텐native감사기존PID9664완료결과·후속부족54coordinator를이어확인한다. F2/F3별도과제는보존한다.
+
+## 11:37 KST — 171 F1보완완료·1219실제화면
+
+doc171/parallel171-root-related-20261018.json우선. parallel.py최종ff25bf…b6ae3·test5ca6b…bb4c7,집중12/관련50PASS·7.5502362초,기존active정산각1회시도후원래예외전파. F2CLIfalse/F3물리상한은170소유자의별도보완이며이수정으로해결했다고표현금지. 다음collector새process는최종sourceimport,단일coordinator/기존예산보존한다.170기존단일은변경전종료·적격1보고/실제나지독립검산은기존담당PID9664진행중으로중복하지않는다.1219pointer/receipt게시와Root실제UI11:35응답1260/1219·3차단·셀54·시점불일치확인완료. 다음부족54수집은기존담당소유·실행/결과새로관측,중복시작0이다.
+
+## 11:30 KST — 164 QA완료와170 worker 시작 후속
+
+priority164-cohort-20261018/summary.json이02:29:17UTC실제완료:1520행1219적격/동일scene16제외·남은identity0/나지차단3,335.141초·4761기록SHA불일치0.1536고정source이며나중7차24적격미포함,게시/UI승계별도확인필요.170 max1/PID19012는11:29:30preflight관측후worker_started로그가생겼다. 현재terminal/원장/실파일결과부터확인하고중복시작하지않는다. F1은2job합성재현이며현재1job의사고로단정하지않는다. 실제168문구표시공백은Root기존IAB증거로해결,관련해설/인덱스갱신을이어마감한다.
+
+## 11:28 KST 후속 — 이미 시작한1job과2job결함 구분
+
+170은11:27:13기존담당PID19012/max1로실제--execute시작했다.11:28같은PIDlock/프로세스존재·stdout없음,완료/HTTP/성과미확정이다. 기존시작을중복하거나잠금삭제/예약환불하지않는다. F1은가짜2job/실제executor로finalize0회재현했지만현재1job발생주장은아니다. 다음확대전보강검토와현재실행terminal/원장독립확인을이어간다.168문구실브라우저는Root02:26:27UTC확인완료(priority168-browser-root-20261018.*),기존담당browser실패를새관측으로보완했다.
+
+## 11:28 KST — 170 실행 전 검토 차단 우선
+
+CONTINUOUS_DEVELOPMENT.md의11:28 독립검토를우선읽는다.170두번째job reserve의비ValueError가이미실행된worker finalize를건너뛸수있고 main이전송후예외도executed:false로축소한다. unenrolled실파일3000상한계수도미확인이다. 실제 --execute 전170소유담당검토/재현/보강필요. Root는독립증거만작성하며동일source/collector중복0이다. 현재1job로컬dryrun성공은이실패경로/실제수집성공증거가아니다.
+
+## 2026-10-18 11:25 KST — 현재 사용자 요청의 병렬 수집·표적 집행 통합 소유
+
+이어서 작업할 내용 찾기 채팅 Root가 사용자 최신 요청에 따라164 전처리/165 품질감사/166 출력claim/167 지원inventory/168 품질문구/169 consumer hooks/170 표적consumer를 통합 중이다. Root 소유는 targeted_inventory.py,targeted_live_guards.py,collect_targeted_bare.py와 관련 시험·167/170 문서다. 같은 collector·원장·소스 통합을 중복 배정하지 않는다.7차남동2021/2023 종료 후1568물리/1259적격/셀 부족54를165가 실제검사했다. 현재 일반8수집은 시작하지 않았으며 반텐2020 표적170 고정request의 로컬전체검사를 먼저 실행중이다. 아직 실제 표적HTTP·나지보완 성공으로 표시하지 않는다.164의1536고정source→1520후보 nativeQA도 별도 진행중이며 이후32물리/24적격은그QA밖이다.168문구는소스/집중시험/공동build만완료,실제브라우저tab생성timeout으로미확인이다. 수집새모드의 default/예산/429/원본보호를 보존하고 시험·실제결과확인뒤공통문서/이해자료/Git에마감할예정이다. 다른채팅160/162/Toolbox완료파일은검토후종속성만반영하고WIP는보존한다.
+
+## 11:24 KST 인계 — 7차 완료·부족54·중복 실행 금지
+
+heartbeat_20261018_1115_audit.md 우선. 실제1568/1259·셀부족54·7차나지0, oldpending136314880B보존·7차완료직후잔여2122648087B다. Root 실제UI02:19:27UTC도1259/54와 고정1125/4차단/source불일치를 확인했다.164 PID38156은 고정1536QA완료 후16행제외staged1219이며 최종QA/게시완료는 미확인이다. 기존개발채팅 active가 coordinator/169·170집행연결/164/168을 소유한다. process·lock·원장·최신후보게시를 새로 확인하고 같은 작업을 중복하지 않는다. 나지2411 기존참조창 관측은 새수집이 아니다. Root는 독립검산/실제UI/이해자료 완료, 다른담당WIP와 index보존·학습실행0·10분보고계속.
+
+## 11:13 KST 인계 — 6차 완료·7차/164 실행·Toolbox 고정
+
+heartbeat_20261018_1105_audit.md 우선. 완료1536/1235·셀부족73·새나지기여0,기존행/pending136314880B보존·6차완료잔여2159200278B다. 기존채팅은새turn으로active이며7차남동술라웨시2021/2023(wrapper18384/collector29292)와고정1536전처리164 PID38156실행을11:13확인했다. 새coordinator/같은source작업을중복하지않는다. 현재UI후보1125는고정1432의4차단이며다음QA/게시와구분한다.
+
+Toolbox는실제hover공통CSS덮어쓰기결함을전용CSS로수정·전체293PASS/최종build32.54초/실브라우저LCLUC왕복·HMR·오류0·넘침false·기존상세5보존까지완료했다. 관련문서/해설/대본/FAQ포함27파일 로컬커밋fc68abd(기반8cf7),branchcodex/toolbox-visual-hub-20261018에고정·공유HEAD/index/WIP보존·push0이다. guard160/162 branch및새164/consumer는별도소유/별도범위이며현재main반영과혼동하지않는다. 전체개발/10분보고 계속.
+
+## 11:02 KST 인계 — 총량1212/셀부족85·162 로컬 구현
+
+11:02:40 기존개발채팅은완료/idle·main8cf7b94push보고,OScollector8688/30492는실행중이다. 이채팅이후속정산/실행을이어확인한다. 담당최종실제UI는1212/1125반영을확인했으며Root직접재조회와구분한다. 로컬guardbranch4901fcc는아직push/main승계전이다.
+
+heartbeat_20261018_1055_audit.md를 먼저 읽는다.5차 종료1512물리/1212적격·목표부족0/셀85, 나지기여train0/val1/test0이라 학습준비가 아니다. Root독립감사는기존행/pending136314880B/바이트안정·완료예산잔여2188636799B를 확인했다.6차동자바2024 두 건은wrapper8688/collector30492실행중(11:00관측), 이후완료/새실행을먼저확인한다. 고정1432후보1125와현재원본을구분한다.
+
+162 내부SceneClaimRegistry는 새10/독립10/관련28PASS·실제94scene private검증·별도이해자료완료, 로컬커밋4901fcc(기반8c58444)에신규10파일만보관했다. 공유main/index/기존작업보존·push0이다. 기존collector/157/160/159/API/UI 수정0이며 같은process같은객체 한정이다. 검증된전체inventory/pending/support/alias/실제기하/정산/품질/배타출력 연결이후속, execution_supportedfalse를유지한다. 기존담당일반수집·159게시·UI와중복하지않고전체개발/10분보고를계속한다.
+
 ## 2026-10-18 11:00 KST — 5차 완료: 적격1212·셀 부족85, 6차 시작
 
 최신 완료 관측은1512물리/1212적격/300부적격, 학습697·검증265·시험250이다. 최초 요청의1122적격보다90개 늘었고 셀당28 계획 부족은151→85개다. 전체1200 수량 목표 부족은0이지만 나지 균형·독립 검증·학습 승인은 미충족이다. 주별 부족은 South Sulawesi0/Gorontalo17/Southeast Sulawesi45/East Java18/Banten5/West Java0이다.

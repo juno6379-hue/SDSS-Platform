@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "scope": "168 scope-only UI wording, no data or QA rule changes",
+  "files": {
+    "frontend/src/CollectionProgress.tsx": "0b5136054bd811810eed5c663ac0062c5d086ad0683fd00ba0eabf731861eb60",
+    "frontend/src/collectionProgressAdapter.test.mjs": "da229034a847f2344b402fce46dc9022628f31cd2a1a1687a5f4ce78df1bdcc7",
+    "docs/implementation/168_quality_scope_ui.md": "d76bb2f734b9659d64c9bf96ead8f47f517ee126d5cd8c1800c7c97673565c6a"
+  },
+  "tests": 9,
+  "passed": 9,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 1.2915933,
+  "build": {
+    "modules": 123,
+    "seconds_display": "1m 20s",
+    "exit_code": 0,
+    "scope": "current shared workspace including other Toolbox work"
+  },
+  "browser": {
+    "status": "BLOCKED",
+    "attempted_url": "http://127.0.0.1:5174/#/view/17",
+    "reason": "createBrowserTab timed out; Browser1 unavailable; cua.getState apps[] browsers[]",
+    "actual_new_wording_seen": false
+  },
+  "operating_writes": 0,
+  "policy_changes": 0,
+  "source_reclassifications": 0
+}

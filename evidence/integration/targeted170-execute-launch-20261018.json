@@ -1,0 +1,49 @@
+{
+  "started_at": "2026-10-18T11:27:13.031531+09:00",
+  "status": "STARTED_NOT_COMPLETED",
+  "pid": 19012,
+  "request_sha256": "f438ce39fee1701c2f20353dc8edb59c1d561ad978b441194957a04e301e7b6f",
+  "maximum_new_batches": 1,
+  "command": [
+    "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "E:\\GeoAI–MLOps–SDSS\\scripts\\collect_targeted_bare.py",
+    "--request",
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\targeted170-live-request-20261018.json",
+    "--expected-request-sha256",
+    "f438ce39fee1701c2f20353dc8edb59c1d561ad978b441194957a04e301e7b6f",
+    "--execute"
+  ],
+  "source_pins": {
+    "scripts/collect_targeted_bare.py": "d81f1e246c4f0faab9b9b5a64236678e14726d7a3a93792504fbb76c6c993f50",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "backend/app/data/service.py": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787",
+    "backend/app/data/targeted_live_guards.py": "e42728f5a18b76439f5df88af8c0427fcff61f58fcfbac9d12eaf0e7bdaba0ec",
+    "backend/app/data/targeted_inventory.py": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+    "backend/app/data/targeted_bare_plan.py": "4042ca3302581e08c59dee8109ed6bc1d8b21f2fa5decf463747b2cb4b0e845a",
+    "backend/app/data/targeted_scene_claims.py": "e9b07b7363e7aa053e1ad55bc15b0a3fb6680ac611a1c86604edc09abadcdaf7",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d"
+  },
+  "pending_before": {
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+    },
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+    }
+  },
+  "source_rows_before": 1568,
+  "old_rows_canonical_sha256": "4a1b8ad3c69ca3d936fa486f1f340f96941400bfa1579da63bed28a35d07711f",
+  "source_before_sha256": "c92a7f73bcbfc461d94750afa3985626f889e729a86e1d72f703e1030e8827ec",
+  "ledger_before_sha256": "b9aed796ed11e7c00e62c6ee3078d2d043b72156da0c2b32e254c42bdf727ebb",
+  "charged_before": 2172319209,
+  "remaining_before": 2122648087,
+  "new_budget_added": false,
+  "training_started": false,
+  "prior_local_validation": "1152 asset inventory; LOCAL_DISPATCH_INPUTS_VERIFIED, no HTTP"
+}

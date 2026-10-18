@@ -1,0 +1,66 @@
+TAP version 13
+# (node:31336) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: live totals and targets are derived from response, not production hardcoded numbers
+ok 1 - live totals and targets are derived from response, not production hardcoded numbers
+  ---
+  duration_ms: 86.3228
+  type: 'test'
+  ...
+# Subtest: missing data is unknown and contaminated sums, typed counters and false flags are rejected
+ok 2 - missing data is unknown and contaminated sums, typed counters and false flags are rejected
+  ---
+  duration_ms: 7.5178
+  type: 'test'
+  ...
+# Subtest: detached rows and bare metrics keep zero, null and original declaration boundaries
+ok 3 - detached rows and bare metrics keep zero, null and original declaration boundaries
+  ---
+  duration_ms: 2.1662
+  type: 'test'
+  ...
+# Subtest: pinned candidate is separate from current raw cohort, unavailable never becomes zero and pins/types are checked
+ok 4 - pinned candidate is separate from current raw cohort, unavailable never becomes zero and pins/types are checked
+  ---
+  duration_ms: 6.9403
+  type: 'test'
+  ...
+# Subtest: synchronous duplicate guard, route/back/unmount/refresh generations discard old success/error/finally
+ok 5 - synchronous duplicate guard, route/back/unmount/refresh generations discard old success/error/finally
+  ---
+  duration_ms: 6.29
+  type: 'test'
+  ...
+# Subtest: GET existing real endpoint preserves token/cache and parses dynamic response with no writes
+ok 6 - GET existing real endpoint preserves token/cache and parses dynamic response with no writes
+  ---
+  duration_ms: 104.4624
+  type: 'test'
+  ...
+# Subtest: bounded reader cancels declared/cumulative overflow and stale response without rendering
+ok 7 - bounded reader cancels declared/cumulative overflow and stale response without rendering
+  ---
+  duration_ms: 1.9336
+  type: 'test'
+  ...
+# Subtest: collection view reuses parent GET while model review has standalone loader; no hardcoded inventory
+ok 8 - collection view reuses parent GET while model review has standalone loader; no hardcoded inventory
+  ---
+  duration_ms: 5.2294
+  type: 'test'
+  ...
+# Subtest: patch validity/province criteria and split class dominance have separate scopes
+ok 9 - patch validity/province criteria and split class dominance have separate scopes
+  ---
+  duration_ms: 3.6795
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1291.5933

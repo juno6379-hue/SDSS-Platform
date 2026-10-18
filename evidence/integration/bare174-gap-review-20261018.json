@@ -1,0 +1,468 @@
+{
+  "schema_version": 1,
+  "kind": "SIX_PROVINCE_TARGETED_EXECUTION_GAP_REVIEW",
+  "status": "PLANNED_NOT_IMPLEMENTED",
+  "at": "2026-10-18T02:42:55.620712+00:00",
+  "scope": "READ_ONLY_PINNED_CODE_AND_EXISTING_PROPOSAL_NOT_RUNTIME_PREFLIGHT",
+  "source_snapshots": {
+    "backend/app/data/targeted_bare_plan.py": {
+      "sha256": "4042ca3302581e08c59dee8109ed6bc1d8b21f2fa5decf463747b2cb4b0e845a",
+      "bytes": 14305,
+      "matched_lines": [
+        {
+          "line": 88,
+          "text": "            _need(target['province']=='banten' and target['fixed_split']=='val' and type(year) is int and 2020<=year<=2025,'TARGET_INVALID')"
+        },
+        {
+          "line": 107,
+          "text": "        features=[f for f in boundary['features'] if f['properties']['province_id']=='banten']"
+        },
+        {
+          "line": 111,
+          "text": "        for row in aggregate.get('scenes',[])+aggregate.get('historical_noneligible_patches',[]):"
+        },
+        {
+          "line": 147,
+          "text": "                        _need(ds.count==1 and ds.crs.to_epsg()==32748 and ds.dtypes[0] in ('uint8','uint16','int16','int32') and ds.transform.a==10 and ds.transform.e==-10,'LABEL_GRID_INVALID')"
+        },
+        {
+          "line": 172,
+          "text": "            config=copy.deepcopy(base);aoi=copy.deepcopy(next(a for a in base['aois'] if a['id']=='banten'))"
+        },
+        {
+          "line": 173,
+          "text": "            aoi.update(id='bare-'+target['target_id'],province_id='banten',bbox=bbox)"
+        },
+        {
+          "line": 179,
+          "text": "            jobs.append({'province':'banten','year':year,'split':'val','nominal_patches':1,'geometry':copy.deepcopy(geometry),"
+        },
+        {
+          "line": 183,
+          "text": "            job['key']=f\"target256-bare-banten-{job['year']}-{job['target_id']}-{digest[:12]}\""
+        }
+      ],
+      "stable_at_end": true
+    },
+    "backend/app/data/targeted_live_guards.py": {
+      "sha256": "e42728f5a18b76439f5df88af8c0427fcff61f58fcfbac9d12eaf0e7bdaba0ec",
+      "bytes": 5907,
+      "matched_lines": [
+        {
+          "line": 67,
+          "text": "              int(year)==self.job['year']==observed.year and self.job['split']=='val' and"
+        },
+        {
+          "line": 68,
+          "text": "              self.job['province']=='banten', 'TARGET_SCENE_YEAR_OR_SPLIT_INVALID')"
+        },
+        {
+          "line": 75,
+          "text": "        _need(result['claim'] is not None and not result['replayed'], 'TARGET_SCENE_SPLIT_OR_CLAIM_CONFLICT')"
+        },
+        {
+          "line": 98,
+          "text": "            _need(all(abs(a-b)<=10.000001 for a,b in zip(bounds,planned)), 'TARGET_B02_ALIGNMENT_SHORTFALL')"
+        },
+        {
+          "line": 104,
+          "text": "    rows=manifest['scenes']+manifest.get('historical_noneligible_patches',[])"
+        }
+      ],
+      "stable_at_end": true
+    },
+    "backend/app/data/targeted_inventory.py": {
+      "sha256": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+      "bytes": 10520,
+      "matched_lines": [
+        {
+          "line": 90,
+          "text": "        history = manifest.get('historical_noneligible_patches', [])"
+        },
+        {
+          "line": 112,
+          "text": "            _need(bool(b02), 'PENDING_IMAGE_FOOTPRINT_MISSING')"
+        }
+      ],
+      "stable_at_end": true
+    },
+    "backend/app/data/targeted_execution.py": {
+      "sha256": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d",
+      "bytes": 6435,
+      "matched_lines": [],
+      "stable_at_end": true
+    },
+    "backend/app/data/targeted_scene_claims.py": {
+      "sha256": "e9b07b7363e7aa053e1ad55bc15b0a3fb6680ac611a1c86604edc09abadcdaf7",
+      "bytes": 5889,
+      "matched_lines": [
+        {
+          "line": 27,
+          "text": "    def __init__(self, seed, max_claims=256):"
+        }
+      ],
+      "stable_at_end": true
+    },
+    "scripts/collect_targeted_bare.py": {
+      "sha256": "663aff6fd88651622fe33c66d89a509114b665dcbb6367ca3e631bcb018e637d",
+      "bytes": 20795,
+      "matched_lines": [
+        {
+          "line": 15,
+          "text": "from app.data.parallel import run_two_workers"
+        },
+        {
+          "line": 68,
+          "text": "    for row in aggregate['scenes']+aggregate.get('historical_noneligible_patches',[]):row_reference(row)"
+        },
+        {
+          "line": 102,
+          "text": "    _need(len(directories)<=3000,'TARGETED_PHYSICAL_PATCH_LIMIT')"
+        },
+        {
+          "line": 132,
+          "text": "    _need(state['rate_limit_active'] is False and state['additional_maximum_bytes']==4*1024**3,"
+        },
+        {
+          "line": 145,
+          "text": "              'TARGETED_MAXIMUM_NEW_PATCHES_INVALID')"
+        },
+        {
+          "line": 147,
+          "text": "    _need(physical['physical_patch_count']+len(jobs)<=3000,'TARGETED_PHYSICAL_PATCH_LIMIT')"
+        },
+        {
+          "line": 186,
+          "text": "        service.configure_request_spacing(2);service.configure_request_circuit(event)"
+        },
+        {
+          "line": 193,
+          "text": "              'TARGETED_PHYSICAL_PATCH_LIMIT')"
+        },
+        {
+          "line": 202,
+          "text": "                accepted=ledger.reserve(job['key'],COG_BATCH+METADATA_BATCH,job['config_sha256'])"
+        },
+        {
+          "line": 238,
+          "text": "                    _need(maximum<=1,'TARGETED_MAXIMUM_NEW_PATCHES_EXCEEDED')"
+        },
+        {
+          "line": 240,
+          "text": "                    _need(len(patches)<=1,'TARGETED_MAXIMUM_NEW_PATCHES_EXCEEDED')"
+        },
+        {
+          "line": 270,
+          "text": "            ledger.settle(job['key'],result['charged_bytes'],result.get('report_path'),circuit)"
+        },
+        {
+          "line": 287,
+          "text": "        execution=run_two_workers(checked['jobs'],reserve,work,finalize,event,request['maximum_batches'])"
+        }
+      ],
+      "stable_at_end": true
+    },
+    "backend/app/data/parallel.py": {
+      "sha256": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+      "bytes": 4364,
+      "matched_lines": [
+        {
+          "line": 10,
+          "text": "def run_two_workers(jobs, reserve, work, finalize, stop_event=None, max_new_batches=0):"
+        }
+      ],
+      "stable_at_end": true
+    },
+    "backend/app/data/budget.py": {
+      "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+      "bytes": 5492,
+      "matched_lines": [
+        {
+          "line": 20,
+          "text": "    def __init__(self, path, historical_paths, additional_budget=4 * 1024 ** 3, initial_metadata_charge=0):"
+        },
+        {
+          "line": 59,
+          "text": "                \"rate_limit_active\": False}"
+        },
+        {
+          "line": 74,
+          "text": "            if state[\"rate_limit_active\"]:"
+        },
+        {
+          "line": 104,
+          "text": "                state.update(rate_limit_active=True, last_rate_limit=rate_limit)"
+        }
+      ],
+      "stable_at_end": true
+    },
+    "backend/app/data/service.py": {
+      "sha256": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787",
+      "bytes": 36547,
+      "matched_lines": [
+        {
+          "line": 48,
+          "text": "_REQUEST_CIRCUIT_REASON = None"
+        },
+        {
+          "line": 149,
+          "text": "            global _REQUEST_CIRCUIT_REASON"
+        },
+        {
+          "line": 151,
+          "text": "                if _REQUEST_CIRCUIT_REASON is None:"
+        },
+        {
+          "line": 153,
+          "text": "                    _REQUEST_CIRCUIT_REASON = {\"reason\": \"provider_http_429\", \"http_status\": 429,"
+        },
+        {
+          "line": 161,
+          "text": "    global _REQUEST_CIRCUIT, _REQUEST_CIRCUIT_REASON"
+        },
+        {
+          "line": 163,
+          "text": "        _REQUEST_CIRCUIT, _REQUEST_CIRCUIT_REASON = event, None"
+        },
+        {
+          "line": 168,
+          "text": "        return dict(_REQUEST_CIRCUIT_REASON) if _REQUEST_CIRCUIT_REASON else None"
+        }
+      ],
+      "stable_at_end": true
+    },
+    "scripts/collect_samples.py": {
+      "sha256": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+      "bytes": 47009,
+      "matched_lines": [
+        {
+          "line": 306,
+          "text": "                        window_guard=lambda geometry: collection_guard.on_window(url, geometry))"
+        },
+        {
+          "line": 370,
+          "text": "                    collection_guard.on_scene(item, aoi, year)"
+        }
+      ],
+      "stable_at_end": true
+    },
+    "scripts/collect_training_grid.py": {
+      "sha256": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+      "bytes": 25287,
+      "matched_lines": [
+        {
+          "line": 25,
+          "text": "COG_BATCH = 64 * 1024 ** 2"
+        },
+        {
+          "line": 26,
+          "text": "METADATA_BATCH = 1024 ** 2"
+        },
+        {
+          "line": 293,
+          "text": "        service.configure_request_spacing(2)"
+        },
+        {
+          "line": 308,
+          "text": "                reserved = ledger.reserve(key, COG_BATCH + METADATA_BATCH, digest)"
+        },
+        {
+          "line": 349,
+          "text": "                budget = ledger.settle(key, charged, str(directory / \"annual-window-report.json\"), circuit)"
+        }
+      ],
+      "stable_at_end": true
+    }
+  },
+  "proposal_ref": {
+    "path": "evidence\\integration\\bare173-verified-20261018\\proposal.json",
+    "sha256": "63368b398ff02382db10213753fb937a7653b925b912c7c5946a857b2152a0ee"
+  },
+  "first_ranked_candidate_per_province": {
+    "southeast_sulawesi": {
+      "proposal_window_index": 0,
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03\\southeast_sulawesi-g03-2021\\raw-esri_io.tif",
+      "source_crop_sha256": "a10218846e13f5a03c97987e24a6e5979c59591f28ccf47508ba51e7c63528f3",
+      "local_window_xy": [
+        1536,
+        1792
+      ],
+      "declared_weak_label_bare_pixels": 1112,
+      "cell_deficit_to_28": 1,
+      "label_crs": "EPSG:32751",
+      "current_157_province_split_gate_passes_statically": false,
+      "current_157_epsg_gate_passes_statically": false,
+      "fully_validated_plan": false,
+      "execution_supported": false
+    },
+    "east_java": {
+      "proposal_window_index": 3,
+      "province": "east_java",
+      "year": 2025,
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g03\\east_java-g03-2025\\raw-esri_io.tif",
+      "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+      "local_window_xy": [
+        1280,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 620,
+      "cell_deficit_to_28": 1,
+      "label_crs": "EPSG:32749",
+      "current_157_province_split_gate_passes_statically": false,
+      "current_157_epsg_gate_passes_statically": false,
+      "fully_validated_plan": false,
+      "execution_supported": false
+    },
+    "gorontalo": {
+      "proposal_window_index": 11,
+      "province": "gorontalo",
+      "year": 2024,
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-esri_io.tif",
+      "source_crop_sha256": "a6081b2295b7b21636d4f8f6fb48b4d1bc24a6e2136546fb5ce763905cdbbc7d",
+      "local_window_xy": [
+        512,
+        1280
+      ],
+      "declared_weak_label_bare_pixels": 271,
+      "cell_deficit_to_28": 3,
+      "label_crs": "EPSG:32651",
+      "current_157_province_split_gate_passes_statically": false,
+      "current_157_epsg_gate_passes_statically": false,
+      "fully_validated_plan": false,
+      "execution_supported": false
+    },
+    "banten": {
+      "proposal_window_index": 13,
+      "province": "banten",
+      "year": 2020,
+      "fixed_split": "val",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-esri_io.tif",
+      "source_crop_sha256": "3f9ccf42be17c17e4f726da083ce3a527778f9f5a54caf927b2c63ccc40d31f4",
+      "local_window_xy": [
+        0,
+        256
+      ],
+      "declared_weak_label_bare_pixels": 3910,
+      "cell_deficit_to_28": 0,
+      "label_crs": "EPSG:32748",
+      "current_157_province_split_gate_passes_statically": true,
+      "current_157_epsg_gate_passes_statically": true,
+      "fully_validated_plan": false,
+      "execution_supported": false
+    },
+    "south_sulawesi": {
+      "proposal_window_index": 21,
+      "province": "south_sulawesi",
+      "year": 2022,
+      "fixed_split": "train",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g02\\south_sulawesi-g02-2022\\raw-esri_io.tif",
+      "source_crop_sha256": "4785440d63d2f262d0a883b8e460d393f523e20279fc2060cd916aa687cfe322",
+      "local_window_xy": [
+        1792,
+        0
+      ],
+      "declared_weak_label_bare_pixels": 961,
+      "cell_deficit_to_28": 0,
+      "label_crs": "EPSG:32750",
+      "current_157_province_split_gate_passes_statically": false,
+      "current_157_epsg_gate_passes_statically": false,
+      "fully_validated_plan": false,
+      "execution_supported": false
+    },
+    "west_java": {
+      "proposal_window_index": 24,
+      "province": "west_java",
+      "year": 2024,
+      "fixed_split": "test",
+      "source_crop_path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-west_java-2024-g00\\west_java-g00-2024\\raw-esri_io.tif",
+      "source_crop_sha256": "7f913ee5a035c64c4759b71e5f1a5b0473b96dddd10562a0f1f1e2b269b05f8e",
+      "local_window_xy": [
+        256,
+        768
+      ],
+      "declared_weak_label_bare_pixels": 802,
+      "cell_deficit_to_28": 0,
+      "label_crs": "EPSG:32748",
+      "current_157_province_split_gate_passes_statically": false,
+      "current_157_epsg_gate_passes_statically": true,
+      "fully_validated_plan": false,
+      "execution_supported": false
+    }
+  },
+  "fixed_province_splits": {
+    "south_sulawesi": "train",
+    "gorontalo": "train",
+    "southeast_sulawesi": "train",
+    "east_java": "train",
+    "banten": "val",
+    "west_java": "test"
+  },
+  "required_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "historical_1152_support_assets": {
+    "meaning": "Past167/170 local dry-run observed support asset count, not fixed policy or current inventory proof",
+    "reference": "docs/implementation/167_targeted_inventory.md:19"
+  },
+  "proposed_changes": [
+    "Centralize exact six-province/fixed-split validator; no caller-controlled reassignment",
+    "Select target province boundary and base AOI per target; retain schema and immutable refs",
+    "Replace Banten-only EPSG literal with projected metric10m north-up native label grid bound to pinned source lineage and target geometry",
+    "Derive job province/split/key from validated target; bind live selected scene year/province/fixed split/native AOI",
+    "Reuse167 full support/pending/B02 inventory and current source+ledger pin checks for each target",
+    "Preserve physical3000 across historical/enrolled/unenrolled/loose partial patches and one-patch-per-target",
+    "Retain166 exclusive paths162 atomic sceneclaims, central accounting, first429shared stop and exact failure progress",
+    "Implement only after170F2/F3 owner freezes and independent regression passes"
+  ],
+  "required_test_groups": {
+    "local_plan": [
+      "six provinces all2020-25 fixed split accepted for valid native fixtures",
+      "unknown province or wrong fixedsplit refused",
+      "wrongyear labelURL/SHA/pixels/window/boundary refused",
+      "missingduplicate base AOI or province feature refused",
+      "Banten legacy fixture unchanged",
+      "projected metre10m supported grid only; arbitrary geographic/feet/rotated/wronggrid refused"
+    ],
+    "live_guard": [
+      "all six jobs bind selected scene timestamp year, province, fixedsplit and AOI",
+      "crosssplit history conflict/active scene race blocked; no release after failure",
+      "B02 exact selected URL,256native10m,CRS/corners/alignment verified",
+      "candidate SCL and all nonlabel support overlap blocked; exact selected yearmatchedlabel reuse only"
+    ],
+    "inventory_accounting": [
+      "history noneligible and out-of-aggregate supported directories cannot be omitted",
+      "everypendingreservation config+actualB02 required",
+      "stale source ledger aliases changed support files fail before reserve/HTTP",
+      "2999physical+1unenrolled+1target rejected; two targets upperbound retained",
+      "second reserve/submit/finalize failure drains existingworker once and reports unknown transfer accurately",
+      "429 stops queued/new requests and central settlements preserve prior reservations"
+    ],
+    "integration": [
+      "sixprovince mockedSTAC/no network then targeted source-only stagedQA",
+      "read-only preflight carries executionfalse; actualopt-in remainsseparate",
+      "afterinternalcontract tests start atmostone explicitlypinned allowedtarget; no automatic6provincebatch"
+    ]
+  },
+  "product_source_written": false,
+  "http_requests": 0,
+  "ledger_written": false,
+  "model_written": false,
+  "execution_supported": false,
+  "training_ready": false,
+  "limitations": [
+    "170 is concurrently owned WIP: line references apply only to captured source SHA; rebase review before implementation",
+    "Static Banten gate compatibility is not an approved157 plan or a clean167/170 inventory",
+    "CRS examples in173 are observations; do not hardcode one UTM zone or hemisphere per province",
+    "Current source+ledger must be repinned after collection;173snapshot does not authorize later state"
+  ]
+}

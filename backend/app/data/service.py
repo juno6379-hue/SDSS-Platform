@@ -348,11 +348,13 @@ class HTTPRangeReader(io.RawIOBase):
         return content
 
 
-def read_cog_window(url, bbox, side=256, max_transfer_bytes=32 * 1024 * 1024):
+def read_cog_window(url, bbox, side=256, max_transfer_bytes=32 * 1024 * 1024, window_guard=None):
     """WGS84 중심점 주변 실제 원본 해상도 창. GDAL 네트워크 대신 검증된 urllib 사용."""
     holder = {"stage": "validation_and_dependencies"}
     try:
-        return _read_cog_window_impl(url, bbox, side, max_transfer_bytes, holder)
+        if window_guard is None:
+            return _read_cog_window_impl(url, bbox, side, max_transfer_bytes, holder)
+        return _read_cog_window_impl(url, bbox, side, max_transfer_bytes, holder, window_guard=window_guard)
     except Exception as exc:
         reader = holder.get("reader")
         known = reader.measurement_known if reader is not None else True
@@ -361,7 +363,7 @@ def read_cog_window(url, bbox, side=256, max_transfer_bytes=32 * 1024 * 1024):
         raise AssetTransferError(holder["stage"], count, known) from cause
 
 
-def _read_cog_window_impl(url, bbox, side, max_transfer_bytes, holder):
+def _read_cog_window_impl(url, bbox, side, max_transfer_bytes, holder, window_guard=None):
     import rasterio
     from rasterio.warp import transform
     from rasterio.windows import Window
@@ -387,6 +389,19 @@ def _read_cog_window_impl(url, bbox, side, max_transfer_bytes, holder):
                 raise ValueError("AOI 중심점이 COG 범위 밖입니다")
             left, top = max(0, col - side // 2), max(0, row - side // 2)
             window = Window(left, top, min(side, src.width - left), min(side, src.height - top))
+            if window_guard is not None:
+                # Header ranges may have transferred; pixel data have not been
+                # requested by src.read. Do not attach signed URL to this record.
+                holder["stage"] = "window_geometry_guard"
+                window_guard({"schema_version": 1, "crs": src.crs.to_string() if src.crs else None,
+                    "source_bounds": list(src.bounds), "source_transform": list(src.transform)[:6],
+                    "source_width": src.width, "source_height": src.height,
+                    "requested_bbox_wgs84": list(bbox), "requested_side": side,
+                    "window": {"col_off": window.col_off, "row_off": window.row_off,
+                               "width": window.width, "height": window.height},
+                    "window_transform": list(src.window_transform(window))[:6],
+                    "window_width": int(window.width), "window_height": int(window.height)})
+                holder["stage"] = "range_raster_read"
             pixels = src.read(window=window)
             profile = src.profile.copy()
             profile.update(width=pixels.shape[2], height=pixels.shape[1], transform=src.window_transform(window), driver="GTiff")

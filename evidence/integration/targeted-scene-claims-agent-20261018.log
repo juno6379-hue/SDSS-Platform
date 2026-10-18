@@ -1,0 +1,15 @@
+test_concurrent_cap_and_idempotent_replay_when_full (test_targeted_scene_claims.TargetedSceneClaimsTests.test_concurrent_cap_and_idempotent_replay_when_full) ... ok
+test_copy_failure_from_concurrent_caller_mutation_is_fixed_and_recoverable (test_targeted_scene_claims.TargetedSceneClaimsTests.test_copy_failure_from_concurrent_caller_mutation_is_fixed_and_recoverable) ... ok
+test_existing_cross_split_veto_and_multi_split_quarantine (test_targeted_scene_claims.TargetedSceneClaimsTests.test_existing_cross_split_veto_and_multi_split_quarantine) ... ok
+test_invalid_requests_do_not_consume_capacity_or_leak_inputs (test_targeted_scene_claims.TargetedSceneClaimsTests.test_invalid_requests_do_not_consume_capacity_or_leak_inputs) ... ok
+test_invalid_seeds_and_caps_fail_closed_without_partial_state (test_targeted_scene_claims.TargetedSceneClaimsTests.test_invalid_seeds_and_caps_fail_closed_without_partial_state) ... ok
+test_no_io_and_all_unverified_guards_remain_false (test_targeted_scene_claims.TargetedSceneClaimsTests.test_no_io_and_all_unverified_guards_remain_false) ... ok
+test_owner_replay_only_for_same_scene_and_split (test_targeted_scene_claims.TargetedSceneClaimsTests.test_owner_replay_only_for_same_scene_and_split) ... ok
+test_return_value_pollution_and_input_mutation_do_not_change_registry (test_targeted_scene_claims.TargetedSceneClaimsTests.test_return_value_pollution_and_input_mutation_do_not_change_registry) ... ok
+test_same_unseen_scene_cross_split_race_has_exactly_one_claim (test_targeted_scene_claims.TargetedSceneClaimsTests.test_same_unseen_scene_cross_split_race_has_exactly_one_claim) ... ok
+test_separate_coordinators_are_explicitly_not_shared (test_targeted_scene_claims.TargetedSceneClaimsTests.test_separate_coordinators_are_explicitly_not_shared) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.132s
+
+OK

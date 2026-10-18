@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "scope": "165 source/tests/docs freeze",
+  "observed_git_head": "8cf7b9421ea3d5916058a9e4622dc19c9075e9f2",
+  "files": {
+    "scripts/audit_priority_increment165.py": "fe0f3289f9cb4901031ae46b2bcaa9204411b446b5cd4530df85d57d4ac9a434",
+    "tests/test_audit_priority_increment165.py": "4b37914d3789b8ee858fc1d2ced805c487af5b51a3c5022e5172363a806ff080",
+    "docs/implementation/165_priority_increment_quality.md": "1382e07f8c36a1d64d881f098f6b60cfbcb452fe077c369a64ae09534d80e8e6"
+  },
+  "tests": 10,
+  "passed": 10,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 17.607,
+  "test_names": [
+    "actual_native_two_patches_and_all_files_unchanged",
+    "pending_and_missing_terminal_are_incomplete_no_native",
+    "old_prefix_pending_and_config_pins_fail_closed",
+    "sha_grid_ratio_and_histogram_reject_including_bool",
+    "nonfinite_pixels_and_nonbinary_support_do_not_pass",
+    "settled_zero_patch_and_scene_failure_not_success",
+    "worker_error_and_scene_error_are_separate",
+    "selected_file_recheck_detects_change_and_paths_never_fetch",
+    "strict_json_and_bound",
+    "stored_and_effective_config_pin_scopes_remain_distinct"
+  ],
+  "actual_scope": "Fixed completed round6: 24 patches/72 native rasters +8 config/terminal files,23 eligible,bare0",
+  "mock_scope": "Only temporary fixture mutations and injected after-read changes; actual round6 is not mocked",
+  "operating_writes": 0,
+  "limitations": [
+    "Snapshot/legacy native declarations are not scientific or execution approval",
+    "Per-patch class dominance observation is not split class-balance result"
+  ],
+  "source_sha256": "fe0f3289f9cb4901031ae46b2bcaa9204411b446b5cd4530df85d57d4ac9a434",
+  "test_sha256": "4b37914d3789b8ee858fc1d2ced805c487af5b51a3c5022e5172363a806ff080"
+}

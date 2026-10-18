@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T02:35:24.835551+00:00",
+  "scope": "READONLY_ACTUAL_TARGET170_INDEPENDENT_NATIVE_AND_ACCOUNTING",
+  "status": "ACTUAL_TARGET_NATIVE_VERIFIED_UNAPPROVED",
+  "operating_writes": 0,
+  "collection_executed": false,
+  "scientific_accuracy_validated": false,
+  "learning_ready": false,
+  "issue": null,
+  "physical_increment": 1,
+  "eligible_increment": 1,
+  "native_patch": {
+    "patch_id": "target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc-r0-c0",
+    "quality_status": "quality_eligible",
+    "valid_pixels": 64908,
+    "province_inside_pixels": 65536,
+    "class_histogram": {
+      "1": 4046,
+      "2": 28,
+      "5": 25381,
+      "7": 28040,
+      "8": 2199,
+      "11": 5214
+    },
+    "eligible_bare_pixels": 2199,
+    "image_band_descriptions": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "B12"
+    ],
+    "maximum_class_fraction": 0.4319960559561225,
+    "maximum_class_fraction_over_90_percent": false
+  },
+  "valid_fraction": 0.99041748046875,
+  "inside_fraction": 1.0,
+  "bare_pixels": 2199,
+  "minimum_bare_pixels": 256,
+  "bare_threshold_met": true,
+  "source_crops": [
+    {
+      "name": "raw-B02.tif",
+      "sha256": "aa2ac533c8aba667e63c86e769d3fbaad44d1c1c267c6a9ffb94079854f11fd5",
+      "shape": [
+        256,
+        256,
+        1
+      ],
+      "crs": "EPSG:32748",
+      "bounds": [
+        683680.0,
+        9323530.0,
+        686240.0,
+        9326090.0
+      ]
+    },
+    {
+      "name": "raw-B03.tif",
+      "sha256": "14d95b34e466a67d805349265f068b114bf47ee61a46c1aaeb77f5a9570544c1",
+      "shape": [
+        256,
+        256,
+        1
+      ],
+      "crs": "EPSG:32748",
+      "bounds": [
+        683680.0,
+        9323530.0,
+        686240.0,
+        9326090.0
+      ]
+    },
+    {
+      "name": "raw-B04.tif",
+      "sha256": "0074d8134f1f96c59c315c012be0c3360851e3bd083004d326ec4db7df2d597f",
+      "shape": [
+        256,
+        256,
+        1
+      ],
+      "crs": "EPSG:32748",
+      "bounds": [
+        683680.0,
+        9323530.0,
+        686240.0,
+        9326090.0
+      ]
+    },
+    {
+      "name": "raw-B08.tif",
+      "sha256": "9eb9c2cc122ca119ce6f0d3de7eef53b974f55d507b2b8c8994026bba16f2c42",
+      "shape": [
+        256,
+        256,
+        1
+      ],
+      "crs": "EPSG:32748",
+      "bounds": [
+        683680.0,
+        9323530.0,
+        686240.0,
+        9326090.0
+      ]
+    },
+    {
+      "name": "raw-B11.tif",
+      "sha256": "fe6bd4312121cc5b334f0171a6e152c3851da6399956131554483b3f8abe4700",
+      "shape": [
+        130,
+        130,
+        1
+      ],
+      "crs": "EPSG:32748",
+      "bounds": [
+        683660.0,
+        9323520.0,
+        686260.0,
+        9326120.0
+      ]
+    },
+    {
+      "name": "raw-B12.tif",
+      "sha256": "072afc3565e1834fd5ce4055da3fc258c324ea1405afec1431827020b73ffced",
+      "shape": [
+        130,
+        130,
+        1
+      ],
+      "crs": "EPSG:32748",
+      "bounds": [
+        683660.0,
+        9323520.0,
+        686260.0,
+        9326120.0
+      ]
+    },
+    {
+      "name": "raw-SCL.tif",
+      "sha256": "13b4c5d8657436f320284b1323eb6520c7547034e61fe49a4f7fcc8942a849c1",
+      "shape": [
+        128,
+        128,
+        1
+      ],
+      "crs": "EPSG:32748",
+      "bounds": [
+        683680.0,
+        9323540.0,
+        686240.0,
+        9326100.0
+      ]
+    },
+    {
+      "name": "raw-esri_io.tif",
+      "sha256": "3f9ccf42be17c17e4f726da083ce3a527778f9f5a54caf927b2c63ccc40d31f4",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "crs": "EPSG:32748",
+      "bounds": [
+        682400.0,
+        9322250.0,
+        687520.0,
+        9327370.0
+      ]
+    }
+  ],
+  "persisted_b02_guard_witness": true,
+  "raw_B02_matches_output_band1": true,
+  "actual_B02_bounds": [
+    683680.0,
+    9323530.0,
+    686240.0,
+    9326090.0
+  ],
+  "selected_scene_id": "S2A_MSIL2A_20200628T025551_R032_T48MXU_20200824T094252",
+  "selected_scene_datetime": "2020-06-28T02:55:51.024000Z",
+  "new_scene_conflicting_prior_splits": [],
+  "old_rows_canonical_verified": 1568,
+  "old_raw_files_rehashed": 4704,
+  "old_pending_exact_rows_preserved": 2,
+  "pending_reserved_bytes": 136314880,
+  "selected_ledger_record": {
+    "status": "settled",
+    "reserved_bytes": 68157440,
+    "charged_bytes": 3827633,
+    "config_sha256": "9536de4b268f5abc2a2c53c9470996ea3b589a1f63193cdf870f8bfba50c3805",
+    "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\annual-window-report.json"
+  },
+  "charged_delta": 3827633,
+  "inventory_assets_verified": 1162,
+  "inventory_status_with_own_new_output": "BLOCKED",
+  "own_new_output_overlaps": [
+    "data/first-group-training-esri-v1/sources/target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc/bare-local-rank0-2020-2020/image.tif",
+    "data/first-group-training-esri-v1/sources/target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc/bare-local-rank0-2020-2020/qa-candidate-00-SCL.tif",
+    "data/first-group-training-esri-v1/sources/target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc/bare-local-rank0-2020-2020/quality-mask.tif",
+    "data/first-group-training-esri-v1/sources/target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc/bare-local-rank0-2020-2020/raw-B02.tif",
+    "data/first-group-training-esri-v1/sources/target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc/bare-local-rank0-2020-2020/raw-B03.tif",
+    "data/first-group-training-esri-v1/sources/target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc/bare-local-rank0-2020-2020/raw-B04.tif",
+    "data/first-group-training-esri-v1/sources/target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc/bare-local-rank0-2020-2020/raw-B08.tif",
+    "data/first-group-training-esri-v1/sources/target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc/bare-local-rank0-2020-2020/raw-B11.tif",
+    "data/first-group-training-esri-v1/sources/target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc/bare-local-rank0-2020-2020/raw-B12.tif",
+    "data/first-group-training-esri-v1/sources/target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc/bare-local-rank0-2020-2020/raw-SCL.tif"
+  ],
+  "prior_support_overlaps": [],
+  "physical_total": 1569,
+  "eligible_total": 1260,
+  "metadata_sha256_at_read": {
+    "aggregate": "6b74cfda9afd8a9ab238406bbf5007e50a2c1162989e2f8953a13a6289f7950c",
+    "ledger": "05bc88395f8a5d3672ba1d72dbdd9664b8a067630c36ea34547298c223b26d53"
+  },
+  "checked_file_sha256": {
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\targeted170-execute-launch-20261018.json": "7a1490023eb91237dd656b4fc9b681e8ea7e7266a7cda77b61cdfa65464df2c9",
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\targeted170-live-request-20261018.json": "b886d0ed6396fd4ef9720d6653182d877783490cd742de9fe7749c13ad1b844f",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json": "6b74cfda9afd8a9ab238406bbf5007e50a2c1162989e2f8953a13a6289f7950c",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json": "05bc88395f8a5d3672ba1d72dbdd9664b8a067630c36ea34547298c223b26d53",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\config.json": "9bbc77d71b46462f1c33f6ad293a69c81e0a5a05aeb56f6db17cb540530d4d93",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\worker-result.json": "8ff025b9ba5ab7dd1c6f59e25a0c6669c6d783d1c6ff1cebe68faa21925be925",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\window-state.json": "1ea570c78da9d7072977c6067d97f21c1731cd2e2d5f185d11134b7715993e37",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\annual-window-report.json": "8c26ee17e4f683165861ff965c10963153984edb60bc7696203f7ea0ef1e74ed",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\r00-c00\\image.tif": "e7e0c7b6320d39030d00a51d2f6666525af4a150b2bcc26f954a8b5d6784209e",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\r00-c00\\label.tif": "437a789be8d1f1ba961ace3e8a37b98d00af067909db97ef7f7ef5c2b20b77eb",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\r00-c00\\quality.tif": "8c5cde30f5bc3918e6aa0c4b007b016d5409c646a92b0e15936a5b5284f6b7d4",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B02.tif": "aa2ac533c8aba667e63c86e769d3fbaad44d1c1c267c6a9ffb94079854f11fd5",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B03.tif": "14d95b34e466a67d805349265f068b114bf47ee61a46c1aaeb77f5a9570544c1",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B04.tif": "0074d8134f1f96c59c315c012be0c3360851e3bd083004d326ec4db7df2d597f",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B08.tif": "9eb9c2cc122ca119ce6f0d3de7eef53b974f55d507b2b8c8994026bba16f2c42",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B11.tif": "fe6bd4312121cc5b334f0171a6e152c3851da6399956131554483b3f8abe4700",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B12.tif": "072afc3565e1834fd5ce4055da3fc258c324ea1405afec1431827020b73ffced",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-SCL.tif": "13b4c5d8657436f320284b1323eb6520c7547034e61fe49a4f7fcc8942a849c1",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-esri_io.tif": "3f9ccf42be17c17e4f726da083ce3a527778f9f5a54caf927b2c63ccc40d31f4",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\stac-item.json": "4ae6eb969e3ca09bd9d6f4d8182fc1d1ca3e592ccbfe140716db17c98bc11f88",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\calibration.json": "6f1324f9b5a81d09d1bc48295439f081dddc0332baf0fdc19f99bff92d0e764c",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\image.tif": "e7e0c7b6320d39030d00a51d2f6666525af4a150b2bcc26f954a8b5d6784209e",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\quality-mask.tif": "79428138d9e188c783bb2d43ae8e2cdc2a373f729f791a3cc6c944abcb658385"
+  },
+  "source_crop_count": 8,
+  "execution_lock_present": false,
+  "limitations": [
+    "Esri annual weak labels are not independent ground truth; original local2411 differs from actual valid aligned2199",
+    "Source DN with SWIR resampling is not reflectance calibration/20m information becoming10m",
+    "Overlap exclusion is strict internal source-window policy, not scientific spatial independence",
+    "Persisted guard witness is not independent HTTP syscall trace; no new network was performed by this audit",
+    "No training/approval/pointer change; whole-pool quality/class balance remains separate"
+  ],
+  "seconds": 442.67893419999746,
+  "launch_execution_source_sha256": {
+    "scripts/collect_targeted_bare.py": "d81f1e246c4f0faab9b9b5a64236678e14726d7a3a93792504fbb76c6c993f50",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "backend/app/data/service.py": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787",
+    "backend/app/data/targeted_live_guards.py": "e42728f5a18b76439f5df88af8c0427fcff61f58fcfbac9d12eaf0e7bdaba0ec",
+    "backend/app/data/targeted_inventory.py": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+    "backend/app/data/targeted_bare_plan.py": "4042ca3302581e08c59dee8109ed6bc1d8b21f2fa5decf463747b2cb4b0e845a",
+    "backend/app/data/targeted_scene_claims.py": "e9b07b7363e7aa053e1ad55bc15b0a3fb6680ac611a1c86604edc09abadcdaf7",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d"
+  },
+  "current_source_sha256_at_close": {
+    "scripts/collect_targeted_bare.py": "714feaf140303d24c1f635891fdfe531d7d921ba131d3960697c6aeeb0dbe9e3",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "backend/app/data/service.py": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787",
+    "backend/app/data/targeted_live_guards.py": "e42728f5a18b76439f5df88af8c0427fcff61f58fcfbac9d12eaf0e7bdaba0ec",
+    "backend/app/data/targeted_inventory.py": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+    "backend/app/data/targeted_bare_plan.py": "4042ca3302581e08c59dee8109ed6bc1d8b21f2fa5decf463747b2cb4b0e845a",
+    "backend/app/data/targeted_scene_claims.py": "e9b07b7363e7aa053e1ad55bc15b0a3fb6680ac611a1c86604edc09abadcdaf7",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d"
+  },
+  "current_vs_launch_source_differences": [
+    "scripts/collect_targeted_bare.py"
+  ],
+  "source_scope_note": "Native evidence belongs to first bounded actual execution with launch pins. Current collect_targeted_bare.py has separate F2/F3 WIP changes; this audit does not validate those fixes or attest loaded process bytes atomically.",
+  "independent_script_sha256": "d75aae7b7e8e4af2292852fed9af0dace356c40f58b0db63c47dca0363a86415",
+  "finished_at": "2026-10-18T02:43:58.782263+00:00",
+  "actual_scenario_checks_passed": true,
+  "mock_scope": "Final audit uses actual files only; initial request digest scope mistake was fixed only in evidence script",
+  "initial_failure_evidence": "targeted170-independent-initial-20261018.py/json/log",
+  "tests": 1,
+  "passed": 1,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "scenario_count_note": "One actual completed target audit, not an additional production unit-test suite",
+  "new_collection_after_snapshot": "Root started ordinary round8 after this audit completed; this report does not inspect round8"
+}

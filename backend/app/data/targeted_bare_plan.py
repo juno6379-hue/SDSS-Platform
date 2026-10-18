@@ -8,6 +8,7 @@ import re
 
 from ..ml.per_scene_normalization_files import _root,_relative,_snapshot,_Blocked
 from .quality_mask_bundle import _copy_json,_Invalid
+from .readiness_connectivity_witness import FIXED_PROVINCE_SPLITS
 
 TOP={'schema_version','kind','proposal_ref','current_manifest_ref','boundary_ref','policy','targets'}
 TARGET={'target_id','proposal_window_index','province','fixed_split','year','source_label_ref','source_lineage_ref',
@@ -85,7 +86,10 @@ def prepare_targeted_bare_jobs(project_root,plan,base_config):
             _need(_keys(target,TARGET),'TARGET_INVALID')
             identifier=target['target_id'];year=target['year'];index=target['proposal_window_index']
             _need(type(identifier) is str and re.fullmatch('[A-Za-z0-9_-]{1,40}',identifier) and identifier not in ids,'TARGET_INVALID');ids.add(identifier)
-            _need(target['province']=='banten' and target['fixed_split']=='val' and type(year) is int and 2020<=year<=2025,'TARGET_INVALID')
+            province=target['province']
+            _need(type(province) is str and province in FIXED_PROVINCE_SPLITS and
+                type(target['fixed_split']) is str and target['fixed_split']==FIXED_PROVINCE_SPLITS[province] and
+                type(year) is int and 2020<=year<=2025,'TARGET_INVALID')
             _need(type(index) is int and index>=0,'TARGET_INVALID')
             grid=target['source_label_grid'];native=target['target_footprint_native']
             _need(_keys(grid,{'crs','transform','width','height'}) and type(grid['crs']) is str and
@@ -104,8 +108,13 @@ def prepare_targeted_bare_jobs(project_root,plan,base_config):
         import rasterio
         from rasterio.io import MemoryFile
         from rasterio.windows import Window
-        features=[f for f in boundary['features'] if f['properties']['province_id']=='banten']
-        _need(len(features)==1,'BOUNDARY_INVALID');geometry=features[0]['geometry']
+        geometries={};aois={}
+        _need(type(base.get('aois')) is list,'BASE_AOI_INVALID')
+        for province in {t['province'] for t in plan['targets']}:
+            features=[f for f in boundary['features'] if f.get('properties',{}).get('province_id')==province]
+            _need(len(features)==1,'BOUNDARY_INVALID');geometries[province]=features[0]['geometry']
+            matches=[a for a in base['aois'] if type(a) is dict and a.get('id')==province]
+            _need(len(matches)==1,'BASE_AOI_INVALID');aois[province]=matches[0]
         # Both eligible and noneligible/history rows participate across ALL years.
         images={}
         for row in aggregate.get('scenes',[])+aggregate.get('historical_noneligible_patches',[]):
@@ -119,11 +128,12 @@ def prepare_targeted_bare_jobs(project_root,plan,base_config):
                 digest,raw=_snapshot(root,path,64*1024**2,'image',True)
                 _need(digest==pin,'EXISTING_IMAGE_PIN_MISMATCH')
                 _need(raw[:4] in (b'II*\x00',b'MM\x00*',b'II+\x00',b'MM\x00+'),'RASTER_GRID_INVALID')
-                with rasterio.Env(GDAL_PAM_ENABLED='NO',GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',GDAL_GEOREF_SOURCES='INTERNAL'):
+                with rasterio.Env(GDAL_PAM_ENABLED='NO',GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',GDAL_GEOREF_SOURCES='INTERNAL',PROJ_NETWORK='OFF'):
                     with MemoryFile(raw) as memory:
                         with memory.open(driver='GTiff') as ds:images[key]={'sha':pin,'crs':ds.crs,'polygon':_polygon(ds)}
         checked=[];polygons=[];jobs=[]
         for target in plan['targets']:
+            province=target['province'];geometry=geometries[province]
             index=target['proposal_window_index'];_need(index<len(proposal['ranked_windows']),'PROPOSAL_MISMATCH')
             proposed=proposal['ranked_windows'][index]
             for key in ('year','province','fixed_split'):_need(type(proposed[key]) is type(target[key]) and proposed[key]==target[key],'PROPOSAL_MISMATCH')
@@ -140,11 +150,13 @@ def prepare_targeted_bare_jobs(project_root,plan,base_config):
             window=target['source_label_window']
             _need(type(window) is list and len(window)==4 and all(type(v) is int for v in window) and window[0]>=0 and window[1]>=0 and window[2:]==[256,256],'WINDOW_INVALID')
             _need(window[:2]==proposed['local_window_xy'],'PROPOSAL_MISMATCH')
-            with rasterio.Env(GDAL_PAM_ENABLED='NO',GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',GDAL_GEOREF_SOURCES='INTERNAL'):
+            with rasterio.Env(GDAL_PAM_ENABLED='NO',GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',GDAL_GEOREF_SOURCES='INTERNAL',PROJ_NETWORK='OFF'):
                 with MemoryFile(raw) as memory:
                     with memory.open(driver='GTiff') as ds:
                         _polygon(ds)
-                        _need(ds.count==1 and ds.crs.to_epsg()==32748 and ds.dtypes[0] in ('uint8','uint16','int16','int32') and ds.transform.a==10 and ds.transform.e==-10,'LABEL_GRID_INVALID')
+                        _need(ds.driver=='GTiff' and not ds.subdatasets and not ds.gcps[0] and ds.rpcs is None and
+                            ds.count==1 and ds.crs.linear_units_factor[1]==1.0 and
+                            ds.dtypes[0] in ('uint8','uint16','int16','int32') and ds.transform.a==10 and ds.transform.e==-10,'LABEL_GRID_INVALID')
                         _need(window[0]+256<=ds.width and window[1]+256<=ds.height,'WINDOW_INVALID')
                         expected={'crs':ds.crs.to_string(),'transform':list(ds.transform)[:6],'width':ds.width,'height':ds.height}
                         _need(target['source_label_grid']==expected,'LABEL_GRID_MISMATCH')
@@ -169,18 +181,18 @@ def prepare_targeted_bare_jobs(project_root,plan,base_config):
                             _need(polygon.intersection(other).area==0,'TARGET_OVERLAP')
                         polygons.append((ds.crs,polygon))
             checked.append({'target_id':target['target_id'],'year':year,'local_bare_pixels':bare,'inside_fraction':inside,'source_label_sha256':target['source_label_ref']['sha256']})
-            config=copy.deepcopy(base);aoi=copy.deepcopy(next(a for a in base['aois'] if a['id']=='banten'))
-            aoi.update(id='bare-'+target['target_id'],province_id='banten',bbox=bbox)
+            config=copy.deepcopy(base);aoi=copy.deepcopy(aois[province])
+            aoi.update(id='bare-'+target['target_id'],province_id=province,bbox=bbox)
             config.update(aois=[aoi],years=[year],annual_reference='esri_io',window_size=256,
                 bands=['blue','green','red','nir','swir16','swir22'],max_total_bytes=64*1024**2,prior_download_budget_bytes=0,
                 candidate_limit=5,min_valid_fraction=.8,candidate_valid_fraction=.65,verify_product_metadata=True,
                 preserve_source_crops=True,transient_asset_retries=0,minimum_complete_scenes=1,search_limit=20,sort_by_cloud=True,
                 collection_policy_version='targeted-bare-256-PLAN-ONLY')
-            jobs.append({'province':'banten','year':year,'split':'val','nominal_patches':1,'geometry':copy.deepcopy(geometry),
+            jobs.append({'province':province,'year':year,'split':target['fixed_split'],'nominal_patches':1,'geometry':copy.deepcopy(geometry),
                 'config':config,'target_id':target['target_id'],'selection_context':{'priority_source_classes':[8]}})
         digest=hashlib.sha256(json.dumps(plan,sort_keys=True,ensure_ascii=False,allow_nan=False,separators=(',',':')).encode()).hexdigest()
         for job in jobs:
-            job['key']=f"target256-bare-banten-{job['year']}-{job['target_id']}-{digest[:12]}"
+            job['key']=f"target256-bare-{job['province']}-{job['year']}-{job['target_id']}-{digest[:12]}"
             job['config_sha256']=hashlib.sha256(json.dumps(job['config'],sort_keys=True).encode()).hexdigest()
         result.update(status='LOCAL_TARGETS_VERIFIED_EXECUTION_BLOCKED',issue='EXECUTION_GUARDS_NOT_CONNECTED',plan_sha256=digest,
             targets=checked,job_proposals=jobs,existing_images_observed=len(images),local_label_bytes_verified=True,listed_image_overlap_checked=True)

@@ -1,0 +1,86 @@
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": false}
+test_absent_b02_witness_never_materializes_or_yields_patches (test_collect_targeted_bare.CollectTargetedBareTests.test_absent_b02_witness_never_materializes_or_yields_patches) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_bare_minimum_applies_after_materialization_without_inventing_quality (test_collect_targeted_bare.CollectTargetedBareTests.test_bare_minimum_applies_after_materialization_without_inventing_quality) ... ok
+test_dry_run_does_not_construct_ledger_reserve_output_or_execute (test_collect_targeted_bare.CollectTargetedBareTests.test_dry_run_does_not_construct_ledger_reserve_output_or_execute) ... ok
+test_existing_exclusive_output_even_empty_is_not_reused_or_charged (test_collect_targeted_bare.CollectTargetedBareTests.test_existing_exclusive_output_even_empty_is_not_reused_or_charged) ... ok
+test_existing_global_lock_is_preserved_without_validation_or_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_existing_global_lock_is_preserved_without_validation_or_dispatch) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_f2_cleanup_failure_retains_execution_and_settlement_progress (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_cleanup_failure_retains_execution_and_settlement_progress) ... ok
+test_f2_cli_subprocess_failure_json_and_exit_code_are_phase_sensitive (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_cli_subprocess_failure_json_and_exit_code_are_phase_sensitive) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_f2_publication_failure_distinguishes_successful_financial_settlement (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_publication_failure_distinguishes_successful_financial_settlement) ... ok
+test_f2_reserve_exception_after_write_preserves_unknown_pending_status (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_reserve_exception_after_write_preserves_unknown_pending_status) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_f2_second_reserve_failure_reports_first_worker_settlement (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_second_reserve_failure_reports_first_worker_settlement) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_f2_settlement_failure_stays_pending_and_is_not_false_nonexecution (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_settlement_failure_stays_pending_and_is_not_false_nonexecution) ... ok
+test_f3_counts_unenrolled_receipt_and_unreported_partial_directory (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_counts_unenrolled_receipt_and_unreported_partial_directory) ... ok
+test_f3_duplicate_or_missing_references_and_missing_receipts_fail_closed (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_duplicate_or_missing_references_and_missing_receipts_fail_closed) ... ok
+test_f3_existing_unenrolled_alias_cannot_be_registered_twice (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_existing_unenrolled_alias_cannot_be_registered_twice) ... ok
+test_f3_oversized_source_is_blocked_before_physical_materialization (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_oversized_source_is_blocked_before_physical_materialization) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": false}
+ok
+test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job) ... ok
+test_ledger_pin_drift_rejected_without_refund (test_collect_targeted_bare.CollectTargetedBareTests.test_ledger_pin_drift_rejected_without_refund) ... ok
+test_manifest_pin_drift_rejected_read_only (test_collect_targeted_bare.CollectTargetedBareTests.test_manifest_pin_drift_rejected_read_only) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": true}
+test_provider_circuit_is_settled_globally_and_stops_future_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_provider_circuit_is_settled_globally_and_stops_future_dispatch) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 1, "eligible": 1, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows (test_collect_targeted_bare.CollectTargetedBareTests.test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows) ... ok
+test_second_output_collision_rolls_back_only_own_empty_first_output (test_collect_targeted_bare.CollectTargetedBareTests.test_second_output_collision_rolls_back_only_own_empty_first_output) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 68157440, "live_b02_checked": false, "rate_limited": false}
+test_unmeasured_worker_finally_failure_settles_full_reservation (test_collect_targeted_bare.CollectTargetedBareTests.test_unmeasured_worker_finally_failure_settles_full_reservation) ... ok
+test_wrong_request_sha_rejected_before_source_or_ledger_mutation (test_collect_targeted_bare.CollectTargetedBareTests.test_wrong_request_sha_rejected_before_source_or_ledger_mutation) ... ok
+test_actual_collector_string_year_selects_scene_and_b02_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_actual_collector_string_year_selects_scene_and_b02_witness) ... ok
+test_b02_alignment_over_one_pixel_rejected_and_exact_boundary_allowed (test_targeted_live_guards.TargetedLiveGuardTests.test_b02_alignment_over_one_pixel_rejected_and_exact_boundary_allowed) ... ok
+test_concurrent_overlapping_workers_claim_exactly_once (test_targeted_live_guards.TargetedLiveGuardTests.test_concurrent_overlapping_workers_claim_exactly_once) ... ok
+test_cross_split_seed_veto_and_quarantined_seed (test_targeted_live_guards.TargetedLiveGuardTests.test_cross_split_seed_veto_and_quarantined_seed) ... ok
+test_failed_b02_check_retains_scene_claim (test_targeted_live_guards.TargetedLiveGuardTests.test_failed_b02_check_retains_scene_claim) ... ok
+test_historical_support_overlap_denied_but_edge_touch_allowed (test_targeted_live_guards.TargetedLiveGuardTests.test_historical_support_overlap_denied_but_edge_touch_allowed) ... ok
+test_invalid_year_split_aoi_or_grid_fails_without_claim_or_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_invalid_year_split_aoi_or_grid_fails_without_claim_or_witness) ... ok
+test_preselection_scl_observed_but_unselected_imagery_denied (test_targeted_live_guards.TargetedLiveGuardTests.test_preselection_scl_observed_but_unselected_imagery_denied) ... ok
+test_registry_includes_historical_noneligible_split_rows (test_targeted_live_guards.TargetedLiveGuardTests.test_registry_includes_historical_noneligible_split_rows) ... ok
+test_same_owner_bands_overlap_allowed_other_owner_blocked (test_targeted_live_guards.TargetedLiveGuardTests.test_same_owner_bands_overlap_allowed_other_owner_blocked) ... ok
+test_scene_requery_same_owner_is_rejected_and_claim_kept (test_targeted_live_guards.TargetedLiveGuardTests.test_scene_requery_same_owner_is_rejected_and_claim_kept) ... ok
+test_year_matched_esri_reference_reusable_without_b02_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_year_matched_esri_reference_reusable_without_b02_witness) ... ok
+test_allowed_guard_observes_actual_header_window_without_signed_url (test_targeted_collection_hooks.TargetedCollectionHookTests.test_allowed_guard_observes_actual_header_window_without_signed_url) ... ok
+test_candidate_scl_can_precede_scene_veto_and_is_also_window_guarded (test_targeted_collection_hooks.TargetedCollectionHookTests.test_candidate_scl_can_precede_scene_veto_and_is_also_window_guarded) ... ok
+test_collector_window_hook_forwards_url_and_refunds_only_known_measurement (test_targeted_collection_hooks.TargetedCollectionHookTests.test_collector_window_hook_forwards_url_and_refunds_only_known_measurement) ... ok
+test_dry_run_invokes_neither_guard_nor_network (test_targeted_collection_hooks.TargetedCollectionHookTests.test_dry_run_invokes_neither_guard_nor_network) ... ok
+test_header_429_preserves_original_cause_and_does_not_call_guard (test_targeted_collection_hooks.TargetedCollectionHookTests.test_header_429_preserves_original_cause_and_does_not_call_guard) ... ok
+test_header_guard_rejection_precedes_pixel_read_and_keeps_measured_accounting (test_targeted_collection_hooks.TargetedCollectionHookTests.test_header_guard_rejection_precedes_pixel_read_and_keeps_measured_accounting) ... ok
+test_legacy_wrapper_retains_five_positional_impl_arguments (test_targeted_collection_hooks.TargetedCollectionHookTests.test_legacy_wrapper_retains_five_positional_impl_arguments) ... ok
+test_opt_in_wrapper_passes_callback_only_as_keyword (test_targeted_collection_hooks.TargetedCollectionHookTests.test_opt_in_wrapper_passes_callback_only_as_keyword) ... ok
+test_scene_veto_precedes_metadata_and_pixel_fetch (test_targeted_collection_hooks.TargetedCollectionHookTests.test_scene_veto_precedes_metadata_and_pixel_fetch) ... ok
+test_unknown_measurement_keeps_full_reservation_charged (test_targeted_collection_hooks.TargetedCollectionHookTests.test_unknown_measurement_keeps_full_reservation_charged) ... ok
+test_budget_valueerror_preserves_stop_reason_and_drains_existing_job (test_data_parallel.ParallelTests.test_budget_valueerror_preserves_stop_reason_and_drains_existing_job) ... ok
+test_finalize_error_after_settlement_never_retries_and_drains_other_job (test_data_parallel.ParallelTests.test_finalize_error_after_settlement_never_retries_and_drains_other_job) ... ok
+test_first_actual_429_blocks_later_http_without_claiming_new_server_response (test_data_parallel.ParallelTests.test_first_actual_429_blocks_later_http_without_claiming_new_server_response) ... ok
+test_first_coordinator_error_preserved_when_drain_finalize_also_fails (test_data_parallel.ParallelTests.test_first_coordinator_error_preserved_when_drain_finalize_also_fails) ... ok
+test_first_rate_limit_event_prevents_queued_third_batch (test_data_parallel.ParallelTests.test_first_rate_limit_event_prevents_queued_third_batch) ... ok
+test_iterator_failure_drains_existing_worker_before_reraising_original (test_data_parallel.ParallelTests.test_iterator_failure_drains_existing_worker_before_reraising_original) ... ok
+test_metadata_budgets_are_isolated_between_simultaneous_workers (test_data_parallel.ParallelTests.test_metadata_budgets_are_isolated_between_simultaneous_workers) ... ok
+test_reserve_failure_and_worker_429_still_finalize_once_without_third_submit (test_data_parallel.ParallelTests.test_reserve_failure_and_worker_429_still_finalize_once_without_third_submit) ... ok
+test_second_reserve_failure_drains_first_worker_and_settles_real_temp_ledger (test_data_parallel.ParallelTests.test_second_reserve_failure_drains_first_worker_and_settles_real_temp_ledger) ... ok
+test_submit_failure_finalizes_reserved_job_and_drains_prior_worker (test_data_parallel.ParallelTests.test_submit_failure_finalizes_reserved_job_and_drains_prior_worker) ... ok
+test_two_workers_overlap_but_ledger_callbacks_stay_in_parent (test_data_parallel.ParallelTests.test_two_workers_overlap_but_ledger_callbacks_stay_in_parent) ... ok
+test_unmeasured_failure_is_finalized_without_zero_refund_claim (test_data_parallel.ParallelTests.test_unmeasured_failure_is_finalized_without_zero_refund_claim) ... ok
+test_concurrent_allowances_cannot_exceed_total (test_data_annual_budget.AnnualBudgetTests.test_concurrent_allowances_cannot_exceed_total) ... ok
+test_exhausted_budget_and_wrong_province_are_rejected (test_data_annual_budget.AnnualBudgetTests.test_exhausted_budget_and_wrong_province_are_rejected) ... ok
+test_provider_429_is_propagated_to_coordinator (test_data_annual_budget.AnnualBudgetTests.test_provider_429_is_propagated_to_coordinator) ... ok
+test_resume_rejects_modified_budget_file (test_data_annual_budget.AnnualBudgetTests.test_resume_rejects_modified_budget_file) ... ok
+
+----------------------------------------------------------------------
+Ran 61 tests in 6.731s
+
+OK

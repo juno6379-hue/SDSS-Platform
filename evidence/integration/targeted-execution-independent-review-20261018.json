@@ -1,0 +1,63 @@
+{
+  "at_utc": "2026-10-18T02:17:55.023704+00:00",
+  "mode": "READ_ONLY_SOURCE_AND_STORED_EVIDENCE_REVIEW",
+  "source_sha256": {
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d",
+    "tests/test_targeted_execution.py": "2d2cfc0ef04f2fa9964f3b44b9bc9a629288b65fb5fabc33f2cd682d71b78f62",
+    "docs/implementation/166_targeted_execution.md": "9f2dff4543913461445218e1c023fe7095b3d9e4ded6ee70abf2a570ecbf8f5e",
+    "backend/app/data/targeted_inventory.py": "9da9ebc3dbf86bf05587235c718c05a839449fe9a08a55696f8c46b7f44c4dec",
+    "docs/implementation/167_targeted_inventory.md": "dacad5e4a1950c374b0b78efc3c7f2f7da04f7f706110d786ecd93748a373b36",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "backend/app/data/service.py": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787",
+    "tests/test_targeted_collection_hooks.py": "41ba4bcf831af98fa87b1f66cb6a6ffa3d89ac46e0c17f6c172e469b1bb29314"
+  },
+  "read_stable_at_end": true,
+  "completed_local_preparation": {
+    "test_method_count": 12,
+    "stored_agent_evidence": "targeted-execution-agent-final-20261018.log",
+    "stored_result": "12 executed,11 PASS,1 SKIP,3.496s; not independently re-executed in this review",
+    "skip": "Actual symlink creation unavailable on this Windows session; mock reparse boundary is a separate pass",
+    "reviewed_properties": [
+      "Atomic os.mkdir existing-output veto; no overwrite/reuse",
+      "Shared162 scene claim including cross-split seed veto and conservative replay rejection",
+      "160 pinned image/label actual-header inspection invoked; catalog bbox not used as geometry truth",
+      "Parent and leaf identity checks; only still-identical empty owned leaf removed on failure",
+      "Scene claim survives downstream failure; original inputs and source bytes are not written by166",
+      "execution/inventory/budget/rate/quality/preprocessing/settlement/training flags remain false"
+    ]
+  },
+  "unresolved_code_defects_within_declared_local_scope": [],
+  "execution_blockers_not_yet_completed": [
+    {
+      "boundary": "TargetedPreparationController.prepare does not call inspect_targeted_inventory",
+      "condition": "Manifest-external partial bands, unreported SCL and existing pending raw-B02 need167 read-stable inventory;160paircoverage alone cannot veto their overlap",
+      "test_required": "Put pending partial raw-B02/support file outside manifest at target; integrated consumer must reject before new pixel transfer and preserve full old reservations."
+    },
+    {
+      "boundary": "prepare scene_id and geometry_request are independent caller declarations",
+      "condition": "No binding to157 fixed target/selectedSTAC/actualB02 scene and same-year reference lineage;actualGTiffcoverage is not provenance",
+      "test_required": "Swap another scenes valid image pin or different target bbox while claiming expected scene; integrated consumer must reject identity/target mismatch."
+    },
+    {
+      "boundary": "WIP collect_samples.collection_guard and service.window_guard hooks",
+      "condition": "Hooks expose actual header/window before src.read but are seams, not themselves a guard consumer or dispatch authorization. Candidate SCL reads can precede on_scene. Native clip/shift needs actual window check, not just center/metadata bbox.",
+      "test_required": "Candidate SCL succeeds but label native coverage fails; center inside/full target outside; full side achieved by shifted window must not count as exact157target; every preclaim SCL request still obeys reserve/first429 shared stop."
+    },
+    {
+      "boundary": "No166 budget or terminal/finalize integration",
+      "condition": "Empty output reservation/scene claim are not byte reservation or collection settlement.166 has no HTTP and cannot prove no missing failure settlement.",
+      "test_required": "Fault inject known/unknown transfer, header429, nativeguard veto, preprocessing exception and finalized-output error; verify one terminal, no double-refund, pending preservation, exact accounting, shared stop and two-worker limits."
+    },
+    {
+      "boundary": "No166 final256 label/quality/preprocessing check",
+      "condition": "160differentCRS/rescoverage does not guarantee256crop alignment,nodata/quality,Aoi inside or bare>=256",
+      "test_required": "After exact native reprojection/crop, final support-mask applied bare count must meet threshold; otherwise reject without publishing eligible patch and settle bytes."
+    }
+  ],
+  "wip_separation": "Existing other-chat collector/source modifications and hooks are owned by that chat. This review does not certify a live guarded dispatcher or modify/start one.167 is a separate local inventory helper, not called by166.",
+  "user_facing_uncertainty": "Local preparation and race/output protection are tested synthetically. Actual targeted bare collection remains blocked until integrated inventory, native selected-window identity, budget/429, final quality and failure settlement are verified. No new real patches follow from166 tests.",
+  "network_calls": 0,
+  "collection_starts": 0,
+  "source_or_operating_data_writes": 0,
+  "tests_executed_this_review": 0
+}

@@ -1,0 +1,15 @@
+test_bad_run_id_rejected (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_bad_run_id_rejected) ... ok
+test_copy_cap_refuses_before_destination (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_copy_cap_refuses_before_destination) ... ok
+test_copy_detects_concurrent_source_change (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_copy_detects_concurrent_source_change) ... ok
+test_copy_is_exact_and_exclusive (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_copy_is_exact_and_exclusive) ... ok
+test_existing_or_partial_runs_never_reused (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_existing_or_partial_runs_never_reused) ... ok
+{"stage": "SNAPSHOT_PINNED", "at": "2026-10-18T02:06:29.876861+00:00", "rows": 1, "source_sha256": "87440fb3f1ca33fecb3e58dce3154ec7845f8d1fc8ddc65564602158704927ff"}
+test_qa_failure_preserves_snapshot_and_blocks_rerun (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_qa_failure_preserves_snapshot_and_blocks_rerun) ... ok
+test_relative_raster_paths_refused_before_assess (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_relative_raster_paths_refused_before_assess) ... ok
+test_relative_source_and_external_source_rejected (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_relative_source_and_external_source_rejected) ... ok
+test_stale_pin_rejected_before_new_runs (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_stale_pin_rejected_before_new_runs) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.111s
+
+OK

@@ -1,0 +1,176 @@
+{
+  "scope": "READ_ONLY_COMPLETED_164_QA_RECEIPT_AND_ACTUAL_FILE_PIN_REVIEW",
+  "observed_at_utc": "2026-10-18T02:30:37.761447+00:00",
+  "source_test_document_server_edits": 0,
+  "new_qa_preprocessing_api_or_publication_calls": 0,
+  "summary_sha256": "c5146c74c0313ef502299731c48fd5e39f2d4e49310ae7a36a671068145bdfdf",
+  "qa_sha256": "03ca6e9786ebb639cf72cbf0ad7335d4e9952aacf3cf429405ec53b0e93b7168",
+  "qa_receipt_sha256": "79a6cd26bb92f3e2cf1620b9be7e0767bd475202ee8d2a3116b81af575ec3f93",
+  "source_snapshot_at": "2026-10-18T02:06:45.591998+00:00",
+  "qa_summary_completed_at": "2026-10-18T02:29:17.620365+00:00",
+  "source_sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+  "candidate_sha256": "706dbc0a67b9186c21fa579504c74f58bfdd4930530f09209e8e977c992678c3",
+  "source_physical": 1536,
+  "source_eligible": {
+    "train": 720,
+    "val": 265,
+    "test": 250
+  },
+  "candidate_physical": 1520,
+  "excluded_rows": 16,
+  "candidate_eligible_total": 1219,
+  "candidate_by_split": {
+    "train": 720,
+    "val": 249,
+    "test": 250
+  },
+  "candidate_blocker_count": 3,
+  "candidate_blockers": [
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "bare": {
+    "train": {
+      "pixels": 1586,
+      "ratio": 3.445572008729159e-05,
+      "contributing_patches": 0
+    },
+    "val": {
+      "pixels": 600,
+      "ratio": 3.732092022939428e-05,
+      "contributing_patches": 1
+    },
+    "test": {
+      "pixels": 1025,
+      "ratio": 6.306551307025068e-05,
+      "contributing_patches": 0
+    }
+  },
+  "source_identity_conflicts_remaining": 0,
+  "connectivity_capture_status": "NOT_CAPTURED_BUDGET",
+  "checks": {
+    "summary_status_completed": true,
+    "qa_receipt_completed": true,
+    "all_summary_output_pins_and_sizes_match": true,
+    "qa_input_candidate_pin_matches_stage": true,
+    "summary_receipt_qa_counts_match": true,
+    "summary_receipt_qa_blockers_match": true,
+    "candidate_source_retained_rows_exact": true,
+    "excluded16_candidate1520": true,
+    "all_recorded_verified_file_actual_sha_match": true,
+    "ready_false_all": true,
+    "training_network_registry_false": true
+  },
+  "summary_outputs": [
+    {
+      "path": "data\\priority164-cohort-20261018\\source.json",
+      "sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+      "sha_matches": true,
+      "size_matches": true
+    },
+    {
+      "path": "data\\priority164-cohort-20261018\\source-readiness.json",
+      "sha256": "51ec2003a90c9dc5a2a2cf72de1708bec6ad1b44f10020e2b04c8aa30e71cd9a",
+      "sha_matches": true,
+      "size_matches": true
+    },
+    {
+      "path": "evidence\\integration\\priority164-cohort-20261018\\split-plan.json",
+      "sha256": "76867c3083e65353d890c6628a192976fc0babb0ae4ffb73d7084c3fb7e418aa",
+      "sha_matches": true,
+      "size_matches": true
+    },
+    {
+      "path": "evidence\\integration\\priority164-cohort-20261018\\candidate-package\\plan.json",
+      "sha256": "76867c3083e65353d890c6628a192976fc0babb0ae4ffb73d7084c3fb7e418aa",
+      "sha_matches": true,
+      "size_matches": true
+    },
+    {
+      "path": "evidence\\integration\\priority164-cohort-20261018\\candidate-package\\candidate.json",
+      "sha256": "706dbc0a67b9186c21fa579504c74f58bfdd4930530f09209e8e977c992678c3",
+      "sha_matches": true,
+      "size_matches": true
+    },
+    {
+      "path": "evidence\\integration\\priority164-cohort-20261018\\candidate-package\\receipt.json",
+      "sha256": "8f8e3e1267cf7fada5380c3057f1362183829447425b7852aeb6a90efade22e4",
+      "sha_matches": true,
+      "size_matches": true
+    },
+    {
+      "path": "data\\priority164-cohort-20261018\\stage\\candidate.json",
+      "sha256": "706dbc0a67b9186c21fa579504c74f58bfdd4930530f09209e8e977c992678c3",
+      "sha_matches": true,
+      "size_matches": true
+    },
+    {
+      "path": "data\\priority164-cohort-20261018\\stage\\staging-receipt.json",
+      "sha256": "099f3868769862e5f62ee44ff033f6dfe61e55682f9253bdcdde5b3ca47a78df",
+      "sha_matches": true,
+      "size_matches": true
+    },
+    {
+      "path": "data\\first-group\\experiment-esri-v003-2020-2025.json",
+      "sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+      "sha_matches": true,
+      "size_matches": true
+    },
+    {
+      "path": "data\\priority164-cohort-20261018\\qa\\readiness.json",
+      "sha256": "03ca6e9786ebb639cf72cbf0ad7335d4e9952aacf3cf429405ec53b0e93b7168",
+      "sha_matches": true,
+      "size_matches": true
+    },
+    {
+      "path": "data\\priority164-cohort-20261018\\qa\\qa-receipt.json",
+      "sha256": "79a6cd26bb92f3e2cf1620b9be7e0767bd475202ee8d2a3116b81af575ec3f93",
+      "sha_matches": true,
+      "size_matches": true
+    }
+  ],
+  "actual_file_rehash": {
+    "records": 4761,
+    "unique_files": 4761,
+    "unique_bytes": 1397645418,
+    "seconds": 29.468,
+    "sha_mismatches": [],
+    "native_readiness_reexecuted": false
+  },
+  "published_pointer_at_review_start": {
+    "sha256": "c0a8f4984dc857979dc3c94b68c3a5d5bc2b311f75e1ad829401f5e578fc6ab0",
+    "recorded_at": "2026-10-18T01:49:48.969661+00:00",
+    "source_sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+    "eligible": 1125,
+    "by_split": {
+      "train": 658,
+      "val": 217,
+      "test": 250
+    },
+    "blockers": 4,
+    "scope": "FROZEN_1432_ROW_SOURCE_NOT_LATER_COLLECTION"
+  },
+  "pointer_unchanged_during_review": true,
+  "new164_source_published_at_review_start": false,
+  "no_training_science_or_operating_approval": true,
+  "limits": [
+    "Independent actual-file SHA rehash and row comparison only; no second native QA/preprocessing execution.",
+    "A completed QA with three class imbalance blockers is not ready for training.",
+    "The fixed 1536-row cohort excludes later collected rows.",
+    "The pointer can be published by its existing owner after this observation; reviewer performed no publication.",
+    "NOT_CAPTURED_BUDGET connectivity witness remains a separate limitation."
+  ]
+}

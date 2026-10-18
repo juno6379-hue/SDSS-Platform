@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "plan": {
+    "schema_version": 1,
+    "kind": "TARGETED_BARE_256_COLLECTION_PLAN",
+    "proposal_ref": {
+      "path": "evidence/integration/ml-resume-audit-20261018-local-banten-label-search.json",
+      "sha256": "869b19cdfce04c2cd884bd78a259bc8b2502f3a632fddd3f7da13703faa8e60d"
+    },
+    "current_manifest_ref": {
+      "path": "data/targeted170-20261018/source.json",
+      "sha256": "c92a7f73bcbfc461d94750afa3985626f889e729a86e1d72f703e1030e8827ec"
+    },
+    "boundary_ref": {
+      "path": "data/first-group-boundaries/selected-six.geojson",
+      "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+    },
+    "policy": {
+      "window_size": 256,
+      "source_taxonomy_code": 8,
+      "minimum_declared_bare_pixels": 256,
+      "minimum_valid_fraction": 0.8,
+      "minimum_inside_fraction": 0.95,
+      "maximum_new_batches": 1
+    },
+    "targets": [
+      {
+        "target_id": "local-rank0-2020",
+        "proposal_window_index": 0,
+        "province": "banten",
+        "fixed_split": "val",
+        "year": 2020,
+        "source_label_ref": {
+          "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-banten-2020-g01/banten-g01-2020/raw-esri_io.tif",
+          "sha256": "a18fd0cc4a9120938a138c2d0ecbbd10c8bde03381934a939ba2f273a4004541"
+        },
+        "source_lineage_ref": {
+          "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-banten-2020-g01/annual-window-report.json",
+          "sha256": "bb6fc30002ceb09ca4d0440d2ab7da0c7501d5e3e7c034fb4704975a5f5c750b"
+        },
+        "source_label_window": [
+          1792,
+          256,
+          256,
+          256
+        ],
+        "source_label_grid": {
+          "crs": "EPSG:32748",
+          "transform": [
+            10.0,
+            0.0,
+            665760.0,
+            0.0,
+            -10.0,
+            9328640.0
+          ],
+          "width": 2048,
+          "height": 2048
+        },
+        "target_bbox_wgs84": [
+          106.6597767728676,
+          -6.117528088624942,
+          106.68297509990934,
+          -6.094307668078154
+        ],
+        "target_footprint_native": {
+          "crs": "EPSG:32748",
+          "corners": [
+            [
+              683680.0,
+              9326080.0
+            ],
+            [
+              686240.0,
+              9326080.0
+            ],
+            [
+              686240.0,
+              9323520.0
+            ],
+            [
+              683680.0,
+              9323520.0
+            ]
+          ]
+        },
+        "declared_bare_pixels": 2411
+      }
+    ]
+  },
+  "ledger_ref": {
+    "path": "data/targeted170-20261018/ledger.json",
+    "sha256": "b9aed796ed11e7c00e62c6ee3078d2d043b72156da0c2b32e254c42bdf727ebb"
+  },
+  "maximum_batches": 1
+}

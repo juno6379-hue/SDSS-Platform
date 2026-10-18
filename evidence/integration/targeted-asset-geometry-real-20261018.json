@@ -1,0 +1,134 @@
+{
+  "observed_at_utc": "2026-10-18T01:50:01.194726+00:00",
+  "classification": "VERIFIED_REAL_LOCAL_HEADERS_AND_PINNED_BYTES_ONLY",
+  "manifest_sha256_at_read": "c57a1768a87fae7b0fd0c5ec8e451c439d35c65bf54d99f1f7b38dc98928e33e",
+  "request": {
+    "schema_version": 1,
+    "kind": "TARGETED_ASSET_GEOMETRY_REQUEST",
+    "target_year": 2020,
+    "image_year": 2020,
+    "label_year": 2020,
+    "target_bbox_wgs84": [
+      122.20481947116188,
+      0.6875288509775055,
+      122.21632416325332,
+      0.699110219487664
+    ],
+    "image_ref": {
+      "path": "data/first-group-training-esri-v1/patches/grid-esri_io-gorontalo-2020-g00/r00-c00/image.tif",
+      "sha256": "c93bd65a4f3ed2810d61532e846042549a6c1fad2eae86e36a105eb0bd290e58"
+    },
+    "label_ref": {
+      "path": "data/first-group-training-esri-v1/patches/grid-esri_io-gorontalo-2020-g00/r00-c00/label.tif",
+      "sha256": "2ae5ea7410fe0cfe5daae6e9f5e4432abf763ed83ce68a2bc99da249d9cc1e4c"
+    }
+  },
+  "result": {
+    "schema_version": 1,
+    "scope": "LOCAL_PINNED_ASSET_COVERAGE_ONLY",
+    "status": "LOCAL_COVERAGE_OBSERVED_EXECUTION_BLOCKED",
+    "issue": "EXECUTION_GUARDS_NOT_CONNECTED",
+    "request_sha256": "f079af740c659fd77bf8f060ff921d5238a6862a6ebc41d6943c00baeaf34ae0",
+    "assets": [
+      {
+        "role": "image",
+        "crs": "EPSG:32651",
+        "transform": [
+          10.0,
+          0.0,
+          410880.0,
+          0.0,
+          -10.0,
+          77920.0
+        ],
+        "width": 256,
+        "height": 256,
+        "band_count": 6,
+        "actual_bounds": [
+          410880.0,
+          75360.0,
+          413440.0,
+          77920.0
+        ],
+        "request_native_envelope": [
+          411519.78502838966,
+          75999.78836605015,
+          412800.2118615872,
+          77280.21519925393
+        ],
+        "numerical_outward_padding": [
+          9.313225746154785e-10,
+          2.3283064365386963e-10,
+          9.313225746154785e-10,
+          2.3283064365386963e-10
+        ],
+        "sampled_native_envelope_contained": true,
+        "coverage_method": "DENSIFIED_ENVELOPE_NUMERICAL_OBSERVATION",
+        "complete_projection_coverage_proven": false,
+        "sha256": "c93bd65a4f3ed2810d61532e846042549a6c1fad2eae86e36a105eb0bd290e58"
+      },
+      {
+        "role": "label",
+        "crs": "EPSG:32651",
+        "transform": [
+          10.0,
+          0.0,
+          410880.0,
+          0.0,
+          -10.0,
+          77920.0
+        ],
+        "width": 256,
+        "height": 256,
+        "band_count": 1,
+        "actual_bounds": [
+          410880.0,
+          75360.0,
+          413440.0,
+          77920.0
+        ],
+        "request_native_envelope": [
+          411519.78502838966,
+          75999.78836605015,
+          412800.2118615872,
+          77280.21519925393
+        ],
+        "numerical_outward_padding": [
+          9.313225746154785e-10,
+          2.3283064365386963e-10,
+          9.313225746154785e-10,
+          2.3283064365386963e-10
+        ],
+        "sampled_native_envelope_contained": true,
+        "coverage_method": "DENSIFIED_ENVELOPE_NUMERICAL_OBSERVATION",
+        "complete_projection_coverage_proven": false,
+        "sha256": "2ae5ea7410fe0cfe5daae6e9f5e4432abf763ed83ce68a2bc99da249d9cc1e4c"
+      }
+    ],
+    "local_bytes_verified": true,
+    "declared_years_match": true,
+    "same_grid_asserted": false,
+    "execution_supported": false,
+    "pending_footprints_verified": false,
+    "support_assets_verified": false,
+    "source_scene_split_verified": false,
+    "quality_verified": false,
+    "temporal_truth_verified": false,
+    "training_ready": false
+  },
+  "original_pair_sha_unchanged": true,
+  "protected_source_matches_preflight": {
+    "backend/app/data/targeted_bare_plan.py": true,
+    "scripts/collect_training_priority.py": true,
+    "scripts/collect_training_parallel.py": true,
+    "backend/app/main.py": true,
+    "frontend/src/App.tsx": true,
+    "frontend/src/GeoAIToolbox.tsx": true
+  },
+  "module_sha256": "b74125b93d53d300316843d3f0706d91e3634f6eaf4d180de2317653ff700232",
+  "limits": "Interior bbox of one stored aligned pair, not a new256-pixel crop or remote COG preflight. Declared year equality is not temporal truth. No pixel reads/QA or bare count validation.",
+  "initial_probe": "Caller copied legacy manifest string year and was correctly blocked REQUEST_INVALID. Caller now explicitly declares validated integer year; no source/year data altered.",
+  "network_requests": 0,
+  "operating_writes": 0,
+  "collectors_started": 0
+}

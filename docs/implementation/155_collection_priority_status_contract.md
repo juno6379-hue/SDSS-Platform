@@ -75,3 +75,15 @@ PLANNED→VERIFIED_REAL(고정 원본의 파일/래스터 검사 범위):1432행
 6차 동자바2024 g01/g02를 plan228a9c72695da9cc4b367f9632456601614d2bc0bac7788a9a6200bedb17ea01, wrapperPID8688로 시작했다. 완료·추가수량은 미확인이다. 단일coordinator·2worker·2초간격·최초429공유중단·기존예산·3000상한·고정split·품질기준을 유지한다. 수량1200을 넘었어도 기존 balanced_coverage의 나지/클래스 gate가 미충족이므로 자동 학습이나 승인으로 전이하지 않는다. 157 표적 집행은 계속 BLOCKED이며 다른채팅160 자산기하 검사 소유와 중복하지 않는다.10분 보고 geoai-2 ACTIVE와 실제 수집·학습 상태를 구분한다.
 
 근거:evidence/integration/priority-collection-round5-final-20261018.json,priority-collection-independent-round5-20261018.json,priority-collection-independent-round5-initial-20261018.log,priority-ml-next-ui-round5-20261018.json,priority-ml-next-ui-round5-20261018.png,priority-collection-round6-launch-20261018.json. 관련 구현/API/UI/인계와 이해자료14개 및161 이해노트를 함께 갱신했다.
+
+## 2026-10-18 11:49 KST — 수집85→54·나지 실제1건·다음8차 시작
+
+이 채팅 소유164/165/166/167/168/169/170/173을 진행했다. 일반6/7차 +56물리/+47적격으로 부족85→54, 이후170 표적 실제1batch +1적격으로 원본1569/1260(744/266/250)이다. 독립 actual170 감사442.679초: 유효64908/65536=99.0417%·주내100%·나지2199, 기존1568행/4704파일SHA 불변, pending2 전액136314880B 보존, source support1162개에서 자신의새10자산 외 과거겹침0, 추가계상3827633B·429false·lock해제. 원본나지1586/2799/1025·기여0/2/0이며 모든split 비율/기여목표 미달이다. 약한ESRI라벨·수치겹침검사는 독립정답/과학적독립성/학습승인이 아니다.
+
+164는1536행고정source→16누출행제외1520행/1219적격(720/249/250), 차단3·4761파일SHA 불일치0, connectivity NOT_CAPTURED_BUDGET. 게시pointer와 실제5174 IAB에서 원본1260/후보1219·source불일치·차단3·미준비 확인, console0/overflow0.168 split전체90%와개별80/95 문구구분 완료, 공개8cf7b94+두파일격리시험9PASS·120modules build39.58초. 이후수집25적격은이고정후보밖이다.
+
+173은고정1569source/104로컬라벨/6404창에서나지후보50(train29/val15/test6)을발굴·50창실계수재검산0불일치/9PASS. 적격추가50이나집행승인아님. 타주35는157/170미연결PLANNED이며6주범용화174설계검토중이다. F1 parallel정산보완은다른채팅171소유완료(12/50PASS); F2실행후오류표시/F3미등록물리상한은이채팅targeted_execution이170소스·시험·문서보완중. 같은파일중복편집금지.
+
+다음일반8차는반텐2024g01/g02, plan eb8afd1776e53ca23e00f89a7292a27716850819c64adc58217128e522bf3717, wrapperPID8860으로실제시작했다. 아직성과미확정이므로종료로그/원장/lock/독립검사를확인하고중복시작하지않는다. 최대2batch·기존4GiB추가한도·2worker·2초·첫429공유중단·고정split/물리3000보존. 학습/등록/승인/배포0이며 geoai-2 ACTIVE10분보고는실제실행과구별한다. 전체개발미완료·계속진행.
+
+근거: targeted170-independent-20261018.json, priority164-final-verification-20261018.json, priority170-final-ui-20261018.json/txt/png, priority170-root-integrated-tests-final-20261018.log(107실행106PASS1SKIP30.319초), bare173-final-verification-20261018.json, priority-collection-round8-launch-20261018.json. 원본/학습자료는Git에넣지않고완료된코드/문서/허용증거만게시하며다른Toolbox WIP를보존한다.

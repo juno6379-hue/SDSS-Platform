@@ -1,0 +1,64 @@
+{
+  "scope": "READ_ONLY_INDEPENDENT_REVIEW_PROCESS_LOCAL_SCENE_CLAIMS",
+  "status": "TESTED_SYNTHETIC_INDEPENDENT_REVIEW_COMPLETE",
+  "source_test_document_edits": 0,
+  "collector_ledger_server_edits": 0,
+  "network_collection_api_calls": 0,
+  "source_sha256": {
+    "backend/app/data/targeted_scene_claims.py": "e9b07b7363e7aa053e1ad55bc15b0a3fb6680ac611a1c86604edc09abadcdaf7",
+    "tests/test_targeted_scene_claims.py": "cc7b34c7121a052fa8f5924fe70d05e67a5c5a11484d00bb4a9b63fc4f893b26",
+    "docs/implementation/162_targeted_scene_claims.md": "9d460a87e632cf9268b6a519f4e4c07d650023d925c3f7569d61a00474e730c9"
+  },
+  "independent_tests": {
+    "command": "PYTHONPATH=.runtime;.;backend;tests python -m unittest test_targeted_scene_claims -v",
+    "passed": 10,
+    "failed": 0,
+    "unittest_seconds": 0.058,
+    "exit_code": 0,
+    "same_scene_different_split_barrier_races": 20,
+    "exactly_one_winner_each_race": true,
+    "distinct_scene_single_capacity_barrier_exactly_one_winner": true
+  },
+  "additional_mocked_runtime_error_probes": {
+    "copy_seed_runtime_error": {"issue": "SEED_INVALID", "claim_count": 0, "raw_secret_not_leaked": true},
+    "copy_request_runtime_error": {"issue": "CLAIM_REQUEST_INVALID", "claim_count": 0, "raw_secret_not_leaked": true},
+    "subsequent_valid_claim_after_request_copy_failure": {"status": "LOCAL_SCENE_CLAIMED_EXECUTION_BLOCKED", "claim_count": 1}
+  },
+  "reviewed_properties": {
+    "seed_request_strict_bounded_builtin_copy_before_use": true,
+    "seed_source_sha_is_caller_declaration_not_verified_file_pin": true,
+    "seed_history_independent_of_later_caller_mutation": true,
+    "history_lookup_claim_lookup_idempotence_cap_and_insert_under_same_lock": true,
+    "cross_split_seed_conflict_veto": true,
+    "multi_split_seed_scene_quarantined_for_every_requested_split": true,
+    "quarantine_is_per_scene_not_global_dataset_approval": true,
+    "same_scene_different_owner_same_split_rejected": true,
+    "same_owner_same_scene_different_split_rejected": true,
+    "same_owner_same_scene_same_split_idempotent_even_at_capacity": true,
+    "same_owner_different_scene_is_new_claim_not_replay": true,
+    "capacity_counts_accepted_active_scene_claims_not_seed_history": true,
+    "failed_requests_do_not_consume_capacity": true,
+    "fresh_deepcopy_receipts_and_snapshots_prevent_return_value_pollution": true,
+    "caller_seed_and_request_unchanged": true,
+    "invalid_seed_never_exposes_partial_history_or_claims": true,
+    "no_network_or_filesystem_io_in_helper_operations": true,
+    "separate_registry_objects_not_shared": true,
+    "no_collector_or_api_integration": true
+  },
+  "always_false_guards_verified": [
+    "execution_supported", "inventory_complete", "source_pins_verified",
+    "pending_verified", "footprints_verified", "image_aliases_verified", "quality_verified"
+  ],
+  "feedback_and_resolution": [
+    "Recommended RuntimeError-safe request/seed copy boundary because caller dict mutation during copying can raise RuntimeError. Implementation owner widened the helper boundary and independent probes confirmed fixed errors without state changes or raw exception leakage.",
+    "Single-registry-object lock scope, per-scene quarantine, owner-specific idempotence and capacity semantics were independently checked."
+  ],
+  "limitations": [
+    "TESTED_SYNTHETIC: in-memory unit tests and mocked copy failures, no operating collector dispatch.",
+    "One process-local registry object only: no cross-process coordination, persistence, release, TTL, refund or restart recovery.",
+    "Caller declarations and owner identifiers are not authenticated provenance or verified complete inventory.",
+    "No pending reservation, footprint, scene alias, quality, file pin, training or execution approval is provided.",
+    "Internal unconnected helper has no UI contract change; browser verification is outside this unit.",
+    "Final 10-test run supersedes the earlier 9-test run; overlapping runs are not added together."
+  ]
+}

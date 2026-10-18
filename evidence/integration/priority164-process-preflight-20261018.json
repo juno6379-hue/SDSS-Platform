@@ -1,0 +1,12 @@
+[
+  {
+    "ProcessId": 35596,
+    "Name": "pwsh.exe",
+    "CommandLine": "\"C:\\Users\\최준오\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe\" -Command \"try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}\npython scripts/collect_training_priority.py --max-batches 2 --continue-unrelated-pending > evidence/integration/priority-collection-round7-dryrun-20261018.json\""
+  },
+  {
+    "ProcessId": 13324,
+    "Name": "pwsh.exe",
+    "CommandLine": "\"C:\\Users\\최준오\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe\" -NoProfile -Command \"try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}\nGet-Content evidence/integration/priority164-focused-20261018.log -Tail 5; Get-CimInstance Win32_Process | Where-Object {$_.CommandLine -match 'collect_training_grid|priority-collection|prepare_priority_candidate164'} | Select-Object ProcessId,Name,CommandLine | ConvertTo-Json -Depth 3 | Set-Content evidence/integration/priority164-process-preflight-20261018.json -Encoding utf8; $priority164Source=(Resolve-Path 'data/first-group-training-esri-v1/annual-window-report.json').Path; $priority164Policy=(Resolve-Path 'data/first-group/experiment-esri-v003-2020-2025.json').Path; $priority164SourcePin=(Get-FileHash -LiteralPath $priority164Source -Algorithm SHA256).Hash.ToLower(); $priority164PolicyPin=(Get-FileHash -LiteralPath $priority164Policy -Algorithm SHA256).Hash.ToLower(); python -X utf8 -u scripts/prepare_priority_candidate164.py --data-root \\\"$PWD/data\\\" --source $priority164Source --source-sha256 $priority164SourcePin --policy $priority164Policy --policy-sha256 $priority164PolicyPin --run-id cohort-20261018 > evidence/integration/priority164-actual-20261018.log 2>&1\""
+  }
+]

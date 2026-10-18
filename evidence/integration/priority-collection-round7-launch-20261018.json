@@ -1,0 +1,65 @@
+{
+  "started_at": "2026-10-18T02:08:50.965211+00:00",
+  "status": "STARTED_NOT_COMPLETED",
+  "plan_sha256": "2bf310007a024dfb434ac9e6048e74ea78536c13d986d4eb459f612c4174cad0",
+  "selected_jobs": [
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03",
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "split": "train",
+      "spatial_window_id": "03",
+      "eligible_patches": 18,
+      "deficit": 10,
+      "config_sha256": "e21891309ea85f81827fecdb575f7d9816370201d0059d8add8536ab6c3acced"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03",
+      "province": "southeast_sulawesi",
+      "year": 2023,
+      "split": "train",
+      "spatial_window_id": "03",
+      "eligible_patches": 18,
+      "deficit": 10,
+      "config_sha256": "b84012dc6e6d4318b240093066088b414dc7ccdfcf4c56712088f10f6ac6582b"
+    }
+  ],
+  "pending_before": {
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+    },
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+    }
+  },
+  "manifest_before_sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+  "manifest_before_rows": 1536,
+  "old_rows_canonical_sha256": "8ce4d063fca366a58b985227dbfe0f2507f09d9168d50977ed03814c50fc3608",
+  "ledger_before_sha256": "2c6442cc4963c1f5dc5f23d4b86f59e3ffa7727c48c8c5970e2a2b896325d50f",
+  "new_charged_before": 2135767018,
+  "budget_remaining_before": 2159200278,
+  "source_pins": {
+    "scripts/collect_training_priority.py": "680c27f4c2b6d3e8b9a9b73e81f0193ccb1d7a55e2f5d64a74a72a7c22889d15",
+    "scripts/collect_training_parallel.py": "a2b9a4179392f3ea5ba5bbed28e9e1f448e0bcee912260e66bab181f99abd04d"
+  },
+  "new_budget_added": false,
+  "training_started": false,
+  "pending_refund": false,
+  "wrapper_pid": 18384,
+  "command": [
+    "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "E:\\GeoAI–MLOps–SDSS\\scripts\\collect_training_priority.py",
+    "--max-batches",
+    "2",
+    "--continue-unrelated-pending",
+    "--expected-plan-sha256",
+    "2bf310007a024dfb434ac9e6048e74ea78536c13d986d4eb459f612c4174cad0",
+    "--execute"
+  ]
+}

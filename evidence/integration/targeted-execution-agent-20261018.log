@@ -1,0 +1,19 @@
+test_actual_native_assets_reserve_without_execution_or_source_changes (test_targeted_execution.TargetedExecutionTests.test_actual_native_assets_reserve_without_execution_or_source_changes) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_changed_parent_identity_preserves_old_directory (test_targeted_execution.TargetedExecutionTests.test_changed_parent_identity_preserves_old_directory) ... ok
+test_exclusive_output_race_one_winner (test_targeted_execution.TargetedExecutionTests.test_exclusive_output_race_one_winner) ... ok
+test_existing_directory_or_file_never_overwritten (test_targeted_execution.TargetedExecutionTests.test_existing_directory_or_file_never_overwritten) ... ok
+test_failure_preserves_other_files_and_existing_reservations (test_targeted_execution.TargetedExecutionTests.test_failure_preserves_other_files_and_existing_reservations) ... ok
+test_fixed_split_and_seeded_split_veto (test_targeted_execution.TargetedExecutionTests.test_fixed_split_and_seeded_split_veto) ... ok
+test_pin_failure_releases_own_empty_output_and_keeps_claim (test_targeted_execution.TargetedExecutionTests.test_pin_failure_releases_own_empty_output_and_keeps_claim) ... ok
+test_reparse_directory_attribute_rejected_without_symlink_privilege (test_targeted_execution.TargetedExecutionTests.test_reparse_directory_attribute_rejected_without_symlink_privilege) ... ok
+test_replaced_leaf_not_removed_on_failure (test_targeted_execution.TargetedExecutionTests.test_replaced_leaf_not_removed_on_failure) ... ok
+test_shared_scene_race_releases_only_loser_empty_output (test_targeted_execution.TargetedExecutionTests.test_shared_scene_race_releases_only_loser_empty_output) ... ok
+test_symlink_parent_or_leaf_rejected_without_touching_target (test_targeted_execution.TargetedExecutionTests.test_symlink_parent_or_leaf_rejected_without_touching_target) ... skipped 'OS does not permit symlink creation'
+test_unsafe_names_bad_controller_and_request_rejected (test_targeted_execution.TargetedExecutionTests.test_unsafe_names_bad_controller_and_request_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 6.100s
+
+OK (skipped=1)

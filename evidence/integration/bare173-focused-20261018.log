@@ -1,0 +1,22 @@
+test_below_threshold_is_not_dense (test_find_bare_targets173.BareTargets173Tests.test_below_threshold_is_not_dense) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_byte_and_window_caps_rejected (test_find_bare_targets173.BareTargets173Tests.test_byte_and_window_caps_rejected) ... ok
+test_duplicate_sha_window_excluded (test_find_bare_targets173.BareTargets173Tests.test_duplicate_sha_window_excluded) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI–MLOps–SDSS\scripts\find_bare_targets173.py:104: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(x,y,256,256));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_inside_fraction_filters_and_missing_boundary_rejects (test_find_bare_targets173.BareTargets173Tests.test_inside_fraction_filters_and_missing_boundary_rejects) ... ok
+test_local_files_unchanged (test_find_bare_targets173.BareTargets173Tests.test_local_files_unchanged) ... ok
+test_native_threshold_and_false_approval (test_find_bare_targets173.BareTargets173Tests.test_native_threshold_and_false_approval) ... ok
+test_priority_gap_then_density_and_train_unconnected (test_find_bare_targets173.BareTargets173Tests.test_priority_gap_then_density_and_train_unconnected) ... ok
+test_stale_crop_pin_rejected (test_find_bare_targets173.BareTargets173Tests.test_stale_crop_pin_rejected) ... ok
+test_year_mismatch_rejected (test_find_bare_targets173.BareTargets173Tests.test_year_mismatch_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 3.539s
+
+OK

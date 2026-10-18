@@ -1,0 +1,149 @@
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_absent_b02_witness_never_materializes_or_yields_patches (test_collect_targeted_bare.CollectTargetedBareTests.test_absent_b02_witness_never_materializes_or_yields_patches) ... ERROR
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_bare_minimum_applies_after_materialization_without_inventing_quality (test_collect_targeted_bare.CollectTargetedBareTests.test_bare_minimum_applies_after_materialization_without_inventing_quality) ... ERROR
+test_dry_run_does_not_construct_ledger_reserve_output_or_execute (test_collect_targeted_bare.CollectTargetedBareTests.test_dry_run_does_not_construct_ledger_reserve_output_or_execute) ... ok
+test_existing_exclusive_output_even_empty_is_not_reused_or_charged (test_collect_targeted_bare.CollectTargetedBareTests.test_existing_exclusive_output_even_empty_is_not_reused_or_charged) ... ok
+test_existing_global_lock_is_preserved_without_validation_or_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_existing_global_lock_is_preserved_without_validation_or_dispatch) ... ok
+test_ledger_pin_drift_rejected_without_refund (test_collect_targeted_bare.CollectTargetedBareTests.test_ledger_pin_drift_rejected_without_refund) ... ok
+test_manifest_pin_drift_rejected_read_only (test_collect_targeted_bare.CollectTargetedBareTests.test_manifest_pin_drift_rejected_read_only) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_provider_circuit_is_settled_globally_and_stops_future_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_provider_circuit_is_settled_globally_and_stops_future_dispatch) ... ERROR
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows (test_collect_targeted_bare.CollectTargetedBareTests.test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows) ... ERROR
+test_second_output_collision_rolls_back_only_own_empty_first_output (test_collect_targeted_bare.CollectTargetedBareTests.test_second_output_collision_rolls_back_only_own_empty_first_output) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_unmeasured_worker_finally_failure_settles_full_reservation (test_collect_targeted_bare.CollectTargetedBareTests.test_unmeasured_worker_finally_failure_settles_full_reservation) ... ERROR
+test_wrong_request_sha_rejected_before_source_or_ledger_mutation (test_collect_targeted_bare.CollectTargetedBareTests.test_wrong_request_sha_rejected_before_source_or_ledger_mutation) ... ok
+
+======================================================================
+ERROR: test_absent_b02_witness_never_materializes_or_yields_patches (test_collect_targeted_bare.CollectTargetedBareTests.test_absent_b02_witness_never_materializes_or_yields_patches)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 153, in test_absent_b02_witness_never_materializes_or_yields_patches
+    result, materialize = self.run_mocked(collect, [self.row()])
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 70, in run_mocked
+    result = module.run_targeted(self.root, self.request, module.digest(self.request), execute=True, **extra)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 167, in run_targeted
+    execution=run_two_workers(checked['jobs'],reserve,work,finalize,event,request['maximum_batches'])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\parallel.py", line 60, in run_two_workers
+    finalize(job, result)
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 157, in finalize
+    metrics=balanced_coverage(aggregate['scenes'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_training_parallel.py", line 23, in balanced_coverage
+    metrics = candidate_coverage(scenes, "esri_io", range(2020, 2026))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_training_grid.py", line 49, in candidate_coverage
+    scene_splits.setdefault(row["scene_id"], set()).add(row.get("split"))
+                            ~~~^^^^^^^^^^^^
+KeyError: 'scene_id'
+
+======================================================================
+ERROR: test_bare_minimum_applies_after_materialization_without_inventing_quality (test_collect_targeted_bare.CollectTargetedBareTests.test_bare_minimum_applies_after_materialization_without_inventing_quality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 143, in test_bare_minimum_applies_after_materialization_without_inventing_quality
+    result, _ = self.run_mocked(self.measured_collect, [self.row(255)])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 70, in run_mocked
+    result = module.run_targeted(self.root, self.request, module.digest(self.request), execute=True, **extra)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 167, in run_targeted
+    execution=run_two_workers(checked['jobs'],reserve,work,finalize,event,request['maximum_batches'])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\parallel.py", line 60, in run_two_workers
+    finalize(job, result)
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 157, in finalize
+    metrics=balanced_coverage(aggregate['scenes'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_training_parallel.py", line 23, in balanced_coverage
+    metrics = candidate_coverage(scenes, "esri_io", range(2020, 2026))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_training_grid.py", line 49, in candidate_coverage
+    scene_splits.setdefault(row["scene_id"], set()).add(row.get("split"))
+                            ~~~^^^^^^^^^^^^
+KeyError: 'scene_id'
+
+======================================================================
+ERROR: test_provider_circuit_is_settled_globally_and_stops_future_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_provider_circuit_is_settled_globally_and_stops_future_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 176, in test_provider_circuit_is_settled_globally_and_stops_future_dispatch
+    result, _ = self.run_mocked(collect)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 70, in run_mocked
+    result = module.run_targeted(self.root, self.request, module.digest(self.request), execute=True, **extra)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 167, in run_targeted
+    execution=run_two_workers(checked['jobs'],reserve,work,finalize,event,request['maximum_batches'])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\parallel.py", line 60, in run_two_workers
+    finalize(job, result)
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 157, in finalize
+    metrics=balanced_coverage(aggregate['scenes'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_training_parallel.py", line 23, in balanced_coverage
+    metrics = candidate_coverage(scenes, "esri_io", range(2020, 2026))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_training_grid.py", line 49, in candidate_coverage
+    scene_splits.setdefault(row["scene_id"], set()).add(row.get("split"))
+                            ~~~^^^^^^^^^^^^
+KeyError: 'scene_id'
+
+======================================================================
+ERROR: test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows (test_collect_targeted_bare.CollectTargetedBareTests.test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 130, in test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows
+    result, materialize = self.run_mocked(self.measured_collect, [self.row()])
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 70, in run_mocked
+    result = module.run_targeted(self.root, self.request, module.digest(self.request), execute=True, **extra)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 167, in run_targeted
+    execution=run_two_workers(checked['jobs'],reserve,work,finalize,event,request['maximum_batches'])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\parallel.py", line 60, in run_two_workers
+    finalize(job, result)
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 157, in finalize
+    metrics=balanced_coverage(aggregate['scenes'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_training_parallel.py", line 23, in balanced_coverage
+    metrics = candidate_coverage(scenes, "esri_io", range(2020, 2026))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_training_grid.py", line 49, in candidate_coverage
+    scene_splits.setdefault(row["scene_id"], set()).add(row.get("split"))
+                            ~~~^^^^^^^^^^^^
+KeyError: 'scene_id'
+
+======================================================================
+ERROR: test_unmeasured_worker_finally_failure_settles_full_reservation (test_collect_targeted_bare.CollectTargetedBareTests.test_unmeasured_worker_finally_failure_settles_full_reservation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_targeted_bare.py", line 165, in test_unmeasured_worker_finally_failure_settles_full_reservation
+    result = module.run_targeted(self.root, self.request, module.digest(self.request), execute=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 167, in run_targeted
+    execution=run_two_workers(checked['jobs'],reserve,work,finalize,event,request['maximum_batches'])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\parallel.py", line 60, in run_two_workers
+    finalize(job, result)
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_targeted_bare.py", line 157, in finalize
+    metrics=balanced_coverage(aggregate['scenes'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_training_parallel.py", line 23, in balanced_coverage
+    metrics = candidate_coverage(scenes, "esri_io", range(2020, 2026))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\collect_training_grid.py", line 49, in candidate_coverage
+    scene_splits.setdefault(row["scene_id"], set()).add(row.get("split"))
+                            ~~~^^^^^^^^^^^^
+KeyError: 'scene_id'
+
+----------------------------------------------------------------------
+Ran 12 tests in 3.234s
+
+FAILED (errors=5)
