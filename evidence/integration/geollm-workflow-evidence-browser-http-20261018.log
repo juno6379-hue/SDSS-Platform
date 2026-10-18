@@ -1,0 +1,53 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{"ready": true, "fixture": "E:\\GeoAI\u2013MLOps\u2013SDSS\\.git\\geollm-workflow-evidence-browser-fixture.json", "identifiers": {"succeeded": "ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da", "running": "7133a754ec2c3192da6784a9e1c91f5b10da1a9460a67a769ee3df2e892bf006", "failed": "8eca6ab0b8514eef465631ba0a6cb6547d2cbb9a918373f55624e4983ae54337"}, "port": 8003, "pid": 27560}
+INFO:     Started server process [27560]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8003 (Press CTRL+C to quit)
+INFO:     127.0.0.1:55230 - "GET /api/health HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55231 - "GET /api/dashboard HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55232 - "GET /api/datasets HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55233 - "GET /api/models HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55234 - "GET /api/jobs HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55235 - "GET /api/tools HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55117 - "GET /api/analyses HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61052 - "GET /api/health HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61412 - "GET /api/models HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61413 - "GET /api/jobs HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61414 - "GET /api/tools HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61415 - "GET /api/dashboard HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61416 - "GET /api/datasets HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:64757 - "GET /api/analyses HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55517 - "GET /api/health HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61968 - "GET /api/dashboard HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61969 - "GET /api/datasets HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61970 - "GET /api/models HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61971 - "GET /api/jobs HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61973 - "GET /api/analyses HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61972 - "GET /api/tools HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:59357 - "GET /api/health HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:60727 - "GET /api/dashboard HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:58353 - "GET /api/datasets HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:64563 - "GET /api/jobs HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:64562 - "GET /api/models HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:49172 - "GET /api/analyses HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:49667 - "GET /api/tools HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54151 - "GET /v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:62084 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58951 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58949 - "GET /api/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58948 - "GET /api/datasets HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58950 - "GET /api/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58947 - "GET /api/dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58937 - "GET /api/analyses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58234 - "GET /v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60611 - "GET /v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/report HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63129 - "GET /v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/assets/0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50161 - "GET /v1/lcluc/workflows/7133a754ec2c3192da6784a9e1c91f5b10da1a9460a67a769ee3df2e892bf006 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62819 - "GET /v1/lcluc/workflows/8eca6ab0b8514eef465631ba0a6cb6547d2cbb9a918373f55624e4983ae54337 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56490 - "GET /v1/lcluc/workflows/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61497 - "GET /v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54461 - "GET /v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/report HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54742 - "GET /v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51687 - "GET /v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/report HTTP/1.1" 200 OK

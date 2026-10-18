@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-18T09:39:48.9528259+09:00",
+  "processes": [
+    {
+      "pid": 27268,
+      "parent_pid": 31440,
+      "name": "ollama app.exe",
+      "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+      "created": "2026-10-17T08:40:23.427079+09:00",
+      "cpu": 28.78125,
+      "working_set": 88739840
+    },
+    {
+      "pid": 27860,
+      "parent_pid": 27268,
+      "name": "ollama.exe",
+      "command_line": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+      "created": "2026-10-17T08:40:25.549335+09:00",
+      "cpu": 10.9375,
+      "working_set": 84865024
+    },
+    {
+      "pid": 34484,
+      "parent_pid": 37408,
+      "name": "node.exe",
+      "command_line": "\"C:\\Program Files\\nodejs\\node.exe\" node_modules/vite/bin/vite.js --host 127.0.0.1 --port 5174 --strictPort",
+      "created": "2026-10-18T09:39:17.13797+09:00",
+      "cpu": 1.921875,
+      "working_set": 59625472
+    }
+  ],
+  "collector_training_processes_observed": 0,
+  "collector_training_command_matches": [],
+  "observation_limit": "Process command patterns only; unittest interpreters and temporary API fixtures are not operating training",
+  "automation_status": "ACTIVE",
+  "automation_interval_minutes": 10,
+  "automation_was_not_modified": true
+}

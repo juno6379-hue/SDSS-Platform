@@ -1,0 +1,66 @@
+TAP version 13
+# (node:38012) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: manual fixed ID is exact lowercase64; existing GET receipt parser requires replay and false claims
+ok 1 - manual fixed ID is exact lowercase64; existing GET receipt parser requires replay and false claims
+  ---
+  duration_ms: 22.537
+  type: 'test'
+  ...
+# Subtest: strict finite JSON catches duplicate escaped keys, UTF16 errors, malformed numbers, depth and nodes
+ok 2 - strict finite JSON catches duplicate escaped keys, UTF16 errors, malformed numbers, depth and nodes
+  ---
+  duration_ms: 147.786
+  type: 'test'
+  ...
+# Subtest: same report raw SHA, Windows paths, model/years and all transition matrices are verified
+ok 3 - same report raw SHA, Windows paths, model/years and all transition matrices are verified
+  ---
+  duration_ms: 28.5363
+  type: 'test'
+  ...
+# Subtest: duplicate report pin or poisoned HTTP/error data never becomes displayed results
+ok 4 - duplicate report pin or poisoned HTTP/error data never becomes displayed results
+  ---
+  duration_ms: 3.09
+  type: 'test'
+  ...
+# Subtest: synchronous pending, identity/route/edit/back/unmount invalidation and old finally isolation
+ok 5 - synchronous pending, identity/route/edit/back/unmount invalidation and old finally isolation
+  ---
+  duration_ms: 3.5468
+  type: 'test'
+  ...
+# Subtest: manual authenticated fixed GET only: success status then report with atomic pinned view
+ok 6 - manual authenticated fixed GET only: success status then report with atomic pinned view
+  ---
+  duration_ms: 39.2492
+  type: 'test'
+  ...
+# Subtest: RUNNING/FAILED use one GET, HTTP failures and stale result never fetch next report
+ok 7 - RUNNING/FAILED use one GET, HTTP failures and stale result never fetch next report
+  ---
+  duration_ms: 7.5542
+  type: 'test'
+  ...
+# Subtest: bounded stream cancels declared/cumulative overflow and stale bytes, releases lock
+ok 8 - bounded stream cancels declared/cumulative overflow and stale bytes, releases lock
+  ---
+  duration_ms: 1.1219
+  type: 'test'
+  ...
+# Subtest: component mount preserves legacy query; no auto request and local id never goes to legacy onReviewResult
+ok 9 - component mount preserves legacy query; no auto request and local id never goes to legacy onReviewResult
+  ---
+  duration_ms: 2.2487
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 588.3648

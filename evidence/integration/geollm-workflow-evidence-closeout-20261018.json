@@ -1,0 +1,589 @@
+{
+  "status": "147_EXPLICIT_LOCAL_WORKFLOW_EVIDENCE_UI",
+  "focused": {
+    "tests": 9,
+    "pass": 9,
+    "fail": 0,
+    "skipped": 0,
+    "seconds": 0.5883647999999999,
+    "log": "evidence/integration/geollm-workflow-evidence-ui-focused-20261018.log"
+  },
+  "frontend": {
+    "tests": 280,
+    "pass": 280,
+    "fail": 0,
+    "skipped": 0,
+    "seconds": 25.282748299999998,
+    "log": "evidence/integration/geollm-workflow-evidence-root-frontend-20261018.log"
+  },
+  "build": {
+    "modules": 116,
+    "seconds": 23.55,
+    "log": "evidence/integration/geollm-workflow-evidence-build-20261018.log"
+  },
+  "related_backend": {
+    "tests": 34,
+    "passed": 34,
+    "skipped": 0,
+    "seconds": 20.542,
+    "log": "evidence/integration/geollm-workflow-evidence-root-backend-20261018.log"
+  },
+  "independent": {
+    "schema_version": 1,
+    "scope": "TESTED_SYNTHETIC_GENERATED_RASTERS_HAND_SET_UNTRAINED_NETWORK_MOCK_APPROVAL_NO_LLM_RAG",
+    "baseline_commit": "c07602a203907e99ac94e4008b94a783719f01de",
+    "tests": 7,
+    "passed": 7,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 5.572386800005916,
+    "fixture_creation": {
+      "actual_local_workflow_calls": 1,
+      "tiny_raster_cpu_inference_calls": 3,
+      "training_calls": 0,
+      "operating_inference_calls": 0,
+      "running_failed_rows": "CONSTRUCTED_HISTORICAL_METADATA_ONLY"
+    },
+    "fixture_identifiers": {
+      "succeeded": "ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+      "running": "7133a754ec2c3192da6784a9e1c91f5b10da1a9460a67a769ee3df2e892bf006",
+      "failed": "8eca6ab0b8514eef465631ba0a6cb6547d2cbb9a918373f55624e4983ae54337"
+    },
+    "operating_store_access": 0,
+    "GET_execution_calls": 0,
+    "GET_store_put_calls": 0,
+    "LLM_calls": 0,
+    "RAG_calls": 0,
+    "training_calls": 0,
+    "auth_scope": "CURRENT_AUTH_AST_ISOLATED_FASTAPI_WITH_EXISTING_116_ROUTER_NOT_FULL_MAIN_SERVER",
+    "backend_source_sha256": {
+      "backend/app/lcluc_workflow.py": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+      "backend/app/lcluc_workflow_api.py": "fd42bfe71edbdded3faa233a4580868a69744e84b42d35e7342c7309f402eaff",
+      "backend/app/main.py": "d5efc3acb269ab1397ff0e32b829f7ce8820799bcb16ed3e64d59121ccc27467",
+      "frontend/src/lclucWorkflowAdapter.ts": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa"
+    },
+    "frontend_frozen_source_sha256": {
+      "frontend/src/GeoQuery.tsx": "4a1edeff18dea8dae46b7a5a75798bde11ea33b85abf6cf8a33048f2f570de6a",
+      "frontend/src/GeoWorkflowEvidence.tsx": "453a37673bb8172d2f083a02f4e2ce25807ad8ae750577745ab7f467742de755",
+      "frontend/src/geollmWorkflowEvidenceAdapter.ts": "cb621faacbc09c1f580fb65ac6e8f5603569e01403672455bf296fcba4a02f96",
+      "frontend/src/geollmWorkflowEvidenceClient.ts": "0acffcb838326b12f0d642e86877cf09519a02d7fa4d359c0b48c79afd85f967",
+      "frontend/src/geollm-workflow-evidence.css": "a9c2e5179845b314117c7f5d75e0de1ae2148449c0606502def5151f9e0887c0",
+      "frontend/src/geollmWorkflowEvidenceAdapter.test.mjs": "4f7a31fa6792906b4ba37a0d2bbb2214537fd0de40d182745d49709add481a2d"
+    },
+    "limits": [
+      "Synthetic generated rasters, hand-set untrained weights and fabricated admission metadata are not scientific or institutional approval.",
+      "The actual fixture executes one local workflow and three tiny CPU raster inferences; operating inference is zero.",
+      "RUNNING/FAILED records are constructed historical metadata fixtures; GET does not execute, retry or resume.",
+      "Observed GET DB/files are unchanged; explicit tamper/model-state setup writes are separate.",
+      "Actual main server browser verification is a separate Root task; no LLM inference, RAG retrieval, official corpus or operating result validation."
+    ],
+    "frontend_pin_note": "Post-test read-only metadata append of final frozen frontend source hashes; no extra test execution."
+  },
+  "browser": {
+    "recorded_at": "2026-10-18T00:38:49.355860+00:00",
+    "verification": "MANUAL_CUA_ACTUAL_BROWSER_WITH_ACTUAL_MAIN_TEMP_API",
+    "scope": "TESTED_SYNTHETIC_GENERATED_RASTERS_HAND_SET_UNTRAINED_NETWORK_MOCK_APPROVAL_NO_LLM_RAG",
+    "server": {
+      "host": "127.0.0.1",
+      "port": 8003,
+      "pid": 27560,
+      "application": "ACTUAL_MAIN_ENV_SET_BEFORE_IMPORT",
+      "reload": false
+    },
+    "identifiers": {
+      "succeeded": "ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+      "running": "7133a754ec2c3192da6784a9e1c91f5b10da1a9460a67a769ee3df2e892bf006",
+      "failed": "8eca6ab0b8514eef465631ba0a6cb6547d2cbb9a918373f55624e4983ae54337"
+    },
+    "fixture_creation": {
+      "actual_local_workflow_calls": 1,
+      "tiny_raster_cpu_inference_calls": 3,
+      "training_calls": 0,
+      "operating_inference_calls": 0,
+      "running_failed_rows": "CONSTRUCTED_HISTORICAL_METADATA_ONLY"
+    },
+    "report_sha256": "3b6efce3f86e48d0369a159d4bbd0694e39dcc951093791403b16bb0a52362d5",
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/health",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/dashboard",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/datasets",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/models",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/jobs",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/tools",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/analyses",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/health",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/models",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/jobs",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/tools",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/dashboard",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/datasets",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/analyses",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/health",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/dashboard",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/datasets",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/models",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/jobs",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/analyses",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/tools",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/health",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/dashboard",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/datasets",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/jobs",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/models",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/analyses",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/tools",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/health",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/tools",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/models",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/datasets",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/jobs",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/dashboard",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/analyses",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/report",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/assets/0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/7133a754ec2c3192da6784a9e1c91f5b10da1a9460a67a769ee3df2e892bf006",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/8eca6ab0b8514eef465631ba0a6cb6547d2cbb9a918373f55624e4983ae54337",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "status": 404
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/report",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/report",
+        "status": 200
+      }
+    ],
+    "observations": [
+      "Initially collapsed; empty ID and disabled read; no automatic workflow query.",
+      "Unauthenticated status GET returned401 and fixed UI message.",
+      "Authenticated success displayed pinned model/Trace/report SHA, years2020/2021/2022, three pairs.",
+      "Pair2020-2021:256 valid pixels and25600m2 change;2021-2022:256 and0;2020-2022:256 and25600.",
+      "Explicit map action displayed one polygon/five vertices and nine-by-nine transition matrix; trees-to-grass256.",
+      "Editing ID immediately cleared prior summary/map.",
+      "RUNNING and FAILED only displayed status; no report GET or execution.",
+      "Unknown ID returned404; no stale result fallback.",
+      "Stop/clear removed settled result.",
+      "Menu navigation then browser back preserved legacy question draft and reset local workflow child/ID.",
+      "Operating5174 newly opened read-only tab showed initially collapsed child; expanded empty ID and disabled read; no operating workflow query."
+    ],
+    "operating_frontend_application": {
+      "stale_module_detected": true,
+      "old_verified_vite_pid": 15608,
+      "restart_only_frontend_port": 5174,
+      "post_restart_transformed_module_matches_test_frontend": true,
+      "api_servers_data_models_reservations_preserved": true,
+      "original_user_tab_id": "1",
+      "original_user_tab_url_preserved": "http://127.0.0.1:5174/#/view/15",
+      "temporary_tabs_closed": [
+        "14",
+        "15"
+      ]
+    },
+    "setup_corrections": [
+      "Two helper startups failed at cp949 console print after each Temp fixture workflow1/CPU inference3; both initial logs preserved. Hidden helper console print changed to ensure_ascii=True and Python UTF8 mode.",
+      "Initial dedicated Vite environment did not override proxy; corrected with PowerShell explicit environment to8003 before positive workflow browser cases.",
+      "Legacy CUA locator mismatch handled with observed native AX controls; not a product defect."
+    ],
+    "limits": [
+      "Generated rasters and hand-set untrained network with mock approval; not independent scientific accuracy.",
+      "Successful browser fixture workflow1/CPU inference3, independent fixture workflow1/CPU inference3, two failed startup fixtures each workflow1/CPU inference3; operating inference/training0.",
+      "Browser stop/back checks occurred after settled responses; delayed in-flight race verified only by unit tests.",
+      "No actual Ollama/Qwen3/BGE-M3/RAG/PostGIS integration tested or newly connected.",
+      "Browser HTTP log is successful dedicated Temp server only, not all operating HTTP traffic."
+    ],
+    "artifacts": [
+      "geollm-workflow-evidence-browser-20261018.png",
+      "geollm-workflow-evidence-map-browser-20261018.png",
+      "geollm-workflow-evidence-browser-dom-20261018.txt",
+      "geollm-workflow-evidence-applied-browser-20261018.png",
+      "geollm-workflow-evidence-applied-dom-20261018.txt",
+      "geollm-workflow-evidence-vite-inspection-initial-20261018.json",
+      "geollm-workflow-evidence-vite-inspection-20261018.json",
+      "geollm-workflow-evidence-browser-http-20261018.log"
+    ],
+    "later_process_observation": {
+      "at": "2026-10-18T09:39:48.9528259+09:00",
+      "prior_browser_pass_is_historical": true,
+      "api_listeners_now": [],
+      "test_listeners_now": [],
+      "frontend_5174_restored_pid": 34484,
+      "api_restarted": false,
+      "interruption_cause": "UNVERIFIED",
+      "temp_cleanup": "UNVERIFIED"
+    },
+    "restored_frontend_browser": {
+      "scope": "READ_ONLY_NO_WORKFLOW_REQUEST",
+      "observations": [
+        "Server connection needs checking visible",
+        "New workflow panel present",
+        "Empty ID and disabled read"
+      ],
+      "dom": "evidence/integration/geollm-workflow-evidence-restored-dom-20261018.txt",
+      "screenshot": "evidence/integration/geollm-workflow-evidence-restored-browser-20261018.png",
+      "original_user_tab_preserved": true
+    }
+  },
+  "integrity": {
+    "recorded_at": "2026-10-18T09:39:32.904659+09:00",
+    "protected_files_checked": 141,
+    "protected_changes": [],
+    "existing_source_checked": 434,
+    "existing_source_changes": [
+      {
+        "path": "frontend/src/GeoQuery.tsx",
+        "before": {
+          "sha256": "6e1d1b1991b56637ea0af09ae3a7f1bebc24bf2d701d3fcfb9d5e3e7076a434a",
+          "bytes": 10207
+        },
+        "after": {
+          "sha256": "4a1edeff18dea8dae46b7a5a75798bde11ea33b85abf6cf8a33048f2f570de6a",
+          "bytes": 10318
+        }
+      }
+    ],
+    "unexpected_existing_source_changes": [],
+    "expected_changed_existing_sources": [
+      {
+        "path": "frontend/src/GeoQuery.tsx",
+        "before": {
+          "sha256": "6e1d1b1991b56637ea0af09ae3a7f1bebc24bf2d701d3fcfb9d5e3e7076a434a",
+          "bytes": 10207
+        },
+        "after": {
+          "sha256": "4a1edeff18dea8dae46b7a5a75798bde11ea33b85abf6cf8a33048f2f570de6a",
+          "bytes": 10318
+        }
+      }
+    ],
+    "unchanged_existing_source_files": 433,
+    "previous_evidence_checked": 1439,
+    "previous_evidence_changes": [],
+    "catalog_rows": 14,
+    "catalog_canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "reserved_bytes_preserved": 136314880,
+    "existing_execution_workflow_model_and_other_sources_unchanged": true,
+    "operating_collection_training_registry_deployment_workflow_dispatch": 0
+  },
+  "understanding_updated": true,
+  "web_ui_changed": true,
+  "backend_api_changed": false,
+  "backend_full_rerun_this_unit": false,
+  "frontend_build_browser_rerun_this_unit": true,
+  "operating_collection_training_registry_approval_deployment_workflow_dispatch": 0,
+  "operating_inference_calls": 0,
+  "independent_temp_workflow_calls": 1,
+  "independent_temp_tiny_raster_cpu_inference_calls": 3,
+  "scientific_accuracy_validated": false,
+  "execution_authorized": false,
+  "standard_gmais_result": false,
+  "previous_full_backend": {
+    "unit": 145,
+    "passed": 1431,
+    "skipped": 1,
+    "seconds": 332.72
+  },
+  "initial_focused": {
+    "passed": 9,
+    "seconds": 0.4358917,
+    "reason": "before redirect:error hardening; preserved initial raw log"
+  },
+  "immutable_frontend_pins": {
+    "frontend/src/GeoQuery.tsx": "4a1edeff18dea8dae46b7a5a75798bde11ea33b85abf6cf8a33048f2f570de6a",
+    "frontend/src/GeoWorkflowEvidence.tsx": "453a37673bb8172d2f083a02f4e2ce25807ad8ae750577745ab7f467742de755",
+    "frontend/src/geollmWorkflowEvidenceAdapter.ts": "cb621faacbc09c1f580fb65ac6e8f5603569e01403672455bf296fcba4a02f96",
+    "frontend/src/geollmWorkflowEvidenceClient.ts": "0acffcb838326b12f0d642e86877cf09519a02d7fa4d359c0b48c79afd85f967",
+    "frontend/src/geollm-workflow-evidence.css": "a9c2e5179845b314117c7f5d75e0de1ae2148449c0606502def5151f9e0887c0",
+    "frontend/src/geollmWorkflowEvidenceAdapter.test.mjs": "4f7a31fa6792906b4ba37a0d2bbb2214537fd0de40d182745d49709add481a2d"
+  },
+  "next_internal_candidate": "ROOT_TO_SELECT_REMAINING_GEOLLM_RAG_OR_LOCAL_WORKFLOW_EVIDENCE_SCOPE",
+  "recorded_at": "2026-10-18T09:41:28.439353+09:00",
+  "documentation_validation": {
+    "checked_at": "2026-10-18T09:41:28.439353+09:00",
+    "understanding_markdown": 114,
+    "implementation_markdown": 1,
+    "local_links": 524,
+    "metadata_evidence_references": 14123,
+    "numbered_faq": 10,
+    "errors": [],
+    "reference_templates_byte_identical": true
+  },
+  "source_records": {
+    "frontend/src/GeoQuery.tsx": {
+      "sha256": "4a1edeff18dea8dae46b7a5a75798bde11ea33b85abf6cf8a33048f2f570de6a",
+      "bytes": 10318
+    },
+    "frontend/src/GeoWorkflowEvidence.tsx": {
+      "sha256": "453a37673bb8172d2f083a02f4e2ce25807ad8ae750577745ab7f467742de755",
+      "bytes": 5727
+    },
+    "frontend/src/geollmWorkflowEvidenceAdapter.ts": {
+      "sha256": "cb621faacbc09c1f580fb65ac6e8f5603569e01403672455bf296fcba4a02f96",
+      "bytes": 5399
+    },
+    "frontend/src/geollmWorkflowEvidenceClient.ts": {
+      "sha256": "0acffcb838326b12f0d642e86877cf09519a02d7fa4d359c0b48c79afd85f967",
+      "bytes": 2310
+    },
+    "frontend/src/geollm-workflow-evidence.css": {
+      "sha256": "a9c2e5179845b314117c7f5d75e0de1ae2148449c0606502def5151f9e0887c0",
+      "bytes": 2550
+    },
+    "frontend/src/geollmWorkflowEvidenceAdapter.test.mjs": {
+      "sha256": "4f7a31fa6792906b4ba37a0d2bbb2214537fd0de40d182745d49709add481a2d",
+      "bytes": 10155
+    }
+  },
+  "live_processes": {
+    "checked_at": "2026-10-18T09:39:48.9528259+09:00",
+    "processes": [
+      {
+        "pid": 27268,
+        "parent_pid": 31440,
+        "name": "ollama app.exe",
+        "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama app.exe\"",
+        "created": "2026-10-17T08:40:23.427079+09:00",
+        "cpu": 28.78125,
+        "working_set": 88739840
+      },
+      {
+        "pid": 27860,
+        "parent_pid": 27268,
+        "name": "ollama.exe",
+        "command_line": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve",
+        "created": "2026-10-17T08:40:25.549335+09:00",
+        "cpu": 10.9375,
+        "working_set": 84865024
+      },
+      {
+        "pid": 34484,
+        "parent_pid": 37408,
+        "name": "node.exe",
+        "command_line": "\"C:\\Program Files\\nodejs\\node.exe\" node_modules/vite/bin/vite.js --host 127.0.0.1 --port 5174 --strictPort",
+        "created": "2026-10-18T09:39:17.13797+09:00",
+        "cpu": 1.921875,
+        "working_set": 59625472
+      }
+    ],
+    "collector_training_processes_observed": 0,
+    "collector_training_command_matches": [],
+    "observation_limit": "Process command patterns only; unittest interpreters and temporary API fixtures are not operating training",
+    "automation_status": "ACTIVE",
+    "automation_interval_minutes": 10,
+    "automation_was_not_modified": true
+  },
+  "current_server_observation": {
+    "observed_at": "2026-10-18T09:39:48.9528259+09:00",
+    "prior_browser_pass_is_historical": true,
+    "API_restarted_by_root": false,
+    "frontend_5174_restored_pid": 34484,
+    "interruption_cause": "UNVERIFIED",
+    "Temp_cleanup": "UNVERIFIED"
+  },
+  "current_dev_server": {
+    "recorded_at": "2026-10-18T09:39:17.2373885+09:00",
+    "pid": 34484,
+    "port": 5174,
+    "reason": "Previous PTY sessions absent at next heartbeat; frontend only restored detached hidden; API not restarted",
+    "api_processes_observed": 0,
+    "owned_test_listeners_observed": 0,
+    "temporary_fixture_cleanup": "No longer running; process exit cause and Temp cleanup not verified"
+  },
+  "operating_inventory": {
+    "recorded_at": "2026-10-18T07:41:25.694803+09:00",
+    "scope": "OPERATING_SQLITE_URI_MODE_RO_COUNTS_ONLY",
+    "counts_by_kind": {
+      "analyses": 3,
+      "datasets": 6,
+      "gmais_idempotency": 2,
+      "gmais_jobs": 2,
+      "models": 1
+    },
+    "dataset_versions_count": 0,
+    "operating_writes": 0,
+    "model_or_raster_files_loaded": false
+  },
+  "snapshot_files": 2177
+}

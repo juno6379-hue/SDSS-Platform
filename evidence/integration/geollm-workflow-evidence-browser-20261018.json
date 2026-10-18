@@ -1,0 +1,326 @@
+{
+  "recorded_at": "2026-10-18T00:38:49.355860+00:00",
+  "verification": "MANUAL_CUA_ACTUAL_BROWSER_WITH_ACTUAL_MAIN_TEMP_API",
+  "scope": "TESTED_SYNTHETIC_GENERATED_RASTERS_HAND_SET_UNTRAINED_NETWORK_MOCK_APPROVAL_NO_LLM_RAG",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8003,
+    "pid": 27560,
+    "application": "ACTUAL_MAIN_ENV_SET_BEFORE_IMPORT",
+    "reload": false
+  },
+  "identifiers": {
+    "succeeded": "ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+    "running": "7133a754ec2c3192da6784a9e1c91f5b10da1a9460a67a769ee3df2e892bf006",
+    "failed": "8eca6ab0b8514eef465631ba0a6cb6547d2cbb9a918373f55624e4983ae54337"
+  },
+  "fixture_creation": {
+    "actual_local_workflow_calls": 1,
+    "tiny_raster_cpu_inference_calls": 3,
+    "training_calls": 0,
+    "operating_inference_calls": 0,
+    "running_failed_rows": "CONSTRUCTED_HISTORICAL_METADATA_ONLY"
+  },
+  "report_sha256": "3b6efce3f86e48d0369a159d4bbd0694e39dcc951093791403b16bb0a52362d5",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/dashboard",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/datasets",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/models",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/jobs",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/tools",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/analyses",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/models",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/jobs",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/tools",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/dashboard",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/datasets",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/analyses",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/dashboard",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/datasets",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/models",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/jobs",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/analyses",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/tools",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/dashboard",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/datasets",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/jobs",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/models",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/analyses",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/tools",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tools",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/models",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/datasets",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/jobs",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/dashboard",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/analyses",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/report",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/assets/0",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/7133a754ec2c3192da6784a9e1c91f5b10da1a9460a67a769ee3df2e892bf006",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/8eca6ab0b8514eef465631ba0a6cb6547d2cbb9a918373f55624e4983ae54337",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/report",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lcluc/workflows/ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da/report",
+      "status": 200
+    }
+  ],
+  "observations": [
+    "Initially collapsed; empty ID and disabled read; no automatic workflow query.",
+    "Unauthenticated status GET returned401 and fixed UI message.",
+    "Authenticated success displayed pinned model/Trace/report SHA, years2020/2021/2022, three pairs.",
+    "Pair2020-2021:256 valid pixels and25600m2 change;2021-2022:256 and0;2020-2022:256 and25600.",
+    "Explicit map action displayed one polygon/five vertices and nine-by-nine transition matrix; trees-to-grass256.",
+    "Editing ID immediately cleared prior summary/map.",
+    "RUNNING and FAILED only displayed status; no report GET or execution.",
+    "Unknown ID returned404; no stale result fallback.",
+    "Stop/clear removed settled result.",
+    "Menu navigation then browser back preserved legacy question draft and reset local workflow child/ID.",
+    "Operating5174 newly opened read-only tab showed initially collapsed child; expanded empty ID and disabled read; no operating workflow query."
+  ],
+  "operating_frontend_application": {
+    "stale_module_detected": true,
+    "old_verified_vite_pid": 15608,
+    "restart_only_frontend_port": 5174,
+    "post_restart_transformed_module_matches_test_frontend": true,
+    "api_servers_data_models_reservations_preserved": true,
+    "original_user_tab_id": "1",
+    "original_user_tab_url_preserved": "http://127.0.0.1:5174/#/view/15",
+    "temporary_tabs_closed": [
+      "14",
+      "15"
+    ]
+  },
+  "setup_corrections": [
+    "Two helper startups failed at cp949 console print after each Temp fixture workflow1/CPU inference3; both initial logs preserved. Hidden helper console print changed to ensure_ascii=True and Python UTF8 mode.",
+    "Initial dedicated Vite environment did not override proxy; corrected with PowerShell explicit environment to8003 before positive workflow browser cases.",
+    "Legacy CUA locator mismatch handled with observed native AX controls; not a product defect."
+  ],
+  "limits": [
+    "Generated rasters and hand-set untrained network with mock approval; not independent scientific accuracy.",
+    "Successful browser fixture workflow1/CPU inference3, independent fixture workflow1/CPU inference3, two failed startup fixtures each workflow1/CPU inference3; operating inference/training0.",
+    "Browser stop/back checks occurred after settled responses; delayed in-flight race verified only by unit tests.",
+    "No actual Ollama/Qwen3/BGE-M3/RAG/PostGIS integration tested or newly connected.",
+    "Browser HTTP log is successful dedicated Temp server only, not all operating HTTP traffic."
+  ],
+  "artifacts": [
+    "geollm-workflow-evidence-browser-20261018.png",
+    "geollm-workflow-evidence-map-browser-20261018.png",
+    "geollm-workflow-evidence-browser-dom-20261018.txt",
+    "geollm-workflow-evidence-applied-browser-20261018.png",
+    "geollm-workflow-evidence-applied-dom-20261018.txt",
+    "geollm-workflow-evidence-vite-inspection-initial-20261018.json",
+    "geollm-workflow-evidence-vite-inspection-20261018.json",
+    "geollm-workflow-evidence-browser-http-20261018.log"
+  ],
+  "later_process_observation": {
+    "at": "2026-10-18T09:39:48.9528259+09:00",
+    "prior_browser_pass_is_historical": true,
+    "api_listeners_now": [],
+    "test_listeners_now": [],
+    "frontend_5174_restored_pid": 34484,
+    "api_restarted": false,
+    "interruption_cause": "UNVERIFIED",
+    "temp_cleanup": "UNVERIFIED"
+  },
+  "restored_frontend_browser": {
+    "scope": "READ_ONLY_NO_WORKFLOW_REQUEST",
+    "observations": [
+      "Server connection needs checking visible",
+      "New workflow panel present",
+      "Empty ID and disabled read"
+    ],
+    "dom": "evidence/integration/geollm-workflow-evidence-restored-dom-20261018.txt",
+    "screenshot": "evidence/integration/geollm-workflow-evidence-restored-browser-20261018.png",
+    "original_user_tab_preserved": true
+  }
+}

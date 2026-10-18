@@ -1,0 +1,98 @@
+Browser tab: 15, Title: "GreenBlue SDSS · Climate Action & GeoAI", URL: "http://127.0.0.1:5174/#/view/16".
+1 AXWebArea GreenBlue SDSS · Climate Action & GeoAI, URL: 127.0.0.1:5174/#/view/16
+	2 container root
+		3 container
+			4 button SDSS 홈
+			5 text 데이터로 만드는 더 안전한 오늘,
+			6 text 지속 가능한 내일 Data for a Resilient Indonesia
+			7 text field (settable) 플랫폼 데이터 검색
+			8 button 데이터 카탈로그 검색
+			9 button Description: 실제 작업·알림 보기, Help: 작업·알림
+			10 button 서버 연결 설정
+			11 button 서버 상태 새로고침
+				12 text ●
+				13 text SDSS Indonesia
+				14 text 로컬 분석 서버 연결됨
+				15 text ⌄
+			16 text Sustainable Indonesia
+			17 text for a Better Tomorrow
+		18 container
+			19 container 전체 플랫폼 메뉴
+				20 button 대시보드
+					21 text 대시보드
+				22 button 데이터 카탈로그
+					23 text 데이터 카탈로그
+				24 button GeoAI 툴박스
+					25 text GeoAI 툴박스
+				26 button WebGIS 분석
+					27 text WebGIS 분석
+				28 button GeoLLM Assistant
+					29 text GeoLLM Assistant
+				30 button 모델 & MLOps
+					31 text 모델 & MLOps
+				32 button 리포트 & RDTR
+					33 text 리포트 & RDTR
+			34 text AI와 공간데이터로
+			35 text 인도네시아의
+			36 text 기후행동을 지원합니다.
+		37 container
+			38 container 현재 위치
+				39 text ⌂ › GeoLLM Assistant › 근거·출처 확인
+			40 text SPATIAL DECISION SUPPORT SYSTEM
+			41 heading 근거·출처 확인, Value: 1
+				42 text 근거·출처 확인
+			43 text 인도네시아 기후행동을 위한 데이터, 분석, 검증과 의사결정. ◎ INDONESIA
+			44 container 현재 메뉴의 세부 기능
+				45 button 자연어 질의
+				46 button 실행계획 검토
+				47 button 근거·출처 확인
+			48 text GEOLLM · EVIDENCE / NO-LLM FALLBACK
+			49 heading 실행 상태와 출처를 함께 확인하는 질의, Value: 2
+				50 text 실행 상태와 출처를 함께 확인하는 질의
+			51 text 현재 질의 API는 승인된 정형 읽기 패턴입니다. LLM·정책 RAG·자연어 임의 코드 실행을 사용하지 않습니다. 외부 GeoLLM 서비스가 연결되었다고 표시하지 않습니다.
+			52 container
+				53 text 질의 유형
+				54 pop up button (collapsed, settable) 질의 유형, Value: 결과·모델 출처 설명 · 정형 읽기, Secondary Actions: Expand
+					55 menu
+						56 데이터 조회만 · 실제 Catalog 읽기
+						57 LCLUC 분석 실행 요청 · 준비도 검토
+						58 (selected) 결과·모델 출처 설명 · 정형 읽기
+			59 container 질의 실행 경로
+				60 text 요청 유형
+				61 text →
+				62 text 도구·준비도
+				63 text →
+				64 text 실제 응답 근거
+				65 text →
+				66 text 동일 Result ID 지도·보고서
+			67 container
+				68 text 질문
+				69 text entry area (settable) 질문, Value: 모델 정확도와 버전을 보여주세요
+			70 container
+				71 text 근거 분석 ID
+				72 pop up button (collapsed, settable) 근거 분석 ID, Value: 모델 기록 조회 또는 분석 미선택, Secondary Actions: Expand
+					73 menu
+						74 (selected) 모델 기록 조회 또는 분석 미선택
+						87 baseline2021_cpu_v1_prediction_2
+						88 baseline2021_cpu_v1_prediction_1
+						89 baseline2021_cpu_v1_prediction_0
+			75 text 지원: 모델 정확도/버전, 완료된 변화 분석 면적·통계. 분석의 AOI·기간·분류체계가 질문과 일치하는지 원본 근거를 확인하세요.
+			76 button 근거 답변 조회
+			90 container
+				91 button (expanded) ▾ Local LCLUC workflow 근거 조회, Secondary Actions: Collapse
+					92 text ▾
+					93 text Local LCLUC workflow 근거 조회
+				94 text 완료된 local workflow의 64자리 ID를 직접 입력하세요. 기존 분석 ID와 별도이며 LLM·정책 RAG·새 실행을 연결하지 않습니다. Local workflow ID
+				95 text field (settable) Local workflow ID
+				96 button (disabled) 기록·보고서 읽기
+				97 button 표시 중단·결과 비우기
+				98 text 인증을 유지하는 수동 GET 조회입니다. 자동 조회·polling·재시도·실행 요청은 없습니다. 표시 중단은 현재 화면의 응답 표시와 전송을 중단하며 서버 실행을 취소하거나 되돌리지 않습니다.
+			80 button (collapsed) 서버 연결 설정 · /api, Secondary Actions: Expand
+				81 text 서버 연결 설정 · 
+				82 text /api
+			83 text ◉ SDSS
+			84 text Spatial Decision Support System for Climate Action & GeoAI
+			85 text 독립 검증·운영 승인 전 분석 결과 게시 차단
+			86 text ◎ KO　⌄　　 ❧ Together for a Resilient Indonesia
+
+The focused UI element is 91 button (expanded) ▾ Local LCLUC workflow 근거 조회, Secondary Actions: Collapse

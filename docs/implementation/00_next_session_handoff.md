@@ -1,5 +1,25 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 — GeoLLM 근거 화면의 고정 local Workflow 보고서 조회 (147)
+
+UI 담당은 GeoQuery evidence 탭에 명시 Workflow ID 조회와 요약·수동 지도/전이행렬 검토를 연결했다. 독립 담당은 기존116 인증 GET과 실제 Temp CPU fixture를, Root는 관련 backend·전체 frontend/build·실제 브라우저·운영 보존·공통 인계·Git을 맡았다. 이해 담당은 완료 코드와 증거를 읽고 설명·대본·FAQ·INDEX·변경 이력14개를 갱신했다. 실제 운영 수집·학습 재개와 ACTIVE/10분 보고 예약은 구분한다.
+
+새 client는 사용자가 입력한64자리 Workflow ID의 기존 status GET을8MiB 상한으로 읽고 readOnly/replayed receipt를 검산한다. SUCCEEDED일 때만 같은 ID의 report GET을 읽어 원바이트 SHA를 유일한 receipt artifact pin과 대조하고 strict UTF8/중복 key·비유한 수 거부·모델/연도/변화쌍/전이 통계를 검산한 뒤 묶어서 표시한다. RUNNING/FAILED는 보고서를 읽지 않고 상태만 보여준다. 명시 선택한 같은 receipt/보고서를 기존 지도·전이행렬 컴포넌트에 전달한다. 새 POST·분석 실행·자동 재시도·LLM/RAG 호출은 없다.
+
+ID 편집·표시 중단·메뉴 이동·unmount는 이전 표시를 지우고 전송 세대를 무효화한다. abort는 화면/전송 표시 중단이지 서버 실행 취소나 rollback이 아니다. Bearer 인증과 redirect:error를 사용하며 HTTP 오류 원문·임의 경로를 화면에 노출하지 않는다. 저장된 성공 이력은 현재 모델 승인이나 기관 권한을 재심사한 결과가 아니고 표준 GMAIS Result·과학 인증도 아니다.
+
+집중9 PASS/0.5883648초, 전체 frontend280 PASS/25.2827483초, build116 modules/23.55초, 기존 backend 관련34 PASS/20.542초, 독립7 PASS/0 SKIP/5.5723868초다. 묶음은 겹치므로 합산하지 않는다. redirect 보강 전 집중9 PASS/0.4358917초 원로그는 initial로 보존했다. backend source 변경이 없어 전체 backend는 이번 재실행하지 않았으며145 전체1431 PASS/1 SKIP/332.720초는 이전 이력이다.
+
+독립 fixture는 새 Temp 합성3연도 영상·학습하지 않은 hand-set TinyUNet·명시 모의 승인 metadata로 실제 Workflow1회/영상 CPU 추론3회를 수행했다. 운영 추론·학습·기관 승인·LLM/RAG는0이다. RUNNING/FAILED는 별도 구성한 과거 metadata이며 실행 중 장기 작업을 재개한 것이 아니다. auth AST+116 router 조회 시험과 실제 main을 Temp8003에 띄운 Root 브라우저 시험을 구분한다. 조회 중 dispatch/put0·DB/files 불변, raw SHA·Trace/model/years/pairs·401/404/409·변조503을 확인했다.
+
+Root는 별도 Vite5180과 실제 main Temp8003으로 성공 요약·3변화쌍·수동1polygon/9×9행렬·ID수정 폐기·RUNNING/FAILED·없는 ID·인증·메뉴/뒤로 가기를 확인했다. 전송 지연 경쟁/초과 응답/변조는 집중 시험이며 모든 경우를 브라우저에서 재현한 것으로 확대하지 않는다. 기존5174의 stale 모듈은 정확히 식별한 Vite만 재시작하고 module SHA 동등과 빈 ID disabled 화면으로 적용을 구분 확인했다. 기존 사용자 질의 초안과 운영 자료를 보존했다. 장치별 WebGL·모바일·접근성·부하/SLA 인증은 아니다.
+
+위 브라우저 통과는08시 관측 이력이다.09:39 CIM/netstat 재확인에서는 기존 API·Temp8003·frontend5174/5180 프로세스가 소실됐고 Ollama는 남아 있었다. 중단 원인이나 Temp cleanup 완료는 확인하지 않았다. Root는 API를 재시작하지 않았고5174만 숨김 detached 프로세스 PID34484로 복원했다. 현재 API offline과 과거 브라우저 성공을 구분하며 최신 dev-server-after/final-processes JSON을 현 상태 근거로 삼는다.
+
+최종 보존은 보호141개·기존 tracked source434개 중 허용 GeoQuery1개 외433개·이전 evidence1439개·catalog14행 SHA·운영 dataset_versions0·예약136314880바이트다. backend/main/API·기존 workflow adapter/client/map/transition·원본/원장/lock/분할/모델 변경0이다. 새 UI 계약·사용법·시험·인계·이해자료를 같은 단위로 갱신했다. 공식 RAG/기관 ACL·승인 모델·독립 라벨·실제 연차 확보·운영 수집/실행·다른5개 실행기·배포/UAT는 별도 후속이며 전체 개발과10분 보고를 중단하지 않는다.
+
+근거: docs/implementation/147_geollm_workflow_evidence_ui.md, evidence/integration/geollm-workflow-evidence-ui-focused-20261018.log, geollm-workflow-evidence-root-frontend-20261018.log, geollm-workflow-evidence-build-20261018.log, geollm-workflow-evidence-root-backend-20261018.log, geollm-workflow-evidence-independent-20261018.json, geollm-workflow-evidence-browser-20261018.json, geollm-workflow-evidence-live-integrity-final-20261018.json 및 geollm-workflow-evidence-closeout-20261018.json.
+
 ## 2026-10-18 — 명시 source raster DatasetVersion 등록 명령 (146)
 
 구현 담당은 신규 register_dataset_version.py·집중시험·문서146을, 독립 담당은 실제 subprocess와 source2건→품질보고서 CLI→소비 연결을 맡았다. Root는 계약 검토·관련 회귀·운영 보존·공통 문서·Git을, 이해 담당은 완료 코드와 시험을 읽고 설명·대본·FAQ·INDEX·변경 이력14개를 갱신했다. 시작 시145 작업자는 모두 완료 상태였고 실제 운영 수집·학습은0이었다. ACTIVE/10분 보고 예약과 API/Ollama 프로세스를 수집·학습 재개로 표현하지 않는다.

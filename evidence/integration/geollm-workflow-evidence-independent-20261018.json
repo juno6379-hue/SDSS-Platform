@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "scope": "TESTED_SYNTHETIC_GENERATED_RASTERS_HAND_SET_UNTRAINED_NETWORK_MOCK_APPROVAL_NO_LLM_RAG",
+  "baseline_commit": "c07602a203907e99ac94e4008b94a783719f01de",
+  "tests": 7,
+  "passed": 7,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 5.572386800005916,
+  "fixture_creation": {
+    "actual_local_workflow_calls": 1,
+    "tiny_raster_cpu_inference_calls": 3,
+    "training_calls": 0,
+    "operating_inference_calls": 0,
+    "running_failed_rows": "CONSTRUCTED_HISTORICAL_METADATA_ONLY"
+  },
+  "fixture_identifiers": {
+    "succeeded": "ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da",
+    "running": "7133a754ec2c3192da6784a9e1c91f5b10da1a9460a67a769ee3df2e892bf006",
+    "failed": "8eca6ab0b8514eef465631ba0a6cb6547d2cbb9a918373f55624e4983ae54337"
+  },
+  "operating_store_access": 0,
+  "GET_execution_calls": 0,
+  "GET_store_put_calls": 0,
+  "LLM_calls": 0,
+  "RAG_calls": 0,
+  "training_calls": 0,
+  "auth_scope": "CURRENT_AUTH_AST_ISOLATED_FASTAPI_WITH_EXISTING_116_ROUTER_NOT_FULL_MAIN_SERVER",
+  "backend_source_sha256": {
+    "backend/app/lcluc_workflow.py": "3af1cefebb6947aa211f4ef985238e99e671318b2d1d632ce7dda34c1eb971fc",
+    "backend/app/lcluc_workflow_api.py": "fd42bfe71edbdded3faa233a4580868a69744e84b42d35e7342c7309f402eaff",
+    "backend/app/main.py": "d5efc3acb269ab1397ff0e32b829f7ce8820799bcb16ed3e64d59121ccc27467",
+    "frontend/src/lclucWorkflowAdapter.ts": "b2bd418141e2567d92b0421d9bad1da0fa1fd6e00b540551e4d89ef347999eaa"
+  },
+  "frontend_frozen_source_sha256": {
+    "frontend/src/GeoQuery.tsx": "4a1edeff18dea8dae46b7a5a75798bde11ea33b85abf6cf8a33048f2f570de6a",
+    "frontend/src/GeoWorkflowEvidence.tsx": "453a37673bb8172d2f083a02f4e2ce25807ad8ae750577745ab7f467742de755",
+    "frontend/src/geollmWorkflowEvidenceAdapter.ts": "cb621faacbc09c1f580fb65ac6e8f5603569e01403672455bf296fcba4a02f96",
+    "frontend/src/geollmWorkflowEvidenceClient.ts": "0acffcb838326b12f0d642e86877cf09519a02d7fa4d359c0b48c79afd85f967",
+    "frontend/src/geollm-workflow-evidence.css": "a9c2e5179845b314117c7f5d75e0de1ae2148449c0606502def5151f9e0887c0",
+    "frontend/src/geollmWorkflowEvidenceAdapter.test.mjs": "4f7a31fa6792906b4ba37a0d2bbb2214537fd0de40d182745d49709add481a2d"
+  },
+  "limits": [
+    "Synthetic generated rasters, hand-set untrained weights and fabricated admission metadata are not scientific or institutional approval.",
+    "The actual fixture executes one local workflow and three tiny CPU raster inferences; operating inference is zero.",
+    "RUNNING/FAILED records are constructed historical metadata fixtures; GET does not execute, retry or resume.",
+    "Observed GET DB/files are unchanged; explicit tamper/model-state setup writes are separate.",
+    "Actual main server browser verification is a separate Root task; no LLM inference, RAG retrieval, official corpus or operating result validation."
+  ],
+  "frontend_pin_note": "Post-test read-only metadata append of final frozen frontend source hashes; no extra test execution."
+}

@@ -1,0 +1,159 @@
+Browser tab: 14, Title: "GreenBlue SDSS · Climate Action & GeoAI", URL: "http://127.0.0.1:5180/#/view/16".
+1 AXWebArea GreenBlue SDSS · Climate Action & GeoAI, URL: 127.0.0.1:5180/#/view/16
+	2 container root
+		3 container
+			4 button SDSS 홈
+			5 text 데이터로 만드는 더 안전한 오늘,
+			6 text 지속 가능한 내일 Data for a Resilient Indonesia
+			7 text field (settable) 플랫폼 데이터 검색
+			8 button 데이터 카탈로그 검색
+			9 button Description: 실제 작업·알림 보기, Help: 작업·알림
+			10 button 서버 연결 설정
+			11 button 서버 상태 새로고침
+				12 text ●
+				13 text SDSS Indonesia
+				14 text 로컬 분석 서버 연결됨
+				15 text ⌄
+			16 text Sustainable Indonesia
+			17 text for a Better Tomorrow
+		18 container
+			19 container 전체 플랫폼 메뉴
+				20 button 대시보드
+					21 text 대시보드
+				22 button 데이터 카탈로그
+					23 text 데이터 카탈로그
+				24 button GeoAI 툴박스
+					25 text GeoAI 툴박스
+				26 button WebGIS 분석
+					27 text WebGIS 분석
+				28 button GeoLLM Assistant
+					29 text GeoLLM Assistant
+				30 button 모델 & MLOps
+					31 text 모델 & MLOps
+				32 button 리포트 & RDTR
+					33 text 리포트 & RDTR
+			34 text AI와 공간데이터로
+			35 text 인도네시아의
+			36 text 기후행동을 지원합니다.
+		37 container
+			38 container 현재 위치
+				39 text ⌂ › GeoLLM Assistant › 근거·출처 확인
+			40 text SPATIAL DECISION SUPPORT SYSTEM
+			41 heading 근거·출처 확인, Value: 1
+				42 text 근거·출처 확인
+			43 text 인도네시아 기후행동을 위한 데이터, 분석, 검증과 의사결정. ◎ INDONESIA
+			44 container 현재 메뉴의 세부 기능
+				45 button 자연어 질의
+				46 button 실행계획 검토
+				47 button 근거·출처 확인
+			48 text GEOLLM · EVIDENCE / NO-LLM FALLBACK
+			49 heading 실행 상태와 출처를 함께 확인하는 질의, Value: 2
+				50 text 실행 상태와 출처를 함께 확인하는 질의
+			51 text 현재 질의 API는 승인된 정형 읽기 패턴입니다. LLM·정책 RAG·자연어 임의 코드 실행을 사용하지 않습니다. 외부 GeoLLM 서비스가 연결되었다고 표시하지 않습니다.
+			52 container
+				53 text 질의 유형
+				54 pop up button (collapsed, settable) 질의 유형, Value: 결과·모델 출처 설명 · 정형 읽기, Secondary Actions: Expand
+					55 menu
+						56 데이터 조회만 · 실제 Catalog 읽기
+						57 LCLUC 분석 실행 요청 · 준비도 검토
+						58 (selected) 결과·모델 출처 설명 · 정형 읽기
+			59 container 질의 실행 경로
+				60 text 요청 유형
+				61 text →
+				62 text 도구·준비도
+				63 text →
+				64 text 실제 응답 근거
+				65 text →
+				66 text 동일 Result ID 지도·보고서
+			107 container
+				108 text 질문
+				109 text entry area (settable) 질문, Value: 모델 정확도와 버전을 보여주세요
+			110 container
+				111 text 근거 분석 ID
+				112 pop up button (collapsed, settable) 근거 분석 ID, Value: 모델 기록 조회 또는 분석 미선택, Secondary Actions: Expand
+					113 menu
+						114 (selected) 모델 기록 조회 또는 분석 미선택
+			115 text 지원: 모델 정확도/버전, 완료된 변화 분석 면적·통계. 분석의 AOI·기간·분류체계가 질문과 일치하는지 원본 근거를 확인하세요.
+			116 button 근거 답변 조회
+			117 container
+				118 button (expanded) ▾ Local LCLUC workflow 근거 조회, Secondary Actions: Collapse
+					126 text ▾
+					120 text Local LCLUC workflow 근거 조회
+				121 text 완료된 local workflow의 64자리 ID를 직접 입력하세요. 기존 분석 ID와 별도이며 LLM·정책 RAG·새 실행을 연결하지 않습니다. Local workflow ID
+				122 text field (settable) Local workflow ID, Value: ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da
+				123 button 기록·보고서 읽기
+				124 button 표시 중단·결과 비우기
+				125 text 인증을 유지하는 수동 GET 조회입니다. 자동 조회·polling·재시도·실행 요청은 없습니다. 표시 중단은 현재 화면의 응답 표시와 전송을 중단하며 서버 실행을 취소하거나 되돌리지 않습니다.
+				127 container Local workflow 기록 근거
+					128 text 로컬 실행 완료
+					129 definition list
+						130 container Workflow ID
+							131 text Workflow ID
+						132 text ea367c3e4898146f01447abc4774f048e4fffe5efbf52fef06da46da8dc0a1da
+						133 container Trace
+							134 text Trace
+						135 text trace-workflow-evidence-147
+						136 container 조회 성격
+							137 text 조회 성격
+						138 text 저장된 이력 읽기 · 새 실행·현재 승인 재판정 아님
+					139 definition list
+						140 container 고정 모델 ID
+							141 text 고정 모델 ID
+						142 text fixture-model
+						143 container 고정 모델 버전
+							144 text 고정 모델 버전
+						145 text v1
+						146 container 체크포인트 SHA
+							147 text 체크포인트 SHA
+						148 text 18080d89c6322688fe9c7126f7fb1eb71691a35393037997d23b6a2703efb14f
+					149 container
+						150 text 관측 연도:  2020, 2021, 2022  · 보고서 원바이트 SHA  3b6efce3f86e48d0369a159d4bbd0694e39dcc951093791403b16bb0a52362d5
+					151 container 검증된 변화쌍 요약
+						152 table 같은 workflow 보고서의 전체 유효 래스터 변화 요약
+							153 text 같은 workflow 보고서의 전체 유효 래스터 변화 요약
+							154 row
+								155 cell
+									156 text 변화쌍
+								157 cell
+									158 text 유효 픽셀
+								159 cell
+									160 text 변화 면적 (m²)
+							161 row
+								162 cell
+									163 text 2020-2021
+								164 cell
+									165 text 256
+								166 cell
+									167 text 25,600
+							168 row
+								169 cell
+									170 text 2021-2022
+								171 cell
+									172 text 256
+								173 cell
+									174 text 0
+							175 row
+								176 cell
+									177 text 2020-2022
+								178 cell
+									179 text 256
+								180 cell
+									181 text 25,600
+					182 button 동일 workflow 지도·행렬 검토
+					183 text LOCAL_LCLUC_WORKFLOW_ONLY · 과학 정확도 인증 false · 표준 GMAIS Result false. SHA·수치 일관성은 기관 권위·독립 정확도·현재 모델 승인·정책 적합성을 인증하지 않습니다. 지도·행렬은 동일 local workflow 안에서만 검토하며 기존 분석 화면으로 전달하지 않습니다.
+			97 container sdss-connection-settings
+				98 button (expanded) 서버 연결 설정 · /api, Secondary Actions: Collapse
+					99 text 서버 연결 설정 · 
+					100 text /api
+				101 text 공유 서버에 GEOAI_API_TOKEN을 설정한 경우에만 입력합니다. 토큰은 현재 탭의 세션에 보관됩니다.
+				102 container
+					103 text API 토큰
+					104 text field (settable) API 토큰
+				105 button 토큰 적용 / 빈 값으로 해제
+				106 text 토큰 설정을 적용했습니다.
+			83 text ◉ SDSS
+			84 text Spatial Decision Support System for Climate Action & GeoAI
+			85 text 독립 검증·운영 승인 전 분석 결과 게시 차단
+			86 text ◎ KO　⌄　　 ❧ Together for a Resilient Indonesia
+
+The focused UI element is 1 AXWebArea GreenBlue SDSS · Climate Action & GeoAI, URL: 127.0.0.1:5180/#/view/16

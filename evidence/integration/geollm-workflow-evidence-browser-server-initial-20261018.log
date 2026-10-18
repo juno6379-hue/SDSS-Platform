@@ -1,0 +1,8 @@
+E:\GeoAI\u2013MLOps\u2013SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\.git\geollm_workflow_evidence_browser_server.py", line 48, in <module>
+    main()
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\.git\geollm_workflow_evidence_browser_server.py", line 39, in main
+    print(json.dumps({'ready':True,'fixture':str(destination),'identifiers':data['identifiers'],
+UnicodeEncodeError: 'cp949' codec can't encode character '\u2013' in position 37: illegal multibyte sequence

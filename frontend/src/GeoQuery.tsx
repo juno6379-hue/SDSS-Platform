@@ -9,6 +9,7 @@ import WorkflowNodeHandoff from './WorkflowNodeHandoff';
 import FullJobHandoff from './FullJobHandoff';
 import WorkflowModelRecordHandoff from './WorkflowModelRecordHandoff';
 import { parseWorkflowDraft, workflowReplyCurrent } from './workflowLineageAdapter';
+import GeoWorkflowEvidence from './GeoWorkflowEvidence';
 
 type QueryResponse = { mode?: string; answer?: string; evidence?: EvidenceRecord[]; trace_id?: string; status?: string; plan_id?: string; scientific_status?: string };
 export default function GeoQuery({ analyses, onReviewResult, onAgentCenter, initialKind = 'evidence' }: { analyses: EvidenceRecord[]; onReviewResult: (id: string) => void; onAgentCenter: () => void; initialKind?: 'data'|'execution'|'evidence' }) {
@@ -61,6 +62,7 @@ export default function GeoQuery({ analyses, onReviewResult, onAgentCenter, init
         {!isMockOnly(record) && analyses.some(row => row.id === record.id) && <button className="secondary" onClick={() => onReviewResult(String(record.id))}>동일 분석 ID의 지도·보고서 검토</button>}
       </article>)}
       <p className="help">Metadata/Policy RAG·문서 버전·기관별 ACL 근거 API는 아직 연결되지 않았습니다. RDTR/RTRW를 인용하거나 정책 적합성을 추정하지 않습니다.</p></>}
+    {kind === 'evidence' && <GeoWorkflowEvidence/>}
     {error && <p className="error" role="alert">{diagnosticText(error)}</p>}
   </section>;
 }

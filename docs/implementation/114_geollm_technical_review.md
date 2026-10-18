@@ -196,3 +196,7 @@ python scripts/evaluate_geollm_tools.py --run-local --model qwen2.5:1.5b --model
 ```
 
 최종 focused17 PASS·독립17 PASS의 scorer/transport/plan-tool 시험은 모의·순수 시험이며 실제 chat16시도 및 embedding1건과 중복 합산하지 않는다. 평가 과제 호출은 기존 query6·structured chat12시도·native chat4시도·embedding1이며 timeout을 성공으로 계산하지 않는다. tags/version/ps 메타데이터 조회는 별도다. 전체 회귀와 문서/보존·Git 결과는 Root 최신 통합 근거를 따른다.
+
+## 후속147 고정 Workflow 보고서 근거 조회
+
+[147 구현·검증](147_geollm_workflow_evidence_ui.md)은 GeoQuery evidence 탭에서 명시한 local Workflow ID의 기존 인증 GET과 보고서 원바이트 SHA를 검산해 요약·같은 변화쌍 지도/전이행렬을 수동 검토하게 한다. LLM 추론·도구 실행·RAG/RDTR corpus 연결은 추가하지 않았다. Temp 합성 CPU fixture·모의 승인 metadata와 운영 검증을 구분하며 과거 SUCCEEDED 조회를 새 실행/기관/과학 승인으로 승격하지 않는다.
