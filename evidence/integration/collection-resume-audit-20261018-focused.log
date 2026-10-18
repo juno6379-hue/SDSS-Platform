@@ -1,0 +1,12 @@
+test_all_pending_leaves_empty_queue_without_worker_or_settlement (test_collection_continue_pending.ContinuePendingTests.test_all_pending_leaves_empty_queue_without_worker_or_settlement) ... ok
+test_changed_pending_config_refuses_before_writes (test_collection_continue_pending.ContinuePendingTests.test_changed_pending_config_refuses_before_writes) ... ok
+test_default_keeps_pending_and_existing_reserve_refuses (test_collection_continue_pending.ContinuePendingTests.test_default_keeps_pending_and_existing_reserve_refuses) ... ok
+test_new_work_uses_same_budget_and_preserves_full_old_reservation (test_collection_continue_pending.ContinuePendingTests.test_new_work_uses_same_budget_and_preserves_full_old_reservation) ... ok
+test_opt_in_excludes_only_pending_without_mutating_inputs_or_ledger (test_collection_continue_pending.ContinuePendingTests.test_opt_in_excludes_only_pending_without_mutating_inputs_or_ledger) ... ok
+test_settled_is_retained_for_existing_ledger_skip (test_collection_continue_pending.ContinuePendingTests.test_settled_is_retained_for_existing_ledger_skip) ... ok
+test_unlisted_pending_is_observed_and_not_invented_or_settled (test_collection_continue_pending.ContinuePendingTests.test_unlisted_pending_is_observed_and_not_invented_or_settled) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.302s
+
+OK

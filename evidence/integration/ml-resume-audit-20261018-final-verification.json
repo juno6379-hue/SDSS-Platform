@@ -1,0 +1,108 @@
+{
+  "status": "FINAL_FROZEN_CANDIDATE_FILES_MATCH",
+  "actual_final_file_rehash_count": 4285,
+  "post_QA_rehash_seconds": 28.188,
+  "mismatch_paths": [],
+  "report_sha256": "18e9b3760e07c8a2bb3e22bd5707313880a9f0655e856e57ca33cdbf0a5de9ba",
+  "old_readiness_sha256": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+  "fixed_historical_candidate_only": true,
+  "current_collector_aggregate_reassessed": false,
+  "eligible": {
+    "train": 628,
+    "val": 217,
+    "test": 250
+  },
+  "blocker_count": 4,
+  "all_compared_fields_equal_stored_QA": true,
+  "planning_floor_deficits": [
+    {
+      "province": "banten",
+      "year": 2024,
+      "eligible": 23,
+      "shortfall_to_planning_floor_28": 5
+    },
+    {
+      "province": "banten",
+      "year": 2025,
+      "eligible": 16,
+      "shortfall_to_planning_floor_28": 12
+    },
+    {
+      "province": "east_java",
+      "year": 2020,
+      "eligible": 23,
+      "shortfall_to_planning_floor_28": 5
+    },
+    {
+      "province": "east_java",
+      "year": 2021,
+      "eligible": 16,
+      "shortfall_to_planning_floor_28": 12
+    },
+    {
+      "province": "east_java",
+      "year": 2024,
+      "eligible": 16,
+      "shortfall_to_planning_floor_28": 12
+    },
+    {
+      "province": "east_java",
+      "year": 2025,
+      "eligible": 14,
+      "shortfall_to_planning_floor_28": 14
+    },
+    {
+      "province": "gorontalo",
+      "year": 2022,
+      "eligible": 14,
+      "shortfall_to_planning_floor_28": 14
+    },
+    {
+      "province": "gorontalo",
+      "year": 2024,
+      "eligible": 25,
+      "shortfall_to_planning_floor_28": 3
+    },
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "eligible": 8,
+      "shortfall_to_planning_floor_28": 20
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "eligible": 18,
+      "shortfall_to_planning_floor_28": 10
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2022,
+      "eligible": 26,
+      "shortfall_to_planning_floor_28": 2
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2023,
+      "eligible": 18,
+      "shortfall_to_planning_floor_28": 10
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "eligible": 1,
+      "shortfall_to_planning_floor_28": 27
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "eligible": 23,
+      "shortfall_to_planning_floor_28": 5
+    }
+  ],
+  "planning_floor_shortfall_total": 151,
+  "training_executed": false,
+  "network_requests": 0,
+  "source_files_written": 0,
+  "scientific_accuracy_validated": false
+}

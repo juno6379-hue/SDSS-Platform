@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-10-18T09:47:28.3208056+09:00",
+  "last_boot": "2026-10-17T08:25:41.5+09:00",
+  "events": [
+    {
+      "TimeCreated": "2026-10-17T08:25:45.0625788+09:00",
+      "Id": 41,
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "Message": "시스템이 비정상적으로 종료된 후 다시 부팅되었습니다. 이 오류는 시스템이 응답을 멈추었거나 손상되었거나 예기치 않게 전원 공급이 중단되면 발생할 수 있습니다."
+    },
+    {
+      "TimeCreated": "2026-10-17T08:25:51.7510253+09:00",
+      "Id": 6005,
+      "ProviderName": "EventLog",
+      "Message": "이벤트 로그 서비스가 시작되었습니다."
+    },
+    {
+      "TimeCreated": "2026-10-17T08:25:51.7501582+09:00",
+      "Id": 6008,
+      "ProviderName": "EventLog",
+      "Message": "‎2026-‎10-‎16의 오후 4:53:55에서 이전에 예기치 않은 시스템 종료가 있었습니다."
+    }
+  ],
+  "interpretation": "Host abnormal shutdown and reboot verified. Exact collector termination cause/time not established: event6008 reports 16:53:55, later collector file timestamps extend to 17:04. Do not silently reconcile clocks or infer power failure vs hang."
+}

@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-10-18T09:58:53.914114+09:00",
+  "catalog_before": {
+    "file_sha256": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "rows": 14,
+    "canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "legacy_jobs": 0
+  },
+  "command": [
+    "python",
+    "-m",
+    "uvicorn",
+    "app.main:app",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8002"
+  ],
+  "explicit_data_root": "E:\\GeoAI–MLOps–SDSS\\data",
+  "authentication_mode": "EXISTING_APP_DEFAULT_WITH_TOKEN_UNSET_LOOPBACK_BINDING_ONLY",
+  "token_created_or_changed": false,
+  "source_or_authorization_code_changed": false,
+  "startup_recovery_target_count_before": 0,
+  "POST_requests": 0,
+  "status": "LAUNCHED_NOT_YET_HEALTH_VERIFIED",
+  "pid": 33956
+}

@@ -82,6 +82,34 @@ def extra_jobs(base, plans, centers=4):
     return result
 
 
+def continuation_jobs(jobs, snapshot, enabled=False):
+    """Opt in to unrelated jobs while retaining every interrupted reservation.
+
+    This is only a queue filter. It cannot settle, refund, change a batch key,
+    remove a lock, or authorize a second collector. The default leaves pending
+    jobs queued so CollectionLedger.reserve keeps its existing fail-closed path.
+    """
+    pending = {key: row for key, row in snapshot["batches"].items() if row["status"] == "pending"}
+    observed = [{"key": key, "config_sha256": row["config_sha256"],
+                 "reserved_bytes_preserved": row["reserved_bytes"],
+                 "charged_bytes_preserved": row["charged_bytes"]}
+                for key, row in sorted(pending.items())]
+    excluded = []
+    retained = []
+    for job in jobs:
+        row = pending.get(job["key"])
+        if enabled and row is not None:
+            digest = hashlib.sha256(json.dumps(job["config"], sort_keys=True).encode()).hexdigest()
+            if digest != row["config_sha256"]:
+                raise RuntimeError("기존 pending batch 설정이 달라 별도 작업 계속을 거부합니다")
+            excluded.append(job["key"])
+        else:
+            retained.append(job)
+    return retained, {"enabled": bool(enabled), "observed_pending": observed,
+                      "excluded_pending_keys": excluded, "settlement_attempted": False,
+                      "refund_bytes": 0, "lock_handover_performed": False}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT / "data/first-group-training-esri-v1")
@@ -89,6 +117,8 @@ def main():
     parser.add_argument("--max-batches", type=int, default=0)
     parser.add_argument("--candidate-plan",type=Path,action="append",default=[],help="로컬검증후추가공간후보를공통원장으로소비")
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--continue-unrelated-pending", action="store_true",
+                        help="기존 pending의 설정/전액예약을 보존하고 다른 미예약 작업만 계속; lock 자동해제/정산 없음")
     args = parser.parse_args()
     service._integer(args.centers_per_province, "centers_per_province", 1, 16)
     service._integer(args.max_batches, "max_batches", 0, 1000)
@@ -102,6 +132,7 @@ def main():
     jobs = v2_jobs(base, args.centers_per_province)
     additions = extra_jobs(base,args.candidate_plan,args.centers_per_province)
     jobs = additions + jobs
+    jobs, continuation = continuation_jobs(jobs, snapshot, args.continue_unrelated_pending)
     plan = {"created_at": now(), "executed": False, "policy_version": "parallel-v2", "workers": 2,
         "global_request_spacing_seconds": 2, "first_429_stops_all_workers": True,
         "source_scl_minimum": .65, "final_patch_valid_minimum": .8, "scene_cloud_maximum": 60,
@@ -110,6 +141,7 @@ def main():
         "new_charged_bytes_before": snapshot["new_charged_bytes"], "nominal_candidate_patches": len(jobs) * 16,
         "v1_successful_spatial_windows_reused_without_redownload": True,
         "extra_candidate_plan_paths": [str(path) for path in args.candidate_plan],
+        "pending_continuation": continuation,
         "jobs": [{k: v for k, v in job.items() if k not in ("config", "geometry")} for job in jobs], "learning_ready": False}
     plan_path = output / "parallel-v2-plan.json"
     if plan_path.exists():

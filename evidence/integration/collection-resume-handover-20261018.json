@@ -1,0 +1,40 @@
+{
+  "prepared_at": "2026-10-18T09:52:11.7229274+09:00",
+  "user_authorization": "2026-10-18: finish 147, investigate stopped collection, continue resumable work in parallel",
+  "scope": "Explicit manual stale-lock handover then one bounded 2-batch continuation; not old pending settlement",
+  "active_collectors_before": [],
+  "backups": [
+    {
+      "original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json",
+      "backup": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\global-ledger.json",
+      "sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8"
+    },
+    {
+      "original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+      "backup": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\annual-window-report.json",
+      "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f"
+    },
+    {
+      "original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\run-result.json",
+      "backup": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\run-result.json",
+      "sha256": "0e8dd6ef449e5e7397d02393def95a54cafedc5a58722ec93df56e39dc554a86"
+    },
+    {
+      "original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\parallel-v2-plan.json",
+      "backup": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\parallel-v2-plan.json",
+      "sha256": "919a3fb1b006b2633a6949056c5a6d7ba44b08fe5e16d72dbb302c2823aa1afc"
+    }
+  ],
+  "old_pending_reserved_bytes_preserved": 136314880,
+  "old_pending_retry": false,
+  "refund_bytes": 0,
+  "new_batches_maximum": 2,
+  "new_reservation_maximum_bytes": 136314880,
+  "legacy_lock_original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.execution.lock",
+  "legacy_lock_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "legacy_lock_archive": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\global-ledger.execution.lock",
+  "race_limit": "Point-in-time OS inventory plus existing O_EXCL execution lock; no global OS process sandbox or atomic ledger/aggregate journal.",
+  "status": "BOUNDED_CONTINUATION_LAUNCHED",
+  "launched_at": "2026-10-18T09:52:13.2790210+09:00",
+  "pid": 532
+}

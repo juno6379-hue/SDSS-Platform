@@ -1,0 +1,58 @@
+{
+  "scope": "READ_ONLY_EXACT_QUEUE_RECONSTRUCTION",
+  "pending_continuation": {
+    "enabled": true,
+    "observed_pending": [
+      {
+        "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+        "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8",
+        "reserved_bytes_preserved": 68157440,
+        "charged_bytes_preserved": 68157440
+      },
+      {
+        "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+        "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593",
+        "reserved_bytes_preserved": 68157440,
+        "charged_bytes_preserved": 68157440
+      }
+    ],
+    "excluded_pending_keys": [
+      "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01"
+    ],
+    "settlement_attempted": false,
+    "refund_bytes": 0,
+    "lock_handover_performed": false
+  },
+  "next_jobs": [
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2021-g03",
+      "province": "south_sulawesi",
+      "year": 2021,
+      "split": "train",
+      "config_sha256": "992a4de2df09447b5e36bf9034aac854ed1229ddaa4412459f067e8057331156",
+      "ledger_entry_exists": false,
+      "source_directory_exists": false,
+      "existing_source_files": [],
+      "maximum_reservation_bytes": 68157440
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2022-g03",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "config_sha256": "d7545412fc260e8a7f31f273377397dd62207faf4f5f2fed00e0d0aa90a72238",
+      "ledger_entry_exists": false,
+      "source_directory_exists": false,
+      "existing_source_files": [],
+      "maximum_reservation_bytes": 68157440
+    }
+  ],
+  "new_budget_remaining_before": 2361454891,
+  "new_budget_remaining_after_two_full_reservations": 2225140011,
+  "physical_patch_count_before": 1384,
+  "physical_patch_count_upper_after_two": 1416,
+  "physical_patch_limit": 3000,
+  "network_requests": 0,
+  "source_files_written": 0
+}

@@ -1,5 +1,29 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 09:52 KST — 147 확정·제한 수집 재개·학습자료 조사 (148–151)
+
+147은 commit76949f6으로 이미마감됐고web_ui가6개SHA/이해자료/실브라우저현상태를독립대조했다. 현재frontend5174만실행·API offline이며기존인증설정재사용위치미확인으로API시작은후속이다.147과거합성브라우저PASS와현재서비스가용성을구분한다(150).
+
+148 opt-in --continue-unrelated-pending은configSHA같은기존pending2만제외하고전액예약136314880B·부분파일·동일globalledger·기본차단을보존한다. Root집중7PASS/1.962초·담당7PASS/1.302초·handover독립구문/경계검토완료,전체backend실행중. Root는data/collection-continuation-backup-20261018에원장/aggregate/run/plan4개SHA대조사본과원본emptyexecution.lock을보관하고중복프로세스재확인후09:52:13KST PID532로신규남술라웨시2021/2022-g03만--max-batches2 실제시작했다. worker_started각1·신규예약정확2·기존pending/부분파일/candidate/catalog/historical2불변을독립확인했다. 아직완료증거없다. 이스크립트는일회용이며재실행하지말고PID·stdout/stderr·ledger부터확인한다. 중단된반텐2023/서자바2023자체의정산/재시도/환불은0이다.
+
+Windows비정상종료/10월17일재부팅은검증됐으나6008의종료시각16:53:55와부분파일17:04가충돌해collector직접원인/시각은미확정이다. 남은lock+pending재실행거부가자동재개를막았다.149 ML담당은기존원본1111/차단5와이미누출제외후보1095/차단4를구분해실제rasterQA재검사중이다. 로컬반텐라벨17개에서작은bare창10개를발견했지만연도/겹침포함이며기존1024창확대중복으로즉시수집가능후보가아니다. 다음실질작업은256표적창의중복/연도/공유예산수집연결이다.
+
+151 안내문에147마감·중단수집·나지절대픽셀/기여패치/비율·지역연도151계획부족을쉽게설명했다. 이해담당은완료코드·증거로관련설명/대본/FAQ/INDEX/변경이력갱신중. 다음단계는현재단일bounded2의완료/오류·oldpending보존·새누계·전체backend결과·실제MLQA를확정하고공통문서/이해자료/Git을마감하는것이다. 실행중작업중복배정금지. geoai-2는기존10분ACTIVE를이채팅01a14c70-71a9-7e80-b326-dfbba5a958d6으로연결했다. 전체개발미완료.
+
+### 10:01 KST 현재 인계 보강
+
+PID532제한수집은정상종료·lock해제됐다. 신규2021은다양성보류0패치·2022는16생성/11적격,최종1400물리/1122적격/278부적격·639/233/250이다.19548647B추가계상/잔여2341906244B이며oldpending2전액136314880B/부분파일/기존settled/candidate/catalog/historical2/backup4원바이트보존을독립확인했다. 신규나지는0픽셀이라bare보완성과아님. ML최초QA는병렬수집에의한부모aggregate/ledger pin변경으로미확정종료해실패보존했고,고정1095candidate/정책/실파일·backupsource 기준재QA1회중이다(신규16반영QA아님).
+
+API조건부보류는Root가코드의기존localhost개발모드를확인해수정했다. tokenunset설정·인증코드유지,명시data root·loopback8002/no reload PID33956복원,frontend도loopback5174이며실제GET/브라우저/catalog검산은web_ui마무리중이다. 전체backend/재QA최종값·이해자료·Git을닫은뒤다음은256표적창수집입력과중복/scene분리·공유예산연결이다. 해당기능은아직PLANNED이며기존1024계약을무검증완화하거나수집성과로표현하지말것. 실행프로세스/채팅/agent를재확인후배정하고10분보고계속.
+
+### 10:08 KST 최종 검증·다음 작업
+
+전체backend1452건/1450PASS/2SKIP/1046.064초/exit0,SKIP2는Windows실제symlink권한제한이다. 고정1095후보QA296.625초·4차단·13필드동일과4285파일재해시28.188초/불일치0을확정했다(신규1122후보QA아님). API8002PID33956/프론트5174PID34484의loopback복원·GET200·실브라우저연결/147빈IDdisabled·catalog14SHA보존·POST0을확인했다. 증거collection-resume-closeout-20261018.json.148–151관련문서/공통인계·이해자료11개갱신,현재수집은정상bounded종료·학습미실행이다. 기존pending2복구완료로말하지말것. 다음152 RFC를읽고명시256나지표적창계획→실제consumer연결부터구현하며현재진행agent/프로세스/채팅을먼저확인한다. 무제한일반수집재시작·기존1024중복검사완화·준비도gate우회금지. 10분예약은이채팅ACTIVE로유지한다.
+
+### 공유 편집 주의 — 다음 실행 전에 확인
+
+10:09 다른개발채팅「이어서작업할내용찾기」에서priority-deficit우선수집·새ML후보·현황UI가실행중임을확인했다. 현재공유collector/backend collection_status/frontend CollectionStatus·ModelReview의그후속변경은이번148시험버전과구분한다. Root는main/공유index/workingtree를건드리지않는별도index와 codex/collection-resume-20261018 브랜치로확정32행collector판본/문서/증거를기록한다. baseline rawSHA일치를확인한버전의1452시험근거이며공유후속버전전체PASS가아니다. 동시작업이끝나기전에같은파일을다시배정하거나새수집기를시작하지말것.152는설계만완료PLANNED이고다음구현은기존진행담당/경로와조정해선택한다.
+
 ## 2026-10-18 — GeoLLM 근거 화면의 고정 local Workflow 보고서 조회 (147)
 
 UI 담당은 GeoQuery evidence 탭에 명시 Workflow ID 조회와 요약·수동 지도/전이행렬 검토를 연결했다. 독립 담당은 기존116 인증 GET과 실제 Temp CPU fixture를, Root는 관련 backend·전체 frontend/build·실제 브라우저·운영 보존·공통 인계·Git을 맡았다. 이해 담당은 완료 코드와 증거를 읽고 설명·대본·FAQ·INDEX·변경 이력14개를 갱신했다. 실제 운영 수집·학습 재개와 ACTIVE/10분 보고 예약은 구분한다.

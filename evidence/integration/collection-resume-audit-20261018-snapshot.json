@@ -1,0 +1,4723 @@
+{
+  "started_at": "2026-10-18T00:46:58.759035+00:00",
+  "finished_at": "2026-10-18T00:47:30.473487+00:00",
+  "protected_before": [
+    {
+      "path": "data\\first-group-training-budget\\global-ledger.execution.lock",
+      "exists": true,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_utc": "2026-10-16T04:10:25.580103+00:00",
+      "mtime_kst": "2026-10-16T13:10:25.580103+09:00"
+    },
+    {
+      "path": "data\\first-group-training-budget\\global-ledger.json",
+      "exists": true,
+      "bytes": 51204,
+      "sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+      "mtime_utc": "2026-10-16T08:00:45.156889+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.156889+09:00"
+    },
+    {
+      "path": "data\\first-group-training-budget\\global-ledger.lock",
+      "exists": false
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\annual-window-report.json",
+      "exists": true,
+      "bytes": 53868103,
+      "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+      "mtime_utc": "2026-10-16T08:00:45.114735+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.114735+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\parallel-v2-plan.json",
+      "exists": true,
+      "bytes": 129532,
+      "sha256": "919a3fb1b006b2633a6949056c5a6d7ba44b08fe5e16d72dbb302c2823aa1afc",
+      "mtime_utc": "2026-10-16T04:10:25.576103+00:00",
+      "mtime_kst": "2026-10-16T13:10:25.576103+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\run-result.json",
+      "exists": true,
+      "bytes": 613,
+      "sha256": "0e8dd6ef449e5e7397d02393def95a54cafedc5a58722ec93df56e39dc554a86",
+      "mtime_utc": "2026-10-16T08:00:45.146542+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.146542+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\annual-window-report.json",
+      "exists": false
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\calibration.json",
+      "exists": true,
+      "bytes": 2881,
+      "sha256": "c76e8bdee509652ce94c464e5273cdeb509a12d27185dba7ddfbe508c93df37f",
+      "mtime_utc": "2026-10-16T08:00:18.661091+00:00",
+      "mtime_kst": "2026-10-16T17:00:18.661091+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\product-metadata.xml",
+      "exists": true,
+      "bytes": 54626,
+      "sha256": "21202e132a363a40a065a7653ba5e96a4ef7da7dfb3a29bad673fb9f793e0ded",
+      "mtime_utc": "2026-10-16T08:00:18.645088+00:00",
+      "mtime_kst": "2026-10-16T17:00:18.645088+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\qa-candidate-00-SCL.tif",
+      "exists": true,
+      "bytes": 4358,
+      "sha256": "5f9de8e44902f88fae008fd1842f77d600a3f89c1c3dab56629d8178c455dd3b",
+      "mtime_utc": "2026-10-16T07:59:47.186864+00:00",
+      "mtime_kst": "2026-10-16T16:59:47.186864+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\qa-candidate-01-SCL.tif",
+      "exists": true,
+      "bytes": 4370,
+      "sha256": "c7e293da00d4c3f62f80196c81a9ec0f65c68d59439f714ed684e6702fafad23",
+      "mtime_utc": "2026-10-16T07:59:59.147792+00:00",
+      "mtime_kst": "2026-10-16T16:59:59.147792+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\qa-candidate-02-SCL.tif",
+      "exists": true,
+      "bytes": 4441,
+      "sha256": "cf8c8908231d61ef03350fb191371c1d3a485ed0595b5df5afbe2d429c570bcf",
+      "mtime_utc": "2026-10-16T08:00:17.181046+00:00",
+      "mtime_kst": "2026-10-16T17:00:17.181046+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B02.tif",
+      "exists": true,
+      "bytes": 1387607,
+      "sha256": "d792b0825675017afacce67121a0f4febe17b5630953686c95177f2aff4c4583",
+      "mtime_utc": "2026-10-16T08:01:31.618668+00:00",
+      "mtime_kst": "2026-10-16T17:01:31.618668+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B03.tif",
+      "exists": true,
+      "bytes": 1439098,
+      "sha256": "e42ab03fe05e75411da51bfdc748b57b42c83e2e487572c798aadfbb33599ad3",
+      "mtime_utc": "2026-10-16T08:02:18.859536+00:00",
+      "mtime_kst": "2026-10-16T17:02:18.859536+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B04.tif",
+      "exists": true,
+      "bytes": 1422585,
+      "sha256": "253dc5317d72febdf68ad52b933caa63f38ea32148f081ce42a6cd02ef4b6da3",
+      "mtime_utc": "2026-10-16T08:03:05.529015+00:00",
+      "mtime_kst": "2026-10-16T17:03:05.529015+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B08.tif",
+      "exists": true,
+      "bytes": 1513963,
+      "sha256": "0a5d4e7943ce32e9526447b4d8730aa37eb5ebcac664a61684d8cdd0f086bcad",
+      "mtime_utc": "2026-10-16T08:03:51.925152+00:00",
+      "mtime_kst": "2026-10-16T17:03:51.925152+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B11.tif",
+      "exists": true,
+      "bytes": 398672,
+      "sha256": "7527aef529705d8550fdbcd32cb91bd49d0ec57cf193a7052ce48682936dfa7a",
+      "mtime_utc": "2026-10-16T08:04:17.422120+00:00",
+      "mtime_kst": "2026-10-16T17:04:17.422120+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-esri_io.tif",
+      "exists": true,
+      "bytes": 112125,
+      "sha256": "e699b7e6f962022613801841f4dcf0239ea7aad484509af0a21c2168e113c481",
+      "mtime_utc": "2026-10-16T08:00:43.447527+00:00",
+      "mtime_kst": "2026-10-16T17:00:43.447527+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\stac-item.json",
+      "exists": true,
+      "bytes": 22410,
+      "sha256": "4a5eefedd5e15aa40195693963bfac79da5703e9c06ed31a4cf6f8ae6d84d46f",
+      "mtime_utc": "2026-10-16T08:00:17.206046+00:00",
+      "mtime_kst": "2026-10-16T17:00:17.206046+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\collection-history.jsonl",
+      "exists": true,
+      "bytes": 115,
+      "sha256": "5127a0f60806cad15966a3a81b6ab791af44bcc7e7316b39a63339c39b617448",
+      "mtime_utc": "2026-10-16T07:59:33.348673+00:00",
+      "mtime_kst": "2026-10-16T16:59:33.348673+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\config.json",
+      "exists": true,
+      "bytes": 3441,
+      "sha256": "d9e7bf2e9e18398205653d518d3fe0dcf15b7ab305ca58520d0ba3c3e135abc6",
+      "mtime_utc": "2026-10-16T07:59:33.335482+00:00",
+      "mtime_kst": "2026-10-16T16:59:33.335482+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\0a5d4e7943ce32e9526447b4d8730aa37eb5ebcac664a61684d8cdd0f086bcad-6a3abecd7bbe6a0e.json",
+      "exists": true,
+      "bytes": 997,
+      "sha256": "3882f611bb9b76883fb3921dffd3a8f29733c2dca57733f11d28a7b90dc0d265",
+      "mtime_utc": "2026-10-16T08:03:51.936148+00:00",
+      "mtime_kst": "2026-10-16T17:03:51.936148+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\253dc5317d72febdf68ad52b933caa63f38ea32148f081ce42a6cd02ef4b6da3-bbbbd38ccf9b9943.json",
+      "exists": true,
+      "bytes": 997,
+      "sha256": "0df415c2311170de8d7d27a398f1306e7078580af2927b4d4c0534427cf7a6ab",
+      "mtime_utc": "2026-10-16T08:03:05.540639+00:00",
+      "mtime_kst": "2026-10-16T17:03:05.540639+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\5f9de8e44902f88fae008fd1842f77d600a3f89c1c3dab56629d8178c455dd3b-a163a082db3cc780.json",
+      "exists": true,
+      "bytes": 1003,
+      "sha256": "bd0ba2c5eaa1a036ec3869ac21e732a2063dbabead57dee215dac4ba2bcb4b9c",
+      "mtime_utc": "2026-10-16T07:59:47.243154+00:00",
+      "mtime_kst": "2026-10-16T16:59:47.243154+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\7527aef529705d8550fdbcd32cb91bd49d0ec57cf193a7052ce48682936dfa7a-908968899792db99.json",
+      "exists": true,
+      "bytes": 994,
+      "sha256": "992e78c3b87ec0bbd212a10a6bc9220e730f908770aa403ce01ebedf88be690a",
+      "mtime_utc": "2026-10-16T08:04:17.431132+00:00",
+      "mtime_kst": "2026-10-16T17:04:17.431132+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\c7e293da00d4c3f62f80196c81a9ec0f65c68d59439f714ed684e6702fafad23-6e0c4d7880c9e172.json",
+      "exists": true,
+      "bytes": 1003,
+      "sha256": "ebb15175cbb6378ae6e1793e8545cbc6f16d143dd4e15cf1756016fb0203c34f",
+      "mtime_utc": "2026-10-16T07:59:59.187557+00:00",
+      "mtime_kst": "2026-10-16T16:59:59.187557+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\cf8c8908231d61ef03350fb191371c1d3a485ed0595b5df5afbe2d429c570bcf-92a9d1ccead73e07.json",
+      "exists": true,
+      "bytes": 1003,
+      "sha256": "d17f57947e99d92adfd2e0845c77940321d19d0bb7d8334a1699701e04ba5337",
+      "mtime_utc": "2026-10-16T08:00:17.201044+00:00",
+      "mtime_kst": "2026-10-16T17:00:17.201044+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\d792b0825675017afacce67121a0f4febe17b5630953686c95177f2aff4c4583-8c55446811d0acf9.json",
+      "exists": true,
+      "bytes": 997,
+      "sha256": "54132af34d5699ef20da209a712d9c7ce0dbcb83428fefa7a7c5795232cbefc4",
+      "mtime_utc": "2026-10-16T08:01:31.648671+00:00",
+      "mtime_kst": "2026-10-16T17:01:31.648671+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\e42ab03fe05e75411da51bfdc748b57b42c83e2e487572c798aadfbb33599ad3-00805743754088f3.json",
+      "exists": true,
+      "bytes": 997,
+      "sha256": "50057ecaec92d1017be01c6410b649cbad06d2b9ceabac0106f0148d977d9538",
+      "mtime_utc": "2026-10-16T08:02:18.872526+00:00",
+      "mtime_kst": "2026-10-16T17:02:18.872526+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\e699b7e6f962022613801841f4dcf0239ea7aad484509af0a21c2168e113c481-47ee47d9e3283236.json",
+      "exists": true,
+      "bytes": 850,
+      "sha256": "128862c8df40d56ad0bcbbe864fd1dd1d7f782d31fe9df9ff77acb482727059a",
+      "mtime_utc": "2026-10-16T08:00:44.421692+00:00",
+      "mtime_kst": "2026-10-16T17:00:44.421692+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\selection-context.json",
+      "exists": true,
+      "bytes": 127,
+      "sha256": "3314bf5fe2aa1a2127153bb723d29bf9699b4a7bf3db23ab9df451f721c2a07b",
+      "mtime_utc": "2026-10-16T07:59:33.339864+00:00",
+      "mtime_kst": "2026-10-16T16:59:33.339864+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\window-state.json",
+      "exists": true,
+      "bytes": 220,
+      "sha256": "1b5821692d52a13fd6c3e7e2bc72d2051c38ac7ac2eb5d8fec0d86cec3925700",
+      "mtime_utc": "2026-10-16T08:04:17.472133+00:00",
+      "mtime_kst": "2026-10-16T17:04:17.472133+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\worker-result.json",
+      "exists": false
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\annual-window-report.json",
+      "exists": false
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\collection-history.jsonl",
+      "exists": true,
+      "bytes": 118,
+      "sha256": "49abd4257fb3944627796fb83ab19d45d841100035855c5ffc58d9d4e5317bf8",
+      "mtime_utc": "2026-10-16T08:00:45.191012+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.191012+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\config.json",
+      "exists": true,
+      "bytes": 3460,
+      "sha256": "5619b92481919e29d5b2b557514e8a2439d2b1659f8b575323aebabec63c56a3",
+      "mtime_utc": "2026-10-16T08:00:45.178495+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.178495+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\2bf7044d8f5c58868681d0392a8e17838607d583db447879a9441df706ec3eb6-5b3ccbe54d85c35e.json",
+      "exists": true,
+      "bytes": 1013,
+      "sha256": "e9f6ea54e4147cb417d1b74439e2105a88dc89b39ad3d66583b3c7480b3aa62f",
+      "mtime_utc": "2026-10-16T08:01:04.334400+00:00",
+      "mtime_kst": "2026-10-16T17:01:04.334400+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\903db6c773cb62b1b8ec808f251814a3b18335f175ac750505f1e1f3c9c661cd-14f3171f4d89f959.json",
+      "exists": true,
+      "bytes": 1006,
+      "sha256": "eacc29abcba701f78ee411858279b70fe30b43717b25fdaa2ce17699dfcd2b79",
+      "mtime_utc": "2026-10-16T08:02:32.759772+00:00",
+      "mtime_kst": "2026-10-16T17:02:32.759772+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\c299f23f7918ed761ce9b7b7979e836f54e74958e0bfcbcff66575f6edc265ee-0758b872b9457f5a.json",
+      "exists": true,
+      "bytes": 1006,
+      "sha256": "f0aea1093c0f7315e85b8dd2e5396db93142bc42ddb0ff7d9b13ab9ccaa5218b",
+      "mtime_utc": "2026-10-16T08:03:15.509213+00:00",
+      "mtime_kst": "2026-10-16T17:03:15.509213+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\e0df62ac185983c358505aa9bb17eb6ddf2b8905dcf27b0685f9cb4f2955b35a-f9bc784a41e8110a.json",
+      "exists": true,
+      "bytes": 859,
+      "sha256": "e2f48755469796d009e17d08ce88d2f8b9da8e84f1cf8e6893257b3220b498ee",
+      "mtime_utc": "2026-10-16T08:01:48.337318+00:00",
+      "mtime_kst": "2026-10-16T17:01:48.337318+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\f7ce02b0f65243a1cdb2c8773924cb5ab382834062d78091ed22e6c0ccef7b56-2cd8fa7c0df5c131.json",
+      "exists": true,
+      "bytes": 1006,
+      "sha256": "8812fe75835f0859bf641141ae445b32c0fc7c0537eaf822f73c8ad251380b28",
+      "mtime_utc": "2026-10-16T08:03:57.906610+00:00",
+      "mtime_kst": "2026-10-16T17:03:57.906610+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\selection-context.json",
+      "exists": true,
+      "bytes": 127,
+      "sha256": "df283ee5054372561c0798a1e91ac77ab84e6f00cf3f78e1f05cb6164d88f717",
+      "mtime_utc": "2026-10-16T08:00:45.181495+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.181495+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\calibration.json",
+      "exists": true,
+      "bytes": 2899,
+      "sha256": "cbcffcd6b5ba6d5f12f93f0aac2311e15bf955b57b27c382a74dd3b53fc60281",
+      "mtime_utc": "2026-10-16T08:01:06.122884+00:00",
+      "mtime_kst": "2026-10-16T17:01:06.122884+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\product-metadata.xml",
+      "exists": true,
+      "bytes": 54060,
+      "sha256": "39ff8766cf1c01d50ad2c92d8baa89ba244554d2ddc5db1e46bf5fb6aab406e0",
+      "mtime_utc": "2026-10-16T08:01:06.113362+00:00",
+      "mtime_kst": "2026-10-16T17:01:06.113362+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\qa-candidate-00-SCL.tif",
+      "exists": true,
+      "bytes": 17684,
+      "sha256": "2bf7044d8f5c58868681d0392a8e17838607d583db447879a9441df706ec3eb6",
+      "mtime_utc": "2026-10-16T08:01:04.317356+00:00",
+      "mtime_kst": "2026-10-16T17:01:04.317356+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-B02.tif",
+      "exists": true,
+      "bytes": 1454906,
+      "sha256": "903db6c773cb62b1b8ec808f251814a3b18335f175ac750505f1e1f3c9c661cd",
+      "mtime_utc": "2026-10-16T08:02:32.747766+00:00",
+      "mtime_kst": "2026-10-16T17:02:32.747766+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-B03.tif",
+      "exists": true,
+      "bytes": 1493192,
+      "sha256": "c299f23f7918ed761ce9b7b7979e836f54e74958e0bfcbcff66575f6edc265ee",
+      "mtime_utc": "2026-10-16T08:03:15.496212+00:00",
+      "mtime_kst": "2026-10-16T17:03:15.496212+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-B04.tif",
+      "exists": true,
+      "bytes": 1548391,
+      "sha256": "f7ce02b0f65243a1cdb2c8773924cb5ab382834062d78091ed22e6c0ccef7b56",
+      "mtime_utc": "2026-10-16T08:03:57.894609+00:00",
+      "mtime_kst": "2026-10-16T17:03:57.894609+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-esri_io.tif",
+      "exists": true,
+      "bytes": 204769,
+      "sha256": "e0df62ac185983c358505aa9bb17eb6ddf2b8905dcf27b0685f9cb4f2955b35a",
+      "mtime_utc": "2026-10-16T08:01:48.316797+00:00",
+      "mtime_kst": "2026-10-16T17:01:48.316797+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\stac-item.json",
+      "exists": true,
+      "bytes": 23996,
+      "sha256": "6870f4acb6edf97a632dbece9851af104b252ca07ad083da48ddb51ed039e462",
+      "mtime_utc": "2026-10-16T08:01:04.339401+00:00",
+      "mtime_kst": "2026-10-16T17:01:04.339401+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\window-state.json",
+      "exists": true,
+      "bytes": 220,
+      "sha256": "4a46982041d039dfccba4a7acf9df715db489e027e800bab5057d852d098e55f",
+      "mtime_utc": "2026-10-16T08:03:57.908117+00:00",
+      "mtime_kst": "2026-10-16T17:03:57.908117+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\worker-result.json",
+      "exists": false
+    }
+  ],
+  "protected_after": [
+    {
+      "path": "data\\first-group-training-budget\\global-ledger.execution.lock",
+      "exists": true,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_utc": "2026-10-16T04:10:25.580103+00:00",
+      "mtime_kst": "2026-10-16T13:10:25.580103+09:00"
+    },
+    {
+      "path": "data\\first-group-training-budget\\global-ledger.json",
+      "exists": true,
+      "bytes": 51204,
+      "sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8",
+      "mtime_utc": "2026-10-16T08:00:45.156889+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.156889+09:00"
+    },
+    {
+      "path": "data\\first-group-training-budget\\global-ledger.lock",
+      "exists": false
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\annual-window-report.json",
+      "exists": true,
+      "bytes": 53868103,
+      "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+      "mtime_utc": "2026-10-16T08:00:45.114735+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.114735+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\parallel-v2-plan.json",
+      "exists": true,
+      "bytes": 129532,
+      "sha256": "919a3fb1b006b2633a6949056c5a6d7ba44b08fe5e16d72dbb302c2823aa1afc",
+      "mtime_utc": "2026-10-16T04:10:25.576103+00:00",
+      "mtime_kst": "2026-10-16T13:10:25.576103+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\run-result.json",
+      "exists": true,
+      "bytes": 613,
+      "sha256": "0e8dd6ef449e5e7397d02393def95a54cafedc5a58722ec93df56e39dc554a86",
+      "mtime_utc": "2026-10-16T08:00:45.146542+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.146542+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\annual-window-report.json",
+      "exists": false
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\calibration.json",
+      "exists": true,
+      "bytes": 2881,
+      "sha256": "c76e8bdee509652ce94c464e5273cdeb509a12d27185dba7ddfbe508c93df37f",
+      "mtime_utc": "2026-10-16T08:00:18.661091+00:00",
+      "mtime_kst": "2026-10-16T17:00:18.661091+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\product-metadata.xml",
+      "exists": true,
+      "bytes": 54626,
+      "sha256": "21202e132a363a40a065a7653ba5e96a4ef7da7dfb3a29bad673fb9f793e0ded",
+      "mtime_utc": "2026-10-16T08:00:18.645088+00:00",
+      "mtime_kst": "2026-10-16T17:00:18.645088+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\qa-candidate-00-SCL.tif",
+      "exists": true,
+      "bytes": 4358,
+      "sha256": "5f9de8e44902f88fae008fd1842f77d600a3f89c1c3dab56629d8178c455dd3b",
+      "mtime_utc": "2026-10-16T07:59:47.186864+00:00",
+      "mtime_kst": "2026-10-16T16:59:47.186864+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\qa-candidate-01-SCL.tif",
+      "exists": true,
+      "bytes": 4370,
+      "sha256": "c7e293da00d4c3f62f80196c81a9ec0f65c68d59439f714ed684e6702fafad23",
+      "mtime_utc": "2026-10-16T07:59:59.147792+00:00",
+      "mtime_kst": "2026-10-16T16:59:59.147792+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\qa-candidate-02-SCL.tif",
+      "exists": true,
+      "bytes": 4441,
+      "sha256": "cf8c8908231d61ef03350fb191371c1d3a485ed0595b5df5afbe2d429c570bcf",
+      "mtime_utc": "2026-10-16T08:00:17.181046+00:00",
+      "mtime_kst": "2026-10-16T17:00:17.181046+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B02.tif",
+      "exists": true,
+      "bytes": 1387607,
+      "sha256": "d792b0825675017afacce67121a0f4febe17b5630953686c95177f2aff4c4583",
+      "mtime_utc": "2026-10-16T08:01:31.618668+00:00",
+      "mtime_kst": "2026-10-16T17:01:31.618668+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B03.tif",
+      "exists": true,
+      "bytes": 1439098,
+      "sha256": "e42ab03fe05e75411da51bfdc748b57b42c83e2e487572c798aadfbb33599ad3",
+      "mtime_utc": "2026-10-16T08:02:18.859536+00:00",
+      "mtime_kst": "2026-10-16T17:02:18.859536+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B04.tif",
+      "exists": true,
+      "bytes": 1422585,
+      "sha256": "253dc5317d72febdf68ad52b933caa63f38ea32148f081ce42a6cd02ef4b6da3",
+      "mtime_utc": "2026-10-16T08:03:05.529015+00:00",
+      "mtime_kst": "2026-10-16T17:03:05.529015+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B08.tif",
+      "exists": true,
+      "bytes": 1513963,
+      "sha256": "0a5d4e7943ce32e9526447b4d8730aa37eb5ebcac664a61684d8cdd0f086bcad",
+      "mtime_utc": "2026-10-16T08:03:51.925152+00:00",
+      "mtime_kst": "2026-10-16T17:03:51.925152+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B11.tif",
+      "exists": true,
+      "bytes": 398672,
+      "sha256": "7527aef529705d8550fdbcd32cb91bd49d0ec57cf193a7052ce48682936dfa7a",
+      "mtime_utc": "2026-10-16T08:04:17.422120+00:00",
+      "mtime_kst": "2026-10-16T17:04:17.422120+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-esri_io.tif",
+      "exists": true,
+      "bytes": 112125,
+      "sha256": "e699b7e6f962022613801841f4dcf0239ea7aad484509af0a21c2168e113c481",
+      "mtime_utc": "2026-10-16T08:00:43.447527+00:00",
+      "mtime_kst": "2026-10-16T17:00:43.447527+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\stac-item.json",
+      "exists": true,
+      "bytes": 22410,
+      "sha256": "4a5eefedd5e15aa40195693963bfac79da5703e9c06ed31a4cf6f8ae6d84d46f",
+      "mtime_utc": "2026-10-16T08:00:17.206046+00:00",
+      "mtime_kst": "2026-10-16T17:00:17.206046+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\collection-history.jsonl",
+      "exists": true,
+      "bytes": 115,
+      "sha256": "5127a0f60806cad15966a3a81b6ab791af44bcc7e7316b39a63339c39b617448",
+      "mtime_utc": "2026-10-16T07:59:33.348673+00:00",
+      "mtime_kst": "2026-10-16T16:59:33.348673+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\config.json",
+      "exists": true,
+      "bytes": 3441,
+      "sha256": "d9e7bf2e9e18398205653d518d3fe0dcf15b7ab305ca58520d0ba3c3e135abc6",
+      "mtime_utc": "2026-10-16T07:59:33.335482+00:00",
+      "mtime_kst": "2026-10-16T16:59:33.335482+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\0a5d4e7943ce32e9526447b4d8730aa37eb5ebcac664a61684d8cdd0f086bcad-6a3abecd7bbe6a0e.json",
+      "exists": true,
+      "bytes": 997,
+      "sha256": "3882f611bb9b76883fb3921dffd3a8f29733c2dca57733f11d28a7b90dc0d265",
+      "mtime_utc": "2026-10-16T08:03:51.936148+00:00",
+      "mtime_kst": "2026-10-16T17:03:51.936148+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\253dc5317d72febdf68ad52b933caa63f38ea32148f081ce42a6cd02ef4b6da3-bbbbd38ccf9b9943.json",
+      "exists": true,
+      "bytes": 997,
+      "sha256": "0df415c2311170de8d7d27a398f1306e7078580af2927b4d4c0534427cf7a6ab",
+      "mtime_utc": "2026-10-16T08:03:05.540639+00:00",
+      "mtime_kst": "2026-10-16T17:03:05.540639+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\5f9de8e44902f88fae008fd1842f77d600a3f89c1c3dab56629d8178c455dd3b-a163a082db3cc780.json",
+      "exists": true,
+      "bytes": 1003,
+      "sha256": "bd0ba2c5eaa1a036ec3869ac21e732a2063dbabead57dee215dac4ba2bcb4b9c",
+      "mtime_utc": "2026-10-16T07:59:47.243154+00:00",
+      "mtime_kst": "2026-10-16T16:59:47.243154+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\7527aef529705d8550fdbcd32cb91bd49d0ec57cf193a7052ce48682936dfa7a-908968899792db99.json",
+      "exists": true,
+      "bytes": 994,
+      "sha256": "992e78c3b87ec0bbd212a10a6bc9220e730f908770aa403ce01ebedf88be690a",
+      "mtime_utc": "2026-10-16T08:04:17.431132+00:00",
+      "mtime_kst": "2026-10-16T17:04:17.431132+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\c7e293da00d4c3f62f80196c81a9ec0f65c68d59439f714ed684e6702fafad23-6e0c4d7880c9e172.json",
+      "exists": true,
+      "bytes": 1003,
+      "sha256": "ebb15175cbb6378ae6e1793e8545cbc6f16d143dd4e15cf1756016fb0203c34f",
+      "mtime_utc": "2026-10-16T07:59:59.187557+00:00",
+      "mtime_kst": "2026-10-16T16:59:59.187557+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\cf8c8908231d61ef03350fb191371c1d3a485ed0595b5df5afbe2d429c570bcf-92a9d1ccead73e07.json",
+      "exists": true,
+      "bytes": 1003,
+      "sha256": "d17f57947e99d92adfd2e0845c77940321d19d0bb7d8334a1699701e04ba5337",
+      "mtime_utc": "2026-10-16T08:00:17.201044+00:00",
+      "mtime_kst": "2026-10-16T17:00:17.201044+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\d792b0825675017afacce67121a0f4febe17b5630953686c95177f2aff4c4583-8c55446811d0acf9.json",
+      "exists": true,
+      "bytes": 997,
+      "sha256": "54132af34d5699ef20da209a712d9c7ce0dbcb83428fefa7a7c5795232cbefc4",
+      "mtime_utc": "2026-10-16T08:01:31.648671+00:00",
+      "mtime_kst": "2026-10-16T17:01:31.648671+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\e42ab03fe05e75411da51bfdc748b57b42c83e2e487572c798aadfbb33599ad3-00805743754088f3.json",
+      "exists": true,
+      "bytes": 997,
+      "sha256": "50057ecaec92d1017be01c6410b649cbad06d2b9ceabac0106f0148d977d9538",
+      "mtime_utc": "2026-10-16T08:02:18.872526+00:00",
+      "mtime_kst": "2026-10-16T17:02:18.872526+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\e699b7e6f962022613801841f4dcf0239ea7aad484509af0a21c2168e113c481-47ee47d9e3283236.json",
+      "exists": true,
+      "bytes": 850,
+      "sha256": "128862c8df40d56ad0bcbbe864fd1dd1d7f782d31fe9df9ff77acb482727059a",
+      "mtime_utc": "2026-10-16T08:00:44.421692+00:00",
+      "mtime_kst": "2026-10-16T17:00:44.421692+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\selection-context.json",
+      "exists": true,
+      "bytes": 127,
+      "sha256": "3314bf5fe2aa1a2127153bb723d29bf9699b4a7bf3db23ab9df451f721c2a07b",
+      "mtime_utc": "2026-10-16T07:59:33.339864+00:00",
+      "mtime_kst": "2026-10-16T16:59:33.339864+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\window-state.json",
+      "exists": true,
+      "bytes": 220,
+      "sha256": "1b5821692d52a13fd6c3e7e2bc72d2051c38ac7ac2eb5d8fec0d86cec3925700",
+      "mtime_utc": "2026-10-16T08:04:17.472133+00:00",
+      "mtime_kst": "2026-10-16T17:04:17.472133+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\worker-result.json",
+      "exists": false
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\annual-window-report.json",
+      "exists": false
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\collection-history.jsonl",
+      "exists": true,
+      "bytes": 118,
+      "sha256": "49abd4257fb3944627796fb83ab19d45d841100035855c5ffc58d9d4e5317bf8",
+      "mtime_utc": "2026-10-16T08:00:45.191012+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.191012+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\config.json",
+      "exists": true,
+      "bytes": 3460,
+      "sha256": "5619b92481919e29d5b2b557514e8a2439d2b1659f8b575323aebabec63c56a3",
+      "mtime_utc": "2026-10-16T08:00:45.178495+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.178495+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\2bf7044d8f5c58868681d0392a8e17838607d583db447879a9441df706ec3eb6-5b3ccbe54d85c35e.json",
+      "exists": true,
+      "bytes": 1013,
+      "sha256": "e9f6ea54e4147cb417d1b74439e2105a88dc89b39ad3d66583b3c7480b3aa62f",
+      "mtime_utc": "2026-10-16T08:01:04.334400+00:00",
+      "mtime_kst": "2026-10-16T17:01:04.334400+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\903db6c773cb62b1b8ec808f251814a3b18335f175ac750505f1e1f3c9c661cd-14f3171f4d89f959.json",
+      "exists": true,
+      "bytes": 1006,
+      "sha256": "eacc29abcba701f78ee411858279b70fe30b43717b25fdaa2ce17699dfcd2b79",
+      "mtime_utc": "2026-10-16T08:02:32.759772+00:00",
+      "mtime_kst": "2026-10-16T17:02:32.759772+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\c299f23f7918ed761ce9b7b7979e836f54e74958e0bfcbcff66575f6edc265ee-0758b872b9457f5a.json",
+      "exists": true,
+      "bytes": 1006,
+      "sha256": "f0aea1093c0f7315e85b8dd2e5396db93142bc42ddb0ff7d9b13ab9ccaa5218b",
+      "mtime_utc": "2026-10-16T08:03:15.509213+00:00",
+      "mtime_kst": "2026-10-16T17:03:15.509213+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\e0df62ac185983c358505aa9bb17eb6ddf2b8905dcf27b0685f9cb4f2955b35a-f9bc784a41e8110a.json",
+      "exists": true,
+      "bytes": 859,
+      "sha256": "e2f48755469796d009e17d08ce88d2f8b9da8e84f1cf8e6893257b3220b498ee",
+      "mtime_utc": "2026-10-16T08:01:48.337318+00:00",
+      "mtime_kst": "2026-10-16T17:01:48.337318+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\f7ce02b0f65243a1cdb2c8773924cb5ab382834062d78091ed22e6c0ccef7b56-2cd8fa7c0df5c131.json",
+      "exists": true,
+      "bytes": 1006,
+      "sha256": "8812fe75835f0859bf641141ae445b32c0fc7c0537eaf822f73c8ad251380b28",
+      "mtime_utc": "2026-10-16T08:03:57.906610+00:00",
+      "mtime_kst": "2026-10-16T17:03:57.906610+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\selection-context.json",
+      "exists": true,
+      "bytes": 127,
+      "sha256": "df283ee5054372561c0798a1e91ac77ab84e6f00cf3f78e1f05cb6164d88f717",
+      "mtime_utc": "2026-10-16T08:00:45.181495+00:00",
+      "mtime_kst": "2026-10-16T17:00:45.181495+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\calibration.json",
+      "exists": true,
+      "bytes": 2899,
+      "sha256": "cbcffcd6b5ba6d5f12f93f0aac2311e15bf955b57b27c382a74dd3b53fc60281",
+      "mtime_utc": "2026-10-16T08:01:06.122884+00:00",
+      "mtime_kst": "2026-10-16T17:01:06.122884+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\product-metadata.xml",
+      "exists": true,
+      "bytes": 54060,
+      "sha256": "39ff8766cf1c01d50ad2c92d8baa89ba244554d2ddc5db1e46bf5fb6aab406e0",
+      "mtime_utc": "2026-10-16T08:01:06.113362+00:00",
+      "mtime_kst": "2026-10-16T17:01:06.113362+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\qa-candidate-00-SCL.tif",
+      "exists": true,
+      "bytes": 17684,
+      "sha256": "2bf7044d8f5c58868681d0392a8e17838607d583db447879a9441df706ec3eb6",
+      "mtime_utc": "2026-10-16T08:01:04.317356+00:00",
+      "mtime_kst": "2026-10-16T17:01:04.317356+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-B02.tif",
+      "exists": true,
+      "bytes": 1454906,
+      "sha256": "903db6c773cb62b1b8ec808f251814a3b18335f175ac750505f1e1f3c9c661cd",
+      "mtime_utc": "2026-10-16T08:02:32.747766+00:00",
+      "mtime_kst": "2026-10-16T17:02:32.747766+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-B03.tif",
+      "exists": true,
+      "bytes": 1493192,
+      "sha256": "c299f23f7918ed761ce9b7b7979e836f54e74958e0bfcbcff66575f6edc265ee",
+      "mtime_utc": "2026-10-16T08:03:15.496212+00:00",
+      "mtime_kst": "2026-10-16T17:03:15.496212+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-B04.tif",
+      "exists": true,
+      "bytes": 1548391,
+      "sha256": "f7ce02b0f65243a1cdb2c8773924cb5ab382834062d78091ed22e6c0ccef7b56",
+      "mtime_utc": "2026-10-16T08:03:57.894609+00:00",
+      "mtime_kst": "2026-10-16T17:03:57.894609+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-esri_io.tif",
+      "exists": true,
+      "bytes": 204769,
+      "sha256": "e0df62ac185983c358505aa9bb17eb6ddf2b8905dcf27b0685f9cb4f2955b35a",
+      "mtime_utc": "2026-10-16T08:01:48.316797+00:00",
+      "mtime_kst": "2026-10-16T17:01:48.316797+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\stac-item.json",
+      "exists": true,
+      "bytes": 23996,
+      "sha256": "6870f4acb6edf97a632dbece9851af104b252ca07ad083da48ddb51ed039e462",
+      "mtime_utc": "2026-10-16T08:01:04.339401+00:00",
+      "mtime_kst": "2026-10-16T17:01:04.339401+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\window-state.json",
+      "exists": true,
+      "bytes": 220,
+      "sha256": "4a46982041d039dfccba4a7acf9df715db489e027e800bab5057d852d098e55f",
+      "mtime_utc": "2026-10-16T08:03:57.908117+00:00",
+      "mtime_kst": "2026-10-16T17:03:57.908117+09:00"
+    },
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\worker-result.json",
+      "exists": false
+    }
+  ],
+  "protected_unchanged": true,
+  "pending": [
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "reservation": {
+        "status": "pending",
+        "reserved_bytes": 68157440,
+        "charged_bytes": 68157440,
+        "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+      },
+      "config": {
+        "schema_version": 2,
+        "description": "사용자 지정 First Group 6개 주. 공개 ADM1 경계와 소규모 검증 창을 분리합니다.",
+        "endpoint": "planetary-computer",
+        "collection": "sentinel-2-l2a",
+        "collection_mode": "bounded_windows",
+        "window_size": 1024,
+        "years": [
+          2023
+        ],
+        "season_start": "06-01",
+        "season_end": "09-30",
+        "cloud_cover": 60,
+        "bands": [
+          "blue",
+          "green",
+          "red",
+          "nir",
+          "swir16",
+          "swir22"
+        ],
+        "max_total_bytes": 67108864,
+        "max_asset_bytes": 268435456,
+        "prior_download_budget_bytes": 0,
+        "prior_budget_note": "2021기존창8912896 + B04전체221758050 + 2023진단창HTTP458966. 새작업 예산에서 차감.",
+        "download_worldcover": true,
+        "worldcover_year": 2021,
+        "minimum_complete_scenes": 1,
+        "target_verified_patches": [
+          1000,
+          3000
+        ],
+        "boundary_status": "public_ADM1_reference_fetched",
+        "boundary_api": "https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM1/",
+        "provinces": [
+          {
+            "id": "south_sulawesi",
+            "name": "South Sulawesi",
+            "local_name": "Sulawesi Selatan"
+          },
+          {
+            "id": "gorontalo",
+            "name": "Gorontalo",
+            "local_name": "Gorontalo"
+          },
+          {
+            "id": "southeast_sulawesi",
+            "name": "Southeast Sulawesi",
+            "local_name": "Sulawesi Tenggara"
+          },
+          {
+            "id": "banten",
+            "name": "Banten",
+            "local_name": "Banten"
+          },
+          {
+            "id": "west_java",
+            "name": "West Java",
+            "local_name": "Jawa Barat"
+          },
+          {
+            "id": "east_java",
+            "name": "East Java",
+            "local_name": "Jawa Timur"
+          }
+        ],
+        "aois": [
+          {
+            "id": "banten-extra-09",
+            "province_name": "Banten",
+            "local_name": "Banten",
+            "bbox": [
+              105.32282543890229,
+              -6.777099792024626,
+              105.41555217631331,
+              -6.6844000898787
+            ],
+            "province_bbox": [
+              105.099815,
+              -7.0367223,
+              106.7800127,
+              -5.8078104
+            ],
+            "representative_interior_point": [
+              106.13434180551447,
+              -6.43753335
+            ],
+            "sample_bbox_inside_province": true,
+            "boundary_status": "public_geoboundaries_ADM1_reference_not_legal_certification",
+            "boundary_feature_id": "65028918B99918739720671",
+            "boundary_geojson": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+            "scope_note": "province_bbox는 전체 주 범위; bbox는 내부 대표점 주변 STAC 검색용 작은 범위; 실제256창은 주 전체가 아님",
+            "province_id": "banten"
+          }
+        ],
+        "boundary_manifest": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\boundary-manifest.json",
+        "candidate_limit": 5,
+        "min_valid_fraction": 0.8,
+        "candidate_valid_fraction": 0.65,
+        "verify_product_metadata": true,
+        "preserve_source_crops": true,
+        "transient_asset_retries": 0,
+        "search_limit": 20,
+        "sort_by_cloud": true,
+        "annual_reference": "esri_io",
+        "collection_policy_version": "parallel-v2-extra",
+        "label_first": true,
+        "spatial_candidate_evidence": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v2\\lane-b-candidates.json",
+          "sha256": "2920786dfcd5dfd5ec955eccc659192e9eb729cb45788b1a7fb052862f7f3b8d",
+          "class_presence_verified": false,
+          "spatial_window_id": "v2-laneB-banten-boundary-01"
+        }
+      },
+      "window_state": {
+        "config_sha256": "141e3d3cd83005849b82d7c441e0a3fb7ae966b89ee8387bb5d0ff43deb7d1f5",
+        "http_body_bytes": 52151987,
+        "cells": {},
+        "legacy_charged_bytes_preserved": 0,
+        "http_body_bytes_measured": 18597555
+      },
+      "files": [
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\calibration.json",
+          "exists": true,
+          "bytes": 2881,
+          "sha256": "c76e8bdee509652ce94c464e5273cdeb509a12d27185dba7ddfbe508c93df37f",
+          "mtime_utc": "2026-10-16T08:00:18.661091+00:00",
+          "mtime_kst": "2026-10-16T17:00:18.661091+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\product-metadata.xml",
+          "exists": true,
+          "bytes": 54626,
+          "sha256": "21202e132a363a40a065a7653ba5e96a4ef7da7dfb3a29bad673fb9f793e0ded",
+          "mtime_utc": "2026-10-16T08:00:18.645088+00:00",
+          "mtime_kst": "2026-10-16T17:00:18.645088+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\qa-candidate-00-SCL.tif",
+          "exists": true,
+          "bytes": 4358,
+          "sha256": "5f9de8e44902f88fae008fd1842f77d600a3f89c1c3dab56629d8178c455dd3b",
+          "mtime_utc": "2026-10-16T07:59:47.186864+00:00",
+          "mtime_kst": "2026-10-16T16:59:47.186864+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\qa-candidate-01-SCL.tif",
+          "exists": true,
+          "bytes": 4370,
+          "sha256": "c7e293da00d4c3f62f80196c81a9ec0f65c68d59439f714ed684e6702fafad23",
+          "mtime_utc": "2026-10-16T07:59:59.147792+00:00",
+          "mtime_kst": "2026-10-16T16:59:59.147792+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\qa-candidate-02-SCL.tif",
+          "exists": true,
+          "bytes": 4441,
+          "sha256": "cf8c8908231d61ef03350fb191371c1d3a485ed0595b5df5afbe2d429c570bcf",
+          "mtime_utc": "2026-10-16T08:00:17.181046+00:00",
+          "mtime_kst": "2026-10-16T17:00:17.181046+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B02.tif",
+          "exists": true,
+          "bytes": 1387607,
+          "sha256": "d792b0825675017afacce67121a0f4febe17b5630953686c95177f2aff4c4583",
+          "mtime_utc": "2026-10-16T08:01:31.618668+00:00",
+          "mtime_kst": "2026-10-16T17:01:31.618668+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B03.tif",
+          "exists": true,
+          "bytes": 1439098,
+          "sha256": "e42ab03fe05e75411da51bfdc748b57b42c83e2e487572c798aadfbb33599ad3",
+          "mtime_utc": "2026-10-16T08:02:18.859536+00:00",
+          "mtime_kst": "2026-10-16T17:02:18.859536+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B04.tif",
+          "exists": true,
+          "bytes": 1422585,
+          "sha256": "253dc5317d72febdf68ad52b933caa63f38ea32148f081ce42a6cd02ef4b6da3",
+          "mtime_utc": "2026-10-16T08:03:05.529015+00:00",
+          "mtime_kst": "2026-10-16T17:03:05.529015+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B08.tif",
+          "exists": true,
+          "bytes": 1513963,
+          "sha256": "0a5d4e7943ce32e9526447b4d8730aa37eb5ebcac664a61684d8cdd0f086bcad",
+          "mtime_utc": "2026-10-16T08:03:51.925152+00:00",
+          "mtime_kst": "2026-10-16T17:03:51.925152+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-B11.tif",
+          "exists": true,
+          "bytes": 398672,
+          "sha256": "7527aef529705d8550fdbcd32cb91bd49d0ec57cf193a7052ce48682936dfa7a",
+          "mtime_utc": "2026-10-16T08:04:17.422120+00:00",
+          "mtime_kst": "2026-10-16T17:04:17.422120+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\raw-esri_io.tif",
+          "exists": true,
+          "bytes": 112125,
+          "sha256": "e699b7e6f962022613801841f4dcf0239ea7aad484509af0a21c2168e113c481",
+          "mtime_utc": "2026-10-16T08:00:43.447527+00:00",
+          "mtime_kst": "2026-10-16T17:00:43.447527+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\banten-extra-09-2023\\stac-item.json",
+          "exists": true,
+          "bytes": 22410,
+          "sha256": "4a5eefedd5e15aa40195693963bfac79da5703e9c06ed31a4cf6f8ae6d84d46f",
+          "mtime_utc": "2026-10-16T08:00:17.206046+00:00",
+          "mtime_kst": "2026-10-16T17:00:17.206046+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\collection-history.jsonl",
+          "exists": true,
+          "bytes": 115,
+          "sha256": "5127a0f60806cad15966a3a81b6ab791af44bcc7e7316b39a63339c39b617448",
+          "mtime_utc": "2026-10-16T07:59:33.348673+00:00",
+          "mtime_kst": "2026-10-16T16:59:33.348673+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\config.json",
+          "exists": true,
+          "bytes": 3441,
+          "sha256": "d9e7bf2e9e18398205653d518d3fe0dcf15b7ab305ca58520d0ba3c3e135abc6",
+          "mtime_utc": "2026-10-16T07:59:33.335482+00:00",
+          "mtime_kst": "2026-10-16T16:59:33.335482+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\0a5d4e7943ce32e9526447b4d8730aa37eb5ebcac664a61684d8cdd0f086bcad-6a3abecd7bbe6a0e.json",
+          "exists": true,
+          "bytes": 997,
+          "sha256": "3882f611bb9b76883fb3921dffd3a8f29733c2dca57733f11d28a7b90dc0d265",
+          "mtime_utc": "2026-10-16T08:03:51.936148+00:00",
+          "mtime_kst": "2026-10-16T17:03:51.936148+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\253dc5317d72febdf68ad52b933caa63f38ea32148f081ce42a6cd02ef4b6da3-bbbbd38ccf9b9943.json",
+          "exists": true,
+          "bytes": 997,
+          "sha256": "0df415c2311170de8d7d27a398f1306e7078580af2927b4d4c0534427cf7a6ab",
+          "mtime_utc": "2026-10-16T08:03:05.540639+00:00",
+          "mtime_kst": "2026-10-16T17:03:05.540639+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\5f9de8e44902f88fae008fd1842f77d600a3f89c1c3dab56629d8178c455dd3b-a163a082db3cc780.json",
+          "exists": true,
+          "bytes": 1003,
+          "sha256": "bd0ba2c5eaa1a036ec3869ac21e732a2063dbabead57dee215dac4ba2bcb4b9c",
+          "mtime_utc": "2026-10-16T07:59:47.243154+00:00",
+          "mtime_kst": "2026-10-16T16:59:47.243154+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\7527aef529705d8550fdbcd32cb91bd49d0ec57cf193a7052ce48682936dfa7a-908968899792db99.json",
+          "exists": true,
+          "bytes": 994,
+          "sha256": "992e78c3b87ec0bbd212a10a6bc9220e730f908770aa403ce01ebedf88be690a",
+          "mtime_utc": "2026-10-16T08:04:17.431132+00:00",
+          "mtime_kst": "2026-10-16T17:04:17.431132+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\c7e293da00d4c3f62f80196c81a9ec0f65c68d59439f714ed684e6702fafad23-6e0c4d7880c9e172.json",
+          "exists": true,
+          "bytes": 1003,
+          "sha256": "ebb15175cbb6378ae6e1793e8545cbc6f16d143dd4e15cf1756016fb0203c34f",
+          "mtime_utc": "2026-10-16T07:59:59.187557+00:00",
+          "mtime_kst": "2026-10-16T16:59:59.187557+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\cf8c8908231d61ef03350fb191371c1d3a485ed0595b5df5afbe2d429c570bcf-92a9d1ccead73e07.json",
+          "exists": true,
+          "bytes": 1003,
+          "sha256": "d17f57947e99d92adfd2e0845c77940321d19d0bb7d8334a1699701e04ba5337",
+          "mtime_utc": "2026-10-16T08:00:17.201044+00:00",
+          "mtime_kst": "2026-10-16T17:00:17.201044+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\d792b0825675017afacce67121a0f4febe17b5630953686c95177f2aff4c4583-8c55446811d0acf9.json",
+          "exists": true,
+          "bytes": 997,
+          "sha256": "54132af34d5699ef20da209a712d9c7ce0dbcb83428fefa7a7c5795232cbefc4",
+          "mtime_utc": "2026-10-16T08:01:31.648671+00:00",
+          "mtime_kst": "2026-10-16T17:01:31.648671+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\e42ab03fe05e75411da51bfdc748b57b42c83e2e487572c798aadfbb33599ad3-00805743754088f3.json",
+          "exists": true,
+          "bytes": 997,
+          "sha256": "50057ecaec92d1017be01c6410b649cbad06d2b9ceabac0106f0148d977d9538",
+          "mtime_utc": "2026-10-16T08:02:18.872526+00:00",
+          "mtime_kst": "2026-10-16T17:02:18.872526+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\manifests\\e699b7e6f962022613801841f4dcf0239ea7aad484509af0a21c2168e113c481-47ee47d9e3283236.json",
+          "exists": true,
+          "bytes": 850,
+          "sha256": "128862c8df40d56ad0bcbbe864fd1dd1d7f782d31fe9df9ff77acb482727059a",
+          "mtime_utc": "2026-10-16T08:00:44.421692+00:00",
+          "mtime_kst": "2026-10-16T17:00:44.421692+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\selection-context.json",
+          "exists": true,
+          "bytes": 127,
+          "sha256": "3314bf5fe2aa1a2127153bb723d29bf9699b4a7bf3db23ab9df451f721c2a07b",
+          "mtime_utc": "2026-10-16T07:59:33.339864+00:00",
+          "mtime_kst": "2026-10-16T16:59:33.339864+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01\\window-state.json",
+          "exists": true,
+          "bytes": 220,
+          "sha256": "1b5821692d52a13fd6c3e7e2bc72d2051c38ac7ac2eb5d8fec0d86cec3925700",
+          "mtime_utc": "2026-10-16T08:04:17.472133+00:00",
+          "mtime_kst": "2026-10-16T17:04:17.472133+09:00"
+        }
+      ],
+      "history_text": [
+        "{\"time\": \"2026-10-16T07:59:33.348672+00:00\", \"event\": \"window_collection_started\", \"key\": \"banten-extra-09-2023\"}\n"
+      ],
+      "aggregate_source_references": [],
+      "aggregate_patch_ids": []
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "reservation": {
+        "status": "pending",
+        "reserved_bytes": 68157440,
+        "charged_bytes": 68157440,
+        "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+      },
+      "config": {
+        "schema_version": 2,
+        "description": "사용자 지정 First Group 6개 주. 공개 ADM1 경계와 소규모 검증 창을 분리합니다.",
+        "endpoint": "planetary-computer",
+        "collection": "sentinel-2-l2a",
+        "collection_mode": "bounded_windows",
+        "window_size": 1024,
+        "years": [
+          2023
+        ],
+        "season_start": "06-01",
+        "season_end": "09-30",
+        "cloud_cover": 60,
+        "bands": [
+          "blue",
+          "green",
+          "red",
+          "nir",
+          "swir16",
+          "swir22"
+        ],
+        "max_total_bytes": 67108864,
+        "max_asset_bytes": 268435456,
+        "prior_download_budget_bytes": 0,
+        "prior_budget_note": "2021기존창8912896 + B04전체221758050 + 2023진단창HTTP458966. 새작업 예산에서 차감.",
+        "download_worldcover": true,
+        "worldcover_year": 2021,
+        "minimum_complete_scenes": 1,
+        "target_verified_patches": [
+          1000,
+          3000
+        ],
+        "boundary_status": "public_ADM1_reference_fetched",
+        "boundary_api": "https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM1/",
+        "provinces": [
+          {
+            "id": "south_sulawesi",
+            "name": "South Sulawesi",
+            "local_name": "Sulawesi Selatan"
+          },
+          {
+            "id": "gorontalo",
+            "name": "Gorontalo",
+            "local_name": "Gorontalo"
+          },
+          {
+            "id": "southeast_sulawesi",
+            "name": "Southeast Sulawesi",
+            "local_name": "Sulawesi Tenggara"
+          },
+          {
+            "id": "banten",
+            "name": "Banten",
+            "local_name": "Banten"
+          },
+          {
+            "id": "west_java",
+            "name": "West Java",
+            "local_name": "Jawa Barat"
+          },
+          {
+            "id": "east_java",
+            "name": "East Java",
+            "local_name": "Jawa Timur"
+          }
+        ],
+        "aois": [
+          {
+            "id": "west_java-extra-17",
+            "province_name": "West Java",
+            "local_name": "Jawa Barat",
+            "bbox": [
+              106.35939538553177,
+              -7.339615670284294,
+              106.45242612217365,
+              -7.2467257571036825
+            ],
+            "province_bbox": [
+              106.3708302,
+              -7.8204266,
+              108.8867652,
+              -5.9147353
+            ],
+            "representative_interior_point": [
+              107.65362883177167,
+              -6.8674129
+            ],
+            "sample_bbox_inside_province": true,
+            "boundary_status": "public_geoboundaries_ADM1_reference_not_legal_certification",
+            "boundary_feature_id": "65028918B28366581005022",
+            "boundary_geojson": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+            "scope_note": "province_bbox는 전체 주 범위; bbox는 내부 대표점 주변 STAC 검색용 작은 범위; 실제256창은 주 전체가 아님",
+            "province_id": "west_java"
+          }
+        ],
+        "boundary_manifest": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\boundary-manifest.json",
+        "candidate_limit": 5,
+        "min_valid_fraction": 0.8,
+        "candidate_valid_fraction": 0.65,
+        "verify_product_metadata": true,
+        "preserve_source_crops": true,
+        "transient_asset_retries": 0,
+        "search_limit": 20,
+        "sort_by_cloud": true,
+        "annual_reference": "esri_io",
+        "collection_policy_version": "parallel-v2-extra",
+        "label_first": true,
+        "spatial_candidate_evidence": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v2\\lane-b-candidates.json",
+          "sha256": "2920786dfcd5dfd5ec955eccc659192e9eb729cb45788b1a7fb052862f7f3b8d",
+          "class_presence_verified": false,
+          "spatial_window_id": "v2-laneB-west_java-boundary-01"
+        }
+      },
+      "window_state": {
+        "config_sha256": "2225aca02b9d152e630f52a6197c7e3a3e85e4f41f4aefe6582aa1ce6deeb47c",
+        "http_body_bytes": 44105728,
+        "cells": {},
+        "legacy_charged_bytes_preserved": 0,
+        "http_body_bytes_measured": 10551296
+      },
+      "files": [
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\collection-history.jsonl",
+          "exists": true,
+          "bytes": 118,
+          "sha256": "49abd4257fb3944627796fb83ab19d45d841100035855c5ffc58d9d4e5317bf8",
+          "mtime_utc": "2026-10-16T08:00:45.191012+00:00",
+          "mtime_kst": "2026-10-16T17:00:45.191012+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\config.json",
+          "exists": true,
+          "bytes": 3460,
+          "sha256": "5619b92481919e29d5b2b557514e8a2439d2b1659f8b575323aebabec63c56a3",
+          "mtime_utc": "2026-10-16T08:00:45.178495+00:00",
+          "mtime_kst": "2026-10-16T17:00:45.178495+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\2bf7044d8f5c58868681d0392a8e17838607d583db447879a9441df706ec3eb6-5b3ccbe54d85c35e.json",
+          "exists": true,
+          "bytes": 1013,
+          "sha256": "e9f6ea54e4147cb417d1b74439e2105a88dc89b39ad3d66583b3c7480b3aa62f",
+          "mtime_utc": "2026-10-16T08:01:04.334400+00:00",
+          "mtime_kst": "2026-10-16T17:01:04.334400+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\903db6c773cb62b1b8ec808f251814a3b18335f175ac750505f1e1f3c9c661cd-14f3171f4d89f959.json",
+          "exists": true,
+          "bytes": 1006,
+          "sha256": "eacc29abcba701f78ee411858279b70fe30b43717b25fdaa2ce17699dfcd2b79",
+          "mtime_utc": "2026-10-16T08:02:32.759772+00:00",
+          "mtime_kst": "2026-10-16T17:02:32.759772+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\c299f23f7918ed761ce9b7b7979e836f54e74958e0bfcbcff66575f6edc265ee-0758b872b9457f5a.json",
+          "exists": true,
+          "bytes": 1006,
+          "sha256": "f0aea1093c0f7315e85b8dd2e5396db93142bc42ddb0ff7d9b13ab9ccaa5218b",
+          "mtime_utc": "2026-10-16T08:03:15.509213+00:00",
+          "mtime_kst": "2026-10-16T17:03:15.509213+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\e0df62ac185983c358505aa9bb17eb6ddf2b8905dcf27b0685f9cb4f2955b35a-f9bc784a41e8110a.json",
+          "exists": true,
+          "bytes": 859,
+          "sha256": "e2f48755469796d009e17d08ce88d2f8b9da8e84f1cf8e6893257b3220b498ee",
+          "mtime_utc": "2026-10-16T08:01:48.337318+00:00",
+          "mtime_kst": "2026-10-16T17:01:48.337318+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\manifests\\f7ce02b0f65243a1cdb2c8773924cb5ab382834062d78091ed22e6c0ccef7b56-2cd8fa7c0df5c131.json",
+          "exists": true,
+          "bytes": 1006,
+          "sha256": "8812fe75835f0859bf641141ae445b32c0fc7c0537eaf822f73c8ad251380b28",
+          "mtime_utc": "2026-10-16T08:03:57.906610+00:00",
+          "mtime_kst": "2026-10-16T17:03:57.906610+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\selection-context.json",
+          "exists": true,
+          "bytes": 127,
+          "sha256": "df283ee5054372561c0798a1e91ac77ab84e6f00cf3f78e1f05cb6164d88f717",
+          "mtime_utc": "2026-10-16T08:00:45.181495+00:00",
+          "mtime_kst": "2026-10-16T17:00:45.181495+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\calibration.json",
+          "exists": true,
+          "bytes": 2899,
+          "sha256": "cbcffcd6b5ba6d5f12f93f0aac2311e15bf955b57b27c382a74dd3b53fc60281",
+          "mtime_utc": "2026-10-16T08:01:06.122884+00:00",
+          "mtime_kst": "2026-10-16T17:01:06.122884+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\product-metadata.xml",
+          "exists": true,
+          "bytes": 54060,
+          "sha256": "39ff8766cf1c01d50ad2c92d8baa89ba244554d2ddc5db1e46bf5fb6aab406e0",
+          "mtime_utc": "2026-10-16T08:01:06.113362+00:00",
+          "mtime_kst": "2026-10-16T17:01:06.113362+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\qa-candidate-00-SCL.tif",
+          "exists": true,
+          "bytes": 17684,
+          "sha256": "2bf7044d8f5c58868681d0392a8e17838607d583db447879a9441df706ec3eb6",
+          "mtime_utc": "2026-10-16T08:01:04.317356+00:00",
+          "mtime_kst": "2026-10-16T17:01:04.317356+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-B02.tif",
+          "exists": true,
+          "bytes": 1454906,
+          "sha256": "903db6c773cb62b1b8ec808f251814a3b18335f175ac750505f1e1f3c9c661cd",
+          "mtime_utc": "2026-10-16T08:02:32.747766+00:00",
+          "mtime_kst": "2026-10-16T17:02:32.747766+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-B03.tif",
+          "exists": true,
+          "bytes": 1493192,
+          "sha256": "c299f23f7918ed761ce9b7b7979e836f54e74958e0bfcbcff66575f6edc265ee",
+          "mtime_utc": "2026-10-16T08:03:15.496212+00:00",
+          "mtime_kst": "2026-10-16T17:03:15.496212+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-B04.tif",
+          "exists": true,
+          "bytes": 1548391,
+          "sha256": "f7ce02b0f65243a1cdb2c8773924cb5ab382834062d78091ed22e6c0ccef7b56",
+          "mtime_utc": "2026-10-16T08:03:57.894609+00:00",
+          "mtime_kst": "2026-10-16T17:03:57.894609+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\raw-esri_io.tif",
+          "exists": true,
+          "bytes": 204769,
+          "sha256": "e0df62ac185983c358505aa9bb17eb6ddf2b8905dcf27b0685f9cb4f2955b35a",
+          "mtime_utc": "2026-10-16T08:01:48.316797+00:00",
+          "mtime_kst": "2026-10-16T17:01:48.316797+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\west_java-extra-17-2023\\stac-item.json",
+          "exists": true,
+          "bytes": 23996,
+          "sha256": "6870f4acb6edf97a632dbece9851af104b252ca07ad083da48ddb51ed039e462",
+          "mtime_utc": "2026-10-16T08:01:04.339401+00:00",
+          "mtime_kst": "2026-10-16T17:01:04.339401+09:00"
+        },
+        {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01\\window-state.json",
+          "exists": true,
+          "bytes": 220,
+          "sha256": "4a46982041d039dfccba4a7acf9df715db489e027e800bab5057d852d098e55f",
+          "mtime_utc": "2026-10-16T08:03:57.908117+00:00",
+          "mtime_kst": "2026-10-16T17:03:57.908117+09:00"
+        }
+      ],
+      "history_text": [
+        "{\"time\": \"2026-10-16T08:00:45.191011+00:00\", \"event\": \"window_collection_started\", \"key\": \"west_java-extra-17-2023\"}\n"
+      ],
+      "aggregate_source_references": [],
+      "aggregate_patch_ids": []
+    }
+  ],
+  "stored_plan_queue_after_eligible_filter": [
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2021-g03",
+      "province": "south_sulawesi",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 119.89086827996725,
+        "lat": -2.117966148053699,
+        "grid_easting": 821600.0,
+        "grid_northing": 9765600.0,
+        "grid_crs": "EPSG:32750",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2022-g00",
+      "province": "gorontalo",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 122.24508565310185,
+        "lat": 0.6585865960192726,
+        "grid_easting": 416000.0,
+        "grid_northing": 72800.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "00",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g00",
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 121.77520151534364,
+        "lat": -3.8134161945696246,
+        "grid_easting": 364000.0,
+        "grid_northing": 9578400.0,
+        "grid_crs": "EPSG:32751",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "00",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2025-v2-laneB-banten-boundary-00",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 106.49690066376554,
+        "lat": -6.258357855347267,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-00",
+      "candidate_rank": 0,
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2021-g01",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "center": {
+        "lon": 108.66710404652768,
+        "lat": -7.562150823445666,
+        "grid_easting": 904800.0,
+        "grid_northing": 9162400.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-00",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 114.29668794963764,
+        "lat": -8.316497441392816,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-00",
+      "candidate_rank": 0,
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2022-g03",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 119.89086827996725,
+        "lat": -2.117966148053699,
+        "grid_easting": 821600.0,
+        "grid_northing": 9765600.0,
+        "grid_crs": "EPSG:32750",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2023-g00",
+      "province": "gorontalo",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 122.24508565310185,
+        "lat": 0.6585865960192726,
+        "grid_easting": 416000.0,
+        "grid_northing": 72800.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "00",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g01",
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 123.08664343994589,
+        "lat": -5.319661130074328,
+        "grid_easting": 509600.0,
+        "grid_northing": 9412000.0,
+        "grid_crs": "EPSG:32751",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 105.36918441729863,
+        "lat": -6.730751936498358,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "pending"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 106.40590599251979,
+        "lat": -7.293172214143451,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "pending"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2024-v2-laneB-east_java-boundary-00",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 114.29668794963764,
+        "lat": -8.316497441392816,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-00",
+      "candidate_rank": 0,
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2023-g03",
+      "province": "south_sulawesi",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 119.89086827996725,
+        "lat": -2.117966148053699,
+        "grid_easting": 821600.0,
+        "grid_northing": 9765600.0,
+        "grid_crs": "EPSG:32750",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2024-g00",
+      "province": "gorontalo",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 122.24508565310185,
+        "lat": 0.6585865960192726,
+        "grid_easting": 416000.0,
+        "grid_northing": 72800.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "00",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g02",
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 123.08649225016032,
+        "lat": -4.0965489327900855,
+        "grid_easting": 509600.0,
+        "grid_northing": 9547200.0,
+        "grid_crs": "EPSG:32751",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2023-g01",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 106.590602687807,
+        "lat": -6.164037031231702,
+        "grid_easting": 676000.0,
+        "grid_northing": 9318400.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2023-g01",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 108.66710404652768,
+        "lat": -7.562150823445666,
+        "grid_easting": 904800.0,
+        "grid_northing": 9162400.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-00",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 114.29668794963764,
+        "lat": -8.316497441392816,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-00",
+      "candidate_rank": 0,
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2024-g03",
+      "province": "south_sulawesi",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 119.89086827996725,
+        "lat": -2.117966148053699,
+        "grid_easting": 821600.0,
+        "grid_northing": 9765600.0,
+        "grid_crs": "EPSG:32750",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2025-g00",
+      "province": "gorontalo",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 122.24508565310185,
+        "lat": 0.6585865960192726,
+        "grid_easting": 416000.0,
+        "grid_northing": 72800.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "00",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03",
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 121.96033624497493,
+        "lat": -5.3187906667261595,
+        "grid_easting": 384800.0,
+        "grid_northing": 9412000.0,
+        "grid_crs": "EPSG:32751",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-01",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 105.36918441729863,
+        "lat": -6.730751936498358,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-01",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 106.40590599251979,
+        "lat": -7.293172214143451,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-01",
+      "province": "east_java",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 110.99273788270617,
+        "lat": -8.142034081089983,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2025-g03",
+      "province": "south_sulawesi",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 119.89086827996725,
+        "lat": -2.117966148053699,
+        "grid_easting": 821600.0,
+        "grid_northing": 9765600.0,
+        "grid_crs": "EPSG:32750",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2025-g01",
+      "province": "gorontalo",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 123.36666905780078,
+        "lat": 0.470450507800503,
+        "grid_easting": 540800.0,
+        "grid_northing": 52000.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03",
+      "province": "southeast_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 121.96033624497493,
+        "lat": -5.3187906667261595,
+        "grid_easting": 384800.0,
+        "grid_northing": 9412000.0,
+        "grid_crs": "EPSG:32751",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g01",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 106.590602687807,
+        "lat": -6.164037031231702,
+        "grid_easting": 676000.0,
+        "grid_northing": 9318400.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2024-g01",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 108.66710404652768,
+        "lat": -7.562150823445666,
+        "grid_easting": 904800.0,
+        "grid_northing": 9162400.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2020-g01",
+      "province": "east_java",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 114.38705278196498,
+        "lat": -7.846164790431671,
+        "grid_easting": 873600.0,
+        "grid_northing": 9131200.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2020-g02",
+      "province": "gorontalo",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 121.31062709027971,
+        "lat": 0.6583559588056558,
+        "grid_easting": 312000.0,
+        "grid_northing": 72800.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03",
+      "province": "southeast_sulawesi",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 121.96033624497493,
+        "lat": -5.3187906667261595,
+        "grid_easting": 384800.0,
+        "grid_northing": 9412000.0,
+        "grid_crs": "EPSG:32751",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2025-v2-laneB-banten-boundary-01",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 105.36918441729863,
+        "lat": -6.730751936498358,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-01",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "center": {
+        "lon": 106.40590599251979,
+        "lat": -7.293172214143451,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-01",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 110.99273788270617,
+        "lat": -8.142034081089983,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2021-g02",
+      "province": "gorontalo",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 121.31062709027971,
+        "lat": 0.6583559588056558,
+        "grid_easting": 312000.0,
+        "grid_northing": 72800.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03",
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 121.96033624497493,
+        "lat": -5.3187906667261595,
+        "grid_easting": 384800.0,
+        "grid_northing": 9412000.0,
+        "grid_crs": "EPSG:32751",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2025-g01",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 106.590602687807,
+        "lat": -6.164037031231702,
+        "grid_easting": 676000.0,
+        "grid_northing": 9318400.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2025-g01",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "center": {
+        "lon": 108.66710404652768,
+        "lat": -7.562150823445666,
+        "grid_easting": 904800.0,
+        "grid_northing": 9162400.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2021-g01",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 114.38705278196498,
+        "lat": -7.846164790431671,
+        "grid_easting": 873600.0,
+        "grid_northing": 9131200.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2022-g02",
+      "province": "gorontalo",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 121.31062709027971,
+        "lat": 0.6583559588056558,
+        "grid_easting": 312000.0,
+        "grid_northing": 72800.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03",
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 121.96033624497493,
+        "lat": -5.3187906667261595,
+        "grid_easting": 384800.0,
+        "grid_northing": 9412000.0,
+        "grid_crs": "EPSG:32751",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2020-v2-laneB-banten-boundary-02",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "center": {
+        "lon": 106.3106469443614,
+        "lat": -6.917244185182123,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-02",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "center": {
+        "lon": 107.3417568454659,
+        "lat": -6.067262327332174,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-01",
+      "province": "east_java",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 110.99273788270617,
+        "lat": -8.142034081089983,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "settled"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2022-g03",
+      "province": "gorontalo",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 122.80586998608266,
+        "lat": 0.7527317153495773,
+        "grid_easting": 478400.0,
+        "grid_northing": 83200.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2020-g02",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "center": {
+        "lon": 105.65149218845085,
+        "lat": -6.730457306574381,
+        "grid_easting": 572000.0,
+        "grid_northing": 9256000.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2020-g02",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "center": {
+        "lon": 106.49772235924307,
+        "lat": -6.540501820804358,
+        "grid_easting": 665600.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-01",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 110.99273788270617,
+        "lat": -8.142034081089983,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2023-g03",
+      "province": "gorontalo",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 122.80586998608266,
+        "lat": 0.7527317153495773,
+        "grid_easting": 478400.0,
+        "grid_northing": 83200.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-02",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "center": {
+        "lon": 106.3106469443614,
+        "lat": -6.917244185182123,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-02",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "center": {
+        "lon": 107.3417568454659,
+        "lat": -6.067262327332174,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2023-g01",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 114.38705278196498,
+        "lat": -7.846164790431671,
+        "grid_easting": 873600.0,
+        "grid_northing": 9131200.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2024-g03",
+      "province": "gorontalo",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 122.80586998608266,
+        "lat": 0.7527317153495773,
+        "grid_easting": 478400.0,
+        "grid_northing": 83200.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2021-g02",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "center": {
+        "lon": 105.65149218845085,
+        "lat": -6.730457306574381,
+        "grid_easting": 572000.0,
+        "grid_northing": 9256000.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2021-g02",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "center": {
+        "lon": 106.49772235924307,
+        "lat": -6.540501820804358,
+        "grid_easting": 665600.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2024-v2-laneB-east_java-boundary-01",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 110.99273788270617,
+        "lat": -8.142034081089983,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2025-g03",
+      "province": "gorontalo",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 122.80586998608266,
+        "lat": 0.7527317153495773,
+        "grid_easting": 478400.0,
+        "grid_northing": 83200.0,
+        "grid_crs": "EPSG:32651",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-02",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "center": {
+        "lon": 106.3106469443614,
+        "lat": -6.917244185182123,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-02",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "center": {
+        "lon": 107.3417568454659,
+        "lat": -6.067262327332174,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2024-g01",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 114.38705278196498,
+        "lat": -7.846164790431671,
+        "grid_easting": 873600.0,
+        "grid_northing": 9131200.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2022-g02",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "center": {
+        "lon": 105.65149218845085,
+        "lat": -6.730457306574381,
+        "grid_easting": 572000.0,
+        "grid_northing": 9256000.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2022-g02",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "center": {
+        "lon": 106.49772235924307,
+        "lat": -6.540501820804358,
+        "grid_easting": 665600.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-01",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 110.99273788270617,
+        "lat": -8.142034081089983,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-02",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 106.3106469443614,
+        "lat": -6.917244185182123,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-02",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 107.3417568454659,
+        "lat": -6.067262327332174,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g01",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 114.38705278196498,
+        "lat": -7.846164790431671,
+        "grid_easting": 873600.0,
+        "grid_northing": 9131200.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2023-g02",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 105.65149218845085,
+        "lat": -6.730457306574381,
+        "grid_easting": 572000.0,
+        "grid_northing": 9256000.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2023-g02",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 106.49772235924307,
+        "lat": -6.540501820804358,
+        "grid_easting": 665600.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-02",
+      "province": "east_java",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 112.68341608957937,
+        "lat": -5.787584675047727,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-02",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 106.3106469443614,
+        "lat": -6.917244185182123,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-02",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 107.3417568454659,
+        "lat": -6.067262327332174,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2020-g02",
+      "province": "east_java",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 111.08714537327394,
+        "lat": -8.142024793222209,
+        "grid_easting": 509600.0,
+        "grid_northing": 9100000.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g02",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 105.65149218845085,
+        "lat": -6.730457306574381,
+        "grid_easting": 572000.0,
+        "grid_northing": 9256000.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2024-g02",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 106.49772235924307,
+        "lat": -6.540501820804358,
+        "grid_easting": 665600.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-02",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 112.68341608957937,
+        "lat": -5.787584675047727,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2025-v2-laneB-banten-boundary-02",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 106.3106469443614,
+        "lat": -6.917244185182123,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-02",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "center": {
+        "lon": 107.3417568454659,
+        "lat": -6.067262327332174,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2021-g02",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 111.08714537327394,
+        "lat": -8.142024793222209,
+        "grid_easting": 509600.0,
+        "grid_northing": 9100000.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2025-g02",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 105.65149218845085,
+        "lat": -6.730457306574381,
+        "grid_easting": 572000.0,
+        "grid_northing": 9256000.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2025-g02",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "center": {
+        "lon": 106.49772235924307,
+        "lat": -6.540501820804358,
+        "grid_easting": 665600.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-02",
+      "province": "east_java",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 112.68341608957937,
+        "lat": -5.787584675047727,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2020-v2-laneB-banten-boundary-03",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "center": {
+        "lon": 105.93258854539746,
+        "lat": -6.071525482370427,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-03",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "center": {
+        "lon": 107.63164154534189,
+        "lat": -7.569636621522271,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2022-g02",
+      "province": "east_java",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 111.08714537327394,
+        "lat": -8.142024793222209,
+        "grid_easting": 509600.0,
+        "grid_northing": 9100000.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2020-g03",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "center": {
+        "lon": 106.31038941026021,
+        "lat": -6.823190411845744,
+        "grid_easting": 644800.0,
+        "grid_northing": 9245600.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2020-g03",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "center": {
+        "lon": 108.47121571446958,
+        "lat": -6.530753306268966,
+        "grid_easting": 884000.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-02",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 112.68341608957937,
+        "lat": -5.787584675047727,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-03",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "center": {
+        "lon": 105.93258854539746,
+        "lat": -6.071525482370427,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-03",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "center": {
+        "lon": 107.63164154534189,
+        "lat": -7.569636621522271,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2023-g02",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 111.08714537327394,
+        "lat": -8.142024793222209,
+        "grid_easting": 509600.0,
+        "grid_northing": 9100000.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2021-g03",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "center": {
+        "lon": 106.31038941026021,
+        "lat": -6.823190411845744,
+        "grid_easting": 644800.0,
+        "grid_northing": 9245600.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2021-g03",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "center": {
+        "lon": 108.47121571446958,
+        "lat": -6.530753306268966,
+        "grid_easting": 884000.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2024-v2-laneB-east_java-boundary-02",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 112.68341608957937,
+        "lat": -5.787584675047727,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-03",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "center": {
+        "lon": 105.93258854539746,
+        "lat": -6.071525482370427,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-03",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "center": {
+        "lon": 107.63164154534189,
+        "lat": -7.569636621522271,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2024-g02",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 111.08714537327394,
+        "lat": -8.142024793222209,
+        "grid_easting": 509600.0,
+        "grid_northing": 9100000.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2022-g03",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "center": {
+        "lon": 106.31038941026021,
+        "lat": -6.823190411845744,
+        "grid_easting": 644800.0,
+        "grid_northing": 9245600.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2022-g03",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "center": {
+        "lon": 108.47121571446958,
+        "lat": -6.530753306268966,
+        "grid_easting": 884000.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-02",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 112.68341608957937,
+        "lat": -5.787584675047727,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-02",
+      "candidate_rank": 2,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-03",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 105.93258854539746,
+        "lat": -6.071525482370427,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-03",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 107.63164154534189,
+        "lat": -7.569636621522271,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g02",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 111.08714537327394,
+        "lat": -8.142024793222209,
+        "grid_easting": 509600.0,
+        "grid_northing": 9100000.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "02",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2023-g03",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 106.31038941026021,
+        "lat": -6.823190411845744,
+        "grid_easting": 644800.0,
+        "grid_northing": 9245600.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2023-g03",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 108.47121571446958,
+        "lat": -6.530753306268966,
+        "grid_easting": 884000.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-03",
+      "province": "east_java",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 115.50688118720795,
+        "lat": -6.897719863967824,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-03",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 105.93258854539746,
+        "lat": -6.071525482370427,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-03",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 107.63164154534189,
+        "lat": -7.569636621522271,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2020-g03",
+      "province": "east_java",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 113.34613707714959,
+        "lat": -7.007268000047672,
+        "grid_easting": 759200.0,
+        "grid_northing": 9224800.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g03",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 106.31038941026021,
+        "lat": -6.823190411845744,
+        "grid_easting": 644800.0,
+        "grid_northing": 9245600.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2024-g03",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 108.47121571446958,
+        "lat": -6.530753306268966,
+        "grid_easting": 884000.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-03",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 115.50688118720795,
+        "lat": -6.897719863967824,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2025-v2-laneB-banten-boundary-03",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 105.93258854539746,
+        "lat": -6.071525482370427,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-03",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "center": {
+        "lon": 107.63164154534189,
+        "lat": -7.569636621522271,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2021-g03",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 113.34613707714959,
+        "lat": -7.007268000047672,
+        "grid_easting": 759200.0,
+        "grid_northing": 9224800.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2025-g03",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 106.31038941026021,
+        "lat": -6.823190411845744,
+        "grid_easting": 644800.0,
+        "grid_northing": 9245600.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2025-g03",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "center": {
+        "lon": 108.47121571446958,
+        "lat": -6.530753306268966,
+        "grid_easting": 884000.0,
+        "grid_northing": 9276800.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-03",
+      "province": "east_java",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 115.50688118720795,
+        "lat": -6.897719863967824,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2020-v2-laneB-banten-boundary-04",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "center": {
+        "lon": 105.83937020806006,
+        "lat": -6.542031802103803,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-04",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "center": {
+        "lon": 108.18831614663357,
+        "lat": -6.344751340815706,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2022-g03",
+      "province": "east_java",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 113.34613707714959,
+        "lat": -7.007268000047672,
+        "grid_easting": 759200.0,
+        "grid_northing": 9224800.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-04",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "center": {
+        "lon": 105.83937020806006,
+        "lat": -6.542031802103803,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-04",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "center": {
+        "lon": 108.18831614663357,
+        "lat": -6.344751340815706,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-03",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 115.50688118720795,
+        "lat": -6.897719863967824,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-04",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "center": {
+        "lon": 105.83937020806006,
+        "lat": -6.542031802103803,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-04",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "center": {
+        "lon": 108.18831614663357,
+        "lat": -6.344751340815706,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2023-g03",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 113.34613707714959,
+        "lat": -7.007268000047672,
+        "grid_easting": 759200.0,
+        "grid_northing": 9224800.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-04",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 105.83937020806006,
+        "lat": -6.542031802103803,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-04",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 108.18831614663357,
+        "lat": -6.344751340815706,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2024-v2-laneB-east_java-boundary-03",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 115.50688118720795,
+        "lat": -6.897719863967824,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-04",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 105.83937020806006,
+        "lat": -6.542031802103803,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-04",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 108.18831614663357,
+        "lat": -6.344751340815706,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2024-g03",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 113.34613707714959,
+        "lat": -7.007268000047672,
+        "grid_easting": 759200.0,
+        "grid_northing": 9224800.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2025-v2-laneB-banten-boundary-04",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 105.83937020806006,
+        "lat": -6.542031802103803,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-04",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "center": {
+        "lon": 108.18831614663357,
+        "lat": -6.344751340815706,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-03",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 115.50688118720795,
+        "lat": -6.897719863967824,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-03",
+      "candidate_rank": 3,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2020-v2-laneB-banten-boundary-05",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "center": {
+        "lon": 106.40394675221646,
+        "lat": -6.634824331803079,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-05",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "center": {
+        "lon": 106.49744435141547,
+        "lat": -6.446454188283089,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g03",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 113.34613707714959,
+        "lat": -7.007268000047672,
+        "grid_easting": 759200.0,
+        "grid_northing": 9224800.0,
+        "grid_crs": "EPSG:32749",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-05",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "center": {
+        "lon": 106.40394675221646,
+        "lat": -6.634824331803079,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-05",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "center": {
+        "lon": 106.49744435141547,
+        "lat": -6.446454188283089,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-04",
+      "province": "east_java",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 112.78338944007038,
+        "lat": -7.479904467460898,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-05",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "center": {
+        "lon": 106.40394675221646,
+        "lat": -6.634824331803079,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-05",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "center": {
+        "lon": 106.49744435141547,
+        "lat": -6.446454188283089,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-04",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 112.78338944007038,
+        "lat": -7.479904467460898,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-05",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 106.40394675221646,
+        "lat": -6.634824331803079,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-05",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 106.49744435141547,
+        "lat": -6.446454188283089,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-04",
+      "province": "east_java",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 112.78338944007038,
+        "lat": -7.479904467460898,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-05",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 106.40394675221646,
+        "lat": -6.634824331803079,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-05",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 106.49744435141547,
+        "lat": -6.446454188283089,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-04",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 112.78338944007038,
+        "lat": -7.479904467460898,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2025-v2-laneB-banten-boundary-05",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 106.40394675221646,
+        "lat": -6.634824331803079,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-05",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "center": {
+        "lon": 106.49744435141547,
+        "lat": -6.446454188283089,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2024-v2-laneB-east_java-boundary-04",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 112.78338944007038,
+        "lat": -7.479904467460898,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2020-v2-laneB-banten-boundary-06",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "center": {
+        "lon": 105.74573608006243,
+        "lat": -6.824393769317376,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-06",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "center": {
+        "lon": 108.4804445979021,
+        "lat": -7.751495553951909,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-04",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 112.78338944007038,
+        "lat": -7.479904467460898,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-04",
+      "candidate_rank": 4,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-06",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "center": {
+        "lon": 105.74573608006243,
+        "lat": -6.824393769317376,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-06",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "center": {
+        "lon": 108.4804445979021,
+        "lat": -7.751495553951909,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-05",
+      "province": "east_java",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 114.00393598735275,
+        "lat": -6.909570926545089,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-06",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "center": {
+        "lon": 105.74573608006243,
+        "lat": -6.824393769317376,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-06",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "center": {
+        "lon": 108.4804445979021,
+        "lat": -7.751495553951909,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-05",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 114.00393598735275,
+        "lat": -6.909570926545089,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-06",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 105.74573608006243,
+        "lat": -6.824393769317376,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-06",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 108.4804445979021,
+        "lat": -7.751495553951909,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-05",
+      "province": "east_java",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 114.00393598735275,
+        "lat": -6.909570926545089,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-06",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 105.74573608006243,
+        "lat": -6.824393769317376,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-06",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 108.4804445979021,
+        "lat": -7.751495553951909,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-05",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 114.00393598735275,
+        "lat": -6.909570926545089,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2025-v2-laneB-banten-boundary-06",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 105.74573608006243,
+        "lat": -6.824393769317376,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-06",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "center": {
+        "lon": 108.4804445979021,
+        "lat": -7.751495553951909,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2024-v2-laneB-east_java-boundary-05",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 114.00393598735275,
+        "lat": -6.909570926545089,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2020-v2-laneB-banten-boundary-07",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "center": {
+        "lon": 106.21449592975279,
+        "lat": -6.070966188994119,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-07",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "center": {
+        "lon": 107.06556564561986,
+        "lat": -7.384655895747477,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-05",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 114.00393598735275,
+        "lat": -6.909570926545089,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-05",
+      "candidate_rank": 5,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-07",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "center": {
+        "lon": 106.21449592975279,
+        "lat": -6.070966188994119,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-07",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "center": {
+        "lon": 107.06556564561986,
+        "lat": -7.384655895747477,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-06",
+      "province": "east_java",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 111.65174658937916,
+        "lat": -6.918602499739437,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-07",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "center": {
+        "lon": 106.21449592975279,
+        "lat": -6.070966188994119,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-07",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "center": {
+        "lon": 107.06556564561986,
+        "lat": -7.384655895747477,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-06",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 111.65174658937916,
+        "lat": -6.918602499739437,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-07",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 106.21449592975279,
+        "lat": -6.070966188994119,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-07",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 107.06556564561986,
+        "lat": -7.384655895747477,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-06",
+      "province": "east_java",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 111.65174658937916,
+        "lat": -6.918602499739437,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-07",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 106.21449592975279,
+        "lat": -6.070966188994119,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-07",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 107.06556564561986,
+        "lat": -7.384655895747477,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-06",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 111.65174658937916,
+        "lat": -6.918602499739437,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2025-v2-laneB-banten-boundary-07",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "center": {
+        "lon": 106.21449592975279,
+        "lat": -6.070966188994119,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-07",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "center": {
+        "lon": 107.06556564561986,
+        "lat": -7.384655895747477,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2024-v2-laneB-east_java-boundary-06",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 111.65174658937916,
+        "lat": -6.918602499739437,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-06",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 111.65174658937916,
+        "lat": -6.918602499739437,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-06",
+      "candidate_rank": 6,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2020-v2-laneB-east_java-boundary-07",
+      "province": "east_java",
+      "year": 2020,
+      "split": "train",
+      "center": {
+        "lon": 111.93699016215487,
+        "lat": -8.235013670079143,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2021-v2-laneB-east_java-boundary-07",
+      "province": "east_java",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 111.93699016215487,
+        "lat": -8.235013670079143,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-07",
+      "province": "east_java",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 111.93699016215487,
+        "lat": -8.235013670079143,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-07",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 111.93699016215487,
+        "lat": -8.235013670079143,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2024-v2-laneB-east_java-boundary-07",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 111.93699016215487,
+        "lat": -8.235013670079143,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-07",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 111.93699016215487,
+        "lat": -8.235013670079143,
+        "grid_crs": "EPSG:32749"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-east_java-boundary-07",
+      "candidate_rank": 7,
+      "ledger_state": "UNRESERVED"
+    }
+  ],
+  "first_unreserved_candidates": [
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2021-g03",
+      "province": "south_sulawesi",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 119.89086827996725,
+        "lat": -2.117966148053699,
+        "grid_easting": 821600.0,
+        "grid_northing": 9765600.0,
+        "grid_crs": "EPSG:32750",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2022-g03",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 119.89086827996725,
+        "lat": -2.117966148053699,
+        "grid_easting": 821600.0,
+        "grid_northing": 9765600.0,
+        "grid_crs": "EPSG:32750",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2023-g03",
+      "province": "south_sulawesi",
+      "year": 2023,
+      "split": "train",
+      "center": {
+        "lon": 119.89086827996725,
+        "lat": -2.117966148053699,
+        "grid_easting": 821600.0,
+        "grid_northing": 9765600.0,
+        "grid_crs": "EPSG:32750",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2023-g01",
+      "province": "banten",
+      "year": 2023,
+      "split": "val",
+      "center": {
+        "lon": 106.590602687807,
+        "lat": -6.164037031231702,
+        "grid_easting": 676000.0,
+        "grid_northing": 9318400.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-west_java-2023-g01",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "center": {
+        "lon": 108.66710404652768,
+        "lat": -7.562150823445666,
+        "grid_easting": 904800.0,
+        "grid_northing": 9162400.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2024-g03",
+      "province": "south_sulawesi",
+      "year": 2024,
+      "split": "train",
+      "center": {
+        "lon": 119.89086827996725,
+        "lat": -2.117966148053699,
+        "grid_easting": 821600.0,
+        "grid_northing": 9765600.0,
+        "grid_crs": "EPSG:32750",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03",
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "split": "train",
+      "center": {
+        "lon": 121.96033624497493,
+        "lat": -5.3187906667261595,
+        "grid_easting": 384800.0,
+        "grid_northing": 9412000.0,
+        "grid_crs": "EPSG:32751",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-01",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 105.36918441729863,
+        "lat": -6.730751936498358,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-banten-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-01",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "center": {
+        "lon": 106.40590599251979,
+        "lat": -7.293172214143451,
+        "grid_crs": "EPSG:32748"
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "v2-laneB-west_java-boundary-01",
+      "candidate_rank": 1,
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-south_sulawesi-2025-g03",
+      "province": "south_sulawesi",
+      "year": 2025,
+      "split": "train",
+      "center": {
+        "lon": 119.89086827996725,
+        "lat": -2.117966148053699,
+        "grid_easting": 821600.0,
+        "grid_northing": 9765600.0,
+        "grid_crs": "EPSG:32750",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03",
+      "province": "southeast_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "center": {
+        "lon": 121.96033624497493,
+        "lat": -5.3187906667261595,
+        "grid_easting": 384800.0,
+        "grid_northing": 9412000.0,
+        "grid_crs": "EPSG:32751",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "03",
+      "ledger_state": "UNRESERVED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g01",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "center": {
+        "lon": 106.590602687807,
+        "lat": -6.164037031231702,
+        "grid_easting": 676000.0,
+        "grid_northing": 9318400.0,
+        "grid_crs": "EPSG:32748",
+        "minimum_center_spacing_m": 10400
+      },
+      "nominal_patches": 16,
+      "spatial_window_id": "01",
+      "ledger_state": "UNRESERVED"
+    }
+  ],
+  "unreserved_candidate_count": 174,
+  "new_budget_remaining_bytes": 2361454891,
+  "network_requests": 0,
+  "source_files_written": 0,
+  "queue_scope": "Stored plan metadata only; not current full job-config revalidation or execution authorization"
+}

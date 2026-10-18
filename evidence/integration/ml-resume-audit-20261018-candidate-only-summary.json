@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-18T01:01:19.995000+00:00",
+  "status": "FIXED_CANDIDATE_QA_REOBSERVED",
+  "scope": "HISTORICAL_FIXED_CANDIDATE_ONLY_NOT_CURRENT_COLLECTOR_AGGREGATE_QA",
+  "seconds": 296.625,
+  "fixed_pins_stable": {
+    "data\\first-group-candidate-qa-stage-20261017\\candidate.json": true,
+    "data\\first-group\\experiment-esri-v003-2020-2025.json": true,
+    "data\\first-group-candidate-readiness-qa-20261017\\readiness.json": true,
+    "data\\collection-continuation-backup-20261018\\annual-window-report.json": true
+  },
+  "same_as_stored_candidate_QA": {
+    "status": true,
+    "ready_for_training": true,
+    "scientific_accuracy_validated": true,
+    "blockers": true,
+    "patch_counts_by_split": true,
+    "class_counts_by_split": true,
+    "class_patch_counts_by_split": true,
+    "reference_balance_by_split": true,
+    "policy": true,
+    "coverage": true,
+    "province_unique_locations": true,
+    "province_patch_counts": true,
+    "verified_files": true
+  },
+  "observed_status": "blocked",
+  "ready_for_training": false,
+  "eligible": {
+    "train": 628,
+    "val": 217,
+    "test": 250
+  },
+  "blockers": [
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 픽셀",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "verified_file_records": 4285,
+  "active_collector_before": {
+    "data\\first-group-training-esri-v1\\annual-window-report.json": "7adfcebe37e7db953e7e9b05fa98612bf3458f1cbc3186401cf61d6ba982e32a",
+    "data\\first-group-training-budget\\global-ledger.json": "432d584f36f4d12ba82e9249d8d7bd37010aef60c4f014391ae33f2698c311be"
+  },
+  "active_collector_after": {
+    "data\\first-group-training-esri-v1\\annual-window-report.json": "9211524656d92f0fcfcdf11f2ec382965e3aeacbc7f80da5b02f4f59784df1e7",
+    "data\\first-group-training-budget\\global-ledger.json": "2a27294300a16dc59b435fd9c9f0c06b7f3adc254b3c776277f1a23e2d76a60c"
+  },
+  "active_collector_stability_required_for_this_candidate_run": false,
+  "original_attempt_stability_failure_preserved": true,
+  "network_requests": 0,
+  "training_executed": false,
+  "collection_executed_by_this_worker": false,
+  "source_files_written_by_this_worker": 0,
+  "scientific_accuracy_validated": false
+}
