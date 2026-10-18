@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "status": "METADATA_INTEGRITY_VERIFIED",
+  "evidence_state": "VERIFIED_REAL_METADATA_ONLY",
+  "plan_integrity_valid": true,
+  "saved_plan": {
+    "path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\evidence\\integration\\ml-split-repair-plan-20261017.json",
+    "sha256": "ccdc704ead412d7aee069fb4f61f30a2baf9c9944458b858efcc28ba4197dfbf"
+  },
+  "source_manifest": {
+    "path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+    "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f"
+  },
+  "readiness_reference": {
+    "path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group\\readiness-resume-20261017.json",
+    "sha256": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db"
+  },
+  "derived_manifest_version": "split-repair-v1-754e7a5a0569eb9b",
+  "candidate_validation": {
+    "status": "EXACT_METADATA_MATCH",
+    "candidate_integrity_valid": true,
+    "reference": {
+      "path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-candidate-qa-stage-20261017\\candidate.json",
+      "sha256": "2ff7be093db3930d99f10cdc7687809222ef7f525ec6e9cf6248ec144725d158"
+    }
+  },
+  "projected_after": {
+    "eligible_patches_by_split": {
+      "test": 250,
+      "val": 217,
+      "train": 628
+    },
+    "eligible_total": 1095,
+    "eligible_by_province_year": {
+      "banten/2020": 53,
+      "banten/2021": 42,
+      "banten/2022": 51,
+      "banten/2023": 32,
+      "banten/2024": 23,
+      "banten/2025": 16,
+      "east_java/2020": 23,
+      "east_java/2021": 16,
+      "east_java/2022": 34,
+      "east_java/2023": 28,
+      "east_java/2024": 16,
+      "east_java/2025": 14,
+      "gorontalo/2020": 46,
+      "gorontalo/2021": 31,
+      "gorontalo/2022": 14,
+      "gorontalo/2023": 30,
+      "gorontalo/2024": 25,
+      "gorontalo/2025": 8,
+      "south_sulawesi/2020": 53,
+      "south_sulawesi/2021": 32,
+      "south_sulawesi/2022": 29,
+      "south_sulawesi/2023": 36,
+      "south_sulawesi/2024": 36,
+      "south_sulawesi/2025": 30,
+      "southeast_sulawesi/2020": 41,
+      "southeast_sulawesi/2021": 18,
+      "southeast_sulawesi/2022": 26,
+      "southeast_sulawesi/2023": 18,
+      "southeast_sulawesi/2024": 1,
+      "southeast_sulawesi/2025": 23,
+      "west_java/2020": 57,
+      "west_java/2021": 41,
+      "west_java/2022": 56,
+      "west_java/2023": 32,
+      "west_java/2024": 32,
+      "west_java/2025": 32
+    }
+  },
+  "excluded_rows": 16,
+  "source_identity_plan_recomputed": true,
+  "raster_files_rehashed": false,
+  "spatial_overlap_rechecked": false,
+  "exact_class_counts_recomputed": false,
+  "ready_for_training": false,
+  "training_executed": false,
+  "scientific_accuracy_validated": false,
+  "source_files_written": 0,
+  "limitation": "Metadata integrity only; no candidate publication, raster readiness, spatial/class validation, execution or approval.",
+  "caller_policy": {
+    "path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group\\experiment-esri-v003-2020-2025.json",
+    "sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7"
+  }
+}

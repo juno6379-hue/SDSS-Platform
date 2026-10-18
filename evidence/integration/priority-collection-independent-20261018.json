@@ -1,0 +1,441 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T10:26:34.623637+09:00",
+  "seconds": 15.20782730000792,
+  "status": "READONLY_INDEPENDENT_FIRST_ROUND_AND_CURRENT_POOL_AUDIT",
+  "old1400_canonical_sha256_verified": "e23cfa91d0ae5b40eae02ee087db76cd2b509d36894a716aa147eeaddccd72ad",
+  "old_pending_exact_rows_preserved": true,
+  "old_pending_reserved_bytes": 136314880,
+  "first_two_settled_verified": true,
+  "first_round_observations": [
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03",
+      "settled_charged_bytes": 21291946,
+      "patches": 16,
+      "eligible_patches": 9,
+      "eligible_bare_pixels": 0,
+      "patch_observations": [
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r0-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65521,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r0-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65534,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r0-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 62124,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r0-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 38688,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r1-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65500,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r1-c1",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 49111,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r1-c2",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 48960,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r1-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 60261,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r2-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65508,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r2-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 52744,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r2-c2",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 30080,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r2-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 24410,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r3-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r3-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 56644,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r3-c2",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 20720,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03-r3-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 21772,
+          "bare_pixels": 0
+        }
+      ],
+      "source_observations": [
+        {
+          "scene_id": "S2B_MSIL2A_20240813T021349_R060_T51MUQ_20240813T055551",
+          "crop_files": 8,
+          "image_present": true,
+          "candidate_selection_entries": 1
+        }
+      ],
+      "history_exists": true,
+      "history_lines": 2,
+      "source_and_terminal_files": {
+        "config.json": "4adb8c692cc6b4369ff0231e1a9d91492525fa060b2f264f9cd3ad214e800e04",
+        "worker-result.json": "096b4b5a0f8060c924e85884e6bd975f3dc2d6d15f2cc0af5bb79e66256a6d22",
+        "window-state.json": "8fdf74a012d5a45bd001061034aa1d1c96668eeeb3690f3b50a85ebe76a7f08b",
+        "annual-window-report.json": "c09932edc8bb727bd48738a070a63eae76eef0895058acefc6cf03c1dc133228"
+      }
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2025-g03",
+      "settled_charged_bytes": 22745891,
+      "patches": 16,
+      "eligible_patches": 10,
+      "eligible_bare_pixels": 14,
+      "patch_observations": [
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r0-c0",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 5860,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r0-c1",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 26228,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r0-c2",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 40228,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r0-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65244,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r1-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 61708,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r1-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 64956,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r1-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r1-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 61612,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r2-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r2-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 55076,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r2-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 57736,
+          "bare_pixels": 14
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r2-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 44492,
+          "bare_pixels": 14
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r3-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65404,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r3-c1",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 51204,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r3-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 53896,
+          "bare_pixels": 0
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g03-r3-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 31728,
+          "bare_pixels": 17
+        }
+      ],
+      "source_observations": [
+        {
+          "scene_id": "S2B_MSIL2A_20250629T021209_R060_T51NVA_20250629T035540",
+          "crop_files": 8,
+          "image_present": true,
+          "candidate_selection_entries": 1
+        }
+      ],
+      "history_exists": true,
+      "history_lines": 2,
+      "source_and_terminal_files": {
+        "config.json": "9293d6ecdf972a2f540b78f73a717c284f273a3fb1826f2fc75d483cc76b86a0",
+        "worker-result.json": "dfc62ae6977d107106238c58baf043766fdb12f96d02e02f13e385393c79c161",
+        "window-state.json": "cc1591d264bf1a1eb4e69e138f09d09c862a07f7779d98f6d63990e187df570a",
+        "annual-window-report.json": "3199068588335ec4a89c92e0c0f31d48def1683fd7abee0515c7c4b2db980ed0"
+      }
+    }
+  ],
+  "first_round_native_patches_checked": 32,
+  "first_round_pixels_checked": 2097152,
+  "first_round_eligible_patches": 19,
+  "first_round_eligible_bare_pixels": 14,
+  "file_sha_checks_repeated_unchanged": 112,
+  "round2_status": "ALL_SELECTED_SETTLED",
+  "round2_selected_ledger_observation": {
+    "parallel-v2-grid-esri_io-east_java-2025-g01": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 689213,
+      "config_sha256": "2eec802c82d9d2cfef1922012d180b4394871f7c04923c2c3fb3ce8a44fe2687",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g01\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-east_java-2025-g02": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 636422,
+      "config_sha256": "31293db15df47a6ca6f1c367ab074aabc8723ab672eb27dac50efa3e4b4944b3",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g02\\annual-window-report.json"
+    }
+  },
+  "read_snapshot_physical_rows": 1432,
+  "read_snapshot_eligible_rows": 1141,
+  "centers4_remaining_deficit_jobs_count": 20,
+  "centers4_remaining_job_observations": [
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g03",
+      "province": "east_java",
+      "year": 2025,
+      "eligible_patches": 14,
+      "deficit": 14
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2022-g03",
+      "province": "gorontalo",
+      "year": 2022,
+      "eligible_patches": 14,
+      "deficit": 14
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2025-g01",
+      "province": "banten",
+      "year": 2025,
+      "eligible_patches": 16,
+      "deficit": 12
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2025-g02",
+      "province": "banten",
+      "year": 2025,
+      "eligible_patches": 16,
+      "deficit": 12
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2025-g03",
+      "province": "banten",
+      "year": 2025,
+      "eligible_patches": 16,
+      "deficit": 12
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2021-g02",
+      "province": "east_java",
+      "year": 2021,
+      "eligible_patches": 16,
+      "deficit": 12
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2021-g03",
+      "province": "east_java",
+      "year": 2021,
+      "eligible_patches": 16,
+      "deficit": 12
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2024-g01",
+      "province": "east_java",
+      "year": 2024,
+      "eligible_patches": 16,
+      "deficit": 12
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2024-g02",
+      "province": "east_java",
+      "year": 2024,
+      "eligible_patches": 16,
+      "deficit": 12
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2024-g03",
+      "province": "east_java",
+      "year": 2024,
+      "eligible_patches": 16,
+      "deficit": 12
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03",
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "eligible_patches": 18,
+      "deficit": 10
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03",
+      "province": "southeast_sulawesi",
+      "year": 2023,
+      "eligible_patches": 18,
+      "deficit": 10
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g01",
+      "province": "banten",
+      "year": 2024,
+      "eligible_patches": 23,
+      "deficit": 5
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g02",
+      "province": "banten",
+      "year": 2024,
+      "eligible_patches": 23,
+      "deficit": 5
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g03",
+      "province": "banten",
+      "year": 2024,
+      "eligible_patches": 23,
+      "deficit": 5
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2020-g02",
+      "province": "east_java",
+      "year": 2020,
+      "eligible_patches": 23,
+      "deficit": 5
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2020-g03",
+      "province": "east_java",
+      "year": 2020,
+      "eligible_patches": 23,
+      "deficit": 5
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03",
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "eligible_patches": 23,
+      "deficit": 5
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2024-g03",
+      "province": "gorontalo",
+      "year": 2024,
+      "eligible_patches": 25,
+      "deficit": 3
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03",
+      "province": "southeast_sulawesi",
+      "year": 2022,
+      "eligible_patches": 26,
+      "deficit": 2
+    }
+  ],
+  "nominal_upper_bound_patches_not_eligible_prediction": 320,
+  "metadata_pins_at_read": {
+    "aggregate_sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+    "ledger_sha256": "56582f32a3eb9efc2add25322540cccf6380ea909aa887d0209a87fabfabb73f"
+  },
+  "metadata_changed_by_other_collector_during_audit": {
+    "aggregate": false,
+    "ledger": false
+  },
+  "executed_collection": false,
+  "published_execution_plan_pin": false,
+  "reservations_created": 0,
+  "source_or_ledger_writes": 0,
+  "limitations": [
+    "Metadata reads are sequential, not an atomic snapshot. Round2 may change after the captured observation.",
+    "Only first-round 32 native patch arrays and their recorded source crops are checked; old1400 are canonical metadata checks, not full old raster QA.",
+    "Remaining centers4 jobs are an unreserved candidate-pool upper bound, not clear-scene availability, independent geometry or eligible yield.",
+    "No centers16 expansion or old laneB geometry compatibility is recommended or executed.",
+    "Esri weak labels and binary support-mask counts are not independent scientific truth or model/QA approval."
+  ]
+}

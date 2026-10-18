@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-18T00:55:59.814333+00:00",
+  "status": "FAILED_POST_ASSESS_SOURCE_PIN_STABILITY",
+  "failure": "AssertionError: Pinned input changed during QA",
+  "assess_returned_before_failure": true,
+  "new_readiness_report_written": false,
+  "success_summary_written": false,
+  "before": {
+    "data\\first-group-candidate-qa-stage-20261017\\candidate.json": "2ff7be093db3930d99f10cdc7687809222ef7f525ec6e9cf6248ec144725d158",
+    "data\\first-group\\experiment-esri-v003-2020-2025.json": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+    "data\\first-group-training-esri-v1\\annual-window-report.json": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+    "data\\first-group\\readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "data\\first-group-candidate-readiness-qa-20261017\\readiness.json": "847343e1aa4ab9b67fd3bba36a2a9f91d716c2fd411af244e55bbfe1a8414019",
+    "data\\first-group-training-budget\\global-ledger.execution.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data\\first-group-training-budget\\global-ledger.json": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8"
+  },
+  "after": {
+    "data\\first-group-candidate-qa-stage-20261017\\candidate.json": "2ff7be093db3930d99f10cdc7687809222ef7f525ec6e9cf6248ec144725d158",
+    "data\\first-group\\experiment-esri-v003-2020-2025.json": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+    "data\\first-group-training-esri-v1\\annual-window-report.json": "7adfcebe37e7db953e7e9b05fa98612bf3458f1cbc3186401cf61d6ba982e32a",
+    "data\\first-group\\readiness-resume-20261017.json": "6e59c3aee00f53609237b889bfc304a811d298b464b6d6ae2c8e563cc29a34db",
+    "data\\first-group-candidate-readiness-qa-20261017\\readiness.json": "847343e1aa4ab9b67fd3bba36a2a9f91d716c2fd411af244e55bbfe1a8414019",
+    "data\\first-group-training-budget\\global-ledger.execution.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data\\first-group-training-budget\\global-ledger.json": "432d584f36f4d12ba82e9249d8d7bd37010aef60c4f014391ae33f2698c311be"
+  },
+  "changed_protected_files": [
+    "data\\first-group-training-esri-v1\\annual-window-report.json",
+    "data\\first-group-training-budget\\global-ledger.json"
+  ],
+  "stale_source_accepted": false,
+  "cause_context": "Root independently reports explicitly resumed collector finalized and updated aggregate during this read-only audit. Cross-reference collector-resume evidence before accepting attribution.",
+  "training_executed": false,
+  "collection_executed_by_this_worker": false,
+  "source_files_written_by_this_worker": 0
+}

@@ -1,0 +1,64 @@
+test_actual_local_pixels_geometry_and_proposal_jobs_not_execution (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_local_pixels_geometry_and_proposal_jobs_not_execution) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_targeted_bare_plan.py:24: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  native=[self.affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py:55: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[t*(0,0),t*(dataset.width,0),t*(dataset.width,dataset.height),t*(0,dataset.height)]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py:151: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*window));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_actual_noneligible_different_year_image_overlap_is_rejected (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_noneligible_different_year_image_overlap_is_rejected) ... ok
+test_bbox_native_window_counts_and_lineage_are_not_inferred (test_targeted_bare_plan.TargetedBarePlanTests.test_bbox_native_window_counts_and_lineage_are_not_inferred) ... ok
+test_changed_label_or_proposal_pin_blocks_no_partial_jobs (test_targeted_bare_plan.TargetedBarePlanTests.test_changed_label_or_proposal_pin_blocks_no_partial_jobs) ... ok
+test_path_escape_does_not_return_original_path_or_partial_payload (test_targeted_bare_plan.TargetedBarePlanTests.test_path_escape_does_not_return_original_path_or_partial_payload) ... ok
+test_same_space_across_requested_years_not_counted_as_independent (test_targeted_bare_plan.TargetedBarePlanTests.test_same_space_across_requested_years_not_counted_as_independent) ... ok
+test_strict_target_count_policy_bool_and_extra_fail_before_file_io (test_targeted_bare_plan.TargetedBarePlanTests.test_strict_target_count_policy_bool_and_extra_fail_before_file_io) ... ok
+test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins (test_targeted_bare_plan.TargetedBarePlanTests.test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins) ... ok
+test_actual_collector_hook_selected_jobs_and_existing_callbacks (test_training_priority.PriorityTests.test_actual_collector_hook_selected_jobs_and_existing_callbacks) ... ok
+test_actual_collector_hook_wrong_pin_no_reserve_and_own_lock_released (test_training_priority.PriorityTests.test_actual_collector_hook_wrong_pin_no_reserve_and_own_lock_released) ... ok
+test_cli_dry_run_no_writes_and_explicit_execute_subprocess_only (test_training_priority.PriorityTests.test_cli_dry_run_no_writes_and_explicit_execute_subprocess_only) ... ok
+test_deficit_descending_limit_and_original_identity_no_mutation (test_training_priority.PriorityTests.test_deficit_descending_limit_and_original_identity_no_mutation) ... ok
+test_exact_target_covered_excluded_unknown_year_counted_separately (test_training_priority.PriorityTests.test_exact_target_covered_excluded_unknown_year_counted_separately) ... ok
+test_pending_reservations_plan_preserves_all_values (test_training_priority.PriorityTests.test_pending_reservations_plan_preserves_all_values) ... ok
+test_pin_drift_and_limits_fail_closed (test_training_priority.PriorityTests.test_pin_drift_and_limits_fail_closed) ... ok
+test_settled_pending_and_same_spatial_eligible_are_not_retried (test_training_priority.PriorityTests.test_settled_pending_and_same_spatial_eligible_are_not_retried) ... ok
+test_sha_is_existing_ledger_encoding_and_stable_under_queue_order (test_training_priority.PriorityTests.test_sha_is_existing_ledger_encoding_and_stable_under_queue_order) ... ok
+test_all_pending_leaves_empty_queue_without_worker_or_settlement (test_collection_continue_pending.ContinuePendingTests.test_all_pending_leaves_empty_queue_without_worker_or_settlement) ... ok
+test_changed_pending_config_refuses_before_writes (test_collection_continue_pending.ContinuePendingTests.test_changed_pending_config_refuses_before_writes) ... ok
+test_default_keeps_pending_and_existing_reserve_refuses (test_collection_continue_pending.ContinuePendingTests.test_default_keeps_pending_and_existing_reserve_refuses) ... ok
+test_new_work_uses_same_budget_and_preserves_full_old_reservation (test_collection_continue_pending.ContinuePendingTests.test_new_work_uses_same_budget_and_preserves_full_old_reservation) ... ok
+test_opt_in_excludes_only_pending_without_mutating_inputs_or_ledger (test_collection_continue_pending.ContinuePendingTests.test_opt_in_excludes_only_pending_without_mutating_inputs_or_ledger) ... ok
+test_settled_is_retained_for_existing_ledger_skip (test_collection_continue_pending.ContinuePendingTests.test_settled_is_retained_for_existing_ledger_skip) ... ok
+test_unlisted_pending_is_observed_and_not_invented_or_settled (test_collection_continue_pending.ContinuePendingTests.test_unlisted_pending_is_observed_and_not_invented_or_settled) ... ok
+test_candidate_receipt_requires_pinned_cohort_and_qa_agreement (test_collection_priority_status.CollectionPriorityStatusTests.test_candidate_receipt_requires_pinned_cohort_and_qa_agreement) ... ok
+test_counts_include_ineligible_only_in_physical_inventory (test_collection_priority_status.CollectionPriorityStatusTests.test_counts_include_ineligible_only_in_physical_inventory) ... ok
+test_scene_conflict_and_bare_contribution_are_separate (test_collection_priority_status.CollectionPriorityStatusTests.test_scene_conflict_and_bare_contribution_are_separate) ... ok
+test_surplus_in_one_cell_does_not_cover_another_gap (test_collection_priority_status.CollectionPriorityStatusTests.test_surplus_in_one_cell_does_not_cover_another_gap) ... ok
+test_untrusted_or_missing_manifest_remains_unknown (test_collection_priority_status.CollectionPriorityStatusTests.test_untrusted_or_missing_manifest_remains_unknown) ... ok
+test_current_inventory_is_separate_from_stale_readiness_counts (test_collection_status.CollectionStatusTests.test_current_inventory_is_separate_from_stale_readiness_counts) ... ok
+test_empty_inventory_is_unknown_and_not_ready (test_collection_status.CollectionStatusTests.test_empty_inventory_is_unknown_and_not_ready) ... ok
+test_external_paths_and_missing_files_are_not_available (test_collection_status.CollectionStatusTests.test_external_paths_and_missing_files_are_not_available) ... ok
+test_incomplete_json_is_unknown_not_success (test_collection_status.CollectionStatusTests.test_incomplete_json_is_unknown_not_success) ... ok
+test_later_failure_does_not_overwrite_success_and_hides_secrets (test_collection_status.CollectionStatusTests.test_later_failure_does_not_overwrite_success_and_hides_secrets) ... ok
+test_latest_explicit_readiness_is_selected_and_invalidated_by_current_manifest_change (test_collection_status.CollectionStatusTests.test_latest_explicit_readiness_is_selected_and_invalidated_by_current_manifest_change) ... ok
+test_probe_rate_limit_does_not_invent_failed_scene_count (test_collection_status.CollectionStatusTests.test_probe_rate_limit_does_not_invent_failed_scene_count) ... ok
+test_quality_requires_matching_audit_report_hash (test_collection_status.CollectionStatusTests.test_quality_requires_matching_audit_report_hash) ... ok
+test_ready_report_becomes_stale_when_input_changes (test_collection_status.CollectionStatusTests.test_ready_report_becomes_stale_when_input_changes) ... ok
+test_first_actual_429_blocks_later_http_without_claiming_new_server_response (test_data_parallel.ParallelTests.test_first_actual_429_blocks_later_http_without_claiming_new_server_response) ... ok
+test_first_rate_limit_event_prevents_queued_third_batch (test_data_parallel.ParallelTests.test_first_rate_limit_event_prevents_queued_third_batch) ... ok
+test_metadata_budgets_are_isolated_between_simultaneous_workers (test_data_parallel.ParallelTests.test_metadata_budgets_are_isolated_between_simultaneous_workers) ... ok
+test_two_workers_overlap_but_ledger_callbacks_stay_in_parent (test_data_parallel.ParallelTests.test_two_workers_overlap_but_ledger_callbacks_stay_in_parent) ... ok
+test_unmeasured_failure_is_finalized_without_zero_refund_claim (test_data_parallel.ParallelTests.test_unmeasured_failure_is_finalized_without_zero_refund_claim) ... ok
+test_concurrent_allowances_cannot_exceed_total (test_data_annual_budget.AnnualBudgetTests.test_concurrent_allowances_cannot_exceed_total) ... ok
+test_exhausted_budget_and_wrong_province_are_rejected (test_data_annual_budget.AnnualBudgetTests.test_exhausted_budget_and_wrong_province_are_rejected) ... ok
+test_provider_429_is_propagated_to_coordinator (test_data_annual_budget.AnnualBudgetTests.test_provider_429_is_propagated_to_coordinator) ... ok
+test_resume_rejects_modified_budget_file (test_data_annual_budget.AnnualBudgetTests.test_resume_rejects_modified_budget_file) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 11.479s
+
+OK

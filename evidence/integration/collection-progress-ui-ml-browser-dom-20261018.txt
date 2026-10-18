@@ -1,0 +1,221 @@
+- banner:
+  - button "SDSS 홈"
+  - strong:
+    - text: 데이터로 만드는 더 안전한 오늘,
+    - text: 지속 가능한 내일
+  - generic: Data for a Resilient Indonesia
+  - textbox "플랫폼 데이터 검색":
+    - /placeholder: "지역, 데이터, 키워드로 검색하세요  (예: Indonesia, land cover, mangrove)"
+  - button "데이터 카탈로그 검색":
+  - button "실제 작업·알림 보기":
+  - button "서버 연결 설정":
+  - button "서버 상태 새로고침":
+    - generic: ●
+    - strong: SDSS Indonesia
+    - generic: 로컬 분석 서버 연결됨
+    - generic: ⌄
+  - text: Sustainable Indonesia
+  - strong: for a Better Tomorrow
+- complementary:
+  - navigation "전체 플랫폼 메뉴":
+    - button "대시보드":
+      - generic: 대시보드
+    - button "데이터 카탈로그":
+      - generic: 데이터 카탈로그
+    - button "GeoAI 툴박스":
+      - generic: GeoAI 툴박스
+    - button "WebGIS 분석":
+      - generic: WebGIS 분석
+    - button "GeoLLM Assistant":
+      - generic: GeoLLM Assistant
+    - button "모델 & MLOps":
+      - generic: 모델 & MLOps
+    - button "리포트 & RDTR":
+      - generic: 리포트 & RDTR
+  - paragraph:
+    - text: AI와 공간데이터로
+    - text: 인도네시아의
+    - text: 기후행동을 지원합니다.
+- main:
+  - generic "현재 위치":
+    - text: ⌂
+    - generic: ›
+    - text: Model & MLOps
+    - generic: ›
+    - text: 승인·배포
+  - text: SPATIAL DECISION SUPPORT SYSTEM
+  - heading "승인·배포" [level=1]
+  - paragraph: 인도네시아 기후행동을 위한 데이터, 분석, 검증과 의사결정.
+  - generic: ◎ INDONESIA
+  - navigation "현재 메뉴의 세부 기능":
+    - button "Model Registry"
+    - button "재학습·재보정"
+    - button "승인·배포"
+    - button "운영 모니터링"
+  - text: REGISTRY → REVIEW → DEPLOY
+  - heading "실제 모델의 검증·배포 검토" [level=2]
+  - button "수집 현황 새로 조회":
+    - text: 수집 현황 새로 조회
+  - region "동적 수집 재고·연차 목표·나지 보완 현황":
+    - text: LCLUC · COLLECTION → QUALITY → TRAINING
+    - heading "수집 재고와 아직 필요한 자료" [level=3]:
+      - text: 수집 재고와 아직 필요한 자료
+    - strong: 학습 준비 미충족 · 승인 아님
+    - text: 물리 패치
+    - generic: 1,432
+    - text: 품질 적격
+    - generic: 1,141
+    - text: 적격 외
+    - generic: "291"
+    - text: 적격 목표까지
+    - text: "59"
+    - generic: / 목표 1,200
+    - paragraph: "원본 수집 manifest 기준 적격: 학습 658 · 검증 233 · 시험 250. 적격 외에는 미달·미확인 등 기록 상태가 포함되며 모두 새 영상 QA로 판정한 수가 아닙니다."
+    - paragraph: "패치 기준: 유효 비율 ≥ 80% · 주 경계 내부 ≥ 95% · 최대 단일 클래스 비중 ≤ 90%. 아래 재고는 저장된 quality_status 집계이며 지금 원본 래스터를 재검사한 결과가 아닙니다."
+    - heading "6개 주 × 연도별 적격 패치" [level=4]
+    - paragraph:
+      - text: 셀별 계획 바닥 28개에 못 미친 부분의 합은
+      - strong: 132개
+      - text: 입니다. 전체 적격 목표의 부족 59개와 다른 지표이며 서로 더하지 않습니다.
+    - region "주·연도별 적격 패치 가로 스크롤":
+      - table "현재 원본 manifest의 부분 창 재고 · 주 전체 공간 확보 아님":
+        - caption: 현재 원본 manifest의 부분 창 재고 · 주 전체 공간 확보 아님
+        - rowgroup:
+          - row "주 / 분할 2020 2021 2022 2023 2024 2025 적격 합계 셀 계획 부족":
+            - columnheader "주 / 분할"
+            - columnheader "2020"
+            - columnheader "2021"
+            - columnheader "2022"
+            - columnheader "2023"
+            - columnheader "2024"
+            - columnheader "2025"
+            - columnheader "적격 합계"
+            - columnheader "셀 계획 부족"
+        - rowgroup:
+          - row "South Sulawesi 학습 · 물리 320 53 32 40 36 36 30 227 0":
+            - rowheader "South Sulawesi 학습 · 물리 320":
+              - text: South Sulawesi
+              - generic: 학습 · 물리 320
+            - cell "53"
+            - cell "32"
+            - cell "40"
+            - cell "36"
+            - cell "36"
+            - cell "30"
+            - cell "227"
+            - cell "0"
+          - row "Gorontalo 학습 · 물리 208 46 31 14 30 25 18 164 27":
+            - rowheader "Gorontalo 학습 · 물리 208":
+              - text: Gorontalo
+              - generic: 학습 · 물리 208
+            - cell "46"
+            - cell "31"
+            - cell "14"
+            - cell "30"
+            - cell "25"
+            - cell "18"
+            - cell "164"
+            - cell "27"
+          - row "Southeast Sulawesi 학습 · 물리 208 41 18 26 18 10 23 136 45":
+            - rowheader "Southeast Sulawesi 학습 · 물리 208":
+              - text: Southeast Sulawesi
+              - generic: 학습 · 물리 208
+            - cell "41"
+            - cell "18"
+            - cell "26"
+            - cell "18"
+            - cell "10"
+            - cell "23"
+            - cell "136"
+            - cell "45"
+          - row "East Java 학습 · 물리 160 23 16 34 28 16 14 131 43":
+            - rowheader "East Java 학습 · 물리 160":
+              - text: East Java
+              - generic: 학습 · 물리 160
+            - cell "23"
+            - cell "16"
+            - cell "34"
+            - cell "28"
+            - cell "16"
+            - cell "14"
+            - cell "131"
+            - cell "43"
+          - row "Banten 검증 · 물리 272 53 58 51 32 23 16 233 17":
+            - rowheader "Banten 검증 · 물리 272":
+              - text: Banten
+              - generic: 검증 · 물리 272
+            - cell "53"
+            - cell "58"
+            - cell "51"
+            - cell "32"
+            - cell "23"
+            - cell "16"
+            - cell "233"
+            - cell "17"
+          - row "West Java 시험 · 물리 264 57 41 56 32 32 32 250 0":
+            - rowheader "West Java 시험 · 물리 264":
+              - text: West Java
+              - generic: 시험 · 물리 264
+            - cell "57"
+            - cell "41"
+            - cell "56"
+            - cell "32"
+            - cell "32"
+            - cell "32"
+            - cell "250"
+            - cell "0"
+    - heading "나지(bare) 부족은 세 조건을 따로 확인" [level=4]
+    - paragraph: 분할별 최소 256픽셀, 유효 참조 픽셀 중 0.5% 이상, 한 패치에 나지 256픽셀 이상인 기여 패치 5개 이상이 각각 필요합니다. 한 조건을 채워도 다른 조건은 남을 수 있습니다.
+    - region "나지 조건별 보완 현황 가로 스크롤":
+      - table "현재 원본의 저장 참조 라벨 집계 · 독립 정답/실물 재QA 아님":
+        - caption: 현재 원본의 저장 참조 라벨 집계 · 독립 정답/실물 재QA 아님
+        - rowgroup:
+          - row "분할 나지 픽셀 / 절대 부족 나지 비율 기여 패치 / 부족":
+            - columnheader "분할"
+            - columnheader "나지 픽셀 / 절대 부족"
+            - columnheader "나지 비율"
+            - columnheader "기여 패치 / 부족"
+        - rowgroup:
+          - row "학습 (train) 1,432 / 0 부족 0.00341% 비율 기준 미달 0 / 5 부족":
+            - rowheader "학습 (train)"
+            - cell "1,432 / 0 부족"
+            - cell "0.00341% 비율 기준 미달":
+              - text: 0.00341%
+              - generic: 비율 기준 미달
+            - cell "0 / 5 부족"
+          - row "검증 (val) 209 / 47 부족 0.00139% 비율 기준 미달 0 / 5 부족":
+            - rowheader "검증 (val)"
+            - cell "209 / 47 부족"
+            - cell "0.00139% 비율 기준 미달":
+              - text: 0.00139%
+              - generic: 비율 기준 미달
+            - cell "0 / 5 부족"
+          - row "시험 (test) 1,025 / 0 부족 0.00631% 비율 기준 미달 0 / 5 부족":
+            - rowheader "시험 (test)"
+            - cell "1,025 / 0 부족"
+            - cell "0.00631% 비율 기준 미달":
+              - text: 0.00631%
+              - generic: 비율 기준 미달
+            - cell "0 / 5 부족"
+    - region "원본과 누출 제외 후보 구분":
+      - heading "원본과 누출 해소 후보는 다른 자료 묶음입니다" [level=4]
+      - paragraph: 위 표는 원본 재고이며 분할 공유 장면 1건을 관측했습니다. 후보는 별도로 고정된 manifest·QA 기록입니다. 원본의 새 수집분을 자동으로 포함하거나 원본을 교체하지 않습니다.
+      - paragraph: 현재 응답에는 유효한 고정 후보 현황이 없습니다. 원본 값이나 과거 문서 숫자로 후보 수치를 대신 표시하지 않습니다.
+      - generic "원본에서 관측된 분할 공유 장면"
+    - paragraph:
+      - text: manifest SHA
+      - code: 7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe
+      - text: · 응답 시각 2026-10-18T01:21:54.463614+00:00. 해시와 선언 집계는 기관 품질·독립 정확도·자료 대표성·모델 학습/배포 승인이 아닙니다. 신규 자료 확보와 후보 QA·실험 모델·독립 평가를 구분합니다.
+  - generic "실제 완료 실험 보고서로 Draft 등록"
+  - text: 등록 모델
+  - combobox "등록 모델":
+    - option "모델을 선택하세요" [selected]
+    - option "baseline2021_cpu_v1_model · Draft"
+  - generic "연차 입력 진단":
+    - text: 연차 입력 진단
+  - generic "서버 연결 설정 · /api"
+  - strong: ◉ SDSS
+  - generic: Spatial Decision Support System for Climate Action & GeoAI
+  - generic: 독립 검증·운영 승인 전 분석 결과 게시 차단
+  - text: ◎ KO ⌄
+  - generic: ❧ Together for a Resilient Indonesia

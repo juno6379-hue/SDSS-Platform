@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T01:29:17.721777+00:00",
+  "files": [
+    {
+      "path": "priority-ml-snapshot-20261018/annual-window-report.json",
+      "sha256": "9211524656d92f0fcfcdf11f2ec382965e3aeacbc7f80da5b02f4f59784df1e7"
+    },
+    {
+      "path": "priority-ml-stage-20261018/candidate.json",
+      "sha256": "6556d3b85ed6d70f5951f430195740e21cb04feacc509c6ce20d726755cb3cf6"
+    },
+    {
+      "path": "priority-ml-readiness-20261018/readiness.json",
+      "sha256": "aa8076a9d09652ae6dbe4cc880d33d7ae8d302b2333e8ce719846df00d432042"
+    }
+  ],
+  "source_manifest_sha256": "9211524656d92f0fcfcdf11f2ec382965e3aeacbc7f80da5b02f4f59784df1e7",
+  "by_split": {
+    "train": 639,
+    "val": 217,
+    "test": 250
+  },
+  "blocker_count": 4,
+  "scene_split_conflicts": [],
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "scope": "FROZEN_1400_ROW_SOURCE_NOT_LATER_COLLECTION"
+}

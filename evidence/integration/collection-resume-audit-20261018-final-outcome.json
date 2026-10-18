@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-18T00:58:10.870048+00:00",
+  "physical_count": 1400,
+  "eligible_count": 1122,
+  "eligible_splits": {
+    "train": 639,
+    "val": 233,
+    "test": 250
+  },
+  "new_physical": 16,
+  "new_eligible": 11,
+  "new_noneligible": 5,
+  "new_patch_ids": [
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r0-c0",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r0-c1",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r0-c2",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r0-c3",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r1-c0",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r1-c1",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r1-c2",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r1-c3",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r2-c0",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r2-c1",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r2-c2",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r2-c3",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r3-c0",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r3-c1",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r3-c2",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03-r3-c3"
+  ],
+  "new_patch_bare8_pixels_all": 0,
+  "new_patch_bare8_pixels_eligible": 0,
+  "eligible_bare8_contributing256": 0,
+  "source_statuses": [
+    "rgb_window_downloaded"
+  ],
+  "new_budget_remaining": 2341906244,
+  "pending_count": 2,
+  "execution_lock_exists": false,
+  "rate_limit_active": false,
+  "new_cog_bytes": 19070976,
+  "new_metadata_bytes": 477671,
+  "new_total_charged": 19548647,
+  "run_result": {
+    "status": "finished_bounded_parallel_stage",
+    "manifests": [
+      "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json"
+    ],
+    "workers": 2,
+    "observed_worker_threads": 2,
+    "observed_maximum_active_workers": 2,
+    "maximum_total_bytes": 6456803755,
+    "reserved_or_transferred_bytes_including_prior": 4114897511,
+    "new_charged_upper_bound_bytes": 1953061052,
+    "new_supplementary_budget_bytes": 4294967296,
+    "complete_window_count": 1400,
+    "quality_eligible_window_count": 1122,
+    "circuit_breaker": null,
+    "old_ledger_unchanged": true,
+    "learning_ready": false,
+    "parallel_execution": {
+      "workers": 2,
+      "submitted_batches": 2,
+      "finalized_batches": 2,
+      "stop_reason": "bounded_batch_count",
+      "circuit_open": false
+    }
+  },
+  "inspection_note": "Initial read-only outcome helper used absent id key and raised KeyError before writing; corrected to actual patch_id field. No collector/source mutation."
+}

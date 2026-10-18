@@ -1,0 +1,210 @@
+{
+  "at": "2026-10-18T01:46:09.723414+00:00",
+  "status": "FROZEN_SNAPSHOT_CANDIDATE_QA_COMPLETED",
+  "scope": "FIXED_SNAPSHOT_NOT_LATER_COLLECTOR_STATE",
+  "raw_source_snapshot_sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+  "source_row_count": 1432,
+  "source_eligible": {
+    "train": 658,
+    "val": 233,
+    "test": 250
+  },
+  "source_blockers": [
+    {
+      "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+      "detail": "같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.",
+      "scene": "west_java"
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 픽셀",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "candidate_row_count": 1416,
+  "excluded_source_rows": 16,
+  "excluded_row_indexes": [
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303
+  ],
+  "conflicts": [
+    {
+      "scene_ids": [
+        "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+      ],
+      "source_groups": [
+        "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+        "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+      ],
+      "row_indexes": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "keep_split": "test",
+      "excluded_row_indexes": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ]
+    }
+  ],
+  "remaining_source_identity_conflicts": 0,
+  "candidate_eligible": {
+    "train": 658,
+    "val": 217,
+    "test": 250
+  },
+  "candidate_blockers": [
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "CLASS_COVERAGE",
+      "detail": "val/class7: 209 픽셀",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "candidate_bare_pixels": {
+    "train": 1432,
+    "val": 209,
+    "test": 1025
+  },
+  "candidate_bare_contributing_patches": {
+    "train": 0,
+    "val": 0,
+    "test": 0
+  },
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "training_executed": false,
+  "collection_executed_by_this_worker": false,
+  "network_requests": 0,
+  "registry_called": false,
+  "frozen_inputs_stable": {
+    "data\\priority-ml-next-snapshot-20261018\\annual-window-report.json": true,
+    "data\\first-group\\experiment-esri-v003-2020-2025.json": true,
+    "data\\first-group-candidate-qa-stage-20261017\\candidate.json": true
+  },
+  "active_aggregate_sha256_after_observation_only": "c57a1768a87fae7b0fd0c5ec8e451c439d35c65bf54d99f1f7b38dc98928e33e",
+  "source_qa_seconds": 164.672,
+  "candidate_qa_seconds": 216.0,
+  "verified_file_records": 4435,
+  "outputs": {
+    "data\\priority-ml-next-snapshot-20261018\\readiness.json": {
+      "sha256": "85e4565749818209ebbaaa5f762ebfdf24d8096c78b786c169cdf6c1a42546de",
+      "bytes": 1155441
+    },
+    "evidence\\integration\\priority-ml-next-20261018-split-plan.json": {
+      "sha256": "3c9b1511ce2f70c1cda986f899bcae3c53fb86f5ca0ae38c1f9072338d85ec5c",
+      "bytes": 22843
+    },
+    "evidence\\integration\\priority-ml-next-20261018-candidate-package\\plan.json": {
+      "sha256": "3c9b1511ce2f70c1cda986f899bcae3c53fb86f5ca0ae38c1f9072338d85ec5c",
+      "bytes": 22843
+    },
+    "evidence\\integration\\priority-ml-next-20261018-candidate-package\\candidate.json": {
+      "sha256": "d8dad13a22278a8cdddfeb56f7fb746e2d51523b01ac866689dde2018a48b01c",
+      "bytes": 55122580
+    },
+    "evidence\\integration\\priority-ml-next-20261018-candidate-package\\receipt.json": {
+      "sha256": "d95027b8b041350e10fb79c30d0886d6f57ec72dce9d225ecf75d781d239e40b",
+      "bytes": 3958
+    },
+    "data\\priority-ml-next-stage-20261018\\candidate.json": {
+      "sha256": "d8dad13a22278a8cdddfeb56f7fb746e2d51523b01ac866689dde2018a48b01c",
+      "bytes": 55122580
+    },
+    "data\\priority-ml-next-stage-20261018\\staging-receipt.json": {
+      "sha256": "1a463d28e57ac6c2474c12383c7768d689d077eba6251c0f739a3848138d140b",
+      "bytes": 3673
+    },
+    "data\\priority-ml-next-readiness-20261018\\readiness.json": {
+      "sha256": "cec0666793c8ba9d9e049d8042850f0784edc6ebb7d7996d7432220ddb0f19b4",
+      "bytes": 1142922
+    },
+    "data\\priority-ml-next-readiness-20261018\\qa-receipt.json": {
+      "sha256": "d2c16e6aeeadd5af0de8abd4961c77cf31471175ab5f738b7b6d8e4d29ceff14",
+      "bytes": 3014
+    }
+  }
+}

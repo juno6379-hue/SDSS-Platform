@@ -1,0 +1,1097 @@
+{
+  "schema_version": 1,
+  "kind": "LOCAL_BARE_SCREENING_REVIEW_QUEUE",
+  "status": "PLANNED_NOT_EXECUTABLE",
+  "recorded_at": "2026-10-18T00:47:52.556820+00:00",
+  "source_manifest_sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f",
+  "source_taxonomy": "ESRI_IO_v003",
+  "source_code_8_is_model_class_7": true,
+  "scope": "STORED_PATCH_METADATA_SCREENING_NOT_NEW_RASTER_OR_FUTURE_CLASS_VALIDATION",
+  "by_fixed_split": {
+    "train": {
+      "rows_with_any_declared_bare": 47,
+      "eligible_rows_with_256_declared_bare": 0,
+      "ineligible_rows_with_256_declared_bare": 2,
+      "max_eligible_declared_bare": 240
+    },
+    "val": {
+      "rows_with_any_declared_bare": 13,
+      "eligible_rows_with_256_declared_bare": 0,
+      "ineligible_rows_with_256_declared_bare": 0,
+      "max_eligible_declared_bare": 84
+    },
+    "test": {
+      "rows_with_any_declared_bare": 24,
+      "eligible_rows_with_256_declared_bare": 0,
+      "ineligible_rows_with_256_declared_bare": 1,
+      "max_eligible_declared_bare": 184
+    }
+  },
+  "local_low_quality_area_review_queue": [
+    {
+      "source_row_index": 989,
+      "province": "west_java",
+      "fixed_split": "test",
+      "year": 2020,
+      "patch_id": "parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01-r3-c1",
+      "spatial_location_id": "west_java/v2-laneB-west_java-boundary-01/r3-c1",
+      "bbox_declared": [
+        106.35939538553177,
+        -7.339615670284294,
+        106.45242612217365,
+        -7.2467257571036825
+      ],
+      "source_scene_id": "S2A_MSIL2A_20200807T025551_R032_T48MXS_20200815T071209",
+      "source_window": {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\image.tif",
+        "sha256": "adcb8633e558211c76b43d89a947cb2cad1a6bfb79e4d4e0ab81de8abf336d58",
+        "quality_mask_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\quality-mask.tif",
+        "quality_mask_sha256": "bb26b4f13c6e8ebc7d5ffc597e2aa0c09ecb7f993ed7fa3aade0998f1c84cebe",
+        "boundary_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+        "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+        "raw_source_crops": {
+          "raw-esri_io.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-esri_io.tif",
+            "sha256": "ba4631ded3b27dc487faa4e5da0fb668cdde8498d13333024f39d4eacaba37cb",
+            "source": "https://lulctimeseries.blob.core.windows.net/lulctimeseriesv003/lc2020/48M_20200101-20210101.tif",
+            "metadata": {
+              "crs": "EPSG:32748",
+              "bounds": [
+                644960.0,
+                9183370.0,
+                665440.0,
+                9203850.0
+              ],
+              "width": 2048,
+              "height": 2048,
+              "count": 1,
+              "dtype": [
+                "uint8"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              644960.0,
+              0.0,
+              -10.0,
+              9203850.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B02.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B02.tif",
+            "sha256": "40c8470cee0883e52b7b01e739c61ee8ff63817eb74a5fbe609e78bdb6a89e07",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/48/M/XS/2020/08/07/S2A_MSIL2A_20200807T025551_N0212_R032_T48MXS_20200815T071209.SAFE/GRANULE/L2A_T48MXS_A026770_20200807T030951/IMG_DATA/R10m/T48MXS_20200807T025551_B02_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32748",
+              "bounds": [
+                650080.0,
+                9188490.0,
+                660320.0,
+                9198730.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": null
+            },
+            "transform": [
+              10.0,
+              0.0,
+              650080.0,
+              0.0,
+              -10.0,
+              9198730.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B03.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B03.tif",
+            "sha256": "170eaa0ff89e488adf54a035f69e1206b003ad642ac0b442b423064f3fa1732a",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/48/M/XS/2020/08/07/S2A_MSIL2A_20200807T025551_N0212_R032_T48MXS_20200815T071209.SAFE/GRANULE/L2A_T48MXS_A026770_20200807T030951/IMG_DATA/R10m/T48MXS_20200807T025551_B03_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32748",
+              "bounds": [
+                650080.0,
+                9188490.0,
+                660320.0,
+                9198730.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": null
+            },
+            "transform": [
+              10.0,
+              0.0,
+              650080.0,
+              0.0,
+              -10.0,
+              9198730.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B04.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B04.tif",
+            "sha256": "c89ec6b11e0180d46c89cfb4cd17385da7c5c7382239f2b101fe2477f13eb51b",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/48/M/XS/2020/08/07/S2A_MSIL2A_20200807T025551_N0212_R032_T48MXS_20200815T071209.SAFE/GRANULE/L2A_T48MXS_A026770_20200807T030951/IMG_DATA/R10m/T48MXS_20200807T025551_B04_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32748",
+              "bounds": [
+                650080.0,
+                9188490.0,
+                660320.0,
+                9198730.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": null
+            },
+            "transform": [
+              10.0,
+              0.0,
+              650080.0,
+              0.0,
+              -10.0,
+              9198730.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B08.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B08.tif",
+            "sha256": "4dcdee197d116944fcc3eb79eea506cc64b80d5cfdaa70ea0f930fe3ce5c9f94",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/48/M/XS/2020/08/07/S2A_MSIL2A_20200807T025551_N0212_R032_T48MXS_20200815T071209.SAFE/GRANULE/L2A_T48MXS_A026770_20200807T030951/IMG_DATA/R10m/T48MXS_20200807T025551_B08_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32748",
+              "bounds": [
+                650080.0,
+                9188490.0,
+                660320.0,
+                9198730.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": null
+            },
+            "transform": [
+              10.0,
+              0.0,
+              650080.0,
+              0.0,
+              -10.0,
+              9198730.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B11.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B11.tif",
+            "sha256": "c63ff2697a35fa76191a9e242f66223a19b53885647f643b9ea2ed744f0a5c9e",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/48/M/XS/2020/08/07/S2A_MSIL2A_20200807T025551_N0212_R032_T48MXS_20200815T071209.SAFE/GRANULE/L2A_T48MXS_A026770_20200807T030951/IMG_DATA/R20m/T48MXS_20200807T025551_B11_20m.tif",
+            "metadata": {
+              "crs": "EPSG:32748",
+              "bounds": [
+                650060.0,
+                9188480.0,
+                660340.0,
+                9198760.0
+              ],
+              "width": 514,
+              "height": 514,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                20.0,
+                20.0
+              ],
+              "nodata": null
+            },
+            "transform": [
+              20.0,
+              0.0,
+              650060.0,
+              0.0,
+              -20.0,
+              9198760.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B12.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B12.tif",
+            "sha256": "d34b96835a28237820022ccd7a181f4f8ec87f7efe0f36015ddf1198123018fe",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/48/M/XS/2020/08/07/S2A_MSIL2A_20200807T025551_N0212_R032_T48MXS_20200815T071209.SAFE/GRANULE/L2A_T48MXS_A026770_20200807T030951/IMG_DATA/R20m/T48MXS_20200807T025551_B12_20m.tif",
+            "metadata": {
+              "crs": "EPSG:32748",
+              "bounds": [
+                650060.0,
+                9188480.0,
+                660340.0,
+                9198760.0
+              ],
+              "width": 514,
+              "height": 514,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                20.0,
+                20.0
+              ],
+              "nodata": null
+            },
+            "transform": [
+              20.0,
+              0.0,
+              650060.0,
+              0.0,
+              -20.0,
+              9198760.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-SCL.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-SCL.tif",
+            "sha256": "75bc525de9dad38f8d599a04c218a958a2b8f8f144579d53bc05e5d0e98eeff6",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/48/M/XS/2020/08/07/S2A_MSIL2A_20200807T025551_N0212_R032_T48MXS_20200815T071209.SAFE/GRANULE/L2A_T48MXS_A026770_20200807T030951/IMG_DATA/R20m/T48MXS_20200807T025551_SCL_20m.tif",
+            "metadata": {
+              "crs": "EPSG:32748",
+              "bounds": [
+                650080.0,
+                9188500.0,
+                660320.0,
+                9198740.0
+              ],
+              "width": 512,
+              "height": 512,
+              "count": 1,
+              "dtype": [
+                "uint8"
+              ],
+              "resolution": [
+                20.0,
+                20.0
+              ],
+              "nodata": null
+            },
+            "transform": [
+              20.0,
+              0.0,
+              650080.0,
+              0.0,
+              -20.0,
+              9198740.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          }
+        },
+        "stac_item": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\stac-item.json",
+          "sha256": "dd0fb9a72d688d4286af0b1cabd23174d9740330be2bf648d5ce51dde222afbc",
+          "raw_feature_available": true,
+          "signed_query_redacted": false
+        },
+        "calibration": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\calibration.json",
+          "sha256": "aaa2e913ad26b6409e0e43776e4fcc4f5ae44215782751e34fe1ea017b939000",
+          "metadata_verified": true,
+          "applied_to_image": false
+        }
+      },
+      "declared_source_taxonomy_code": "8",
+      "mapped_model_class": 7,
+      "declared_bare_pixels": 1171,
+      "recorded_quality_status": "quality_insufficient",
+      "recorded_valid_fraction": 0.5807647705078125,
+      "recorded_inside_fraction": 0.6092529296875,
+      "label_year": 2020,
+      "label_dataset_version": "EsriIOv003-2020",
+      "next_action": "Review a different same-year Sentinel acquisition for this existing low-quality area; verify against current processed windows before any selection",
+      "execution_authorized": false,
+      "new_scene_identified": false,
+      "bare_presence_in_future_scene_verified": false,
+      "collector_job_ready": false
+    },
+    {
+      "source_row_index": 194,
+      "province": "south_sulawesi",
+      "fixed_split": "train",
+      "year": 2022,
+      "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2022-g00-r0-c2",
+      "spatial_location_id": "south_sulawesi/00/r0-c2",
+      "bbox_declared": [
+        119.98480802602216,
+        -3.8130830399585203,
+        119.99280802602217,
+        -3.8050830399585203
+      ],
+      "source_scene_id": "S2A_MSIL2A_20220901T022341_R103_T50MRA_20220901T225532",
+      "source_window": {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\image.tif",
+        "sha256": "648550ef1902f6eb18148642c0177654f52fa90e292d919d2375ef1b05588c15",
+        "quality_mask_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\quality-mask.tif",
+        "quality_mask_sha256": "c0a3f2db00f89a42cfffddc2f0d7b16dbe65991423d8faebae56110e4aac0240",
+        "boundary_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+        "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+        "raw_source_crops": {
+          "raw-esri_io.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\raw-esri_io.tif",
+            "sha256": "951f32851ac00e79aa319640a367f2645c849c3be7d794b2387214ddbdc47c2c",
+            "source": "https://lulctimeseries.blob.core.windows.net/lulctimeseriesv003/lc2022/50M_20220101-20230101.tif",
+            "metadata": {
+              "crs": "EPSG:32750",
+              "bounds": [
+                821750.0,
+                9568160.0,
+                833970.0,
+                9588640.0
+              ],
+              "width": 1222,
+              "height": 2048,
+              "count": 1,
+              "dtype": [
+                "uint8"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              821750.0,
+              0.0,
+              -10.0,
+              9588640.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B02.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\raw-B02.tif",
+            "sha256": "e1dd3fd3a8f9ecb8e23189b869e8e1e39df6f64b70bab9d66d225e93515bacba",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/50/M/RA/2022/09/01/S2A_MSIL2A_20220901T022341_N0400_R103_T50MRA_20220901T225532.SAFE/GRANULE/L2A_T50MRA_A037566_20220901T022338/IMG_DATA/R10m/T50MRA_20220901T022341_B02_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32750",
+              "bounds": [
+                826870.0,
+                9573280.0,
+                837110.0,
+                9583520.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              826870.0,
+              0.0,
+              -10.0,
+              9583520.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B03.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\raw-B03.tif",
+            "sha256": "f23f9438b7a5a4ee42e1e189f50d230ac8fa5e9dcfd7ee392b3230f9005fc4d2",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/50/M/RA/2022/09/01/S2A_MSIL2A_20220901T022341_N0400_R103_T50MRA_20220901T225532.SAFE/GRANULE/L2A_T50MRA_A037566_20220901T022338/IMG_DATA/R10m/T50MRA_20220901T022341_B03_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32750",
+              "bounds": [
+                826870.0,
+                9573280.0,
+                837110.0,
+                9583520.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              826870.0,
+              0.0,
+              -10.0,
+              9583520.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B04.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\raw-B04.tif",
+            "sha256": "20870703d07e31ab6db5c7e4edbb9cdf1b907e2b6de7ff5fd7d9c6414057e764",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/50/M/RA/2022/09/01/S2A_MSIL2A_20220901T022341_N0400_R103_T50MRA_20220901T225532.SAFE/GRANULE/L2A_T50MRA_A037566_20220901T022338/IMG_DATA/R10m/T50MRA_20220901T022341_B04_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32750",
+              "bounds": [
+                826870.0,
+                9573280.0,
+                837110.0,
+                9583520.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              826870.0,
+              0.0,
+              -10.0,
+              9583520.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B08.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\raw-B08.tif",
+            "sha256": "f4e748c42112ef47b8d30832f397ffb6a0c99b3f4b6b2dadcfe544f07b348ebc",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/50/M/RA/2022/09/01/S2A_MSIL2A_20220901T022341_N0400_R103_T50MRA_20220901T225532.SAFE/GRANULE/L2A_T50MRA_A037566_20220901T022338/IMG_DATA/R10m/T50MRA_20220901T022341_B08_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32750",
+              "bounds": [
+                826870.0,
+                9573280.0,
+                837110.0,
+                9583520.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              826870.0,
+              0.0,
+              -10.0,
+              9583520.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B11.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\raw-B11.tif",
+            "sha256": "3d1bc370527bb9a1150e6b9e3114d3e56b2424cf55861c61cecf660df8e52526",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/50/M/RA/2022/09/01/S2A_MSIL2A_20220901T022341_N0400_R103_T50MRA_20220901T225532.SAFE/GRANULE/L2A_T50MRA_A037566_20220901T022338/IMG_DATA/R20m/T50MRA_20220901T022341_B11_20m.tif",
+            "metadata": {
+              "crs": "EPSG:32750",
+              "bounds": [
+                826840.0,
+                9573260.0,
+                837120.0,
+                9583540.0
+              ],
+              "width": 514,
+              "height": 514,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                20.0,
+                20.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              20.0,
+              0.0,
+              826840.0,
+              0.0,
+              -20.0,
+              9583540.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B12.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\raw-B12.tif",
+            "sha256": "1a49902b9800ee66e587056217010351e5a0dd87f324c702eb10c436f42a1e55",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/50/M/RA/2022/09/01/S2A_MSIL2A_20220901T022341_N0400_R103_T50MRA_20220901T225532.SAFE/GRANULE/L2A_T50MRA_A037566_20220901T022338/IMG_DATA/R20m/T50MRA_20220901T022341_B12_20m.tif",
+            "metadata": {
+              "crs": "EPSG:32750",
+              "bounds": [
+                826840.0,
+                9573260.0,
+                837120.0,
+                9583540.0
+              ],
+              "width": 514,
+              "height": 514,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                20.0,
+                20.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              20.0,
+              0.0,
+              826840.0,
+              0.0,
+              -20.0,
+              9583540.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-SCL.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\raw-SCL.tif",
+            "sha256": "a1309766a1cf94deae8d44d9b6903c09f38a0061e2c4917c8106ea9b2a3b8940",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/50/M/RA/2022/09/01/S2A_MSIL2A_20220901T022341_N0400_R103_T50MRA_20220901T225532.SAFE/GRANULE/L2A_T50MRA_A037566_20220901T022338/IMG_DATA/R20m/T50MRA_20220901T022341_SCL_20m.tif",
+            "metadata": {
+              "crs": "EPSG:32750",
+              "bounds": [
+                826860.0,
+                9573280.0,
+                837100.0,
+                9583520.0
+              ],
+              "width": 512,
+              "height": 512,
+              "count": 1,
+              "dtype": [
+                "uint8"
+              ],
+              "resolution": [
+                20.0,
+                20.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              20.0,
+              0.0,
+              826860.0,
+              0.0,
+              -20.0,
+              9583520.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          }
+        },
+        "stac_item": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\stac-item.json",
+          "sha256": "f463623ca143417a79922805ce75379024002030da49d38db01d46219248d3b2",
+          "raw_feature_available": true,
+          "signed_query_redacted": false
+        },
+        "calibration": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2022-g00\\south_sulawesi-g00-2022\\calibration.json",
+          "sha256": "b57bfef6725861db9e329579ba3dfab69c95149760a8f29a8e927dbe14b32c97",
+          "metadata_verified": true,
+          "applied_to_image": false
+        }
+      },
+      "declared_source_taxonomy_code": "8",
+      "mapped_model_class": 7,
+      "declared_bare_pixels": 545,
+      "recorded_quality_status": "quality_insufficient",
+      "recorded_valid_fraction": 0.2640228271484375,
+      "recorded_inside_fraction": 1.0,
+      "label_year": 2022,
+      "label_dataset_version": "EsriIOv003-2022",
+      "next_action": "Review a different same-year Sentinel acquisition for this existing low-quality area; verify against current processed windows before any selection",
+      "execution_authorized": false,
+      "new_scene_identified": false,
+      "bare_presence_in_future_scene_verified": false,
+      "collector_job_ready": false
+    },
+    {
+      "source_row_index": 772,
+      "province": "gorontalo",
+      "fixed_split": "train",
+      "year": 2024,
+      "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g01-r3-c0",
+      "spatial_location_id": "gorontalo/01/r3-c0",
+      "bbox_declared": [
+        123.36266905780077,
+        0.466450507800503,
+        123.37066905780078,
+        0.474450507800503
+      ],
+      "source_scene_id": "S2A_MSIL2A_20240729T021351_R060_T51NWA_20240729T081053",
+      "source_window": {
+        "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\image.tif",
+        "sha256": "788d02923cfd4011fb70430fe992fd2729ebd19c5f3871d6684825ecf4581e14",
+        "quality_mask_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\quality-mask.tif",
+        "quality_mask_sha256": "f5eeccb2f4b43d4705f8cbbb4ea8d1094d5770213d9450c517298480a8d6c8ee",
+        "boundary_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+        "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+        "raw_source_crops": {
+          "raw-esri_io.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-esri_io.tif",
+            "sha256": "a6081b2295b7b21636d4f8f6fb48b4d1bc24a6e2136546fb5ce763905cdbbc7d",
+            "source": "https://lulctimeseries.blob.core.windows.net/lulctimeseriesv003/lc2024/51N_20240101-20241231.tif",
+            "metadata": {
+              "crs": "EPSG:32651",
+              "bounds": [
+                530560.0,
+                41760.0,
+                551040.0,
+                62240.0
+              ],
+              "width": 2048,
+              "height": 2048,
+              "count": 1,
+              "dtype": [
+                "uint8"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              530560.0,
+              0.0,
+              -10.0,
+              62240.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B02.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-B02.tif",
+            "sha256": "4e4f18199b9839a9d48fe1ba03edfa8815e489cfea7b9422a06f485e2c8a1d77",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/51/N/WA/2024/07/29/S2A_MSIL2A_20240729T021351_N0511_R060_T51NWA_20240729T081053.SAFE/GRANULE/L2A_T51NWA_A047533_20240729T021345/IMG_DATA/R10m/T51NWA_20240729T021351_B02_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32651",
+              "bounds": [
+                535680.0,
+                46880.0,
+                545920.0,
+                57120.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              535680.0,
+              0.0,
+              -10.0,
+              57120.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B03.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-B03.tif",
+            "sha256": "45e92123e99d91cbab561f8c2232c03bd76e50a554ed136d983719d288fb946b",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/51/N/WA/2024/07/29/S2A_MSIL2A_20240729T021351_N0511_R060_T51NWA_20240729T081053.SAFE/GRANULE/L2A_T51NWA_A047533_20240729T021345/IMG_DATA/R10m/T51NWA_20240729T021351_B03_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32651",
+              "bounds": [
+                535680.0,
+                46880.0,
+                545920.0,
+                57120.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              535680.0,
+              0.0,
+              -10.0,
+              57120.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B04.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-B04.tif",
+            "sha256": "026de3ffac0fa17848da6235d8f3116111aa3da52e3947eb17844b5de29b2d66",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/51/N/WA/2024/07/29/S2A_MSIL2A_20240729T021351_N0511_R060_T51NWA_20240729T081053.SAFE/GRANULE/L2A_T51NWA_A047533_20240729T021345/IMG_DATA/R10m/T51NWA_20240729T021351_B04_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32651",
+              "bounds": [
+                535680.0,
+                46880.0,
+                545920.0,
+                57120.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              535680.0,
+              0.0,
+              -10.0,
+              57120.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B08.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-B08.tif",
+            "sha256": "b475b250ea802cb8a12916e14b1956c6b40bbb55d802546f05694e596d1aa92e",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/51/N/WA/2024/07/29/S2A_MSIL2A_20240729T021351_N0511_R060_T51NWA_20240729T081053.SAFE/GRANULE/L2A_T51NWA_A047533_20240729T021345/IMG_DATA/R10m/T51NWA_20240729T021351_B08_10m.tif",
+            "metadata": {
+              "crs": "EPSG:32651",
+              "bounds": [
+                535680.0,
+                46880.0,
+                545920.0,
+                57120.0
+              ],
+              "width": 1024,
+              "height": 1024,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                10.0,
+                10.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              10.0,
+              0.0,
+              535680.0,
+              0.0,
+              -10.0,
+              57120.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B11.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-B11.tif",
+            "sha256": "b1421d2f6a664a44159fc9256a25f4bc7c7c522baf17c6bc403f856235770a5f",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/51/N/WA/2024/07/29/S2A_MSIL2A_20240729T021351_N0511_R060_T51NWA_20240729T081053.SAFE/GRANULE/L2A_T51NWA_A047533_20240729T021345/IMG_DATA/R20m/T51NWA_20240729T021351_B11_20m.tif",
+            "metadata": {
+              "crs": "EPSG:32651",
+              "bounds": [
+                535660.0,
+                46860.0,
+                545940.0,
+                57140.0
+              ],
+              "width": 514,
+              "height": 514,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                20.0,
+                20.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              20.0,
+              0.0,
+              535660.0,
+              0.0,
+              -20.0,
+              57140.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-B12.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-B12.tif",
+            "sha256": "81ce09cd76735ba99d2339b57cdbfb51059dd04f4e3e9fa10bc0a70d6d2bf373",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/51/N/WA/2024/07/29/S2A_MSIL2A_20240729T021351_N0511_R060_T51NWA_20240729T081053.SAFE/GRANULE/L2A_T51NWA_A047533_20240729T021345/IMG_DATA/R20m/T51NWA_20240729T021351_B12_20m.tif",
+            "metadata": {
+              "crs": "EPSG:32651",
+              "bounds": [
+                535660.0,
+                46860.0,
+                545940.0,
+                57140.0
+              ],
+              "width": 514,
+              "height": 514,
+              "count": 1,
+              "dtype": [
+                "uint16"
+              ],
+              "resolution": [
+                20.0,
+                20.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              20.0,
+              0.0,
+              535660.0,
+              0.0,
+              -20.0,
+              57140.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          },
+          "raw-SCL.tif": {
+            "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-SCL.tif",
+            "sha256": "9270a0117c7f1ec8d98d12b67a64889c8d46129ae493d6dd07ab2a047aa44ab6",
+            "source": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/51/N/WA/2024/07/29/S2A_MSIL2A_20240729T021351_N0511_R060_T51NWA_20240729T081053.SAFE/GRANULE/L2A_T51NWA_A047533_20240729T021345/IMG_DATA/R20m/T51NWA_20240729T021351_SCL_20m.tif",
+            "metadata": {
+              "crs": "EPSG:32651",
+              "bounds": [
+                535680.0,
+                46880.0,
+                545920.0,
+                57120.0
+              ],
+              "width": 512,
+              "height": 512,
+              "count": 1,
+              "dtype": [
+                "uint8"
+              ],
+              "resolution": [
+                20.0,
+                20.0
+              ],
+              "nodata": 0.0
+            },
+            "transform": [
+              20.0,
+              0.0,
+              535680.0,
+              0.0,
+              -20.0,
+              57120.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "resampling_applied": false
+          }
+        },
+        "stac_item": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\stac-item.json",
+          "sha256": "068942dbc57bb763385ac2afcf3aa969c46f067ea85bb536c9b466f551b681a8",
+          "raw_feature_available": true,
+          "signed_query_redacted": false
+        },
+        "calibration": {
+          "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\calibration.json",
+          "sha256": "3363052c8b5c0c1ddb077dff651bfa52e57ef484866ab0067249bb394a7e051a",
+          "metadata_verified": true,
+          "applied_to_image": false
+        }
+      },
+      "declared_source_taxonomy_code": "8",
+      "mapped_model_class": 7,
+      "declared_bare_pixels": 271,
+      "recorded_quality_status": "quality_insufficient",
+      "recorded_valid_fraction": 0.3048095703125,
+      "recorded_inside_fraction": 1.0,
+      "label_year": 2024,
+      "label_dataset_version": "EsriIOv003-2024",
+      "next_action": "Review a different same-year Sentinel acquisition for this existing low-quality area; verify against current processed windows before any selection",
+      "execution_authorized": false,
+      "new_scene_identified": false,
+      "bare_presence_in_future_scene_verified": false,
+      "collector_job_ready": false
+    }
+  ],
+  "validation_split_new_spatial_search_required": true,
+  "required_future_acceptance": {
+    "same_year_image_and_esri_v003": true,
+    "preserve_fixed_province_split": true,
+    "actual_patch_size": 256,
+    "minimum_valid_fraction": 0.8,
+    "minimum_inside_fraction": 0.95,
+    "bare_pixels_per_contributing_patch": 256,
+    "minimum_bare_contributing_patches_per_split": 5,
+    "minimum_bare_fraction_per_split": 0.005,
+    "source_identity_and_spatial_checks_required": true,
+    "new_full_candidate_QA_required": true
+  },
+  "limitations": [
+    "Stored sample_class_coverage is a preliminary source-taxonomy summary; not the final QA histogram or an independent field label.",
+    "Three areas have >=256 declared bare pixels but all are quality-insufficient. Never change them to eligible or lower quality thresholds.",
+    "Validation has no existing patch with >=256 declared bare pixels. New same-year bare-bearing spatial candidates must be identified.",
+    "Existing lane-B geometric intentions do not certify bare class presence.",
+    "Collector currently has no CLI that executes this review queue or targets bare-specific source acquisition; an explicit isolated job-selection integration remains needed.",
+    "This queue does not authorize stale lock deletion, pending settlement/refund, download, training or source rewriting."
+  ],
+  "network_requests": 0,
+  "source_files_written": 0,
+  "training_executed": false,
+  "collection_executed": false,
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false
+}

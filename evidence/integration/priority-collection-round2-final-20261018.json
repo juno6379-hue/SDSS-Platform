@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-18T01:25:29.377651+00:00",
+  "status": "SETTLED",
+  "manifest_sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+  "physical_total": 1432,
+  "eligible_total": 1141,
+  "cell_gap_total": 132,
+  "new_physical": 0,
+  "new_eligible": 0,
+  "new_bare_declared_pixels": 0,
+  "old_rows_unchanged": true,
+  "old_pending_rows_unchanged": true,
+  "old_pending_reserved_bytes": 136314880,
+  "selected_ledger_rows": {
+    "parallel-v2-grid-esri_io-east_java-2025-g01": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 689213,
+      "config_sha256": "2eec802c82d9d2cfef1922012d180b4394871f7c04923c2c3fb3ce8a44fe2687",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g01\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-east_java-2025-g02": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 636422,
+      "config_sha256": "31293db15df47a6ca6f1c367ab074aabc8723ab672eb27dac50efa3e4b4944b3",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g02\\annual-window-report.json"
+    }
+  },
+  "new_charged_total": 1998424524,
+  "charged_delta_from_launch": 1325635,
+  "remaining_budget": 2296542772,
+  "rate_limit_active": false,
+  "execution_lock_present": false,
+  "scientific_accuracy_validated": false,
+  "learning_ready": false,
+  "observation_limit": "Sequential reads, not an atomic OS snapshot. Stored quality counts are not a new native raster QA. Round2 stdout forwarded worker-started and worker-finished twice each; central ledger/source reports independently read.",
+  "source_failures": [
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g01",
+      "status": "failed",
+      "category": "payload_or_response_contract",
+      "reason": "AOI 중심점이 COG 범위 밖입니다"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g02",
+      "status": "failed",
+      "category": "payload_or_response_contract",
+      "reason": "AOI 중심점이 COG 범위 밖입니다"
+    }
+  ]
+}

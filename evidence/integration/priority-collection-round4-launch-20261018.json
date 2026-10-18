@@ -1,0 +1,65 @@
+{
+  "started_at": "2026-10-18T01:45:01.356190+00:00",
+  "status": "STARTED_NOT_COMPLETED",
+  "plan_sha256": "4268eb34bcdb78d6c9efdc08b1c6020eaf0ad2f5ce8fb5e9bfe179dfd2f1d496",
+  "selected_jobs": [
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2025-g01",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "spatial_window_id": "01",
+      "eligible_patches": 16,
+      "deficit": 12,
+      "config_sha256": "cf3d2a94ac3793f4887b1722bd79207df11a58245add02cc500825d59bb968ed"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2025-g02",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "spatial_window_id": "02",
+      "eligible_patches": 16,
+      "deficit": 12,
+      "config_sha256": "baea858acaf6ead2d68fdb2d48348691f74b5a1bf33187eaec8d28de41b623de"
+    }
+  ],
+  "pending_before": {
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+    },
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+    }
+  },
+  "manifest_before_sha256": "c57a1768a87fae7b0fd0c5ec8e451c439d35c65bf54d99f1f7b38dc98928e33e",
+  "manifest_before_rows": 1464,
+  "old_rows_canonical_sha256": "9af241f9cf15cca5396cc84a1518ca82a87c2bf2e7427966bb1b872eb905ecbc",
+  "ledger_before_sha256": "06f17b1aed4d21696d76d1c89be2fbc5647dce7716915668b892a4dd653984c7",
+  "new_charged_before": 2040697858,
+  "budget_remaining_before": 2254269438,
+  "source_pins": {
+    "scripts/collect_training_priority.py": "680c27f4c2b6d3e8b9a9b73e81f0193ccb1d7a55e2f5d64a74a72a7c22889d15",
+    "scripts/collect_training_parallel.py": "a2b9a4179392f3ea5ba5bbed28e9e1f448e0bcee912260e66bab181f99abd04d"
+  },
+  "new_budget_added": false,
+  "training_started": false,
+  "pending_refund": false,
+  "wrapper_pid": 22020,
+  "command": [
+    "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "E:\\GeoAI–MLOps–SDSS\\scripts\\collect_training_priority.py",
+    "--max-batches",
+    "2",
+    "--continue-unrelated-pending",
+    "--expected-plan-sha256",
+    "4268eb34bcdb78d6c9efdc08b1c6020eaf0ad2f5ce8fb5e9bfe179dfd2f1d496",
+    "--execute"
+  ]
+}

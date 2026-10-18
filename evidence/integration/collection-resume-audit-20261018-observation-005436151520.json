@@ -1,0 +1,214 @@
+{
+  "at": "2026-10-18T00:54:35.915396+00:00",
+  "handover": {
+    "prepared_at": "2026-10-18T09:52:11.7229274+09:00",
+    "user_authorization": "2026-10-18: finish 147, investigate stopped collection, continue resumable work in parallel",
+    "scope": "Explicit manual stale-lock handover then one bounded 2-batch continuation; not old pending settlement",
+    "active_collectors_before": [],
+    "backups": [
+      {
+        "original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json",
+        "backup": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\global-ledger.json",
+        "sha256": "154004a2527c7ef6e93bec0c8a3ebf00a2af8e0683a1d4ed5252d59769da74a8"
+      },
+      {
+        "original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+        "backup": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\annual-window-report.json",
+        "sha256": "cdc374b2779dee749b57689fd90ef27e3525a48e59062343537327d0f4859a8f"
+      },
+      {
+        "original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\run-result.json",
+        "backup": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\run-result.json",
+        "sha256": "0e8dd6ef449e5e7397d02393def95a54cafedc5a58722ec93df56e39dc554a86"
+      },
+      {
+        "original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\parallel-v2-plan.json",
+        "backup": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\parallel-v2-plan.json",
+        "sha256": "919a3fb1b006b2633a6949056c5a6d7ba44b08fe5e16d72dbb302c2823aa1afc"
+      }
+    ],
+    "old_pending_reserved_bytes_preserved": 136314880,
+    "old_pending_retry": false,
+    "refund_bytes": 0,
+    "new_batches_maximum": 2,
+    "new_reservation_maximum_bytes": 136314880,
+    "legacy_lock_original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.execution.lock",
+    "legacy_lock_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legacy_lock_archive": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\global-ledger.execution.lock",
+    "race_limit": "Point-in-time OS inventory plus existing O_EXCL execution lock; no global OS process sandbox or atomic ledger/aggregate journal.",
+    "status": "BOUNDED_CONTINUATION_LAUNCHED",
+    "launched_at": "2026-10-18T09:52:13.2790210+09:00",
+    "pid": 532
+  },
+  "old_pending_records_unchanged": true,
+  "old_partial_path_count": 46,
+  "old_partial_changes": [],
+  "fixed_input_changes": [],
+  "backup_checks": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\global-ledger.json",
+      "sha_matches_record": true
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\annual-window-report.json",
+      "sha_matches_record": true
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\run-result.json",
+      "sha_matches_record": true
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\collection-continuation-backup-20261018\\parallel-v2-plan.json",
+      "sha_matches_record": true
+    }
+  ],
+  "new_keys": [
+    "parallel-v2-grid-esri_io-south_sulawesi-2021-g03",
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03"
+  ],
+  "new_keys_within_expected_two": true,
+  "original_existing_ledger_record_changes": [],
+  "new_budget_maximum_bytes": 4294967296,
+  "new_charged_bytes": 2002860374,
+  "within_same_4gib_budget": true,
+  "rate_limit_active": false,
+  "new_job_states": {
+    "parallel-v2-grid-esri_io-south_sulawesi-2021-g03": {
+      "ledger": {
+        "status": "settled",
+        "reserved_bytes": 68157440,
+        "charged_bytes": 1190529,
+        "config_sha256": "992a4de2df09447b5e36bf9034aac854ed1229ddaa4412459f067e8057331156",
+        "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2021-g03\\annual-window-report.json"
+      },
+      "files": [
+        {
+          "path": "annual-window-report.json",
+          "bytes": 13740,
+          "text": "{\n  \"status\": \"executed_windows_readiness_unverified\",\n  \"executed\": true,\n  \"boundary_status\": \"research_candidates_unconfirmed\",\n  \"years\": [\n    \"2021\"\n  ],\n  \"expected_aoi_year_cells\": 1,\n  \"full_scene_count\": 0,\n  \"complete_scene_count\": 0,\n  \"minimum_scene_goal_met\": false,\n  \"complete_window_count\": 0,\n  \"label_window_count\": 0,\n  \"verified_patch_count\": 0,\n  \"patch_target_range\": [\n    1000,\n    3000\n  ],\n  \"learning_ready\": false,\n  \"scenes\": [\n    {\n      \"aoi\": \"south_sulawesi-g03\",\n      \"province\": \"south_sulawesi\",\n      \"year\": \"2021\",\n      \"bbox\": [\n        119.88686827996725,\n        -2.121966148053699,\n        119.89486827996726,\n        -2.113966148053699\n      ],\n      \"status\": \"reference_diversity_deferred\",\n      \"valid_pixel_ratio\": null,\n      \"sample_class_coverage\": null,\n      \"verified_patches\": 0,\n      \"incomplete_year\": false,\n      \"label_status\": \"reference_preview_only\",\n      \"stac_response_filter\": {\n        \"filtered_count\": 0,\n        \"filtered_items\": [],\n        \"cloud_cover_response_verified\": true\n      },\n      \"candidate_selection\": [\n        {\n          \"scene_id\": \"S2B_MSIL2A_20210603T022329_R103_T50MRC_20210603T170845\",\n          \"cloud_cover\": 5.096271,\n          \"status\": \"eligible\",\n          \"estimated_valid_fraction\": 1.0,\n          \"raw_scl_path\": \"E:\\\\GeoAI–MLOps–SDSS\\\\data\\\\first-group-training-esri-v1\\\\sources\\\\parallel-v2-grid-esri_io-south_sulawesi-2021-g03\\\\south_sulawesi-g03-2021\\\\qa-candidate-00-SCL.tif\",\n          \"raw_scl_sha256\": \"5eef7b14228e7d106ac805b86301b883a744ecba804b5673a27a728417c152a4\",\n          \"minimum_fraction\": 0.65,\n          \"note\": \"20m 중심 SCL 예비값이며 최종10m 전체밴드/NoData QA와 다를 수 있음\"\n        }\n      ],\n      \"scene_id\": \"S2B_MSIL2A_20210603T022329_R103_T50MRC_20210603T170845\",\n      \"source_group\": \"south_sulawesi/S2B_MSIL2A_20210603T022329_R103_T50MRC_20210603T170845\",\n      \"datetime\": \"2021-06-03T02:23:29.024000Z\",\n      \"cloud_cover\": 5.096271,\n      \"source_properties\": {\n        \"datetime\": \"2021-06-03T02:23:29.024000Z\",\n        \"platform\": \"Sentinel-2B\",\n        \"proj:epsg\": 32750,\n        \"instruments\": [\n          \"msi\"\n        ],\n        \"s2:mgrs_tile\": \"50MRC\",\n        \"constellation\": \"Sentinel 2\",\n        \"s2:granule_id\": \"S2B_OPER_MSI_L2A_TL_ESRI_20210603T170846_A022151_T50MRC_N02.12\",\n        \"eo:cloud_cover\": 5.096271,\n        \"s2:datatake_id\": \"GS2B_20210603T022329_022151_N02.12\",\n        \"s2:product_uri\": \"S2B_MSIL2A_20210603T022329_N0212_R103_T50MRC_20210603T170845.SAFE\",\n        \"s2:datastrip_id\": \"S2B_OPER_MSI_L2A_DS_ESRI_20210603T170846_S20210603T022326_N02.12\",\n        \"s2:product_type\": \"S2MSI2A\",\n        \"sat:orbit_state\": \"descending\",\n        \"s2:datatake_type\": \"INS-NOBS\",\n        \"s2:generation_time\": \"2021-06-03T17:08:45.906Z\",\n        \"sat:relative_orbit\": 103,\n        \"s2:water_percentage\": 4.041961,\n        \"s2:mean_solar_zenith\": 32.8421837349068,\n        \"s2:mean_solar_azimuth\": 40.2380076695719,\n        \"s2:processing_baseline\": \"02.12\",\n        \"s2:snow_ice_percentage\": 8.6e-05,\n        \"s2:vegetation_percentage\": 86.602992,\n        \"s2:thin_cirrus_percentage\": 4.280806,\n        \"s2:cloud_shadow_percentage\": 0.515423,\n        \"s2:nodata_pixel_percentage\": 1.7e-05,\n        \"s2:unclassified_percentage\": 1.123192,\n        \"s2:dark_features_percentage\": 0.65526,\n        \"s2:not_vegetated_percentage\": 1.964818,\n        \"s2:degraded_msi_data_percentage\": 0.0,\n        \"s2:high_proba_clouds_percentage\": 0.626528,\n        \"s2:reflectance_conversion_factor\": 0.973125528370181,\n        \"s2:medium_proba_clouds_percentage\": 0.188938,\n        \"s2:saturated_defective_pixel_percentage\": 0.0\n      },\n      \"source_band_metadata\": {\n        \"AOT\": {\n          \"raster:bands\": null,\n          \"eo:bands\": null\n        },\n        \"B01\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B01\",\n              \"common_name\": \"coastal\",\n              \"description\": \"Band 1 - Coastal aerosol\",\n              \"center_wavelength\": 0.443,\n              \"full_width_half_max\": 0.027\n            }\n          ]\n        },\n        \"B02\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B02\",\n              \"common_name\": \"blue\",\n              \"description\": \"Band 2 - Blue\",\n              \"center_wavelength\": 0.49,\n              \"full_width_half_max\": 0.098\n            }\n          ]\n        },\n        \"B03\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B03\",\n              \"common_name\": \"green\",\n              \"description\": \"Band 3 - Green\",\n              \"center_wavelength\": 0.56,\n              \"full_width_half_max\": 0.045\n            }\n          ]\n        },\n        \"B04\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B04\",\n              \"common_name\": \"red\",\n              \"description\": \"Band 4 - Red\",\n              \"center_wavelength\": 0.665,\n              \"full_width_half_max\": 0.038\n            }\n          ]\n        },\n        \"B05\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B05\",\n              \"common_name\": \"rededge\",\n              \"description\": \"Band 5 - Vegetation red edge 1\",\n              \"center_wavelength\": 0.704,\n              \"full_width_half_max\": 0.019\n            }\n          ]\n        },\n        \"B06\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B06\",\n              \"common_name\": \"rededge\",\n              \"description\": \"Band 6 - Vegetation red edge 2\",\n              \"center_wavelength\": 0.74,\n              \"full_width_half_max\": 0.018\n            }\n          ]\n        },\n        \"B07\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B07\",\n              \"common_name\": \"rededge\",\n              \"description\": \"Band 7 - Vegetation red edge 3\",\n              \"center_wavelength\": 0.783,\n              \"full_width_half_max\": 0.028\n            }\n          ]\n        },\n        \"B08\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B08\",\n              \"common_name\": \"nir\",\n              \"description\": \"Band 8 - NIR\",\n              \"center_wavelength\": 0.842,\n              \"full_width_half_max\": 0.145\n            }\n          ]\n        },\n        \"B09\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B09\",\n              \"description\": \"Band 9 - Water vapor\",\n              \"center_wavelength\": 0.945,\n              \"full_width_half_max\": 0.026\n            }\n          ]\n        },\n        \"B11\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B11\",\n              \"common_name\": \"swir16\",\n              \"description\": \"Band 11 - SWIR (1.6)\",\n              \"center_wavelength\": 1.61,\n              \"full_width_half_max\": 0.143\n            }\n          ]\n        },\n        \"B12\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B12\",\n              \"common_name\": \"swir22\",\n              \"description\": \"Band 12 - SWIR (2.2)\",\n              \"center_wavelength\": 2.19,\n              \"full_width_half_max\": 0.242\n            }\n          ]\n        },\n        \"B8A\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B8A\",\n              \"common_name\": \"rededge\",\n              \"description\": \"Band 8A - Vegetation red edge 4\",\n              \"center_wavelength\": 0.865,\n              \"full_width_half_max\": 0.033\n            }\n          ]\n        },\n        \"SCL\": {\n          \"raster:bands\": null,\n          \"eo:bands\": null\n        },\n        \"WVP\": {\n          \"raster:bands\": null,\n          \"eo:bands\": null\n        },\n        \"visual\": {\n          \"raster:bands\": null,\n          \"eo:bands\": [\n            {\n              \"name\": \"B04\",\n              \"common_name\": \"red\",\n              \"description\": \"Band 4 - Red\",\n              \"center_wavelength\": 0.665,\n              \"full_width_half_max\": 0.038\n            },\n            {\n              \"name\": \"B03\",\n              \"common_name\": \"green\",\n              \"description\": \"Band 3 - Green\",\n              \"center_wavelength\": 0.56,\n              \"full_width_half_max\": 0.045\n            },\n            {\n              \"name\": \"B02\",\n              \"common_name\": \"blue\",\n              \"description\": \"Band 2 - Blue\",\n              \"center_wavelength\": 0.49,\n              \"full_width_half_max\": 0.098\n            }\n          ]\n        },\n        \"preview\": {\n          \"raster:bands\": null,\n          \"eo:bands\": null\n        }\n      },\n      \"stac_item\": {\n        \"path\": \"E:\\\\GeoAI–MLOps–SDSS\\\\data\\\\first-group-training-esri-v1\\\\sources\\\\parallel-v2-grid-esri_io-south_sulawesi-2021-g03\\\\south_sulawesi-g03-2021\\\\stac-item.json\",\n        \"sha256\": \"8c695e8a5e4281474ac8b103230f021dc7a9a21f6aef93b42d7a3815aeb57918\",\n        \"raw_feature_available\": true,\n        \"signed_query_redacted\": false\n      },\n      \"calibration\": {\n        \"path\": \"E:\\\\GeoAI–MLOps–SDSS\\\\data\\\\first-group-training-esri-v1\\\\sources\\\\parallel-v2-grid-esri_io-south_sulawesi-2021-g03\\\\south_sulawesi-g03-2021\\\\calibration.json\",\n        \"sha256\": \"891e4e4bf19f9b8228a4aa86f2a5c555b972fc1ca33615ad2b386602a09ce1c5\",\n        \"metadata_verified\": true,\n        \"applied_to_image\": false\n      },\n      \"normalization\": {\n        \"scale\": [\n          0.0001,\n          0.0001,\n          0.0001,\n          0.0001,\n          0.0001,\n          0.0001\n        ],\n        \"offset\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ],\n        \"evidence_path\": \"first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-south_sulawesi-2021-g03/south_sulawesi-g03-2021/calibration.json\",\n        \"evidence_sha256\": \"891e4e4bf19f9b8228a4aa86f2a5c555b972fc1ca33615ad2b386602a09ce1c5\"\n      },\n      \"source_crops\": {\n        \"raw-esri_io.tif\": {\n          \"path\": \"E:\\\\GeoAI–MLOps–SDSS\\\\data\\\\first-group-training-esri-v1\\\\sources\\\\parallel-v2-grid-esri_io-south_sulawesi-2021-g03\\\\south_sulawesi-g03-2021\\\\raw-esri_io.tif\",\n          \"sha256\": \"846cd9616677f6babba6647c62ee2fc9fd1e5f0f1ff6a0e935f529e0d2c5d09c\",\n          \"source\": \"https://lulctimeseries.blob.core.windows.net/lulctimeseriesv003/lc2021/50M_20210101-20220101.tif\",\n          \"metadata\": {\n            \"crs\": \"EPSG:32750\",\n            \"bounds\": [\n              811360.0,\n              9755360.0,\n              831840.0,\n              9775840.0\n            ],\n            \"width\": 2048,\n            \"height\": 2048,\n            \"count\": 1,\n            \"dtype\": [\n              \"uint8\"\n            ],\n            \"resolution\": [\n              10.0,\n              10.0\n            ],\n            \"nodata\": 0.0\n          },\n          \"transform\": [\n            10.0,\n            0.0,\n            811360.0,\n            0.0,\n            -10.0,\n            9775840.0,\n            0.0,\n            0.0,\n            1.0\n          ],\n          \"resampling_applied\": false\n        }\n      },\n      \"label_first_preview\": {\n        \"source_url\": \"https://lulctimeseries.blob.core.windows.net/lulctimeseriesv003/lc2021/50M_20210101-20220101.tif\",\n        \"year\": 2021,\n        \"class_counts\": {\n          \"1\": 5842,\n          \"2\": 4131175,\n          \"4\": 62,\n          \"5\": 11105,\n          \"7\": 2055,\n          \"8\": 4,\n          \"10\": 567,\n          \"11\": 43494\n        },\n        \"selection_context\": {\n          \"priority_source_classes\": [\n            8\n          ],\n          \"allow_dominant_class_deferral\": true,\n          \"snapshot_eligible_patches\": 216\n        },\n        \"note\": \"확대원본범위예비분포이며최종256/SCL/polygon필터후분포와다름\"\n      }\n    }\n  ],\n  \"missing_aoi_years\": [\n    \"south_sulawesi-g03/2021\"\n  ],\n  \"http_body_bytes\": 983040,\n  \"maximum_http_body_bytes\": 67108864,\n  \"year_pairs\": [],\n  \"common_bands\": [\n    \"blue\",\n    \"green\",\n    \"red\",\n    \"nir\",\n    \"swir16\",\n    \"swir22\"\n  ],\n  \"valid_pixel_ratio\": null,\n  \"sample_class_coverage\": null,\n  \"nominal_max_patches\": 1,\n  \"nominal_patch_size\": 1024,\n  \"common_bands_status\": \"requested_unverified_across_years\",\n  \"grid_plan\": {\n    \"rows\": 8,\n    \"cols\": 8,\n    \"spacing_m\": 2560,\n    \"nominal_candidate_count\": 64,\n    \"executed\": false,\n    \"quality_verified_count\": 0,\n    \"note\": \"상한 후보 계획이며 1000개 유효 패치 확보를 보장하지 않음\"\n  },\n  \"collection_purpose\": \"smoke_small_annual_windows\",\n  \"quality_eligible_window_count\": 0,\n  \"missing_years\": [\n    \"2021\"\n  ],\n  \"http_body_bytes_upper_bound\": 983040,\n  \"http_body_bytes_measured\": 983040,\n  \"legacy_charged_bytes_preserved\": 0,\n  \"measurement_scope\": \"Python이 실제 읽은 COG Range 응답 본문; SAS JSON/HEAD/오류본문/TLS overhead 제외\",\n  \"batch_circuit_breaker\": null,\n  \"deferred_rate_limit_count\": 0,\n  \"prior_download_budget_bytes\": 0,\n  \"combined_budget_charged_bytes\": 983040,\n  \"blockers\": [\n    \"1000~3000 패치 미확보\",\n    \"지상정답/연차별 독립 검증 미확보\",\n    \"연도간 방사보정 및 클래스 매핑 검증 필요\"\n  ]\n}"
+        },
+        {
+          "path": "collection-history.jsonl",
+          "bytes": 256,
+          "text": "{\"time\": \"2026-10-18T00:52:37.399974+00:00\", \"event\": \"window_collection_started\", \"key\": \"south_sulawesi-g03-2021\"}\n{\"time\": \"2026-10-18T00:53:53.881121+00:00\", \"event\": \"reference_dominance_deferred_before_six_bands\", \"key\": \"south_sulawesi-g03-2021\"}\n"
+        },
+        {
+          "path": "config.json",
+          "bytes": 3145
+        },
+        {
+          "path": "manifests\\5eef7b14228e7d106ac805b86301b883a744ecba804b5673a27a728417c152a4-c3b6de5cf14ab2ad.json",
+          "bytes": 998
+        },
+        {
+          "path": "manifests\\846cd9616677f6babba6647c62ee2fc9fd1e5f0f1ff6a0e935f529e0d2c5d09c-b3b3e94d1017c93a.json",
+          "bytes": 843
+        },
+        {
+          "path": "selection-context.json",
+          "bytes": 127
+        },
+        {
+          "path": "south_sulawesi-g03-2021\\calibration.json",
+          "bytes": 2869
+        },
+        {
+          "path": "south_sulawesi-g03-2021\\product-metadata.xml",
+          "bytes": 51023
+        },
+        {
+          "path": "south_sulawesi-g03-2021\\qa-candidate-00-SCL.tif",
+          "bytes": 1844
+        },
+        {
+          "path": "south_sulawesi-g03-2021\\raw-esri_io.tif",
+          "bytes": 93746
+        },
+        {
+          "path": "south_sulawesi-g03-2021\\stac-item.json",
+          "bytes": 22343
+        },
+        {
+          "path": "window-state.json",
+          "bytes": 216,
+          "text": "{\n  \"config_sha256\": \"cf50172bb59996ec61022b79e746f4eb219d55fbcef779a6fd21a32d34cf0856\",\n  \"http_body_bytes\": 983040,\n  \"cells\": {},\n  \"legacy_charged_bytes_preserved\": 0,\n  \"http_body_bytes_measured\": 983040\n}"
+        },
+        {
+          "path": "worker-result.json",
+          "bytes": 463,
+          "text": "{\n  \"key\": \"parallel-v2-grid-esri_io-south_sulawesi-2021-g03\",\n  \"worker_thread\": 34516,\n  \"report_path\": \"E:\\\\GeoAI–MLOps–SDSS\\\\data\\\\first-group-training-esri-v1\\\\sources\\\\parallel-v2-grid-esri_io-south_sulawesi-2021-g03\\\\annual-window-report.json\",\n  \"circuit\": null,\n  \"cog_charged_bytes\": 983040,\n  \"metadata_budget\": {\n    \"maximum_bytes\": 1048576,\n    \"charged_bytes\": 207489,\n    \"read_body_bytes\": 207489\n  },\n  \"charged_bytes\": 1190529\n}"
+        }
+      ]
+    },
+    "parallel-v2-grid-esri_io-south_sulawesi-2022-g03": {
+      "ledger": {
+        "status": "pending",
+        "reserved_bytes": 68157440,
+        "charged_bytes": 68157440,
+        "config_sha256": "d7545412fc260e8a7f31f273377397dd62207faf4f5f2fed00e0d0aa90a72238"
+      },
+      "files": [
+        {
+          "path": "collection-history.jsonl",
+          "bytes": 118,
+          "text": "{\"time\": \"2026-10-18T00:52:37.460984+00:00\", \"event\": \"window_collection_started\", \"key\": \"south_sulawesi-g03-2022\"}\n"
+        },
+        {
+          "path": "config.json",
+          "bytes": 3145
+        },
+        {
+          "path": "manifests\\6df79075b25511585df85f1f899540d310863c8f6cc5f1e6862536c7694a69b2-e3a31ac67a1883b7.json",
+          "bytes": 991
+        },
+        {
+          "path": "manifests\\7cb00e4690f011e853f3faf77916665fbd05668d644dfb4784fe31b141fc6e7f-79b776bd3b5accd2.json",
+          "bytes": 997
+        },
+        {
+          "path": "manifests\\e7fcee61ed94153cc3406d37007aa0ee9d86712a3481f29d0eb9a55a741dc3e1-8818075ba19d232d.json",
+          "bytes": 843
+        },
+        {
+          "path": "selection-context.json",
+          "bytes": 127
+        },
+        {
+          "path": "south_sulawesi-g03-2022\\calibration.json",
+          "bytes": 2869
+        },
+        {
+          "path": "south_sulawesi-g03-2022\\product-metadata.xml",
+          "bytes": 52943
+        },
+        {
+          "path": "south_sulawesi-g03-2022\\qa-candidate-00-SCL.tif",
+          "bytes": 9569
+        },
+        {
+          "path": "south_sulawesi-g03-2022\\raw-B02.tif",
+          "bytes": 1467769
+        },
+        {
+          "path": "south_sulawesi-g03-2022\\raw-esri_io.tif",
+          "bytes": 97357
+        },
+        {
+          "path": "south_sulawesi-g03-2022\\stac-item.json",
+          "bytes": 22340
+        },
+        {
+          "path": "window-state.json",
+          "bytes": 219,
+          "text": "{\n  \"config_sha256\": \"eba08d75fedf67edba40a721bc7485ae99081a007c514037dbb47c987afcdabf\",\n  \"http_body_bytes\": 37748736,\n  \"cells\": {},\n  \"legacy_charged_bytes_preserved\": 0,\n  \"http_body_bytes_measured\": 4194304\n}"
+        }
+      ]
+    }
+  },
+  "ledger_stable_during_observation": true,
+  "stdout": "{\"status\": \"worker_started\", \"key\": \"parallel-v2-grid-esri_io-south_sulawesi-2021-g03\", \"thread\": 34516}\n{\"status\": \"worker_started\", \"key\": \"parallel-v2-grid-esri_io-south_sulawesi-2022-g03\", \"thread\": 30348}\n{\"status\": \"worker_finished\", \"key\": \"parallel-v2-grid-esri_io-south_sulawesi-2021-g03\", \"charged_bytes\": 1190529, \"new_patches\": 0, \"eligible_total\": 1111, \"rate_limited\": false}\n",
+  "stderr": "",
+  "network_requests_by_observer": 0,
+  "source_files_written_by_observer": 0,
+  "request_spacing_scope": "Configured 2s spacing is retained in existing collector/service code; this filesystem observation is not packet-level timing measurement."
+}

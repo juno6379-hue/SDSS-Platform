@@ -1,5 +1,79 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-18 10:44 KST — 152–157 검증 마감과 후속 수집 지속
+
+이 항목은 아래의 초기 진행 기록을 갱신한다. 완료된 3회·6batch에서 신규64물리/42적격/나지 선언162픽셀을 확보했다. 최신 완료 관측은1464물리/1164적격/300부적격,train681/val233/test250,1200목표 부족36·셀당28 부족109다. 최초151 부족은 주·연도 셀별 합계이며151개 셀이 아니다. 기존1400행·이후1432행 canonical내용과 pending2 전액136314880B를 보존했다. 총 신규계상87636806B, 기존4GiB 한도 잔여2254269438B다. 2차 동자바2025 두 건은 COG 범위 오류 실패이며 정산을 수집성공으로 계산하지 않는다. 3차32행은 실제래스터·SHA·품질을 별도 검증해23적격/나지148픽셀을 확인했다.
+
+153 고정1400원본의 새후보는 반텐 동일장면16행을 제외해1384행/1106적격(639/217/250)이다. 실제QA239.188초·4335파일 SHA 확인·교차scene/sourcegroup/imageSHA 누출0을 검증했다. 나지4차단은 남아 학습미준비·독립정확도미검증이다. 이후42개 적격이 이 후보에 포함됐다고 표시하지 않는다.159는 별도1432원본을 고정하여 첫19개 적격을 포함한 다음 후보 실제QA 진행중이며 UI후보 pointer는 최종검증 전 교체하지 않는다.
+
+web_ui 실제 브라우저 응답01:41:01.686168Z에서1464/1164/300·목표36/셀109를 확인했다. 별도1106후보의 source불일치·차단4·미준비 경고, 콘솔오류0·가로넘침0·소스7SHA 동일이다. API8002 PID36400에 실제적용했고 catalog14행 SHA와 기존개발인증모드를 보존했다. 조회15.8384658초는 단일로컬관측이며 지연SLA가 아니다. 오래된 manifest는 기존native증거 재해시를 생략하되 미준비 상태를 유지한다. 관련backend48PASS5.326초, 격리된76949기준+소유7프런트 파일288PASS36.4999934초·120모듈build32.33초다. 초기fixture누락실패 로그를 보존했으며 공동Toolbox123모듈build와 구분한다.
+
+157 나지256표적은 로컬반텐2020/val 약한참조2411픽셀·inside1.0·1526개기존영상/SHA/기하 양성겹침0을 검증했으나 execution_supported=false다. pending/rawsupport footprint,scene veto/sharedclaim,실제선택B02 정렬,배타출력이 아직미연결이다. 실제표적Sentinel 수집이나 나지차단 해소로 표현하지 않는다. 다음 집행가드160은 대기열이며 별도 에이전트 실행을 확인하지 못했다.
+
+4차는 반텐2025 g01/g02 정확2건을 계획SHA4268eb34bcdb78d6c9efdc08b1c6020eaf0ad2f5ce8fb5e9bfe179dfd2f1d496로 검증해 PID22020 시작했다. 아직완료관측 전이며 새예산/기존pending환불/중복수집은 하지 않는다. 기존2worker·2초간격·최초429공유중단·3000상한·고정split·80%유효/95%주내 품질을 유지한다. 나지 기준은 split별0.5%·기여5패치(각256픽셀이상)·절대256픽셀이상·최대클래스90%다. 수집재고는 선언집계, 검증후보는 고정nativeQA, 운영등록승인은 별개다.
+
+관련설계/구현/API/사용법/시험근거/인계와 이해자료14개를 같은단위로 갱신한다. 전체프로젝트는 미완료이며 geoai-2 ACTIVE10분과 실제수집/159QA 실행상태를 구분한다. 다른채팅 Toolbox/App/PlatformShell 및159 WIP는 이번152–157 Git대상에서 제외한다. 실행중로그는 변경가능하므로 마감시점 복사본만 고정증거로 취급한다.
+
+근거: evidence/integration/priority-collection-round3-final-20261018.json,priority-collection-independent-round3-20261018.json,priority-ml-20261018-final-verification.json,collection-progress-ui-final1464-browser-20261018.json,priority-root-related-final-20261018.log,priority-frontend-isolated-tests-20261018.log,priority-frontend-isolated-build-20261018.log,priority-collection-round4-launch-20261018.json.
+
+## 10:39 KST 후속 — round3 종료·최신 화면 검증
+
+heartbeat_20261018_1035_audit.md를 먼저 확인한다. 현재1464/1164, 목표 부족36/셀109, 나지 새148픽셀이나 기여patch0이다. 기존pending/행 보존·잔여2254269438B. 모델검토 실제브라우저에서 현재1164와 게시고정후보1106/차단4/source불일치를 확인했다. 단일GET48초 지연은 원인 미확정이며 과거래스터 전체해시로 단정하지 않는다. API36400/Vite34484, 다음1432고정후보 runner39472 실행 중; 원본QA만1141/5차단 완료다. collector는10:38:47없음 관측으로 한정하고 다음 담당 실행을 먼저 확인한다. 기존개발 채팅이 소유한 source/collector/후보 게시를 중복하지 않는다. 전체개발/학습준비 미완료·10분 보고 유지.
+
+## 10:29 KST 독립 후속 감사
+
+10:29:39에는기존담당의round3wrapper33868/collector5892실행을추가확인했다.10:27collector없음은그이전관측이며현재로확대하지않는다.round3성과는미확정이며별도launch/종료증거를확인한다.중복수집시작금지.
+
+heartbeat_20261018_1025_audit.md를먼저확인한다. round2동자바는정산됐으나2source실패/패치증가0,현재1432/1141·셀부족132다.고정1400→1384후보의실제QA는1106적격/4차단으로완료됐고4335파일검증과Root출력9pin일치를확인했다.현재누계QA가아니다.10:28API candidateavailablefalse이므로기존담당의명시receipt게시·source/candidate/QA지문분리·실브라우저연결이후속이다.수집오류는earlyEsri라벨범위가능성이있지만실제실패header없어미확정이며B02만의오류로단정하지않는다.기존활성채팅이원인/다음계획을조사중이므로새collector/동일파일작업을중복하지않는다.독립증거는heartbeat-1025-*이며학습미실행·보고예약유지.
+
+## 2026-10-18 — 부족 주·연도 우선 수집·누출 제외 후보·UI 연계 (152–157)
+
+사용자는 셀당28 기준 부족151개와 나지 클래스를 우선 보완하고 동일scene 누출 제거·UI·관련 문서·이해자료·10분 보고를 함께 진행하도록 지시했다. 수집 담당은152 명시 planSHA·최대2batch 우선순위 entry를, ML은153 고정 최신 원본→새누출제외 후보를, web_ui는154 실제 현황/API 화면을 맡았다. Root는155 읽기전용 현황 계약·실제수집 실행·기존row/미정산예약 보존·통합시험을 맡고 이해 담당은156자료를 갱신한다. 다른 채팅의148–151 마감/Toolbox 작업과 소유파일을 분리한다.
+
+첫 우선수집은 남동술라웨시2024-g03/고론탈로2025-g03 정확2건이 정상정산됐다. 신규32물리/19적격으로 현재1432물리/1141적격/291부적격,train658/val233/test250이다. 셀 부족151→132,1200목표 부족59이며 추가 적격나지 선언량14픽셀은 나지차단 해소가 아니다. 기존1400행의 완전내용을 canonicalSHA로 대조해 보존했고 기존pending2의 전액136314880B·행내용을 보존했다. 신규계상44037837B/잔여2297868407B·429false·실행lock 정상해제를 확인했다. 첫 childstdout이 비어 있어 원장/sourcehistory/windowstate를 실행근거로 사용하고 다음 실행에는 stdout/stderr 전달을 명시했다. 새 예산을 추가하거나 중단예약을 환불하지 않았다.
+
+두 번째는 같은 예산·coordinator로 동자바2025-g01/g02 최대2건을 명시 시작했다. 이후 수치는 결과관측으로 확인하며 시작을 완료로 세지 않는다. 우선실행은 매번 계획SHA와 원본목록/원장 snapshot을 재검산하고 drift이면 reserve/HTTP 전에 차단한다. 기존2worker·공유2초간격·최초429공유중단·물리3000상한·고정split·최종80%유효/95%주내·클래스0.5%/기여5패치/256픽셀·지배90%를 유지한다.
+
+ML은1432이전의1400행 원본SHA9211524656d92f0fcfcdf11f2ec382965e3aeacbc7f80da5b02f4f59784df1e7를 별도로 고정했다. 실제 sourceQA230.906초·적격1122·차단5를 확인하고, 반텐16행을 제외한 새candidate1384행/적격1106(639/217/250)의 metadata검산·staging을 완료했다. 현재후보실제QA는진행중이며 전체학습준비/과학정확도/운영승인으로 표현하지 않는다. 기존1095후보·원본/분할/모델은 보존하고 새 수집 이후 원본과 이 고정 cohort를 구분한다.
+
+154는 기존 collection-status GET에 원본1432/1141/291·목표59/셀132·나지/누출을 연결했고 실제catalog·모델검토 브라우저로 확인했다. 후보는 최종고정 QA receipt발행 전 미제공으로 표시한다. 집중8PASS1.1917267초·전체front288PASS는 당시코드범위·최종build123모듈41.81초이며 Toolbox병렬변경과 스코프를 구분한다.155 API관련최종14PASS1.002초·우선/회복관련30PASS1.901초·확대관련47PASS11.479초다. Root는API8002를PID8564로 재적용하고 health200·catalog14행SHA동일/token변경0을 확인했다. helper 최초 /health404는 경로오류로 보존하고 실제 /api/health로 검증했다.
+
+157은 실행을 허용하는 우회가 아닌 새256표적계획 검증기다. 합성8PASS6.799초, 실제반텐2020/val의 code8=2411픽셀·inside1.0 및 고정목록1526개 영상/원본창 SHA/header 양성겹침0을110.0058014초에 확인했다. source1400이후 별도1432시점SHA7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe와 과거proposal cdc를 혼동하지 않는다. pending/rawsupport footprint·source scene veto/sharedclaim·실제선택B02기하·배타출력 보호가 미연결이므로 LOCAL_TARGETS_VERIFIED_EXECUTION_BLOCKED/execution_supported=false다. HTTP/실제Sentinel확보0이며 나지자료 보완완료가 아니다.
+
+다음은 실행중2차 정산→새고정후보 실제QA/파일보존→UI후보지문/시점 비교→157의남은집행가드연결이다. 기존centers16확장이나 다른후보선택은 laneB기존창과의 실제기하중복검사 없이 실행하지 않는다. 전체프로젝트/151패치/나지목표는미완료이며 보고예약geoai-2 ACTIVE/10분과 실제수집·학습상태를 구분한다.
+
+근거: docs/implementation/152_priority_collection.md,153_priority_collection_split_candidate_qa.md,154_collection_progress_ui.md,155_collection_priority_status_contract.md,157_targeted_bare_plan.md 및 evidence/integration/priority-collection-*,priority-ml-*,priority-status-*,collection-progress-ui-*,targeted-bare-plan-*.
+
+## 2026-10-18 10:24 KST — GeoAI Toolbox 화면 개선 인계
+
+Toolbox 메인은 사용자 참조에 따라 이미지 카드6개·지도·워크플로우·LCLUC 참조미리보기·우측현황/빠른이동으로 적용됐다. 실제 http://127.0.0.1:5174/#/view/12 에서 확인했다. 기존 상세5파일 SHA불변, frontend293PASS/build성공,6카드각상세·지도·카탈로그·모바일검증완료. 구현/API/한계/근거는 toolbox_visual_hub_20261018.md, 쉬운해설·대본·FAQ는 ../understanding/06_toolbox_visual_hub_20261018.md, 증거는 toolbox-ui-final-20261018.json을 참조한다. 새 컴포넌트4파일과 App/PlatformShell의 좁은 연결만 변경했다. 화면참조이미지와 실제결과, 구현여부와 운영승인을 구분한다. API재시작/수집/Registry쓰기0이다.
+
+다른 활성 개발채팅의 collection priority/status·ML candidate 파일을 편집하거나 함께 stage하지 않는다. 이 화면개선 완료를 전체프로젝트 완료로 간주하지 않고 기존10분 보고를 유지한다. 다음은 해당병렬담당의 실제후보QA/수집진행 후속을 계속 확인한다.
+
+## 2026-10-18 09:52 KST — 147 확정·제한 수집 재개·학습자료 조사 (148–151)
+
+147은 commit76949f6으로 이미마감됐고web_ui가6개SHA/이해자료/실브라우저현상태를독립대조했다. 현재frontend5174만실행·API offline이며기존인증설정재사용위치미확인으로API시작은후속이다.147과거합성브라우저PASS와현재서비스가용성을구분한다(150).
+
+148 opt-in --continue-unrelated-pending은configSHA같은기존pending2만제외하고전액예약136314880B·부분파일·동일globalledger·기본차단을보존한다. Root집중7PASS/1.962초·담당7PASS/1.302초·handover독립구문/경계검토완료,전체backend실행중. Root는data/collection-continuation-backup-20261018에원장/aggregate/run/plan4개SHA대조사본과원본emptyexecution.lock을보관하고중복프로세스재확인후09:52:13KST PID532로신규남술라웨시2021/2022-g03만--max-batches2 실제시작했다. worker_started각1·신규예약정확2·기존pending/부분파일/candidate/catalog/historical2불변을독립확인했다. 아직완료증거없다. 이스크립트는일회용이며재실행하지말고PID·stdout/stderr·ledger부터확인한다. 중단된반텐2023/서자바2023자체의정산/재시도/환불은0이다.
+
+Windows비정상종료/10월17일재부팅은검증됐으나6008의종료시각16:53:55와부분파일17:04가충돌해collector직접원인/시각은미확정이다. 남은lock+pending재실행거부가자동재개를막았다.149 ML담당은기존원본1111/차단5와이미누출제외후보1095/차단4를구분해실제rasterQA재검사중이다. 로컬반텐라벨17개에서작은bare창10개를발견했지만연도/겹침포함이며기존1024창확대중복으로즉시수집가능후보가아니다. 다음실질작업은256표적창의중복/연도/공유예산수집연결이다.
+
+151 안내문에147마감·중단수집·나지절대픽셀/기여패치/비율·지역연도151계획부족을쉽게설명했다. 이해담당은완료코드·증거로관련설명/대본/FAQ/INDEX/변경이력갱신중. 다음단계는현재단일bounded2의완료/오류·oldpending보존·새누계·전체backend결과·실제MLQA를확정하고공통문서/이해자료/Git을마감하는것이다. 실행중작업중복배정금지. geoai-2는기존10분ACTIVE를이채팅01a14c70-71a9-7e80-b326-dfbba5a958d6으로연결했다. 전체개발미완료.
+
+### 10:01 KST 현재 인계 보강
+
+PID532제한수집은정상종료·lock해제됐다. 신규2021은다양성보류0패치·2022는16생성/11적격,최종1400물리/1122적격/278부적격·639/233/250이다.19548647B추가계상/잔여2341906244B이며oldpending2전액136314880B/부분파일/기존settled/candidate/catalog/historical2/backup4원바이트보존을독립확인했다. 신규나지는0픽셀이라bare보완성과아님. ML최초QA는병렬수집에의한부모aggregate/ledger pin변경으로미확정종료해실패보존했고,고정1095candidate/정책/실파일·backupsource 기준재QA1회중이다(신규16반영QA아님).
+
+API조건부보류는Root가코드의기존localhost개발모드를확인해수정했다. tokenunset설정·인증코드유지,명시data root·loopback8002/no reload PID33956복원,frontend도loopback5174이며실제GET/브라우저/catalog검산은web_ui마무리중이다. 전체backend/재QA최종값·이해자료·Git을닫은뒤다음은256표적창수집입력과중복/scene분리·공유예산연결이다. 해당기능은아직PLANNED이며기존1024계약을무검증완화하거나수집성과로표현하지말것. 실행프로세스/채팅/agent를재확인후배정하고10분보고계속.
+
+### 10:08 KST 최종 검증·다음 작업
+
+전체backend1452건/1450PASS/2SKIP/1046.064초/exit0,SKIP2는Windows실제symlink권한제한이다. 고정1095후보QA296.625초·4차단·13필드동일과4285파일재해시28.188초/불일치0을확정했다(신규1122후보QA아님). API8002PID33956/프론트5174PID34484의loopback복원·GET200·실브라우저연결/147빈IDdisabled·catalog14SHA보존·POST0을확인했다. 증거collection-resume-closeout-20261018.json.148–151관련문서/공통인계·이해자료11개갱신,현재수집은정상bounded종료·학습미실행이다. 기존pending2복구완료로말하지말것. 다음152 RFC를읽고명시256나지표적창계획→실제consumer연결부터구현하며현재진행agent/프로세스/채팅을먼저확인한다. 무제한일반수집재시작·기존1024중복검사완화·준비도gate우회금지. 10분예약은이채팅ACTIVE로유지한다.
+
+### 공유 편집 주의 — 다음 실행 전에 확인
+
+10:09 다른개발채팅「이어서작업할내용찾기」에서priority-deficit우선수집·새ML후보·현황UI가실행중임을확인했다. 현재공유collector/backend collection_status/frontend CollectionStatus·ModelReview의그후속변경은이번148시험버전과구분한다. Root는main/공유index/workingtree를건드리지않는별도index와 codex/collection-resume-20261018 브랜치로확정32행collector판본/문서/증거를기록한다. baseline rawSHA일치를확인한버전의1452시험근거이며공유후속버전전체PASS가아니다. 동시작업이끝나기전에같은파일을다시배정하거나새수집기를시작하지말것.152는설계만완료PLANNED이고다음구현은기존진행담당/경로와조정해선택한다.
+
 ## 2026-10-18 — GeoLLM 근거 화면의 고정 local Workflow 보고서 조회 (147)
 
 UI 담당은 GeoQuery evidence 탭에 명시 Workflow ID 조회와 요약·수동 지도/전이행렬 검토를 연결했다. 독립 담당은 기존116 인증 GET과 실제 Temp CPU fixture를, Root는 관련 backend·전체 frontend/build·실제 브라우저·운영 보존·공통 인계·Git을 맡았다. 이해 담당은 완료 코드와 증거를 읽고 설명·대본·FAQ·INDEX·변경 이력14개를 갱신했다. 실제 운영 수집·학습 재개와 ACTIVE/10분 보고 예약은 구분한다.
@@ -1899,3 +1973,12 @@ python scripts/run_experiment.py --manifest data/first-group-training-esri-v1/an
 - Animate/Swipe: docs/21_Animate_Swipe_개발기록.md, frontend/src/TemporalCompare.tsx
 - tests are under tests/; previous PASS is historical evidence, not a new run.
 
+
+### 2026-10-18 10:25 KST — 두 번째 우선 수집 종료
+
+동자바2025-g01/g02 두 건은 종료·정산됐지만 AOI 중심점이 COG 범위 밖이라는 payload_or_response_contract 오류로 신규패치0이다. 정상정산을 자료확보 성공으로 세지 않는다. 추가계상1325635B·잔여2296542772B·429false, 누계1432/1141/291 및 부족132는 유지한다. 원래1400행/기존pending2전액136314880B 보존을 다시 확인했다. stdout 전달 보강으로 worker시작/종료각2를 관측했다. 실패범위검사를 완화하거나 같은settled실패를 자동재시도하지 않는다. 근거: evidence/integration/priority-collection-round2-final-20261018.json 및 priority-collection-round2-live-20261018-stdout.log. 새누출제외후보 실제QA와 나지집행가드 연결은 계속 진행한다.
+
+
+### 159 후속 후보 QA 완료 — 2026-10-18 10:48 KST
+
+PLANNED→VERIFIED_REAL(고정 원본의 파일/래스터 검사 범위):1432행 시점 원본의 새후보는 반텐16행을 제외해1416행/1125적격(train658/val217/test250)이다. sourceQA164.672초·candidateQA216.0초·별도4435파일 SHA10.328초 검사에서 불일치0·source identity 교차분할0을 확인했다. 나지1432/209/1025픽셀·기여0/0/0·차단4·학습미준비/독립정확도미검증은 유지된다. 부가 connectivity 진단은1001820쌍이 기존100만cap을 넘어 NOT_CAPTURED_BUDGET이며 가드를 완화하지 않았다. 최신1464 원본의 나머지23적격은 포함하지 않는다. UI pointer는 아직검증된153의1106후보를 표시한다.1125후보의 API/UI 승계는 다음작업이며 실제화면 반영완료로 표현하지 않는다. 근거:docs/implementation/159_next_collection_candidate_qa.md,evidence/integration/priority-ml-next-20261018-summary.json,priority-ml-next-20261018-final-verification.json.

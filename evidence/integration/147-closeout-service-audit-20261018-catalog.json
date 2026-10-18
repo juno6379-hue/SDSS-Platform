@@ -1,0 +1,59 @@
+{
+  "observed_at": "2026-10-18T09:47:12.222248+09:00",
+  "head": "76949f650123653f30841507feebc7678aaea151",
+  "catalog_read_only": true,
+  "store_or_main_imported": false,
+  "catalog_counts": {
+    "analyses": 3,
+    "datasets": 6,
+    "gmais_idempotency": 2,
+    "gmais_jobs": 2,
+    "models": 1
+  },
+  "jobs": [],
+  "would_recover_jobs": [],
+  "db_sha256_before": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+  "db_sha256_after": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+  "canonical_records_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "frontend_source_checks": [
+    {
+      "path": "frontend/src/GeoQuery.tsx",
+      "actual_sha256": "4a1edeff18dea8dae46b7a5a75798bde11ea33b85abf6cf8a33048f2f570de6a",
+      "expected_sha256": "4a1edeff18dea8dae46b7a5a75798bde11ea33b85abf6cf8a33048f2f570de6a",
+      "matches": true
+    },
+    {
+      "path": "frontend/src/GeoWorkflowEvidence.tsx",
+      "actual_sha256": "453a37673bb8172d2f083a02f4e2ce25807ad8ae750577745ab7f467742de755",
+      "expected_sha256": "453a37673bb8172d2f083a02f4e2ce25807ad8ae750577745ab7f467742de755",
+      "matches": true
+    },
+    {
+      "path": "frontend/src/geollmWorkflowEvidenceAdapter.ts",
+      "actual_sha256": "cb621faacbc09c1f580fb65ac6e8f5603569e01403672455bf296fcba4a02f96",
+      "expected_sha256": "cb621faacbc09c1f580fb65ac6e8f5603569e01403672455bf296fcba4a02f96",
+      "matches": true
+    },
+    {
+      "path": "frontend/src/geollmWorkflowEvidenceClient.ts",
+      "actual_sha256": "0acffcb838326b12f0d642e86877cf09519a02d7fa4d359c0b48c79afd85f967",
+      "expected_sha256": "0acffcb838326b12f0d642e86877cf09519a02d7fa4d359c0b48c79afd85f967",
+      "matches": true
+    },
+    {
+      "path": "frontend/src/geollm-workflow-evidence.css",
+      "actual_sha256": "a9c2e5179845b314117c7f5d75e0de1ae2148449c0606502def5151f9e0887c0",
+      "expected_sha256": "a9c2e5179845b314117c7f5d75e0de1ae2148449c0606502def5151f9e0887c0",
+      "matches": true
+    },
+    {
+      "path": "frontend/src/geollmWorkflowEvidenceAdapter.test.mjs",
+      "actual_sha256": "4f7a31fa6792906b4ba37a0d2bbb2214537fd0de40d182745d49709add481a2d",
+      "expected_sha256": "4f7a31fa6792906b4ba37a0d2bbb2214537fd0de40d182745d49709add481a2d",
+      "matches": true
+    }
+  ],
+  "api_token_process_configured": false,
+  "data_root_process_configured": false,
+  "protected_operating_mutations": 0
+}

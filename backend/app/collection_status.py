@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+from .collection_priority_status import collection_targets, candidate_quality
 
 _HASH_CACHE = {}
 
@@ -156,17 +157,18 @@ def collection_status(data_root):
     integrity_status = 'not_checked'
     evidence_matched = False
     evidence = readiness.get('input_manifests', []) + readiness.get('verified_files', [])
-    if readiness.get('input_manifests') and readiness.get('verified_files'):
+    manifest_matches_current = not current_path.exists()
+    if current_sha:
+        manifest_matches_current = any(local_file(entry.get('path'), root) == current_path and
+            entry.get('sha256') == current_sha for entry in readiness.get('input_manifests', []))
+    # A stale manifest already fails freshness; do not hash its entire raster set.
+    if manifest_matches_current and readiness.get('input_manifests') and readiness.get('verified_files'):
         try:
             evidence_matched = all((path := local_file(entry.get('path'), root)) is not None and
                                    same_hash(path, entry.get('sha256')) for entry in evidence)
         except OSError:
             evidence_matched = False
     # 과거 입력이 아직 남아 있더라도 현재 합산 manifest를 검사한 근거가 없으면 최신 검증으로 보지 않는다.
-    manifest_matches_current = not current_path.exists()
-    if current_sha:
-        manifest_matches_current = any(local_file(entry.get('path'), root) == current_path and
-            entry.get('sha256') == current_sha for entry in readiness.get('input_manifests', []))
     evidence_matched = evidence_matched and manifest_matches_current
     freshness = 'current' if evidence_matched else ('stale_or_missing' if readiness else 'missing')
     if readiness:
@@ -217,6 +219,8 @@ def collection_status(data_root):
             'evaluation_kind': readiness.get('evaluation_kind'), 'scientific_accuracy_validated': False},
         'latest_run': latest_run, 'full_reference': full_reference, 'blocked_reasons': blockers,
         'patch_inventory': patch_inventory,
+        'collection_targets': collection_targets(current_manifest, current_sha),
+        'candidate_quality': candidate_quality(root, current_sha, same_hash),
         'limitations': ['실제 파일 존재와 독립 정확도 검증을 구분', '예약 예산은 실제 수신량이 아님',
                         '부분 창을 주 전체나 전체 장면 확보로 계산하지 않음'],
         'unreadable_reports': errors}

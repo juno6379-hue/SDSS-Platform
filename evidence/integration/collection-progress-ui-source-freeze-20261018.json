@@ -1,0 +1,45 @@
+{
+  "scope": "collection progress UI source freeze; candidate browser follow-up pending",
+  "files": {
+    "frontend/src/CollectionProgress.tsx": "2dc92ee86e96e78cbdc47863596e2c57f3fbaa18c548328a3ec6663116c3e7d0",
+    "frontend/src/collectionProgressAdapter.ts": "f209f66d7ef07b5f5b9013f71b345fe351a8fe49474a1e75d0b3552214a9716f",
+    "frontend/src/collectionProgressClient.ts": "015500db7f4f1d61b6d478eef1bf24b58902683f614c0aede45150e4f421cacb",
+    "frontend/src/collection-progress.css": "fdc05a6708fcff9e62ca61073319d993e5c6563416532f6b3aa696333fb40fbb",
+    "frontend/src/collectionProgressAdapter.test.mjs": "8d79294242f89e55a39a74a273284cf888329cd2ac8a82f5ee0f5cd1d18d9516",
+    "frontend/src/CollectionStatus.tsx": "80b4a1aef652c3e2ebb77e1b07ce602b23b4a5828c3166ffd74dc79370798d10",
+    "frontend/src/ModelReview.tsx": "f172c6693b45f2cde13c00c5487580a694607e9a632bea11d6e4d908d15f64d1"
+  },
+  "focused": {
+    "tests": 8,
+    "passed": 8,
+    "skipped": 0,
+    "seconds": 1.1917267
+  },
+  "frontend_history": {
+    "passed": 288,
+    "seconds": 43.7817264
+  },
+  "build": {
+    "modules": 123,
+    "seconds": 41.81
+  },
+  "browser": {
+    "url": "http://127.0.0.1:5174/#/view/10",
+    "physical": 1432,
+    "eligible": 1141,
+    "ineligible": 291,
+    "target_gap": 59,
+    "cell_gap": 132,
+    "source_manifest_sha256": "4edb8f513e804c1bd6559d82d61395769fa628b54a580a9de275a0fb370b5bac",
+    "recorded_at": "2026-10-18T01:20:17.587761+00:00",
+    "horizontal_overflow": 0,
+    "console_error_warning_count": 0,
+    "candidate_available": false
+  },
+  "limitations": [
+    "candidate live available branch pending pointer publication",
+    "mobile not checked",
+    "browser forced-delay/auth failure not reproduced; unit tests separate"
+  ],
+  "ui_operating_writes": 0
+}

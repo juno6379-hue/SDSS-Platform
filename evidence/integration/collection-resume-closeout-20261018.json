@@ -1,0 +1,76 @@
+{
+  "observed_at": "2026-10-18T10:07:55.195791+09:00",
+  "source_parent_commit": "76949f650123653f30841507feebc7678aaea151",
+  "source_change": "scripts/collect_training_parallel.py explicit unrelated-pending queue filter only",
+  "full_backend": {
+    "total": 1452,
+    "passed": 1450,
+    "skipped": 2,
+    "seconds": 1046.064,
+    "log": "evidence\\integration\\collection-resume-root-full-20261018.log",
+    "log_sha256": "a3c05360896c53a94984ef32aaced2362e59d0770e34a257b6b160d5ddfda58c"
+  },
+  "root_focused": {
+    "passed": 7,
+    "seconds": 1.962,
+    "scope": "SYNTHETIC_TEMP_LEDGER_NO_NETWORK"
+  },
+  "live_collection": {
+    "physical": 1400,
+    "eligible": 1122,
+    "new_physical": 16,
+    "new_eligible": 11,
+    "new_bare_pixels": 0,
+    "new_charged_bytes": 19548647,
+    "remaining_new_budget_bytes": 2341906244,
+    "old_pending_count": 2,
+    "old_pending_reserved_bytes_preserved": 136314880,
+    "old_pending_retry_or_settlement": false,
+    "old_pending_refund_bytes": 0,
+    "bounded_submitted_and_finalized": 2,
+    "execution_lock_exists_after": false
+  },
+  "frozen_candidate": {
+    "eligible": {
+      "train": 628,
+      "val": 217,
+      "test": 250
+    },
+    "blocker_count": 4,
+    "seconds": 296.625,
+    "actual_post_QA_file_rehashes": 4285,
+    "mismatches": 0,
+    "new_collection_included": false,
+    "first_mutable_parent_stability_failure_preserved": true
+  },
+  "service": {
+    "api": "http://127.0.0.1:8002",
+    "frontend": "http://127.0.0.1:5174",
+    "mode": "EXISTING_LOCALHOST_DEVELOPMENT_TOKEN_UNSET",
+    "catalog_unchanged": true,
+    "new_POST_requests": 0,
+    "new_operating_workflow_report_GET": 0
+  },
+  "reporting": {
+    "automation_id": "geoai-2",
+    "active": true,
+    "interval_minutes": 10,
+    "target_thread_id": "01a14c70-71a9-7e80-b326-dfbba5a958d6"
+  },
+  "documents": [
+    "148_collection_resume_audit.md",
+    "149_training_data_remediation_audit.md",
+    "150_service_recovery_audit.md",
+    "151_development_resume_runbook.md"
+  ],
+  "understanding_documents_updated": 11,
+  "not_achieved": [
+    "old_pending_terminal_recovery",
+    "bare_class_remediation",
+    "new_1122_candidate_QA",
+    "independent_ground_truth",
+    "operating_training_or_model_approval",
+    "whole_project_completion"
+  ],
+  "next_internal_work": "Explicit 256 target planning/collection with geometry, overlap/scene separation and shared budget gates."
+}

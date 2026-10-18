@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "kind": "EVIDENCE_SPLIT_CANDIDATE_RECEIPT",
+  "status": "METADATA_ROUNDTRIP_VERIFIED",
+  "candidate_status": "PLANNED_DERIVED_CANDIDATE",
+  "readiness_status": "BLOCKED",
+  "scope": "PINNED_JSON_METADATA_ONLY_NOT_RASTER_READINESS",
+  "inputs": {
+    "source": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\priority-ml-next-snapshot-20261018\\annual-window-report.json",
+      "sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+      "bytes": 55742976
+    },
+    "readiness": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\priority-ml-next-snapshot-20261018\\readiness.json",
+      "sha256": "85e4565749818209ebbaaa5f762ebfdf24d8096c78b786c169cdf6c1a42546de",
+      "bytes": 1155441
+    },
+    "saved_plan": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\priority-ml-next-20261018-split-plan.json",
+      "sha256": "3c9b1511ce2f70c1cda986f899bcae3c53fb86f5ca0ae38c1f9072338d85ec5c",
+      "bytes": 22843
+    }
+  },
+  "outputs": {
+    "plan": {
+      "name": "plan.json",
+      "sha256": "3c9b1511ce2f70c1cda986f899bcae3c53fb86f5ca0ae38c1f9072338d85ec5c",
+      "bytes": 22843
+    },
+    "candidate": {
+      "name": "candidate.json",
+      "sha256": "d8dad13a22278a8cdddfeb56f7fb746e2d51523b01ac866689dde2018a48b01c",
+      "bytes": 55122580
+    }
+  },
+  "derived_manifest_version": "split-repair-v1-62f898b41636a854",
+  "fixed_province_splits": {
+    "south_sulawesi": "train",
+    "gorontalo": "train",
+    "southeast_sulawesi": "train",
+    "east_java": "train",
+    "banten": "val",
+    "west_java": "test"
+  },
+  "source_row_count": 1432,
+  "candidate_row_count": 1416,
+  "excluded_source_row_count": 16,
+  "projected_after": {
+    "eligible_patches_by_split": {
+      "test": 250,
+      "val": 217,
+      "train": 658
+    },
+    "eligible_total": 1125,
+    "eligible_by_province_year": {
+      "banten/2020": 53,
+      "banten/2021": 42,
+      "banten/2022": 51,
+      "banten/2023": 32,
+      "banten/2024": 23,
+      "banten/2025": 16,
+      "east_java/2020": 23,
+      "east_java/2021": 16,
+      "east_java/2022": 34,
+      "east_java/2023": 28,
+      "east_java/2024": 16,
+      "east_java/2025": 14,
+      "gorontalo/2020": 46,
+      "gorontalo/2021": 31,
+      "gorontalo/2022": 14,
+      "gorontalo/2023": 30,
+      "gorontalo/2024": 25,
+      "gorontalo/2025": 18,
+      "south_sulawesi/2020": 53,
+      "south_sulawesi/2021": 32,
+      "south_sulawesi/2022": 40,
+      "south_sulawesi/2023": 36,
+      "south_sulawesi/2024": 36,
+      "south_sulawesi/2025": 30,
+      "southeast_sulawesi/2020": 41,
+      "southeast_sulawesi/2021": 18,
+      "southeast_sulawesi/2022": 26,
+      "southeast_sulawesi/2023": 18,
+      "southeast_sulawesi/2024": 10,
+      "southeast_sulawesi/2025": 23,
+      "west_java/2020": 57,
+      "west_java/2021": 41,
+      "west_java/2022": 56,
+      "west_java/2023": 32,
+      "west_java/2024": 32,
+      "west_java/2025": 32
+    }
+  },
+  "metadata_integrity_verified": true,
+  "raster_readiness_rechecked": false,
+  "source_rows_modified_or_reassigned": false,
+  "executed": false,
+  "learning_ready": false,
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "source_authenticity_verified": false,
+  "exact_row_binding_verified": false,
+  "spatial_overlap_rechecked": false,
+  "exact_class_counts_recomputed": false,
+  "training_split_leakage_resolved": false,
+  "execution_authorized": false,
+  "registry_called": false,
+  "settlement_authorized": false,
+  "automatic_resume_allowed": false,
+  "proposed_refund_bytes": 0,
+  "exactly_once_applied": "UNKNOWN",
+  "completion_contract": "Receipt requires strict schema and output SHA verification; absent or invalid receipt means incomplete. Final stability check immediately precedes exclusive receipt write; no atomic multi-file snapshot guarantee."
+}

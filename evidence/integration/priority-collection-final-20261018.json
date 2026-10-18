@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-18T01:16:57.781228+00:00",
+  "status": "SETTLED",
+  "manifest_sha256": "fd00a2c0847f5b2678ceea5966d33f3fd1153bc2fbe4b7e6f0fd125babc70c71",
+  "physical_total": 1432,
+  "eligible_total": 1141,
+  "cell_gap_total": 132,
+  "new_physical": 32,
+  "new_eligible": 19,
+  "new_bare_declared_pixels": 14,
+  "old_rows_unchanged": true,
+  "old_pending_rows_unchanged": true,
+  "old_pending_reserved_bytes": 136314880,
+  "selected_ledger_rows": {
+    "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 21291946,
+      "config_sha256": "c8e80c7ddb7fed2f96930a521e5d1029541a32261ca103057737db40c90c1048",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-gorontalo-2025-g03": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 22745891,
+      "config_sha256": "d1c263064037b849069472f8439edbb8d2c0fc6c2a566c55a2eac9d44baa6984",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g03\\annual-window-report.json"
+    }
+  },
+  "new_charged_total": 1997098889,
+  "charged_delta_from_launch": 44037837,
+  "remaining_budget": 2297868407,
+  "rate_limit_active": false,
+  "execution_lock_present": false,
+  "scientific_accuracy_validated": false,
+  "learning_ready": false,
+  "observation_limit": "Sequential reads, not atomic OS snapshot. Stored quality counts, not a new native raster QA. Child stdout is empty; source history/state and central ledger are execution evidence."
+}

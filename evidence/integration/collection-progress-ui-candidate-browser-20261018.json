@@ -1,0 +1,67 @@
+{
+  "scope": "VERIFIED_REAL UI read from live 5174 to 8002; no fixture server",
+  "source_sha256": {
+    "frontend/src/CollectionProgress.tsx": "2dc92ee86e96e78cbdc47863596e2c57f3fbaa18c548328a3ec6663116c3e7d0",
+    "frontend/src/collectionProgressAdapter.ts": "f209f66d7ef07b5f5b9013f71b345fe351a8fe49474a1e75d0b3552214a9716f",
+    "frontend/src/collectionProgressClient.ts": "015500db7f4f1d61b6d478eef1bf24b58902683f614c0aede45150e4f421cacb",
+    "frontend/src/collection-progress.css": "fdc05a6708fcff9e62ca61073319d993e5c6563416532f6b3aa696333fb40fbb",
+    "frontend/src/collectionProgressAdapter.test.mjs": "8d79294242f89e55a39a74a273284cf888329cd2ac8a82f5ee0f5cd1d18d9516",
+    "frontend/src/CollectionStatus.tsx": "80b4a1aef652c3e2ebb77e1b07ce602b23b4a5828c3166ffd74dc79370798d10",
+    "frontend/src/ModelReview.tsx": "f172c6693b45f2cde13c00c5487580a694607e9a632bea11d6e4d908d15f64d1"
+  },
+  "source_mismatches": [],
+  "url": "http://127.0.0.1:5174/#/view/17",
+  "raw": {
+    "physical": 1432,
+    "eligible": 1141,
+    "ineligible": 291,
+    "by_split": {
+      "train": 658,
+      "val": 233,
+      "test": 250
+    },
+    "target_gap": 59,
+    "cell_gap": 132,
+    "manifest_sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+    "response_recorded_at": "2026-10-18T01:31:51.731994+00:00"
+  },
+  "candidate": {
+    "eligible": 1106,
+    "by_split": {
+      "train": 639,
+      "val": 217,
+      "test": 250
+    },
+    "blockers": 4,
+    "ready_for_training": false,
+    "source_matches_current_manifest": false,
+    "source_manifest_sha256": "9211524656d92f0fcfcdf11f2ec382965e3aeacbc7f80da5b02f4f59784df1e7",
+    "recorded_at": "2026-10-18T01:29:17.721777+00:00",
+    "scene_split_conflicts": 0
+  },
+  "checks": {
+    "available_candidate_actual_display": true,
+    "manual_refresh_then_old_result_cleared": true,
+    "manual_refresh_completed": true,
+    "current_and_fixed_cohort_separate": true,
+    "source_mismatch_warning": true,
+    "four_blockers_not_ready": true,
+    "raw_bare_not_candidate_QA": true,
+    "no_science_or_approval_claim": true,
+    "horizontal_overflow_px": 0,
+    "console_error_warning_count": 0
+  },
+  "ui_operating_writes": 0,
+  "limitations": [
+    "mobile not checked",
+    "browser forced-delay/auth error not reproduced; unit tests separate",
+    "first candidate GET showed multi-minute busy; no latency SLA",
+    "refresh-20261018.png is overscrolled viewport capture; use refresh-final image"
+  ],
+  "evidence": [
+    "collection-progress-ui-candidate-browser-dom-20261018.txt",
+    "collection-progress-ui-candidate-browser-20261018.png",
+    "collection-progress-ui-candidate-refresh-dom-20261018.txt",
+    "collection-progress-ui-candidate-refresh-final-20261018.png"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-18T01:35:17.560542+00:00",
+  "status": "SETTLED",
+  "manifest_sha256": "c57a1768a87fae7b0fd0c5ec8e451c439d35c65bf54d99f1f7b38dc98928e33e",
+  "physical_total": 1464,
+  "eligible_total": 1164,
+  "cell_gap_total": 109,
+  "new_physical": 32,
+  "new_eligible": 23,
+  "new_bare_declared_pixels": 148,
+  "old_rows_unchanged": true,
+  "old_pending_rows_unchanged": true,
+  "old_pending_reserved_bytes": 136314880,
+  "selected_ledger_rows": {
+    "parallel-v2-grid-esri_io-east_java-2025-g03": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 23103474,
+      "config_sha256": "ba727182a278e2ab0c45fc3e097a1af4e17cb59fca018a300819d24cf0710bac",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2025-g03\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-gorontalo-2022-g03": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 19169860,
+      "config_sha256": "9d5ff4eb798d32192561eb8e05ea5d2fd1c43c44620362b9efb23e72c0be305e",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2022-g03\\annual-window-report.json"
+    }
+  },
+  "new_charged_total": 2040697858,
+  "charged_delta_from_launch": 42273334,
+  "remaining_budget": 2254269438,
+  "rate_limit_active": false,
+  "execution_lock_present": false,
+  "scientific_accuracy_validated": false,
+  "learning_ready": false,
+  "observation_limit": "Sequential reads, not atomic OS snapshot. Stored quality counts, not a new native raster QA. Child stdout is forwarded; source history/state and central ledger are independent evidence."
+}

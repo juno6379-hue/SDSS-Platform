@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T10:27:54.040695+09:00",
+  "observations": [
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g01",
+      "scene_id": "S2B_MSIL2A_20250807T022529_R046_T49MHM_20250807T042835",
+      "year": "2025",
+      "status": "failed",
+      "candidate_selection_statuses": [
+        "eligible"
+      ],
+      "stac_saved": true,
+      "calibration_saved": true,
+      "source_crop_count": 0,
+      "label_first_preview_present": false,
+      "first_ref_source_host": "lulctimeseries.blob.core.windows.net",
+      "first_ref_source_path": "/lulctimeseriesv003/lc2025/49M_20250101-20251231.tif",
+      "query_and_fragment_emitted": false,
+      "error_category": "payload_or_response_contract",
+      "recorded_center_outside_COG": true,
+      "stage_inference": "SCL_CANDIDATE_SELECTED_AND_CALIBRATION_SAVED_THEN_EARLY_ESRI_LABEL_FETCH_BEFORE_FIRST_CROP",
+      "stage_is_explicit_runtime_field": false,
+      "inference_basis": "collector source ordering: label_first fetch precedes raw-esri crop and label_first_preview; no raw crops/preview survived",
+      "terminal_charged_bytes": 689213
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g02",
+      "scene_id": "S2C_MSIL2A_20250606T023551_R089_T49MEM_20250606T065914",
+      "year": "2025",
+      "status": "failed",
+      "candidate_selection_statuses": [
+        "eligible"
+      ],
+      "stac_saved": true,
+      "calibration_saved": true,
+      "source_crop_count": 0,
+      "label_first_preview_present": false,
+      "first_ref_source_host": "lulctimeseries.blob.core.windows.net",
+      "first_ref_source_path": "/lulctimeseriesv003/lc2025/49M_20250101-20251231.tif",
+      "query_and_fragment_emitted": false,
+      "error_category": "payload_or_response_contract",
+      "recorded_center_outside_COG": true,
+      "stage_inference": "SCL_CANDIDATE_SELECTED_AND_CALIBRATION_SAVED_THEN_EARLY_ESRI_LABEL_FETCH_BEFORE_FIRST_CROP",
+      "stage_is_explicit_runtime_field": false,
+      "inference_basis": "collector source ordering: label_first fetch precedes raw-esri crop and label_first_preview; no raw crops/preview survived",
+      "terminal_charged_bytes": 636422
+    }
+  ],
+  "collector_source_sha256": "a78d0293736780e70402b85714f38964c2ef09e1253cf7453e292ca9a2551c98",
+  "HTTP_requests": 0,
+  "collector_replayed": false,
+  "source_or_ledger_writes": 0,
+  "limits": [
+    "Stage is a saved-witness/source-order inference, not a newly instrumented runtime stage or network reproduction.",
+    "Public source hostname/path only; signed query/fragment not read out or written.",
+    "No bbox/COG center guard is relaxed; no retry or candidate expansion is performed."
+  ]
+}

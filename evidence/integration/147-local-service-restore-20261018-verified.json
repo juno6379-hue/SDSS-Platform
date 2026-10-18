@@ -1,0 +1,82 @@
+{
+  "observed_at": "2026-10-18T10:01:35.151860+09:00",
+  "pid": 33956,
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8002/healthz",
+      "status": 200,
+      "body": {
+        "status": "UP",
+        "scope": "local-platform-runtime"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8002/readyz",
+      "status": 200,
+      "body": {
+        "status": "UP",
+        "scope": "runtime-only",
+        "scientific_readiness": "not-implied"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8002/api/health",
+      "status": 200,
+      "body": {
+        "status": "ok",
+        "mode": "local-development",
+        "storage": "sqlite",
+        "dependencies": {
+          "torch": true,
+          "rasterio": true,
+          "pyproj": true,
+          "ee": false,
+          "mlflow": false
+        },
+        "authentication": "localhost-only; configure GEOAI_API_TOKEN for shared access"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5174/api/health",
+      "status": 200,
+      "body": {
+        "status": "ok",
+        "mode": "local-development",
+        "storage": "sqlite",
+        "dependencies": {
+          "torch": true,
+          "rasterio": true,
+          "pyproj": true,
+          "ee": false,
+          "mlflow": false
+        },
+        "authentication": "localhost-only; configure GEOAI_API_TOKEN for shared access"
+      }
+    }
+  ],
+  "catalog_before": {
+    "file_sha256": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "rows": 14,
+    "canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "legacy_jobs": 0
+  },
+  "catalog_after": {
+    "file_sha256": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+    "rows": 14,
+    "canonical_sha256": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+    "legacy_jobs": 0
+  },
+  "catalog_unchanged": true,
+  "request_methods_in_current_access_log": [
+    "GET"
+  ],
+  "POST_in_current_access_log": 0,
+  "browser_existing_tab_refresh": "LOCAL_ANALYSIS_SERVER_CONNECTED",
+  "browser_auth_or_token_changes": 0,
+  "authentication_mode": "EXISTING_LOCAL_DEVELOPMENT_TOKEN_UNSET_LOOPBACK_ONLY",
+  "scientific_or_training_readiness_implied": false
+}

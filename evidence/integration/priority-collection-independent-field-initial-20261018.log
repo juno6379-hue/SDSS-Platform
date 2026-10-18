@@ -1,0 +1,6 @@
+{"stage": "old_rows_and_pending_verified", "rows": 1432}
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\evidence\integration\priority-collection-independent-20261018.py", line 51, in <module>
+    path=Path(item[role+'_path']);raw=path.read_bytes()
+              ~~~~^^^^^^^^^^^^^^
+KeyError: 'quality_path'

@@ -1,0 +1,35 @@
+{
+  "observed_at": "2026-10-18T09:46:44.4607800+09:00",
+  "listeners": [
+    {
+      "LocalAddress": "::",
+      "LocalPort": 11434,
+      "OwningProcess": 27860
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 5174,
+      "OwningProcess": 34484
+    }
+  ],
+  "processes": [
+    {
+      "ProcessId": 27860,
+      "ParentProcessId": 27268,
+      "Name": "ollama.exe",
+      "CommandLine": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve"
+    },
+    {
+      "ProcessId": 34484,
+      "ParentProcessId": 37408,
+      "Name": "node.exe",
+      "CommandLine": "\"C:\\Program Files\\nodejs\\node.exe\" node_modules/vite/bin/vite.js --host 127.0.0.1 --port 5174 --strictPort"
+    }
+  ],
+  "api_token": {
+    "user_configured": false,
+    "process_configured": false,
+    "machine_configured": false
+  },
+  "explicit_data_root_configured": false
+}

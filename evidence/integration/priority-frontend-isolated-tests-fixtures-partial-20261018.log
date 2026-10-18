@@ -1,0 +1,1720 @@
+TAP version 13
+# Subtest: unit presentation preserves counts and converts only m² to ha
+ok 1 - unit presentation preserves counts and converts only m² to ha
+  ---
+  duration_ms: 157.5975
+  type: 'test'
+  ...
+# Subtest: actual report renders full9x9 pixels matrix, before rows, after columns and totals
+ok 2 - actual report renders full9x9 pixels matrix, before rows, after columns and totals
+  ---
+  duration_ms: 208.2497
+  type: 'test'
+  ...
+# Subtest: m² and ha use the real area matrix and net areas rather than relabeling pixels
+ok 3 - m² and ha use the real area matrix and net areas rather than relabeling pixels
+  ---
+  duration_ms: 678.5259
+  type: 'test'
+  ...
+# Subtest: unchanged pair shows diagonal counts, zero change and real class labels without another request
+ok 4 - unchanged pair shows diagonal counts, zero change and real class labels without another request
+  ---
+  duration_ms: 132.9049
+  type: 'test'
+  ...
+# Subtest: legend uses all actual names and ID stable palette; no invented classification names
+ok 5 - legend uses all actual names and ID stable palette; no invented classification names
+  ---
+  duration_ms: 96.2976
+  type: 'test'
+  ...
+# Subtest: duplicate actual names keep class IDs; HTML-looking names are escaped by React
+ok 6 - duplicate actual names keep class IDs; HTML-looking names are escaped by React
+  ---
+  duration_ms: 186.7085
+  type: 'test'
+  ...
+# Subtest: truncated vector warning remains separate from full raster transition statistics
+ok 7 - truncated vector warning remains separate from full raster transition statistics
+  ---
+  duration_ms: 179.7427
+  type: 'test'
+  ...
+# Subtest: matrix and class tables have captions, scoped row/column headings and keyboard scroll regions
+ok 8 - matrix and class tables have captions, scoped row/column headings and keyboard scroll regions
+  ---
+  duration_ms: 93.5048
+  type: 'test'
+  ...
+# Subtest: map stats gate is local-only, controls read eligibility, and uses to_class palette without changing118 fetch client
+ok 9 - map stats gate is local-only, controls read eligibility, and uses to_class palette without changing118 fetch client
+  ---
+  duration_ms: 4.8031
+  type: 'test'
+  ...
+# (node:35236) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: explicit stored pins and policy only, Unicode/padding preserve, no inferred version/default
+ok 10 - explicit stored pins and policy only, Unicode/padding preserve, no inferred version/default
+  ---
+  duration_ms: 4.3124
+  type: 'test'
+  ...
+# Subtest: strict raw JSON duplicate/float/bool/nonfinite/depth/string/surrogate and byte limits
+ok 11 - strict raw JSON duplicate/float/bool/nonfinite/depth/string/surrogate and byte limits
+  ---
+  duration_ms: 20.9748
+  type: 'test'
+  ...
+# Subtest: 2..6 sorted exact rows/refs and pair namespaces before transport
+ok 12 - 2..6 sorted exact rows/refs and pair namespaces before transport
+  ---
+  duration_ms: 15.1951
+  type: 'test'
+  ...
+# Subtest: canonical digest stable across property order and raw whitespace, pins/policy bound
+ok 13 - canonical digest stable across property order and raw whitespace, pins/policy bound
+  ---
+  duration_ms: 19.546
+  type: 'test'
+  ...
+# Subtest: MET/NOTMET counts and exact cross product; allzero zero-policy accepted only explicitly
+ok 14 - MET/NOTMET counts and exact cross product; allzero zero-policy accepted only explicitly
+  ---
+  duration_ms: 2.3406
+  type: 'test'
+  ...
+# Subtest: contaminated exact19/status/9false/digest/counts/sums/arithmetic/year/issue rejected
+ok 15 - contaminated exact19/status/9false/digest/counts/sums/arithmetic/year/issue rejected
+  ---
+  duration_ms: 1.9663
+  type: 'test'
+  ...
+# Subtest: SOURCE_BLOCKED safe waiting vs zero, INVALID422/OUTPUT503 consistency and fixed transport errors
+ok 16 - SOURCE_BLOCKED safe waiting vs zero, INVALID422/OUTPUT503 consistency and fixed transport errors
+  ---
+  duration_ms: 1.7447
+  type: 'test'
+  ...
+# Subtest: synchronous double-click one request and edit/model/route/unmount stale discarded
+ok 17 - synchronous double-click one request and edit/model/route/unmount stale discarded
+  ---
+  duration_ms: 49.8034
+  type: 'test'
+  ...
+# Subtest: client exact POST/Bearer/AbortSignal/no-store bounded copy and 401 safe ignore detail
+ok 18 - client exact POST/Bearer/AbortSignal/no-store bounded copy and 401 safe ignore detail
+  ---
+  duration_ms: 334.0071
+  type: 'test'
+  ...
+# Subtest: panel manual collapsed/blank policy/refs, model-unselected guidance and namespaced sibling; no execution call
+ok 19 - panel manual collapsed/blank policy/refs, model-unselected guidance and namespaced sibling; no execution call
+  ---
+  duration_ms: 3.374
+  type: 'test'
+  ...
+# Subtest: 수동 요청은4고정 SHA만 허용하고 bool·누락·latest·추가필드·대문자를 거부한다
+ok 20 - 수동 요청은4고정 SHA만 허용하고 bool·누락·latest·추가필드·대문자를 거부한다
+  ---
+  duration_ms: 9.5336
+  type: 'test'
+  ...
+# Subtest: 1111→1095와split628/233/250→628/217/250 및차단5→4·나지부족을분리한다
+ok 21 - 1111→1095와split628/233/250→628/217/250 및차단5→4·나지부족을분리한다
+  ---
+  duration_ms: 3.5391
+  type: 'test'
+  ...
+# Subtest: 요청4핀중하나라도다르거나 응답pins가누락·추가되면폐기한다
+ok 22 - 요청4핀중하나라도다르거나 응답pins가누락·추가되면폐기한다
+  ---
+  duration_ms: 1.2639
+  type: 'test'
+  ...
+# Subtest: 10개의승인·실행false는true·bool유사값·누락을허용하지않는다
+ok 23 - 10개의승인·실행false는true·bool유사값·누락을허용하지않는다
+  ---
+  duration_ms: 3.1251
+  type: 'test'
+  ...
+# Subtest: 알수없는scope/schema/status·원문detail/path같은추가필드는폐기한다
+ok 24 - 알수없는scope/schema/status·원문detail/path같은추가필드는폐기한다
+  ---
+  duration_ms: 1.0246
+  type: 'test'
+  ...
+# Subtest: 분할별typedint·3000상한·합계·10000차단상한을검사한다
+ok 25 - 분할별typedint·3000상한·합계·10000차단상한을검사한다
+  ---
+  duration_ms: 1.9519
+  type: 'test'
+  ...
+# Subtest: 중복코드빈도3을보존하고정렬·유일코드·빈도합·문자열길이를검사한다
+ok 26 - 중복코드빈도3을보존하고정렬·유일코드·빈도합·문자열길이를검사한다
+  ---
+  duration_ms: 1.9201
+  type: 'test'
+  ...
+# Subtest: 출처공유미관측은독립성승인이아니며관측boolean과빈도를대조한다
+ok 27 - 출처공유미관측은독립성승인이아니며관측boolean과빈도를대조한다
+  ---
+  duration_ms: 0.9625
+  type: 'test'
+  ...
+# Subtest: 원본physicalnull·stage선언·새QA캡처를섞지않고미캡처는null로유지한다
+ok 28 - 원본physicalnull·stage선언·새QA캡처를섞지않고미캡처는null로유지한다
+  ---
+  duration_ms: 10.4726
+  type: 'test'
+  ...
+# Subtest: 나지7·정수픽셀·패치·바닥·부족관측계약을검사하며미해소false를유지한다
+ok 29 - 나지7·정수픽셀·패치·바닥·부족관측계약을검사하며미해소false를유지한다
+  ---
+  duration_ms: 3.4436
+  type: 'test'
+  ...
+# Subtest: 입력·메뉴·재조회·표시중단이후늦은성공·오류를무효화한다
+ok 30 - 입력·메뉴·재조회·표시중단이후늦은성공·오류를무효화한다
+  ---
+  duration_ms: 2.3968
+  type: 'test'
+  ...
+# Subtest: HTTP오류를구분하고원문보고서·경로·상세를투영하지않는다
+ok 31 - HTTP오류를구분하고원문보고서·경로·상세를투영하지않는다
+  ---
+  duration_ms: 1.2477
+  type: 'test'
+  ...
+# Subtest: AgentCenter의두진단카드는같은선택에서도독립React key를갖고선택변경시재마운트한다
+ok 32 - AgentCenter의두진단카드는같은선택에서도독립React key를갖고선택변경시재마운트한다
+  ---
+  duration_ms: 6.3049
+  type: 'test'
+  ...
+# Subtest: 5개의 목적별 직접 URL과 데이터 ID는 새로고침에서도 정확히 왕복한다
+ok 33 - 5개의 목적별 직접 URL과 데이터 ID는 새로고침에서도 정확히 왕복한다
+  ---
+  duration_ms: 95.0471
+  type: 'test'
+  ...
+# Subtest: 잘못된 URL은 안전한 카탈로그로 정규화하고 알 수 없는 모델·탭을 차단한다
+ok 34 - 잘못된 URL은 안전한 카탈로그로 정규화하고 알 수 없는 모델·탭을 차단한다
+  ---
+  duration_ms: 1.6474
+  type: 'test'
+  ...
+# Subtest: 상세 닫기와 검색 복귀 경로는 같은 검색 화면을 가리킨다
+ok 35 - 상세 닫기와 검색 복귀 경로는 같은 검색 화면을 가리킨다
+  ---
+  duration_ms: 3.4903
+  type: 'test'
+  ...
+# Subtest: 불완전·오염 저장값은 제한된 필터와 유일한 ID만 복구한다
+ok 36 - 불완전·오염 저장값은 제한된 필터와 유일한 ID만 복구한다
+  ---
+  duration_ms: 1.3768
+  type: 'test'
+  ...
+# Subtest: 선택·필터의 session 복귀는 실제 최신 자료를 다시 검색한다
+ok 37 - 선택·필터의 session 복귀는 실제 최신 자료를 다시 검색한다
+  ---
+  duration_ms: 3.8031
+  type: 'test'
+  ...
+# Subtest: 잘못된 JSON과 브라우저 저장 차단으로 검색 화면이 실패하지 않는다
+ok 38 - 잘못된 JSON과 브라우저 저장 차단으로 검색 화면이 실패하지 않는다
+  ---
+  duration_ms: 1.0704
+  type: 'test'
+  ...
+# Subtest: 외부·오염 history 표식은 이전 이동을 승인하지 않는다
+ok 39 - 외부·오염 history 표식은 이전 이동을 승인하지 않는다
+  ---
+  duration_ms: 0.828
+  type: 'test'
+  ...
+# Subtest: 이동후 늦은 성공·오류는 새 화면을 덮지 않고 같은 요청의 응답은 표시한다
+ok 40 - 이동후 늦은 성공·오류는 새 화면을 덮지 않고 같은 요청의 응답은 표시한다
+  ---
+  duration_ms: 0.6884
+  type: 'test'
+  ...
+# Subtest: 인사이트는 명시상세 또는 정확히 한개의 실제선택만 전달한다
+ok 41 - 인사이트는 명시상세 또는 정확히 한개의 실제선택만 전달한다
+  ---
+  duration_ms: 1.0728
+  type: 'test'
+  ...
+# Subtest: Climate→Workspace→뒤로에서 모델·참조지역을 복구하고 필터저장과 독립적이다
+ok 42 - Climate→Workspace→뒤로에서 모델·참조지역을 복구하고 필터저장과 독립적이다
+  ---
+  duration_ms: 15.1451
+  type: 'test'
+  ...
+# Subtest: 모델·지역은 허용목록만 복원하고 오염 JSON·차단저장소에서 안전하게 복귀한다
+ok 43 - 모델·지역은 허용목록만 복원하고 오염 JSON·차단저장소에서 안전하게 복귀한다
+  ---
+  duration_ms: 1.0346
+  type: 'test'
+  ...
+# Subtest: 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+ok 44 - 원본에 없는 분류·기간·권한·품질을 파일경로/승인상태로 추정하지 않는다
+  ---
+  duration_ms: 5.515
+  type: 'test'
+  ...
+# Subtest: 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+ok 45 - 검색과 지역·유형·주제·기관·접근·형식 조건은 실제 메타데이터에 모두 적용된다
+  ---
+  duration_ms: 5.7397
+  type: 'test'
+  ...
+# Subtest: 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+ok 46 - 기간은 겹치는 기록만 검색하고 기간 미확인은 제외한다
+  ---
+  duration_ms: 3.1309
+  type: 'test'
+  ...
+# Subtest: 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+ok 47 - 초기화 필터는 실제 원본행만 반환하며 입력객체를 변경하지 않는다
+  ---
+  duration_ms: 0.8131
+  type: 'test'
+  ...
+# Subtest: CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+ok 48 - CSV는 선택된 실제 행을 UTF8 BOM·표준 quoting으로 내보내고 수식 삽입을 막는다
+  ---
+  duration_ms: 6.3097
+  type: 'test'
+  ...
+# Subtest: 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+ok 49 - 역전·잘못된 연도 범위는 결과를 반환하지 않고 등록방식은 제공기관으로 추정하지 않는다
+  ---
+  duration_ms: 1.2066
+  type: 'test'
+  ...
+# (node:35380) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: live totals and targets are derived from response, not production hardcoded numbers
+ok 50 - live totals and targets are derived from response, not production hardcoded numbers
+  ---
+  duration_ms: 226.7819
+  type: 'test'
+  ...
+# Subtest: missing data is unknown and contaminated sums, typed counters and false flags are rejected
+ok 51 - missing data is unknown and contaminated sums, typed counters and false flags are rejected
+  ---
+  duration_ms: 31.3267
+  type: 'test'
+  ...
+# Subtest: detached rows and bare metrics keep zero, null and original declaration boundaries
+ok 52 - detached rows and bare metrics keep zero, null and original declaration boundaries
+  ---
+  duration_ms: 2.6956
+  type: 'test'
+  ...
+# Subtest: pinned candidate is separate from current raw cohort, unavailable never becomes zero and pins/types are checked
+ok 53 - pinned candidate is separate from current raw cohort, unavailable never becomes zero and pins/types are checked
+  ---
+  duration_ms: 7.0633
+  type: 'test'
+  ...
+# Subtest: synchronous duplicate guard, route/back/unmount/refresh generations discard old success/error/finally
+ok 54 - synchronous duplicate guard, route/back/unmount/refresh generations discard old success/error/finally
+  ---
+  duration_ms: 4.4913
+  type: 'test'
+  ...
+# Subtest: GET existing real endpoint preserves token/cache and parses dynamic response with no writes
+ok 55 - GET existing real endpoint preserves token/cache and parses dynamic response with no writes
+  ---
+  duration_ms: 331.1606
+  type: 'test'
+  ...
+# Subtest: bounded reader cancels declared/cumulative overflow and stale response without rendering
+ok 56 - bounded reader cancels declared/cumulative overflow and stale response without rendering
+  ---
+  duration_ms: 2.9807
+  type: 'test'
+  ...
+# Subtest: collection view reuses parent GET while model review has standalone loader; no hardcoded inventory
+ok 57 - collection view reuses parent GET while model review has standalone loader; no hardcoded inventory
+  ---
+  duration_ms: 88.8843
+  type: 'test'
+  ...
+# Subtest: legacy는UNKNOWN/current미실행/null이며0개통과나현재Registry역채움으로표시하지않는다
+ok 58 - legacy는UNKNOWN/current미실행/null이며0개통과나현재Registry역채움으로표시하지않는다
+  ---
+  duration_ms: 7.4035
+  type: 'test'
+  ...
+# Subtest: 저장UNAVAILABLE/INVALID/URI미지원은정확한원인과미실행상태를보존한다
+ok 59 - 저장UNAVAILABLE/INVALID/URI미지원은정확한원인과미실행상태를보존한다
+  ---
+  duration_ms: 1.5638
+  type: 'test'
+  ...
+# Subtest: 제한된currentMATCH는3축관측·집계만투영하며실행/ACL승인을생성하지않는다
+ok 60 - 제한된currentMATCH는3축관측·집계만투영하며실행/ACL승인을생성하지않는다
+  ---
+  duration_ms: 2.33
+  type: 'test'
+  ...
+# Subtest: 현재접근/품질BLOCKED는innerpinMATCH여도전체BLOCKED를유지한다
+ok 61 - 현재접근/품질BLOCKED는innerpinMATCH여도전체BLOCKED를유지한다
+  ---
+  duration_ms: 2.4742
+  type: 'test'
+  ...
+# Subtest: 현재무결성통과도저장pin불일치면BLOCKED이며내부원인·집계가분리된다
+ok 62 - 현재무결성통과도저장pin불일치면BLOCKED이며내부원인·집계가분리된다
+  ---
+  duration_ms: 1.7008
+  type: 'test'
+  ...
+# Subtest: Job literal SHA와top35키·scope/state/저장조회typed횟수를엄격히대조한다
+ok 63 - Job literal SHA와top35키·scope/state/저장조회typed횟수를엄격히대조한다
+  ---
+  duration_ms: 1.2927
+  type: 'test'
+  ...
+# Subtest: top15false와inner15false·7IO정수0은범위를섞거나bool/승인으로정규화하지않는다
+ok 64 - top15false와inner15false·7IO정수0은범위를섞거나bool/승인으로정규화하지않는다
+  ---
+  duration_ms: 15.9905
+  type: 'test'
+  ...
+# Subtest: 현재계수·무결성<=품질관측·품질PUBLICbool양방향과차단합계를검사한다
+ok 65 - 현재계수·무결성<=품질관측·품질PUBLICbool양방향과차단합계를검사한다
+  ---
+  duration_ms: 1.3945
+  type: 'test'
+  ...
+# Subtest: 현재차단768상한·safe코드·index와반복빈도보존을검사한다
+ok 66 - 현재차단768상한·safe코드·index와반복빈도보존을검사한다
+  ---
+  duration_ms: 1.9555
+  type: 'test'
+  ...
+# Subtest: 현재진단무효와capture실패는미실행null과기관측계수를각각보존한다
+ok 67 - 현재진단무효와capture실패는미실행null과기관측계수를각각보존한다
+  ---
+  duration_ms: 1.981
+  type: 'test'
+  ...
+# Subtest: inner81의exact형태/count/hash/issue범위와MATCH논리·null상태를검사한다
+ok 68 - inner81의exact형태/count/hash/issue범위와MATCH논리·null상태를검사한다
+  ---
+  duration_ms: 2.155
+  type: 'test'
+  ...
+# Subtest: Job·메뉴·재조회·표시중단후늦은성공과오류를폐기한다
+ok 69 - Job·메뉴·재조회·표시중단후늦은성공과오류를폐기한다
+  ---
+  duration_ms: 0.8953
+  type: 'test'
+  ...
+# Subtest: 400/404/429/503/인증·연결오류는안전하게구별하고429는서버검사수명을설명한다
+ok 70 - 400/404/429/503/인증·연결오류는안전하게구별하고429는서버검사수명을설명한다
+  ---
+  duration_ms: 0.9085
+  type: 'test'
+  ...
+# Subtest: 저장카드로컬상태/성공/실패와child identity·수동GET범위가독립이다
+ok 71 - 저장카드로컬상태/성공/실패와child identity·수동GET범위가독립이다
+  ---
+  duration_ms: 208.532
+  type: 'test'
+  ...
+# Subtest: whole RAW request SHA binds exact four keys and original decimal/exponent/negative zero text
+ok 72 - whole RAW request SHA binds exact four keys and original decimal/exponent/negative zero text
+  ---
+  duration_ms: 461.2412
+  type: 'test'
+  ...
+# Subtest: full Job server observed hash is not compared to JavaScript canonical draft
+ok 73 - full Job server observed hash is not compared to JavaScript canonical draft
+  ---
+  duration_ms: 41.919
+  type: 'test'
+  ...
+# Subtest: fullJob strict parsing remains server authority: duplicates underflow and malformed raw preserved
+ok 74 - fullJob strict parsing remains server authority: duplicates underflow and malformed raw preserved
+  ---
+  duration_ms: 135.6375
+  type: 'test'
+  ...
+# Subtest: UTF8 budgets and explicit node are bounded without automatic trim or Job generation
+ok 75 - UTF8 budgets and explicit node are bounded without automatic trim or Job generation
+  ---
+  duration_ms: 21.6974
+  type: 'test'
+  ...
+# Subtest: exact wrapper rejects extension status retarget and unknown properties
+ok 76 - exact wrapper rejects extension status retarget and unknown properties
+  ---
+  duration_ms: 18.5871
+  type: 'test'
+  ...
+# Subtest: 24 flags must be false and 7 I/O counts typed numeric zero
+ok 77 - 24 flags must be false and 7 I/O counts typed numeric zero
+  ---
+  duration_ms: 28.5889
+  type: 'test'
+  ...
+# Subtest: schema read null not fake zero, exact stage booleans/calls/status
+ok 78 - schema read null not fake zero, exact stage booleans/calls/status
+  ---
+  duration_ms: 15.6778
+  type: 'test'
+  ...
+# Subtest: schema invalid and before-validator bounds preserve legitimate BLOCKED stages
+ok 79 - schema invalid and before-validator bounds preserve legitimate BLOCKED stages
+  ---
+  duration_ms: 9.5815
+  type: 'test'
+  ...
+# Subtest: bbox model and optional workflow mismatch stages stay separate from metadata
+ok 80 - bbox model and optional workflow mismatch stages stay separate from metadata
+  ---
+  duration_ms: 79.9807
+  type: 'test'
+  ...
+# Subtest: resource failure maps to HTTP503; 200 resource payload is rejected
+ok 81 - resource failure maps to HTTP503; 200 resource payload is rejected
+  ---
+  duration_ms: 9.0155
+  type: 'test'
+  ...
+# Subtest: inner 86 mismatch hashes safe codes and indices remain validated
+ok 82 - inner 86 mismatch hashes safe codes and indices remain validated
+  ---
+  duration_ms: 32.9123
+  type: 'test'
+  ...
+# Subtest: stale generation raw input revision route response is ignored
+ok 83 - stale generation raw input revision route response is ignored
+  ---
+  duration_ms: 0.6507
+  type: 'test'
+  ...
+# Subtest: independent details child has one manual POST and no lookup-triggered submission
+ok 84 - independent details child has one manual POST and no lookup-triggered submission
+  ---
+  duration_ms: 154.4927
+  type: 'test'
+  ...
+# Subtest: Python89 real helper cross-language stages include 257 scalar metadata and 65 refs
+not ok 85 - Python89 real helper cross-language stages include 257 scalar metadata and 65 refs
+  ---
+  duration_ms: 812.0255
+  type: 'test'
+  location: 'E:\\GeoAI–MLOps–SDSS\\.git\\priority-frontend-check\\frontend\\src\\fullJobHandoffAdapter.test.mjs:30:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Traceback (most recent call last):
+      File "<string>", line 2, in <module>
+    ModuleNotFoundError: No module named 'test_workflow_job_request_handoff'
+    
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/.git/priority-frontend-check/frontend/src/fullJobHandoffAdapter.test.mjs:49:216)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: RFC2 uses exact five keys version integer and whole body SHA while RFC1 stays four
+ok 86 - RFC2 uses exact five keys version integer and whole body SHA while RFC1 stays four
+  ---
+  duration_ms: 189.1606
+  type: 'test'
+  ...
+# Subtest: RFC2 wrapper and request identity cannot accept RFC1 or retargeted response
+ok 87 - RFC2 wrapper and request identity cannot accept RFC1 or retargeted response
+  ---
+  duration_ms: 44.6298
+  type: 'test'
+  ...
+# Subtest: all three checked registration statuses preserve independent inner MATCH and outer truth
+ok 88 - all three checked registration statuses preserve independent inner MATCH and outer truth
+  ---
+  duration_ms: 57.6189
+  type: 'test'
+  ...
+# Subtest: inner BLOCKED requires NOT_RUN false and cannot claim registration checked
+ok 89 - inner BLOCKED requires NOT_RUN false and cannot claim registration checked
+  ---
+  duration_ms: 6.0321
+  type: 'test'
+  ...
+# Subtest: RFC2 result registration shape flags and phase types are exact
+ok 90 - RFC2 result registration shape flags and phase types are exact
+  ---
+  duration_ms: 60.3112
+  type: 'test'
+  ...
+# Subtest: RFC2 cannot bypass inner24 false typed7zero null schema or metadata hash checks
+ok 91 - RFC2 cannot bypass inner24 false typed7zero null schema or metadata hash checks
+  ---
+  duration_ms: 4.0165
+  type: 'test'
+  ...
+# Subtest: RFC2 full Job hash remains server observation and raw invalid transport stays server authority
+ok 92 - RFC2 full Job hash remains server observation and raw invalid transport stays server authority
+  ---
+  duration_ms: 15.953
+  type: 'test'
+  ...
+# Subtest: UI checkbox defaults off version enters stale identity and single manual dispatch stays owned by inspect
+ok 93 - UI checkbox defaults off version enters stale identity and single manual dispatch stays owned by inspect
+  ---
+  duration_ms: 121.4692
+  type: 'test'
+  ...
+# Subtest: version edits and route revision response generations invalidate same raw draft
+ok 94 - version edits and route revision response generations invalidate same raw draft
+  ---
+  duration_ms: 1.6728
+  type: 'test'
+  ...
+# Subtest: Python94 producer cross-language registered unknown capability and NOT_RUN stages
+not ok 95 - Python94 producer cross-language registered unknown capability and NOT_RUN stages
+  ---
+  duration_ms: 758.0478
+  type: 'test'
+  location: 'E:\\GeoAI–MLOps–SDSS\\.git\\priority-frontend-check\\frontend\\src\\fullJobRegistrationAdapter.test.mjs:31:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Traceback (most recent call last):
+      File "<string>", line 2, in <module>
+    ModuleNotFoundError: No module named 'test_workflow_job_request_handoff'
+    
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/.git/priority-frontend-check/frontend/src/fullJobRegistrationAdapter.test.mjs:48:216)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# (node:19928) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: manual fixed ID is exact lowercase64; existing GET receipt parser requires replay and false claims
+ok 96 - manual fixed ID is exact lowercase64; existing GET receipt parser requires replay and false claims
+  ---
+  duration_ms: 156.3558
+  type: 'test'
+  ...
+# Subtest: strict finite JSON catches duplicate escaped keys, UTF16 errors, malformed numbers, depth and nodes
+ok 97 - strict finite JSON catches duplicate escaped keys, UTF16 errors, malformed numbers, depth and nodes
+  ---
+  duration_ms: 863.5868
+  type: 'test'
+  ...
+# Subtest: same report raw SHA, Windows paths, model/years and all transition matrices are verified
+ok 98 - same report raw SHA, Windows paths, model/years and all transition matrices are verified
+  ---
+  duration_ms: 138.9363
+  type: 'test'
+  ...
+# Subtest: duplicate report pin or poisoned HTTP/error data never becomes displayed results
+ok 99 - duplicate report pin or poisoned HTTP/error data never becomes displayed results
+  ---
+  duration_ms: 6.6659
+  type: 'test'
+  ...
+# Subtest: synchronous pending, identity/route/edit/back/unmount invalidation and old finally isolation
+ok 100 - synchronous pending, identity/route/edit/back/unmount invalidation and old finally isolation
+  ---
+  duration_ms: 6.7407
+  type: 'test'
+  ...
+# Subtest: manual authenticated fixed GET only: success status then report with atomic pinned view
+ok 101 - manual authenticated fixed GET only: success status then report with atomic pinned view
+  ---
+  duration_ms: 181.4142
+  type: 'test'
+  ...
+# Subtest: RUNNING/FAILED use one GET, HTTP failures and stale result never fetch next report
+ok 102 - RUNNING/FAILED use one GET, HTTP failures and stale result never fetch next report
+  ---
+  duration_ms: 20.3537
+  type: 'test'
+  ...
+# Subtest: bounded stream cancels declared/cumulative overflow and stale bytes, releases lock
+ok 103 - bounded stream cancels declared/cumulative overflow and stale bytes, releases lock
+  ---
+  duration_ms: 2.4283
+  type: 'test'
+  ...
+# Subtest: component mount preserves legacy query; no auto request and local id never goes to legacy onReviewResult
+ok 104 - component mount preserves legacy query; no auto request and local id never goes to legacy onReviewResult
+  ---
+  duration_ms: 29.5044
+  type: 'test'
+  ...
+# Subtest: 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+ok 105 - 무결성 통과를 권한·실행 승인으로 바꾸지 않는다
+  ---
+  duration_ms: 5.9046
+  type: 'test'
+  ...
+# Subtest: 입력 품질·기관 ACL 차단코드를 보존한다
+ok 106 - 입력 품질·기관 ACL 차단코드를 보존한다
+  ---
+  duration_ms: 2.8242
+  type: 'test'
+  ...
+# Subtest: 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+ok 107 - 직접·의존·정책 차단 원인을 혼합하거나 실행권한을 만들지 않는다
+  ---
+  duration_ms: 0.8461
+  type: 'test'
+  ...
+# Subtest: 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+ok 108 - 원본 JSON·오류 메시지에서 제한 경로와 URI·자격정보를 숨긴다
+  ---
+  duration_ms: 1.7418
+  type: 'test'
+  ...
+# Subtest: 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+ok 109 - 누락·잘못된 형태의 진단 응답은 빈 상태로 표시한다
+  ---
+  duration_ms: 1.023
+  type: 'test'
+  ...
+# Subtest: 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+ok 110 - 제출시점 snapshot은 동일 Job·Trace일 때만 표시한다
+  ---
+  duration_ms: 0.8684
+  type: 'test'
+  ...
+# Subtest: legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+ok 111 - legacy·유효하지 않은 snapshot·계약 불일치를 통과로 표시하지 않는다
+  ---
+  duration_ms: 0.6637
+  type: 'test'
+  ...
+# Subtest: ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+ok 112 - ID 변경·Agent 변경·이전 조회 응답은 세대 guard로 거부한다
+  ---
+  duration_ms: 0.6788
+  type: 'test'
+  ...
+# Subtest: 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+ok 113 - 표준 Result MOCK_ONLY는 지도·보고서 게시를 차단한다
+  ---
+  duration_ms: 4.6273
+  type: 'test'
+  ...
+# Subtest: 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+ok 114 - 런타임 구현과 데이터 적격은 독립 검증·배포 승인을 만들지 않는다
+  ---
+  duration_ms: 1.1846
+  type: 'test'
+  ...
+# Subtest: 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+ok 115 - 외부 미구현 Agent는 학습자료가 있어도 실행 코드가 연결되지 않는다
+  ---
+  duration_ms: 0.6064
+  type: 'test'
+  ...
+# Subtest: Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+ok 116 - Result·Job·Input·Model·검증 근거 ID를 그대로 보존한다
+  ---
+  duration_ms: 2.4512
+  type: 'test'
+  ...
+# Subtest: SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+ok 117 - SDSS 게시에는 동일 Job·Result·Trace와 독립 검증이 모두 필요하다
+  ---
+  duration_ms: 1.0993
+  type: 'test'
+  ...
+# Subtest: Job현재계보는같은Job·Trace와현재검사scope를확인한다
+ok 118 - Job현재계보는같은Job·Trace와현재검사scope를확인한다
+  ---
+  duration_ms: 11.0862
+  type: 'test'
+  ...
+# Subtest: 저장요청없는legacy·잘못된요청·상한선차단을현재통과로추정하지않는다
+ok 119 - 저장요청없는legacy·잘못된요청·상한선차단을현재통과로추정하지않는다
+  ---
+  duration_ms: 1.0984
+  type: 'test'
+  ...
+# Subtest: 부분검사와checked/current_assets_revalidated true를전체성공으로바꾸지않는다
+ok 120 - 부분검사와checked/current_assets_revalidated true를전체성공으로바꾸지않는다
+  ---
+  duration_ms: 4.0173
+  type: 'test'
+  ...
+# Subtest: 중복참조진단재사용과고정ref연결을구별한다
+ok 121 - 중복참조진단재사용과고정ref연결을구별한다
+  ---
+  duration_ms: 1.0053
+  type: 'test'
+  ...
+# Subtest: 무결성집계는모든진단·입력근거가있어야하고실행·권한·과학승인은거부한다
+ok 122 - 무결성집계는모든진단·입력근거가있어야하고실행·권한·과학승인은거부한다
+  ---
+  duration_ms: 82.5052
+  type: 'test'
+  ...
+# Subtest: 검사예산초과·형식오류·쓰기근거가있는응답을표시하지않는다
+ok 123 - 검사예산초과·형식오류·쓰기근거가있는응답을표시하지않는다
+  ---
+  duration_ms: 0.9233
+  type: 'test'
+  ...
+# Subtest: Job·Agent전환과이전명시조회응답은요청세대guard로거부한다
+ok 124 - Job·Agent전환과이전명시조회응답은요청세대guard로거부한다
+  ---
+  duration_ms: 0.5443
+  type: 'test'
+  ...
+# Subtest: pair is bound to same receipt report year pair unique artifact index and SHA
+ok 125 - pair is bound to same receipt report year pair unique artifact index and SHA
+  ---
+  duration_ms: 11.2317
+  type: 'test'
+  ...
+# Subtest: Windows report and artifact paths normalize to the same canonical selection
+ok 126 - Windows report and artifact paths normalize to the same canonical selection
+  ---
+  duration_ms: 2.0379
+  type: 'test'
+  ...
+# Subtest: receipt status flags identity report pin metadata pair and duplicate artifact contamination reject
+ok 127 - receipt status flags identity report pin metadata pair and duplicate artifact contamination reject
+  ---
+  duration_ms: 7.305
+  type: 'test'
+  ...
+# Subtest: Polygon is sanitized without aliases and MapLibre bounds use longitude latitude order
+ok 128 - Polygon is sanitized without aliases and MapLibre bounds use longitude latitude order
+  ---
+  duration_ms: 11.2265
+  type: 'test'
+  ...
+# Subtest: MultiPolygon and holes count all vertices with finite WGS84 bounds
+ok 129 - MultiPolygon and holes count all vertices with finite WGS84 bounds
+  ---
+  duration_ms: 2.2013
+  type: 'test'
+  ...
+# Subtest: zero-feature native output is valid empty data with null bounds and no invented geometry
+ok 130 - zero-feature native output is valid empty data with null bounds and no invented geometry
+  ---
+  duration_ms: 0.9247
+  type: 'test'
+  ...
+# Subtest: truncated vector subset preserves full raster statistics without computing polygon area
+ok 131 - truncated vector subset preserves full raster statistics without computing polygon area
+  ---
+  duration_ms: 60.6218
+  type: 'test'
+  ...
+# Subtest: external CRS links unsupported geometry properties feature count and malformed classes reject
+ok 132 - external CRS links unsupported geometry properties feature count and malformed classes reject
+  ---
+  duration_ms: 6.3558
+  type: 'test'
+  ...
+# Subtest: coordinates require closed four-position 2D rings and finite latitude longitude
+ok 133 - coordinates require closed four-position 2D rings and finite latitude longitude
+  ---
+  duration_ms: 3.5343
+  type: 'test'
+  ...
+# Subtest: antimeridian crossing edges and globally ambiguous extent do not trigger world fit
+ok 134 - antimeridian crossing edges and globally ambiguous extent do not trigger world fit
+  ---
+  duration_ms: 2.3318
+  type: 'test'
+  ...
+# Subtest: feature and vertex budgets accept the exact boundary and reject one more
+ok 135 - feature and vertex budgets accept the exact boundary and reject one more
+  ---
+  duration_ms: 272.465
+  type: 'test'
+  ...
+# Subtest: selection shape and pins remain bounded even when parser is called separately
+ok 136 - selection shape and pins remain bounded even when parser is called separately
+  ---
+  duration_ms: 4.1101
+  type: 'test'
+  ...
+# Subtest: actual tiny CPU empty and nonempty reports bind GeoJSON bytes and transition metadata
+not ok 137 - actual tiny CPU empty and nonempty reports bind GeoJSON bytes and transition metadata
+  ---
+  duration_ms: 18591.4088
+  type: 'test'
+  location: 'E:\\GeoAI–MLOps–SDSS\\.git\\priority-frontend-check\\frontend\\src\\lclucChangeMapAdapter.test.mjs:106:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Traceback (most recent call last):
+      File "<string>", line 3, in <module>
+    ModuleNotFoundError: No module named 'test_lcluc_workflow'
+    
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/.git/priority-frontend-check/frontend/src/lclucChangeMapAdapter.test.mjs:111:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: stored real CPU three-year fixture yields pinned full-raster nonempty and unchanged statistics
+ok 138 - stored real CPU three-year fixture yields pinned full-raster nonempty and unchanged statistics
+  ---
+  duration_ms: 18.0547
+  type: 'test'
+  ...
+# Subtest: empty full raster has exact zero matrices null rate and zero totals
+ok 139 - empty full raster has exact zero matrices null rate and zero totals
+  ---
+  duration_ms: 56.0958
+  type: 'test'
+  ...
+# Subtest: ordered actual labels including duplicates are retained by ID and colors are frozen display-only
+ok 140 - ordered actual labels including duplicates are retained by ID and colors are frozen display-only
+  ---
+  duration_ms: 7.4426
+  type: 'test'
+  ...
+# Subtest: output matrices labels selection and derived classes are detached without input mutation
+ok 141 - output matrices labels selection and derived classes are detached without input mutation
+  ---
+  duration_ms: 11.8597
+  type: 'test'
+  ...
+# Subtest: truncated vector preview never reduces full raster totals
+ok 142 - truncated vector preview never reduces full raster totals
+  ---
+  duration_ms: 4.1914
+  type: 'test'
+  ...
+# Subtest: known projected and actual ellipsoidal area units only
+ok 143 - known projected and actual ellipsoidal area units only
+  ---
+  duration_ms: 7.6458
+  type: 'test'
+  ...
+# Subtest: corrupt totals rates net and full-raster basis reject without echoing payload
+ok 144 - corrupt totals rates net and full-raster basis reject without echoing payload
+  ---
+  duration_ms: 154.7923
+  type: 'test'
+  ...
+# Subtest: matrix dimensions sparse arrays unsafe sum and finite accumulation are bounded
+ok 145 - matrix dimensions sparse arrays unsafe sum and finite accumulation are bounded
+  ---
+  duration_ms: 72.4935
+  type: 'test'
+  ...
+# Subtest: label exact order length controls blank lone-surrogate and type violations reject
+ok 146 - label exact order length controls blank lone-surrogate and type violations reject
+  ---
+  duration_ms: 86.4567
+  type: 'test'
+  ...
+# Subtest: floating accumulation tolerance is area-relative while rate remains dimensionless
+ok 147 - floating accumulation tolerance is area-relative while rate remains dimensionless
+  ---
+  duration_ms: 7.6677
+  type: 'test'
+  ...
+# Subtest: zero rate nonzero total and total0/null invariant cannot be disguised by tolerance
+ok 148 - zero rate nonzero total and total0/null invariant cannot be disguised by tolerance
+  ---
+  duration_ms: 8.4721
+  type: 'test'
+  ...
+# Subtest: same receipt report identity pair and artifact namespace remain required
+ok 149 - same receipt report identity pair and artifact namespace remain required
+  ---
+  duration_ms: 44.5833
+  type: 'test'
+  ...
+# Subtest: manual request has exact6 fixed refs and ordered integer years
+ok 150 - manual request has exact6 fixed refs and ordered integer years
+  ---
+  duration_ms: 20.021
+  type: 'test'
+  ...
+# Subtest: empty oversized duplicate floats and unknown keys are invalid
+ok 151 - empty oversized duplicate floats and unknown keys are invalid
+  ---
+  duration_ms: 1.5621
+  type: 'test'
+  ...
+# (node:34968) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: fixed request digest and full key id match Python115 canonical
+ok 152 - fixed request digest and full key id match Python115 canonical
+  ---
+  duration_ms: 65.752
+  type: 'test'
+  ...
+# Subtest: HTTP409 BLOCKED is valid unclaimed receipt; 200 blocked and mismatched id rejected
+ok 153 - HTTP409 BLOCKED is valid unclaimed receipt; 200 blocked and mismatched id rejected
+  ---
+  duration_ms: 1.0889
+  type: 'test'
+  ...
+# Subtest: GET state must explicitly be historical replay, never fresh execution receipt
+ok 154 - GET state must explicitly be historical replay, never fresh execution receipt
+  ---
+  duration_ms: 2.4162
+  type: 'test'
+  ...
+# Subtest: status shape exact keys flags and fixed issues cannot be contaminated
+ok 155 - status shape exact keys flags and fixed issues cannot be contaminated
+  ---
+  duration_ms: 0.8217
+  type: 'test'
+  ...
+# Subtest: success allows Windows paths but rejects traversal duplicate namespace and pin contamination
+ok 156 - success allows Windows paths but rejects traversal duplicate namespace and pin contamination
+  ---
+  duration_ms: 84.4765
+  type: 'test'
+  ...
+# Subtest: POST response digest and exact request snapshot are bound
+ok 157 - POST response digest and exact request snapshot are bound
+  ---
+  duration_ms: 1.914
+  type: 'test'
+  ...
+# Subtest: safe error envelope code/status/false retryable contract and auth do not expose message
+ok 158 - safe error envelope code/status/false retryable contract and auth do not expose message
+  ---
+  duration_ms: 3.4358
+  type: 'test'
+  ...
+# Subtest: report binds receipt checkpoint path years and actual pair set
+ok 159 - report binds receipt checkpoint path years and actual pair set
+  ---
+  duration_ms: 4.6985
+  type: 'test'
+  ...
+# Subtest: synchronous pending gate permits one manual concurrent request
+ok 160 - synchronous pending gate permits one manual concurrent request
+  ---
+  duration_ms: 1.9692
+  type: 'test'
+  ...
+# Subtest: editing route back unmount and explicit invalidation discard late result/error/busy
+ok 161 - editing route back unmount and explicit invalidation discard late result/error/busy
+  ---
+  duration_ms: 2.3871
+  type: 'test'
+  ...
+# Subtest: mount is closed and manual actions only; no poll, common API or existing model selection mutation
+ok 162 - mount is closed and manual actions only; no poll, common API or existing model selection mutation
+  ---
+  duration_ms: 72.3514
+  type: 'test'
+  ...
+# Subtest: scoped client uses exact endpoints and tab Bearer; stale downloads do not click; no arbitrary path fetch
+ok 163 - scoped client uses exact endpoints and tab Bearer; stale downloads do not click; no arbitrary path fetch
+  ---
+  duration_ms: 23.8315
+  type: 'test'
+  ...
+# Subtest: real Windows Python115 CPU receipt and report parse without training or operating writes
+not ok 164 - real Windows Python115 CPU receipt and report parse without training or operating writes
+  ---
+  duration_ms: 1980.1674
+  type: 'test'
+  location: 'E:\\GeoAI–MLOps–SDSS\\.git\\priority-frontend-check\\frontend\\src\\lclucWorkflowAdapter.test.mjs:47:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Traceback (most recent call last):
+      File "<string>", line 3, in <module>
+    ModuleNotFoundError: No module named 'test_lcluc_workflow'
+    
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/.git/priority-frontend-check/frontend/src/lclucWorkflowAdapter.test.mjs:47:821)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# (node:34616) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: manual GeoJSON reads exact receipt index with session auth and exact byte SHA
+ok 165 - manual GeoJSON reads exact receipt index with session auth and exact byte SHA
+  ---
+  duration_ms: 274.8952
+  type: 'test'
+  ...
+# Subtest: content-length over8MiB cancels before reader consumption
+ok 166 - content-length over8MiB cancels before reader consumption
+  ---
+  duration_ms: 2.5651
+  type: 'test'
+  ...
+# Subtest: stream cumulative over8MiB cancels before joining or parsing
+ok 167 - stream cumulative over8MiB cancels before joining or parsing
+  ---
+  duration_ms: 1.2282
+  type: 'test'
+  ...
+# Subtest: exact8MiB valid JSON is accepted at the byte boundary
+ok 168 - exact8MiB valid JSON is accepted at the byte boundary
+  ---
+  duration_ms: 235.708
+  type: 'test'
+  ...
+# Subtest: wrong SHA rejects valid JSON; malformed UTF8/JSON reject even with matching SHA
+ok 169 - wrong SHA rejects valid JSON; malformed UTF8/JSON reject even with matching SHA
+  ---
+  duration_ms: 31.2558
+  type: 'test'
+  ...
+# Subtest: invalid model/index/SHA paths never fetch or become arbitrary URLs
+ok 170 - invalid model/index/SHA paths never fetch or become arbitrary URLs
+  ---
+  duration_ms: 2.7032
+  type: 'test'
+  ...
+# Subtest: stale before request means no GET; stale streamed response is canceled and discarded
+ok 171 - stale before request means no GET; stale streamed response is canceled and discarded
+  ---
+  duration_ms: 4.7623
+  type: 'test'
+  ...
+# Subtest: HTTP failure has no parser or raw message exposure
+ok 172 - HTTP failure has no parser or raw message exposure
+  ---
+  duration_ms: 1.5128
+  type: 'test'
+  ...
+# Subtest: map is an explicit blank pair selection and manual read; parent retains receipt/report on pair change
+ok 173 - map is an explicit blank pair selection and manual read; parent retains receipt/report on pair change
+  ---
+  duration_ms: 7.0907
+  type: 'test'
+  ...
+# Subtest: map has empty0 distinct from raster stats, truncation warning, local attribution, neutral source and cleanup
+ok 174 - map has empty0 distinct from raster stats, truncation warning, local attribution, neutral source and cleanup
+  ---
+  duration_ms: 3.8
+  type: 'test'
+  ...
+# Subtest: 미상·별칭·형식이 다른 고정참조와 잘못된 검사한도는 제출하지 않는다
+ok 175 - 미상·별칭·형식이 다른 고정참조와 잘못된 검사한도는 제출하지 않는다
+  ---
+  duration_ms: 7.6789
+  type: 'test'
+  ...
+# Subtest: HTTP200 BLOCKED와 current_assets_revalidated 시도를 성공으로 바꾸지 않는다
+ok 176 - HTTP200 BLOCKED와 current_assets_revalidated 시도를 성공으로 바꾸지 않는다
+  ---
+  duration_ms: 1.295
+  type: 'test'
+  ...
+# Subtest: 같은 고정 ID·버전·SHA 응답만 표시한다
+ok 177 - 같은 고정 ID·버전·SHA 응답만 표시한다
+  ---
+  duration_ms: 1.1283
+  type: 'test'
+  ...
+# Subtest: wrapper와 diagnostic의 기관·실행·과학 승인 불변조건을 검증한다
+ok 178 - wrapper와 diagnostic의 기관·실행·과학 승인 불변조건을 검증한다
+  ---
+  duration_ms: 0.782
+  type: 'test'
+  ...
+# Subtest: 계보 일치는 일관된 노드·차단 근거가 있어야 하고 과학 승인과 구별한다
+ok 179 - 계보 일치는 일관된 노드·차단 근거가 있어야 하고 과학 승인과 구별한다
+  ---
+  duration_ms: 1.5335
+  type: 'test'
+  ...
+# Subtest: 입력 수정·다른 상세창·늦은 응답은 세대와 입력키로 거부한다
+ok 180 - 입력 수정·다른 상세창·늦은 응답은 세대와 입력키로 거부한다
+  ---
+  duration_ms: 0.583
+  type: 'test'
+  ...
+# node:internal/modules/run_main:123
+#     triggerUncaughtException(
+#     ^
+# AssertionError [ERR_ASSERTION]: Traceback (most recent call last):
+#   File "<string>", line 3, in <module>
+# ModuleNotFoundError: No module named 'test_model_error_analysis_api'
+# 1 !== 0
+#     at file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/.git/priority-frontend-check/frontend/src/modelErrorAnalysisAdapter.test.mjs:11:220
+#     at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+#     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:647:26)
+#     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+#   generatedMessage: false,
+#   code: 'ERR_ASSERTION',
+#   actual: 1,
+#   expected: 0,
+#   operator: 'strictEqual'
+# }
+# Node.js v22.18.0
+# Subtest: src\\modelErrorAnalysisAdapter.test.mjs
+not ok 19 - src\\modelErrorAnalysisAdapter.test.mjs
+  ---
+  duration_ms: 3186.0906
+  type: 'test'
+  location: 'E:\\GeoAI–MLOps–SDSS\\.git\\priority-frontend-check\\frontend\\src\\modelErrorAnalysisAdapter.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: five Korean states and five binding labels are explicit; consistent is unverified
+ok 182 - five Korean states and five binding labels are explicit; consistent is unverified
+  ---
+  duration_ms: 6.2566
+  type: 'test'
+  ...
+# Subtest: exact ten envelope fields reject addition deletion wrong scope/schema and inherited enum keys
+ok 183 - exact ten envelope fields reject addition deletion wrong scope/schema and inherited enum keys
+  ---
+  duration_ms: 1.6767
+  type: 'test'
+  ...
+# Subtest: four flags must be typed false, never authority even on consistent result
+ok 184 - four flags must be typed false, never authority even on consistent result
+  ---
+  duration_ms: 3.0297
+  type: 'test'
+  ...
+# Subtest: exact three bindings reject extra/missing and coerced arrays or objects
+ok 185 - exact three bindings reject extra/missing and coerced arrays or objects
+  ---
+  duration_ms: 1.274
+  type: 'test'
+  ...
+# Subtest: ABSENT requires false key presence, null issue and all not checked
+ok 186 - ABSENT requires false key presence, null issue and all not checked
+  ---
+  duration_ms: 0.8888
+  type: 'test'
+  ...
+# Subtest: INVALID fixed code/field pairs and record versus ID key presence are enforced
+ok 187 - INVALID fixed code/field pairs and record versus ID key presence are enforced
+  ---
+  duration_ms: 0.931
+  type: 'test'
+  ...
+# Subtest: all permitted INVALID declaration and parent fields are accepted without leaking values
+ok 188 - all permitted INVALID declaration and parent fields are accepted without leaking values
+  ---
+  duration_ms: 1.3972
+  type: 'test'
+  ...
+# Subtest: INVALID never claims completed binding comparison
+ok 189 - INVALID never claims completed binding comparison
+  ---
+  duration_ms: 0.5263
+  type: 'test'
+  ...
+# Subtest: conflict requires mismatch and first checkpoint then report then version issue
+ok 190 - conflict requires mismatch and first checkpoint then report then version issue
+  ---
+  duration_ms: 85.4822
+  type: 'test'
+  ...
+# Subtest: unknown binding requires no conflict and first missing parent hash
+ok 191 - unknown binding requires no conflict and first missing parent hash
+  ---
+  duration_ms: 1.6158
+  type: 'test'
+  ...
+# Subtest: consistent requires matched parent hashes and optional matched or not recorded version
+ok 192 - consistent requires matched parent hashes and optional matched or not recorded version
+  ---
+  duration_ms: 1.0366
+  type: 'test'
+  ...
+# Subtest: real Python100 helper outputs cross-language absent invalid conflict unknown consistent stages
+ok 193 - real Python100 helper outputs cross-language absent invalid conflict unknown consistent stages
+  ---
+  duration_ms: 1130.7102
+  type: 'test'
+  ...
+# Subtest: manual read uses encoded model path and exactly one concurrent GET
+ok 194 - manual read uses encoded model path and exactly one concurrent GET
+  ---
+  duration_ms: 2.4993
+  type: 'test'
+  ...
+# Subtest: selected model change or route change discards late success
+ok 195 - selected model change or route change discards late success
+  ---
+  duration_ms: 0.6982
+  type: 'test'
+  ...
+# Subtest: back to same route and unmount invalidate generation for late success and error
+ok 196 - back to same route and unmount invalidate generation for late success and error
+  ---
+  duration_ms: 0.7322
+  type: 'test'
+  ...
+# Subtest: old response cannot clear busy or replace new request after generation reset
+ok 197 - old response cannot clear busy or replace new request after generation reset
+  ---
+  duration_ms: 0.6357
+  type: 'test'
+  ...
+# Subtest: contaminated response gives fixed safe failure with no result
+ok 198 - contaminated response gives fixed safe failure with no result
+  ---
+  duration_ms: 0.5464
+  type: 'test'
+  ...
+# Subtest: 404/auth/503 transport errors map to fixed Korean messages without raw server text
+ok 199 - 404/auth/503 transport errors map to fixed Korean messages without raw server text
+  ---
+  duration_ms: 2.3564
+  type: 'test'
+  ...
+# Subtest: empty model never queries, opening component does not GET, and keyed selected child clears old result
+ok 200 - empty model never queries, opening component does not GET, and keyed selected child clears old result
+  ---
+  duration_ms: 3.7419
+  type: 'test'
+  ...
+# Subtest: default off is exact legacy body even when optional input holds null or invalid text
+ok 201 - default off is exact legacy body even when optional input holds null or invalid text
+  ---
+  duration_ms: 6.468
+  type: 'test'
+  ...
+# Subtest: explicit preserves caller padding and never infers or normalizes model/dataset version
+ok 202 - explicit preserves caller padding and never infers or normalizes model/dataset version
+  ---
+  duration_ms: 1.402
+  type: 'test'
+  ...
+# Subtest: explicit null is rejected rather than treated as omitted
+ok 203 - explicit null is rejected rather than treated as omitted
+  ---
+  duration_ms: 1.0207
+  type: 'test'
+  ...
+# Subtest: fixed references reject alias case and Python whitespace padding
+ok 204 - fixed references reject alias case and Python whitespace padding
+  ---
+  duration_ms: 3.0094
+  type: 'test'
+  ...
+# Subtest: code point bounds accept supplementary Unicode at 256 and reject 257
+ok 205 - code point bounds accept supplementary Unicode at 256 and reject 257
+  ---
+  duration_ms: 6.9945
+  type: 'test'
+  ...
+# Subtest: blank control and lone surrogate declarations are rejected without echoing unsafe input
+ok 206 - blank control and lone surrogate declarations are rejected without echoing unsafe input
+  ---
+  duration_ms: 4.8361
+  type: 'test'
+  ...
+# Subtest: client Unicode and alias policy agrees with real Python96 pure contract
+ok 207 - client Unicode and alias policy agrees with real Python96 pure contract
+  ---
+  duration_ms: 1081.222
+  type: 'test'
+  ...
+# Subtest: mock successful registration refreshes before selecting returned Draft model ID
+ok 208 - mock successful registration refreshes before selecting returned Draft model ID
+  ---
+  duration_ms: 1.7454
+  type: 'test'
+  ...
+# Subtest: synchronous in-flight prevents double registration before React busy render
+ok 209 - synchronous in-flight prevents double registration before React busy render
+  ---
+  duration_ms: 1.1751
+  type: 'test'
+  ...
+# Subtest: server 422 remains visible and settles current form without refresh
+ok 210 - server 422 remains visible and settles current form without refresh
+  ---
+  duration_ms: 1.9343
+  type: 'test'
+  ...
+# Subtest: route change discards stale success but always refreshes a successful server mutation
+ok 211 - route change discards stale success but always refreshes a successful server mutation
+  ---
+  duration_ms: 0.8975
+  type: 'test'
+  ...
+# Subtest: back-forward to same route and unmount invalidate the generation
+ok 212 - back-forward to same route and unmount invalidate the generation
+  ---
+  duration_ms: 0.7485
+  type: 'test'
+  ...
+# Subtest: stale rejected request cannot clear busy or append error in replacement form
+ok 213 - stale rejected request cannot clear busy or append error in replacement form
+  ---
+  duration_ms: 0.8365
+  type: 'test'
+  ...
+# Subtest: navigation during refresh also discards selection, and current refresh failure is reported
+ok 214 - navigation during refresh also discards selection, and current refresh failure is reported
+  ---
+  duration_ms: 1.2389
+  type: 'test'
+  ...
+# Subtest: response model ID access never claims declaration authority or changes record
+ok 215 - response model ID access never claims declaration authority or changes record
+  ---
+  duration_ms: 0.5657
+  type: 'test'
+  ...
+# Subtest: component wiring stays manual, default off/empty, disables registration inputs and shares SVG
+ok 216 - component wiring stays manual, default off/empty, disables registration inputs and shares SVG
+  ---
+  duration_ms: 2.3531
+  type: 'test'
+  ...
+# Subtest: 수동 요청은 명시 핀3개만 가지며 latest·경로·불완전 SHA를 거부한다
+ok 217 - 수동 요청은 명시 핀3개만 가지며 latest·경로·불완전 SHA를 거부한다
+  ---
+  duration_ms: 5.5576
+  type: 'test'
+  ...
+# Subtest: 저장선언의 회원28/넓은400/선언28/zero3/patch25를 개별 투영하며 승인으로 승격하지 않는다
+ok 218 - 저장선언의 회원28/넓은400/선언28/zero3/patch25를 개별 투영하며 승인으로 승격하지 않는다
+  ---
+  duration_ms: 2.0697
+  type: 'test'
+  ...
+# Subtest: 보고서·manifest·token SHA가 요청과 다르면 결과를 폐기한다
+ok 219 - 보고서·manifest·token SHA가 요청과 다르면 결과를 폐기한다
+  ---
+  duration_ms: 3.0243
+  type: 'test'
+  ...
+# Subtest: 8개 승인·해소 false 필드는 true·0·문자열·누락을 허용하지 않는다
+ok 220 - 8개 승인·해소 false 필드는 true·0·문자열·누락을 허용하지 않는다
+  ---
+  duration_ms: 1.4988
+  type: 'test'
+  ...
+# Subtest: 알 수 없는 상태·schema·scope·추가필드와 bool형 계수는 failclosed다
+ok 221 - 알 수 없는 상태·schema·scope·추가필드와 bool형 계수는 failclosed다
+  ---
+  duration_ms: 0.9844
+  type: 'test'
+  ...
+# Subtest: 단서 없는 두 상태는 선택4계수 null만 허용하고0·누락과 혼동하지 않는다
+ok 222 - 단서 없는 두 상태는 선택4계수 null만 허용하고0·누락과 혼동하지 않는다
+  ---
+  duration_ms: 0.7614
+  type: 'test'
+  ...
+# Subtest: 회원·후보 교차계수 모순과 누락을 거부하며 zero patch를 삭제하지 않는다
+ok 223 - 회원·후보 교차계수 모순과 누락을 거부하며 zero patch를 삭제하지 않는다
+  ---
+  duration_ms: 1.0902
+  type: 'test'
+  ...
+# Subtest: 입력·선택·메뉴·재조회 이후 늦은 성공/실패는 무효이고 같은 요청만 현재다
+ok 224 - 입력·선택·메뉴·재조회 이후 늦은 성공/실패는 무효이고 같은 요청만 현재다
+  ---
+  duration_ms: 0.7225
+  type: 'test'
+  ...
+# Subtest: HTTP400/409/413/429/503/404/권한/연결 오류는 원본정보없이 서로 구분한다
+ok 225 - HTTP400/409/413/429/503/404/권한/연결 오류는 원본정보없이 서로 구분한다
+  ---
+  duration_ms: 1.6323
+  type: 'test'
+  ...
+# Subtest: 토큰 hash는 대소문자·UTF8 원문에 의존하고 응답 원문token을 투영하지 않는다
+ok 226 - 토큰 hash는 대소문자·UTF8 원문에 의존하고 응답 원문token을 투영하지 않는다
+  ---
+  duration_ms: 34.7236
+  type: 'test'
+  ...
+# Subtest: Job ID는명시ASCII subset만허용하고빈값·공백·경로·추정trim을거부한다
+ok 227 - Job ID는명시ASCII subset만허용하고빈값·공백·경로·추정trim을거부한다
+  ---
+  duration_ms: 4.1595
+  type: 'test'
+  ...
+# Subtest: Job 원문UTF8SHA는독립node해시와일치하고공백·대소문자를정규화하지않는다
+ok 228 - Job 원문UTF8SHA는독립node해시와일치하고공백·대소문자를정규화하지않는다
+  ---
+  duration_ms: 190.7935
+  type: 'test'
+  ...
+# Subtest: RECORDED는저장연결계수·집계만투영하고현재파일/승인/개별핀을추가하지않는다
+ok 229 - RECORDED는저장연결계수·집계만투영하고현재파일/승인/개별핀을추가하지않는다
+  ---
+  duration_ms: 2.2969
+  type: 'test'
+  ...
+# Subtest: LEGACY는request수와미기록null을분리하고0건/무결성일치로바꾸지않는다
+ok 230 - LEGACY는request수와미기록null을분리하고0건/무결성일치로바꾸지않는다
+  ---
+  duration_ms: 0.9572
+  type: 'test'
+  ...
+# Subtest: UNAVAILABLE의6원인은별도상태이고행미기록만입력범위index를허용한다
+ok 231 - UNAVAILABLE의6원인은별도상태이고행미기록만입력범위index를허용한다
+  ---
+  duration_ms: 1.4116
+  type: 'test'
+  ...
+# Subtest: INVALID는Job오염requestnull과capture오염request수를구별한다
+ok 232 - INVALID는Job오염requestnull과capture오염request수를구별한다
+  ---
+  duration_ms: 0.8125
+  type: 'test'
+  ...
+# Subtest: 모든상태의요청JobSHA가달라지거나null이면이전/다른Job결과를거부한다
+ok 233 - 모든상태의요청JobSHA가달라지거나null이면이전/다른Job결과를거부한다
+  ---
+  duration_ms: 1.1562
+  type: 'test'
+  ...
+# Subtest: 12승인과현재파일/실행자대조2개는정확false만허용한다
+ok 234 - 12승인과현재파일/실행자대조2개는정확false만허용한다
+  ---
+  duration_ms: 1.7677
+  type: 'test'
+  ...
+# Subtest: RECORDED typedcount1..64/동일3계수/해시/빈issues/무결성true를검사한다
+ok 235 - RECORDED typedcount1..64/동일3계수/해시/빈issues/무결성true를검사한다
+  ---
+  duration_ms: 1.7738
+  type: 'test'
+  ...
+# Subtest: 나머지3상태는capture/핀/hashnull·무결성false·정확1원인만허용한다
+ok 236 - 나머지3상태는capture/핀/hashnull·무결성false·정확1원인만허용한다
+  ---
+  duration_ms: 2.0201
+  type: 'test'
+  ...
+# Subtest: 잘못된schema/status/scope·형제API키·원본id/path/URI같은추가정보를거부한다
+ok 237 - 잘못된schema/status/scope·형제API키·원본id/path/URI같은추가정보를거부한다
+  ---
+  duration_ms: 1.0865
+  type: 'test'
+  ...
+# Subtest: 입력/메뉴/재조회/표시중단후늦은성공과오류는무효이고현재요청만반영한다
+ok 238 - 입력/메뉴/재조회/표시중단후늦은성공과오류는무효이고현재요청만반영한다
+  ---
+  duration_ms: 9.8972
+  type: 'test'
+  ...
+# Subtest: 3개의형제진단카드key를분리하고모든선택context변경시새key를사용한다
+ok 239 - 3개의형제진단카드key를분리하고모든선택context변경시새key를사용한다
+  ---
+  duration_ms: 7.5763
+  type: 'test'
+  ...
+# Subtest: 404/503/401/403과연결실패는안전한별도안내를사용하고원문error를전달하지않는다
+ok 240 - 404/503/401/403과연결실패는안전한별도안내를사용하고원문error를전달하지않는다
+  ---
+  duration_ms: 3.0527
+  type: 'test'
+  ...
+# Subtest: 해시는실제agentApi JSON.stringify UTF8본문이며키정렬canonical이아니다
+ok 241 - 해시는실제agentApi JSON.stringify UTF8본문이며키정렬canonical이아니다
+  ---
+  duration_ms: 237.6668
+  type: 'test'
+  ...
+# Subtest: WorkflowID·Trace·실제본문SHA가모두일치하는현재진단만표시한다
+ok 242 - WorkflowID·Trace·실제본문SHA가모두일치하는현재진단만표시한다
+  ---
+  duration_ms: 2.3911
+  type: 'test'
+  ...
+# Subtest: 공유ref재사용·빈노드·상충참조무해시진단을실행성공으로바꾸지않는다
+ok 243 - 공유ref재사용·빈노드·상충참조무해시진단을실행성공으로바꾸지않는다
+  ---
+  duration_ms: 0.7946
+  type: 'test'
+  ...
+# Subtest: 계보무결성일치여도Workflow는항상PLAN_ONLY/BLOCKED·비실행이다
+ok 244 - 계보무결성일치여도Workflow는항상PLAN_ONLY/BLOCKED·비실행이다
+  ---
+  duration_ms: 1.4421
+  type: 'test'
+  ...
+# Subtest: 선행상한·부분검사·노드순서와고정binding신원을검증한다
+ok 245 - 선행상한·부분검사·노드순서와고정binding신원을검증한다
+  ---
+  duration_ms: 0.8451
+  type: 'test'
+  ...
+# Subtest: JSON수정·메뉴이동·같은JSON복귀에도이전응답은세대로거부한다
+ok 246 - JSON수정·메뉴이동·같은JSON복귀에도이전응답은세대로거부한다
+  ---
+  duration_ms: 0.4078
+  type: 'test'
+  ...
+# node:internal/modules/run_main:123
+#     triggerUncaughtException(
+#     ^
+# AssertionError [ERR_ASSERTION]: Traceback (most recent call last):
+#   File "<string>", line 2, in <module>
+# ModuleNotFoundError: No module named 'test_workflow_job_model_record_handoff'
+# 1 !== 0
+#     at file:///E:/GeoAI%E2%80%93MLOps%E2%80%93SDSS/.git/priority-frontend-check/frontend/src/workflowModelRecordHandoffAdapter.test.mjs:33:215
+#     at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+#     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:647:26)
+#     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+#   generatedMessage: false,
+#   code: 'ERR_ASSERTION',
+#   actual: 1,
+#   expected: 0,
+#   operator: 'strictEqual'
+# }
+# Node.js v22.18.0
+# Subtest: src\\workflowModelRecordHandoffAdapter.test.mjs
+not ok 25 - src\\workflowModelRecordHandoffAdapter.test.mjs
+  ---
+  duration_ms: 2885.2896
+  type: 'test'
+  location: 'E:\\GeoAI–MLOps–SDSS\\.git\\priority-frontend-check\\frontend\\src\\workflowModelRecordHandoffAdapter.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: Python shared Unicode golden canonical/SHA includes nonBMP·accent·Hangul·U2028
+ok 248 - Python shared Unicode golden canonical/SHA includes nonBMP·accent·Hangul·U2028
+  ---
+  duration_ms: 51.8622
+  type: 'test'
+  ...
+# Subtest: canonical sorts keys by codepoint and numeric keys lexically without JS object re-enumeration
+ok 249 - canonical sorts keys by codepoint and numeric keys lexically without JS object re-enumeration
+  ---
+  duration_ms: 0.9185
+  type: 'test'
+  ...
+# Subtest: request preserves whitespace/escape raw JSON and hashes actual JSON.stringify outer body
+ok 250 - request preserves whitespace/escape raw JSON and hashes actual JSON.stringify outer body
+  ---
+  duration_ms: 11.1258
+  type: 'test'
+  ...
+# Subtest: strict parser refuses duplicates including escaped keys, floats/exponents/nonfinite/int32/type syntax
+ok 251 - strict parser refuses duplicates including escaped keys, floats/exponents/nonfinite/int32/type syntax
+  ---
+  duration_ms: 2.1003
+  type: 'test'
+  ...
+# Subtest: strict scalar/depth/UTF8 limits and Unicode codepoint length are explicit
+ok 252 - strict scalar/depth/UTF8 limits and Unicode codepoint length are explicit
+  ---
+  duration_ms: 2.5335
+  type: 'test'
+  ...
+# Subtest: valid server MATCH requires exact wrapper/result and all hashes/counts/20false7typed0
+ok 253 - valid server MATCH requires exact wrapper/result and all hashes/counts/20false7typed0
+  ---
+  duration_ms: 11.5183
+  type: 'test'
+  ...
+# Subtest: typed status rejects coercible arrays and MATCH inconsistencies
+ok 254 - typed status rejects coercible arrays and MATCH inconsistencies
+  ---
+  duration_ms: 5.4439
+  type: 'test'
+  ...
+# Subtest: server metadata mismatch BLOCKED is displayed with exact local proposal digest
+ok 255 - server metadata mismatch BLOCKED is displayed with exact local proposal digest
+  ---
+  duration_ms: 9.5423
+  type: 'test'
+  ...
+# Subtest: core invalid Workflow HTTP200 BLOCKED keeps null diagnostics, not fake zero pass
+ok 256 - core invalid Workflow HTTP200 BLOCKED keeps null diagnostics, not fake zero pass
+  ---
+  duration_ms: 5.4024
+  type: 'test'
+  ...
+# Subtest: unknown selection / empty selected inputs / invalid proposal preserve legitimate BLOCKED stages
+ok 257 - unknown selection / empty selected inputs / invalid proposal preserve legitimate BLOCKED stages
+  ---
+  duration_ms: 8.1236
+  type: 'test'
+  ...
+# Subtest: comparison per-ref indices must be in both selected and proposed input ranges
+ok 258 - comparison per-ref indices must be in both selected and proposed input ranges
+  ---
+  duration_ms: 3.4888
+  type: 'test'
+  ...
+# Subtest: stale reply ignores generation/raw inputs/revision/route differences and safe errors stay bounded
+ok 259 - stale reply ignores generation/raw inputs/revision/route differences and safe errors stay bounded
+  ---
+  duration_ms: 1.1
+  type: 'test'
+  ...
+# Subtest: component has only manual POST, independent state and route/unmount guards; parent mount avoids plan result keys
+ok 260 - component has only manual POST, independent state and route/unmount guards; parent mount avoids plan result keys
+  ---
+  duration_ms: 71.5694
+  type: 'test'
+  ...
+1..260
+# tests 260
+# suites 0
+# pass 254
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 22734.7215

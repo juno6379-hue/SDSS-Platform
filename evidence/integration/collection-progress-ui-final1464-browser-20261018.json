@@ -1,0 +1,60 @@
+{
+  "scope": "VERIFIED_REAL final live UI after round3 settlement",
+  "attempted_url": "http://127.0.0.1:5174/#/view/17",
+  "observed_url": "http://127.0.0.1:5174/#/view/17",
+  "tab_id": "850118897",
+  "navigation_interference": {
+    "observed_other_route": "#/view/12",
+    "action": "notified Root; restored own tab only; manual refresh then waited",
+    "other_tabs_changed": false
+  },
+  "raw": {
+    "physical": 1464,
+    "eligible": 1164,
+    "ineligible": 300,
+    "by_split": {
+      "train": 681,
+      "val": 233,
+      "test": 250
+    },
+    "target_gap": 36,
+    "cell_gap": 109,
+    "source_manifest_sha256": "c57a1768a87fae7b0fd0c5ec8e451c439d35c65bf54d99f1f7b38dc98928e33e",
+    "recorded_at": "2026-10-18T01:41:01.686168+00:00"
+  },
+  "candidate": {
+    "eligible": 1106,
+    "by_split": {
+      "train": 639,
+      "val": 217,
+      "test": 250
+    },
+    "blocker_count": 4,
+    "ready_for_training": false,
+    "source_matches_current_manifest": false,
+    "source_manifest_sha256": "9211524656d92f0fcfcdf11f2ec382965e3aeacbc7f80da5b02f4f59784df1e7"
+  },
+  "console_error_warning_count": 0,
+  "horizontal_overflow_px": 0,
+  "source_mismatches": [],
+  "source_sha256": {
+    "frontend/src/CollectionProgress.tsx": "2dc92ee86e96e78cbdc47863596e2c57f3fbaa18c548328a3ec6663116c3e7d0",
+    "frontend/src/collectionProgressAdapter.ts": "f209f66d7ef07b5f5b9013f71b345fe351a8fe49474a1e75d0b3552214a9716f",
+    "frontend/src/collectionProgressClient.ts": "015500db7f4f1d61b6d478eef1bf24b58902683f614c0aede45150e4f421cacb",
+    "frontend/src/collection-progress.css": "fdc05a6708fcff9e62ca61073319d993e5c6563416532f6b3aa696333fb40fbb",
+    "frontend/src/collectionProgressAdapter.test.mjs": "8d79294242f89e55a39a74a273284cf888329cd2ac8a82f5ee0f5cd1d18d9516",
+    "frontend/src/CollectionStatus.tsx": "80b4a1aef652c3e2ebb77e1b07ce602b23b4a5828c3166ffd74dc79370798d10",
+    "frontend/src/ModelReview.tsx": "f172c6693b45f2cde13c00c5487580a694607e9a632bea11d6e4d908d15f64d1"
+  },
+  "ui_operating_writes": 0,
+  "evidence": [
+    "collection-progress-ui-final1464-dom-20261018.txt",
+    "collection-progress-ui-final1464-20261018.png",
+    "collection-progress-ui-final1464-candidate-20261018.png"
+  ],
+  "limitations": [
+    "mobile and forced-delay browser not tested",
+    "Root API PID36400 reported separately; browser performs existing GET only",
+    "raw stored quality status counts are not new native raster QA"
+  ]
+}
