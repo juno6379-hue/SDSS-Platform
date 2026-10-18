@@ -1,5 +1,9 @@
 # 157 — 반텐 256 나지 표적창의 로컬 계획 검증
 
+## 2026-10-18 후속175 — 로컬 계획 범위 확장
+
+아래157본문은초기반텐판본의구현/시험이력이다. [175](175_six_province_local_target_plan.md)에서같은helper의로컬검사를6주고정split·각주경계/AOI·실제미터10m격자로확장하고기존반텐job/key/config계약을보존했다.집중16/관련77PASS이며성공도execution_supported=false다.다른주train/test실제실행은174 B/C의liveguard/consumer검증이남아있다. 175의합성검사를157의과거실자료관측으로확대하지않는다.
+
 상태: `TESTED_SYNTHETIC` 및 `VERIFIED_REAL_LOCAL` 읽기 관측. 신규 `backend/app/data/targeted_bare_plan.py`는 명시한 로컬 계획을 실제 저장 라벨과 영상 헤더에 대조하고 **실행할 수 없는 job 제안**을 반환한다. 기존 collector·1024 후보 validator·원장·API/UI를 변경하지 않았다. 이 단위의 실제 HTTP·학습·추론·Registry 쓰기는 0이다. 일반 부족 셀 수집은 Root의 별도152 실행이다.
 
 ## 목적과 입력
