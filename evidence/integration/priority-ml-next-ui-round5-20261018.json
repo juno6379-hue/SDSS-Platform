@@ -1,0 +1,49 @@
+{
+  "observedAt": "2026-10-18T01:59:26.155Z",
+  "responseAt": "2026-10-18T01:58:33.471802+00:00",
+  "url": "http://127.0.0.1:5174/#/view/17",
+  "raw": {
+    "physical": 1512,
+    "eligible": 1212,
+    "ineligible": 300,
+    "split": [
+      697,
+      265,
+      250
+    ],
+    "cellGap": 85,
+    "goalGap": 0,
+    "manifestSha256": "035749c062f9877d38c3117e80ced87ba28945259ac5fdbbca81dc8776868af4"
+  },
+  "candidate": {
+    "eligible": 1125,
+    "split": [
+      658,
+      217,
+      250
+    ],
+    "blockers": 4,
+    "ready": false,
+    "sourceMatchesCurrent": false
+  },
+  "bareRaw": {
+    "pixels": [
+      1586,
+      600,
+      1025
+    ],
+    "contributingPatches": [
+      0,
+      1,
+      0
+    ],
+    "minimumContributingPatches": 5
+  },
+  "console": [],
+  "horizontalOverflow": false,
+  "limitations": [
+    "Round6 started subsequently; no unverified new collection included",
+    "Raw manifest count is stored quality declaration; selected increments have separate native audit"
+  ],
+  "noAnalysisTrainingOrDeployment": true
+}

@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-18T11:01:00.149293+09:00",
+  "baseline": "2d41ee67681e3841a5b8e6fe2f4c5feb86eb98f3",
+  "scope": "Completed round5 native audit/UI/documentation; round6 launch only",
+  "raw": {
+    "physical": 1512,
+    "eligible": 1212,
+    "ineligible": 300,
+    "split": [
+      697,
+      265,
+      250
+    ],
+    "cellGap": 85,
+    "goalGap": 0,
+    "manifestSha256": "035749c062f9877d38c3117e80ced87ba28945259ac5fdbbca81dc8776868af4"
+  },
+  "candidate": {
+    "eligible": 1125,
+    "split": [
+      658,
+      217,
+      250
+    ],
+    "blockers": 4,
+    "ready": false,
+    "sourceMatchesCurrent": false
+  },
+  "new_request_totals": {
+    "physical": 112,
+    "eligible": 90,
+    "bare_declared_pixels": 559
+  },
+  "round5": {
+    "physical_added": 16,
+    "eligible_added": 16,
+    "bare_added": 6,
+    "native_audit_seconds": 9.428613700001733,
+    "one_scene_failed_COG_range": true,
+    "initial_auditor_scene_level_failure_log_retained": true
+  },
+  "continuing": {
+    "round6_wrapper_pid": 8688,
+    "selected": "east_java2024g01/g02",
+    "completion": "UNVERIFIED",
+    "training_started": false,
+    "targeted_bare_execution_supported": false,
+    "automation": "geoai-2 ACTIVE10min"
+  },
+  "documentation": {
+    "understanding_markdown": 121,
+    "local_links": 572,
+    "errors": []
+  },
+  "source_change": false,
+  "test_scope": "No new product source; prior48 backend/288 isolated frontend/build120 historical scope. New16 native audit+actual browser response is this unit evidence."
+}

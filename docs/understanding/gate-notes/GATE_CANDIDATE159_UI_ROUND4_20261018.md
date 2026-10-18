@@ -2,7 +2,7 @@
 
 | 필드 | 값 |
 |---|---|
-| updated_at | 2026-10-18 10:54 KST |
+| updated_at | 2026-10-18 11:00 KST — 5차1212/셀85·후보1125 실제UI;6차 시작/완료미확인 |
 | source_commit | 1c97f5973b71e1e8234cdb41494c0ba6ca0a25b6 + 161 receipt/UI evidence follow-up |
 | evidence_paths | `evidence/integration/priority-collection-round4-final-20261018.json`; `evidence/integration/priority-collection-independent-round4-20261018.json`; `evidence/integration/priority-ml-next-20261018-final-verification.json`; `evidence/integration/priority-ml-next-ui-round4-20261018.json`; `evidence/integration/priority-ml-next-ui-round4-20261018.png`; `evidence/integration/priority-collection-round5-launch-20261018.json` |
 | confidence | 실제 수집·고정 후보 QA·실제 UI 확인. 독립 정확도와 운영 승인은 미확인 |
@@ -64,3 +64,8 @@ flowchart LR
 
 
 최종 감사 산출물 정정: 최초4차 감사의 패치별 실제검사 assertion은32적격/391나지였지만 JSON요약에 이전회차23/148상수가 남아 마감검산에서 차단됐다. 최초JSON/script를 summary-initial로 보존하고 요약을 실제 observations에서 계산하도록 수정했다. 재검사는10.2128606초/exit0이며32/391을 확인했다. 수집 원본·원장·품질판정 변경은0이다. 이는 제품수집 오류가 아닌 감사 helper의요약 오류다. 근거:evidence/integration/priority-collection-independent-round4-summary-initial-20261018.json,priority-collection-independent-round4-20261018.json,priority-collection-independent-round4-final-20261018.log.
+
+
+### 최신 5차 완료 관측 — 2026-10-18 11:00 KST
+
+VERIFIED_REAL(실제수집·고정후보·조회범위): 원본1512물리/1212적격(697/265/250), 셀 부족85·전체1200 수량 부족0이다. 누출16행을 제외한 고정 후보1125(658/217/250)는 UI에 연결됐지만 이후71적격은 QA 범위 밖이다. 나지1586/600/1025픽셀·기여0/1/0, 나지4차단·학습미준비와 독립정확도미검증은 유지한다.5차 한 batch는 COG 범위 오류0개, 다른 batch는16적격/나지6픽셀이며 실제 검사9.4286137초를 완료했다. 감사helper의 scene-level 실패처리 초기로그를 보존했다.6차 동자바2024 두창은 PID8688로 시작/완료미확인이다. 전체개발·나지목표 완료가 아니며10분 보고를 계속한다. 근거: `evidence/integration/priority-collection-round5-final-20261018.json`, `evidence/integration/priority-collection-independent-round5-20261018.json`, `evidence/integration/priority-ml-next-ui-round5-20261018.json`, `evidence/integration/priority-collection-round6-launch-20261018.json`.
