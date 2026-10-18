@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-18T01:51:36.800453+00:00",
+  "status": "SETTLED",
+  "manifest_sha256": "f5aa5c9b802a9bc36aab9080133250651a31e929b88a9134b397c9db2e7edd1d",
+  "physical_total": 1496,
+  "eligible_total": 1196,
+  "cell_gap_total": 97,
+  "new_physical": 32,
+  "new_eligible": 32,
+  "new_bare_declared_pixels": 391,
+  "old_rows_unchanged": true,
+  "old_pending_rows_unchanged": true,
+  "old_pending_reserved_bytes": 136314880,
+  "selected_ledger_rows": {
+    "parallel-v2-grid-esri_io-banten-2025-g01": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 23020268,
+      "config_sha256": "cf3d2a94ac3793f4887b1722bd79207df11a58245add02cc500825d59bb968ed",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2025-g01\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-banten-2025-g02": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 21661979,
+      "config_sha256": "baea858acaf6ead2d68fdb2d48348691f74b5a1bf33187eaec8d28de41b623de",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2025-g02\\annual-window-report.json"
+    }
+  },
+  "new_charged_total": 2085380105,
+  "charged_delta_from_launch": 44682247,
+  "remaining_budget": 2209587191,
+  "rate_limit_active": false,
+  "execution_lock_present": false,
+  "scientific_accuracy_validated": false,
+  "learning_ready": false,
+  "observation_limit": "Sequential reads, not atomic OS snapshot. Stored quality counts, not a new native raster QA. Child stdout is forwarded; source history/state and central ledger are independent evidence."
+}

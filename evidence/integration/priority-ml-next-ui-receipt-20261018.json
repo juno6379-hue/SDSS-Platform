@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T01:49:48.969661+00:00",
+  "files": [
+    {
+      "path": "priority-ml-next-snapshot-20261018/annual-window-report.json",
+      "sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe"
+    },
+    {
+      "path": "priority-ml-next-stage-20261018/candidate.json",
+      "sha256": "d8dad13a22278a8cdddfeb56f7fb746e2d51523b01ac866689dde2018a48b01c"
+    },
+    {
+      "path": "priority-ml-next-readiness-20261018/readiness.json",
+      "sha256": "cec0666793c8ba9d9e049d8042850f0784edc6ebb7d7996d7432220ddb0f19b4"
+    }
+  ],
+  "source_manifest_sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+  "by_split": {
+    "train": 658,
+    "val": 217,
+    "test": 250
+  },
+  "blocker_count": 4,
+  "scene_split_conflicts": [],
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "scope": "FROZEN_1432_ROW_SOURCE_NOT_LATER_COLLECTION",
+  "limitations": [
+    "Connectivity ancillary witness NOT_CAPTURED_BUDGET; no cap bypass",
+    "Later1464 aggregate additions excluded"
+  ],
+  "previous_pointer_sha256": "0d2c43cf7e884e3012a393771e2980fc6fcc4525e266980e3a2602d762a8f01d"
+}

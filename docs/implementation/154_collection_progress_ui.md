@@ -63,3 +63,16 @@ Root가 `priority-ml-ui-receipt-20261018.json`과 명시 pointer를 발행한 �
 최종 근거는 `collection-progress-ui-final1464-browser-20261018.json`, `collection-progress-ui-final1464-dom-20261018.txt`, `collection-progress-ui-final1464-20261018.png`, `collection-progress-ui-final1464-candidate-20261018.png`다. 최초 전용 탭 경로가 외부 조작으로툴박스12로 바뀐 관측은 Root에 알렸고, 본인 탭ID만17로 복구해 수동 조회했다. 다른 탭·제품 코드는 변경하지 않았다. 이후 최종 경로17·응답·콘솔0·가로 넘침0·제품7개 SHA 불일치0을 확인했다.
 
 Root가 HEAD76949 기준에 본 UI7개 파일만 적용하고 다른 담당 Toolbox/App/WIP를 제외한 격리 프런트 검증도 수행했다. 최종 **288 PASS/0 SKIP/36.4999934초**, 빌드 **120 modules/32.33초**이며 `priority-frontend-isolated-tests-20261018.log`, `priority-frontend-isolated-build-20261018.log`, 소스핀 `priority-frontend-isolated-source-20261018.json`에 남겼다. 초기 격리 export fixture 누락193PASS/33FAIL, 부분 fixture254PASS/6FAIL은 환경 구성 중 근거로 보존됐고 최종 fixture 연결 후 통과했으며 제품 코드는 바뀌지 않았다. 이 격리 결과와 앞선 공동 workspace123modules 빌드는 실행 범위가 다르므로 하나의 실행 수치로 혼용하지 않는다. 최종 브라우저 후속은 소스/시험 재편집 없이 문서·증거만 추가했다.
+
+
+## 2026-10-18 10:54 KST — 4차 수집 완료·159 후보 UI 승계
+
+앞선1464/1164 관측 이후4차 반텐2025 g01/g02가 정상종료했다. 신규32물리/32적격/나지391픽셀로1496물리/1196적격/300부적격,train681/val265/test250이다. 전체1200 부족4·주연도 셀당28 부족97이다. 최초요청대비96물리/74적격을 추가했고 셀 부족151→97,나지추가553픽셀이다. 4차32개 실제래스터·유효/주내·클래스·SHA 및source/worker/원장 정합성을12.7664229초에 재검증했고 기존1464행과pending2전액136314880B를보존했다. 신규총계상2085380105B/한도잔여2209587191B,429false/실행lock정상해제다. 원본검증분할 나지는209→600픽셀,기여0→1개로 개선됐으나0.5%·기여5패치 기준은미달이다. 1200개충족과학습준비는별개다.
+
+159의1432행고정source→누출16행제외후1416행/1125적격 후보는실제QA·4435파일SHA검증후명시receipt로승계했다. 기존153후보/receipt와교체전pointer원바이트를보존하고,새receipt3핀검산·readyfalse/차단4 검산후pointer원바이트가변하지않았는지비교하고os.replace로교체했다. DatasetRegistry/모델/원장/기존분할/학습상태전이0이다. 부가connectivity NOT_CAPTURED_BUDGET 한계는유지한다. 최신1496원본의55적격(23+32)은새1125후보QA범위밖이며sourceSHA불일치경고를유지한다.
+
+실제API8002/프런트5174 소스변경·재시작 없이기존GET·명시수동새로조회로승계됐다. 브라우저응답01:52:31.145480Z에서원본1196(681/265/250)·후보1125(658/217/250)·차단4/미준비·시점불일치·원본검증나지600/기여1을확인했다. console warning/error0,가로넘침0이며분석/학습/배포/등록버튼을실행하지않았다. 전체페이지스크린샷1회timeout은브라우저캡처한계로기록하고실제viewport PNG/DOM/JSON을보존한다. 제품소스변경없으므로기존48관련backend·288격리frontend·build120근거를유지하며새전체회귀통과를주장하지않는다.
+
+5차동자바2021 g02/g03은plan fe20a0b67e5b6215d3f0e4814a07e48b9645a2fb6ba90893b4c3049cd62b8ade,wrapperPID33756으로시작했고완료는미확인이다. 기존budget/2worker/2초/429중단/3000상한/고정split/품질정책을유지한다. 같은collector중복실행금지.157표적은계속집행차단이며160로컬자산영역검사작업은다른채팅소유기록과중복하지않는다. geoai-2 ACTIVE10분보고지속,전체개발미완료다.
+
+근거:evidence/integration/priority-collection-round4-final-20261018.json,priority-collection-independent-round4-20261018.json,priority-collection-round5-launch-20261018.json,priority-ml-next-ui-promote-20261018.py,priority-ml-next-ui-receipt-20261018.json,priority-ml-next-ui-round4-20261018.json,priority-ml-next-ui-round4-20261018.png 및docs/implementation/159_next_collection_candidate_qa.md.

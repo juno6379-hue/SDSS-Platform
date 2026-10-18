@@ -1,0 +1,41 @@
+{
+  "observedAt": "2026-10-18T01:53:13.364Z",
+  "responseAt": "2026-10-18T01:52:31.145480+00:00",
+  "url": "http://127.0.0.1:5174/#/view/17",
+  "raw": {
+    "physical": 1496,
+    "eligible": 1196,
+    "ineligible": 300,
+    "split": [
+      681,
+      265,
+      250
+    ],
+    "cellGap": 97,
+    "goalGap": 4,
+    "manifestSha256": "f5aa5c9b802a9bc36aab9080133250651a31e929b88a9134b397c9db2e7edd1d"
+  },
+  "candidate": {
+    "eligible": 1125,
+    "split": [
+      658,
+      217,
+      250
+    ],
+    "blockers": 4,
+    "ready": false,
+    "sourceMatchesCurrent": false
+  },
+  "bareRawVal": {
+    "pixels": 600,
+    "contributingPatches": 1,
+    "minimumContributingPatches": 5
+  },
+  "console": [],
+  "limitations": [
+    "Later round5 started after this completed round4 observation",
+    "Stored raw counts are not this browser rerunning rasterQA",
+    "Full-page screenshot attempt timed out; viewport screenshot retained"
+  ],
+  "noAnalysisTrainingOrDeployment": true
+}

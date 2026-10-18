@@ -1,5 +1,13 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-18 10:53 KST — 160 로컬 검사 완료·반텐 적격32 추가
+
+10:54 추가관측: 기존담당이 동자바2021 다음2batch를 시작했고 wrapper33756/collector2284 실행을 확인했다. 아래10:52 collector없음은 과거 관측이다. 완료1196누계에 새시작을 더하지 않는다. 다른채팅 최신보고는 실제UI1196원본/1125후보 분리반영도 확인했다. Root직접브라우저와 해당담당 후속확인을 구분한다.
+
+이 채팅의160 로컬 자산 검사 helper는 집중10/독립10/Root관련18 PASS(5.324초)와 실제 고정 영상·라벨 한 쌍의 내부 bbox 관측을 마쳤다. 원본2·보호6소스 SHA를 보존했다. 설명·대본·FAQ까지 별도 이해 담당이 완료했으며 `8c58444` / `codex/targeted-asset-geometry-20261018`에 신규11파일만 로컬 커밋했다. 기반1c97f59, 공유HEAD/index/작업파일 보존·push0이다. 기존 collector/157/API/UI 변경0이며160 전체 실행가드 완료가 아니다. 내부 helper라 새 화면 연결이 필요 없고 실행허용은 항상false다.
+
+기존 담당 round4는 반텐2025 두 창 +32물리/+32적격으로1496/1196/300, 총량 부족4·셀 부족97이다. 같은 셀16→48이므로 셀 부족 개선은12다. 새 나지 선언391픽셀·기여patch1개를 저장기록에서 확인했지만 최소5개/비율/최신QA가 남는다. oldpending136314880B·기존행 보존, 잔여2209587191B·429false·lock없음.159 고정1432 후보는1416물리/1125적격·4차단·4435파일 검증이 완료됐고 Root도9출력핀 일치 확인했다. UI1125 게시 근거는 당시 원본1164 범위다. 현재1196은 후보 생성 이후 적격55개를 포함하므로 최신전체QA로 확대하지 않는다.10:52:41 API/Vite실행·collector/ML runner없음, 다른 개발채팅active. 상세는 heartbeat_20261018_1045_audit.md. 전체개발/10분보고 유지.
+
 ## 2026-10-18 10:47 KST — 160 중 로컬 자산 전체영역 검사 구현 배정
 
 기존 개발 채팅의 최신 인계에서160 집행가드는 대기열/담당실행미확인임을 확인했다. 이 채팅은 그 일부인 신규 `backend/app/data/targeted_asset_geometry.py`, `tests/test_targeted_asset_geometry.py`, `docs/implementation/160_targeted_asset_geometry.md`만 담당한다. 명시 pinned 로컬 영상과 참조라벨 각각의 실제 CRS/격자/크기에 요청 전체bbox가 포함되는지 검사한다. collector/157/원장/기존source는 변경하지 않는다. 완료 전은 PLANNED/구현 중이며 실행허용은 항상false다. pending/support/scene veto/claim/정산/품질 연결과 실제 표적수집은 후속이다. 담당중복을 피하기 위한 소유기록이며 완료 근거가 아니다.
@@ -1980,3 +1988,16 @@ Job 제출의 고정 input 진단 연결은 위 단위로 구현·검증했다. 
 ### 159 후속 후보 QA 완료 — 2026-10-18 10:48 KST
 
 PLANNED→VERIFIED_REAL(고정 원본의 파일/래스터 검사 범위):1432행 시점 원본의 새후보는 반텐16행을 제외해1416행/1125적격(train658/val217/test250)이다. sourceQA164.672초·candidateQA216.0초·별도4435파일 SHA10.328초 검사에서 불일치0·source identity 교차분할0을 확인했다. 나지1432/209/1025픽셀·기여0/0/0·차단4·학습미준비/독립정확도미검증은 유지된다. 부가 connectivity 진단은1001820쌍이 기존100만cap을 넘어 NOT_CAPTURED_BUDGET이며 가드를 완화하지 않았다. 최신1464 원본의 나머지23적격은 포함하지 않는다. UI pointer는 아직검증된153의1106후보를 표시한다.1125후보의 API/UI 승계는 다음작업이며 실제화면 반영완료로 표현하지 않는다. 근거:docs/implementation/159_next_collection_candidate_qa.md,evidence/integration/priority-ml-next-20261018-summary.json,priority-ml-next-20261018-final-verification.json.
+
+
+## 2026-10-18 10:54 KST — 4차 수집 완료·159 후보 UI 승계
+
+앞선1464/1164 관측 이후4차 반텐2025 g01/g02가 정상종료했다. 신규32물리/32적격/나지391픽셀로1496물리/1196적격/300부적격,train681/val265/test250이다. 전체1200 부족4·주연도 셀당28 부족97이다. 최초요청대비96물리/74적격을 추가했고 셀 부족151→97,나지추가553픽셀이다. 4차32개 실제래스터·유효/주내·클래스·SHA 및source/worker/원장 정합성을12.7664229초에 재검증했고 기존1464행과pending2전액136314880B를보존했다. 신규총계상2085380105B/한도잔여2209587191B,429false/실행lock정상해제다. 원본검증분할 나지는209→600픽셀,기여0→1개로 개선됐으나0.5%·기여5패치 기준은미달이다. 1200개충족과학습준비는별개다.
+
+159의1432행고정source→누출16행제외후1416행/1125적격 후보는실제QA·4435파일SHA검증후명시receipt로승계했다. 기존153후보/receipt와교체전pointer원바이트를보존하고,새receipt3핀검산·readyfalse/차단4 검산후pointer원바이트가변하지않았는지비교하고os.replace로교체했다. DatasetRegistry/모델/원장/기존분할/학습상태전이0이다. 부가connectivity NOT_CAPTURED_BUDGET 한계는유지한다. 최신1496원본의55적격(23+32)은새1125후보QA범위밖이며sourceSHA불일치경고를유지한다.
+
+실제API8002/프런트5174 소스변경·재시작 없이기존GET·명시수동새로조회로승계됐다. 브라우저응답01:52:31.145480Z에서원본1196(681/265/250)·후보1125(658/217/250)·차단4/미준비·시점불일치·원본검증나지600/기여1을확인했다. console warning/error0,가로넘침0이며분석/학습/배포/등록버튼을실행하지않았다. 전체페이지스크린샷1회timeout은브라우저캡처한계로기록하고실제viewport PNG/DOM/JSON을보존한다. 제품소스변경없으므로기존48관련backend·288격리frontend·build120근거를유지하며새전체회귀통과를주장하지않는다.
+
+5차동자바2021 g02/g03은plan fe20a0b67e5b6215d3f0e4814a07e48b9645a2fb6ba90893b4c3049cd62b8ade,wrapperPID33756으로시작했고완료는미확인이다. 기존budget/2worker/2초/429중단/3000상한/고정split/품질정책을유지한다. 같은collector중복실행금지.157표적은계속집행차단이며160로컬자산영역검사작업은다른채팅소유기록과중복하지않는다. geoai-2 ACTIVE10분보고지속,전체개발미완료다.
+
+근거:evidence/integration/priority-collection-round4-final-20261018.json,priority-collection-independent-round4-20261018.json,priority-collection-round5-launch-20261018.json,priority-ml-next-ui-promote-20261018.py,priority-ml-next-ui-receipt-20261018.json,priority-ml-next-ui-round4-20261018.json,priority-ml-next-ui-round4-20261018.png 및docs/implementation/159_next_collection_candidate_qa.md.

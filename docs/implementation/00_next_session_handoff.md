@@ -1,5 +1,13 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 10:53 KST 인계 — 160 로컬 부분 완료와 최신 수집
+
+10:54에는 다음 동자바2021 두 배치의 wrapper33756/collector2284 실행을 추가 확인했다. 완료성과는 미확정이며1196누계에 포함하지 않는다. 다른담당 최신보고에서 UI원본1196/후보1125 반영도 확인됐다.10:52 collector없음/당시 UI1164 범위는 이전관측으로만 읽는다.
+
+heartbeat_20261018_1045_audit.md를 먼저 읽는다.160 신규 helper/test/doc/이해자료/증거는 별도 로컬커밋8c58444(기반1c97f59)에 보관했고 main/index/기존 작업을 보존했다. 집중10/독립10/Root관련18PASS·실제 고정 영상/라벨 내부bbox관측 완료이나 execution_supportedfalse, pending/support/sceneclaim/crop/정산/품질 집행은 미연결이다. 기존collector/157/API/UI 수정0이다.
+
+Round4 최종1496물리/1196적격·목표4/셀97, 새val나지391픽셀·기여패치1(최소5미달), oldpending136314880B보존·잔여2209587191B다.159는고정1432→1416물리/1125적격·4차단QA완료/4435파일검증, 원본에이후추가된55적격미포함이다. 새1125pointer/UI는기존개발담당이게시확인했으나그당시원본1164범위이므로1196화면검증으로확대하지않는다.10:52:41 collector/ML없음·API/Vite실행이며새실행을먼저확인한다. 기존채팅 소유collector/원장/159후보게시와중복하지않는다. 다음은 남은셀97·나지검증·160나머지집행가드이며 전체개발/10분보고 유지.
+
 ## 2026-10-18 10:44 KST — 152–157 검증 마감과 후속 수집 지속
 
 이 항목은 아래의 초기 진행 기록을 갱신한다. 완료된 3회·6batch에서 신규64물리/42적격/나지 선언162픽셀을 확보했다. 최신 완료 관측은1464물리/1164적격/300부적격,train681/val233/test250,1200목표 부족36·셀당28 부족109다. 최초151 부족은 주·연도 셀별 합계이며151개 셀이 아니다. 기존1400행·이후1432행 canonical내용과 pending2 전액136314880B를 보존했다. 총 신규계상87636806B, 기존4GiB 한도 잔여2254269438B다. 2차 동자바2025 두 건은 COG 범위 오류 실패이며 정산을 수집성공으로 계산하지 않는다. 3차32행은 실제래스터·SHA·품질을 별도 검증해23적격/나지148픽셀을 확인했다.
@@ -1982,3 +1990,16 @@ python scripts/run_experiment.py --manifest data/first-group-training-esri-v1/an
 ### 159 후속 후보 QA 완료 — 2026-10-18 10:48 KST
 
 PLANNED→VERIFIED_REAL(고정 원본의 파일/래스터 검사 범위):1432행 시점 원본의 새후보는 반텐16행을 제외해1416행/1125적격(train658/val217/test250)이다. sourceQA164.672초·candidateQA216.0초·별도4435파일 SHA10.328초 검사에서 불일치0·source identity 교차분할0을 확인했다. 나지1432/209/1025픽셀·기여0/0/0·차단4·학습미준비/독립정확도미검증은 유지된다. 부가 connectivity 진단은1001820쌍이 기존100만cap을 넘어 NOT_CAPTURED_BUDGET이며 가드를 완화하지 않았다. 최신1464 원본의 나머지23적격은 포함하지 않는다. UI pointer는 아직검증된153의1106후보를 표시한다.1125후보의 API/UI 승계는 다음작업이며 실제화면 반영완료로 표현하지 않는다. 근거:docs/implementation/159_next_collection_candidate_qa.md,evidence/integration/priority-ml-next-20261018-summary.json,priority-ml-next-20261018-final-verification.json.
+
+
+## 2026-10-18 10:54 KST — 4차 수집 완료·159 후보 UI 승계
+
+앞선1464/1164 관측 이후4차 반텐2025 g01/g02가 정상종료했다. 신규32물리/32적격/나지391픽셀로1496물리/1196적격/300부적격,train681/val265/test250이다. 전체1200 부족4·주연도 셀당28 부족97이다. 최초요청대비96물리/74적격을 추가했고 셀 부족151→97,나지추가553픽셀이다. 4차32개 실제래스터·유효/주내·클래스·SHA 및source/worker/원장 정합성을12.7664229초에 재검증했고 기존1464행과pending2전액136314880B를보존했다. 신규총계상2085380105B/한도잔여2209587191B,429false/실행lock정상해제다. 원본검증분할 나지는209→600픽셀,기여0→1개로 개선됐으나0.5%·기여5패치 기준은미달이다. 1200개충족과학습준비는별개다.
+
+159의1432행고정source→누출16행제외후1416행/1125적격 후보는실제QA·4435파일SHA검증후명시receipt로승계했다. 기존153후보/receipt와교체전pointer원바이트를보존하고,새receipt3핀검산·readyfalse/차단4 검산후pointer원바이트가변하지않았는지비교하고os.replace로교체했다. DatasetRegistry/모델/원장/기존분할/학습상태전이0이다. 부가connectivity NOT_CAPTURED_BUDGET 한계는유지한다. 최신1496원본의55적격(23+32)은새1125후보QA범위밖이며sourceSHA불일치경고를유지한다.
+
+실제API8002/프런트5174 소스변경·재시작 없이기존GET·명시수동새로조회로승계됐다. 브라우저응답01:52:31.145480Z에서원본1196(681/265/250)·후보1125(658/217/250)·차단4/미준비·시점불일치·원본검증나지600/기여1을확인했다. console warning/error0,가로넘침0이며분석/학습/배포/등록버튼을실행하지않았다. 전체페이지스크린샷1회timeout은브라우저캡처한계로기록하고실제viewport PNG/DOM/JSON을보존한다. 제품소스변경없으므로기존48관련backend·288격리frontend·build120근거를유지하며새전체회귀통과를주장하지않는다.
+
+5차동자바2021 g02/g03은plan fe20a0b67e5b6215d3f0e4814a07e48b9645a2fb6ba90893b4c3049cd62b8ade,wrapperPID33756으로시작했고완료는미확인이다. 기존budget/2worker/2초/429중단/3000상한/고정split/품질정책을유지한다. 같은collector중복실행금지.157표적은계속집행차단이며160로컬자산영역검사작업은다른채팅소유기록과중복하지않는다. geoai-2 ACTIVE10분보고지속,전체개발미완료다.
+
+근거:evidence/integration/priority-collection-round4-final-20261018.json,priority-collection-independent-round4-20261018.json,priority-collection-round5-launch-20261018.json,priority-ml-next-ui-promote-20261018.py,priority-ml-next-ui-receipt-20261018.json,priority-ml-next-ui-round4-20261018.json,priority-ml-next-ui-round4-20261018.png 및docs/implementation/159_next_collection_candidate_qa.md.

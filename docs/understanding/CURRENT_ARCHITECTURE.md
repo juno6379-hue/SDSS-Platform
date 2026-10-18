@@ -984,3 +984,8 @@ Root는 병행 Toolbox 작업을 제외한 공개 HEAD와 이번7개 frontend �
 ### 159 후속 후보 QA 완료 — 2026-10-18 10:48 KST
 
 PLANNED→VERIFIED_REAL(고정 원본의 파일/래스터 검사 범위):1432행 시점 원본의 새후보는 반텐16행을 제외해1416행/1125적격(train658/val217/test250)이다. sourceQA164.672초·candidateQA216.0초·별도4435파일 SHA10.328초 검사에서 불일치0·source identity 교차분할0을 확인했다. 나지1432/209/1025픽셀·기여0/0/0·차단4·학습미준비/독립정확도미검증은 유지된다. 부가 connectivity 진단은1001820쌍이 기존100만cap을 넘어 NOT_CAPTURED_BUDGET이며 가드를 완화하지 않았다. 최신1464 원본의 나머지23적격은 포함하지 않는다. UI pointer는 아직검증된153의1106후보를 표시한다.1125후보의 API/UI 승계는 다음작업이며 실제화면 반영완료로 표현하지 않는다. 근거:docs/implementation/159_next_collection_candidate_qa.md,evidence/integration/priority-ml-next-20261018-summary.json,priority-ml-next-20261018-final-verification.json.
+
+
+### 161 후속 UI·수집 완료 근거 — 2026-10-18 10:54 KST
+
+VERIFIED_REAL(수집·파일검사·실제조회범위):4차완료1496물리/1196적격(681/265/250),셀부족97/목표부족4,원본val나지600픽셀·기여1개다. 검증후보1125(658/217/250)를3핀검산·이전receipt보존후UIpointer로승계했고실제브라우저에서차단4·미준비·현재원본과고정source불일치를확인했다. 최신55적격은후보QA밖이다. 나지0.5%/기여5개·독립정답·표적집행미연결차단은미해소다.5차동자바2021 g02/g03 PID33756은시작/완료미확인이다. 보고10분ACTIVE와실제collector/학습0을구분한다. 쉬운설명·이론·동작·증거·발표·Q&A는[161 이해노트](gate-notes/GATE_CANDIDATE159_UI_ROUND4_20261018.md)에모았다.
