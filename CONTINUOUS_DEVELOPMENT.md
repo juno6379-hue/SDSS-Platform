@@ -1,5 +1,14 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-19 11:42 KST — 서버 재기동·API 재확인·미커밋 변경 커밋
+
+00:16 이후 원장 갱신과 실제 작업이 없었다(collector/QA/native/시험 프로세스 0, 332 격리 작업공간 00:18 이후 수정 없음·freeze 없음 → 중단 상태). 프로젝트 API 8002/frontend 5174가 꺼져 있어 재기동했다. API는 기존 명시 진입점 `evidence/integration/profile237-api-entrypoint-root-20261018.py`(source-profile237 결속)로, frontend는 `npm run dev -- --port 5174 --strictPort`로 실행했다. 첫 시도에서 profile 없이 일반 uvicorn으로 띄운 API는 current_manifest 미일치로 보여 중단하고 교체했다(로그 restart333-*-20261019 보존).
+
+실API GET `/api/data/collection-status` 200(첫 호출 55.46초, cold): 원본 1407·image cell 36/36·freshness current_manifest, 후보 1391 source 일치·blocker3·ready false, 예산 잔여 1799757940B·pending 136314880B, bare50 source 일치, unreadable 0. 323 마지막 검증값과 같다. `/api/health` ok, UI 5174 HTTP 200. 실제 브라우저 화면 육안 확인은 이번에 수행하지 않았다.
+
+커밋 a63ae6c(main, push 안 함): 3446파일. 50MB 초과 candidate.json 10개는 `.gitignore`에 경로를 추가해 로컬만 보존했고, `Ref/` 참조 PDF는 기존처럼 추적하지 않는다. 운영 원본·원장·후보·pointer·profile 쓰기 0, 수집·학습 0. 다음: 332 재개 여부 결정, 원장·인계서 요약본 분리.
+
+
 00:16 후속: 별도 understanding_agent가 330 최종 검토와 331 공유 적용·30건 통과까지 해설·발표대본·FAQ·INDEX·이력에 반영했다. 329_ATOMIC_JSON_WRITER_ISOLATED.md145행 SHA079b6c7341d8eccac5f94abd31038e2203dae593949057fb9ac696afb5142e47. 링크누락0/문서검사통과·운영자료추가읽기/HTTP시험/제품수정0. UNKNOWN·임시파일존재미보장·oldpending caller책임과 실제원장170worker미연결을 유지했다.332 격리 구현만 진행한다.
 
 

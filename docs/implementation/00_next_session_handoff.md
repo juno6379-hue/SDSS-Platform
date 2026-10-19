@@ -1,5 +1,10 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-19 11:42 KST — 서버 재기동·커밋 a63ae6c
+
+API 8002는 반드시 `python evidence/integration/profile237-api-entrypoint-root-20261018.py`(source-profile237 결속, CORS env `GEOAI_CORS_ORIGINS`에 5174 포함)로, frontend는 `frontend`에서 `npm run dev -- --port 5174 --strictPort`로 띄운다. 일반 `uvicorn app.main:app`으로 띄우면 profile이 없어 current_manifest 미일치·image cell 0으로 보인다. 재기동 뒤 collection-status는 1407/후보1391 current/blocker3/잔여1799757940/pending136314880/bare50 current로 323과 같다. 실브라우저 육안 확인은 미수행. 미커밋 3446파일을 a63ae6c로 커밋했고(push 안 함) 50MB 초과 candidate.json 10개는 .gitignore로 제외, `Ref/`는 미추적이다. 332는 중단 상태이며 재개 여부를 결정해야 한다.
+
+
 00:16 후속: 별도 understanding_agent가 330 최종 검토와 331 공유 적용·30건 통과까지 해설·발표대본·FAQ·INDEX·이력에 반영했다. 329_ATOMIC_JSON_WRITER_ISOLATED.md145행 SHA079b6c7341d8eccac5f94abd31038e2203dae593949057fb9ac696afb5142e47. 링크누락0/문서검사통과·운영자료추가읽기/HTTP시험/제품수정0. UNKNOWN·임시파일존재미보장·oldpending caller책임과 실제원장170worker미연결을 유지했다.332 격리 구현만 진행한다.
 
 
