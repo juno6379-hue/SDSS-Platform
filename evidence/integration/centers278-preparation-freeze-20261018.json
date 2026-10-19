@@ -1,0 +1,41 @@
+{
+  "status": "FROZEN_PREPARATION_ONLY_AWAITING_ROOT_GO",
+  "files": [
+    {
+      "path": "evidence/integration/centers278-prepare-20261018.py",
+      "bytes": 12594,
+      "sha256": "cbe09f3d190422f3088fa5be030e229765e63dd2c29d750b5e9a01a1b1f7df41"
+    },
+    {
+      "path": "evidence/integration/centers278-prepared-20261018.json",
+      "bytes": 5810,
+      "sha256": "e33676f1589ffac3318614eb44ca1acedb581799f34249f276904a43ef79d492"
+    },
+    {
+      "path": "docs/implementation/278_gorontalo_priority_local_plan_preparation.md",
+      "bytes": 7602,
+      "sha256": "4d492fe5dd22bcb37d4c83123d9086139aa89cdbb4854e968faf4eb6516dc3a7"
+    }
+  ],
+  "parent269_freeze_sha256": "9d1d67515250ff7bae39e51a050375cc3e00c03ab44eec4129cb515828e114ee",
+  "prior_candidates_to_preserve": 56,
+  "maximum_next_candidates": 4,
+  "targets": [
+    "gorontalo:2025",
+    "gorontalo:2022",
+    "east_java:2025"
+  ],
+  "ast_parse_passed": true,
+  "default_noarg_status": "PLANNED_AWAITING_ROOT_GO",
+  "local_cli_invocations": 0,
+  "active_source_reads": 0,
+  "active_ledger_reads": 0,
+  "raster_header_or_array_reads": 0,
+  "network_requests": 0,
+  "collector_started": false,
+  "main_product_changes": 0,
+  "operating_source_or_ledger_written": false,
+  "actual_quality_eligible": false,
+  "ready_for_training": false,
+  "automatic_retry_allowed": false
+}

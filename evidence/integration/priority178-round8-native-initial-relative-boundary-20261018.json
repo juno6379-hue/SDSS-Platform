@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "scope": "READONLY_FIXED_LAUNCH_INCREMENT_NATIVE_AUDIT",
+  "recorded_at": "2026-10-18T02:53:58.405200+00:00",
+  "status": "INTEGRITY_BLOCKED",
+  "issue": "FILE_UNAVAILABLE",
+  "native_validation_complete": false,
+  "batches": [],
+  "native_patches_checked": 0,
+  "native_eligible_patches": 0,
+  "eligible_bare_pixels": 0,
+  "source_or_ledger_writes": 0,
+  "collection_executed": false,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "limitations": [
+    "Sequential observations, not an atomic filesystem/DB snapshot.",
+    "Only selected launch batches get native patch checks; prior rows are canonical metadata checks.",
+    "Esri weak labels and training support masks are not independent truth or QA/model approval.",
+    "Stored whole-pool counts/leakage are metadata only, not whole-pool raster revalidation.",
+    "No HTTP, collection, retries, refunds, reservation edits or source reconstruction."
+  ],
+  "seconds": 2.6152690000017174
+}

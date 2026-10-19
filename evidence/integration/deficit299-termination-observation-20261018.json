@@ -1,0 +1,66 @@
+{
+  "status": "TERMINATION_OBSERVED_NATIVE_GO_PENDING",
+  "observed_at": "2026-10-18T13:04:38.420811+00:00",
+  "launch_sha256": "a09147508317777a540201d0c990a926f33d5f57a5989ce520c18d0a0197f91d",
+  "terminal_sha256": "7bf70672ff58f17b5b917ec26ae2b4e13f48ff79c7bda71dc17c9ffad453fb1b",
+  "stdout_sha256": "a68649196835a32637a41babeec27f909500a91f3ad819e984d3b3c4145d2157",
+  "stderr_bytes": 0,
+  "collector_pid": 14628,
+  "supervisor_pid": 41744,
+  "processes_absent_at_last_os_observation": true,
+  "execution_lock_absent_at_last_observation": true,
+  "exit_code": 0,
+  "actual_seconds": 350.3899999999994,
+  "finished_at": "2026-10-18T13:04:07.327723+00:00",
+  "program_reported_batches": [
+    {
+      "key": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072",
+      "patches": 16,
+      "eligible": 15,
+      "charged_bytes": 22680361,
+      "live_b02_checked": true,
+      "rate_limited": false
+    }
+  ],
+  "program_reported_eligible_total": 1391,
+  "program_reported_execution_progress": {
+    "reservation_attempted_batches": [
+      "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072"
+    ],
+    "reserved_batches": [
+      "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072"
+    ],
+    "collector_entered_batches": [
+      "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072"
+    ],
+    "settled_batches": [
+      "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072"
+    ],
+    "published_batches": [
+      "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072"
+    ],
+    "finalization_attempted_batches": [
+      "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072"
+    ],
+    "execution_started": true,
+    "transfer_status": "NOT_INDEPENDENTLY_VERIFIED",
+    "reservation_status": "ALL_ATTEMPTS_CONFIRMED_RESERVED",
+    "settlement_status": "ALL_RESERVED_SETTLED",
+    "publication_status": "ALL_RESERVED_PUBLISHED"
+  },
+  "program_reported_physical_inventory_before": {
+    "physical_patch_count": 1748,
+    "referenced_patch_count": 1748,
+    "unreferenced_physical_directories": 0,
+    "worker_receipt_count": 145,
+    "limit": 3000,
+    "observation_sha256": "fde0f2c00d1b151b4b289c809fe611b8e34ffb21c1fae96727cb54850a1f83a4"
+  },
+  "new_patch_native_independently_verified": false,
+  "bare_result": null,
+  "source_ledger_reopened": false,
+  "native_helper_calls": 0,
+  "http_calls_by_reviewer": 0,
+  "additional_collector_starts": 0,
+  "root_separate_native_go_required": true
+}

@@ -1,0 +1,97 @@
+{
+  "observed_at_utc": "2026-10-18T01:28:04.278897+00:00",
+  "status_api_path": "/api/data/collection-status",
+  "initial_probe_error": "/api/collection-status returned 404; corrected using actual main.py route; no server defect inferred",
+  "current_inventory": {
+    "source_manifest_sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+    "physical_total": 1432,
+    "eligible_total": 1141,
+    "ineligible_total": 291,
+    "eligible_target_gap": 59,
+    "cell_gap_total": 132
+  },
+  "current_bare_declarations": {
+    "train": {
+      "pixels": 1432,
+      "ratio": 3.4086806480178035e-05,
+      "contributing_patches": 0
+    },
+    "val": {
+      "pixels": 209,
+      "ratio": 1.3898536031954663e-05,
+      "contributing_patches": 0
+    },
+    "test": {
+      "pixels": 1025,
+      "ratio": 6.306551307025068e-05,
+      "contributing_patches": 0
+    }
+  },
+  "candidate_api_available_at_observation": false,
+  "fixed_candidate": {
+    "status": "FROZEN_SNAPSHOT_CANDIDATE_QA_COMPLETED",
+    "scope": "FIXED_SNAPSHOT_NOT_LATER_COLLECTOR_STATE",
+    "raw_source_snapshot_sha256": "9211524656d92f0fcfcdf11f2ec382965e3aeacbc7f80da5b02f4f59784df1e7",
+    "source_row_count": 1400,
+    "candidate_row_count": 1384,
+    "excluded_source_rows": 16,
+    "candidate_eligible": {
+      "train": 639,
+      "val": 217,
+      "test": 250
+    },
+    "candidate_blockers": [
+      {
+        "code": "REFERENCE_CLASS_IMBALANCE",
+        "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+        "scene": null
+      },
+      {
+        "code": "REFERENCE_CLASS_IMBALANCE",
+        "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+        "scene": null
+      },
+      {
+        "code": "CLASS_COVERAGE",
+        "detail": "val/class7: 209 픽셀",
+        "scene": null
+      },
+      {
+        "code": "REFERENCE_CLASS_IMBALANCE",
+        "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+        "scene": null
+      }
+    ],
+    "remaining_source_identity_conflicts": 0,
+    "verified_file_records": 4335
+  },
+  "all_summary_output_pins_independently_match": true,
+  "output_pin_checks": {
+    "data\\priority-ml-snapshot-20261018\\readiness.json": true,
+    "evidence\\integration\\priority-ml-20261018-split-plan.json": true,
+    "evidence\\integration\\priority-ml-20261018-candidate-package\\plan.json": true,
+    "evidence\\integration\\priority-ml-20261018-candidate-package\\candidate.json": true,
+    "evidence\\integration\\priority-ml-20261018-candidate-package\\receipt.json": true,
+    "data\\priority-ml-stage-20261018\\candidate.json": true,
+    "data\\priority-ml-stage-20261018\\staging-receipt.json": true,
+    "data\\priority-ml-readiness-20261018\\readiness.json": true,
+    "data\\priority-ml-readiness-20261018\\qa-receipt.json": true
+  },
+  "candidate_source_matches_current": false,
+  "round2": {
+    "status": "SETTLED",
+    "new_physical": 0,
+    "new_eligible": 0,
+    "charged_delta_from_launch": 1325635,
+    "remaining_budget": 2296542772,
+    "old_pending_rows_unchanged": true,
+    "old_pending_reserved_bytes": 136314880,
+    "rate_limit_active": false,
+    "execution_lock_present": false
+  },
+  "round2_caveat": "SETTLED denotes accounting finalization. Both scene reports failed: AOI center outside COG. The recorded stdout-empty limitation is stale: actual stdout contains two starts and two finishes.",
+  "native_raster_qa_rerun_by_this_observer": false,
+  "training_executed_by_this_observer": false,
+  "api_writes_by_this_observer": 0,
+  "limitations": "Sequential reads, not atomic OS snapshot; latest current inventory is manifest quality status, not new native QA. Fixed candidate does not include later collector additions."
+}

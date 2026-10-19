@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "status": "ISOLATED_TESTED_SYNTHETIC_AWAITING_INDEPENDENT_REVIEW",
+  "main_applied": false,
+  "operating_io": 0,
+  "http": 0,
+  "operational_collector": 0,
+  "actual_provider_compatibility_verified": false,
+  "parent260_all_pins_unchanged": true,
+  "main255_246_pins_unchanged": true,
+  "main_baseline_existing_verified": 40,
+  "main_new_test_paths_absent": 6,
+  "delta_files": [
+    {
+      "path": "scripts/collect_samples.py",
+      "bytes": 48320,
+      "sha256": "9ce6cf2a520edb14d8c67260e79fc5f605f11eab03d9d6773117e0fd193eb165"
+    },
+    {
+      "path": "tests/test_deficit_metadata_selection260.py",
+      "bytes": 15926,
+      "sha256": "a0d4d852338014d3b591f2e3ea2efbd869b67c29301012a4c7f861ab92855a29"
+    },
+    {
+      "path": "tests/selection265_fixtures.py",
+      "bytes": 2125,
+      "sha256": "122939427720099f68724fed4cef329feb09ba728e23bc1e048c44ce4020c1a8"
+    },
+    {
+      "path": "tests/test_selection265_contract.py",
+      "bytes": 5858,
+      "sha256": "94f024e0b9c43c402e23b41106d999011773fea86f941cc2a5e8d5c847cc141f"
+    },
+    {
+      "path": "tests/fixtures/selection265/manifest.json",
+      "bytes": 299,
+      "sha256": "b0398658098475f9788a11d9a8f7fa9cbc6c077847e8f896b513bf0aa39d0163"
+    },
+    {
+      "path": "tests/fixtures/selection265/guard.py.fixture",
+      "bytes": 22548,
+      "sha256": "a90ba9a70bb0b0eecf529a10961e12edd1d9519b881913eed2e997c52c182071"
+    },
+    {
+      "path": "tests/fixtures/selection265/collector.py.fixture",
+      "bytes": 47009,
+      "sha256": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301"
+    }
+  ],
+  "runtime_bundle": [
+    {
+      "path": "backend/app/data/deficit_candidate_guard.py",
+      "bytes": 27712,
+      "sha256": "4052759b683f6f4f545a629466f2d4145e3ad9cc2ad8e6cdf5b1e3c0004a5dd2"
+    },
+    {
+      "path": "scripts/collect_deficit_guarded.py",
+      "bytes": 21814,
+      "sha256": "9ae5ba986d3d48e89cfb269d8a242ffd6189d281649d98a11614c03e5ab3c9ab"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "bytes": 48320,
+      "sha256": "9ce6cf2a520edb14d8c67260e79fc5f605f11eab03d9d6773117e0fd193eb165"
+    }
+  ],
+  "test_bundle_paths": [
+    "tests/test_deficit_metadata_selection260.py",
+    "tests/selection265_fixtures.py",
+    "tests/test_selection265_contract.py",
+    "tests/fixtures/selection265/manifest.json",
+    "tests/fixtures/selection265/guard.py.fixture",
+    "tests/fixtures/selection265/collector.py.fixture"
+  ],
+  "document": {
+    "path": "docs/implementation/265_failclosed_selection_and_portable_tests_isolated.md",
+    "bytes": 10403,
+    "sha256": "a60e54d136d285d7e6acf54b891cceadca3db404a6e6023a1bc12490869f5397"
+  },
+  "evidence": {
+    "baseline265.json": {
+      "bytes": 8393,
+      "sha256": "0ae62a2898a81e4a3d1a9108c3960ee8489d2377dd31c3801475db27dcdec44e"
+    },
+    "patch265-manifest.json": {
+      "bytes": 1987,
+      "sha256": "65751dbbaefab5a92fc7c2035af78345746adef6db4f97b6de2be364cf9530db"
+    },
+    "patch265.diff": {
+      "bytes": 82434,
+      "sha256": "3b06c2553c0901aea0733a7df455dc050f3a9f28d219c945a4228ba8746ebe66"
+    },
+    "application265-manifest.json": {
+      "bytes": 9529,
+      "sha256": "368ed88ec4b23c14bc55de1139b58f8f6c80ea653fd0ed19343cd42f64c33f1f"
+    },
+    "focused265.log": {
+      "bytes": 5019,
+      "sha256": "520bbcdc84ee45c8c78cd209e32570408611f2c5bf99925a7989686561a2e02d"
+    },
+    "run_portable265.py": {
+      "bytes": 3064,
+      "sha256": "ccf5d78b0a87e972829efe2162b700fe6d1a676379cdd5ba23e3dd00cd9b563d"
+    },
+    "portable265-regression.log": {
+      "bytes": 15040,
+      "sha256": "63c25c1c0d34abb76eca3386565cabbf1e5c7c43ea12991fc48a3f17c2b2c03d"
+    },
+    "portable265-result.json": {
+      "bytes": 5454,
+      "sha256": "a2c11a179b85b1b2e16bc785998c4caada5f234850c74a0888809470eb4b035d"
+    }
+  },
+  "focused": {
+    "passed": 22,
+    "seconds_unittest": 12.059
+  },
+  "final_portable": {
+    "passed": 96,
+    "seconds_unittest": 39.035,
+    "actual_wall_seconds": 40.531,
+    "exit_code": 0,
+    "skip": 0,
+    "files_deployed": 46,
+    "external_baseline_present": false,
+    "rss_observed": false
+  },
+  "execution_authorized": false
+}

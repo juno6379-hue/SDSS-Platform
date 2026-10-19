@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "DIAGNOSTIC_PROCESS_NATIVE_FAILURE",
+  "evidence_class": "VERIFIED_REAL_DIAGNOSTIC_NOT_SERVER_ROOT_CAUSE_PROOF",
+  "function": "app.collection_status.collection_status(data_root)",
+  "performance": {
+    "diagnostic_pid": 25556,
+    "server_mutations": 0,
+    "http_requests": 0,
+    "native_raster_qa": false,
+    "exit_code": 3221225477,
+    "timed_out": false,
+    "elapsed_seconds": 37.21899999999732
+  },
+  "report_shape": {
+    "scope": "report_json_only_no_path_resolve_no_file_hash_no_raster_qa",
+    "reports_last64": 64,
+    "scene_rows": 1680,
+    "path_field_calls_potential": {
+      "image_path": 1666,
+      "label_path": 1666,
+      "quality_mask_path": 1666
+    },
+    "unique_declared_paths": 4998,
+    "json_bytes": 64464973,
+    "elapsed_seconds": 3.9840000000112923
+  },
+  "findings": [
+    "IMPORT_OK excludes module import failure in this standalone diagnostic.",
+    "Trace reached report-scene local_file Path.resolve/Windows ntpath.realpath before any same_hash or candidate-quality proof.",
+    "Diagnostic terminated naturally with Windows 0xC0000005 after 37.219 seconds; parent did not kill it.",
+    "Only JSON report enumeration and parsing completed separately in 3.984 seconds."
+  ],
+  "limits": [
+    "Cannot infer the live API worker has the same native exception.",
+    "No successful complete cProfile output because child failed before profile dump.",
+    "Not a native raster QA or full collection status result.",
+    "No server restart, no additional HTTP request, no Store/main import, no product or ledger mutation."
+  ],
+  "recommended_followup": [
+    "Root may separately profile/timestamp bounded per-phase path canonicalization before changing route contracts.",
+    "Preserve containment and reparse protections; do not replace resolved-path checks with unchecked lexical joins merely to avoid latency.",
+    "A fast status route should ideally consume bounded pinned status receipts rather than repeatedly resolve thousands of historical raster paths; that would require a deliberate contract/test/documentation change."
+  ]
+}

@@ -1,3 +1,4 @@
+from .manifest_resource_profile import active,cap as profile_cap,policy as resource_policy,charge as profile_charge,structure as profile_structure,entry as profile_entry,stamp as profile_stamp,receipt as profile_receipt,DESCRIPTOR
 """Evidence-only candidate materialization through existing bounded writer/validator."""
 import copy
 from pathlib import Path
@@ -23,6 +24,7 @@ def _dir_identity(path):
     return (value.st_dev,value.st_ino,value.st_ctime_ns)
 
 
+@profile_entry
 def materialize_split_candidate(data_root,paths,pins,output_dir,*,evidence_root):
     """Create a new metadata-only evidence package; receipt is written last.
 
@@ -39,13 +41,13 @@ def materialize_split_candidate(data_root,paths,pins,output_dir,*,evidence_root)
         scope=data if role!='saved_plan' else evidence
         value=Path(paths[role]);value=value if value.is_absolute() else scope/value
         logical[role]=_local(value);targets[role]=_confined(scope,logical[role]);_local(targets[role]);stamps[role]=_stamp(targets[role].stat())
-        _need(stamps[role][0]<=POLICY['input_caps'][role],'Input exceeds role byte cap')
+        _need(stamps[role][0]<=resource_policy(POLICY)['input_caps'][role],'Input exceeds role byte cap')
     _need(len(set(targets.values()))==3 and len({(s[3],s[4]) for s in stamps.values()})==3,'Inputs must be distinct regular files')
     out=_local(output_dir);target=_confined(evidence,out);_need(not target.is_relative_to(data),'Output must be outside DATA')
     _need(not out.is_symlink() and not out.exists(),'New explicit output directory required')
     parent=out.parent.resolve();parent_id=_dir_identity(parent)
     _need(target.parent==parent and all(target/name not in targets.values() for name in BASENAMES),'Output/input alias prohibited')
-    io=BoundedJSONIO(copy.deepcopy(POLICY));docs={role:io.read(logical[role],role,pins[role])[0] for role in INPUT_ROLES}
+    io=BoundedJSONIO(resource_policy(POLICY));docs={role:io.read(logical[role],role,pins[role])[0] for role in INPUT_ROLES}
     def check_paths():
         _need(all(p.resolve()==r for p,r in zip(roots,resolved)),'Input root target changed')
         for role in INPUT_ROLES:
@@ -73,7 +75,8 @@ def materialize_split_candidate(data_root,paths,pins,output_dir,*,evidence_root)
       'derived_manifest_version':plan_document['derived_manifest_version'],'fixed_province_splits':dict(FIXED_PROVINCE_SPLITS),'source_row_count':len(docs['source']['scenes']),'candidate_row_count':len(candidate['scenes']),'excluded_source_row_count':len(plan['excluded_row_indexes']),'projected_after':copy.deepcopy(plan['projected_after']),
       'metadata_integrity_verified':True,'raster_readiness_rechecked':False,'source_rows_modified_or_reassigned':False,'executed':False,'learning_ready':False,'ready_for_training':False,'scientific_accuracy_validated':False,'source_authenticity_verified':False,'exact_row_binding_verified':False,'spatial_overlap_rechecked':False,'exact_class_counts_recomputed':False,'training_split_leakage_resolved':False,'execution_authorized':False,'registry_called':False,'settlement_authorized':False,'automatic_resume_allowed':False,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN',
       'completion_contract':'Receipt requires strict schema and output SHA verification; absent or invalid receipt means incomplete. Final stability check immediately precedes exclusive receipt write; no atomic multi-file snapshot guarantee.'}
-    receipt_io=BoundedJSONIO({'input_caps':dict(POLICY['input_caps']),'output_caps':{'plan':RECEIPT_CAP,'candidate':RECEIPT_CAP},'max_depth':32});size=receipt_io.measure(receipt,'plan')
+    receipt=profile_stamp(receipt)
+    receipt_io=BoundedJSONIO({'input_caps':dict(resource_policy(POLICY)['input_caps']),'output_caps':{'plan':RECEIPT_CAP,'candidate':RECEIPT_CAP},'max_depth':32});size=receipt_io.measure(receipt,'plan')
     # ctime of directories changes as files are added: compare inode/device here.
     _need(_dir_identity(out)[:2]==created_id[:2],'New output directory replaced')
     io.verify()

@@ -1,0 +1,129 @@
+{
+  "scope": "READ_ONLY_INDEPENDENT_WEB_UI_CONTRACT_AUDIT",
+  "operating_writes": 0,
+  "source_test_document_server_edits": 0,
+  "direct_browser_operations": 0,
+  "new_live_collection_status_get_count": 1,
+  "api_process": {
+    "pid": 36400,
+    "command": "python -m uvicorn app.main:app --host 127.0.0.1 --port 8002",
+    "created_at_kst": "2026-10-18T10:33:30.493991+09:00",
+    "collection_status_source_modified_at_kst": "2026-10-18T10:32:09.4666807+09:00",
+    "collection_status_source_sha256": "f8ba45e6d06d5d52d0ebab9b42dcd9074d266a6d34be75ec718f14ca4cad4316",
+    "health_status": "ok",
+    "health_elapsed_seconds": 3.288262
+  },
+  "live_get": {
+    "response_recorded_at_kst": "2026-10-18T10:37:10.921293+09:00",
+    "elapsed_seconds": 48.2918269,
+    "current": {
+      "physical": 1464,
+      "eligible": 1164,
+      "ineligible": 300,
+      "eligible_target_gap": 36,
+      "cell_gap": 109,
+      "source_sha256": "c57a1768a87fae7b0fd0c5ec8e451c439d35c65bf54d99f1f7b38dc98928e33e",
+      "native_raster_reverified": false,
+      "learning_ready": false
+    },
+    "candidate": {
+      "available": true,
+      "eligible": 1106,
+      "by_split": {"train": 639, "val": 217, "test": 250},
+      "blockers": 4,
+      "source_sha256": "9211524656d92f0fcfcdf11f2ec382965e3aeacbc7f80da5b02f4f59784df1e7",
+      "source_pins_match": true,
+      "source_matches_current_manifest": false,
+      "ready_for_training": false,
+      "scientific_accuracy_validated": false,
+      "receipt_recorded_at_kst": "2026-10-18T10:29:17.721777+09:00",
+      "source_report": "priority-ml-readiness-20261018/readiness.json"
+    }
+  },
+  "prior_browser_evidence": {
+    "json": "collection-progress-ui-candidate-browser-20261018.json",
+    "dom": "collection-progress-ui-candidate-browser-dom-20261018.txt",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "at_response_time": "2026-10-18T01:31:51.731994+00:00",
+    "current_at_that_time": {"physical": 1432, "eligible": 1141},
+    "candidate_1106_639_217_250_four_blockers_displayed": true,
+    "source_mismatch_warning_displayed": true,
+    "raw_bare_table_not_presented_as_candidate_qa": true,
+    "source_mismatches_reported_by_prior_verifier": [],
+    "current_source_hashes_still_match_prior_browser_evidence": {
+      "frontend/src/CollectionProgress.tsx": "2dc92ee86e96e78cbdc47863596e2c57f3fbaa18c548328a3ec6663116c3e7d0",
+      "frontend/src/collectionProgressAdapter.ts": "f209f66d7ef07b5f5b9013f71b345fe351a8fe49474a1e75d0b3552214a9716f"
+    },
+    "new_current_1464_browser_display_independently_verified": false
+  },
+  "publication_contract": {
+    "explicit_receipt": "data/first-group-training-priority/latest-candidate.json",
+    "publication_evidence": "priority-ml-ui-receipt-20261018.json",
+    "publication_scope": "FROZEN_1400_ROW_SOURCE_NOT_LATER_COLLECTION",
+    "source_physical": 1400,
+    "candidate_physical": 1384,
+    "excluded_rows": 16,
+    "source_sha256": "9211524656d92f0fcfcdf11f2ec382965e3aeacbc7f80da5b02f4f59784df1e7",
+    "candidate_sha256": "6556d3b85ed6d70f5951f430195740e21cb04feacc509c6ce20d726755cb3cf6",
+    "qa_sha256": "aa8076a9d09652ae6dbe4cc880d33d7ae8d302b2333e8ce719846df00d432042",
+    "final_verifier_status": "FINAL_CANDIDATE_ROW_AND_FILE_PINS_MATCH",
+    "retained_rows_exact": true,
+    "partition_complete": true,
+    "candidate_source_identity_cross_split_conflicts": 0,
+    "verified_file_records": 4335,
+    "file_sha_mismatches": [],
+    "latest_mtime_qa_glob_used_for_candidate": false
+  },
+  "display_contract_assessment": {
+    "current_vs_pinned_candidate_counts_separate": true,
+    "source_sha_mismatch_correct": true,
+    "candidate_receipt_time_is_not_current_collection_time": true,
+    "api_response_time_is_not_source_or_qa_completed_time": true,
+    "candidate_physical_and_source_physical_not_exposed_by_current_api": true,
+    "candidate_manifest_and_qa_sha_not_exposed_by_current_api": true,
+    "client_trusts_source_matches_current_boolean_without_independent_cross_section_sha_comparison": true,
+    "no_training_scientific_or_operating_approval_claim": true
+  },
+  "performance_analysis": {
+    "analysis_method": "SOURCE_READ_AND_FILE_STAT_ONLY_NO_ADDITIONAL_CONTENT_HASH_OR_REPEAT_GET",
+    "same_hash_cache_key": ["path", "mtime_ns", "ctime_ns", "size"],
+    "cache_loaded_before_current_pid_start": true,
+    "unchanged_warm_files_skip_full_content_hash": true,
+    "warm_latency_benchmark_executed": false,
+    "old_readiness_report": "first-group/readiness-source-identity-20261017.json",
+    "old_readiness_input_manifests": 1,
+    "old_readiness_verified_files": 4335,
+    "old_readiness_hash_call_upper_bound": 4336,
+    "old_readiness_unique_existing_files": 4335,
+    "old_readiness_unique_bytes_stat_sum": 1272578528,
+    "old_readiness_missing_files": 0,
+    "old_readiness_outside_root": 0,
+    "candidate_pin_files": 3,
+    "candidate_pin_bytes_stat_sum": 120228377,
+    "candidate_pin_sizes": [54492684, 53872476, 11863217],
+    "potential_large_qa_hash_loop_is_training_readiness_not_candidate_receipt_three_file_loop": true,
+    "current_source_checks_manifest_match_before_old_evidence_hash_loop": true,
+    "current_source_skips_old_raster_hashes_when_manifest_stale": true,
+    "old_1025_source_read_had_hash_loop_before_current_manifest_match_but_is_not_current_source": true,
+    "current_source_mtime_predates_pid_creation": true,
+    "actual_loaded_python_function_not_introspected": true,
+    "stale_raster_hash_loop_as_cause_of_48_seconds_not_established": true,
+    "candidate_three_files_are_not_4335_individual_raster_rehashes": true,
+    "all_short_circuit_may_reduce_actual_hash_calls": true,
+    "current_manifest_read_and_json_parse_still_per_get": true,
+    "candidate_qa_json_parse_still_per_get": true,
+    "concurrent_cold_requests_have_no_per_key_hash_lock_in_source": true,
+    "exact_48_second_io_attribution_not_profiled": true
+  },
+  "recommended_followup_to_existing_owner_only": [
+    "Current source already checks readiness manifest match before the raster hash loop. Verify the actual loaded implementation and remaining read/parse/path-stat costs with the existing owner; do not attribute measured delay to stale raster hashing without profiling.",
+    "Keep source/candidate/QA receipt identity and current counts separate; expose source/candidate physical counts and QA identity/time only through explicit fields if added.",
+    "Benchmark one warm GET only after existing browser requests finish; do not infer warm SLA from cache implementation alone.",
+    "Retain manual cancellation, old-result clearing, missing/error unknown state, and no automatic fallback."
+  ],
+  "limitations": [
+    "Existing browser evidence was inspected, no new browser interaction by this agent.",
+    "1464/1164 is verified by this single live GET; the currently pending Root browser refresh is not claimed completed.",
+    "The byte counts describe stat inventory and a potential matching-readiness cold path, not traced actual read bytes. Current stale-first code should skip the old raster loop for the observed mismatched manifest."
+  ]
+}

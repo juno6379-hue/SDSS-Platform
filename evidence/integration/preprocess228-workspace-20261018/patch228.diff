@@ -1,0 +1,752 @@
+--- a/backend/app/candidate_qa_comparison_api.py
++++ b/backend/app/candidate_qa_comparison_api.py
+@@ -1,6 +1,7 @@
++from .ml.manifest_resource_profile import NAME,validate_name
+ """고정 원본/후보 QA 보고서 비교의 명시 조회 API. 경로·상세 원문은 반환하지 않는다."""
+ import threading
+-from fastapi import APIRouter,Request
++from fastapi import APIRouter,Request,Query
+ from fastapi.concurrency import run_in_threadpool
+ from fastapi.responses import JSONResponse
+ from .ml.candidate_qa_comparison import compare_candidate_qa,PIN_NAMES,FALSE_FIELDS,_sha
+@@ -34,17 +35,18 @@
+ def create_candidate_qa_comparison_router(get_store):
+     router=APIRouter();gate=threading.BoundedSemaphore(1)
+     @router.post('/v1/diagnostics/candidate-readiness-comparison',responses={200:{'content':{'application/json':{'schema':RESPONSE_SCHEMA}}},**{code:{'description':'Safe diagnostic error','content':{'application/json':{'schema':ERROR_SCHEMA}}} for code in [400,409,413,429,503]}},openapi_extra={'requestBody':{'required':True,'content':{'application/json':{'schema':REQUEST_SCHEMA}}}})
+-    async def inspect(request:Request):
++    async def inspect(request:Request,manifest_profile:str|None=Query(None,enum=[NAME])):
+         body=bytearray()
+         try:
+             async for chunk in request.stream():
+                 if len(body)+len(chunk)>BODY_BYTES:return _error('REQUEST_TOO_LARGE',413)
+                 body.extend(chunk)
+             pins=_request(bytes(body))
++            validate_name(manifest_profile)
+         except Exception:return _error('INVALID_REQUEST',400)
+         def worker():
+             if not gate.acquire(blocking=False):return None
+-            try:return compare_candidate_qa(get_store().root,pins)
++            try:return compare_candidate_qa(get_store().root,pins,manifest_profile=manifest_profile) if manifest_profile is not None else compare_candidate_qa(get_store().root,pins)
+             finally:gate.release()
+         try:result=await run_in_threadpool(worker)
+         except ValueError as exc:
+--- a/backend/app/ml/candidate_materialization.py
++++ b/backend/app/ml/candidate_materialization.py
+@@ -1,3 +1,4 @@
++from .manifest_resource_profile import active,cap as profile_cap,policy as resource_policy,charge as profile_charge,structure as profile_structure,entry as profile_entry,stamp as profile_stamp,receipt as profile_receipt,DESCRIPTOR
+ """Evidence-only candidate materialization through existing bounded writer/validator."""
+ import copy
+ from pathlib import Path
+@@ -23,6 +24,7 @@
+     return (value.st_dev,value.st_ino,value.st_ctime_ns)
+ 
+ 
++@profile_entry
+ def materialize_split_candidate(data_root,paths,pins,output_dir,*,evidence_root):
+     """Create a new metadata-only evidence package; receipt is written last.
+ 
+@@ -39,13 +41,13 @@
+         scope=data if role!='saved_plan' else evidence
+         value=Path(paths[role]);value=value if value.is_absolute() else scope/value
+         logical[role]=_local(value);targets[role]=_confined(scope,logical[role]);_local(targets[role]);stamps[role]=_stamp(targets[role].stat())
+-        _need(stamps[role][0]<=POLICY['input_caps'][role],'Input exceeds role byte cap')
++        _need(stamps[role][0]<=resource_policy(POLICY)['input_caps'][role],'Input exceeds role byte cap')
+     _need(len(set(targets.values()))==3 and len({(s[3],s[4]) for s in stamps.values()})==3,'Inputs must be distinct regular files')
+     out=_local(output_dir);target=_confined(evidence,out);_need(not target.is_relative_to(data),'Output must be outside DATA')
+     _need(not out.is_symlink() and not out.exists(),'New explicit output directory required')
+     parent=out.parent.resolve();parent_id=_dir_identity(parent)
+     _need(target.parent==parent and all(target/name not in targets.values() for name in BASENAMES),'Output/input alias prohibited')
+-    io=BoundedJSONIO(copy.deepcopy(POLICY));docs={role:io.read(logical[role],role,pins[role])[0] for role in INPUT_ROLES}
++    io=BoundedJSONIO(resource_policy(POLICY));docs={role:io.read(logical[role],role,pins[role])[0] for role in INPUT_ROLES}
+     def check_paths():
+         _need(all(p.resolve()==r for p,r in zip(roots,resolved)),'Input root target changed')
+         for role in INPUT_ROLES:
+@@ -73,7 +75,8 @@
+       'derived_manifest_version':plan_document['derived_manifest_version'],'fixed_province_splits':dict(FIXED_PROVINCE_SPLITS),'source_row_count':len(docs['source']['scenes']),'candidate_row_count':len(candidate['scenes']),'excluded_source_row_count':len(plan['excluded_row_indexes']),'projected_after':copy.deepcopy(plan['projected_after']),
+       'metadata_integrity_verified':True,'raster_readiness_rechecked':False,'source_rows_modified_or_reassigned':False,'executed':False,'learning_ready':False,'ready_for_training':False,'scientific_accuracy_validated':False,'source_authenticity_verified':False,'exact_row_binding_verified':False,'spatial_overlap_rechecked':False,'exact_class_counts_recomputed':False,'training_split_leakage_resolved':False,'execution_authorized':False,'registry_called':False,'settlement_authorized':False,'automatic_resume_allowed':False,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN',
+       'completion_contract':'Receipt requires strict schema and output SHA verification; absent or invalid receipt means incomplete. Final stability check immediately precedes exclusive receipt write; no atomic multi-file snapshot guarantee.'}
+-    receipt_io=BoundedJSONIO({'input_caps':dict(POLICY['input_caps']),'output_caps':{'plan':RECEIPT_CAP,'candidate':RECEIPT_CAP},'max_depth':32});size=receipt_io.measure(receipt,'plan')
++    receipt=profile_stamp(receipt)
++    receipt_io=BoundedJSONIO({'input_caps':dict(resource_policy(POLICY)['input_caps']),'output_caps':{'plan':RECEIPT_CAP,'candidate':RECEIPT_CAP},'max_depth':32});size=receipt_io.measure(receipt,'plan')
+     # ctime of directories changes as files are added: compare inode/device here.
+     _need(_dir_identity(out)[:2]==created_id[:2],'New output directory replaced')
+     io.verify()
+--- a/backend/app/ml/candidate_qa_comparison.py
++++ b/backend/app/ml/candidate_qa_comparison.py
+@@ -1,3 +1,4 @@
++from .manifest_resource_profile import active,cap as profile_cap,policy as resource_policy,charge as profile_charge,structure as profile_structure,entry as profile_entry,stamp as profile_stamp,receipt as profile_receipt,DESCRIPTOR
+ """고정 보고서 4JSON만 대조한다. 원본/후보 manifest·래스터·assess는 읽거나 실행하지 않는다."""
+ from collections import Counter
+ import copy
+@@ -31,8 +32,8 @@
+     _need(type(value) is str and 0<len(value)<=4096);key=_lexical_identity_path(value,root);_need(key is not None);return key
+ 
+ 
+-def _ref(value,root,*,path=None,pin=None,size=None):
+-    _need(type(value) is dict and set(value)=={'path','sha256','bytes'} and _sha(value['sha256']) and _uint(value['bytes'],64*1024**2) and value['bytes']>0)
++def _ref(value,root,*,path=None,pin=None,size=None,maximum=64*1024**2):
++    _need(type(value) is dict and set(value)=={'path','sha256','bytes'} and _sha(value['sha256']) and _uint(value['bytes'],maximum) and value['bytes']>0)
+     key=_path(value['path'],root)
+     if path is not None:_need(key==_path(path,root))
+     if pin is not None:_need(value['sha256']==pin)
+@@ -67,6 +68,7 @@
+     """메모리 안의 선택 보고서 계약 대조. pin의 실제 바이트 검증은 reader 담당."""
+     _need(type(documents) is dict and set(documents)==set(PIN_NAMES) and type(pins) is dict and set(pins)==set(PIN_NAMES) and all(_sha(p) for p in pins.values()) and type(references) is dict and set(references)==set(PIN_NAMES))
+     old,new,qa,stage=(documents[k] for k in PIN_NAMES);root=data_root_literal
++    qa=profile_receipt(qa);stage=profile_receipt(stage)
+     for k,ref in references.items():_need(type(ref) is dict and set(ref)=={'path','bytes'} and _uint(ref['bytes'],CAPS[k]) and ref['bytes']>0);_path(ref['path'],root)
+     old_summary,old_codes=_report(old,root);new_summary,new_codes=_report(new,root)
+     _need(old.get('prepared_payload') is None and 'connectivity_diagnostics' not in old and old.get('scene_count') is None,'Original physical scene count is outside supported stored scope')
+@@ -79,12 +81,12 @@
+     _need(type(stage['derived_manifest_version']) is str and re.fullmatch('split-repair-v1-[0-9a-f]{16}',stage['derived_manifest_version']) is not None)
+     package=stage['package_reference'];_need(type(package) is dict and set(package)=={'path','receipt_sha256'} and type(package['path']) is str and 0<len(package['path'])<=4096 and _sha(package['receipt_sha256']));_local(package['path'])
+     source_pins=stage['input_pins'];_need(type(source_pins) is dict and set(source_pins)=={'source','readiness','saved_plan'} and all(_sha(v) for v in source_pins.values()) and source_pins['readiness']==pins['original_report_sha256'] and old['input_manifests'][0]['sha256']==source_pins['source'])
+-    staged=stage['staged_candidate'];_ref(staged,root);_need(staged['sha256']==new['input_manifests'][0]['sha256'] and _path(staged['path'],root)==_path(new['input_manifests'][0]['path'],root))
++    staged=stage['staged_candidate'];_ref(staged,root,maximum=profile_cap('candidate',64*1024**2));_need(staged['sha256']==new['input_manifests'][0]['sha256'] and _path(staged['path'],root)==_path(new['input_manifests'][0]['path'],root))
+     outputs=stage['verified_package_outputs'];_need(type(outputs) is dict and set(outputs)=={'plan','candidate'})
+-    for k,item in outputs.items():_need(type(item) is dict and set(item)=={'name','sha256','bytes'} and item['name']==k+'.json' and _sha(item['sha256']) and _uint(item['bytes'],4*1024**2 if k=='plan' else 64*1024**2) and item['bytes']>0)
++    for k,item in outputs.items():_need(type(item) is dict and set(item)=={'name','sha256','bytes'} and item['name']==k+'.json' and _sha(item['sha256']) and _uint(item['bytes'],4*1024**2 if k=='plan' else profile_cap('candidate',64*1024**2)) and item['bytes']>0)
+     _need(outputs['candidate']['sha256']==staged['sha256'] and _same(outputs['candidate']['bytes'],staged['bytes']))
+     inputs=qa['inputs'];_need(type(inputs) is dict and set(inputs)=={'candidate','staging_receipt','policy','old_readiness'})
+-    _ref(inputs['candidate'],root,path=staged['path'],pin=staged['sha256'],size=staged['bytes'])
++    _ref(inputs['candidate'],root,maximum=profile_cap('candidate',64*1024**2),path=staged['path'],pin=staged['sha256'],size=staged['bytes'])
+     _ref(inputs['old_readiness'],root,path=references['original_report_sha256']['path'],pin=pins['original_report_sha256'],size=references['original_report_sha256']['bytes'])
+     _ref(inputs['staging_receipt'],root,path=references['staging_receipt_sha256']['path'],pin=pins['staging_receipt_sha256'],size=references['staging_receipt_sha256']['bytes'])
+     _ref(inputs['policy'],root);_need(inputs['policy']['bytes']<=1024**2)
+@@ -104,7 +106,7 @@
+         scene_count=capture['scene_count']
+     else:
+         _need(capture['capture_status'] in {'NOT_CAPTURED_UNSUPPORTED_POLICY','NOT_CAPTURED_BUDGET','NOT_CAPTURED_UNSUPPORTED_METADATA','FAILED_DIAGNOSTIC','FAILED_ADAPTER_BOUNDARY'});scene_count=None
+-    _need(_uint(stage['source_row_count'],100000) and _uint(stage['candidate_row_count'],100000) and stage['candidate_row_count']<=stage['source_row_count'])
++    _need(_uint(stage['source_row_count'],3000 if active() is not None else 100000) and _uint(stage['candidate_row_count'],100000) and stage['candidate_row_count']<=stage['source_row_count'])
+     if captured:_need(scene_count==stage['candidate_row_count'])
+     projected=stage['projected_after'];_need(type(projected) is dict and set(projected)=={'eligible_patches_by_split','eligible_total','eligible_by_province_year'} and type(projected['eligible_patches_by_split']) is dict and set(projected['eligible_patches_by_split'])=={'train','val','test'} and all(_uint(n,stage['candidate_row_count']) for n in projected['eligible_patches_by_split'].values()) and _same(projected['eligible_total'],sum(projected['eligible_patches_by_split'].values())) and type(projected['eligible_by_province_year']) is dict and all(type(k) is str and len(k)<=128 and _uint(v,stage['candidate_row_count']) for k,v in projected['eligible_by_province_year'].items()) and sum(projected['eligible_by_province_year'].values())==projected['eligible_total'])
+     codes=sorted(set(old_codes)|set(new_codes));_need(len(codes)<=32)
+@@ -116,6 +118,7 @@
+       'row_counts':{'original_report_physical_scene_count':None,'original_report_scope':'NOT_PERSISTED','source_rows_declared':stage['source_row_count'],'candidate_rows_declared':stage['candidate_row_count'],'declared_scope':'PINNED_STAGING_RECEIPT_DECLARATION','candidate_appended_scene_count':scene_count,'candidate_capture_scope':'STORED_QA_CAPTURE' if captured else 'NOT_CAPTURED'},'bare_class':bare,**{k:False for k in sorted(FALSE_FIELDS)}}
+ 
+ 
++@profile_entry
+ def compare_candidate_qa(data_root,pins):
+     _need(type(pins) is dict and set(pins)==set(PIN_NAMES) and all(_sha(v) for v in pins.values()))
+     logical_root=_local(data_root);root=logical_root.resolve();_local(root);targets={};contexts={};references={}
+--- a/backend/app/ml/candidate_readiness_qa.py
++++ b/backend/app/ml/candidate_readiness_qa.py
+@@ -1,3 +1,4 @@
++from .manifest_resource_profile import active,cap as profile_cap,policy as resource_policy,charge as profile_charge,structure as profile_structure,entry as profile_entry,stamp as profile_stamp,receipt as profile_receipt,DESCRIPTOR
+ """고정 staging metadata와 동일 정책으로 기존 run을 QA-only 호출한다."""
+ import copy
+ from pathlib import Path
+@@ -29,7 +30,7 @@
+ 
+ 
+ def _context(role,cap):
+-    policy=copy.deepcopy(POLICY);policy['input_caps'][role]=cap;policy['output_caps']['plan']=65536
++    policy=resource_policy(POLICY);policy['input_caps'][role]=cap;policy['output_caps']['plan']=65536
+     return BoundedJSONIO(policy)
+ 
+ 
+@@ -48,6 +49,7 @@
+ 
+ 
+ def _stage(stage,candidate,candidate_path,data,pins,size):
++    stage=profile_receipt(stage)
+     _need(type(stage) is dict and set(stage)==STAGE_FIELDS,'Exact staging receipt schema required')
+     for key,value in {'schema_version':1,'kind':'DATA_CANDIDATE_STAGING_RECEIPT','status':'METADATA_STAGED_FOR_QA','next_step':'NEXT_QA_NOT_PERFORMED','qa_status':'NOT_PERFORMED','metadata_integrity_verified':True,'original_candidate_bytes_preserved':True,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN'}.items():_need(_same(stage[key],value),'Staging receipt state invalid')
+     for key in STAGE_FALSE:_need(stage[key] is False,'Staging receipt false claim invalid: '+key)
+@@ -55,13 +57,13 @@
+     oldpins=stage['input_pins'];_need(type(oldpins) is dict and set(oldpins)=={'source','readiness','saved_plan'} and all(_sha(x) for x in oldpins.values()) and oldpins['readiness']==pins['old_readiness'],'Old readiness pin differs from staging provenance')
+     ref=stage['package_reference'];_need(type(ref) is dict and set(ref)=={'path','receipt_sha256'} and type(ref['path']) is str and 0<len(ref['path'])<=4096 and _sha(ref['receipt_sha256']),'Package reference invalid');_local(ref['path'])
+     outputs=stage['verified_package_outputs'];_need(type(outputs) is dict and set(outputs)=={'plan','candidate'},'Package output references invalid')
+-    for role,item in outputs.items():_need(type(item) is dict and set(item)=={'name','sha256','bytes'} and item['name']==role+'.json' and _sha(item['sha256']) and _uint(item['bytes']) and 0<item['bytes']<=POLICY['output_caps'][role],'Package output pin invalid')
++    for role,item in outputs.items():_need(type(item) is dict and set(item)=={'name','sha256','bytes'} and item['name']==role+'.json' and _sha(item['sha256']) and _uint(item['bytes']) and 0<item['bytes']<=resource_policy(POLICY)['output_caps'][role],'Package output pin invalid')
+     ref=stage['staged_candidate'];_need(type(ref) is dict and set(ref)=={'path','sha256','bytes'} and type(ref['path']) is str and 0<len(ref['path'])<=4096 and ref['sha256']==pins['candidate'] and _same(ref['bytes'],size),'Staged candidate pin/size invalid')
+     _local(ref['path']);_need(_confined(data,ref['path'])==candidate_path,'Staged candidate path mismatch')
+     _need(_same(outputs['candidate']['sha256'],pins['candidate']) and _same(outputs['candidate']['bytes'],size),'Package/staged candidate pin mismatch')
+     _need(type(candidate) is dict and _same(candidate.get('schema_version'),1) and candidate.get('status')=='PLANNED_DERIVED_CANDIDATE' and candidate.get('executed') is False and candidate.get('learning_ready') is False,'Candidate metadata state invalid')
+     _need(type(stage['derived_manifest_version']) is str and re.fullmatch('split-repair-v1-[0-9a-f]{16}',stage['derived_manifest_version']) is not None and candidate.get('version')==stage['derived_manifest_version'],'Candidate version mismatch')
+-    rows=candidate.get('scenes');_need(type(rows) is list and len(rows)<=100000 and _same(stage['candidate_row_count'],len(rows)) and _uint(stage['source_row_count']) and len(rows)<=stage['source_row_count']<=100000,'Candidate physical row counts invalid')
++    rows=candidate.get('scenes');_need(type(rows) is list and len(rows)<=(3000 if active() is not None else 100000) and _same(stage['candidate_row_count'],len(rows)) and _uint(stage['source_row_count']) and len(rows)<=stage['source_row_count']<=(3000 if active() is not None else 100000),'Candidate physical row counts invalid')
+     lineage=candidate.get('lineage');_need(type(lineage) is dict and set(lineage)=={'source_manifest','selection_policy','source_row_indexes'},'Candidate lineage invalid')
+     source=lineage['source_manifest'];_need(type(source) is dict and set(source)=={'path','sha256'} and type(source['path']) is str and 0<len(source['path'])<=4096 and source['sha256']==oldpins['source'],'Candidate source pin invalid');_local(source['path']);_confined(data,source['path'])
+     selection=lineage['selection_policy'];_need(type(selection) is dict and _same(selection.get('province_splits'),FIXED_PROVINCE_SPLITS) and _same(selection.get('keep_split_priority'),['test','val','train']),'Candidate fixed selection policy invalid')
+@@ -98,13 +100,14 @@
+     return expected_status,counts,blockers,capture['capture_status']
+ 
+ 
++@profile_entry
+ def assess_staged_candidate(data_root,paths,pins,output_dir):
+     """출처·동일정책 guard. 기존 run의 QA는 호출하되 execute/resume는 항상 False."""
+     _need(type(paths) is dict and set(paths)==set(ROLES) and type(pins) is dict and set(pins)==set(ROLES) and all(_sha(v) for v in pins.values()),'Four external input SHA pins required')
+     root_logical=_local(data_root);data=root_logical.resolve();_local(data);_need(data.is_dir(),'Existing DATA root required')
+-    roles={'candidate':'candidate','staging_receipt':'saved_plan','policy':'source','old_readiness':'readiness'};contexts={r:_context(roles[r],CAPS[r]) for r in ROLES};logical={};targets={};stamps={}
++    roles={'candidate':'candidate','staging_receipt':'saved_plan','policy':'source','old_readiness':'readiness'};contexts={r:_context(roles[r],profile_cap('candidate' if r=='candidate' else r,CAPS[r])) for r in ROLES};logical={};targets={};stamps={}
+     for r in ROLES:
+-        value=Path(paths[r]);value=value if value.is_absolute() else data/value;logical[r]=_local(value);targets[r]=_confined(data,logical[r]);_local(targets[r]);stamps[r]=_stamp(targets[r].stat());_need(stamps[r][0]<=CAPS[r],'Input exceeds role byte cap')
++        value=Path(paths[r]);value=value if value.is_absolute() else data/value;logical[r]=_local(value);targets[r]=_confined(data,logical[r]);_local(targets[r]);stamps[r]=_stamp(targets[r].stat());_need(stamps[r][0]<=profile_cap('candidate' if r=='candidate' else r,CAPS[r]),'Input exceeds role byte cap')
+     _need(len(set(targets.values()))==4 and len({s[3:] for s in stamps.values()})==4,'Four distinct input files required')
+     out=_local(output_dir);target=_confined(data,out);_need(not out.exists() and not out.is_symlink(),'New DATA QA output directory required');parent=out.parent.resolve();parent_id=_dir_identity(parent)[:2]
+     docs={r:contexts[r].read(logical[r],roles[r],pins[r])[0] for r in ROLES};_stage(docs['staging_receipt'],docs['candidate'],targets['candidate'],data,pins,stamps['candidate'][0]);effective=_policy(docs['policy'],docs['old_readiness'])
+@@ -128,5 +131,6 @@
+       'observed_readiness_status':state,'observed_gate_ready_for_training':result['ready_for_training'],'saved_blockers':copy.deepcopy(blockers),'patch_counts_by_split':copy.deepcopy(counts),'connectivity_capture_status':capture_status,
+       'qa_performed':True,'full_plan_recomputation_performed':False,'package_revalidated':False,'prepared_dataset_registered':False,'training_executed':False,'execution_authorized':False,'ready_for_training':False,'scientific_accuracy_validated':False,'source_authenticity_verified':False,'exact_row_binding_verified':False,'training_split_leakage_resolved':False,'registry_called':False,'resume_requested':False,'settlement_authorized':False,'automatic_resume_allowed':False,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN',
+       'completion_contract':'QA may complete with blockers. Receipt is not execution/scientific authorization. Absent/partial/invalid receipt is incomplete. Final stability check precedes exclusive receipt write; no atomic snapshot guarantee.'}
++    receipt=profile_stamp(receipt)
+     size=report_io.measure(receipt,'plan');verify();report_io.verify();paths_ok(created=True);receipt_out=target/'qa-receipt.json';_need(not receipt_out.exists() and not receipt_out.is_symlink(),'New QA receipt required');report_io.write(receipt_out,receipt,'plan',size)
+     return receipt
+--- a/backend/app/ml/candidate_staging.py
++++ b/backend/app/ml/candidate_staging.py
+@@ -1,3 +1,4 @@
++from .manifest_resource_profile import active,cap as profile_cap,policy as resource_policy,charge as profile_charge,structure as profile_structure,entry as profile_entry,stamp as profile_stamp,receipt as profile_receipt,DESCRIPTOR
+ """엄격한 evidence 영수증 검증과 동일 바이트 DATA metadata staging. QA는 실행하지 않는다."""
+ import copy
+ import hashlib
+@@ -25,18 +26,19 @@
+ 
+ 
+ def _receipt_contract(receipt,input_pins):
++    receipt=profile_receipt(receipt)
+     _need(type(receipt) is dict and set(receipt)==RECEIPT_FIELDS,'Exact materialization receipt schema required')
+     for key,value in {'schema_version':1,'kind':'EVIDENCE_SPLIT_CANDIDATE_RECEIPT','status':'METADATA_ROUNDTRIP_VERIFIED','candidate_status':'PLANNED_DERIVED_CANDIDATE','readiness_status':'BLOCKED','scope':'PINNED_JSON_METADATA_ONLY_NOT_RASTER_READINESS','metadata_integrity_verified':True,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN'}.items():_need(_same(receipt[key],value),'Receipt status/type claim invalid: '+key)
+     for key in FALSE_FIELDS:_need(receipt[key] is False,'Receipt false claim invalid: '+key)
+     _need(type(receipt['completion_contract']) is str and 0<len(receipt['completion_contract'])<=4096,'Receipt completion text invalid')
+     _need(type(receipt['derived_manifest_version']) is str and re.fullmatch('split-repair-v1-[0-9a-f]{16}',receipt['derived_manifest_version']) is not None and _same(receipt['fixed_province_splits'],FIXED_PROVINCE_SPLITS),'Receipt version/fixed split invalid')
+-    for key in ['source_row_count','candidate_row_count','excluded_source_row_count']:_need(_uint(receipt[key]) and receipt[key]<=100000,'Receipt row count invalid')
++    for key in ['source_row_count','candidate_row_count','excluded_source_row_count']:_need(_uint(receipt[key]) and receipt[key]<=(3000 if active() is not None else 100000),'Receipt row count invalid')
+     _need(receipt['source_row_count']==receipt['candidate_row_count']+receipt['excluded_source_row_count'],'Receipt row partition invalid')
+     inputs=receipt['inputs'];outputs=receipt['outputs'];_need(type(inputs) is dict and set(inputs)==set(INPUT_ROLES) and type(outputs) is dict and set(outputs)=={'plan','candidate'},'Receipt reference keys invalid')
+     for role,value in inputs.items():
+-        _need(type(value) is dict and set(value)=={'path','sha256','bytes'} and type(value['path']) is str and 0<len(value['path'])<=4096 and _sha(value['sha256']) and value['sha256']==input_pins[role] and _uint(value['bytes']) and 0<value['bytes']<=POLICY['input_caps'][role],'Receipt input reference invalid')
++        _need(type(value) is dict and set(value)=={'path','sha256','bytes'} and type(value['path']) is str and 0<len(value['path'])<=4096 and _sha(value['sha256']) and value['sha256']==input_pins[role] and _uint(value['bytes']) and 0<value['bytes']<=resource_policy(POLICY)['input_caps'][role],'Receipt input reference invalid')
+     for role,value in outputs.items():
+-        _need(type(value) is dict and set(value)=={'name','sha256','bytes'} and value['name']==role+'.json' and _sha(value['sha256']) and _uint(value['bytes']) and 0<value['bytes']<=POLICY['output_caps'][role],'Receipt output reference invalid')
++        _need(type(value) is dict and set(value)=={'name','sha256','bytes'} and value['name']==role+'.json' and _sha(value['sha256']) and _uint(value['bytes']) and 0<value['bytes']<=resource_policy(POLICY)['output_caps'][role],'Receipt output reference invalid')
+ 
+ 
+ def _copy_bytes(source,destination,stamp,pin,maximum):
+@@ -54,6 +56,7 @@
+     return count
+ 
+ 
++@profile_entry
+ def stage_split_candidate(data_root,package_dir,receipt_sha256,input_pins,output_dir,*,evidence_root):
+     """3 외부 pin + pinned receipt를 검증한 뒤 DATA 새 metadata 파일만 staging."""
+     _need(_sha(receipt_sha256) and type(input_pins) is dict and set(input_pins)==set(INPUT_ROLES) and all(_sha(p) for p in input_pins.values()),'Explicit receipt SHA and three external lowercase SHA pins required')
+@@ -64,7 +67,7 @@
+     out=_local(output_dir);target=_confined(data,out);_need(not out.exists() and not out.is_symlink(),'New DATA staging directory required')
+     parent=out.parent.resolve();parent_id=_dir_identity(parent)[:2];_need(target.parent==parent,'Staging parent mismatch')
+     receipt_path=package/'receipt.json';receipt_target=_confined(evidence,receipt_path)
+-    receipt_policy=copy.deepcopy(POLICY);receipt_policy['input_caps']['saved_plan']=RECEIPT_CAP;receipt_policy['output_caps']={'plan':RECEIPT_CAP,'candidate':RECEIPT_CAP}
++    receipt_policy=resource_policy(POLICY);receipt_policy['input_caps']['saved_plan']=RECEIPT_CAP;receipt_policy['output_caps']={'plan':RECEIPT_CAP,'candidate':RECEIPT_CAP}
+     receipt_io=BoundedJSONIO(receipt_policy);receipt=receipt_io.read(receipt_path,'saved_plan',receipt_sha256)[0];_receipt_contract(receipt,input_pins)
+     paths={};stamps={};targets={}
+     for role,reference in receipt['inputs'].items():
+@@ -77,7 +80,7 @@
+         info=receipt['outputs']['plan' if role=='new_plan' else 'candidate'];_need(stamps[role][0]==info['bytes'],'Receipt output size mismatch')
+     targets['receipt']=receipt_target;stamps['receipt']=_stamp(receipt_target.stat())
+     _need(len(set(targets.values()))==6 and len({s[3:] for s in stamps.values()})==6,'Receipt/package/inputs must be distinct regular files')
+-    io=BoundedJSONIO(copy.deepcopy(POLICY));docs={r:io.read(paths[r],r,input_pins[r])[0] for r in INPUT_ROLES}
++    io=BoundedJSONIO(resource_policy(POLICY));docs={r:io.read(paths[r],r,input_pins[r])[0] for r in INPUT_ROLES}
+     plan,plan_sha=io.read(package_paths['new_plan'],'saved_plan',receipt['outputs']['plan']['sha256']);candidate,candidate_sha=io.read(package_paths['candidate'],'candidate',receipt['outputs']['candidate']['sha256'])
+     _need(all(type(d) is dict for d in [*docs.values(),plan,candidate]),'Pinned JSON documents must be objects')
+     _need(_same(plan,docs['saved_plan']),'Package plan differs from caller-pinned original plan')
+@@ -92,13 +95,14 @@
+         if created:_need(_dir_identity(out)[:2]==created_id,'Staging directory replaced')
+         else:_need(not out.exists(),'Staging directory appeared')
+     io.verify();receipt_io.verify();check_paths();out.mkdir(exist_ok=False);created_id=_dir_identity(out)[:2]
+-    staged=target/'candidate.json';_copy_bytes(targets['candidate'],staged,stamps['candidate'],candidate_sha,POLICY['input_caps']['candidate'])
++    staged=target/'candidate.json';_copy_bytes(targets['candidate'],staged,stamps['candidate'],candidate_sha,resource_policy(POLICY)['input_caps']['candidate'])
+     staged_doc,staged_sha=io.read(staged,'candidate',candidate_sha);_need(_same(staged_doc,candidate) and staged.stat().st_size==receipt['outputs']['candidate']['bytes'],'Staged metadata differs')
+     staging={'schema_version':1,'kind':'DATA_CANDIDATE_STAGING_RECEIPT','status':'METADATA_STAGED_FOR_QA','next_step':'NEXT_QA_NOT_PERFORMED','qa_status':'NOT_PERFORMED',
+       'package_reference':{'path':str(package_target),'receipt_sha256':receipt_sha256},'input_pins':dict(input_pins),'verified_package_outputs':copy.deepcopy(receipt['outputs']),
+       'staged_candidate':{'path':str(staged.relative_to(data)),'sha256':staged_sha,'bytes':staged.stat().st_size},'derived_manifest_version':receipt['derived_manifest_version'],'source_row_count':receipt['source_row_count'],'candidate_row_count':receipt['candidate_row_count'],'projected_after':copy.deepcopy(receipt['projected_after']),
+       'metadata_integrity_verified':True,'original_candidate_bytes_preserved':True,'qa_performed':False,'readiness_assess_called':False,'registered':False,'registry_called':False,'executed':False,'learning_ready':False,'ready_for_training':False,'scientific_accuracy_validated':False,'source_authenticity_verified':False,'exact_row_binding_verified':False,'spatial_overlap_rechecked':False,'exact_class_counts_recomputed':False,'training_split_leakage_resolved':False,'source_rows_modified_or_reassigned':False,'execution_authorized':False,'settlement_authorized':False,'automatic_resume_allowed':False,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN',
+       'completion_contract':'Absent, partial or invalid staging receipt is incomplete. Validate receipt schema and staged SHA before QA. Receipt follows final stability check; no atomic snapshot guarantee.'}
++    staging=profile_stamp(staging)
+     size=receipt_io.measure(staging,'plan');io.verify();receipt_io.verify();check_paths(created=True)
+     receipt_out=target/'staging-receipt.json';_need(not receipt_out.exists() and not receipt_out.is_symlink(),'New staging receipt required')
+     receipt_io.write(receipt_out,staging,'plan',size)
+--- a/backend/app/ml/readiness.py
++++ b/backend/app/ml/readiness.py
+@@ -1,3 +1,4 @@
++from .manifest_resource_profile import active,read_json as profile_read_json,charge as profile_charge
+ """실자료 의사라벨 실험의 충분성·출처·분할 gate. 독립 실정확도 승인이 아니다."""
+ import json
+ import re
+@@ -141,13 +142,15 @@
+     if not test_mode and policy['required_years']!=list(range(2020,2026)) and (not policy['limited_period_experiment'] or not policy['scope_statement']):
+         block('LIMITED_SCOPE_NOT_DECLARED','제한 연도 개발 실험은 명시적 limited_period_experiment와 범위 설명이 필요합니다. 전기간 달성으로 보고하지 않습니다.')
+     def inventory(path,kind):
+-        path=safe_path(root,path);digest=file_digest(path)
++        path=safe_path(root,path)
++        if active() is not None and path.suffix.lower()=='.json':profile_charge(path.stat().st_size)
++        digest=file_digest(path)
+         files[str(path.relative_to(root))]={'path':str(path.relative_to(root)),'sha256':digest,'kind':kind}
+         return path,digest
+     for manifest in manifests:
+         path,digest=inventory(manifest,'collection_manifest')
+         inputs.append({'path':str(path.relative_to(root)),'sha256':digest})
+-        document=json.loads(path.read_text(encoding='utf-8'))
++        document=profile_read_json(path,'source') if active() is not None else json.loads(path.read_text(encoding='utf-8'))
+         if document.get('synthetic') and not test_mode:
+             block('SYNTHETIC_NOT_REAL','합성 자료는 실자료 충분성에 포함하지 않습니다.',str(path))
+             continue
+@@ -197,7 +200,7 @@
+                 if not evidence_path:
+                     block('NORMALIZATION_UNVERIFIED','제품별 공식 메타데이터 정규화 검증 기록이 없습니다.',key);continue
+                 ep,eh=inventory(evidence_path,'normalization_qa')
+-                evidence=json.loads(ep.read_text(encoding='utf-8'))
++                evidence=profile_read_json(ep,'source') if active() is not None else json.loads(ep.read_text(encoding='utf-8'))
+                 scale=channel_values(normalization.get('scale'),len(bands),'scale')
+                 offset=channel_values(normalization.get('offset'),len(bands),'offset')
+                 if normalization.get('evidence_sha256')!=eh or evidence.get('status')!='verified_product_metadata' or evidence.get('product_id')!=row.get('scene_id') or evidence.get('band_names')!=bands:
+--- a/backend/app/ml/split_json_io.py
++++ b/backend/app/ml/split_json_io.py
+@@ -1,3 +1,4 @@
++from .manifest_resource_profile import active as profile_active,cap as profile_cap,policy as resource_policy,charge as profile_charge,structure as profile_structure,entry as profile_entry,stamp as profile_stamp,receipt as profile_receipt,DESCRIPTOR,require_io_room
+ """Opt-in bounded, strict JSON IO for split metadata; no approval semantics."""
+ import hashlib
+ import json
+@@ -58,10 +59,13 @@
+ 
+ 
+ def _tree(value,maximum,cap):
++    visited=0
+     # Bound serialization before encoder builds a possibly enormous string fragment.
+     active=set();stack=[(value,1 if type(value) in (dict,list) else 0,False)]
+     while stack:
+         item,depth,leave=stack.pop();kind=type(item)
++        visited+=1
++        if profile_active() is not None:_need(visited<=DESCRIPTOR['max_nodes'],'MANIFEST_NODE_LIMIT')
+         if leave:active.remove(id(item));continue
+         if kind in (dict,list):
+             _need(depth<=maximum,'JSON object depth exceeds policy')
+@@ -81,6 +85,7 @@
+ class BoundedJSONIO:
+     """Shared operation context; all subsequent reads retain first logical/stat/SHA binding."""
+     def __init__(self,policy):
++        policy=resource_policy(policy)
+         _need(type(policy) is dict and set(policy)=={'input_caps','output_caps','max_depth'},'Exact bounded JSON policy required')
+         for key,roles in [('input_caps',INPUT_ROLES),('output_caps',OUTPUT_ROLES)]:
+             caps=policy[key];_need(type(caps) is dict and set(caps)==roles and all(type(n) is int and 1<=n<=MAX_BYTES for n in caps.values()),'Exact integer role byte caps required')
+@@ -103,13 +108,14 @@
+         _need(before[0]<=cap,'JSON input exceeds role byte cap')
+         old=self._records.get(logical)
+         if old is not None:_need(old['target']==target and old['stamp']==before,'JSON logical target or input state changed')
++        require_io_room(cap+1)
+         parts=[];count=0
+         with target.open('rb',buffering=0) as stream:
+             _need(_stamp(os.fstat(stream.fileno()))==before,'JSON descriptor differs from input')
+             while count<=cap:
+                 block=stream.read(min(CHUNK,cap+1-count))
+                 if not block:break
+-                count+=len(block);parts.append(block)
++                profile_charge(len(block));count+=len(block);parts.append(block)
+             _need(count<=cap,'JSON input grew beyond byte cap')
+             _need(_stamp(os.fstat(stream.fileno()))==before,'JSON input changed during read')
+         _need(_stamp(target.stat())==before and logical.resolve()==target,'JSON input target changed after read')
+@@ -118,7 +124,7 @@
+         if expected is not None:_need(digest==expected,'JSON SHA mismatch or stale input')
+         if old is not None:_need(digest==old['sha256'],'JSON input content changed')
+         text=payload.decode('utf-8');_need(not text.startswith('\ufeff') and '\x00' not in text,'Only strict UTF8 JSON without BOM/NUL supported');_depth(text,self.max_depth)
+-        document=json.loads(text,object_pairs_hook=_pairs,parse_constant=_constant);_tree(document,self.max_depth,cap)
++        document=json.loads(text,object_pairs_hook=_pairs,parse_constant=_constant);_tree(document,self.max_depth,cap);profile_structure(document,role)
+         self._records[logical]={'target':target,'stamp':before,'sha256':digest,'role':role}
+         return document,digest
+ 
+@@ -126,7 +132,7 @@
+         for logical,record in list(self._records.items()):self.read(logical,record['role'],record['sha256'])
+ 
+     def measure(self,document,role):
+-        _need(role in self.output_caps,'Unknown output role');cap=self.output_caps[role];_tree(document,self.max_depth,cap)
++        _need(role in self.output_caps,'Unknown output role');cap=self.output_caps[role];_tree(document,self.max_depth,cap);profile_structure(document,role)
+         count=0
+         for part in self.chunks(document):count+=len(part);_need(count<=cap,'JSON output exceeds role byte cap')
+         return count
+@@ -142,7 +148,7 @@
+         with Path(path).open('xb') as stream:
+             for part in self.chunks(document):
+                 _need(count+len(part)<=cap and count+len(part)<=expected_size,'JSON output changed or exceeded budget')
+-                written=stream.write(part);_need(written==len(part),'Incomplete JSON output write');count+=written
++                profile_charge(len(part),'write');written=stream.write(part);_need(written==len(part),'Incomplete JSON output write');count+=written
+         _need(count==expected_size,'JSON output changed after measurement')
+ 
+ 
+--- a/scripts/prepare_priority_candidate164.py
++++ b/scripts/prepare_priority_candidate164.py
+@@ -11,7 +11,9 @@
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ sys.path[:0] = [str(ROOT), str(ROOT / '.runtime'), str(ROOT / 'backend')]
+-from backend.app.ml.split_json_io import _local
++from backend.app.ml.split_json_io import _local,BoundedJSONIO
++from backend.app.ml.manifest_resource_profile import entry as profile_entry,active,cap as profile_cap,charge as profile_charge,read_json as profile_read_json,NAME,require_io_room,MARKER
++from backend.app.ml.candidate_materialization import POLICY
+ from backend.app.data.recovery_terminal import _confined
+ from backend.app.ml.readiness import assess
+ from backend.app.ml.split_planning import plan_split_repair, write_plan
+@@ -22,6 +24,18 @@
+ 
+ def digest(path):
+     h = hashlib.sha256()
++    if active() is not None and path.suffix=='.json':
++        maximum=128*1024**2
++        if path.stat().st_size>maximum:raise ValueError('MANIFEST_JSON_FILE_LIMIT')
++        require_io_room(maximum+1);count=0
++        with path.open('rb') as stream:
++            while True:
++                chunk=stream.read(min(1024*1024,maximum+1-count))
++                if not chunk:break
++                profile_charge(len(chunk));count+=len(chunk)
++                if count>maximum:raise ValueError('MANIFEST_JSON_FILE_LIMIT')
++                h.update(chunk)
++        return h.hexdigest()
+     with path.open('rb') as stream:
+         for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+             h.update(chunk)
+@@ -29,6 +43,9 @@
+ 
+ 
+ def write_new(path, value):
++    if active() is not None:
++        bounded=BoundedJSONIO({'input_caps':dict(POLICY['input_caps']),'output_caps':{'plan':16*1024**2 if path.name=='source-readiness.json' else 4*1024**2,'candidate':65536},'max_depth':32})
++        profile_charge(bounded.measure(value,'plan')+len(os.linesep.encode()),'write')
+     with path.open('x', encoding='utf-8') as stream:
+         json.dump(value, stream, ensure_ascii=False, indent=2, allow_nan=False)
+         stream.write('\n')
+@@ -36,11 +53,14 @@
+ 
+ def copy_pinned(source, output, pin, cap=64 * 1024**2):
+     """Bounded exclusive copy. A failed partial copy is preserved, never reused."""
++    cap=profile_cap('source',cap)
+     if not source.is_file() or source.is_symlink() or source.stat().st_size > cap:
+         raise ValueError('Source must be a bounded regular local file')
+     before = source.stat()
++    require_io_room(2*before.st_size)
+     if digest(source) != pin:
+         raise ValueError('Source pin differs before copy')
++    require_io_room(2*before.st_size)
+     h = hashlib.sha256(); count = 0
+     with source.open('rb') as src, output.open('xb') as dst:
+         opened = os.fstat(src.fileno())
+@@ -50,7 +70,7 @@
+             count += len(chunk)
+             if count > cap or count > before.st_size:
+                 raise ValueError('Source grew during copy')
+-            dst.write(chunk); h.update(chunk)
++            profile_charge(len(chunk));profile_charge(len(chunk),'write');dst.write(chunk); h.update(chunk)
+     after = source.stat()
+     if count != before.st_size or h.hexdigest() != pin or digest(source) != pin or (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns) != (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns):
+         raise ValueError('Source changed during copy')
+@@ -59,6 +79,7 @@
+     return count
+ 
+ 
++@profile_entry
+ def prepare(data_root, source, source_pin, policy, policy_pin, run_id, *, evidence_root=None):
+     for pin in (source_pin, policy_pin):
+         if type(pin) is not str or re.fullmatch('[0-9a-f]{64}', pin) is None:
+@@ -89,8 +110,8 @@
+     work.mkdir(exist_ok=False); out.mkdir(exist_ok=False)
+     snapshot = work / 'source.json'
+     size = copy_pinned(source, snapshot, source_pin)
+-    policy_doc = json.loads(policy.read_text(encoding='utf-8'))
+-    document = json.loads(snapshot.read_text(encoding='utf-8'))
++    policy_doc = profile_read_json(policy,'source',maximum=1024**2) if active() is not None else json.loads(policy.read_text(encoding='utf-8'))
++    document = profile_read_json(snapshot,'source') if active() is not None else json.loads(snapshot.read_text(encoding='utf-8'))
+     rows = document['scenes']
+     if not rows or not all(Path(r[k]).is_absolute() for r in rows for k in ('image_path', 'label_path', 'quality_mask_path')):
+         raise ValueError('Snapshot requires nonempty rows with absolute raster paths')
+@@ -106,8 +127,8 @@
+     print(json.dumps({'stage': 'SOURCE_QA_COMPLETE', 'seconds': raw_seconds, 'eligible': raw_report['patch_counts_by_split']}), flush=True)
+     if digest(snapshot) != source_pin or digest(policy) != policy_pin:
+         raise ValueError('Pinned input changed after source QA')
+-    plan = plan_split_repair(snapshot, source_pin, province_splits=policy_doc['province_splits'], readiness_path=old_readiness, readiness_sha256=digest(old_readiness), data_root=data)
+-    saved = out / 'split-plan.json'; write_plan(plan, saved)
++    plan = plan_split_repair(snapshot, source_pin, province_splits=policy_doc['province_splits'], readiness_path=old_readiness, readiness_sha256=digest(old_readiness), data_root=data,**({'io_policy':BoundedJSONIO(POLICY)} if active() is not None else {}))
++    saved = out / 'split-plan.json'; write_plan(plan, saved,**({'io_policy':BoundedJSONIO(POLICY)} if active() is not None else {}))
+     paths = {'source': snapshot, 'readiness': old_readiness, 'saved_plan': saved}
+     pins = {k: digest(p) for k, p in paths.items()}
+     package = out / 'candidate-package'
+@@ -120,7 +141,7 @@
+     qa_dir = work / 'qa'; start = time.monotonic()
+     qa_receipt = assess_staged_candidate(data, qa_paths, qa_pins, qa_dir)
+     qa_seconds = round(time.monotonic() - start, 3)
+-    report = json.loads((qa_dir / 'readiness.json').read_text(encoding='utf-8'))
++    report = profile_read_json(qa_dir/'readiness.json','readiness') if active() is not None else json.loads((qa_dir / 'readiness.json').read_text(encoding='utf-8'))
+     if digest(snapshot) != source_pin or digest(policy) != policy_pin or any(digest(p) != qa_pins[k] for k, p in qa_paths.items()):
+         raise ValueError('Pinned input changed after candidate QA')
+     # Recheck actual files after the native gate, without invoking training.
+@@ -129,6 +150,9 @@
+         raise ValueError('Actual QA file changed during final verification')
+     outputs = [snapshot, old_readiness, saved, package / 'plan.json', package / 'candidate.json', package / 'receipt.json', *qa_paths.values(), qa_dir / 'readiness.json', qa_dir / 'qa-receipt.json']
+     summary = {'status': 'PINNED_CANDIDATE_QA_COMPLETED', 'at': datetime.now(timezone.utc).isoformat(), 'source_snapshot_at': stamp, 'scope': 'PINNED_COHORT_EXCLUDES_LATER_COLLECTION', 'source_sha256': source_pin, 'source_row_count': len(rows), 'source_eligible': raw_report['patch_counts_by_split'], 'source_blockers': raw_report['blockers'], 'candidate_row_count': receipt['candidate_row_count'], 'candidate_eligible': report['patch_counts_by_split'], 'excluded_source_rows': len(plan['excluded_row_indexes']), 'remaining_source_identity_conflicts': plan['remaining_source_identity_conflicts'], 'candidate_blockers': report['blockers'], 'bare_pixels': {s: v[7] for s, v in report['class_counts_by_split'].items()}, 'bare_contributing_patches': {s: v[7] for s, v in report['class_patch_counts_by_split'].items()}, 'observed_gate_ready_for_training': report['ready_for_training'], 'ready_for_training': False, 'scientific_accuracy_validated': False, 'training_executed': False, 'network_requests': 0, 'registry_called': False, 'source_qa_seconds': raw_seconds, 'candidate_qa_seconds': qa_seconds, 'verified_file_records': len(report['verified_files']), 'file_sha_mismatches': 0, 'connectivity_capture_status': qa_receipt['connectivity_capture_status'], 'outputs': {str(p): {'sha256': digest(p), 'bytes': p.stat().st_size} for p in outputs}}
++    if active() is not None:
++        summary['manifest_profile']=dict(MARKER)
++        summary['manifest_resource_usage_before_summary_write']={'json_io_bytes':active().bytes,'read_bytes':active().reads,'write_bytes':active().writes,'maximum_bytes':active().maximum}
+     write_new(out / 'summary.json', summary)
+     return summary
+ 
+@@ -140,9 +164,10 @@
+     parser.add_argument('--source-sha256', required=True)
+     parser.add_argument('--policy-sha256', required=True)
+     parser.add_argument('--run-id', required=True)
++    parser.add_argument('--manifest-profile',choices=[NAME],default=None)
+     args = parser.parse_args(argv)
+     try:
+-        result = prepare(args.data_root, args.source, args.source_sha256, args.policy, args.policy_sha256, args.run_id)
++        result = prepare(args.data_root, args.source, args.source_sha256, args.policy, args.policy_sha256, args.run_id,manifest_profile=args.manifest_profile)
+         print(json.dumps({'stage': result['status'], 'candidate_eligible': result['candidate_eligible'], 'ready_for_training': False}), flush=True)
+         return 0
+     except (ValueError, OSError, TypeError, KeyError, IndexError, AssertionError):
+--- a/scripts/run_experiment.py
++++ b/scripts/run_experiment.py
+@@ -12,6 +12,8 @@
+ from backend.app.ml.service import prepare_dataset, train_model, infer_raster
+ from backend.app.ml.raster import safe_path
+ from backend.app.ml.dataset import file_digest
++from backend.app.ml.manifest_resource_profile import active,charge as profile_charge
++from backend.app.ml.split_json_io import BoundedJSONIO
+ 
+ 
+ def _local_path(value):
+@@ -87,6 +89,9 @@
+     else:
+         result=assess([Path(path).resolve() for path in manifests],root,policy)
+     result['assessed_at']=datetime.now(timezone.utc).isoformat()
++    if active() is not None:
++        policy228={'input_caps':{'source':65536,'candidate':65536,'saved_plan':65536,'readiness':16*1024**2},'output_caps':{'plan':16*1024**2,'candidate':65536},'max_depth':32}
++        profile_charge(BoundedJSONIO(policy228).measure(result,'plan'),'write')
+     if connectivity_diagnostics:
+         _recheck_diagnostic_output(root,output)
+         readiness_path=output['target']
+--- /dev/null
++++ b/backend/app/ml/manifest_resource_profile.py
+@@ -0,0 +1,77 @@
++"""Explicit bounded metadata profile; isolated228 prototype, never remote budget."""
++from contextlib import contextmanager
++from contextvars import ContextVar
++from functools import wraps
++import copy,hashlib,json
++from types import MappingProxyType,ModuleType
++import sys
++
++NAME='bounded128m-3000-v1'
++DESCRIPTOR=MappingProxyType({'name':NAME,'manifest_bytes':128*1024**2,'max_rows':3000,'max_depth':32,'max_nodes':4000000,'max_json_io_bytes':16*1024**3})
++DIGEST=hashlib.sha256(json.dumps(dict(DESCRIPTOR),sort_keys=True,separators=(',',':')).encode()).hexdigest()
++MARKER=MappingProxyType({'name':NAME,'sha256':DIGEST})
++_state_candidate=ModuleType('_geoai_manifest_profile228_state')
++_state_candidate.context=ContextVar('manifest_profile228',default=None)
++_CONTEXT=sys.modules.setdefault('_geoai_manifest_profile228_state',_state_candidate).context
++# app.ml and backend.app.ml are both used by existing entry points.
++# Share only the operation-local ContextVar, never a globally enabled profile.
++class Budget:
++    def __init__(self,maximum):self.maximum=maximum;self.bytes=0;self.reads=0;self.writes=0
++    def charge(self,size,kind='read'):
++        if type(size) is not int or size<0 or self.bytes+size>self.maximum:raise ValueError('MANIFEST_JSON_IO_LIMIT')
++        self.bytes+=size
++        if kind=='read':self.reads+=size
++        else:self.writes+=size
++
++def active():return _CONTEXT.get()
++def validate_name(name):
++    if name is not None and (type(name) is not str or name!=NAME):raise ValueError('MANIFEST_PROFILE_INVALID')
++    return name
++@contextmanager
++def scope(name=None):
++    validate_name(name);old=active()
++    if old is not None or name is None:yield old;return
++    budget=Budget(DESCRIPTOR['max_json_io_bytes']);token=_CONTEXT.set(budget)
++    try:yield budget
++    finally:_CONTEXT.reset(token)
++def entry(function):
++    @wraps(function)
++    def wrapped(*args,manifest_profile=None,**kwargs):
++        with scope(manifest_profile):return function(*args,**kwargs)
++    return wrapped
++def cap(role,maximum):
++    return DESCRIPTOR['manifest_bytes'] if active() is not None and role in ('source','candidate') and maximum==64*1024**2 else maximum
++def policy(value):
++    result=copy.deepcopy(value)
++    if active() is not None:
++        for key in ('input_caps','output_caps'):
++            for role,maximum in result[key].items():result[key][role]=cap(role,maximum)
++    return result
++def charge(size,kind='read'):
++    if active() is not None:active().charge(size,kind)
++def structure(document,role):
++    if active() is None:return
++    if role in ('source','candidate') and type(document) is dict and 'scenes' in document:
++        rows=document['scenes'];history=document.get('historical_noneligible_patches',[])
++        if type(rows) is not list or type(history) is not list or len(rows)+len(history)>DESCRIPTOR['max_rows']:raise ValueError('MANIFEST_ROW_LIMIT')
++def stamp(receipt,version=True):
++    if active() is None:return receipt
++    result=dict(receipt);result['manifest_profile']=dict(MARKER)
++    if version:result['schema_version']=2
++    return result
++def receipt(value):
++    if type(value) is not dict:raise ValueError('MANIFEST_PROFILE_RECEIPT_INVALID')
++    if active() is None:
++        if 'manifest_profile' in value or value.get('schema_version')!=1:raise ValueError('MANIFEST_PROFILE_NOT_SELECTED')
++        return value
++    if type(value.get('schema_version')) is not int or value['schema_version']!=2 or value.get('manifest_profile')!=MARKER:raise ValueError('MANIFEST_PROFILE_MISMATCH')
++    result=dict(value);result.pop('manifest_profile');result['schema_version']=1
++    return result
++def read_json(path,role,maximum=None):
++    from .split_json_io import BoundedJSONIO
++    base={'input_caps':{'source':64*1024**2,'readiness':16*1024**2,'saved_plan':4*1024**2,'candidate':64*1024**2},'output_caps':{'plan':4*1024**2,'candidate':64*1024**2},'max_depth':32}
++    if maximum is not None:base['input_caps'][role]=maximum
++    return BoundedJSONIO(base).read(path,role)[0]
++
++def require_io_room(maximum):
++    if active() is not None and active().bytes+maximum>active().maximum:raise ValueError('MANIFEST_JSON_IO_LIMIT')
+--- /dev/null
++++ b/tests/test_manifest_profile228.py
+@@ -0,0 +1,147 @@
++"""Isolated228 only: Temp metadata, mocked gate, no real source/raster/HTTP."""
++import copy,hashlib,json,types,unittest
++from pathlib import Path
++from unittest.mock import patch
++from backend.app.ml import manifest_resource_profile as profile
++from backend.app.ml.split_json_io import BoundedJSONIO
++from backend.app.ml import split_json_io as bounded
++from backend.app.ml import candidate_materialization as material
++from backend.app.ml import candidate_staging as staging
++from backend.app.ml import candidate_readiness_qa as qa
++from backend.app.ml import candidate_qa_comparison as comparison
++from scripts import prepare_priority_candidate164 as cli
++import test_candidate_materialization as mf
++import test_candidate_readiness_qa as qf
++import test_candidate_qa_comparison as cf
++
++ROOT=Path(__file__).resolve().parents[1]
++def original(name):
++    module=types.ModuleType('backend.app.ml.original228_'+name);module.__package__='backend.app.ml'
++    path=ROOT/'baseline-code/backend/app/ml'/str(name+'.py')
++    exec(compile(path.read_text('utf-8'),str(path),'exec'),module.__dict__)
++    return module
++class Profile228Tests(unittest.TestCase):
++    def test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict(self):
++        f=mf.CandidateMaterializationTests();f.setUp();self.addCleanup(f.tearDown)
++        old=original('candidate_materialization');oldout=f.f.workspace/'old-package'
++        old.materialize_split_candidate(f.f.root,f.paths,f.pins,oldout,evidence_root=f.f.workspace)
++        f.run_package()
++        for name in ('plan.json','candidate.json','receipt.json'):
++            self.assertEqual((f.out/name).read_bytes(),(oldout/name).read_bytes())
++    def test_explicit_materialization_staging_v2_and_old_contract_fail_closed(self):
++        f=mf.CandidateMaterializationTests();f.setUp();self.addCleanup(f.tearDown)
++        evidence=f.f.workspace/'evidence';evidence.mkdir();f.out=evidence/'new-package'
++        moved=evidence/'saved.json';f.saved.rename(moved);f.saved=moved;f.paths['saved_plan']=moved
++        receipt=material.materialize_split_candidate(f.f.root,f.paths,f.pins,f.out,evidence_root=evidence,manifest_profile=profile.NAME)
++        self.assertEqual(receipt['schema_version'],2);self.assertEqual(receipt['manifest_profile'],profile.MARKER)
++        with self.assertRaises(ValueError):staging._receipt_contract(receipt,f.pins)
++        stamp=f.f.sha(f.out/'receipt.json');out=f.f.root/'new-stage'
++        staged=staging.stage_split_candidate(f.f.root,f.out,stamp,f.pins,out,evidence_root=evidence,manifest_profile=profile.NAME)
++        self.assertEqual(staged['manifest_profile'],profile.MARKER);self.assertEqual(staged['schema_version'],2)
++        self.assertFalse(staged['ready_for_training'])
++    def test_qa_v2_same_profile_and_default_rejection(self):
++        f=qf.CandidateReadinessQATests();f.setUp();self.addCleanup(f.tearDown)
++        with profile.scope(profile.NAME):f.stage=profile.stamp(f.stage)
++        f.write('staging_receipt',f.stage);f.refresh()
++        with patch.object(qa,'run',side_effect=f.fake_run):
++            receipt=qa.assess_staged_candidate(f.data,f.paths,f.pins,f.out,manifest_profile=profile.NAME)
++        self.assertEqual(receipt['schema_version'],2);self.assertEqual(receipt['manifest_profile'],profile.MARKER)
++        self.assertFalse(receipt['ready_for_training'])
++    def test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper(self):
++        f=cf.CandidateQAComparisonTests();f.setUp();self.addCleanup(f.tearDown)
++        with profile.scope(profile.NAME):
++            f.stage=profile.stamp(f.stage);f.qa=profile.stamp(f.qa)
++        f.documents['staging_receipt_sha256']=f.stage;f.documents['qa_receipt_sha256']=f.qa
++        f.write('staging_receipt_sha256')
++        f.qa['inputs']['staging_receipt']['sha256']=f.sha(f.paths['staging_receipt_sha256'])
++        f.qa['inputs']['staging_receipt']['bytes']=f.paths['staging_receipt_sha256'].stat().st_size
++        f.write('qa_receipt_sha256');f.pins={k:f.sha(p) for k,p in f.paths.items()}
++        f.refs={k:{'path':str(p),'bytes':p.stat().st_size} for k,p in f.paths.items()}
++        with self.assertRaises(ValueError):f.project()
++        with self.assertRaises(ValueError):original('candidate_qa_comparison').project_candidate_qa(f.documents,f.pins,f.refs,data_root_literal=str(f.root))
++        with profile.scope(profile.NAME):self.assertEqual(f.project()['status'],'BLOCKED')
++        response=f.client.post('/v1/diagnostics/candidate-readiness-comparison?manifest_profile='+profile.NAME,json=f.pins)
++        self.assertEqual(response.status_code,200,response.text)
++        self.assertEqual(f.client.post('/v1/diagnostics/candidate-readiness-comparison?manifest_profile=bad',json=f.pins).status_code,400)
++        self.assertEqual(f.client.post('/v1/diagnostics/candidate-readiness-comparison',json=f.pins).status_code,503)
++        f.stage['manifest_profile']['sha256']='0'*64
++        with profile.scope(profile.NAME),self.assertRaises(ValueError):f.project()
++    def test_profile_exact_name_scope_reset_and_legacy_receipts(self):
++        for bad in ('bad','128m','',True,{},128):
++            with self.assertRaises(ValueError):
++                with profile.scope(bad):pass
++        with profile.scope(profile.NAME):
++            self.assertEqual(BoundedJSONIO(material.POLICY).input_caps['source'],128*1024**2)
++            self.assertEqual(BoundedJSONIO(material.POLICY).input_caps['readiness'],16*1024**2)
++            with self.assertRaises(ValueError):profile.receipt({'schema_version':1})
++        self.assertIsNone(profile.active());self.assertEqual(BoundedJSONIO(material.POLICY).input_caps['source'],64*1024**2)
++        self.assertEqual(profile.receipt({'schema_version':1}),{'schema_version':1})
++    def test_rows_nodes_depth_io_and_output_budget_fail_closed(self):
++        with profile.scope(profile.NAME) as budget:
++            io=BoundedJSONIO(material.POLICY)
++            io.measure({'scenes':[{}]*3000},'candidate')
++            with self.assertRaisesRegex(ValueError,'MANIFEST_ROW_LIMIT'):io.measure({'scenes':[{}]*2999,'historical_noneligible_patches':[{},{}]},'candidate')
++            with patch.object(bounded,'DESCRIPTOR',{**profile.DESCRIPTOR,'max_nodes':10}),self.assertRaisesRegex(ValueError,'MANIFEST_NODE_LIMIT'):io.measure({'scenes':[{}]*20},'candidate')
++            deep={};at=deep
++            for _ in range(34):at['next']={};at=at['next']
++            with self.assertRaises(ValueError):io.measure(deep,'candidate')
++            budget.maximum=4
++            with self.assertRaisesRegex(ValueError,'MANIFEST_JSON_IO_LIMIT'):profile.charge(5)
++        with profile.scope(profile.NAME):
++            small=copy.deepcopy(material.POLICY);small['output_caps']['candidate']=64
++            with self.assertRaises(ValueError):BoundedJSONIO(small).measure({'large':'x'*65},'candidate')
++    def test_164_cli_explicit_choice_and_no_flag_preserves_default(self):
++        args=['--data-root',str(ROOT/'evidence'),'--source',str(ROOT/'evidence/source.json'),'--source-sha256','a'*64,'--policy',str(ROOT/'evidence/policy.json'),'--policy-sha256','b'*64,'--run-id','synthetic228']
++        with patch.object(cli,'prepare',return_value={'status':'PINNED_CANDIDATE_QA_COMPLETED','candidate_eligible':{}}) as prepare:
++            self.assertEqual(cli.main(args+['--manifest-profile',profile.NAME]),0)
++            self.assertEqual(prepare.call_args.kwargs['manifest_profile'],profile.NAME)
++            self.assertEqual(cli.main(args),0);self.assertIsNone(prepare.call_args.kwargs['manifest_profile'])
++        with self.assertRaises(SystemExit):cli.main(args+['--manifest-profile','bad'])
++
++    def test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate(self):
++        import tempfile
++        from backend.app.ml.readiness import default_policy
++        from backend.app.ml.readiness_connectivity_adapter import failure_capture
++        from scripts import run_experiment
++        with tempfile.TemporaryDirectory(dir=ROOT/'evidence') as directory:
++            base=Path(directory);data=base/'data';data.mkdir();evidence=base/'evidence/integration';evidence.mkdir(parents=True)
++            source=data/'source.json';policy=data/'policy.json'
++            document={'synthetic':True,'scenes':[{'province':'banten','year':'2021','quality_status':'quality_insufficient',
++                'source_group':'banten/synthetic','scene_id':'synthetic','image_path':str(data/'missing-image.tif'),
++                'label_path':str(data/'missing-label.tif'),'quality_mask_path':str(data/'missing-quality.tif')}]}
++            source.write_text(json.dumps(document),encoding='utf-8');policy_doc=default_policy();policy.write_text(json.dumps(policy_doc),encoding='utf-8')
++            def fake_assess(manifests,root,policy_arg,**kwargs):
++                path=Path(manifests[0]);pin=hashlib.sha256(path.read_bytes()).hexdigest();refs=[{'path':path.relative_to(data).as_posix(),'sha256':pin}]
++                capture=failure_capture();capture.update(capture_status='NOT_CAPTURED_BUDGET',scene_count=1,supplied_eligible_patch_sum=0)
++                return {'schema_version':1,'status':'blocked','ready_for_training':False,'scientific_accuracy_validated':False,
++                    'policy':copy.deepcopy(policy_doc),'blockers':[{'code':'CLASS_COVERAGE'}],
++                    'patch_counts_by_split':dict.fromkeys(('train','val','test'),0),'input_manifests':refs,
++                    'verified_files':[{'path':refs[0]['path'],'sha256':pin,'kind':'collection_manifest'}],
++                    'input_signature':{'band_names':policy_doc['band_names'],'class_names':['x']*9,'label_source':'esri_io'},
++                    'class_counts_by_split':{k:[0]*9 for k in ('train','val','test')},
++                    'class_patch_counts_by_split':{k:[0]*9 for k in ('train','val','test')},'connectivity_diagnostics':capture,'prepared_payload':None}
++            args=['--data-root',str(data),'--source',str(source),'--source-sha256',hashlib.sha256(source.read_bytes()).hexdigest(),
++                  '--policy',str(policy),'--policy-sha256',hashlib.sha256(policy.read_bytes()).hexdigest(),'--run-id','profile228-chain','--manifest-profile',profile.NAME]
++            with patch.object(cli,'ROOT',base),patch.object(cli,'assess',side_effect=fake_assess),patch.object(run_experiment,'assess',side_effect=fake_assess):
++                self.assertEqual(cli.main(args),0)
++            package=evidence/'priority164-profile228-chain/candidate-package/receipt.json'
++            package_value=json.loads(package.read_text('utf-8'))
++            self.assertEqual(package_value['manifest_profile'],profile.MARKER);self.assertEqual(package_value['schema_version'],2)
++            for leaf in ('stage/staging-receipt.json','qa/qa-receipt.json'):
++                value=json.loads((data/'priority164-profile228-chain'/leaf).read_text('utf-8'))
++                self.assertEqual(value['manifest_profile'],profile.MARKER);self.assertEqual(value['schema_version'],2)
++
++
++    def test_both_import_names_share_only_the_explicit_operation_budget(self):
++        from app.ml import manifest_resource_profile as alias
++        from app.ml.split_json_io import BoundedJSONIO as AliasIO
++        self.assertTrue(Path(alias.__file__).resolve().is_relative_to(ROOT))
++        self.assertIsNone(alias.active())
++        with profile.scope(profile.NAME) as budget:
++            self.assertIs(alias.active(),budget)
++            self.assertEqual(AliasIO(material.POLICY).input_caps['source'],128*1024**2)
++            alias.charge(17)
++            self.assertEqual(budget.bytes,17)
++        self.assertIsNone(alias.active());self.assertIsNone(profile.active())
++
++if __name__=='__main__':unittest.main()

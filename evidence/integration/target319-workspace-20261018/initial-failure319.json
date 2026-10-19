@@ -1,0 +1,12 @@
+{
+  "command": "python -X utf8 -m unittest discover -s evidence/integration/target319-workspace-20261018/tests -p test_targeted_source_profile319.py -v",
+  "exec_session": 19261,
+  "tests": 26,
+  "seconds": 0.629,
+  "failures": 1,
+  "failure_test": "test_nonfinite_huge_numbers_and_utf8_surrogates",
+  "observed_assertion": "Regex ^TARGET_SOURCE_[A-Z_]+$ rejected valid fixed TARGET_SOURCE_UTF8_INVALID because the regex did not permit digit8",
+  "classification": "TEST_ASSERTION_CHARACTER_CLASS_FIX_REQUIRED_PRODUCT_REJECTION_WORKED",
+  "raw_tool_transcript_preserved_in_chat": true,
+  "full_raw_log_file_not_captured": true
+}

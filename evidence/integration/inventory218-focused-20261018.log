@@ -1,0 +1,29 @@
+test_targeted_inventory (unittest.loader._FailedTest.test_targeted_inventory) ... ERROR
+test_deficit_candidate_guard (unittest.loader._FailedTest.test_deficit_candidate_guard) ... ERROR
+
+======================================================================
+ERROR: test_targeted_inventory (unittest.loader._FailedTest.test_targeted_inventory)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_targeted_inventory
+Traceback (most recent call last):
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\unittest\loader.py", line 162, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests.test_targeted_inventory'
+
+
+======================================================================
+ERROR: test_deficit_candidate_guard (unittest.loader._FailedTest.test_deficit_candidate_guard)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_deficit_candidate_guard
+Traceback (most recent call last):
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\unittest\loader.py", line 162, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests.test_deficit_candidate_guard'
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (errors=2)

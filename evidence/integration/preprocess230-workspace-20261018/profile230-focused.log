@@ -1,0 +1,30 @@
+test_173_182_profile_only_expands_source_and_default_scope_stays_off (test_manifest_profile230.Profile230Tests.test_173_182_profile_only_expands_source_and_default_scope_stays_off) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess230-workspace-20261018\scripts\find_bare_targets173.py:138: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(x,y,256,256));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\tempfile.py:934: ResourceWarning: Implicitly cleaning up <TemporaryDirectory 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmpvv3_luup'>
+  _warnings.warn(warn_message, ResourceWarning)
+ok
+test_api_uses_root_internal_path_no_browser_profile_switch (test_manifest_profile230.Profile230Tests.test_api_uses_root_internal_path_no_browser_profile_switch) ... ok
+test_budget_root_config_is_explicit_strict_pinned_readonly (test_manifest_profile230.Profile230Tests.test_budget_root_config_is_explicit_strict_pinned_readonly) ... ok
+test_config_changes_mid_observation_and_source_drift_are_unconfirmed (test_manifest_profile230.Profile230Tests.test_config_changes_mid_observation_and_source_drift_are_unconfirmed) ... ok
+test_copy_counts_both_directions_and_checks_before_destination_open (test_manifest_profile230.Profile230Tests.test_copy_counts_both_directions_and_checks_before_destination_open) ... ok
+test_copy_partial_write_failure_preserves_measured_bytes (test_manifest_profile230.Profile230Tests.test_copy_partial_write_failure_preserves_measured_bytes) ... ok
+test_dual_import_has_same_error_class_and_budget (test_manifest_profile230.Profile230Tests.test_dual_import_has_same_error_class_and_budget) ... ok
+test_growing_hash_reads_only_initial_bound_then_aborts (test_manifest_profile230.Profile230Tests.test_growing_hash_reads_only_initial_bound_then_aborts) ... ok
+test_independent_threads_and_async_tasks_do_not_leak_scope (test_manifest_profile230.Profile230Tests.test_independent_threads_and_async_tasks_do_not_leak_scope) ... ok
+test_json_role_is_extension_independent_and_oversize_refused_before_open (test_manifest_profile230.Profile230Tests.test_json_role_is_extension_independent_and_oversize_refused_before_open) ... ok
+test_profile_is_hard_ceiling_and_readonly_not_caller_controlled (test_manifest_profile230.Profile230Tests.test_profile_is_hard_ceiling_and_readonly_not_caller_controlled) ... ok
+test_resource_error_aborts_entire_qa_legacy_metadata_error_stays_scene_blocker (test_manifest_profile230.Profile230Tests.test_resource_error_aborts_entire_qa_legacy_metadata_error_stays_scene_blocker) ... E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess230-workspace-20261018\backend\app\ml\readiness.py:234: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  point=ip['transform']*(x,y)
+ok
+test_shared_copied_context_serializes_precheck_read_charge (test_manifest_profile230.Profile230Tests.test_shared_copied_context_serializes_precheck_read_charge) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 15.911s
+
+OK

@@ -1,0 +1,34 @@
+{
+  "status": "APPLICATION_OR_PROJECT_TESTS_BLOCKED_PARTIAL_PRESERVED",
+  "at_utc": "2026-10-18T09:05:00.063829+00:00",
+  "operating_pins_before": {
+    "first-group-training-esri-v1/annual-window-report.json": "9473861797b729b6b6eb60607a7edfb67921fa2b259bc2b0ffa8b2af08fc1353",
+    "first-group-training-budget/global-ledger.json": "a92506b7b5b2ca5f668a21f9b111b32b3d2080a707ba9646bbf063c53dfe5aea",
+    "first-group-training-priority/latest-candidate.json": "920ceb52dca0aba32f11389fd2f9c5f2719ca40b47f44e650c3a38b57c3b3d40",
+    "first-group-training-priority/latest-bare-review.json": "1018b59294871df8f9e339d63695f08632a5632419b3831e47bdeb2f88c785ab",
+    "first-group-training-priority/source-profile237-root-20261018.json": "a24616e092f04233ca5e29c80ba4345b71de189381330bee1e82e48b9c0b59c2"
+  },
+  "copied": [
+    "backend/app/data/deficit_candidate_guard.py",
+    "scripts/collect_deficit_guarded.py",
+    "scripts/collect_samples.py",
+    "tests/test_deficit_metadata_selection260.py",
+    "tests/selection265_fixtures.py",
+    "tests/test_selection265_contract.py",
+    "tests/fixtures/selection265/manifest.json",
+    "tests/fixtures/selection265/guard.py.fixture",
+    "tests/fixtures/selection265/collector.py.fixture"
+  ],
+  "runtime_files": 3,
+  "test_bundle_files": 6,
+  "training_started": false,
+  "collector_started": false,
+  "server_restarted": false,
+  "test_exit_code": 1,
+  "regression_elapsed_seconds": 89.219,
+  "tests": 96,
+  "project_log_sha256": "ecc91ec0459a6159d50e05c4ede5d16bde7f16a6da728cd6772f0fb4bf3e27e1",
+  "issue_type": "AssertionError",
+  "automatic_retry_allowed": false,
+  "finished_at_utc": "2026-10-18T09:06:29.870061+00:00"
+}

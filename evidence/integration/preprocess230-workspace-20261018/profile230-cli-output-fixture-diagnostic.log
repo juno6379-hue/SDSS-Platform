@@ -1,0 +1,15 @@
+{"status": "DISCOVERY_INCOMPLETE", "partial_outputs_preserved": true, "execution_supported": false}
+F
+SYNTHETIC_EXCEPTION 183 ValueError Local DATA source required
+======================================================================
+FAIL: test_173_cli_snapshot_and_proposal_writes_are_measured (test_manifest_profile230.Profile230Tests.test_173_cli_snapshot_and_proposal_writes_are_measured)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess230-workspace-20261018\tests\test_manifest_profile230.py", line 99, in test_173_cli_snapshot_and_proposal_writes_are_measured
+    self.assertEqual(module._run(args),0)
+AssertionError: 2 != 0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.221s
+
+FAILED (failures=1)

@@ -1,0 +1,80 @@
+{
+  "status": "VERIFIED_REAL_225_API_AND_BROWSER",
+  "at": "2026-10-18T06:19:55.349605+00:00",
+  "api_application": "service225-api-application-20261018.json",
+  "api_pid": 40492,
+  "budget_http_status": 200,
+  "budget_http_seconds": 0.37867259999984526,
+  "collection_response_recorded_at": "2026-10-18T06:17:49.337627+00:00",
+  "budget_observed_at": "2026-10-18T06:17:51.063011+00:00",
+  "source_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+  "ledger_sha256": "61161c35eabb593afb5f096c256791871d297b723f82ffc2ac2449b3bd8266e7",
+  "budget": {
+    "maximum": 4294967296,
+    "charged_including_pending": 2398022341,
+    "remaining": 1896944955,
+    "old_pending": 136314880,
+    "old_pending_count": 2,
+    "settled": 2258031733,
+    "metadata": 3675728,
+    "all_pending": 136314880,
+    "pending_not_double_subtracted": true,
+    "process_verification": "UNKNOWN",
+    "execution_approved": false
+  },
+  "current": {
+    "registered": 1715,
+    "eligible": 1358,
+    "split": [
+      816,
+      292,
+      250
+    ],
+    "cell_gap": 21
+  },
+  "candidate": {
+    "eligible": 1339,
+    "blockers": 3,
+    "source_mismatch_warning": true
+  },
+  "bare_review": {
+    "total": 37,
+    "searched_provinces": [
+      "gorontalo",
+      "west_java"
+    ],
+    "source_mismatch_warning": true,
+    "remote_quality": "미검사",
+    "execution": "미승인"
+  },
+  "checks": {
+    "at": "2026-10-18T06:19:14.434Z",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    },
+    "singleRefresh": true
+  },
+  "operating_pins_preserved_after_browser": {
+    "first-group-training-esri-v1/annual-window-report.json": true,
+    "first-group-training-budget/global-ledger.json": true,
+    "first-group-training-priority/latest-candidate.json": true,
+    "first-group-training-priority/latest-bare-review.json": true
+  },
+  "proof": [
+    "service225-budget-final-ui-20261018.dom.txt",
+    "service225-budget-final-ui-20261018.inventory.png",
+    "service225-budget-final-ui-20261018.budget.png",
+    "service225-budget-final-ui-20261018.cohort.png",
+    "service225-budget-final-ui-20261018.checks.json"
+  ],
+  "limits": [
+    "Separate budget GET timing0.379sec is not a collection-status response SLA.",
+    "Budget observation time is separate from earlier collection response recorded_at.",
+    "No process scan was added; displayed process status remains UNKNOWN.",
+    "Only the known API20676 was stopped; newAPI40492 uses existing localhost settings;Vite5174 untouched.",
+    "No source/ledger/pointer/lock writes, collector restart, newQA, training or deployment approval."
+  ]
+}

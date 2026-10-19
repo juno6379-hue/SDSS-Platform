@@ -1,0 +1,50 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+test_164_cli_explicit_choice_and_no_flag_preserves_default (test_manifest_profile228.Profile228Tests.test_164_cli_explicit_choice_and_no_flag_preserves_default) ... usage: python.exe -m unittest [-h] --data-root DATA_ROOT --source SOURCE
+                              --policy POLICY --source-sha256 SOURCE_SHA256
+                              --policy-sha256 POLICY_SHA256 --run-id RUN_ID
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'bad' (choose from 'bounded128m-3000-v1')
+ok
+test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper (test_manifest_profile228.Profile228Tests.test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper) ... ok
+test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict (test_manifest_profile228.Profile228Tests.test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict) ... ok
+test_explicit_materialization_staging_v2_and_old_contract_fail_closed (test_manifest_profile228.Profile228Tests.test_explicit_materialization_staging_v2_and_old_contract_fail_closed) ... ERROR
+test_profile_exact_name_scope_reset_and_legacy_receipts (test_manifest_profile228.Profile228Tests.test_profile_exact_name_scope_reset_and_legacy_receipts) ... ok
+test_qa_v2_same_profile_and_default_rejection (test_manifest_profile228.Profile228Tests.test_qa_v2_same_profile_and_default_rejection) ... ok
+test_rows_nodes_depth_io_and_output_budget_fail_closed (test_manifest_profile228.Profile228Tests.test_rows_nodes_depth_io_and_output_budget_fail_closed) ... ok
+test_bad_run_id_rejected (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_bad_run_id_rejected) ... ok
+test_copy_cap_refuses_before_destination (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_copy_cap_refuses_before_destination) ... ok
+test_copy_detects_concurrent_source_change (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_copy_detects_concurrent_source_change) ... ok
+test_copy_is_exact_and_exclusive (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_copy_is_exact_and_exclusive) ... ok
+test_existing_or_partial_runs_never_reused (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_existing_or_partial_runs_never_reused) ... ok
+{"stage": "SNAPSHOT_PINNED", "at": "2026-10-18T06:26:30.775102+00:00", "rows": 1, "source_sha256": "84e3ba7afd92136f79e1fbe39df98d464feb91cdd2b6b909ac870af82023d6be"}
+test_qa_failure_preserves_snapshot_and_blocks_rerun (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_qa_failure_preserves_snapshot_and_blocks_rerun) ... ok
+test_relative_raster_paths_refused_before_assess (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_relative_raster_paths_refused_before_assess) ... ok
+test_relative_source_and_external_source_rejected (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_relative_source_and_external_source_rejected) ... ok
+test_stale_pin_rejected_before_new_runs (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_stale_pin_rejected_before_new_runs) ... ok
+
+======================================================================
+ERROR: test_explicit_materialization_staging_v2_and_old_contract_fail_closed (test_manifest_profile228.Profile228Tests.test_explicit_materialization_staging_v2_and_old_contract_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\tests\test_manifest_profile228.py", line 34, in test_explicit_materialization_staging_v2_and_old_contract_fail_closed
+    receipt=material.materialize_split_candidate(f.f.root,f.paths,f.pins,f.out,evidence_root=evidence,manifest_profile=profile.NAME)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\backend\app\ml\manifest_resource_profile.py", line 34, in wrapped
+    with scope(manifest_profile):return function(*args,**kwargs)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\backend\app\ml\candidate_materialization.py", line 46, in materialize_split_candidate
+    out=_local(output_dir);target=_confined(evidence,out);_need(not target.is_relative_to(data),'Output must be outside DATA')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\backend\app\data\recovery_terminal.py", line 41, in _confined
+    path.absolute().relative_to(root)
+  File "C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 730, in relative_to
+    raise ValueError("{!r} is not in the subpath of {!r}"
+ValueError: 'E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\evidence\\tmpbmy0nlyq\\new-package' is not in the subpath of 'E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\evidence\\tmpbmy0nlyq\\evidence' OR one path is relative and the other is absolute.
+
+----------------------------------------------------------------------
+Ran 16 tests in 4.259s
+
+FAILED (errors=1)

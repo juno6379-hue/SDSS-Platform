@@ -1,0 +1,62 @@
+{
+  "status": "ISOLATED_NEW_FILES_ONLY_MAIN_APPLICATION_FORBIDDEN_PENDING_REVIEW",
+  "product_files": [
+    {
+      "path": "evidence/integration/target319-workspace-20261018/backend/app/data/targeted_source_profile.py",
+      "bytes": 11581,
+      "sha256": "8e347589d802d22f89354b176d81da9ebdde27607986355ce3212ac4981493d9"
+    }
+  ],
+  "test_only_files": [
+    {
+      "path": "evidence/integration/target319-workspace-20261018/tests/test_targeted_source_profile319.py",
+      "bytes": 13824,
+      "sha256": "d9fc227c405c6e86f781218bf979507f58987f252ba281cd4a5a6140fe7a5486"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/tests/fixtures/target319/legacy_inventory232.py.fixture",
+      "bytes": 1900,
+      "sha256": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d"
+    }
+  ],
+  "main_new_helper_must_be_absent": true,
+  "main_existing_baseline_exact_verified": [
+    {
+      "path": "backend/app/data/targeted_bare_plan.py",
+      "bytes": 15594,
+      "sha256": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory_profile.py",
+      "bytes": 1900,
+      "sha256": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "bytes": 10945,
+      "sha256": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839"
+    },
+    {
+      "path": "backend/app/data/targeted_live_guards.py",
+      "bytes": 7558,
+      "sha256": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "bytes": 21923,
+      "sha256": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8"
+    },
+    {
+      "path": "scripts/review_bare_targets179.py",
+      "bytes": 15198,
+      "sha256": "25b3abcbc1f4e7da00d0d9b40624c415415e23489cec138c65bd1e4c6164c89d"
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "bytes": 11756,
+      "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3"
+    }
+  ],
+  "requires_175_170_coordinator_followup": true,
+  "execution_authorized": false
+}

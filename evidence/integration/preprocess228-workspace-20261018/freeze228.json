@@ -1,0 +1,219 @@
+{
+  "at_utc": "2026-10-18T06:36:50.846308+00:00",
+  "status": "ISOLATED_IMPLEMENTATION_TESTED_SYNTHETIC_NOT_MERGED",
+  "profile": "bounded128m-3000-v1",
+  "profile_descriptor": {
+    "name": "bounded128m-3000-v1",
+    "manifest_bytes": 134217728,
+    "max_rows": 3000,
+    "max_depth": 32,
+    "max_nodes": 4000000,
+    "max_json_io_bytes": 17179869184,
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "patch_files": [
+    {
+      "path": "backend/app/candidate_qa_comparison_api.py",
+      "before": {
+        "sha256": "6268dd381198309daee474598788a9c2a1eb385eb0cee9c4f9e60ad1085f1a5b",
+        "bytes": 4690
+      },
+      "after": {
+        "sha256": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+        "bytes": 5023
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/candidate_materialization.py",
+      "before": {
+        "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b",
+        "bytes": 8716
+      },
+      "after": {
+        "sha256": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+        "bytes": 9036
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/candidate_qa_comparison.py",
+      "before": {
+        "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e",
+        "bytes": 17204
+      },
+      "after": {
+        "sha256": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+        "bytes": 17672
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/candidate_readiness_qa.py",
+      "before": {
+        "sha256": "b93aa5964bbe54955411ff978680a06e5380d1507f562cf3a6675d30d7cd4aaf",
+        "bytes": 17817
+      },
+      "after": {
+        "sha256": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+        "bytes": 18326
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/candidate_staging.py",
+      "before": {
+        "sha256": "a96bcb55d08f7605fb57b9f45f86a6c392e6c15068b09efdb4761aabe5955862",
+        "bytes": 12357
+      },
+      "after": {
+        "sha256": "eef485a01864e6ddc17bcfcb28dabae923579b2f6eb3b4df8ce4efc6f202e0fd",
+        "bytes": 12770
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/readiness.py",
+      "before": {
+        "sha256": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc",
+        "bytes": 32867
+      },
+      "after": {
+        "sha256": "f5e701152d064c794e8723aee2f1bc5ae7ec9f7dc386e180754e37f2cd5c6d3c",
+        "bytes": 33203
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "before": {
+        "sha256": "5f8774150d7c6bd11b8682fe2027059191ac6d5a9d64a79f03a3c9e60ef0165b",
+        "bytes": 7699
+      },
+      "after": {
+        "sha256": "f0cb93fe0a3d10bac163d705b748660f4d20276229fe043489503c3558601476",
+        "bytes": 8302
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "scripts/prepare_priority_candidate164.py",
+      "before": {
+        "sha256": "8a113c2efa530744662734b31386bf99a41bc31db9d279f53c2074dfc3173ba7",
+        "bytes": 10443
+      },
+      "after": {
+        "sha256": "197d81b9ed40e6cd3a74358a88335e8eda0c396dbd6c1e28dfd85f658226a6c2",
+        "bytes": 12705
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "scripts/run_experiment.py",
+      "before": {
+        "sha256": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3",
+        "bytes": 13221
+      },
+      "after": {
+        "sha256": "b045de37b36a22e6ac75e0749c93b98f05cf166b58569904bf880cdf7ad4f4d1",
+        "bytes": 13652
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "before": null,
+      "after": {
+        "sha256": "a7bdef52d2d44cac90ad1157a51c54012520a12fefacc2c980db328077557a60",
+        "bytes": 4200
+      },
+      "main_absent": true
+    },
+    {
+      "path": "tests/test_manifest_profile228.py",
+      "before": null,
+      "after": {
+        "sha256": "94add11a4af11c61c4a6b3621c71502775441d4db54d95ef8202c6799a1dbe34",
+        "bytes": 11800
+      },
+      "main_absent": true
+    }
+  ],
+  "evidence": [
+    {
+      "path": "input-source-manifest.json",
+      "sha256": "60bd97bd1ec01b0c6b0ab8e07c9f546e859e0b3c0303859fa6399bd183021fbf",
+      "bytes": 58498
+    },
+    {
+      "path": "patch228.diff",
+      "sha256": "64238b9f52d4526b44bd4ccfa2c40b46d8443973ecd4bb238d6f8ff8e04c19ba",
+      "bytes": 64820
+    },
+    {
+      "path": "patch228-manifest.json",
+      "sha256": "4b739df89075c0823eee276471522198862bcf30194a65c40b7be883c532c35f",
+      "bytes": 6034
+    },
+    {
+      "path": "docs/ISOLATED228.md",
+      "sha256": "12a903751d2e7676ccbd5f4bdbcd49c5a93cf4800c0b39f3143e578526305889",
+      "bytes": 1326
+    },
+    {
+      "path": "profile228-freeze-regression.log",
+      "sha256": "51d283f8e669938c150c4aae62ddb7c89448e43e139e24ae8d34c9de58b76dbb",
+      "bytes": 17090
+    },
+    {
+      "path": "benchmark228-child.py",
+      "sha256": "a303448e84117c7b0077cdc8c55e24795dfc3a2f822313eaa7b342953384e187",
+      "bytes": 2459
+    },
+    {
+      "path": "benchmark228-monitor.py",
+      "sha256": "312cbe3f5bcc037b530347499741ba75df6e58b7ac3d22c246db8e383399f00a",
+      "bytes": 1093
+    },
+    {
+      "path": "benchmark228-child.log",
+      "sha256": "177b314769ad78ec3d051a9e23c5a1c63a38dd830ca2bef8c7054a6c29d267e9",
+      "bytes": 1490
+    },
+    {
+      "path": "benchmark228-result.json",
+      "sha256": "22b9eea511583a782c2f60459dcdbad038987719542a3409e2dd355207f7540f",
+      "bytes": 1149
+    },
+    {
+      "path": "benchmark228-supervision.json",
+      "sha256": "182ef6bd4606ad29898bfa5ac29446e805a93048e57e2442e84804d3aca7a969",
+      "bytes": 231
+    }
+  ],
+  "main_document": {
+    "path": "docs/implementation/228_explicit_manifest_profile_isolated.md",
+    "sha256": "25bed27d63d39ae849fcdfb7afe052418975fa50fa5edc976302f81649f219f9",
+    "bytes": 13675
+  },
+  "final_tests": {
+    "passed": 88,
+    "seconds": 74.061,
+    "skipped": 0
+  },
+  "benchmark_child_count": 1,
+  "benchmark_applies_to": "CAP_AND_PARSER_PATH_BEFORE_FINAL_DUAL_IMPORT_CONTEXT_BINDING_PROTECTION",
+  "shared_product_changes": 0,
+  "operating_source_or_ledger_reads": 0,
+  "real_source_qa_runs": 0,
+  "native_runs": 0,
+  "http_requests": 0,
+  "collector_runs": 0,
+  "remaining_64m_consumers": [
+    "173_source_json",
+    "182_source_json",
+    "225_budget_card_source_json"
+  ],
+  "understanding_handoff": "ROOT_ASSIGNMENT_REQUIRED",
+  "next_step": "ROOT_INDEPENDENT_DIFF_REVIEW_NO_SHARED_APPLICATION_AUTHORIZED"
+}

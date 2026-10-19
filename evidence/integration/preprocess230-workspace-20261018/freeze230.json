@@ -1,0 +1,271 @@
+{
+  "at_utc": "2026-10-18T07:24:45.221773+00:00",
+  "status": "ISOLATED_IMPLEMENTATION_TESTED_SYNTHETIC_NOT_MERGED",
+  "main_apply": false,
+  "operating_reads": 0,
+  "http": 0,
+  "collector": 0,
+  "live_qa": 0,
+  "parent228_freeze_sha256": "377f8112c0b503a24bc15556bad24b7e1eb75dd1a82465d76ada05ecaa21fc67",
+  "parent228_unchanged": true,
+  "files": [
+    {
+      "path": "backend/app/collection_budget_status.py",
+      "before": {
+        "sha256": "670d3262e6ea7ccd25995a8c0b42bc0441dd1618d1d380360978c213da3a6d52",
+        "bytes": 8643
+      },
+      "after": {
+        "sha256": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108",
+        "bytes": 9420
+      }
+    },
+    {
+      "path": "backend/app/collection_status.py",
+      "before": {
+        "sha256": "ff76a2bede8f538b0f25f7a68221773c2e037213f437da1e02ef5e20971b64fd",
+        "bytes": 16533
+      },
+      "after": {
+        "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4",
+        "bytes": 17192
+      }
+    },
+    {
+      "path": "backend/app/main.py",
+      "before": {
+        "sha256": "0713249307cf83ae5eb5e0223288ce2003c7b661cdb38a1c71a807402ac0a44b",
+        "bytes": 22739
+      },
+      "after": {
+        "sha256": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b",
+        "bytes": 23838
+      }
+    },
+    {
+      "path": "backend/app/ml/candidate_staging.py",
+      "before": {
+        "sha256": "eef485a01864e6ddc17bcfcb28dabae923579b2f6eb3b4df8ce4efc6f202e0fd",
+        "bytes": 12770
+      },
+      "after": {
+        "sha256": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d",
+        "bytes": 13715
+      }
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "before": {
+        "sha256": "a7bdef52d2d44cac90ad1157a51c54012520a12fefacc2c980db328077557a60",
+        "bytes": 4200
+      },
+      "after": {
+        "sha256": "e6c411962d4dda859274b117e4fd10ade981105ba08aa8698b43e06f3e6c15d9",
+        "bytes": 10172
+      }
+    },
+    {
+      "path": "backend/app/ml/readiness.py",
+      "before": {
+        "sha256": "f5e701152d064c794e8723aee2f1bc5ae7ec9f7dc386e180754e37f2cd5c6d3c",
+        "bytes": 33203
+      },
+      "after": {
+        "sha256": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb",
+        "bytes": 33396
+      }
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "before": {
+        "sha256": "f0cb93fe0a3d10bac163d705b748660f4d20276229fe043489503c3558601476",
+        "bytes": 8302
+      },
+      "after": {
+        "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+        "bytes": 8513
+      }
+    },
+    {
+      "path": "scripts/find_bare_targets173.py",
+      "before": {
+        "sha256": "64d7a8f09f1a87edeecf72665e4f6a097d793d9e168c5b4d03ae1839daef917f",
+        "bytes": 16216
+      },
+      "after": {
+        "sha256": "39850ac9ffcf6ca96d3ec9cab116d55e9f3b8f1e3564950240e39889d3e12c11",
+        "bytes": 17355
+      }
+    },
+    {
+      "path": "scripts/prepare_priority_candidate164.py",
+      "before": {
+        "sha256": "197d81b9ed40e6cd3a74358a88335e8eda0c396dbd6c1e28dfd85f658226a6c2",
+        "bytes": 12705
+      },
+      "after": {
+        "sha256": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437",
+        "bytes": 13570
+      }
+    },
+    {
+      "path": "scripts/propose_deficit_centers182.py",
+      "before": {
+        "sha256": "c8ab85d7e3f39cda8a0c5a8259bf212a5bf9bc699e7f7b17652a90cfdacd6cf9",
+        "bytes": 13575
+      },
+      "after": {
+        "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d",
+        "bytes": 14002
+      }
+    },
+    {
+      "path": "scripts/run_experiment.py",
+      "before": {
+        "sha256": "b045de37b36a22e6ac75e0749c93b98f05cf166b58569904bf880cdf7ad4f4d1",
+        "bytes": 13652
+      },
+      "after": {
+        "sha256": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772",
+        "bytes": 13682
+      }
+    },
+    {
+      "path": "tests/test_manifest_profile228.py",
+      "before": {
+        "sha256": "94add11a4af11c61c4a6b3621c71502775441d4db54d95ef8202c6799a1dbe34",
+        "bytes": 11800
+      },
+      "after": {
+        "sha256": "f6c32f189ac7674f23dd11d3e65958896a388aa13adffd068babaf10ad5fec1a",
+        "bytes": 11801
+      }
+    },
+    {
+      "path": "backend/app/collection_source_profile.py",
+      "before": null,
+      "after": {
+        "sha256": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef",
+        "bytes": 4882
+      }
+    },
+    {
+      "path": "tests/test_manifest_profile230.py",
+      "before": null,
+      "after": {
+        "sha256": "431e44c787c594bd0cb40d90528ca80e87f01b1daa92b85250b61223131f10de",
+        "bytes": 20898
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "path": "patch230.diff",
+      "bytes": 215175,
+      "sha256": "6f3d14efaba86bdaaf112e029b76b5e348fab9a40667c4d11150e29471fbd089"
+    },
+    {
+      "path": "patch230-manifest.json",
+      "bytes": 5594,
+      "sha256": "ee6432ac6e1fcade043257f3b234be71bb7741b4797bbd9917c795b2c249a3e6"
+    },
+    {
+      "path": "input-source-manifest.json",
+      "bytes": 58761,
+      "sha256": "dcac213ba9497ed694419eae9e57fa0020d14690e0e1add132f5f9bef06f0cd6"
+    },
+    {
+      "path": "docs\\ISOLATED230.md",
+      "bytes": 9499,
+      "sha256": "e04244d1d8287b4739fe7d66e54f96087ae207a39bbeb9092a119e6e8f4b0fc4"
+    },
+    {
+      "path": "seal230.py",
+      "bytes": 5012,
+      "sha256": "478d78f82c7472a46e113c322cb14cd43ecbcbca6498bd1c7b0ee7bb1e9d96ed"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\docs\\implementation\\230_explicit_source_profile_and_resource_guards_isolated.md",
+      "bytes": 9499,
+      "sha256": "e04244d1d8287b4739fe7d66e54f96087ae207a39bbeb9092a119e6e8f4b0fc4"
+    }
+  ],
+  "tests": [
+    {
+      "path": "profile230-focused-final.log",
+      "bytes": 9994,
+      "sha256": "016d90fd4b54d46b78f3ccb0d116d06a322a562c1d8d4ac52345253edecbcf34",
+      "tests": 27,
+      "seconds": 17.138,
+      "status": "PASS",
+      "revision_scope": "BEFORE_FINAL_173_182_OUTPUT_ACCOUNTING"
+    },
+    {
+      "path": "profile230-related-176-before-cli-output-final.log",
+      "bytes": 37162,
+      "sha256": "609c87d16fa299a5994222d980ceb9229c1d211685eb53bad14b13b17a1da213",
+      "tests": 176,
+      "seconds": 181.901,
+      "status": "PASS",
+      "revision_scope": "BEFORE_FINAL_173_182_OUTPUT_ACCOUNTING"
+    },
+    {
+      "path": "profile230-final-cli-output-check.log",
+      "bytes": 16826,
+      "sha256": "278c8458f0462ad8edd45bfe8dcd7820f18831a5ea82f07e33e98b2b64d9a367",
+      "tests": 60,
+      "seconds": 31.711,
+      "status": "PASS",
+      "revision_scope": "FINAL_CODE"
+    }
+  ],
+  "excluded_232_and_shared_files": [
+    {
+      "path": "scripts/review_bare_targets179.py",
+      "included": false,
+      "isolated_matches_parent228": true
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "included": false,
+      "isolated_matches_parent228": true
+    },
+    {
+      "path": "backend/app/data/targeted_inventory_profile.py",
+      "included": false,
+      "isolated_copy_present": false
+    },
+    {
+      "path": "tests/test_targeted_inventory_profile232.py",
+      "included": false,
+      "isolated_copy_present": false
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "included": false,
+      "isolated_matches_parent228": true
+    },
+    {
+      "path": "backend/app/data/deficit_candidate_guard.py",
+      "included": false,
+      "isolated_matches_parent228": true
+    }
+  ],
+  "limits": {
+    "source_candidate_json": 134217728,
+    "scenes_plus_history": 3000,
+    "depth": 32,
+    "tree_visits": 4000000,
+    "local_metadata_io": 17179869184,
+    "label_raster_header_each_unchanged": 67108864,
+    "remote_additional_unchanged": 4294967296
+  },
+  "limitations": [
+    "No real rich128MiB/3000-row QA performance was measured.",
+    "Inherited228 whitespace benchmark remains historical only.",
+    "176 regression predates the final narrow173/182 output-accounting connection; final targeted regression checks that connection plus shared profile.",
+    "Known synchronous shared-budget I/O is locked; arbitrary async await inside a transaction is unsupported.",
+    "Budget card streams source SHA and does not establish row-quality readiness.",
+    "No shared product application or server/frontend runtime change."
+  ]
+}

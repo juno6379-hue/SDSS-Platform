@@ -1,0 +1,79 @@
+{
+  "scope": "POST_LOCAL_PLAN_METADATA_ONLY_NOT_FULL_SUPPORT_OR_QUALITY",
+  "source_or_ledger_reread_for_this_summary": false,
+  "old40_array_preserved": true,
+  "old235_four_array_preserved": true,
+  "prior44_unique_ids": 44,
+  "combined_prior_and_new_unique_ids": 48,
+  "prior_sha256": "380ac7849963558798fb5edd7e8f2dbff4ba55adc4ecd08f5dccfd8535dc9b4c",
+  "proposal_sha256": "22cb58cc4b60b393d3f18ea2f31d30332b323f56113ec565bdc35710fbf84cd0",
+  "source_snapshot_ref": {
+    "path": "data/centers245-fresh-20261018/source.json",
+    "sha256": "4f8fcaff71868539aff16b3c351992696a6464b9cb229a5ff0f243778b7cd3e8"
+  },
+  "new_candidates": [
+    {
+      "index": 0,
+      "spatial_window_id": "centers182-southeast_sulawesi-f5fa8f8ccc4f",
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "years": [
+        2024
+      ],
+      "lon": 121.77546121939974,
+      "lat": -3.625283294611246,
+      "grid_crs": "EPSG:32751",
+      "inside_fraction_native": 1.0,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    },
+    {
+      "index": 1,
+      "spatial_window_id": "centers182-gorontalo-cdd18dd42ff8",
+      "province": "gorontalo",
+      "fixed_split": "train",
+      "years": [
+        2025
+      ],
+      "lon": 122.43199823312948,
+      "lat": 0.7526988314786761,
+      "grid_crs": "EPSG:32651",
+      "inside_fraction_native": 1.0,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    },
+    {
+      "index": 2,
+      "spatial_window_id": "centers182-gorontalo-c15f295679a6",
+      "province": "gorontalo",
+      "fixed_split": "train",
+      "years": [
+        2022
+      ],
+      "lon": 122.05816975181469,
+      "lat": 0.658554570141661,
+      "grid_crs": "EPSG:32651",
+      "inside_fraction_native": 1.0,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    },
+    {
+      "index": 3,
+      "spatial_window_id": "centers182-southeast_sulawesi-99e193f48bc8",
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "years": [
+        2024
+      ],
+      "lon": 121.96238685882253,
+      "lat": -3.907735512885352,
+      "grid_crs": "EPSG:32751",
+      "inside_fraction_native": 1.0,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    }
+  ],
+  "network_requests": 0,
+  "collector_started": false,
+  "training_started": false
+}

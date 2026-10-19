@@ -1,0 +1,528 @@
+--- /dev/null
++++ backend/app/data/targeted_source_profile.py
+@@ -0,0 +1,227 @@
++"""Pure target256 profile declarations; no files, scopes, dispatch or authority."""
++from dataclasses import dataclass, field
++import hashlib
++import json
++import math
++import re
++from types import MappingProxyType
++
++NAME = 'bounded128m-3000-v1'
++DESCRIPTOR = MappingProxyType(dict(name=NAME, manifest_bytes=134217728, max_rows=3000,
++                                 max_depth=32, max_nodes=4000000, max_json_io_bytes=17179869184))
++
++
++def _canonical(value):
++    return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False)
++
++
++def _digest(value):
++    return hashlib.sha256(_canonical(value).encode('utf-8')).hexdigest()
++
++
++DIGEST = _digest(dict(DESCRIPTOR))
++MARKER = MappingProxyType(dict(name=NAME, sha256=DIGEST))
++SUPPORT_DESCRIPTOR = MappingProxyType(dict(name='TARGETED_LOCAL_SUPPORT_3G_V1', max_files=10000,
++                                         max_support_bytes=3221225472, max_file_bytes=67108864))
++SUPPORT_MARKER = MappingProxyType(dict(name=SUPPORT_DESCRIPTOR['name'], sha256=_digest(dict(SUPPORT_DESCRIPTOR))))
++# Declarations only: this module never reads a file or activates these limits.
++ROLE_LIMITS = MappingProxyType(dict(source=134217728, candidate=134217728, ledger=8388608,
++                                   lineage=8388608, request=2097152, plan=2097152,
++                                   proposal=2097152, boundary=2097152, base_config=2097152,
++                                   label=67108864, image=67108864, support=67108864))
++ROLE_LIMITS_SHA256 = _digest(dict(ROLE_LIMITS))
++PLAN_KEYS = frozenset(('schema_version', 'kind', 'proposal_ref', 'current_manifest_ref',
++                       'boundary_ref', 'policy', 'targets'))
++OUTER_KEYS = frozenset(('schema_version', 'plan', 'ledger_ref', 'maximum_batches',
++                        'local_support_profile', 'manifest_profile'))
++TARGET_KEYS = frozenset(('target_id', 'proposal_window_index', 'province', 'fixed_split', 'year',
++                        'source_label_ref', 'source_lineage_ref', 'source_label_window',
++                        'source_label_grid', 'target_bbox_wgs84', 'target_footprint_native', 'declared_bare_pixels'))
++SPLITS = MappingProxyType(dict(south_sulawesi='train', gorontalo='train', southeast_sulawesi='train',
++                              east_java='train', banten='val', west_java='test'))
++POLICY = MappingProxyType(dict(window_size=256, source_taxonomy_code=8, minimum_declared_bare_pixels=256,
++                              minimum_valid_fraction=.8, minimum_inside_fraction=.95))
++
++
++class TargetSourceContractError(ValueError):
++    """Fixed codes only; caller paths and exception text are never exposed."""
++
++
++def _need(ok, code):
++    if not ok:
++        raise TargetSourceContractError(code)
++
++
++def _keys(value, keys, code):
++    _need(type(value) is dict and set(value) == set(keys), code)
++
++
++def _copy(value):
++    """Detach first, validate/serialize only that tree; not an atomic caller snapshot."""
++    nodes = 0
++
++    def clone(item, depth):
++        nonlocal nodes
++        nodes += 1
++        _need(nodes <= 50000 and depth <= 32, 'TARGET_SOURCE_STRUCTURE_LIMIT')
++        if type(item) is dict:
++            _need(len(item) <= 256, 'TARGET_SOURCE_STRUCTURE_LIMIT')
++            out = {}
++            for key, val in item.items():
++                _need(type(key) is str and len(key) <= 128 and len(out) < 256, 'TARGET_SOURCE_TYPE_INVALID')
++                key.encode('utf-8')
++                out[key] = clone(val, depth + 1)
++            return out
++        if type(item) is list:
++            _need(len(item) <= 256, 'TARGET_SOURCE_STRUCTURE_LIMIT')
++            out = []
++            for val in item:
++                _need(len(out) < 256, 'TARGET_SOURCE_STRUCTURE_LIMIT')
++                out.append(clone(val, depth + 1))
++            return out
++        if type(item) is str:
++            _need(len(item) <= 4096 and '\x00' not in item, 'TARGET_SOURCE_STRUCTURE_LIMIT')
++            item.encode('utf-8')
++        elif type(item) in (int, float):
++            _need(math.isfinite(item) and abs(item) <= 2**63-1, 'TARGET_SOURCE_NUMBER_INVALID')
++        else:
++            _need(type(item) in (bool, type(None)), 'TARGET_SOURCE_TYPE_INVALID')
++        return item
++
++    try:
++        detached = clone(value, 0)
++        _need(len(_canonical(detached).encode('utf-8')) <= 2097152, 'TARGET_SOURCE_STRUCTURE_LIMIT')
++        return detached
++    except UnicodeError:
++        raise TargetSourceContractError('TARGET_SOURCE_UTF8_INVALID') from None
++    except RuntimeError:
++        raise TargetSourceContractError('TARGET_SOURCE_INPUT_CHANGED') from None
++    except (OverflowError, RecursionError):
++        raise TargetSourceContractError('TARGET_SOURCE_STRUCTURE_LIMIT') from None
++
++
++def _marker(value, expected):
++    _keys(value, ('name', 'sha256'), 'TARGET_SOURCE_MARKER_INVALID')
++    _need(all(type(value[k]) is str and value[k] == expected[k] for k in expected), 'TARGET_SOURCE_MARKER_INVALID')
++
++
++def _ref(value, prefix):
++    _keys(value, ('path', 'sha256'), 'TARGET_SOURCE_REFERENCE_INVALID')
++    path, sha = value['path'], value['sha256']
++    _need(type(path) is str and 1 <= len(path) <= 1024 and path.startswith(prefix + '/') and
++          all(x not in path for x in ('\\', ':', '//')) and
++          all(x not in ('', '.', '..') for x in path.split('/')) and
++          type(sha) is str and re.fullmatch('[a-f0-9]{64}', sha) is not None, 'TARGET_SOURCE_REFERENCE_INVALID')
++
++
++def _number(value):
++    return type(value) in (int, float) and math.isfinite(value)
++
++
++def _plan(plan, version):
++    _keys(plan, PLAN_KEYS | ({'manifest_profile'} if version == 2 else set()), 'TARGET_SOURCE_PLAN_INVALID')
++    _need(type(plan['schema_version']) is int and plan['schema_version'] == version and
++          plan['kind'] == 'TARGETED_BARE_256_COLLECTION_PLAN', 'TARGET_SOURCE_PLAN_INVALID')
++    if version == 2:
++        _marker(plan['manifest_profile'], MARKER)
++    _ref(plan['proposal_ref'], 'evidence/integration')
++    _ref(plan['current_manifest_ref'], 'data')
++    _ref(plan['boundary_ref'], 'data')
++    policy = plan['policy']
++    keys = set(POLICY) | {'maximum_new_batches'}
++    _need(type(policy) is dict and set(policy) in (keys, keys | {'minimum_candidate_valid_fraction'}), 'TARGET_SOURCE_POLICY_INVALID')
++    _need(all(type(policy[k]) is type(v) and policy[k] == v for k, v in POLICY.items()), 'TARGET_SOURCE_POLICY_INVALID')
++    maximum = policy['maximum_new_batches']
++    _need(type(maximum) is int and 1 <= maximum <= 2, 'TARGET_SOURCE_POLICY_INVALID')
++    if 'minimum_candidate_valid_fraction' in policy:
++        n = policy['minimum_candidate_valid_fraction']
++        _need(_number(n) and .8 <= n <= 1, 'TARGET_SOURCE_POLICY_INVALID')
++    targets = plan['targets']
++    _need(type(targets) is list and 1 <= len(targets) <= maximum, 'TARGET_SOURCE_TARGET_INVALID')
++    seen = set()
++    for target in targets:
++        _keys(target, TARGET_KEYS, 'TARGET_SOURCE_TARGET_INVALID')
++        identifier = target['target_id']
++        _need(type(identifier) is str and re.fullmatch('[A-Za-z0-9_-]{1,40}', identifier) is not None and
++              identifier not in seen, 'TARGET_SOURCE_TARGET_INVALID')
++        seen.add(identifier)
++        _need(type(target['year']) is int and 2020 <= target['year'] <= 2025 and
++              type(target['proposal_window_index']) is int and target['proposal_window_index'] >= 0 and
++              type(target['province']) is str and target['province'] in SPLITS and
++              target['fixed_split'] == SPLITS[target['province']], 'TARGET_SOURCE_TARGET_INVALID')
++        _ref(target['source_label_ref'], 'data')
++        _ref(target['source_lineage_ref'], 'data')
++        window = target['source_label_window']
++        _need(type(window) is list and len(window) == 4 and all(type(x) is int for x in window) and
++              window[0] >= 0 and window[1] >= 0 and window[2:] == [256, 256], 'TARGET_SOURCE_TARGET_INVALID')
++        grid = target['source_label_grid']
++        _keys(grid, ('crs', 'transform', 'width', 'height'), 'TARGET_SOURCE_TARGET_INVALID')
++        _need(type(grid['crs']) is str and bool(grid['crs']) and
++              all(type(grid[k]) is int and 1 <= grid[k] <= 8192 for k in ('width', 'height')) and
++              type(grid['transform']) is list and len(grid['transform']) == 6 and
++              all(_number(x) for x in grid['transform']), 'TARGET_SOURCE_TARGET_INVALID')
++        native = target['target_footprint_native']
++        _keys(native, ('crs', 'corners'), 'TARGET_SOURCE_TARGET_INVALID')
++        _need(type(native['crs']) is str and bool(native['crs']) and type(native['corners']) is list and
++              len(native['corners']) == 4 and all(type(p) is list and len(p) == 2 and all(_number(x) for x in p)
++              for p in native['corners']), 'TARGET_SOURCE_TARGET_INVALID')
++        bbox = target['target_bbox_wgs84']
++        _need(type(bbox) is list and len(bbox) == 4 and all(_number(x) for x in bbox) and
++              -180 <= bbox[0] < bbox[2] <= 180 and -90 <= bbox[1] < bbox[3] <= 90 and
++              type(target['declared_bare_pixels']) is int and 256 <= target['declared_bare_pixels'] <= 65536,
++              'TARGET_SOURCE_TARGET_INVALID')
++
++
++def upgrade_plan_v1(plan, marker):
++    """Deep-copy adapter only: preserves refs/targets, explicitly adds the marker."""
++    value, selected = _copy(plan), _copy(marker)
++    _marker(selected, MARKER)
++    _plan(value, 1)
++    value['schema_version'] = 2
++    value['manifest_profile'] = selected
++    _plan(value, 2)
++    return value
++
++
++@dataclass(frozen=True)
++class ValidatedTargetSourceContract:
++    canonical_json: str
++    request_sha256: str
++    inventory_envelope_json: str
++    status: str = field(default='DECLARED_CONTRACT_VALID_EXECUTION_BLOCKED', init=False)
++    execution_supported: bool = field(default=False, init=False)
++    source_bytes_verified: bool = field(default=False, init=False)
++    source_profile_connected: bool = field(default=False, init=False)
++    training_ready: bool = field(default=False, init=False)
++
++    def to_dict(self):
++        return json.loads(self.canonical_json)
++
++    def inventory_envelope(self):
++        return json.loads(self.inventory_envelope_json)
++
++
++def validate_request_v3(request):
++    """Validate detached declarations, never validate a preconstructed result token."""
++    value = _copy(request)
++    _keys(value, OUTER_KEYS, 'TARGET_SOURCE_REQUEST_INVALID')
++    _need(type(value['schema_version']) is int and value['schema_version'] == 3, 'TARGET_SOURCE_REQUEST_INVALID')
++    _marker(value['manifest_profile'], MARKER)
++    _marker(value['local_support_profile'], SUPPORT_MARKER)
++    _plan(value['plan'], 2)
++    _need(value['manifest_profile'] == value['plan']['manifest_profile'], 'TARGET_SOURCE_MARKER_INVALID')
++    _ref(value['ledger_ref'], 'data')
++    _need(type(value['maximum_batches']) is int and 1 <= value['maximum_batches'] <= 2 and
++          value['maximum_batches'] == value['plan']['policy']['maximum_new_batches'], 'TARGET_SOURCE_BATCH_INVALID')
++    canonical = _canonical(value)
++    # This envelope selects ONLY the unchanged232 3GiB options. It is not a
++    # downgraded executable request: plan remains v2 and original digest stays v3.
++    envelope = {k: value[k] for k in OUTER_KEYS if k != 'manifest_profile'}
++    envelope['schema_version'] = 2
++    return ValidatedTargetSourceContract(canonical, hashlib.sha256(canonical.encode('utf-8')).hexdigest(),
++                                         _canonical(envelope))
++
++
++def inventory_envelope_v3(request):
++    """Revalidate the raw declaration on every projection; no authority tokens."""
++    return validate_request_v3(request).inventory_envelope()
+--- /dev/null
++++ tests/test_targeted_source_profile319.py
+@@ -0,0 +1,249 @@
++"""Offline synthetic declarations only; no operating data or pipeline execution."""
++import copy
++from dataclasses import FrozenInstanceError
++import hashlib
++import importlib.util
++import json
++from pathlib import Path
++import socket
++import sys
++import tempfile
++import unittest
++from unittest.mock import patch
++
++ROOT = Path(__file__).resolve().parents[1]
++
++
++def load(name, path):
++    spec = importlib.util.spec_from_file_location(name, path)
++    module = importlib.util.module_from_spec(spec)
++    sys.modules[name] = module
++    spec.loader.exec_module(module)
++    return module
++
++
++s = load('target319_subject', ROOT/'backend/app/data/targeted_source_profile.py')
++LEGACY = ROOT/'tests/fixtures/target319/legacy_inventory232.py.fixture'
++def legacy_load(path):
++    raw=path.read_bytes()
++    if len(raw)!=1900 or hashlib.sha256(raw).hexdigest()!='dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d':
++        raise ValueError('LEGACY_FIXTURE_PIN_INVALID')
++    module=type(sys)('target319_legacy232')
++    exec(compile(raw,str(path),'exec'),module.__dict__)
++    return module
++old = legacy_load(LEGACY)
++
++
++def plan():
++    ref = lambda name: dict(path=name, sha256='a'*64)
++    return dict(schema_version=1, kind='TARGETED_BARE_256_COLLECTION_PLAN',
++                proposal_ref=ref('evidence/integration/synthetic/proposal.json'),
++                current_manifest_ref=ref('data/synthetic/source.json'),
++                boundary_ref=ref('data/synthetic/boundary.json'),
++                policy={**s.POLICY, 'maximum_new_batches':1}, targets=[dict(
++                    target_id='synthetic', proposal_window_index=0, province='east_java', fixed_split='train', year=2025,
++                    source_label_ref=ref('data/synthetic/label.tif'), source_lineage_ref=ref('data/synthetic/report.json'),
++                    source_label_window=[0,0,256,256], source_label_grid=dict(crs='EPSG:32749', transform=[10,0,0,0,-10,2560],width=256,height=256),
++                    target_bbox_wgs84=[112,-8,113,-7], target_footprint_native=dict(crs='EPSG:32749',corners=[[0,0],[2560,0],[2560,2560],[0,2560]]), declared_bare_pixels=512)])
++
++
++def request():
++    return dict(schema_version=3, plan=s.upgrade_plan_v1(plan(),dict(s.MARKER)),
++                ledger_ref=dict(path='data/synthetic/ledger.json',sha256='b'*64), maximum_batches=1,
++                local_support_profile=dict(s.SUPPORT_MARKER), manifest_profile=dict(s.MARKER))
++
++
++class Contracts(unittest.TestCase):
++    def reject(self, value, code=None):
++        with self.assertRaises(s.TargetSourceContractError) as caught:
++            s.validate_request_v3(value)
++        if code: self.assertEqual(str(caught.exception), code)
++        self.assertRegex(str(caught.exception), r'^TARGET_SOURCE_[A-Z0-9_]+$')
++
++    def test_descriptor_exact_common_profile(self):
++        self.assertEqual(s.DIGEST,'db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4')
++        self.assertEqual(s.SUPPORT_MARKER,old.MARKER)
++
++    def test_fixture_missing_and_tampered_fail_without_fallback(self):
++        with tempfile.TemporaryDirectory(prefix='target319-fixture-') as directory:
++            p=Path(directory)/'missing.py'
++            with self.assertRaises(FileNotFoundError):legacy_load(p)
++            p.write_bytes(LEGACY.read_bytes()+b'\n')
++            with self.assertRaisesRegex(ValueError,'^LEGACY_FIXTURE_PIN_INVALID$'):legacy_load(p)
++
++    def test_immutable_limits_and_descriptors(self):
++        for table in (s.ROLE_LIMITS,s.DESCRIPTOR,s.MARKER,s.SUPPORT_DESCRIPTOR):
++            with self.assertRaises(TypeError):table['anything']=1
++        self.assertEqual(s.ROLE_LIMITS['ledger'],8<<20)
++        self.assertEqual(s.ROLE_LIMITS['lineage'],8<<20)
++        self.assertEqual(s.ROLE_LIMITS['source'],128<<20)
++        self.assertEqual(s.ROLE_LIMITS_SHA256,hashlib.sha256(s._canonical(dict(s.ROLE_LIMITS)).encode()).hexdigest())
++
++    def test_upgrade_deepcopy_and_original_unmodified(self):
++        original=plan(); saved=copy.deepcopy(original); marker=dict(s.MARKER)
++        upgraded=s.upgrade_plan_v1(original,marker)
++        self.assertEqual(original,saved)
++        upgraded['targets'][0]['year']=2020; marker['name']='changed'
++        self.assertEqual(original,saved)
++        self.assertEqual(upgraded['manifest_profile'],s.MARKER)
++
++    def test_canonical_v3_preserved_and_envelope_is_not_executable_planv1(self):
++        value=request(); checked=s.validate_request_v3(value)
++        self.assertEqual(checked.request_sha256,hashlib.sha256(s._canonical(value).encode()).hexdigest())
++        envelope=s.inventory_envelope_v3(value)
++        self.assertEqual(envelope['schema_version'],2)
++        self.assertEqual(envelope['plan']['schema_version'],2)
++        self.assertNotIn('manifest_profile',envelope)
++        self.assertIn('manifest_profile',envelope['plan'])
++        self.assertNotEqual(old.request_sha256(envelope),checked.request_sha256)
++        fields={'schema_version','plan','ledger_ref','maximum_batches'}
++        self.assertEqual(old.inventory_kwargs(envelope,fields,'INVALID'),{'max_files':10000,'max_bytes':3<<30})
++
++    def test_return_copy_cannot_mutate_validated_digest(self):
++        value=request(); checked=s.validate_request_v3(value); digest=checked.request_sha256
++        value['plan']['targets'][0]['year']=2020
++        checked.to_dict()['plan']['targets'][0]['year']=2021
++        checked.inventory_envelope()['plan']['targets'][0]['year']=2022
++        self.assertEqual(checked.to_dict()['plan']['targets'][0]['year'],2025)
++        self.assertEqual(checked.request_sha256,digest)
++        with self.assertRaises(FrozenInstanceError):checked.execution_supported=True
++
++    def test_token_not_accepted_as_request(self):
++        self.reject(s.validate_request_v3(request()))
++
++    def test_all_authority_false(self):
++        checked=s.validate_request_v3(request())
++        for key in ('execution_supported','source_bytes_verified','source_profile_connected','training_ready'):
++            self.assertIs(getattr(checked,key),False)
++            with self.assertRaises(TypeError):
++                s.ValidatedTargetSourceContract('{}','a'*64,'{}',**{key:True})
++
++    def test_pure_no_open_socket_or_environment_profile_import(self):
++        with patch('builtins.open',side_effect=AssertionError('I/O')), patch.object(Path,'open',side_effect=AssertionError('I/O')), patch.object(socket,'socket',side_effect=AssertionError('HTTP')):
++            checked=s.validate_request_v3(request())
++            self.assertIs(checked.execution_supported,False)
++
++    def test_outer_versions(self):
++        for version in (True,False,1,2,4,3.0,'3',None):
++            with self.subTest(version=version):
++                value=request();value['schema_version']=version;self.reject(value)
++
++    def test_plan_versions(self):
++        for version in (True,False,1,3,2.0,'2',None):
++            value=request();value['plan']['schema_version']=version;self.reject(value)
++
++    def test_unknown_or_missing_outer_keys(self):
++        for key in s.OUTER_KEYS:
++            value=request();del value[key];self.reject(value)
++        for key in ('execute','manifest_bytes','maximum_json_io_bytes','max_depth','max_nodes','caps'):
++            value=request();value[key]=128;self.reject(value)
++
++    def test_profile_markers_both_exact_and_required(self):
++        for path in ('outer','plan','support'):
++            for replacement in (None,True,{},dict(name=s.NAME,sha256='0'*64),dict(s.MARKER,manifest_bytes=1),dict(name=True,sha256=s.DIGEST)):
++                value=request();target=value['plan'] if path=='plan' else value
++                target['local_support_profile' if path=='support' else 'manifest_profile']=replacement
++                self.reject(value)
++
++    def test_nested_key_and_policy_cap_manipulation(self):
++        for key in ('manifest_bytes','manifest_profile_override','execution_supported'):
++            value=request();value['plan'][key]=1;self.reject(value)
++        for key in s.POLICY:
++            value=request();value['plan']['policy'][key]=True;self.reject(value)
++        value=request();value['plan']['policy']['max_total_bytes']=1;self.reject(value)
++
++    def test_batch_count_exact(self):
++        for n in (True,False,0,3,1.0,'1',2):
++            value=request();value['maximum_batches']=n;self.reject(value)
++
++    def test_two_targets_explicit_valid(self):
++        value=request();value['plan']['policy']['maximum_new_batches']=2;value['maximum_batches']=2
++        other=copy.deepcopy(value['plan']['targets'][0]);other['target_id']='second';value['plan']['targets'].append(other)
++        self.assertEqual(len(s.validate_request_v3(value).to_dict()['plan']['targets']),2)
++
++    def test_duplicate_targets_and_empty(self):
++        value=request();value['plan']['targets']=[];self.reject(value)
++        value=request();value['maximum_batches']=2;value['plan']['policy']['maximum_new_batches']=2
++        value['plan']['targets']*=2;self.reject(value)
++
++    def test_reference_sha_and_path_aliases(self):
++        for path in ('../data/x','data/../x','data//x','data/./x','data\\x','https://example/x','C:/data/x','/data/x','data/x\x00'):
++            value=request();value['ledger_ref']['path']=path;self.reject(value)
++        for sha in ('a'*63,'A'*64,True,'g'*64):
++            value=request();value['ledger_ref']['sha256']=sha;self.reject(value)
++
++    def test_bad_target_types_and_fixedsplit(self):
++        for field, n in [('year',True),('year',2026),('proposal_window_index',False),('fixed_split','test'),('declared_bare_pixels',True),('declared_bare_pixels',255),('declared_bare_pixels',65537)]:
++            value=request();value['plan']['targets'][0][field]=n;self.reject(value)
++
++    def test_nonfinite_huge_numbers_and_utf8_surrogates(self):
++        for n in (float('nan'),float('inf'),-float('inf'),10**10000,'\ud800'):
++            value=request();value['plan']['targets'][0]['target_bbox_wgs84'][0]=n;self.reject(value)
++        value=request();value['\ud800']=1;self.reject(value,'TARGET_SOURCE_UTF8_INVALID')
++
++    def test_subclasses_and_bytes_fail_without_invoking_methods(self):
++        class Evil(dict):
++            def items(self):raise AssertionError('prototype executed')
++        class EvilList(list):
++            def __iter__(self):raise AssertionError('prototype executed')
++        self.reject(Evil(request()))
++        value=request();value['plan']['targets']=EvilList(value['plan']['targets']);self.reject(value)
++        self.reject(b'not UTF8 JSON')
++
++    def test_cycles_depth_nodes_and_canonical_utf8_size(self):
++        value=request();value['cycle']=value;self.reject(value)
++        nested=0
++        for _ in range(34):nested=[nested]
++        value=request();value['deep']=nested;self.reject(value)
++        with self.assertRaises(s.TargetSourceContractError):s._copy([[0]*256 for _ in range(200)])
++        with self.assertRaises(s.TargetSourceContractError):s._copy(['é'*4096]*256)
++
++    def test_caller_mutation_after_detachment_never_revalidated_original(self):
++        value=request();original=s._canonical;mutated=False
++        def mutate(detached):
++            nonlocal mutated
++            if not mutated:
++                mutated=True;value['maximum_batches']=True;value['plan']['targets'][0]['year']=False
++            return original(detached)
++        with patch.object(s,'_canonical',side_effect=mutate):checked=s.validate_request_v3(value)
++        self.assertEqual(checked.to_dict()['maximum_batches'],1)
++        self.assertEqual(checked.to_dict()['plan']['targets'][0]['year'],2025)
++
++    def test_detected_iteration_mutation_is_fixed_code(self):
++        value=request();fired=False
++        def trace(frame,event,arg):
++            nonlocal fired
++            if not fired and event=='line' and frame.f_code.co_name=='clone' and frame.f_locals.get('item') is value and 'key' in frame.f_locals:
++                fired=True;value['added_during_iteration']=1
++            return trace
++        prior=sys.gettrace()
++        try:
++            sys.settrace(trace)
++            self.reject(value,'TARGET_SOURCE_INPUT_CHANGED')
++        finally:sys.settrace(prior)
++        self.assertTrue(fired)
++
++    def test_key_order_invariance_and_nonascii_canonical_utf8(self):
++        value=request();value['ledger_ref']['path']='data/합성/ledger.json'
++        reverse={k:value[k] for k in reversed(value)}
++        first=s.validate_request_v3(value);second=s.validate_request_v3(reverse)
++        self.assertEqual(first.request_sha256,second.request_sha256)
++        self.assertIn('합성',first.canonical_json)
++
++    def test_legacy232_v1_v2_exact_and_new_version_rejected(self):
++        fields={'schema_version','plan','ledger_ref','maximum_batches'}
++        legacy={k:request()[k] for k in fields};legacy['schema_version']=1;legacy['plan']=plan()
++        before=copy.deepcopy(legacy);self.assertEqual(old.inventory_kwargs(legacy,fields,'OLD'),{})
++        s.validate_request_v3(request());self.assertEqual(legacy,before)
++        legacy['schema_version']=2;legacy['local_support_profile']=dict(old.MARKER)
++        self.assertEqual(old.inventory_kwargs(legacy,fields,'OLD'),{'max_files':10000,'max_bytes':3<<30})
++        with self.assertRaisesRegex(ValueError,'^OLD$'):old.inventory_kwargs(request(),fields,'OLD')
++
++    def test_bad_upgrades_cannot_smuggle_marker_into_legacy(self):
++        value=plan();value['manifest_profile']=dict(s.MARKER)
++        with self.assertRaises(s.TargetSourceContractError):s.upgrade_plan_v1(value,dict(s.MARKER))
++        value=plan();value['schema_version']=True
++        with self.assertRaises(s.TargetSourceContractError):s.upgrade_plan_v1(value,dict(s.MARKER))
++
++
++if __name__=='__main__':unittest.main(verbosity=2)
+--- /dev/null
++++ tests/fixtures/target319/legacy_inventory232.py.fixture
+@@ -0,0 +1,43 @@
++"""명시 targeted256 로컬 지원 profile. 원격 예산이나 승인을 바꾸지 않는다."""
++import hashlib
++import json
++from types import MappingProxyType
++
++NAME = 'TARGETED_LOCAL_SUPPORT_3G_V1'
++DESCRIPTOR = MappingProxyType({'name': NAME, 'max_files': 10000,
++                               'max_support_bytes': 3 * 1024**3,
++                               'max_file_bytes': 64 * 1024**2})
++SHA256 = hashlib.sha256(json.dumps(dict(DESCRIPTOR), sort_keys=True,
++                                   separators=(',', ':')).encode()).hexdigest()
++MARKER = MappingProxyType({'name': NAME, 'sha256': SHA256})
++
++
++def inventory_kwargs(request, legacy_fields, error):
++    """v1은 기존 호출, 정확한 v2 marker만 고정3GiB를 선택한다."""
++    def need(condition):
++        if not condition:
++            raise ValueError(error)
++    need(type(request) is dict)
++    version = request.get('schema_version')
++    need(type(version) is int and version in (1, 2))
++    fields = set(legacy_fields)
++    if version == 1:
++        need(set(request) == fields)
++        return {}
++    need(set(request) == fields | {'local_support_profile'})
++    marker = request['local_support_profile']
++    need(type(marker) is dict and set(marker) == {'name', 'sha256'})
++    need(type(marker['name']) is str and marker['name'] == NAME and
++         type(marker['sha256']) is str and marker['sha256'] == SHA256)
++    return {'max_files': DESCRIPTOR['max_files'],
++            'max_bytes': DESCRIPTOR['max_support_bytes']}
++
++
++def metadata(request):
++    """검증한 v2 요청의 관측 marker. 승인 flag를 만들지 않는다."""
++    return {'local_support_profile': dict(MARKER)} if request['schema_version'] == 2 else {}
++
++
++def request_sha256(request):
++    return hashlib.sha256(json.dumps(request, sort_keys=True, ensure_ascii=False,
++                                    allow_nan=False, separators=(',', ':')).encode()).hexdigest()

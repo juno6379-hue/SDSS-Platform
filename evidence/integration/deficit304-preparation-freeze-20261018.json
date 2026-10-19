@@ -1,0 +1,53 @@
+{
+  "status": "FROZEN_PREPARED_AWAITING_ROOT_AND_INDEPENDENT_REVIEW_NO_EXECUTION",
+  "files": [
+    {
+      "path": "evidence/integration/deficit304-before297-supervisor-20261018.py",
+      "bytes": 7815,
+      "sha256": "1b41991db71ce006f7ef46ed5fc67cb5e7ad92d79a4b484b30e50bef4993bfaa"
+    },
+    {
+      "path": "evidence/integration/deficit304-supervisor-root-20261018.py",
+      "bytes": 7822,
+      "sha256": "f8d74ec8597f111326db71e2f93ff09516dc3341a06c15cb9f7b30d7a45c26b1"
+    },
+    {
+      "path": "evidence/integration/deficit304-prepared-request-root-20261018.json",
+      "bytes": 1277,
+      "sha256": "b07fd377056542066029cf879b1c52261d61f6976e56bbf298a89298178b8c39"
+    },
+    {
+      "path": "evidence/integration/deficit304-expected-config-20261018.json",
+      "bytes": 3121,
+      "sha256": "23085f52d3b88c7982e14a4a211d0b006ffc1b1c584e8b6b8540b365094824c6"
+    },
+    {
+      "path": "evidence/integration/deficit304-prepared-review-20261018.json",
+      "bytes": 7980,
+      "sha256": "1d808ac33bfa301946bad09afdf3b14992a9ad059dab7ff691df51a8ff1cf041"
+    },
+    {
+      "path": "evidence/integration/deficit304-vs297-20261018.patch",
+      "bytes": 8983,
+      "sha256": "2a39b8f422481a7fd880d31e5709329239bc35271f96aeffc3f4daefd82963c7"
+    },
+    {
+      "path": "docs/implementation/304_eastjava2025_single_batch_preparation.md",
+      "bytes": 6348,
+      "sha256": "b9e751453c9637c15a4351198e1103580dc3438d2e0afb91f1fc9ec136327f1d"
+    }
+  ],
+  "request_canonical_sha256": "981abcd9b78b6eaa94dcb48a2f2bc62346ac939967076490b41c0c10e03f0987",
+  "expected_config_sha256": "31044c97e5dd1cf84648eec174975eacd9b5f8e1eacfcbf50e355bc0bb7d657a",
+  "expected_job_key": "center1024-east_java-2025-981abcd9b78b-9c40f177",
+  "source_pin_count": 42,
+  "compile_passed": true,
+  "config_fragment_equal_to_independent_expected": true,
+  "fresh_inventory_executed": false,
+  "operating_source_ledger_model_reads": 0,
+  "http": 0,
+  "collector_started": false,
+  "maximum_batches": 1,
+  "maximum_new_physical_patches": 16,
+  "training_approved": false
+}

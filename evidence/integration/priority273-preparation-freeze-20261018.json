@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "PREPARED_AWAITING_ROOT_REVIEW_AND_EXPLICIT_GO",
+  "execution_authorized": false,
+  "actual_cli_started": false,
+  "qa_started": false,
+  "files": {
+    "evidence/integration/priority273-preparation-20261018.json": {
+      "bytes": 4812,
+      "sha256": "a87623fd2346e5fea4d89b03662ec0e83606ab4da58d6360d08cf442d33043c5"
+    },
+    "evidence/integration/priority273-runner-20261018.py": {
+      "bytes": 8833,
+      "sha256": "fe3d74262d8d6a9eb9f8b291dd39de640b5152bdf64602fee4195eb8d7485cc1"
+    },
+    "docs/implementation/273_post270_candidate_qa_preparation.md": {
+      "bytes": 9049,
+      "sha256": "518d32784453dbdd3abf3f4556207074548e44f3f2e9dd43b88f540a51e496cd"
+    }
+  },
+  "old238_protected_observed": {
+    "evidence/integration/priority238-preparation-20261018.json": {
+      "bytes": 5360,
+      "sha256": "f3ca8b567f2df72d6a64ef0ded1664349fda4e305541452b6b074f8b8c83b313"
+    },
+    "docs/implementation/238_post235_candidate_qa_plan.md": {
+      "bytes": 8524,
+      "sha256": "30e40cb4590baf265aee3accc28e8a267032b51f74ae44b0136398ddd0ba7166"
+    }
+  },
+  "code_pins_verified": 16,
+  "cli_call_sites": 1,
+  "syntax_compile_without_execution": "PASS",
+  "new_run_paths_absent": true,
+  "source_policy_read_during_preparation": false,
+  "ledger_model_read": false,
+  "http": 0,
+  "operational_collection": 0,
+  "native_qa": 0,
+  "candidate_count": null,
+  "root_native_complete_claim_sha256": "8b745ee8eeda31584942afbe399f93a0c2e1d4f7253fefbdbc849204193cdb4a",
+  "source_bytes_root_reported": 67518599,
+  "source_default64_excess_bytes": 409735,
+  "actual_rss_observed": false,
+  "automatic_retry_allowed": false
+}

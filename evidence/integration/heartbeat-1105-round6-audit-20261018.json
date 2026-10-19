@@ -1,0 +1,50 @@
+{
+  "at_utc": "2026-10-18T02:06:46.414853+00:00",
+  "checks": {
+    "old_rows_unchanged": true,
+    "old_pending_unchanged": true,
+    "both_settled": true,
+    "stdout_started2_finished2": true,
+    "no_worker429": true,
+    "manifest_two_reads_stable": true,
+    "ledger_two_reads_stable": true
+  },
+  "manifest_sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+  "ledger_sha256": "2c6442cc4963c1f5dc5f23d4b86f59e3ffa7727c48c8c5970e2a2b896325d50f",
+  "round6_final_evidence_exists": false,
+  "physical_total": 1536,
+  "eligible_total": 1235,
+  "ineligible_total": 301,
+  "new_physical": 24,
+  "new_eligible": 23,
+  "cell_gap_total": 73,
+  "populated_cells": 36,
+  "east_java_2024_eligible": 39,
+  "new_bare_declared_pixels": 0,
+  "new_bare_ge256_contribution_patches": 0,
+  "largest_new_patch_bare_pixels": 0,
+  "pending_reserved_bytes": 136314880,
+  "charged_delta": 29436521,
+  "remaining_budget": 2159200278,
+  "rate_limit_active": false,
+  "lock_present": false,
+  "by_job": [
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2024-g01",
+      "ledger_status": "settled",
+      "source_status": "rgb_window_downloaded",
+      "charged_bytes": 22317685,
+      "eligible_rows_by_source_path": 16
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2024-g02",
+      "ledger_status": "settled",
+      "source_status": "rgb_window_downloaded",
+      "charged_bytes": 7118836,
+      "eligible_rows_by_source_path": 7
+    }
+  ],
+  "limits": "Sequential double reads with stable hashes, not atomic OS snapshot or native raster QA. Stored quality/weak-label counts, no learning readiness or scientific validity clearance. Fixed159 cohort1125 is separate.",
+  "collection_starts": 0,
+  "operating_data_writes": 0
+}

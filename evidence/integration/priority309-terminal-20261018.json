@@ -1,0 +1,54 @@
+{
+  "status": "PINNED_CANDIDATE_QA_COMPLETED",
+  "at": "2026-10-18T14:03:02.849132+00:00",
+  "pid": 24432,
+  "exit_code": 0,
+  "actual_wall_seconds": 1608.765,
+  "cli_and_postcheck_wall_seconds": 1607.422,
+  "source_pin_expected": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+  "protected_before": {
+    "data/first-group-training-priority/latest-candidate.json": "996a88de2034e9803381d7ae4e906a0d1f418075675d13ef796fb5648bb472c0",
+    "data/first-group-training-priority/candidate-receipt293-20261018.json": "996a88de2034e9803381d7ae4e906a0d1f418075675d13ef796fb5648bb472c0"
+  },
+  "protected_after": {
+    "data/first-group-training-priority/latest-candidate.json": "996a88de2034e9803381d7ae4e906a0d1f418075675d13ef796fb5648bb472c0",
+    "data/first-group-training-priority/candidate-receipt293-20261018.json": "996a88de2034e9803381d7ae4e906a0d1f418075675d13ef796fb5648bb472c0"
+  },
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "resource_usage_before_terminal_write": {
+    "read_bytes": 4445908695,
+    "write_bytes": 210381886,
+    "json_io_bytes": 4656290581,
+    "maximum_bytes": 17179869184
+  },
+  "rss_observed": false,
+  "automatic_retry_allowed": false,
+  "partial_outputs_preserved": true,
+  "published": false,
+  "training_executed": false,
+  "candidate_eligible": {
+    "train": 865,
+    "val": 276,
+    "test": 250
+  },
+  "candidate_blockers": [
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ]
+}

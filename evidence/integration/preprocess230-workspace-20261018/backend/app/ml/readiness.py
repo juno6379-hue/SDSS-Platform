@@ -1,0 +1,433 @@
+from .manifest_resource_profile import active,read_json as profile_read_json,charge as profile_charge,bounded_json_digest,ProfileResourceError
+"""실자료 의사라벨 실험의 충분성·출처·분할 gate. 독립 실정확도 승인이 아니다."""
+import json
+import re
+from urllib.parse import urlsplit
+import numpy as np
+from .dataset import file_digest, split_groups
+from .normalization import channel_values
+from .raster import read, safe_path, assert_aligned, IGNORE, CLASS_NAMES, ESRI_IO_MAPPING, ESRI_IO_CLASS_NAMES
+
+FIRST_GROUP=['south_sulawesi','gorontalo','southeast_sulawesi','banten','west_java','east_java']
+SIX_BANDS=['B02','B03','B04','B08','B11','B12']
+WC_MAPPING={10:1,20:5,30:2,40:4,50:6,60:7,70:8,80:0,90:3,95:1,100:2}
+
+
+def default_policy():
+    return {'required_provinces':FIRST_GROUP.copy(),'required_years':list(range(2020,2026)),
+            'band_names':SIX_BANDS.copy(),'patch_size':256,'min_valid_fraction':.8,'min_patches':1000,
+            'min_patches_per_split':{'train':600,'val':100,'test':100},'required_classes':[0,1,2,4,6,7],
+            'min_class_pixels_per_split':256,'class_weighting':'inverse_sqrt_train','max_prediction_dominance':.995,'seed':42,
+            'max_patches':3000,'min_patches_per_train_province':50,'min_unique_train_locations':32,
+            'max_reference_class_dominance':.90,'min_required_class_ratio':.005,
+            'min_class_patches_per_split':5,'min_class_pixels_per_patch':256,
+            'min_province_inside_fraction':.95,
+            'limited_period_experiment':False,'scope_statement':'2020-2025 six-province full target',
+            'province_splits':{'south_sulawesi':'train','gorontalo':'train','southeast_sulawesi':'train','east_java':'train','banten':'val','west_java':'test'}}
+
+
+def reference_labels(labels, valid, source, threshold=.8):
+    if source in ('worldcover','esri_io'):
+        mapped=np.full(labels.shape[1:],IGNORE,dtype='uint8')
+        for original,target in (ESRI_IO_MAPPING if source=='esri_io' else WC_MAPPING).items():
+            mapped[labels[0]==original]=target
+        valid &= mapped!=IGNORE
+    elif source=='dynamic_world':
+        if labels.shape[0]!=9:
+            raise ValueError('DW 확률 밴드가 9개가 아닙니다.')
+        valid &= np.isfinite(labels).all(0) & (labels>=0).all(0) & (labels<=1).all(0)
+        valid &= np.isclose(labels.sum(0),1,atol=.03) & (labels.max(0)>=threshold)
+        mapped=labels.argmax(0).astype('uint8')
+    elif source=='classes':
+        mapped=labels[0]
+        valid &= (mapped>=0) & (mapped<9) & (mapped==np.floor(mapped))
+    else:
+        raise ValueError('라벨 출처가 지원되지 않습니다.')
+    return np.where(valid,mapped,IGNORE).astype('uint8')
+
+
+def esri_reference_matches_year(url, year):
+    """Esri 연간 파일의 익년 1월 1일/동년 12월 31일 종료 표기를 검사한다."""
+    # URL의 쿼리나 상위 경로에 포함된 날짜를 제품 파일 기간으로 오인하지 않는다.
+    try:
+        filename=urlsplit(str(url)).path.rsplit('/',1)[-1]
+    except ValueError:
+        return False
+    interval=re.fullmatch(r'[0-9]{2}[A-Z]_([0-9]{8})-([0-9]{8})\.tif',filename)
+    return bool(interval and interval.group(1)==f'{year}0101'
+                and interval.group(2) in (f'{year+1}0101',f'{year}1231'))
+
+
+def train_only_weights(class_counts):
+    """학습 분할 통계만 입력받는다. 없는 클래스는 0, 관측 클래스 평균 가중치는 1이다."""
+    counts=np.asarray(class_counts,dtype='float64')
+    if counts.shape!=(9,) or (counts<0).any() or not np.isfinite(counts).all() or counts.sum()==0:
+        raise ValueError('학습 클래스 개수는 유한한 9개 값이며 합이 양수여야 합니다.')
+    present=counts>0
+    weights=np.zeros(9,dtype='float64');weights[present]=1/np.sqrt(counts[present]/counts.sum())
+    weights[present]/=weights[present].mean()
+    return weights.astype('float32').tolist()
+
+
+def prediction_check(confusion, max_dominance=.995):
+    matrix=np.asarray(confusion,dtype='int64')
+    counts=matrix.sum(0);total=int(counts.sum());active=np.flatnonzero(counts).tolist()
+    dominant=float(counts.max()/total) if total else None
+    return {'predicted_class_counts':counts.tolist(),'predicted_classes':active,'dominant_ratio':dominant,
+            'passed':bool(total and len(active)>=2 and dominant<=max_dominance),
+            'interpretation':'output-diversity check only; not an accuracy criterion'}
+
+
+def balance_diagnostics(counts, class_patches, policy):
+    """참조자료 균형의 명시적 개발 기준이다. 자연 분포 추정이나 정확도 합격 기준은 아니다."""
+    counts=np.asarray(counts,dtype='int64');total=int(counts.sum())
+    ratios=counts/total if total else np.zeros(9)
+    failures=[]
+    if not total or ratios.max()>policy['max_reference_class_dominance']:
+        failures.append('dominant_reference_class')
+    for cls in policy['required_classes']:
+        if ratios[cls]<policy['min_required_class_ratio']:
+            failures.append(f'class{cls}_pixel_ratio')
+        if class_patches[cls]<policy['min_class_patches_per_split']:
+            failures.append(f'class{cls}_patch_representation')
+    return {'passed':not failures,'class_ratios':ratios.tolist(),'class_patch_counts':list(map(int,class_patches)),
+            'dominant_ratio':float(ratios.max()) if total else None,'failures':failures,
+            'interpretation':'explicit development sampling policy; not population prevalence or independent accuracy'}
+
+
+def verify_files(records, root):
+    for record in records:
+        if file_digest(safe_path(root,record['path']))!=record['sha256']:
+            raise ValueError(f"gate 검증 후 파일이 변경됐습니다: {record['path']}")
+
+
+def assess(manifests, root, policy=None, *, test_mode=False, connectivity_diagnostics=False):
+    if type(connectivity_diagnostics) is not bool:
+        raise ValueError('connectivity_diagnostics must be an exact bool')
+    supplied_policy=policy or {}
+    root=root.resolve();policy={**default_policy(),**supplied_policy}
+    if not test_mode:
+        if set(policy['required_provinces'])!=set(FIRST_GROUP):
+            raise ValueError('실자료 실험은 First Group 6개 주와 고정 4/1/1 분할을 유지해야 합니다.')
+        policy['min_patches']=max(1000,int(policy['min_patches']))
+        policy['min_valid_fraction']=max(.8,float(policy['min_valid_fraction']))
+        policy['min_patches_per_split']={split:max(floor,int(policy['min_patches_per_split'][split])) for split,floor in [('train',600),('val',100),('test',100)]}
+        policy['min_patches_per_train_province']=max(50,int(policy['min_patches_per_train_province']))
+        policy['min_unique_train_locations']=max(32,int(policy['min_unique_train_locations']))
+        policy['max_patches']=min(3000,int(policy['max_patches']))
+        policy['min_province_inside_fraction']=max(.95,float(policy['min_province_inside_fraction']))
+    else:
+        policy['min_patches_per_train_province']=supplied_policy.get('min_patches_per_train_province',1)
+        policy['min_unique_train_locations']=supplied_policy.get('min_unique_train_locations',1)
+        policy['max_reference_class_dominance']=supplied_policy.get('max_reference_class_dominance',1.0)
+        policy['min_required_class_ratio']=supplied_policy.get('min_required_class_ratio',0.0)
+        policy['min_class_patches_per_split']=supplied_policy.get('min_class_patches_per_split',1)
+        if 'province_splits' not in supplied_policy:
+            policy['province_splits']={}
+    if policy['patch_size']!=256 or not 0<policy['min_valid_fraction']<=1:
+        raise ValueError('실험 gate는 256 패치와 0~1의 품질 기준을 사용합니다.')
+    if not 0<policy['min_province_inside_fraction']<=1:
+        raise ValueError('주 경계 포함률 기준은 0보다 크고 1 이하여야 합니다.')
+    if not 0<policy['max_reference_class_dominance']<=1 or not 0<=policy['min_required_class_ratio']<1 or policy['min_class_patches_per_split']<1 or not 1<=policy['min_class_pixels_per_patch']<=65536:
+        raise ValueError('클래스 균형 정책의 비율·포함 패치·최소 픽셀 기준이 잘못됐습니다.')
+    bands=policy['band_names']
+    if not isinstance(bands,list) or len(bands)<3 or len(set(bands))!=len(bands):
+        raise ValueError('고유한 입력 밴드 이름을 최소 3개 지정하세요.')
+    required=policy['required_classes']
+    if not isinstance(required,list) or len(set(required))<2 or any(type(c) is not int or not 0<=c<9 for c in required) or policy['min_class_pixels_per_split']<1:
+        raise ValueError('평가 대상 클래스는 최소 2개이며 유효 픽셀 기준이 양수여야 합니다.')
+    blockers=[];files={};inputs=[];scenes=[];coverage=set();seen_images=set()
+    def block(code,detail,scene=None):
+        blockers.append({'code':code,'detail':str(detail),'scene':scene})
+    if not test_mode and policy['required_years']!=list(range(2020,2026)) and (not policy['limited_period_experiment'] or not policy['scope_statement']):
+        block('LIMITED_SCOPE_NOT_DECLARED','제한 연도 개발 실험은 명시적 limited_period_experiment와 범위 설명이 필요합니다. 전기간 달성으로 보고하지 않습니다.')
+    def inventory(path,kind):
+        path=safe_path(root,path)
+        json_role={'collection_manifest':'source','normalization_qa':'evidence'}.get(kind)
+        digest=bounded_json_digest(path,json_role) if active() is not None and json_role else file_digest(path)
+        files[str(path.relative_to(root))]={'path':str(path.relative_to(root)),'sha256':digest,'kind':kind}
+        return path,digest
+    for manifest in manifests:
+        path,digest=inventory(manifest,'collection_manifest')
+        inputs.append({'path':str(path.relative_to(root)),'sha256':digest})
+        document=profile_read_json(path,'source') if active() is not None else json.loads(path.read_text(encoding='utf-8'))
+        if document.get('synthetic') and not test_mode:
+            block('SYNTHETIC_NOT_REAL','합성 자료는 실자료 충분성에 포함하지 않습니다.',str(path))
+            continue
+        for row in document.get('scenes',[]):
+            province=row.get('province',row.get('province_id',row.get('aoi')))
+            try:
+                year=int(row.get('year'))
+            except (ValueError,TypeError):
+                continue
+            if province not in policy['required_provinces'] or year not in policy['required_years']:
+                continue
+            key=f'{province}/{year}/{row.get("scene_id","unknown")}'
+            if not row.get('image_path') or not row.get('label_path'):
+                block('FILES_INCOMPLETE','영상 또는 해당 시기 라벨 경로가 없습니다.',key);continue
+            try:
+                image_path,image_hash=inventory(row['image_path'],'input_image')
+                label_path,label_hash=inventory(row['label_path'],'label')
+                recorded_hashes=row.get('patch_sha256')
+                if recorded_hashes is not None:
+                    if not isinstance(recorded_hashes,dict) or recorded_hashes.get('image')!=image_hash or recorded_hashes.get('label')!=label_hash:
+                        raise ValueError('수집 manifest의 영상/라벨 SHA-256과 실제 파일이 다릅니다.')
+                if image_hash in seen_images:
+                    block('DUPLICATE_IMAGE','중복 원본 영상은 충분성에 재집계하지 않습니다.',key);continue
+                seen_images.add(image_hash)
+                image,iv,ip=read(image_path);label,lv,lp=read(label_path);assert_aligned(ip,lp)
+                from rasterio.transform import array_bounds
+                from rasterio.warp import transform_bounds
+                bounds=transform_bounds(ip['crs'],'EPSG:4326',*array_bounds(ip['height'],ip['width'],ip['transform']),densify_pts=21)
+                if row.get('bands')!=bands or image.shape[0]!=len(bands):
+                    block('BAND_SIGNATURE','실파일 채널 수와 명시적 밴드 순서가 계획과 다릅니다.',key);continue
+                observed=str(row.get('acquisition_date',row.get('datetime','')))[:4]
+                if observed!=str(year) or row.get('label_year')!=year:
+                    block('TEMPORAL_QA','영상 관측연도/라벨 제품연도가 명시적으로 일치해야 합니다.',key)
+                if not row.get('label_dataset_version') or not row.get('label_source_url'):
+                    block('LABEL_PROVENANCE','라벨 제품 버전과 원래 출처 URL이 필요합니다.',key)
+                if row.get('label_source')=='worldcover':
+                    product=re.search(r'/v(100|200)/(2020|2021)/',row.get('label_source_url',''))
+                    if not product or (product.group(1),int(product.group(2))) not in [('100',2020),('200',2021)] or int(product.group(2))!=year:
+                        block('WORLDCOVER_YEAR_REUSE','WC 원본 제품 연도와 요청 연도가 다르거나 확인되지 않습니다.',key)
+                if row.get('label_source')=='esri_io':
+                    if not esri_reference_matches_year(row.get('label_source_url',''),year):
+                        block('ESRI_REFERENCE_YEAR','Esri 연간 원본 파일 기간과 요청 연도가 일치해야 합니다.',key)
+                    if 'v003' not in str(row.get('label_dataset_version','')).lower():
+                        block('ESRI_VERSION_CONTRACT','해당 실험은 동일 Esri v003 분류체계만 사용합니다.',key)
+                normalization=row.get('normalization') or {}
+                evidence_path=normalization.get('evidence_path')
+                if not evidence_path:
+                    block('NORMALIZATION_UNVERIFIED','제품별 공식 메타데이터 정규화 검증 기록이 없습니다.',key);continue
+                ep,eh=inventory(evidence_path,'normalization_qa')
+                evidence=profile_read_json(ep,'source',maximum=2*1024**2) if active() is not None else json.loads(ep.read_text(encoding='utf-8'))
+                scale=channel_values(normalization.get('scale'),len(bands),'scale')
+                offset=channel_values(normalization.get('offset'),len(bands),'offset')
+                if normalization.get('evidence_sha256')!=eh or evidence.get('status')!='verified_product_metadata' or evidence.get('product_id')!=row.get('scene_id') or evidence.get('band_names')!=bands:
+                    raise ValueError('제품/밴드와 정규화 근거 해시 또는 검증 상태가 다릅니다.')
+                if not np.array_equal(scale,channel_values(evidence.get('scale'),len(bands),'scale')) or not np.array_equal(offset,channel_values(evidence.get('offset'),len(bands),'offset')):
+                    raise ValueError('적용하려는 scale/offset이 검증 기록과 다릅니다.')
+                metadata_path,mh=inventory(evidence['source_metadata_path'],'official_product_metadata')
+                if mh!=evidence.get('source_metadata_sha256') or not evidence.get('source_url'):
+                    raise ValueError('정규화 원본 메타데이터 해시/출처가 없습니다.')
+                valid=iv & lv & np.isfinite(image).all(0)
+                if not row.get('quality_mask_path'):
+                    block('QUALITY_MASK_MISSING','실제 외부 구름/품질 마스크가 필요합니다.',key)
+                else:
+                    qp,qh=inventory(row['quality_mask_path'],'quality_mask')
+                    if recorded_hashes is not None and recorded_hashes.get('quality')!=qh:
+                        raise ValueError('수집 manifest의 품질 마스크 SHA-256과 실제 파일이 다릅니다.')
+                    q,qv,qprofile=read(qp);assert_aligned(ip,qprofile)
+                    valid &= qv & (q[0]>0)
+                mapped=reference_labels(label,valid,row.get('label_source'))
+                inside_fraction=row.get('province_inside_fraction')
+                if inside_fraction is not None and (not isinstance(inside_fraction,(int,float)) or not np.isfinite(inside_fraction) or not 0<=inside_fraction<=1):
+                    raise ValueError('수집 manifest의 주 경계 포함률이 유효하지 않습니다.')
+                inside_eligible=inside_fraction is None or inside_fraction>=policy['min_province_inside_fraction']
+                counts=np.zeros(9,dtype='int64');class_patches=np.zeros(9,dtype='int64');patch_count=0;locations=[]
+                for y in range(0,ip['height']-255,256):
+                    for x in range(0,ip['width']-255,256):
+                        patch=mapped[y:y+256,x:x+256];pv=patch!=IGNORE
+                        if inside_eligible and pv.mean()>=policy['min_valid_fraction']:
+                            patch_count+=1;current=np.bincount(patch[pv],minlength=9);counts+=current
+                            class_patches+=(current>=policy['min_class_pixels_per_patch'])
+                            point=ip['transform']*(x,y)
+                            locations.append(str(row.get('spatial_location_id')) if row.get('spatial_location_id') and ip['width']==256 and ip['height']==256 else f"{ip['crs']}:{point[0]:.2f}:{point[1]:.2f}:256")
+                coverage.add((province,year))
+                scenes.append({'province':province,'year':year,'source_group':row.get('source_group',row.get('scene_id')),
+                               'scene_id':row.get('scene_id'),'image_path':str(image_path.relative_to(root)),
+                               'image_sha256':image_hash,'label_path':str(label_path.relative_to(root)),
+                               'bounds_wgs84':bounds,
+                               'label_source':row.get('label_source'),'quality_mask_path':row.get('quality_mask_path'),
+                               'normalization':{**normalization,'scale':scale.tolist(),'offset':offset.tolist()},
+                               'source':row.get('scene_id'),'license':row.get('license','unverified'),
+                               'label_year':row.get('label_year'),'label_dataset_version':row.get('label_dataset_version'),
+                               'label_source_url':row.get('label_source_url'),'source_window':row.get('source_window'),
+                               'acquisition_date':row.get('acquisition_date',row.get('datetime')),
+                               'eligible_patches':patch_count,'class_counts':counts.tolist(),'class_patch_counts':class_patches.tolist()})
+                scenes[-1]['spatial_locations']=locations
+            except ProfileResourceError:
+                raise
+            except Exception as exc:
+                block('SCENE_QA_ERROR',f'{type(exc).__name__}: {exc}',key)
+    sources={scene['label_source'] for scene in scenes}
+    if len(sources)>1:
+        block('MIXED_LABEL_TAXONOMY','같은 실험에 WC/DW/ESRI의 서로 다른 의미 체계를 혼합하지 않습니다.')
+    if policy.get('label_source') and sources and sources!={policy['label_source']}:
+        block('LABEL_SOURCE_CONTRACT','선정한 실험 계획과 라벨 공급자 체계가 다릅니다.')
+    label_source=next(iter(sources)) if len(sources)==1 else policy.get('label_source')
+    class_names=ESRI_IO_CLASS_NAMES if label_source=='esri_io' else CLASS_NAMES
+    expected={(province,year) for province in policy['required_provinces'] for year in policy['required_years']}
+    missing=sorted(expected-coverage)
+    if missing:
+        block('COVERAGE_INCOMPLETE',f'{len(missing)}/{len(expected)} 주·연도 조합 미확인')
+    parents={province:province for province in policy['required_provinces']}
+    def find(p):
+        while parents[p]!=p:
+            p=parents[p]
+        return p
+    source_groups={}
+    for scene in scenes:
+        group=scene['source_group']
+        if not group:
+            block('SOURCE_GROUP_MISSING','원본 장면 group이 필요합니다.',scene['image_path']);continue
+        for token in (str(group),str(scene['scene_id'])):
+            if token in source_groups:
+                first,second=find(scene['province']),find(source_groups[token])
+                parents[max(first,second)]=min(first,second)
+            source_groups[token]=scene['province']
+    for index,scene in enumerate(scenes):
+        a=scene['bounds_wgs84']
+        for other in scenes[:index]:
+            b=other['bounds_wgs84']
+            if min(a[2],b[2])>max(a[0],b[0]) and min(a[3],b[3])>max(a[1],b[1]):
+                first,second=find(scene['province']),find(other['province'])
+                parents[max(first,second)]=min(first,second)
+    declared=policy.get('province_splits') or {}
+    if declared:
+        if set(declared)!=set(parents) or [list(declared.values()).count(s) for s in ('train','val','test')]!=[4,1,1]:
+            block('FIXED_PROVINCE_SPLITS','6개 주의 고정 4train/1val/1test 계약이 아닙니다.')
+        component_splits={}
+        for province in parents:
+            component=find(province);value=declared.get(province)
+            if component in component_splits and component_splits[component]!=value:
+                block('SHARED_SOURCE_CROSSES_FIXED_SPLIT','같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.',province)
+            component_splits[component]=value
+        # 충돌은 차단하되 고정된 지역 holdout의 통계와 이름을 다른 split으로 이동하지 않는다.
+        assignments=dict(declared)
+    else:
+        try:
+            assignments=split_groups({find(p) for p in parents},int(policy['seed']))
+        except ValueError as exc:
+            assignments={};block('SPLIT_INDEPENDENCE',exc)
+    split_counts={s:0 for s in ('train','val','test')};class_counts={s:np.zeros(9,dtype='int64') for s in split_counts}
+    class_patch_counts={s:np.zeros(9,dtype='int64') for s in split_counts}
+    for scene in scenes:
+        scene['group']=scene['province'] if declared else find(scene['province']);split=assignments.get(scene['group'])
+        if split:
+            split_counts[split]+=scene['eligible_patches'];class_counts[split]+=scene['class_counts']
+            class_patch_counts[split]+=scene['class_patch_counts']
+    if sum(split_counts.values())<policy['min_patches']:
+        block('PATCH_COUNT_INSUFFICIENT',f"{sum(split_counts.values())}/{policy['min_patches']} 시기·품질 적격 패치")
+    if sum(split_counts.values())>policy['max_patches']:
+        block('REPRESENTATIVE_SELECTION_REQUIRED','적격 패치가 3000개를 초과했습니다. 중복 없는 지역·연도·클래스 대표 부분집합을 명시적으로 선정하세요.')
+    province_patches={p:sum(s['eligible_patches'] for s in scenes if s['province']==p) for p in parents}
+    province_locations={p:len({location for s in scenes if s['province']==p for location in s['spatial_locations']}) for p in parents}
+    spatial_years=set()
+    for scene in scenes:
+        for location in scene['spatial_locations']:
+            identity=(scene['province'],scene['year'],location)
+            if identity in spatial_years:
+                block('DUPLICATE_SPATIAL_SAMPLE','같은 주·연도의 공간 패치를 반복 집계할 수 없습니다.',str(identity))
+            spatial_years.add(identity)
+    for province in parents:
+        if assignments.get(province if declared else find(province))=='train' and (province_patches[province]<policy['min_patches_per_train_province'] or province_locations[province]<policy['min_unique_train_locations']):
+            block('TRAIN_PROVINCE_REPRESENTATION',f"{province}: {province_patches[province]} patches/{province_locations[province]} distinct locations")
+    balance={}
+    for split in split_counts:
+        balance[split]=balance_diagnostics(class_counts[split],class_patch_counts[split],policy)
+        if not balance[split]['passed']:
+            block('REFERENCE_CLASS_IMBALANCE',f"{split}: {balance[split]['failures']}")
+        if split_counts[split]<policy['min_patches_per_split'][split]:
+            block('SPLIT_PATCH_COVERAGE',f'{split}: {split_counts[split]} 적격 패치')
+        for cls in policy['required_classes']:
+            if class_counts[split][cls]<policy['min_class_pixels_per_split']:
+                block('CLASS_COVERAGE',f'{split}/class{cls}: {int(class_counts[split][cls])} 픽셀')
+    unsupported=(class_counts['val']+class_counts['test']>0)&(class_counts['train']==0)
+    if unsupported.any():
+        block('HELDOUT_CLASS_UNSEEN_IN_TRAIN',np.flatnonzero(unsupported).tolist())
+    ready=not blockers
+    verified_files=list(files.values())
+    contract={'source':'training_readiness_v1','ready_for_training':ready,'policy':policy,'verified_files':verified_files,
+              'group_splits':assignments,'patch_counts_by_split':split_counts,'class_counts_by_split':{s:c.tolist() for s,c in class_counts.items()},
+              'province_patch_counts':province_patches,'province_unique_locations':province_locations,'class_names':class_names}
+    contract['class_patch_counts_by_split']={s:c.tolist() for s,c in class_patch_counts.items()}
+    payload={'scenes':scenes,'bands':list(range(1,len(bands)+1)),'band_names':bands,'scale':[1.0]*len(bands),'offset':[0.0]*len(bands),
+             'patch_size':256,'seed':policy['seed'],'group_splits':assignments,'min_valid_fraction':policy['min_valid_fraction'],
+             'require_full_patches':True,'synthetic':bool(test_mode),'reference_kind':f'{label_source}_weak_label_agreement',
+             'class_names':class_names,'readiness_contract':contract}
+    report={'schema_version':1,'synthetic':bool(test_mode),'status':'ready_for_weak_label_experiment' if ready else 'blocked','ready_for_training':ready,
+            'scientific_accuracy_validated':False,'evaluation_kind':'weak_label_agreement','blockers':blockers,
+            'input_manifests':inputs,'verified_files':verified_files,'policy':policy,
+            'coverage':{'expected_cells':len(expected),'available_cells':len(coverage),'missing':[{'province':p,'year':y} for p,y in missing]},
+            'patch_counts_by_split':split_counts,'class_counts_by_split':{s:c.tolist() for s,c in class_counts.items()},
+            'reference_balance_by_split':balance,'class_patch_counts_by_split':contract['class_patch_counts_by_split'],
+            'group_splits':assignments,'province_groups':{p:find(p) for p in parents},
+            'province_patch_counts':province_patches,'province_unique_locations':province_locations,
+            'user_full_period_input_target_met':ready and set(policy['required_provinces'])==set(FIRST_GROUP) and policy['required_years']==list(range(2020,2026)),
+            'input_signature':{'band_names':bands,'band_indices':list(range(1,len(bands)+1)),'patch_size':256,'normalization_mode':'per_scene_product_metadata',
+                               'label_source':label_source,'class_names':class_names},
+            'prepared_payload':payload if ready else None}
+    if connectivity_diagnostics:
+        try:
+            from copy import deepcopy
+            from .readiness_connectivity_adapter import capture_readiness_connectivity
+            diagnostic_inputs=deepcopy((scenes,policy,report['province_groups'],inputs))
+            report['connectivity_diagnostics']=capture_readiness_connectivity(*diagnostic_inputs)
+        except Exception as exc:
+            report['connectivity_diagnostics']={'schema_version':1,'status':'BLOCKED','capture_status':'FAILED_ADAPTER_BOUNDARY',
+                'error_type':type(exc).__name__,'gate_result_modified':False,'ready_for_training':False,'scientific_accuracy_validated':False,
+                'settlement_authorized':False,'execution_authorized':False,'automatic_resume_allowed':False,'proposed_refund_bytes':0}
+    return report
+
+
+def prepared_statistics(manifest, manifest_path, root):
+    counts={split:np.zeros(9,dtype='int64') for split in ('train','val','test')};patches={split:0 for split in counts}
+    class_patches={split:np.zeros(9,dtype='int64') for split in counts}
+    if len({item['path'] for item in manifest['patches']})!=len(manifest['patches']):
+        raise ValueError('동일 패치 경로를 반복하여 충분성 개수를 늘릴 수 없습니다.')
+    for item in manifest['patches']:
+        patch_path=safe_path(root,manifest_path.parent/item['path'])
+        if item.get('sha256')!=file_digest(patch_path):
+            raise ValueError('실험 패치의 저장 해시가 일치하지 않습니다.')
+        with np.load(patch_path,allow_pickle=False) as archive:
+            labels=archive['label'];image=archive['image']
+        if labels.shape!=(256,256) or image.shape!=(len(manifest['bands']),256,256):
+            raise ValueError('정식 실험 패치 shape가 입력 계약과 다릅니다.')
+        valid=(labels>=0)&(labels<9)
+        if valid.mean()<manifest['min_valid_fraction']:
+            raise ValueError('패치 품질 비율이 gate보다 낮습니다.')
+        current=np.bincount(labels[valid],minlength=9)
+        counts[item['split']]+=current;patches[item['split']]+=1
+        class_patches[item['split']]+=(current>=manifest['readiness_contract']['policy']['min_class_pixels_per_patch'])
+    return counts,patches,class_patches
+
+
+def validate_prepared_training(manifest, manifest_path, root):
+    contract=manifest.get('readiness_contract') or {}
+    if contract.get('source')!='training_readiness_v1' or contract.get('ready_for_training') is not True:
+        raise ValueError('실자료 신규 학습은 충분성·정규화·라벨 QA gate가 필요합니다. 소규모 baseline을 재학습하지 않습니다.')
+    verify_files(contract['verified_files'],root)
+    policy=contract['policy'];counts,patches,class_patches=prepared_statistics(manifest,manifest_path,root)
+    if manifest.get('min_valid_fraction',0)<.8 or manifest.get('require_full_patches') is not True:
+        raise ValueError('정식 실자료 실험은 완전한 패치와 최소 80% 유효 비율을 요구합니다.')
+    if manifest.get('band_names')!=policy['band_names'] or manifest.get('min_valid_fraction')!=policy['min_valid_fraction'] or manifest['groups']!=contract['group_splits']:
+        raise ValueError('준비된 데이터의 밴드·품질·그룹 분할이 gate와 다릅니다.')
+    if sum(patches.values())<max(1000,int(policy['min_patches'])):
+        raise ValueError('실자료 정식 실험은 시기·품질 적격 실제 패치가 최소 1000개 필요합니다.')
+    if sum(patches.values())>min(3000,int(policy.get('max_patches',3000))) or manifest['class_names']!=contract['class_names']:
+        raise ValueError('정식 실험 표본 상한 또는 라벨 분류체계가 계약과 다릅니다.')
+    province_counts={province:0 for province in policy['required_provinces']};province_splits={};locations={province:set() for province in province_counts}
+    for source in manifest['provenance']:
+        province=source['province'];split=manifest['groups'][source['group']]
+        if province in province_splits and province_splits[province]!=split:
+            raise ValueError('같은 주의 연차 자료가 서로 다른 split에 포함됐습니다.')
+        province_splits[province]=split;locations[province].update(source.get('spatial_locations') or [])
+    for patch in manifest['patches']:
+        source=manifest['provenance'][int(patch['path'].split('_')[0])]
+        if source['group']!=patch['group']:
+            raise ValueError('원본 장면과 패치의 지역 group이 다릅니다.')
+        province_counts[source['province']]+=1
+    if province_counts!=contract['province_patch_counts']:
+        raise ValueError('준비 패치의 실제 주별 개수가 원본 gate와 다릅니다.')
+    for province,split in province_splits.items():
+        if split=='train' and (province_counts[province]<max(50,policy['min_patches_per_train_province']) or len(locations[province])<max(32,policy['min_unique_train_locations'])):
+            raise ValueError('4개 학습 주의 실제 패치/공간 대표성 기준이 부족합니다.')
+    for split in counts:
+        if class_patches[split].tolist()!=contract.get('class_patch_counts_by_split',{}).get(split) or not balance_diagnostics(counts[split],class_patches[split],policy)['passed']:
+            raise ValueError(f'{split}의 클래스 균형/포함 패치 수가 gate와 다르거나 충분하지 않습니다.')
+        if patches[split]!=contract['patch_counts_by_split'][split] or counts[split].tolist()!=contract['class_counts_by_split'][split]:
+            raise ValueError('준비한 실제 패치/클래스 통계가 원본 gate와 다릅니다.')
+        if patches[split]<max({'train':600,'val':100,'test':100}[split],policy['min_patches_per_split'][split]) or any(counts[split][cls]<policy['min_class_pixels_per_split'] for cls in policy['required_classes']):
+            raise ValueError(f'{split}의 실제 패치·클래스 coverage가 충분성 gate를 충족하지 않습니다.')
+    return counts

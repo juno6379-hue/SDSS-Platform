@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T08:11:56.875045+00:00",
+  "status": "COMPLETED_EXECUTION_SCL_REJECTED_NO_NEW_PATCH",
+  "classification": "VERIFIED_REAL",
+  "terminal_exit_code": 0,
+  "terminal_seconds": 263.40699999999924,
+  "execution_attempted": true,
+  "native_validation_complete": false,
+  "native_patch_checks": 0,
+  "checks": {
+    "root_go_received": true,
+    "terminal_exit_zero": true,
+    "prior_source_pin_matches": true,
+    "old_scene_rows_exact": true,
+    "old_history_exact": true,
+    "old_pending_exact": true,
+    "new_batch_settled": true,
+    "config_pin_matches": true,
+    "effective_config_pin_matches": true,
+    "report_binding": true,
+    "actual_charge_matches": true,
+    "exactly_once_finalization": true,
+    "worker_b02_not_reached": true,
+    "candidate_five_scl_rejections": true,
+    "patch_leaf_empty": true,
+    "lock_absent": true,
+    "metadata_two_reads_stable": true,
+    "launch_unchanged": true
+  },
+  "candidate_selection_observations": [
+    {
+      "scene_id": "S2A_MSIL2A_20240619T021351_R060_T51MUR_20240619T061603",
+      "status": "quality_insufficient",
+      "estimated_valid_fraction": 0.34243011474609375,
+      "minimum_fraction": 0.65,
+      "raw_scl_sha256": "7d5e2fc4f081b790df7f835d763f6d00bedf4a7f729fecc01aef7e512b195bd4"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240803T021349_R060_T51MUR_20240803T041141",
+      "status": "quality_insufficient",
+      "estimated_valid_fraction": 0.4889373779296875,
+      "minimum_fraction": 0.65,
+      "raw_scl_sha256": "2c5dfb2fe4bd7f27d939dbbf8ea93797cf80ed8ddaba46aba56820be198b407c"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240912T021209_R060_T51MUR_20240912T055427",
+      "status": "quality_insufficient",
+      "estimated_valid_fraction": 0.5348281860351562,
+      "minimum_fraction": 0.65,
+      "raw_scl_sha256": "7e02c12215cea243afdfb3ab224d25877370e640104191a3a7abfcaf47c47c14"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240813T021349_R060_T51MUR_20240813T055551",
+      "status": "quality_insufficient",
+      "estimated_valid_fraction": 0.5683364868164062,
+      "minimum_fraction": 0.65,
+      "raw_scl_sha256": "c251a445402b9ff8f9c3727b8859b4b77c0d6a32a176913ebf46962edbccef21"
+    },
+    {
+      "scene_id": "S2A_MSIL2A_20240729T021351_R060_T51MUR_20240729T081053",
+      "status": "quality_insufficient",
+      "estimated_valid_fraction": 0.21070480346679688,
+      "minimum_fraction": 0.65,
+      "raw_scl_sha256": "39e6d72ee76cf4056cad60f0122205a086414a7c246e50c2cca4cdeaed6d280d"
+    }
+  ],
+  "scl_ratio_scope": "Persisted20mSCL estimates; five rawfileSHA independentlychecked, no rasterarray remeasurement",
+  "file_sha_rechecks": 9,
+  "new_patch_files": 0,
+  "new_physical_patches": 0,
+  "new_eligible_patches": 0,
+  "new_bare_contribution_patches": 0,
+  "source_batch_files": [
+    "annual-window-report.json",
+    "collection-history.jsonl",
+    "config.json",
+    "selection-context.json",
+    "window-state.json",
+    "worker-result.json",
+    "centers182-southeast_sulawesi-aacbd06f2c57-2024\\qa-candidate-00-SCL.tif",
+    "centers182-southeast_sulawesi-aacbd06f2c57-2024\\qa-candidate-01-SCL.tif",
+    "centers182-southeast_sulawesi-aacbd06f2c57-2024\\qa-candidate-02-SCL.tif",
+    "centers182-southeast_sulawesi-aacbd06f2c57-2024\\qa-candidate-03-SCL.tif",
+    "centers182-southeast_sulawesi-aacbd06f2c57-2024\\qa-candidate-04-SCL.tif",
+    "manifests\\2c5dfb2fe4bd7f27d939dbbf8ea93797cf80ed8ddaba46aba56820be198b407c-3e47b99a9085b29c.json",
+    "manifests\\39e6d72ee76cf4056cad60f0122205a086414a7c246e50c2cca4cdeaed6d280d-ee2f72498b43e776.json",
+    "manifests\\7d5e2fc4f081b790df7f835d763f6d00bedf4a7f729fecc01aef7e512b195bd4-1651db3beca5ce2c.json",
+    "manifests\\7e02c12215cea243afdfb3ab224d25877370e640104191a3a7abfcaf47c47c14-12b662ca17249f3a.json",
+    "manifests\\c251a445402b9ff8f9c3727b8859b4b77c0d6a32a176913ebf46962edbccef21-2c2072dc61ebafb4.json"
+  ],
+  "old_pending_reserved_bytes": 136314880,
+  "registered_total": 1715,
+  "eligible_total": 1358,
+  "physical_before_observed_in_collector_preflight": {
+    "physical_patch_count": 1716,
+    "referenced_patch_count": 1716,
+    "unreferenced_physical_directories": 0,
+    "worker_receipt_count": 139,
+    "limit": 3000,
+    "observation_sha256": "7a2ac34402e402fd81d0d57df55ebda558c1934135cb1de093efca098632f5b3"
+  },
+  "physical_after_inferred": 1716,
+  "before_source_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+  "after_source_sha256": "4f8fcaff71868539aff16b3c351992696a6464b9cb229a5ff0f243778b7cd3e8",
+  "source_bytes": 66827012,
+  "changed_top_level_manifest_keys": [
+    "source_manifests"
+  ],
+  "source_manifest_reference_increment": 1,
+  "before_ledger_sha256": "61161c35eabb593afb5f096c256791871d297b723f82ffc2ac2449b3bd8266e7",
+  "after_ledger_sha256": "9c452bfb3773dddf08dc1091640ed33cb7885b30bdd6b1f7b7ebb58616646c86",
+  "cog_charged_bytes": 1245184,
+  "metadata_charged_bytes": 169282,
+  "total_settled_bytes": 1414466,
+  "remaining_budget": 1895530489,
+  "rate_limit_active": false,
+  "source_profile_observation": {
+    "path": "data\\first-group-training-priority\\source-profile237-root-20261018.json",
+    "config_sha256": "61dd13f8de88f8eef826a0ad4461f22c1a3f4bb698d5b7c5c4833d730fe3ffcc",
+    "manifest_profile": {
+      "name": "bounded128m-3000-v1",
+      "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+    },
+    "expected_source_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "actual_source_sha256": "4f8fcaff71868539aff16b3c351992696a6464b9cb229a5ff0f243778b7cd3e8",
+    "expected_pin_matches_actual": false,
+    "observed_effect_type": "STATIC_CODE_AND_PIN_COMPARISON_NOT_HTTP",
+    "predicted_status_behavior": "collection_source_profile.read_source raises SOURCE_PROFILE_PIN_MISMATCH; configured status returns UNCONFIRMED/availablefalse for current unchanged selectedconfig",
+    "predicted_budget_behavior": "collection_budget_status detects mismatched source SHA and returns UNCONFIRMED/availablefalse",
+    "http_called": false,
+    "configuration_modified": false,
+    "scope_note": "No header/raster/HTTP reader invoked; only fixed configJSON and code read. Root must explicitly rebind verifiedcurrent source in sameprofile if desired."
+  },
+  "launch_source_pins_match_now": {
+    "backend/app/candidate_qa_comparison_api.py": true,
+    "backend/app/collection_budget_status.py": true,
+    "backend/app/collection_priority_status.py": true,
+    "backend/app/collection_source_profile.py": true,
+    "backend/app/collection_status.py": true,
+    "backend/app/data/budget.py": true,
+    "backend/app/data/candidates.py": true,
+    "backend/app/data/deficit_candidate_guard.py": true,
+    "backend/app/data/parallel.py": true,
+    "backend/app/data/targeted_execution.py": true,
+    "backend/app/data/targeted_inventory.py": true,
+    "backend/app/data/targeted_inventory_profile.py": true,
+    "backend/app/data/targeted_live_guards.py": true,
+    "backend/app/main.py": true,
+    "backend/app/ml/candidate_materialization.py": true,
+    "backend/app/ml/candidate_qa_comparison.py": true,
+    "backend/app/ml/candidate_readiness_qa.py": true,
+    "backend/app/ml/candidate_staging.py": true,
+    "backend/app/ml/manifest_resource_profile.py": true,
+    "backend/app/ml/readiness.py": true,
+    "backend/app/ml/split_json_io.py": true,
+    "evidence/integration/deficit235-supervisor-root-20261018.py": true,
+    "scripts/collect_deficit_guarded.py": true,
+    "scripts/collect_samples.py": true,
+    "scripts/collect_targeted_bare.py": true,
+    "scripts/collect_training_grid.py": true,
+    "scripts/find_bare_targets173.py": true,
+    "scripts/prepare_priority_candidate164.py": true,
+    "scripts/propose_deficit_centers182.py": true,
+    "scripts/run_experiment.py": true
+  },
+  "collector_os_exit_observed": true,
+  "os_observation_method": "Win32_Process python CommandLine collector/supervisor235 match none afterterminal; separate from ledgerchecks",
+  "execution_progress": {
+    "reservation_attempted_batches": [
+      "center1024-southeast_sulawesi-2024-fc824e2465d1-41f9ed9a"
+    ],
+    "reserved_batches": [
+      "center1024-southeast_sulawesi-2024-fc824e2465d1-41f9ed9a"
+    ],
+    "collector_entered_batches": [
+      "center1024-southeast_sulawesi-2024-fc824e2465d1-41f9ed9a"
+    ],
+    "settled_batches": [
+      "center1024-southeast_sulawesi-2024-fc824e2465d1-41f9ed9a"
+    ],
+    "published_batches": [
+      "center1024-southeast_sulawesi-2024-fc824e2465d1-41f9ed9a"
+    ],
+    "finalization_attempted_batches": [
+      "center1024-southeast_sulawesi-2024-fc824e2465d1-41f9ed9a"
+    ],
+    "execution_started": true,
+    "transfer_status": "NOT_INDEPENDENTLY_VERIFIED",
+    "reservation_status": "ALL_ATTEMPTS_CONFIRMED_RESERVED",
+    "settlement_status": "ALL_RESERVED_SETTLED",
+    "publication_status": "ALL_RESERVED_PUBLISHED"
+  },
+  "reviewer_collection_starts": 0,
+  "reviewer_http_calls": 0,
+  "reviewer_native_raster_reads": 0,
+  "source_or_ledger_or_lock_or_profile_or_pointer_writes": 0,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "limitations": [
+    "신규 최종 patch가 없어 B02/6band/grid/inside/native 품질·rawlabel bare 검사는 수행하지 않았다.",
+    "SCL5개계상/저장SHA·예비결과를확인했으며SCL배열비율독립재계산0.",
+    "실물1716은collector전검사관측과신규patchleaf부재에근거한다.전체physical/native/support재스캔0.",
+    "profile핀불일치영향은소스제어흐름의정적추론이며실제API/브라우저응답확인은수행하지않았다.",
+    "source행불변이나보고참조1추가로sourceSHA변경. 신규자료0으로같은후보QA재실행을승인하지않는다."
+  ]
+}

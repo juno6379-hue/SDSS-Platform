@@ -1,0 +1,81 @@
+{
+  "status": "APPLIED_EXACT_FROZEN_CODE_TESTS_PENDING",
+  "at": "2026-10-18T14:47:32.894771+00:00",
+  "isolated_freeze_sha256": "c908ea546e8029dfc669fd716a34def18eb932e612922e33bf6381603cf6ee4e",
+  "independent_review_sha256": "59e89f2f3a0d2c503bafcb7c4b9cbb727c7bd5ae98930688bb3cf17af49c22bd",
+  "files": [
+    {
+      "path": "backend\\app\\ml\\manifest_resource_profile.py",
+      "sha256": "73c9ba94cda1722ae87e7729ecd655ba5e9584fcb735c8c1f0e06734f8357d01",
+      "previously_existed": true,
+      "changed": true
+    },
+    {
+      "path": "backend\\app\\data\\targeted_bare_plan.py",
+      "sha256": "0577de883385f71d2007d2d2a043d683a8a78bf13b98f984e310546997aa2d2c",
+      "previously_existed": true,
+      "changed": true
+    },
+    {
+      "path": "backend\\app\\data\\targeted_source_profile.py",
+      "sha256": "8e347589d802d22f89354b176d81da9ebdde27607986355ce3212ac4981493d9",
+      "previously_existed": false,
+      "changed": true
+    },
+    {
+      "path": "backend\\app\\data\\targeted_source_io.py",
+      "sha256": "c4854dc5887f83d1536e9741bf6f5f3cafc283cc704662c102e8a22bf8c78f6f",
+      "previously_existed": false,
+      "changed": true
+    },
+    {
+      "path": "tests\\test_large_target325_once.py",
+      "sha256": "9d8601af859860969d3b8ce81353158b58a555c921b8a5796cddcf681990ba2e",
+      "previously_existed": false,
+      "changed": true
+    },
+    {
+      "path": "tests\\test_target325_local_profile.py",
+      "sha256": "aed230f74a4056b8064f6e7289cb07b5c4ae88bd4e79fd0162584ee52d417e44",
+      "previously_existed": false,
+      "changed": true
+    },
+    {
+      "path": "tests\\test_targeted_bare_plan.py",
+      "sha256": "ec240fdc2950e9b6219ece303a5df787bfd038e4280dbb07dad2272abccc6575",
+      "previously_existed": true,
+      "changed": false
+    },
+    {
+      "path": "tests\\test_targeted_source_profile319.py",
+      "sha256": "d9fc227c405c6e86f781218bf979507f58987f252ba281cd4a5a6140fe7a5486",
+      "previously_existed": false,
+      "changed": true
+    },
+    {
+      "path": "tests\\fixtures\\target319\\legacy_inventory232.py.fixture",
+      "sha256": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d",
+      "previously_existed": false,
+      "changed": true
+    },
+    {
+      "path": "tests\\fixtures\\target325\\legacy_manifest_profile.py.fixture",
+      "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+      "previously_existed": false,
+      "changed": true
+    },
+    {
+      "path": "tests\\fixtures\\target325\\legacy_targeted_bare_plan.py.fixture",
+      "sha256": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1",
+      "previously_existed": false,
+      "changed": true
+    }
+  ],
+  "runtime_files": 4,
+  "baseline_files_verified": 9,
+  "operating_source_ledger_model_read_or_written": false,
+  "collector_started": false,
+  "coordinator_connected": false,
+  "training_started": false,
+  "api_server_restarted": false
+}

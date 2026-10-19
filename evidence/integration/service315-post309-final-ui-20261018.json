@@ -1,0 +1,77 @@
+{
+  "status": "VERIFIED_REAL_EXISTING_TAB_SINGLE_REFRESH",
+  "tabId": "850119075",
+  "url": "http://127.0.0.1:5174/#/view/17",
+  "refreshStartedAt": "2026-10-18T14:08:13.749Z",
+  "observedAt": "2026-10-18T14:10:08.953Z",
+  "uiRefreshClicks": 1,
+  "manualGET": 0,
+  "newTabs": 0,
+  "serverRestarts": 0,
+  "productEdits": 0,
+  "sourceRecordedAt": "2026-10-18T14:08:40.311442+00:00",
+  "budgetObservedAt": "2026-10-18T14:08:41.325020+00:00",
+  "candidateRecordedAt": "2026-10-18T14:06:10.442585+00:00",
+  "sourceSha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+  "ledgerSha256": "d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91",
+  "rawRegisteredRows": 1779,
+  "rawEligible": 1407,
+  "cellGap": 0,
+  "candidateEligible": 1391,
+  "candidateBySplit": {
+    "train": 865,
+    "val": 276,
+    "test": 250
+  },
+  "candidateCurrentSource": true,
+  "candidateReady": false,
+  "candidateBlockers": 3,
+  "bareCandidateTotal": 50,
+  "bareCurrentSource": false,
+  "bareRemoteQuality": "NOT_INSPECTED_EXECUTION_NOT_APPROVED",
+  "remainingBytes": 1799757940,
+  "oldPendingBytesIncluded": 136314880,
+  "processStatus": "UNKNOWN",
+  "layout": {
+    "bodyWidth": 1573,
+    "documentWidth": 1573,
+    "heading": "승인·배포",
+    "overflow": false,
+    "viewportWidth": 1588
+  },
+  "consoleWarningsErrors": [],
+  "checks": {
+    "raw1779": true,
+    "eligible1407": true,
+    "cellGap0": true,
+    "candidate1391": true,
+    "currentSourceMatched": true,
+    "sourceSha": true,
+    "ledgerSha": true,
+    "bare50Stale": true,
+    "bareUninspectedUnapproved": true,
+    "bareOldSource": true,
+    "notReady3Blockers": true,
+    "remaining1799757940": true,
+    "oldPendingIncluded": true,
+    "processUnknown": true,
+    "noConsoleWarningsErrors": true,
+    "noHorizontalOverflow": true
+  },
+  "screenshotAttempts": [
+    {
+      "fullPage": true,
+      "status": "TIMEOUT",
+      "message": "Page.captureScreenshot 5000ms timeout; no refresh/input retry"
+    },
+    {
+      "fullPage": false,
+      "status": "CAPTURED"
+    }
+  ],
+  "limitations": [
+    "실화면의 물리 패치1779는 manifest 등록행 표시이며 전체 실물 디렉터리 재스캔이 아니다.",
+    "UI 집계와 저장QA를 확인했으며 이 검증에서 native/QA/훈련을 실행하지 않았다.",
+    "페이지의 단1회 새로 조회를 사용했고 브라우저 밖 수동GET은 하지 않았다."
+  ]
+}

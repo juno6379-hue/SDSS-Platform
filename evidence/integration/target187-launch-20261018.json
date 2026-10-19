@@ -1,0 +1,48 @@
+{
+  "started_at": "2026-10-18T03:13:09.189238+00:00",
+  "status": "STARTED_PREFLIGHT_NOT_COMPLETED",
+  "source_rows_before": 1617,
+  "manifest_before_sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+  "ledger_before_sha256": "7d27c5231c43c0014de92a11fa517c5a4d5c662005785ac75054d37dc27544fb",
+  "old_rows_canonical_sha256": "0a02a43e201e899e325d929aa106ee3061cb83f62ba667662a2e79b82cb58710",
+  "pending_before": {
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+    },
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+    }
+  },
+  "request_sha256": "284f5e0929d4e526769c0816bb84a54d9cf98d601a6018a3dadee6a40df59702",
+  "report_sha256": "36aaf1107292eee74b0f6a2ce462d90e40a22de498ca31aaff1c1ded636775f0",
+  "target_id": "local-rank2-2024",
+  "province": "southeast_sulawesi",
+  "year": 2024,
+  "source_pins": {
+    "backend/app/data/targeted_bare_plan.py": "c2011f678a7860d734889abb96514daf1944b9ed888ee02dd502de8030a0fccb",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "scripts/collect_targeted_bare.py": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+    "backend/app/data/service.py": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301"
+  },
+  "new_budget_added": false,
+  "training_started": false,
+  "scientific_accuracy_validated": false,
+  "pid": 26564,
+  "command": [
+    "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "E:\\GeoAI–MLOps–SDSS\\scripts\\collect_targeted_bare.py",
+    "--request",
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\target187-request-20261018.json",
+    "--expected-request-sha256",
+    "284f5e0929d4e526769c0816bb84a54d9cf98d601a6018a3dadee6a40df59702",
+    "--execute"
+  ]
+}

@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "kind": "추가1024 공간후보 소비 전 계약 검토",
+  "status": "코드·최신 메타데이터 읽기 검증 완료·실행 미승인",
+  "recorded_at_kst": "2026-10-18T13:28:28.116919+09:00",
+  "input_refs": {
+    "source": {
+      "path": "data/first-group-training-esri-v1/annual-window-report.json",
+      "sha256": "1a12b7bca384dd09d73a04cc31df21f75377fc34c332b501a6ee37508dd46fb5"
+    },
+    "ledger": {
+      "path": "data/first-group-training-budget/global-ledger.json",
+      "sha256": "f49d7e778359c1f60743f617edb599fe2ba3170e9e9243a3459211aa4bc9b0fe"
+    },
+    "config": {
+      "path": "configs/first-group.collection.json",
+      "sha256": "8b0c1b2aad13a3344200998ec62a18853c5308adf4ec57b1af835333845fd7e3"
+    },
+    "proposal": {
+      "path": "data/centers182-actual-20261018/proposal.json",
+      "sha256": "e9dcd4a9c6ae994c9cb48fb7acbce3b217494279edfc0076b540e3860b88c565"
+    },
+    "boundary": {
+      "path": "data/first-group-boundaries/selected-six.geojson",
+      "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+    },
+    "prior": {
+      "path": "data/first-group-training-esri-v2/lane-b-candidates.json",
+      "sha256": "2920786dfcd5dfd5ec955eccc659192e9eb729cb45788b1a7fb052862f7f3b8d"
+    }
+  },
+  "input_pins_stable": true,
+  "source_rows": 1667,
+  "source_eligible": 1333,
+  "all_cell_deficit_to_28": 33,
+  "base_v2_job_count": 144,
+  "cell_jobs": [
+    {
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "eligible_patches": 11,
+      "deficit_to_28": 17,
+      "default_jobs": [
+        {
+          "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g00",
+          "spatial_window_id": "00",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": false,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g01",
+          "spatial_window_id": "01",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": false,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g02",
+          "spatial_window_id": "02",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03",
+          "spatial_window_id": "03",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        }
+      ],
+      "default_job_count": 4,
+      "settled_default_jobs": 4,
+      "pending_default_jobs": 0,
+      "never_reserved_default_jobs": 0,
+      "unreserved_available_default_jobs": 0,
+      "proposal182_candidate_jobs": 2,
+      "proposal182_job_keys": [
+        "parallel-v2-extra-southeast_sulawesi-2024-centers182-southeast_sulawesi-ff61391db6ca",
+        "parallel-v2-extra-southeast_sulawesi-2024-centers182-southeast_sulawesi-19cd11b0e656"
+      ],
+      "existing_lane_B_jobs": [],
+      "existing_lane_B_total": 0,
+      "existing_lane_B_settled": 0,
+      "existing_lane_B_unreserved_available": 0,
+      "new_spatial_plan_required_beyond_existing_default_and_lane_B": true,
+      "additional_spatial_candidate_needed_beyond_default_jobs": true
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "eligible_patches": 27,
+      "deficit_to_28": 1,
+      "default_jobs": [
+        {
+          "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g00",
+          "spatial_window_id": "00",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g01",
+          "spatial_window_id": "01",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g02",
+          "spatial_window_id": "02",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": false,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03",
+          "spatial_window_id": "03",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        }
+      ],
+      "default_job_count": 4,
+      "settled_default_jobs": 4,
+      "pending_default_jobs": 0,
+      "never_reserved_default_jobs": 0,
+      "unreserved_available_default_jobs": 0,
+      "proposal182_candidate_jobs": 0,
+      "proposal182_job_keys": [],
+      "existing_lane_B_jobs": [],
+      "existing_lane_B_total": 0,
+      "existing_lane_B_settled": 0,
+      "existing_lane_B_unreserved_available": 0,
+      "new_spatial_plan_required_beyond_existing_default_and_lane_B": true,
+      "additional_spatial_candidate_needed_beyond_default_jobs": true
+    },
+    {
+      "province": "gorontalo",
+      "year": 2022,
+      "eligible_patches": 24,
+      "deficit_to_28": 4,
+      "default_jobs": [
+        {
+          "key": "parallel-v2-grid-esri_io-gorontalo-2022-g00",
+          "spatial_window_id": "00",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": false,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-gorontalo-2022-g01",
+          "spatial_window_id": "01",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-gorontalo-2022-g02",
+          "spatial_window_id": "02",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": false,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-gorontalo-2022-g03",
+          "spatial_window_id": "03",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        }
+      ],
+      "default_job_count": 4,
+      "settled_default_jobs": 4,
+      "pending_default_jobs": 0,
+      "never_reserved_default_jobs": 0,
+      "unreserved_available_default_jobs": 0,
+      "proposal182_candidate_jobs": 0,
+      "proposal182_job_keys": [],
+      "existing_lane_B_jobs": [],
+      "existing_lane_B_total": 0,
+      "existing_lane_B_settled": 0,
+      "existing_lane_B_unreserved_available": 0,
+      "new_spatial_plan_required_beyond_existing_default_and_lane_B": true,
+      "additional_spatial_candidate_needed_beyond_default_jobs": true
+    },
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "eligible_patches": 18,
+      "deficit_to_28": 10,
+      "default_jobs": [
+        {
+          "key": "parallel-v2-grid-esri_io-gorontalo-2025-g00",
+          "spatial_window_id": "00",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": false,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-gorontalo-2025-g01",
+          "spatial_window_id": "01",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": false,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-gorontalo-2025-g02",
+          "spatial_window_id": "02",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-gorontalo-2025-g03",
+          "spatial_window_id": "03",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        }
+      ],
+      "default_job_count": 4,
+      "settled_default_jobs": 4,
+      "pending_default_jobs": 0,
+      "never_reserved_default_jobs": 0,
+      "unreserved_available_default_jobs": 0,
+      "proposal182_candidate_jobs": 1,
+      "proposal182_job_keys": [
+        "parallel-v2-extra-gorontalo-2025-centers182-gorontalo-fa0c1ffb8559"
+      ],
+      "existing_lane_B_jobs": [],
+      "existing_lane_B_total": 0,
+      "existing_lane_B_settled": 0,
+      "existing_lane_B_unreserved_available": 0,
+      "new_spatial_plan_required_beyond_existing_default_and_lane_B": true,
+      "additional_spatial_candidate_needed_beyond_default_jobs": true
+    },
+    {
+      "province": "east_java",
+      "year": 2025,
+      "eligible_patches": 27,
+      "deficit_to_28": 1,
+      "default_jobs": [
+        {
+          "key": "parallel-v2-grid-esri_io-east_java-2025-g00",
+          "spatial_window_id": "00",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-east_java-2025-g01",
+          "spatial_window_id": "01",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": false,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-east_java-2025-g02",
+          "spatial_window_id": "02",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": false,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-grid-esri_io-east_java-2025-g03",
+          "spatial_window_id": "03",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": true,
+          "ledger_config_matches": true,
+          "unreserved_and_not_already_eligible": false
+        }
+      ],
+      "default_job_count": 4,
+      "settled_default_jobs": 4,
+      "pending_default_jobs": 0,
+      "never_reserved_default_jobs": 0,
+      "unreserved_available_default_jobs": 0,
+      "proposal182_candidate_jobs": 0,
+      "proposal182_job_keys": [],
+      "existing_lane_B_jobs": [
+        {
+          "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-00",
+          "ledger_status": "settled",
+          "has_eligible_spatial_prefix": false,
+          "unreserved_and_not_already_eligible": false
+        },
+        {
+          "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-01",
+          "ledger_status": "미예약",
+          "has_eligible_spatial_prefix": false,
+          "unreserved_and_not_already_eligible": true
+        },
+        {
+          "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-02",
+          "ledger_status": "미예약",
+          "has_eligible_spatial_prefix": false,
+          "unreserved_and_not_already_eligible": true
+        },
+        {
+          "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-03",
+          "ledger_status": "미예약",
+          "has_eligible_spatial_prefix": false,
+          "unreserved_and_not_already_eligible": true
+        },
+        {
+          "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-04",
+          "ledger_status": "미예약",
+          "has_eligible_spatial_prefix": false,
+          "unreserved_and_not_already_eligible": true
+        },
+        {
+          "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-05",
+          "ledger_status": "미예약",
+          "has_eligible_spatial_prefix": false,
+          "unreserved_and_not_already_eligible": true
+        },
+        {
+          "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-06",
+          "ledger_status": "미예약",
+          "has_eligible_spatial_prefix": false,
+          "unreserved_and_not_already_eligible": true
+        },
+        {
+          "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-07",
+          "ledger_status": "미예약",
+          "has_eligible_spatial_prefix": false,
+          "unreserved_and_not_already_eligible": true
+        }
+      ],
+      "existing_lane_B_total": 8,
+      "existing_lane_B_settled": 1,
+      "existing_lane_B_unreserved_available": 7,
+      "new_spatial_plan_required_beyond_existing_default_and_lane_B": false,
+      "additional_spatial_candidate_needed_beyond_default_jobs": true
+    }
+  ],
+  "pure_priority_preview": {
+    "selected_jobs": [],
+    "priority_region_status": [
+      {
+        "province": "southeast_sulawesi",
+        "eligible_patches": 186,
+        "deficit_to_28": 18,
+        "available_deficit_jobs": 0,
+        "selected_jobs": 0,
+        "status": "BLOCKED_NO_AVAILABLE_DEFICIT_JOB"
+      },
+      {
+        "province": "gorontalo",
+        "eligible_patches": 185,
+        "deficit_to_28": 14,
+        "available_deficit_jobs": 0,
+        "selected_jobs": 0,
+        "status": "BLOCKED_NO_AVAILABLE_DEFICIT_JOB"
+      }
+    ],
+    "plan_sha256": "bf7eef73521d489589557c00b49c88d8460802e322362dc1af2c02412f2677a2"
+  },
+  "proposal182": {
+    "declared_source_sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+    "current_source_matches": false,
+    "declared_config_sha256": "8b0c1b2aad13a3344200998ec62a18853c5308adf4ec57b1af835333845fd7e3",
+    "current_config_matches": true,
+    "declared_prior_sha256": "2920786dfcd5dfd5ec955eccc659192e9eb729cb45788b1a7fb052862f7f3b8d",
+    "current_prior_matches": true,
+    "collector_consumption_approved": false,
+    "full_pending_support_inventory_verified": false,
+    "extra_jobs_returned_despite_unapproved_flags": 4,
+    "generated_job_cells": [
+      {
+        "province": "southeast_sulawesi",
+        "year": 2024,
+        "key": "parallel-v2-extra-southeast_sulawesi-2024-centers182-southeast_sulawesi-ff61391db6ca",
+        "ledger_status": "미예약"
+      },
+      {
+        "province": "gorontalo",
+        "year": 2024,
+        "key": "parallel-v2-extra-gorontalo-2024-centers182-gorontalo-9cce26141403",
+        "ledger_status": "미예약"
+      },
+      {
+        "province": "gorontalo",
+        "year": 2025,
+        "key": "parallel-v2-extra-gorontalo-2025-centers182-gorontalo-fa0c1ffb8559",
+        "ledger_status": "미예약"
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": 2024,
+        "key": "parallel-v2-extra-southeast_sulawesi-2024-centers182-southeast_sulawesi-19cd11b0e656",
+        "ledger_status": "미예약"
+      }
+    ]
+  },
+  "code_pins": {
+    "scripts/propose_deficit_centers182.py": "c7853c4c99a42509063508ffd0d3173abd6c53174ef591b3a5e979dc839ccf2d",
+    "backend/app/data/candidates.py": "c72257998d14c8b874ee9c9b532e50d78b3e3417a8b47c1688a54c656966dba6",
+    "scripts/collect_training_parallel.py": "5e99234379cd45804d6eaf1b3b349210d5b9f26d5344e8ff6193dd74eb136b0c",
+    "scripts/collect_training_priority.py": "27a13917bf90941ea68b2400028fe1b1300365ac63721e4ccf0eabd1e004040c",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "backend/app/data/service.py": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "scripts/collect_targeted_bare.py": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581"
+  },
+  "code_observations": {
+    "general_collect_windows_call_line": 248,
+    "general_collection_guard_connected": false,
+    "targeted_B02_size_hardcoded_256": true,
+    "general_cap_counts_aggregate_plus_16_inflight_only": true,
+    "full_pending_support_required_by_extra_jobs": false,
+    "scene_claim_registry_connected_to_general_worker": false
+  },
+  "limits_and_preservation": {
+    "new_budget_added": false,
+    "additional_maximum_bytes": 4294967296,
+    "workers_preserved": 2,
+    "global_spacing_seconds_preserved": 2,
+    "first429_shared_stop_preserved": true,
+    "physical_cap_preserved": 3000,
+    "fixed_split_preserved": true,
+    "pending_count": 2,
+    "pending_charged_bytes": 136314880
+  },
+  "network_requests": 0,
+  "collection_executed": false,
+  "collector_main_executed": false,
+  "full167_inventory_scans": 0,
+  "native_audits": 0,
+  "source_or_ledger_or_lock_writes": 0,
+  "existing_approval_flags_changed": false,
+  "physical_patch_inventory_recounted": false,
+  "execution_supported": false,
+  "ready_for_training": false,
+  "limitations": [
+    "job 생성과 계수는 읽기 전용 메타데이터 관측이며 실제 선택scene/지원영상/품질 검사가 아니다.",
+    "182 source 지문은 오래됐고 기존 extra_jobs는 그 불일치를 차단하지 않는다.",
+    "새1024 후보 생성 및 소비 전 전체지원/미정산/실B02/scene-split/물리상한 가드 연결은 별도 구현·승인이 필요하다."
+  ],
+  "initial_default_only_observation_sha256": "d5f2625d392f685e3767e74a1dcd03f7159a9f7663c9e0a4f4f936e2a40ac40d",
+  "existing_lane_B_followup": {
+    "generated_metadata_jobs": 144,
+    "priority_preview_with_existing_lane_B": {
+      "selected_jobs": [
+        {
+          "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-01",
+          "province": "east_java",
+          "year": 2025,
+          "split": "train",
+          "spatial_window_id": "v2-laneB-east_java-boundary-01",
+          "eligible_patches": 27,
+          "deficit": 1,
+          "config_sha256": "99b5785b632f8ec1536ac4383865bb19ab7b3715cc99a7e380152294a639378d"
+        },
+        {
+          "key": "parallel-v2-extra-east_java-2025-v2-laneB-east_java-boundary-02",
+          "province": "east_java",
+          "year": 2025,
+          "split": "train",
+          "spatial_window_id": "v2-laneB-east_java-boundary-02",
+          "eligible_patches": 27,
+          "deficit": 1,
+          "config_sha256": "14ec1612d13195f7b012cf75055211f137cca8c5378f77a366013dc1bb15582f"
+        }
+      ],
+      "priority_region_status": [
+        {
+          "province": "southeast_sulawesi",
+          "eligible_patches": 186,
+          "deficit_to_28": 18,
+          "available_deficit_jobs": 0,
+          "selected_jobs": 0,
+          "status": "BLOCKED_NO_AVAILABLE_DEFICIT_JOB"
+        },
+        {
+          "province": "gorontalo",
+          "eligible_patches": 185,
+          "deficit_to_28": 14,
+          "available_deficit_jobs": 0,
+          "selected_jobs": 0,
+          "status": "BLOCKED_NO_AVAILABLE_DEFICIT_JOB"
+        }
+      ],
+      "plan_sha256": "d7c068288c9ecfb6ab9ceb200922955f2da76ac8a10cf9deb3bef0d8948c0f80"
+    },
+    "pending_reservations_preserved": [
+      {
+        "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+        "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8",
+        "reserved_bytes_preserved": 68157440,
+        "charged_bytes_preserved": 68157440
+      },
+      {
+        "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+        "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593",
+        "reserved_bytes_preserved": 68157440,
+        "charged_bytes_preserved": 68157440
+      }
+    ],
+    "note": "기존 lane-B 미예약 후보는 새 공간 제안이 꼭 필요한지 구분하는 메타데이터 수량이다. 현재 support/live B02/scene/물리상한 검증이나 실행 승인은 아니다."
+  },
+  "previous_default_plus_lane_B_observation_sha256": "3355b50f48fd246b15d48cd06e7b081c86b7781a3bac6b48d98e92a1026c8cd9"
+}

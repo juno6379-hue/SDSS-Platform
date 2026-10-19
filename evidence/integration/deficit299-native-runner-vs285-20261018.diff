@@ -1,0 +1,111 @@
+--- deficit285-native-runner-root-20261018.py
++++ deficit297-native-runner-root-20261018.py
+@@ -1,4 +1,4 @@
+-"""Root GO 뒤 새285분만 1회 검사. 제품/운영자료/원장 쓰기와 HTTP 없음."""
++"""Root GO 뒤 새297분만 1회 검사. 제품/운영자료/원장 쓰기와 HTTP 없음."""
+ from pathlib import Path
+ import argparse
+ import copy
+@@ -21,35 +21,53 @@
+     from app.data.readiness_connectivity_witness import FIXED_PROVINCE_SPLITS
+ 
+     go = read_json(go_path, 1 << 20)[1]
+-    assert go['status'] == 'GO_BOUNDED_NEW16_NATIVE_AUDIT'
++    assert go['status'] == 'GO_297_BOUNDED_NEW_MAX16_NATIVE_AUDIT'
++    assert go['no_active_collector_or_duplicate_audit'] is True
++    assert go['collector_terminated_and_settled'] is True
++    assert type(go['source_bytes']) is int and 0 < go['source_bytes'] <= 128 << 20
++    assert type(go['expected_new_patch_count']) is int and 0 <= go['expected_new_patch_count'] <= 16
++    assert sha(snapshot(ROOT / 'scripts/audit_priority_increment165.py', 1 << 20)) == go['audit165_code_sha256']
+     assert go['runner_sha256'] == sha(snapshot(Path(__file__), 1 << 20))
+     data = ROOT / 'data'
+     evidence = ROOT / 'evidence/integration'
+     read = lambda p, cap=16 << 20: read_json(p, cap)[1]
+-    launch_path = evidence / 'deficit285-launch-root-20261018.json'
++    launch_path = evidence / 'deficit297-launch-root-20261018.json'
+     launch_raw = snapshot(launch_path, 1 << 20)
++    assert sha(launch_raw) == go['launch_sha256']
+     launch = json.loads(launch_raw)
+-    terminal = read(evidence / 'deficit285-terminal-root-20261018.json')
+-    request = read(evidence / 'deficit285-request-root-20261018.json')
++    terminal_raw, terminal = read_json(evidence / 'deficit297-terminal-root-20261018.json', 16 << 20)
++    assert sha(terminal_raw) == go['terminal_sha256']
++    request = read(evidence / 'deficit297-request-root-20261018.json')
+     assert sha(json.dumps(request, sort_keys=True, ensure_ascii=False, allow_nan=False,
+                           separators=(',', ':')).encode()) == launch['request_sha256']
+-    assert terminal['exit_code'] == 0
++    assert terminal['exit_code'] == 0 and terminal['lock_present'] is False
++    assert launch['request_sha256'] == 'e9ebe6f7dcbb986a853ed1749e97c4feafcacde1702c1937c946d7f6e2602487'
+     assert len(launch['selected_jobs']) == 1 and launch['maximum_new_physical_patches'] == 16
+     job = launch['selected_jobs'][0]
+-    key = job['key']
++    key = job['key']
++    assert key == 'center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072'
++    assert job['province'] == 'gorontalo' and job['year'] == 2025 and job['split'] == 'train'
++    assert job['config_sha256'] == '9d3618a258fbfd272c227cde90bffd3fc98fac2fd574864a69349a5825e41f71'
+     mp = data / 'first-group-training-esri-v1/annual-window-report.json'
+     lp = data / 'first-group-training-budget/global-ledger.json'
+     assert not (lp.parent / 'global-ledger.execution.lock').exists()
+     manifest_raw, manifest = read_json(mp, 128 << 20)
+     ledger_raw, ledger = read_json(lp, 16 << 20)
++    assert len(manifest_raw) == go['source_bytes']
+     assert sha(manifest_raw) == go['source_sha256'] and sha(ledger_raw) == go['ledger_sha256']
+     prior_raw, prior = read_json(local(ROOT, request['current_manifest_ref']['path']), 128 << 20)
+     assert sha(prior_raw) == request['current_manifest_ref']['sha256'] == launch['manifest_before_sha256']
+     old_count = launch['source_rows_before']
+-    assert old_count == len(prior['scenes']) == 1731
++    assert old_count == len(prior['scenes']) == 1747
+     assert manifest['scenes'][:old_count] == prior['scenes']
+     assert manifest.get('historical_noneligible_patches', []) == prior.get('historical_noneligible_patches', [])
+     rows = manifest['scenes'][old_count:]
++    assert len(rows) == go['expected_new_patch_count']
++    if not rows:
++        result.update(status='ZERO_PATCH_REQUIRES_SEPARATE_ROOT_AUDIT', new_registered_rows=0,
++                      zero_patch_branch='NO_HELPER_NO_RASTER_READ_NO_NATIVE_SUCCESS',
++                      source_sha256=sha(manifest_raw), ledger_sha256=sha(ledger_raw), source_bytes=len(manifest_raw))
++        return
+     assert 0 < len(rows) <= 16 and all(row['patch_id'].startswith(key + '-') for row in rows)
+     assert all(row['split'] == job['split'] == FIXED_PROVINCE_SPLITS[job['province']] for row in rows)
+     config = read(mp.parent / 'sources' / key / 'config.json')
+@@ -62,7 +80,7 @@
+     adapter.update(manifest_before_rows=old_count, old_rows_canonical_sha256=canonical(prior['scenes']))
+     result['native_helper_invocations'] = 1
+     print('NATIVE_HELPER_ONCE_BEGIN', flush=True)
+-    with tempfile.TemporaryDirectory(prefix='geoai285-native-') as temp:
++    with tempfile.TemporaryDirectory(prefix='geoai297-native-') as temp:
+         adapted_path = Path(temp) / 'launch165-adapter.json'
+         adapted_path.write_text(json.dumps(adapter, ensure_ascii=False), encoding='utf-8')
+         product = audit_increment(data, adapted_path, (data / 'first-group-boundaries/selected-six.geojson').absolute())
+@@ -102,7 +120,8 @@
+     stac = json.loads(load(sref['path'], sref['sha256'], 16 << 20))
+     assert stac['id'] == scene['scene_id'] == row['scene_id']
+     assert stac['properties']['datetime'] == scene['datetime'] == row['datetime']
+-    assert stac['collection'] == 'sentinel-2-l2a'
++    assert stac['collection'] == 'sentinel-2-l2a'
++    assert int(stac['properties']['datetime'][:4]) == job['year']
+     aoi_box = config['aois'][0]['bbox']
+     box = stac['bbox']
+     assert len(box) == 4 and box[0] <= aoi_box[0] and box[1] <= aoi_box[1]
+@@ -160,10 +179,12 @@
+     assert snapshot(mp, 128 << 20) == manifest_raw and snapshot(lp, 16 << 20) == ledger_raw
+     assert snapshot(launch_path, 1 << 20) == launch_raw
+     worker = read(mp.parent / 'sources' / key / 'worker-result.json')
+-    final = [json.loads(x) for x in (evidence / 'deficit285-live-root-20261018-stdout.log').read_text('utf-8-sig').splitlines() if x.strip()][-1]
++    final = [json.loads(x) for x in (evidence / 'deficit297-live-root-20261018-stdout.log').read_text('utf-8-sig').splitlines() if x.strip()][-1]
+     assert all(final['execution_progress'][name] == [key] for name in ('finalization_attempted_batches', 'settled_batches', 'published_batches'))
+     result['candidate_observations'] = [{k: c.get(k) for k in ('scene_id', 'status', 'estimated_valid_fraction', 'minimum_fraction', 'error')} for c in scene.get('candidate_selection', [])]
+     result['new_patch_quality_observations'] = [dict(p) for batch in product['batches'] for p in batch['patches']]
++    assert worker['charged_bytes'] == worker['cog_charged_bytes'] + worker['metadata_budget']['charged_bytes']
++    assert ledger['batches'][key]['status'] == 'settled'
+     result.update(status='COMPLETED_BOUNDED_NATIVE_AND_TRACE_CHECKED', native_validation_complete=True,
+                   original_launch_sha256=sha(launch_raw), source_sha256=sha(manifest_raw), ledger_sha256=sha(ledger_raw),
+                   source_bytes=len(manifest_raw), old_rows_exact=True, old_history_exact=True,
+@@ -190,7 +211,7 @@
+     args = parser.parse_args()
+     if not args.root_go:
+         parser.error('ROOT_FIXED_SOURCE_GO_REQUIRED')
+-    prefix = ROOT / 'evidence/integration/deficit285-native-root-20261018'
++    prefix = ROOT / 'evidence/integration/deficit297-native-root-20261018'
+     result = {'status': 'INCOMPLETE', 'native_helper_invocations': 0, 'native_validation_complete': False,
+               'reviewer_http_calls': 0, 'reviewer_collection_starts': 0, 'operating_writes': 0,
+               'learning_ready': False, 'scientific_accuracy_validated': False}

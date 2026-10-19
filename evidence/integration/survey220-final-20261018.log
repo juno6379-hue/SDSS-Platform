@@ -1,0 +1,83 @@
+test_all_approval_and_training_flags_prohibited (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_all_approval_and_training_flags_prohibited) ... ok
+test_bbox_period_numeric_and_structure_failclosed (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_bbox_period_numeric_and_structure_failclosed) ... ok
+test_budget_is_existing_bound_not_new_authorization (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_budget_is_existing_bound_not_new_authorization) ... ok
+test_declared_measured_accounting_exact_caps_and_sum (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_declared_measured_accounting_exact_caps_and_sum) ... ok
+test_esri_exact_scene_supercell_year_version_and_unsigned_url (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_esri_exact_scene_supercell_year_version_and_unsigned_url) ... ok
+test_exact_keys_types_and_unknown_execute_rejected (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_exact_keys_types_and_unknown_execute_rejected) ... ok
+test_exact_policy_cannot_increase_budget_or_relax_circuit (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_exact_policy_cannot_increase_budget_or_relax_circuit) ... ok
+test_fixed_province_split_year_and_scene (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_fixed_province_split_year_and_scene) ... ok
+test_label_and_scl_grid_shape_crs_contract (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_label_and_scl_grid_shape_crs_contract) ... ok
+test_no_io_for_request_or_receipt (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_no_io_for_request_or_receipt) ... ok
+test_output_is_separate_survey_only (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_output_is_separate_survey_only) ... ok
+test_paths_are_lexical_local_and_canonical_only (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_paths_are_lexical_local_and_canonical_only) ... ok
+test_receipt_request_and_scene_digest_binding (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_receipt_request_and_scene_digest_binding) ... ok
+test_receipt_validates_only_declared_facts_not_operational_truth (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_receipt_validates_only_declared_facts_not_operational_truth) ... ok
+test_refs_sha_alias_and_nondata_operational_ref (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_refs_sha_alias_and_nondata_operational_ref) ... ok
+test_scl_selected_scene_required_and_no_duplicate_alias (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_scl_selected_scene_required_and_no_duplicate_alias) ... ok
+test_unsettled_must_preserve_full_reservation_and_unknown_measurement (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_unsettled_must_preserve_full_reservation_and_unknown_measurement) ... ok
+test_valid_request_immutable_typed_copy_and_false_status (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_valid_request_immutable_typed_copy_and_false_status) ... ok
+test_actual_gcp_rpc_and_nonfinite_native_transform_are_rejected (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_gcp_rpc_and_nonfinite_native_transform_are_rejected) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_targeted_bare_plan.py:25: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  native=[self.affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_targeted_bare_plan.py:135: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  inverse=Transformer.from_crs(crs,4326,always_xy=True);native=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py:56: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[t*(0,0),t*(dataset.width,0),t*(dataset.width,dataset.height),t*(0,dataset.height)]
+ok
+test_actual_local_pixels_geometry_and_proposal_jobs_not_execution (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_local_pixels_geometry_and_proposal_jobs_not_execution) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py:169: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*window));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_actual_noneligible_different_year_image_overlap_is_rejected (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_noneligible_different_year_image_overlap_is_rejected) ... ok
+test_bare_255_rejected_and_256_accepted (test_targeted_bare_plan.TargetedBarePlanTests.test_bare_255_rejected_and_256_accepted) ... ok
+test_bbox_native_window_counts_and_lineage_are_not_inferred (test_targeted_bare_plan.TargetedBarePlanTests.test_bbox_native_window_counts_and_lineage_are_not_inferred) ... ok
+test_changed_label_or_proposal_pin_blocks_no_partial_jobs (test_targeted_bare_plan.TargetedBarePlanTests.test_changed_label_or_proposal_pin_blocks_no_partial_jobs) ... ok
+test_existing_banten_complete_job_and_key_contract_remains_unchanged (test_targeted_bare_plan.TargetedBarePlanTests.test_existing_banten_complete_job_and_key_contract_remains_unchanged) ... ok
+test_mixed_province_geometry_is_bound_to_each_target (test_targeted_bare_plan.TargetedBarePlanTests.test_mixed_province_geometry_is_bound_to_each_target) ... ok
+test_non_metre_or_wrong_resolution_and_geographic_labels_block (test_targeted_bare_plan.TargetedBarePlanTests.test_non_metre_or_wrong_resolution_and_geographic_labels_block) ... ok
+test_path_escape_does_not_return_original_path_or_partial_payload (test_targeted_bare_plan.TargetedBarePlanTests.test_path_escape_does_not_return_original_path_or_partial_payload) ... ok
+test_same_space_across_requested_years_not_counted_as_independent (test_targeted_bare_plan.TargetedBarePlanTests.test_same_space_across_requested_years_not_counted_as_independent) ... ok
+test_six_provinces_six_years_native_metre_crs_and_fixed_splits (test_targeted_bare_plan.TargetedBarePlanTests.test_six_provinces_six_years_native_metre_crs_and_fixed_splits) ... ok
+test_strict_target_count_policy_bool_and_extra_fail_before_file_io (test_targeted_bare_plan.TargetedBarePlanTests.test_strict_target_count_policy_bool_and_extra_fail_before_file_io) ... ok
+test_synthetic_local_read_only_with_network_unavailable (test_targeted_bare_plan.TargetedBarePlanTests.test_synthetic_local_read_only_with_network_unavailable) ... ok
+test_unknown_province_wrong_fixed_split_and_missing_or_duplicate_bindings (test_targeted_bare_plan.TargetedBarePlanTests.test_unknown_province_wrong_fixed_split_and_missing_or_duplicate_bindings) ... ok
+test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins (test_targeted_bare_plan.TargetedBarePlanTests.test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins) ... ok
+test186_filter_scope_invalid_stride_and_caps (test_find_bare_targets173.BareTargets173Tests.test186_filter_scope_invalid_stride_and_caps) ... E:\GeoAI\u2013MLOps\u2013SDSS\scripts\find_bare_targets173.py:129: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(x,y,256,256));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test186_offset_duplicate_sha_window_still_excluded (test_find_bare_targets173.BareTargets173Tests.test186_offset_duplicate_sha_window_still_excluded) ... ok
+test186_offset_finds_split_bare_patch_default_unchanged (test_find_bare_targets173.BareTargets173Tests.test186_offset_finds_split_bare_patch_default_unchanged) ... ok
+test214_entire_manifest_coverage_is_preserved_while_one_crop_is_scanned (test_find_bare_targets173.BareTargets173Tests.test214_entire_manifest_coverage_is_preserved_while_one_crop_is_scanned) ... ok
+test214_filter_does_not_override_year_lineage_or_mutate_inputs (test_find_bare_targets173.BareTargets173Tests.test214_filter_does_not_override_year_lineage_or_mutate_inputs) ... ok
+test214_invalid_shape_duplicate_and_path_fail_before_any_pin_reads (test_find_bare_targets173.BareTargets173Tests.test214_invalid_shape_duplicate_and_path_fail_before_any_pin_reads) ... ok
+test214_missing_ref_sha_mismatch_and_province_conflict_fail_before_raster_pin (test_find_bare_targets173.BareTargets173Tests.test214_missing_ref_sha_mismatch_and_province_conflict_fail_before_raster_pin) ... ok
+test214_omitted_and_explicit_none_match_pinned_legacy_complete_output (test_find_bare_targets173.BareTargets173Tests.test214_omitted_and_explicit_none_match_pinned_legacy_complete_output) ... E:\GeoAI\u2013MLOps\u2013SDSS\scripts\find_bare_targets173.py:110: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  with memory.open(driver='GTiff') as ds:
+ok
+test214_only_selected_crop_is_read_and_unselected_bad_bytes_are_ignored (test_find_bare_targets173.BareTargets173Tests.test214_only_selected_crop_is_read_and_unselected_bad_bytes_are_ignored) ... ok
+test214_selected_actual_bytes_change_is_still_rejected (test_find_bare_targets173.BareTargets173Tests.test214_selected_actual_bytes_change_is_still_rejected) ... ok
+test214_selected_file_byte_window_caps_and128_stride_remain_effective (test_find_bare_targets173.BareTargets173Tests.test214_selected_file_byte_window_caps_and128_stride_remain_effective) ... ok
+test_below_threshold_is_not_dense (test_find_bare_targets173.BareTargets173Tests.test_below_threshold_is_not_dense) ... ok
+test_byte_and_window_caps_rejected (test_find_bare_targets173.BareTargets173Tests.test_byte_and_window_caps_rejected) ... ok
+test_duplicate_sha_window_excluded (test_find_bare_targets173.BareTargets173Tests.test_duplicate_sha_window_excluded) ... ok
+test_inside_fraction_filters_and_missing_boundary_rejects (test_find_bare_targets173.BareTargets173Tests.test_inside_fraction_filters_and_missing_boundary_rejects) ... ok
+test_local_files_unchanged (test_find_bare_targets173.BareTargets173Tests.test_local_files_unchanged) ... ok
+test_native_threshold_and_false_approval (test_find_bare_targets173.BareTargets173Tests.test_native_threshold_and_false_approval) ... ok
+test_priority_gap_then_density_and_train_unconnected (test_find_bare_targets173.BareTargets173Tests.test_priority_gap_then_density_and_train_unconnected) ... ok
+test_stale_crop_pin_rejected (test_find_bare_targets173.BareTargets173Tests.test_stale_crop_pin_rejected) ... ok
+test_year_mismatch_rejected (test_find_bare_targets173.BareTargets173Tests.test_year_mismatch_rejected) ... ok
+test_actual_selector_rejects_low_scl_then_tries_next_candidate (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_actual_selector_rejects_low_scl_then_tries_next_candidate) ... ok
+test_existing_collect_windows_passes_explicit_minimum_to_selector (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_existing_collect_windows_passes_explicit_minimum_to_selector) ... ok
+test_explicit_finite_range_is_forwarded_and_only_candidate_config_changes (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_explicit_finite_range_is_forwarded_and_only_candidate_config_changes) ... ok
+test_explicit_policy_preserves_inputs_and_actual_local_fixture_bytes (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_explicit_policy_preserves_inputs_and_actual_local_fixture_bytes) ... ok
+test_invalid_field_or_extra_policy_is_rejected_before_pinned_file_reads (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_invalid_field_or_extra_policy_is_rejected_before_pinned_file_reads) ... ok
+test_omitted_field_preserves_complete_existing_banten_job_and_key (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_omitted_field_preserves_complete_existing_banten_job_and_key) ... ok
+
+----------------------------------------------------------------------
+Ran 60 tests in 15.841s
+
+OK

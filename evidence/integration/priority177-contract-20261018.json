@@ -1,0 +1,122 @@
+{
+  "status": "TESTED_SYNTHETIC_EXPLICIT_PROVINCE_PRIORITY",
+  "scope": "SYNTHETIC_PLAN_AND_CLI_TESTS_NO_OPERATING_COLLECTION",
+  "legacy_default_plan": {
+    "schema_version": 1,
+    "scope": "EXPLICIT_BOUNDED_PROVINCE_YEAR_DEFICIT_PRIORITY",
+    "target_eligible_patches_per_cell": 28,
+    "max_batches": 2,
+    "scenes_sha256": "2cb6eec062318536692fbd7c242024bfd3f077730c23f91e5938f5347faab068",
+    "ledger_snapshot_sha256": "a81976b52625c298fbae2e77e04ace890f5b4b1ab400d26da8fa087d981aa65d",
+    "eligible_cells": [
+      {
+        "province": "southeast_sulawesi",
+        "year": 2024,
+        "eligible_patches": 27,
+        "deficit": 1
+      }
+    ],
+    "selected_jobs": [
+      {
+        "key": "banten-2024-0",
+        "province": "banten",
+        "year": 2024,
+        "split": "val",
+        "spatial_window_id": "0",
+        "eligible_patches": 0,
+        "deficit": 28,
+        "config_sha256": "ffe2f66842738b270f5bd2cf51f4394a04a9c5e4ff22008e1ae275ad14d7282c"
+      },
+      {
+        "key": "gorontalo-2024-0",
+        "province": "gorontalo",
+        "year": 2024,
+        "split": "train",
+        "spatial_window_id": "0",
+        "eligible_patches": 0,
+        "deficit": 28,
+        "config_sha256": "77bda77f71c1ef564a52a3e683951487a3b349971e3d0784481a5f5be93cf477"
+      }
+    ],
+    "pending_reservations_preserved": [],
+    "bare_targeted_256_supported": false,
+    "new_budget_added": false,
+    "learning_ready": false,
+    "plan_sha256": "19b276ff1752088a1a1f026ea527a732f0835230a1fe16a40e2fa7a676836167"
+  },
+  "explicit_plan": {
+    "schema_version": 1,
+    "scope": "EXPLICIT_BOUNDED_PROVINCE_YEAR_DEFICIT_PRIORITY",
+    "target_eligible_patches_per_cell": 28,
+    "max_batches": 2,
+    "scenes_sha256": "2cb6eec062318536692fbd7c242024bfd3f077730c23f91e5938f5347faab068",
+    "ledger_snapshot_sha256": "a81976b52625c298fbae2e77e04ace890f5b4b1ab400d26da8fa087d981aa65d",
+    "eligible_cells": [
+      {
+        "province": "southeast_sulawesi",
+        "year": 2024,
+        "eligible_patches": 27,
+        "deficit": 1
+      }
+    ],
+    "selected_jobs": [
+      {
+        "key": "southeast_sulawesi-2024-0",
+        "province": "southeast_sulawesi",
+        "year": 2024,
+        "split": "train",
+        "spatial_window_id": "0",
+        "eligible_patches": 27,
+        "deficit": 1,
+        "config_sha256": "2440635a7ca30f0bfdb61f40b726d405fe8f7d7a7f10946aebbbe4a08a25fcf1"
+      },
+      {
+        "key": "gorontalo-2024-0",
+        "province": "gorontalo",
+        "year": 2024,
+        "split": "train",
+        "spatial_window_id": "0",
+        "eligible_patches": 0,
+        "deficit": 28,
+        "config_sha256": "77bda77f71c1ef564a52a3e683951487a3b349971e3d0784481a5f5be93cf477"
+      }
+    ],
+    "pending_reservations_preserved": [],
+    "bare_targeted_256_supported": false,
+    "new_budget_added": false,
+    "learning_ready": false,
+    "province_priority_order": [
+      "southeast_sulawesi",
+      "gorontalo"
+    ],
+    "priority_region_status": [
+      {
+        "province": "southeast_sulawesi",
+        "eligible_patches": 27,
+        "deficit_to_28": 141,
+        "available_deficit_jobs": 1,
+        "selected_jobs": 1,
+        "status": "DEFICIT_JOB_SELECTED"
+      },
+      {
+        "province": "gorontalo",
+        "eligible_patches": 0,
+        "deficit_to_28": 168,
+        "available_deficit_jobs": 1,
+        "selected_jobs": 1,
+        "status": "DEFICIT_JOB_SELECTED"
+      }
+    ],
+    "plan_sha256": "c45cd6f433879463b1ab8e1cc5bf37e8810e8df501cd66f8c9234a47a8935986"
+  },
+  "source_pins": {
+    "scripts/collect_training_priority.py": "27a13917bf90941ea68b2400028fe1b1300365ac63721e4ccf0eabd1e004040c",
+    "tests/test_training_priority.py": "75a45c2c45e63fb44313683feebc226cbc66baf0602c0de4ac389d5afc4a4f54",
+    "scripts/collect_training_parallel.py": "5e99234379cd45804d6eaf1b3b349210d5b9f26d5344e8ff6193dd74eb136b0c"
+  },
+  "operating_source_written": false,
+  "operating_ledger_written": false,
+  "operating_collector_started": false,
+  "http_requests": 0,
+  "training_executed": false
+}

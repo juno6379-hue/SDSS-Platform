@@ -1,0 +1,187 @@
+{
+  "scope": "READ_ONLY_EXISTING_ROUND8_DRYRUN_HANDOFF_NO_DUPLICATE_PLAN_EXECUTION",
+  "observed_at_utc": "2026-10-18T02:40:47.243074+00:00",
+  "new_dryrun_executions": 0,
+  "collector_launches": 0,
+  "network_or_api_calls": 0,
+  "source_ledger_or_operating_file_writes": 0,
+  "existing_dryrun": {
+    "path": "evidence\\integration\\priority-collection-round8-dryrun-20261018.json",
+    "sha256": "bd20dec64411ac78505b87e72180fe88b8d9fff2707fca6aa8a30ef602e28ce9",
+    "mtime_kst": "2026-10-18T11:40:05.897758+09:00",
+    "executed": false,
+    "plan_sha256": "eb8afd1776e53ca23e00f89a7292a27716850819c64adc58217128e522bf3717",
+    "plan_self_pin_matches": true
+  },
+  "source": {
+    "manifest_sha256": "6b74cfda9afd8a9ab238406bbf5007e50a2c1162989e2f8953a13a6289f7950c",
+    "physical": 1569,
+    "eligible": 1260,
+    "scenes_canonical_sha256": "b79558b2f2fe1820afda163f834099b8af72d916bdc7150168772fd894115312",
+    "matches_dryrun_scene_pin": true,
+    "ledger_sha256": "05bc88395f8a5d3672ba1d72dbdd9664b8a067630c36ea34547298c223b26d53",
+    "ledger_canonical_sha256": "f0e1fbb783214b59fdd11a8ded2aba4aa2187579456dd74bcf1ff5a0077310fc",
+    "matches_dryrun_ledger_pin": true
+  },
+  "cell_deficit": {
+    "floor": 28,
+    "total": 54,
+    "cells": [
+      {
+        "province": "banten",
+        "year": 2024,
+        "eligible": 23,
+        "deficit": 5
+      },
+      {
+        "province": "east_java",
+        "year": 2020,
+        "eligible": 23,
+        "deficit": 5
+      },
+      {
+        "province": "east_java",
+        "year": 2025,
+        "eligible": 27,
+        "deficit": 1
+      },
+      {
+        "province": "gorontalo",
+        "year": 2022,
+        "eligible": 24,
+        "deficit": 4
+      },
+      {
+        "province": "gorontalo",
+        "year": 2024,
+        "eligible": 25,
+        "deficit": 3
+      },
+      {
+        "province": "gorontalo",
+        "year": 2025,
+        "eligible": 18,
+        "deficit": 10
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": 2021,
+        "eligible": 27,
+        "deficit": 1
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": 2022,
+        "eligible": 26,
+        "deficit": 2
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": 2024,
+        "eligible": 10,
+        "deficit": 18
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": 2025,
+        "eligible": 23,
+        "deficit": 5
+      }
+    ],
+    "matches_current_eligible_counts": true
+  },
+  "selected_jobs": [
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g01",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "spatial_window_id": "01",
+      "eligible_patches": 23,
+      "deficit": 5,
+      "config_sha256": "ed1f80354faf4723f943bdc7474dd228cce1845e2ba4486272f6d9e4ccc68db4",
+      "already_in_ledger": false,
+      "already_reserved": false,
+      "same_window_already_quality_eligible": false
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g02",
+      "province": "banten",
+      "year": 2024,
+      "split": "val",
+      "spatial_window_id": "02",
+      "eligible_patches": 23,
+      "deficit": 5,
+      "config_sha256": "b22f6a2d1e0f6077adbe7b760a5139c18edb8aa44432a4a3f2301721ab8509e4",
+      "already_in_ledger": false,
+      "already_reserved": false,
+      "same_window_already_quality_eligible": false
+    }
+  ],
+  "selected_jobs_duplicate_or_reserved": false,
+  "selected_job_keys_unique": true,
+  "pending_reservations": [
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+    }
+  ],
+  "pending_matches_plan": true,
+  "pending_total_reserved_bytes": 136314880,
+  "continuation": {
+    "enabled": true,
+    "observed_pending": [
+      {
+        "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+        "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8",
+        "reserved_bytes_preserved": 68157440,
+        "charged_bytes_preserved": 68157440
+      },
+      {
+        "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+        "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593",
+        "reserved_bytes_preserved": 68157440,
+        "charged_bytes_preserved": 68157440
+      }
+    ],
+    "excluded_pending_keys": [],
+    "settlement_attempted": false,
+    "refund_bytes": 0,
+    "lock_handover_performed": false
+  },
+  "parallel171": {
+    "actual_source_sha256": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+    "expected_completed_source_sha256": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+    "matches_completed171": true,
+    "commit": "cfd109d5bbf796c667e1afdd214bf5077b5c87a5",
+    "branch": "refs/heads/codex/parallel-finalization-20261018"
+  },
+  "read_only_path_review": {
+    "entrypoint": "scripts/collect_training_priority.py --max-batches 2 --continue-unrelated-pending",
+    "without_execute_prints_plan_then_returns_before_subprocess": true,
+    "v2_jobs_extra_jobs_continuation_jobs_do_not_reserve_write_or_access_network": true,
+    "parallel_main_not_invoked": true,
+    "do_not_use_collect_training_parallel_direct_dryrun_as_equivalent_readonly_path": true
+  },
+  "handoff_to_existing_coordinator": {
+    "launch_authority_retained_by_existing_owner": true,
+    "wait_for_existing_native_audit_pid9664_before_manifest_mutation": true,
+    "require_same_scene_and_ledger_pins_at_launch": true,
+    "require_expected_plan_sha256": "eb8afd1776e53ca23e00f89a7292a27716850819c64adc58217128e522bf3717",
+    "selection_note": "Both selected jobs target Banten2024 deficit5 using distinct existing01/02 windows. Larger deficit cells may have no available unreserved standard-grid jobs; this plan is not a promise to eliminate all54 deficits.",
+    "performance_quality_note": "No acquired or eligible increments are claimed by dryrun; bare class gate and weak-label limits remain."
+  },
+  "limits": [
+    "No new plan process was started after an existing dryrun PID3392 and owner output were discovered.",
+    "Other coordinator owns launch; no lock or reservation handover performed.",
+    "Sequential file observation can become stale; coordinator must verify the expected plan pin again."
+  ]
+}

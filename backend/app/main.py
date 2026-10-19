@@ -13,7 +13,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 from fastapi import Body, Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, PlainTextResponse, Response
+from fastapi.responses import FileResponse, PlainTextResponse, Response, JSONResponse
 
 from .lifecycle import deploy, transition
 from .gmais_api import create_router
@@ -173,7 +173,23 @@ def datasets():
 @app.get('/api/data/collection-status')
 def data_collection_status():
     from .collection_status import collection_status
-    return collection_status(store.root)
+    from .collection_budget_status import collection_budget_status
+    config_path=getattr(app.state,'collection_source_profile_path',None)
+    result = collection_status(store.root,source_profile_config_path=config_path)
+    if isinstance(result.get('collection_targets'), dict):
+        result['collection_targets']['budget_status'] = collection_budget_status(store.root,source_profile_config_path=config_path)
+        budget=result['collection_targets']['budget_status']
+        current=(result.get('training_readiness') or {}).get('current_manifest_sha256')
+        if budget.get('available') and current and budget.get('source_manifest_sha256')!=current:
+            result['collection_targets']['available']=False
+            result['collection_targets']['budget_status']={'available':False,'status':'UNCONFIRMED'}
+    return result
+
+
+@app.get('/api/data/collection-budget-status')
+def data_collection_budget_status():
+    from .collection_budget_status import collection_budget_status
+    return JSONResponse(collection_budget_status(store.root,source_profile_config_path=getattr(app.state,'collection_source_profile_path',None)), headers={'Cache-Control': 'no-store'})
 
 
 @app.get('/api/data/landcover-series')

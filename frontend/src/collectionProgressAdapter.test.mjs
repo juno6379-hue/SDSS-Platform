@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {stripTypeScriptTypes} from 'node:module';
-import {parseCollectionProgress,parseCandidateProgress,CollectionProgressFlight} from './collectionProgressAdapter.ts';
+import {parseCollectionProgress,parseCandidateProgress,parseBareReview,parseBudgetProgress,CollectionProgressFlight} from './collectionProgressAdapter.ts';
 function fixture(){
  const provinces=['south_sulawesi','gorontalo','southeast_sulawesi','east_java','banten','west_java'];
  const rows=provinces.map((province,index)=>({province,split:index<4?'train':index===4?'val':'test',physical:14,eligible:12,year_counts:Object.fromEntries(Array.from({length:6},(_,i)=>[String(2020+i),2])),cell_gap:6}));
@@ -63,4 +63,38 @@ test('patch validity/province criteria and split class dominance have separate s
  assert.match(component,/학습 후보의 분할\(split\) 집계 기준: 최대 단일 클래스 비중 ≤ \{percent\(data.maxDominance\)\}/);
  assert.match(component,/개별 순림 패치의 클래스 비율만으로 자동 탈락시키지 않습니다/);
  assert(!component.includes('data.minProvince)} · 최대 단일 클래스'));
+});
+
+
+test('minimum floor and requested priority are planned policy, old responses remain compatible',()=>{
+ const old=fixture();assert.equal(parseCollectionProgress(old).balancePolicy,undefined);
+ old.balance_policy={scope:'PLANNED_COLLECTION_PRIORITY_NOT_RUNNING_JOBS',minimum_floor_not_equal_quota:true,preserve_existing_patches:true,deduplicate_before_enrollment:true,priority_provinces:['southeast_sulawesi','gorontalo']};
+ assert.deepEqual(parseCollectionProgress(old).balancePolicy.priorityProvinces,['southeast_sulawesi','gorontalo']);
+ old.balance_policy.scope='RUNNING';assert.throws(()=>parseCollectionProgress(old));
+ const component=readFileSync(new URL('./CollectionProgress.tsx',import.meta.url),'utf8');
+ assert.match(component,/최소 확보 기준이며 모든 주·연도의 동일 개수를 강제/);assert.match(component,/현재 실행 중인 배치나 완료 성과를 뜻하지 않습니다/);assert.match(component,/같은 영상을 중복 추가/);
+});
+function bareFixture(){return {available:true,status:'LOCAL_TARGET_REVIEW_FINISHED',scope:'LOCAL_LABEL_AND_HISTORICAL_SUPPORT_NOT_REMOTE_QUALITY',source_manifest_sha256:'a'.repeat(64),source_matches_current_manifest:true,report_sha256:'b'.repeat(64),recorded_at:'2026-10-18T12:00:00+09:00',source_report:'first-group-training-priority/review.json',candidate_total:12,execution_supported:false,actual_quality_verified:false,scientific_accuracy_validated:false,rows:fixture().rows.map(r=>({province:r.province,candidates:2,support_clear:1,overlap:1,local_invalid:0}))};}
+test('local bare review keeps unknown, stale and remote quality separate with bounded identity and sums',()=>{
+ assert.equal(parseBareReview(undefined,'a'.repeat(64)),undefined);assert.equal(parseBareReview({available:false,status:'INVALID'},'a'.repeat(64)),undefined);
+ const input=bareFixture(),view=parseBareReview(input,'a'.repeat(64));assert.equal(view.total,12);view.rows[0].clear=99;assert.equal(input.rows[0].support_clear,1);
+ input.source_matches_current_manifest=false;assert.equal(parseBareReview(input,'c'.repeat(64)).matchesCurrent,false);
+ for(const edit of [v=>v.candidate_total++,v=>v.rows[0].candidates++,v=>v.rows[0].overlap=true,v=>v.rows.pop(),v=>v.rows[1].province=v.rows[0].province,v=>v.actual_quality_verified=true,v=>v.execution_supported=true,v=>v.source_report='../hidden',v=>v.source_matches_current_manifest=false]){const bad=bareFixture();edit(bad);assert.throws(()=>parseBareReview(bad,'a'.repeat(64)));const raw=fixture();raw.bare_target_review=bad;const parsed=parseCollectionProgress(raw);assert.equal(parsed.bareReview,undefined);assert.equal(parsed.bareReviewInvalid,true);assert.equal(parsed.eligible,72);}
+ const component=readFileSync(new URL('./CollectionProgress.tsx',import.meta.url),'utf8');assert.match(component,/미확인 후보를 0개/);assert.match(component,/미검사 · 집행 미승인/);assert.match(component,/검토 후 원본이 변경됐습니다/);
+});
+
+
+test('searched province scope defaults to six, subsets stay detached and outside positives fail closed',()=>{
+ const original=bareFixture();assert.equal(parseBareReview(original,'a'.repeat(64)).searchedProvinces.length,6);
+ const subset=bareFixture();subset.searched_provinces=['gorontalo','west_java'];for(const r of subset.rows){if(!subset.searched_provinces.includes(r.province))Object.assign(r,{candidates:0,support_clear:0,overlap:0});}subset.candidate_total=4;
+ const view=parseBareReview(subset,'a'.repeat(64));assert.deepEqual(view.searchedProvinces,['gorontalo','west_java']);view.searchedProvinces.push('banten');assert.equal(subset.searched_provinces.length,2);
+ for(const scope of [[],['gorontalo','gorontalo'],['unknown'],[''],null,'gorontalo',[true],[['gorontalo']]]){const bad=structuredClone(subset);bad.searched_provinces=scope;assert.throws(()=>parseBareReview(bad,'a'.repeat(64)));}
+ const bad=bareFixture();bad.searched_provinces=['gorontalo','west_java'];assert.throws(()=>parseBareReview(bad,'a'.repeat(64)));const raw=fixture();raw.bare_target_review=bad;assert.equal(parseCollectionProgress(raw).bareReviewInvalid,true);
+});
+
+function budgetFixture(){return {schema_version:1,available:true,status:'OBSERVED_LEDGER_SNAPSHOT',scope:'ADDITIONAL_BUDGET_INCLUDES_PENDING_NOT_PROCESS_LIVENESS',additional_maximum_bytes:4294967296,charged_including_pending_bytes:460,remaining_bytes:4294966836,settled_batch_bytes:250,metadata_body_bytes:10,pending_bytes:200,pending_count:2,old_pending_bytes:200,old_pending_count:2,source_manifest_sha256:'a'.repeat(64),ledger_sha256:'b'.repeat(64),observed_at:'2026-10-18T15:00:00+09:00',ledger_updated_at:'2026-10-18T14:59:00+09:00',rate_limit_active:false,process_verification:'UNKNOWN',execution_approved:false};}
+test('budget preserves fully charged pending once and refuses invalid or mismatched snapshots',()=>{
+ assert.equal(parseBudgetProgress(undefined,'a'.repeat(64)),undefined);assert.equal(parseBudgetProgress({available:false},'a'.repeat(64)),undefined);const good=parseBudgetProgress(budgetFixture(),'a'.repeat(64));assert.equal(good.remaining,4294966836);assert.equal(good.oldPending,200);
+ for(const edit of [v=>v.remaining_bytes--,v=>v.pending_bytes++,v=>v.old_pending_bytes=201,v=>v.old_pending_count=3,v=>v.charged_including_pending_bytes=true,v=>v.observed_at='invalid',v=>v.ledger_sha256='bad',v=>v.process_verification='RUNNING',v=>v.execution_approved=true,v=>v.source_manifest_sha256='c'.repeat(64)]){const bad=budgetFixture();edit(bad);assert.throws(()=>parseBudgetProgress(bad,'a'.repeat(64)));const raw=fixture();raw.budget_status=bad;assert.equal(parseCollectionProgress(raw).budgetInvalid,true);assert.equal(parseCollectionProgress(raw).eligible,72);}
+ const raw=fixture();raw.budget_status=budgetFixture();assert.equal(parseCollectionProgress(raw).budget.remaining,4294966836);
 });

@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "scope": "READ_ONLY_FIXED_BATCH_METADATA_AND_CODE_NO_NEW_SCAN",
+  "classification": {
+    "235_selection": "VERIFIED_REAL_PERSISTED_VALUES_NOT_ARRAY_REMEASUREMENT",
+    "249_geometry_condition": "VERIFIED_REAL_FIXED_ERROR_PLUS_STATIC_CODE",
+    "exact_b02_delta_m": "UNKNOWN_NOT_PERSISTED",
+    "catalog_bbox_relation": "VERIFIED_DECLARED_METADATA_ONLY_NOT_ACTUAL_B02_WINDOW"
+  },
+  "refs": [
+    {
+      "path": "evidence/integration/deficit235-native-root-20261018.json",
+      "bytes": 9987,
+      "sha256": "faecb6ee76e6537fe767fe850e4b9c83e2f6bc9cfb37d412d0014a50738b4b2e"
+    },
+    {
+      "path": "evidence/integration/deficit249-native-root-20261018-run2.json",
+      "bytes": 10610,
+      "sha256": "6beed046a69e8cddce35df65fa2ea1ae6c16199dd42808d71a3045d7ef64146c"
+    },
+    {
+      "path": "data/first-group-training-esri-v1/sources/center1024-southeast_sulawesi-2024-fc824e2465d1-41f9ed9a/config.json",
+      "bytes": 3206,
+      "sha256": "dd7224cc5f8ba81a7d21e5df602f796afde3b23789d38ddf7633b2e2c0868787"
+    },
+    {
+      "path": "data/first-group-training-esri-v1/sources/center1024-southeast_sulawesi-2024-fc824e2465d1-41f9ed9a/annual-window-report.json",
+      "bytes": 6267,
+      "sha256": "9ace6635a2c974d63371a13677a3bb10fdc97fd03a58a87e55a31d560a11d8b5"
+    },
+    {
+      "path": "data/first-group-training-esri-v1/sources/center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39/annual-window-report.json",
+      "bytes": 16525,
+      "sha256": "2283e97995423ecd046849274d9bdc5160d478077ea4d8e7a02d4a00c5c7845b"
+    },
+    {
+      "path": "data/first-group-training-esri-v1/sources/center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39/centers182-southeast_sulawesi-f5fa8f8ccc4f-2024/stac-item.json",
+      "bytes": 21876,
+      "sha256": "b59e97e567c54aecd2709291487b0cf352ae2e1f5c05932a4993c53de1e5b2e6"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "bytes": 47009,
+      "sha256": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+      "scope": "CURRENT_CODE_STATIC_ANALYSIS"
+    },
+    {
+      "path": "scripts/diagnose_stac.py",
+      "bytes": 10779,
+      "sha256": "a30a43cca57c9368fa977701084b73f93d3f8e89526d9e40eb35f6fc44e531d9",
+      "scope": "CURRENT_CODE_STATIC_ANALYSIS"
+    },
+    {
+      "path": "backend/app/data/service.py",
+      "bytes": 36547,
+      "sha256": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787",
+      "scope": "CURRENT_CODE_STATIC_ANALYSIS"
+    },
+    {
+      "path": "backend/app/data/deficit_candidate_guard.py",
+      "bytes": 22548,
+      "sha256": "a90ba9a70bb0b0eecf529a10961e12edd1d9519b881913eed2e997c52c182071",
+      "scope": "CURRENT_CODE_STATIC_ANALYSIS"
+    },
+    {
+      "path": "backend/app/data/targeted_live_guards.py",
+      "bytes": 7558,
+      "sha256": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+      "scope": "CURRENT_CODE_STATIC_ANALYSIS"
+    },
+    {
+      "path": "backend/app/data/targeted_bare_plan.py",
+      "bytes": 15594,
+      "sha256": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1",
+      "scope": "CURRENT_CODE_STATIC_ANALYSIS"
+    },
+    {
+      "path": "scripts/collect_deficit_guarded.py",
+      "bytes": 21165,
+      "sha256": "971c474b1c8217b1be958b61532ccf55e646804a083a045d2cda74a4a9d2bd09",
+      "scope": "CURRENT_CODE_STATIC_ANALYSIS"
+    },
+    {
+      "path": "scripts/propose_deficit_centers182.py",
+      "bytes": 14399,
+      "sha256": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+      "scope": "CURRENT_CODE_STATIC_ANALYSIS"
+    }
+  ],
+  "235_policy": {
+    "year": [
+      2024
+    ],
+    "season_start": "06-01",
+    "season_end": "09-30",
+    "derived_search_start": "2024-06-01T00:00:00Z",
+    "derived_search_end": "2024-09-30T23:59:59Z",
+    "cloud_cover_maximum": 60,
+    "search_limit": 20,
+    "candidate_limit": 5,
+    "sort_by_cloud": true,
+    "candidate_minimum": 0.65,
+    "final_minimum": 0.8,
+    "window_side": 1024
+  },
+  "235_candidates": [
+    {
+      "scene_id": "S2A_MSIL2A_20240619T021351_R060_T51MUR_20240619T061603",
+      "cloud_cover": 21.468797,
+      "stored_scl_estimated_valid_fraction": 0.34243011474609375,
+      "minimum": 0.65,
+      "status": "quality_insufficient"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240803T021349_R060_T51MUR_20240803T041141",
+      "cloud_cover": 23.492284,
+      "stored_scl_estimated_valid_fraction": 0.4889373779296875,
+      "minimum": 0.65,
+      "status": "quality_insufficient"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240912T021209_R060_T51MUR_20240912T055427",
+      "cloud_cover": 24.44963,
+      "stored_scl_estimated_valid_fraction": 0.5348281860351562,
+      "minimum": 0.65,
+      "status": "quality_insufficient"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240813T021349_R060_T51MUR_20240813T055551",
+      "cloud_cover": 24.531983,
+      "stored_scl_estimated_valid_fraction": 0.5683364868164062,
+      "minimum": 0.65,
+      "status": "quality_insufficient"
+    },
+    {
+      "scene_id": "S2A_MSIL2A_20240729T021351_R060_T51MUR_20240729T081053",
+      "cloud_cover": 43.92902,
+      "stored_scl_estimated_valid_fraction": 0.21070480346679688,
+      "minimum": 0.65,
+      "status": "quality_insufficient"
+    }
+  ],
+  "249_candidates": [
+    {
+      "scene_id": "S2A_MSIL2A_20240619T021351_R060_T51MUR_20240619T061603",
+      "cloud_cover": 21.468797,
+      "stored_scl_estimated_valid_fraction": 0.10772705078125,
+      "minimum": 0.65,
+      "status": "quality_insufficient"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240803T021349_R060_T51MUR_20240803T041141",
+      "cloud_cover": 23.492284,
+      "stored_scl_estimated_valid_fraction": 0.5407943725585938,
+      "minimum": 0.65,
+      "status": "quality_insufficient"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240912T021209_R060_T51MUR_20240912T055427",
+      "cloud_cover": 24.44963,
+      "stored_scl_estimated_valid_fraction": 0.469696044921875,
+      "minimum": 0.65,
+      "status": "quality_insufficient"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240813T021349_R060_T51MUR_20240813T055551",
+      "cloud_cover": 24.531983,
+      "stored_scl_estimated_valid_fraction": 0.8155479431152344,
+      "minimum": 0.65,
+      "status": "eligible"
+    }
+  ],
+  "249_selected_scene": "S2B_MSIL2A_20240813T021349_R060_T51MUR_20240813T055551",
+  "249_failure": {
+    "category": "payload_or_response_contract",
+    "error_type": "ValueError",
+    "error_code": null,
+    "sanitized_message": "CENTER_B02_ALIGNMENT_SHORTFALL",
+    "exception_chain": [
+      {
+        "error_type": "AssetTransferError",
+        "sanitized_message": "원격 자산 처리 실패(stage=window_geometry_guard); 원인은 exception chain을 확인하세요"
+      },
+      {
+        "error_type": "ValueError",
+        "sanitized_message": "CENTER_B02_ALIGNMENT_SHORTFALL"
+      }
+    ]
+  },
+  "249_declared_catalog_relation": {
+    "requested_bbox_wgs84": [
+      121.72930337706629,
+      -3.6716552086746117,
+      121.82161437453668,
+      -3.5789105806457218
+    ],
+    "scene_bbox_wgs84": [
+      121.1971527,
+      -4.6113932,
+      122.1878144,
+      -3.6167214
+    ],
+    "catalog_bbox_contains_requested_bbox": false,
+    "requested_north_exceeds_scene_north_degrees": 0.0378108193542781,
+    "bbox_overlap_area_fraction_upper_bound": 0.5923125666911938,
+    "overlap_scope": "Unprojected rectangular declaration arithmetic only; not validpixels/actualCOGboundproof.",
+    "declared_b02_transform": [
+      10.0,
+      0.0,
+      300000.0,
+      0.0,
+      -10.0,
+      9600040.0
+    ],
+    "declared_b02_shape": [
+      10980,
+      10980
+    ],
+    "actual_failed_b02_bounds_available": false,
+    "actual_failed_b02_delta_m": null
+  },
+  "policy_findings": {
+    "local_top5_of_returned_items": true,
+    "full_retained_search_count_persisted": false,
+    "next_page_consumed": false,
+    "sixth_candidate_fallback_implemented": false,
+    "post_scl_geometry_failure_retries_next_scene": false,
+    "higher_scl_fraction_guarantees_final_quality": false,
+    "geometry_tolerance_m_unchanged": 10.000001,
+    "deficit_search_settings_hardcoded": true,
+    "season_fields_retained_from_pinned_base_config": true
+  },
+  "activity": {
+    "remote_queries": 0,
+    "operating_original_source_reads": 0,
+    "ledger_reads": 0,
+    "raster_arrays_read": 0,
+    "new_inventory_or_native_scan": 0,
+    "process_queries": 0,
+    "collector_starts": 0,
+    "product_edits": 0,
+    "threshold_or_budget_changes": 0
+  },
+  "limitations": [
+    "235 does not persist full20-item search response or selected STAC because none qualified; cannot assert actual returned count or existence/quality of candidates6-20.",
+    "249 selected catalog B02 declaration is not the actual failed B02 header/window; no exactside/delta inferred from SCL/Esri.",
+    "Current code static reading is distinct from a new remote reproduction; no fix or operational option executed."
+  ]
+}

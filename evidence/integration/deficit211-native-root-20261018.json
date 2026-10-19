@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T05:44:23.099073+00:00",
+  "status": "BLOCKED_PREFLIGHT_NO_NEW_PATCH",
+  "classification": "VERIFIED_REAL",
+  "terminal_exit_code": 2,
+  "terminal_seconds": 34.42200000000048,
+  "finished_at": "2026-10-18T05:42:59.376277+00:00",
+  "stdout": {
+    "status": "BLOCKED",
+    "executed": false,
+    "execute_requested": true,
+    "execution_started": false,
+    "execution_progress": null,
+    "issue": "DEFICIT_LOCAL_PROOF_INVALID_CENTER_FULL_INVENTORY_NOT_VERIFIED"
+  },
+  "checks": {
+    "source_exact_launch_sha": true,
+    "ledger_exact_launch_sha": true,
+    "source_rows_unchanged": true,
+    "oldpending_exact": true,
+    "selected_keys_not_reserved": true,
+    "selected_output_directories_absent": true,
+    "lock_absent": true,
+    "worker_start_zero": true,
+    "worker_finish_zero": true,
+    "preexecution_blocked": true,
+    "metadata_two_reads_stable": true,
+    "request_canonical_sha_matches": true
+  },
+  "source_sha256": "80eef2d274942c7a7f9bf8ee2483af070a729060d84ceb1a19baacb52ae4976a",
+  "ledger_sha256": "6e9e27b0ba9e4d222f9fde6b1e22f2adfd604701163d8e2c4653617c47af02fc",
+  "registered_total": 1699,
+  "eligible_total": 1355,
+  "physical_baseline": 1700,
+  "physical_baseline_provenance": "209 preflight1668 + independently audited32 new physical patches; no211 full native/inventory rescan",
+  "physical_after_inferred": 1700,
+  "new_physical_patches": 0,
+  "new_registered_patches": 0,
+  "new_eligible_patches": 0,
+  "new_bare_pixels": 0,
+  "new_bare_contribution_patches": 0,
+  "native_validation_complete": false,
+  "native_patch_checks": 0,
+  "pending_count": 2,
+  "pending_reserved_bytes": 136314880,
+  "remaining_budget": 1921782936,
+  "rate_limit_active": false,
+  "selected_output_directories": {
+    "center1024-southeast_sulawesi-2024-e3e88cc6da31-c541fe0f": {
+      "sources": false,
+      "patches": false
+    }
+  },
+  "launch_source_pins_match_now": {
+    "backend/app/data/deficit_candidate_guard.py": true,
+    "scripts/collect_targeted_bare.py": true,
+    "scripts/collect_samples.py": true,
+    "backend/app/data/parallel.py": true,
+    "scripts/collect_deficit_guarded.py": true,
+    "scripts/collect_training_grid.py": true,
+    "backend/app/data/targeted_live_guards.py": true,
+    "backend/app/data/targeted_inventory.py": true,
+    "backend/app/data/targeted_execution.py": true,
+    "backend/app/data/budget.py": true,
+    "backend/app/data/candidates.py": true
+  },
+  "collector_processes_observed": [],
+  "process_observation": "Win32_Process python collector/supervisor match: none at14:43:53KST independent read",
+  "source_or_ledger_writes": 0,
+  "reviewer_collection_starts": 0,
+  "reviewer_network_calls": 0,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "limitations": [
+    "전검사 반환 코드가 전체 inventory 검증 미완료를 알리지만 내부 최초 실패 원인은 이 감사에서 확정하지 않았다. Root 후속 조사 소유다.",
+    "새 source/patch 출력이 없어 native 검사는0회다. 품질검사 성공으로 표현하지 않는다.",
+    "원본과 원장 원바이트 지문 및 선택 경로만 검산했다. 전체 support/inventory/native 재실행0이다.",
+    "실물1700은 기존 검증 기준과 신규 출력 부재에 따른 불변 추론이다.",
+    "독립 HTTP syscall 추적은 추가하지 않았다. 실행 전 차단/예약과계상 불변을 확인했다."
+  ]
+}

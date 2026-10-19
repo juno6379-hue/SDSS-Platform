@@ -1,0 +1,86 @@
+test_cache_hit_has_zero_actual_read_and_pin_mismatch_fails (test_target325_local_profile.LocalPreflightTests.test_cache_hit_has_zero_actual_read_and_pin_mismatch_fails) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI–MLOps–SDSS\evidence\integration\target325-workspace-20261018\tests\test_targeted_bare_plan.py:25: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  native=[self.affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_explicit_local175_path_success_false_and_canonical_bound (test_target325_local_profile.LocalPreflightTests.test_explicit_local175_path_success_false_and_canonical_bound) ... E:\GeoAI–MLOps–SDSS\evidence\integration\target325-workspace-20261018\backend\app\data\targeted_bare_plan.py:57: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[t*(0,0),t*(dataset.width,0),t*(dataset.width,dataset.height),t*(0,dataset.height)]
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI–MLOps–SDSS\evidence\integration\target325-workspace-20261018\backend\app\data\targeted_bare_plan.py:188: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*window));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI–MLOps–SDSS\evidence\integration\target325-workspace-20261018\tests\fixtures\target325\legacy_targeted_bare_plan.py.fixture:56: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[t*(0,0),t*(dataset.width,0),t*(dataset.width,dataset.height),t*(0,dataset.height)]
+E:\GeoAI–MLOps–SDSS\evidence\integration\target325-workspace-20261018\tests\fixtures\target325\legacy_targeted_bare_plan.py.fixture:169: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*window));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_final_same_content_replacement_detected (test_target325_local_profile.LocalPreflightTests.test_final_same_content_replacement_detected) ... ok
+test_implementation_descriptor_mismatch_before_root (test_target325_local_profile.LocalPreflightTests.test_implementation_descriptor_mismatch_before_root) ... ok
+test_legacy64_unchanged_with_sparse_overcap (test_target325_local_profile.LocalPreflightTests.test_legacy64_unchanged_with_sparse_overcap) ... ok
+test_legacy_result_and_errors_exact_even_ambient128 (test_target325_local_profile.LocalPreflightTests.test_legacy_result_and_errors_exact_even_ambient128) ... ok
+test_markers_fail_before_root_or_any_file_open (test_target325_local_profile.LocalPreflightTests.test_markers_fail_before_root_or_any_file_open) ... ok
+test_no_170_or_worker_or_network_import (test_target325_local_profile.LocalPreflightTests.test_no_170_or_worker_or_network_import) ... ok
+test_resource_error_propagates_past_175_catches (test_target325_local_profile.LocalPreflightTests.test_resource_error_propagates_past_175_catches) ... ok
+test_declared_role_cap_cannot_be_raised (test_target325_local_profile.NarrowCapTests.test_declared_role_cap_cannot_be_raised) ... ok
+test_default_and_none_are_exact (test_target325_local_profile.NarrowCapTests.test_default_and_none_are_exact) ... ok
+test_growth_during_actual_read_is_detected_and_charged (test_target325_local_profile.NarrowCapTests.test_growth_during_actual_read_is_detected_and_charged) ... ok
+test_hash_mismatch (test_target325_local_profile.NarrowCapTests.test_hash_mismatch) ... ok
+test_ledger8m_overcap_before_open (test_target325_local_profile.NarrowCapTests.test_ledger8m_overcap_before_open) ... ok
+test_narrow_exact_boundary_and_effective_tree_cap (test_target325_local_profile.NarrowCapTests.test_narrow_exact_boundary_and_effective_tree_cap) ... ok
+test_percall_invalid_values_before_open (test_target325_local_profile.NarrowCapTests.test_percall_invalid_values_before_open) ... ok
+test_replaced_same_content_before_open_fails_identity (test_target325_local_profile.NarrowCapTests.test_replaced_same_content_before_open_fails_identity) ... ok
+test_row_history_and_depth_resource_errors (test_target325_local_profile.NarrowCapTests.test_row_history_and_depth_resource_errors) ... ok
+test_shared_scope_budget_exhaustion_not_reset (test_target325_local_profile.NarrowCapTests.test_shared_scope_budget_exhaustion_not_reset) ... ok
+test_source128_overcap_before_open (test_target325_local_profile.NarrowCapTests.test_source128_overcap_before_open) ... ok
+test_actual_gcp_rpc_and_nonfinite_native_transform_are_rejected (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_gcp_rpc_and_nonfinite_native_transform_are_rejected) ... E:\GeoAI–MLOps–SDSS\evidence\integration\target325-workspace-20261018\tests\test_targeted_bare_plan.py:135: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  inverse=Transformer.from_crs(crs,4326,always_xy=True);native=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_actual_local_pixels_geometry_and_proposal_jobs_not_execution (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_local_pixels_geometry_and_proposal_jobs_not_execution) ... ok
+test_actual_noneligible_different_year_image_overlap_is_rejected (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_noneligible_different_year_image_overlap_is_rejected) ... ok
+test_bare_255_rejected_and_256_accepted (test_targeted_bare_plan.TargetedBarePlanTests.test_bare_255_rejected_and_256_accepted) ... ok
+test_bbox_native_window_counts_and_lineage_are_not_inferred (test_targeted_bare_plan.TargetedBarePlanTests.test_bbox_native_window_counts_and_lineage_are_not_inferred) ... ok
+test_changed_label_or_proposal_pin_blocks_no_partial_jobs (test_targeted_bare_plan.TargetedBarePlanTests.test_changed_label_or_proposal_pin_blocks_no_partial_jobs) ... ok
+test_existing_banten_complete_job_and_key_contract_remains_unchanged (test_targeted_bare_plan.TargetedBarePlanTests.test_existing_banten_complete_job_and_key_contract_remains_unchanged) ... ok
+test_mixed_province_geometry_is_bound_to_each_target (test_targeted_bare_plan.TargetedBarePlanTests.test_mixed_province_geometry_is_bound_to_each_target) ... ok
+test_non_metre_or_wrong_resolution_and_geographic_labels_block (test_targeted_bare_plan.TargetedBarePlanTests.test_non_metre_or_wrong_resolution_and_geographic_labels_block) ... ok
+test_path_escape_does_not_return_original_path_or_partial_payload (test_targeted_bare_plan.TargetedBarePlanTests.test_path_escape_does_not_return_original_path_or_partial_payload) ... ok
+test_same_space_across_requested_years_not_counted_as_independent (test_targeted_bare_plan.TargetedBarePlanTests.test_same_space_across_requested_years_not_counted_as_independent) ... ok
+test_six_provinces_six_years_native_metre_crs_and_fixed_splits (test_targeted_bare_plan.TargetedBarePlanTests.test_six_provinces_six_years_native_metre_crs_and_fixed_splits) ... ok
+test_strict_target_count_policy_bool_and_extra_fail_before_file_io (test_targeted_bare_plan.TargetedBarePlanTests.test_strict_target_count_policy_bool_and_extra_fail_before_file_io) ... ok
+test_synthetic_local_read_only_with_network_unavailable (test_targeted_bare_plan.TargetedBarePlanTests.test_synthetic_local_read_only_with_network_unavailable) ... ok
+test_unknown_province_wrong_fixed_split_and_missing_or_duplicate_bindings (test_targeted_bare_plan.TargetedBarePlanTests.test_unknown_province_wrong_fixed_split_and_missing_or_duplicate_bindings) ... ok
+test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins (test_targeted_bare_plan.TargetedBarePlanTests.test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins) ... ok
+test_all_authority_false (test_targeted_source_profile319.Contracts.test_all_authority_false) ... ok
+test_bad_target_types_and_fixedsplit (test_targeted_source_profile319.Contracts.test_bad_target_types_and_fixedsplit) ... ok
+test_bad_upgrades_cannot_smuggle_marker_into_legacy (test_targeted_source_profile319.Contracts.test_bad_upgrades_cannot_smuggle_marker_into_legacy) ... ok
+test_batch_count_exact (test_targeted_source_profile319.Contracts.test_batch_count_exact) ... ok
+test_caller_mutation_after_detachment_never_revalidated_original (test_targeted_source_profile319.Contracts.test_caller_mutation_after_detachment_never_revalidated_original) ... ok
+test_canonical_v3_preserved_and_envelope_is_not_executable_planv1 (test_targeted_source_profile319.Contracts.test_canonical_v3_preserved_and_envelope_is_not_executable_planv1) ... ok
+test_cycles_depth_nodes_and_canonical_utf8_size (test_targeted_source_profile319.Contracts.test_cycles_depth_nodes_and_canonical_utf8_size) ... ok
+test_descriptor_exact_common_profile (test_targeted_source_profile319.Contracts.test_descriptor_exact_common_profile) ... ok
+test_detected_iteration_mutation_is_fixed_code (test_targeted_source_profile319.Contracts.test_detected_iteration_mutation_is_fixed_code) ... ok
+test_duplicate_targets_and_empty (test_targeted_source_profile319.Contracts.test_duplicate_targets_and_empty) ... ok
+test_fixture_missing_and_tampered_fail_without_fallback (test_targeted_source_profile319.Contracts.test_fixture_missing_and_tampered_fail_without_fallback) ... ok
+test_immutable_limits_and_descriptors (test_targeted_source_profile319.Contracts.test_immutable_limits_and_descriptors) ... ok
+test_key_order_invariance_and_nonascii_canonical_utf8 (test_targeted_source_profile319.Contracts.test_key_order_invariance_and_nonascii_canonical_utf8) ... ok
+test_legacy232_v1_v2_exact_and_new_version_rejected (test_targeted_source_profile319.Contracts.test_legacy232_v1_v2_exact_and_new_version_rejected) ... ok
+test_nested_key_and_policy_cap_manipulation (test_targeted_source_profile319.Contracts.test_nested_key_and_policy_cap_manipulation) ... ok
+test_nonfinite_huge_numbers_and_utf8_surrogates (test_targeted_source_profile319.Contracts.test_nonfinite_huge_numbers_and_utf8_surrogates) ... ok
+test_outer_versions (test_targeted_source_profile319.Contracts.test_outer_versions) ... ok
+test_plan_versions (test_targeted_source_profile319.Contracts.test_plan_versions) ... ok
+test_profile_markers_both_exact_and_required (test_targeted_source_profile319.Contracts.test_profile_markers_both_exact_and_required) ... ok
+test_pure_no_open_socket_or_environment_profile_import (test_targeted_source_profile319.Contracts.test_pure_no_open_socket_or_environment_profile_import) ... ok
+test_reference_sha_and_path_aliases (test_targeted_source_profile319.Contracts.test_reference_sha_and_path_aliases) ... ok
+test_return_copy_cannot_mutate_validated_digest (test_targeted_source_profile319.Contracts.test_return_copy_cannot_mutate_validated_digest) ... ok
+test_subclasses_and_bytes_fail_without_invoking_methods (test_targeted_source_profile319.Contracts.test_subclasses_and_bytes_fail_without_invoking_methods) ... ok
+test_token_not_accepted_as_request (test_targeted_source_profile319.Contracts.test_token_not_accepted_as_request) ... ok
+test_two_targets_explicit_valid (test_targeted_source_profile319.Contracts.test_two_targets_explicit_valid) ... ok
+test_unknown_or_missing_outer_keys (test_targeted_source_profile319.Contracts.test_unknown_or_missing_outer_keys) ... ok
+test_upgrade_deepcopy_and_original_unmodified (test_targeted_source_profile319.Contracts.test_upgrade_deepcopy_and_original_unmodified) ... ok
+
+----------------------------------------------------------------------
+Ran 63 tests in 19.563s
+
+OK

@@ -1,0 +1,365 @@
+{
+  "scope": "READ_ONLY_JOIN_COMPLETED_BARE173_PROPOSAL_WITH_FIXED_54_DEFICIT_CELLS",
+  "observed_at_utc": "2026-10-18T02:43:23.024019+00:00",
+  "new_raw_label_scan_candidate_generation_plan_collector_or_api_calls": 0,
+  "source_test_document_ledger_edits": 0,
+  "proposal": {
+    "path": "evidence/integration/bare173-verified-20261018/proposal.json",
+    "sha256": "63368b398ff02382db10213753fb937a7653b925b912c7c5946a857b2152a0ee",
+    "receipt_at": "2026-10-18T02:38:46.891159+00:00",
+    "source_sha256": "6b74cfda9afd8a9ab238406bbf5007e50a2c1162989e2f8953a13a6289f7950c",
+    "source_physical_rows": 1569,
+    "local_candidate_total": 50,
+    "split_counts": {
+      "train": 29,
+      "val": 15,
+      "test": 6
+    }
+  },
+  "deficit_basis": {
+    "source_sha256": "6b74cfda9afd8a9ab238406bbf5007e50a2c1162989e2f8953a13a6289f7950c",
+    "physical": 1569,
+    "quality_eligible": 1260,
+    "fixed_cell_deficit_total": 54,
+    "handoff": "priority-next54-handoff-root-20261018.json",
+    "later_collection_may_change_these_counts": true
+  },
+  "checks": {
+    "proposal_sha_matches_receipt_and_final_verifier": true,
+    "discovery_complete": true,
+    "proposal_source_matches_54_handoff_source": true,
+    "candidate_count_50_matches_verified_recount": true,
+    "all_execution_guards_false": true,
+    "cells_total54": true,
+    "cell_snapshot_counts_match": true
+  },
+  "crosswalk": [
+    {
+      "province": "banten",
+      "year": 2024,
+      "eligible": 23,
+      "deficit": 5,
+      "local_bare_candidates": 0,
+      "max_declared_weak_bare_pixels": null,
+      "proposal_indexes": [],
+      "splits": [],
+      "consumer_scopes": [],
+      "candidates": []
+    },
+    {
+      "province": "east_java",
+      "year": 2020,
+      "eligible": 23,
+      "deficit": 5,
+      "local_bare_candidates": 0,
+      "max_declared_weak_bare_pixels": null,
+      "proposal_indexes": [],
+      "splits": [],
+      "consumer_scopes": [],
+      "candidates": []
+    },
+    {
+      "province": "east_java",
+      "year": 2025,
+      "eligible": 27,
+      "deficit": 1,
+      "local_bare_candidates": 6,
+      "max_declared_weak_bare_pixels": 620,
+      "proposal_indexes": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "splits": [
+        "train"
+      ],
+      "consumer_scopes": [
+        "PLANNED_CONSUMER_NOT_CONNECTED"
+      ],
+      "candidates": [
+        {
+          "proposal_index": 3,
+          "fixed_split": "train",
+          "local_window_xy": [
+            1280,
+            256
+          ],
+          "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+          "declared_weak_label_bare_pixels": 620,
+          "geometric_inside_fraction": 1.0
+        },
+        {
+          "proposal_index": 4,
+          "fixed_split": "train",
+          "local_window_xy": [
+            1536,
+            1024
+          ],
+          "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+          "declared_weak_label_bare_pixels": 538,
+          "geometric_inside_fraction": 1.0
+        },
+        {
+          "proposal_index": 6,
+          "fixed_split": "train",
+          "local_window_xy": [
+            1536,
+            512
+          ],
+          "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+          "declared_weak_label_bare_pixels": 423,
+          "geometric_inside_fraction": 1.0
+        },
+        {
+          "proposal_index": 7,
+          "fixed_split": "train",
+          "local_window_xy": [
+            1280,
+            512
+          ],
+          "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+          "declared_weak_label_bare_pixels": 390,
+          "geometric_inside_fraction": 1.0
+        },
+        {
+          "proposal_index": 8,
+          "fixed_split": "train",
+          "local_window_xy": [
+            1792,
+            768
+          ],
+          "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+          "declared_weak_label_bare_pixels": 388,
+          "geometric_inside_fraction": 1.0
+        },
+        {
+          "proposal_index": 9,
+          "fixed_split": "train",
+          "local_window_xy": [
+            1792,
+            1280
+          ],
+          "source_crop_sha256": "c9e370c60b870548445d7aaf75fd5e3b2dffde87f0cced932e5b70d1bf4628f4",
+          "declared_weak_label_bare_pixels": 350,
+          "geometric_inside_fraction": 1.0
+        }
+      ]
+    },
+    {
+      "province": "gorontalo",
+      "year": 2022,
+      "eligible": 24,
+      "deficit": 4,
+      "local_bare_candidates": 0,
+      "max_declared_weak_bare_pixels": null,
+      "proposal_indexes": [],
+      "splits": [],
+      "consumer_scopes": [],
+      "candidates": []
+    },
+    {
+      "province": "gorontalo",
+      "year": 2024,
+      "eligible": 25,
+      "deficit": 3,
+      "local_bare_candidates": 1,
+      "max_declared_weak_bare_pixels": 271,
+      "proposal_indexes": [
+        11
+      ],
+      "splits": [
+        "train"
+      ],
+      "consumer_scopes": [
+        "PLANNED_CONSUMER_NOT_CONNECTED"
+      ],
+      "candidates": [
+        {
+          "proposal_index": 11,
+          "fixed_split": "train",
+          "local_window_xy": [
+            512,
+            1280
+          ],
+          "source_crop_sha256": "a6081b2295b7b21636d4f8f6fb48b4d1bc24a6e2136546fb5ce763905cdbbc7d",
+          "declared_weak_label_bare_pixels": 271,
+          "geometric_inside_fraction": 1.0
+        }
+      ]
+    },
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "eligible": 18,
+      "deficit": 10,
+      "local_bare_candidates": 0,
+      "max_declared_weak_bare_pixels": null,
+      "proposal_indexes": [],
+      "splits": [],
+      "consumer_scopes": [],
+      "candidates": []
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "eligible": 27,
+      "deficit": 1,
+      "local_bare_candidates": 2,
+      "max_declared_weak_bare_pixels": 1112,
+      "proposal_indexes": [
+        0,
+        5
+      ],
+      "splits": [
+        "train"
+      ],
+      "consumer_scopes": [
+        "PLANNED_CONSUMER_NOT_CONNECTED"
+      ],
+      "candidates": [
+        {
+          "proposal_index": 0,
+          "fixed_split": "train",
+          "local_window_xy": [
+            1536,
+            1792
+          ],
+          "source_crop_sha256": "a10218846e13f5a03c97987e24a6e5979c59591f28ccf47508ba51e7c63528f3",
+          "declared_weak_label_bare_pixels": 1112,
+          "geometric_inside_fraction": 1.0
+        },
+        {
+          "proposal_index": 5,
+          "fixed_split": "train",
+          "local_window_xy": [
+            1536,
+            1024
+          ],
+          "source_crop_sha256": "a10218846e13f5a03c97987e24a6e5979c59591f28ccf47508ba51e7c63528f3",
+          "declared_weak_label_bare_pixels": 469,
+          "geometric_inside_fraction": 1.0
+        }
+      ]
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2022,
+      "eligible": 26,
+      "deficit": 2,
+      "local_bare_candidates": 0,
+      "max_declared_weak_bare_pixels": null,
+      "proposal_indexes": [],
+      "splits": [],
+      "consumer_scopes": [],
+      "candidates": []
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "eligible": 10,
+      "deficit": 18,
+      "local_bare_candidates": 2,
+      "max_declared_weak_bare_pixels": 814,
+      "proposal_indexes": [
+        2,
+        12
+      ],
+      "splits": [
+        "train"
+      ],
+      "consumer_scopes": [
+        "PLANNED_CONSUMER_NOT_CONNECTED"
+      ],
+      "candidates": [
+        {
+          "proposal_index": 2,
+          "fixed_split": "train",
+          "local_window_xy": [
+            1536,
+            1792
+          ],
+          "source_crop_sha256": "ddfad3eb54ca9d9e9b0e7aa0c4783bb7d93e02fc972f2a28f7002305c076bd81",
+          "declared_weak_label_bare_pixels": 814,
+          "geometric_inside_fraction": 1.0
+        },
+        {
+          "proposal_index": 12,
+          "fixed_split": "train",
+          "local_window_xy": [
+            0,
+            768
+          ],
+          "source_crop_sha256": "ddfad3eb54ca9d9e9b0e7aa0c4783bb7d93e02fc972f2a28f7002305c076bd81",
+          "declared_weak_label_bare_pixels": 266,
+          "geometric_inside_fraction": 1.0
+        }
+      ]
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "eligible": 23,
+      "deficit": 5,
+      "local_bare_candidates": 2,
+      "max_declared_weak_bare_pixels": 840,
+      "proposal_indexes": [
+        1,
+        10
+      ],
+      "splits": [
+        "train"
+      ],
+      "consumer_scopes": [
+        "PLANNED_CONSUMER_NOT_CONNECTED"
+      ],
+      "candidates": [
+        {
+          "proposal_index": 1,
+          "fixed_split": "train",
+          "local_window_xy": [
+            512,
+            0
+          ],
+          "source_crop_sha256": "220bdd675c59a16adb44223d6beac671e272e368c131835d1356cb9b39151187",
+          "declared_weak_label_bare_pixels": 840,
+          "geometric_inside_fraction": 0.9927933426788534
+        },
+        {
+          "proposal_index": 10,
+          "fixed_split": "train",
+          "local_window_xy": [
+            256,
+            0
+          ],
+          "source_crop_sha256": "220bdd675c59a16adb44223d6beac671e272e368c131835d1356cb9b39151187",
+          "declared_weak_label_bare_pixels": 321,
+          "geometric_inside_fraction": 1.0
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "deficit_cells": 10,
+    "deficit_cells_with_local_candidates": 5,
+    "candidate_windows_in_deficit_cells": 13,
+    "candidate_windows_elsewhere": 37,
+    "deficit_sum_of_cells_with_candidates_not_predicted_resolved": 28,
+    "new_acquired_or_quality_eligible_patches_from_this_review": 0
+  },
+  "handoff_constraints": [
+    "Local weak-label candidates are positions for later review, not acquired images, independent spaces, or approved batches.",
+    "Existing157 consumer supports only Banten/val. Train/test candidates require owner implementation/generalization and its verification.",
+    "Even Banten candidates require current/source image and pending/support inventory overlap checks, source-scene split veto/claim, actual B02/SCL and quality checks, and shared budget/429/finalize contracts.",
+    "Bare counts are raw weak-label code8 counts; final aligned valid-area counts may differ.",
+    "No assumption that each candidate fills one missing patch or that candidates are spatially independent.",
+    "This join uses the matching fixed6b74 source and54 deficit basis; do not call it live after later collection changes."
+  ],
+  "limits": [
+    "No raw raster or boundary geometry was re-read or recomputed.",
+    "The173 final verifier recounted50 candidate labels but did not independently recompute geometry.",
+    "Publication and execution remain existing-owner responsibilities."
+  ]
+}

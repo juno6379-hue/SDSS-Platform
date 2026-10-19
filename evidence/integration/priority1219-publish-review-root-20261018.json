@@ -1,0 +1,154 @@
+{
+  "scope": "READ_ONLY_1219_PUBLICATION_CONTRACT_AND_POST_PUBLICATION_POINTER_AUDIT",
+  "observed_at_utc": "2026-10-18T02:35:35.752989+00:00",
+  "source_test_document_server_edits": 0,
+  "publication_calls": 0,
+  "api_calls": 0,
+  "native_qa_preprocessing_or_raster_rehashes": 0,
+  "ownership": "Existing development chat owns pointer publication/UI and 170 consumer/native QA; Root chat owns post-publication browser check. This agent reads and hands off only.",
+  "checks": {
+    "pointer_equals_publication_receipt_bytes": true,
+    "previous_pointer_sha_matches_preserved_backup": true,
+    "source_pin_matches_completed_summary_and_prior_independent_audit": true,
+    "candidate_pin_matches_prior_independent_audit": true,
+    "qa_current_bytes_pin_matches": true,
+    "published_counts_match_qa_summary": true,
+    "published_blockers_match_qa_summary": true,
+    "ready_scientific_false": true
+  },
+  "publication": {
+    "at": "2026-10-18T02:33:11.635555+00:00",
+    "pointer_sha256": "d432cb8ec91bdfe903f751f40d27a83064b91ce0938740fb4ad358e85c595067",
+    "scope": "FROZEN_1536_ROW_SOURCE_NOT_LATER_COLLECTION",
+    "eligible": 1219,
+    "by_split": {
+      "train": 720,
+      "val": 249,
+      "test": 250
+    },
+    "blockers": 3,
+    "source_sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+    "files": [
+      {
+        "path": "priority164-cohort-20261018/source.json",
+        "sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf"
+      },
+      {
+        "path": "priority164-cohort-20261018/stage/candidate.json",
+        "sha256": "706dbc0a67b9186c21fa579504c74f58bfdd4930530f09209e8e977c992678c3"
+      },
+      {
+        "path": "priority164-cohort-20261018/qa/readiness.json",
+        "sha256": "03ca6e9786ebb639cf72cbf0ad7335d4e9952aacf3cf429405ec53b0e93b7168"
+      }
+    ],
+    "limitations": [
+      "Connectivity witness NOT_CAPTURED_BUDGET; no gate bypass",
+      "Later general/targeted collection excluded"
+    ],
+    "prior_eligible": 1125,
+    "prior_source_sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+    "preserved_prior_pointer_sha256": "c0a8f4984dc857979dc3c94b68c3a5d5bc2b311f75e1ad829401f5e578fc6ab0"
+  },
+  "completed_164_qa": {
+    "source_snapshot_at": "2026-10-18T02:06:45.591998+00:00",
+    "qa_summary_completed_at": "2026-10-18T02:29:17.620365+00:00",
+    "source_physical": 1536,
+    "candidate_physical": 1520,
+    "excluded_rows": 16,
+    "eligible": 1219,
+    "blockers": [
+      {
+        "code": "REFERENCE_CLASS_IMBALANCE",
+        "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+        "scene": null
+      },
+      {
+        "code": "REFERENCE_CLASS_IMBALANCE",
+        "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+        "scene": null
+      },
+      {
+        "code": "REFERENCE_CLASS_IMBALANCE",
+        "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+        "scene": null
+      }
+    ],
+    "prior_independent_4761_file_hash_audit": "priority164-completed-review-root-20261018.json",
+    "heavy_file_audit_repeated": false
+  },
+  "current_manifest_single_json_observation": {
+    "sha256": "6b74cfda9afd8a9ab238406bbf5007e50a2c1162989e2f8953a13a6289f7950c",
+    "stat_stable": true,
+    "physical": 1569,
+    "eligible": 1260,
+    "by_split": {
+      "train": 744,
+      "val": 266,
+      "test": 250
+    },
+    "source_matches_published_cohort": false,
+    "targeted_rows_observed": 1,
+    "targeted_quality_eligible_rows_observed": 1,
+    "targeted_rows_native_qa_rerun": false
+  },
+  "170_completed_artifact": {
+    "stdout_path": "evidence\\integration\\targeted170-execute-20261018-stdout.log",
+    "terminal_records": [
+      {
+        "status": "BOUNDED_TARGETED_STAGE_FINISHED",
+        "executed": true,
+        "recorded_at": "2026-10-18T02:31:36.440526+00:00",
+        "request_sha256": "f438ce39fee1701c2f20353dc8edb59c1d561ad978b441194957a04e301e7b6f",
+        "execution": {
+          "workers": 2,
+          "submitted_batches": 1,
+          "finalized_batches": 1,
+          "stop_reason": "bounded_batch_count",
+          "circuit_open": false
+        },
+        "batches": [
+          {
+            "key": "target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc",
+            "patches": 1,
+            "eligible": 1,
+            "charged_bytes": 3827633,
+            "live_b02_checked": true,
+            "rate_limited": false
+          }
+        ],
+        "quality_eligible_total": 1260,
+        "learning_ready": false,
+        "scientific_accuracy_validated": false
+      }
+    ],
+    "status": "RECORDED_TERMINAL_COMPLETION_NOT_INDEPENDENT_NATIVE_QA",
+    "not_included_in_164_fixed_candidate": true,
+    "later_final_guards_and_native_validation_owned_elsewhere": true
+  },
+  "api_ui_handoff_contract": {
+    "endpoint": "GET /api/data/collection-status",
+    "candidate_quality_expected_eligible": 1219,
+    "candidate_quality_expected_by_split": {
+      "train": 720,
+      "val": 249,
+      "test": 250
+    },
+    "candidate_quality_expected_blockers": 3,
+    "candidate_quality_source_matches_current_expected": false,
+    "candidate_quality_ready_for_training": false,
+    "source_report": "priority164-cohort-20261018/qa/readiness.json",
+    "current_counts_source": "collection_targets from current aggregate manifest",
+    "current_and_fixed_candidate_numbers_must_remain_separate": true,
+    "candidate_receipt_time_not_api_response_or_current_collection_time": true,
+    "old1125_browser_fallback_must_not_be_used_after_successful_new_pointer_fetch": true,
+    "no_explicit_frontend_change_needed_dynamic_candidate_parser": true,
+    "actual_browser_verification_by_this_agent": false
+  },
+  "limits": [
+    "No new API GET, native QA, collection, publication or source mutation.",
+    "Current manifest observation is sequential and can become stale after this read.",
+    "Source/candidate JSON pins are compared to the completed independent audit; their large contents were not rehashed again in this review.",
+    "170 stdout and aggregate membership do not replace the existing owner native QA or imply all execution guard findings resolved."
+  ]
+}

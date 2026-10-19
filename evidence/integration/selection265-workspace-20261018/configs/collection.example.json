@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "description": "인도네시아 연구 후보 AOI. 행정/사업 경계가 확정된 영역이 아닙니다.",
+  "collection": "sentinel-2-l2a",
+  "endpoint": "planetary-computer",
+  "collection_mode": "bounded_windows",
+  "window_size": 256,
+  "years": [2020, 2021, 2022, 2023, 2024, 2025],
+  "season_start": "06-01",
+  "season_end": "09-30",
+  "cloud_cover": 20,
+  "bands": ["blue", "green", "red", "nir", "swir16", "swir22"],
+  "max_total_bytes": 2147483648,
+  "max_asset_bytes": 268435456,
+  "download_worldcover": true,
+  "worldcover_year": 2021,
+  "minimum_complete_scenes": 6,
+  "target_verified_patches": [1000, 3000],
+  "periods": {
+    "T1": {"start_date": "2020-06-01", "end_date": "2020-09-30"},
+    "T2": {"start_date": "2024-06-01", "end_date": "2024-09-30"}
+  },
+  "aois": [
+    {"id": "west_java_candidate", "bbox": [106.7, -6.8, 106.9, -6.6], "boundary_status": "research_candidate_unconfirmed"},
+    {"id": "central_java_candidate", "bbox": [110.3, -7.2, 110.5, -7.0], "boundary_status": "research_candidate_unconfirmed"},
+    {"id": "south_sulawesi_candidate", "bbox": [119.4, -5.3, 119.6, -5.1], "boundary_status": "research_candidate_unconfirmed"}
+  ]
+}

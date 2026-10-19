@@ -1,0 +1,35 @@
+test_absent_destination_not_created (test_target329_atomic_json.AtomicJSONTests.test_absent_destination_not_created) ... ok
+test_bad_contract_before_open (test_target329_atomic_json.AtomicJSONTests.test_bad_contract_before_open) ... ok
+test_budget_exhaustion_before_temp_open (test_target329_atomic_json.AtomicJSONTests.test_budget_exhaustion_before_temp_open) ... ok
+test_budget_postread_room_before_replace (test_target329_atomic_json.AtomicJSONTests.test_budget_postread_room_before_replace) ... ok
+test_cancel_preserved_and_cleanup (test_target329_atomic_json.AtomicJSONTests.test_cancel_preserved_and_cleanup) ... ok
+test_cooperative_competition_one_winner (test_target329_atomic_json.AtomicJSONTests.test_cooperative_competition_one_winner) ... ok
+test_depth (test_target329_atomic_json.AtomicJSONTests.test_depth) ... ok
+test_existing_temp_never_deleted (test_target329_atomic_json.AtomicJSONTests.test_existing_temp_never_deleted) ... ok
+test_external_destination_change_never_overwritten (test_target329_atomic_json.AtomicJSONTests.test_external_destination_change_never_overwritten) ... ok
+test_foreign_temp_after_close_preserved (test_target329_atomic_json.AtomicJSONTests.test_foreign_temp_after_close_preserved) ... ok
+test_fsync_failure_old_unchanged (test_target329_atomic_json.AtomicJSONTests.test_fsync_failure_old_unchanged) ... ok
+test_hardlink_rejected (test_target329_atomic_json.AtomicJSONTests.test_hardlink_rejected) ... ok
+test_invalid_json_before_open (test_target329_atomic_json.AtomicJSONTests.test_invalid_json_before_open) ... ok
+test_ledger_old_cap_before_read_open (test_target329_atomic_json.AtomicJSONTests.test_ledger_old_cap_before_read_open) ... ok
+test_oversize_before_open (test_target329_atomic_json.AtomicJSONTests.test_oversize_before_open) ... ok
+test_parent_replacement_detected (test_target329_atomic_json.AtomicJSONTests.test_parent_replacement_detected) ... ok
+test_partial_then_exception_charged (test_target329_atomic_json.AtomicJSONTests.test_partial_then_exception_charged) ... ok
+test_postcommit_failure_reports_applied (test_target329_atomic_json.AtomicJSONTests.test_postcommit_failure_reports_applied) ... ok
+test_replace_exception_outcome_unknown (test_target329_atomic_json.AtomicJSONTests.test_replace_exception_outcome_unknown) ... ok
+test_roles (test_target329_atomic_json.AtomicJSONTests.test_roles) ... ok
+test_short_write_charged_and_cleaned (test_target329_atomic_json.AtomicJSONTests.test_short_write_charged_and_cleaned) ... ok
+test_source_exact_3000_rows (test_target329_atomic_json.AtomicJSONTests.test_source_exact_3000_rows) ... ok
+test_source_missing_scenes (test_target329_atomic_json.AtomicJSONTests.test_source_missing_scenes) ... ok
+test_source_rows_includes_history (test_target329_atomic_json.AtomicJSONTests.test_source_rows_includes_history) ... ok
+test_success_exact_actual_io_and_same_budget (test_target329_atomic_json.AtomicJSONTests.test_success_exact_actual_io_and_same_budget) ... ok
+test_unknown_conservative_charge_preserve (test_target329_atomic_json.AtomicJSONTests.test_unknown_conservative_charge_preserve) ... ok
+test_value_detached_canonical (test_target329_atomic_json.AtomicJSONTests.test_value_detached_canonical) ... ok
+test_value_reject_custom_cycle_nonfinite_surrogate (test_target329_atomic_json.AtomicJSONTests.test_value_reject_custom_cycle_nonfinite_surrogate) ... ok
+test_wrong_pin_old_unchanged (test_target329_atomic_json.AtomicJSONTests.test_wrong_pin_old_unchanged) ... ok
+test_wrong_return_count_is_unknown_conservative (test_target329_atomic_json.AtomicJSONTests.test_wrong_return_count_is_unknown_conservative) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 2.484s
+
+OK

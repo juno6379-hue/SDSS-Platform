@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T09:04:19.703756+00:00",
+  "status": "STATIC_REVIEW_COMPLETED_NO_BLOCKING_FINDINGS_IN_REVIEWED_SCOPE",
+  "freeze_sha256": "718e757240a69c1351f5ffbbfa1ec248fc1daab2493720d0e5ea23419be1922e",
+  "application_manifest_path": "evidence/integration/selection265-workspace-20261018/application265-manifest.json",
+  "application_manifest_sha256": "368ed88ec4b23c14bc55de1139b58f8f6c80ea653fd0ed19343cd42f64c33f1f",
+  "unique_pins_checked": 20,
+  "pin_mismatches": 0,
+  "runtime_bundle_paths": 3,
+  "test_bundle_paths": 6,
+  "application_union_paths": 9,
+  "findings263": {
+    "F1": "RESOLVED_STATIC",
+    "F2": "RESOLVED_STATIC_WITH_EXISTING_PORTABLE_SYNTHETIC_EVIDENCE"
+  },
+  "new_blocking_findings": [],
+  "existing_portable_tests": {
+    "passed": 96,
+    "unittest_seconds": 39.035,
+    "wall_seconds": 40.531,
+    "deployed_files": 46,
+    "skip": 0,
+    "scope": "Existing isolated Temp evidence, not independently reexecuted"
+  },
+  "document_path": "docs\\implementation\\267_selection265_independent_review.md",
+  "document_sha256": "a0a1172940dac38fe86ee9b73f5fc10cc1532f003f15e0dab52b3830e3feed08",
+  "tests_reexecuted": 0,
+  "operating_data_or_ledger_reads": 0,
+  "native_raster_reads": 0,
+  "http_calls": 0,
+  "collector_starts": 0,
+  "main_or_isolated_code_edits": 0,
+  "shared_application_authorized": false,
+  "real_provider_compatibility_verified": false,
+  "execution_approved": false
+}

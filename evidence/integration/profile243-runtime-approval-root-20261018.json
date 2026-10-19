@@ -1,0 +1,412 @@
+{
+  "status": "ROOT_APPROVED_RUNTIME18_ONLY_TEST3_DEFERRED_TO242",
+  "at_utc": "2026-10-18T07:50:57.267989+00:00",
+  "review_sha256": "c617a634b50690eb3f83926be438b8747b430f2679da0007777db37f51b7b9f5",
+  "freeze237_sha256": "56c9f57bf4929338835170e48d15495385e48cf58140f7ca396bdbbf4a07ceb6",
+  "runtime_files": [
+    {
+      "path": "backend/app/candidate_qa_comparison_api.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "6268dd381198309daee474598788a9c2a1eb385eb0cee9c4f9e60ad1085f1a5b",
+        "bytes": 4690
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\candidate_qa_comparison_api.py",
+      "main_observed": {
+        "bytes": 4690,
+        "sha256": "6268dd381198309daee474598788a9c2a1eb385eb0cee9c4f9e60ad1085f1a5b"
+      },
+      "final237": {
+        "sha256": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+        "bytes": 5023
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/collection_budget_status.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "670d3262e6ea7ccd25995a8c0b42bc0441dd1618d1d380360978c213da3a6d52",
+        "bytes": 8643
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\baseline230-code\\backend\\app\\collection_budget_status.py",
+      "main_observed": {
+        "bytes": 8643,
+        "sha256": "670d3262e6ea7ccd25995a8c0b42bc0441dd1618d1d380360978c213da3a6d52"
+      },
+      "final237": {
+        "sha256": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108",
+        "bytes": 9420
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/collection_priority_status.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        237
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "57401082fea929ba8ecc396a48596a5253e18408f6a641064395722242aea21a",
+        "bytes": 11716
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\baseline237-code\\backend\\app\\collection_priority_status.py",
+      "main_observed": {
+        "bytes": 11716,
+        "sha256": "57401082fea929ba8ecc396a48596a5253e18408f6a641064395722242aea21a"
+      },
+      "final237": {
+        "sha256": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9",
+        "bytes": 12380
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/collection_source_profile.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230
+      ],
+      "baseline_before_any_profile_revision": null,
+      "baseline_code_archive": null,
+      "main_observed": null,
+      "final237": {
+        "sha256": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef",
+        "bytes": 4882
+      },
+      "status": "NEW_PATH_ABSENT",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/collection_status.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230,
+        237
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "ff76a2bede8f538b0f25f7a68221773c2e037213f437da1e02ef5e20971b64fd",
+        "bytes": 16533
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\baseline230-code\\backend\\app\\collection_status.py",
+      "main_observed": {
+        "bytes": 16533,
+        "sha256": "ff76a2bede8f538b0f25f7a68221773c2e037213f437da1e02ef5e20971b64fd"
+      },
+      "final237": {
+        "sha256": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9",
+        "bytes": 19153
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/data/candidates.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        237
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "c72257998d14c8b874ee9c9b532e50d78b3e3417a8b47c1688a54c656966dba6",
+        "bytes": 3752
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\baseline237-code\\backend\\app\\data\\candidates.py",
+      "main_observed": {
+        "bytes": 3752,
+        "sha256": "c72257998d14c8b874ee9c9b532e50d78b3e3417a8b47c1688a54c656966dba6"
+      },
+      "final237": {
+        "sha256": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9",
+        "bytes": 4564
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/main.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "0713249307cf83ae5eb5e0223288ce2003c7b661cdb38a1c71a807402ac0a44b",
+        "bytes": 22739
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\baseline230-code\\backend\\app\\main.py",
+      "main_observed": {
+        "bytes": 22739,
+        "sha256": "0713249307cf83ae5eb5e0223288ce2003c7b661cdb38a1c71a807402ac0a44b"
+      },
+      "final237": {
+        "sha256": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b",
+        "bytes": 23838
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/candidate_materialization.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b",
+        "bytes": 8716
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\candidate_materialization.py",
+      "main_observed": {
+        "bytes": 8716,
+        "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b"
+      },
+      "final237": {
+        "sha256": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+        "bytes": 9036
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/candidate_qa_comparison.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e",
+        "bytes": 17204
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\candidate_qa_comparison.py",
+      "main_observed": {
+        "bytes": 17204,
+        "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e"
+      },
+      "final237": {
+        "sha256": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+        "bytes": 17672
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/candidate_readiness_qa.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "b93aa5964bbe54955411ff978680a06e5380d1507f562cf3a6675d30d7cd4aaf",
+        "bytes": 17817
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\candidate_readiness_qa.py",
+      "main_observed": {
+        "bytes": 17817,
+        "sha256": "b93aa5964bbe54955411ff978680a06e5380d1507f562cf3a6675d30d7cd4aaf"
+      },
+      "final237": {
+        "sha256": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+        "bytes": 18326
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/candidate_staging.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "a96bcb55d08f7605fb57b9f45f86a6c392e6c15068b09efdb4761aabe5955862",
+        "bytes": 12357
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\candidate_staging.py",
+      "main_observed": {
+        "bytes": 12357,
+        "sha256": "a96bcb55d08f7605fb57b9f45f86a6c392e6c15068b09efdb4761aabe5955862"
+      },
+      "final237": {
+        "sha256": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d",
+        "bytes": 13715
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230,
+        237
+      ],
+      "baseline_before_any_profile_revision": null,
+      "baseline_code_archive": null,
+      "main_observed": null,
+      "final237": {
+        "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+        "bytes": 11756
+      },
+      "status": "NEW_PATH_ABSENT",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/readiness.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc",
+        "bytes": 32867
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\readiness.py",
+      "main_observed": {
+        "bytes": 32867,
+        "sha256": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc"
+      },
+      "final237": {
+        "sha256": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb",
+        "bytes": 33396
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "5f8774150d7c6bd11b8682fe2027059191ac6d5a9d64a79f03a3c9e60ef0165b",
+        "bytes": 7699
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\split_json_io.py",
+      "main_observed": {
+        "bytes": 7699,
+        "sha256": "5f8774150d7c6bd11b8682fe2027059191ac6d5a9d64a79f03a3c9e60ef0165b"
+      },
+      "final237": {
+        "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+        "bytes": 8513
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "scripts/find_bare_targets173.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230,
+        237
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "64d7a8f09f1a87edeecf72665e4f6a097d793d9e168c5b4d03ae1839daef917f",
+        "bytes": 16216
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\baseline230-code\\scripts\\find_bare_targets173.py",
+      "main_observed": {
+        "bytes": 16216,
+        "sha256": "64d7a8f09f1a87edeecf72665e4f6a097d793d9e168c5b4d03ae1839daef917f"
+      },
+      "final237": {
+        "sha256": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750",
+        "bytes": 17919
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "scripts/prepare_priority_candidate164.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "8a113c2efa530744662734b31386bf99a41bc31db9d279f53c2074dfc3173ba7",
+        "bytes": 10443
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\scripts\\prepare_priority_candidate164.py",
+      "main_observed": {
+        "bytes": 10443,
+        "sha256": "8a113c2efa530744662734b31386bf99a41bc31db9d279f53c2074dfc3173ba7"
+      },
+      "final237": {
+        "sha256": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437",
+        "bytes": 13570
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "scripts/propose_deficit_centers182.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230,
+        237
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "c8ab85d7e3f39cda8a0c5a8259bf212a5bf9bc699e7f7b17652a90cfdacd6cf9",
+        "bytes": 13575
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\baseline230-code\\scripts\\propose_deficit_centers182.py",
+      "main_observed": {
+        "bytes": 13575,
+        "sha256": "c8ab85d7e3f39cda8a0c5a8259bf212a5bf9bc699e7f7b17652a90cfdacd6cf9"
+      },
+      "final237": {
+        "sha256": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+        "bytes": 14399
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "scripts/run_experiment.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3",
+        "bytes": 13221
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\scripts\\run_experiment.py",
+      "main_observed": {
+        "bytes": 13221,
+        "sha256": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3"
+      },
+      "final237": {
+        "sha256": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772",
+        "bytes": 13682
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    }
+  ],
+  "protected_pins": {
+    "first-group-training-esri-v1/annual-window-report.json": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "first-group-training-budget/global-ledger.json": "61161c35eabb593afb5f096c256791871d297b723f82ffc2ac2449b3bd8266e7",
+    "first-group-training-priority/latest-candidate.json": "920ceb52dca0aba32f11389fd2f9c5f2719ca40b47f44e650c3a38b57c3b3d40",
+    "first-group-training-priority/latest-bare-review.json": "1018b59294871df8f9e339d63695f08632a5632419b3831e47bdeb2f88c785ab"
+  },
+  "catalog_record_snapshot": "72cf29dae2c6790907559d38d92ebf43eaf6ede795607637b0a46ccdaa5b754b",
+  "old_api_pid": 40492,
+  "collector_started": false,
+  "external_deployment": false
+}

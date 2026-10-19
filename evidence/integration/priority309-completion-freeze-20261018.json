@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "status": "VERIFIED_REAL_PINNED_CANDIDATE_QA_AND_METADATA_HANDOFF_COMPLETED",
+  "at": "2026-10-18T14:06:08.424496+00:00",
+  "run_id": "guarded309-20261018",
+  "actual_pid": 24432,
+  "exec_session": 96526,
+  "actual_cli_invocations": 1,
+  "exit_code": 0,
+  "qa_wrapper_wall_seconds": 1608.765,
+  "source_qa_seconds": 314.125,
+  "candidate_qa_function_seconds": 343.078,
+  "source_rows": 1779,
+  "candidate_rows": 1763,
+  "source_eligible": {
+    "train": 865,
+    "val": 292,
+    "test": 250
+  },
+  "candidate_eligible": {
+    "train": 865,
+    "val": 276,
+    "test": 250
+  },
+  "excluded_rows": [
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303
+  ],
+  "remaining_source_identity_conflicts": 0,
+  "native_verified_files_rechecked_by_original_cli": 5526,
+  "native_file_sha_mismatches": 0,
+  "independent_output_pins_verified": 11,
+  "profile_v2_receipts_verified": 3,
+  "candidate_blockers": [
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "connectivity_capture_status": "NOT_CAPTURED_BUDGET",
+  "qa_and_handoff_cumulative_json_io_bytes_after_proof": 5076287859,
+  "maximum_json_io_bytes": 17179869184,
+  "administrative_doc_and_completion_freeze_in_qa_usage": false,
+  "os_peak_working_set_max_observed_sample_bytes": 1332064256,
+  "os_final_peak_guaranteed": false,
+  "rss_observed_by_wrapper": false,
+  "class_statistics": {
+    "train": {
+      "valid_label_pixels": 55132456,
+      "bare_pixels": 2562,
+      "bare_percent": 0.004646990513174309,
+      "bare_contributing_patches": 1
+    },
+    "val": {
+      "valid_label_pixels": 17776457,
+      "bare_pixels": 2998,
+      "bare_percent": 0.01686500296431398,
+      "bare_contributing_patches": 2
+    },
+    "test": {
+      "valid_label_pixels": 16252940,
+      "bare_pixels": 1025,
+      "bare_percent": 0.006306551307025068,
+      "bare_contributing_patches": 0
+    }
+  },
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "handoff_verified_at": "2026-10-18T14:04:01.049395+00:00",
+  "verified_output_pins_as_of_handoff": {
+    "data\\priority164-guarded309-20261018\\source.json": {
+      "sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+      "bytes": 69564847
+    },
+    "data\\priority164-guarded309-20261018\\source-readiness.json": {
+      "sha256": "b62e2af77230271039a8a7265fb748011375c35040b42524d86c7117ee510dad",
+      "bytes": 1433644
+    },
+    "evidence\\integration\\priority164-guarded309-20261018\\split-plan.json": {
+      "sha256": "08338b84fe2faa8699ae80b990575b34f055a09eb863487e96cc5fcddc3430d8",
+      "bytes": 26650
+    },
+    "evidence\\integration\\priority164-guarded309-20261018\\candidate-package\\plan.json": {
+      "sha256": "08338b84fe2faa8699ae80b990575b34f055a09eb863487e96cc5fcddc3430d8",
+      "bytes": 26650
+    },
+    "evidence\\integration\\priority164-guarded309-20261018\\candidate-package\\candidate.json": {
+      "sha256": "b518c75cc1c84be1773de3a7955fdbea62e65acc3f752717d8bb8eed756374d6",
+      "bytes": 68943578
+    },
+    "evidence\\integration\\priority164-guarded309-20261018\\candidate-package\\receipt.json": {
+      "sha256": "6053767917382c5982e1ef0c43ee48fdeacbfbfbc35b1ec5bd7109fbb957f3ed",
+      "bytes": 4101
+    },
+    "data\\priority164-guarded309-20261018\\stage\\candidate.json": {
+      "sha256": "b518c75cc1c84be1773de3a7955fdbea62e65acc3f752717d8bb8eed756374d6",
+      "bytes": 68943578
+    },
+    "data\\priority164-guarded309-20261018\\stage\\staging-receipt.json": {
+      "sha256": "e492f09c06973c6af549685fae2a1c289b01da5d4d29508ecb2ade1819f12433",
+      "bytes": 3836
+    },
+    "data\\first-group\\experiment-esri-v003-2020-2025.json": {
+      "sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+      "bytes": 1306
+    },
+    "data\\priority164-guarded309-20261018\\qa\\readiness.json": {
+      "sha256": "3e74d8e881e23a641dc0e6e80f2457d9cd1420441a58b39db66fce9cdef11fe5",
+      "bytes": 1421174
+    },
+    "data\\priority164-guarded309-20261018\\qa\\qa-receipt.json": {
+      "sha256": "ef847882a6fbce52413b05b9dc3f94ee89418d6232a4a1ce3ba0933e85b210b1",
+      "bytes": 3069
+    }
+  },
+  "protected_old_1360_as_of_handoff": {
+    "data/first-group-training-priority/latest-candidate.json": "996a88de2034e9803381d7ae4e906a0d1f418075675d13ef796fb5648bb472c0",
+    "data/first-group-training-priority/candidate-receipt293-20261018.json": "996a88de2034e9803381d7ae4e906a0d1f418075675d13ef796fb5648bb472c0"
+  },
+  "operational_inputs_reopened_after_handoff": false,
+  "pins": [
+    {
+      "path": "evidence/integration/priority309-runner-20261018.py",
+      "bytes": 8887,
+      "sha256": "922e70584c51ac0c9cd247bc22d49be4bdf9936c8fcdb3b800be5b5874ea4e83"
+    },
+    {
+      "path": "evidence/integration/priority309-preparation-20261018.json",
+      "bytes": 6173,
+      "sha256": "698bb2a02155de2027d138d65820e836767f6475003f57301cc0f1a5de73fd33"
+    },
+    {
+      "path": "evidence/integration/priority309-preparation-freeze-20261018.json",
+      "bytes": 2138,
+      "sha256": "e73b65af5ed2acd84877f38c09e0d66da2a0002346356e2f45c681d5ac3a39fe"
+    },
+    {
+      "path": "evidence/integration/priority309-preparation-doc-before-start-20261018.md",
+      "bytes": 6747,
+      "sha256": "14d6930a8621172002bff0761e7690553303ca32346fead61aba2e67858d2b72"
+    },
+    {
+      "path": "evidence/integration/priority309-before290-preparation-20261018.json",
+      "bytes": 5995,
+      "sha256": "e9260f8ee5c81a63a9a8221e24b439f5e7c0b2b5e5955129be6b0cf169ace4ef"
+    },
+    {
+      "path": "evidence/integration/priority309-before290-runner-20261018.py",
+      "bytes": 8887,
+      "sha256": "68b271471887eca7259dd72196a1515ecef57a50239f25ba917ea194c3877c3e"
+    },
+    {
+      "path": "evidence/integration/priority309-runner-vs290-20261018.diff",
+      "bytes": 4072,
+      "sha256": "1329d3eb2379910edfde1f9a5dd7d698b6837e522a243fa64ab5c9150c7ab5a7"
+    },
+    {
+      "path": "evidence/integration/priority309-go-root-20261018.json",
+      "bytes": 607,
+      "sha256": "45f1ed362a9ff932646deaaafe418c0bbbe800bec54c33d9e95c0ded7bd390d4"
+    },
+    {
+      "path": "evidence/integration/priority309-launch-20261018.json",
+      "bytes": 4476,
+      "sha256": "0de64ee211ad79ffaf965ef8fbe530140157fc4f01ef6494498ba9472c0466fc"
+    },
+    {
+      "path": "evidence/integration/priority309-terminal-20261018.json",
+      "bytes": 1955,
+      "sha256": "f5fa44070eeb071c7c5cb1105908dd6d6110e335ccda9cab58b47a97957b8a30"
+    },
+    {
+      "path": "evidence/integration/priority164-guarded309-20261018.log",
+      "bytes": 514,
+      "sha256": "2c5c0eeecc1cdafa6b5ddddcd2156f6b834e2c44bf5b946381828856951b7af7"
+    },
+    {
+      "path": "evidence/integration/priority309-handoff-20261018.py",
+      "bytes": 7531,
+      "sha256": "1b535829d022884b19bd1cbd50d3016f04e43adff10a98390ba0be57b535c66e"
+    },
+    {
+      "path": "evidence/integration/priority309-handoff-before-receipt-pin-20261018.py",
+      "bytes": 7399,
+      "sha256": "47d0fb402ac8b51b49e67de78540595bba4421d254fb82546e8412d8000469bb"
+    },
+    {
+      "path": "evidence/integration/priority164-guarded309-20261018/summary.json",
+      "bytes": 5158,
+      "sha256": "1359667f4ef2316b8bfffc52a939cd626ca6b87be10139ec192c0abe5b47ec3b"
+    },
+    {
+      "path": "evidence/integration/priority164-guarded309-20261018/handoff-verification.json",
+      "bytes": 6685,
+      "sha256": "8c02c1831358e684c6788a8820e79173464a0f47d3d860199ec5b1a97f8831f1"
+    },
+    {
+      "path": "docs/implementation/309_post304_candidate_qa_preparation.md",
+      "bytes": 13837,
+      "sha256": "0f7985ee1f02aca037b9439446abcedab7ed0b0075b484abbd9a7aa10dd5435f"
+    }
+  ],
+  "published_by_this_unit": false,
+  "api_or_browser_checked_by_this_unit": false,
+  "training_executed": false,
+  "registry_called": false,
+  "network_requests": 0,
+  "additional_qa_or_native_after_handoff": 0,
+  "understanding_handoff": "ROOT_REQUESTED_SEPARATE_FOLLOWUP",
+  "later_root_publication_is_separate": true
+}

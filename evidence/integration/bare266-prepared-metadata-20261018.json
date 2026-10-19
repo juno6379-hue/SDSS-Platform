@@ -1,0 +1,140 @@
+{
+  "status": "PREPARED_METADATA_ONLY_NO_ARRAY_GO",
+  "refs": [
+    {
+      "path": "evidence/integration/deficit249-native-root-20261018-run2.json",
+      "bytes": 10610,
+      "sha256": "6beed046a69e8cddce35df65fa2ea1ae6c16199dd42808d71a3045d7ef64146c"
+    },
+    {
+      "path": "data/first-group-training-esri-v1/sources/center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39/annual-window-report.json",
+      "bytes": 16525,
+      "sha256": "2283e97995423ecd046849274d9bdc5160d478077ea4d8e7a02d4a00c5c7845b"
+    },
+    {
+      "path": "data/first-group-training-esri-v1/sources/center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39/config.json",
+      "bytes": 3208,
+      "sha256": "95b4b29c0ea051e00e4199814bfdd3f9fd6437ed225f16017f320182b55abd00"
+    },
+    {
+      "path": "data/first-group-training-esri-v1/sources/center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39/manifests/10180e532308d221ac26e9c6db24e288b0b9ac79db404c6f3dfccd2f10e23097-44ceac81423bcb24.json",
+      "bytes": 875,
+      "sha256": "d8672a82ff9781e911799885d1d73a68c63f09064e07ad9e0a0542c606a37ae7"
+    },
+    {
+      "path": "data/first-group-training-esri-v1/sources/center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39/centers182-southeast_sulawesi-f5fa8f8ccc4f-2024/stac-item.json",
+      "bytes": 21876,
+      "sha256": "b59e97e567c54aecd2709291487b0cf352ae2e1f5c05932a4993c53de1e5b2e6"
+    },
+    {
+      "path": "data/first-group-training-esri-v1/sources/center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39/centers182-southeast_sulawesi-f5fa8f8ccc4f-2024/product-metadata.xml",
+      "bytes": 54748,
+      "sha256": "f547d2bd129b525b4349e3c2b237aac2679f960a6405077afbee9ea47902a077"
+    }
+  ],
+  "province": "southeast_sulawesi",
+  "fixed_split": "train",
+  "year": 2024,
+  "selected_scene_id": "S2B_MSIL2A_20240813T021349_R060_T51MUR_20240813T055551",
+  "stac_scene_id_matches": true,
+  "stac_datetime": "2024-08-13T02:13:49.024000Z",
+  "failure_lineage": {
+    "category": "payload_or_response_contract",
+    "error_type": "ValueError",
+    "error_code": null,
+    "sanitized_message": "CENTER_B02_ALIGNMENT_SHORTFALL",
+    "exception_chain": [
+      {
+        "error_type": "AssetTransferError",
+        "sanitized_message": "원격 자산 처리 실패(stage=window_geometry_guard); 원인은 exception chain을 확인하세요"
+      },
+      {
+        "error_type": "ValueError",
+        "sanitized_message": "CENTER_B02_ALIGNMENT_SHORTFALL"
+      }
+    ]
+  },
+  "raw_label": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39\\centers182-southeast_sulawesi-f5fa8f8ccc4f-2024\\raw-esri_io.tif",
+    "sha256": "10180e532308d221ac26e9c6db24e288b0b9ac79db404c6f3dfccd2f10e23097",
+    "stored_bytes": 97234,
+    "source_url": "https://lulctimeseries.blob.core.windows.net/lulctimeseriesv003/lc2024/51M_20240101-20241231.tif",
+    "stored_metadata": {
+      "crs": "EPSG:32751",
+      "bounds": [
+        353750.0,
+        9588970.0,
+        374230.0,
+        9609450.0
+      ],
+      "width": 2048,
+      "height": 2048,
+      "count": 1,
+      "dtype": [
+        "uint8"
+      ],
+      "resolution": [
+        10.0,
+        10.0
+      ],
+      "nodata": 0.0
+    },
+    "file_catalog_status": "registered",
+    "aggregate_success_row_registration_verified": false
+  },
+  "product_declared": {
+    "PRODUCT_START_TIME": [
+      "2024-08-13T02:13:49.024Z"
+    ],
+    "PRODUCT_STOP_TIME": [
+      "2024-08-13T02:13:49.024Z"
+    ],
+    "PRODUCT_URI": [
+      "S2B_MSIL2A_20240813T021349_N0511_R060_T51MUR_20240813T055551.SAFE"
+    ],
+    "PROCESSING_LEVEL": [
+      "Level-2A"
+    ]
+  },
+  "stored_label_preview_counts": {
+    "1": 962,
+    "2": 4072659,
+    "4": 408,
+    "5": 54635,
+    "7": 7058,
+    "11": 58582
+  },
+  "stored_label_preview_total_pixels": 4194304,
+  "stored_label_preview_bare_pixels": 0,
+  "counts_cover_declared_2048_squared": true,
+  "metadata_implication": "If persisted whole-crop counts are faithful, bare8=0 means no subset256window can reach256barepixels. No new array verification performed.",
+  "proposed_scan": {
+    "label_files": 1,
+    "max_file_bytes": 8388608,
+    "max_width": 2048,
+    "max_height": 2048,
+    "window_size": 256,
+    "stride": 128,
+    "max_windows": 225,
+    "max_ranked": 50,
+    "bare_class": 8,
+    "minimum_bare_pixels": 256,
+    "minimum_province_fraction": 0.95,
+    "boundary_ref": "PENDING_ROOT_SHA_AND_GO"
+  },
+  "activity": {
+    "raster_header_reads": 0,
+    "raster_array_reads": 0,
+    "operating_aggregate_reads": 0,
+    "ledger_reads": 0,
+    "http": 0,
+    "collector": 0,
+    "product_changes": 0
+  },
+  "execution_supported": false,
+  "actual_quality_eligible": false,
+  "scientifically_verified_bare": false,
+  "spatial_independence_verified": false,
+  "consumer_connected": false,
+  "ready_for_training": false
+}

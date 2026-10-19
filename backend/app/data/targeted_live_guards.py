@@ -2,13 +2,26 @@
 from threading import Lock
 from urllib.parse import urlsplit
 from datetime import datetime
+import copy
 import math
 
 from .targeted_scene_claims import SceneClaimRegistry
+from .readiness_connectivity_witness import FIXED_PROVINCE_SPLITS
 
 
 def _need(value, code):
     if not value: raise ValueError(code)
+
+
+def _metric_crs(value):
+    from rasterio.crs import CRS
+    try:
+        crs=CRS.from_user_input(value)
+        valid=crs.is_projected and crs.linear_units_factor[1]==1.0
+    except Exception:
+        valid=False
+    _need(valid,'TARGET_NATIVE_CRS_UNSUPPORTED')
+    return crs
 
 
 def _bounds(geometry):
@@ -56,18 +69,38 @@ class TargetedLiveGuard:
     Only a selected item's exact declared B02 URL can satisfy the B02 witness.
     """
     def __init__(self, job, target, scenes, windows):
-        self.job,self.target,self.scenes,self.windows=job,target,scenes,windows
+        self.job,self.target=copy.deepcopy(job),copy.deepcopy(target)
+        self.scenes,self.windows=scenes,windows
         self.selected=None;self.assets=set();self.blue=None;self.label_url=None;self.b02_checked=False
 
+    def _binding(self):
+        """Recheck fixed province/split and pinned target AOI before any pixel hook."""
+        province=self.job.get('province');year=self.job.get('year')
+        _need(type(province) is str and province in FIXED_PROVINCE_SPLITS and
+              self.job.get('split')==FIXED_PROVINCE_SPLITS[province] and
+              self.target.get('province')==province and self.target.get('fixed_split')==self.job['split'] and
+              type(year) is int and 2020<=year<=2025 and
+              type(self.target.get('year')) is int and self.target['year']==year,
+              'TARGET_SCENE_YEAR_OR_SPLIT_INVALID')
+        aois=self.job['config']['aois']
+        _need(type(aois) is list and len(aois)==1 and aois[0].get('province_id')==province and
+              type(aois[0].get('id')) is str and bool(aois[0]['id']) and
+              aois[0].get('bbox')==self.target.get('target_bbox_wgs84'), 'TARGET_SCENE_AOI_CHANGED')
+        bbox=aois[0]['bbox']
+        _need(type(bbox) is list and len(bbox)==4 and all(type(v) in (int,float) and math.isfinite(v) for v in bbox) and
+              -180<=bbox[0]<bbox[2]<=180 and -90<bbox[1]<bbox[3]<90,'TARGET_SCENE_AOI_CHANGED')
+        _metric_crs(self.target['target_footprint_native']['crs'])
+        return aois[0]
+
     def on_scene(self, item, aoi, year):
+        planned_aoi=self._binding()
         _need(type(year) is int or (type(year) is str and year in {str(y) for y in range(2020,2026)}),
               'TARGET_SCENE_YEAR_OR_SPLIT_INVALID')
         observed=datetime.fromisoformat(item['datetime'].replace('Z','+00:00'))
         _need('T' in item['datetime'] and observed.tzinfo is not None and
-              int(year)==self.job['year']==observed.year and self.job['split']=='val' and
-              self.job['province']=='banten', 'TARGET_SCENE_YEAR_OR_SPLIT_INVALID')
-        _need(aoi['id']==self.job['config']['aois'][0]['id'] and
-              aoi['bbox']==self.job['config']['aois'][0]['bbox'], 'TARGET_SCENE_AOI_CHANGED')
+              int(year)==self.job['year']==observed.year, 'TARGET_SCENE_YEAR_OR_SPLIT_INVALID')
+        _need(aoi.get('id')==planned_aoi['id'] and aoi.get('province_id')==self.job['province'] and
+              aoi.get('bbox')==planned_aoi['bbox'], 'TARGET_SCENE_AOI_CHANGED')
         blue=item['assets'].get('blue',item['assets'].get('B02',{})).get('href')
         _need(type(blue) is str and bool(blue), 'TARGET_B02_MISSING')
         result=self.scenes.claim({'schema_version':1,'scene_id':item['id'],
@@ -79,7 +112,9 @@ class TargetedLiveGuard:
         self.assets={a['href'] for a in item['assets'].values() if type(a) is dict and type(a.get('href')) is str}
 
     def on_window(self, url, geometry):
-        _need(geometry['requested_bbox_wgs84']==self.job['config']['aois'][0]['bbox'], 'TARGET_WINDOW_AOI_CHANGED')
+        planned_aoi=self._binding()
+        _need(geometry['requested_bbox_wgs84']==planned_aoi['bbox'], 'TARGET_WINDOW_AOI_CHANGED')
+        _metric_crs(geometry['crs'])
         if self.selected is not None and url==self.label_url:
             return  # Larger year-matched reference coverage may be reused.
         if self.selected is None:
@@ -88,9 +123,8 @@ class TargetedLiveGuard:
             _need(url in self.assets, 'UNDECLARED_SELECTED_ASSET')
         bounds=_bounds(geometry)
         if url==self.blue:
-            from rasterio.crs import CRS
             from shapely.geometry import Polygon
-            _need(CRS.from_user_input(geometry['crs'])==CRS.from_user_input(self.target['target_footprint_native']['crs']) and
+            _need(_metric_crs(geometry['crs'])==_metric_crs(self.target['target_footprint_native']['crs']) and
                   geometry['window_width']==geometry['window_height']==256 and
                   geometry['window_transform'][0]==10 and geometry['window_transform'][4]==-10,
                   'TARGET_B02_GRID_INVALID')

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T08:57:55.945486+00:00",
+  "status": "STATIC_REVIEW_COMPLETED_CHANGES_REQUIRED_BEFORE_SHARED_APPLICATION",
+  "freeze_path": "evidence\\integration\\selection260-workspace-20261018\\freeze260.json",
+  "freeze_sha256": "66d25b903db870ca6607bb56dc76bf8117b56d468f12ffafd1a20843e9313a8b",
+  "findings": [
+    {
+      "id": "F1",
+      "scope": "PRODUCT_COLLECTOR_CONTRACT",
+      "function": "collect_windows",
+      "issue": "Optin candidate_metadata_policy marker with omitted callback silently uses legacy selection; normalv2coordinator always passes callback",
+      "required_before_shared_application": true
+    },
+    {
+      "id": "F2",
+      "scope": "MAIN_TEST_PACKAGING",
+      "file": "tests/test_deficit_metadata_selection260.py",
+      "issue": "Two ROOT/baseline modules referenced by newtest are absent in main and not partofpatchmanifest",
+      "required_before_shared_application": true
+    }
+  ],
+  "document_path": "docs\\implementation\\263_deficit_metadata_selection260_independent_review.md",
+  "document_sha256": "fdc9a10e3158d7bda53685276402c0396852c9d2b827a8b97fa88aa2b13c6474",
+  "provider_compatibility_verified": false,
+  "source_pins_read_and_matched": true,
+  "tests_reexecuted": 0,
+  "operating_data_reads": 0,
+  "ledger_reads": 0,
+  "native_raster_reads": 0,
+  "http_calls": 0,
+  "collector_starts": 0,
+  "main_or_isolated_code_edits": 0,
+  "execution_approved": false
+}

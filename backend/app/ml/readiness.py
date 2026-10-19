@@ -1,3 +1,4 @@
+from .manifest_resource_profile import active,read_json as profile_read_json,charge as profile_charge,bounded_json_digest,ProfileResourceError
 """실자료 의사라벨 실험의 충분성·출처·분할 gate. 독립 실정확도 승인이 아니다."""
 import json
 import re
@@ -141,13 +142,15 @@ def assess(manifests, root, policy=None, *, test_mode=False, connectivity_diagno
     if not test_mode and policy['required_years']!=list(range(2020,2026)) and (not policy['limited_period_experiment'] or not policy['scope_statement']):
         block('LIMITED_SCOPE_NOT_DECLARED','제한 연도 개발 실험은 명시적 limited_period_experiment와 범위 설명이 필요합니다. 전기간 달성으로 보고하지 않습니다.')
     def inventory(path,kind):
-        path=safe_path(root,path);digest=file_digest(path)
+        path=safe_path(root,path)
+        json_role={'collection_manifest':'source','normalization_qa':'evidence'}.get(kind)
+        digest=bounded_json_digest(path,json_role) if active() is not None and json_role else file_digest(path)
         files[str(path.relative_to(root))]={'path':str(path.relative_to(root)),'sha256':digest,'kind':kind}
         return path,digest
     for manifest in manifests:
         path,digest=inventory(manifest,'collection_manifest')
         inputs.append({'path':str(path.relative_to(root)),'sha256':digest})
-        document=json.loads(path.read_text(encoding='utf-8'))
+        document=profile_read_json(path,'source') if active() is not None else json.loads(path.read_text(encoding='utf-8'))
         if document.get('synthetic') and not test_mode:
             block('SYNTHETIC_NOT_REAL','합성 자료는 실자료 충분성에 포함하지 않습니다.',str(path))
             continue
@@ -197,7 +200,7 @@ def assess(manifests, root, policy=None, *, test_mode=False, connectivity_diagno
                 if not evidence_path:
                     block('NORMALIZATION_UNVERIFIED','제품별 공식 메타데이터 정규화 검증 기록이 없습니다.',key);continue
                 ep,eh=inventory(evidence_path,'normalization_qa')
-                evidence=json.loads(ep.read_text(encoding='utf-8'))
+                evidence=profile_read_json(ep,'source',maximum=2*1024**2) if active() is not None else json.loads(ep.read_text(encoding='utf-8'))
                 scale=channel_values(normalization.get('scale'),len(bands),'scale')
                 offset=channel_values(normalization.get('offset'),len(bands),'offset')
                 if normalization.get('evidence_sha256')!=eh or evidence.get('status')!='verified_product_metadata' or evidence.get('product_id')!=row.get('scene_id') or evidence.get('band_names')!=bands:
@@ -243,6 +246,8 @@ def assess(manifests, root, policy=None, *, test_mode=False, connectivity_diagno
                                'acquisition_date':row.get('acquisition_date',row.get('datetime')),
                                'eligible_patches':patch_count,'class_counts':counts.tolist(),'class_patch_counts':class_patches.tolist()})
                 scenes[-1]['spatial_locations']=locations
+            except ProfileResourceError:
+                raise
             except Exception as exc:
                 block('SCENE_QA_ERROR',f'{type(exc).__name__}: {exc}',key)
     sources={scene['label_source'] for scene in scenes}

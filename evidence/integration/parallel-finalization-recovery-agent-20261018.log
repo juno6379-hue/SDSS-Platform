@@ -1,0 +1,19 @@
+test_budget_valueerror_preserves_stop_reason_and_drains_existing_job (test_data_parallel.ParallelTests.test_budget_valueerror_preserves_stop_reason_and_drains_existing_job) ... ok
+test_finalize_error_after_settlement_never_retries_and_drains_other_job (test_data_parallel.ParallelTests.test_finalize_error_after_settlement_never_retries_and_drains_other_job) ... ok
+test_first_actual_429_blocks_later_http_without_claiming_new_server_response (test_data_parallel.ParallelTests.test_first_actual_429_blocks_later_http_without_claiming_new_server_response) ... ok
+test_first_coordinator_error_preserved_when_drain_finalize_also_fails (test_data_parallel.ParallelTests.test_first_coordinator_error_preserved_when_drain_finalize_also_fails) ... ok
+test_first_rate_limit_event_prevents_queued_third_batch (test_data_parallel.ParallelTests.test_first_rate_limit_event_prevents_queued_third_batch) ... ok
+test_iterator_failure_drains_existing_worker_before_reraising_original (test_data_parallel.ParallelTests.test_iterator_failure_drains_existing_worker_before_reraising_original) ... ok
+test_metadata_budgets_are_isolated_between_simultaneous_workers (test_data_parallel.ParallelTests.test_metadata_budgets_are_isolated_between_simultaneous_workers) ... ok
+test_reserve_failure_and_worker_429_still_finalize_once_without_third_submit (test_data_parallel.ParallelTests.test_reserve_failure_and_worker_429_still_finalize_once_without_third_submit) ... ok
+test_second_reserve_failure_drains_first_worker_and_settles_real_temp_ledger (test_data_parallel.ParallelTests.test_second_reserve_failure_drains_first_worker_and_settles_real_temp_ledger) ... ok
+test_submit_failure_finalizes_reserved_job_and_drains_prior_worker (test_data_parallel.ParallelTests.test_submit_failure_finalizes_reserved_job_and_drains_prior_worker) ... ok
+test_two_workers_overlap_but_ledger_callbacks_stay_in_parent (test_data_parallel.ParallelTests.test_two_workers_overlap_but_ledger_callbacks_stay_in_parent) ... ok
+test_unmeasured_failure_is_finalized_without_zero_refund_claim (test_data_parallel.ParallelTests.test_unmeasured_failure_is_finalized_without_zero_refund_claim) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.165s
+
+OK
+
+Final source pins: {"source_before": "87c32c3a7b90b3b0d2fc1067b3e2adba9c0aff81dc44720675a513382a637280", "test_before": "e1d33c1b4bc75520c37d8d917010ffc8efe9810cd677a8c8917aafaf33d817cf", "source_after": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3", "test_after": "5ca6b310f24b9c1db5c9942d32d5109632d571b5a2bdb3dc053cf3cdd8abb4c7"}

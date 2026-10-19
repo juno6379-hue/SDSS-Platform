@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-10-18T10:12:33.1471212+09:00",
+  "collectors": [
+    {
+      "ProcessId": 35932,
+      "CreationDate": "2026-10-18T10:09:09.004818+09:00",
+      "CommandLine": "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe E:\\GeoAI–MLOps–SDSS\\scripts\\collect_training_parallel.py --execute --priority-deficit --priority-plan-sha256 508b4bad371df668ca06ff737efe55a19429ba67cdd833de0ff4afd4e70ab3fe --output E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1 --centers-per-province 4 --max-batches 2 --continue-unrelated-pending"
+    }
+  ],
+  "pending": [
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "reserved_bytes": 68157440
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "reserved_bytes": 68157440
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03",
+      "reserved_bytes": 68157440
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2025-g03",
+      "reserved_bytes": 68157440
+    }
+  ],
+  "physical": 1400,
+  "eligible": 1122,
+  "new_charged_bytes": 2089375932,
+  "rate_limit_active": false,
+  "scope": "Point-in-time observation of separate ongoing priority collection, not the closed bounded run or its test version"
+}

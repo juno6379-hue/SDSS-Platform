@@ -1,0 +1,64 @@
+{
+  "status": "VERIFIED_REAL_POST191_BROWSER",
+  "observed_at": "2026-10-18T04:07:03.962426+00:00",
+  "method": "One explicit refresh in existing Chrome view17; separate HTTP requests and repeated refresh zero",
+  "response_recorded_at": "2026-10-18T04:06:08.277881+00:00",
+  "response_kst": "2026-10-18 13:06:08.277881",
+  "current": {
+    "physical": 1666,
+    "eligible": 1333,
+    "other": 333,
+    "train": 791,
+    "val": 292,
+    "test": 250,
+    "cell_gap": 33,
+    "source_sha256": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f"
+  },
+  "bare_train": {
+    "pixels": 2562,
+    "percent": 0.00507,
+    "contributing_patches": 1,
+    "contributing_gap": 4
+  },
+  "fixed_candidate": {
+    "eligible": 1219,
+    "split": [
+      720,
+      249,
+      250
+    ],
+    "blockers": 3,
+    "source_mismatch_visible": true
+  },
+  "bare179": {
+    "candidates": 50,
+    "historical_clear": 23,
+    "historical_overlap": 27,
+    "stale_warning_visible": true,
+    "remote_quality": "미검사",
+    "execution": "미승인"
+  },
+  "checks": {
+    "at": "2026-10-18T04:06:49.274Z",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    }
+  },
+  "proof": [
+    "service191-postcollection-ui-20261018.dom.txt",
+    "service191-postcollection-ui-20261018.inventory.png",
+    "service191-postcollection-ui-20261018.cohort.png",
+    "service191-postcollection-ui-20261018.checks.json"
+  ],
+  "limitations": [
+    "192 local review and193 candidate QA are in progress and are not represented as completed or published.",
+    "Existing1219 pointer was not changed.",
+    "Browser stored-count verification is separate from native audit.",
+    "No source/code/pointer/collector/operating-data mutation or tests performed.",
+    "No HTTP timing claim."
+  ],
+  "documentation": "docs/implementation/service185_ui_recovery_20261018.md"
+}

@@ -1,0 +1,91 @@
+{
+  "status": "CACHED234_NUMERICAL_PRECHECK_NOT_FRESH_FULL_INVENTORY",
+  "at_utc": "2026-10-18T07:54:40.449876+00:00",
+  "seconds": 20.141,
+  "input_pins": {
+    "source": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "ledger": "61161c35eabb593afb5f096c256791871d297b723f82ffc2ac2449b3bd8266e7",
+    "proposal": "87e6f5f157d940e00c624f46821d30329135ef9182a0acb1db248bfb59a712da",
+    "report234": "c936575e2937d5c8ec9f1e4675de89eed0f5dbabce26bbd26bea8661c4b18458",
+    "guard199": "f3528592f335be1c69f562ade59e8fcab22e20c6c83c8363ad84a751b3d1c803",
+    "liveguard": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238"
+  },
+  "pins_unchanged": true,
+  "cached_asset_count": 1292,
+  "new_inventory_scans": 0,
+  "native_raster_reads": 0,
+  "observations": [
+    {
+      "index": 0,
+      "province": "southeast_sulawesi",
+      "years": [
+        2024
+      ],
+      "spatial_window_id": "centers182-southeast_sulawesi-aacbd06f2c57",
+      "native_crs": "EPSG:32751",
+      "native_bounds": [
+        348480.00000000035,
+        9562880.0,
+        358720.00000000035,
+        9573120.0
+      ],
+      "overlap_against_fixed234_assets": false
+    },
+    {
+      "index": 1,
+      "province": "gorontalo",
+      "years": [
+        2025
+      ],
+      "spatial_window_id": "centers182-gorontalo-ee2977cb69ba",
+      "native_crs": "EPSG:32651",
+      "native_bounds": [
+        431680.00000000047,
+        67680.0,
+        441920.00000000047,
+        77920.0
+      ],
+      "overlap_against_fixed234_assets": false
+    },
+    {
+      "index": 2,
+      "province": "gorontalo",
+      "years": [
+        2022
+      ],
+      "spatial_window_id": "centers182-gorontalo-35274ad56c3d",
+      "native_crs": "EPSG:32651",
+      "native_bounds": [
+        421280.00000000105,
+        88479.99999999999,
+        431520.00000000105,
+        98719.99999999999
+      ],
+      "overlap_against_fixed234_assets": false
+    },
+    {
+      "index": 3,
+      "province": "southeast_sulawesi",
+      "years": [
+        2024
+      ],
+      "spatial_window_id": "centers182-southeast_sulawesi-b5a414bfb8e6",
+      "native_crs": "EPSG:32751",
+      "native_bounds": [
+        379680.0000000002,
+        9583680.0,
+        389920.0000000002,
+        9593920.0
+      ],
+      "overlap_against_fixed234_assets": false
+    }
+  ],
+  "network_requests": 0,
+  "collection_started": false,
+  "execution_supported": false,
+  "fresh200_under_lock_required": true,
+  "limitations": [
+    "Cached234 assets do not detect newly added or changed support files.",
+    "Fresh200 must validate full current inventory, scene/window/split, actual imagery, budget and physical caps."
+  ]
+}

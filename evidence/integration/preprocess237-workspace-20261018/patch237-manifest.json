@@ -1,0 +1,117 @@
+{
+  "scope": "ISOLATED237_DELTA_OVER_FROZEN230_NOT_APPLIED_TO_MAIN",
+  "requires_parent230_freeze_sha256": "e92b962361def809675bbfa498c44b7ede2953cb1e263bc30cd991eaf6f92401",
+  "files": [
+    {
+      "path": "backend/app/collection_priority_status.py",
+      "before": {
+        "sha256": "57401082fea929ba8ecc396a48596a5253e18408f6a641064395722242aea21a",
+        "bytes": 11716
+      },
+      "after": {
+        "sha256": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9",
+        "bytes": 12380
+      }
+    },
+    {
+      "path": "backend/app/collection_status.py",
+      "before": {
+        "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4",
+        "bytes": 17192
+      },
+      "after": {
+        "sha256": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9",
+        "bytes": 19153
+      }
+    },
+    {
+      "path": "backend/app/data/candidates.py",
+      "before": {
+        "sha256": "c72257998d14c8b874ee9c9b532e50d78b3e3417a8b47c1688a54c656966dba6",
+        "bytes": 3752
+      },
+      "after": {
+        "sha256": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9",
+        "bytes": 4564
+      }
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "before": {
+        "sha256": "e6c411962d4dda859274b117e4fd10ade981105ba08aa8698b43e06f3e6c15d9",
+        "bytes": 10172
+      },
+      "after": {
+        "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+        "bytes": 11756
+      }
+    },
+    {
+      "path": "scripts/find_bare_targets173.py",
+      "before": {
+        "sha256": "39850ac9ffcf6ca96d3ec9cab116d55e9f3b8f1e3564950240e39889d3e12c11",
+        "bytes": 17355
+      },
+      "after": {
+        "sha256": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750",
+        "bytes": 17919
+      }
+    },
+    {
+      "path": "scripts/propose_deficit_centers182.py",
+      "before": {
+        "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d",
+        "bytes": 14002
+      },
+      "after": {
+        "sha256": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+        "bytes": 14399
+      }
+    },
+    {
+      "path": "tests/test_manifest_profile237.py",
+      "before": null,
+      "after": {
+        "sha256": "82952348b0c5d33f25f879e8716393c5970ae00d6c46bb80b44b52a028c9f7eb",
+        "bytes": 19353
+      }
+    }
+  ],
+  "excluded_232_and_shared_files": [
+    {
+      "path": "scripts/review_bare_targets179.py",
+      "included": false,
+      "isolated_matches_parent230": true
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "included": false,
+      "isolated_matches_parent230": true
+    },
+    {
+      "path": "backend/app/data/targeted_inventory_profile.py",
+      "included": false,
+      "isolated_matches_parent230": null
+    },
+    {
+      "path": "tests/test_targeted_inventory_profile232.py",
+      "included": false,
+      "isolated_matches_parent230": null
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "included": false,
+      "isolated_matches_parent230": true
+    },
+    {
+      "path": "backend/app/data/deficit_candidate_guard.py",
+      "included": false,
+      "isolated_matches_parent230": true
+    }
+  ],
+  "main_written": 0,
+  "operating_data_read": 0,
+  "http": 0,
+  "collector": 0,
+  "live_qa": 0
+}

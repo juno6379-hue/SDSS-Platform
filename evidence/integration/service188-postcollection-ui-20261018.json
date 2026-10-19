@@ -1,0 +1,72 @@
+{
+  "status": "VERIFIED_REAL_POST188_BROWSER_RESPONSE",
+  "observed_at": "2026-10-18T03:55:43.126508+00:00",
+  "method": "One explicit existing UI refresh only; no separate HTTP request, reload or repeated refresh. Browser finished loading actual collection-status response.",
+  "response_recorded_at": "2026-10-18T03:54:24.095832+00:00",
+  "current": {
+    "physical": 1649,
+    "eligible": 1321,
+    "other": 328,
+    "split": {
+      "train": 779,
+      "val": 292,
+      "test": 250
+    },
+    "cell_gap": 37,
+    "source_sha256": "3d5ae7d2c75e169a2bcf8b3e5dfbb1e854145f73f26d75a5549608e9fa4969d8"
+  },
+  "fixed_candidate": {
+    "eligible": 1219,
+    "train": 720,
+    "val": 249,
+    "test": 250,
+    "blockers": 3,
+    "source_mismatch_warning_visible": true
+  },
+  "bare179_review": {
+    "candidates": 50,
+    "historical_clear": 23,
+    "historical_overlap": 27,
+    "source_sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+    "stale_warning_visible": true,
+    "warning": "검토 후 원본이 변경됐습니다. 현재 재고 기준의 최신 겹침 검사나 집행 허가로 해석하지 않습니다.",
+    "remote_quality": "미검사",
+    "execution": "미승인"
+  },
+  "bare_current": {
+    "train_pixels": 1586,
+    "val_pixels": 2998,
+    "test_pixels": 1025,
+    "train_percent": 0.00319,
+    "contributing_patches": [
+      0,
+      2,
+      0
+    ]
+  },
+  "checks": {
+    "observedAt": "2026-10-18T03:55:18.242Z",
+    "singleRefresh": true,
+    "observationElapsedSeconds": 72.01,
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    }
+  },
+  "limitations": [
+    "Observation elapsed is not HTTP latency; no browser request timing instrumented.",
+    "189 preflight or future results are not claimed as collected.",
+    "No source, test, collector, ledger, pointer or operating data mutation.",
+    "No new tests/build required for read-only service verification."
+  ],
+  "proof": [
+    "service188-postcollection-ui-20261018.dom.txt",
+    "service188-postcollection-ui-20261018.inventory.png",
+    "service188-postcollection-ui-20261018.review.png",
+    "service188-postcollection-ui-20261018.cohort.png",
+    "service188-postcollection-ui-20261018.stale.png",
+    "service188-postcollection-ui-20261018.checks.json"
+  ],
+  "documentation": "docs/implementation/service185_ui_recovery_20261018.md"
+}

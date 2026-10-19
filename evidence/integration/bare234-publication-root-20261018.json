@@ -1,0 +1,77 @@
+{
+  "status": "LOCAL_ONLY_REVIEW_PUBLISHED_READER_VERIFIED",
+  "at_utc": "2026-10-18T07:11:32.797743+00:00",
+  "report_sha256": "c936575e2937d5c8ec9f1e4675de89eed0f5dbabce26bbd26bea8661c4b18458",
+  "pointer_sha256": "1018b59294871df8f9e339d63695f08632a5632419b3831e47bdeb2f88c785ab",
+  "prior_pointer_sha256": "11740b732b9c7ee58999a5d71d960a5ec67a9f7b48752ceb5e173f43f056d50c",
+  "previous_pointer_preserved": true,
+  "view": {
+    "available": true,
+    "status": "LOCAL_TARGET_REVIEW_FINISHED",
+    "scope": "LOCAL_LABEL_AND_HISTORICAL_SUPPORT_NOT_REMOTE_QUALITY",
+    "source_manifest_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "source_matches_current_manifest": true,
+    "recorded_at": "2026-10-18T07:10:40.638011+00:00",
+    "source_report": "first-group-training-priority/bare-review234-20261018.json",
+    "report_sha256": "c936575e2937d5c8ec9f1e4675de89eed0f5dbabce26bbd26bea8661c4b18458",
+    "candidate_total": 50,
+    "rows": [
+      {
+        "province": "south_sulawesi",
+        "candidates": 9,
+        "support_clear": 8,
+        "overlap": 1,
+        "local_invalid": 0
+      },
+      {
+        "province": "gorontalo",
+        "candidates": 1,
+        "support_clear": 0,
+        "overlap": 1,
+        "local_invalid": 0
+      },
+      {
+        "province": "southeast_sulawesi",
+        "candidates": 11,
+        "support_clear": 0,
+        "overlap": 11,
+        "local_invalid": 0
+      },
+      {
+        "province": "east_java",
+        "candidates": 8,
+        "support_clear": 3,
+        "overlap": 5,
+        "local_invalid": 0
+      },
+      {
+        "province": "banten",
+        "candidates": 15,
+        "support_clear": 4,
+        "overlap": 11,
+        "local_invalid": 0
+      },
+      {
+        "province": "west_java",
+        "candidates": 6,
+        "support_clear": 0,
+        "overlap": 6,
+        "local_invalid": 0
+      }
+    ],
+    "searched_provinces": [
+      "south_sulawesi",
+      "gorontalo",
+      "southeast_sulawesi",
+      "east_java",
+      "banten",
+      "west_java"
+    ],
+    "execution_supported": false,
+    "actual_quality_verified": false,
+    "scientific_accuracy_validated": false
+  },
+  "source_or_ledger_written": false,
+  "collection_started": false,
+  "training_started": false
+}

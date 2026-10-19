@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-18T06:18:37.014825+00:00",
+  "pid": 38816,
+  "command": [
+    "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-X",
+    "utf8",
+    "-u",
+    "E:\\GeoAI–MLOps–SDSS\\scripts\\prepare_priority_candidate164.py",
+    "--data-root",
+    "E:\\GeoAI–MLOps–SDSS\\data",
+    "--source",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+    "--source-sha256",
+    "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "--policy",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group\\experiment-esri-v003-2020-2025.json",
+    "--policy-sha256",
+    "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+    "--run-id",
+    "guarded227-20261018"
+  ],
+  "source_bytes": 66826849,
+  "source_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+  "policy_sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+  "protected_before": {
+    "data/first-group-training-priority/latest-candidate.json": "ac6827a1841fd657c430c2a4953aae6089dc4322041dfad87b20fbd1e751c12a",
+    "data/first-group-training-priority/candidate-receipt207-20261018.json": "ac6827a1841fd657c430c2a4953aae6089dc4322041dfad87b20fbd1e751c12a",
+    "evidence/integration/priority164-guarded207-20261018/summary.json": "d80bad5650ff8c32f4b8a297ac1017b27aaec6cbdb0fc2f110f240f3875a5ec9"
+  },
+  "automatic_retry_allowed": false
+}

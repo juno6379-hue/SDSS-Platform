@@ -1,0 +1,132 @@
+{
+  "scope": "READ_ONLY_1215_EXISTING_UI_QUALITY_AND_TEST_ARTIFACT_OBSERVATION",
+  "observed_at_utc": "2026-10-18T03:39:54.247086+00:00",
+  "source_test_document_server_edits": 0,
+  "tests_api_browser_native_scan_preflight_collector_executions": 0,
+  "artifact_sha256": {
+    "status185-fixed-performance-20261018.json": "3692131951b9f723c68c79910ac37f5d925db5a2d5ee33aa24ca17ee2b9c4972",
+    "status185-fixed-child-result-20261018.json": "dda431068899331a104639eb2bd526d0d711af2513dd311e3e30333495920f1a",
+    "status185-regression-final-20261018.log": "b14b59140e885b231219532f28857b501bf748c4fef6fb7e02cc4d35a431e5b6",
+    "bare186-source-and-tests-20261018.json": "63a096ec380770d3325a397589d3ee08126b353b0360a6db717776beea43720e",
+    "bare186-focused-final-20261018.log": "967c7814682e5fabb18e03251c1d8760982fffb8944ab885d29ba25f873c7abc",
+    "bare186-related-20261018.log": "94419873b5a2511e9eed0d39484f58d7c0ac4e01817b7b492b0a782dcb687ba5",
+    "ui180-root-publish-review-20261018.json": "049110e47fc624af0e85ab317ae2e57af70b639f13e9dafaad2e0b9586cae7f2",
+    "heartbeat-1205-ui-passive-root-20261018.json": "af9ff4c21c72b0729f50e7d028f26599af9f5d932c1fb8a61533760d87406ed6"
+  },
+  "185_status_repair": {
+    "old_diagnostic_status": "DIAGNOSTIC_PROCESS_NATIVE_FAILURE",
+    "old_process_exit_code": 3221225477,
+    "old_diagnostic_not_live_api_rootcause_proof": true,
+    "new_standalone_performance": {
+      "diagnostic_pid": 38432,
+      "server_mutations": 0,
+      "http_requests": 0,
+      "native_raster_qa": false,
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 30.51600000000326
+    },
+    "new_child_result": {
+      "completed": true,
+      "elapsed_seconds": 29.953999999997905,
+      "physical": 1617,
+      "eligible": 1296,
+      "candidate_available": true,
+      "bare_review_status": "LOCAL_TARGET_REVIEW_FINISHED"
+    },
+    "existing_regression_final": {
+      "tests": 25,
+      "seconds": 3.776,
+      "status": "OK"
+    },
+    "completed_verified_scope": "Standalone read-only collection_status function completed,1617 physical/1296 eligible,candidate available,bare review reader LOCAL_TARGET_REVIEW_FINISHED; regression log25PASS",
+    "not_verified_by_these_artifacts": [
+      "Live HTTP request success/latency",
+      "Applied code in current API process",
+      "New browser rendering after published179 receipt",
+      "Native raster/image quality validation"
+    ],
+    "thirty_second_standalone_completion_not_fifteen_second_http_sla": true
+  },
+  "186_offset128": {
+    "source_and_tests_evidence": {
+      "status": "TESTED_SYNTHETIC_OFFSET128_CONTRACT",
+      "source_pins": {
+        "scripts/find_bare_targets173.py": "a8524dc457fd2945fe4845b69757af3b6ba2dd32be5248383175dca1fed964e0",
+        "tests/test_find_bare_targets173.py": "c7460026a8bf0bfa1b4b39d916f9d1d65084ee3c991b0395b185f40513fb22fb",
+        "scripts/review_bare_targets179.py": "cd6c353d57a9daffc117c3187bc8b4ff2ff74806a220019db5d44ba2ad1cb94a",
+        "tests/test_review_bare_targets179.py": "2e6ae7e6268fba8b9dbf133ef0563a8b668760348b671ca4d5ab430e8722695b",
+        "docs/implementation/186_bare_offset_gap_search.md": "b426014428444cde2ebff4fecc7f2f032d37de8616835562ff21ad5825b05f92"
+      },
+      "final_focused_tests": 26,
+      "final_focused_seconds": 18.288,
+      "related_tests": 59,
+      "related_seconds": 21.748,
+      "operational_scan_executed": false,
+      "network_requests": 0,
+      "source_or_ledger_writes": 0,
+      "original50_artifacts_modified": false,
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientific_accuracy_validated": false
+    },
+    "final_focused_log_observed": {
+      "tests": 26,
+      "seconds": 18.288,
+      "status": "OK"
+    },
+    "related_log_observed": {
+      "tests": 59,
+      "seconds": 21.748,
+      "status": "OK"
+    },
+    "overlapping_suites_not_summed": true,
+    "completed_verified_scope": "Synthetic stride128/filter/legacy256 contract and actual temporary-array tests only",
+    "operating_scan_complete": false,
+    "new_operating_candidates_found_claimed": false,
+    "gorontalo_or_west_java_clear_gap_resolved_claimed": false,
+    "original50_artifacts_preserved_as_reported": true,
+    "new_labels_or_eligible_patches_from186": 0,
+    "execution_or_quality_or_science_approval": false
+  },
+  "180_publication_vs_actual_ui": {
+    "published_at": "2026-10-18T03:11:00.883082+00:00",
+    "publication_status": "PINNED_REVIEW_PUBLISHED_READER_VERIFIED",
+    "published_report_sha256": "36aaf1107292eee74b0f6a2ce462d90e40a22de498ca31aaff1c1ded636775f0",
+    "local_reader_status": "LOCAL_TARGET_REVIEW_FINISHED",
+    "local_reader_candidate_total": 50,
+    "local_reader_historical_clear": 23,
+    "local_reader_historical_overlap": 27,
+    "remote_quality_verified": false,
+    "execution_supported": false,
+    "latest_existing_browser_observation": {
+      "observed_at": "2026-10-18T03:07:20.672Z",
+      "url": "http://127.0.0.1:5174/#/view/17",
+      "scope": "READ_ONLY_EXISTING_BROWSER_NO_REFRESH_NO_API_REQUEST",
+      "lines": [
+        "    - paragraph: 이 응답에는 검증된 다음 수집 우선순위 정책이 없습니다. 실행 중인 작업으로 추정하지 않습니다.",
+        "    - region \"6개 주 나지 표적 후보 로컬 검토\":",
+        "      - paragraph: 검증된 나지 후보 검토 보고서가 게시되지 않았거나 현재 읽을 수 없습니다. 미확인 후보를 0개·수집 완료로 표시하지 않습니다.",
+        "            - row \"현재 원본 1,296 754 292 250 선언 집계 · 재QA 아님\":",
+        "            - row \"고정 누출 제외 후보 1,219 720 249 250 미충족 · 차단 3건\":",
+        "              - rowheader \"고정 누출 제외 후보\""
+      ],
+      "console": []
+    },
+    "browser_observed_at_utc": "2026-10-18T03:07:20.672Z",
+    "browser_predates_publication": true,
+    "published_table_display_success_in_new_browser_claimed": false,
+    "counts1296_vs1219_and_unknown_bare_review_shown_in_prior_browser": true
+  },
+  "187_and_185_180_ownership": "Other owner maintains187 preflight and185/180 server application. This reviewer neither starts a second process nor infers finished runtime quality from code/tests.",
+  "reportable_conclusion": [
+    "185 standalone fixed path completes with25 regression tests passing; live API/browser completion is not established by these artifacts.",
+    "186 contract tests are complete; actual offset128 search and new clear candidates are not observed.",
+    "17950-candidate report is published and locally readable, but the latest browser artifact is pre-publication and still showed unknown bare review.",
+    "Raw/local review, historical overlap, actual remote quality, fixed ML QA and execution remain separate; none authorizes training."
+  ],
+  "limits": [
+    "Artifact-only review. No source or operating data reread, status function call, HTTP, browser, native QA or scans.",
+    "Runtime progress may advance after this observation; later owner evidence must be reported separately."
+  ]
+}

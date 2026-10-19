@@ -1,0 +1,35 @@
+Sun Oct 18 12:14:14 2026    evidence\integration\status185-fixed-cprofile-20261018.prof
+
+         2334588 function calls (2326065 primitive calls) in 29.704 seconds
+
+   Ordered by: cumulative time
+   List reduced from 220 to 25 due to restriction <25>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.295    0.295   29.704   29.704 E:\GeoAI–MLOps–SDSS\backend\app\collection_status.py:81(collection_status)
+     6488    0.800    0.000   16.241    0.003 E:\GeoAI–MLOps–SDSS\backend\app\collection_status.py:48(local_file)
+    41294    0.115    0.000   12.153    0.000 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1008(stat)
+    41294   11.519    0.000   12.038    0.000 {built-in method nt.stat}
+    38877    0.079    0.000   11.830    0.000 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1158(lstat)
+       75    0.001    0.000    8.741    0.117 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py:299(loads)
+       75    0.001    0.000    8.740    0.117 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:332(decode)
+       75    8.738    0.117    8.738    0.117 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:343(raw_decode)
+       70    0.038    0.001    8.283    0.118 E:\GeoAI–MLOps–SDSS\backend\app\collection_status.py:36(read_report)
+       43    0.006    0.000    6.099    0.142 {built-in method builtins.sum}
+     1618    0.028    0.000    6.077    0.004 E:\GeoAI–MLOps–SDSS\backend\app\collection_status.py:149(<genexpr>)
+       72    0.001    0.000    2.112    0.029 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1053(read_text)
+       72    1.695    0.024    2.044    0.028 {method 'read' of '_io.TextIOWrapper' objects}
+    60014    0.461    0.000    1.938    0.000 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:484(_parse_args)
+    60018    0.707    0.000    1.368    0.000 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:56(parse_parts)
+    32401    0.058    0.000    1.227    0.000 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:765(__truediv__)
+    32401    0.196    0.000    1.169    0.000 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:530(_make_child)
+        3    0.000    0.000    1.011    0.337 {built-in method builtins.sorted}
+      157    0.000    0.000    0.989    0.006 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:940(glob)
+      155    0.002    0.000    0.980    0.006 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:353(_select_from)
+      158    0.008    0.000    0.975    0.006 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:402(_select_from)
+    19474    0.073    0.000    0.969    0.000 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:868(__new__)
+    19483    0.059    0.000    0.897    0.000 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:504(_from_parts)
+    56579    0.112    0.000    0.687    0.000 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:546(__fspath__)
+    58371    0.354    0.000    0.590    0.000 C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:536(__str__)
+
+

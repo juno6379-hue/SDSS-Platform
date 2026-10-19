@@ -1,0 +1,218 @@
+{
+  "at_utc": "2026-10-18T08:19:29.477452+00:00",
+  "status": "VERIFIED_REAL_LOCAL_PROPOSAL_COMPLETE_NOT_COLLECTION_APPROVAL",
+  "files": [
+    {
+      "path": "evidence/integration/centers245-prepare-20261018.py",
+      "bytes": 12354,
+      "sha256": "15da0d95c6fdc898efcd17cc5b1eb64f2d757a85cdc8a9f12038da0c37a8a655"
+    },
+    {
+      "path": "evidence/integration/centers245-prepared-20261018.json",
+      "bytes": 5101,
+      "sha256": "d4adb1c2953c75f0c82832d98b511677361185b27cce6b10889efb2cb6de5c0d"
+    },
+    {
+      "path": "evidence/integration/centers245-go-root-20261018.json",
+      "bytes": 588,
+      "sha256": "c11f6d1881c199f481b83618c8a616a44fe6d9e12ed2308a72fe0cb665473e2b"
+    },
+    {
+      "path": "evidence/integration/centers245-local-plan-claim-20261018.json",
+      "bytes": 239,
+      "sha256": "39f53bc09337efb320217e3b96b7f3f9ddd2145e33b959aab8db612ddc2da872"
+    },
+    {
+      "path": "evidence/integration/centers245-preflight-20261018.json",
+      "bytes": 1112,
+      "sha256": "8bef40107f80095f0f2eff4bb13a93c4a316119cf18c62aec32eabe5d196be02"
+    },
+    {
+      "path": "evidence/integration/centers245-cli-20261018.log",
+      "bytes": 629,
+      "sha256": "f961a66659ebba62b20b22ad4766e94bb037b55a179dd4fea0f2318c8a3689a5"
+    },
+    {
+      "path": "evidence/integration/centers245-result-20261018.json",
+      "bytes": 1344,
+      "sha256": "88f8983e8277201aac4677b831c23153b0edfb0762e6b57e9f269756c9712534"
+    },
+    {
+      "path": "evidence/integration/centers245-metadata-preservation-20261018.json",
+      "bytes": 2461,
+      "sha256": "df8f12b5045744e7af28a5088f2f5ca5cd001f540987eb5dcbf70204ee87bf9d"
+    },
+    {
+      "path": "data/centers245-fresh-20261018/prior-merged.json",
+      "bytes": 44428,
+      "sha256": "380ac7849963558798fb5edd7e8f2dbff4ba55adc4ecd08f5dccfd8535dc9b4c"
+    },
+    {
+      "path": "data/centers245-fresh-20261018/proposal.json",
+      "bytes": 47760,
+      "sha256": "22cb58cc4b60b393d3f18ea2f31d30332b323f56113ec565bdc35710fbf84cd0"
+    },
+    {
+      "path": "docs/implementation/245_fresh_deficit_centers_local_plan.md",
+      "bytes": 5048,
+      "sha256": "a2c726d2c82948fddf49de2d009a4765545aa86c0af05ea2e44ef8a41762b391"
+    }
+  ],
+  "code_pins_unchanged": [
+    {
+      "path": "backend/app/candidate_qa_comparison_api.py",
+      "sha256": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/collection_budget_status.py",
+      "sha256": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/collection_priority_status.py",
+      "sha256": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/collection_source_profile.py",
+      "sha256": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/collection_status.py",
+      "sha256": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/data/candidates.py",
+      "sha256": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/data/targeted_bare_plan.py",
+      "sha256": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "sha256": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/ml/candidate_materialization.py",
+      "sha256": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/ml/candidate_qa_comparison.py",
+      "sha256": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/ml/candidate_readiness_qa.py",
+      "sha256": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/ml/candidate_staging.py",
+      "sha256": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/ml/per_scene_normalization_contract.py",
+      "sha256": "b2f1f79c5b9773d9588d4e9b560f9df12ed94d2c1e5301b638cc9c432090f8ea",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/ml/per_scene_normalization_files.py",
+      "sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/ml/readiness.py",
+      "sha256": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb",
+      "unchanged_after": true
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+      "unchanged_after": true
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "sha256": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+      "unchanged_after": true
+    },
+    {
+      "path": "scripts/collect_training_grid.py",
+      "sha256": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+      "unchanged_after": true
+    },
+    {
+      "path": "scripts/diagnose_stac.py",
+      "sha256": "a30a43cca57c9368fa977701084b73f93d3f8e89526d9e40eb35f6fc44e531d9",
+      "unchanged_after": true
+    },
+    {
+      "path": "scripts/find_bare_targets173.py",
+      "sha256": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750",
+      "unchanged_after": true
+    },
+    {
+      "path": "scripts/prepare_priority_candidate164.py",
+      "sha256": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437",
+      "unchanged_after": true
+    },
+    {
+      "path": "scripts/propose_deficit_centers182.py",
+      "sha256": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+      "unchanged_after": true
+    },
+    {
+      "path": "scripts/run_experiment.py",
+      "sha256": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772",
+      "unchanged_after": true
+    }
+  ],
+  "execution": {
+    "session_id": 86517,
+    "cli_pid": 31648,
+    "exit_code": 0,
+    "seconds": 59.109,
+    "cli_invocations": 1,
+    "headers_verified": 115,
+    "candidate_count": 4
+  },
+  "source_snapshot": {
+    "path": "data/centers245-fresh-20261018/source.json",
+    "sha256": "4f8fcaff71868539aff16b3c351992696a6464b9cb229a5ff0f243778b7cd3e8",
+    "bytes": 66827012,
+    "hash_verification": "VERIFIED_BY_SINGLE_RUNNER_COPY_AND182_PRE_POST_PINS",
+    "additional_snapshot_created": false
+  },
+  "original_source_and_ledger_stable_by_runner": {
+    "source": true,
+    "ledger": true
+  },
+  "prior_candidates_preserved": 44,
+  "old_arrays_preserved_metadata_evidence": "evidence/integration/centers245-metadata-preservation-20261018.json",
+  "operating_source_or_ledger_written": false,
+  "network_requests": 0,
+  "collector_started": false,
+  "native_quality_audit_started": false,
+  "training_started": false,
+  "full_pending_support_inventory_verified": false,
+  "snapshot_reuse_for_next_request": true,
+  "limitations": [
+    "Local geometry/source-header proposal only; no selected scene/SCL/B02 quality proof.",
+    "Original live source/ledger were read only after exact Root245 GO; this seal does not reread them.",
+    "Single new immutable source snapshot created; subsequent requests should reuse it.",
+    "Global fullsupport/pending/overlap/scene/split/budget and any collector require separate Root authorization."
+  ]
+}

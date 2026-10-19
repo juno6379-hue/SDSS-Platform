@@ -1,0 +1,99 @@
+{
+  "status": "LOCAL_ONLY_REVIEW_PUBLISHED_READER_VERIFIED",
+  "at_utc": "2026-10-18T14:27:25.512160+00:00",
+  "approval_sha256": "fe175d0019ccffcd2d5acaf1492f84e7c54c86ef84b0767e7885c29bf2fb9329",
+  "result_sha256": "aaa97f9b64fca9e6a11d8fe9f07a4e649c224ed69fbae599605d28f49490887e",
+  "report_sha256": "16b923a42c28d89e26b2003c24ab4ca46e9bb9b28e95f2d8a1e8d3f25b1f9093",
+  "pointer_sha256": "5f23cc3760766e3994ac1e4f6d099d5dadbb694e7675d586aad5cb201cd63972",
+  "prior_pointer_sha256": "1018b59294871df8f9e339d63695f08632a5632419b3831e47bdeb2f88c785ab",
+  "previous_pointer_preserved": true,
+  "source_sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+  "ledger_sha256": "d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91",
+  "candidate_pointer_sha256": "25d7bf6d37a7c96ab6a9eaa2a74e78b94f52e8186b22a8ac705184ff96b5832e",
+  "view": {
+    "available": true,
+    "status": "LOCAL_TARGET_REVIEW_FINISHED",
+    "scope": "LOCAL_LABEL_AND_HISTORICAL_SUPPORT_NOT_REMOTE_QUALITY",
+    "source_manifest_sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "source_matches_current_manifest": true,
+    "recorded_at": "2026-10-18T14:14:05.588803+00:00",
+    "source_report": "first-group-training-priority/bare-review320-20261018.json",
+    "report_sha256": "16b923a42c28d89e26b2003c24ab4ca46e9bb9b28e95f2d8a1e8d3f25b1f9093",
+    "candidate_total": 50,
+    "rows": [
+      {
+        "province": "south_sulawesi",
+        "candidates": 9,
+        "support_clear": 8,
+        "overlap": 1,
+        "local_invalid": 0
+      },
+      {
+        "province": "gorontalo",
+        "candidates": 1,
+        "support_clear": 0,
+        "overlap": 1,
+        "local_invalid": 0
+      },
+      {
+        "province": "southeast_sulawesi",
+        "candidates": 11,
+        "support_clear": 0,
+        "overlap": 11,
+        "local_invalid": 0
+      },
+      {
+        "province": "east_java",
+        "candidates": 8,
+        "support_clear": 3,
+        "overlap": 5,
+        "local_invalid": 0
+      },
+      {
+        "province": "banten",
+        "candidates": 15,
+        "support_clear": 4,
+        "overlap": 11,
+        "local_invalid": 0
+      },
+      {
+        "province": "west_java",
+        "candidates": 6,
+        "support_clear": 0,
+        "overlap": 6,
+        "local_invalid": 0
+      }
+    ],
+    "searched_provinces": [
+      "south_sulawesi",
+      "gorontalo",
+      "southeast_sulawesi",
+      "east_java",
+      "banten",
+      "west_java"
+    ],
+    "execution_supported": false,
+    "actual_quality_verified": false,
+    "scientific_accuracy_validated": false
+  },
+  "inventory_status": "BLOCKED",
+  "inventory_issue": "EXISTING_SUPPORT_OVERLAP",
+  "historical_clear_count": 15,
+  "historical_overlap_count": 35,
+  "mutual_overlap_pairs": 56,
+  "remote_requests": 0,
+  "source_or_ledger_written": false,
+  "collection_started": false,
+  "training_started": false,
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "proposal_scope": "OLD_50_PROPOSALS_REVIEWED_AGAINST_POST304_CURRENT309_SOURCE_NOT_NEW_COLLECTION",
+  "json_io_before_publication_write": {
+    "read_bytes": 214511407,
+    "write_bytes": 707605,
+    "json_io_bytes": 215219012,
+    "maximum_bytes": 17179869184
+  }
+}

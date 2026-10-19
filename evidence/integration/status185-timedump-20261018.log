@@ -1,0 +1,13 @@
+Timeout (0:00:15)!
+Thread 0x00001380 (most recent call first):
+  File "C:\Users\\ucd5c\uc900\uc624\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 526 in _format_parsed_parts
+  File "C:\Users\\ucd5c\uc900\uc624\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 544 in __str__
+  File "C:\Users\\ucd5c\uc900\uc624\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 547 in __fspath__
+  File Windows fatal exception: access violation
+
+Thread 0x00001380 (most recent call first):
+  File "<frozen ntpath>", line 696 in realpath
+  File "C:\Users\\ucd5c\uc900\uc624\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 993 in resolve
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\collection_status.py", line 50 in local_file
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\collection_status.py", line 78 in collection_status
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\evidence\integration\status185-diagnostic-child-20261018.py", line 15 in <module>

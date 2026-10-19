@@ -1,0 +1,53 @@
+{
+  "status": "VERIFIED_METADATA_ONLY_RESUME_OBSERVATION",
+  "at_utc": "2026-10-18T06:57:51.177265+00:00",
+  "pins": {
+    "source": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "ledger": "61161c35eabb593afb5f096c256791871d297b723f82ffc2ac2449b3bd8266e7",
+    "pointer": "920ceb52dca0aba32f11389fd2f9c5f2719ca40b47f44e650c3a38b57c3b3d40"
+  },
+  "source_bytes": 66826849,
+  "registered_rows": 1715,
+  "eligible_rows": 1358,
+  "cell_shortfalls": [
+    {
+      "province": "gorontalo",
+      "year": 2022,
+      "eligible": 24,
+      "missing": 4
+    },
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "eligible": 18,
+      "missing": 10
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "eligible": 22,
+      "missing": 6
+    },
+    {
+      "province": "east_java",
+      "year": 2025,
+      "eligible": 27,
+      "missing": 1
+    }
+  ],
+  "total_cell_shortfall": 21,
+  "published_candidate": 1342,
+  "candidate_blockers": 3,
+  "candidate_source_current": true,
+  "additional_budget": 4294967296,
+  "charged_including_pending": 2398022341,
+  "remaining": 1896944955,
+  "pending_count": 2,
+  "pending_reserved": 136314880,
+  "lock_present": false,
+  "native_runs": 0,
+  "physical_recount_performed": false,
+  "last_native_verified_physical": 1716,
+  "source_or_ledger_writes": false,
+  "training_started": false
+}

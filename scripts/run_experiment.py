@@ -12,6 +12,8 @@ from backend.app.ml.readiness import assess, verify_files, default_policy
 from backend.app.ml.service import prepare_dataset, train_model, infer_raster
 from backend.app.ml.raster import safe_path
 from backend.app.ml.dataset import file_digest
+from backend.app.ml.manifest_resource_profile import active,charge as profile_charge,serialized_io
+from backend.app.ml.split_json_io import BoundedJSONIO
 
 
 def _local_path(value):
@@ -74,6 +76,7 @@ def _connectivity_summary(result):
     return {'connectivity_capture_status':status,'connectivity_scene_count':scenes,'eligible_patch_count':patches,'connectivity_is_training_authorization':False}
 
 
+@serialized_io
 def run(manifests,root,readiness_path,policy=None,execute=False,run_id=None,epochs=20,resume=False,max_seconds=1800,epochs_per_call=20,*,connectivity_diagnostics=False):
     if type(connectivity_diagnostics) is not bool:
         raise ValueError('connectivity_diagnostics must be an exact bool')
@@ -87,6 +90,9 @@ def run(manifests,root,readiness_path,policy=None,execute=False,run_id=None,epoc
     else:
         result=assess([Path(path).resolve() for path in manifests],root,policy)
     result['assessed_at']=datetime.now(timezone.utc).isoformat()
+    if active() is not None:
+        policy228={'input_caps':{'source':65536,'candidate':65536,'saved_plan':65536,'readiness':16*1024**2},'output_caps':{'plan':16*1024**2,'candidate':65536},'max_depth':32}
+        profile_charge(BoundedJSONIO(policy228).measure(result,'plan'),'write')
     if connectivity_diagnostics:
         _recheck_diagnostic_output(root,output)
         readiness_path=output['target']

@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "plan": {
+    "schema_version": 1,
+    "kind": "TARGETED_BARE_256_COLLECTION_PLAN",
+    "proposal_ref": {
+      "path": "evidence/integration/bare190-gap-20261018/proposal.json",
+      "sha256": "1cda6dd428dfffcca9df4ac690d9f79ca2187fdc953de0dd3b67d0d1226dce92"
+    },
+    "current_manifest_ref": {
+      "path": "data/target203-20261018/source.json",
+      "sha256": "1a12b7bca384dd09d73a04cc31df21f75377fc34c332b501a6ee37508dd46fb5"
+    },
+    "boundary_ref": {
+      "path": "data/first-group-boundaries/selected-six.geojson",
+      "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+    },
+    "policy": {
+      "window_size": 256,
+      "source_taxonomy_code": 8,
+      "minimum_declared_bare_pixels": 256,
+      "minimum_valid_fraction": 0.8,
+      "minimum_inside_fraction": 0.95,
+      "maximum_new_batches": 1,
+      "minimum_candidate_valid_fraction": 0.9
+    },
+    "targets": [
+      {
+        "target_id": "local-rank1-2024",
+        "proposal_window_index": 1,
+        "province": "gorontalo",
+        "fixed_split": "train",
+        "year": 2024,
+        "source_label_ref": {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g01\\gorontalo-g01-2024\\raw-esri_io.tif",
+          "sha256": "a6081b2295b7b21636d4f8f6fb48b4d1bc24a6e2136546fb5ce763905cdbbc7d"
+        },
+        "source_lineage_ref": {
+          "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-gorontalo-2024-g01/annual-window-report.json",
+          "sha256": "f0af4a4b726f8e8d29f1fdbaf1ee6e85f55438e0a996f4bad92a1d660c969070"
+        },
+        "source_label_window": [
+          1664,
+          640,
+          256,
+          256
+        ],
+        "source_label_grid": {
+          "crs": "EPSG:32651",
+          "transform": [
+            10.0,
+            0.0,
+            530560.0,
+            0.0,
+            -10.0,
+            62240.0
+          ],
+          "width": 2048,
+          "height": 2048
+        },
+        "target_bbox_wgs84": [
+          123.42418549435011,
+          0.4820259789804949,
+          123.44719325393643,
+          0.5051879274338988
+        ],
+        "target_footprint_native": {
+          "crs": "EPSG:32651",
+          "corners": [
+            [
+              547200.0,
+              55840.0
+            ],
+            [
+              549760.0,
+              55840.0
+            ],
+            [
+              549760.0,
+              53280.0
+            ],
+            [
+              547200.0,
+              53280.0
+            ]
+          ]
+        },
+        "declared_bare_pixels": 273
+      }
+    ]
+  },
+  "ledger_ref": {
+    "path": "data/first-group-training-budget/global-ledger.json",
+    "sha256": "f49d7e778359c1f60743f617edb599fe2ba3170e9e9243a3459211aa4bc9b0fe"
+  },
+  "maximum_batches": 1
+}

@@ -1,0 +1,50 @@
+{
+  "status": "LOCAL_PROPOSAL_COMPLETE_UNAPPROVED",
+  "at_utc": "2026-10-18T11:41:34.776285+00:00",
+  "seconds": 96.578,
+  "exit_code": 0,
+  "cli_invocations": 1,
+  "pins_stable_after": {
+    "source": true,
+    "ledger": true
+  },
+  "prior_candidates_preserved": 56,
+  "source_snapshot_ref": {
+    "path": "data/centers278-fresh-20261018/source.json",
+    "sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b"
+  },
+  "proposal_sha256": "8f88429c4381ef3d3cfcb363912cc0277b81a112e05f77deaba798ba720f78f9",
+  "candidate_count": 4,
+  "target_status": [
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 18,
+      "deficit_to_28": 10,
+      "proposed_candidates": 1
+    },
+    {
+      "province": "gorontalo",
+      "year": 2022,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 24,
+      "deficit_to_28": 4,
+      "proposed_candidates": 1
+    },
+    {
+      "province": "east_java",
+      "year": 2025,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 27,
+      "deficit_to_28": 1,
+      "proposed_candidates": 2
+    }
+  ],
+  "headers_verified": 116,
+  "network_requests": 0,
+  "full_pending_support_inventory_verified": false,
+  "collection_started": false,
+  "source_or_ledger_written": false,
+  "training_started": false
+}

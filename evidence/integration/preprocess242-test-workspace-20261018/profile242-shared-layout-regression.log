@@ -1,0 +1,150 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+test_164_cli_explicit_choice_and_no_flag_preserves_default (test_manifest_profile228.Profile228Tests.test_164_cli_explicit_choice_and_no_flag_preserves_default) ... usage: python.exe -m unittest [-h] --data-root DATA_ROOT --source SOURCE
+                              --policy POLICY --source-sha256 SOURCE_SHA256
+                              --policy-sha256 POLICY_SHA256 --run-id RUN_ID
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'bad' (choose from 'bounded128m-3000-v1')
+ok
+test_both_import_names_share_only_the_explicit_operation_budget (test_manifest_profile228.Profile228Tests.test_both_import_names_share_only_the_explicit_operation_budget) ... ok
+test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper (test_manifest_profile228.Profile228Tests.test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper) ... ok
+test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict (test_manifest_profile228.Profile228Tests.test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict) ... ok
+test_explicit_materialization_staging_v2_and_old_contract_fail_closed (test_manifest_profile228.Profile228Tests.test_explicit_materialization_staging_v2_and_old_contract_fail_closed) ... ok
+test_profile_exact_name_scope_reset_and_legacy_receipts (test_manifest_profile228.Profile228Tests.test_profile_exact_name_scope_reset_and_legacy_receipts) ... ok
+test_qa_v2_same_profile_and_default_rejection (test_manifest_profile228.Profile228Tests.test_qa_v2_same_profile_and_default_rejection) ... ok
+{"stage": "SNAPSHOT_PINNED", "at": "2026-10-18T07:52:52.997760+00:00", "rows": 1, "source_sha256": "f7df5541cbfd2a800337af36b66af9f5bb3c56ed062580fe74a2e1724e899159"}
+{"stage": "SOURCE_QA_COMPLETE", "seconds": 0.0, "eligible": {"train": 0, "val": 0, "test": 0}}
+{"stage": "CANDIDATE_STAGED", "excluded_rows": 0, "eligible": {"test": 0, "val": 0, "train": 0}}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {"train": 0, "val": 0, "test": 0}, "ready_for_training": false}
+test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate (test_manifest_profile228.Profile228Tests.test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate) ... ok
+test_rows_nodes_depth_io_and_output_budget_fail_closed (test_manifest_profile228.Profile228Tests.test_rows_nodes_depth_io_and_output_budget_fail_closed) ... ok
+test_164_snapshot_uses_bounded_copy_with_actual_partial_accounting (test_manifest_profile230.Profile230Tests.test_164_snapshot_uses_bounded_copy_with_actual_partial_accounting) ... ok
+test_173_182_profile_only_expands_source_and_default_scope_stays_off (test_manifest_profile230.Profile230Tests.test_173_182_profile_only_expands_source_and_default_scope_stays_off) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess242-test-workspace-20261018\evidence\shared-layout242\project\scripts\find_bare_targets173.py:143: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(x,y,256,256));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\tempfile.py:934: ResourceWarning: Implicitly cleaning up <TemporaryDirectory 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmp27fbhhfr'>
+  _warnings.warn(warn_message, ResourceWarning)
+ok
+{"status": "LOCAL_DISCOVERY_COMPLETE_UNAPPROVED", "crops": 0, "windows": 0, "qualified": 0, "split_counts": {}, "proposal_sha256": "a748af344da2ad63b87af59d822497d5f67ab56c8a2f32c059a93b63e4ad51de"}
+test_173_cli_snapshot_and_proposal_writes_are_measured (test_manifest_profile230.Profile230Tests.test_173_cli_snapshot_and_proposal_writes_are_measured) ... ok
+test_api_uses_root_internal_path_no_browser_profile_switch (test_manifest_profile230.Profile230Tests.test_api_uses_root_internal_path_no_browser_profile_switch) ... ok
+test_budget_root_config_is_explicit_strict_pinned_readonly (test_manifest_profile230.Profile230Tests.test_budget_root_config_is_explicit_strict_pinned_readonly) ... ok
+test_cli_profile_forwarding_and_strict_unknown_choice (test_manifest_profile230.Profile230Tests.test_cli_profile_forwarding_and_strict_unknown_choice) ... usage: python.exe -m unittest [-h] --source SOURCE --source-sha256
+                              SOURCE_SHA256 --boundary BOUNDARY
+                              --boundary-sha256 BOUNDARY_SHA256 --run-id
+                              RUN_ID [--window-stride {128,256}]
+                              [--province {south_sulawesi,gorontalo,southeast_sulawesi,east_java,banten,west_java}]
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'automatic' (choose from 'bounded128m-3000-v1')
+{"status": "LOCAL_CENTERS_PROPOSED_UNAPPROVED", "candidates": 0, "proposal_sha256": "4444444444444444444444444444444444444444444444444444444444444444", "target_status": [], "execution_supported": false}
+usage: python.exe -m unittest [-h] --source SOURCE --source-sha256
+                              SOURCE_SHA256 --boundary BOUNDARY
+                              --boundary-sha256 BOUNDARY_SHA256 --run-id
+                              RUN_ID [--window-stride {128,256}]
+                              [--province {south_sulawesi,gorontalo,southeast_sulawesi,east_java,banten,west_java}]
+                              [--manifest-profile {bounded128m-3000-v1}]
+{"status": "LOCAL_CENTERS_PROPOSED_UNAPPROVED", "candidates": 0, "proposal_sha256": "4444444444444444444444444444444444444444444444444444444444444444", "target_status": [], "execution_supported": false}
+python.exe -m unittest: error: Safe explicit run ID required
+usage: python.exe -m unittest [-h] --source SOURCE --source-sha256
+                              SOURCE_SHA256 --boundary BOUNDARY
+                              --boundary-sha256 BOUNDARY_SHA256 --config
+                              CONFIG --config-sha256 CONFIG_SHA256
+                              --prior-plan PRIOR_PLAN --prior-plan-sha256
+                              PRIOR_PLAN_SHA256 [--target TARGET]
+                              [--manifest-profile {bounded128m-3000-v1}]
+                              --output OUTPUT
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'automatic' (choose from 'bounded128m-3000-v1')
+ok
+test_config_changes_mid_observation_and_source_drift_are_unconfirmed (test_manifest_profile230.Profile230Tests.test_config_changes_mid_observation_and_source_drift_are_unconfirmed) ... ok
+test_copy_counts_both_directions_and_checks_before_destination_open (test_manifest_profile230.Profile230Tests.test_copy_counts_both_directions_and_checks_before_destination_open) ... ok
+test_copy_partial_write_failure_preserves_measured_bytes (test_manifest_profile230.Profile230Tests.test_copy_partial_write_failure_preserves_measured_bytes) ... ok
+test_dual_import_has_same_error_class_and_budget (test_manifest_profile230.Profile230Tests.test_dual_import_has_same_error_class_and_budget) ... ok
+test_growing_hash_reads_only_initial_bound_then_aborts (test_manifest_profile230.Profile230Tests.test_growing_hash_reads_only_initial_bound_then_aborts) ... ok
+test_independent_threads_and_async_tasks_do_not_leak_scope (test_manifest_profile230.Profile230Tests.test_independent_threads_and_async_tasks_do_not_leak_scope) ... ok
+test_json_output_precheck_and_actual_partial_write (test_manifest_profile230.Profile230Tests.test_json_output_precheck_and_actual_partial_write) ... ok
+test_json_role_is_extension_independent_and_oversize_refused_before_open (test_manifest_profile230.Profile230Tests.test_json_role_is_extension_independent_and_oversize_refused_before_open) ... ok
+test_profile_is_hard_ceiling_and_readonly_not_caller_controlled (test_manifest_profile230.Profile230Tests.test_profile_is_hard_ceiling_and_readonly_not_caller_controlled) ... ok
+test_resource_error_aborts_entire_qa_legacy_metadata_error_stays_scene_blocker (test_manifest_profile230.Profile230Tests.test_resource_error_aborts_entire_qa_legacy_metadata_error_stays_scene_blocker) ... E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess242-test-workspace-20261018\evidence\shared-layout242\project\backend\app\ml\readiness.py:234: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  point=ip['transform']*(x,y)
+ok
+test_shared_copied_context_serializes_precheck_read_charge (test_manifest_profile230.Profile230Tests.test_shared_copied_context_serializes_precheck_read_charge) ... ok
+test_ui_default_does_not_inherit_unrelated_parent_profile (test_manifest_profile230.Profile230Tests.test_ui_default_does_not_inherit_unrelated_parent_profile) ... ok
+test_v1_published_candidate_is_pinned_cohort_not_v2_comparison_or_current_source (test_manifest_profile230.Profile230Tests.test_v1_published_candidate_is_pinned_cohort_not_v2_comparison_or_current_source) ... ok
+test_173_boundary_pin_all_rechecks_and_low_budget (test_manifest_profile237.Metadata237Tests.test_173_boundary_pin_all_rechecks_and_low_budget) ... ok
+{"status": "LOCAL_DISCOVERY_COMPLETE_UNAPPROVED", "crops": 0, "windows": 0, "qualified": 0, "split_counts": {}, "proposal_sha256": "a748af344da2ad63b87af59d822497d5f67ab56c8a2f32c059a93b63e4ad51de"}
+test_173_cli_every_json_read_and_write_measured (test_manifest_profile237.Metadata237Tests.test_173_cli_every_json_read_and_write_measured) ... ok
+test_182_default_artifact_bytes_equal_frozen230 (test_manifest_profile237.Metadata237Tests.test_182_default_artifact_bytes_equal_frozen230) ... ok
+test_182_entire_json_consumption_matches_physical_reads (test_manifest_profile237.Metadata237Tests.test_182_entire_json_consumption_matches_physical_reads) ... ok
+test_bare_exact_reads_and_legacy_result_same (test_manifest_profile237.Metadata237Tests.test_bare_exact_reads_and_legacy_result_same) ... ok
+test_cache_hit_no_read_role_change_rechecks_and_replacement_invalidates (test_manifest_profile237.Metadata237Tests.test_cache_hit_no_read_role_change_rechecks_and_replacement_invalidates) ... ok
+test_cache_hit_still_checks_logical_path_change (test_manifest_profile237.Metadata237Tests.test_cache_hit_still_checks_logical_path_change) ... ok
+test_candidate_bare_and_read_report_propagate_resource_errors (test_manifest_profile237.Metadata237Tests.test_candidate_bare_and_read_report_propagate_resource_errors) ... ok
+test_candidate_v1_exact_bytes_and_cache_hit_readiness_reread (test_manifest_profile237.Metadata237Tests.test_candidate_v1_exact_bytes_and_cache_hit_readiness_reread) ... ok
+test_candidates_validator_exact_repeated_reads_and_budget_before_open (test_manifest_profile237.Metadata237Tests.test_candidates_validator_exact_repeated_reads_and_budget_before_open) ... ok
+test_configured_status_resource_failure_is_whole_unconfirmed (test_manifest_profile237.Metadata237Tests.test_configured_status_resource_failure_is_whole_unconfirmed) ... ok
+test_default_status_exact_result_matches_frozen230_and_dual_import_scope (test_manifest_profile237.Metadata237Tests.test_default_status_exact_result_matches_frozen230_and_dual_import_scope) ... ok
+test_growth_reads_initial_bytes_then_aborts (test_manifest_profile237.Metadata237Tests.test_growth_reads_initial_bytes_then_aborts) ... ok
+test_one_scope_exact_duplicate_reads_and_second_refusal_before_open (test_manifest_profile237.Metadata237Tests.test_one_scope_exact_duplicate_reads_and_second_refusal_before_open) ... ok
+test_role_caps_preserve_small_inputs_and_missing_role_fails (test_manifest_profile237.Metadata237Tests.test_role_caps_preserve_small_inputs_and_missing_role_fails) ... ok
+test_small_roles_and_new_status_cap_refuse_before_open (test_manifest_profile237.Metadata237Tests.test_small_roles_and_new_status_cap_refuse_before_open) ... ok
+test_unclassified_verified_entry_fails_explicit_instead_of_unmetered_hash (test_manifest_profile237.Metadata237Tests.test_unclassified_verified_entry_fails_explicit_instead_of_unmetered_hash) ... ok
+test_validator_rejects_replacement_between_parse_and_final_hash (test_manifest_profile237.Metadata237Tests.test_validator_rejects_replacement_between_parse_and_final_hash) ... ok
+test_verified_kinds_require_context_for_collection_manifest (test_manifest_profile237.Metadata237Tests.test_verified_kinds_require_context_for_collection_manifest) ... ok
+test_all_explicit_fixture_pins_and_provenance_match (test_manifest_profile242_portability.BaselinePackaging242Tests.test_all_explicit_fixture_pins_and_provenance_match) ... ok
+test_baseline_script_loader_restores_sys_path (test_manifest_profile242_portability.BaselinePackaging242Tests.test_baseline_script_loader_restores_sys_path) ... ok
+test_missing_fixture_does_not_fall_back_or_skip (test_manifest_profile242_portability.BaselinePackaging242Tests.test_missing_fixture_does_not_fall_back_or_skip) ... ok
+test_tampered_code_or_manifest_cannot_rebase_expected_sha (test_manifest_profile242_portability.BaselinePackaging242Tests.test_tampered_code_or_manifest_cannot_rebase_expected_sha) ... ok
+test_actual_source_header_excludes_same_window_all_years (test_propose_deficit_centers182.DeficitCenters182Tests.test_actual_source_header_excludes_same_window_all_years) ... ok
+test_covered_target_not_proposed (test_propose_deficit_centers182.DeficitCenters182Tests.test_covered_target_not_proposed) ... ok
+test_deterministic_bounded_candidates_pass_existing_validator (test_propose_deficit_centers182.DeficitCenters182Tests.test_deterministic_bounded_candidates_pass_existing_validator) ... ok
+test_existing_output_not_overwritten (test_propose_deficit_centers182.DeficitCenters182Tests.test_existing_output_not_overwritten) ... ok
+test_explicit_cells_preserve_requested_order_and_years (test_propose_deficit_centers182.DeficitCenters182Tests.test_explicit_cells_preserve_requested_order_and_years) ... ok
+test_explicit_default_matches_legacy_candidates (test_propose_deficit_centers182.DeficitCenters182Tests.test_explicit_default_matches_legacy_candidates) ... ok
+test_input_bytes_preserved_and_network_flags_false (test_propose_deficit_centers182.DeficitCenters182Tests.test_input_bytes_preserved_and_network_flags_false) ... ok
+test_invalid_explicit_cells_refuse_before_input_read (test_propose_deficit_centers182.DeficitCenters182Tests.test_invalid_explicit_cells_refuse_before_input_read) ... ok
+test_prior_candidate_not_reused (test_propose_deficit_centers182.DeficitCenters182Tests.test_prior_candidate_not_reused) ... ok
+test_prior_plan_must_pass_existing_year_contract (test_propose_deficit_centers182.DeficitCenters182Tests.test_prior_plan_must_pass_existing_year_contract) ... ok
+test_scope_and_header_caps_fail_closed (test_propose_deficit_centers182.DeficitCenters182Tests.test_scope_and_header_caps_fail_closed) ... ok
+test_stale_source_pin_refuses_before_output (test_propose_deficit_centers182.DeficitCenters182Tests.test_stale_source_pin_refuses_before_output) ... ok
+test_current_inventory_is_separate_from_stale_readiness_counts (test_collection_status.CollectionStatusTests.test_current_inventory_is_separate_from_stale_readiness_counts) ... ok
+test_empty_inventory_is_unknown_and_not_ready (test_collection_status.CollectionStatusTests.test_empty_inventory_is_unknown_and_not_ready) ... ok
+test_external_paths_and_missing_files_are_not_available (test_collection_status.CollectionStatusTests.test_external_paths_and_missing_files_are_not_available) ... ok
+test_incomplete_json_is_unknown_not_success (test_collection_status.CollectionStatusTests.test_incomplete_json_is_unknown_not_success) ... ok
+test_later_failure_does_not_overwrite_success_and_hides_secrets (test_collection_status.CollectionStatusTests.test_later_failure_does_not_overwrite_success_and_hides_secrets) ... ok
+test_latest_explicit_readiness_is_selected_and_invalidated_by_current_manifest_change (test_collection_status.CollectionStatusTests.test_latest_explicit_readiness_is_selected_and_invalidated_by_current_manifest_change) ... ok
+test_probe_rate_limit_does_not_invent_failed_scene_count (test_collection_status.CollectionStatusTests.test_probe_rate_limit_does_not_invent_failed_scene_count) ... ok
+test_quality_requires_matching_audit_report_hash (test_collection_status.CollectionStatusTests.test_quality_requires_matching_audit_report_hash) ... ok
+test_ready_report_becomes_stale_when_input_changes (test_collection_status.CollectionStatusTests.test_ready_report_becomes_stale_when_input_changes) ... ok
+test_absence_invalid_receipt_hash_path_and_size_do_not_become_zero (test_collection_priority_status.BareTargetReviewTests.test_absence_invalid_receipt_hash_path_and_size_do_not_become_zero) ... ok
+test_invalid_scope_and_outside_candidates_fail_closed (test_collection_priority_status.BareTargetReviewTests.test_invalid_scope_and_outside_candidates_fail_closed) ... ok
+test_linked_receipt_and_report_are_rejected_without_following (test_collection_priority_status.BareTargetReviewTests.test_linked_receipt_and_report_are_rejected_without_following) ... ok
+test_partial_and_contaminated_review_blocks_whole_summary (test_collection_priority_status.BareTargetReviewTests.test_partial_and_contaminated_review_blocks_whole_summary) ... ok
+test_pinned_local_review_is_not_remote_quality_and_stale_is_explicit (test_collection_priority_status.BareTargetReviewTests.test_pinned_local_review_is_not_remote_quality_and_stale_is_explicit) ... ok
+test_searched_scope_defaults_and_restricted_scope_counts (test_collection_priority_status.BareTargetReviewTests.test_searched_scope_defaults_and_restricted_scope_counts) ... ok
+test_candidate_receipt_requires_pinned_cohort_and_qa_agreement (test_collection_priority_status.CollectionPriorityStatusTests.test_candidate_receipt_requires_pinned_cohort_and_qa_agreement) ... ok
+test_counts_include_ineligible_only_in_physical_inventory (test_collection_priority_status.CollectionPriorityStatusTests.test_counts_include_ineligible_only_in_physical_inventory) ... ok
+test_scene_conflict_and_bare_contribution_are_separate (test_collection_priority_status.CollectionPriorityStatusTests.test_scene_conflict_and_bare_contribution_are_separate) ... ok
+test_stale_global_readiness_does_not_hash_its_obsolete_raster_set (test_collection_priority_status.CollectionPriorityStatusTests.test_stale_global_readiness_does_not_hash_its_obsolete_raster_set) ... ok
+test_surplus_in_one_cell_does_not_cover_another_gap (test_collection_priority_status.CollectionPriorityStatusTests.test_surplus_in_one_cell_does_not_cover_another_gap) ... ok
+test_untrusted_or_missing_manifest_remains_unknown (test_collection_priority_status.CollectionPriorityStatusTests.test_untrusted_or_missing_manifest_remains_unknown) ... ok
+test_data_root_itself_must_be_nonlinked_directory (test_collection_budget_status.BudgetStatusTests.test_data_root_itself_must_be_nonlinked_directory) ... ok
+test_duplicate_nonfinite_missing_and_oversize_unknown (test_collection_budget_status.BudgetStatusTests.test_duplicate_nonfinite_missing_and_oversize_unknown) ... ok
+test_identity_change_during_read_is_unknown (test_collection_budget_status.BudgetStatusTests.test_identity_change_during_read_is_unknown) ... ok
+test_invalid_schema_numbers_and_arithmetic_fail_closed (test_collection_budget_status.BudgetStatusTests.test_invalid_schema_numbers_and_arithmetic_fail_closed) ... ok
+test_linked_inputs_and_descriptor_retarget_are_rejected (test_collection_budget_status.BudgetStatusTests.test_linked_inputs_and_descriptor_retarget_are_rejected) ... ok
+test_new_pending_is_separate_from_named_old_pending (test_collection_budget_status.BudgetStatusTests.test_new_pending_is_separate_from_named_old_pending) ... ok
+test_read_only_consistent_totals_pending_not_double_subtracted (test_collection_budget_status.BudgetStatusTests.test_read_only_consistent_totals_pending_not_double_subtracted) ... ok
+test_source_cap_and_non_utf8_deep_json_are_unknown (test_collection_budget_status.BudgetStatusTests.test_source_cap_and_non_utf8_deep_json_are_unknown) ... ok
+test_source_or_ledger_changed_between_observations_is_unknown (test_collection_budget_status.BudgetStatusTests.test_source_or_ledger_changed_between_observations_is_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 93 tests in 48.384s
+
+OK

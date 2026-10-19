@@ -1,0 +1,74 @@
+--- priority273-runner-frozen.py
++++ priority290-runner.py
+@@ -1,4 +1,4 @@
+-"""273 준비 runner. Root exact GO 없이는 CLI/QA를 실행하지 않는다."""
++"""290 준비 runner. Root exact GO 없이는 CLI/QA를 실행하지 않는다."""
+ import argparse
+ import contextlib
+ from datetime import datetime, timezone
+@@ -10,13 +10,13 @@
+ import time
+ 
+ ROOT = Path(__file__).resolve().parents[2]
+-PREPARATION_SHA = 'a87623fd2346e5fea4d89b03662ec0e83606ab4da58d6360d08cf442d33043c5'
+-PREPARATION = ROOT/'evidence/integration/priority273-preparation-20261018.json'
++PREPARATION_SHA = 'e9260f8ee5c81a63a9a8221e24b439f5e7c0b2b5e5955129be6b0cf169ace4ef'
++PREPARATION = ROOT/'evidence/integration/priority290-preparation-20261018.json'
+ 
+ 
+ def need(value):
+     if not value:
+-        raise ValueError('QA273_EXPLICIT_CONTRACT_INVALID')
++        raise ValueError('QA290_EXPLICIT_CONTRACT_INVALID')
+ 
+ 
+ def file_pin(path, maximum):
+@@ -59,7 +59,7 @@
+         approval = args.approval
+         need(approval.is_absolute() and approval.resolve().is_relative_to(ROOT/'evidence/integration'))
+         go, go_sha, _ = profile.read_metadata(approval,'local_plan')
+-        expected = {'kind':'PINNED_CANDIDATE_QA_273_GO','approved':True,'run_id':plan['run_id'],
++        expected = {'kind':'PINNED_CANDIDATE_QA_290_GO','approved':True,'run_id':plan['run_id'],
+             'preparation_sha256':PREPARATION_SHA,'native_audit_sha256':plan['native_audit']['sha256'],
+             'source_sha256':plan['source']['sha256'],'source_bytes':plan['source']['bytes'],
+             'manifest_profile':dict(profile.MARKER),'no_active_collector':True,'execution_lock_absent':True}
+@@ -73,6 +73,7 @@
+         paths = {k:ROOT/v for k,v in plan['paths'].items()}
+         need(all(not p.exists() and not p.is_symlink() for p in paths.values()))
+         protected = {p:profile.bounded_json_digest(ROOT/p,'pointer') for p in plan['protected_paths']}
++        need(protected == plan['protected_expected'])
+         def write_json(path, value):
+             payload = (json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n').encode('utf-8')
+             profile.write_new_json_bytes(path,payload,'local_plan')
+@@ -80,12 +81,12 @@
+                 '--source-sha256',plan['source']['sha256'],'--policy',str(ROOT/plan['policy']['path']),
+                 '--policy-sha256',plan['policy']['sha256'],'--run-id',plan['run_id'],
+                 '--manifest-profile',plan['manifest_profile']['name']]
+-        write_json(paths['launch'],{'status':'QA273_LAUNCHED','at':datetime.now(timezone.utc).isoformat(),
++        write_json(paths['launch'],{'status':'QA290_LAUNCHED','at':datetime.now(timezone.utc).isoformat(),
+             'pid':os.getpid(),'argv':['scripts/prepare_priority_candidate164.py',*argv],
+             'approval_sha256':go_sha,'preparation_sha256':PREPARATION_SHA,'native_audit_sha256':plan['native_audit']['sha256'],
+             'source_pin_expected':plan['source'],'source_pin_direct_check':'164_BEFORE_OUTPUT_AND_AFTER_EACH_QA',
+             'protected_before':protected,'manifest_profile':dict(profile.MARKER),'code_pins':plan['code_pins']})
+-        print(json.dumps({'status':'QA273_STARTED','pid':os.getpid(),'run_id':plan['run_id']}),flush=True)
++        print(json.dumps({'status':'QA290_STARTED','pid':os.getpid(),'run_id':plan['run_id']}),flush=True)
+         from scripts.prepare_priority_candidate164 import main as cli_main
+         start = time.monotonic(); exit_code = 2; status = 'CLI_INCOMPLETE'; summary = None
+         class MeteredLog:
+@@ -114,7 +115,7 @@
+                     need(receipt['schema_version']==2 and receipt['manifest_profile']==dict(profile.MARKER))
+                 status='PINNED_CANDIDATE_QA_COMPLETED'
+         except Exception:
+-            exit_code=2;status='QA273_INCOMPLETE_PARTIAL_PRESERVED'
++            exit_code=2;status='QA290_INCOMPLETE_PARTIAL_PRESERVED'
+         protected_after={p:profile.bounded_json_digest(ROOT/p,'pointer') for p in protected}
+         need(protected_after==protected)
+         for rel,pin in plan['code_pins'].items():need(file_pin(ROOT/rel,2*1024**2)==pin['sha256'])
+@@ -138,6 +139,6 @@
+     try:
+         raise SystemExit(main())
+     except Exception:
+-        print(json.dumps({'status':'QA273_WRAPPER_INCOMPLETE','partial_outputs_preserved':True,
++        print(json.dumps({'status':'QA290_WRAPPER_INCOMPLETE','partial_outputs_preserved':True,
+                           'automatic_retry_allowed':False}),file=sys.stderr)
+         raise SystemExit(2)

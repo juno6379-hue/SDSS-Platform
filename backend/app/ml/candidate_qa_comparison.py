@@ -1,3 +1,4 @@
+from .manifest_resource_profile import active,cap as profile_cap,policy as resource_policy,charge as profile_charge,structure as profile_structure,entry as profile_entry,stamp as profile_stamp,receipt as profile_receipt,DESCRIPTOR
 """고정 보고서 4JSON만 대조한다. 원본/후보 manifest·래스터·assess는 읽거나 실행하지 않는다."""
 from collections import Counter
 import copy
@@ -31,8 +32,8 @@ def _path(value,root):
     _need(type(value) is str and 0<len(value)<=4096);key=_lexical_identity_path(value,root);_need(key is not None);return key
 
 
-def _ref(value,root,*,path=None,pin=None,size=None):
-    _need(type(value) is dict and set(value)=={'path','sha256','bytes'} and _sha(value['sha256']) and _uint(value['bytes'],64*1024**2) and value['bytes']>0)
+def _ref(value,root,*,path=None,pin=None,size=None,maximum=64*1024**2):
+    _need(type(value) is dict and set(value)=={'path','sha256','bytes'} and _sha(value['sha256']) and _uint(value['bytes'],maximum) and value['bytes']>0)
     key=_path(value['path'],root)
     if path is not None:_need(key==_path(path,root))
     if pin is not None:_need(value['sha256']==pin)
@@ -67,6 +68,7 @@ def project_candidate_qa(documents,pins,references,*,data_root_literal):
     """메모리 안의 선택 보고서 계약 대조. pin의 실제 바이트 검증은 reader 담당."""
     _need(type(documents) is dict and set(documents)==set(PIN_NAMES) and type(pins) is dict and set(pins)==set(PIN_NAMES) and all(_sha(p) for p in pins.values()) and type(references) is dict and set(references)==set(PIN_NAMES))
     old,new,qa,stage=(documents[k] for k in PIN_NAMES);root=data_root_literal
+    qa=profile_receipt(qa);stage=profile_receipt(stage)
     for k,ref in references.items():_need(type(ref) is dict and set(ref)=={'path','bytes'} and _uint(ref['bytes'],CAPS[k]) and ref['bytes']>0);_path(ref['path'],root)
     old_summary,old_codes=_report(old,root);new_summary,new_codes=_report(new,root)
     _need(old.get('prepared_payload') is None and 'connectivity_diagnostics' not in old and old.get('scene_count') is None,'Original physical scene count is outside supported stored scope')
@@ -79,12 +81,12 @@ def project_candidate_qa(documents,pins,references,*,data_root_literal):
     _need(type(stage['derived_manifest_version']) is str and re.fullmatch('split-repair-v1-[0-9a-f]{16}',stage['derived_manifest_version']) is not None)
     package=stage['package_reference'];_need(type(package) is dict and set(package)=={'path','receipt_sha256'} and type(package['path']) is str and 0<len(package['path'])<=4096 and _sha(package['receipt_sha256']));_local(package['path'])
     source_pins=stage['input_pins'];_need(type(source_pins) is dict and set(source_pins)=={'source','readiness','saved_plan'} and all(_sha(v) for v in source_pins.values()) and source_pins['readiness']==pins['original_report_sha256'] and old['input_manifests'][0]['sha256']==source_pins['source'])
-    staged=stage['staged_candidate'];_ref(staged,root);_need(staged['sha256']==new['input_manifests'][0]['sha256'] and _path(staged['path'],root)==_path(new['input_manifests'][0]['path'],root))
+    staged=stage['staged_candidate'];_ref(staged,root,maximum=profile_cap('candidate',64*1024**2));_need(staged['sha256']==new['input_manifests'][0]['sha256'] and _path(staged['path'],root)==_path(new['input_manifests'][0]['path'],root))
     outputs=stage['verified_package_outputs'];_need(type(outputs) is dict and set(outputs)=={'plan','candidate'})
-    for k,item in outputs.items():_need(type(item) is dict and set(item)=={'name','sha256','bytes'} and item['name']==k+'.json' and _sha(item['sha256']) and _uint(item['bytes'],4*1024**2 if k=='plan' else 64*1024**2) and item['bytes']>0)
+    for k,item in outputs.items():_need(type(item) is dict and set(item)=={'name','sha256','bytes'} and item['name']==k+'.json' and _sha(item['sha256']) and _uint(item['bytes'],4*1024**2 if k=='plan' else profile_cap('candidate',64*1024**2)) and item['bytes']>0)
     _need(outputs['candidate']['sha256']==staged['sha256'] and _same(outputs['candidate']['bytes'],staged['bytes']))
     inputs=qa['inputs'];_need(type(inputs) is dict and set(inputs)=={'candidate','staging_receipt','policy','old_readiness'})
-    _ref(inputs['candidate'],root,path=staged['path'],pin=staged['sha256'],size=staged['bytes'])
+    _ref(inputs['candidate'],root,maximum=profile_cap('candidate',64*1024**2),path=staged['path'],pin=staged['sha256'],size=staged['bytes'])
     _ref(inputs['old_readiness'],root,path=references['original_report_sha256']['path'],pin=pins['original_report_sha256'],size=references['original_report_sha256']['bytes'])
     _ref(inputs['staging_receipt'],root,path=references['staging_receipt_sha256']['path'],pin=pins['staging_receipt_sha256'],size=references['staging_receipt_sha256']['bytes'])
     _ref(inputs['policy'],root);_need(inputs['policy']['bytes']<=1024**2)
@@ -104,7 +106,7 @@ def project_candidate_qa(documents,pins,references,*,data_root_literal):
         scene_count=capture['scene_count']
     else:
         _need(capture['capture_status'] in {'NOT_CAPTURED_UNSUPPORTED_POLICY','NOT_CAPTURED_BUDGET','NOT_CAPTURED_UNSUPPORTED_METADATA','FAILED_DIAGNOSTIC','FAILED_ADAPTER_BOUNDARY'});scene_count=None
-    _need(_uint(stage['source_row_count'],100000) and _uint(stage['candidate_row_count'],100000) and stage['candidate_row_count']<=stage['source_row_count'])
+    _need(_uint(stage['source_row_count'],3000 if active() is not None else 100000) and _uint(stage['candidate_row_count'],100000) and stage['candidate_row_count']<=stage['source_row_count'])
     if captured:_need(scene_count==stage['candidate_row_count'])
     projected=stage['projected_after'];_need(type(projected) is dict and set(projected)=={'eligible_patches_by_split','eligible_total','eligible_by_province_year'} and type(projected['eligible_patches_by_split']) is dict and set(projected['eligible_patches_by_split'])=={'train','val','test'} and all(_uint(n,stage['candidate_row_count']) for n in projected['eligible_patches_by_split'].values()) and _same(projected['eligible_total'],sum(projected['eligible_patches_by_split'].values())) and type(projected['eligible_by_province_year']) is dict and all(type(k) is str and len(k)<=128 and _uint(v,stage['candidate_row_count']) for k,v in projected['eligible_by_province_year'].items()) and sum(projected['eligible_by_province_year'].values())==projected['eligible_total'])
     codes=sorted(set(old_codes)|set(new_codes));_need(len(codes)<=32)
@@ -116,6 +118,7 @@ def project_candidate_qa(documents,pins,references,*,data_root_literal):
       'row_counts':{'original_report_physical_scene_count':None,'original_report_scope':'NOT_PERSISTED','source_rows_declared':stage['source_row_count'],'candidate_rows_declared':stage['candidate_row_count'],'declared_scope':'PINNED_STAGING_RECEIPT_DECLARATION','candidate_appended_scene_count':scene_count,'candidate_capture_scope':'STORED_QA_CAPTURE' if captured else 'NOT_CAPTURED'},'bare_class':bare,**{k:False for k in sorted(FALSE_FIELDS)}}
 
 
+@profile_entry
 def compare_candidate_qa(data_root,pins):
     _need(type(pins) is dict and set(pins)==set(PIN_NAMES) and all(_sha(v) for v in pins.values()))
     logical_root=_local(data_root);root=logical_root.resolve();_local(root);targets={};contexts={};references={}

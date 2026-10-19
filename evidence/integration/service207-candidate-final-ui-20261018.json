@@ -1,0 +1,62 @@
+{
+  "status": "VERIFIED_REAL_PUBLISHED207_CANDIDATE_BROWSER",
+  "at": "2026-10-18T05:39:17.720904+00:00",
+  "method": "One explicit refresh existing Chrome view17; no separate HTTP request/restart",
+  "response_recorded_at": "2026-10-18T05:38:19.903033+00:00",
+  "response_kst": "2026-10-18 14:38:19.903033",
+  "source_sha256": "80eef2d274942c7a7f9bf8ee2483af070a729060d84ceb1a19baacb52ae4976a",
+  "current": {
+    "registered": 1699,
+    "eligible": 1355,
+    "split": [
+      813,
+      292,
+      250
+    ],
+    "cell_gap": 24
+  },
+  "candidate": {
+    "eligible": 1339,
+    "split": [
+      813,
+      276,
+      250
+    ],
+    "blockers": 3,
+    "source_matches_current": true,
+    "stale_warning_removed": true,
+    "ready": false,
+    "report": "priority164-guarded207-20261018/qa/readiness.json"
+  },
+  "bare_review": {
+    "total": 37,
+    "searched_provinces": [
+      "gorontalo",
+      "west_java"
+    ],
+    "source_mismatch_warning": true,
+    "remote_quality": "미검사",
+    "execution": "미승인"
+  },
+  "checks": {
+    "at": "2026-10-18T05:38:54.719Z",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    }
+  },
+  "proof": [
+    "service207-candidate-final-ui-20261018.dom.txt",
+    "service207-candidate-final-ui-20261018.inventory.png",
+    "service207-candidate-final-ui-20261018.png",
+    "service207-candidate-final-ui-20261018.checks.json"
+  ],
+  "limits": [
+    "211 has not been included in this snapshot.",
+    "No pointer/source/ledger/registry/operating-data writes and no native QA rerun.",
+    "Previously observed1317 pointer and current1339 publication are separate time snapshots.",
+    "No HTTP timing/SLA claim; training readiness remains false."
+  ]
+}

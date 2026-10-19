@@ -1,0 +1,52 @@
+{
+  "at_utc": "2026-10-18T02:46:41.953370+00:00",
+  "stage": "RUNNING_NOT_COMPLETED",
+  "processes": [
+    {
+      "ProcessId": 8860,
+      "Name": "python.exe"
+    },
+    {
+      "ProcessId": 31156,
+      "Name": "python.exe"
+    }
+  ],
+  "worker_start_count": 2,
+  "worker_finished_records": [],
+  "selected_ledger_rows": {
+    "parallel-v2-grid-esri_io-banten-2024-g01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "ed1f80354faf4723f943bdc7474dd228cce1845e2ba4486272f6d9e4ccc68db4"
+    },
+    "parallel-v2-grid-esri_io-banten-2024-g02": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "b22f6a2d1e0f6077adbe7b760a5139c18edb8aa44432a4a3f2301721ab8509e4"
+    }
+  },
+  "lock_present": true,
+  "rate_limit_active": false,
+  "old1569prefix_unchanged": true,
+  "old_pending_two_rows_unchanged": true,
+  "old_pending_reserved_bytes": 136314880,
+  "physical_total": 1569,
+  "eligible_total": 1260,
+  "new_physical_stored": 0,
+  "new_eligible_stored": 0,
+  "new_bare_pixels_stored": 0,
+  "new_bare_ge256_patches_stored": 0,
+  "cell_gap_total": 54,
+  "current_remaining_including_pending_reservations": 1982505574,
+  "current_delta_including_pending": 136314880,
+  "manifest_sha256": "6b74cfda9afd8a9ab238406bbf5007e50a2c1162989e2f8953a13a6289f7950c",
+  "manifest_ledger_double_read_stable": true,
+  "round8_final_exists": false,
+  "existing_final_status": null,
+  "limits": "Sequential stored-artifact observation, not atomic snapshot/native QA. Any pending delta remains reservation, not final measured charge. Existing165 owner retains full nativeQA responsibility.",
+  "new_collectors_started": 0,
+  "native_QA_runs": 0,
+  "operating_data_writes": 0
+}

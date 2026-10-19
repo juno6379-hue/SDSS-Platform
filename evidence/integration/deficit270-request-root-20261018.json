@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "kind": "GUARDED_DEFICIT_1024_REQUEST",
+  "proposal_ref": {
+    "path": "data/centers269-fresh-20261018/proposal.json",
+    "sha256": "661de17b3bed3f3cceb2624315a837ac0eec2bd4b71af039ac22f6299ee7d4de"
+  },
+  "current_manifest_ref": {
+    "path": "data/centers269-fresh-20261018/source.json",
+    "sha256": "9473861797b729b6b6eb60607a7edfb67921fa2b259bc2b0ffa8b2af08fc1353"
+  },
+  "ledger_ref": {
+    "path": "data/first-group-training-budget/global-ledger.json",
+    "sha256": "a92506b7b5b2ca5f668a21f9b111b32b3d2080a707ba9646bbf063c53dfe5aea"
+  },
+  "boundary_ref": {
+    "path": "data/first-group-boundaries/selected-six.geojson",
+    "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+  },
+  "config_ref": {
+    "path": "configs/first-group.collection.json",
+    "sha256": "8b0c1b2aad13a3344200998ec62a18853c5308adf4ec57b1af835333845fd7e3"
+  },
+  "prior_plan_ref": {
+    "path": "data/centers269-fresh-20261018/prior-merged.json",
+    "sha256": "bfe4b55d9413eea8972784748b1354ebc683285043dcc8f2a5c4fc5b8b03933e"
+  },
+  "selected": [
+    {
+      "spatial_window_id": "centers182-southeast_sulawesi-411ad85627a7",
+      "year": 2024
+    }
+  ],
+  "maximum_batches": 1,
+  "candidate_metadata_policy": "DEFICIT_AOI_BBOX_CONTAINS_V1"
+}

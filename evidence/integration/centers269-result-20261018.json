@@ -1,0 +1,50 @@
+{
+  "status": "LOCAL_PROPOSAL_COMPLETE_UNAPPROVED",
+  "at_utc": "2026-10-18T09:13:34.584299+00:00",
+  "seconds": 54.313,
+  "exit_code": 0,
+  "cli_invocations": 1,
+  "pins_stable_after": {
+    "source": true,
+    "ledger": true
+  },
+  "prior_candidates_preserved": 52,
+  "source_snapshot_ref": {
+    "path": "data/centers269-fresh-20261018/source.json",
+    "sha256": "9473861797b729b6b6eb60607a7edfb67921fa2b259bc2b0ffa8b2af08fc1353"
+  },
+  "proposal_sha256": "661de17b3bed3f3cceb2624315a837ac0eec2bd4b71af039ac22f6299ee7d4de",
+  "candidate_count": 4,
+  "target_status": [
+    {
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 22,
+      "deficit_to_28": 6,
+      "proposed_candidates": 2
+    },
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 18,
+      "deficit_to_28": 10,
+      "proposed_candidates": 1
+    },
+    {
+      "province": "gorontalo",
+      "year": 2022,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 24,
+      "deficit_to_28": 4,
+      "proposed_candidates": 1
+    }
+  ],
+  "headers_verified": 115,
+  "network_requests": 0,
+  "full_pending_support_inventory_verified": false,
+  "collection_started": false,
+  "source_or_ledger_written": false,
+  "training_started": false
+}

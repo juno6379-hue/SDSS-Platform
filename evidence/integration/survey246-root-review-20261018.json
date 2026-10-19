@@ -1,0 +1,20 @@
+{
+  "status": "ROOT_STATIC_REVIEW_AND_PERSISTED_SYNTHETIC_EVIDENCE_VERIFIED",
+  "source_pins": {
+    "backend/app/data/bare_survey_stac_binding.py": "16a1d8684e47b2d7f1cb63e062f9fe1e2831f10eb4bd68eedae6e6ee7e788b4a",
+    "tests/test_bare_survey_stac_binding.py": "1778d168b3ab6914a57a1607a8bab096f4899c7cee688198749ae507287809e2",
+    "docs/implementation/246_survey_stac_source_binding.md": "f86f51c4ac6638e06938dbac3ee7992ea7a6c999c8f012c43be3540bd9e54154"
+  },
+  "tests": 45,
+  "seconds": 1.265,
+  "exit_code": 0,
+  "log_sha256": "1e6c3adc34d8dc90715e4c2933a2147fe705273c8c362b12ab94d28e721610d7",
+  "static_review_scope": "Pure metadata binding, strict bytes/scene/time/product/URL; no required product correction found. Current provider/real STAC compatibility remains unverified.",
+  "operations": {
+    "http": 0,
+    "collector": 0,
+    "native_raster": 0,
+    "operating_source_or_ledger_read": 0
+  },
+  "test_count_not_added_to_prior45": true
+}

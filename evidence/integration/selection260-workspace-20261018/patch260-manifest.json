@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "status": "ISOLATED_NOT_APPLIED",
+  "files": [
+    {
+      "path": "backend/app/data/deficit_candidate_guard.py",
+      "baseline": {
+        "bytes": 22548,
+        "sha256": "a90ba9a70bb0b0eecf529a10961e12edd1d9519b881913eed2e997c52c182071"
+      },
+      "final": {
+        "bytes": 27712,
+        "sha256": "4052759b683f6f4f545a629466f2d4145e3ad9cc2ad8e6cdf5b1e3c0004a5dd2"
+      }
+    },
+    {
+      "path": "scripts/collect_deficit_guarded.py",
+      "baseline": {
+        "bytes": 21165,
+        "sha256": "971c474b1c8217b1be958b61532ccf55e646804a083a045d2cda74a4a9d2bd09"
+      },
+      "final": {
+        "bytes": 21814,
+        "sha256": "9ae5ba986d3d48e89cfb269d8a242ffd6189d281649d98a11614c03e5ab3c9ab"
+      }
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "baseline": {
+        "bytes": 47009,
+        "sha256": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301"
+      },
+      "final": {
+        "bytes": 48185,
+        "sha256": "eac2c2ea7a21f809328ea7572f490584ff7313c2b1ff95191ee976204ac2b424"
+      }
+    },
+    {
+      "path": "tests/test_deficit_metadata_selection260.py",
+      "baseline": null,
+      "final": {
+        "bytes": 16280,
+        "sha256": "c3c129ce5c95882df5dc9381c360629f325d931233f080982471ee19f7300f45"
+      }
+    }
+  ],
+  "operating_data_copied": false
+}

@@ -1,3 +1,4 @@
+from .manifest_resource_profile import active as profile_active,cap as profile_cap,policy as resource_policy,charge as profile_charge,structure as profile_structure,entry as profile_entry,stamp as profile_stamp,receipt as profile_receipt,DESCRIPTOR,require_io_room,resource_boundary,write_measured
 """Opt-in bounded, strict JSON IO for split metadata; no approval semantics."""
 import hashlib
 import json
@@ -58,10 +59,13 @@ def _depth(text,maximum):
 
 
 def _tree(value,maximum,cap):
+    visited=0
     # Bound serialization before encoder builds a possibly enormous string fragment.
     active=set();stack=[(value,1 if type(value) in (dict,list) else 0,False)]
     while stack:
         item,depth,leave=stack.pop();kind=type(item)
+        visited+=1
+        if profile_active() is not None:_need(visited<=DESCRIPTOR['max_nodes'],'MANIFEST_NODE_LIMIT')
         if leave:active.remove(id(item));continue
         if kind in (dict,list):
             _need(depth<=maximum,'JSON object depth exceeds policy')
@@ -81,6 +85,7 @@ def _tree(value,maximum,cap):
 class BoundedJSONIO:
     """Shared operation context; all subsequent reads retain first logical/stat/SHA binding."""
     def __init__(self,policy):
+        policy=resource_policy(policy)
         _need(type(policy) is dict and set(policy)=={'input_caps','output_caps','max_depth'},'Exact bounded JSON policy required')
         for key,roles in [('input_caps',INPUT_ROLES),('output_caps',OUTPUT_ROLES)]:
             caps=policy[key];_need(type(caps) is dict and set(caps)==roles and all(type(n) is int and 1<=n<=MAX_BYTES for n in caps.values()),'Exact integer role byte caps required')
@@ -96,6 +101,7 @@ class BoundedJSONIO:
     @property
     def max_depth(self):return self._max_depth
 
+    @resource_boundary
     def read(self,path,role,expected=None):
         _need(role in self.input_caps,'Unknown input role')
         if expected is not None:_need(type(expected) is str and re.fullmatch('[0-9a-f]{64}',expected) is not None,'Explicit lowercase SHA required')
@@ -103,13 +109,14 @@ class BoundedJSONIO:
         _need(before[0]<=cap,'JSON input exceeds role byte cap')
         old=self._records.get(logical)
         if old is not None:_need(old['target']==target and old['stamp']==before,'JSON logical target or input state changed')
+        require_io_room(cap+1)
         parts=[];count=0
         with target.open('rb',buffering=0) as stream:
             _need(_stamp(os.fstat(stream.fileno()))==before,'JSON descriptor differs from input')
             while count<=cap:
                 block=stream.read(min(CHUNK,cap+1-count))
                 if not block:break
-                count+=len(block);parts.append(block)
+                profile_charge(len(block));count+=len(block);parts.append(block)
             _need(count<=cap,'JSON input grew beyond byte cap')
             _need(_stamp(os.fstat(stream.fileno()))==before,'JSON input changed during read')
         _need(_stamp(target.stat())==before and logical.resolve()==target,'JSON input target changed after read')
@@ -118,15 +125,16 @@ class BoundedJSONIO:
         if expected is not None:_need(digest==expected,'JSON SHA mismatch or stale input')
         if old is not None:_need(digest==old['sha256'],'JSON input content changed')
         text=payload.decode('utf-8');_need(not text.startswith('\ufeff') and '\x00' not in text,'Only strict UTF8 JSON without BOM/NUL supported');_depth(text,self.max_depth)
-        document=json.loads(text,object_pairs_hook=_pairs,parse_constant=_constant);_tree(document,self.max_depth,cap)
+        document=json.loads(text,object_pairs_hook=_pairs,parse_constant=_constant);_tree(document,self.max_depth,cap);profile_structure(document,role)
         self._records[logical]={'target':target,'stamp':before,'sha256':digest,'role':role}
         return document,digest
 
     def verify(self):
         for logical,record in list(self._records.items()):self.read(logical,record['role'],record['sha256'])
 
+    @resource_boundary
     def measure(self,document,role):
-        _need(role in self.output_caps,'Unknown output role');cap=self.output_caps[role];_tree(document,self.max_depth,cap)
+        _need(role in self.output_caps,'Unknown output role');cap=self.output_caps[role];_tree(document,self.max_depth,cap);profile_structure(document,role)
         count=0
         for part in self.chunks(document):count+=len(part);_need(count<=cap,'JSON output exceeds role byte cap')
         return count
@@ -137,12 +145,17 @@ class BoundedJSONIO:
             text=text.replace('\n',os.linesep)
             for i in range(0,len(text),CHUNK):yield text[i:i+CHUNK].encode('utf-8')
 
+    @resource_boundary
     def write(self,path,document,role,expected_size):
         cap=self.output_caps[role];count=0
-        with Path(path).open('xb') as stream:
+        _need(type(expected_size) is int and 0<=expected_size<=cap,'JSON output exceeds role byte cap')
+        require_io_room(expected_size)
+        with Path(path).open('xb',buffering=0 if profile_active() is not None else -1) as stream:
             for part in self.chunks(document):
                 _need(count+len(part)<=cap and count+len(part)<=expected_size,'JSON output changed or exceeded budget')
-                written=stream.write(part);_need(written==len(part),'Incomplete JSON output write');count+=written
+                if profile_active() is not None:written=write_measured(stream,part)
+                else:written=stream.write(part)
+                _need(written==len(part),'Incomplete JSON output write');count+=written
         _need(count==expected_size,'JSON output changed after measurement')
 
 

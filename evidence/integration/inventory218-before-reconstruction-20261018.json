@@ -1,0 +1,29 @@
+[
+  {
+    "source": "backend/app/data/deficit_candidate_guard.py",
+    "expected_sha256": "c8eece7cbb0d3fed77f704b65eda9e51fe2e300ea56fdfd4aa020d9c9653204f",
+    "reconstruction_method": "IN_MEMORY_MINIMAL_218_DIFF_REVERSE_NOT_HISTORICAL_FILE_DISCOVERY",
+    "matched": true,
+    "archive": "evidence\\integration\\inventory218-before-reconstructed-deficit_candidate_guard.py",
+    "bytes": 19481,
+    "sha256": "c8eece7cbb0d3fed77f704b65eda9e51fe2e300ea56fdfd4aa020d9c9653204f"
+  },
+  {
+    "source": "backend/app/data/targeted_inventory.py",
+    "expected_sha256": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+    "reconstruction_method": "IN_MEMORY_MINIMAL_218_DIFF_REVERSE_NOT_HISTORICAL_FILE_DISCOVERY",
+    "matched": true,
+    "archive": "evidence\\integration\\inventory218-before-reconstructed-targeted_inventory.py",
+    "bytes": 10520,
+    "sha256": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9"
+  },
+  {
+    "source": "scripts/collect_deficit_guarded.py",
+    "expected_sha256": "6e41c4ead9262133b497e802050671da1bc0a969027a39735429a72c720f112a",
+    "reconstruction_method": "IN_MEMORY_MINIMAL_218_DIFF_REVERSE_NOT_HISTORICAL_FILE_DISCOVERY",
+    "matched": true,
+    "archive": "evidence\\integration\\inventory218-before-reconstructed-collect_deficit_guarded.py",
+    "bytes": 20011,
+    "sha256": "6e41c4ead9262133b497e802050671da1bc0a969027a39735429a72c720f112a"
+  }
+]

@@ -1,0 +1,121 @@
+{
+  "status": "METADATA_HANDOFF_VERIFIED",
+  "at": "2026-10-18T06:29:34.425870+00:00",
+  "summary_sha256": "99927a8a0e7559feda77191308fe7f51221e1d39796fc4f8685384752d26eb85",
+  "summary_bytes": 4820,
+  "output_pins_verified": 11,
+  "output_pin_mismatches": [],
+  "exact_retained_rows": true,
+  "partition_complete": true,
+  "source_current_matches_snapshot": true,
+  "previous_207_artifacts_unchanged": {
+    "data/first-group-training-priority/latest-candidate.json": "ac6827a1841fd657c430c2a4953aae6089dc4322041dfad87b20fbd1e751c12a",
+    "data/first-group-training-priority/candidate-receipt207-20261018.json": "ac6827a1841fd657c430c2a4953aae6089dc4322041dfad87b20fbd1e751c12a",
+    "evidence/integration/priority164-guarded207-20261018/summary.json": "d80bad5650ff8c32f4b8a297ac1017b27aaec6cbdb0fc2f110f240f3875a5ec9"
+  },
+  "source_verified_file_records": 5376,
+  "candidate_verified_file_records": 5326,
+  "excluded_rows": [
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303
+  ],
+  "conflicts": [
+    {
+      "scene_ids": [
+        "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+      ],
+      "source_groups": [
+        "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+        "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+      ],
+      "row_indexes": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "keep_split": "test",
+      "excluded_row_indexes": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ]
+    }
+  ],
+  "class_statistics": {
+    "train": {
+      "valid_label_pixels": 52026521,
+      "bare_pixels": 2562,
+      "bare_percent": 0.004924411532341361,
+      "bare_contributing_patches": 1
+    },
+    "val": {
+      "valid_label_pixels": 17776457,
+      "bare_pixels": 2998,
+      "bare_percent": 0.01686500296431398,
+      "bare_contributing_patches": 2
+    },
+    "test": {
+      "valid_label_pixels": 16252940,
+      "bare_pixels": 1025,
+      "bare_percent": 0.006306551307025068,
+      "bare_contributing_patches": 0
+    }
+  },
+  "source_rows_modified": false,
+  "pointer_written": false,
+  "additional_native_scans": 0,
+  "training_executed": false,
+  "network_requests": 0
+}

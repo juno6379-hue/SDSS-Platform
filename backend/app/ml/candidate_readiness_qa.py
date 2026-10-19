@@ -1,3 +1,4 @@
+from .manifest_resource_profile import active,cap as profile_cap,policy as resource_policy,charge as profile_charge,structure as profile_structure,entry as profile_entry,stamp as profile_stamp,receipt as profile_receipt,DESCRIPTOR
 """고정 staging metadata와 동일 정책으로 기존 run을 QA-only 호출한다."""
 import copy
 from pathlib import Path
@@ -29,7 +30,7 @@ def _number(value):
 
 
 def _context(role,cap):
-    policy=copy.deepcopy(POLICY);policy['input_caps'][role]=cap;policy['output_caps']['plan']=65536
+    policy=resource_policy(POLICY);policy['input_caps'][role]=cap;policy['output_caps']['plan']=65536
     return BoundedJSONIO(policy)
 
 
@@ -48,6 +49,7 @@ def _policy(caller,old):
 
 
 def _stage(stage,candidate,candidate_path,data,pins,size):
+    stage=profile_receipt(stage)
     _need(type(stage) is dict and set(stage)==STAGE_FIELDS,'Exact staging receipt schema required')
     for key,value in {'schema_version':1,'kind':'DATA_CANDIDATE_STAGING_RECEIPT','status':'METADATA_STAGED_FOR_QA','next_step':'NEXT_QA_NOT_PERFORMED','qa_status':'NOT_PERFORMED','metadata_integrity_verified':True,'original_candidate_bytes_preserved':True,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN'}.items():_need(_same(stage[key],value),'Staging receipt state invalid')
     for key in STAGE_FALSE:_need(stage[key] is False,'Staging receipt false claim invalid: '+key)
@@ -55,13 +57,13 @@ def _stage(stage,candidate,candidate_path,data,pins,size):
     oldpins=stage['input_pins'];_need(type(oldpins) is dict and set(oldpins)=={'source','readiness','saved_plan'} and all(_sha(x) for x in oldpins.values()) and oldpins['readiness']==pins['old_readiness'],'Old readiness pin differs from staging provenance')
     ref=stage['package_reference'];_need(type(ref) is dict and set(ref)=={'path','receipt_sha256'} and type(ref['path']) is str and 0<len(ref['path'])<=4096 and _sha(ref['receipt_sha256']),'Package reference invalid');_local(ref['path'])
     outputs=stage['verified_package_outputs'];_need(type(outputs) is dict and set(outputs)=={'plan','candidate'},'Package output references invalid')
-    for role,item in outputs.items():_need(type(item) is dict and set(item)=={'name','sha256','bytes'} and item['name']==role+'.json' and _sha(item['sha256']) and _uint(item['bytes']) and 0<item['bytes']<=POLICY['output_caps'][role],'Package output pin invalid')
+    for role,item in outputs.items():_need(type(item) is dict and set(item)=={'name','sha256','bytes'} and item['name']==role+'.json' and _sha(item['sha256']) and _uint(item['bytes']) and 0<item['bytes']<=resource_policy(POLICY)['output_caps'][role],'Package output pin invalid')
     ref=stage['staged_candidate'];_need(type(ref) is dict and set(ref)=={'path','sha256','bytes'} and type(ref['path']) is str and 0<len(ref['path'])<=4096 and ref['sha256']==pins['candidate'] and _same(ref['bytes'],size),'Staged candidate pin/size invalid')
     _local(ref['path']);_need(_confined(data,ref['path'])==candidate_path,'Staged candidate path mismatch')
     _need(_same(outputs['candidate']['sha256'],pins['candidate']) and _same(outputs['candidate']['bytes'],size),'Package/staged candidate pin mismatch')
     _need(type(candidate) is dict and _same(candidate.get('schema_version'),1) and candidate.get('status')=='PLANNED_DERIVED_CANDIDATE' and candidate.get('executed') is False and candidate.get('learning_ready') is False,'Candidate metadata state invalid')
     _need(type(stage['derived_manifest_version']) is str and re.fullmatch('split-repair-v1-[0-9a-f]{16}',stage['derived_manifest_version']) is not None and candidate.get('version')==stage['derived_manifest_version'],'Candidate version mismatch')
-    rows=candidate.get('scenes');_need(type(rows) is list and len(rows)<=100000 and _same(stage['candidate_row_count'],len(rows)) and _uint(stage['source_row_count']) and len(rows)<=stage['source_row_count']<=100000,'Candidate physical row counts invalid')
+    rows=candidate.get('scenes');_need(type(rows) is list and len(rows)<=(3000 if active() is not None else 100000) and _same(stage['candidate_row_count'],len(rows)) and _uint(stage['source_row_count']) and len(rows)<=stage['source_row_count']<=(3000 if active() is not None else 100000),'Candidate physical row counts invalid')
     lineage=candidate.get('lineage');_need(type(lineage) is dict and set(lineage)=={'source_manifest','selection_policy','source_row_indexes'},'Candidate lineage invalid')
     source=lineage['source_manifest'];_need(type(source) is dict and set(source)=={'path','sha256'} and type(source['path']) is str and 0<len(source['path'])<=4096 and source['sha256']==oldpins['source'],'Candidate source pin invalid');_local(source['path']);_confined(data,source['path'])
     selection=lineage['selection_policy'];_need(type(selection) is dict and _same(selection.get('province_splits'),FIXED_PROVINCE_SPLITS) and _same(selection.get('keep_split_priority'),['test','val','train']),'Candidate fixed selection policy invalid')
@@ -98,13 +100,14 @@ def _report(report,policy,candidate,data,pin,old):
     return expected_status,counts,blockers,capture['capture_status']
 
 
+@profile_entry
 def assess_staged_candidate(data_root,paths,pins,output_dir):
     """출처·동일정책 guard. 기존 run의 QA는 호출하되 execute/resume는 항상 False."""
     _need(type(paths) is dict and set(paths)==set(ROLES) and type(pins) is dict and set(pins)==set(ROLES) and all(_sha(v) for v in pins.values()),'Four external input SHA pins required')
     root_logical=_local(data_root);data=root_logical.resolve();_local(data);_need(data.is_dir(),'Existing DATA root required')
-    roles={'candidate':'candidate','staging_receipt':'saved_plan','policy':'source','old_readiness':'readiness'};contexts={r:_context(roles[r],CAPS[r]) for r in ROLES};logical={};targets={};stamps={}
+    roles={'candidate':'candidate','staging_receipt':'saved_plan','policy':'source','old_readiness':'readiness'};contexts={r:_context(roles[r],profile_cap('candidate' if r=='candidate' else r,CAPS[r])) for r in ROLES};logical={};targets={};stamps={}
     for r in ROLES:
-        value=Path(paths[r]);value=value if value.is_absolute() else data/value;logical[r]=_local(value);targets[r]=_confined(data,logical[r]);_local(targets[r]);stamps[r]=_stamp(targets[r].stat());_need(stamps[r][0]<=CAPS[r],'Input exceeds role byte cap')
+        value=Path(paths[r]);value=value if value.is_absolute() else data/value;logical[r]=_local(value);targets[r]=_confined(data,logical[r]);_local(targets[r]);stamps[r]=_stamp(targets[r].stat());_need(stamps[r][0]<=profile_cap('candidate' if r=='candidate' else r,CAPS[r]),'Input exceeds role byte cap')
     _need(len(set(targets.values()))==4 and len({s[3:] for s in stamps.values()})==4,'Four distinct input files required')
     out=_local(output_dir);target=_confined(data,out);_need(not out.exists() and not out.is_symlink(),'New DATA QA output directory required');parent=out.parent.resolve();parent_id=_dir_identity(parent)[:2]
     docs={r:contexts[r].read(logical[r],roles[r],pins[r])[0] for r in ROLES};_stage(docs['staging_receipt'],docs['candidate'],targets['candidate'],data,pins,stamps['candidate'][0]);effective=_policy(docs['policy'],docs['old_readiness'])
@@ -128,5 +131,6 @@ def assess_staged_candidate(data_root,paths,pins,output_dir):
       'observed_readiness_status':state,'observed_gate_ready_for_training':result['ready_for_training'],'saved_blockers':copy.deepcopy(blockers),'patch_counts_by_split':copy.deepcopy(counts),'connectivity_capture_status':capture_status,
       'qa_performed':True,'full_plan_recomputation_performed':False,'package_revalidated':False,'prepared_dataset_registered':False,'training_executed':False,'execution_authorized':False,'ready_for_training':False,'scientific_accuracy_validated':False,'source_authenticity_verified':False,'exact_row_binding_verified':False,'training_split_leakage_resolved':False,'registry_called':False,'resume_requested':False,'settlement_authorized':False,'automatic_resume_allowed':False,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN',
       'completion_contract':'QA may complete with blockers. Receipt is not execution/scientific authorization. Absent/partial/invalid receipt is incomplete. Final stability check precedes exclusive receipt write; no atomic snapshot guarantee.'}
+    receipt=profile_stamp(receipt)
     size=report_io.measure(receipt,'plan');verify();report_io.verify();paths_ok(created=True);receipt_out=target/'qa-receipt.json';_need(not receipt_out.exists() and not receipt_out.is_symlink(),'New QA receipt required');report_io.write(receipt_out,receipt,'plan',size)
     return receipt

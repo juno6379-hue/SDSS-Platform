@@ -1,0 +1,110 @@
+{
+  "status": "QA273_LAUNCHED",
+  "at": "2026-10-18T11:05:40.384551+00:00",
+  "pid": 37520,
+  "argv": [
+    "scripts/prepare_priority_candidate164.py",
+    "--data-root",
+    "E:\\GeoAI–MLOps–SDSS\\data",
+    "--source",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+    "--source-sha256",
+    "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+    "--policy",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group\\experiment-esri-v003-2020-2025.json",
+    "--policy-sha256",
+    "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+    "--run-id",
+    "guarded273-20261018",
+    "--manifest-profile",
+    "bounded128m-3000-v1"
+  ],
+  "approval_sha256": "d240680837818ea21d6191cb5d14fce40f4ae2a2622b0af62216054367d01a5f",
+  "preparation_sha256": "a87623fd2346e5fea4d89b03662ec0e83606ab4da58d6360d08cf442d33043c5",
+  "native_audit_sha256": "8b745ee8eeda31584942afbe399f93a0c2e1d4f7253fefbdbc849204193cdb4a",
+  "source_pin_expected": {
+    "path": "data/first-group-training-esri-v1/annual-window-report.json",
+    "sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+    "bytes": 67518599,
+    "registered_rows_reported": 1731,
+    "verification": "ROOT_REPORTED_POST270_NATIVE_SOURCE_NOT_READ_DURING_PREPARATION",
+    "default64_excess_bytes": 409735,
+    "history_count": null,
+    "candidate_count": null
+  },
+  "source_pin_direct_check": "164_BEFORE_OUTPUT_AND_AFTER_EACH_QA",
+  "protected_before": {
+    "data/first-group-training-priority/latest-candidate.json": "920ceb52dca0aba32f11389fd2f9c5f2719ca40b47f44e650c3a38b57c3b3d40",
+    "data/first-group-training-priority/candidate-receipt227-20261018.json": "920ceb52dca0aba32f11389fd2f9c5f2719ca40b47f44e650c3a38b57c3b3d40"
+  },
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "code_pins": {
+    "scripts/prepare_priority_candidate164.py": {
+      "bytes": 13570,
+      "sha256": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437"
+    },
+    "scripts/run_experiment.py": {
+      "bytes": 13682,
+      "sha256": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772"
+    },
+    "backend/app/ml/manifest_resource_profile.py": {
+      "bytes": 11756,
+      "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3"
+    },
+    "backend/app/ml/split_json_io.py": {
+      "bytes": 8513,
+      "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8"
+    },
+    "backend/app/ml/split_planning.py": {
+      "bytes": 13413,
+      "sha256": "13bea99a184f54ff1e05bd1b8c77aa398abce3badf622c8ee402852b57a5d3ad"
+    },
+    "backend/app/ml/split_validation.py": {
+      "bytes": 7967,
+      "sha256": "c54fa2ac72668df5414cc42116634a5ec493445db200c62f0788d78793faf30d"
+    },
+    "backend/app/ml/candidate_materialization.py": {
+      "bytes": 9036,
+      "sha256": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff"
+    },
+    "backend/app/ml/candidate_staging.py": {
+      "bytes": 13715,
+      "sha256": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d"
+    },
+    "backend/app/ml/candidate_readiness_qa.py": {
+      "bytes": 18326,
+      "sha256": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054"
+    },
+    "backend/app/ml/readiness.py": {
+      "bytes": 33396,
+      "sha256": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb"
+    },
+    "backend/app/ml/dataset.py": {
+      "bytes": 11777,
+      "sha256": "edc6e66d3a5e7aceebd4e25cb20dc68b7b59c8fbfdb18459c54e45b871f331fb"
+    },
+    "backend/app/ml/normalization.py": {
+      "bytes": 3026,
+      "sha256": "390f5b673fd694b3f7c1002a091f8c0a443bc400a728784426cca4064bf4bd83"
+    },
+    "backend/app/ml/raster.py": {
+      "bytes": 3911,
+      "sha256": "2fee32d1782e5de1b578b49f54997c74e8def767db778e13c95e8fd68407c54c"
+    },
+    "backend/app/ml/per_scene_normalization_files.py": {
+      "bytes": 9136,
+      "sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366"
+    },
+    "backend/app/data/recovery_terminal.py": {
+      "bytes": 15890,
+      "sha256": "c4467989dbfc36ce2940d1b0ebb2a84c04acda1b17c6a8ea0d9c046e81fdaf2e"
+    },
+    "backend/app/data/readiness_connectivity_witness.py": {
+      "bytes": 10869,
+      "sha256": "6c56cca4ce94d6ebeec1808b3ec82b4ba77a9e7744bb1442bb943cac17c2760e"
+    }
+  }
+}

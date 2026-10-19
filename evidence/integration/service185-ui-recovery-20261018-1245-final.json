@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-18T03:51:44.663170+00:00",
+  "status": "VERIFIED_REAL_LOCAL_API_AND_BROWSER",
+  "scope": "185/180 service recovery; no collector, ledger, manifest, receipt, source or test mutation",
+  "services": {
+    "api_pid": 32576,
+    "api": "http://127.0.0.1:8002",
+    "vite_pid": 32748,
+    "ui": "http://127.0.0.1:5174/#/view/17",
+    "background_hidden": true,
+    "existing_localhost_auth_preserved": true,
+    "still_running_at_final_process_check": true
+  },
+  "api": {
+    "health_status": 200,
+    "health_seconds": 0.453,
+    "collection_status": 200,
+    "collection_status_seconds": 43.594,
+    "cors": "http://127.0.0.1:5174",
+    "initial_not_ready_connection_failure_preserved": true,
+    "latency_limit_resolved": false
+  },
+  "actual_browser": {
+    "provider": "existing Chrome user tab 850119075",
+    "iab_unavailable": true,
+    "reload_count": 1,
+    "response_recorded_at": "2026-10-18T03:48:03.010281+00:00",
+    "physical_rows": 1617,
+    "current_eligible": 1296,
+    "current_splits": {
+      "train": 754,
+      "val": 292,
+      "test": 250
+    },
+    "other_rows": 321,
+    "cell_gap": 44,
+    "fixed_candidate_eligible": 1219,
+    "fixed_splits": {
+      "train": 720,
+      "val": 249,
+      "test": 250
+    },
+    "fixed_candidate_blockers": 3,
+    "current_and_fixed_source_difference_visible": true,
+    "bare_local_candidates": 50,
+    "historical_support_clear": 23,
+    "historical_support_overlap": 27,
+    "province_rows": 6,
+    "remote_quality": "not inspected",
+    "execution": "not approved",
+    "console_warning_error_count": 0,
+    "horizontal_overflow": false,
+    "fullpage_screenshot_timeout": true,
+    "viewport_screenshot_saved": true,
+    "reload_tool_timeout_but_navigation_completed": true
+  },
+  "source_pins": {
+    "backend/app/collection_status.py": {
+      "sha256": "ff76a2bede8f538b0f25f7a68221773c2e037213f437da1e02ef5e20971b64fd",
+      "bytes": 16533
+    },
+    "backend/app/collection_priority_status.py": {
+      "sha256": "445faf9f085c0fcc66e2b20463b290463cd0d9684be636474d41e15f6277b745",
+      "bytes": 11015
+    },
+    "frontend/src/CollectionProgress.tsx": {
+      "sha256": "ee147a0e26133dc0492c228a9c67246b934e56d70fb9ecc86dc52c3ea5f18758",
+      "bytes": 12957
+    },
+    "frontend/src/collectionProgressAdapter.ts": {
+      "sha256": "b9044126e3c986af1eeb8c21b4eddec9e79749308bb4679cbcb0b7a3ca262a8d",
+      "bytes": 11152
+    }
+  },
+  "proof": {
+    "launch": "service185-ui-recovery-20261018-1245-launch.json",
+    "bounded_http": "service185-ui-recovery-20261018-1245-api-final.json",
+    "dom": "service185-ui-recovery-20261018-1245-browser-dom.txt",
+    "browser_checks": "service185-ui-recovery-20261018-1245-browser-checks.json",
+    "inventory_screenshot": "service185-ui-recovery-20261018-1245-browser.png",
+    "candidate_and_bare_screenshot": "service185-ui-recovery-20261018-1245-candidate.png"
+  },
+  "tests": {
+    "new_runs": 0,
+    "reason": "No product source changes; existing 185 regression 25 PASS is historical evidence, not a new execution."
+  },
+  "limits": [
+    "Cold real HTTP took 43.594 seconds; no fast-response SLA asserted.",
+    "UI is the 12:48:03 snapshot; running 188 workers and later results are not included.",
+    "Local support clearance does not establish remote quality, independent raw acquisition, execution approval or training readiness.",
+    "Root owns collector recovery and one later refresh after native audit; no additional refresh/API loop performed."
+  ],
+  "documentation": "docs/implementation/service185_ui_recovery_20261018.md"
+}

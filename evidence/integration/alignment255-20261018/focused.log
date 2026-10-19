@@ -1,0 +1,15 @@
+test_alignment_diagnostic_signed_edges_detached_and_stale_reset (test_deficit_candidate_guard.LiveGuardTests.test_alignment_diagnostic_signed_edges_detached_and_stale_reset) ... ok
+test_alignment_diagnostic_boundary_and_unavailable_do_not_change_guard (test_deficit_candidate_guard.LiveGuardTests.test_alignment_diagnostic_boundary_and_unavailable_do_not_change_guard) ... ok
+test_alignment_diagnostic_formatter_failure_preserves_original_error (test_deficit_candidate_guard.LiveGuardTests.test_alignment_diagnostic_formatter_failure_preserves_original_error) ... ok
+test_service_hook_rejects_before_pixel_read (test_deficit_candidate_guard.LiveGuardTests.test_service_hook_rejects_before_pixel_read) ... ok
+{"status": "deficit_worker_started", "key": "center1024-banten-2024-938052045129-fa0efe65"}
+{"status": "deficit_worker_finished", "key": "center1024-banten-2024-938052045129-fa0efe65", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": false}
+test_alignment_failure_finally_records_bounded_diagnostic_without_changing_settlement (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_alignment_failure_finally_records_bounded_diagnostic_without_changing_settlement) ... ok
+{"status": "deficit_worker_started", "key": "center1024-banten-2024-938052045129-fa0efe65"}
+{"status": "deficit_worker_finished", "key": "center1024-banten-2024-938052045129-fa0efe65", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": true, "rate_limited": false}
+test_success_without_alignment_observation_keeps_legacy_worker_fields (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_success_without_alignment_observation_keeps_legacy_worker_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.640s
+
+OK

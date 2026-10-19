@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "status": "ISOLATED_TESTED_SYNTHETIC_AWAITING_INDEPENDENT_REVIEW",
+  "policy": "DEFICIT_AOI_BBOX_CONTAINS_V1",
+  "main_applied": false,
+  "operating_io": 0,
+  "http": 0,
+  "operational_collector": 0,
+  "real_native_qa": 0,
+  "real_provider_compatibility_verified": false,
+  "baseline_main_archive_verified_count": 40,
+  "protected_main": {
+    "backend/app/data/deficit_candidate_guard.py": "a90ba9a70bb0b0eecf529a10961e12edd1d9519b881913eed2e997c52c182071",
+    "scripts/collect_deficit_guarded.py": "971c474b1c8217b1be958b61532ccf55e646804a083a045d2cda74a4a9d2bd09",
+    "backend/app/data/bare_survey_stac_binding.py": "16a1d8684e47b2d7f1cb63e062f9fe1e2831f10eb4bd68eedae6e6ee7e788b4a",
+    "tests/test_bare_survey_stac_binding.py": "1778d168b3ab6914a57a1607a8bab096f4899c7cee688198749ae507287809e2",
+    "docs/implementation/246_survey_stac_source_binding.md": "f86f51c4ac6638e06938dbac3ee7992ea7a6c999c8f012c43be3540bd9e54154",
+    "tests/test_deficit_candidate_guard.py": "b44676ddcaeaae5cae818021f68e6b19df164890e6b42736b46921e90e6e5f08",
+    "tests/test_collect_deficit_guarded.py": "6bf662ea4ed83afab807c1dda9eccdfb39acd452b1a92aa84508957d597245aa",
+    "docs/implementation/255_b02_alignment_failure_diagnostics.md": "0ca129ef668bf6764ff0c2cd5de4b0fcb3d90ccdb3b59bb29a1e82fb1616f82a"
+  },
+  "files": {
+    "backend/app/data/deficit_candidate_guard.py": {
+      "bytes": 27712,
+      "sha256": "4052759b683f6f4f545a629466f2d4145e3ad9cc2ad8e6cdf5b1e3c0004a5dd2"
+    },
+    "scripts/collect_deficit_guarded.py": {
+      "bytes": 21814,
+      "sha256": "9ae5ba986d3d48e89cfb269d8a242ffd6189d281649d98a11614c03e5ab3c9ab"
+    },
+    "scripts/collect_samples.py": {
+      "bytes": 48185,
+      "sha256": "eac2c2ea7a21f809328ea7572f490584ff7313c2b1ff95191ee976204ac2b424"
+    },
+    "tests/test_deficit_metadata_selection260.py": {
+      "bytes": 16280,
+      "sha256": "c3c129ce5c95882df5dc9381c360629f325d931233f080982471ee19f7300f45"
+    }
+  },
+  "document": {
+    "path": "docs/implementation/260_explicit_deficit_metadata_selection_isolated.md",
+    "bytes": 12804,
+    "sha256": "85cece0cfbc99dbc899d3e87889fe7d1b80305430b3077f1d5180c593f5562a4"
+  },
+  "evidence": {
+    "baseline260.json": {
+      "bytes": 7714,
+      "sha256": "1fa5f105bc0f259daacf2c69b1d3912194d4feb204f58d8954ef2a7a9b4a94b6"
+    },
+    "patch260-manifest.json": {
+      "bytes": 1357,
+      "sha256": "39dd0e517d871702c0e1ba79b926b01fd7199b3658570db359a02d922cb0bd4d"
+    },
+    "patch260.diff": {
+      "bytes": 30807,
+      "sha256": "cb44fcc78cf63d5bb03caed8ab19d099fd5ce6da056dafc9cf79b783584ff9d9"
+    },
+    "focused260.log": {
+      "bytes": 3047,
+      "sha256": "8ab806061b791d192434e2029597b827a7fc066b626d1e870d571e50101d514f"
+    },
+    "focused260-final.log": {
+      "bytes": 3861,
+      "sha256": "9c1c05e861237ecde152426376184a61d3006cf9e825e7726a16013d023c4199"
+    },
+    "regression260.log": {
+      "bytes": 17108,
+      "sha256": "16718892a4c20b33fe117254e35c617c535b9ab9ce178150e82dfc42e33c253f"
+    },
+    "regression260-final.log": {
+      "bytes": 15135,
+      "sha256": "457e4b7547cdc87c304bf2b0c3db991458ac20926663d7ce0d4e170ecd71d963"
+    }
+  },
+  "final_tests": {
+    "passed": 90,
+    "seconds_unittest": 58.025,
+    "exit_code": 0,
+    "skipped": 0,
+    "command": "python -X utf8 -m unittest test_deficit_metadata_selection260 test_deficit_candidate_guard test_collect_deficit_guarded test_targeted_collection_hooks test_targeted_candidate_quality_policy test_data_recovery -q"
+  },
+  "prior_failure_preserved": {
+    "run": 90,
+    "failures": 2,
+    "seconds": 56.64
+  },
+  "execution_authorized": false
+}

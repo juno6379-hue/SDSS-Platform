@@ -1,0 +1,34 @@
+{
+  "status": "REVIEWED_TESTED_LOCAL_FULL_REVIEW_ONLY",
+  "at_utc": "2026-10-18T07:03:53.718920+00:00",
+  "source_pins": {
+    "scripts/review_bare_targets179.py": "25b3abcbc1f4e7da00d0d9b40624c415415e23489cec138c65bd1e4c6164c89d",
+    "scripts/collect_targeted_bare.py": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8",
+    "backend/app/data/targeted_inventory_profile.py": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d",
+    "tests/test_targeted_inventory_profile232.py": "294f4deca06489a0b34b4c936a43f9f9606ea49551f431be78c805d59ce6d33b",
+    "backend/app/data/targeted_inventory.py": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/data/deficit_candidate_guard.py": "f3528592f335be1c69f562ade59e8fcab22e20c6c83c8363ad84a751b3d1c803",
+    "backend/app/data/targeted_bare_plan.py": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1"
+  },
+  "request_file_sha256": "da86b1ac234820517c199a8c168b1a3964467a6328f704b6cc51be0a5e15de36",
+  "local_support_profile": {
+    "name": "TARGETED_LOCAL_SUPPORT_3G_V1",
+    "sha256": "062bf36199ee4e0f142cb117cad2f0c5b25411eb3ddd43ed37b30ca3b7a75a7a"
+  },
+  "freeze232_sha256": "67ef6e1f0ca6d81e23b5f54371eec5f619bc16b7c81d1e9b685a2ab726f5e3ed",
+  "runner_sha256": "038c710eab43f856eef212ec341ee837e394f10682daea10d4b4143208218f3d",
+  "maximum_inventory_scans": 1,
+  "network_requests_approved": 0,
+  "collection_approved": false,
+  "training_approved": false,
+  "budget_increased": false,
+  "root_review": [
+    "strict v1/v2 request fields and canonical binding",
+    "fixed marker/descriptor and kwargs",
+    "all target inventory calls retain defaults or explicit3GiB",
+    "legacy plan/split/quality guards unchanged",
+    "103 Temp regression cases including CLI positive/negative and source preservation",
+    "five changed file/four protected file SHA and baseline diff checked"
+  ]
+}

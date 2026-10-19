@@ -1,0 +1,41 @@
+{
+  "at_utc": "2026-10-18T03:39:42.149841+00:00",
+  "sources": [
+    "target187-launch-20261018.json",
+    "target187-live-20261018-stdout.log",
+    "target187-live-20261018-stderr.log",
+    "OSCIM+tasklistPID26564",
+    "global-ledger.json",
+    "annual-window-report.json"
+  ],
+  "launch_status": "STARTED_PREFLIGHT_NOT_COMPLETED",
+  "launch_at_utc": "2026-10-18T03:13:09.189238+00:00",
+  "launch_pid": 26564,
+  "execute_flag_present": true,
+  "processes": [],
+  "tasklist_pid26564_output": "INFO: No tasks are running which match the specified criteria.",
+  "stdout_bytes": 0,
+  "stderr_bytes": 0,
+  "stdout_events": [],
+  "result_artifacts": [],
+  "lock_present": true,
+  "lock_owner": "26564",
+  "physical_stored_rows": 1617,
+  "eligible_stored_count": 1296,
+  "remaining_budget": 2051329434,
+  "oldpending2_unchanged": true,
+  "current_pending_keys": [
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01"
+  ],
+  "manifest_sha_matches_launch": true,
+  "ledger_sha_matches_launch": true,
+  "manifest_ledger_two_reads_stable": true,
+  "rate_limit_active": false,
+  "stage_interpretation": "Use process evidence and zero/nonzero worker/terminal records separately; launch alone does not certify worker HTTP start or completion. Absence of process with no terminal is outcome unconfirmed, not ownership release.",
+  "ownership": "Other chat retains187/185/186/coordinator. No new collector/preflight/review/native/test execution by this agent.",
+  "network_calls": 0,
+  "new_collectors_started": 0,
+  "native_QA_or_tests": 0,
+  "operating_data_writes": 0
+}

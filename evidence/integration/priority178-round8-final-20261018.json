@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T02:55:39.047050+00:00",
+  "status": "VERIFIED_REAL_FIXED_ROUND8_INCREMENT_AND_METADATA_INVENTORY",
+  "native_audit": {
+    "path": "evidence\\integration\\priority178-round8-native-20261018.json",
+    "sha256": "b6666c75f1825993a2dd763b0af4ebed6731d586a4075633c8e334dcddd79313",
+    "seconds": 22.964537800013204,
+    "native_patches": 32,
+    "native_eligible_patches": 26,
+    "eligible_bare_pixels": 199,
+    "files_sha_rechecked": 104
+  },
+  "source_sha256": {
+    "aggregate": "c68b0fcc79dd1a97ab1e0b42c66955ee6dfd0a8fe45489280207cdc01f1d05d8",
+    "ledger": "e0557f3d22a3f7ea82218344b83a01d8962320105cbe8fdacc1d42522fae8858"
+  },
+  "physical_total": 1601,
+  "eligible_total": 1286,
+  "other_total": 315,
+  "eligible_by_province_year": {
+    "south_sulawesi": {
+      "2020": 53,
+      "2021": 32,
+      "2022": 40,
+      "2023": 36,
+      "2024": 36,
+      "2025": 30
+    },
+    "gorontalo": {
+      "2020": 46,
+      "2021": 31,
+      "2022": 24,
+      "2023": 30,
+      "2024": 25,
+      "2025": 18
+    },
+    "southeast_sulawesi": {
+      "2020": 41,
+      "2021": 27,
+      "2022": 26,
+      "2023": 33,
+      "2024": 10,
+      "2025": 23
+    },
+    "east_java": {
+      "2020": 23,
+      "2021": 32,
+      "2022": 34,
+      "2023": 28,
+      "2024": 39,
+      "2025": 27
+    },
+    "banten": {
+      "2020": 54,
+      "2021": 58,
+      "2022": 51,
+      "2023": 32,
+      "2024": 49,
+      "2025": 48
+    },
+    "west_java": {
+      "2020": 57,
+      "2021": 41,
+      "2022": 56,
+      "2023": 32,
+      "2024": 32,
+      "2025": 32
+    }
+  },
+  "eligible_by_province": {
+    "gorontalo": 174,
+    "southeast_sulawesi": 160,
+    "east_java": 183,
+    "banten": 292,
+    "west_java": 250,
+    "south_sulawesi": 227
+  },
+  "deficit_by_province": {
+    "south_sulawesi": 0,
+    "gorontalo": 17,
+    "southeast_sulawesi": 26,
+    "east_java": 6,
+    "banten": 0,
+    "west_java": 0
+  },
+  "bare_by_split_metadata": {
+    "train": {
+      "eligible_patches": 744,
+      "bare_pixels": 1586,
+      "bare_contributing_patches_at_least_256": 0,
+      "valid_labeled_pixels": 47552660,
+      "bare_fraction": 3.33524980516337e-05
+    },
+    "val": {
+      "eligible_patches": 292,
+      "bare_pixels": 2998,
+      "bare_contributing_patches_at_least_256": 2,
+      "valid_labeled_pixels": 18824769,
+      "bare_fraction": 0.00015925826234574247
+    },
+    "test": {
+      "eligible_patches": 250,
+      "bare_pixels": 1025,
+      "bare_contributing_patches_at_least_256": 0,
+      "valid_labeled_pixels": 16252940,
+      "bare_fraction": 6.306551307025068e-05
+    }
+  },
+  "cell_floor": 28,
+  "cell_gap_total": 49,
+  "accounting": {
+    "round_charge_bytes": 45131651,
+    "new_charged_bytes": 2221278493,
+    "additional_maximum_bytes": 4294967296,
+    "remaining_bytes": 2073688803,
+    "old_pending_preserved": true,
+    "old_pending_bytes": 136314880
+  },
+  "collector_execution_lock_present": false,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "source_or_ledger_writes": 0,
+  "http_calls": 0,
+  "limitations": [
+    "Only 32 newly collected patches received native raster QA here; older pool class figures are metadata aggregation.",
+    "Fixed minimum 28 per cell is coverage floor, not exact balancing or independent accuracy approval.",
+    "ESRI class 8 is weak reference label; split bare fraction and contributing-patch gates remain unmet.",
+    "Existing cross-split raw scene remains excluded from the separate 1219 eligible frozen candidate."
+  ]
+}

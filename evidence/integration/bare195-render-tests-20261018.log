@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: rendered two-province review explicitly marks scope and omits unsearched province rows
+ok 1 - rendered two-province review explicitly marks scope and omits unsearched province rows
+  ---
+  duration_ms: 102.4777
+  type: 'test'
+  ...
+# Subtest: legacy report renders all six rows and corrupted scope renders unknown without zero review
+ok 2 - legacy report renders all six rows and corrupted scope renders unknown without zero review
+  ---
+  duration_ms: 35.4514
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 12206.6834

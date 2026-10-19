@@ -1,0 +1,118 @@
+{
+  "unit": 329,
+  "at": "2026-10-18T15:09:20.871289+00:00",
+  "status": "FROZEN_FOR_INDEPENDENT_REVIEW",
+  "unique_synthetic_cases": 30,
+  "focused_pass": 30,
+  "portable_same_cases_pass": 30,
+  "skip": 0,
+  "historical_failure": "Windows open-fd parent rename fixture, retained; test-only timing fix",
+  "document": {
+    "path": "docs/implementation/329_fixed_role_atomic_json_writer_isolated.md",
+    "bytes": 11975,
+    "sha256": "4b75dbda713f632a650cc738e188b3c98caddd6ed2c8fc68983461b14f45f11b"
+  },
+  "files": [
+    {
+      "path": "evidence/integration/target329-workspace-20261018/baseline-manifest329.json",
+      "bytes": 557,
+      "sha256": "022ab4cbef8d1a051f0fcbf51b6971e7bf3b7f95484af9b4f4126c215be11506"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/patch329-manifest.json",
+      "bytes": 1597,
+      "sha256": "71228fa052210bc30d8a136ac1165e76cfb2f8137b766c89266ff12e350d2bc8"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/patch329.diff",
+      "bytes": 26325,
+      "sha256": "1f9e62cb035e66c4620ff23ee4631d40357038babd2afbbde73f47ec2760fcab"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/finalize329.py",
+      "bytes": 3912,
+      "sha256": "57f6e0b02aac242c081cd3ce56a9d8095254510d7afdecb9d64623cb4a3f680f"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/focused329-first.log",
+      "bytes": 3028,
+      "sha256": "b86aa9913d6d6e3f1f06a104bc5a445db8d9fe0bc29678aca5c6488d3364bc50"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/focused329-first-result.json",
+      "bytes": 60,
+      "sha256": "32dedb0fd0f84108ff14045b75ca43ee587eca149ca71e3875573f6d02a99ad3"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/focused329-parent-fixture-failure.log",
+      "bytes": 5471,
+      "sha256": "b0c89cc4d8a8482dcb25b3b3c48583fbba8c1a98bb33181af05918a1fbea179b"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/focused329-parent-fixture-failure-result.json",
+      "bytes": 59,
+      "sha256": "3bc9c2575bdcb22ee17e2a26886bba5893ebaba6a0a3c054e8c4ff36952c0838"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/test329-before-parent-fixture-fix.py",
+      "bytes": 13078,
+      "sha256": "c8b9da378ba728cd16ac34b1420743a28d4ef75f0f335963d88d84900102b01b"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/focused329-final.log",
+      "bytes": 3764,
+      "sha256": "c644d5c3a2a31d922ca93d6005411e6fc648ca782801cfd4e0b78930efa3887a"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/focused329-final-result.json",
+      "bytes": 59,
+      "sha256": "ef5ff620de8e21cd897378f35297e41ec31090c7a5223c2759b4ce2ea869e66e"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/portable329-final.log",
+      "bytes": 3764,
+      "sha256": "d36230b4ce29d3b6246d67571b6a4fe1ca2814a43db952fbf51dc62de2c73122"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/portable329-final-result.json",
+      "bytes": 782,
+      "sha256": "326ef4bf20f52117fad3715987c79cc2ebeb7611abab693418577bbcc7aa6ceb"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/backend/app/data/targeted_atomic_json.py",
+      "bytes": 11914,
+      "sha256": "11ea4b0956468045bdd27f7dd605f0d61508fd3846000dba001ef9b4a87aaa66"
+    },
+    {
+      "path": "evidence/integration/target329-workspace-20261018/tests/test_target329_atomic_json.py",
+      "bytes": 13190,
+      "sha256": "4aae15d2b8693e86180eb3052bb23575788dc22e5850a8ec3f0eb0e835b035a8"
+    }
+  ],
+  "baseline_checks": [
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "bytes": 12511,
+      "sha256": "73c9ba94cda1722ae87e7729ecd655ba5e9584fcb735c8c1f0e06734f8357d01",
+      "main_and_archive_and_isolated_equal": true
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "bytes": 8513,
+      "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+      "main_and_archive_and_isolated_equal": true
+    }
+  ],
+  "parent325": {
+    "path": "evidence/integration/target325-workspace-20261018/freeze325.json",
+    "bytes": 5710,
+    "sha256": "c908ea546e8029dfc669fd716a34def18eb932e612922e33bf6381603cf6ee4e"
+  },
+  "operating_io": false,
+  "http": false,
+  "native": false,
+  "shared_edits": false,
+  "coverage": "Existing-file atomic JSON replacement only; no coordinator/ledger connection",
+  "rss_observed": false,
+  "main_applied": false
+}

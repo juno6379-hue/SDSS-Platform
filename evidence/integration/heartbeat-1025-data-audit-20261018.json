@@ -1,0 +1,131 @@
+{
+  "at_utc": "2026-10-18T01:26:53.128506+00:00",
+  "checks": {
+    "manifest_sha_matches_final": true,
+    "old_rows_unchanged": true,
+    "old_pending_unchanged": true,
+    "round2_settled": true,
+    "two_worker_started": true,
+    "two_worker_finished": true,
+    "no_worker_429": true
+  },
+  "physical_total": 1432,
+  "eligible_total": 1141,
+  "ineligible_total": 291,
+  "round2_new_physical": 0,
+  "round2_new_eligible": 0,
+  "cell_gap_total": 132,
+  "pending_reserved_bytes": 136314880,
+  "charged_delta": 1325635,
+  "remaining_budget": 2296542772,
+  "rate_limit_active": false,
+  "lock_present": false,
+  "source_reports": [
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g01",
+      "ledger_status": "settled",
+      "scene_status": "failed",
+      "complete_window_count": 0,
+      "error": "AOI 중심점이 COG 범위 밖입니다",
+      "error_category": "payload_or_response_contract",
+      "charged_bytes": 689213
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g02",
+      "ledger_status": "settled",
+      "scene_status": "failed",
+      "complete_window_count": 0,
+      "error": "AOI 중심점이 COG 범위 밖입니다",
+      "error_category": "payload_or_response_contract",
+      "charged_bytes": 636422
+    }
+  ],
+  "discrepancies": [
+    "Final observation_limit says child stdout is empty, but actual stdout contains two worker_started and two worker_finished records. SETTLED is budget/worker finalization, not successful imagery acquisition; both source scenes failed because AOI center is outside COG extent."
+  ],
+  "limits": "Sequential read-only observation; no fresh raster QA or learning readiness validation. No collector restart or operating-data writes.",
+  "followup_diagnosis": {
+    "at_utc": "2026-10-18T01:28:30.487026+00:00",
+    "local_observations": [
+      {
+        "key": "g01",
+        "aoi_bbox": [
+          114.38305278196498,
+          -7.850164790431671,
+          114.39105278196499,
+          -7.842164790431672
+        ],
+        "selected_scene": "S2B_MSIL2A_20250807T022529_R046_T49MHM_20250807T042835",
+        "B02_catalog_bounds": [
+          799980.0,
+          9090220.0,
+          909780.0,
+          9200020.0
+        ],
+        "B02_catalog_center_inside": true,
+        "center_in_SCL_CRS": [
+          873600.0000000005,
+          9131200.0
+        ],
+        "crs": "EPSG:32749",
+        "B02_actual_header_verified": false,
+        "SCL_actual_local_crop_verified": true,
+        "raw_B02_present": false,
+        "raw_esri_present": false,
+        "label_first": true
+      },
+      {
+        "key": "g02",
+        "aoi_bbox": [
+          111.08314537327394,
+          -8.146024793222209,
+          111.09114537327395,
+          -8.13802479322221
+        ],
+        "selected_scene": "S2C_MSIL2A_20250606T023551_R089_T49MEM_20250606T065914",
+        "B02_catalog_bounds": [
+          499980.0,
+          9090220.0,
+          609780.0,
+          9200020.0
+        ],
+        "B02_catalog_center_inside": true,
+        "center_in_SCL_CRS": [
+          509599.99999999936,
+          9100000.0
+        ],
+        "crs": "EPSG:32749",
+        "B02_actual_header_verified": false,
+        "SCL_actual_local_crop_verified": true,
+        "raw_B02_present": false,
+        "raw_esri_present": false,
+        "label_first": true
+      }
+    ],
+    "execution_order": "collect_samples.collect_windows: select_quality_candidate SCL success -> product metadata/calibration -> early Esri fetch at line432 -> preserve raw label -> label_first_preview -> six-band B02 fetch at line454. Both scenes have empty source_crops and absent label_first_preview.",
+    "inference": "The failing read is strongly localized to early Esri reference COG, not B02. Both selected scene IDs derive Esri49M. g01 center longitude114.387 crosses normal zone49 eastern longitude114; g02 latitude-8.142 crosses M latitude band southern limit-8. Source scene coverage may cross these coarse label-supercell boundaries. Exact failing Esri native bounds/header were not retained, so this boundary explanation remains inferred.",
+    "responsibility": {
+      "search_stac": "backend/app/data/service.py:399 enforces actual cloud constraint but does not locally validate returned item geometry/center or per-asset native coverage. This alone cannot establish raster or label coverage.",
+      "candidate_selection": "scripts/collect_samples.py:101 select_quality_candidate checks SCL only and returns immediately on quality; later auxiliary failure does not select another candidate.",
+      "reference_tile_planner": "backend/app/data/references.py:16 esri_annual_plan derives zone+latitude-band from selected Sentinel scene ID; no AOI or label header coverage input.",
+      "native_guard": "backend/app/data/service.py:364 _read_cog_window_impl checks actual per-file center and raises at387. Existing fail-closed guard correctly prevented wrong data but occurs after transfers/reservation.",
+      "workflow": "scripts/collect_samples.py:432 label_first fetch is before B02 at454 and outside candidate selection loop."
+    },
+    "relation_to_157": "Same general need for actual native-grid validation, but this observation is not proof of the missing157 B02 guard. 157 is disconnected plan-only for Banten256 and unchanged normal1024 path; this failure concerns Esri auxiliary coverage before B02. Adding B02-only geometry checks would not prevent this incident.",
+    "preconditions": [
+      "Candidate-specific source image and reference-label actual CRS/affine/dimensions must both cover intended native target window, not merely STAC bbox or SCL center.",
+      "Confirm appropriate same-year reference tile covers AOI in actual CRS; keep scene split identity separate from label supercell selection. Do not silently reassign labels from guessed coordinates.",
+      "Handle out-of-coverage as explicit candidate rejection or blocked target with audited asset role/stage and measured-byte accounting; preserve first429/global stop and no automatic unbounded retry.",
+      "For targeted157, also preserve label-pinned final256 alignment, pending footprints, cross-split scene veto and current-manifest checks."
+    ],
+    "test_proposals": [
+      "Offline mocked scene whose SCL and B02 cover AOI but derived Esri tile does not: reject before six-band transfer; attribution must name reference asset role without leaking signed URL.",
+      "Offline geometry fixtures at g01 longitude114.387 and g02 latitude-8.142: verify scene coverage does not imply derived reference supercell coverage.",
+      "Candidate1 reference outside/candidate2 all assets cover: bounded fallback or explicit blocked result with exact bytes and terminal settlement; no loop on429.",
+      "Actual center-inside but requested full256/1024 window outside native dimensions: prohibit silent clipping where exact-grid contract applies.",
+      "Metadata says inside while actual header outside: actual header wins; retain sanitized per-asset CRS/bounds/window evidence."
+    ],
+    "network_calls": 0,
+    "source_or_operating_data_writes": 0
+  }
+}

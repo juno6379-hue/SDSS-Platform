@@ -1,0 +1,97 @@
+{
+  "at_utc": "2026-10-18T02:11:51.360558+00:00",
+  "base": "8cf7b9421ea3d5916058a9e4622dc19c9075e9f2",
+  "source_sha256": {
+    "frontend/src/App.tsx": "de808c64825758c93822cc3b7fda05b9c5fdd0a0332e74300263decfdc78e24b",
+    "frontend/src/PlatformShell.tsx": "7116e9f266521b8125dc44e933d3b55c84677c389102cd9c85cf29b0c03bf9c9",
+    "frontend/src/GeoAIToolbox.tsx": "f4456f604287e0deaeca4ef85e0e2b2b62cb245d91ff0b25127a2b5781307769",
+    "frontend/src/geoai-toolbox.css": "b962623c6e30844547f5c8942b266cac003180f52415c7ea64dcc8220d2393da",
+    "frontend/src/toolboxAdapter.ts": "0528fa173dba0d52ef6009a53c551beaee33aae9c3ee2afdd09388180e1898cd",
+    "frontend/src/toolboxAdapter.test.mjs": "7378b0831832746a6056e98d6d6dbbb89d9e4c8f54cff0dd9e64c225185ead63",
+    "frontend/src/ModelAnalysisWorkspace.tsx": "137a48fe30a9974a3ea5f9b5a2de0211881b3b91ae01aaa86ef4a203e3750324",
+    "frontend/src/model-workspace.css": "2c66a36b75c57aaf500a39897e26398a1a22bfc3cb5880d9f6e8a32b81d95448",
+    "frontend/src/LclucWorkflowPanel.tsx": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+    "frontend/src/SDSSChrome.tsx": "d6b735ec6ee76dc4f2a24906376f5069f648185770969758a6755b0f164f71a0",
+    "frontend/src/sdss-chrome.css": "c82594ab1c224515e0c69c10050e39e689c024a0d723a3e8bba515b2f2c0e219"
+  },
+  "existing_detail_sources_unchanged": {
+    "ModelAnalysisWorkspace.tsx": true,
+    "model-workspace.css": true,
+    "LclucWorkflowPanel.tsx": true,
+    "SDSSChrome.tsx": true,
+    "sdss-chrome.css": true
+  },
+  "frontend": {
+    "pass": 293,
+    "fail": 0,
+    "skip": 0,
+    "milliseconds": 52585.8786,
+    "exit": 0,
+    "scope": "Current main data UI plus Toolbox code. Final subsequent change is CSS-only hover override, checked in live browser and final build."
+  },
+  "final_build": {
+    "exit": 0,
+    "modules": 123,
+    "vite_seconds": 32.54,
+    "css_kb": 228.17,
+    "js_kb": 1739.26,
+    "warning": "Existing chunk-size warning"
+  },
+  "hover": {
+    "before": {
+      "background": [
+        18,
+        110,
+        134
+      ],
+      "text": [
+        6,
+        25,
+        119
+      ],
+      "heading": [
+        35,
+        76,
+        105
+      ]
+    },
+    "after": {
+      "background": "linear-gradient(145deg, rgb(255,255,255)65%,rgb(237,246,255))",
+      "text": [
+        6,
+        25,
+        119
+      ],
+      "heading": [
+        6,
+        25,
+        119
+      ]
+    },
+    "cause": "Later global button:hover:not(:disabled) rule overrode card background. Scoped Toolbox rules now win and preserve preview imagery/primary buttons."
+  },
+  "browser": {
+    "url": "http://127.0.0.1:5174/#/view/12",
+    "actual_hover_observed": true,
+    "hmr_applied": true,
+    "lcluc_navigation": "#/view/24?model=lcluc&tab=input",
+    "lcluc_heading_count": 1,
+    "return_to_hub": true,
+    "horizontal_overflow": false,
+    "console_error_warning_count": 0
+  },
+  "earlier_browser_evidence": "toolbox-ui-final-20261018.json includes six-model navigation and390x844 viewport check; not rerun as if new observations.",
+  "latest_readonly_scope_review": "toolbox-ui-current-base-review-20261018.json; its CSS pin predates final hover fix.",
+  "evidence": [
+    "toolbox-ui-current-frontend-20261018.log",
+    "toolbox-ui-hover-build-20261018.log",
+    "toolbox-ui-hover-before-20261018.jpg",
+    "toolbox-ui-hover-after-20261018.jpg",
+    "toolbox-ui-current-browser-20261018.txt",
+    "toolbox-ui-current-browser-20261018.jpg"
+  ],
+  "collector_or_training_changes": 0,
+  "server_restarts": 0,
+  "api_writes": 0,
+  "scope_note": "Dataset registry records and collected patch counts are different units; code implementation is not scientific/operational approval."
+}

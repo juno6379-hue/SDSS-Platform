@@ -1,0 +1,64 @@
+{
+  "status": "VERIFIED_REAL_POST196_BROWSER",
+  "at": "2026-10-18T04:32:46.837253+00:00",
+  "method": "Single explicit refresh in existing Chrome view17; separate API requests zero; no server restart",
+  "response_recorded_at": "2026-10-18T04:31:45.000538+00:00",
+  "response_kst": "2026-10-18 13:31:45.000538",
+  "source_sha256": "1a12b7bca384dd09d73a04cc31df21f75377fc34c332b501a6ee37508dd46fb5",
+  "registered_manifest": {
+    "physical_total": 1667,
+    "eligible_total": 1333,
+    "other": 334,
+    "split": [
+      791,
+      292,
+      250
+    ],
+    "cell_gap": 33
+  },
+  "physical_scope_note": "UI physical_total1667 counts registered manifest rows. Parent native audit reports1668 physical outputs including one unregistered insufficient-bare output; browser does not independently count files.",
+  "physical_outputs_parent_audit": 1668,
+  "candidate": {
+    "eligible": 1317,
+    "split": [
+      791,
+      276,
+      250
+    ],
+    "blockers": 3,
+    "source_mismatch_warning_visible": true
+  },
+  "bare_review": {
+    "candidates": 37,
+    "searched_provinces": [
+      "gorontalo",
+      "west_java"
+    ],
+    "rendered_rows": 2,
+    "source_mismatch_warning_visible": true,
+    "remote_quality": "미검사",
+    "execution": "미승인"
+  },
+  "checks": {
+    "at": "2026-10-18T04:32:30.320Z",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    }
+  },
+  "proof": [
+    "service196-posttarget-ui-20261018.dom.txt",
+    "service196-posttarget-ui-20261018.inventory.png",
+    "service196-posttarget-ui-20261018.png",
+    "service196-posttarget-ui-20261018.checks.json"
+  ],
+  "limits": [
+    "No eligible increase from196 asserted; registered inventory is not all physical outputs.",
+    "Native QA findings are parent handoff, not re-executed or certified by this UI task.",
+    "No source, ledger, receipt, pointer or operating data writes; no new test/build needed.",
+    "Source198 development is separate; API not restarted.",
+    "No HTTP latency/SLA claim."
+  ]
+}

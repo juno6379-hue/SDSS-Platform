@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "version": "split-repair-v1-d0bbcf0864743ffd",
+  "status": "PLANNED_DERIVED_CANDIDATE",
+  "executed": false,
+  "learning_ready": false,
+  "synthetic": false,
+  "lineage": {
+    "source_manifest": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\evidence\\tmpn_fp9_1p\\data\\first-group-training-esri-v1\\annual-window-report.json",
+      "sha256": "f9ac36895f25ef05ad12c1fe2eb2abd0eb178177cd2be6182391b2cb09300fbc"
+    },
+    "selection_policy": {
+      "province_splits": {
+        "south_sulawesi": "train",
+        "gorontalo": "train",
+        "southeast_sulawesi": "train",
+        "east_java": "train",
+        "banten": "val",
+        "west_java": "test"
+      },
+      "keep_split_priority": [
+        "test",
+        "val",
+        "train"
+      ],
+      "selection_basis": "fixed priority; no labels, predictions or evaluation scores consulted",
+      "action": "exclude conflicting rows from a new candidate only; never reassign splits"
+    },
+    "source_row_indexes": [
+      2
+    ]
+  },
+  "scenes": [
+    {
+      "province": "west_java",
+      "source_group": "w/group",
+      "scene_id": "shared",
+      "image_path": "missing-w.tif",
+      "patch_sha256": {
+        "image": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "year": "2021",
+      "quality_status": "quality_insufficient"
+    }
+  ]
+}

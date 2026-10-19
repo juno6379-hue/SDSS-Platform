@@ -1,0 +1,45 @@
+{
+  "status": "COMPLETED_QA_PUBLISHED_AND_PROFILE_READER_VERIFIED",
+  "recorded_at": "2026-10-18T14:06:11.607432+00:00",
+  "pointer_sha256": "25d7bf6d37a7c96ab6a9eaa2a74e78b94f52e8186b22a8ac705184ff96b5832e",
+  "previous_pointer_sha256": "996a88de2034e9803381d7ae4e906a0d1f418075675d13ef796fb5648bb472c0",
+  "previous_pointer_preserved": true,
+  "exact_retained_rows": true,
+  "partition_complete": true,
+  "file_sha_mismatches": 0,
+  "source_snapshot_sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+  "candidate_view": {
+    "available": true,
+    "source_manifest_sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "eligible_total": 1391,
+    "by_split": {
+      "train": 865,
+      "val": 276,
+      "test": 250
+    },
+    "ready_for_training": false,
+    "blocker_count": 3,
+    "source_pins_match": true,
+    "source_matches_current_manifest": true,
+    "source_report": "priority164-guarded309-20261018/qa/readiness.json",
+    "recorded_at": "2026-10-18T14:06:10.442585+00:00",
+    "scene_split_conflicts": [],
+    "scientific_accuracy_validated": false,
+    "scope": "PINNED_CANDIDATE_COHORT_NOT_AUTOMATIC_CURRENT_COLLECTION"
+  },
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "json_io_before_result_write": {
+    "read_bytes": 840540236,
+    "write_bytes": 3633,
+    "json_io_bytes": 840543869,
+    "maximum_bytes": 17179869184
+  },
+  "training_started": false,
+  "registry_written": false,
+  "source_or_ledger_written": false,
+  "profile_config_changed": false,
+  "api_or_browser_verified": false
+}

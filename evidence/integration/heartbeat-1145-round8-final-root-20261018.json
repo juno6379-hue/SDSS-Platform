@@ -1,0 +1,45 @@
+{
+  "at_utc": "2026-10-18T02:50:30.043277+00:00",
+  "status": "COMPLETED_METADATA_ACCOUNTING_VERIFIED_NATIVE_QA_SEPARATE",
+  "physical_total": 1601,
+  "eligible_total": 1286,
+  "eligible_by_split": {
+    "train": 744,
+    "val": 292,
+    "test": 250
+  },
+  "physical_increment": 32,
+  "eligible_increment": 26,
+  "cell_deficit": 49,
+  "old_rows_unchanged": true,
+  "old_pending_exact_preserved": true,
+  "old_pending_reserved_bytes": 136314880,
+  "selected_settled": {
+    "parallel-v2-grid-esri_io-banten-2024-g01": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 23007402,
+      "config_sha256": "ed1f80354faf4723f943bdc7474dd228cce1845e2ba4486272f6d9e4ccc68db4",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2024-g01\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-banten-2024-g02": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 22124249,
+      "config_sha256": "b22f6a2d1e0f6077adbe7b760a5139c18edb8aa44432a4a3f2301721ab8509e4",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2024-g02\\annual-window-report.json"
+    }
+  },
+  "charged_increment": 45131651,
+  "remaining_after_settlement": 2073688803,
+  "rate_limit_active": false,
+  "execution_lock_present": false,
+  "source_sha256": "c68b0fcc79dd1a97ab1e0b42c66955ee6dfd0a8fe45489280207cdc01f1d05d8",
+  "ledger_sha256": "e0557f3d22a3f7ea82218344b83a01d8962320105cbe8fdacc1d42522fae8858",
+  "stable_second_read": true,
+  "bare_increment_metadata_only": 199,
+  "native_qa_repeated": false,
+  "collection_started": false,
+  "operating_writes": 0,
+  "learning_ready": false
+}

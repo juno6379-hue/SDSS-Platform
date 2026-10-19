@@ -1,0 +1,73 @@
+{
+  "at_utc": "2026-10-18T06:15:56.935071+00:00",
+  "status": "IMPLEMENTED_TESTED_SYNTHETIC_EXECUTION_PLANNED",
+  "files": [
+    {
+      "path": "backend/app/data/bare_label_survey_contract.py",
+      "bytes": 15549,
+      "sha256": "e035cc1afb77b9461f1e5df1256dcf58bf82199e4dbb5fdba4af6e1518f8dd60"
+    },
+    {
+      "path": "tests/test_bare_label_survey_contract.py",
+      "bytes": 24593,
+      "sha256": "9376b52503f1518617dbd7d8ac08d1e800249c3560e1e586aa78eb2eae99d449"
+    },
+    {
+      "path": "docs/implementation/226_survey_catalog_scene_id_compatibility.md",
+      "bytes": 5222,
+      "sha256": "d5ac5d436343e03401907b88f217a24404eff385e4362b4bf3c8ae2097d7b432"
+    },
+    {
+      "path": "evidence/integration/survey226-final-20261018.log",
+      "bytes": 15869,
+      "sha256": "f4910040b1ebbd1ee6e3259aa434d26091ed67307653a709ec0d546d40d349bc"
+    },
+    {
+      "path": "evidence/integration/survey226-before224-archives-20261018.json",
+      "bytes": 1015,
+      "sha256": "7528c93d977581e740a63bba0f4e615bf9357fdc5f481154aff8a20f35c43c27"
+    }
+  ],
+  "archives": [
+    {
+      "path": "evidence/integration/survey226-before224-bare_label_survey_contract.py",
+      "bytes": 15381,
+      "sha256": "ea60acf759c7437e70646f3ac5ce4ec6c929af2c5b9c920a5ecfe7a744bfe3a0"
+    },
+    {
+      "path": "evidence/integration/survey226-before224-test_bare_label_survey_contract.py",
+      "bytes": 21092,
+      "sha256": "57a27c762d5bc9db83739119037f2ba49df93d787c945672627f8f9cfb564289"
+    },
+    {
+      "path": "evidence/integration/survey226-before224-224_survey_contract_scene_and_copy_hardening.md",
+      "bytes": 8970,
+      "sha256": "f1888e3f02a0d68e37b76e0a4cb15ca252963f4eec6c4cd172ce47b5cea486e4"
+    }
+  ],
+  "historical224_freeze": {
+    "path": "evidence/integration/survey224-freeze-20261018.json",
+    "bytes": 3047,
+    "sha256": "4336c02239b8c8e7a319aa1fc56142c36a4af838962c723f598f73e181e9835c"
+  },
+  "final_tests": {
+    "passed": 74,
+    "seconds": 18.601,
+    "skipped": 0
+  },
+  "accepted_scene_profiles": [
+    "CATALOG_L2A_NO_BASELINE",
+    "COMPACT_L2A_WITH_BASELINE"
+  ],
+  "baseline_inferred": false,
+  "raw_catalog_id_preserved": true,
+  "operating_source_or_ledger_reads": 0,
+  "http_requests": 0,
+  "collector_runs": 0,
+  "native_runs": 0,
+  "actual_stac_scl_url_binding_verified": false,
+  "raw_stac_datetime_conversion_connected": false,
+  "registry_connected": false,
+  "target_consumer_connected": false,
+  "understanding_handoff": "ROOT_ASSIGNMENT_REQUIRED"
+}

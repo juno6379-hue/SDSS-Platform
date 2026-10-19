@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-18T06:55:31.629291+00:00",
+  "before": [
+    {
+      "path": "scripts/review_bare_targets179.py",
+      "sha256": "cd6c353d57a9daffc117c3187bc8b4ff2ff74806a220019db5d44ba2ad1cb94a",
+      "bytes": 14861
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "sha256": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+      "bytes": 21431
+    }
+  ],
+  "protected": {
+    "backend/app/data/targeted_inventory.py": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/data/deficit_candidate_guard.py": "f3528592f335be1c69f562ade59e8fcab22e20c6c83c8363ad84a751b3d1c803",
+    "backend/app/data/targeted_bare_plan.py": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1"
+  },
+  "operating_data_reads": 0
+}

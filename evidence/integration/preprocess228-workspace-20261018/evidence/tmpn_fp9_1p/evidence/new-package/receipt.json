@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "kind": "EVIDENCE_SPLIT_CANDIDATE_RECEIPT",
+  "status": "METADATA_ROUNDTRIP_VERIFIED",
+  "candidate_status": "PLANNED_DERIVED_CANDIDATE",
+  "readiness_status": "BLOCKED",
+  "scope": "PINNED_JSON_METADATA_ONLY_NOT_RASTER_READINESS",
+  "inputs": {
+    "source": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\evidence\\tmpn_fp9_1p\\data\\first-group-training-esri-v1\\annual-window-report.json",
+      "sha256": "f9ac36895f25ef05ad12c1fe2eb2abd0eb178177cd2be6182391b2cb09300fbc",
+      "bytes": 780
+    },
+    "readiness": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\evidence\\tmpn_fp9_1p\\data\\first-group\\readiness-connectivity-20261017.json",
+      "sha256": "a427a8ccfce0363209fb185055e5efbe085574b53ecce1af20170055392acc60",
+      "bytes": 9087
+    },
+    "saved_plan": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\evidence\\tmpn_fp9_1p\\evidence\\saved.json",
+      "sha256": "018a1b3340c423f23f1e07453ac9b24782209df4dab02c1b3e392806edbeb5f5",
+      "bytes": 3434
+    }
+  },
+  "outputs": {
+    "plan": {
+      "name": "plan.json",
+      "sha256": "4d07f1f41702a071c752979f84710cb403c188915d35c2daf022cd1761451fff",
+      "bytes": 5243
+    },
+    "candidate": {
+      "name": "candidate.json",
+      "sha256": "3d452b4ab0a19051ae09a896cd1c28c947bf589953e1f7c5f07da9e9b906c50b",
+      "bytes": 1472
+    }
+  },
+  "derived_manifest_version": "split-repair-v1-d0bbcf0864743ffd",
+  "fixed_province_splits": {
+    "south_sulawesi": "train",
+    "gorontalo": "train",
+    "southeast_sulawesi": "train",
+    "east_java": "train",
+    "banten": "val",
+    "west_java": "test"
+  },
+  "source_row_count": 3,
+  "candidate_row_count": 1,
+  "excluded_source_row_count": 2,
+  "projected_after": {
+    "eligible_patches_by_split": {
+      "test": 0,
+      "val": 0,
+      "train": 0
+    },
+    "eligible_total": 0,
+    "eligible_by_province_year": {}
+  },
+  "metadata_integrity_verified": true,
+  "raster_readiness_rechecked": false,
+  "source_rows_modified_or_reassigned": false,
+  "executed": false,
+  "learning_ready": false,
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "source_authenticity_verified": false,
+  "exact_row_binding_verified": false,
+  "spatial_overlap_rechecked": false,
+  "exact_class_counts_recomputed": false,
+  "training_split_leakage_resolved": false,
+  "execution_authorized": false,
+  "registry_called": false,
+  "settlement_authorized": false,
+  "automatic_resume_allowed": false,
+  "proposed_refund_bytes": 0,
+  "exactly_once_applied": "UNKNOWN",
+  "completion_contract": "Receipt requires strict schema and output SHA verification; absent or invalid receipt means incomplete. Final stability check immediately precedes exclusive receipt write; no atomic multi-file snapshot guarantee."
+}

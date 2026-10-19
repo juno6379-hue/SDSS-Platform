@@ -1,0 +1,65 @@
+{
+  "at_utc": "2026-10-18T01:57:51.527913+00:00",
+  "classification": "VERIFIED_REAL_STORED_RECORDS_NOT_NATIVE_QA",
+  "manifest_sha256": "035749c062f9877d38c3117e80ced87ba28945259ac5fdbbca81dc8776868af4",
+  "physical_total": 1512,
+  "eligible_total": 1212,
+  "ineligible_total": 300,
+  "goal_gap": 0,
+  "cell_gap_total": 85,
+  "cell_gap_by_province": {
+    "south_sulawesi": 0,
+    "gorontalo": 17,
+    "southeast_sulawesi": 45,
+    "banten": 5,
+    "west_java": 0,
+    "east_java": 18
+  },
+  "new_physical": 16,
+  "new_eligible": 16,
+  "new_bare_declared_pixels": 6,
+  "bare_by_split": {
+    "train": {
+      "pixels": 1586,
+      "ratio": 3.561576971067869e-05,
+      "contributing_patches": 0
+    },
+    "val": {
+      "pixels": 600,
+      "ratio": 3.503632040154426e-05,
+      "contributing_patches": 1
+    },
+    "test": {
+      "pixels": 1025,
+      "ratio": 6.306551307025068e-05,
+      "contributing_patches": 0
+    }
+  },
+  "selected_batches": {
+    "parallel-v2-grid-esri_io-east_java-2021-g02": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 596377,
+      "config_sha256": "17d172f6880ccdd35b94058f4ca588a423bff077925090834c17380f8b731a6c",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2021-g02\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-east_java-2021-g03": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 20354015,
+      "config_sha256": "2520afe28c9b2a123bd6864c5a98af10a1b2a60ef72b28b78806bf3191f8942a",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2021-g03\\annual-window-report.json"
+    }
+  },
+  "old_rows_unchanged": true,
+  "pending_rows_unchanged": true,
+  "old_pending_reserved_bytes": 136314880,
+  "charged_delta": 20950392,
+  "remaining_budget": 2188636799,
+  "rate_limit_active": false,
+  "execution_lock_present": false,
+  "two_reads_bytes_stable": true,
+  "operating_writes": 0,
+  "collectors_started": 0,
+  "limit": "Sequential bounded observations, not atomic OS snapshot, native QA or training approval. Candidate1125 belongs to fixed1432-row source."
+}

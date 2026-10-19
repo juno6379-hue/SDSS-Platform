@@ -1,0 +1,118 @@
+{
+  "schema_version": 2,
+  "kind": "EVIDENCE_SPLIT_CANDIDATE_RECEIPT",
+  "status": "METADATA_ROUNDTRIP_VERIFIED",
+  "candidate_status": "PLANNED_DERIVED_CANDIDATE",
+  "readiness_status": "BLOCKED",
+  "scope": "PINNED_JSON_METADATA_ONLY_NOT_RASTER_READINESS",
+  "inputs": {
+    "source": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\priority164-guarded309-20261018\\source.json",
+      "sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+      "bytes": 69564847
+    },
+    "readiness": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\priority164-guarded309-20261018\\source-readiness.json",
+      "sha256": "b62e2af77230271039a8a7265fb748011375c35040b42524d86c7117ee510dad",
+      "bytes": 1433644
+    },
+    "saved_plan": {
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\priority164-guarded309-20261018\\split-plan.json",
+      "sha256": "08338b84fe2faa8699ae80b990575b34f055a09eb863487e96cc5fcddc3430d8",
+      "bytes": 26650
+    }
+  },
+  "outputs": {
+    "plan": {
+      "name": "plan.json",
+      "sha256": "08338b84fe2faa8699ae80b990575b34f055a09eb863487e96cc5fcddc3430d8",
+      "bytes": 26650
+    },
+    "candidate": {
+      "name": "candidate.json",
+      "sha256": "b518c75cc1c84be1773de3a7955fdbea62e65acc3f752717d8bb8eed756374d6",
+      "bytes": 68943578
+    }
+  },
+  "derived_manifest_version": "split-repair-v1-36fd1f3d6b56966b",
+  "fixed_province_splits": {
+    "south_sulawesi": "train",
+    "gorontalo": "train",
+    "southeast_sulawesi": "train",
+    "east_java": "train",
+    "banten": "val",
+    "west_java": "test"
+  },
+  "source_row_count": 1779,
+  "candidate_row_count": 1763,
+  "excluded_source_row_count": 16,
+  "projected_after": {
+    "eligible_patches_by_split": {
+      "test": 250,
+      "val": 276,
+      "train": 865
+    },
+    "eligible_total": 1391,
+    "eligible_by_province_year": {
+      "banten/2020": 54,
+      "banten/2021": 42,
+      "banten/2022": 51,
+      "banten/2023": 32,
+      "banten/2024": 49,
+      "banten/2025": 48,
+      "east_java/2020": 33,
+      "east_java/2021": 32,
+      "east_java/2022": 34,
+      "east_java/2023": 28,
+      "east_java/2024": 39,
+      "east_java/2025": 43,
+      "gorontalo/2020": 46,
+      "gorontalo/2021": 31,
+      "gorontalo/2022": 36,
+      "gorontalo/2023": 30,
+      "gorontalo/2024": 36,
+      "gorontalo/2025": 33,
+      "south_sulawesi/2020": 53,
+      "south_sulawesi/2021": 32,
+      "south_sulawesi/2022": 40,
+      "south_sulawesi/2023": 36,
+      "south_sulawesi/2024": 36,
+      "south_sulawesi/2025": 30,
+      "southeast_sulawesi/2020": 41,
+      "southeast_sulawesi/2021": 41,
+      "southeast_sulawesi/2022": 37,
+      "southeast_sulawesi/2023": 33,
+      "southeast_sulawesi/2024": 28,
+      "southeast_sulawesi/2025": 37,
+      "west_java/2020": 57,
+      "west_java/2021": 41,
+      "west_java/2022": 56,
+      "west_java/2023": 32,
+      "west_java/2024": 32,
+      "west_java/2025": 32
+    }
+  },
+  "metadata_integrity_verified": true,
+  "raster_readiness_rechecked": false,
+  "source_rows_modified_or_reassigned": false,
+  "executed": false,
+  "learning_ready": false,
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "source_authenticity_verified": false,
+  "exact_row_binding_verified": false,
+  "spatial_overlap_rechecked": false,
+  "exact_class_counts_recomputed": false,
+  "training_split_leakage_resolved": false,
+  "execution_authorized": false,
+  "registry_called": false,
+  "settlement_authorized": false,
+  "automatic_resume_allowed": false,
+  "proposed_refund_bytes": 0,
+  "exactly_once_applied": "UNKNOWN",
+  "completion_contract": "Receipt requires strict schema and output SHA verification; absent or invalid receipt means incomplete. Final stability check immediately precedes exclusive receipt write; no atomic multi-file snapshot guarantee.",
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  }
+}

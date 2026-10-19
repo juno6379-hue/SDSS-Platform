@@ -1,0 +1,40 @@
+{
+  "at_utc": "2026-10-18T05:33:16.267476+00:00",
+  "status": "FROZEN_TESTED_SYNTHETIC_OPERATIONAL_SCAN_NOT_RUN",
+  "files": {
+    "scripts/find_bare_targets173.py": {
+      "sha256": "64d7a8f09f1a87edeecf72665e4f6a097d793d9e168c5b4d03ae1839daef917f",
+      "bytes": 16216
+    },
+    "tests/test_find_bare_targets173.py": {
+      "sha256": "6da6c11d7927041ee9be26f5914e4ea1f8e9867e8dd5c407f041ae1e8ac69281",
+      "bytes": 13891
+    },
+    "docs/implementation/214_only_selected_label_discovery.md": {
+      "sha256": "f35567f3b3cd24f6f8b9775db5043c343a348786264436decde187e8cd6dac37",
+      "bytes": 9933
+    },
+    "evidence/integration/bare214-before-source-20261018.py": {
+      "sha256": "a8524dc457fd2945fe4845b69757af3b6ba2dd32be5248383175dca1fed964e0",
+      "bytes": 14061
+    }
+  },
+  "focused": {
+    "passed": 20,
+    "seconds": 4.248
+  },
+  "related_final": {
+    "passed": 50,
+    "seconds": 40.937
+  },
+  "baseline_provenance": "214 minimal diff reversed in memory; exact SHA matches working source observed before edit a8524d...64e0, which included186 not yet present in Git51194. Existing working file never reverted.",
+  "default_and_explicit_none_complete_output_equal_to_baseline": true,
+  "whole_manifest_coverage_preserved": true,
+  "scope_fields": "label_ref_filter; requested_province_filter distinct from actually selected province_filter; counts of referenced/excluded label files",
+  "cli_changed": false,
+  "operational_label_scans": 0,
+  "http_requests": 0,
+  "operational_ledger_writes": 0,
+  "collector_starts": 0,
+  "new_native_or_full_support_scans": 0
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "STATIC_REVIEW_COMPLETED_NO_REQUIRED_PRODUCT_CHANGES_IDENTIFIED",
+  "main_application_authorized": false,
+  "operational_execution_authorized": false,
+  "source_workspace": "evidence/integration/survey281-workspace-20261018",
+  "input_freeze": {
+    "bytes": 3902,
+    "sha256": "42bae67521fbd160506c89cf45aac255567260e1c2203d22c530fd9b55a271f4"
+  },
+  "input_patch_manifest": {
+    "bytes": 4878,
+    "sha256": "ab164cec389ed53dc0949bb37661395170a8e05701667dd45faed479a7fd4353"
+  },
+  "frozen_file_pins_verified": 15,
+  "baseline_main_isolated_pins_verified": 8,
+  "new_main_targets_absent": 2,
+  "runtime": {
+    "path": "backend/app/data/bare_survey_stac_file.py",
+    "bytes": 6746,
+    "sha256": "542c418f2fb7ed47c4e03a9fa9fad73bc2c4effcc5f95aaac27209792dac468c"
+  },
+  "required_product_findings": [],
+  "checks": {
+    "single_payload_fd_and_size_budget_before_open": "STATIC_CONFIRMED",
+    "identity_pre_post_binding_and_parents": "STATIC_CONFIRMED_NOT_ATOMIC_TRANSACTION",
+    "hardlink_symlink_reparse_checks": "STATIC_CONFIRMED_REAL_JUNCTION_NOT_TESTED",
+    "partial_read_bytes_preserved": "STATIC_CONFIRMED_RETURNED_BYTES_ONLY",
+    "request246_original_strict_time_and_provider": "UNCHANGED_PIN_MATCH",
+    "false_gates": "STATIC_CONFIRMED_VALIDATOR_OUTPUT_NOT_CAPABILITY",
+    "app_backend_api": "SYNTHETIC_CANONICAL_EQUIVALENCE_LOG_AND_TEST_READ",
+    "per_call_allowance_not_global_budget": "EXPLICIT_LIMITATION"
+  },
+  "reported_tests_read_not_rerun": {
+    "final_passed": 61,
+    "seconds": 3.963,
+    "skipped": 0,
+    "first_total": 16,
+    "first_failures": 1,
+    "first_seconds": 1.714,
+    "first_log_preserved": true,
+    "fixture_timing_adjustment": "AFTER_FD_CLOSE_REPLACEMENT_FOR_WINDOWS"
+  },
+  "limitations": [
+    "NO_RUNTIME_TESTS_EXECUTED_BY_REVIEWER",
+    "NO_REAL_PROVIDER_COMPATIBILITY_VERIFICATION",
+    "STRICT_NONZERO_FRACTION_VS_SECOND_DECLARATION_REMAINS_BLOCKED",
+    "NO_GLOBAL_BUDGET_OR_REMOTE_CREDIT_OR_LOCK_AUTHORITY",
+    "NO_CONTINUOUS_ATOMIC_FILESYSTEM_TRANSACTION",
+    "OTHER_REFERENCED_FILES_NOT_OPENED_OR_AUTHENTICATED",
+    "NO_REAL_JUNCTION_EXERCISE_OR_RSS_MAXIMUM_PROOF"
+  ],
+  "reviewer_operational_source_ledger_model_reads": 0,
+  "reviewer_http": 0,
+  "reviewer_native_qa": 0,
+  "reviewer_new_tests": 0,
+  "reviewer_product_changes": 0,
+  "doc": {
+    "path": "docs/implementation/287_survey281_file_adapter_independent_review.md",
+    "bytes": 9544,
+    "sha256": "98d1cad22c77658665144928e508cde49a9913f572e58a2b1c991523f3923f8c"
+  }
+}

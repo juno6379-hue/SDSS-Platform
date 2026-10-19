@@ -1,0 +1,145 @@
+{
+  "observed_at_utc": "2026-10-18T01:20:24.826953+00:00",
+  "classification": "VERIFIED_REAL read-only GET plus TESTED_SYNTHETIC adapter assertions and source review; browser and full build are Root-owned",
+  "results": [
+    {
+      "name": "tools_live_get_shape",
+      "pass": true
+    },
+    {
+      "name": "datasets_live_get_shape",
+      "pass": true
+    },
+    {
+      "name": "models_live_get_shape",
+      "pass": true
+    },
+    {
+      "name": "jobs_live_get_shape",
+      "pass": true
+    },
+    {
+      "name": "strict_implementation",
+      "pass": true
+    },
+    {
+      "name": "error_overrides_stale",
+      "pass": true
+    },
+    {
+      "name": "empty_jobs",
+      "pass": true
+    },
+    {
+      "name": "unknown_job_state",
+      "pass": true
+    },
+    {
+      "name": "scoped_css_and_keyboard_focus_source_review",
+      "pass": true
+    },
+    {
+      "name": "resolved_errors_and_approval_separation_source_review",
+      "pass": true
+    },
+    {
+      "name": "existing_detail_workspace_matches_head",
+      "pass": true
+    }
+  ],
+  "api_summary": {
+    "tools": {
+      "shape": "list[object]",
+      "count": 6,
+      "row_keys": [
+        "id",
+        "implemented",
+        "input_schema",
+        "output_schema",
+        "status"
+      ],
+      "implementation": [
+        {
+          "id": "climate-downscaling",
+          "implemented": false
+        },
+        {
+          "id": "lcluc",
+          "implemented": true
+        },
+        {
+          "id": "net-carbon-footprint",
+          "implemented": false
+        },
+        {
+          "id": "biodiversity",
+          "implemented": false
+        },
+        {
+          "id": "sea-level-subsidence",
+          "implemented": false
+        },
+        {
+          "id": "flood-drought",
+          "implemented": false
+        }
+      ]
+    },
+    "datasets": {
+      "shape": "list[object]",
+      "count": 6,
+      "row_keys": [
+        "created_at",
+        "downloaded_windows",
+        "full_scene_downloaded",
+        "id",
+        "items",
+        "kind",
+        "readiness_note",
+        "source_manifests",
+        "status",
+        "training_ready",
+        "verified_file_count"
+      ]
+    },
+    "models": {
+      "shape": "list[object]",
+      "count": 1,
+      "row_keys": [
+        "accuracy_claim",
+        "architecture",
+        "checkpoint_path",
+        "checkpoint_sha256",
+        "created_at",
+        "dataset_version",
+        "device",
+        "history",
+        "id",
+        "independent_evaluation",
+        "model_id",
+        "reference_kind",
+        "registration",
+        "seed",
+        "status",
+        "synthetic",
+        "test_metrics",
+        "training_history"
+      ]
+    },
+    "jobs": {
+      "shape": "list[object]",
+      "count": 0,
+      "row_keys": []
+    }
+  },
+  "source_sha256": {
+    "GeoAIToolbox.tsx": "f4456f604287e0deaeca4ef85e0e2b2b62cb245d91ff0b25127a2b5781307769",
+    "geoai-toolbox.css": "daf2889fd89f97854cd2ed4669e27aaa97d4b4f0f726631f48254e13f622377f",
+    "toolboxAdapter.ts": "0528fa173dba0d52ef6009a53c551beaee33aae9c3ee2afdd09388180e1898cd",
+    "App.tsx": "de808c64825758c93822cc3b7fda05b9c5fdd0a0332e74300263decfdc78e24b",
+    "PlatformShell.tsx": "7116e9f266521b8125dc44e933d3b55c84677c389102cd9c85cf29b0c03bf9c9"
+  },
+  "post_calls": 0,
+  "server_restarts": 0,
+  "collection_or_registry_writes": 0
+}

@@ -1,0 +1,298 @@
+{
+  "scope": "TEST_ONLY_PORTABILITY_REVISION_RUNTIME237_EXACT_UNCHANGED",
+  "parent237_freeze_sha256": "56c9f57bf4929338835170e48d15495385e48cf58140f7ca396bdbbf4a07ceb6",
+  "files": [
+    {
+      "path": "tests/fixtures/manifest_profile_baselines/candidate_materialization_pre228.py",
+      "artifact_class": "PINNED_HISTORICAL_TEST_FIXTURE",
+      "before": null,
+      "after": {
+        "bytes": 8716,
+        "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b"
+      }
+    },
+    {
+      "path": "tests/fixtures/manifest_profile_baselines/candidate_qa_comparison_pre228.py",
+      "artifact_class": "PINNED_HISTORICAL_TEST_FIXTURE",
+      "before": null,
+      "after": {
+        "bytes": 17204,
+        "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e"
+      }
+    },
+    {
+      "path": "tests/fixtures/manifest_profile_baselines/centers230.py",
+      "artifact_class": "PINNED_HISTORICAL_TEST_FIXTURE",
+      "before": null,
+      "after": {
+        "bytes": 14002,
+        "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d"
+      }
+    },
+    {
+      "path": "tests/fixtures/manifest_profile_baselines/manifest.json",
+      "artifact_class": "PINNED_HISTORICAL_TEST_FIXTURE",
+      "before": null,
+      "after": {
+        "bytes": 1659,
+        "sha256": "7e4babd8f30ff31ca70e677c1eb1cabae0e715bd7a386136c4cb6be84abde637"
+      }
+    },
+    {
+      "path": "tests/fixtures/manifest_profile_baselines/status230.py",
+      "artifact_class": "PINNED_HISTORICAL_TEST_FIXTURE",
+      "before": null,
+      "after": {
+        "bytes": 17192,
+        "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4"
+      }
+    },
+    {
+      "path": "tests/manifest_profile_baseline_fixtures.py",
+      "artifact_class": "TEST_SOURCE_OR_LOADER",
+      "before": null,
+      "after": {
+        "bytes": 1855,
+        "sha256": "f3d7d06d71b999190b4a33a2047df2bc29eb3691085fae33bc4f6fd87d5e3a0e"
+      }
+    },
+    {
+      "path": "tests/test_manifest_profile228.py",
+      "artifact_class": "TEST_SOURCE_OR_LOADER",
+      "before": {
+        "bytes": 11801,
+        "sha256": "f6c32f189ac7674f23dd11d3e65958896a388aa13adffd068babaf10ad5fec1a"
+      },
+      "after": {
+        "bytes": 11547,
+        "sha256": "baac07d5a35d99b2cde02367079e2cd4241fdf15a75d7e9c0afe1bed73dea9e9"
+      }
+    },
+    {
+      "path": "tests/test_manifest_profile237.py",
+      "artifact_class": "TEST_SOURCE_OR_LOADER",
+      "before": {
+        "bytes": 19353,
+        "sha256": "82952348b0c5d33f25f879e8716393c5970ae00d6c46bb80b44b52a028c9f7eb"
+      },
+      "after": {
+        "bytes": 19093,
+        "sha256": "c6def6d5c9d65a89f8497d09f423dd82d8c7a9659b436460d2249e92f4fb51b9"
+      }
+    },
+    {
+      "path": "tests/test_manifest_profile242_portability.py",
+      "artifact_class": "TEST_SOURCE_OR_LOADER",
+      "before": null,
+      "after": {
+        "bytes": 2666,
+        "sha256": "1d8818ffced5e91ea216924dc954ca6c16db575bb0ddfdf6e9c9af755bed5e3e"
+      }
+    }
+  ],
+  "root_main_test_bundle": [
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\candidate_materialization_pre228.py",
+      "bytes": 8716,
+      "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\candidate_qa_comparison_pre228.py",
+      "bytes": 17204,
+      "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\centers230.py",
+      "bytes": 14002,
+      "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\manifest.json",
+      "bytes": 1659,
+      "sha256": "7e4babd8f30ff31ca70e677c1eb1cabae0e715bd7a386136c4cb6be84abde637"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\status230.py",
+      "bytes": 17192,
+      "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4"
+    },
+    {
+      "path": "tests\\manifest_profile_baseline_fixtures.py",
+      "bytes": 1855,
+      "sha256": "f3d7d06d71b999190b4a33a2047df2bc29eb3691085fae33bc4f6fd87d5e3a0e"
+    },
+    {
+      "path": "tests\\test_manifest_profile228.py",
+      "bytes": 11547,
+      "sha256": "baac07d5a35d99b2cde02367079e2cd4241fdf15a75d7e9c0afe1bed73dea9e9"
+    },
+    {
+      "path": "tests\\test_manifest_profile230.py",
+      "bytes": 20898,
+      "sha256": "431e44c787c594bd0cb40d90528ca80e87f01b1daa92b85250b61223131f10de"
+    },
+    {
+      "path": "tests\\test_manifest_profile237.py",
+      "bytes": 19093,
+      "sha256": "c6def6d5c9d65a89f8497d09f423dd82d8c7a9659b436460d2249e92f4fb51b9"
+    },
+    {
+      "path": "tests\\test_manifest_profile242_portability.py",
+      "bytes": 2666,
+      "sha256": "1d8818ffced5e91ea216924dc954ca6c16db575bb0ddfdf6e9c9af755bed5e3e"
+    }
+  ],
+  "runtime18_not_in_test_patch": [
+    {
+      "path": "backend/app/candidate_qa_comparison_api.py",
+      "237_sha256": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/collection_budget_status.py",
+      "237_sha256": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/collection_priority_status.py",
+      "237_sha256": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/collection_source_profile.py",
+      "237_sha256": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/collection_status.py",
+      "237_sha256": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/data/candidates.py",
+      "237_sha256": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/main.py",
+      "237_sha256": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/ml/candidate_materialization.py",
+      "237_sha256": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/ml/candidate_qa_comparison.py",
+      "237_sha256": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/ml/candidate_readiness_qa.py",
+      "237_sha256": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/ml/candidate_staging.py",
+      "237_sha256": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "237_sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/ml/readiness.py",
+      "237_sha256": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "237_sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "scripts/find_bare_targets173.py",
+      "237_sha256": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "scripts/prepare_priority_candidate164.py",
+      "237_sha256": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "scripts/propose_deficit_centers182.py",
+      "237_sha256": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    },
+    {
+      "path": "scripts/run_experiment.py",
+      "237_sha256": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772",
+      "workspace_match": true,
+      "shared_layout_match": true,
+      "workspace_match_after_tests": true,
+      "shared_layout_match_after_tests": true
+    }
+  ],
+  "test230_unchanged": true,
+  "runtime_files_modified": 0,
+  "main_written": 0,
+  "operating_data_read": 0,
+  "http": 0,
+  "collector": 0,
+  "live_qa": 0
+}

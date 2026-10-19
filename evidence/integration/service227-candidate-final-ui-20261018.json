@@ -1,0 +1,75 @@
+{
+  "status": "VERIFIED_REAL_PUBLISHED227_CANDIDATE_BROWSER",
+  "at": "2026-10-18T06:36:14.938634+00:00",
+  "method": "One explicit refresh existing Chrome view17/API40492; no separate API GET or restart",
+  "collection_recorded_at": "2026-10-18T06:35:03.322120+00:00",
+  "budget_observed_at": "2026-10-18T06:35:04.252491+00:00",
+  "source_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+  "ledger_sha256": "61161c35eabb593afb5f096c256791871d297b723f82ffc2ac2449b3bd8266e7",
+  "current": {
+    "registered": 1715,
+    "eligible": 1358,
+    "split": [
+      816,
+      292,
+      250
+    ],
+    "cell_gap": 21
+  },
+  "candidate": {
+    "eligible": 1342,
+    "split": [
+      816,
+      276,
+      250
+    ],
+    "blockers": 3,
+    "source_matches_current": true,
+    "stale_warning_removed": true,
+    "ready": false,
+    "report": "priority164-guarded227-20261018/qa/readiness.json"
+  },
+  "bare_review": {
+    "total": 37,
+    "searched_provinces": [
+      "gorontalo",
+      "west_java"
+    ],
+    "source_mismatch_warning": true,
+    "remote_quality": "미검사",
+    "execution": "미승인"
+  },
+  "budget": {
+    "maximum": 4294967296,
+    "charged": 2398022341,
+    "remaining": 1896944955,
+    "old_pending": 136314880,
+    "old_pending_count": 2,
+    "process_verification": "UNKNOWN",
+    "pending_not_double_subtracted": true
+  },
+  "checks": {
+    "at": "2026-10-18T06:35:51.737Z",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    },
+    "singleRefresh": true
+  },
+  "proof": [
+    "service227-candidate-final-ui-20261018.dom.txt",
+    "service227-candidate-final-ui-20261018.inventory.png",
+    "service227-candidate-final-ui-20261018.budget.png",
+    "service227-candidate-final-ui-20261018.png",
+    "service227-candidate-final-ui-20261018.checks.json"
+  ],
+  "limits": [
+    "228 isolated work is not part of running server or this observation.",
+    "No source, pointer, ledger, lock, registry or operating-data writes; no additional QA or restart.",
+    "Candidate-current source agreement does not mean training/deployment approval.",
+    "Budget observed_at and collection recorded_at are separate timestamps.",
+    "No API latency/SLA claim."
+  ]
+}

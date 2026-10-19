@@ -1,0 +1,119 @@
+{
+  "status": "ROOT_APPROVED_ONE_EASTJAVA2025_V2_BATCH_AFTER_AUDITED297_AND_CURRENT301",
+  "required_root_approval_status": "ROOT_APPROVED_ONE_EASTJAVA2025_V2_BATCH_AFTER_AUDITED297_AND_CURRENT301",
+  "maximum_batches": 1,
+  "maximum_new_physical_patches": 16,
+  "request_sha256": "981abcd9b78b6eaa94dcb48a2f2bc62346ac939967076490b41c0c10e03f0987",
+  "source_sha256": "9e63564c87647a144665bbb6bbe49b4a95d09bbd2c3bc0f3725861c54d5e7109",
+  "ledger_sha256": "574d382dd9da51ae56dc8fb135532f8f2e5c542b2c4cafdf73a6ee8dd9c6045f",
+  "source_pins": {
+    "backend/app/candidate_qa_comparison_api.py": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+    "backend/app/collection_budget_status.py": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108",
+    "backend/app/collection_priority_status.py": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9",
+    "backend/app/collection_source_profile.py": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef",
+    "backend/app/collection_status.py": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9",
+    "backend/app/data/budget.py": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+    "backend/app/data/candidates.py": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9",
+    "backend/app/data/deficit_candidate_guard.py": "4052759b683f6f4f545a629466f2d4145e3ad9cc2ad8e6cdf5b1e3c0004a5dd2",
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d",
+    "backend/app/data/targeted_inventory.py": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839",
+    "backend/app/data/targeted_inventory_profile.py": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/main.py": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b",
+    "backend/app/ml/candidate_materialization.py": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+    "backend/app/ml/candidate_qa_comparison.py": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+    "backend/app/ml/candidate_readiness_qa.py": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+    "backend/app/ml/candidate_staging.py": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d",
+    "backend/app/ml/manifest_resource_profile.py": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+    "backend/app/ml/readiness.py": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb",
+    "backend/app/ml/split_json_io.py": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+    "evidence/integration/deficit235-supervisor-root-20261018.py": "f5dc759bce17df50035f1a15930285e83a43e820979fbaf88ea6b72351eee0c1",
+    "evidence/integration/deficit249-supervisor-root-20261018.py": "3506f3f9baacb83c4d984582fdc2dd6ca906e50bd6a0ee5c5e5e5d14368b374d",
+    "evidence/integration/deficit258-supervisor-root-20261018.py": "d25e50aabce5613a605ccce4475b2a078a695830a38358039113ff0114934753",
+    "scripts/collect_deficit_guarded.py": "9ae5ba986d3d48e89cfb269d8a242ffd6189d281649d98a11614c03e5ab3c9ab",
+    "scripts/collect_samples.py": "9ce6cf2a520edb14d8c67260e79fc5f605f11eab03d9d6773117e0fd193eb165",
+    "scripts/collect_targeted_bare.py": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8",
+    "scripts/collect_training_grid.py": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+    "scripts/find_bare_targets173.py": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750",
+    "scripts/prepare_priority_candidate164.py": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437",
+    "scripts/propose_deficit_centers182.py": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+    "scripts/run_experiment.py": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772",
+    "evidence/integration/deficit270-supervisor-root-20261018.py": "9a42f1d38a90fe7224599f0bc60ef9d8bb7228b95c81efc22e783a6bf526f9fa",
+    "evidence/integration/selection271-project-validation-root-20261018.json": "24b837029aafa7413a5a31b56ddbf9cdab91a7a6a53155e45b3608820aaaef9d",
+    "evidence/integration/selection272-static-review-20261018.json": "b14343b9a74b6805000b101f0a829515cc884a868d44f0686ae1a5d6a5b4ea90",
+    "evidence/integration/deficit279-supervisor-root-20261018.py": "112e36ae376dc64625eab6467e411272a554eccf01512a0cf7a38bb888a12aa2",
+    "docs/implementation/280_gorontalo279_supervisor_static_review.md": "1c7e64a263fd09df8cf74e3639a84baf98afe9d7584c036ce4a5bcb009944c25",
+    "evidence/integration/deficit285-supervisor-root-20261018.py": "66fe2ed5b76ed53342ce7cb84617cc500a3bb54c03ece64e65b65249fdee80ed",
+    "docs/implementation/286_gorontalo2022_supervisor_static_review.md": "c66df8e34cf6a3d48e6a848effe8e4be3f249ece3f6eb58d6f86dceadf835599",
+    "evidence/integration/deficit297-supervisor-root-20261018.py": "1b41991db71ce006f7ef46ed5fc67cb5e7ad92d79a4b484b30e50bef4993bfaa",
+    "docs/implementation/298_gorontalo2025_supervisor297_static_review.md": "badad23cd3f895063d0a0c4c0004470ed3cd1d1f119b4d447d4d045b443537dc",
+    "evidence/integration/deficit304-supervisor-root-20261018.py": "f8d74ec8597f111326db71e2f93ff09516dc3341a06c15cb9f7b30d7a45c26b1",
+    "docs/implementation/306_eastjava304_supervisor_static_review.md": "7a781af4e58b55ecefd164de0f98b741a9a621124ac84ce5fdf4d624f407ce9d"
+  },
+  "runtime_validation_ref": {
+    "path": "evidence/integration/selection271-project-validation-root-20261018.json",
+    "sha256": "24b837029aafa7413a5a31b56ddbf9cdab91a7a6a53155e45b3608820aaaef9d"
+  },
+  "prior297_audit_sha256": "e8c51e5c0afd86d4f0d89a58121103bad76ff3a5e4504079c41217ac08731096",
+  "expected_config_sha256": "31044c97e5dd1cf84648eec174975eacd9b5f8e1eacfcbf50e355bc0bb7d657a",
+  "expected_config_file_ref": {
+    "path": "evidence/integration/deficit304-expected-config-20261018.json",
+    "sha256": "23085f52d3b88c7982e14a4a211d0b006ffc1b1c584e8b6b8540b365094824c6"
+  },
+  "selected_candidate": {
+    "province": "east_java",
+    "fixed_split": "train",
+    "spatial_window_id": "centers182-east_java-5141c64815b2",
+    "lon": 112.12452853355475,
+    "lat": -7.764251076494455,
+    "bbox": [
+      112.07798445151195,
+      -7.810676790393404,
+      112.17108277600694,
+      -7.717821675089114
+    ],
+    "window_size": 1024,
+    "grid_crs": "EPSG:32749",
+    "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+    "years": [
+      2025
+    ],
+    "reference": "esri_io",
+    "inside_fraction_native": 1.0,
+    "source_snapshot_sha256": "9e63564c87647a144665bbb6bbe49b4a95d09bbd2c3bc0f3725861c54d5e7109",
+    "deficit_at_snapshot": 1,
+    "class_presence_verified": false,
+    "actual_quality_eligible": false,
+    "execution_supported": false
+  },
+  "expected_job_key": "center1024-east_java-2025-981abcd9b78b-9c40f177",
+  "candidate_metadata_binding": {
+    "policy": "DEFICIT_AOI_BBOX_CONTAINS_V1",
+    "request_sha256": "981abcd9b78b6eaa94dcb48a2f2bc62346ac939967076490b41c0c10e03f0987",
+    "source_sha256": "9e63564c87647a144665bbb6bbe49b4a95d09bbd2c3bc0f3725861c54d5e7109"
+  },
+  "published_candidate_ref": {
+    "path": "data/first-group-training-priority/latest-candidate.json",
+    "sha256": "996a88de2034e9803381d7ae4e906a0d1f418075675d13ef796fb5648bb472c0"
+  },
+  "source_profile_config_ref": {
+    "path": "data/first-group-training-priority/source-profile237-root-20261018.json",
+    "sha256": "b9a2cd5cfe20bb570281882adcd1f47b4b81b0be4e69c0f0b91d606f0cd17f9e"
+  },
+  "existing_budget_maximum_bytes": 4294967296,
+  "oldpending_preserved_bytes": 136314880,
+  "new_budget_added": false,
+  "training_approved": false,
+  "fresh200_under_lock_required": true,
+  "config_template_not_inventory_proof": true,
+  "collector_executed": false,
+  "active_source_or_ledger_reads": 0,
+  "http": 0,
+  "root_approved_at": "2026-10-18T13:17:37.646448+00:00",
+  "independent_review_ref": {
+    "path": "docs/implementation/306_eastjava304_supervisor_static_review.md",
+    "sha256": "7a781af4e58b55ecefd164de0f98b741a9a621124ac84ce5fdf4d624f407ce9d"
+  },
+  "root_read_review_and_current_pins_verified": true
+}

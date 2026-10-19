@@ -1,0 +1,49 @@
+{
+  "status": "LOCAL_PLAN_COMPLETE_UNAPPROVED",
+  "at_utc": "2026-10-18T08:33:59.016060+00:00",
+  "seconds": 96.156,
+  "exit_code": 0,
+  "pins_stable": {
+    "data/first-group-training-esri-v1/annual-window-report.json": true,
+    "data/first-group-training-budget/global-ledger.json": true,
+    "scripts/propose_deficit_centers182.py": true,
+    "data/first-group-boundaries/selected-six.geojson": true,
+    "configs/first-group.collection.json": true,
+    "data/centers245-fresh-20261018/prior-merged.json": true,
+    "data/centers245-fresh-20261018/proposal.json": true
+  },
+  "prior_count": 48,
+  "new_candidates": 4,
+  "proposal_sha256": "70f69e14f468f6ca3ce30c294b80c80a6ee2fd9f375e4925654ed9bb47892847",
+  "headers_verified": 115,
+  "target_status": [
+    {
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 22,
+      "deficit_to_28": 6,
+      "proposed_candidates": 2
+    },
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 18,
+      "deficit_to_28": 10,
+      "proposed_candidates": 1
+    },
+    {
+      "province": "gorontalo",
+      "year": 2022,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 24,
+      "deficit_to_28": 4,
+      "proposed_candidates": 1
+    }
+  ],
+  "network_requests": 0,
+  "collector_started": false,
+  "source_or_ledger_written": false,
+  "full_support_inventory_verified": false
+}

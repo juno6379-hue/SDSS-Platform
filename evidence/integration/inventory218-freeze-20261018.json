@@ -1,0 +1,109 @@
+{
+  "at_utc": "2026-10-18T05:49:55.540957+00:00",
+  "status": "IMPLEMENTED_TESTED_SYNTHETIC_NOT_OPERATIONALLY_REEXECUTED",
+  "source_pins": [
+    {
+      "path": "backend/app/data/deficit_candidate_guard.py",
+      "bytes": 20475,
+      "sha256": "f3528592f335be1c69f562ade59e8fcab22e20c6c83c8363ad84a751b3d1c803"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "bytes": 10945,
+      "sha256": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839"
+    },
+    {
+      "path": "scripts/collect_deficit_guarded.py",
+      "bytes": 21000,
+      "sha256": "cb9a52f75b6c97771bbb0b109a91612f65b3975742342fe2a92eaf8073dbf3ec"
+    }
+  ],
+  "test_pins": [
+    {
+      "path": "tests/test_deficit_candidate_guard.py",
+      "bytes": 26295,
+      "sha256": "447c89f864a0217e3aea3d901d127b3dcc1f89ea5462e6d94c37c46d0dcb21a3"
+    },
+    {
+      "path": "tests/test_targeted_inventory.py",
+      "bytes": 11460,
+      "sha256": "7716971b8d791210b8d737d8b03600cd7765af4f496d4ebc75dd0bd5c0cb6c86"
+    },
+    {
+      "path": "tests/test_collect_deficit_guarded.py",
+      "bytes": 29658,
+      "sha256": "804a6a6341ebea939c3c986fcb91a13cccc4f00312c965f6a87fb71ac0e04d9f"
+    }
+  ],
+  "documentation": {
+    "path": "docs/implementation/218_local_support_inventory_resource_profile.md",
+    "bytes": 9259,
+    "sha256": "604df1d7fc2f95d7e0122a4250839e9a11a8d8a3c9a1ecc430a7388d6fb5b450"
+  },
+  "logs": [
+    {
+      "path": "evidence/integration/inventory218-focused-recheck-20261018.log",
+      "bytes": 10695,
+      "sha256": "7c518b9408c11ca5bcffcd2aeff58384b5ad336b66ac558597787d693af6c87e"
+    },
+    {
+      "path": "evidence/integration/inventory218-related-20261018.log",
+      "bytes": 38710,
+      "sha256": "4046ae1dc97d94036682edfc1bbb00b762a67286058d6192ec26e7ede8cb4327"
+    },
+    {
+      "path": "evidence/integration/inventory218-focused-20261018.log",
+      "bytes": 1552,
+      "sha256": "b2c34e5f7f844ac864094b725e1b209fe51b17e6be84d5497caa91044430c265"
+    }
+  ],
+  "focused_tests": {
+    "passed": 38,
+    "seconds": 17.344,
+    "skipped": 0
+  },
+  "related_tests": {
+    "passed": 108,
+    "seconds": 34.655,
+    "skipped": 0
+  },
+  "initial_command_import_errors": 2,
+  "operating_inventory_runs": 0,
+  "collector_runs": 0,
+  "network_requests": 0,
+  "native_runs": 0,
+  "source_or_ledger_writes": 0,
+  "resource_profile": "DEFICIT_LOCAL_SUPPORT_3G_V1",
+  "local_support_cap_bytes": 3221225472,
+  "common_inventory_default_unchanged_bytes": 2147483648,
+  "historical_211_success_claimed": false,
+  "reconstructed_archives": [
+    {
+      "path": "evidence/integration/inventory218-before-reconstructed-collect_deficit_guarded.py",
+      "bytes": 20011,
+      "sha256": "6e41c4ead9262133b497e802050671da1bc0a969027a39735429a72c720f112a"
+    },
+    {
+      "path": "evidence/integration/inventory218-before-reconstructed-deficit_candidate_guard.py",
+      "bytes": 19481,
+      "sha256": "c8eece7cbb0d3fed77f704b65eda9e51fe2e300ea56fdfd4aa020d9c9653204f"
+    },
+    {
+      "path": "evidence/integration/inventory218-before-reconstructed-targeted_inventory.py",
+      "bytes": 10520,
+      "sha256": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9"
+    }
+  ],
+  "reconstruction_record": {
+    "path": "evidence/integration/inventory218-before-reconstruction-20261018.json",
+    "bytes": 1457,
+    "sha256": "1d565fb44f60ce08bfa5ad3f11f5aa6ef406386699310bc203fb880299ee66e6"
+  },
+  "historical_stat_evidence": {
+    "path": "evidence/integration/inventory218-stat-diagnostic-root-20261018.json",
+    "bytes": 549,
+    "sha256": "01754e37c4b32eb778fa3635198cb9bf6fb21610ebeac232de6f87ffa24c9dea"
+  },
+  "ui_changes_required": false,
+  "understanding_handoff": "ROOT_ASSIGNMENT_REQUIRED"
+}

@@ -1,0 +1,82 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_164_snapshot_uses_bounded_copy_with_actual_partial_accounting (test_manifest_profile230.Profile230Tests.test_164_snapshot_uses_bounded_copy_with_actual_partial_accounting) ... ok
+test_173_182_profile_only_expands_source_and_default_scope_stays_off (test_manifest_profile230.Profile230Tests.test_173_182_profile_only_expands_source_and_default_scope_stays_off) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess230-workspace-20261018\scripts\find_bare_targets173.py:138: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(x,y,256,256));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\tempfile.py:934: ResourceWarning: Implicitly cleaning up <TemporaryDirectory 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmp9tnjeias'>
+  _warnings.warn(warn_message, ResourceWarning)
+ok
+test_api_uses_root_internal_path_no_browser_profile_switch (test_manifest_profile230.Profile230Tests.test_api_uses_root_internal_path_no_browser_profile_switch) ... ok
+test_budget_root_config_is_explicit_strict_pinned_readonly (test_manifest_profile230.Profile230Tests.test_budget_root_config_is_explicit_strict_pinned_readonly) ... ok
+test_cli_profile_forwarding_and_strict_unknown_choice (test_manifest_profile230.Profile230Tests.test_cli_profile_forwarding_and_strict_unknown_choice) ... usage: python.exe -m unittest [-h] --source SOURCE --source-sha256
+                              SOURCE_SHA256 --boundary BOUNDARY
+                              --boundary-sha256 BOUNDARY_SHA256 --run-id
+                              RUN_ID [--window-stride {128,256}]
+                              [--province {south_sulawesi,gorontalo,southeast_sulawesi,east_java,banten,west_java}]
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'automatic' (choose from 'bounded128m-3000-v1')
+usage: python.exe -m unittest [-h] --source SOURCE --source-sha256
+                              SOURCE_SHA256 --boundary BOUNDARY
+                              --boundary-sha256 BOUNDARY_SHA256 --run-id
+                              RUN_ID [--window-stride {128,256}]
+                              [--province {south_sulawesi,gorontalo,southeast_sulawesi,east_java,banten,west_java}]
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: Safe explicit run ID required
+{"status": "LOCAL_CENTERS_PROPOSED_UNAPPROVED", "candidates": 0, "proposal_sha256": "4444444444444444444444444444444444444444444444444444444444444444", "target_status": [], "execution_supported": false}
+{"status": "LOCAL_CENTERS_PROPOSED_UNAPPROVED", "candidates": 0, "proposal_sha256": "4444444444444444444444444444444444444444444444444444444444444444", "target_status": [], "execution_supported": false}
+usage: python.exe -m unittest [-h] --source SOURCE --source-sha256
+                              SOURCE_SHA256 --boundary BOUNDARY
+                              --boundary-sha256 BOUNDARY_SHA256 --config
+                              CONFIG --config-sha256 CONFIG_SHA256
+                              --prior-plan PRIOR_PLAN --prior-plan-sha256
+                              PRIOR_PLAN_SHA256 [--target TARGET]
+                              [--manifest-profile {bounded128m-3000-v1}]
+                              --output OUTPUT
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'automatic' (choose from 'bounded128m-3000-v1')
+ok
+test_config_changes_mid_observation_and_source_drift_are_unconfirmed (test_manifest_profile230.Profile230Tests.test_config_changes_mid_observation_and_source_drift_are_unconfirmed) ... ok
+test_copy_counts_both_directions_and_checks_before_destination_open (test_manifest_profile230.Profile230Tests.test_copy_counts_both_directions_and_checks_before_destination_open) ... ok
+test_copy_partial_write_failure_preserves_measured_bytes (test_manifest_profile230.Profile230Tests.test_copy_partial_write_failure_preserves_measured_bytes) ... ok
+test_dual_import_has_same_error_class_and_budget (test_manifest_profile230.Profile230Tests.test_dual_import_has_same_error_class_and_budget) ... ok
+test_growing_hash_reads_only_initial_bound_then_aborts (test_manifest_profile230.Profile230Tests.test_growing_hash_reads_only_initial_bound_then_aborts) ... ok
+test_independent_threads_and_async_tasks_do_not_leak_scope (test_manifest_profile230.Profile230Tests.test_independent_threads_and_async_tasks_do_not_leak_scope) ... ok
+test_json_output_precheck_and_actual_partial_write (test_manifest_profile230.Profile230Tests.test_json_output_precheck_and_actual_partial_write) ... ok
+test_json_role_is_extension_independent_and_oversize_refused_before_open (test_manifest_profile230.Profile230Tests.test_json_role_is_extension_independent_and_oversize_refused_before_open) ... ok
+test_profile_is_hard_ceiling_and_readonly_not_caller_controlled (test_manifest_profile230.Profile230Tests.test_profile_is_hard_ceiling_and_readonly_not_caller_controlled) ... ok
+test_resource_error_aborts_entire_qa_legacy_metadata_error_stays_scene_blocker (test_manifest_profile230.Profile230Tests.test_resource_error_aborts_entire_qa_legacy_metadata_error_stays_scene_blocker) ... E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess230-workspace-20261018\backend\app\ml\readiness.py:234: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  point=ip['transform']*(x,y)
+ok
+test_shared_copied_context_serializes_precheck_read_charge (test_manifest_profile230.Profile230Tests.test_shared_copied_context_serializes_precheck_read_charge) ... ok
+test_ui_default_does_not_inherit_unrelated_parent_profile (test_manifest_profile230.Profile230Tests.test_ui_default_does_not_inherit_unrelated_parent_profile) ... ok
+test_v1_published_candidate_is_pinned_cohort_not_v2_comparison_or_current_source (test_manifest_profile230.Profile230Tests.test_v1_published_candidate_is_pinned_cohort_not_v2_comparison_or_current_source) ... ok
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+test_164_cli_explicit_choice_and_no_flag_preserves_default (test_manifest_profile228.Profile228Tests.test_164_cli_explicit_choice_and_no_flag_preserves_default) ... usage: python.exe -m unittest [-h] --data-root DATA_ROOT --source SOURCE
+                              --policy POLICY --source-sha256 SOURCE_SHA256
+                              --policy-sha256 POLICY_SHA256 --run-id RUN_ID
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'bad' (choose from 'bounded128m-3000-v1')
+ok
+test_both_import_names_share_only_the_explicit_operation_budget (test_manifest_profile228.Profile228Tests.test_both_import_names_share_only_the_explicit_operation_budget) ... ok
+test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper (test_manifest_profile228.Profile228Tests.test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper) ... ok
+test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict (test_manifest_profile228.Profile228Tests.test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict) ... ok
+test_explicit_materialization_staging_v2_and_old_contract_fail_closed (test_manifest_profile228.Profile228Tests.test_explicit_materialization_staging_v2_and_old_contract_fail_closed) ... ok
+test_profile_exact_name_scope_reset_and_legacy_receipts (test_manifest_profile228.Profile228Tests.test_profile_exact_name_scope_reset_and_legacy_receipts) ... ok
+test_qa_v2_same_profile_and_default_rejection (test_manifest_profile228.Profile228Tests.test_qa_v2_same_profile_and_default_rejection) ... ok
+{"stage": "SNAPSHOT_PINNED", "at": "2026-10-18T07:11:53.434371+00:00", "rows": 1, "source_sha256": "785c3ee217fc64cca26775ed4ab99b0b04e32c9626893cdad9b0f1e83750af00"}
+{"stage": "SOURCE_QA_COMPLETE", "seconds": 0.0, "eligible": {"train": 0, "val": 0, "test": 0}}
+{"stage": "CANDIDATE_STAGED", "excluded_rows": 0, "eligible": {"test": 0, "val": 0, "train": 0}}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {"train": 0, "val": 0, "test": 0}, "ready_for_training": false}
+test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate (test_manifest_profile228.Profile228Tests.test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate) ... ok
+test_rows_nodes_depth_io_and_output_budget_fail_closed (test_manifest_profile228.Profile228Tests.test_rows_nodes_depth_io_and_output_budget_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 17.138s
+
+OK

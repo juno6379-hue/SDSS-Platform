@@ -1,0 +1,616 @@
+{
+  "schema_version": 1,
+  "kind": "SOUTHEAST_179_TARGETS_RECHECKED_AGAINST_FIXED192_ASSETS",
+  "status": "NUMERICAL_REFRESH_COMPLETE_UNAPPROVED",
+  "at_kst": "2026-10-18T13:09:53.519361+09:00",
+  "seconds": 31.078,
+  "fixed_input_references": {
+    "source": {
+      "path": "data/first-group-training-esri-v1/annual-window-report.json",
+      "sha256": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f"
+    },
+    "ledger": {
+      "path": "data/first-group-training-budget/global-ledger.json",
+      "sha256": "7839929111f3e70e8b9ba2bda3eb0972bc8c0055bb8c03b9273f4c0b381e353f"
+    },
+    "old179": {
+      "path": "evidence/integration/bare179-report-20261018.json",
+      "sha256": "36aaf1107292eee74b0f6a2ce462d90e40a22de498ca31aaff1c1ded636775f0"
+    },
+    "report192": {
+      "path": "evidence/integration/bare192-review-20261018/report.json",
+      "sha256": "857b1384c09e3cc8d921ed5a03c445e6464a0805f457cd40bc2a24d1a8e2ec0a"
+    }
+  },
+  "input_pins_verified_before_and_after": true,
+  "asset_origin": "192 product179 full167 inventory exactlyonce; this194rundoesnotrescan",
+  "cached_asset_count": 1233,
+  "cached_assets_sha256": "9c4d6d1241450bea3f69bd621c3b0bea9e631d1581fdeea120d4f92fe3da3515",
+  "old179_southeast_historical_clear_count": 8,
+  "current192_assets_clear_count": 4,
+  "current192_assets_blocked_count": 4,
+  "results": [
+    {
+      "old179_proposal_index": 0,
+      "target_id": "local-rank0-2021",
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "fixed_split": "train",
+      "source_label_window": [
+        1536,
+        1792,
+        256,
+        256
+      ],
+      "source_label_ref": {
+        "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03\\southeast_sulawesi-g03-2021\\raw-esri_io.tif",
+        "sha256": "a10218846e13f5a03c97987e24a6e5979c59591f28ccf47508ba51e7c63528f3"
+      },
+      "source_lineage_ref": {
+        "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03/annual-window-report.json",
+        "sha256": "fbfdc687ca83bdb5d760f28ef00b3db908bc2032c2d2e635db31648d46297495"
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            389920.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9401760.0
+          ],
+          [
+            389920.0,
+            9401760.0
+          ]
+        ]
+      },
+      "target_bbox_wgs84": [
+        122.00638886030562,
+        -5.411526614603877,
+        122.02953065777287,
+        -5.388333622590284
+      ],
+      "native_bare_pixels_from_pinned179": 1112,
+      "previous179_historical_clear": true,
+      "current192_asset_historical_clear": false,
+      "blocked_reason": "LIVE_SUPPORT_WINDOW_OVERLAP",
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false
+    },
+    {
+      "old179_proposal_index": 1,
+      "target_id": "local-rank1-2025",
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "fixed_split": "train",
+      "source_label_window": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "source_label_ref": {
+        "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02\\southeast_sulawesi-g02-2025\\raw-esri_io.tif",
+        "sha256": "220bdd675c59a16adb44223d6beac671e272e368c131835d1356cb9b39151187"
+      },
+      "source_lineage_ref": {
+        "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02/annual-window-report.json",
+        "sha256": "d37e47b651d933a8dac339c23adf93e444db9fd51ba9469be7ca0d7d8920206b"
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            504470.0,
+            9557440.0
+          ],
+          [
+            507030.0,
+            9557440.0
+          ],
+          [
+            507030.0,
+            9554880.0
+          ],
+          [
+            504470.0,
+            9554880.0
+          ]
+        ]
+      },
+      "target_bbox_wgs84": [
+        123.04026838633663,
+        -4.027072749241323,
+        123.06333214777132,
+        -4.003911310394138
+      ],
+      "native_bare_pixels_from_pinned179": 840,
+      "previous179_historical_clear": true,
+      "current192_asset_historical_clear": true,
+      "blocked_reason": null,
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false
+    },
+    {
+      "old179_proposal_index": 2,
+      "target_id": "local-rank2-2024",
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "fixed_split": "train",
+      "source_label_window": [
+        1536,
+        1792,
+        256,
+        256
+      ],
+      "source_label_ref": {
+        "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03\\southeast_sulawesi-g03-2024\\raw-esri_io.tif",
+        "sha256": "ddfad3eb54ca9d9e9b0e7aa0c4783bb7d93e02fc972f2a28f7002305c076bd81"
+      },
+      "source_lineage_ref": {
+        "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03/annual-window-report.json",
+        "sha256": "c09932edc8bb727bd48738a070a63eae76eef0895058acefc6cf03c1dc133228"
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            389920.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9401760.0
+          ],
+          [
+            389920.0,
+            9401760.0
+          ]
+        ]
+      },
+      "target_bbox_wgs84": [
+        122.00638886030562,
+        -5.411526614603877,
+        122.02953065777287,
+        -5.388333622590284
+      ],
+      "native_bare_pixels_from_pinned179": 814,
+      "previous179_historical_clear": true,
+      "current192_asset_historical_clear": false,
+      "blocked_reason": "LIVE_SUPPORT_WINDOW_OVERLAP",
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false
+    },
+    {
+      "old179_proposal_index": 10,
+      "target_id": "local-rank10-2025",
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "fixed_split": "train",
+      "source_label_window": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "source_label_ref": {
+        "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02\\southeast_sulawesi-g02-2025\\raw-esri_io.tif",
+        "sha256": "220bdd675c59a16adb44223d6beac671e272e368c131835d1356cb9b39151187"
+      },
+      "source_lineage_ref": {
+        "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02/annual-window-report.json",
+        "sha256": "d37e47b651d933a8dac339c23adf93e444db9fd51ba9469be7ca0d7d8920206b"
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            501910.0,
+            9557440.0
+          ],
+          [
+            504470.0,
+            9557440.0
+          ],
+          [
+            504470.0,
+            9554880.0
+          ],
+          [
+            501910.0,
+            9554880.0
+          ]
+        ]
+      },
+      "target_bbox_wgs84": [
+        123.01720640338668,
+        -4.027073565042538,
+        123.04026952137654,
+        -4.003912772398084
+      ],
+      "native_bare_pixels_from_pinned179": 321,
+      "previous179_historical_clear": true,
+      "current192_asset_historical_clear": true,
+      "blocked_reason": null,
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false
+    },
+    {
+      "old179_proposal_index": 12,
+      "target_id": "local-rank12-2024",
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "fixed_split": "train",
+      "source_label_window": [
+        0,
+        768,
+        256,
+        256
+      ],
+      "source_label_ref": {
+        "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03\\southeast_sulawesi-g03-2024\\raw-esri_io.tif",
+        "sha256": "ddfad3eb54ca9d9e9b0e7aa0c4783bb7d93e02fc972f2a28f7002305c076bd81"
+      },
+      "source_lineage_ref": {
+        "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-southeast_sulawesi-2024-g03/annual-window-report.json",
+        "sha256": "c09932edc8bb727bd48738a070a63eae76eef0895058acefc6cf03c1dc133228"
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            374560.0,
+            9414560.0
+          ],
+          [
+            377120.0,
+            9414560.0
+          ],
+          [
+            377120.0,
+            9412000.0
+          ],
+          [
+            374560.0,
+            9412000.0
+          ]
+        ]
+      },
+      "target_bbox_wgs84": [
+        121.86793339962946,
+        -5.318669916238935,
+        121.89107519918669,
+        -5.295473352711408
+      ],
+      "native_bare_pixels_from_pinned179": 266,
+      "previous179_historical_clear": true,
+      "current192_asset_historical_clear": true,
+      "blocked_reason": null,
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false
+    },
+    {
+      "old179_proposal_index": 18,
+      "target_id": "local-rank18-2020",
+      "province": "southeast_sulawesi",
+      "year": 2020,
+      "fixed_split": "train",
+      "source_label_window": [
+        1536,
+        1792,
+        256,
+        256
+      ],
+      "source_label_ref": {
+        "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2020-g03\\southeast_sulawesi-g03-2020\\raw-esri_io.tif",
+        "sha256": "5ac35d14ce689fec53305eb2d6bf2fff9a342eed251feb1fbd91e5e10ffe3410"
+      },
+      "source_lineage_ref": {
+        "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-southeast_sulawesi-2020-g03/annual-window-report.json",
+        "sha256": "ecfea1a112d4367992b89c5b98038307c47adb2151da24cd71d1930e601ae537"
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            389920.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9401760.0
+          ],
+          [
+            389920.0,
+            9401760.0
+          ]
+        ]
+      },
+      "target_bbox_wgs84": [
+        122.00638886030562,
+        -5.411526614603877,
+        122.02953065777287,
+        -5.388333622590284
+      ],
+      "native_bare_pixels_from_pinned179": 1171,
+      "previous179_historical_clear": true,
+      "current192_asset_historical_clear": false,
+      "blocked_reason": "LIVE_SUPPORT_WINDOW_OVERLAP",
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false
+    },
+    {
+      "old179_proposal_index": 23,
+      "target_id": "local-rank23-2023",
+      "province": "southeast_sulawesi",
+      "year": 2023,
+      "fixed_split": "train",
+      "source_label_window": [
+        1536,
+        1792,
+        256,
+        256
+      ],
+      "source_label_ref": {
+        "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03\\southeast_sulawesi-g03-2023\\raw-esri_io.tif",
+        "sha256": "b48754d22e881d0e18d7743961b2ab15084ff3f37015dc2148824898ff20eb0f"
+      },
+      "source_lineage_ref": {
+        "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03/annual-window-report.json",
+        "sha256": "94e5c918a0267fa520308304fa3a8bfa1821b77549774ebc0da4fc0435005cc5"
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            389920.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9404320.0
+          ],
+          [
+            392480.0,
+            9401760.0
+          ],
+          [
+            389920.0,
+            9401760.0
+          ]
+        ]
+      },
+      "target_bbox_wgs84": [
+        122.00638886030562,
+        -5.411526614603877,
+        122.02953065777287,
+        -5.388333622590284
+      ],
+      "native_bare_pixels_from_pinned179": 816,
+      "previous179_historical_clear": true,
+      "current192_asset_historical_clear": false,
+      "blocked_reason": "LIVE_SUPPORT_WINDOW_OVERLAP",
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false
+    },
+    {
+      "old179_proposal_index": 48,
+      "target_id": "local-rank48-2023",
+      "province": "southeast_sulawesi",
+      "year": 2023,
+      "fixed_split": "train",
+      "source_label_window": [
+        0,
+        768,
+        256,
+        256
+      ],
+      "source_label_ref": {
+        "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03\\southeast_sulawesi-g03-2023\\raw-esri_io.tif",
+        "sha256": "b48754d22e881d0e18d7743961b2ab15084ff3f37015dc2148824898ff20eb0f"
+      },
+      "source_lineage_ref": {
+        "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03/annual-window-report.json",
+        "sha256": "94e5c918a0267fa520308304fa3a8bfa1821b77549774ebc0da4fc0435005cc5"
+      },
+      "target_footprint_native": {
+        "crs": "EPSG:32751",
+        "corners": [
+          [
+            374560.0,
+            9414560.0
+          ],
+          [
+            377120.0,
+            9414560.0
+          ],
+          [
+            377120.0,
+            9412000.0
+          ],
+          [
+            374560.0,
+            9412000.0
+          ]
+        ]
+      },
+      "target_bbox_wgs84": [
+        121.86793339962946,
+        -5.318669916238935,
+        121.89107519918669,
+        -5.295473352711408
+      ],
+      "native_bare_pixels_from_pinned179": 281,
+      "previous179_historical_clear": true,
+      "current192_asset_historical_clear": true,
+      "blocked_reason": null,
+      "execution_supported": false,
+      "actual_quality_eligible": false,
+      "scientifically_verified_bare": false
+    }
+  ],
+  "claim_objects_are_independent": true,
+  "mutual_target_overlap_rechecked": false,
+  "native_label_pixels_recounted": false,
+  "full167_inventory_scans": 0,
+  "product179_review_invocations": 0,
+  "native165_audits": 0,
+  "source_or_ledger_or_pointer_writes": 0,
+  "network_requests": 0,
+  "collection_executed": false,
+  "training_executed": false,
+  "execution_supported": false,
+  "actual_quality_eligible": false,
+  "scientifically_verified_bare": false,
+  "ready_for_training": false,
+  "limitations": [
+    "Only numeric claims against pinned192 cachedassets; not a fresh live inventory audit.",
+    "Bare pixel numbers come from pinned prior179native report; no new label or imagery quality test.",
+    "Each target independently compared withhistoricalassets; newlyclear targets may overlap eachother.",
+    "Root must rerun fresh175/176/170 currentpins/support/scene/B02/quality/budget checks before execution.",
+    "Currentcollectorholdandstablemetadata do not provideOS atomic snapshots."
+  ],
+  "initial194_result_sha256": "775bebfb34532236bab8b3058824757e068fb71bc2df85f1dd56e31f5c6ecda8",
+  "initial194_result_bytes": 15577,
+  "mutual_followup": {
+    "status": "SIX_PAIRS_NUMERICALLY_RECHECKED_UNAPPROVED",
+    "at_kst": "2026-10-18T13:11:17.230379+09:00",
+    "seconds": 0.734,
+    "initial_historical_claim_phase_mutual_check_was_false": true,
+    "mutual_target_overlap_rechecked": true,
+    "pair_count": 6,
+    "overlap_pair_count": 1,
+    "nonoverlap_pair_count": 5,
+    "pairs": [
+      {
+        "target_ids": [
+          "local-rank1-2025",
+          "local-rank10-2025"
+        ],
+        "old179_indices": [
+          1,
+          10
+        ],
+        "overlap": false,
+        "reason": null,
+        "independent_claim_object": true,
+        "execution_authorized": false
+      },
+      {
+        "target_ids": [
+          "local-rank1-2025",
+          "local-rank12-2024"
+        ],
+        "old179_indices": [
+          1,
+          12
+        ],
+        "overlap": false,
+        "reason": null,
+        "independent_claim_object": true,
+        "execution_authorized": false
+      },
+      {
+        "target_ids": [
+          "local-rank1-2025",
+          "local-rank48-2023"
+        ],
+        "old179_indices": [
+          1,
+          48
+        ],
+        "overlap": false,
+        "reason": null,
+        "independent_claim_object": true,
+        "execution_authorized": false
+      },
+      {
+        "target_ids": [
+          "local-rank10-2025",
+          "local-rank12-2024"
+        ],
+        "old179_indices": [
+          10,
+          12
+        ],
+        "overlap": false,
+        "reason": null,
+        "independent_claim_object": true,
+        "execution_authorized": false
+      },
+      {
+        "target_ids": [
+          "local-rank10-2025",
+          "local-rank48-2023"
+        ],
+        "old179_indices": [
+          10,
+          48
+        ],
+        "overlap": false,
+        "reason": null,
+        "independent_claim_object": true,
+        "execution_authorized": false
+      },
+      {
+        "target_ids": [
+          "local-rank12-2024",
+          "local-rank48-2023"
+        ],
+        "old179_indices": [
+          12,
+          48
+        ],
+        "overlap": true,
+        "reason": "LIVE_SUPPORT_WINDOW_OVERLAP",
+        "independent_claim_object": true,
+        "execution_authorized": false
+      }
+    ],
+    "priority_rank12_2024_and_rank1_2025": {
+      "target_ids": [
+        "local-rank1-2025",
+        "local-rank12-2024"
+      ],
+      "old179_indices": [
+        1,
+        12
+      ],
+      "overlap": false,
+      "reason": null,
+      "independent_claim_object": true,
+      "execution_authorized": false
+    },
+    "root_priority_note": "At request time Southeast2024 shortage17,2021 shortage1,2025/2023 shortage0. Rank12-2024/266 is primary class+coverage candidate; rank1-2025/840 class-only candidate.",
+    "full167_inventory_scans": 0,
+    "product179_review_invocations": 0,
+    "native165_audits": 0,
+    "input_pins_verified_before_and_after": true,
+    "execution_authorized": false,
+    "scientific_spatial_independence_proven": false,
+    "source_or_ledger_or_pointer_writes": 0,
+    "limitations": "Pairs only use fixed179 target geometry and conservative guard math. Fresh175/176/170 current support, scene/B02, quality and budget validation remains required."
+  }
+}

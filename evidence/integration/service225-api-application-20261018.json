@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-18T06:17:19.272787+00:00",
+  "old_pid": 20676,
+  "new_pid": 40492,
+  "before_dashboard": {
+    "datasets": 6,
+    "models": 1,
+    "jobs": 0,
+    "analyses": 3,
+    "recent_jobs": [],
+    "limitations": [
+      "실데이터 독립평가 전 운영 승인 불가",
+      "PostGIS·MLflow·RDTR·드리프트는 후속 통합 대상"
+    ]
+  },
+  "after_dashboard": {
+    "datasets": 6,
+    "models": 1,
+    "jobs": 0,
+    "analyses": 3,
+    "recent_jobs": [],
+    "limitations": [
+      "실데이터 독립평가 전 운영 승인 불가",
+      "PostGIS·MLflow·RDTR·드리프트는 후속 통합 대상"
+    ]
+  },
+  "health": {
+    "status": "ok",
+    "mode": "local-development",
+    "storage": "sqlite",
+    "dependencies": {
+      "torch": true,
+      "rasterio": true,
+      "pyproj": true,
+      "ee": false,
+      "mlflow": false
+    },
+    "authentication": "localhost-only; configure GEOAI_API_TOKEN for shared access"
+  },
+  "cors": "http://127.0.0.1:5174",
+  "budget_http200": {
+    "schema_version": 1,
+    "available": true,
+    "status": "OBSERVED_LEDGER_SNAPSHOT",
+    "scope": "ADDITIONAL_BUDGET_INCLUDES_PENDING_NOT_PROCESS_LIVENESS",
+    "additional_maximum_bytes": 4294967296,
+    "charged_including_pending_bytes": 2398022341,
+    "remaining_bytes": 1896944955,
+    "settled_batch_bytes": 2258031733,
+    "metadata_body_bytes": 3675728,
+    "pending_bytes": 136314880,
+    "pending_count": 2,
+    "old_pending_bytes": 136314880,
+    "old_pending_count": 2,
+    "ledger_updated_at": "2026-10-18T06:14:06.328621+00:00",
+    "rate_limit_active": false,
+    "source_manifest_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "ledger_sha256": "61161c35eabb593afb5f096c256791871d297b723f82ffc2ac2449b3bd8266e7",
+    "observed_at": "2026-10-18T06:17:19.108653+00:00",
+    "process_verification": "UNKNOWN",
+    "execution_approved": false
+  },
+  "budget_seconds": 0.37867259999984526,
+  "operating_pins_preserved": {
+    "first-group-training-esri-v1/annual-window-report.json": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "first-group-training-budget/global-ledger.json": "61161c35eabb593afb5f096c256791871d297b723f82ffc2ac2449b3bd8266e7",
+    "first-group-training-priority/latest-candidate.json": "ac6827a1841fd657c430c2a4953aae6089dc4322041dfad87b20fbd1e751c12a",
+    "first-group-training-priority/latest-bare-review.json": "11740b732b9c7ee58999a5d71d960a5ec67a9f7b48752ceb5e173f43f056d50c"
+  },
+  "only_development_api_restarted": true,
+  "frontend_unchanged": true,
+  "ledger_lock_pointer_mutation": false
+}

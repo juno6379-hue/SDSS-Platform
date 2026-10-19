@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "status": "PREPARED_AWAITING_ROOT_REVIEW_AND_EXPLICIT_GO",
+  "actual_cli_started": false,
+  "qa_started": false,
+  "execution_authorized": false,
+  "run_id": "guarded290-20261018",
+  "code_pins_verified_and_equal_to273": 16,
+  "source_actual_pin": {
+    "path": "data/first-group-training-esri-v1/annual-window-report.json",
+    "sha256": "9d491e6ede51cf29407add25b83919cc5d4150576a694c5019814b973d20c2b7",
+    "bytes": 68220381,
+    "registered_rows_reported": 1747,
+    "verification": "PREPARATION_DIRECT_BOUNDED_HASH_AND_STAT_MATCH_ROOT_POST285_PIN",
+    "default64_excess_bytes": 1111517,
+    "history_count": null,
+    "candidate_count": null
+  },
+  "ledger_preparation_pin": {
+    "path": "data/first-group-training-budget/global-ledger.json",
+    "bytes": 67545,
+    "sha256": "4a4f4a47b522b9497b944ac00b29d2368a977c1a4eb6dfe972a34959fcc68722",
+    "is_qa_input": false
+  },
+  "policy_pin": {
+    "path": "data/first-group/experiment-esri-v003-2020-2025.json",
+    "sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+    "verification": "PREPARATION_DIRECT_HASH_MATCH_RECHECK_INSIDE_164_BEFORE_OUTPUT",
+    "bytes": 1306
+  },
+  "native_audit": {
+    "path": "evidence/integration/deficit285-native-root-20261018.json",
+    "bytes": 35844,
+    "sha256": "194affdac6f8838875251bdb8c6cb2807cc3492015b3b655ba71ae040ba8c455",
+    "root_reported_status": "COMPLETED_BOUNDED_NATIVE_AND_TRACE_CHECKED",
+    "preparation_sha_directly_verified": true
+  },
+  "os_preparation_observation": {
+    "matching_python_qa_or_collector_processes": 0,
+    "execution_lock_exists": false,
+    "observed_by": "GET_CIMINSTANCE_EXCLUDING_QUERY_PROCESS_PYTHON_SCRIPT_FILTER",
+    "process_state_must_be_rechecked_at_root_go": true
+  },
+  "new_paths_absent": true,
+  "syntax_compile_without_execution": "PASS",
+  "cli_main_call_sites": 1,
+  "protected1348_expected": {
+    "data/first-group-training-priority/latest-candidate.json": "1aee2e01583a024c508d6fdac0d3c4fac2260bbd449ea12269d5e033c1dcc7b4",
+    "data/first-group-training-priority/candidate-receipt275-20261018.json": "1aee2e01583a024c508d6fdac0d3c4fac2260bbd449ea12269d5e033c1dcc7b4"
+  },
+  "candidate_count": null,
+  "files": {
+    "evidence/integration/priority290-preparation-20261018.json": {
+      "bytes": 5995,
+      "sha256": "e9260f8ee5c81a63a9a8221e24b439f5e7c0b2b5e5955129be6b0cf169ace4ef"
+    },
+    "evidence/integration/priority290-runner-20261018.py": {
+      "bytes": 8887,
+      "sha256": "68b271471887eca7259dd72196a1515ecef57a50239f25ba917ea194c3877c3e"
+    },
+    "evidence/integration/priority290-runner-vs273-20261018.diff": {
+      "bytes": 4530,
+      "sha256": "b4b964ae1057a4f3ee37d67ceb2e56a77553e369433793b70cff30ebc97ea89b"
+    },
+    "docs/implementation/290_post285_candidate_qa_preparation.md": {
+      "bytes": 7655,
+      "sha256": "fb5726916211a77edb54e5ac447e24b583d2ac0f22d8be9953835c3c9052bd0b"
+    }
+  },
+  "preserved273": {
+    "evidence/integration/priority273-preparation-20261018.json": {
+      "bytes": 4812,
+      "sha256": "a87623fd2346e5fea4d89b03662ec0e83606ab4da58d6360d08cf442d33043c5"
+    },
+    "evidence/integration/priority273-runner-20261018.py": {
+      "bytes": 8833,
+      "sha256": "fe3d74262d8d6a9eb9f8b291dd39de640b5152bdf64602fee4195eb8d7485cc1"
+    },
+    "evidence/integration/priority273-completion-freeze-20261018.json": {
+      "bytes": 7280,
+      "sha256": "0f51baecfc5ee39975adb44fb6b16f9fa69d7091b2ecf50a0ef98be7650a1510"
+    }
+  },
+  "product_changes": 0,
+  "source_ledger_model_pointer_writes": 0,
+  "http": 0,
+  "native_qa": 0,
+  "new_tests": 0,
+  "automatic_retry_allowed": false,
+  "cap_increase_allowed": false
+}

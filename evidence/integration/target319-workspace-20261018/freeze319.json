@@ -1,0 +1,95 @@
+{
+  "status": "ISOLATED_PURE_CONTRACT_TESTED_SYNTHETIC_MAIN_NOT_APPLIED",
+  "at": "2026-10-18T14:24:18.413264+00:00",
+  "files": [
+    {
+      "path": "evidence/integration/target319-workspace-20261018/backend/app/data/targeted_source_profile.py",
+      "bytes": 11581,
+      "sha256": "8e347589d802d22f89354b176d81da9ebdde27607986355ce3212ac4981493d9"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/tests/test_targeted_source_profile319.py",
+      "bytes": 13824,
+      "sha256": "d9fc227c405c6e86f781218bf979507f58987f252ba281cd4a5a6140fe7a5486"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/tests/fixtures/target319/legacy_inventory232.py.fixture",
+      "bytes": 1900,
+      "sha256": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/baseline-manifest319.json",
+      "bytes": 1394,
+      "sha256": "26224798ee24c24b617699c4948fcb21ddb8f73d879e4f46854377c10730fc21"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/patch319.diff",
+      "bytes": 28351,
+      "sha256": "0394a6222eb41206416f44982ffe96a06f174f03db31d960f38d2d92a80cd445"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/patch319-manifest.json",
+      "bytes": 2286,
+      "sha256": "613a8861c36f7d47bffd7fc1521ea8231d0e1912977b6203ca6cb1f3a1e8a56b"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/focused-final319.log",
+      "bytes": 3812,
+      "sha256": "3d82985244180c50f0295f472c309da199a3e9ce5b8fd1b5c7427fe6da328994"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/portable-final319.log",
+      "bytes": 3812,
+      "sha256": "1540f3c925b116c1233078c29c2c939a17b03a8ede9d1d5b93b22a49fb9b4fa5"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/test-results319.json",
+      "bytes": 654,
+      "sha256": "0f996b87c083fcc3bdf259c110dc9cfe7a6789a6ef0e602178f948daf951146e"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/initial-failure319.json",
+      "bytes": 641,
+      "sha256": "85bad0d0f748a6323dc98e5841972711d7dcb49224815cc4baba07c0c5d30e72"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/tests-before-first-fixture-fix319.py",
+      "bytes": 12663,
+      "sha256": "1493242e49f84e427a280338e9ccdea31f8b679d7a9ab532f7145efd9275be12"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/before-authority-init-focused-final319.log",
+      "bytes": 3812,
+      "sha256": "5759800949f4e207a364e232c1f853a274bd8c03c4ab4dec86f9e4431e150262"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/before-authority-init-portable-final319.log",
+      "bytes": 3812,
+      "sha256": "a0d7db2bac1ce622781d6ef1b9af5a33ec6dc44ce75d4d9961d78bec20367df4"
+    },
+    {
+      "path": "evidence/integration/target319-workspace-20261018/before-authority-init-test-results319.json",
+      "bytes": 922,
+      "sha256": "207efec7e0f99b3a0ea9b0d31688021d70f0bd07750cb5716a11e512676ed89a"
+    },
+    {
+      "path": "docs/implementation/319_pure_target_source_profile_isolated.md",
+      "bytes": 8594,
+      "sha256": "8a7faf431c4a5b9eb262a993fd920cf162b99d790eb6526f610aec1a55050097"
+    }
+  ],
+  "main_baseline7_exact": true,
+  "main_new_helper_absent": true,
+  "parent318_doc_preserved": true,
+  "tests_isolated": 27,
+  "tests_isolated_seconds": 0.232,
+  "tests_portable_no_baseline": 27,
+  "tests_portable_seconds": 0.146,
+  "initial_fixture_failure_preserved": true,
+  "actual_file_io_or_scope_in_product": false,
+  "operating_reads_copies_http_native": 0,
+  "shared_product_edits": 0,
+  "target256_source64_blocker_resolved": false,
+  "execution_authorized": false,
+  "training_approved": false
+}

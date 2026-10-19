@@ -1,0 +1,539 @@
+--- /dev/null
++++ backend/app/data/targeted_atomic_json.py
+@@ -0,0 +1,258 @@
++"""Opt-in atomic replacement of existing local JSON; no coordinator or ledger API."""
++from dataclasses import dataclass
++import hashlib
++import json
++import math
++import os
++from pathlib import Path
++import re
++import stat
++from types import MappingProxyType
++from ..ml import manifest_resource_profile as profile
++from ..ml.split_json_io import _depth, _tree, _pairs, _constant, _local
++
++ROLE_LIMITS = MappingProxyType({'config': 2097152, 'ledger': 8388608, 'source': 134217728})
++JSON_ROLES = MappingProxyType({'config': 'local_config', 'ledger': 'status_report', 'source': 'source'})
++EXPECTED_MARKER = MappingProxyType({'name': 'bounded128m-3000-v1',
++    'sha256': 'db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4'})
++
++
++class AtomicJSONWriteError(ValueError):
++    """Fixed code; committed/temporary_preserved distinguish apply from verification."""
++
++
++def _need(value, code):
++    if not value:
++        raise AtomicJSONWriteError(code)
++
++
++def _identity(path, *, file=False):
++    info = path.lstat()
++    _need(not path.is_symlink() and not getattr(info, 'st_file_attributes', 0) & 0x400,
++          'ATOMIC_JSON_PATH_INVALID')
++    if file:
++        _need(stat.S_ISREG(info.st_mode) and info.st_nlink == 1, 'ATOMIC_JSON_PATH_INVALID')
++        return (info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
++    _need(stat.S_ISDIR(info.st_mode), 'ATOMIC_JSON_PARENT_INVALID')
++    return (info.st_dev, info.st_ino)
++
++
++def _parents(root, target):
++    _need(root.is_absolute() and target.is_absolute() and root.resolve() == root and
++          target.resolve() == target and target.is_relative_to(root) and target.parent != target,
++          'ATOMIC_JSON_PATH_INVALID')
++    chain = list(reversed(target.parent.parents)) + [target.parent]
++    return [(p, _identity(p)) for p in chain]
++
++
++def _check_parents(parents):
++    _need(all(_identity(p) == identity for p, identity in parents), 'ATOMIC_JSON_PARENT_CHANGED')
++
++
++@profile.resource_boundary
++def _validate_payload(payload, role):
++    _need(type(payload) is bytes, 'ATOMIC_JSON_BYTES_REQUIRED')
++    _need(len(payload) <= ROLE_LIMITS[role], 'ATOMIC_JSON_PAYLOAD_LIMIT')
++    text = payload.decode('utf-8')
++    _need(not text.startswith('\ufeff') and '\x00' not in text, 'ATOMIC_JSON_ENCODING_INVALID')
++    _depth(text, 32)
++    document = json.loads(text, object_pairs_hook=_pairs, parse_constant=_constant)
++    _tree(document, 32, ROLE_LIMITS[role])
++    _need(type(document) is dict, 'ATOMIC_JSON_OBJECT_REQUIRED')
++    if role == 'source':
++        _need(type(document.get('scenes')) is list, 'ATOMIC_JSON_SOURCE_INVALID')
++        profile.structure(document, 'source')
++
++
++def _write_once(stream, block):
++    return stream.write(block)
++
++
++def _sync(stream):
++    stream.flush()
++    os.fsync(stream.fileno())
++
++
++def _measure(stream, before, amount):
++    after = os.fstat(stream.fileno())
++    if (after.st_dev, after.st_ino) != (before.st_dev, before.st_ino):
++        raise OSError('unknown')
++    delta = after.st_size - before.st_size
++    if not stat.S_ISREG(after.st_mode) or not 0 <= delta <= amount:
++        raise OSError('unknown')
++    return delta
++
++
++def _block(stream, data, state):
++    profile.require_io_room(len(data))
++    before = os.fstat(stream.fileno())
++    _need(stat.S_ISREG(before.st_mode) and before.st_size == state['written'] and
++          stream.tell() == before.st_size, 'ATOMIC_JSON_APPEND_STATE_INVALID')
++    try:
++        result = _write_once(stream, data)
++    except BaseException:
++        try:
++            actual = _measure(stream, before, len(data))
++        except Exception:
++            state['measurement_known'] = False
++            profile.charge(len(data), 'write')
++            raise AtomicJSONWriteError('ATOMIC_JSON_WRITE_MEASUREMENT_UNKNOWN') from None
++        profile.charge(actual, 'write')
++        state['written'] += actual
++        raise
++    try:
++        actual = _measure(stream, before, len(data))
++    except Exception:
++        state['measurement_known'] = False
++        profile.charge(len(data), 'write')
++        raise AtomicJSONWriteError('ATOMIC_JSON_WRITE_MEASUREMENT_UNKNOWN') from None
++    if type(result) is not int or result != actual:
++        state['measurement_known'] = False
++        profile.charge(len(data), 'write')
++        raise AtomicJSONWriteError('ATOMIC_JSON_WRITE_MEASUREMENT_UNKNOWN')
++    profile.charge(actual, 'write')
++    state['written'] += actual
++    _need(actual == len(data), 'ATOMIC_JSON_INCOMPLETE_WRITE')
++
++
++def _cleanup(temp, owner, parents, payload, state, role):
++    """Delete only our unchanged, known prefix; lack of budget preserves temp."""
++    try:
++        _check_parents(parents)
++        stamp = _identity(temp, file=True)
++        if not state['measurement_known'] or stamp[:2] != owner or stamp[2] != state['written']:
++            return False
++        digest = profile.bounded_json_digest(temp, JSON_ROLES[role], maximum_bytes=ROLE_LIMITS[role])
++        if digest != hashlib.sha256(payload[:state['written']]).hexdigest() or _identity(temp, file=True) != stamp:
++            return False
++        temp.unlink()
++        return True
++    except Exception:
++        return False
++
++
++@dataclass(frozen=True)
++class AtomicJSONReplacement:
++    sha256: str
++    bytes_written: int
++    json_io_bytes: int
++    maximum_json_io_bytes: int
++    committed: bool = True
++    coordinator_connected: bool = False
++
++
++def replace_json(root, target, payload, *, role, expected_sha256, manifest_profile):
++    """Replace an existing file only. Immutable bytes preserve validation/digest identity.
++
++    Cooperative writers share one deterministic exclusive temp. This is not an OS
++    compare-and-swap against arbitrary external writers in the final check gap.
++    """
++    _need(type(role) is str and role in ROLE_LIMITS, 'ATOMIC_JSON_ROLE_INVALID')
++    _need(type(expected_sha256) is str and re.fullmatch('[a-f0-9]{64}', expected_sha256) is not None,
++          'ATOMIC_JSON_EXPECTED_PIN_REQUIRED')
++    _need(type(manifest_profile) is dict and set(manifest_profile) == {'name', 'sha256'} and
++          all(type(manifest_profile[k]) is str and manifest_profile[k] == EXPECTED_MARKER[k] for k in EXPECTED_MARKER),
++          'ATOMIC_JSON_PROFILE_INVALID')
++    _need(dict(profile.MARKER) == dict(EXPECTED_MARKER), 'ATOMIC_JSON_PROFILE_INVALID')
++    root, target = _local(root), _local(target)
++    temp = target.with_name('.' + target.name + '.target329.tmp')
++    committed = False
++    commit_attempted = False
++    owner = None
++    state = {'written': 0, 'measurement_known': True}
++    parents = []
++    with profile.scope(EXPECTED_MARKER['name']) as budget, profile.io_transaction():
++        _validate_payload(payload, role)  # Oversize/invalid JSON before any file open.
++        parents = _parents(root, target)
++        old = _identity(target, file=True)
++        _need(profile.bounded_json_digest(target, JSON_ROLES[role], maximum_bytes=ROLE_LIMITS[role]) == expected_sha256,
++              'ATOMIC_JSON_PIN_MISMATCH')
++        _need(_identity(target, file=True) == old, 'ATOMIC_JSON_INPUT_CHANGED')
++        try:
++            with temp.open('xb', buffering=0) as stream:
++                own = os.fstat(stream.fileno()); owner = (own.st_dev, own.st_ino)
++                for start in range(0, len(payload), 65536):
++                    _block(stream, payload[start:start+65536], state)
++                _sync(stream)
++            _check_parents(parents)
++            temp_stamp = _identity(temp, file=True)
++            new_sha = hashlib.sha256(payload).hexdigest()
++            _need(temp_stamp[:2] == owner and temp_stamp[2] == len(payload), 'ATOMIC_JSON_TEMP_CHANGED')
++            _need(profile.bounded_json_digest(temp, JSON_ROLES[role], maximum_bytes=ROLE_LIMITS[role]) == new_sha,
++                  'ATOMIC_JSON_TEMP_CHANGED')
++            _need(_identity(target, file=True) == old and
++                  profile.bounded_json_digest(target, JSON_ROLES[role], maximum_bytes=ROLE_LIMITS[role]) == expected_sha256 and
++                  _identity(target, file=True) == old, 'ATOMIC_JSON_INPUT_CHANGED')
++            _check_parents(parents)
++            _need(_identity(temp, file=True) == temp_stamp, 'ATOMIC_JSON_TEMP_CHANGED')
++            profile.require_io_room(len(payload))  # Same locked budget reserves post-read room.
++            commit_attempted = True
++            os.replace(temp, target)
++            committed = True
++            _need(profile.bounded_json_digest(target, JSON_ROLES[role], maximum_bytes=ROLE_LIMITS[role]) == new_sha,
++                  'ATOMIC_JSON_POSTCOMMIT_CHANGED')
++            return AtomicJSONReplacement(new_sha, state['written'], budget.bytes, budget.maximum)
++        except BaseException as exc:
++            cleaned = bool(owner is not None and not committed and _cleanup(temp, owner, parents, payload, state, role))
++            # Error remains the same class (including cancellation/resource errors).
++            exc.atomic_json_committed = committed
++            exc.atomic_json_commit_outcome = 'APPLIED' if committed else ('UNKNOWN' if commit_attempted else 'NOT_ATTEMPTED')
++            exc.atomic_json_temporary_preserved = owner is not None and not committed and not cleaned
++            exc.atomic_json_measurement_known = state['measurement_known']
++            raise
++
++
++def _detach(value, cap):
++    """Only exact JSON builtins; never call caller-defined copy/iterator hooks."""
++    nodes = [0]
++    active = set()
++    def visit(item, depth):
++        nodes[0] += 1
++        _need(nodes[0] <= 4000000, 'ATOMIC_JSON_NODE_LIMIT')
++        kind = type(item)
++        if kind in (dict, list):
++            _need(depth <= 32 and id(item) not in active, 'ATOMIC_JSON_TREE_INVALID')
++            _need(len(item) <= 4000000 - nodes[0], 'ATOMIC_JSON_NODE_LIMIT')
++            active.add(id(item))
++            try:
++                if kind is dict:
++                    snapshot = tuple(item.items())
++                    _need(all(type(k) is str for k, _ in snapshot), 'ATOMIC_JSON_KEY_INVALID')
++                    result = {visit(k, depth + 1): visit(v, depth + 1) for k, v in snapshot}
++                    current = tuple(item.items())
++                    _need(len(current) == len(snapshot) and all(k == oldk and v is oldv
++                          for (k, v), (oldk, oldv) in zip(current, snapshot)), 'ATOMIC_JSON_VALUE_CHANGED')
++                else:
++                    snapshot = tuple(item)
++                    result = [visit(v, depth + 1) for v in snapshot]
++                    _need(len(item) == len(snapshot) and all(a is b for a, b in zip(item, snapshot)),
++                          'ATOMIC_JSON_VALUE_CHANGED')
++            finally:
++                active.remove(id(item))
++            return result
++        if kind is str:
++            _need(len(item) <= cap, 'ATOMIC_JSON_PAYLOAD_LIMIT')
++            item.encode('utf-8')
++        elif kind is float:
++            _need(math.isfinite(item), 'ATOMIC_JSON_NUMBER_INVALID')
++        else:
++            _need(kind in (int, bool, type(None)), 'ATOMIC_JSON_VALUE_INVALID')
++        return item
++    return visit(value, 1)
++
++
++def replace_json_value(root, target, value, *, role, expected_sha256, manifest_profile):
++    """Detach then serialize in the same scope. Memory encoding is not disk I/O."""
++    _need(type(role) is str and role in ROLE_LIMITS, 'ATOMIC_JSON_ROLE_INVALID')
++    with profile.scope(EXPECTED_MARKER['name']), profile.io_transaction():
++        detached = _detach(value, ROLE_LIMITS[role])
++        parts = []
++        total = 0
++        for part in json.JSONEncoder(ensure_ascii=False, allow_nan=False, sort_keys=True,
++                                     separators=(',', ':')).iterencode(detached):
++            block = part.encode('utf-8')
++            total += len(block)
++            _need(total <= ROLE_LIMITS[role], 'ATOMIC_JSON_PAYLOAD_LIMIT')
++            parts.append(block)
++        return replace_json(root, target, b''.join(parts), role=role,
++                            expected_sha256=expected_sha256, manifest_profile=manifest_profile)
+--- /dev/null
++++ tests/test_target329_atomic_json.py
+@@ -0,0 +1,275 @@
++import concurrent.futures
++import hashlib
++import json
++import os
++from pathlib import Path
++import tempfile
++import unittest
++from unittest.mock import patch
++
++from backend.app.data import targeted_atomic_json as writer
++from backend.app.ml import manifest_resource_profile as profile
++
++
++class AtomicJSONTests(unittest.TestCase):
++    def setUp(self):
++        self.temp = tempfile.TemporaryDirectory()
++        self.addCleanup(self.temp.cleanup)
++        self.root = Path(self.temp.name).resolve()
++        self.path = self.root / 'state.json'
++        self.old = b'{"old":1}'
++        self.new = b'{"new":2}'
++        self.path.write_bytes(self.old)
++        self.pin = hashlib.sha256(self.old).hexdigest()
++
++    def run_write(self, payload=None, **options):
++        args = dict(role='config', expected_sha256=self.pin, manifest_profile=dict(profile.MARKER))
++        args.update(options)
++        return writer.replace_json(self.root, self.path, self.new if payload is None else payload, **args)
++
++    def scratch(self):
++        return self.path.with_name('.state.json.target329.tmp')
++
++    def test_success_exact_actual_io_and_same_budget(self):
++        with profile.scope(profile.NAME) as budget:
++            profile.charge(7)
++            result = self.run_write()
++            self.assertEqual(budget.reads, 7 + 2*len(self.old) + 2*len(self.new))
++            self.assertEqual(budget.writes, len(self.new))
++            self.assertEqual(result.json_io_bytes, budget.bytes)
++        self.assertEqual(self.path.read_bytes(), self.new)
++        self.assertTrue(result.committed)
++        self.assertFalse(result.coordinator_connected)
++        self.assertFalse(self.scratch().exists())
++
++    def test_roles(self):
++        for role in ('config', 'ledger', 'source'):
++            self.path.write_bytes(self.old)
++            result = self.run_write(b'{"scenes":[],"historical_noneligible_patches":[]}', role=role)
++            self.assertTrue(result.committed)
++
++    def test_bad_contract_before_open(self):
++        for options in ({'role':True}, {'role':'status_report'}, {'expected_sha256':None},
++                        {'manifest_profile':True}, {'manifest_profile':dict(profile.MARKER, cap=1)}):
++            with self.subTest(options=options), patch.object(Path, 'open', side_effect=AssertionError('open')):
++                with self.assertRaises(writer.AtomicJSONWriteError):
++                    self.run_write(**options)
++
++    def test_oversize_before_open(self):
++        with patch.object(Path, 'open', side_effect=AssertionError('open')):
++            with self.assertRaisesRegex(ValueError, 'PAYLOAD_LIMIT'):
++                self.run_write(b' ' * (2097152 + 1))
++
++    def test_invalid_json_before_open(self):
++        for payload in (b'{"a":1,"a":2}', b'{"a":NaN}', b'[]', b'\xef\xbb\xbf{}', b'{"x":"\x00"}', b'\xff'):
++            with self.subTest(payload=payload), patch.object(Path, 'open', side_effect=AssertionError('open')):
++                with self.assertRaises(ValueError):
++                    self.run_write(payload)
++
++    def test_source_rows_includes_history(self):
++        payload = json.dumps({'scenes':[{}]*2999, 'historical_noneligible_patches':[{},{}]}).encode()
++        with self.assertRaisesRegex(profile.ProfileResourceError, 'ROW_LIMIT'):
++            self.run_write(payload, role='source')
++        self.assertEqual(self.path.read_bytes(), self.old)
++
++    def test_depth(self):
++        with self.assertRaises(profile.ProfileResourceError):
++            self.run_write(b'{"x":' * 33 + b'0' + b'}' * 33)
++
++    def test_wrong_pin_old_unchanged(self):
++        with self.assertRaisesRegex(ValueError, 'PIN_MISMATCH'):
++            self.run_write(expected_sha256='0'*64)
++        self.assertEqual(self.path.read_bytes(), self.old)
++        self.assertFalse(self.scratch().exists())
++
++    def test_ledger_old_cap_before_read_open(self):
++        with self.path.open('wb') as stream: stream.truncate(8388609)
++        with patch.object(Path, 'open', side_effect=AssertionError('open')):
++            with self.assertRaisesRegex(profile.ProfileResourceError, 'FILE_LIMIT'):
++                self.run_write(role='ledger')
++
++    def test_source_exact_3000_rows(self):
++        self.run_write(json.dumps({'scenes':[{}]*2999,
++            'historical_noneligible_patches':[{}]}).encode(), role='source')
++        self.assertEqual(len(json.loads(self.path.read_bytes())['scenes']), 2999)
++
++    def test_wrong_return_count_is_unknown_conservative(self):
++        def wrong(stream, block):
++            stream.write(block)
++            return True
++        with profile.scope(profile.NAME) as budget, patch.object(writer, '_write_once', wrong):
++            with self.assertRaisesRegex(ValueError, 'MEASUREMENT_UNKNOWN') as caught:
++                self.run_write()
++            self.assertEqual(budget.writes, len(self.new))
++        self.assertFalse(caught.exception.atomic_json_measurement_known)
++        self.assertEqual(self.path.read_bytes(), self.old)
++
++    def test_source_missing_scenes(self):
++        with self.assertRaisesRegex(ValueError, 'SOURCE_INVALID'):
++            self.run_write(b'{}', role='source')
++
++    def test_absent_destination_not_created(self):
++        self.path.unlink()
++        with self.assertRaises(FileNotFoundError): self.run_write()
++        self.assertFalse(self.path.exists())
++        self.assertFalse(self.scratch().exists())
++
++    def test_parent_replacement_detected(self):
++        folder = self.root / 'nested'; folder.mkdir()
++        self.path = folder / 'state.json'; self.path.write_bytes(self.old)
++        original = writer._check_parents
++        count = [0]
++        def swap(parents):
++            count[0] += 1
++            if count[0] == 1:
++                folder.rename(self.root / 'previous')
++                folder.mkdir(); self.path.write_bytes(b'{"foreign":1}')
++            original(parents)
++        with patch.object(writer, '_check_parents', swap):
++            with self.assertRaisesRegex(ValueError, 'PARENT_CHANGED'): self.run_write()
++        self.assertEqual(self.path.read_bytes(), b'{"foreign":1}')
++        self.assertEqual((self.root/'previous'/'state.json').read_bytes(), self.old)
++
++    def test_existing_temp_never_deleted(self):
++        self.scratch().write_bytes(b'foreign')
++        with self.assertRaises(FileExistsError):
++            self.run_write()
++        self.assertEqual(self.scratch().read_bytes(), b'foreign')
++        self.assertEqual(self.path.read_bytes(), self.old)
++
++    def test_short_write_charged_and_cleaned(self):
++        def partial(stream, block):
++            return stream.write(block[:3])
++        with profile.scope(profile.NAME) as budget, patch.object(writer, '_write_once', partial):
++            with self.assertRaisesRegex(ValueError, 'INCOMPLETE_WRITE') as caught:
++                self.run_write()
++            self.assertEqual(budget.writes, 3)
++            self.assertTrue(caught.exception.atomic_json_measurement_known)
++        self.assertFalse(self.scratch().exists())
++        self.assertEqual(self.path.read_bytes(), self.old)
++
++    def test_partial_then_exception_charged(self):
++        def partial(stream, block):
++            stream.write(block[:4])
++            raise OSError('test')
++        with profile.scope(profile.NAME) as budget, patch.object(writer, '_write_once', partial):
++            with self.assertRaises(OSError): self.run_write()
++            self.assertEqual(budget.writes, 4)
++        self.assertFalse(self.scratch().exists())
++
++    def test_unknown_conservative_charge_preserve(self):
++        with profile.scope(profile.NAME) as budget, patch.object(writer, '_measure', side_effect=OSError()):
++            with self.assertRaisesRegex(ValueError, 'MEASUREMENT_UNKNOWN') as caught:
++                self.run_write()
++            self.assertEqual(budget.writes, len(self.new))
++            self.assertFalse(caught.exception.atomic_json_measurement_known)
++            self.assertTrue(caught.exception.atomic_json_temporary_preserved)
++        self.assertTrue(self.scratch().exists())
++        self.assertEqual(self.path.read_bytes(), self.old)
++
++    def test_cancel_preserved_and_cleanup(self):
++        def cancel(stream, block):
++            stream.write(block[:2])
++            raise KeyboardInterrupt()
++        with patch.object(writer, '_write_once', cancel):
++            with self.assertRaises(KeyboardInterrupt) as caught: self.run_write()
++        self.assertEqual(caught.exception.atomic_json_commit_outcome, 'NOT_ATTEMPTED')
++        self.assertFalse(self.scratch().exists())
++
++    def test_fsync_failure_old_unchanged(self):
++        with patch.object(writer, '_sync', side_effect=OSError()):
++            with self.assertRaises(OSError): self.run_write()
++        self.assertEqual(self.path.read_bytes(), self.old)
++        self.assertFalse(self.scratch().exists())
++
++    def test_external_destination_change_never_overwritten(self):
++        sync = writer._sync
++        def changed(stream):
++            sync(stream)
++            self.path.write_bytes(b'{"external":3}')
++        with patch.object(writer, '_sync', changed):
++            with self.assertRaisesRegex(ValueError, 'INPUT_CHANGED'): self.run_write()
++        self.assertEqual(self.path.read_bytes(), b'{"external":3}')
++
++    def test_foreign_temp_after_close_preserved(self):
++        original = writer._check_parents
++        count = [0]
++        def swapped(parents):
++            original(parents)
++            count[0] += 1
++            if count[0] == 1:
++                alternate = self.root / 'alternate'
++                alternate.write_bytes(self.new)
++                os.replace(alternate, self.scratch())
++        with patch.object(writer, '_check_parents', swapped):
++            with self.assertRaisesRegex(ValueError, 'TEMP_CHANGED'): self.run_write()
++        self.assertEqual(self.scratch().read_bytes(), self.new)
++        self.assertEqual(self.path.read_bytes(), self.old)
++
++    def test_budget_exhaustion_before_temp_open(self):
++        with profile.scope(profile.NAME) as budget:
++            budget._maximum = len(self.old)-1
++            with self.assertRaises(profile.ProfileResourceError): self.run_write()
++        self.assertEqual(self.path.read_bytes(), self.old)
++        self.assertFalse(self.scratch().exists())
++
++    def test_budget_postread_room_before_replace(self):
++        with profile.scope(profile.NAME) as budget:
++            budget._maximum = 2*len(self.old) + 2*len(self.new)-1
++            with self.assertRaises(profile.ProfileResourceError) as caught: self.run_write()
++        self.assertEqual(caught.exception.atomic_json_commit_outcome, 'NOT_ATTEMPTED')
++        self.assertEqual(self.path.read_bytes(), self.old)
++
++    def test_postcommit_failure_reports_applied(self):
++        digest = profile.bounded_json_digest
++        count = [0]
++        def fail_final(*args, **kwargs):
++            count[0] += 1
++            if count[0] == 4: raise OSError('post-read')
++            return digest(*args, **kwargs)
++        with patch.object(profile, 'bounded_json_digest', fail_final):
++            with self.assertRaises(OSError) as caught: self.run_write()
++        self.assertTrue(caught.exception.atomic_json_committed)
++        self.assertEqual(caught.exception.atomic_json_commit_outcome, 'APPLIED')
++        self.assertEqual(self.path.read_bytes(), self.new)
++
++    def test_replace_exception_outcome_unknown(self):
++        replace = os.replace
++        def replace_then_raise(*args):
++            replace(*args)
++            raise OSError('after-commit')
++        with patch.object(writer.os, 'replace', replace_then_raise):
++            with self.assertRaises(OSError) as caught: self.run_write()
++        self.assertEqual(caught.exception.atomic_json_commit_outcome, 'UNKNOWN')
++        self.assertEqual(self.path.read_bytes(), self.new)
++
++    def test_cooperative_competition_one_winner(self):
++        def attempt(_):
++            try: return self.run_write().committed
++            except (ValueError, OSError): return False
++        with concurrent.futures.ThreadPoolExecutor(2) as executor:
++            results = list(executor.map(attempt, range(2)))
++        self.assertEqual(sum(results), 1)
++        self.assertEqual(self.path.read_bytes(), self.new)
++
++    def test_hardlink_rejected(self):
++        os.link(self.path, self.root/'link')
++        with self.assertRaisesRegex(ValueError, 'PATH_INVALID'): self.run_write()
++
++    def test_value_detached_canonical(self):
++        result = writer.replace_json_value(self.root, self.path, {'b':[2], 'a':'가'},
++            role='config', expected_sha256=self.pin, manifest_profile=dict(profile.MARKER))
++        self.assertEqual(self.path.read_bytes(), '{"a":"가","b":[2]}'.encode())
++        self.assertTrue(result.committed)
++
++    def test_value_reject_custom_cycle_nonfinite_surrogate(self):
++        cycle = {}; cycle['self'] = cycle
++        class Fake(dict): pass
++        for value in (Fake(), cycle, {'a':float('nan')}, {'a':'\ud800'}, {True:1}):
++            with self.subTest(value=type(value)), patch.object(Path, 'open', side_effect=AssertionError('open')):
++                with self.assertRaises(ValueError):
++                    writer.replace_json_value(self.root, self.path, value, role='config',
++                        expected_sha256=self.pin, manifest_profile=dict(profile.MARKER))
++
++
++if __name__ == '__main__': unittest.main()

@@ -1,0 +1,39 @@
+{
+  "status": "FROZEN_PREPARATION_ONLY_ROOT_FINAL_GO_REQUIRED",
+  "execution_authorized": false,
+  "files": [
+    {
+      "path": "evidence/integration/bare320-before234-publish-root-20261018.py",
+      "bytes": 3481,
+      "sha256": "e71591db99af682e2f5ac6d4ce5ed4c8fb93bc70561f1ac7bd7f25ffb99927f0"
+    },
+    {
+      "path": "evidence/integration/bare320-publish-root-20261018.py",
+      "bytes": 8548,
+      "sha256": "b88345551a7e3dc817418965752c4ba62c0e5612f287d97981dffacf4968f957"
+    },
+    {
+      "path": "evidence/integration/bare320-vs234-root-20261018.diff",
+      "bytes": 12319,
+      "sha256": "02809af76fe7fc0b0919cc624d55403faa1d061d9e07bed34a988264aa6efaba"
+    },
+    {
+      "path": "docs/implementation/320_current_bare_review_publication_preparation.md",
+      "bytes": 5905,
+      "sha256": "ca39e23a04a266f840b7a20a78557612ab5d1fb3242ac89400714d08b743f344"
+    }
+  ],
+  "compile_passed": true,
+  "operational_source_ledger_pointer_report_result_reads": 0,
+  "publication_executed": false,
+  "http": 0,
+  "qa_native_executed": false,
+  "product_changes": 0,
+  "result_expected_sha256": "aaa97f9b64fca9e6a11d8fe9f07a4e649c224ed69fbae599605d28f49490887e",
+  "report_expected_sha256": "16b923a42c28d89e26b2003c24ab4ca46e9bb9b28e95f2d8a1e8d3f25b1f9093",
+  "bounded_same_context": true,
+  "unbounded_read_bytes_calls": 0,
+  "automatic_retry_allowed": false,
+  "automatic_rollback_allowed": false,
+  "future_publication_sha256": null
+}

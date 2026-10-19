@@ -1,0 +1,120 @@
+{
+  "status": "VERIFIED_REAL_ONE_BOUNDED_NATIVE_AND_TRACE_COMPLETED",
+  "at": "2026-10-18T13:07:24.230895+00:00",
+  "exec_session": 19511,
+  "exit_code": 0,
+  "audit_pid_observed": false,
+  "helper_invocations": 1,
+  "native_validation_complete": true,
+  "native_patches": 16,
+  "native_eligible": 15,
+  "helper_seconds": 4.474027999996906,
+  "total_native_wall_or_peak_rss_captured": false,
+  "source_sha256": "9e63564c87647a144665bbb6bbe49b4a95d09bbd2c3bc0f3725861c54d5e7109",
+  "source_bytes": 68887373,
+  "ledger_sha256": "574d382dd9da51ae56dc8fb135532f8f2e5c542b2c4cafdf73a6ee8dd9c6045f",
+  "source_registered_rows": 1763,
+  "source_eligible": 1391,
+  "cell_gap": 1,
+  "source_history_and_pending_preserved": true,
+  "file_sha_rechecks": 52,
+  "new_rasters": 48,
+  "trace_files": 21,
+  "trace_duplicate_patch_images": 16,
+  "bare_stages": {
+    "raw_aligned_bare_pixels": 0,
+    "after_source_quality_bare_pixels": 0,
+    "final_supported_bare_pixels": 0,
+    "eligible_bare_pixels": 0,
+    "eligible_bare_contribution_patches": 0
+  },
+  "charged_bytes": 22680361,
+  "remaining_budget": 1822603826,
+  "http": 0,
+  "operating_writes": 0,
+  "additional_qa_native": 0,
+  "training_approved": false,
+  "source_ledger_drift": {
+    "aggregate": false,
+    "ledger": false
+  },
+  "pins": [
+    {
+      "path": "evidence/integration/deficit297-native-go-root-20261018.json",
+      "bytes": 743,
+      "sha256": "31f7f777da5b2e7d4f07352287157d6f42f1670b35eb5cef715aef9c4540324d"
+    },
+    {
+      "path": "evidence/integration/deficit297-native-runner-root-20261018.py",
+      "bytes": 15973,
+      "sha256": "a8a9ed9fcdbb0fafb60c3c71f028f188b6f855ccc5f7c6768a328c327da608ca"
+    },
+    {
+      "path": "evidence/integration/deficit299-native-preparation-freeze-20261018.json",
+      "bytes": 1874,
+      "sha256": "0922c1704c9f595f8f9df9e537e1a4e006e29af5b5342a1515a6cc074c9af098"
+    },
+    {
+      "path": "evidence/integration/deficit299-before285-native-runner-20261018.py",
+      "bytes": 14334,
+      "sha256": "479dff23370e2db3fd58918e456fc9b263ad614afd3b69baa1f252a66011a4cb"
+    },
+    {
+      "path": "evidence/integration/deficit299-native-runner-vs285-20261018.diff",
+      "bytes": 7881,
+      "sha256": "e23333cc268f8a9cf41a60fab2cfd0440e5ae2188880d4a268213a96ee2bd9fe"
+    },
+    {
+      "path": "evidence/integration/deficit299-preparation-doc-before-native-20261018.md",
+      "bytes": 7989,
+      "sha256": "abf457fc0179cbae9617f3d2e4ab943481e01b175f2c2a17c5b885b8cb4fd9df"
+    },
+    {
+      "path": "evidence/integration/deficit299-termination-observation-20261018.json",
+      "bytes": 2445,
+      "sha256": "e85800aa9288736e8e09a6a01e3cf82341b8055267715a361d02dba059459854"
+    },
+    {
+      "path": "evidence/integration/deficit297-launch-root-20261018.json",
+      "bytes": 7235,
+      "sha256": "a09147508317777a540201d0c990a926f33d5f57a5989ce520c18d0a0197f91d"
+    },
+    {
+      "path": "evidence/integration/deficit297-terminal-root-20261018.json",
+      "bytes": 7365,
+      "sha256": "7bf70672ff58f17b5b917ec26ae2b4e13f48ff79c7bda71dc17c9ffad453fb1b"
+    },
+    {
+      "path": "evidence/integration/deficit297-live-root-20261018-stdout.log",
+      "bytes": 1943,
+      "sha256": "a68649196835a32637a41babeec27f909500a91f3ad819e984d3b3c4145d2157"
+    },
+    {
+      "path": "evidence/integration/deficit297-live-root-20261018-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/integration/deficit297-native-root-20261018.json",
+      "bytes": 34626,
+      "sha256": "e8c51e5c0afd86d4f0d89a58121103bad76ff3a5e4504079c41217ac08731096"
+    },
+    {
+      "path": "evidence/integration/deficit297-native-root-20261018.log",
+      "bytes": 26,
+      "sha256": "8e5ed701297271b2a3a1ddd311775ed5313e1edd18a21545e1041ddd15b0d565"
+    },
+    {
+      "path": "evidence/integration/deficit297-native-root-20261018-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/implementation/299_post297_bounded_native_preparation.md",
+      "bytes": 13971,
+      "sha256": "cf809a3a2f5bbdf6dec2fbcd2061d4e6cf598d4b0c8327eec8e19fad48121e88"
+    }
+  ],
+  "understanding_handoff": "ROOT_SEPARATE_FOLLOWUP_REQUIRED",
+  "api_ui_checked_by_this_unit": false
+}

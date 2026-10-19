@@ -1,0 +1,137 @@
+{
+  "status": "PINNED_CANDIDATE_QA_COMPLETED",
+  "at": "2026-10-18T12:40:14.288270+00:00",
+  "source_snapshot_at": "2026-10-18T12:16:41.654063+00:00",
+  "scope": "PINNED_COHORT_EXCLUDES_LATER_COLLECTION",
+  "source_sha256": "9d491e6ede51cf29407add25b83919cc5d4150576a694c5019814b973d20c2b7",
+  "source_row_count": 1747,
+  "source_eligible": {
+    "train": 834,
+    "val": 292,
+    "test": 250
+  },
+  "source_blockers": [
+    {
+      "code": "SHARED_SOURCE_CROSSES_FIXED_SPLIT",
+      "detail": "같은 원본/중첩 공간이 서로 다른 고정 split에 걸칩니다.",
+      "scene": "west_java"
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "candidate_row_count": 1731,
+  "candidate_eligible": {
+    "train": 834,
+    "val": 276,
+    "test": 250
+  },
+  "excluded_source_rows": 16,
+  "remaining_source_identity_conflicts": 0,
+  "candidate_blockers": [
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "bare_pixels": {
+    "train": 2562,
+    "val": 2998,
+    "test": 1025
+  },
+  "bare_contributing_patches": {
+    "train": 1,
+    "val": 2,
+    "test": 0
+  },
+  "observed_gate_ready_for_training": false,
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "training_executed": false,
+  "network_requests": 0,
+  "registry_called": false,
+  "source_qa_seconds": 326.406,
+  "candidate_qa_seconds": 330.187,
+  "verified_file_records": 5426,
+  "file_sha_mismatches": 0,
+  "connectivity_capture_status": "NOT_CAPTURED_BUDGET",
+  "outputs": {
+    "E:\\GeoAI–MLOps–SDSS\\data\\priority164-guarded290-20261018\\source.json": {
+      "sha256": "9d491e6ede51cf29407add25b83919cc5d4150576a694c5019814b973d20c2b7",
+      "bytes": 68220381
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\priority164-guarded290-20261018\\source-readiness.json": {
+      "sha256": "e5fd07a253dd4e985657ab8f78204bd0943ebdef0093bf8825b59128c1669790",
+      "bytes": 1408139
+    },
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\priority164-guarded290-20261018\\split-plan.json": {
+      "sha256": "8f3fa8b9bc06719a03e533066b191d4c3b4f4ffcb0c8cd1526093c2e41cdf783",
+      "bytes": 26298
+    },
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\priority164-guarded290-20261018\\candidate-package\\plan.json": {
+      "sha256": "8f3fa8b9bc06719a03e533066b191d4c3b4f4ffcb0c8cd1526093c2e41cdf783",
+      "bytes": 26298
+    },
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\priority164-guarded290-20261018\\candidate-package\\candidate.json": {
+      "sha256": "72c7385708ac824b0ff67da9bb72391f33d7f6f63fa942da4d01c46c50dc6961",
+      "bytes": 67599006
+    },
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\priority164-guarded290-20261018\\candidate-package\\receipt.json": {
+      "sha256": "27ba7396c1d453e7534ba9ebb9106ad13b784e4632cd1927ebccd6bd57350987",
+      "bytes": 4101
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\priority164-guarded290-20261018\\stage\\candidate.json": {
+      "sha256": "72c7385708ac824b0ff67da9bb72391f33d7f6f63fa942da4d01c46c50dc6961",
+      "bytes": 67599006
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\priority164-guarded290-20261018\\stage\\staging-receipt.json": {
+      "sha256": "8875c4377ec306d045d47ae2853c890df3f7016be5fab0eeeb9eedc477a6296c",
+      "bytes": 3836
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group\\experiment-esri-v003-2020-2025.json": {
+      "sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+      "bytes": 1306
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\priority164-guarded290-20261018\\qa\\readiness.json": {
+      "sha256": "8e6b0cdcaebddd350faaff1a3565d0ff43226de462d14ab64ffa4d8dc866e127",
+      "bytes": 1395669
+    },
+    "E:\\GeoAI–MLOps–SDSS\\data\\priority164-guarded290-20261018\\qa\\qa-receipt.json": {
+      "sha256": "25a74d0034451e2968d54005c7b5e3059f1f8c5e6d9956d60e406b67623f8e05",
+      "bytes": 3069
+    }
+  },
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "manifest_resource_usage_before_summary_write": {
+    "json_io_bytes": 4566071245,
+    "read_bytes": 4359779983,
+    "write_bytes": 206291262,
+    "maximum_bytes": 17179869184
+  }
+}

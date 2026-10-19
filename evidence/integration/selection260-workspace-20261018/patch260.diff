@@ -1,0 +1,472 @@
+--- before/backend/app/data/deficit_candidate_guard.py
++++ after/backend/app/data/deficit_candidate_guard.py
+@@ -1,5 +1,6 @@
+ """추가1024 후보의 읽기 전용 검증과 별도 live guard. 집행 권한은 주지 않는다."""
+ import copy
++from datetime import datetime
+ from collections import Counter
+ import hashlib
+ import json
+@@ -21,6 +22,28 @@
+ BATCH_BYTES = 65 * 1024**2
+ LOCAL_SUPPORT_PROFILE = 'DEFICIT_LOCAL_SUPPORT_3G_V1'
+ LOCAL_SUPPORT_BYTES = 3 * 1024**3
++CANDIDATE_METADATA_POLICY = 'DEFICIT_AOI_BBOX_CONTAINS_V1'
++PC_SEARCH = 'https://planetarycomputer.microsoft.com/api/stac/v1/search'
++
++
++def _metadata_policy(request):
++    _need(type(request) is dict, 'CENTER_REQUEST_INVALID')
++    version = request.get('schema_version')
++    _need(type(version) is int and version in (1, 2), 'CENTER_REQUEST_INVALID')
++    expected = REQUEST_KEYS if version == 1 else REQUEST_KEYS | {'candidate_metadata_policy'}
++    _need(_keys(request, expected), 'CENTER_REQUEST_INVALID')
++    if version == 2:
++        _need(type(request['candidate_metadata_policy']) is str and
++              request['candidate_metadata_policy'] == CANDIDATE_METADATA_POLICY,
++              'CENTER_METADATA_POLICY_INVALID')
++        return CANDIDATE_METADATA_POLICY
++    return None
++
++
++def _metadata_bbox(value):
++    return (type(value) is list and len(value) == 4 and
++            all(type(n) in (int, float) and -180 <= n <= 180 and math.isfinite(n) for n in value) and
++            -180 <= value[0] < value[2] <= 180 and -90 <= value[1] < value[3] <= 90)
+ 
+ 
+ def _inventory_diagnostic(proof):
+@@ -86,6 +109,60 @@
+ 
+ class DeficitCandidateLiveGuard(TargetedLiveGuard):
+     """256 부모를 수정하지 않고 선택 B02의1024 규격만 별도로 확인한다."""
++    def filter_candidate_pool(self, response, aoi, year):
++        """명시 v2만: metadata 포함 후보를 안정정렬한다. 픽셀/원격 검증이 아니다."""
++        planned = self._binding()
++        binding = self.job.get('candidate_metadata_binding')
++        _need(self.job['config'].get('candidate_metadata_policy') == CANDIDATE_METADATA_POLICY and
++              _keys(binding, {'policy', 'request_sha256', 'source_sha256'}) and
++              binding['policy'] == CANDIDATE_METADATA_POLICY and
++              all(type(binding[k]) is str and re.fullmatch('[a-f0-9]{64}', binding[k])
++                  for k in ('request_sha256', 'source_sha256')),
++              'CENTER_METADATA_BINDING_INVALID')
++        _need(aoi == planned and type(year) in (int, str) and not isinstance(year, bool) and
++              str(year) == str(self.job['year']), 'CENTER_METADATA_AOI_CHANGED')
++        _need(type(response) is dict and response.get('source') == PC_SEARCH and
++              type(response.get('items')) is list and len(response['items']) <= 20,
++              'CENTER_METADATA_RESPONSE_INVALID')
++        rows = response['items']
++        _need(all(type(r) is dict and type(r.get('cloud_cover')) in (int, float) and
++                  0 <= r['cloud_cover'] <= 100 and math.isfinite(r['cloud_cover']) for r in rows),
++              'CENTER_METADATA_RESPONSE_INVALID')
++        ordered = sorted(enumerate(rows), key=lambda pair: pair[1]['cloud_cover'])
++        retained, audit = [], []
++        for rank, (index, item) in enumerate(ordered):
++            reason = 'METADATA_CONTAINS_AOI'
++            raw = item.get('stac_feature')
++            if (type(raw) is not dict or raw.get('type') != 'Feature' or
++                raw.get('collection') != 'sentinel-2-l2a' or item.get('collection') != 'sentinel-2-l2a' or
++                type(item.get('id')) is not str or not re.fullmatch('[A-Za-z0-9_.:-]{1,160}', item['id']) or
++                raw.get('id') != item['id'] or type(raw.get('properties')) is not dict or
++                raw['properties'].get('datetime') != item.get('datetime')):
++                reason = 'METADATA_IDENTITY_INVALID'
++            else:
++                value = item.get('datetime')
++                try:
++                    _need(type(value) is str and re.fullmatch(
++                        r'[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.[0-9]{1,6})?Z', value),
++                        'CENTER_METADATA_TIME_INVALID')
++                    observed = datetime.fromisoformat(value.replace('Z', '+00:00'))
++                    _need(observed.year == self.job['year'], 'CENTER_METADATA_TIME_INVALID')
++                except ValueError:
++                    reason = 'METADATA_TIME_INVALID'
++            if reason == 'METADATA_CONTAINS_AOI':
++                box = item.get('bbox'); raw_box = raw.get('bbox')
++                if not _metadata_bbox(box) or not _metadata_bbox(raw_box) or box != raw_box:
++                    reason = 'METADATA_BBOX_INVALID'
++                elif not (box[0] <= planned['bbox'][0] and box[1] <= planned['bbox'][1] and
++                          box[2] >= planned['bbox'][2] and box[3] >= planned['bbox'][3]):
++                    reason = 'METADATA_PARTIAL_OR_DISJOINT'
++            audit.append({'input_index': index, 'cloud_rank': rank, 'reason': reason})
++            if reason == 'METADATA_CONTAINS_AOI':
++                retained.append(item)
++        return retained, {'schema_version': 1, **copy.deepcopy(binding),
++                          'input_count': len(rows), 'retained_count': len(retained),
++                          'excluded_count': len(rows)-len(retained), 'items': audit}
++
+     def alignment_diagnostic(self):
+         """선택 B02 정렬 실패만 반환한다. URL/원 geometry를 보관하지 않는다."""
+         return copy.deepcopy(getattr(self, '_alignment_diagnostic', None))
+@@ -177,9 +254,8 @@
+               'ready_for_training': False, 'network_requests': 0, 'source_or_ledger_writes': 0}
+     try:
+         request = _copy_json(request, 'request')
+-        _need(_keys(request, REQUEST_KEYS) and type(request['schema_version']) is int and
+-              request['schema_version'] == 1 and
+-              request['kind'] == 'GUARDED_DEFICIT_1024_REQUEST', 'CENTER_REQUEST_INVALID')
++        policy = _metadata_policy(request)
++        _need(request['kind'] == 'GUARDED_DEFICIT_1024_REQUEST', 'CENTER_REQUEST_INVALID')
+         maximum = request['maximum_batches']
+         selected = request['selected']
+         _need(type(maximum) is int and 1 <= maximum <= 2 and type(selected) is list and
+@@ -324,10 +400,18 @@
+                       'year': y, 'window_size': 1024, 'target_bbox_wgs84': copy.deepcopy(given),
+                       'target_footprint_native': native}
+             targets.append(target)
++            if policy is not None:
++                _need(job_config.get('endpoint', 'planetary-computer') == 'planetary-computer' and
++                      job_config.get('collection') == 'sentinel-2-l2a', 'CENTER_METADATA_PROVIDER_INVALID')
++                job_config['candidate_metadata_policy'] = policy
+             jobs.append({'key': key, 'target_id': identifier, 'province': p, 'year': y,
+                          'split': FIXED_PROVINCE_SPLITS[p], 'spatial_window_id': identifier,
+                          'nominal_patches': 16, 'geometry': copy.deepcopy(features[p].__geo_interface__),
+                          'config': job_config, 'config_sha256': hashlib.sha256(json.dumps(job_config, sort_keys=True).encode()).hexdigest()})
++            if policy is not None:
++                jobs[-1]['candidate_metadata_binding'] = {
++                    'policy': policy, 'request_sha256': request_sha,
++                    'source_sha256': request['current_manifest_ref']['sha256']}
+         _need(len({job['key'] for job in jobs}) == len(jobs), 'CENTER_JOB_ID_COLLISION')
+         proof = inspect_targeted_inventory(root, {'manifest_ref': request['current_manifest_ref'],
+                     'ledger_ref': request['ledger_ref'], 'target': targets[0]['target_footprint_native']},
+--- before/scripts/collect_deficit_guarded.py
++++ after/scripts/collect_deficit_guarded.py
+@@ -16,6 +16,7 @@
+ from app.data.parallel import run_two_workers
+ from app.data.deficit_candidate_guard import (prepare_deficit_candidate_jobs,DeficitCandidateLiveGuard,
+     _inventory_diagnostic,LOCAL_SUPPORT_PROFILE,LOCAL_SUPPORT_BYTES)
++from app.data.deficit_candidate_guard import _metadata_policy,CANDIDATE_METADATA_POLICY
+ from app.data.targeted_live_guards import scene_registry,TargetedWindowClaims
+ from app.data.targeted_execution import _directory_identity
+ from app.data.targeted_bare_plan import _json,_need
+@@ -63,6 +64,7 @@
+     if not valid:
+         raise DeficitLocalProofFailure(failure,proof.get('inventory_diagnostic')
+                                       if proof.get('local_checks_passed') is False else None)
++    policy=_metadata_policy(request)
+     inventory=proof.get('inventory');physical=proof.get('physical_inventory')
+     _need(type(inventory) is dict and all(inventory.get(k) is True for k in
+           ('inventory_verified','pending_footprints_verified','source_pins_verified')) and
+@@ -106,6 +108,11 @@
+               'DEFICIT_JOB_PROOF_INVALID')
+         _need(job['key']==f"center1024-{p}-{year}-{expected_sha256[:12]}-{digest(identifier)[:8]}",
+               'DEFICIT_JOB_KEY_INVALID')
++        if policy is not None:
++            _need(config.get('candidate_metadata_policy')==CANDIDATE_METADATA_POLICY and
++                  job.get('candidate_metadata_binding')=={
++                      'policy':policy,'request_sha256':expected_sha256,'source_sha256':source_pin},
++                  'DEFICIT_METADATA_BINDING_INVALID')
+         _need(job['key'] not in state['batches'] and identifier not in target_map and
+               target.get('target_id')==identifier and target.get('province')==p and target.get('year')==year and
+               target.get('fixed_split')==job['split'] and target.get('window_size')==1024,
+@@ -190,8 +197,10 @@
+                 path=directory/'config.json';write_json(path,job['config'])
+                 write_json(directory/'selection-context.json',job['selection_context'])
+                 progress['collector_entered_batches'].append(job['key'])
++                metadata_options = ({'candidate_metadata_filter': guard.filter_candidate_pool}
++                                    if request['schema_version']==2 else {})
+                 report=collect_windows(load_config(path),directory,execute=True,
+-                         selection_context=job['selection_context'],collection_guard=guard)
++                         selection_context=job['selection_context'],collection_guard=guard,**metadata_options)
+                 result.update(report_path=str(directory/'annual-window-report.json'),circuit=report.get('batch_circuit_breaker'))
+                 if guard.b02_checked:
+                     import rasterio
+--- before/scripts/collect_samples.py
++++ after/scripts/collect_samples.py
+@@ -231,7 +231,8 @@
+     return report
+ 
+ 
+-def collect_windows(config, root, execute=False, selection_context=None, collection_guard=None):
++def collect_windows(config, root, execute=False, selection_context=None, collection_guard=None,
++                    candidate_metadata_filter=None):
+     """연차별 실제 RGB/SCL/라벨 창을 수집하되 연차 라벨 부재와 품질을 분리한다."""
+     if execute:
+         import numpy as np
+@@ -243,6 +244,10 @@
+     minimum_valid = service._number(config.get("min_valid_fraction", .8), "min_valid_fraction", 0, 1)
+     candidate_limit = service._integer(config.get("candidate_limit", 1), "candidate_limit", 1, 5)
+     search_limit = service._integer(config.get("search_limit", candidate_limit), "search_limit", candidate_limit, 50)
++    if candidate_metadata_filter is not None and not (
++            callable(candidate_metadata_filter) and side == 1024 and search_limit <= 20 and
++            config.get('candidate_metadata_policy') == 'DEFICIT_AOI_BBOX_CONTAINS_V1'):
++        raise ValueError('CENTER_METADATA_CALLBACK_INVALID')
+     reference_kind = config.get("annual_reference", "worldcover")
+     if reference_kind not in ("worldcover", "esri_io"):
+         raise ValueError("지원하는 연차 참조는 worldcover/esri_io 입니다")
+@@ -353,8 +358,19 @@
+                 directory = root / key
+                 directory.mkdir(exist_ok=True)
+                 selected_scl = None
++                metadata_pool = None
++                if candidate_metadata_filter is not None:
++                    metadata_pool, metadata_audit = candidate_metadata_filter(result, aoi, year)
++                    metadata_pool = metadata_pool[:candidate_limit]
++                    metadata_audit['selected_pool_count'] = len(metadata_pool)
++                    row['candidate_metadata_filter'] = metadata_audit
++                    if not metadata_pool:
++                        row.update(status='metadata_coverage_insufficient', quality_status='quality_unverified')
++                        record_event(root, {'event': 'all_candidates_metadata_excluded', 'key': key})
++                        continue
+                 if candidate_limit > 1:
+-                    pool = sorted(result["items"], key=lambda value: value.get("cloud_cover", 101))[:candidate_limit]
++                    pool = (metadata_pool if metadata_pool is not None else
++                            sorted(result["items"], key=lambda value: value.get("cloud_cover", 101))[:candidate_limit])
+                     item, selected_scl, candidates = select_quality_candidate(pool, fetch, aoi, side, directory, root,
+                         service._number(config.get("candidate_valid_fraction", .85), "candidate_valid_fraction", 0, 1))
+                     row["candidate_selection"] = candidates
+@@ -363,7 +379,7 @@
+                         record_event(root, {"event": "all_candidates_quality_insufficient", "key": key})
+                         continue
+                 else:
+-                    item = result["items"][0]
++                    item = metadata_pool[0] if metadata_pool is not None else result["items"][0]
+                 # Candidate SCL reads may already have occurred during selection.
+                 # Reject before selected-scene metadata and remaining pixel reads.
+                 if collection_guard is not None:
+--- /dev/null
++++ after/tests/test_deficit_metadata_selection260.py
+@@ -0,0 +1,244 @@
++"""260 격리 합성 metadata/Temp 소비계약. 원격·운영 자료 사용 없음."""
++import copy
++import hashlib
++import importlib.util
++import json
++from pathlib import Path
++import tempfile
++import unittest
++from unittest.mock import patch
++
++import test_deficit_candidate_guard as fixtures
++import test_collect_deficit_guarded as workers
++from app.data import deficit_candidate_guard as guard_module
++from app.data.targeted_live_guards import TargetedWindowClaims
++from app.data.targeted_scene_claims import SceneClaimRegistry
++import collect_samples as collector
++from scripts import collect_deficit_guarded as coordinator
++
++ROOT = Path(__file__).resolve().parents[1]
++
++
++class MetadataSelectionTests(unittest.TestCase):
++    def setUp(self):
++        self.fixture = fixtures.CandidateFixture(methodName='runTest')
++        self.fixture.setUp(); self.addCleanup(self.fixture.doCleanups)
++        f = self.fixture
++        f.config.update(collection='sentinel-2-l2a', endpoint='planetary-computer')
++        f.save('config', f.config); f.request['config_ref'] = f.ref('config')
++        f.proposal['config_sha256'] = f.sha('config'); f.update_proposal()
++        self.v1 = copy.deepcopy(f.request)
++        f.request.update(schema_version=2, candidate_metadata_policy=guard_module.CANDIDATE_METADATA_POLICY)
++        proof, _, _ = f.run_prepare(); self.assertTrue(proof['local_checks_passed'], proof)
++        self.job = proof['job_proposals'][0]; self.target = proof['targets'][0]
++        self.guard = guard_module.DeficitCandidateLiveGuard(self.job, self.target, SceneClaimRegistry({
++            'schema_version':1, 'kind':'DECLARED_SCENE_SPLIT_HISTORY',
++            'source_manifest_sha256':'a'*64, 'scenes':[]}), TargetedWindowClaims([]))
++        self.aoi = self.job['config']['aois'][0]
++
++    def item(self, index=0, box=None, cloud=0):
++        value = {'id':'S2A-scene-'+str(index), 'collection':'sentinel-2-l2a',
++                 'datetime':'2024-06-01T03:04:05.024Z', 'cloud_cover':cloud,
++                 'bbox':copy.deepcopy(self.aoi['bbox'] if box is None else box),
++                 'assets':{'SCL':{'href':'https://example.org/private-SCL.tif?token=SECRET'}}}
++        value['stac_feature'] = {'type':'Feature', 'collection':value['collection'],
++            'id':value['id'], 'bbox':copy.deepcopy(value['bbox']),
++            'properties':{'datetime':value['datetime']}}
++        return value
++
++    def response(self, items): return {'source':guard_module.PC_SEARCH, 'items':items}
++
++    def apply(self, items):
++        return self.guard.filter_candidate_pool(self.response(items), self.aoi, '2024')
++
++    def config(self, limit=5):
++        config = collector.load_config(ROOT/'configs/collection.example.json')
++        config.update(copy.deepcopy(self.job['config']))
++        config.update(candidate_limit=limit, periods={'2024':{'start_date':'2024-06-01','end_date':'2024-09-30'}})
++        return config
++
++    def test_v2_request_and_config_digests_bind_policy_source_and_request(self):
++        self.assertNotEqual(coordinator.digest(self.v1), coordinator.digest(self.fixture.request))
++        self.assertEqual(self.job['config']['candidate_metadata_policy'], guard_module.CANDIDATE_METADATA_POLICY)
++        self.assertEqual(self.job['config_sha256'], hashlib.sha256(json.dumps(self.job['config'],sort_keys=True).encode()).hexdigest())
++        self.assertEqual(self.job['candidate_metadata_binding'], {'policy':guard_module.CANDIDATE_METADATA_POLICY,
++            'request_sha256':coordinator.digest(self.fixture.request), 'source_sha256':self.fixture.sha('source')})
++
++    def test_v1_full_proof_equals_archived_baseline_and_has_no_policy_output(self):
++        spec = importlib.util.spec_from_file_location('app.data._guard260_baseline',
++            ROOT/'baseline/backend/app/data/deficit_candidate_guard.py')
++        baseline = importlib.util.module_from_spec(spec); spec.loader.exec_module(baseline)
++        f = self.fixture
++        results = []
++        for module in (baseline, guard_module):
++            with patch.object(module,'inspect_targeted_inventory',return_value=f.proof), \
++                 patch.object(module,'_physical_inventory',return_value=f.physical):
++                results.append(module.prepare_deficit_candidate_jobs(f.root, self.v1))
++        self.assertEqual(results[0], results[1])
++        self.assertNotIn('candidate_metadata_binding', results[1]['job_proposals'][0])
++
++    def test_policy_unknown_missing_boolean_and_extra_rejected_before_inventory(self):
++        f = self.fixture
++        variants = []
++        for value in (True, None, 'UNKNOWN', 2):
++            changed = copy.deepcopy(f.request); changed['candidate_metadata_policy'] = value; variants.append(changed)
++        changed = copy.deepcopy(f.request); del changed['candidate_metadata_policy']; variants.append(changed)
++        changed = copy.deepcopy(self.v1); changed['candidate_metadata_policy'] = guard_module.CANDIDATE_METADATA_POLICY; variants.append(changed)
++        for request in variants:
++            with patch.object(guard_module,'inspect_targeted_inventory') as inventory:
++                result = guard_module.prepare_deficit_candidate_jobs(f.root, request)
++            self.assertFalse(result['local_checks_passed']); inventory.assert_not_called()
++
++    def test_stable_cloud_order_full_twenty_and_no_input_mutation(self):
++        rows = [self.item(i, cloud=19-i) for i in range(20)]
++        before = copy.deepcopy(rows)
++        accepted, summary = self.apply(rows)
++        self.assertEqual([r['id'] for r in accepted], [r['id'] for r in rows[::-1]])
++        self.assertEqual(summary['input_count'],20); self.assertEqual(rows,before)
++        rows = [self.item(i) for i in range(3)]
++        self.assertEqual([r['id'] for r in self.apply(rows)[0]], [r['id'] for r in rows])
++        self.assertNotIn('https',json.dumps(summary)); self.assertNotIn('SECRET',json.dumps(summary))
++
++    def test_bbox_missing_invalid_partial_raw_mismatch_fail_closed(self):
++        a = self.aoi['bbox']; middle = (a[1]+a[3])/2
++        bad = [None, [], a+[0,1], [True,*a[1:]], [float('nan'),*a[1:]],
++               [float('inf'),*a[1:]], [10**1000,*a[1:]], [a[2],a[1],a[0],a[3]], [a[0],a[1],a[2],middle]]
++        for box in bad:
++            row = self.item(); row['bbox']=copy.deepcopy(box); row['stac_feature']['bbox']=copy.deepcopy(box)
++            accepted, summary = self.apply([row]); self.assertEqual(accepted,[])
++            self.assertEqual(summary['excluded_count'],1)
++        row=self.item(); row['stac_feature']['bbox'][0]-=.1
++        self.assertEqual(self.apply([row])[0],[])
++        self.assertEqual(len(self.apply([self.item()])[0]),1) # equality includes all four AOI boundaries
++
++    def test_identity_time_provider_response_and_binding_validation(self):
++        for field,value in [('id','different'),('datetime','2023-06-01T00:00:00Z'),('datetime','invalid'),
++                            ('collection','landsat-c2-l2')]:
++            row=self.item();row[field]=value
++            self.assertEqual(self.apply([row])[0],[])
++        row=self.item();del row['stac_feature']
++        self.assertEqual(self.apply([row])[0],[])
++        for response in ({'items':[self.item()]},self.response([self.item(i) for i in range(21)]),
++                         self.response([{**self.item(),'cloud_cover':True}])):
++            with self.assertRaises(ValueError):self.guard.filter_candidate_pool(response,self.aoi,2024)
++        with self.assertRaises(ValueError):self.guard.filter_candidate_pool(self.response([self.item()]),self.aoi,2023)
++        self.guard.job['candidate_metadata_binding']['source_sha256']='bad'
++        with self.assertRaises(ValueError):self.apply([self.item()])
++
++    def test_first_five_metadata_rejects_allow_six_to_ten_but_scl_pool_stays_five(self):
++        rows=[self.item(i) for i in range(20)]
++        for row in rows[:5]: row['bbox']=None;row['stac_feature']['bbox']=None
++        with tempfile.TemporaryDirectory() as directory, \
++             patch.object(collector.service,'search_stac',return_value=self.response(rows)) as search, \
++             patch.object(collector,'select_quality_candidate',return_value=(None,None,[])) as select, \
++             patch.object(collector.service,'read_cog_window',side_effect=AssertionError('HTTP forbidden')):
++            report=collector.collect_windows(self.config(),Path(directory),True,
++                collection_guard=self.guard,candidate_metadata_filter=self.guard.filter_candidate_pool)
++        self.assertEqual([r['id'] for r in select.call_args.args[0]],['S2A-scene-'+str(i) for i in range(5,10)])
++        self.assertEqual(search.call_count,1);self.assertEqual(search.call_args.args[0]['limit'],20)
++        self.assertEqual(report['scenes'][0]['candidate_metadata_filter']['selected_pool_count'],5)
++        self.assertEqual(report['scenes'][0]['status'],'quality_insufficient')
++
++    def test_real_quality_selector_reads_only_five_and_does_not_refill_after_failure(self):
++        rows=[self.item(i) for i in range(20)]
++        for row in rows[:5]:row['bbox']=None;row['stac_feature']['bbox']=None
++        error=collector.service.AssetTransferError('window_geometry_guard',97,True)
++        with tempfile.TemporaryDirectory() as directory, \
++             patch.object(collector.service,'search_stac',return_value=self.response(rows)) as search, \
++             patch.object(collector.service,'read_cog_window',side_effect=error) as pixels:
++            report=collector.collect_windows(self.config(),Path(directory),True,
++                collection_guard=self.guard,candidate_metadata_filter=self.guard.filter_candidate_pool)
++        self.assertEqual(search.call_count,1);self.assertEqual(pixels.call_count,5)
++        self.assertEqual(len(report['scenes'][0]['candidate_selection']),5)
++        self.assertEqual(report['scenes'][0]['status'],'quality_insufficient')
++
++    def test_default_256_dry_output_exactly_equals_archived_collector(self):
++        spec=importlib.util.spec_from_file_location('_collector260_baseline',ROOT/'baseline/scripts/collect_samples.py')
++        baseline=importlib.util.module_from_spec(spec);spec.loader.exec_module(baseline)
++        config=collector.load_config(ROOT/'configs/collection.example.json')
++        config.update(window_size=256)
++        outputs=[]
++        for module in (baseline,collector):
++            with tempfile.TemporaryDirectory() as directory,patch.object(collector.service,'search_stac') as search:
++                outputs.append(module.collect_windows(config,Path(directory),False))
++                search.assert_not_called()
++        self.assertEqual(outputs[0],outputs[1])
++
++    def test_explicit_callback_rejects_256_and_search_above_twenty_before_network(self):
++        for change in ({'window_size':256},{'search_limit':21}):
++            config=self.config();config.update(change)
++            with tempfile.TemporaryDirectory() as directory,patch.object(collector.service,'search_stac') as search:
++                with self.assertRaisesRegex(ValueError,'CENTER_METADATA_CALLBACK_INVALID'):
++                    collector.collect_windows(config,Path(directory),True,
++                        candidate_metadata_filter=self.guard.filter_candidate_pool)
++                search.assert_not_called()
++
++    def test_all_excluded_no_scl_or_scene_fallback_including_limit_one(self):
++        for limit in (1,5):
++            row=self.item();row['bbox']=None
++            with tempfile.TemporaryDirectory() as directory, \
++                 patch.object(collector.service,'search_stac',return_value=self.response([row])) as search, \
++                 patch.object(collector,'select_quality_candidate') as select, \
++                 patch.object(collector.service,'read_cog_window') as pixels, \
++                 patch.object(self.guard,'on_scene') as scene:
++                report=collector.collect_windows(self.config(limit),Path(directory),True,
++                    collection_guard=self.guard,candidate_metadata_filter=self.guard.filter_candidate_pool)
++            self.assertEqual(search.call_count,1);select.assert_not_called();pixels.assert_not_called();scene.assert_not_called()
++            self.assertEqual(report['scenes'][0]['status'],'metadata_coverage_insufficient')
++
++    def test_limit_one_filters_before_scene_and_never_falls_back_to_partial_first(self):
++        partial=self.item(0);partial['bbox']=None
++        good=self.item(1)
++        with tempfile.TemporaryDirectory() as directory, \
++             patch.object(collector.service,'search_stac',return_value=self.response([partial,good])), \
++             patch.object(self.guard,'on_scene',side_effect=ValueError('STOP_OFFLINE')) as scene, \
++             patch.object(collector.service,'read_cog_window') as pixels:
++            collector.collect_windows(self.config(1),Path(directory),True,
++                collection_guard=self.guard,candidate_metadata_filter=self.guard.filter_candidate_pool)
++        self.assertEqual(scene.call_args.args[0]['id'],good['id']);pixels.assert_not_called()
++
++    def test_metadata_pass_does_not_bypass_existing_support_window_guard(self):
++        self.assertEqual(len(self.apply([self.item()])[0]),1)
++        # Before scene selection the same existing SCL support veto still runs.
++        self.guard.windows.claim('old', self.target['target_footprint_native']['crs'],
++            guard_module._rectangle(self.target['target_footprint_native']).bounds)
++        left,bottom,right,top=guard_module._rectangle(self.target['target_footprint_native']).bounds
++        geometry={'crs':self.target['target_footprint_native']['crs'], 'requested_bbox_wgs84':self.aoi['bbox'],
++            'window_transform':[20,0,left,0,-20,top], 'window_width':512,'window_height':512}
++        with self.assertRaisesRegex(ValueError,'LIVE_SUPPORT_WINDOW_OVERLAP'):
++            self.guard.on_window('https://example.org/SCL.tif',geometry)
++
++    def test_v2_coordinator_passes_callback_and_preserves_temp_settlement(self):
++        fixture=workers.CollectDeficitGuardedTests(methodName='runTest');fixture.setUp();self.addCleanup(fixture.doCleanups)
++        fixture.request.update(schema_version=2,candidate_metadata_policy=guard_module.CANDIDATE_METADATA_POLICY)
++        def collect(config,directory,**kwargs):
++            self.assertIn('candidate_metadata_filter',kwargs)
++            self.assertEqual(kwargs['candidate_metadata_filter'].__self__,kwargs['collection_guard'])
++            return fixture.collect(config,directory,**kwargs)
++        result,_,_=fixture.execute(collect=collect)
++        self.assertEqual(result['batches'][0]['charged_bytes'],97)
++        state=json.loads(fixture.fixture.paths['ledger'].read_text())
++        for key,value in fixture.pending.items():self.assertEqual(state['batches'][key],value)
++        self.assertEqual(state['new_charged_bytes'],136314880+97)
++
++    def test_v1_coordinator_never_passes_optional_callback(self):
++        fixture=workers.CollectDeficitGuardedTests(methodName='runTest');fixture.setUp();self.addCleanup(fixture.doCleanups)
++        def collect(config,directory,**kwargs):
++            self.assertNotIn('candidate_metadata_filter',kwargs)
++            return fixture.collect(config,directory,**kwargs)
++        fixture.execute(collect=collect)
++
++    def test_v2_binding_tamper_fails_before_reservation_or_worker(self):
++        fixture=workers.CollectDeficitGuardedTests(methodName='runTest');fixture.setUp();self.addCleanup(fixture.doCleanups)
++        fixture.request.update(schema_version=2,candidate_metadata_policy=guard_module.CANDIDATE_METADATA_POLICY)
++        with fixture.proof_stack():proof=guard_module.prepare_deficit_candidate_jobs(fixture.root,fixture.request)
++        self.assertTrue(proof['local_checks_passed'])
++        proof['job_proposals'][0]['candidate_metadata_binding']['source_sha256']='0'*64
++        with patch.object(coordinator,'prepare_deficit_candidate_jobs',return_value=proof), \
++             patch.object(coordinator,'CollectionLedger') as ledger,patch.object(coordinator,'collect_windows') as collect:
++            with self.assertRaisesRegex(ValueError,'DEFICIT_METADATA_BINDING_INVALID'):
++                coordinator.run_deficit_guarded(fixture.root,fixture.request,coordinator.digest(fixture.request),execute=True)
++        ledger.assert_not_called();collect.assert_not_called();self.assertFalse(fixture.lock.exists())
++
++
++if __name__=='__main__':unittest.main()

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-18T04:41:44.770398+00:00",
+  "status": "COMPLETED_EXECUTION_NO_SCENE_NO_NEW_PATCH",
+  "terminal_exit_code": 0,
+  "terminal_seconds": 126.71900000000005,
+  "execution_attempted": true,
+  "native_validation_complete": false,
+  "native_patch_checks": 0,
+  "checks": {
+    "snapshot_pin_matches_launch": true,
+    "old1667_rows_exact": true,
+    "oldpending2_exact": true,
+    "old_ledger_entries_exact": true,
+    "new_batch_settled": true,
+    "charge_binding319": true,
+    "cog_zero": true,
+    "worker_b02_false": true,
+    "single_finalize": true,
+    "lock_absent": true,
+    "metadata_double_read_stable": true
+  },
+  "batch_key": "target256-bare-gorontalo-2024-local-rank1-2024-8ebfbcf25cc5",
+  "scene_status": "search_failed",
+  "scene_error": {
+    "category": "payload_or_response_contract",
+    "error_type": "ValueError",
+    "error_code": null,
+    "sanitized_message": "해당 AOI/연도/계절의 장면 없음",
+    "exception_chain": [
+      {
+        "error_type": "ValueError",
+        "sanitized_message": "해당 AOI/연도/계절의 장면 없음"
+      }
+    ]
+  },
+  "query_config": {
+    "endpoint": "planetary-computer",
+    "collection": "sentinel-2-l2a",
+    "years": [
+      2024
+    ],
+    "season_start": "06-01",
+    "season_end": "09-30",
+    "cloud_cover": 20,
+    "search_limit": 20,
+    "candidate_limit": 5,
+    "candidate_valid_fraction": 0.9
+  },
+  "stac_response_filter": {
+    "filtered_count": 0,
+    "filtered_items": [],
+    "cloud_cover_response_verified": true
+  },
+  "worker_started_records": 1,
+  "worker_finished_records": 1,
+  "metadata_bytes_charged": 319,
+  "cog_bytes_charged": 0,
+  "total_settled_bytes": 319,
+  "new_patch_files": 0,
+  "new_eligible_patches": 0,
+  "new_bare_contribution_patches": 0,
+  "source_batch_immediate_children": [
+    "annual-window-report.json",
+    "collection-history.jsonl",
+    "config.json",
+    "window-state.json",
+    "worker-result.json"
+  ],
+  "patch_batch_children": [],
+  "old_pending_reserved_bytes": 136314880,
+  "source_rows": 1667,
+  "eligible_stored": 1333,
+  "before_source_sha256": "1a12b7bca384dd09d73a04cc31df21f75377fc34c332b501a6ee37508dd46fb5",
+  "after_source_sha256": "39bb0245e586342bd116f5b052428fcf857fb26eae0ee1413c9c5f5275c40ba9",
+  "source_sha_changed": true,
+  "changed_top_level_manifest_keys": [
+    "source_manifests"
+  ],
+  "source_manifest_reference_appended": 1,
+  "before_ledger_sha256": "f49d7e778359c1f60743f617edb599fe2ba3170e9e9243a3459211aa4bc9b0fe",
+  "after_ledger_sha256": "024f5eabb2cadf88af4f34661fab6e6c209bf9aa8d105c2d1fbadf10f1c0dae3",
+  "remaining_budget": 1963547538,
+  "rate_limit_active": false,
+  "launch_source_pins_match_now": {
+    "scripts/collect_targeted_bare.py": true,
+    "backend/app/data/targeted_live_guards.py": true,
+    "backend/app/data/targeted_bare_plan.py": true,
+    "backend/app/data/parallel.py": true
+  },
+  "limitations": [
+    "Query returned no selectable scenes for thisAOI/year/season/cloudquery; not proof no2024 satelliteimagery exists globally.",
+    "StrictSCL0.9selector and liveB02native guard were not reached; no newpatch available for nativeQA.",
+    "Stored source rows unchanged but manifestmetadata may change with publishedreportreference. No broad inventory/native193rerun.",
+    "No independent networksyscalltrace; metadata319/COG0 are metered persisted records checked against centralsettlement."
+  ],
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "reviewer_network_calls": 0,
+  "reviewer_collection_starts": 0,
+  "source_or_ledger_writes": 0
+}

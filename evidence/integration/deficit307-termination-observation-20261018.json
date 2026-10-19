@@ -1,0 +1,81 @@
+{
+  "status": "TERMINATION_OBSERVED_NATIVE_GO_PENDING",
+  "at": "2026-10-18T13:25:52.230676+00:00",
+  "launch_sha256": "309186bdff3c24a0a1ac67409924d8210c15c5d162ef0cefecab393d4b1f199c",
+  "terminal_sha256": "0acb1c650c203b2c6486b7a15001dc5a6c61a7534762e48ebba27b6c35331d52",
+  "collector_pid": 33032,
+  "supervisor_pid": 43984,
+  "os_processes_absent_at_last_observation": true,
+  "execution_lock_absent_at_last_observation": true,
+  "exit_code": 0,
+  "actual_seconds": 424.65699999999924,
+  "finished_at": "2026-10-18T13:24:54.378141+00:00",
+  "program_reported_batches": [
+    {
+      "key": "center1024-east_java-2025-981abcd9b78b-9c40f177",
+      "patches": 16,
+      "eligible": 16,
+      "charged_bytes": 22845886,
+      "live_b02_checked": true,
+      "rate_limited": false
+    }
+  ],
+  "program_reported_eligible_total": 1407,
+  "program_reported_execution_progress": {
+    "reservation_attempted_batches": [
+      "center1024-east_java-2025-981abcd9b78b-9c40f177"
+    ],
+    "reserved_batches": [
+      "center1024-east_java-2025-981abcd9b78b-9c40f177"
+    ],
+    "collector_entered_batches": [
+      "center1024-east_java-2025-981abcd9b78b-9c40f177"
+    ],
+    "settled_batches": [
+      "center1024-east_java-2025-981abcd9b78b-9c40f177"
+    ],
+    "published_batches": [
+      "center1024-east_java-2025-981abcd9b78b-9c40f177"
+    ],
+    "finalization_attempted_batches": [
+      "center1024-east_java-2025-981abcd9b78b-9c40f177"
+    ],
+    "execution_started": true,
+    "transfer_status": "NOT_INDEPENDENTLY_VERIFIED",
+    "reservation_status": "ALL_ATTEMPTS_CONFIRMED_RESERVED",
+    "settlement_status": "ALL_RESERVED_SETTLED",
+    "publication_status": "ALL_RESERVED_PUBLISHED"
+  },
+  "local_transfer_receipt_observations": [
+    {
+      "file": "window-state.json",
+      "bytes": 33981,
+      "sha256": "60bf0116d6cd2debe4b4e1dd609c00b3ad71b534350df365ac1489bcf0e4a6f7",
+      "stable_bounded_two_reads": true,
+      "http_body_bytes": 22478848,
+      "charged_bytes": null,
+      "cog_charged_bytes": null,
+      "metadata_budget": null
+    },
+    {
+      "file": "worker-result.json",
+      "bytes": 466,
+      "sha256": "f080f6a830a5d6381ae112ac05949a9b462124a3abcf824dd6bab840fc7f1317",
+      "stable_bounded_two_reads": true,
+      "http_body_bytes": null,
+      "charged_bytes": 22845886,
+      "cog_charged_bytes": 22478848,
+      "metadata_budget": {
+        "maximum_bytes": 1048576,
+        "charged_bytes": 367038,
+        "read_body_bytes": 367038
+      }
+    }
+  ],
+  "native_helper_calls": 0,
+  "native_independently_verified": false,
+  "bare_result": null,
+  "source_ledger_read": false,
+  "http_calls": 0,
+  "root_separate_native_go_required": true
+}

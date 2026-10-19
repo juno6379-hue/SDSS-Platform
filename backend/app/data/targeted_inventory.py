@@ -43,11 +43,14 @@ def inspect_targeted_inventory(project_root, request, *, max_files=10000, max_by
            'inventory_verified': False, 'pending_footprints_verified': False,
            'support_files_verified': 0, 'label_files_excluded': [], 'pending': [],
            'overlaps': [], 'assets': [], 'source_pins_verified': False,
+           'resource_limits': None,
+           'observed': {'enumerated_files': None, 'support_files': None, 'support_bytes': None},
            'scientific_independence_proven': False, 'training_ready': False}
     try:
         _need(type(request) is dict and request.keys() == {'manifest_ref', 'ledger_ref', 'target'}, 'REQUEST_INVALID')
         _need(type(max_files) is int and 1 <= max_files <= 10000 and
               type(max_bytes) is int and 1 <= max_bytes <= 4*1024**3, 'INVENTORY_LIMIT')
+        out['resource_limits'] = {'max_files': max_files, 'max_support_bytes': max_bytes}
         root = _root(project_root)
         manifest_path, raw = _pinned(root, request['manifest_ref'], 128*1024**2)
         manifest = _json(raw)
@@ -84,6 +87,7 @@ def inspect_targeted_inventory(project_root, request, *, max_files=10000, max_by
             _need(len(files) <= max_files, 'INVENTORY_LIMIT')
             return files
         before = inventory()
+        out['observed']['enumerated_files'] = len(before)
         assets = {p: None for p in before if p.name not in LABELS}
         out['label_files_excluded'] = [p.relative_to(root).as_posix() for p in before if p.name in LABELS]
         # Source windows from every row, regardless of year/quality, cannot be omitted.
@@ -97,6 +101,7 @@ def inspect_targeted_inventory(project_root, request, *, max_files=10000, max_by
             if path in assets and assets[path] is not None:
                 _need(assets[path] == ref['sha256'], 'SOURCE_PIN_CONFLICT')
             assets[path] = ref['sha256']
+        out['observed']['support_files'] = len(assets)
         _need(len(assets) <= max_files, 'INVENTORY_LIMIT')
         configs = []
         for key, row in ledger['batches'].items():
@@ -113,7 +118,9 @@ def inspect_targeted_inventory(project_root, request, *, max_files=10000, max_by
             configs.append((config_path, digest))
             out['pending'].append({'key': key, 'reserved_bytes': row['reserved_bytes'],
                                    'charged_bytes': row['charged_bytes'], 'b02_files': len(b02)})
-        _need(sum(p.stat().st_size for p in assets) <= max_bytes, 'INVENTORY_LIMIT')
+        total_bytes = sum(p.stat().st_size for p in assets)
+        out['observed']['support_bytes'] = total_bytes
+        _need(total_bytes <= max_bytes, 'INVENTORY_LIMIT')
         signatures = {}
         with rasterio.Env(GDAL_PAM_ENABLED='NO', GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',
                           GDAL_GEOREF_SOURCES='INTERNAL', PROJ_NETWORK='OFF'):

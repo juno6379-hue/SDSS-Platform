@@ -1,15 +1,31 @@
+from .collection_source_profile import configured,read_source,verify_source,SourceProfileError
 """수집 보고서를 읽어 성공 재고와 최근 실패를 분리하는 읽기 전용 현황."""
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
+import stat
 from pathlib import Path
-from .collection_priority_status import collection_targets, candidate_quality
+from .ml.manifest_resource_profile import active,read_metadata,bounded_json_digest,metadata_identity,ProfileResourceError,serialized_io
+from .collection_priority_status import collection_targets, candidate_quality, bare_target_review
 
 _HASH_CACHE = {}
 
 
-def same_hash(path, expected):
+@serialized_io
+def same_hash(path, expected, *, json_role=None):
     """큰 입력의 재해시는 내용 변경을 시사하는 파일 메타데이터가 바뀔 때 수행한다."""
+    if active() is not None and json_role!='binary':
+        if json_role is None:raise ProfileResourceError('MANIFEST_JSON_ROLE_REQUIRED')
+        logical,before_identity=metadata_identity(path,json_role)
+        key=('PROFILE237',str(logical),json_role,before_identity)
+        if key not in _HASH_CACHE:
+            value=bounded_json_digest(logical,json_role)
+            if metadata_identity(path,json_role)!=(logical,before_identity):raise ProfileResourceError('MANIFEST_JSON_CHANGED')
+            if len(_HASH_CACHE)>20000:_HASH_CACHE.clear()
+            _HASH_CACHE[key]=value
+        if metadata_identity(path,json_role)!=(logical,before_identity):raise ProfileResourceError('MANIFEST_JSON_CHANGED')
+        return isinstance(expected,str) and _HASH_CACHE[key]==expected
     before = path.stat()
     key = (str(path), before.st_mtime_ns, before.st_ctime_ns, before.st_size)
     if key not in _HASH_CACHE:
@@ -31,12 +47,14 @@ PROVINCES = [('south_sulawesi', 'South Sulawesi'), ('gorontalo', 'Gorontalo'),
 YEARS = list(range(2020, 2026))
 
 
-def read_report(path, errors):
+def read_report(path, errors, *, json_role='status_report'):
     try:
-        value = json.loads(path.read_text(encoding='utf-8'))
+        value = read_metadata(path,json_role)[0] if active() is not None else json.loads(path.read_text(encoding='utf-8'))
         if not isinstance(value, dict):
             raise ValueError('보고서 객체가 아님')
         return value
+    except (ProfileResourceError,SourceProfileError):
+        raise
     except (OSError, ValueError):
         # 작성 중인 파일은 미확인으로 표시하며 과거 성공을 실패로 바꾸지 않는다.
         errors.append(path.name)
@@ -46,22 +64,63 @@ def read_report(path, errors):
 def local_file(value, root):
     if not isinstance(value, str) or not value:
         return None
-    path = Path(value)
-    path = (path if path.is_absolute() else root / path).resolve()
-    return path if path.is_relative_to(root) and path.is_file() else None
+    # Resolve the trusted data root once in collection_status, not thousands of
+    # historical raster paths through Windows realpath. Reject outside paths
+    # lexically before touching them, then inspect every local component without
+    # following links (including Windows junctions/reparse points).
+    try:
+        if any(part not in ('.', '..') and part.endswith((' ', '.'))
+               for part in Path(value).parts):
+            return None
+        root = Path(os.path.abspath(root))
+        path = Path(os.path.abspath(os.path.join(root, value)))
+        relative = path.relative_to(root)
+        if not relative.parts:
+            return None
+        if any(':' in part or part.endswith((' ', '.')) for part in relative.parts):
+            return None
+        current = root
+        for index, part in enumerate((None, *relative.parts)):
+            if part is not None:
+                current = current / part
+            info = current.lstat()
+            if stat.S_ISLNK(info.st_mode) or getattr(info, 'st_file_attributes', 0) & 0x400:
+                return None
+            last = index == len(relative.parts)
+            if not (stat.S_ISREG(info.st_mode) if last else stat.S_ISDIR(info.st_mode)):
+                return None
+        return path
+    except (ProfileResourceError,SourceProfileError):
+        raise
+    except (OSError, ValueError):
+        return None
 
 
-def collection_status(data_root):
+@configured('status')
+def collection_status(data_root,*,_source_selection=None):
     root = Path(data_root).resolve()
     errors = []
+    current_path=root/'first-group-training-esri-v1/annual-window-report.json'
+    current_cache=[]
+    def current():
+        if not current_cache:current_cache.append(read_source(root,_source_selection))
+        return current_cache[0][0]
+    def report_at(path,json_role='status_report'):
+        if path==current_path:
+            try:return current()
+            except (ProfileResourceError,SourceProfileError):raise
+            except (OSError,ValueError):errors.append(path.name);return {}
+        return read_report(path,errors,json_role=json_role)
+
     reports = sorted(root.glob('first-group*/**/annual-window-report.json'), key=lambda p: (p.stat().st_mtime_ns, str(p)))[-64:]
+    known_source_paths={current_path,*reports}
     cells = {(province, year): {'province': province, 'year': year, 'image_available': False,
         'label_available': False, 'bands': [], 'collection_status': 'unknown', 'latest_attempt_status': 'unknown',
         'valid_pixel_ratio': None, 'quality_eligible': None, 'quality_mask_available': None,
         'label_status': 'unknown', 'label_source': None, 'label_year': None, 'mode': None,
         'source_report': None, 'latest_error': None} for province, _ in PROVINCES for year in YEARS}
     for path in reports:
-        report = read_report(path, errors)
+        report = report_at(path,'source')
         for scene in report.get('scenes', []):
             try:
                 key = (scene['aoi'], int(scene['year']))
@@ -87,11 +146,11 @@ def collection_status(data_root):
     # 품질 적격은 별도 감사가 해당 수집 보고서의 해시를 확인한 경우만 표시한다.
     for audit_name in ('quality-audit-2021.json', 'quality-audit-current.json'):
         audit_path = root / 'first-group' / audit_name
-        audit = read_report(audit_path, errors) if audit_path.exists() else {}
+        audit = report_at(audit_path,'readiness') if audit_path.exists() else {}
         verified_reports = set()
         for entry in audit.get('inputs', []):
             path = local_file(entry.get('path'), root)
-            if path and same_hash(path, entry.get('sha256')):
+            if path and same_hash(path, entry.get('sha256'),**({'json_role':'source'} if active() is not None else {})):
                 verified_reports.add(str(path.relative_to(root)))
         for row in audit.get('inventory', []):
             key = (row.get('province'), row.get('year'))
@@ -104,12 +163,13 @@ def collection_status(data_root):
     latest_run = None
     if attempts:
         result_path = attempts[-1]
-        run = read_report(result_path, errors)
+        run = report_at(result_path)
         rows = []
         for value in run.get('manifests', []):
             path = local_file(value, root)
             if path:
-                rows.extend(read_report(path, errors).get('scenes', []))
+                known_source_paths.add(path)
+                rows.extend(report_at(path,'source').get('scenes', []))
         latest_run = {key: run.get(key) for key in ('status', 'learning_ready', 'maximum_total_bytes', 'reserved_or_transferred_bytes_including_prior')}
         latest_run.update({key: run.get(key) for key in ('new_supplementary_budget_bytes',
             'new_charged_upper_bound_bytes', 'historical_charged_upper_bound_bytes',
@@ -126,7 +186,7 @@ def collection_status(data_root):
         latest_run['server_http_status'] = run_error.get('http_status')
         latest_run['error_category'] = run_error.get('category')
     reference_path = root / 'raw-reference/reference-report.json'
-    reference = read_report(reference_path, errors) if reference_path.exists() else {}
+    reference = report_at(reference_path) if reference_path.exists() else {}
     record, raster = reference.get('record', {}), reference.get('raster_metadata', {})
     file = local_file(record.get('path'), root)
     full_reference = {'band': 'B04', 'status': reference.get('status', 'unknown'),
@@ -139,17 +199,16 @@ def collection_status(data_root):
     readiness_candidates = list((root / 'first-group').glob('readiness-*.json'))
     readiness_candidates += list((root / 'first-group').glob('training-readiness.json'))
     readiness_path = max(readiness_candidates, key=lambda p: (p.stat().st_mtime_ns, p.name)) if readiness_candidates else root / 'first-group/training-readiness.json'
-    readiness = read_report(readiness_path, errors) if readiness_path.exists() else {}
+    readiness = report_at(readiness_path,'readiness') if readiness_path.exists() else {}
     readiness_source = readiness_path.relative_to(root).as_posix() if readiness else None
     current_path = root / 'first-group-training-esri-v1/annual-window-report.json'
     current_manifest, current_sha = {}, None
     if current_path.exists():
         try:
-            raw = current_path.read_bytes()
-            current_manifest = json.loads(raw.decode('utf-8'))
-            if not isinstance(current_manifest, dict):
-                raise ValueError('보고서 객체가 아님')
-            current_sha = hashlib.sha256(raw).hexdigest()
+            current_manifest = current()
+            current_sha = current_cache[0][1][1]
+        except (ProfileResourceError,SourceProfileError):
+            raise
         except (OSError, ValueError):
             errors.append(current_path.name)
             current_manifest = {}
@@ -164,8 +223,14 @@ def collection_status(data_root):
     # A stale manifest already fails freshness; do not hash its entire raster set.
     if manifest_matches_current and readiness.get('input_manifests') and readiness.get('verified_files'):
         try:
-            evidence_matched = all((path := local_file(entry.get('path'), root)) is not None and
-                                   same_hash(path, entry.get('sha256')) for entry in evidence)
+            def verified(entry,role):
+                path=local_file(entry.get('path'),root)
+                return path is not None and same_hash(path,entry.get('sha256'),**({'json_role':role} if active() is not None else {}))
+            def manifest_role(entry):
+                path=local_file(entry.get('path'),root)
+                return 'source' if path in known_source_paths else None
+            kinds={'normalization_qa':'evidence','input_image':'binary','label':'binary','quality_mask':'binary','official_product_metadata':'binary'}
+            evidence_matched=all(verified(entry,manifest_role(entry)) for entry in readiness.get('input_manifests',[])) and all(verified(entry,manifest_role(entry) if entry.get('kind')=='collection_manifest' else kinds.get(entry.get('kind'))) for entry in readiness.get('verified_files',[]))
         except OSError:
             evidence_matched = False
     # 과거 입력이 아직 남아 있더라도 현재 합산 manifest를 검사한 근거가 없으면 최신 검증으로 보지 않는다.
@@ -201,6 +266,7 @@ def collection_status(data_root):
             source_report=current_path.relative_to(root).as_posix(), freshness='current_manifest',
             count_basis='manifest_quality_status', readiness_source_report=readiness_source,
             scope_note='현재 합산 manifest의 품질 적격 패치 재고. 파일 무결성·학습 승인 여부는 별도 최신 readiness로 판정한다.')
+    if current_cache:verify_source(root,_source_selection,current_cache[0][1])
     return {'schema_version': 1, 'recorded_at': datetime.now(timezone.utc).isoformat(),
         'provinces': [{'id': key, 'name': name} for key, name in PROVINCES], 'years': YEARS, 'cells': rows,
         'summary': {'expected_cells': 36, 'available_image_cells': sum(row['image_available'] for row in rows),
@@ -219,7 +285,7 @@ def collection_status(data_root):
             'evaluation_kind': readiness.get('evaluation_kind'), 'scientific_accuracy_validated': False},
         'latest_run': latest_run, 'full_reference': full_reference, 'blocked_reasons': blockers,
         'patch_inventory': patch_inventory,
-        'collection_targets': collection_targets(current_manifest, current_sha),
+        'collection_targets': collection_targets(current_manifest, current_sha, bare_target_review(root, current_sha)),
         'candidate_quality': candidate_quality(root, current_sha, same_hash),
         'limitations': ['실제 파일 존재와 독립 정확도 검증을 구분', '예약 예산은 실제 수신량이 아님',
                         '부분 창을 주 전체나 전체 장면 확보로 계산하지 않음'],

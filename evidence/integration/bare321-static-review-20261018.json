@@ -1,0 +1,51 @@
+{
+  "status": "STATIC_REVIEW_NO_REQUIRED_CODE_FIX_FOUND_EXECUTION_UNVERIFIED",
+  "at": "2026-10-18T14:26:34.244196+00:00",
+  "pins": [
+    {
+      "path": "evidence/integration/bare320-publish-root-20261018.py",
+      "bytes": 8548,
+      "sha256": "b88345551a7e3dc817418965752c4ba62c0e5612f287d97981dffacf4968f957"
+    },
+    {
+      "path": "evidence/integration/bare320-preparation-freeze-root-20261018.json",
+      "bytes": 1492,
+      "sha256": "21a844646c2158a1cdd5940132f11fd7480eb140af3e49510b893d4b94d49108"
+    },
+    {
+      "path": "evidence/integration/bare322-api-root-20261018.py",
+      "bytes": 4672,
+      "sha256": "8a8344dfb7d27a9f82cfc16f1b541c6f8a498884e282b3d518ac4de0b24ffd6b"
+    },
+    {
+      "path": "evidence/integration/bare322-preparation-freeze-root-20261018.json",
+      "bytes": 542,
+      "sha256": "27f3f79b022048b4ff2f107df9fb7caa6850f5895eb1115fabf3698025adf8f5"
+    },
+    {
+      "path": "backend/app/collection_priority_status.py",
+      "bytes": 12380,
+      "sha256": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9"
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "bytes": 11756,
+      "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3"
+    },
+    {
+      "path": "docs/implementation/321_bare320_publication_and322_api_static_review.md",
+      "bytes": 7072,
+      "sha256": "21522d20b0f4b7f70a837d83feb8edc6188ae17ac50b76a03421bd1bdfe13713"
+    }
+  ],
+  "all6_freeze_references_exact": true,
+  "operating_source_ledger_pointer_profile_report_result_reads": 0,
+  "tests_import_http_native_publication": 0,
+  "shared_edits": 0,
+  "required_fixes": [],
+  "result_inventory_blocked_vs_verified_flags_distinguished": true,
+  "320_to322_field_contract_static_compatible": true,
+  "real_api_browser_unverified": true,
+  "target256_source64_blocker_remains": true,
+  "root_separate_go_required": true
+}

@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-18T04:14:15.309247+00:00",
+  "scope": "195 bare review search scope API/adapter/UI; existing other WIP preserved",
+  "files": {
+    "backend/app/collection_priority_status.py": {
+      "sha256": "57401082fea929ba8ecc396a48596a5253e18408f6a641064395722242aea21a",
+      "bytes": 11716
+    },
+    "tests/test_collection_priority_status.py": {
+      "sha256": "309fbb70f543fe78974f79bb686c62917d4d64669e40ac9205a34fc5f5c53805",
+      "bytes": 12854
+    },
+    "frontend/src/collectionProgressAdapter.ts": {
+      "sha256": "0c40c2d27e2ff14781cd9771787609125d15b00c6fb99c28f0f273ee51d56704",
+      "bytes": 11618
+    },
+    "frontend/src/collectionProgressAdapter.test.mjs": {
+      "sha256": "e988f0df64845feb9d6898795ae435fa9cca43807261a6110c0f569e5be2d680",
+      "bytes": 14589
+    },
+    "frontend/src/CollectionProgress.tsx": {
+      "sha256": "5f80aa2c8a60b9ce2a89dff7588e300bdddffb3dacdf63b9ce2205df3de34230",
+      "bytes": 13469
+    },
+    "frontend/src/CollectionProgress.scope.test.mjs": {
+      "sha256": "6e56441c4380c512e6b14392d6cda11bdb785cbde36b3c6fcd14f94271bd7d2a",
+      "bytes": 4111
+    },
+    "docs/implementation/195_bare_review_scope_ui.md": {
+      "sha256": "2001fd9a2b0c520160864434130c04ecf86386d534ec768c1240d03b927fbb24",
+      "bytes": 4670
+    }
+  },
+  "tests": {
+    "backend": {
+      "passed": 12,
+      "seconds": 0.959
+    },
+    "adapter": {
+      "passed": 12,
+      "milliseconds": 995.4179
+    },
+    "actual_component_ssr": {
+      "passed": 2,
+      "milliseconds": 12206.6834
+    },
+    "build": "tsc -b and Vite success123modules29.77sec; bundle warning only"
+  },
+  "services": {
+    "old_api": 32576,
+    "new_api": 20676,
+    "health": "ok",
+    "existing179_reader_total": 50,
+    "existing179_scope_count": 6,
+    "pointer_mutation": false
+  },
+  "browser": {
+    "legacy179_hmr_verified": true,
+    "refresh_requests": 0,
+    "proof": "bare195-legacy179-browser-20261018.png"
+  },
+  "pending": [
+    "Root192/193 pointer publish",
+    "One final actual browser refresh of new37/two provinces and newcandidate"
+  ],
+  "before_pins": "bare195-scope-before-20261018.json"
+}

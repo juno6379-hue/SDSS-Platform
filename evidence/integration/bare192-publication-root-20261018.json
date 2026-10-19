@@ -1,0 +1,72 @@
+{
+  "status": "SCOPED_NATIVE_REVIEW_PUBLISHED_READER_VERIFIED",
+  "recorded_at": "2026-10-18T04:13:50.206260+00:00",
+  "original_native_report_sha256": "857b1384c09e3cc8d921ed5a03c445e6464a0805f457cd40bc2a24d1a8e2ec0a",
+  "published_report_sha256": "6d72cfceb04589d59fe55674ca10d79764672dbd09bfb3e4345b69cd67f3009f",
+  "scope_annotation_only": true,
+  "previous_pointer_preserved": true,
+  "reader": {
+    "available": true,
+    "status": "LOCAL_TARGET_REVIEW_FINISHED",
+    "scope": "LOCAL_LABEL_AND_HISTORICAL_SUPPORT_NOT_REMOTE_QUALITY",
+    "source_manifest_sha256": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f",
+    "source_matches_current_manifest": true,
+    "recorded_at": "2026-10-18T04:07:16.755147+00:00",
+    "source_report": "first-group-training-priority/bare-review192-20261018.json",
+    "report_sha256": "6d72cfceb04589d59fe55674ca10d79764672dbd09bfb3e4345b69cd67f3009f",
+    "candidate_total": 37,
+    "rows": [
+      {
+        "province": "south_sulawesi",
+        "candidates": 0,
+        "support_clear": 0,
+        "overlap": 0,
+        "local_invalid": 0
+      },
+      {
+        "province": "gorontalo",
+        "candidates": 8,
+        "support_clear": 2,
+        "overlap": 6,
+        "local_invalid": 0
+      },
+      {
+        "province": "southeast_sulawesi",
+        "candidates": 0,
+        "support_clear": 0,
+        "overlap": 0,
+        "local_invalid": 0
+      },
+      {
+        "province": "east_java",
+        "candidates": 0,
+        "support_clear": 0,
+        "overlap": 0,
+        "local_invalid": 0
+      },
+      {
+        "province": "banten",
+        "candidates": 0,
+        "support_clear": 0,
+        "overlap": 0,
+        "local_invalid": 0
+      },
+      {
+        "province": "west_java",
+        "candidates": 29,
+        "support_clear": 2,
+        "overlap": 27,
+        "local_invalid": 0
+      }
+    ],
+    "searched_provinces": [
+      "gorontalo",
+      "west_java"
+    ],
+    "execution_supported": false,
+    "actual_quality_verified": false,
+    "scientific_accuracy_validated": false
+  },
+  "source_or_ledger_written": false,
+  "training_started": false
+}

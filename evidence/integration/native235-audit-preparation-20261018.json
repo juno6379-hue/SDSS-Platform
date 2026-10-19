@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T07:40:08.589752+00:00",
+  "status": "PLANNED_AUDIT_NOT_STARTED",
+  "owner": "/root/toolbox_review",
+  "collector_and_operating_lock_owner": "/root",
+  "ml_handoff_owner": "/root/ml_pipeline",
+  "target_run": "235",
+  "declared_planned_request_canonical_sha256": "fc824e2465d1f4128f8f473576c0e9087b2950ab3c7a5da4cee4a8f18e8af704",
+  "planned_province": "southeast_sulawesi",
+  "planned_year": 2024,
+  "planned_spatial_window_id": "centers182-southeast_sulawesi-aacbd06f2c57",
+  "plan_limits": {
+    "maximum_batches": 1,
+    "maximum_new_patches": 16,
+    "maximum_new_patch_rasters": 48,
+    "broad_inventory_rescan": false,
+    "old_native_reqa": false,
+    "retry": false,
+    "automatic_resource_raise": false
+  },
+  "execution_gates": {
+    "root_go_received": false,
+    "real_launch_verified": false,
+    "terminal_verified": false,
+    "selected_workers_finished_verified": false,
+    "actual_ledger_settled_verified": false,
+    "lock_absent_verified": false,
+    "collector_os_terminated_verified": false,
+    "fixed_source_hold_confirmed": false,
+    "selected_scope_and_pins_verified": false,
+    "native_audit_authorized": false,
+    "native_audit_started": false,
+    "native_audit_complete": false,
+    "ml238_handoff_ready": false
+  },
+  "future_observations": {
+    "source_before_sha256": null,
+    "source_after_sha256": null,
+    "source_bytes": null,
+    "registered_rows_before": null,
+    "registered_rows_after": null,
+    "new_registered_rows": null,
+    "physical_before": null,
+    "physical_after": null,
+    "ledger_before_sha256": null,
+    "ledger_after_sha256": null,
+    "settled_bytes": null,
+    "remaining_budget": null,
+    "checked_files": null,
+    "native_patches_checked": null,
+    "new_eligible_patches": null,
+    "cell_deficit": null,
+    "raw_bare_pixels": null,
+    "after_source_quality_bare_pixels": null,
+    "final_supported_bare_pixels": null,
+    "eligible_bare_pixels": null,
+    "eligible_bare_contribution_patches": null,
+    "selected_scene": null,
+    "raw_b02_binding": null,
+    "native_quality_result": null,
+    "outcome": null
+  },
+  "process_observation": {
+    "at_kst": "2026-10-18T16:38:50+09:00",
+    "method": "Win32_Process names python with collect_deficit_guarded/deficit235-supervisor/audit_priority_increment165/prepare_priority_candidate164 CommandLine match",
+    "matching_processes_observed": [],
+    "scope_limitation": "OS process absence only; operating ledger/lock files not read; ownership not released"
+  },
+  "agent_observation": {
+    "root": "running",
+    "data_pipeline": "running",
+    "toolbox_review": "running",
+    "understanding_agent": "completed",
+    "meaning": "observed via collaboration.list_agents; no duplicate assignment"
+  },
+  "preparation_reads": [
+    {
+      "path": "scripts/audit_priority_increment165.py",
+      "sha256": "ba4da0b03bd19a0d327200a49eb5c75b28a1f42620be43c84826092c50c661ba"
+    },
+    {
+      "path": "evidence/integration/deficit223-native-root-20261018.json",
+      "sha256": "12171b694a472238048dd3e2d3b38311c4f3974733ecc662d25212b67120ebfd"
+    },
+    {
+      "path": "docs/implementation/223_guarded_southeast_collection.md",
+      "sha256": "badb2c079da821ed218244435f60f8725c20de6a11cde6a64c2f93de1778079d"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "19704fc4b88ce3d3ba9345f05ce9608cdd1eebc21d8942461377a2e1c39a7448"
+    },
+    {
+      "path": "CONTINUOUS_DEVELOPMENT.md",
+      "sha256": "3bf1dfbf01a5b8601157b6abc615123af9a52a9f0ca8b228d27b4c083f6d8210"
+    }
+  ],
+  "planned_checks": [
+    "Root GO plus real terminal/workers/settlement/lock absence/OS exit/source hold before any operating read or native audit",
+    "Immutable original launch; if165 needs adapter add only actual pinned snapshot-derived row count/canonical values in temporary copy",
+    "Only selected new0..16patches,48expectedfinalrasters and relevant rawB02/sourceimage/sourcequality/rawEsri/STACrefs; no broad physical or support scan",
+    "Native image/label/mask SHA and grid,6bands,256shape,binarymask/support,inside95,valid80 and declaredhistogram/status",
+    "Selected STAC scene/date/B02asset binding,same-yearweaklabeldeclaration; actualrawB02 versus source firstband and each patch subwindowgrid/firstband",
+    "RawEsri nearest aligned to selectedB02grid -> sourcequality -> finalsupport -> qualityeligible -> perpatchbare>=256; sums not substituted for perpatch contribution",
+    "Oldrows/history and originalpending exact preservation; meteredCOG+metadata vsledger/finalize/settle/publication; newphysical outputs vsregistered refs includingunpublishedpartial preservation",
+    "Rehash selectedfiles and source/ledger double-read stability; preserve partialfailure and original logs; never retry to invent success",
+    "After singleaudit completion deliver actualpins/results toRoot, then ML238 only after its separateGO"
+  ],
+  "existing_165_reader_caps_bytes": {
+    "aggregate": 134217728,
+    "ledger": 16777216,
+    "boundary": 16777216,
+    "batch_json": 16777216,
+    "launch": 1048576,
+    "patch_image": 67108864,
+    "patch_label": 2097152,
+    "patch_quality": 2097152
+  },
+  "cap_note": "Existing165 caps recorded from code only. No cap/profile chosen or enlarged for235; an exceededcap blocks and preserves partialevidence. Related rawrefs remain within originalbounded local reader limits.",
+  "actual_counts_this_preparation": {
+    "operating_source_reads": 0,
+    "operating_readiness_reads": 0,
+    "operating_catalog_reads": 0,
+    "operating_ledger_reads": 0,
+    "operating_lock_reads": 0,
+    "raster_reads": 0,
+    "native_audit_runs": 0,
+    "http_calls": 0,
+    "collector_starts": 0,
+    "operating_writes": 0,
+    "tests_executed": 0
+  },
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "collection_executed": false,
+  "execution_supported": false,
+  "ui_changes_required": false
+}

@@ -1,0 +1,25 @@
+{
+  "status": "APPLIED_NEW_WRITER_AND_TEST_SHARED_TEST_PENDING",
+  "at": "2026-10-18T15:13:20.784448+00:00",
+  "freeze_sha256": "1daf49fe9fd9053e707131c4d94fbed18b160d29f10403a1f22fecfdded2510c",
+  "independent_review_sha256": "a39b4eba4f078e197be275f30f6df7b7f3e85290048b9a9861a376c34369e508",
+  "files": [
+    {
+      "path": "backend/app/data/targeted_atomic_json.py",
+      "sha256": "11ea4b0956468045bdd27f7dd605f0d61508fd3846000dba001ef9b4a87aaa66",
+      "bytes": 11914,
+      "new": true
+    },
+    {
+      "path": "tests/test_target329_atomic_json.py",
+      "sha256": "4aae15d2b8693e86180eb3052bb23575788dc22e5850a8ec3f0eb0e835b035a8",
+      "bytes": 13190,
+      "new": true
+    }
+  ],
+  "baseline_files_unchanged": 2,
+  "operating_io": false,
+  "collector_connected": false,
+  "ledger_connected": false,
+  "server_restarted": false
+}

@@ -1,0 +1,88 @@
+{
+  "at_utc": "2026-10-18T06:07:54.999088+00:00",
+  "status": "REVIEWED_TESTED_BOUNDED_EXECUTION_APPROVED",
+  "scope": "ROOT_BOUNDED_COLLECTION_ONLY_WITHIN_EXISTING_USER_AUTHORIZATION",
+  "source_pins": {
+    "backend/app/data/deficit_candidate_guard.py": "f3528592f335be1c69f562ade59e8fcab22e20c6c83c8363ad84a751b3d1c803",
+    "scripts/collect_targeted_bare.py": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+    "scripts/collect_deficit_guarded.py": "cb9a52f75b6c97771bbb0b109a91612f65b3975742342fe2a92eaf8073dbf3ec",
+    "scripts/collect_training_grid.py": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/data/targeted_inventory.py": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d",
+    "backend/app/data/budget.py": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+    "backend/app/data/candidates.py": "c72257998d14c8b874ee9c9b532e50d78b3e3417a8b47c1688a54c656966dba6"
+  },
+  "unit200_related_tests": {
+    "passed": 77,
+    "skipped": 0,
+    "seconds": 28.002
+  },
+  "root_reviewed": [
+    "full200 coordinator source and failure branches",
+    "199 helper and inherited256 checks",
+    "20/22 focused cases plus related final77 log",
+    "doc200 fixed snapshot and active SHA contract",
+    "205 actual current-source local proof,1254assets/1668physical",
+    "208 minimal ROOT path and fixed-code diagnosis diff",
+    "isolated actual CLI regression and79PASS log",
+    "old200 reconstructed bytes match historical frozen SHA",
+    "206 zero reservation/worker and unchanged original metadata audit"
+  ],
+  "maximum_batches": 1,
+  "maximum_new_physical_patches": 16,
+  "selected_cells": [
+    [
+      "southeast_sulawesi",
+      2024
+    ]
+  ],
+  "budget_increased": false,
+  "training_or_deployment_approved": false,
+  "independent_labels_verified": false,
+  "unit208_related_tests": {
+    "passed": 79,
+    "skipped": 0,
+    "seconds": 33.288
+  },
+  "separate_execution_run": "223",
+  "prior206_terminal_preserved": true,
+  "publication207_sha256": "631a14dcc635cdeeb29ba692e5a97a094a84b2198e766a455942a33a40ab11d8",
+  "actual_ui207_sha256": "5891f35b139cda7f30a4bae0713449b6b0fd74b4af094a55e8e14a2961837e4c",
+  "supervisor_sha256": "dd2b450a770e7d5797cc8e156a3a8e6dab6d57559f057c0a144a865d50b60346",
+  "request_file_sha256": "ddc926298f2498d30758d1d818caa31066f608ea755588121584c8975fdb8a6c",
+  "fresh_guard_required": true,
+  "old_pending_preserved_bytes": 136314880,
+  "unit218_freeze_sha256": "a3d5defb6b3ed105edb8fbe9903de1a63c832372b61f639bfc8ba2143d5b7f8b",
+  "unit218_focused_tests": {
+    "passed": 38,
+    "seconds": 17.344,
+    "skipped": 0
+  },
+  "unit218_related_tests": {
+    "passed": 108,
+    "seconds": 34.655,
+    "skipped": 0
+  },
+  "resource_profile": "DEFICIT_LOCAL_SUPPORT_3G_V1",
+  "local_support_bytes": 3221225472,
+  "remote_download_budget_increased": false,
+  "historical211_failure_preserved": true,
+  "root_218_review": [
+    "14 freeze pins",
+    "minimal diff vs exact reconstructed original SHA",
+    "unchanged success/fail execution predicate and pre-reservation cleanup",
+    "fixed3GiB aggregate cap within existing4GiB function range,default2GiB unchanged",
+    "safe optional CLI issue/count/byte contract and Temp actual CLI regressions",
+    "source JSON/individual raster/COG/global budget/pending/overlap/quality constraints unchanged"
+  ],
+  "proposal222_sha256": "9e4c6a43fdcf49b00d266bae3f14c4b843465a1b339059c52823b24d6bdf74d0",
+  "actual_ui219_sha256": "0ad344208893834afd6f27e8438501a0672b24e9ac6bbfaeabc05d74b93d5bde",
+  "latest_source_sha256": "f85925ebf188675060598352ffaa658d82b6dc6f6a1fb4b9025ec01433c92efc",
+  "historical207_publication_is_current_source": false,
+  "prior219_audit_sha256": "9b7d2dfa01ca573e1940352ed69ad9b3df9ec7849893ed6086eaeba28b766b46",
+  "cohort_qa_repeated": false,
+  "download_budget_increased": false
+}

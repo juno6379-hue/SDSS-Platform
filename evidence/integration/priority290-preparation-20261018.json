@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "kind": "PINNED_CANDIDATE_QA_290_PREPARATION",
+  "status": "PREPARED_WAITING_FOR_ROOT_GO",
+  "execution_authorized": false,
+  "run_id": "guarded290-20261018",
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "manifest_bytes": 134217728,
+    "max_rows": 3000,
+    "max_depth": 32,
+    "max_nodes": 4000000,
+    "max_json_io_bytes": 17179869184
+  },
+  "manifest_profile_sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4",
+  "source": {
+    "path": "data/first-group-training-esri-v1/annual-window-report.json",
+    "sha256": "9d491e6ede51cf29407add25b83919cc5d4150576a694c5019814b973d20c2b7",
+    "bytes": 68220381,
+    "registered_rows_reported": 1747,
+    "verification": "PREPARATION_DIRECT_BOUNDED_HASH_AND_STAT_MATCH_ROOT_POST285_PIN",
+    "default64_excess_bytes": 1111517,
+    "history_count": null,
+    "candidate_count": null
+  },
+  "policy": {
+    "path": "data/first-group/experiment-esri-v003-2020-2025.json",
+    "sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+    "verification": "PREPARATION_DIRECT_HASH_MATCH_RECHECK_INSIDE_164_BEFORE_OUTPUT",
+    "bytes": 1306
+  },
+  "native_audit": {
+    "path": "evidence/integration/deficit285-native-root-20261018.json",
+    "bytes": 35844,
+    "sha256": "194affdac6f8838875251bdb8c6cb2807cc3492015b3b655ba71ae040ba8c455",
+    "root_reported_status": "COMPLETED_BOUNDED_NATIVE_AND_TRACE_CHECKED",
+    "preparation_sha_directly_verified": true
+  },
+  "protected_paths": [
+    "data/first-group-training-priority/latest-candidate.json",
+    "data/first-group-training-priority/candidate-receipt275-20261018.json"
+  ],
+  "lock_path": "data/first-group-training-budget/global-ledger.execution.lock",
+  "paths": {
+    "work": "data/priority164-guarded290-20261018",
+    "evidence": "evidence/integration/priority164-guarded290-20261018",
+    "log": "evidence/integration/priority164-guarded290-20261018.log",
+    "launch": "evidence/integration/priority290-launch-20261018.json",
+    "terminal": "evidence/integration/priority290-terminal-20261018.json"
+  },
+  "paths_absent_verified": true,
+  "code_pins": {
+    "scripts/prepare_priority_candidate164.py": {
+      "bytes": 13570,
+      "sha256": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437"
+    },
+    "scripts/run_experiment.py": {
+      "bytes": 13682,
+      "sha256": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772"
+    },
+    "backend/app/ml/manifest_resource_profile.py": {
+      "bytes": 11756,
+      "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3"
+    },
+    "backend/app/ml/split_json_io.py": {
+      "bytes": 8513,
+      "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8"
+    },
+    "backend/app/ml/split_planning.py": {
+      "bytes": 13413,
+      "sha256": "13bea99a184f54ff1e05bd1b8c77aa398abce3badf622c8ee402852b57a5d3ad"
+    },
+    "backend/app/ml/split_validation.py": {
+      "bytes": 7967,
+      "sha256": "c54fa2ac72668df5414cc42116634a5ec493445db200c62f0788d78793faf30d"
+    },
+    "backend/app/ml/candidate_materialization.py": {
+      "bytes": 9036,
+      "sha256": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff"
+    },
+    "backend/app/ml/candidate_staging.py": {
+      "bytes": 13715,
+      "sha256": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d"
+    },
+    "backend/app/ml/candidate_readiness_qa.py": {
+      "bytes": 18326,
+      "sha256": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054"
+    },
+    "backend/app/ml/readiness.py": {
+      "bytes": 33396,
+      "sha256": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb"
+    },
+    "backend/app/ml/dataset.py": {
+      "bytes": 11777,
+      "sha256": "edc6e66d3a5e7aceebd4e25cb20dc68b7b59c8fbfdb18459c54e45b871f331fb"
+    },
+    "backend/app/ml/normalization.py": {
+      "bytes": 3026,
+      "sha256": "390f5b673fd694b3f7c1002a091f8c0a443bc400a728784426cca4064bf4bd83"
+    },
+    "backend/app/ml/raster.py": {
+      "bytes": 3911,
+      "sha256": "2fee32d1782e5de1b578b49f54997c74e8def767db778e13c95e8fd68407c54c"
+    },
+    "backend/app/ml/per_scene_normalization_files.py": {
+      "bytes": 9136,
+      "sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366"
+    },
+    "backend/app/data/recovery_terminal.py": {
+      "bytes": 15890,
+      "sha256": "c4467989dbfc36ce2940d1b0ebb2a84c04acda1b17c6a8ea0d9c046e81fdaf2e"
+    },
+    "backend/app/data/readiness_connectivity_witness.py": {
+      "bytes": 10869,
+      "sha256": "6c56cca4ce94d6ebeec1808b3ec82b4ba77a9e7744bb1442bb943cac17c2760e"
+    }
+  },
+  "actual_cli_started": false,
+  "qa_started": false,
+  "operating_source_ledger_model_read_during_preparation": true,
+  "http": 0,
+  "training": false,
+  "registry": false,
+  "automatic_retry_allowed": false,
+  "caps_increase_allowed": false,
+  "prepared_at": "2026-10-18T12:12:51.727968+00:00",
+  "ledger_preparation_provenance": {
+    "path": "data/first-group-training-budget/global-ledger.json",
+    "bytes": 67545,
+    "sha256": "4a4f4a47b522b9497b944ac00b29d2368a977c1a4eb6dfe972a34959fcc68722",
+    "is_qa_input": false
+  },
+  "source_eligible_root_native_reported": {
+    "train": 834,
+    "val": 292,
+    "test": 250
+  },
+  "protected_expected": {
+    "data/first-group-training-priority/latest-candidate.json": "1aee2e01583a024c508d6fdac0d3c4fac2260bbd449ea12269d5e033c1dcc7b4",
+    "data/first-group-training-priority/candidate-receipt275-20261018.json": "1aee2e01583a024c508d6fdac0d3c4fac2260bbd449ea12269d5e033c1dcc7b4"
+  },
+  "os_preparation_observation": {
+    "matching_python_qa_or_collector_processes": 0,
+    "execution_lock_exists": false,
+    "observed_by": "GET_CIMINSTANCE_EXCLUDING_QUERY_PROCESS_PYTHON_SCRIPT_FILTER",
+    "process_state_must_be_rechecked_at_root_go": true
+  },
+  "preparation_read_scope": "SOURCE_LEDGER_POLICY_METADATA_HASH_ONLY",
+  "model_or_raster_read_during_preparation": false
+}

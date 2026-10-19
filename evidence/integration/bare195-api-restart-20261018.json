@@ -1,0 +1,113 @@
+{
+  "at": "2026-10-18T04:13:38.786477+00:00",
+  "old_pid": 32576,
+  "new_pid": 20676,
+  "health": {
+    "status": "ok",
+    "mode": "local-development",
+    "storage": "sqlite",
+    "dependencies": {
+      "torch": true,
+      "rasterio": true,
+      "pyproj": true,
+      "ee": false,
+      "mlflow": false
+    },
+    "authentication": "localhost-only; configure GEOAI_API_TOKEN for shared access"
+  },
+  "cors": "http://127.0.0.1:5174",
+  "dashboard_before": {
+    "datasets": 6,
+    "models": 1,
+    "jobs": 0,
+    "analyses": 3,
+    "recent_jobs": [],
+    "limitations": [
+      "실데이터 독립평가 전 운영 승인 불가",
+      "PostGIS·MLflow·RDTR·드리프트는 후속 통합 대상"
+    ]
+  },
+  "dashboard_after": {
+    "datasets": 6,
+    "models": 1,
+    "jobs": 0,
+    "analyses": 3,
+    "recent_jobs": [],
+    "limitations": [
+      "실데이터 독립평가 전 운영 승인 불가",
+      "PostGIS·MLflow·RDTR·드리프트는 후속 통합 대상"
+    ]
+  },
+  "operating_pins_preserved": {
+    "data/first-group-training-priority/latest-bare-review.json": "471a2e4274d8916eb0e09d1a89cdd92ab51e8dbfda73c337c9678c172340a8dd",
+    "data/first-group-training-priority/latest-candidate.json": "d432cb8ec91bdfe903f751f40d27a83064b91ce0938740fb4ad358e85c595067"
+  },
+  "legacy179_reader": {
+    "available": true,
+    "status": "LOCAL_TARGET_REVIEW_FINISHED",
+    "scope": "LOCAL_LABEL_AND_HISTORICAL_SUPPORT_NOT_REMOTE_QUALITY",
+    "source_manifest_sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+    "source_matches_current_manifest": false,
+    "recorded_at": "2026-10-18T03:08:03.967441+00:00",
+    "source_report": "first-group-training-priority/bare-review179-20261018.json",
+    "report_sha256": "36aaf1107292eee74b0f6a2ce462d90e40a22de498ca31aaff1c1ded636775f0",
+    "candidate_total": 50,
+    "rows": [
+      {
+        "province": "south_sulawesi",
+        "candidates": 9,
+        "support_clear": 8,
+        "overlap": 1,
+        "local_invalid": 0
+      },
+      {
+        "province": "gorontalo",
+        "candidates": 1,
+        "support_clear": 0,
+        "overlap": 1,
+        "local_invalid": 0
+      },
+      {
+        "province": "southeast_sulawesi",
+        "candidates": 11,
+        "support_clear": 8,
+        "overlap": 3,
+        "local_invalid": 0
+      },
+      {
+        "province": "east_java",
+        "candidates": 8,
+        "support_clear": 3,
+        "overlap": 5,
+        "local_invalid": 0
+      },
+      {
+        "province": "banten",
+        "candidates": 15,
+        "support_clear": 4,
+        "overlap": 11,
+        "local_invalid": 0
+      },
+      {
+        "province": "west_java",
+        "candidates": 6,
+        "support_clear": 0,
+        "overlap": 6,
+        "local_invalid": 0
+      }
+    ],
+    "searched_provinces": [
+      "south_sulawesi",
+      "gorontalo",
+      "southeast_sulawesi",
+      "east_java",
+      "banten",
+      "west_java"
+    ],
+    "execution_supported": false,
+    "actual_quality_verified": false,
+    "scientific_accuracy_validated": false
+  },
+  "loaded_source_sha256": "57401082fea929ba8ecc396a48596a5253e18408f6a641064395722242aea21a",
+  "scope": "development API only, no collector or pointer mutation, no collection-status HTTP requested"
+}

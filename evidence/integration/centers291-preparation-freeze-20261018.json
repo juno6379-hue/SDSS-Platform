@@ -1,0 +1,54 @@
+{
+  "status": "FROZEN_PREPARATION_ONLY_ROOT290_HOLD_NO_OPERATIONAL_EXECUTION",
+  "files": [
+    {
+      "path": "evidence/integration/centers291-prepare-20261018.py",
+      "bytes": 12595,
+      "sha256": "87ab2abaac3bcfad0738055dd138a0657197e6ab0123ed8e48c09d755b135a26"
+    },
+    {
+      "path": "evidence/integration/centers291-prepared-20261018.json",
+      "bytes": 6030,
+      "sha256": "4934542b5aa861b6737532e4495816d3c9ecaf3d3a940785edf1d37a1300275c"
+    },
+    {
+      "path": "evidence/integration/centers291-default-20261018.log",
+      "bytes": 119,
+      "sha256": "be8a99a8e73d93eeac8623d58ef54493051edbe281da90ae6ba7d29bb0981624"
+    },
+    {
+      "path": "evidence/integration/centers291-final-default-20261018.log",
+      "bytes": 119,
+      "sha256": "be8a99a8e73d93eeac8623d58ef54493051edbe281da90ae6ba7d29bb0981624"
+    },
+    {
+      "path": "docs/implementation/291_gorontalo_eastjava_local_plan_preparation.md",
+      "bytes": 7128,
+      "sha256": "061820bca91ace204b510779c6b3984f513c9199dee00fc315e4573b484af9d1"
+    }
+  ],
+  "parent_runner_ref": {
+    "path": "evidence/integration/centers284-prepare-root-20261018.py",
+    "sha256": "c15cb938f60f07821e5b7f906f0c25afd823abd428d05dde3fe203cdcd07565b"
+  },
+  "prior64_canonical_sha256": "d855117832cdfde64e03a37a0891fa925ef1088f42fbc768b26120a7c399e7fd",
+  "targets": [
+    "gorontalo:2025",
+    "east_java:2025"
+  ],
+  "current_code_pins_match": true,
+  "code_pin_count": 27,
+  "ast_parse_passed": true,
+  "final_noarg_status": "PLANNED_AWAITING_ROOT_GO",
+  "local182_cli_invocations": 0,
+  "active_source_or_ledger_reads": 0,
+  "source_snapshot_created": false,
+  "raster_header_or_array_reads": 0,
+  "network_requests": 0,
+  "collector_started": false,
+  "main_product_changes": 0,
+  "operating_source_or_ledger_written": false,
+  "actual_quality_eligible": false,
+  "ready_for_training": false,
+  "automatic_retry_allowed": false
+}

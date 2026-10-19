@@ -1,0 +1,146 @@
+{
+  "at": "2026-10-18T16:21:40.100985+09:00",
+  "status": "API_VERIFIED_REAL_BROWSER_UNCONFIRMED_DEBUGGER_UNATTACHED",
+  "actual_api": {
+    "url": "http://127.0.0.1:5174/api/data/collection-status",
+    "status": 200,
+    "seconds": 33.57168129999991,
+    "recorded_at": "2026-10-18T07:13:13.895728+00:00",
+    "budget_observed_at": "2026-10-18T07:13:19.353792+00:00"
+  },
+  "source_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+  "pointer_sha256": "1018b59294871df8f9e339d63695f08632a5632419b3831e47bdeb2f88c785ab",
+  "report_sha256": "c936575e2937d5c8ec9f1e4675de89eed0f5dbabce26bbd26bea8661c4b18458",
+  "current": {
+    "registered": 1715,
+    "eligible": 1358,
+    "cell_gap": 21
+  },
+  "candidate": {
+    "eligible": 1342,
+    "blockers": 3,
+    "source_matches_current": true,
+    "ready": false
+  },
+  "bare_review": {
+    "available": true,
+    "status": "LOCAL_TARGET_REVIEW_FINISHED",
+    "scope": "LOCAL_LABEL_AND_HISTORICAL_SUPPORT_NOT_REMOTE_QUALITY",
+    "source_manifest_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "source_matches_current_manifest": true,
+    "recorded_at": "2026-10-18T07:10:40.638011+00:00",
+    "source_report": "first-group-training-priority/bare-review234-20261018.json",
+    "report_sha256": "c936575e2937d5c8ec9f1e4675de89eed0f5dbabce26bbd26bea8661c4b18458",
+    "candidate_total": 50,
+    "rows": [
+      {
+        "province": "south_sulawesi",
+        "candidates": 9,
+        "support_clear": 8,
+        "overlap": 1,
+        "local_invalid": 0
+      },
+      {
+        "province": "gorontalo",
+        "candidates": 1,
+        "support_clear": 0,
+        "overlap": 1,
+        "local_invalid": 0
+      },
+      {
+        "province": "southeast_sulawesi",
+        "candidates": 11,
+        "support_clear": 0,
+        "overlap": 11,
+        "local_invalid": 0
+      },
+      {
+        "province": "east_java",
+        "candidates": 8,
+        "support_clear": 3,
+        "overlap": 5,
+        "local_invalid": 0
+      },
+      {
+        "province": "banten",
+        "candidates": 15,
+        "support_clear": 4,
+        "overlap": 11,
+        "local_invalid": 0
+      },
+      {
+        "province": "west_java",
+        "candidates": 6,
+        "support_clear": 0,
+        "overlap": 6,
+        "local_invalid": 0
+      }
+    ],
+    "searched_provinces": [
+      "south_sulawesi",
+      "gorontalo",
+      "southeast_sulawesi",
+      "east_java",
+      "banten",
+      "west_java"
+    ],
+    "execution_supported": false,
+    "actual_quality_verified": false,
+    "scientific_accuracy_validated": false
+  },
+  "budget": {
+    "schema_version": 1,
+    "available": true,
+    "status": "OBSERVED_LEDGER_SNAPSHOT",
+    "scope": "ADDITIONAL_BUDGET_INCLUDES_PENDING_NOT_PROCESS_LIVENESS",
+    "additional_maximum_bytes": 4294967296,
+    "charged_including_pending_bytes": 2398022341,
+    "remaining_bytes": 1896944955,
+    "settled_batch_bytes": 2258031733,
+    "metadata_body_bytes": 3675728,
+    "pending_bytes": 136314880,
+    "pending_count": 2,
+    "old_pending_bytes": 136314880,
+    "old_pending_count": 2,
+    "ledger_updated_at": "2026-10-18T06:14:06.328621+00:00",
+    "rate_limit_active": false,
+    "source_manifest_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "ledger_sha256": "61161c35eabb593afb5f096c256791871d297b723f82ffc2ac2449b3bd8266e7",
+    "observed_at": "2026-10-18T07:13:19.353792+00:00",
+    "process_verification": "UNKNOWN",
+    "execution_approved": false
+  },
+  "browser": {
+    "tab": "850119075",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "explicit_refreshes": 1,
+    "last_observed_state": "READING_CURRENT_COLLECTION",
+    "recovery_attempts": 1,
+    "error": "DEBUGGER_UNATTACHED",
+    "new_234_rows_visually_confirmed": false,
+    "console_and_overflow": "UNVERIFIED",
+    "new_GET_or_refresh_after_resume": "NO_EXTRA_MANUAL_API_GET; ONE_ROOT_AUTHORIZED_PAGE_NAVIGATION_WITH_PAGE_INITIATED_REQUESTS_UNOBSERVED",
+    "root_authorized_new_verification_tab": {
+      "id": "850119094",
+      "url": "http://127.0.0.1:5174/#/view/17",
+      "create_error": "NAVIGATION_TIMEOUT",
+      "bind_error": "CDP_DOMSNAPSHOT_CAPTURE_TIMEOUT_10000MS",
+      "attempts": 1,
+      "actual_visual_result": "UNVERIFIED",
+      "new_tab_closed": false,
+      "existing_tabs_modified_or_closed": false
+    }
+  },
+  "writes": {
+    "product_code": 0,
+    "server_restart": 0,
+    "collector": 0,
+    "raw_source_ledger_lock": 0,
+    "pointer": 0
+  },
+  "limits": [
+    "Actual API GET200 and browser render completion are separate.",
+    "API source/current match is verified; new browser rows, console and overflow are not verified.",
+    "One API call duration is not a service SLA."
+  ]
+}

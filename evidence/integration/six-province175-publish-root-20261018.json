@@ -1,0 +1,49 @@
+{
+  "base": "51194db3398d11e1a490924893ea2b68c1d99f9a",
+  "commit": "36d433b3d65cddc1166750f3fa98f9f7c0a38298",
+  "branch": "main",
+  "owned_files": [
+    "backend/app/data/targeted_bare_plan.py",
+    "tests/test_targeted_bare_plan.py",
+    "docs/implementation/157_targeted_bare_plan.md",
+    "docs/implementation/174_six_province_targeted_execution_plan.md",
+    "docs/implementation/175_six_province_local_target_plan.md",
+    "docs/understanding/175_SIX_PROVINCE_LOCAL_TARGET_PLAN.md",
+    "evidence/integration/six-province-local-plan-agent-20261018.log",
+    "evidence/integration/six-province-local-plan-independent-20261018.json",
+    "evidence/integration/six-province175-root-related-20261018.py",
+    "evidence/integration/six-province175-root-related-20261018.json",
+    "evidence/integration/six-province175-root-related-20261018.log",
+    "evidence/integration/six-province175-publish-root-20261018.py"
+  ],
+  "changed_files": [
+    "docs/implementation/157_targeted_bare_plan.md",
+    "docs/implementation/174_six_province_targeted_execution_plan.md",
+    "docs/implementation/175_six_province_local_target_plan.md",
+    "docs/understanding/175_SIX_PROVINCE_LOCAL_TARGET_PLAN.md",
+    "evidence/integration/six-province-local-plan-agent-20261018.log",
+    "evidence/integration/six-province-local-plan-independent-20261018.json",
+    "evidence/integration/six-province175-publish-root-20261018.py",
+    "evidence/integration/six-province175-root-related-20261018.json",
+    "evidence/integration/six-province175-root-related-20261018.log",
+    "evidence/integration/six-province175-root-related-20261018.py",
+    "tests/test_targeted_bare_plan.py"
+  ],
+  "protected_tracked_work_sha256": {
+    "CONTINUOUS_DEVELOPMENT.md": "917533197226324a605dd5d0a15bef0aca222b4ef2ffe3c6d5447d547129a79c",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "docs/implementation/00_next_session_handoff.md": "113269b7e527720d0b745e697617560d53db01704fbddf5d4def9cc361fdd7ff",
+    "frontend/src/App.tsx": "de808c64825758c93822cc3b7fda05b9c5fdd0a0332e74300263decfdc78e24b",
+    "frontend/src/PlatformShell.tsx": "7116e9f266521b8125dc44e933d3b55c84677c389102cd9c85cf29b0c03bf9c9",
+    "scripts/collect_training_parallel.py": "5e99234379cd45804d6eaf1b3b349210d5b9f26d5344e8ff6193dd74eb136b0c",
+    "scripts/collect_training_priority.py": "27a13917bf90941ea68b2400028fe1b1300365ac63721e4ccf0eabd1e004040c",
+    "tests/test_targeted_live_guards.py": "1ca8bc1d02f6f30e30feccc1262cfc59100824fa5e9771629c32c76f9d180b99",
+    "tests/test_training_priority.py": "75a45c2c45e63fb44313683feebc226cbc66baf0602c0de4ac389d5afc4a4f54"
+  },
+  "protected_work_unchanged": true,
+  "preexisting_staged_work": false,
+  "post_commit_index_clean": true,
+  "source_sha256": "c2011f678a7860d734889abb96514daf1944b9ed888ee02dd502de8030a0fccb",
+  "scope": "175 local plan only; execution_supported remains false",
+  "pushed": false
+}

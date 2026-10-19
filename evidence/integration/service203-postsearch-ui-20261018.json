@@ -1,0 +1,61 @@
+{
+  "status": "VERIFIED_REAL_POST203_BROWSER",
+  "at": "2026-10-18T04:44:53.242247+00:00",
+  "method": "One explicit refresh existing Chrome view17; no separate API requests or restarts",
+  "response_recorded_at": "2026-10-18T04:43:50.605749+00:00",
+  "response_kst": "2026-10-18 13:43:50.605749",
+  "source_sha256": "39bb0245e586342bd116f5b052428fcf857fb26eae0ee1413c9c5f5275c40ba9",
+  "registered_manifest": {
+    "physical_total": 1667,
+    "eligible": 1333,
+    "split": [
+      791,
+      292,
+      250
+    ],
+    "cell_gap": 33
+  },
+  "candidate": {
+    "eligible": 1317,
+    "split": [
+      791,
+      276,
+      250
+    ],
+    "blockers": 3,
+    "source_mismatch_warning": true
+  },
+  "bare_review": {
+    "total": 37,
+    "searched_provinces": [
+      "gorontalo",
+      "west_java"
+    ],
+    "source_mismatch_warning": true,
+    "remote_quality": "미검사",
+    "execution": "미승인"
+  },
+  "checks": {
+    "at": "2026-10-18T04:44:32.422Z",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    }
+  },
+  "proof": [
+    "service203-postsearch-ui-20261018.dom.txt",
+    "service203-postsearch-ui-20261018.inventory.png",
+    "service203-postsearch-ui-20261018.png",
+    "service203-postsearch-ui-20261018.checks.json"
+  ],
+  "limitations": [
+    "UI registered manifest count1667 is not a physical-file census.",
+    "203 stage references/source change is parent handoff; no additional native audit here.",
+    "204 local proposals are not published or execution approved; pointers unchanged by this task.",
+    "196 observations preserved separately.",
+    "No code, registry, source, ledger or operating-data writes; no API/UI restart or duplicate request.",
+    "No HTTP timing/SLA claim."
+  ]
+}

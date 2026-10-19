@@ -1,0 +1,34 @@
+{
+  "status": "LOCAL_PROPOSAL_COMPLETE_UNAPPROVED",
+  "at_utc": "2026-10-18T13:11:01.169971+00:00",
+  "seconds": 67.171,
+  "exit_code": 0,
+  "cli_invocations": 1,
+  "pins_stable_after": {
+    "source": true,
+    "ledger": true
+  },
+  "prior_candidates_preserved": 68,
+  "source_snapshot_ref": {
+    "path": "data/centers302-fresh-20261018/source.json",
+    "sha256": "9e63564c87647a144665bbb6bbe49b4a95d09bbd2c3bc0f3725861c54d5e7109"
+  },
+  "proposal_sha256": "e145e1fc2028bb00c26ceace8f814281fa8c48a9663ea18b1f31548d4eeec842",
+  "candidate_count": 2,
+  "target_status": [
+    {
+      "province": "east_java",
+      "year": 2025,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 27,
+      "deficit_to_28": 1,
+      "proposed_candidates": 2
+    }
+  ],
+  "headers_verified": 118,
+  "network_requests": 0,
+  "full_pending_support_inventory_verified": false,
+  "collection_started": false,
+  "source_or_ledger_written": false,
+  "training_started": false
+}

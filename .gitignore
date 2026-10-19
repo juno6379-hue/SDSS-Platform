@@ -12,3 +12,15 @@ __pycache__/
 frontend/node_modules/
 frontend/dist/
 *.sqlite3
+
+# Large candidate package snapshots (50-66MB each); kept locally, SHA pinned in evidence records
+/evidence/integration/candidate-materialization-live-20261017/candidate.json
+/evidence/integration/priority-ml-20261018-candidate-package/candidate.json
+/evidence/integration/priority-ml-next-20261018-candidate-package/candidate.json
+/evidence/integration/priority164-cohort-20261018/candidate-package/candidate.json
+/evidence/integration/priority164-guarded207-20261018/candidate-package/candidate.json
+/evidence/integration/priority164-guarded227-20261018/candidate-package/candidate.json
+/evidence/integration/priority164-guarded273-20261018/candidate-package/candidate.json
+/evidence/integration/priority164-guarded290-20261018/candidate-package/candidate.json
+/evidence/integration/priority164-guarded309-20261018/candidate-package/candidate.json
+/evidence/integration/priority164-recovery193-20261018/candidate-package/candidate.json

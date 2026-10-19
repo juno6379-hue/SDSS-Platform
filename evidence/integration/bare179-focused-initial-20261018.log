@@ -1,0 +1,17 @@
+test_review_bare_targets179 (unittest.loader._FailedTest.test_review_bare_targets179) ... ERROR
+
+======================================================================
+ERROR: test_review_bare_targets179 (unittest.loader._FailedTest.test_review_bare_targets179)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_review_bare_targets179
+Traceback (most recent call last):
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\unittest\loader.py", line 162, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests.test_review_bare_targets179'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

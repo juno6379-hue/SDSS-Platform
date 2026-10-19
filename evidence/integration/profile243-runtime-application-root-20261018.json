@@ -1,0 +1,69 @@
+{
+  "started_at_utc": "2026-10-18T07:50:58.196500+00:00",
+  "status": "RUNTIME18_APPLIED_API_HEALTH_VERIFIED_STATUS_SMOKE_PENDING",
+  "applied": [
+    "backend/app/candidate_qa_comparison_api.py",
+    "backend/app/collection_budget_status.py",
+    "backend/app/collection_priority_status.py",
+    "backend/app/collection_source_profile.py",
+    "backend/app/collection_status.py",
+    "backend/app/data/candidates.py",
+    "backend/app/main.py",
+    "backend/app/ml/candidate_materialization.py",
+    "backend/app/ml/candidate_qa_comparison.py",
+    "backend/app/ml/candidate_readiness_qa.py",
+    "backend/app/ml/candidate_staging.py",
+    "backend/app/ml/manifest_resource_profile.py",
+    "backend/app/ml/readiness.py",
+    "backend/app/ml/split_json_io.py",
+    "scripts/find_bare_targets173.py",
+    "scripts/prepare_priority_candidate164.py",
+    "scripts/propose_deficit_centers182.py",
+    "scripts/run_experiment.py"
+  ],
+  "new_api_pid": 40156,
+  "profile_config_sha256": "61dd13f8de88f8eef826a0ad4461f22c1a3f4bb698d5b7c5c4833d730fe3ffcc",
+  "protected_pins_preserved": true,
+  "catalog_records_preserved": true,
+  "health": {
+    "status": "ok",
+    "mode": "local-development",
+    "storage": "sqlite",
+    "dependencies": {
+      "torch": true,
+      "rasterio": true,
+      "pyproj": true,
+      "ee": false,
+      "mlflow": false
+    },
+    "authentication": "localhost-only; configure GEOAI_API_TOKEN for shared access"
+  },
+  "cors": "http://127.0.0.1:5174",
+  "dashboard_before": {
+    "datasets": 6,
+    "models": 1,
+    "jobs": 0,
+    "analyses": 3,
+    "recent_jobs": [],
+    "limitations": [
+      "실데이터 독립평가 전 운영 승인 불가",
+      "PostGIS·MLflow·RDTR·드리프트는 후속 통합 대상"
+    ]
+  },
+  "dashboard_after": {
+    "datasets": 6,
+    "models": 1,
+    "jobs": 0,
+    "analyses": 3,
+    "recent_jobs": [],
+    "limitations": [
+      "실데이터 독립평가 전 운영 승인 불가",
+      "PostGIS·MLflow·RDTR·드리프트는 후속 통합 대상"
+    ]
+  },
+  "tests_copied": 0,
+  "collector_started": false,
+  "training_started": false,
+  "external_deployment": false,
+  "finished_at_utc": "2026-10-18T07:51:07.526950+00:00"
+}

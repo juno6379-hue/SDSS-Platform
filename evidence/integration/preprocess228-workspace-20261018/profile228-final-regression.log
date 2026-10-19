@@ -1,0 +1,114 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+test_164_cli_explicit_choice_and_no_flag_preserves_default (test_manifest_profile228.Profile228Tests.test_164_cli_explicit_choice_and_no_flag_preserves_default) ... usage: python.exe -m unittest [-h] --data-root DATA_ROOT --source SOURCE
+                              --policy POLICY --source-sha256 SOURCE_SHA256
+                              --policy-sha256 POLICY_SHA256 --run-id RUN_ID
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'bad' (choose from 'bounded128m-3000-v1')
+ok
+test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper (test_manifest_profile228.Profile228Tests.test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper) ... ok
+test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict (test_manifest_profile228.Profile228Tests.test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict) ... ok
+test_explicit_materialization_staging_v2_and_old_contract_fail_closed (test_manifest_profile228.Profile228Tests.test_explicit_materialization_staging_v2_and_old_contract_fail_closed) ... ok
+test_profile_exact_name_scope_reset_and_legacy_receipts (test_manifest_profile228.Profile228Tests.test_profile_exact_name_scope_reset_and_legacy_receipts) ... ok
+test_qa_v2_same_profile_and_default_rejection (test_manifest_profile228.Profile228Tests.test_qa_v2_same_profile_and_default_rejection) ... ok
+{"stage": "SNAPSHOT_PINNED", "at": "2026-10-18T06:30:27.937774+00:00", "rows": 1, "source_sha256": "cd988bb4d3eb533d1cd7ea9d9ed3a4618886f2d99e2ec5061bd9715659534470"}
+{"stage": "SOURCE_QA_COMPLETE", "seconds": 0.0, "eligible": {"train": 0, "val": 0, "test": 0}}
+{"stage": "CANDIDATE_STAGED", "excluded_rows": 0, "eligible": {"test": 0, "val": 0, "train": 0}}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {"train": 0, "val": 0, "test": 0}, "ready_for_training": false}
+test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate (test_manifest_profile228.Profile228Tests.test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate) ... ok
+test_rows_nodes_depth_io_and_output_budget_fail_closed (test_manifest_profile228.Profile228Tests.test_rows_nodes_depth_io_and_output_budget_fail_closed) ... FAIL
+test_candidate_tamper_roundtrip_fails_without_receipt (test_candidate_materialization.CandidateMaterializationTests.test_candidate_tamper_roundtrip_fails_without_receipt) ... ok
+test_exact_pin_format_and_wrong_sha_leave_no_output (test_candidate_materialization.CandidateMaterializationTests.test_exact_pin_format_and_wrong_sha_leave_no_output) ... ok
+test_existing_package_never_overwrites_and_cli_cp949 (test_candidate_materialization.CandidateMaterializationTests.test_existing_package_never_overwrites_and_cli_cp949) ... ok
+test_fixed_policy_tampered_plan_and_typed_false_refused (test_candidate_materialization.CandidateMaterializationTests.test_fixed_policy_tampered_plan_and_typed_false_refused) ... ok
+test_output_cap_and_receipt_cap_reject_without_completion (test_candidate_materialization.CandidateMaterializationTests.test_output_cap_and_receipt_cap_reject_without_completion) ... ok
+test_output_directory_race_preserves_racer_and_never_writes_receipt (test_candidate_materialization.CandidateMaterializationTests.test_output_directory_race_preserves_racer_and_never_writes_receipt) ... ok
+test_parent_retarget_before_directory_creation_rejected (test_candidate_materialization.CandidateMaterializationTests.test_parent_retarget_before_directory_creation_rejected) ... ok
+test_partial_receipt_failure_preserved_not_completion (test_candidate_materialization.CandidateMaterializationTests.test_partial_receipt_failure_preserved_not_completion) ... ok
+test_roundtrip_false_approval_contradiction_no_receipt (test_candidate_materialization.CandidateMaterializationTests.test_roundtrip_false_approval_contradiction_no_receipt) ... ok
+test_roundtrip_receipt_pins_bytes_falseflags_and_source_preservation (test_candidate_materialization.CandidateMaterializationTests.test_roundtrip_receipt_pins_bytes_falseflags_and_source_preservation) ... ok
+test_safe_writer_and_validator_only_no_assess_or_pixels_or_registry (test_candidate_materialization.CandidateMaterializationTests.test_safe_writer_and_validator_only_no_assess_or_pixels_or_registry) ... ok
+test_scope_input_output_distinct_existing_directory_and_parent_required (test_candidate_materialization.CandidateMaterializationTests.test_scope_input_output_distinct_existing_directory_and_parent_required) ... ok
+test_source_change_after_roundtrip_no_receipt_and_partial_preserved (test_candidate_materialization.CandidateMaterializationTests.test_source_change_after_roundtrip_no_receipt_and_partial_preserved) ... ok
+test_windows_remote_ads_device_rejected_before_files_open (test_candidate_materialization.CandidateMaterializationTests.test_windows_remote_ads_device_rejected_before_files_open) ... ok
+test_writer_failure_preserves_partial_no_receipt (test_candidate_materialization.CandidateMaterializationTests.test_writer_failure_preserves_partial_no_receipt) ... ok
+test_cli_cp949_ascii_and_existing_stage_never_overwritten (test_candidate_staging.CandidateStagingTests.test_cli_cp949_ascii_and_existing_stage_never_overwritten) ... ok
+test_copy_failure_preserves_partial_without_completion (test_candidate_staging.CandidateStagingTests.test_copy_failure_preserves_partial_without_completion) ... ok
+test_copy_growth_and_truncation_or_wrong_sha_rejected (test_candidate_staging.CandidateStagingTests.test_copy_growth_and_truncation_or_wrong_sha_rejected) ... ok
+test_copy_reads_are_bounded_and_early_eof_preserves_partial (test_candidate_staging.CandidateStagingTests.test_copy_reads_are_bounded_and_early_eof_preserves_partial) ... ok
+test_directory_race_and_output_retarget_refused (test_candidate_staging.CandidateStagingTests.test_directory_race_and_output_retarget_refused) ... ok
+test_disjoint_roots_and_validator_qa_claims_enforced (test_candidate_staging.CandidateStagingTests.test_disjoint_roots_and_validator_qa_claims_enforced) ... ok
+test_exact_receipt_keys_status_and_fifteen_false_flags (test_candidate_staging.CandidateStagingTests.test_exact_receipt_keys_status_and_fifteen_false_flags) ... ok
+test_external_three_pins_and_receipt_pin_mandatory (test_candidate_staging.CandidateStagingTests.test_external_three_pins_and_receipt_pin_mandatory) ... ok
+test_full_validator_exact_candidate_called_once_and_no_assess (test_candidate_staging.CandidateStagingTests.test_full_validator_exact_candidate_called_once_and_no_assess) ... ok
+test_identical_bytes_new_data_receipt_without_qa (test_candidate_staging.CandidateStagingTests.test_identical_bytes_new_data_receipt_without_qa) ... ok
+test_old_new_plan_entire_typed_match_required (test_candidate_staging.CandidateStagingTests.test_old_new_plan_entire_typed_match_required) ... ok
+test_package_logical_retarget_before_stage_rejected (test_candidate_staging.CandidateStagingTests.test_package_logical_retarget_before_stage_rejected) ... ok
+test_partial_receipt_preserved_and_invalid (test_candidate_staging.CandidateStagingTests.test_partial_receipt_preserved_and_invalid) ... ok
+test_receipt_growth_read_stops_at_64k_plus_one (test_candidate_staging.CandidateStagingTests.test_receipt_growth_read_stops_at_64k_plus_one) ... ok
+test_receipt_sizes_names_refs_and_count_tamper_fail_closed (test_candidate_staging.CandidateStagingTests.test_receipt_sizes_names_refs_and_count_tamper_fail_closed) ... ok
+test_receipt_strict_parser_and_byte_cap_before_stage (test_candidate_staging.CandidateStagingTests.test_receipt_strict_parser_and_byte_cap_before_stage) ... ok
+test_receipt_uses_separate_64k_read_context (test_candidate_staging.CandidateStagingTests.test_receipt_uses_separate_64k_read_context) ... ok
+test_scope_existing_parent_new_directory_and_windows_aliases (test_candidate_staging.CandidateStagingTests.test_scope_existing_parent_new_directory_and_windows_aliases) ... ok
+test_source_mutation_after_copy_prevents_receipt (test_candidate_staging.CandidateStagingTests.test_source_mutation_after_copy_prevents_receipt) ... ok
+test_actual_run_with_mock_assess_ready_true_never_prepares_trains_or_infers (test_candidate_readiness_qa.CandidateReadinessQATests.test_actual_run_with_mock_assess_ready_true_never_prepares_trains_or_infers) ... ok
+test_blocked_qa_is_completed_false_authorization_and_input_preservation (test_candidate_readiness_qa.CandidateReadinessQATests.test_blocked_qa_is_completed_false_authorization_and_input_preservation) ... ok
+test_cli_cp949_subprocess_uses_mock_run_only (test_candidate_readiness_qa.CandidateReadinessQATests.test_cli_cp949_subprocess_uses_mock_run_only) ... ok
+test_cli_has_no_execute_resume_and_ascii_summary (test_candidate_readiness_qa.CandidateReadinessQATests.test_cli_has_no_execute_resume_and_ascii_summary) ... ok
+test_directory_race_and_partial_receipt_preserved (test_candidate_readiness_qa.CandidateReadinessQATests.test_directory_race_and_partial_receipt_preserved) ... ok
+test_explicit_label_source_extra_key_supported_but_mismatch_rejected (test_candidate_readiness_qa.CandidateReadinessQATests.test_explicit_label_source_extra_key_supported_but_mismatch_rejected) ... ok
+test_four_external_pin_formats_and_mismatch_before_run (test_candidate_readiness_qa.CandidateReadinessQATests.test_four_external_pin_formats_and_mismatch_before_run) ... ok
+test_input_role_caps_strict_json_and_early_output_guard (test_candidate_readiness_qa.CandidateReadinessQATests.test_input_role_caps_strict_json_and_early_output_guard) ... ok
+test_minimal_failed_capture_can_complete_qa_but_not_claim_capture_success (test_candidate_readiness_qa.CandidateReadinessQATests.test_minimal_failed_capture_can_complete_qa_but_not_claim_capture_success) ... ok
+test_partial_final_receipt_is_preserved_and_invalid (test_candidate_readiness_qa.CandidateReadinessQATests.test_partial_final_receipt_is_preserved_and_invalid) ... ok
+test_policy_object_detached_from_runner_mutation (test_candidate_readiness_qa.CandidateReadinessQATests.test_policy_object_detached_from_runner_mutation) ... ok
+test_policy_whole_typed_same_and_all_floors_no_coercion (test_candidate_readiness_qa.CandidateReadinessQATests.test_policy_whole_typed_same_and_all_floors_no_coercion) ... ok
+test_report_read_cap_and_qa_receipt_cap_are_completion_limits (test_candidate_readiness_qa.CandidateReadinessQATests.test_report_read_cap_and_qa_receipt_cap_are_completion_limits) ... ok
+test_report_return_file_mismatch_and_report_limit_prevent_completion (test_candidate_readiness_qa.CandidateReadinessQATests.test_report_return_file_mismatch_and_report_limit_prevent_completion) ... ok
+test_report_status_signature_source_counts_capture_or_approval_tamper (test_candidate_readiness_qa.CandidateReadinessQATests.test_report_status_signature_source_counts_capture_or_approval_tamper) ... ok
+test_run_exception_preserves_partial_report_no_completion (test_candidate_readiness_qa.CandidateReadinessQATests.test_run_exception_preserves_partial_report_no_completion) ... ok
+test_scopes_aliases_existing_and_missing_parent_refused (test_candidate_readiness_qa.CandidateReadinessQATests.test_scopes_aliases_existing_and_missing_parent_refused) ... ok
+test_source_input_change_after_qa_no_receipt_partial_report_preserved (test_candidate_readiness_qa.CandidateReadinessQATests.test_source_input_change_after_qa_no_receipt_partial_report_preserved) ... ok
+test_stage_schema_flags_lineage_count_and_old_source_binding (test_candidate_readiness_qa.CandidateReadinessQATests.test_stage_schema_flags_lineage_count_and_old_source_binding) ... ok
+test_api_busy_worker_lock_and_recovery (test_candidate_qa_comparison.CandidateQAComparisonTests.test_api_busy_worker_lock_and_recovery) ... ok
+test_api_cancelled_request_keeps_worker_busy_until_finished (test_candidate_qa_comparison.CandidateQAComparisonTests.test_api_cancelled_request_keeps_worker_busy_until_finished) ... ok
+test_api_exact_minimal_success_schema_and_no_store (test_candidate_qa_comparison.CandidateQAComparisonTests.test_api_exact_minimal_success_schema_and_no_store) ... ok
+test_api_invalid_requests_before_reader_and_stream_cap (test_candidate_qa_comparison.CandidateQAComparisonTests.test_api_invalid_requests_before_reader_and_stream_cap) ... ok
+test_api_pin_error_privacy_and_recovery (test_candidate_qa_comparison.CandidateQAComparisonTests.test_api_pin_error_privacy_and_recovery) ... ok
+test_code_counter_budget_and_empty_blocked_report_refused (test_candidate_qa_comparison.CandidateQAComparisonTests.test_code_counter_budget_and_empty_blocked_report_refused) ... ok
+test_failed_capture_null_and_bare_shortage_computed_not_assumed (test_candidate_qa_comparison.CandidateQAComparisonTests.test_failed_capture_null_and_bare_shortage_computed_not_assumed) ... ok
+test_huge_integer_float_bool_and_blocker_code_privacy_rejected (test_candidate_qa_comparison.CandidateQAComparisonTests.test_huge_integer_float_bool_and_blocker_code_privacy_rejected) ... ok
+test_policy_signature_stage_qa_schema_false_flags_and_typed_counts (test_candidate_qa_comparison.CandidateQAComparisonTests.test_policy_signature_stage_qa_schema_false_flags_and_typed_counts) ... ok
+test_pure_projection_is_input_immutable_without_io_or_assess (test_candidate_qa_comparison.CandidateQAComparisonTests.test_pure_projection_is_input_immutable_without_io_or_assess) ... ok
+test_qa_saved_counts_blockers_capture_and_scene_scope_consistency (test_candidate_qa_comparison.CandidateQAComparisonTests.test_qa_saved_counts_blockers_capture_and_scene_scope_consistency) ... ok
+test_reader_caps_strict_json_pin_and_stale (test_candidate_qa_comparison.CandidateQAComparisonTests.test_reader_caps_strict_json_pin_and_stale) ... ok
+test_reader_change_after_initial_four_inputs_rejected (test_candidate_qa_comparison.CandidateQAComparisonTests.test_reader_change_after_initial_four_inputs_rejected) ... ok
+test_reader_opens_only_fixed_four_jsons_and_preserves_bytes (test_candidate_qa_comparison.CandidateQAComparisonTests.test_reader_opens_only_fixed_four_jsons_and_preserves_bytes) ... ok
+test_signature_required_class_range_capture_false_and_bare_bounds (test_candidate_qa_comparison.CandidateQAComparisonTests.test_signature_required_class_range_capture_false_and_bare_bounds) ... ok
+test_source_role_pin_path_size_and_receipt_report_crossbinding (test_candidate_qa_comparison.CandidateQAComparisonTests.test_source_role_pin_path_size_and_receipt_report_crossbinding) ... ok
+test_summary_counter_rows_bare_and_all_false_projection (test_candidate_qa_comparison.CandidateQAComparisonTests.test_summary_counter_rows_bare_and_all_false_projection) ... ok
+test_bad_run_id_rejected (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_bad_run_id_rejected) ... ok
+test_copy_cap_refuses_before_destination (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_copy_cap_refuses_before_destination) ... ok
+test_copy_detects_concurrent_source_change (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_copy_detects_concurrent_source_change) ... ok
+test_copy_is_exact_and_exclusive (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_copy_is_exact_and_exclusive) ... ok
+test_existing_or_partial_runs_never_reused (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_existing_or_partial_runs_never_reused) ... ok
+{"stage": "SNAPSHOT_PINNED", "at": "2026-10-18T06:31:18.590993+00:00", "rows": 1, "source_sha256": "d520e05e9b8b3df907dc14a731638daddf8ddaa87585623c83d036c9850a1c3b"}
+test_qa_failure_preserves_snapshot_and_blocks_rerun (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_qa_failure_preserves_snapshot_and_blocks_rerun) ... ok
+test_relative_raster_paths_refused_before_assess (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_relative_raster_paths_refused_before_assess) ... ok
+test_relative_source_and_external_source_rejected (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_relative_source_and_external_source_rejected) ... ok
+test_stale_pin_rejected_before_new_runs (test_prepare_priority_candidate164.PriorityPreprocessing164Tests.test_stale_pin_rejected_before_new_runs) ... ok
+
+======================================================================
+FAIL: test_rows_nodes_depth_io_and_output_budget_fail_closed (test_manifest_profile228.Profile228Tests.test_rows_nodes_depth_io_and_output_budget_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\tests\test_manifest_profile228.py", line 83, in test_rows_nodes_depth_io_and_output_budget_fail_closed
+    with patch.object(profile,'DESCRIPTOR',{**profile.DESCRIPTOR,'max_nodes':10}),self.assertRaisesRegex(ValueError,'MANIFEST_NODE_LIMIT'):io.measure({'scenes':[{}]*20},'candidate')
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 87 tests in 53.562s
+
+FAILED (failures=1)

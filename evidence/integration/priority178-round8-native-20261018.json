@@ -1,0 +1,851 @@
+{
+  "schema_version": 1,
+  "scope": "READONLY_FIXED_LAUNCH_INCREMENT_NATIVE_AUDIT",
+  "recorded_at": "2026-10-18T02:54:22.641821+00:00",
+  "status": "COMPLETED_NATIVE_CHECKED",
+  "issue": null,
+  "native_validation_complete": true,
+  "batches": [
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g01",
+      "settled": true,
+      "stored_config_sha256": "ed1f80354faf4723f943bdc7474dd228cce1845e2ba4486272f6d9e4ccc68db4",
+      "effective_config_sha256": "c27f10f9cb844fd2d1140aab3fff7ef62d8731e21860e472b1f83feda1b0ad77",
+      "charged_bytes": 23007402,
+      "worker_error": false,
+      "worker_error_category": null,
+      "rate_limited": false,
+      "scene_status_counts": {
+        "rgb_window_downloaded": 1
+      },
+      "scene_failure_count": 0,
+      "patches": [
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r0-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 62848,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 84,
+            "5": 36454,
+            "7": 26084,
+            "11": 226
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.5800343686354379,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r0-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 63764,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 385,
+            "5": 13004,
+            "7": 50184,
+            "11": 191
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7870271626623173,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r0-c2",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 51948,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 94,
+            "5": 12431,
+            "7": 39089,
+            "11": 334
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7524640024640025,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r0-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 58080,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 612,
+            "2": 1890,
+            "5": 9206,
+            "7": 45336,
+            "11": 1036
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7805785123966942,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r1-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 63545,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 52,
+            "2": 425,
+            "5": 18511,
+            "7": 43340,
+            "11": 1217
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.6820363521913605,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r1-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 62476,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 354,
+            "5": 6408,
+            "7": 55617,
+            "11": 97
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8902138421153724,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r1-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 59093,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 1114,
+            "2": 120,
+            "5": 12951,
+            "7": 44518,
+            "11": 390
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7533548812888159,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r1-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 55512,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 1193,
+            "2": 276,
+            "5": 12569,
+            "7": 40945,
+            "11": 529
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7375882692030552,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r2-c0",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 31507,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 4,
+            "2": 68,
+            "4": 28,
+            "5": 285,
+            "7": 30273,
+            "11": 849
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9608341003586505,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r2-c1",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 30240,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 175,
+            "7": 28780,
+            "11": 1285
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9517195767195767,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r2-c2",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 50573,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 44,
+            "5": 916,
+            "7": 49067,
+            "11": 546
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.970221264310996,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r2-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 51880,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 1591,
+            "2": 321,
+            "5": 213,
+            "7": 49612,
+            "11": 143
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.956283731688512,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r3-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 54108,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 710,
+            "5": 6501,
+            "7": 46837,
+            "11": 60
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8656206106305907,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r3-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 59524,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "7": 59520,
+            "11": 4
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9999328002150393,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r3-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 64680,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 14,
+            "2": 56,
+            "7": 64204,
+            "11": 406
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9926406926406927,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g01-r3-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 55692,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 2262,
+            "2": 1469,
+            "5": 463,
+            "7": 50815,
+            "11": 683
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.91242907419378,
+          "maximum_class_fraction_over_90_percent": true
+        }
+      ],
+      "native_patches_checked": 16,
+      "native_eligible_patches": 11,
+      "eligible_bare_pixels": 0,
+      "data_outcome": "PATCHES_NATIVE_CHECKED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-banten-2024-g02",
+      "settled": true,
+      "stored_config_sha256": "b22f6a2d1e0f6077adbe7b760a5139c18edb8aa44432a4a3f2301721ab8509e4",
+      "effective_config_sha256": "61e1daef6307b8431bdf431a0a2f9f89be507335f5cc6f6f3a6fbe71f2a70a4a",
+      "charged_bytes": 22124249,
+      "worker_error": false,
+      "worker_error_category": null,
+      "rate_limited": false,
+      "scene_status_counts": {
+        "rgb_window_downloaded": 1
+      },
+      "scene_failure_count": 0,
+      "patches": [
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r0-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 58984,
+            "5": 2574,
+            "7": 3045,
+            "11": 933
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9000244140625,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r0-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 57556,
+            "5": 1721,
+            "7": 5651,
+            "11": 608
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.87823486328125,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r0-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 58317,
+            "5": 2463,
+            "7": 4588,
+            "11": 168
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8898468017578125,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r0-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65476,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 58,
+            "2": 54280,
+            "5": 5305,
+            "7": 5011,
+            "11": 822
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8290060480175943,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r1-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65534,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 62624,
+            "5": 870,
+            "7": 1057,
+            "11": 983
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9555955687124241,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r1-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 2,
+            "2": 59434,
+            "5": 1956,
+            "7": 3655,
+            "11": 489
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.906890869140625,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r1-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65508,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 56021,
+            "5": 2344,
+            "7": 6165,
+            "11": 978
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8551779935275081,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r1-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 61841,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 115,
+            "2": 47311,
+            "5": 3647,
+            "7": 10325,
+            "11": 443
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7650426092721657,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r2-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65524,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 33,
+            "2": 58064,
+            "5": 4049,
+            "7": 2727,
+            "8": 6,
+            "11": 645
+          },
+          "eligible_bare_pixels": 6,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.886148586777364,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r2-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65488,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 393,
+            "2": 61581,
+            "5": 807,
+            "7": 349,
+            "8": 193,
+            "11": 2165
+          },
+          "eligible_bare_pixels": 193,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9403402150012216,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r2-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65096,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 61098,
+            "5": 1826,
+            "7": 617,
+            "11": 1555
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9385830158535087,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r2-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 52284,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 48302,
+            "5": 1899,
+            "7": 524,
+            "8": 6,
+            "11": 1553
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9238390329737587,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r3-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 63753,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 57128,
+            "5": 3368,
+            "7": 1897,
+            "11": 1360
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.896083321569181,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r3-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65512,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 61911,
+            "5": 509,
+            "7": 1801,
+            "11": 1291
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9450329710587373,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r3-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65535,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 63571,
+            "5": 795,
+            "7": 366,
+            "11": 803
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9700312809948882,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2024-g02-r3-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 64042,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "1": 26,
+            "2": 60961,
+            "5": 113,
+            "7": 1657,
+            "11": 1285
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9518909465663159,
+          "maximum_class_fraction_over_90_percent": true
+        }
+      ],
+      "native_patches_checked": 16,
+      "native_eligible_patches": 15,
+      "eligible_bare_pixels": 199,
+      "data_outcome": "PATCHES_NATIVE_CHECKED"
+    }
+  ],
+  "native_patches_checked": 32,
+  "native_eligible_patches": 26,
+  "eligible_bare_pixels": 199,
+  "source_or_ledger_writes": 0,
+  "collection_executed": false,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "limitations": [
+    "Sequential observations, not an atomic filesystem/DB snapshot.",
+    "Only selected launch batches get native patch checks; prior rows are canonical metadata checks.",
+    "Esri weak labels and training support masks are not independent truth or QA/model approval.",
+    "Stored whole-pool counts/leakage are metadata only, not whole-pool raster revalidation.",
+    "No HTTP, collection, retries, refunds, reservation edits or source reconstruction."
+  ],
+  "launch_sha256": "b821e52ba516b119b94f5f39cc865188f8611a3f5d8f9a2945c1a522e7e31ac0",
+  "aggregate_sha256_at_read": "c68b0fcc79dd1a97ab1e0b42c66955ee6dfd0a8fe45489280207cdc01f1d05d8",
+  "ledger_sha256_at_read": "e0557f3d22a3f7ea82218344b83a01d8962320105cbe8fdacc1d42522fae8858",
+  "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+  "old_rows_verified": 1569,
+  "pending_rows_verified": 2,
+  "pending_reserved_bytes": 136314880,
+  "physical_total_at_read": 1601,
+  "eligible_total_at_read": 1286,
+  "execution_lock_present_at_read": false,
+  "cell_gap_total_at_read": 49,
+  "eligible_target_gap_at_read": 0,
+  "selected_ledger_observations": {
+    "parallel-v2-grid-esri_io-banten-2024-g01": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 23007402,
+      "config_sha256": "ed1f80354faf4723f943bdc7474dd228cce1845e2ba4486272f6d9e4ccc68db4",
+      "report_path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2024-g01\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-banten-2024-g02": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 22124249,
+      "config_sha256": "b22f6a2d1e0f6077adbe7b760a5139c18edb8aa44432a4a3f2301721ab8509e4",
+      "report_path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2024-g02\\annual-window-report.json"
+    }
+  },
+  "file_sha_rechecks": 104,
+  "external_metadata_changed_during_audit": {
+    "aggregate": false,
+    "ledger": false
+  },
+  "declared_cross_split_scene_ids": [
+    "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+  ],
+  "seconds": 22.964537800013204
+}

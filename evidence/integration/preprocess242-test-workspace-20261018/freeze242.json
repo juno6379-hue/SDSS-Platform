@@ -1,0 +1,225 @@
+{
+  "at_utc": "2026-10-18T07:55:12.279625+00:00",
+  "status": "TEST_ONLY_IMPLEMENTATION_TESTED_SYNTHETIC_NOT_APPLIED_TO_MAIN",
+  "parent237_freeze_sha256": "56c9f57bf4929338835170e48d15495385e48cf58140f7ca396bdbbf4a07ceb6",
+  "parent237_frozen_products_evidence_unchanged": true,
+  "files": [
+    {
+      "path": "tests/fixtures/manifest_profile_baselines/candidate_materialization_pre228.py",
+      "artifact_class": "PINNED_HISTORICAL_TEST_FIXTURE",
+      "before": null,
+      "after": {
+        "bytes": 8716,
+        "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b"
+      }
+    },
+    {
+      "path": "tests/fixtures/manifest_profile_baselines/candidate_qa_comparison_pre228.py",
+      "artifact_class": "PINNED_HISTORICAL_TEST_FIXTURE",
+      "before": null,
+      "after": {
+        "bytes": 17204,
+        "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e"
+      }
+    },
+    {
+      "path": "tests/fixtures/manifest_profile_baselines/centers230.py",
+      "artifact_class": "PINNED_HISTORICAL_TEST_FIXTURE",
+      "before": null,
+      "after": {
+        "bytes": 14002,
+        "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d"
+      }
+    },
+    {
+      "path": "tests/fixtures/manifest_profile_baselines/manifest.json",
+      "artifact_class": "PINNED_HISTORICAL_TEST_FIXTURE",
+      "before": null,
+      "after": {
+        "bytes": 1659,
+        "sha256": "7e4babd8f30ff31ca70e677c1eb1cabae0e715bd7a386136c4cb6be84abde637"
+      }
+    },
+    {
+      "path": "tests/fixtures/manifest_profile_baselines/status230.py",
+      "artifact_class": "PINNED_HISTORICAL_TEST_FIXTURE",
+      "before": null,
+      "after": {
+        "bytes": 17192,
+        "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4"
+      }
+    },
+    {
+      "path": "tests/manifest_profile_baseline_fixtures.py",
+      "artifact_class": "TEST_SOURCE_OR_LOADER",
+      "before": null,
+      "after": {
+        "bytes": 1855,
+        "sha256": "f3d7d06d71b999190b4a33a2047df2bc29eb3691085fae33bc4f6fd87d5e3a0e"
+      }
+    },
+    {
+      "path": "tests/test_manifest_profile228.py",
+      "artifact_class": "TEST_SOURCE_OR_LOADER",
+      "before": {
+        "bytes": 11801,
+        "sha256": "f6c32f189ac7674f23dd11d3e65958896a388aa13adffd068babaf10ad5fec1a"
+      },
+      "after": {
+        "bytes": 11547,
+        "sha256": "baac07d5a35d99b2cde02367079e2cd4241fdf15a75d7e9c0afe1bed73dea9e9"
+      }
+    },
+    {
+      "path": "tests/test_manifest_profile237.py",
+      "artifact_class": "TEST_SOURCE_OR_LOADER",
+      "before": {
+        "bytes": 19353,
+        "sha256": "82952348b0c5d33f25f879e8716393c5970ae00d6c46bb80b44b52a028c9f7eb"
+      },
+      "after": {
+        "bytes": 19093,
+        "sha256": "c6def6d5c9d65a89f8497d09f423dd82d8c7a9659b436460d2249e92f4fb51b9"
+      }
+    },
+    {
+      "path": "tests/test_manifest_profile242_portability.py",
+      "artifact_class": "TEST_SOURCE_OR_LOADER",
+      "before": null,
+      "after": {
+        "bytes": 2666,
+        "sha256": "1d8818ffced5e91ea216924dc954ca6c16db575bb0ddfdf6e9c9af755bed5e3e"
+      }
+    }
+  ],
+  "root_main_test_bundle_count": 10,
+  "root_main_test_bundle": [
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\candidate_materialization_pre228.py",
+      "bytes": 8716,
+      "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\candidate_qa_comparison_pre228.py",
+      "bytes": 17204,
+      "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\centers230.py",
+      "bytes": 14002,
+      "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\manifest.json",
+      "bytes": 1659,
+      "sha256": "7e4babd8f30ff31ca70e677c1eb1cabae0e715bd7a386136c4cb6be84abde637"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\status230.py",
+      "bytes": 17192,
+      "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4"
+    },
+    {
+      "path": "tests\\manifest_profile_baseline_fixtures.py",
+      "bytes": 1855,
+      "sha256": "f3d7d06d71b999190b4a33a2047df2bc29eb3691085fae33bc4f6fd87d5e3a0e"
+    },
+    {
+      "path": "tests\\test_manifest_profile228.py",
+      "bytes": 11547,
+      "sha256": "baac07d5a35d99b2cde02367079e2cd4241fdf15a75d7e9c0afe1bed73dea9e9"
+    },
+    {
+      "path": "tests\\test_manifest_profile230.py",
+      "bytes": 20898,
+      "sha256": "431e44c787c594bd0cb40d90528ca80e87f01b1daa92b85250b61223131f10de"
+    },
+    {
+      "path": "tests\\test_manifest_profile237.py",
+      "bytes": 19093,
+      "sha256": "c6def6d5c9d65a89f8497d09f423dd82d8c7a9659b436460d2249e92f4fb51b9"
+    },
+    {
+      "path": "tests\\test_manifest_profile242_portability.py",
+      "bytes": 2666,
+      "sha256": "1d8818ffced5e91ea216924dc954ca6c16db575bb0ddfdf6e9c9af755bed5e3e"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "input-source-manifest242.json",
+      "bytes": 57849,
+      "sha256": "f426fba4434efa198e17a7c54a7f7a47826e9d13613c9418180b9e2d06671b07"
+    },
+    {
+      "path": "shared-layout242-manifest.json",
+      "bytes": 59335,
+      "sha256": "dfe3361657ea0edbee541abdbaec2c8aa59172c1471de92ec56f90773d64ab40"
+    },
+    {
+      "path": "runtime18-unchanged242.json",
+      "bytes": 5715,
+      "sha256": "c14ee7bd685b9906d5afd1545462655529af468f6894f8d6b047b9784ff33a21"
+    },
+    {
+      "path": "patch242-manifest.json",
+      "bytes": 10727,
+      "sha256": "c181a60fd672091f9782a29706b4f115128e8832a34ee7a7b5762e027c80b83d"
+    },
+    {
+      "path": "patch242.diff",
+      "bytes": 91157,
+      "sha256": "97935e677a0f06dd781cf535a4e758a6da389fec40e4cae3a82bf99a2143a18e"
+    },
+    {
+      "path": "docs\\ISOLATED242.md",
+      "bytes": 5208,
+      "sha256": "f88912f9b0fe2208f5b2e74661db4be96bb98e5076f1afd1b36c8e3f82ee9e4e"
+    },
+    {
+      "path": "seal242.py",
+      "bytes": 5370,
+      "sha256": "9efee28556d242f8c6a6686efb574f9c8b0678f7fd0237fc1f10aaf7db24e9d5"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\docs\\implementation\\242_portable_profile_tests.md",
+      "bytes": 5208,
+      "sha256": "f88912f9b0fe2208f5b2e74661db4be96bb98e5076f1afd1b36c8e3f82ee9e4e"
+    }
+  ],
+  "tests": [
+    {
+      "path": "profile242-workspace-regression.log",
+      "bytes": 21654,
+      "sha256": "781b760ea48c8852c393b40eed9943efe66a4a53c4af329d2d15a3cb9c59f4f5",
+      "layout": "ISOLATED_WORKSPACE",
+      "tests": 93,
+      "seconds": 30.768,
+      "status": "PASS"
+    },
+    {
+      "path": "profile242-shared-layout-regression.log",
+      "bytes": 21722,
+      "sha256": "a98dac94cc7c9eea01f9044d6b0f2972f78a3b181de64f3772f0993e5b3f8ecf",
+      "layout": "SHARED_LAYOUT_WITHOUT_PARENT230_OR_BASELINE_CODE",
+      "tests": 93,
+      "seconds": 48.384,
+      "status": "PASS"
+    }
+  ],
+  "runtime18_exact_unchanged": true,
+  "test230_exact_unchanged": true,
+  "main_written": 0,
+  "operating_data_read": 0,
+  "ledger_read": 0,
+  "model_read": 0,
+  "http": 0,
+  "collector": 0,
+  "live_qa": 0,
+  "limitations": [
+    "Same93-test suite run in two layouts; not186 distinct requirements.",
+    "No new128MiB load benchmark or actual rich3000-row QA.",
+    "Baseline portability only; dependency environment still uses existing .runtime libraries.",
+    "Runtime18 product application and operational verification remain separate Root decisions."
+  ]
+}

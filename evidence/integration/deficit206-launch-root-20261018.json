@@ -1,0 +1,66 @@
+{
+  "started_at": "2026-10-18T04:51:34.928608+00:00",
+  "status": "STARTED_PREFLIGHT_NOT_COMPLETED",
+  "manifest_before_sha256": "39bb0245e586342bd116f5b052428fcf857fb26eae0ee1413c9c5f5275c40ba9",
+  "ledger_before_sha256": "024f5eabb2cadf88af4f34661fab6e6c209bf9aa8d105c2d1fbadf10f1c0dae3",
+  "source_rows_before": 1667,
+  "pending_before": {
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+    },
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+    }
+  },
+  "request_sha256": "c28a69f1093e935523227e6d4021c18856e3457a29fd78bf241a7e8b2eeebabc",
+  "selected_jobs": [
+    {
+      "key": "center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440",
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "nominal_patches": 16,
+      "spatial_window_id": "centers182-southeast_sulawesi-bd99d40b7b68"
+    },
+    {
+      "key": "center1024-southeast_sulawesi-2021-c28a69f1093e-2ce2bf2f",
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "nominal_patches": 16,
+      "spatial_window_id": "centers182-southeast_sulawesi-6ad43e34c63c"
+    }
+  ],
+  "command": [
+    "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-X",
+    "faulthandler",
+    "E:\\GeoAI–MLOps–SDSS\\scripts\\collect_deficit_guarded.py",
+    "--request",
+    "evidence/integration/deficit206-request-root-20261018.json",
+    "--expected-request-sha256",
+    "c28a69f1093e935523227e6d4021c18856e3457a29fd78bf241a7e8b2eeebabc",
+    "--execute"
+  ],
+  "new_budget_added": false,
+  "training_started": false,
+  "source_pins": {
+    "backend/app/data/deficit_candidate_guard.py": "c8eece7cbb0d3fed77f704b65eda9e51fe2e300ea56fdfd4aa020d9c9653204f",
+    "scripts/collect_targeted_bare.py": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+    "scripts/collect_deficit_guarded.py": "9797930f8ad04728af5f2f2fb4e49218dbf1f046f9c47c78b7a6e675821c627b",
+    "scripts/collect_training_grid.py": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/data/targeted_inventory.py": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d",
+    "backend/app/data/budget.py": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+    "backend/app/data/candidates.py": "c72257998d14c8b874ee9c9b532e50d78b3e3417a8b47c1688a54c656966dba6"
+  },
+  "maximum_new_physical_patches": 32,
+  "pid": 34404
+}

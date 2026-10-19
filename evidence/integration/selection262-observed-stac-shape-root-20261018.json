@@ -1,0 +1,22 @@
+{
+  "status": "OBSERVED_STORED_METADATA_ONLY_NOT_260_VALIDATION",
+  "at_utc": "2026-10-18T08:47:09.783603+00:00",
+  "source_ref": {
+    "path": "data/first-group-training-esri-v1/sources/center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39/centers182-southeast_sulawesi-f5fa8f8ccc4f-2024/stac-item.json",
+    "sha256": "b59e97e567c54aecd2709291487b0cf352ae2e1f5c05932a4993c53de1e5b2e6"
+  },
+  "scene_id": "S2B_MSIL2A_20240813T021349_R060_T51MUR_20240813T055551",
+  "raw_datetime": "2024-08-13T02:13:49.024000Z",
+  "collection": "sentinel-2-l2a",
+  "bbox": [
+    121.1971527,
+    -4.6113932,
+    122.1878144,
+    -3.6167214
+  ],
+  "stored_bytes_unchanged": true,
+  "http": 0,
+  "native_raster": 0,
+  "guard_policy_changed": false,
+  "review_implication": "Check final260 time policy explicitly. Do not silently round/delete nonzero fractions. Metadata observation is not real260 compatibility/auth/pixel verification."
+}

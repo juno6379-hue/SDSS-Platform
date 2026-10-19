@@ -1,0 +1,104 @@
+{
+  "status": "VERIFIED_REAL_POST290_CURRENT_CANDIDATE_BROWSER",
+  "at": "2026-10-18T21:50:17.994990+09:00",
+  "root_actual_api": {
+    "status": "REAL_API_POST290_CURRENT_CANDIDATE_VERIFIED",
+    "at_utc": "2026-10-18T12:46:34.567226+00:00",
+    "seconds": 41.25,
+    "checks": {
+      "http200": true,
+      "raw1376": true,
+      "gap11": true,
+      "candidate_actual": true,
+      "candidate_current_source": true,
+      "bare50_stale": true,
+      "not_ready": true,
+      "budget_remaining": true,
+      "oldpending": true,
+      "operating_pins_preserved": true,
+      "config_preserved": true
+    },
+    "recorded_at": "2026-10-18T12:46:33.091901+00:00",
+    "budget_observed_at": "2026-10-18T12:46:34.397896+00:00",
+    "source_sha256": "9d491e6ede51cf29407add25b83919cc5d4150576a694c5019814b973d20c2b7",
+    "config_sha256": "a644b5b2cdf8917d13028f7a89ceeb4996d5ad5dc54af2b6fb2c9fda2c98f9de",
+    "training_started": false,
+    "browser_verified": false,
+    "candidate_qa_repeated": false
+  },
+  "browser": {
+    "tab": "850119075",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "explicit_refreshes": 1,
+    "new_tabs": 0,
+    "recorded_at": "2026-10-18T12:48:16.705738+00:00",
+    "budget_observed_at": "2026-10-18T12:48:17.406248+00:00",
+    "checks_at": "2026-10-18T12:49:21.853Z",
+    "console_warn_error": [],
+    "scrollWidth": 1573,
+    "clientWidth": 1573,
+    "bodyWidth": 1573,
+    "horizontal_overflow": false,
+    "click_setup_note": "First Playwright click Runtime.evaluate timeout; AX confirmed old response and enabled button. Then one native click observed loading and completed current response. No later refresh.",
+    "post_result_check_note": "Combined Runtime.evaluate check timed out; separate console and dimension reads succeeded."
+  },
+  "source_sha256": "9d491e6ede51cf29407add25b83919cc5d4150576a694c5019814b973d20c2b7",
+  "ledger_sha256": "4a4f4a47b522b9497b944ac00b29d2368a977c1a4eb6dfe972a34959fcc68722",
+  "current": {
+    "registered": 1747,
+    "eligible": 1376,
+    "cell_gap": 11,
+    "split": [
+      834,
+      292,
+      250
+    ]
+  },
+  "candidate": {
+    "eligible": 1360,
+    "blockers": 3,
+    "source_matches_current": true,
+    "warning": null,
+    "source_sha256": "9d491e6ede51cf29407add25b83919cc5d4150576a694c5019814b973d20c2b7",
+    "split": [
+      834,
+      276,
+      250
+    ],
+    "recorded_at": "2026-10-18T12:44:43.092408+00:00",
+    "source_report": "priority164-guarded290-20261018/qa/readiness.json",
+    "stale_warning_removed": true
+  },
+  "bare": {
+    "total": 50,
+    "source_matches_current": false,
+    "warning": "검토 후 원본이 변경됐습니다. 현재 재고 기준의 최신 겹침 검사나 집행 허가로 해석하지 않습니다.",
+    "remote_quality": "미검사",
+    "execution": "집행 미승인"
+  },
+  "budget": {
+    "maximum": 4294967296,
+    "used_including_pending": 2449683109,
+    "remaining": 1845284187,
+    "old_pending": 136314880,
+    "old_pending_count": 2,
+    "old_pending_already_in_used": true,
+    "process_verification": "UNKNOWN"
+  },
+  "manual_API_GET_by_web_ui": 0,
+  "product_or_raw_ledger_pointer_writes": 0,
+  "server_restarts": 0,
+  "collector_starts": 0,
+  "limits": [
+    "Root API and actual browser have separate timestamps.",
+    "Zero new patches does not mean no network charge or unchanged source metadata.",
+    "No candidate QA rerun, native raster QA, training, model approval or remote collection by this task.",
+    "Console result is current observed session only; not all historic logs."
+  ],
+  "context": "293 candidate publication and294 profile binding followed by296 actual browser; historical bare50 remains stale",
+  "proof": [
+    "service296-post290-final-ui-20261018-dom.txt",
+    "service296-post290-final-ui-20261018-inventory.png",
+    "service296-post290-final-ui-20261018-candidate.png"
+  ]
+}

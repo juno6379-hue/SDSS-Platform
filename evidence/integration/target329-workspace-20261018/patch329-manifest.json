@@ -1,0 +1,47 @@
+{
+  "unit": 329,
+  "status": "TESTED_SYNTHETIC_SHARED_APPLICATION_BLOCKED",
+  "runtime_new": [
+    {
+      "path": "evidence/integration/target329-workspace-20261018/backend/app/data/targeted_atomic_json.py",
+      "bytes": 11914,
+      "sha256": "11ea4b0956468045bdd27f7dd605f0d61508fd3846000dba001ef9b4a87aaa66"
+    }
+  ],
+  "tests_new": [
+    {
+      "path": "evidence/integration/target329-workspace-20261018/tests/test_target329_atomic_json.py",
+      "bytes": 13190,
+      "sha256": "4aae15d2b8693e86180eb3052bb23575788dc22e5850a8ec3f0eb0e835b035a8"
+    }
+  ],
+  "existing_code_changed": [],
+  "copied_unchanged_dependencies": [
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "bytes": 12511,
+      "sha256": "73c9ba94cda1722ae87e7729ecd655ba5e9584fcb735c8c1f0e06734f8357d01",
+      "main_and_archive_and_isolated_equal": true
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "bytes": 8513,
+      "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+      "main_and_archive_and_isolated_equal": true
+    }
+  ],
+  "main_preconditions_new_files_absent": [
+    "backend/app/data/targeted_atomic_json.py",
+    "tests/test_target329_atomic_json.py"
+  ],
+  "diff": {
+    "path": "evidence/integration/target329-workspace-20261018/patch329.diff",
+    "bytes": 26325,
+    "sha256": "1f9e62cb035e66c4620ff23ee4631d40357038babd2afbbde73f47ec2760fcab"
+  },
+  "operating_io": false,
+  "http": false,
+  "collector_connected": false,
+  "ledger_connected": false,
+  "main_applied": false
+}

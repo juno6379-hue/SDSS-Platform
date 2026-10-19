@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-18T03:59:59.428826+00:00",
+  "status": "VERIFIED_REAL_NEW_TARGET_NATIVE_CHECKED",
+  "seconds": 4.193981299999905,
+  "native_validation_complete": true,
+  "native_patches_checked": 1,
+  "native_eligible_patches": 1,
+  "province": "southeast_sulawesi",
+  "year": 2024,
+  "split": "train",
+  "patch_id": "target256-bare-southeast_sulawesi-2024-local-rank2-2024-af6c81c01410-r0-c0",
+  "native": {
+    "patch_id": "target256-bare-southeast_sulawesi-2024-local-rank2-2024-af6c81c01410-r0-c0",
+    "quality_status": "quality_eligible",
+    "valid_pixels": 65025,
+    "province_inside_pixels": 65536,
+    "class_histogram": {
+      "1": 7,
+      "2": 62865,
+      "8": 814,
+      "11": 1339
+    },
+    "eligible_bare_pixels": 814,
+    "image_band_descriptions": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "B12"
+    ],
+    "maximum_class_fraction": 0.9667820069204153,
+    "maximum_class_fraction_over_90_percent": true
+  },
+  "valid_fraction": 0.9922027587890625,
+  "inside_fraction": 1.0,
+  "eligible_bare_pixels": 814,
+  "contributing_bare_ge256_patches": 1,
+  "grid": {
+    "crs": "EPSG:32751",
+    "affine": [
+      10.0,
+      0.0,
+      389910.0,
+      0.0,
+      -10.0,
+      9404330.0
+    ],
+    "width": 256,
+    "height": 256,
+    "bands": 6
+  },
+  "actual_bounds": [
+    389910.0,
+    9401770.0,
+    392470.0,
+    9404330.0
+  ],
+  "blue_equals_final_first_band": true,
+  "raw_b02_selected_scene_asset_binding": true,
+  "selected_scene_id": "S2B_MSIL2A_20240813T021349_R060_T51MUQ_20240813T055551",
+  "selected_stac_sha256": "5d4b2e3475222a0226819d89437a1a3751921141aa904a62caa1d5f7868a834a",
+  "live_guard_witness_from_worker_and_terminal": true,
+  "unique_native_raster_files_checked": 4,
+  "raster_pins": {
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-southeast_sulawesi-2024-local-rank2-2024-af6c81c01410\\r00-c00\\image.tif": "531236a6454c7000819939640c3258f57f475a9b360c49caa966cbf57b08219a",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-southeast_sulawesi-2024-local-rank2-2024-af6c81c01410\\r00-c00\\label.tif": "0f598d53249f23647bad2502090e15fe71d74e5322ac29bac847d97b85c8b609",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-southeast_sulawesi-2024-local-rank2-2024-af6c81c01410\\r00-c00\\quality.tif": "51041618d2885945797000a444d5dcccbc2d189b4023f0654dad38d43f8905ca",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2024-local-rank2-2024-af6c81c01410\\bare-local-rank2-2024-2024\\raw-B02.tif": "a29b748e7f02555a59f83e836b35979a5bf26ff996148b5eedeb1c02058c0be7"
+  },
+  "old1649_metadata_prefix_unchanged": true,
+  "old_pending_rows_verified": 2,
+  "old_pending_reserved_bytes": 136314880,
+  "charged_bytes": 9978645,
+  "cog_charged_bytes": 9785391,
+  "metadata_charged_bytes": 193254,
+  "settled_and_published_once_from_terminal": true,
+  "physical_total_at_read": 1650,
+  "eligible_total_at_read": 1322,
+  "remaining_budget": 2002233523,
+  "lock_present": false,
+  "external_metadata_changed_during_audit": {
+    "aggregate": false,
+    "ledger": false
+  },
+  "launch_source_pins_match_now": {
+    "scripts/collect_targeted_bare.py": true,
+    "backend/app/data/targeted_live_guards.py": true,
+    "backend/app/data/targeted_bare_plan.py": true,
+    "backend/app/data/parallel.py": true
+  },
+  "limitations": [
+    "Only one new patch and rawB02 natively reread; prior1649 rows checked as canonical metadata,not wholepool rasterQA.",
+    "SelectedSTACdeclaredscene/year plus actualrawB02byte/arraybinding are verified; physicalsensortruth/independentscientificaccuracy are not.",
+    "Esri annual weaklabel code8 is not independently surveyed baretruth; one contributing trainpatch does not satisfy allsplitfivepatch/0.5percent requirements.",
+    "Fullsupport inventory was completed by189preflight and188audit; not rescanned here. Sequential reads,notatomicOSsnapshot."
+  ],
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "network_calls": 0,
+  "collection_starts": 0,
+  "source_or_ledger_writes": 0
+}

@@ -1,0 +1,51 @@
+{
+  "at_utc": "2026-10-18T05:57:09.909517+00:00",
+  "status": "IMPLEMENTED_TESTED_SYNTHETIC_EXECUTION_PLANNED",
+  "files": [
+    {
+      "path": "backend/app/data/bare_label_survey_contract.py",
+      "sha256": "a0470b489db19a9c4ccafcada3374e87675e116af3a592068b7dfcda64cf9096",
+      "bytes": 14134
+    },
+    {
+      "path": "tests/test_bare_label_survey_contract.py",
+      "sha256": "a1b2b913c7e225d9225833923d697af7c9866db142933e8d1b1b3104f953251e",
+      "bytes": 13808
+    },
+    {
+      "path": "docs/implementation/220_bare_label_survey_pure_contract.md",
+      "sha256": "b7e3a2fc9096fa09758cb441e5d853b2a2d78c2e45d997b8f9f6ea962b739a65",
+      "bytes": 10697
+    },
+    {
+      "path": "evidence/integration/survey220-focused-20261018.log",
+      "sha256": "404c293a0e31e57350aa1e1d2c6334b173f1cbb06e44e951045dae2adbc0752c",
+      "bytes": 3218
+    },
+    {
+      "path": "evidence/integration/survey220-related-20261018.log",
+      "sha256": "82346bcfe2d648becd247c55219e0e6e408ff61df79941c0809b95144826ef70",
+      "bytes": 12963
+    },
+    {
+      "path": "evidence/integration/survey220-final-20261018.log",
+      "sha256": "3e3b400d6f54fed41996bde3cba5561e36820c7a68534b6baa332b87bb3d1e89",
+      "bytes": 12963
+    }
+  ],
+  "final_tests": {
+    "passed": 60,
+    "seconds": 15.841,
+    "skipped": 0
+  },
+  "operating_source_or_ledger_reads": 0,
+  "operating_scans": 0,
+  "network_requests": 0,
+  "collector_runs": 0,
+  "existing_product_files_changed": 0,
+  "registry_connected": false,
+  "target_consumer_connected": false,
+  "actual_provenance_verified": false,
+  "ui_changes_required": false,
+  "understanding_handoff": "ROOT_ASSIGNMENT_REQUIRED"
+}

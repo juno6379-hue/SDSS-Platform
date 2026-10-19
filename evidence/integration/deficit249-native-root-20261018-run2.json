@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T08:24:59.490561+00:00",
+  "status": "COMPLETED_EXECUTION_B02_ALIGNMENT_BLOCKED_NO_NEW_PATCH",
+  "classification": "VERIFIED_REAL",
+  "terminal_exit_code": 0,
+  "terminal_seconds": 129.11000000000058,
+  "native_patch_checks": 0,
+  "native_validation_complete": false,
+  "checks": {
+    "root_go_received": true,
+    "terminal_exit_zero": true,
+    "prior245_snapshot_matches_launch_pin": true,
+    "old1715_rows_exact": true,
+    "old_history_exact": true,
+    "oldpending_exact": true,
+    "new_batch_settled": true,
+    "config_pin_matches": true,
+    "effective_config_pin_matches": true,
+    "report_binding": true,
+    "actual_charge_matches": true,
+    "finalize_settle_publish_once": true,
+    "b02_not_approved": true,
+    "four_candidates_three_rejected_one_scl_eligible": true,
+    "geometry_guard_error_recorded": true,
+    "selected_scene_stac_binding": true,
+    "new_patch_leaf_empty": true,
+    "lock_absent": true,
+    "source_ledger_two_reads_stable": true,
+    "original_launch_unchanged": true
+  },
+  "prior_snapshot_path": "data/centers245-fresh-20261018/source.json",
+  "candidate_selection_observations": [
+    {
+      "scene_id": "S2A_MSIL2A_20240619T021351_R060_T51MUR_20240619T061603",
+      "status": "quality_insufficient",
+      "estimated_valid_fraction": 0.10772705078125,
+      "minimum_fraction": 0.65,
+      "raw_scl_sha256": "eab42d8e515a096535a1b87f06963399ccdd5c455d05ca8c45409021d26a9e28"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240803T021349_R060_T51MUR_20240803T041141",
+      "status": "quality_insufficient",
+      "estimated_valid_fraction": 0.5407943725585938,
+      "minimum_fraction": 0.65,
+      "raw_scl_sha256": "ef0fdc2bbcd833711d90980883951667602ea39baa85d5b1e01b87b2d6aa6dd3"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240912T021209_R060_T51MUR_20240912T055427",
+      "status": "quality_insufficient",
+      "estimated_valid_fraction": 0.469696044921875,
+      "minimum_fraction": 0.65,
+      "raw_scl_sha256": "c4b554597000fae259a96aec8e31f8cc3e4d2b0d1d4a80b4375747a0b44d923a"
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20240813T021349_R060_T51MUR_20240813T055551",
+      "status": "eligible",
+      "estimated_valid_fraction": 0.8155479431152344,
+      "minimum_fraction": 0.65,
+      "raw_scl_sha256": "5a5a4cd83939c5637d353085050e13fd8b72e29e83889f9e36278aa58e53eb28"
+    }
+  ],
+  "selected_scene_id": "S2B_MSIL2A_20240813T021349_R060_T51MUR_20240813T055551",
+  "selected_datetime": "2024-08-13T02:13:49.024000Z",
+  "scene_error": {
+    "category": "payload_or_response_contract",
+    "error_type": "ValueError",
+    "error_code": null,
+    "sanitized_message": "CENTER_B02_ALIGNMENT_SHORTFALL",
+    "exception_chain": [
+      {
+        "error_type": "AssetTransferError",
+        "sanitized_message": "원격 자산 처리 실패(stage=window_geometry_guard); 원인은 exception chain을 확인하세요"
+      },
+      {
+        "error_type": "ValueError",
+        "sanitized_message": "CENTER_B02_ALIGNMENT_SHORTFALL"
+      }
+    ]
+  },
+  "guard_diagnosis": {
+    "function": "DeficitCandidateLiveGuard.on_window",
+    "reported_stage": "window_geometry_guard",
+    "fixed_issue": "CENTER_B02_ALIGNMENT_SHORTFALL",
+    "static_condition": "Each selectedB02crop bound must differ from plannednative1024rectangle bound by<=10.000001m; failed beforeb02_checked=true",
+    "actual_failed_b02_bounds_persisted": false,
+    "actual_failed_b02_window_transform_persisted": false,
+    "specific_side_and_delta_m": null,
+    "raw_esri_declared_bounds": [
+      353750.0,
+      9588970.0,
+      374230.0,
+      9609450.0
+    ],
+    "scl_stored_manifest_bounds": [
+      358860.0,
+      9589800.0,
+      369100.0,
+      9600040.0
+    ],
+    "bounds_limit": "Esri/SCLbounds are not failed B02bounds. Do not substitute for missingdiagnostic or claim exactovershoot."
+  },
+  "candidate_ratio_scope": "저장된20mSCL예비값;4SCL파일SHA확인·배열재산출0. 마지막1개65%통과뒤B02기하가드차단.",
+  "file_sha_rechecks": 9,
+  "new_patch_files": 0,
+  "new_physical_patches": 0,
+  "new_eligible_patches": 0,
+  "new_bare_contribution_patches": 0,
+  "source_batch_files": [
+    "annual-window-report.json",
+    "collection-history.jsonl",
+    "config.json",
+    "selection-context.json",
+    "window-state.json",
+    "worker-result.json",
+    "centers182-southeast_sulawesi-f5fa8f8ccc4f-2024\\calibration.json",
+    "centers182-southeast_sulawesi-f5fa8f8ccc4f-2024\\product-metadata.xml",
+    "centers182-southeast_sulawesi-f5fa8f8ccc4f-2024\\qa-candidate-00-SCL.tif",
+    "centers182-southeast_sulawesi-f5fa8f8ccc4f-2024\\qa-candidate-01-SCL.tif",
+    "centers182-southeast_sulawesi-f5fa8f8ccc4f-2024\\qa-candidate-02-SCL.tif",
+    "centers182-southeast_sulawesi-f5fa8f8ccc4f-2024\\qa-candidate-03-SCL.tif",
+    "centers182-southeast_sulawesi-f5fa8f8ccc4f-2024\\raw-esri_io.tif",
+    "centers182-southeast_sulawesi-f5fa8f8ccc4f-2024\\stac-item.json",
+    "manifests\\10180e532308d221ac26e9c6db24e288b0b9ac79db404c6f3dfccd2f10e23097-44ceac81423bcb24.json",
+    "manifests\\5a5a4cd83939c5637d353085050e13fd8b72e29e83889f9e36278aa58e53eb28-9dac86e6265f6e4b.json",
+    "manifests\\c4b554597000fae259a96aec8e31f8cc3e4d2b0d1d4a80b4375747a0b44d923a-a4c0aeeded1ce8ec.json",
+    "manifests\\eab42d8e515a096535a1b87f06963399ccdd5c455d05ca8c45409021d26a9e28-f4cf9626527bcc64.json",
+    "manifests\\ef0fdc2bbcd833711d90980883951667602ea39baa85d5b1e01b87b2d6aa6dd3-0e83d11ce4357cda.json"
+  ],
+  "old_pending_count": 2,
+  "old_pending_reserved_bytes": 136314880,
+  "registered_total": 1715,
+  "eligible_total": 1358,
+  "physical_inventory_before": {
+    "physical_patch_count": 1716,
+    "referenced_patch_count": 1716,
+    "unreferenced_physical_directories": 0,
+    "worker_receipt_count": 140,
+    "limit": 3000,
+    "observation_sha256": "5e2243ae42212e0388577c3a599e2b1f11ea979f134dcb74f700c1bba17fb3db"
+  },
+  "physical_after_inferred": 1716,
+  "before_source_sha256": "4f8fcaff71868539aff16b3c351992696a6464b9cb229a5ff0f243778b7cd3e8",
+  "after_source_sha256": "6899f9019670e9eff3e40cd9e5441a91bbaf11fae236cbbc8c2eac27ffa31e15",
+  "source_bytes": 66827175,
+  "changed_top_level_manifest_keys": [
+    "source_manifests"
+  ],
+  "source_manifest_reference_increment": 1,
+  "before_ledger_sha256": "9c452bfb3773dddf08dc1091640ed33cb7885b30bdd6b1f7b7ebb58616646c86",
+  "after_ledger_sha256": "c7ef4985a0c7f55a4a0a48c1db2b8ab4bef8d87be3a91e5175a948f56d613f4f",
+  "cog_charged_bytes": 1310720,
+  "metadata_charged_bytes": 269558,
+  "total_settled_bytes": 1580278,
+  "remaining_budget": 1893950211,
+  "rate_limit_active": false,
+  "execution_progress": {
+    "reservation_attempted_batches": [
+      "center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39"
+    ],
+    "reserved_batches": [
+      "center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39"
+    ],
+    "collector_entered_batches": [
+      "center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39"
+    ],
+    "settled_batches": [
+      "center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39"
+    ],
+    "published_batches": [
+      "center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39"
+    ],
+    "finalization_attempted_batches": [
+      "center1024-southeast_sulawesi-2024-7fdcb4d284c6-991dcd39"
+    ],
+    "execution_started": true,
+    "transfer_status": "NOT_INDEPENDENTLY_VERIFIED",
+    "reservation_status": "ALL_ATTEMPTS_CONFIRMED_RESERVED",
+    "settlement_status": "ALL_RESERVED_SETTLED",
+    "publication_status": "ALL_RESERVED_PUBLISHED"
+  },
+  "launch_source_pins_match_now": {
+    "backend/app/candidate_qa_comparison_api.py": true,
+    "backend/app/collection_budget_status.py": true,
+    "backend/app/collection_priority_status.py": true,
+    "backend/app/collection_source_profile.py": true,
+    "backend/app/collection_status.py": true,
+    "backend/app/data/budget.py": true,
+    "backend/app/data/candidates.py": true,
+    "backend/app/data/deficit_candidate_guard.py": true,
+    "backend/app/data/parallel.py": true,
+    "backend/app/data/targeted_execution.py": true,
+    "backend/app/data/targeted_inventory.py": true,
+    "backend/app/data/targeted_inventory_profile.py": true,
+    "backend/app/data/targeted_live_guards.py": true,
+    "backend/app/main.py": true,
+    "backend/app/ml/candidate_materialization.py": true,
+    "backend/app/ml/candidate_qa_comparison.py": true,
+    "backend/app/ml/candidate_readiness_qa.py": true,
+    "backend/app/ml/candidate_staging.py": true,
+    "backend/app/ml/manifest_resource_profile.py": true,
+    "backend/app/ml/readiness.py": true,
+    "backend/app/ml/split_json_io.py": true,
+    "evidence/integration/deficit235-supervisor-root-20261018.py": true,
+    "evidence/integration/deficit249-supervisor-root-20261018.py": true,
+    "scripts/collect_deficit_guarded.py": true,
+    "scripts/collect_samples.py": true,
+    "scripts/collect_targeted_bare.py": true,
+    "scripts/collect_training_grid.py": true,
+    "scripts/find_bare_targets173.py": true,
+    "scripts/prepare_priority_candidate164.py": true,
+    "scripts/propose_deficit_centers182.py": true,
+    "scripts/run_experiment.py": true
+  },
+  "initial_incomplete_evidence": {
+    "path": "evidence/integration/deficit249-native-root-20261018.json",
+    "status": "INCOMPLETE",
+    "reason": "Initial auditor assumption of fiveallSCLrejections was contradicted by actual fourcandidate report",
+    "preserved_unmodified": true,
+    "native_audits_before_or_after": 0
+  },
+  "collector_os_exit_observed": true,
+  "reviewer_native_raster_reads": 0,
+  "reviewer_http_calls": 0,
+  "reviewer_collection_starts": 0,
+  "operating_source_ledger_lock_profile_pointer_writes": 0,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "limitations": [
+    "후보 3개 예비 탈락·4번째 81.5548% 선택 후 B02 정렬 가드 차단이다. SCL 모두 탈락이나 검색0으로 표현하지 않는다.",
+    "정확한실패B02bounds와몇m초과했는지는저장진단부재로미확정이다. 원인코드와조건은확인했으나새수집/원격재현/가드완화0.",
+    "실물1716은collector전검사와새patchleaf빈상태에근거하며기존native/support재스캔0.",
+    "새patch0으로동일238후보QA재실행을승인하지않는다.",
+    "약라벨metadata와SCL선별은독립정답/최종유효80%/모델학습승인이아니다."
+  ]
+}

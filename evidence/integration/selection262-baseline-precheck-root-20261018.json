@@ -1,0 +1,214 @@
+{
+  "status": "BASELINE_PRECHECK_ONLY_FINAL260_NOT_YET_REVIEWED",
+  "at_utc": "2026-10-18T08:45:27.919990+00:00",
+  "baseline_manifest_sha256": "1fa5f105bc0f259daacf2c69b1d3912194d4feb204f58d8954ef2a7a9b4a94b6",
+  "files_checked": 40,
+  "checks": [
+    {
+      "path": "backend/app/__init__.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/__init__.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/budget.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/calibration.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/candidates.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/deficit_candidate_guard.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/parallel.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/quality_mask_bundle.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/readiness_connectivity_witness.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/references.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/service.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/targeted_asset_geometry.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/targeted_bare_plan.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/targeted_execution.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/targeted_inventory_profile.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/targeted_live_guards.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/data/targeted_scene_claims.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/execution_input_binding.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/ml/__init__.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/ml/per_scene_normalization_contract.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/ml/per_scene_normalization_files.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "backend/app/model_reference_contract.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "configs/collection.example.json",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "scripts/collect_deficit_guarded.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "scripts/collect_recovery_validation.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "scripts/collect_training_grid.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "scripts/collect_training_parallel.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "scripts/collect_training_priority.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "scripts/diagnose_stac.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "tests/test_collect_deficit_guarded.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "tests/test_data_recovery.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "tests/test_deficit_candidate_guard.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "tests/test_targeted_bare_plan.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "tests/test_targeted_candidate_quality_policy.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    },
+    {
+      "path": "tests/test_targeted_collection_hooks.py",
+      "shared_sha_matches_baseline": true,
+      "archive_sha_matches_baseline": true
+    }
+  ],
+  "shared_conflicts": [],
+  "archive_conflicts": [],
+  "product_applied": false,
+  "collection_started": false,
+  "operating_data_read": false,
+  "code_under_development_not_reviewed": true
+}

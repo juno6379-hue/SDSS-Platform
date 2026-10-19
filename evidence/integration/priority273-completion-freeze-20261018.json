@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "status": "VERIFIED_REAL_PINNED_CANDIDATE_QA_AND_METADATA_HANDOFF_COMPLETED",
+  "run_id": "guarded273-20261018",
+  "actual_pid": 37520,
+  "exec_session": 53854,
+  "actual_cli_invocations": 1,
+  "exit_code": 0,
+  "qa_wrapper_wall_seconds": 1574.593,
+  "source_qa_seconds": 308.39,
+  "candidate_qa_function_seconds": 324.656,
+  "source_rows": 1731,
+  "candidate_rows": 1715,
+  "source_eligible": {
+    "train": 822,
+    "val": 292,
+    "test": 250
+  },
+  "candidate_eligible": {
+    "train": 822,
+    "val": 276,
+    "test": 250
+  },
+  "excluded_rows": [
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303
+  ],
+  "remaining_source_identity_conflicts": 0,
+  "native_verified_files_rechecked_by_original_cli": 5376,
+  "native_file_sha_mismatches": 0,
+  "independent_output_pins_verified": 11,
+  "profile_v2_receipts_verified": 3,
+  "candidate_blockers": [
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "ready_for_training": false,
+  "scientific_accuracy_validated": false,
+  "connectivity_capture_status": "NOT_CAPTURED_BUDGET",
+  "qa_and_handoff_cumulative_json_io_bytes_after_proof": 4926565643,
+  "maximum_json_io_bytes": 17179869184,
+  "os_peak_working_set_max_observed_sample_bytes": 1294880768,
+  "os_final_peak_guaranteed": false,
+  "rss_observed_by_wrapper": false,
+  "class_statistics": {
+    "train": {
+      "valid_label_pixels": 52383086,
+      "bare_pixels": 2562,
+      "bare_percent": 0.004890891689733591,
+      "bare_contributing_patches": 1
+    },
+    "val": {
+      "valid_label_pixels": 17776457,
+      "bare_pixels": 2998,
+      "bare_percent": 0.01686500296431398,
+      "bare_contributing_patches": 2
+    },
+    "test": {
+      "valid_label_pixels": 16252940,
+      "bare_pixels": 1025,
+      "bare_percent": 0.006306551307025068,
+      "bare_contributing_patches": 0
+    }
+  },
+  "published_by_this_agent": false,
+  "training_executed": false,
+  "registry_called": false,
+  "additional_native_scans": 0,
+  "operating_source_pointer_writes": 0,
+  "network_requests": 0,
+  "files": {
+    "evidence/integration/priority273-preparation-20261018.json": {
+      "bytes": 4812,
+      "sha256": "a87623fd2346e5fea4d89b03662ec0e83606ab4da58d6360d08cf442d33043c5"
+    },
+    "evidence/integration/priority273-preparation-freeze-20261018.json": {
+      "bytes": 1669,
+      "sha256": "da03944172aab6a8d7e0817bb3d36ea2622cbfdd13a953c27c781f201165d68b"
+    },
+    "evidence/integration/priority273-preparation-doc-before-result-20261018.md": {
+      "bytes": 9049,
+      "sha256": "518d32784453dbdd3abf3f4556207074548e44f3f2e9dd43b88f540a51e496cd"
+    },
+    "evidence/integration/priority273-runner-20261018.py": {
+      "bytes": 8833,
+      "sha256": "fe3d74262d8d6a9eb9f8b291dd39de640b5152bdf64602fee4195eb8d7485cc1"
+    },
+    "evidence/integration/priority273-go-root-20261018.json": {
+      "bytes": 620,
+      "sha256": "d240680837818ea21d6191cb5d14fce40f4ae2a2622b0af62216054367d01a5f"
+    },
+    "evidence/integration/priority273-launch-20261018.json": {
+      "bytes": 4468,
+      "sha256": "684f84a6b30fa36145dbd4ad95ec4b91b56c7ccef9c44f906dc0144f45d52e04"
+    },
+    "evidence/integration/priority273-terminal-20261018.json": {
+      "bytes": 1955,
+      "sha256": "8ed1d8264abfd810b713478dc850a1d93837f3092532bd22a67c4f496f99eb0e"
+    },
+    "evidence/integration/priority273-handoff-20261018.py": {
+      "bytes": 5929,
+      "sha256": "630a90df86e947be6059f0f2cc762619fdf4d617a598850b95bfc3e0e245ed0d"
+    },
+    "evidence/integration/priority164-guarded273-20261018.log": {
+      "bytes": 513,
+      "sha256": "bd94343b900ba447f6dc8ea0d2c990a13a00ddcb7371578d6623413691d0a919"
+    },
+    "evidence/integration/priority164-guarded273-20261018/summary.json": {
+      "bytes": 5157,
+      "sha256": "6978fc4cfe1b3b05d37b08c899a3c9b4edbaf24a9fe26cd2841f68f64bf730f0"
+    },
+    "evidence/integration/priority164-guarded273-20261018/handoff-verification.json": {
+      "bytes": 6431,
+      "sha256": "a8eb96bf444dbadca20e77e683147cb4f83845ee8dd259fe50bea7c5a08b566c"
+    },
+    "docs/implementation/273_post270_candidate_qa_preparation.md": {
+      "bytes": 15973,
+      "sha256": "43cf0a4e1ebb4f26341e7870ecbeb7e3ddbaeeda5e986b521b7eaf42fe3ff8e4"
+    }
+  },
+  "verified_output_pins_as_of_handoff": {
+    "data\\priority164-guarded273-20261018\\source.json": {
+      "sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+      "bytes": 67518599
+    },
+    "data\\priority164-guarded273-20261018\\source-readiness.json": {
+      "sha256": "3b3886668618535714d07fb8c00230dccceeb074bab215d615fd73d3e93a5db6",
+      "bytes": 1395390
+    },
+    "evidence\\integration\\priority164-guarded273-20261018\\split-plan.json": {
+      "sha256": "b55dd8df0e233ccd7df6d5a0eea17c4dd14417260248491f6bdecf92c273e343",
+      "bytes": 26121
+    },
+    "evidence\\integration\\priority164-guarded273-20261018\\candidate-package\\plan.json": {
+      "sha256": "b55dd8df0e233ccd7df6d5a0eea17c4dd14417260248491f6bdecf92c273e343",
+      "bytes": 26121
+    },
+    "evidence\\integration\\priority164-guarded273-20261018\\candidate-package\\candidate.json": {
+      "sha256": "944e34b5b8f6f8c8da8d39c6ade24353cddf105e804f30dfbb6869e808af2b10",
+      "bytes": 66897322
+    },
+    "evidence\\integration\\priority164-guarded273-20261018\\candidate-package\\receipt.json": {
+      "sha256": "be0a3d3748cf5dcdb433095096673b1e265eab4781ea3f55377e18a6f6cbdb05",
+      "bytes": 4101
+    },
+    "data\\priority164-guarded273-20261018\\stage\\candidate.json": {
+      "sha256": "944e34b5b8f6f8c8da8d39c6ade24353cddf105e804f30dfbb6869e808af2b10",
+      "bytes": 66897322
+    },
+    "data\\priority164-guarded273-20261018\\stage\\staging-receipt.json": {
+      "sha256": "fcb04a952ee75a61d4a0f959d16c62b9ab54f3ededc777e9a7e98e2abc61f68f",
+      "bytes": 3836
+    },
+    "data\\first-group\\experiment-esri-v003-2020-2025.json": {
+      "sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+      "bytes": 1306
+    },
+    "data\\priority164-guarded273-20261018\\qa\\readiness.json": {
+      "sha256": "4f6a1e1bac5b236de757176ec6d49c56c1ee6c9ec917f2c859e90e9ad0bd2bfb",
+      "bytes": 1382920
+    },
+    "data\\priority164-guarded273-20261018\\qa\\qa-receipt.json": {
+      "sha256": "fe131b495609681eeac6ecab9bc53c4c8f94159d0f59055ce9df294ccffe661f",
+      "bytes": 3069
+    }
+  },
+  "protected_pointer_as_of_handoff": {
+    "data/first-group-training-priority/latest-candidate.json": "920ceb52dca0aba32f11389fd2f9c5f2719ca40b47f44e650c3a38b57c3b3d40",
+    "data/first-group-training-priority/candidate-receipt227-20261018.json": "920ceb52dca0aba32f11389fd2f9c5f2719ca40b47f44e650c3a38b57c3b3d40"
+  },
+  "handoff_at": "2026-10-18T11:34:14.129782+00:00",
+  "post_handoff_root_publication_is_separate": true
+}

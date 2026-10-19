@@ -1,4 +1,5 @@
 """공개경계 근처의 추가 공간후보를 로컬에서만 검증한다. HTTP 호출 없음."""
+from ..ml.manifest_resource_profile import active,read_metadata,bounded_json_digest,ProfileResourceError
 import hashlib
 import json
 import re
@@ -18,7 +19,7 @@ def footprint(lon, lat, crs, side=1024):
     return transform(inverse.transform, box(x-half,y-half,x+half,y+half))
 
 
-def validate_candidate_plan(path, boundary_path, existing_centers=()):
+def validate_candidate_plan(path, boundary_path, existing_centers=(), *, json_role='local_plan'):
     """후보의 실제 클래스 존재를 검증했다고 주장하지 않고 공간중복만 거부한다.
 
     existing_centers는[{province,lon,lat,grid_crs},...]이다. 같은주내같은공간을
@@ -27,10 +28,16 @@ def validate_candidate_plan(path, boundary_path, existing_centers=()):
     import math
     from shapely.geometry import Point, shape
     boundary_path, path = Path(boundary_path), Path(path)
-    digest = hashlib.sha256(boundary_path.read_bytes()).hexdigest()
-    boundaries = json.loads(boundary_path.read_text(encoding="utf-8"))["features"]
+    if active() is not None:
+        if json_role not in ('local_plan','proposal'):raise ValueError('Explicit candidate plan role required')
+        boundary_document,digest,_=read_metadata(boundary_path,'boundary')
+        boundaries=boundary_document['features']
+    else:
+        digest = hashlib.sha256(boundary_path.read_bytes()).hexdigest()
+        boundaries = json.loads(boundary_path.read_text(encoding="utf-8"))["features"]
     polygons = {feature["properties"]["province_id"]: shape(feature["geometry"]) for feature in boundaries}
-    document = json.loads(path.read_text(encoding="utf-8"))
+    if active() is not None:document,document_digest,_=read_metadata(path,json_role)
+    else:document=json.loads(path.read_text(encoding="utf-8"))
     if document.get("schema_version") != 1 or document.get("executed_network") is not False:
         raise ValueError("스키마1/로컬제안기록이필요합니다")
     previous = [(item["province"], footprint(item["lon"],item["lat"],item["grid_crs"])) for item in existing_centers]
@@ -55,6 +62,9 @@ def validate_candidate_plan(path, boundary_path, existing_centers=()):
         previous.append((province,polygon))
         ids.add(identifier)
         accepted.append(candidate.copy())
-    return {"source_path": str(path.resolve()), "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+    if active() is not None:
+        if bounded_json_digest(path,json_role)!=document_digest:raise ProfileResourceError('MANIFEST_JSON_CHANGED')
+        if bounded_json_digest(boundary_path,'boundary')!=digest:raise ProfileResourceError('MANIFEST_JSON_CHANGED')
+    return {"source_path": str(path.resolve()), "source_sha256": (document_digest if active() is not None else hashlib.sha256(path.read_bytes()).hexdigest()),
         "boundary_sha256": digest, "candidates": accepted, "validated_spatial_only": True,
         "class_presence_verified": False, "source_proposal_consumption_flag": document.get("collector_consumption_approved")}

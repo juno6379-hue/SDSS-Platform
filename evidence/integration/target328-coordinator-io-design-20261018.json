@@ -1,0 +1,235 @@
+{
+  "status": "DESIGN_ONLY_OPERATIONAL_EXECUTION_BLOCKED",
+  "at": "2026-10-18T14:55:28.743255+00:00",
+  "pins": [
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "bytes": 21923,
+      "sha256": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "bytes": 48320,
+      "sha256": "9ce6cf2a520edb14d8c67260e79fc5f605f11eab03d9d6773117e0fd193eb165"
+    },
+    {
+      "path": "scripts/collect_training_grid.py",
+      "bytes": 25287,
+      "sha256": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6"
+    },
+    {
+      "path": "backend/app/data/budget.py",
+      "bytes": 5492,
+      "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77"
+    },
+    {
+      "path": "backend/app/data/parallel.py",
+      "bytes": 4364,
+      "sha256": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3"
+    },
+    {
+      "path": "backend/app/data/service.py",
+      "bytes": 36547,
+      "sha256": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "bytes": 10945,
+      "sha256": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839"
+    },
+    {
+      "path": "backend/app/data/targeted_live_guards.py",
+      "bytes": 7558,
+      "sha256": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238"
+    },
+    {
+      "path": "backend/app/data/targeted_source_io.py",
+      "bytes": 3957,
+      "sha256": "c4854dc5887f83d1536e9741bf6f5f3cafc283cc704662c102e8a22bf8c78f6f"
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "bytes": 12511,
+      "sha256": "73c9ba94cda1722ae87e7729ecd655ba5e9584fcb735c8c1f0e06734f8357d01"
+    },
+    {
+      "path": "docs/implementation/328_target256_coordinator_metadata_io_design.md",
+      "bytes": 15949,
+      "sha256": "4dd5d95165745ac4bb78b881fda00f47f9f9e60461daa0f09396fd20cada60cb"
+    }
+  ],
+  "json_call_catalog": [
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "line": 335,
+      "function_or_artifact": "CLI bootstrap request",
+      "mode": "read",
+      "cap_status": "request2M"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "line": 138,
+      "function_or_artifact": "current aggregate + final rehash166",
+      "mode": "read/hash",
+      "cap_status": "source128M+3000"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "line": 141,
+      "function_or_artifact": "ledger ref/current/final hash",
+      "mode": "read/hash",
+      "cap_status": "ledger8M"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "line": 148,
+      "function_or_artifact": "base config raw read",
+      "mode": "read",
+      "cap_status": "config2M"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "line": 79,
+      "function_or_artifact": "physical worker receipts",
+      "mode": "read",
+      "cap_status": "worker8M"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "line": 235,
+      "function_or_artifact": "job config via grid.write_json",
+      "mode": "write",
+      "cap_status": "config2M"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "line": 24,
+      "function_or_artifact": "load_config",
+      "mode": "read",
+      "cap_status": "config2M"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "line": 282,
+      "function_or_artifact": "window state existing",
+      "mode": "read",
+      "cap_status": "NEW_V3_STATE_CAP_REQUIRES_ROOT"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "line": 295,
+      "function_or_artifact": "state circuit/reserve/actual/error/final repeated writes",
+      "mode": "write",
+      "cap_status": "NEW_V3_STATE_CAP_REQUIRES_ROOT"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "line": 62,
+      "function_or_artifact": "record_event JSONL append",
+      "mode": "write",
+      "cap_status": "NEW_V3_JSONL_CAP_REQUIRES_ROOT"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "line": 403,
+      "function_or_artifact": "saved STAC feature JSON",
+      "mode": "write",
+      "cap_status": "PROPOSED_LOCAL_STAC1M_ROOT_APPROVAL"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "line": 431,
+      "function_or_artifact": "calibration JSON",
+      "mode": "write",
+      "cap_status": "PROPOSED_CONFIG2M_ROOT_APPROVAL"
+    },
+    {
+      "path": "backend/app/data/service.py",
+      "line": 219,
+      "function_or_artifact": "remote JSON response parse",
+      "mode": "read",
+      "cap_status": "REMOTE_BATCH_METADATA1M_PLUS_JSON_OPERATION"
+    },
+    {
+      "path": "backend/app/data/service.py",
+      "line": 485,
+      "function_or_artifact": "registered asset manifest _record",
+      "mode": "write",
+      "cap_status": "NEW_V3_ARTIFACT_CAP_REQUIRES_ROOT"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "line": 587,
+      "function_or_artifact": "batch annual report repeat/final604",
+      "mode": "write",
+      "cap_status": "PROPOSED_LINEAGE8M_ROOT_APPROVAL"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "line": 270,
+      "function_or_artifact": "finally state + worker result274",
+      "mode": "read/write",
+      "cap_status": "STATE/WORKER8M"
+    },
+    {
+      "path": "backend/app/data/budget.py",
+      "line": 44,
+      "function_or_artifact": "active ledger and historical JSON hashes",
+      "mode": "read/hash",
+      "cap_status": "ledger/historical8M"
+    },
+    {
+      "path": "backend/app/data/budget.py",
+      "line": 53,
+      "function_or_artifact": "last historical run-result bootstrap",
+      "mode": "read",
+      "cap_status": "historical8M_NO_AUTO_INIT_PROPOSED"
+    },
+    {
+      "path": "backend/app/data/budget.py",
+      "line": 64,
+      "function_or_artifact": "reserve/settle ledger temp+replace",
+      "mode": "write",
+      "cap_status": "ledger8M"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "line": 293,
+      "function_or_artifact": "finalize aggregate write",
+      "mode": "write",
+      "cap_status": "source128M+3000"
+    },
+    {
+      "path": "scripts/collect_training_grid.py",
+      "line": 207,
+      "function_or_artifact": "boundary JSON provenance hash",
+      "mode": "hash",
+      "cap_status": "boundary2M"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "line": 336,
+      "function_or_artifact": "JSON stdout/status/terminal output",
+      "mode": "write",
+      "cap_status": "JSON_RECORD_CAP_REQUIRES_ROOT"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "line": 55,
+      "function_or_artifact": "inventory manifest/ledger/pending config + end hashes",
+      "mode": "read/hash",
+      "cap_status": "source128M/ledger8M/config2M"
+    }
+  ],
+  "runtime_or_test_edits": 0,
+  "operating_data_reads_copies": 0,
+  "tests_worker_http_native_reservation": 0,
+  "same_budget_copy_context_per_submit_required": true,
+  "whole_metadata_accounting_connected": false,
+  "new_output_role_caps_require_root_choice": true,
+  "profile_error_parallel_valueerror_interception_required": true,
+  "existing_pending_preservation_required": true,
+  "main327_regression_owned_by_root": true,
+  "execution_authorized": false,
+  "training_approved": false
+}

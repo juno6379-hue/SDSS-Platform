@@ -1,0 +1,245 @@
+test186_filter_scope_invalid_stride_and_caps (test_find_bare_targets173.BareTargets173Tests.test186_filter_scope_invalid_stride_and_caps) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\find_bare_targets173.py:110: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(x,y,256,256));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test186_offset_duplicate_sha_window_still_excluded (test_find_bare_targets173.BareTargets173Tests.test186_offset_duplicate_sha_window_still_excluded) ... ok
+test186_offset_finds_split_bare_patch_default_unchanged (test_find_bare_targets173.BareTargets173Tests.test186_offset_finds_split_bare_patch_default_unchanged) ... ok
+test_below_threshold_is_not_dense (test_find_bare_targets173.BareTargets173Tests.test_below_threshold_is_not_dense) ... ok
+test_byte_and_window_caps_rejected (test_find_bare_targets173.BareTargets173Tests.test_byte_and_window_caps_rejected) ... ok
+test_duplicate_sha_window_excluded (test_find_bare_targets173.BareTargets173Tests.test_duplicate_sha_window_excluded) ... ok
+test_inside_fraction_filters_and_missing_boundary_rejects (test_find_bare_targets173.BareTargets173Tests.test_inside_fraction_filters_and_missing_boundary_rejects) ... ok
+test_local_files_unchanged (test_find_bare_targets173.BareTargets173Tests.test_local_files_unchanged) ... ok
+test_native_threshold_and_false_approval (test_find_bare_targets173.BareTargets173Tests.test_native_threshold_and_false_approval) ... ok
+test_priority_gap_then_density_and_train_unconnected (test_find_bare_targets173.BareTargets173Tests.test_priority_gap_then_density_and_train_unconnected) ... ok
+test_stale_crop_pin_rejected (test_find_bare_targets173.BareTargets173Tests.test_stale_crop_pin_rejected) ... ok
+test_year_mismatch_rejected (test_find_bare_targets173.BareTargets173Tests.test_year_mismatch_rejected) ... ok
+test186_explicit128_offset_accepted_default256_rejects (test_review_bare_targets179.Review179Tests.test186_explicit128_offset_accepted_default256_rejects) ... E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test186_stride_and_scope_cannot_widen_silently (test_review_bare_targets179.Review179Tests.test186_stride_and_scope_cannot_widen_silently) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_all_six_fixed_province_splits_native (test_review_bare_targets179.Review179Tests.test_all_six_fixed_province_splits_native) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_bad_split_year_duplicate_and_geometry_fail (test_review_bare_targets179.Review179Tests.test_bad_split_year_duplicate_and_geometry_fail) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_bounds_cap_and_extra_request_fields (test_review_bare_targets179.Review179Tests.test_bounds_cap_and_extra_request_fields) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_cli_existing_output_refused_before_review (test_review_bare_targets179.Review179Tests.test_cli_existing_output_refused_before_review) ... {"status": "REVIEW_BLOCKED", "execution_supported": false, "source_or_ledger_writes": 0}
+ok
+test_label_mutated_after_inventory_rejected (test_review_bare_targets179.Review179Tests.test_label_mutated_after_inventory_rejected) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_metadata_changed_during_inventory_rejected (test_review_bare_targets179.Review179Tests.test_metadata_changed_during_inventory_rejected) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_missing_lineage_or_ambiguous_lineage (test_review_bare_targets179.Review179Tests.test_missing_lineage_or_ambiguous_lineage) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_mutual_overlap_report_separate_from_history (test_review_bare_targets179.Review179Tests.test_mutual_overlap_report_separate_from_history) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_native_two_candidates_one_inventory_plan_exact (test_review_bare_targets179.Review179Tests.test_native_two_candidates_one_inventory_plan_exact) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_overlap_history_is_observation_not_global_abort (test_review_bare_targets179.Review179Tests.test_overlap_history_is_observation_not_global_abort) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_stale_metadata_and_label_pin (test_review_bare_targets179.Review179Tests.test_stale_metadata_and_label_pin) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_unverified_inventory_rejected (test_review_bare_targets179.Review179Tests.test_unverified_inventory_rejected) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_actual_pending_support_and_reusable_reference_labels_readonly (test_targeted_inventory.TargetedInventoryTests.test_actual_pending_support_and_reusable_reference_labels_readonly) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_alias_rejected_even_if_outside_active_scene_list (test_targeted_inventory.TargetedInventoryTests.test_alias_rejected_even_if_outside_active_scene_list) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_budget_cannot_be_raised_and_inventory_is_not_truncated (test_targeted_inventory.TargetedInventoryTests.test_budget_cannot_be_raised_and_inventory_is_not_truncated) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_geographic_support_is_checked_and_worldcover_is_reference_only (test_targeted_inventory.TargetedInventoryTests.test_geographic_support_is_checked_and_worldcover_is_reference_only) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_historical_source_window_participates (test_targeted_inventory.TargetedInventoryTests.test_historical_source_window_participates) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_ledger_drift_after_pinned_read_blocks (test_targeted_inventory.TargetedInventoryTests.test_ledger_drift_after_pinned_read_blocks) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_missing_pending_b02_is_unknown_not_clear (test_targeted_inventory.TargetedInventoryTests.test_missing_pending_b02_is_unknown_not_clear) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_new_partial_support_during_read_blocks (test_targeted_inventory.TargetedInventoryTests.test_new_partial_support_during_read_blocks) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_noneligible_source_window_hash_is_enforced (test_targeted_inventory.TargetedInventoryTests.test_noneligible_source_window_hash_is_enforced) ... ok
+test_older_ledger_report_source_directory_is_not_omitted (test_targeted_inventory.TargetedInventoryTests.test_older_ledger_report_source_directory_is_not_omitted) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_pending_configuration_mismatch_blocks (test_targeted_inventory.TargetedInventoryTests.test_pending_configuration_mismatch_blocks) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_target_invalid_and_missing_source_reference_block (test_targeted_inventory.TargetedInventoryTests.test_target_invalid_and_missing_source_reference_block) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_unreported_scl_support_overlap_blocks (test_targeted_inventory.TargetedInventoryTests.test_unreported_scl_support_overlap_blocks) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_actual_collector_string_year_selects_scene_and_b02_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_actual_collector_string_year_selects_scene_and_b02_witness) ... ok
+test_all_provinces_reject_caller_split_reassignment_before_preselection_scl (test_targeted_live_guards.TargetedLiveGuardTests.test_all_provinces_reject_caller_split_reassignment_before_preselection_scl) ... ok
+test_b02_alignment_over_one_pixel_rejected_and_exact_boundary_allowed (test_targeted_live_guards.TargetedLiveGuardTests.test_b02_alignment_over_one_pixel_rejected_and_exact_boundary_allowed) ... ok
+test_concurrent_overlapping_workers_claim_exactly_once (test_targeted_live_guards.TargetedLiveGuardTests.test_concurrent_overlapping_workers_claim_exactly_once) ... ok
+test_cross_split_seed_veto_and_quarantined_seed (test_targeted_live_guards.TargetedLiveGuardTests.test_cross_split_seed_veto_and_quarantined_seed) ... ok
+test_failed_b02_check_retains_scene_claim (test_targeted_live_guards.TargetedLiveGuardTests.test_failed_b02_check_retains_scene_claim) ... ok
+test_historical_support_overlap_denied_but_edge_touch_allowed (test_targeted_live_guards.TargetedLiveGuardTests.test_historical_support_overlap_denied_but_edge_touch_allowed) ... ok
+test_input_objects_cannot_reassign_bound_province_after_construction (test_targeted_live_guards.TargetedLiveGuardTests.test_input_objects_cannot_reassign_bound_province_after_construction) ... ok
+test_invalid_year_split_aoi_or_grid_fails_without_claim_or_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_invalid_year_split_aoi_or_grid_fails_without_claim_or_witness) ... ok
+test_metric_native_crs_is_not_hardcoded_per_province_and_unsupported_units_fail (test_targeted_live_guards.TargetedLiveGuardTests.test_metric_native_crs_is_not_hardcoded_per_province_and_unsupported_units_fail) ... ok
+test_new_province_b02_crs_mismatch_and_reference_spoof_never_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_new_province_b02_crs_mismatch_and_reference_spoof_never_witness) ... ok
+test_new_province_failed_window_claim_is_retained_and_other_owner_denied (test_targeted_live_guards.TargetedLiveGuardTests.test_new_province_failed_window_claim_is_retained_and_other_owner_denied) ... ok
+test_preselection_scl_observed_but_unselected_imagery_denied (test_targeted_live_guards.TargetedLiveGuardTests.test_preselection_scl_observed_but_unselected_imagery_denied) ... ok
+test_registry_includes_historical_noneligible_split_rows (test_targeted_live_guards.TargetedLiveGuardTests.test_registry_includes_historical_noneligible_split_rows) ... ok
+test_same_owner_bands_overlap_allowed_other_owner_blocked (test_targeted_live_guards.TargetedLiveGuardTests.test_same_owner_bands_overlap_allowed_other_owner_blocked) ... ok
+test_scene_requery_same_owner_is_rejected_and_claim_kept (test_targeted_live_guards.TargetedLiveGuardTests.test_scene_requery_same_owner_is_rejected_and_claim_kept) ... ok
+test_six_fixed_provinces_all_six_years_support_three_splits (test_targeted_live_guards.TargetedLiveGuardTests.test_six_fixed_provinces_all_six_years_support_three_splits) ... ok
+test_train_and_test_shared_scene_conflict_and_history_support_reject (test_targeted_live_guards.TargetedLiveGuardTests.test_train_and_test_shared_scene_conflict_and_history_support_reject) ... ok
+test_unknown_province_target_binding_and_province_aoi_mutation_fail_closed (test_targeted_live_guards.TargetedLiveGuardTests.test_unknown_province_target_binding_and_province_aoi_mutation_fail_closed) ... ok
+test_year_matched_esri_reference_reusable_without_b02_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_year_matched_esri_reference_reusable_without_b02_witness) ... ok
+
+----------------------------------------------------------------------
+Ran 59 tests in 21.748s
+
+OK

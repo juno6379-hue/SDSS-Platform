@@ -1,0 +1,85 @@
+{
+  "at_utc": "2026-10-18T06:11:22.186382+00:00",
+  "status": "IMPLEMENTED_TESTED_SYNTHETIC_EXECUTION_PLANNED",
+  "files": [
+    {
+      "path": "backend/app/data/bare_label_survey_contract.py",
+      "bytes": 15381,
+      "sha256": "ea60acf759c7437e70646f3ac5ce4ec6c929af2c5b9c920a5ecfe7a744bfe3a0"
+    },
+    {
+      "path": "tests/test_bare_label_survey_contract.py",
+      "bytes": 21092,
+      "sha256": "57a27c762d5bc9db83739119037f2ba49df93d787c945672627f8f9cfb564289"
+    },
+    {
+      "path": "docs/implementation/224_survey_contract_scene_and_copy_hardening.md",
+      "bytes": 8970,
+      "sha256": "f1888e3f02a0d68e37b76e0a4cb15ca252963f4eec6c4cd172ce47b5cea486e4"
+    },
+    {
+      "path": "evidence/integration/survey224-focused-20261018.log",
+      "bytes": 6174,
+      "sha256": "8df6893e37577c8cd3add599df9bca6f0f6722e8d111e9cc986d53059448222c"
+    },
+    {
+      "path": "evidence/integration/survey224-final-20261018.log",
+      "bytes": 15003,
+      "sha256": "a89d627e665ddecdb4e8936552c26c2b3e07f9f7a58825230858fcf539dc6aea"
+    },
+    {
+      "path": "evidence/integration/survey224-before220-archives-20261018.json",
+      "bytes": 998,
+      "sha256": "451ab086c31d86f9d0b1c6d06a410e1a475be15cd019d4d0c6a0e6d11bc1b1bd"
+    }
+  ],
+  "archives": [
+    {
+      "path": "evidence/integration/survey224-before220-bare_label_survey_contract.py",
+      "bytes": 14134,
+      "sha256": "a0470b489db19a9c4ccafcada3374e87675e116af3a592068b7dfcda64cf9096"
+    },
+    {
+      "path": "evidence/integration/survey224-before220-test_bare_label_survey_contract.py",
+      "bytes": 13808,
+      "sha256": "a1b2b913c7e225d9225833923d697af7c9866db142933e8d1b1b3104f953251e"
+    },
+    {
+      "path": "evidence/integration/survey224-before220-220_bare_label_survey_pure_contract.md",
+      "bytes": 10697,
+      "sha256": "b7e3a2fc9096fa09758cb441e5d853b2a2d78c2e45d997b8f9f6ea962b739a65"
+    }
+  ],
+  "historical220_freeze": {
+    "path": "evidence/integration/survey220-freeze-20261018.json",
+    "bytes": 1718,
+    "sha256": "c69f029b37d88b095de3b3a39147fccd542e8c50f3f71a1cac198c2a88a70217"
+  },
+  "independent221_review": {
+    "path": "docs/implementation/221_survey_contract_independent_review.md",
+    "bytes": 9722,
+    "sha256": "7ebb454e43f364e613b8849b2b9b6b40a2cd78f44d6507ca71245bfb06a8a312"
+  },
+  "final_tests": {
+    "passed": 70,
+    "seconds": 20.164,
+    "skipped": 0
+  },
+  "initial_tests": {
+    "passed": 27,
+    "failed": 1,
+    "reason": "TEST_FIXED_CODE_REGEX_DID_NOT_ALLOW_UTF8_DIGIT_CORRECTED"
+  },
+  "issues_addressed": [
+    "F1_FULL_SENTINEL_L2A_ID_CALENDAR_AND_ACQUISITION_BINDING",
+    "F2_DETACHED_BOUNDED_COPY_UTF8_AND_RUNTIMEERROR_BOUNDARY",
+    "CANONICAL_IMMUTABLE_SPLIT_SNAPSHOT"
+  ],
+  "operating_source_or_ledger_reads": 0,
+  "http_requests": 0,
+  "collector_runs": 0,
+  "native_runs": 0,
+  "registry_connected": false,
+  "target_consumer_connected": false,
+  "understanding_handoff": "ROOT_ASSIGNMENT_REQUIRED"
+}

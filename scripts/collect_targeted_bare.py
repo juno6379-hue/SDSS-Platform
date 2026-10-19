@@ -15,6 +15,7 @@ from app.data.budget import CollectionLedger
 from app.data.parallel import run_two_workers
 from app.data.targeted_bare_plan import prepare_targeted_bare_jobs,_pinned,_json,_need
 from app.data.targeted_inventory import inspect_targeted_inventory
+from app.data.targeted_inventory_profile import inventory_kwargs,metadata as profile_metadata
 from app.data.targeted_live_guards import TargetedLiveGuard,TargetedWindowClaims,scene_registry
 from app.data.targeted_execution import _directory_identity
 from app.ml.per_scene_normalization_files import _root,_snapshot,_check_path
@@ -129,9 +130,8 @@ def _execution_progress(progress):
 def validate_request(root, request, expected_sha256):
     """Read-only full plan/inventory validation; never converts157 into approval."""
     root=_root(root)
-    _need(type(request) is dict and request.keys()=={'schema_version','plan','ledger_ref','maximum_batches'} and
-          type(request['schema_version']) is int and request['schema_version']==1 and
-          type(request['maximum_batches']) is int and 1<=request['maximum_batches']<=2,'TARGETED_REQUEST_INVALID')
+    inventory_options=inventory_kwargs(request,{'schema_version','plan','ledger_ref','maximum_batches'},'TARGETED_REQUEST_INVALID')
+    _need(type(request['maximum_batches']) is int and 1<=request['maximum_batches']<=2,'TARGETED_REQUEST_INVALID')
     _need(digest(request)==expected_sha256,'TARGETED_REQUEST_PIN_MISMATCH')
     aggregate_path=root/'data/first-group-training-esri-v1/annual-window-report.json'
     ledger_path=root/'data/first-group-training-budget/global-ledger.json'
@@ -160,7 +160,7 @@ def validate_request(root, request, expected_sha256):
     proofs=[]
     for target in request['plan']['targets']:
         proof=inspect_targeted_inventory(root,{'manifest_ref':request['plan']['current_manifest_ref'],
-                  'ledger_ref':request['ledger_ref'],'target':target['target_footprint_native']})
+                  'ledger_ref':request['ledger_ref'],'target':target['target_footprint_native']},**inventory_options)
         _need(proof['status']=='LOCAL_INVENTORY_VERIFIED_EXECUTION_BLOCKED','TARGETED_INVENTORY_'+str(proof['issue']))
         proofs.append(proof)
     _need(_snapshot(root,aggregate_path,128*1024**2,'aggregate')[0]==source_pin and
@@ -172,7 +172,8 @@ def validate_request(root, request, expected_sha256):
     return {'root':root,'jobs':jobs,'aggregate':aggregate,'aggregate_path':aggregate_path,
             'ledger_path':ledger_path,'source_sha256':source_pin,'inventory':proofs,
             'physical_inventory':physical,'maximum_new_physical_patches':len(jobs),
-            'targets':{t['target_id']:t for t in request['plan']['targets']},'request_sha256':expected_sha256}
+            'targets':{t['target_id']:t for t in request['plan']['targets']},'request_sha256':expected_sha256,
+            **profile_metadata(request)}
 
 
 def run_targeted(root,request,expected_sha256,*,execute=False):
@@ -188,7 +189,7 @@ def run_targeted(root,request,expected_sha256,*,execute=False):
         checked=validate_request(root,request,expected_sha256)
         if not execute:
             return {'status':'LOCAL_DISPATCH_INPUTS_VERIFIED','executed':False,
-                    'request_sha256':expected_sha256,'jobs':[j['key'] for j in checked['jobs']],
+                    'request_sha256':expected_sha256,**profile_metadata(request),'jobs':[j['key'] for j in checked['jobs']],
                     'inventory_assets':len(checked['inventory'][0]['assets']),
                     'physical_inventory':checked['physical_inventory'],
                     'maximum_new_physical_patches':checked['maximum_new_physical_patches'],
@@ -298,7 +299,7 @@ def run_targeted(root,request,expected_sha256,*,execute=False):
 
         execution=run_two_workers(checked['jobs'],reserve,work,finalize,event,request['maximum_batches'])
         return {'status':'BOUNDED_TARGETED_STAGE_FINISHED','executed':True,'recorded_at':now(),
-                'request_sha256':expected_sha256,'execution':execution,'batches':summaries,
+                'request_sha256':expected_sha256,**profile_metadata(request),'execution':execution,'batches':summaries,
                 'execution_progress':_execution_progress(progress),
                 'physical_inventory_before':checked['physical_inventory'],
                 'maximum_new_physical_patches':checked['maximum_new_physical_patches'],

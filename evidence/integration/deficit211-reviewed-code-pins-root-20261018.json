@@ -1,0 +1,58 @@
+{
+  "at_utc": "2026-10-18T05:42:11.096121+00:00",
+  "status": "REVIEWED_TESTED_BOUNDED_EXECUTION_APPROVED",
+  "scope": "ROOT_BOUNDED_COLLECTION_ONLY_WITHIN_EXISTING_USER_AUTHORIZATION",
+  "source_pins": {
+    "backend/app/data/deficit_candidate_guard.py": "c8eece7cbb0d3fed77f704b65eda9e51fe2e300ea56fdfd4aa020d9c9653204f",
+    "scripts/collect_targeted_bare.py": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+    "scripts/collect_deficit_guarded.py": "6e41c4ead9262133b497e802050671da1bc0a969027a39735429a72c720f112a",
+    "scripts/collect_training_grid.py": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/data/targeted_inventory.py": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d",
+    "backend/app/data/budget.py": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+    "backend/app/data/candidates.py": "c72257998d14c8b874ee9c9b532e50d78b3e3417a8b47c1688a54c656966dba6"
+  },
+  "unit200_related_tests": {
+    "passed": 77,
+    "skipped": 0,
+    "seconds": 28.002
+  },
+  "root_reviewed": [
+    "full200 coordinator source and failure branches",
+    "199 helper and inherited256 checks",
+    "20/22 focused cases plus related final77 log",
+    "doc200 fixed snapshot and active SHA contract",
+    "205 actual current-source local proof,1254assets/1668physical",
+    "208 minimal ROOT path and fixed-code diagnosis diff",
+    "isolated actual CLI regression and79PASS log",
+    "old200 reconstructed bytes match historical frozen SHA",
+    "206 zero reservation/worker and unchanged original metadata audit"
+  ],
+  "maximum_batches": 1,
+  "maximum_new_physical_patches": 16,
+  "selected_cells": [
+    [
+      "southeast_sulawesi",
+      2024
+    ]
+  ],
+  "budget_increased": false,
+  "training_or_deployment_approved": false,
+  "independent_labels_verified": false,
+  "unit208_related_tests": {
+    "passed": 79,
+    "skipped": 0,
+    "seconds": 33.288
+  },
+  "separate_execution_run": "211",
+  "prior206_terminal_preserved": true,
+  "publication207_sha256": "631a14dcc635cdeeb29ba692e5a97a094a84b2198e766a455942a33a40ab11d8",
+  "actual_ui207_sha256": "5891f35b139cda7f30a4bae0713449b6b0fd74b4af094a55e8e14a2961837e4c",
+  "supervisor_sha256": "2b1ae4e943de236ac7c653e106ba4aa2f349d3c29eb28223d59038cbd003795f",
+  "request_file_sha256": "11c6edead16b841a278e5ba59e2ccb843f7b6571e03b52a43ce3fd7251f1a530",
+  "fresh_guard_required": true,
+  "old_pending_preserved_bytes": 136314880
+}

@@ -1,0 +1,72 @@
+{
+  "status": "IMPLEMENTED_TESTED_SYNTHETIC_NOT_OPERATING_REVIEWED",
+  "at": "2026-10-18T07:02:20.299733+00:00",
+  "profile_descriptor": {
+    "name": "TARGETED_LOCAL_SUPPORT_3G_V1",
+    "max_files": 10000,
+    "max_support_bytes": 3221225472,
+    "max_file_bytes": 67108864
+  },
+  "profile_marker": {
+    "name": "TARGETED_LOCAL_SUPPORT_3G_V1",
+    "sha256": "062bf36199ee4e0f142cb117cad2f0c5b25411eb3ddd43ed37b30ca3b7a75a7a"
+  },
+  "files": [
+    {
+      "path": "scripts/review_bare_targets179.py",
+      "sha256": "25b3abcbc1f4e7da00d0d9b40624c415415e23489cec138c65bd1e4c6164c89d",
+      "bytes": 15198
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "sha256": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8",
+      "bytes": 21923
+    },
+    {
+      "path": "backend/app/data/targeted_inventory_profile.py",
+      "sha256": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d",
+      "bytes": 1900
+    },
+    {
+      "path": "tests/test_targeted_inventory_profile232.py",
+      "sha256": "294f4deca06489a0b34b4c936a43f9f9606ea49551f431be78c805d59ce6d33b",
+      "bytes": 14614
+    },
+    {
+      "path": "docs/implementation/232_targeted_support_inventory_profile.md",
+      "sha256": "c0cf8324baa0cdb3d32af300862ae623f9ed91ae22aa19af1b26dfe37fc8a12c",
+      "bytes": 9072
+    }
+  ],
+  "protected_unchanged": {
+    "backend/app/data/targeted_inventory.py": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/data/deficit_candidate_guard.py": "f3528592f335be1c69f562ade59e8fcab22e20c6c83c8363ad84a751b3d1c803",
+    "backend/app/data/targeted_bare_plan.py": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1"
+  },
+  "baseline_manifest": {
+    "sha256": "8eb88d86ee18090917bc87fa29c47356bab3f56efa7de4da5ae7b0051e6063cd",
+    "bytes": 937
+  },
+  "patch": {
+    "sha256": "3870919040cdfc45bc8ac6bbf96944bc53da7ce492e1f79c9748d2a5500c1f1d",
+    "bytes": 26960
+  },
+  "tests": {
+    "passed": 103,
+    "seconds": 32.239,
+    "new_tests_included": 8,
+    "skipped": 0,
+    "log": {
+      "sha256": "e27cf4f68f43d97a91f51552a48a3a34a38842afaac31f21314641044ba5db25",
+      "bytes": 49730
+    }
+  },
+  "operating_source_or_ledger_reads": 0,
+  "operating_inventory_scans": 0,
+  "operating_native_scans": 0,
+  "http_requests": 0,
+  "collector_runs": 0,
+  "training_executed": false,
+  "next_step": "ROOT_INDEPENDENT_REVIEW_AND_SEPARATE_EXPLICIT_V2_REQUEST"
+}

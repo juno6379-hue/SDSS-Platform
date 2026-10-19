@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-18T03:09:21.106374+00:00",
+  "status": "AUTHORIZED_LOCAL_PROPOSAL_SNAPSHOT_PINNED",
+  "source_rows": 1617,
+  "source_bytes": 62918015,
+  "metadata": {
+    "source": {
+      "path": "data\\first-group-training-esri-v1\\annual-window-report.json",
+      "sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+      "stamp": [
+        1290997423,
+        562949953447383,
+        62918015,
+        1792292412052601400,
+        1792292410889851000
+      ]
+    },
+    "ledger": {
+      "path": "data\\first-group-training-budget\\global-ledger.json",
+      "sha256": "7d27c5231c43c0014de92a11fa517c5a4d5c662005785ac75054d37dc27544fb",
+      "stamp": [
+        1290997423,
+        281474976736728,
+        60026,
+        1792292406330210800,
+        1792292406330210800
+      ]
+    },
+    "boundary": {
+      "path": "data\\first-group-boundaries\\selected-six.geojson",
+      "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+      "stamp": [
+        1290997423,
+        281474976716464,
+        482365,
+        1792111815480366000,
+        1792111815452784900
+      ]
+    },
+    "config": {
+      "path": "configs\\first-group.collection.json",
+      "sha256": "8b0c1b2aad13a3344200998ec62a18853c5308adf4ec57b1af835333845fd7e3",
+      "stamp": [
+        1290997423,
+        562949953427115,
+        7401,
+        1792111815511624200,
+        1792111796185410100
+      ]
+    },
+    "prior": {
+      "path": "data\\first-group-training-esri-v2\\lane-b-candidates.json",
+      "sha256": "2920786dfcd5dfd5ec955eccc659192e9eb729cb45788b1a7fb052862f7f3b8d",
+      "stamp": [
+        1290997423,
+        281474976717223,
+        28274,
+        1792122700305075200,
+        1792122700303948400
+      ]
+    }
+  },
+  "snapshot_path": "data\\centers182-actual-20261018\\source.json",
+  "snapshot_sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+  "operating_collector_started": false,
+  "ledger_written": false,
+  "http_requests": 0,
+  "frozen_code_sha256": "c7853c4c99a42509063508ffd0d3173abd6c53174ef591b3a5e979dc839ccf2d"
+}

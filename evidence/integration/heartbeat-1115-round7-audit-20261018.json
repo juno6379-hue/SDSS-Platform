@@ -1,0 +1,70 @@
+{
+  "at_utc": "2026-10-18T02:18:56.052020+00:00",
+  "checks": {
+    "old_rows_unchanged": true,
+    "old_pending_unchanged": true,
+    "both_settled": true,
+    "stdout_started2_finished2": true,
+    "no_worker429": true,
+    "manifest_two_reads_stable": true,
+    "ledger_two_reads_stable": true
+  },
+  "manifest_sha256": "c92a7f73bcbfc461d94750afa3985626f889e729a86e1d72f703e1030e8827ec",
+  "ledger_sha256": "b9aed796ed11e7c00e62c6ee3078d2d043b72156da0c2b32e254c42bdf727ebb",
+  "physical_total": 1568,
+  "eligible_total": 1259,
+  "ineligible_total": 309,
+  "new_since_round7_physical": 32,
+  "new_since_round7_eligible": 24,
+  "round7_physical": 32,
+  "round7_eligible": 24,
+  "cell_gap_total": 54,
+  "populated_cells": 36,
+  "round7_bare_declared_pixels": 0,
+  "round7_bare_ge256_patches": 0,
+  "old_pending_reserved_bytes": 136314880,
+  "round7_charged_bytes": 36552191,
+  "ledger_charged_delta_since_launch": 36552191,
+  "remaining_after_round7_before_any_later_reservations": 2122648087,
+  "current_remaining_including_any_new_reservations": 2122648087,
+  "current_pending": [
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440
+    }
+  ],
+  "rate_limit_active": false,
+  "lock_present": false,
+  "round8_launch_exists": false,
+  "by_job": [
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g03",
+      "ledger_status": "settled",
+      "source_status": "rgb_window_downloaded",
+      "charged_bytes": 18694877,
+      "physical_rows": 16,
+      "eligible_rows": 9,
+      "bare_declared_pixels": 0,
+      "bare_ge256_patches": 0
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2023-g03",
+      "ledger_status": "settled",
+      "source_status": "rgb_window_downloaded",
+      "charged_bytes": 17857314,
+      "physical_rows": 16,
+      "eligible_rows": 15,
+      "bare_declared_pixels": 0,
+      "bare_ge256_patches": 0
+    }
+  ],
+  "limits": "Sequential double reads, not atomic snapshot or native pixel QA. Current aggregate1259 differs from fixed159 cohort1125. Later reservations are kept separate from round7 settled charges. No new collection/network/operating writes.",
+  "collection_starts": 0,
+  "operating_data_writes": 0
+}

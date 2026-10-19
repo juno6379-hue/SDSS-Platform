@@ -1,0 +1,95 @@
+{
+  "status": "FROZEN_IMPLEMENTED_TESTED_NOT_LIVE_APPLIED",
+  "at": "2026-10-18T06:15:24.388716+00:00",
+  "files": {
+    "backend/app/collection_budget_status.py": {
+      "sha256": "670d3262e6ea7ccd25995a8c0b42bc0441dd1618d1d380360978c213da3a6d52",
+      "bytes": 8643
+    },
+    "backend/app/main.py": {
+      "sha256": "0713249307cf83ae5eb5e0223288ce2003c7b661cdb38a1c71a807402ac0a44b",
+      "bytes": 22739
+    },
+    "tests/test_collection_budget_status.py": {
+      "sha256": "093750021fe44dc6e8f844e5e55ae75f824acff4f08d2c64cd883dd0f17a7542",
+      "bytes": 7356
+    },
+    "tests/test_collection_budget_api.py": {
+      "sha256": "d39b50f643ed5b1899e76172c0095cec96b2faa9ae26d501e62a8118dc70dd4f",
+      "bytes": 2191
+    },
+    "frontend/src/collectionProgressAdapter.ts": {
+      "sha256": "ff3ecdd642cb7777d604782f3f2b14bde95c7029a3d3c69669caffb83404536e",
+      "bytes": 14892
+    },
+    "frontend/src/collectionProgressAdapter.test.mjs": {
+      "sha256": "0a4992bf17a47c156ee7ab12de93c0d517e7fa127b37d3a0de8decb9dbbc8c2b",
+      "bytes": 16333
+    },
+    "frontend/src/CollectionProgress.tsx": {
+      "sha256": "2dfae62f905f6aaa8ffd350fa08a45f798c38d963191a362dbc99ea688562303",
+      "bytes": 15399
+    },
+    "frontend/src/CollectionProgress.scope.test.mjs": {
+      "sha256": "5d950cf3c75436357316f4a454d11ecab6c32a27c3a748efa942ae048afbadab",
+      "bytes": 5447
+    },
+    "docs/implementation/225_readonly_collection_budget_status.md": {
+      "sha256": "324220e6db1a6542ee5bf50fed7839b299f4e1dd8826e662f1506d0cf86861fa",
+      "bytes": 7702
+    }
+  },
+  "tests": {
+    "backend_helper_and_api": {
+      "passed": 11,
+      "seconds": 1.126,
+      "log": "budget225-backend-final-20261018.log"
+    },
+    "frontend_adapter_and_render": {
+      "passed": 16,
+      "milliseconds": 2068.4529,
+      "log": "budget225-frontend-final-20261018.log"
+    },
+    "related_priority": {
+      "passed": 12,
+      "seconds": 1.02,
+      "log": "budget225-priority-regression-20261018.log"
+    },
+    "build": {
+      "tsc": true,
+      "vite_modules": 123,
+      "vite_seconds": 27.48,
+      "warning": "existing bundle >500kB",
+      "log": "budget225-build-final-20261018.log"
+    }
+  },
+  "existing_wip_preservation": {
+    "main_inverse_only_225_changes_matches_before_sha": true,
+    "main_original_LF_preserved": true,
+    "collector_core_mutation": false
+  },
+  "contract": {
+    "ledger_max_bytes": 8388608,
+    "source_max_bytes": 67108864,
+    "source_sha_passes": 2,
+    "ledger_sha_passes": 2,
+    "lock_write": false,
+    "process_verification": "UNKNOWN",
+    "get": "/api/data/collection-budget-status",
+    "existing_response_attachment": "collection_targets.budget_status",
+    "sum": "charged=settled_batch+metadata+all_pending; remaining=maximum-charged",
+    "old_pending_in_charged_not_double_subtracted": true
+  },
+  "live": {
+    "server_restart": false,
+    "new_api_http": false,
+    "browser_refresh": false,
+    "collector_cost_or_training": false
+  },
+  "pending": [
+    "Root independent source review",
+    "Explicit live API application and browser instruction",
+    "Understanding materials by Root-assigned understanding agent"
+  ],
+  "before": "budget225-before-20261018.json"
+}

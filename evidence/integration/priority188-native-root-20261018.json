@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "scope": "READONLY_FIXED_LAUNCH_INCREMENT_NATIVE_AUDIT",
+  "recorded_at": "2026-10-18T03:52:44.165589+00:00",
+  "status": "COMPLETED_NATIVE_CHECKED",
+  "issue": null,
+  "native_validation_complete": true,
+  "batches": [
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03",
+      "settled": true,
+      "stored_config_sha256": "831ea62faf67259563274e74b8ae2df33cc0c27e4dd0ad7764bfafa2bd129403",
+      "effective_config_sha256": "16e4d71750b31a3ff8b061b49ca04d5fbf372c29d946e8d7f93d5789ca3b23f1",
+      "charged_bytes": 21256810,
+      "worker_error": false,
+      "worker_error_category": null,
+      "rate_limited": false,
+      "scene_status_counts": {
+        "rgb_window_downloaded": 1
+      },
+      "scene_failure_count": 0,
+      "patches": [
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r0-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65461,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 47484,
+            "7": 2110,
+            "11": 15867
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7253784696231343,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r0-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65535,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 63604,
+            "11": 1931
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9705348287174792,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r0-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 61877,
+            "7": 482,
+            "11": 3177
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9441680908203125,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r0-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 52831,
+            "7": 2410,
+            "11": 10295
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8061370849609375,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r1-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 64004,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 47520,
+            "11": 16484
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7424535966502094,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r1-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65488,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 63522,
+            "11": 1966
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9699792328365502,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r1-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 65536
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r1-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65164,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 65057,
+            "11": 107
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9983579890737216,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r2-c0",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 37084,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 33749,
+            "11": 3335
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.910069032466832,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r2-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 64965,
+            "11": 571
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9912872314453125,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r2-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 65536
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r2-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 59292,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 59292
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r3-c0",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 27596,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 27596
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r3-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 57312,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 57312
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r3-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 65536
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03-r3-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 59016,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 59016
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        }
+      ],
+      "native_patches_checked": 16,
+      "native_eligible_patches": 14,
+      "eligible_bare_pixels": 0,
+      "data_outcome": "PATCHES_NATIVE_CHECKED"
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03",
+      "settled": true,
+      "stored_config_sha256": "3d40f0fcadb0ec16cdb44fbcb6bc97436d5b4b5176946f119af3897ab437cf5a",
+      "effective_config_sha256": "24476835c5af64440ff5ff3ef667c0dd28419f584e146fefc0aade9017dbccaf",
+      "charged_bytes": 17860456,
+      "worker_error": false,
+      "worker_error_category": null,
+      "rate_limited": false,
+      "scene_status_counts": {
+        "rgb_window_downloaded": 1
+      },
+      "scene_failure_count": 0,
+      "patches": [
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r0-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 47140,
+            "7": 1993,
+            "11": 16403
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.71929931640625,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r0-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 56576,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 55066,
+            "11": 1510
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9733102375565611,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r0-c2",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 32376,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 32305,
+            "11": 71
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9978070175438597,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r0-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 20040,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 17564,
+            "7": 243,
+            "11": 2233
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8764471057884231,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r1-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 47971,
+            "11": 17565
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.7319793701171875,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r1-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 64838,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 62827,
+            "11": 2011
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9689842376384219,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r1-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 55336,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 55336
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r1-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 29648,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 29607,
+            "11": 41
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9986171073934161,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r2-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 58607,
+            "11": 6929
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8942718505859375,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r2-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 63348,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 62874,
+            "11": 474
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9925175222580034,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r2-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 59276,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 59276
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r2-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 22320,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 22320
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r3-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 65536
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r3-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65292,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 65292
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r3-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 63964,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 63964
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03-r3-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 47232,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 47232
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 1.0,
+          "maximum_class_fraction_over_90_percent": true
+        }
+      ],
+      "native_patches_checked": 16,
+      "native_eligible_patches": 11,
+      "eligible_bare_pixels": 0,
+      "data_outcome": "PATCHES_NATIVE_CHECKED"
+    }
+  ],
+  "native_patches_checked": 32,
+  "native_eligible_patches": 25,
+  "eligible_bare_pixels": 0,
+  "source_or_ledger_writes": 0,
+  "collection_executed": false,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "limitations": [
+    "Sequential observations, not an atomic filesystem/DB snapshot.",
+    "Only selected launch batches get native patch checks; prior rows are canonical metadata checks.",
+    "Esri weak labels and training support masks are not independent truth or QA/model approval.",
+    "Stored whole-pool counts/leakage are metadata only, not whole-pool raster revalidation.",
+    "No HTTP, collection, retries, refunds, reservation edits or source reconstruction."
+  ],
+  "launch_sha256": "61338b9a7de26a352b107c599cfce5f8bff7204eba497ab913c6baabcd997d14",
+  "aggregate_sha256_at_read": "3d5ae7d2c75e169a2bcf8b3e5dfbb1e854145f73f26d75a5549608e9fa4969d8",
+  "ledger_sha256_at_read": "1d42f570a1fc21aa1d0d7bfafbf219ecb5de5e1007c93f76107780d497ae23bc",
+  "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+  "old_rows_verified": 1617,
+  "pending_rows_verified": 2,
+  "pending_reserved_bytes": 136314880,
+  "physical_total_at_read": 1649,
+  "eligible_total_at_read": 1321,
+  "execution_lock_present_at_read": false,
+  "cell_gap_total_at_read": 37,
+  "eligible_target_gap_at_read": 0,
+  "selected_ledger_observations": {
+    "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 21256810,
+      "config_sha256": "831ea62faf67259563274e74b8ae2df33cc0c27e4dd0ad7764bfafa2bd129403",
+      "report_path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g03\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 17860456,
+      "config_sha256": "3d40f0fcadb0ec16cdb44fbcb6bc97436d5b4b5176946f119af3897ab437cf5a",
+      "report_path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2022-g03\\annual-window-report.json"
+    }
+  },
+  "file_sha_rechecks": 104,
+  "external_metadata_changed_during_audit": {
+    "aggregate": false,
+    "ledger": false
+  },
+  "declared_cross_split_scene_ids": [
+    "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+  ],
+  "seconds": 16.032581599999958
+}

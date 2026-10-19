@@ -1,0 +1,171 @@
+test_bad_split_year_duplicate_and_geometry_fail (test_review_bare_targets179.Review179Tests.test_bad_split_year_duplicate_and_geometry_fail) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:101: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:101: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_bounds_cap_and_extra_request_fields (test_review_bare_targets179.Review179Tests.test_bounds_cap_and_extra_request_fields) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_metadata_changed_during_inventory_rejected (test_review_bare_targets179.Review179Tests.test_metadata_changed_during_inventory_rejected) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:101: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_missing_lineage_or_ambiguous_lineage (test_review_bare_targets179.Review179Tests.test_missing_lineage_or_ambiguous_lineage) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+ERROR
+test_mutual_overlap_report_separate_from_history (test_review_bare_targets179.Review179Tests.test_mutual_overlap_report_separate_from_history) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:101: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ERROR
+test_native_two_candidates_one_inventory_plan_exact (test_review_bare_targets179.Review179Tests.test_native_two_candidates_one_inventory_plan_exact) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:101: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ERROR
+test_overlap_history_is_observation_not_global_abort (test_review_bare_targets179.Review179Tests.test_overlap_history_is_observation_not_global_abort) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:101: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ERROR
+test_stale_metadata_and_label_pin (test_review_bare_targets179.Review179Tests.test_stale_metadata_and_label_pin) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_unverified_inventory_rejected (test_review_bare_targets179.Review179Tests.test_unverified_inventory_rejected) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py:101: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+FAIL
+
+======================================================================
+ERROR: test_missing_lineage_or_ambiguous_lineage (test_review_bare_targets179.Review179Tests.test_missing_lineage_or_ambiguous_lineage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py", line 83, in test_missing_lineage_or_ambiguous_lineage
+    with self.assertRaises((ValueError,OSError)):self.run_review()
+                                                 ^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py", line 48, in run_review
+    result=s.review(self.root,self.request);self.assertEqual(call.call_count,1);return result
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py", line 87, in review
+    ref=_ref(root,lineage);_,raw=_pinned(root,ref,8*1024**2)
+        ^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py", line 24, in _ref
+    digest,_=_snapshot(root,path,8*1024**2,'lineage',True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\ml\per_scene_normalization_files.py", line 107, in _snapshot
+    raise _Blocked('FILE_UNAVAILABLE', field) from None
+app.ml.per_scene_normalization_files._Blocked: ('FILE_UNAVAILABLE', 'lineage')
+
+======================================================================
+ERROR: test_mutual_overlap_report_separate_from_history (test_review_bare_targets179.Review179Tests.test_mutual_overlap_report_separate_from_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py", line 68, in test_mutual_overlap_report_separate_from_history
+    out=self.run_review();out['candidate_mutual_overlap_pairs']=[[out['targets'][0]['target_id'],out['targets'][1]['target_id']]]
+        ^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py", line 48, in run_review
+    result=s.review(self.root,self.request);self.assertEqual(call.call_count,1);return result
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py", line 109, in review
+    _need(inside>=.95,'BOUNDARY_SHORTFALL')
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py", line 21, in _need
+    if not condition:raise ValueError(code)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+ValueError: BOUNDARY_SHORTFALL
+
+======================================================================
+ERROR: test_native_two_candidates_one_inventory_plan_exact (test_review_bare_targets179.Review179Tests.test_native_two_candidates_one_inventory_plan_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py", line 52, in test_native_two_candidates_one_inventory_plan_exact
+    out=self.run_review();self.assertEqual(out['historical_clear_count'],2)
+        ^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py", line 48, in run_review
+    result=s.review(self.root,self.request);self.assertEqual(call.call_count,1);return result
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py", line 109, in review
+    _need(inside>=.95,'BOUNDARY_SHORTFALL')
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py", line 21, in _need
+    if not condition:raise ValueError(code)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+ValueError: BOUNDARY_SHORTFALL
+
+======================================================================
+ERROR: test_overlap_history_is_observation_not_global_abort (test_review_bare_targets179.Review179Tests.test_overlap_history_is_observation_not_global_abort)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py", line 61, in test_overlap_history_is_observation_not_global_abort
+    out=self.run_review({**self.inventory,'status':'BLOCKED','issue':'EXISTING_SUPPORT_OVERLAP','assets':assets})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py", line 48, in run_review
+    result=s.review(self.root,self.request);self.assertEqual(call.call_count,1);return result
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\scripts\review_bare_targets179.py", line 109, in review
+    _need(inside>=.95,'BOUNDARY_SHORTFALL')
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py", line 21, in _need
+    if not condition:raise ValueError(code)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+ValueError: BOUNDARY_SHORTFALL
+
+======================================================================
+FAIL: test_unverified_inventory_rejected (test_review_bare_targets179.Review179Tests.test_unverified_inventory_rejected)
+----------------------------------------------------------------------
+ValueError: BOUNDARY_SHORTFALL
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_review_bare_targets179.py", line 86, in test_unverified_inventory_rejected
+    with self.assertRaisesRegex(ValueError,'INVENTORY_NOT_VERIFIED'):self.run_review({**self.inventory,'pending_footprints_verified':False})
+AssertionError: "INVENTORY_NOT_VERIFIED" does not match "BOUNDARY_SHORTFALL"
+
+----------------------------------------------------------------------
+Ran 9 tests in 5.607s
+
+FAILED (failures=1, errors=4)

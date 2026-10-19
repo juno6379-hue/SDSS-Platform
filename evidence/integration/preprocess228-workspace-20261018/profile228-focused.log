@@ -1,0 +1,59 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+test_164_cli_explicit_choice_and_no_flag_preserves_default (test_manifest_profile228.Profile228Tests.test_164_cli_explicit_choice_and_no_flag_preserves_default) ... usage: python.exe -m unittest [-h] --data-root DATA_ROOT --source SOURCE
+                              --policy POLICY --source-sha256 SOURCE_SHA256
+                              --policy-sha256 POLICY_SHA256 --run-id RUN_ID
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'bad' (choose from 'bounded128m-3000-v1')
+ok
+test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper (test_manifest_profile228.Profile228Tests.test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper) ... ERROR
+test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict (test_manifest_profile228.Profile228Tests.test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict) ... ok
+test_explicit_materialization_staging_v2_and_old_contract_fail_closed (test_manifest_profile228.Profile228Tests.test_explicit_materialization_staging_v2_and_old_contract_fail_closed) ... ERROR
+test_profile_exact_name_scope_reset_and_legacy_receipts (test_manifest_profile228.Profile228Tests.test_profile_exact_name_scope_reset_and_legacy_receipts) ... ok
+test_qa_v2_same_profile_and_default_rejection (test_manifest_profile228.Profile228Tests.test_qa_v2_same_profile_and_default_rejection) ... ok
+test_rows_nodes_depth_io_and_output_budget_fail_closed (test_manifest_profile228.Profile228Tests.test_rows_nodes_depth_io_and_output_budget_fail_closed) ... ok
+
+======================================================================
+ERROR: test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper (test_manifest_profile228.Profile228Tests.test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\tests\test_manifest_profile228.py", line 58, in test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper
+    with profile.scope(profile.NAME):self.assertEqual(f.project()['status'],'BLOCKED')
+                                                      ^^^^^^^^^^^
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\tests\test_candidate_qa_comparison.py", line 50, in project
+    def project(self,docs=None):return core.project_candidate_qa(docs or self.documents,self.pins,self.refs,data_root_literal=str(self.root))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\backend\app\ml\candidate_qa_comparison.py", line 91, in project_candidate_qa
+    _ref(inputs['staging_receipt'],root,path=references['staging_receipt_sha256']['path'],pin=pins['staging_receipt_sha256'],size=references['staging_receipt_sha256']['bytes'])
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\backend\app\ml\candidate_qa_comparison.py", line 40, in _ref
+    if size is not None:_need(_same(value['bytes'],size))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\backend\app\ml\candidate_qa_comparison.py", line 24, in _need
+    if not value:raise ValueError(message)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 저장 QA 비교 계약이 올바르지 않습니다.
+
+======================================================================
+ERROR: test_explicit_materialization_staging_v2_and_old_contract_fail_closed (test_manifest_profile228.Profile228Tests.test_explicit_materialization_staging_v2_and_old_contract_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\tests\test_manifest_profile228.py", line 36, in test_explicit_materialization_staging_v2_and_old_contract_fail_closed
+    staged=staging.stage_split_candidate(f.f.root,f.out,stamp,f.pins,out,evidence_root=f.f.workspace,manifest_profile=profile.NAME)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\backend\app\ml\manifest_resource_profile.py", line 34, in wrapped
+    with scope(manifest_profile):return function(*args,**kwargs)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\backend\app\ml\candidate_staging.py", line 65, in stage_split_candidate
+    data,evidence=resolved;_need(not evidence.is_relative_to(data) and not data.is_relative_to(evidence),'DATA and evidence roots must be disjoint')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GeoAI–MLOps–SDSS\evidence\integration\preprocess228-workspace-20261018\backend\app\ml\candidate_staging.py", line 20, in _need
+    if not value:raise ValueError(message)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: DATA and evidence roots must be disjoint
+
+----------------------------------------------------------------------
+Ran 7 tests in 3.430s
+
+FAILED (errors=2)

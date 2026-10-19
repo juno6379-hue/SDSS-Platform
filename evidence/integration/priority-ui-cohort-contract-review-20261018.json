@@ -1,0 +1,270 @@
+{
+  "scope": "READ_ONLY_PRIORITY_UI_COHORT_CONTRACT_REVIEW",
+  "observed_at_utc": "2026-10-18T02:17:34.766482+00:00",
+  "source_test_document_server_edits": 0,
+  "network_api_gets": 0,
+  "new_tests_or_browser_operations": 0,
+  "source_sha256": {
+    "frontend/src/CollectionProgress.tsx": "0b5136054bd811810eed5c663ac0062c5d086ad0683fd00ba0eabf731861eb60",
+    "frontend/src/collectionProgressAdapter.ts": "f209f66d7ef07b5f5b9013f71b345fe351a8fe49474a1e75d0b3552214a9716f",
+    "frontend/src/collectionProgressClient.ts": "015500db7f4f1d61b6d478eef1bf24b58902683f614c0aede45150e4f421cacb",
+    "backend/app/collection_priority_status.py": "069e79fcafb1e984aa4d6cf9169f747a60619e14694dbc33863246ba92126e9a",
+    "scripts/prepare_priority_candidate164.py": "8a113c2efa530744662734b31386bf99a41bc31db9d279f53c2074dfc3173ba7",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d"
+  },
+  "current_manifest_file_observation": {
+    "sha256": "c92a7f73bcbfc461d94750afa3985626f889e729a86e1d72f703e1030e8827ec",
+    "bytes": 61020673,
+    "stat_stable_during_single_read": true,
+    "physical": 1568,
+    "eligible": 1259,
+    "by_split": {
+      "train": 744,
+      "val": 265,
+      "test": 250
+    },
+    "target": 1200,
+    "target_gap": 0,
+    "cell_floor": 28,
+    "cell_gap_total": 54,
+    "short_cells": [
+      {
+        "province": "gorontalo",
+        "year": "2022",
+        "eligible": 24,
+        "floor": 28,
+        "gap": 4
+      },
+      {
+        "province": "gorontalo",
+        "year": "2024",
+        "eligible": 25,
+        "floor": 28,
+        "gap": 3
+      },
+      {
+        "province": "gorontalo",
+        "year": "2025",
+        "eligible": 18,
+        "floor": 28,
+        "gap": 10
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": "2021",
+        "eligible": 27,
+        "floor": 28,
+        "gap": 1
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": "2022",
+        "eligible": 26,
+        "floor": 28,
+        "gap": 2
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": "2024",
+        "eligible": 10,
+        "floor": 28,
+        "gap": 18
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": "2025",
+        "eligible": 23,
+        "floor": 28,
+        "gap": 5
+      },
+      {
+        "province": "east_java",
+        "year": "2020",
+        "eligible": 23,
+        "floor": 28,
+        "gap": 5
+      },
+      {
+        "province": "east_java",
+        "year": "2025",
+        "eligible": 27,
+        "floor": 28,
+        "gap": 1
+      },
+      {
+        "province": "banten",
+        "year": "2024",
+        "eligible": 23,
+        "floor": 28,
+        "gap": 5
+      }
+    ],
+    "basis": "stored manifest quality_status, not native raster re-QA"
+  },
+  "published_candidate_pointer": {
+    "sha256": "c0a8f4984dc857979dc3c94b68c3a5d5bc2b311f75e1ad829401f5e578fc6ab0",
+    "recorded_at": "2026-10-18T01:49:48.969661+00:00",
+    "scope": "FROZEN_1432_ROW_SOURCE_NOT_LATER_COLLECTION",
+    "source_sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe",
+    "eligible": 1125,
+    "by_split": {
+      "train": 658,
+      "val": 217,
+      "test": 250
+    },
+    "blockers": 4,
+    "files": [
+      {
+        "path": "priority-ml-next-snapshot-20261018/annual-window-report.json",
+        "sha256": "7eac5a54cce152f1f3163e35e8565217b6cbef61b86068150209bb39fa3a9bbe"
+      },
+      {
+        "path": "priority-ml-next-stage-20261018/candidate.json",
+        "sha256": "d8dad13a22278a8cdddfeb56f7fb746e2d51523b01ac866689dde2018a48b01c"
+      },
+      {
+        "path": "priority-ml-next-readiness-20261018/readiness.json",
+        "sha256": "cec0666793c8ba9d9e049d8042850f0784edc6ebb7d7996d7432220ddb0f19b4"
+      }
+    ],
+    "source_matches_this_current_manifest": false,
+    "ready_for_training": false,
+    "pointer_contents_observed_not_fresh_independent_hash_of_all_three_assets": true
+  },
+  "164_preprocessing": {
+    "preflight": {
+      "at": "2026-10-18T02:06:45.591998+00:00",
+      "source_original": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json",
+      "source_snapshot": "E:\\GeoAI–MLOps–SDSS\\data\\priority164-cohort-20261018\\source.json",
+      "source_sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+      "source_bytes": 59763442,
+      "source_row_count": 1536,
+      "policy_sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+      "scope": "PINNED_COHORT_EXCLUDES_LATER_COLLECTION",
+      "training_executed": false,
+      "network_requests": 0
+    },
+    "summary_exists_at_observation": false,
+    "latest_log_lines": [
+      "{\"stage\": \"SNAPSHOT_PINNED\", \"at\": \"2026-10-18T02:06:45.591998+00:00\", \"rows\": 1536, \"source_sha256\": \"0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf\"}",
+      "{\"stage\": \"SOURCE_QA_COMPLETE\", \"seconds\": 303.14, \"eligible\": {\"train\": 720, \"val\": 265, \"test\": 250}}"
+    ],
+    "new_candidate_qa_completed_claimed": false,
+    "new_candidate_eligible_count_claimed": false,
+    "script_does_not_publish_latest_pointer": true,
+    "outputs_require_separate_explicit_publication_after_qa_and_final_pins": true
+  },
+  "safe_publication_handoff_fields": [
+    "fixed source snapshot SHA/path/source row count and snapshot time",
+    "candidate manifest SHA/path/candidate row count and excluded row binding",
+    "QA SHA/path and QA completed status; exact counts by split and blocker count matching QA",
+    "receipt publication recorded_at distinct from source snapshot and API response recorded_at",
+    "source_matches_current_manifest calculated from current source SHA on each response",
+    "ready_for_training=false and scientific_accuracy_validated=false for this blocked weak-label cohort"
+  ],
+  "ui_contract": {
+    "current_counts_source": "collection_targets from current manifest quality_status",
+    "candidate_counts_source": "candidate_quality from explicitly published latest-candidate receipt only",
+    "source_sha_and_response_time_displayed_separately": true,
+    "normal_successful_fetch_retains_published_1125_until_explicit_valid_pointer_replacement": true,
+    "refresh_clears_previous_response_before_loading": true,
+    "request_failure_is_unknown_not_cached_1125_fallback": true,
+    "invalid_candidate_pins_is_missing_unknown_not_inferred_latest_candidate": true,
+    "current_bare_table_not_candidate_bare_qa": true,
+    "manual_refresh_abort_route_generation_and_4_mib_strict_json_contract": true,
+    "publication_receipt_time_not_source_or_qa_time": true,
+    "api_response_time_not_file_source_time": true
+  },
+  "166_targeted_consumer_contract": {
+    "current_document_status": "TESTED_SYNTHETIC local preparation; real dispatch blocked",
+    "reserves_empty_output_directory_and_claims_scene": true,
+    "invokes_160_local_geometry": true,
+    "execution_supported": false,
+    "produces_training_patches": false,
+    "updates_general_annual_manifest": false,
+    "finalizes_shared_collection_ledger": false,
+    "targeted_output_cannot_increment_ui_inventory_without_future_manifest_aggregation_and_quality_gate": true
+  },
+  "limitations": [
+    "No operating browser confirmation by this reviewer; Root owns browser review.",
+    "Pointer and manifest may change after this single file observation.",
+    "No fresh native raster or three-published-asset content rehash in this review.",
+    "Source QA completion log is not candidate QA completion, publication, learning readiness or operating approval."
+  ],
+  "frozen_164_source_cell_gap_basis": {
+    "source_sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+    "physical": 1536,
+    "eligible": 1235,
+    "cell_floor": 28,
+    "cell_gap_total": 73,
+    "short_cells": [
+      {
+        "province": "gorontalo",
+        "year": "2022",
+        "eligible": 24,
+        "gap": 4
+      },
+      {
+        "province": "gorontalo",
+        "year": "2024",
+        "eligible": 25,
+        "gap": 3
+      },
+      {
+        "province": "gorontalo",
+        "year": "2025",
+        "eligible": 18,
+        "gap": 10
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": "2021",
+        "eligible": 18,
+        "gap": 10
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": "2022",
+        "eligible": 26,
+        "gap": 2
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": "2023",
+        "eligible": 18,
+        "gap": 10
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": "2024",
+        "eligible": 10,
+        "gap": 18
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": "2025",
+        "eligible": 23,
+        "gap": 5
+      },
+      {
+        "province": "east_java",
+        "year": "2020",
+        "eligible": 23,
+        "gap": 5
+      },
+      {
+        "province": "east_java",
+        "year": "2025",
+        "eligible": 27,
+        "gap": 1
+      },
+      {
+        "province": "banten",
+        "year": "2024",
+        "eligible": 23,
+        "gap": 5
+      }
+    ],
+    "interpretation": "73 is this 1536-row fixed snapshot gap, not a timeless current counter; later single current-file observation is 1568/1259 with gap54."
+  }
+}

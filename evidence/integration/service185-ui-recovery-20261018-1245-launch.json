@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-18T03:45:01.152738+00:00",
+  "scope": "LOCALHOST_DEVELOPMENT_SERVICES_ONLY_NO_COLLECTOR_OR_OPERATING_DATA_MUTATION",
+  "api": {
+    "pid": 32576,
+    "args": [
+      "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-m",
+      "uvicorn",
+      "app.main:app",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8002"
+    ],
+    "cwd": "E:\\GeoAI–MLOps–SDSS\\backend",
+    "stdout": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\service185-ui-recovery-20261018-1245-api-stdout.log",
+    "stderr": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\service185-ui-recovery-20261018-1245-api-stderr.log"
+  },
+  "frontend": {
+    "pid": 32748,
+    "args": [
+      "C:/Program Files/nodejs/node.exe",
+      "node_modules/vite/bin/vite.js",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "5174",
+      "--strictPort"
+    ],
+    "cwd": "E:\\GeoAI–MLOps–SDSS\\frontend",
+    "stdout": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\service185-ui-recovery-20261018-1245-vite-stdout.log",
+    "stderr": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\service185-ui-recovery-20261018-1245-vite-stderr.log"
+  },
+  "existing_authentication_mode_preserved": true,
+  "new_credentials": false,
+  "api_proxy_target": "http://127.0.0.1:8002"
+}

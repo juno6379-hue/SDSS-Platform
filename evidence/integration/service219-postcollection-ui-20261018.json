@@ -1,0 +1,68 @@
+{
+  "status": "VERIFIED_REAL_POST219_BROWSER_WITH_BUDGET_DISPLAY_LIMITATION",
+  "at": "2026-10-18T06:06:23.374426+00:00",
+  "method": "One explicit refresh existing Chrome view17; no separate HTTP request/restart",
+  "response_recorded_at": "2026-10-18T06:05:18.908414+00:00",
+  "response_kst": "2026-10-18 15:05:18.908414",
+  "source_sha256": "f85925ebf188675060598352ffaa658d82b6dc6f6a1fb4b9025ec01433c92efc",
+  "current": {
+    "registered": 1699,
+    "eligible": 1355,
+    "split": [
+      813,
+      292,
+      250
+    ],
+    "cell_gap": 24
+  },
+  "candidate": {
+    "eligible": 1339,
+    "split": [
+      813,
+      276,
+      250
+    ],
+    "blockers": 3,
+    "source_mismatch_warning": true,
+    "source_sha256": "80eef2d274942c7a7f9bf8ee2483af070a729060d84ceb1a19baacb52ae4976a",
+    "ready": false
+  },
+  "bare_review": {
+    "total": 37,
+    "searched_provinces": [
+      "gorontalo",
+      "west_java"
+    ],
+    "source_mismatch_warning": true,
+    "remote_quality": "미검사",
+    "execution": "미승인"
+  },
+  "budget": {
+    "ui_display_verified": false,
+    "reason": "CollectionProgress in view17 exposes no budget amount or current-ledger contract. No extra HTTP or navigation performed; latest_run elsewhere is not guaranteed current-ledger accounting.",
+    "measured_settlement_parent_handoff_bytes": 1611074,
+    "native_or_ledger_reverified": false
+  },
+  "checks": {
+    "at": "2026-10-18T06:06:04.795Z",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    },
+    "budget_amount_visible": false
+  },
+  "proof": [
+    "service219-postcollection-ui-20261018.dom.txt",
+    "service219-postcollection-ui-20261018.inventory.png",
+    "service219-postcollection-ui-20261018.png",
+    "service219-postcollection-ui-20261018.checks.json"
+  ],
+  "limits": [
+    "Same row counts do not establish SHA match; candidate stale warning was verified rather than suppressed.",
+    "No candidate QA rerun, pointer writes, source/code/ledger/registry/operating mutations or server restart.",
+    "219 measured settlement is parent handoff, not verified via this UI.",
+    "No HTTP timing/SLA claim."
+  ]
+}

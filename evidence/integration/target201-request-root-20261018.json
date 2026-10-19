@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "plan": {
+    "schema_version": 1,
+    "kind": "TARGETED_BARE_256_COLLECTION_PLAN",
+    "proposal_ref": {
+      "path": "evidence/integration/bare173-verified-20261018/proposal.json",
+      "sha256": "63368b398ff02382db10213753fb937a7653b925b912c7c5946a857b2152a0ee"
+    },
+    "current_manifest_ref": {
+      "path": "data/target201-20261018/source.json",
+      "sha256": "1a12b7bca384dd09d73a04cc31df21f75377fc34c332b501a6ee37508dd46fb5"
+    },
+    "boundary_ref": {
+      "path": "data/first-group-boundaries/selected-six.geojson",
+      "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+    },
+    "policy": {
+      "window_size": 256,
+      "source_taxonomy_code": 8,
+      "minimum_declared_bare_pixels": 256,
+      "minimum_valid_fraction": 0.8,
+      "minimum_inside_fraction": 0.95,
+      "maximum_new_batches": 1,
+      "minimum_candidate_valid_fraction": 0.9
+    },
+    "targets": [
+      {
+        "target_id": "local-rank10-2025",
+        "proposal_window_index": 10,
+        "province": "southeast_sulawesi",
+        "fixed_split": "train",
+        "year": 2025,
+        "source_label_ref": {
+          "path": "data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02\\southeast_sulawesi-g02-2025\\raw-esri_io.tif",
+          "sha256": "220bdd675c59a16adb44223d6beac671e272e368c131835d1356cb9b39151187"
+        },
+        "source_lineage_ref": {
+          "path": "data/first-group-training-esri-v1/sources/parallel-v2-grid-esri_io-southeast_sulawesi-2025-g02/annual-window-report.json",
+          "sha256": "d37e47b651d933a8dac339c23adf93e444db9fd51ba9469be7ca0d7d8920206b"
+        },
+        "source_label_window": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "source_label_grid": {
+          "crs": "EPSG:32751",
+          "transform": [
+            10.0,
+            0.0,
+            499350.0,
+            0.0,
+            -10.0,
+            9557440.0
+          ],
+          "width": 2048,
+          "height": 2048
+        },
+        "target_bbox_wgs84": [
+          123.01720640338668,
+          -4.027073565042538,
+          123.04026952137654,
+          -4.003912772398084
+        ],
+        "target_footprint_native": {
+          "crs": "EPSG:32751",
+          "corners": [
+            [
+              501910.0,
+              9557440.0
+            ],
+            [
+              504470.0,
+              9557440.0
+            ],
+            [
+              504470.0,
+              9554880.0
+            ],
+            [
+              501910.0,
+              9554880.0
+            ]
+          ]
+        },
+        "declared_bare_pixels": 321
+      }
+    ]
+  },
+  "ledger_ref": {
+    "path": "data/first-group-training-budget/global-ledger.json",
+    "sha256": "f49d7e778359c1f60743f617edb599fe2ba3170e9e9243a3459211aa4bc9b0fe"
+  },
+  "maximum_batches": 1
+}

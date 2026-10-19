@@ -1,0 +1,172 @@
+{
+  "at": "2026-10-18T04:42:55.713844+00:00",
+  "status": "LOCAL_PROPOSAL_COMPLETE_UNAPPROVED",
+  "seconds": 32.922,
+  "exit_code": 0,
+  "owned_pid": 12140,
+  "metadata_drift_detected": [],
+  "metadata_pins_stable": {
+    "source": true,
+    "ledger": true,
+    "boundary": true,
+    "config": true,
+    "prior": true
+  },
+  "source_sha256": "39bb0245e586342bd116f5b052428fcf857fb26eae0ee1413c9c5f5275c40ba9",
+  "ledger_sha256": "024f5eabb2cadf88af4f34661fab6e6c209bf9aa8d105c2d1fbadf10f1c0dae3",
+  "snapshot_sha256": "39bb0245e586342bd116f5b052428fcf857fb26eae0ee1413c9c5f5275c40ba9",
+  "source_rows": 1667,
+  "proposal_sha256": "0755f8cf2c7b210cb989b817b003e394e9ab7208400fa6b40551c26053d598f0",
+  "candidate_count": 4,
+  "candidates": [
+    {
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-southeast_sulawesi-bd99d40b7b68",
+      "lon": 121.86897121915361,
+      "lat": -3.7194753108993215,
+      "bbox": [
+        121.82281018427871,
+        -3.765845319810232,
+        121.91512744356424,
+        -3.6731043171066355
+      ],
+      "window_size": 1024,
+      "grid_crs": "EPSG:32751",
+      "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+      "years": [
+        2024
+      ],
+      "reference": "esri_io",
+      "inside_fraction_native": 1.0,
+      "source_snapshot_sha256": "39bb0245e586342bd116f5b052428fcf857fb26eae0ee1413c9c5f5275c40ba9",
+      "deficit_at_snapshot": 17,
+      "class_presence_verified": false,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    },
+    {
+      "province": "southeast_sulawesi",
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-southeast_sulawesi-6ad43e34c63c",
+      "lon": 121.77506670103317,
+      "lat": -3.9074823314300042,
+      "bbox": [
+        121.72888894826677,
+        -3.953858731459888,
+        121.82123939903595,
+        -3.8611049449176265
+      ],
+      "window_size": 1024,
+      "grid_crs": "EPSG:32751",
+      "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+      "years": [
+        2021
+      ],
+      "reference": "esri_io",
+      "inside_fraction_native": 1.0,
+      "source_snapshot_sha256": "39bb0245e586342bd116f5b052428fcf857fb26eae0ee1413c9c5f5275c40ba9",
+      "deficit_at_snapshot": 1,
+      "class_presence_verified": false,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    },
+    {
+      "province": "gorontalo",
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-gorontalo-359af9381159",
+      "lon": 122.15162656600933,
+      "lat": 0.6585714648273931,
+      "bbox": [
+        122.10560821187387,
+        0.6122468604465353,
+        122.1976440709852,
+        0.7048967420133085
+      ],
+      "window_size": 1024,
+      "grid_crs": "EPSG:32651",
+      "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+      "years": [
+        2025
+      ],
+      "reference": "esri_io",
+      "inside_fraction_native": 1.0,
+      "source_snapshot_sha256": "39bb0245e586342bd116f5b052428fcf857fb26eae0ee1413c9c5f5275c40ba9",
+      "deficit_at_snapshot": 10,
+      "class_presence_verified": false,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    },
+    {
+      "province": "gorontalo",
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-gorontalo-032f179511c6",
+      "lon": 122.24509879677824,
+      "lat": 0.5645028633827455,
+      "bbox": [
+        122.19908210498411,
+        0.5181790188132205,
+        122.29111476065913,
+        0.6108273208742682
+      ],
+      "window_size": 1024,
+      "grid_crs": "EPSG:32651",
+      "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+      "years": [
+        2022
+      ],
+      "reference": "esri_io",
+      "inside_fraction_native": 1.0,
+      "source_snapshot_sha256": "39bb0245e586342bd116f5b052428fcf857fb26eae0ee1413c9c5f5275c40ba9",
+      "deficit_at_snapshot": 4,
+      "class_presence_verified": false,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    }
+  ],
+  "target_status": [
+    {
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 11,
+      "deficit_to_28": 17,
+      "proposed_candidates": 1
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 27,
+      "deficit_to_28": 1,
+      "proposed_candidates": 1
+    },
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 18,
+      "deficit_to_28": 10,
+      "proposed_candidates": 1
+    },
+    {
+      "province": "gorontalo",
+      "year": 2022,
+      "fixed_split": "train",
+      "eligible_at_snapshot": 24,
+      "deficit_to_28": 4,
+      "proposed_candidates": 1
+    }
+  ],
+  "header_files_verified": 112,
+  "rejections": {
+    "existing_center_or_source_overlap": 6
+  },
+  "full_pending_support_inventory_verified": false,
+  "execution_supported": false,
+  "operating_collector_started": false,
+  "ledger_written": false,
+  "http_requests": 0,
+  "source_original_written": false,
+  "training_executed": false
+}

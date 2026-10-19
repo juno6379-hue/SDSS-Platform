@@ -1,0 +1,71 @@
+{
+  "status": "TEST_SOURCES_APPLIED_AND_PROJECT_REGRESSION_VERIFIED",
+  "at_utc": "2026-10-18T07:59:10.494471+00:00",
+  "seconds": 36.75,
+  "exit_code": 0,
+  "test_bundle_count": 10,
+  "test_sources": [
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\candidate_materialization_pre228.py",
+      "bytes": 8716,
+      "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\candidate_qa_comparison_pre228.py",
+      "bytes": 17204,
+      "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\centers230.py",
+      "bytes": 14002,
+      "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\manifest.json",
+      "bytes": 1659,
+      "sha256": "7e4babd8f30ff31ca70e677c1eb1cabae0e715bd7a386136c4cb6be84abde637"
+    },
+    {
+      "path": "tests\\fixtures\\manifest_profile_baselines\\status230.py",
+      "bytes": 17192,
+      "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4"
+    },
+    {
+      "path": "tests\\manifest_profile_baseline_fixtures.py",
+      "bytes": 1855,
+      "sha256": "f3d7d06d71b999190b4a33a2047df2bc29eb3691085fae33bc4f6fd87d5e3a0e"
+    },
+    {
+      "path": "tests\\test_manifest_profile228.py",
+      "bytes": 11547,
+      "sha256": "baac07d5a35d99b2cde02367079e2cd4241fdf15a75d7e9c0afe1bed73dea9e9"
+    },
+    {
+      "path": "tests\\test_manifest_profile230.py",
+      "bytes": 20898,
+      "sha256": "431e44c787c594bd0cb40d90528ca80e87f01b1daa92b85250b61223131f10de"
+    },
+    {
+      "path": "tests\\test_manifest_profile237.py",
+      "bytes": 19093,
+      "sha256": "c6def6d5c9d65a89f8497d09f423dd82d8c7a9659b436460d2249e92f4fb51b9"
+    },
+    {
+      "path": "tests\\test_manifest_profile242_portability.py",
+      "bytes": 2666,
+      "sha256": "1d8818ffced5e91ea216924dc954ca6c16db575bb0ddfdf6e9c9af755bed5e3e"
+    }
+  ],
+  "runtime18_unchanged": true,
+  "operating_pins_unchanged": true,
+  "protected_pins": {
+    "data\\first-group-training-esri-v1\\annual-window-report.json": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "data\\first-group-training-budget\\global-ledger.json": "61161c35eabb593afb5f096c256791871d297b723f82ffc2ac2449b3bd8266e7",
+    "data\\first-group-training-priority\\latest-candidate.json": "920ceb52dca0aba32f11389fd2f9c5f2719ca40b47f44e650c3a38b57c3b3d40",
+    "data\\first-group-training-priority\\latest-bare-review.json": "1018b59294871df8f9e339d63695f08632a5632419b3831e47bdeb2f88c785ab"
+  },
+  "project_layout": "E:\\GeoAI–MLOps–SDSS",
+  "test_data_root_was_temporary": true,
+  "collector_started": false,
+  "training_started": false
+}

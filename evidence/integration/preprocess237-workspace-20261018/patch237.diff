@@ -1,0 +1,1410 @@
+--- a/backend/app/collection_priority_status.py
++++ b/backend/app/collection_priority_status.py
+@@ -1,194 +1,211 @@
+-"""Read-only counts from the collector manifest; no raster QA or execution."""
+-from collections import Counter, defaultdict
+-import json
+-import hashlib
+-from datetime import datetime
+-from pathlib import Path
+-
+-PROVINCES = ('south_sulawesi', 'gorontalo', 'southeast_sulawesi', 'east_java', 'banten', 'west_java')
+-YEARS = tuple(range(2020, 2026))
+-SPLITS = {p: 'train' for p in PROVINCES} | {'banten': 'val', 'west_java': 'test'}
+-
+-
+-def candidate_quality(root, current_sha256, same_hash):
+-    """Read an explicitly published candidate receipt, never choose a newest glob."""
+-    unavailable = {'available': False, 'ready_for_training': False}
+-    path = Path(root) / 'first-group-training-priority/latest-candidate.json'
+-    try:
+-        if path.stat().st_size > 65536:
+-            return unavailable
+-        receipt = json.loads(path.read_text('utf-8'))
+-        files = receipt['files']
+-        if not isinstance(files, list) or len(files) != 3:
+-            return unavailable
+-        for entry in files:
+-            target = (Path(root) / entry['path']).resolve()
+-            if not target.is_relative_to(Path(root).resolve()) or not same_hash(target, entry['sha256']):
+-                return unavailable
+-        counts = receipt['by_split']
+-        if set(counts) != {'train', 'val', 'test'} or any(type(n) is not int or n < 0 for n in counts.values()):
+-            return unavailable
+-        if type(receipt['blocker_count']) is not int or receipt['blocker_count'] < 0:
+-            return unavailable
+-        qa_path = (Path(root) / files[2]['path']).resolve()
+-        if qa_path.stat().st_size > 16 * 1024 * 1024:
+-            return unavailable
+-        qa = json.loads(qa_path.read_text('utf-8'))
+-        if qa.get('patch_counts_by_split') != counts or len(qa.get('blockers', [])) != receipt['blocker_count']:
+-            return unavailable
+-        if files[0]['sha256'] != receipt['source_manifest_sha256'] or receipt['scene_split_conflicts'] != []:
+-            return unavailable
+-        return {'available': True, 'source_manifest_sha256': receipt['source_manifest_sha256'],
+-            'eligible_total': sum(counts.values()), 'by_split': counts,
+-            'ready_for_training': False, 'blocker_count': receipt['blocker_count'],
+-            'source_pins_match': True, 'source_matches_current_manifest': receipt['source_manifest_sha256'] == current_sha256,
+-            'source_report': files[2]['path'], 'recorded_at': receipt['recorded_at'],
+-            'scene_split_conflicts': receipt['scene_split_conflicts'],
+-            'scientific_accuracy_validated': False,
+-            'scope': 'PINNED_CANDIDATE_COHORT_NOT_AUTOMATIC_CURRENT_COLLECTION'}
+-    except (OSError, KeyError, TypeError, ValueError):
+-        return unavailable
+-
+-
+-def bare_target_review(root, current_sha256):
+-    """Explicit small receipt and pinned read-only local review; no target execution."""
+-    root = Path(root).resolve()
+-    unavailable = {'available': False, 'status': 'NOT_PUBLISHED'}
+-    def bounded(path, limit):
+-        relative = path.relative_to(root)
+-        current = root
+-        for part in relative.parts:
+-            current = current / part
+-            if current.is_symlink() or (getattr(current.lstat(), 'st_file_attributes', 0) & 0x400):
+-                raise ValueError('linked review input')
+-        with path.open('rb') as stream:
+-            raw = stream.read(limit + 1)
+-        if len(raw) > limit:
+-            raise ValueError('oversize review input')
+-        value = json.loads(raw)
+-        if not isinstance(value, dict):
+-            raise ValueError('review object required')
+-        return value, raw
+-    try:
+-        receipt, _ = bounded(root / 'first-group-training-priority/latest-bare-review.json', 65536)
+-    except FileNotFoundError:
+-        return unavailable
+-    except (OSError, ValueError, TypeError):
+-        return {'available': False, 'status': 'INVALID_RECEIPT'}
+-    try:
+-        if set(receipt) != {'schema_version', 'report'} or type(receipt['schema_version']) is not int or receipt['schema_version'] != 1:
+-            raise ValueError('receipt schema')
+-        ref = receipt['report']
+-        if not isinstance(ref, dict) or set(ref) != {'path', 'sha256'}:
+-            raise ValueError('report ref')
+-        name, digest = ref['path'], ref['sha256']
+-        if not isinstance(name, str) or len(name) > 512 or '\\' in name or ':' in name or any(ord(c) < 32 for c in name):
+-            raise ValueError('report path')
+-        if name.startswith('/') or any(p in ('', '.', '..') for p in name.split('/')) or not name.endswith('.json'):
+-            raise ValueError('report path')
+-        if not isinstance(digest, str) or len(digest) != 64 or any(c not in '0123456789abcdef' for c in digest):
+-            raise ValueError('report hash')
+-        path = root / name
+-        report, raw = bounded(path, 2 * 1024 * 1024)
+-        if hashlib.sha256(raw).hexdigest() != digest:
+-            raise ValueError('report mismatch')
+-        summary = report['ui_summary']
+-        if summary['schema_version'] != 1 or type(summary['schema_version']) is not int or summary['status'] != 'LOCAL_TARGET_REVIEW_FINISHED':
+-            raise ValueError('review incomplete')
+-        for flag in ('execution_supported', 'actual_quality_verified', 'scientific_accuracy_validated'):
+-            if summary[flag] is not False:
+-                raise ValueError('approval scope')
+-        source = summary['current_manifest_sha256']
+-        if not isinstance(source, str) or len(source) != 64 or any(c not in '0123456789abcdef' for c in source):
+-            raise ValueError('source hash')
+-        timestamp = summary['recorded_at']
+-        if not isinstance(timestamp, str) or len(timestamp) > 64 or datetime.fromisoformat(timestamp.replace('Z', '+00:00')).tzinfo is None:
+-            raise ValueError('recorded_at')
+-        searched = summary.get('searched_provinces', list(PROVINCES))
+-        if (not isinstance(searched, list) or not searched
+-                or any(not isinstance(p, str) or p not in PROVINCES for p in searched)
+-                or len(set(searched)) != len(searched)):
+-            raise ValueError('searched provinces')
+-        rows = summary['summary_by_province']
+-        if not isinstance(rows, list) or len(rows) != 6:
+-            raise ValueError('province rows')
+-        seen, checked = set(), []
+-        keys = ('candidates', 'support_clear', 'overlap', 'local_invalid')
+-        for row in rows:
+-            if not isinstance(row, dict) or set(row) != {'province', *keys} or row['province'] not in PROVINCES or row['province'] in seen:
+-                raise ValueError('province identity')
+-            if any(type(row[k]) is not int or row[k] < 0 or row[k] > 10000 for k in keys):
+-                raise ValueError('review counts')
+-            if row['candidates'] != row['support_clear'] + row['overlap'] + row['local_invalid']:
+-                raise ValueError('review sum')
+-            if row['province'] not in searched and row['candidates'] != 0:
+-                raise ValueError('candidates outside searched scope')
+-            seen.add(row['province'])
+-            checked.append(dict(row))
+-        total = summary['candidate_total']
+-        if type(total) is not int or total != sum(r['candidates'] for r in checked):
+-            raise ValueError('total')
+-        return {'available': True, 'status': 'LOCAL_TARGET_REVIEW_FINISHED',
+-            'scope': 'LOCAL_LABEL_AND_HISTORICAL_SUPPORT_NOT_REMOTE_QUALITY',
+-            'source_manifest_sha256': source, 'source_matches_current_manifest': source == current_sha256,
+-            'recorded_at': timestamp, 'source_report': name, 'report_sha256': digest,
+-            'candidate_total': total, 'rows': checked, 'searched_provinces': list(searched), 'execution_supported': False,
+-            'actual_quality_verified': False, 'scientific_accuracy_validated': False}
+-    except (OSError, KeyError, TypeError, ValueError, OverflowError, AttributeError):
+-        return {'available': False, 'status': 'INVALID_OR_BLOCKED_REPORT'}
+-
+-
+-def collection_targets(manifest, source_sha256, bare_review=None):
+-    unavailable = {'available': False, 'learning_ready': False, 'scientific_accuracy_validated': False}
+-    scenes = manifest.get('scenes') if isinstance(manifest, dict) else None
+-    if not isinstance(scenes, list) or not scenes or not source_sha256:
+-        return unavailable
+-    physical, eligible = Counter(), Counter()
+-    pixels = {s: Counter() for s in ('train', 'val', 'test')}
+-    contributing = Counter()
+-    scene_splits = defaultdict(set)
+-    try:
+-        for row in scenes:
+-            province, year = row['province'], int(row['year'])
+-            if province not in PROVINCES or year not in YEARS or row.get('split') != SPLITS[province]:
+-                return unavailable
+-            physical[province] += 1
+-            if row.get('quality_status') != 'quality_eligible':
+-                continue
+-            eligible[province, year] += 1
+-            split = SPLITS[province]
+-            histogram = row.get('sample_class_coverage', {})
+-            if not isinstance(histogram, dict) or any(type(n) is not int or n < 0 for n in histogram.values()):
+-                return unavailable
+-            pixels[split].update(histogram)
+-            contributing[split] += histogram.get('8', 0) >= 256
+-            if isinstance(row.get('scene_id'), str) and row['scene_id']:
+-                scene_splits[row['scene_id']].add(split)
+-    except (KeyError, TypeError, ValueError, OverflowError):
+-        return unavailable
+-    rows = []
+-    for province in PROVINCES:
+-        counts = {str(y): eligible[province, y] for y in YEARS}
+-        rows.append({'province': province, 'split': SPLITS[province], 'physical': physical[province],
+-                     'eligible': sum(counts.values()), 'year_counts': counts,
+-                     'cell_gap': sum(max(0, 28 - n) for n in counts.values())})
+-    total = sum(eligible.values())
+-    return {'available': True, 'source_manifest_sha256': source_sha256,
+-            'count_basis': 'manifest_quality_status', 'physical_total': len(scenes),
+-            'eligible_total': total, 'ineligible_total': len(scenes) - total,
+-            'eligible_target': 1200, 'eligible_target_gap': max(0, 1200 - total),
+-            'balance_policy': {'scope': 'PLANNED_COLLECTION_PRIORITY_NOT_RUNNING_JOBS',
+-                'minimum_floor_not_equal_quota': True, 'preserve_existing_patches': True,
+-                'priority_provinces': ['southeast_sulawesi', 'gorontalo'],
+-                'deduplicate_before_enrollment': True},
+-            'bare_target_review': bare_review if bare_review is not None else {'available': False, 'status': 'NOT_PUBLISHED'},
+-            'cell_floor': 28, 'cell_gap_total': sum(r['cell_gap'] for r in rows), 'rows': rows,
+-            'minimum_valid_fraction': .8, 'minimum_province_fraction': .95,
+-            'class_quality': {'required_fraction': .005, 'minimum_contributing_patches': 5,
+-                'minimum_pixels_per_contributing_patch': 256, 'minimum_pixels_per_split': 256,
+-                'max_dominance': .9,
+-                'bare_by_split': {s: {'pixels': pixels[s]['8'],
+-                    'ratio': pixels[s]['8'] / sum(pixels[s].values()) if sum(pixels[s].values()) else None,
+-                    'contributing_patches': contributing[s]} for s in pixels},
+-                'scene_split_conflicts': sorted(k for k, splits in scene_splits.items() if len(splits) > 1)},
+-            'native_raster_reverified': False, 'learning_ready': False, 'scientific_accuracy_validated': False}
++"""Read-only counts from the collector manifest; no raster QA or execution."""
++from .ml.manifest_resource_profile import active,read_metadata,ProfileResourceError
++from collections import Counter, defaultdict
++import json
++import hashlib
++from datetime import datetime
++from pathlib import Path
++
++PROVINCES = ('south_sulawesi', 'gorontalo', 'southeast_sulawesi', 'east_java', 'banten', 'west_java')
++YEARS = tuple(range(2020, 2026))
++SPLITS = {p: 'train' for p in PROVINCES} | {'banten': 'val', 'west_java': 'test'}
++
++
++def candidate_quality(root, current_sha256, same_hash):
++    """Read an explicitly published candidate receipt, never choose a newest glob."""
++    unavailable = {'available': False, 'ready_for_training': False}
++    path = Path(root) / 'first-group-training-priority/latest-candidate.json'
++    try:
++        if active() is not None:receipt=read_metadata(path,'pointer')[0]
++        else:
++            if path.stat().st_size > 65536:return unavailable
++            receipt = json.loads(path.read_text('utf-8'))
++        files = receipt['files']
++        if not isinstance(files, list) or len(files) != 3:
++            return unavailable
++        for entry,role in zip(files,('source','candidate','readiness')):
++            target = Path(root) / entry['path']
++            if active() is None:target=target.resolve()
++            if not target.resolve().is_relative_to(Path(root).resolve()) or not same_hash(target, entry['sha256'],**({'json_role':role} if active() is not None else {})):
++                return unavailable
++        counts = receipt['by_split']
++        if set(counts) != {'train', 'val', 'test'} or any(type(n) is not int or n < 0 for n in counts.values()):
++            return unavailable
++        if type(receipt['blocker_count']) is not int or receipt['blocker_count'] < 0:
++            return unavailable
++        qa_path = Path(root) / files[2]['path']
++        if active() is not None:qa=read_metadata(qa_path,'readiness',files[2]['sha256'])[0]
++        else:
++            qa_path=qa_path.resolve()
++            if qa_path.stat().st_size > 16 * 1024 * 1024:return unavailable
++            qa = json.loads(qa_path.read_text('utf-8'))
++        if qa.get('patch_counts_by_split') != counts or len(qa.get('blockers', [])) != receipt['blocker_count']:
++            return unavailable
++        if files[0]['sha256'] != receipt['source_manifest_sha256'] or receipt['scene_split_conflicts'] != []:
++            return unavailable
++        return {'available': True, 'source_manifest_sha256': receipt['source_manifest_sha256'],
++            'eligible_total': sum(counts.values()), 'by_split': counts,
++            'ready_for_training': False, 'blocker_count': receipt['blocker_count'],
++            'source_pins_match': True, 'source_matches_current_manifest': receipt['source_manifest_sha256'] == current_sha256,
++            'source_report': files[2]['path'], 'recorded_at': receipt['recorded_at'],
++            'scene_split_conflicts': receipt['scene_split_conflicts'],
++            'scientific_accuracy_validated': False,
++            'scope': 'PINNED_CANDIDATE_COHORT_NOT_AUTOMATIC_CURRENT_COLLECTION'}
++    except ProfileResourceError:
++        raise
++    except (OSError, KeyError, TypeError, ValueError):
++        return unavailable
++
++
++def bare_target_review(root, current_sha256):
++    """Explicit small receipt and pinned read-only local review; no target execution."""
++    root = Path(root).resolve()
++    unavailable = {'available': False, 'status': 'NOT_PUBLISHED'}
++    def bounded(path, limit, role):
++        relative = path.relative_to(root)
++        current = root
++        for part in relative.parts:
++            current = current / part
++            if current.is_symlink() or (getattr(current.lstat(), 'st_file_attributes', 0) & 0x400):
++                raise ValueError('linked review input')
++        if active() is not None:
++            value,_,raw=read_metadata(path,role)
++            if not isinstance(value,dict):raise ValueError('review object required')
++            return value,raw
++        with path.open('rb') as stream:
++            raw = stream.read(limit + 1)
++        if len(raw) > limit:
++            raise ValueError('oversize review input')
++        value = json.loads(raw)
++        if not isinstance(value, dict):
++            raise ValueError('review object required')
++        return value, raw
++    try:
++        receipt, _ = bounded(root / 'first-group-training-priority/latest-bare-review.json', 65536,'pointer')
++    except FileNotFoundError:
++        return unavailable
++    except ProfileResourceError:
++        raise
++    except (OSError, ValueError, TypeError):
++        return {'available': False, 'status': 'INVALID_RECEIPT'}
++    try:
++        if set(receipt) != {'schema_version', 'report'} or type(receipt['schema_version']) is not int or receipt['schema_version'] != 1:
++            raise ValueError('receipt schema')
++        ref = receipt['report']
++        if not isinstance(ref, dict) or set(ref) != {'path', 'sha256'}:
++            raise ValueError('report ref')
++        name, digest = ref['path'], ref['sha256']
++        if not isinstance(name, str) or len(name) > 512 or '\\' in name or ':' in name or any(ord(c) < 32 for c in name):
++            raise ValueError('report path')
++        if name.startswith('/') or any(p in ('', '.', '..') for p in name.split('/')) or not name.endswith('.json'):
++            raise ValueError('report path')
++        if not isinstance(digest, str) or len(digest) != 64 or any(c not in '0123456789abcdef' for c in digest):
++            raise ValueError('report hash')
++        path = root / name
++        report, raw = bounded(path, 2 * 1024 * 1024,'evidence')
++        if hashlib.sha256(raw).hexdigest() != digest:
++            raise ValueError('report mismatch')
++        summary = report['ui_summary']
++        if summary['schema_version'] != 1 or type(summary['schema_version']) is not int or summary['status'] != 'LOCAL_TARGET_REVIEW_FINISHED':
++            raise ValueError('review incomplete')
++        for flag in ('execution_supported', 'actual_quality_verified', 'scientific_accuracy_validated'):
++            if summary[flag] is not False:
++                raise ValueError('approval scope')
++        source = summary['current_manifest_sha256']
++        if not isinstance(source, str) or len(source) != 64 or any(c not in '0123456789abcdef' for c in source):
++            raise ValueError('source hash')
++        timestamp = summary['recorded_at']
++        if not isinstance(timestamp, str) or len(timestamp) > 64 or datetime.fromisoformat(timestamp.replace('Z', '+00:00')).tzinfo is None:
++            raise ValueError('recorded_at')
++        searched = summary.get('searched_provinces', list(PROVINCES))
++        if (not isinstance(searched, list) or not searched
++                or any(not isinstance(p, str) or p not in PROVINCES for p in searched)
++                or len(set(searched)) != len(searched)):
++            raise ValueError('searched provinces')
++        rows = summary['summary_by_province']
++        if not isinstance(rows, list) or len(rows) != 6:
++            raise ValueError('province rows')
++        seen, checked = set(), []
++        keys = ('candidates', 'support_clear', 'overlap', 'local_invalid')
++        for row in rows:
++            if not isinstance(row, dict) or set(row) != {'province', *keys} or row['province'] not in PROVINCES or row['province'] in seen:
++                raise ValueError('province identity')
++            if any(type(row[k]) is not int or row[k] < 0 or row[k] > 10000 for k in keys):
++                raise ValueError('review counts')
++            if row['candidates'] != row['support_clear'] + row['overlap'] + row['local_invalid']:
++                raise ValueError('review sum')
++            if row['province'] not in searched and row['candidates'] != 0:
++                raise ValueError('candidates outside searched scope')
++            seen.add(row['province'])
++            checked.append(dict(row))
++        total = summary['candidate_total']
++        if type(total) is not int or total != sum(r['candidates'] for r in checked):
++            raise ValueError('total')
++        return {'available': True, 'status': 'LOCAL_TARGET_REVIEW_FINISHED',
++            'scope': 'LOCAL_LABEL_AND_HISTORICAL_SUPPORT_NOT_REMOTE_QUALITY',
++            'source_manifest_sha256': source, 'source_matches_current_manifest': source == current_sha256,
++            'recorded_at': timestamp, 'source_report': name, 'report_sha256': digest,
++            'candidate_total': total, 'rows': checked, 'searched_provinces': list(searched), 'execution_supported': False,
++            'actual_quality_verified': False, 'scientific_accuracy_validated': False}
++    except ProfileResourceError:
++        raise
++    except (OSError, KeyError, TypeError, ValueError, OverflowError, AttributeError):
++        return {'available': False, 'status': 'INVALID_OR_BLOCKED_REPORT'}
++
++
++def collection_targets(manifest, source_sha256, bare_review=None):
++    unavailable = {'available': False, 'learning_ready': False, 'scientific_accuracy_validated': False}
++    scenes = manifest.get('scenes') if isinstance(manifest, dict) else None
++    if not isinstance(scenes, list) or not scenes or not source_sha256:
++        return unavailable
++    physical, eligible = Counter(), Counter()
++    pixels = {s: Counter() for s in ('train', 'val', 'test')}
++    contributing = Counter()
++    scene_splits = defaultdict(set)
++    try:
++        for row in scenes:
++            province, year = row['province'], int(row['year'])
++            if province not in PROVINCES or year not in YEARS or row.get('split') != SPLITS[province]:
++                return unavailable
++            physical[province] += 1
++            if row.get('quality_status') != 'quality_eligible':
++                continue
++            eligible[province, year] += 1
++            split = SPLITS[province]
++            histogram = row.get('sample_class_coverage', {})
++            if not isinstance(histogram, dict) or any(type(n) is not int or n < 0 for n in histogram.values()):
++                return unavailable
++            pixels[split].update(histogram)
++            contributing[split] += histogram.get('8', 0) >= 256
++            if isinstance(row.get('scene_id'), str) and row['scene_id']:
++                scene_splits[row['scene_id']].add(split)
++    except ProfileResourceError:
++        raise
++    except (KeyError, TypeError, ValueError, OverflowError):
++        return unavailable
++    rows = []
++    for province in PROVINCES:
++        counts = {str(y): eligible[province, y] for y in YEARS}
++        rows.append({'province': province, 'split': SPLITS[province], 'physical': physical[province],
++                     'eligible': sum(counts.values()), 'year_counts': counts,
++                     'cell_gap': sum(max(0, 28 - n) for n in counts.values())})
++    total = sum(eligible.values())
++    return {'available': True, 'source_manifest_sha256': source_sha256,
++            'count_basis': 'manifest_quality_status', 'physical_total': len(scenes),
++            'eligible_total': total, 'ineligible_total': len(scenes) - total,
++            'eligible_target': 1200, 'eligible_target_gap': max(0, 1200 - total),
++            'balance_policy': {'scope': 'PLANNED_COLLECTION_PRIORITY_NOT_RUNNING_JOBS',
++                'minimum_floor_not_equal_quota': True, 'preserve_existing_patches': True,
++                'priority_provinces': ['southeast_sulawesi', 'gorontalo'],
++                'deduplicate_before_enrollment': True},
++            'bare_target_review': bare_review if bare_review is not None else {'available': False, 'status': 'NOT_PUBLISHED'},
++            'cell_floor': 28, 'cell_gap_total': sum(r['cell_gap'] for r in rows), 'rows': rows,
++            'minimum_valid_fraction': .8, 'minimum_province_fraction': .95,
++            'class_quality': {'required_fraction': .005, 'minimum_contributing_patches': 5,
++                'minimum_pixels_per_contributing_patch': 256, 'minimum_pixels_per_split': 256,
++                'max_dominance': .9,
++                'bare_by_split': {s: {'pixels': pixels[s]['8'],
++                    'ratio': pixels[s]['8'] / sum(pixels[s].values()) if sum(pixels[s].values()) else None,
++                    'contributing_patches': contributing[s]} for s in pixels},
++                'scene_split_conflicts': sorted(k for k, splits in scene_splits.items() if len(splits) > 1)},
++            'native_raster_reverified': False, 'learning_ready': False, 'scientific_accuracy_validated': False}
+--- a/backend/app/collection_status.py
++++ b/backend/app/collection_status.py
+@@ -1,264 +1,292 @@
+-from .collection_source_profile import configured,read_source,verify_source
+-"""수집 보고서를 읽어 성공 재고와 최근 실패를 분리하는 읽기 전용 현황."""
+-from datetime import datetime, timezone
+-import hashlib
+-import json
+-import os
+-import stat
+-from pathlib import Path
+-from .collection_priority_status import collection_targets, candidate_quality, bare_target_review
+-
+-_HASH_CACHE = {}
+-
+-
+-def same_hash(path, expected):
+-    """큰 입력의 재해시는 내용 변경을 시사하는 파일 메타데이터가 바뀔 때 수행한다."""
+-    before = path.stat()
+-    key = (str(path), before.st_mtime_ns, before.st_ctime_ns, before.st_size)
+-    if key not in _HASH_CACHE:
+-        digest = hashlib.sha256()
+-        with path.open('rb') as stream:
+-            for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+-                digest.update(chunk)
+-        after = path.stat()
+-        if (before.st_mtime_ns, before.st_ctime_ns, before.st_size) != (after.st_mtime_ns, after.st_ctime_ns, after.st_size):
+-            return False
+-        if len(_HASH_CACHE) > 20000:
+-            _HASH_CACHE.clear()
+-        _HASH_CACHE[key] = digest.hexdigest()
+-    return isinstance(expected, str) and _HASH_CACHE[key] == expected
+-
+-PROVINCES = [('south_sulawesi', 'South Sulawesi'), ('gorontalo', 'Gorontalo'),
+-             ('southeast_sulawesi', 'Southeast Sulawesi'), ('banten', 'Banten'),
+-             ('west_java', 'West Java'), ('east_java', 'East Java')]
+-YEARS = list(range(2020, 2026))
+-
+-
+-def read_report(path, errors):
+-    try:
+-        value = json.loads(path.read_text(encoding='utf-8'))
+-        if not isinstance(value, dict):
+-            raise ValueError('보고서 객체가 아님')
+-        return value
+-    except (OSError, ValueError):
+-        # 작성 중인 파일은 미확인으로 표시하며 과거 성공을 실패로 바꾸지 않는다.
+-        errors.append(path.name)
+-        return {}
+-
+-
+-def local_file(value, root):
+-    if not isinstance(value, str) or not value:
+-        return None
+-    # Resolve the trusted data root once in collection_status, not thousands of
+-    # historical raster paths through Windows realpath. Reject outside paths
+-    # lexically before touching them, then inspect every local component without
+-    # following links (including Windows junctions/reparse points).
+-    try:
+-        if any(part not in ('.', '..') and part.endswith((' ', '.'))
+-               for part in Path(value).parts):
+-            return None
+-        root = Path(os.path.abspath(root))
+-        path = Path(os.path.abspath(os.path.join(root, value)))
+-        relative = path.relative_to(root)
+-        if not relative.parts:
+-            return None
+-        if any(':' in part or part.endswith((' ', '.')) for part in relative.parts):
+-            return None
+-        current = root
+-        for index, part in enumerate((None, *relative.parts)):
+-            if part is not None:
+-                current = current / part
+-            info = current.lstat()
+-            if stat.S_ISLNK(info.st_mode) or getattr(info, 'st_file_attributes', 0) & 0x400:
+-                return None
+-            last = index == len(relative.parts)
+-            if not (stat.S_ISREG(info.st_mode) if last else stat.S_ISDIR(info.st_mode)):
+-                return None
+-        return path
+-    except (OSError, ValueError):
+-        return None
+-
+-
+-@configured('status')
+-def collection_status(data_root,*,_source_selection=None):
+-    root = Path(data_root).resolve()
+-    errors = []
+-    current_path=root/'first-group-training-esri-v1/annual-window-report.json'
+-    current_cache=[]
+-    def current():
+-        if not current_cache:current_cache.append(read_source(root,_source_selection))
+-        return current_cache[0][0]
+-    def report_at(path):
+-        if path==current_path:
+-            try:return current()
+-            except (OSError,ValueError):errors.append(path.name);return {}
+-        return read_report(path,errors)
+-
+-    reports = sorted(root.glob('first-group*/**/annual-window-report.json'), key=lambda p: (p.stat().st_mtime_ns, str(p)))[-64:]
+-    cells = {(province, year): {'province': province, 'year': year, 'image_available': False,
+-        'label_available': False, 'bands': [], 'collection_status': 'unknown', 'latest_attempt_status': 'unknown',
+-        'valid_pixel_ratio': None, 'quality_eligible': None, 'quality_mask_available': None,
+-        'label_status': 'unknown', 'label_source': None, 'label_year': None, 'mode': None,
+-        'source_report': None, 'latest_error': None} for province, _ in PROVINCES for year in YEARS}
+-    for path in reports:
+-        report = report_at(path)
+-        for scene in report.get('scenes', []):
+-            try:
+-                key = (scene['aoi'], int(scene['year']))
+-            except (KeyError, ValueError, TypeError):
+-                continue
+-            if key not in cells:
+-                continue
+-            cell = cells[key]
+-            error = scene.get('error') or {}
+-            # 외부 오류 원문/서명 URL은 화면에 노출하지 않는다.
+-            cell.update(latest_attempt_status=scene.get('status', 'unknown'),
+-                        latest_error={'code': error.get('category'), 'http_status': error.get('http_status')} if error else None)
+-            image = local_file(scene.get('image_path'), root)
+-            label = local_file(scene.get('label_path'), root)
+-            if image:
+-                cell.update(image_available=True, label_available=bool(label), bands=scene.get('bands', []),
+-                    collection_status=scene.get('status', 'unknown'), valid_pixel_ratio=scene.get('label_valid_pixel_ratio', scene.get('valid_pixel_ratio')),
+-                    quality_eligible=None, quality_mask_available=bool(local_file(scene.get('quality_mask_path'), root)),
+-                    label_status=scene.get('label_status', 'unknown'), label_source=scene.get('label_source'),
+-                    label_year=scene.get('label_year'), mode='bounded_window', source_report=str(path.relative_to(root)))
+-            elif not cell['image_available']:
+-                cell.update(collection_status=scene.get('status', 'unknown'), label_status=scene.get('label_status', 'unknown'))
+-    # 품질 적격은 별도 감사가 해당 수집 보고서의 해시를 확인한 경우만 표시한다.
+-    for audit_name in ('quality-audit-2021.json', 'quality-audit-current.json'):
+-        audit_path = root / 'first-group' / audit_name
+-        audit = report_at(audit_path) if audit_path.exists() else {}
+-        verified_reports = set()
+-        for entry in audit.get('inputs', []):
+-            path = local_file(entry.get('path'), root)
+-            if path and same_hash(path, entry.get('sha256')):
+-                verified_reports.add(str(path.relative_to(root)))
+-        for row in audit.get('inventory', []):
+-            key = (row.get('province'), row.get('year'))
+-            cell = cells.get(key)
+-            source = local_file(row.get('manifest_path'), root)
+-            if cell and source and cell['source_report'] == str(source.relative_to(root)) and cell['source_report'] in verified_reports and cell['image_available']:
+-                cell['quality_eligible'] = row.get('eligible_patch_count', 0) > 0
+-                cell['label_year'] = row.get('label_year')
+-    attempts = sorted(root.glob('first-group*/run-result.json'), key=lambda p: (p.stat().st_mtime_ns, str(p)))
+-    latest_run = None
+-    if attempts:
+-        result_path = attempts[-1]
+-        run = report_at(result_path)
+-        rows = []
+-        for value in run.get('manifests', []):
+-            path = local_file(value, root)
+-            if path:
+-                rows.extend(report_at(path).get('scenes', []))
+-        latest_run = {key: run.get(key) for key in ('status', 'learning_ready', 'maximum_total_bytes', 'reserved_or_transferred_bytes_including_prior')}
+-        latest_run.update({key: run.get(key) for key in ('new_supplementary_budget_bytes',
+-            'new_charged_upper_bound_bytes', 'historical_charged_upper_bound_bytes',
+-            'combined_historical_and_new_charged_upper_bound_bytes', 'combined_maximum_charged_upper_bound_bytes')})
+-        latest_run.update(source_report=str(result_path.relative_to(root)),
+-            rate_limited_cells=sum((row.get('error') or {}).get('http_status') == 429 for row in rows),
+-            budget_exhausted_cells=sum('예산 소진' in str((row.get('error') or {}).get('sanitized_message', '')) for row in rows),
+-            no_scene_cells=sum(row.get('status') in ('no_scene', 'no_scene_found', 'no_scenes') or
+-                               '장면 없음' in str((row.get('error') or {}).get('sanitized_message', '')) for row in rows),
+-            complete_windows=sum(bool(local_file(row.get('image_path'), root)) for row in rows))
+-        run_error = run.get('error') or {}
+-        latest_run['rate_limit_active'] = bool(run.get('circuit_breaker') or run.get('stopped_for_rate_limit') or
+-                                              run_error.get('http_status') == 429 or latest_run['rate_limited_cells'])
+-        latest_run['server_http_status'] = run_error.get('http_status')
+-        latest_run['error_category'] = run_error.get('category')
+-    reference_path = root / 'raw-reference/reference-report.json'
+-    reference = report_at(reference_path) if reference_path.exists() else {}
+-    record, raster = reference.get('record', {}), reference.get('raster_metadata', {})
+-    file = local_file(record.get('path'), root)
+-    full_reference = {'band': 'B04', 'status': reference.get('status', 'unknown'),
+-        'file_available': bool(file), 'mode': 'full_single_band', 'bytes': file.stat().st_size if file else None,
+-        'width': raster.get('width'), 'height': raster.get('height'), 'crs': raster.get('crs'),
+-        'sha256': record.get('sha256'), 'hash_verified_now': False}
+-    rows = list(cells.values())
+-    blockers = ['충분한 패치 및 지역별 검증·시험 자료 부족', '물리 반사도 보정 검증 필요',
+-                '독립 참조가 없으면 WorldCover 일치도만 평가 가능']
+-    readiness_candidates = list((root / 'first-group').glob('readiness-*.json'))
+-    readiness_candidates += list((root / 'first-group').glob('training-readiness.json'))
+-    readiness_path = max(readiness_candidates, key=lambda p: (p.stat().st_mtime_ns, p.name)) if readiness_candidates else root / 'first-group/training-readiness.json'
+-    readiness = report_at(readiness_path) if readiness_path.exists() else {}
+-    readiness_source = readiness_path.relative_to(root).as_posix() if readiness else None
+-    current_path = root / 'first-group-training-esri-v1/annual-window-report.json'
+-    current_manifest, current_sha = {}, None
+-    if current_path.exists():
+-        try:
+-            current_manifest = current()
+-            current_sha = current_cache[0][1][1]
+-        except (OSError, ValueError):
+-            errors.append(current_path.name)
+-            current_manifest = {}
+-    ready = False
+-    integrity_status = 'not_checked'
+-    evidence_matched = False
+-    evidence = readiness.get('input_manifests', []) + readiness.get('verified_files', [])
+-    manifest_matches_current = not current_path.exists()
+-    if current_sha:
+-        manifest_matches_current = any(local_file(entry.get('path'), root) == current_path and
+-            entry.get('sha256') == current_sha for entry in readiness.get('input_manifests', []))
+-    # A stale manifest already fails freshness; do not hash its entire raster set.
+-    if manifest_matches_current and readiness.get('input_manifests') and readiness.get('verified_files'):
+-        try:
+-            evidence_matched = all((path := local_file(entry.get('path'), root)) is not None and
+-                                   same_hash(path, entry.get('sha256')) for entry in evidence)
+-        except OSError:
+-            evidence_matched = False
+-    # 과거 입력이 아직 남아 있더라도 현재 합산 manifest를 검사한 근거가 없으면 최신 검증으로 보지 않는다.
+-    evidence_matched = evidence_matched and manifest_matches_current
+-    freshness = 'current' if evidence_matched else ('stale_or_missing' if readiness else 'missing')
+-    if readiness:
+-        integrity_status = 'matched' if evidence_matched else 'stale_or_missing'
+-    if readiness.get('schema_version') == 1 and readiness.get('status') == 'ready_for_weak_label_experiment' and readiness.get('ready_for_training') is True:
+-        ready = evidence_matched
+-        integrity_status = 'matched' if ready else 'stale_or_missing'
+-    splits = readiness.get('patch_counts_by_split') or {}
+-    counts_by_split = (readiness.get('class_counts_by_split') or {}) if evidence_matched else {}
+-    class_counts = {str(index): sum(values[index] for values in counts_by_split.values()
+-                    if isinstance(values, list) and len(values) == 9) for index in range(9)}
+-    total_pixels = sum(class_counts.values())
+-    patch_inventory = {'verified': evidence_matched, 'total': sum(splits.values()) if splits else None,
+-        'by_split': splits, 'by_class': class_counts,
+-        'class_names': (readiness.get('input_signature') or {}).get('class_names'),
+-        'label_source': (readiness.get('input_signature') or {}).get('label_source'),
+-        'class_ratios': {key: value / total_pixels if total_pixels else None for key, value in class_counts.items()},
+-        'source_report': readiness_source, 'freshness': freshness,
+-        'scope_note': '실험에 선택한 원본 창에서 품질 조건을 통과한 완전 256픽셀 패치 수. 격자 후보 계획 수나 혼합 RGB 재고 수가 아님.'}
+-    if current_sha:
+-        manifest_rows = current_manifest.get('scenes', [])
+-        eligible = [row for row in manifest_rows if row.get('quality_status') == 'quality_eligible']
+-        manifest_splits = {split: sum(row.get('split') == split for row in eligible) for split in ('train', 'val', 'test')}
+-        # 재고 개수는 현재 manifest에서 계산하고 readiness의 과거 개수를 가져오지 않는다.
+-        counts_match_inventory = splits == manifest_splits
+-        if not counts_match_inventory:
+-            patch_inventory.update(by_class={}, class_ratios={})
+-        patch_inventory.update(total=len(eligible), physical_total=len(manifest_rows), by_split=manifest_splits,
+-            verified=evidence_matched and counts_match_inventory, manifest_sha256=current_sha,
+-            source_report=current_path.relative_to(root).as_posix(), freshness='current_manifest',
+-            count_basis='manifest_quality_status', readiness_source_report=readiness_source,
+-            scope_note='현재 합산 manifest의 품질 적격 패치 재고. 파일 무결성·학습 승인 여부는 별도 최신 readiness로 판정한다.')
+-    if current_cache:verify_source(root,_source_selection,current_cache[0][1])
+-    return {'schema_version': 1, 'recorded_at': datetime.now(timezone.utc).isoformat(),
+-        'provinces': [{'id': key, 'name': name} for key, name in PROVINCES], 'years': YEARS, 'cells': rows,
+-        'summary': {'expected_cells': 36, 'available_image_cells': sum(row['image_available'] for row in rows),
+-            'available_label_cells': sum(row['label_available'] for row in rows),
+-            'quality_eligible_cells': sum(row['quality_eligible'] is True for row in rows),
+-            'learning_ready': ready, 'readiness_basis': '학습 전 검사 및 입력 해시 일치' if ready else '정식 데이터셋 구축·학습 gate 통과 기록 없음 또는 입력 변경'},
+-        'training_readiness': {'status': readiness.get('status', 'unknown'), 'integrity_status': integrity_status,
+-            'source_report': readiness_source, 'freshness': freshness,
+-            'manifest_matches_current': manifest_matches_current, 'evidence_matched': evidence_matched,
+-            'current_manifest_sha256': current_sha,
+-            'ready_for_training': ready, 'blockers': readiness.get('blockers', []),
+-            'patch_counts_by_split': readiness.get('patch_counts_by_split'),
+-            'input_signature': readiness.get('input_signature'),
+-            'required_bands': (readiness.get('policy') or {}).get('band_names'),
+-            'minimum_patches': (readiness.get('policy') or {}).get('min_patches'),
+-            'evaluation_kind': readiness.get('evaluation_kind'), 'scientific_accuracy_validated': False},
+-        'latest_run': latest_run, 'full_reference': full_reference, 'blocked_reasons': blockers,
+-        'patch_inventory': patch_inventory,
+-        'collection_targets': collection_targets(current_manifest, current_sha, bare_target_review(root, current_sha)),
+-        'candidate_quality': candidate_quality(root, current_sha, same_hash),
+-        'limitations': ['실제 파일 존재와 독립 정확도 검증을 구분', '예약 예산은 실제 수신량이 아님',
+-                        '부분 창을 주 전체나 전체 장면 확보로 계산하지 않음'],
+-        'unreadable_reports': errors}
++from .collection_source_profile import configured,read_source,verify_source,SourceProfileError
++"""수집 보고서를 읽어 성공 재고와 최근 실패를 분리하는 읽기 전용 현황."""
++from datetime import datetime, timezone
++import hashlib
++import json
++import os
++import stat
++from pathlib import Path
++from .ml.manifest_resource_profile import active,read_metadata,bounded_json_digest,metadata_identity,ProfileResourceError,serialized_io
++from .collection_priority_status import collection_targets, candidate_quality, bare_target_review
++
++_HASH_CACHE = {}
++
++
++@serialized_io
++def same_hash(path, expected, *, json_role=None):
++    """큰 입력의 재해시는 내용 변경을 시사하는 파일 메타데이터가 바뀔 때 수행한다."""
++    if active() is not None and json_role!='binary':
++        if json_role is None:raise ProfileResourceError('MANIFEST_JSON_ROLE_REQUIRED')
++        logical,before_identity=metadata_identity(path,json_role)
++        key=('PROFILE237',str(logical),json_role,before_identity)
++        if key not in _HASH_CACHE:
++            value=bounded_json_digest(logical,json_role)
++            if metadata_identity(path,json_role)!=(logical,before_identity):raise ProfileResourceError('MANIFEST_JSON_CHANGED')
++            if len(_HASH_CACHE)>20000:_HASH_CACHE.clear()
++            _HASH_CACHE[key]=value
++        if metadata_identity(path,json_role)!=(logical,before_identity):raise ProfileResourceError('MANIFEST_JSON_CHANGED')
++        return isinstance(expected,str) and _HASH_CACHE[key]==expected
++    before = path.stat()
++    key = (str(path), before.st_mtime_ns, before.st_ctime_ns, before.st_size)
++    if key not in _HASH_CACHE:
++        digest = hashlib.sha256()
++        with path.open('rb') as stream:
++            for chunk in iter(lambda: stream.read(1024 * 1024), b''):
++                digest.update(chunk)
++        after = path.stat()
++        if (before.st_mtime_ns, before.st_ctime_ns, before.st_size) != (after.st_mtime_ns, after.st_ctime_ns, after.st_size):
++            return False
++        if len(_HASH_CACHE) > 20000:
++            _HASH_CACHE.clear()
++        _HASH_CACHE[key] = digest.hexdigest()
++    return isinstance(expected, str) and _HASH_CACHE[key] == expected
++
++PROVINCES = [('south_sulawesi', 'South Sulawesi'), ('gorontalo', 'Gorontalo'),
++             ('southeast_sulawesi', 'Southeast Sulawesi'), ('banten', 'Banten'),
++             ('west_java', 'West Java'), ('east_java', 'East Java')]
++YEARS = list(range(2020, 2026))
++
++
++def read_report(path, errors, *, json_role='status_report'):
++    try:
++        value = read_metadata(path,json_role)[0] if active() is not None else json.loads(path.read_text(encoding='utf-8'))
++        if not isinstance(value, dict):
++            raise ValueError('보고서 객체가 아님')
++        return value
++    except (ProfileResourceError,SourceProfileError):
++        raise
++    except (OSError, ValueError):
++        # 작성 중인 파일은 미확인으로 표시하며 과거 성공을 실패로 바꾸지 않는다.
++        errors.append(path.name)
++        return {}
++
++
++def local_file(value, root):
++    if not isinstance(value, str) or not value:
++        return None
++    # Resolve the trusted data root once in collection_status, not thousands of
++    # historical raster paths through Windows realpath. Reject outside paths
++    # lexically before touching them, then inspect every local component without
++    # following links (including Windows junctions/reparse points).
++    try:
++        if any(part not in ('.', '..') and part.endswith((' ', '.'))
++               for part in Path(value).parts):
++            return None
++        root = Path(os.path.abspath(root))
++        path = Path(os.path.abspath(os.path.join(root, value)))
++        relative = path.relative_to(root)
++        if not relative.parts:
++            return None
++        if any(':' in part or part.endswith((' ', '.')) for part in relative.parts):
++            return None
++        current = root
++        for index, part in enumerate((None, *relative.parts)):
++            if part is not None:
++                current = current / part
++            info = current.lstat()
++            if stat.S_ISLNK(info.st_mode) or getattr(info, 'st_file_attributes', 0) & 0x400:
++                return None
++            last = index == len(relative.parts)
++            if not (stat.S_ISREG(info.st_mode) if last else stat.S_ISDIR(info.st_mode)):
++                return None
++        return path
++    except (ProfileResourceError,SourceProfileError):
++        raise
++    except (OSError, ValueError):
++        return None
++
++
++@configured('status')
++def collection_status(data_root,*,_source_selection=None):
++    root = Path(data_root).resolve()
++    errors = []
++    current_path=root/'first-group-training-esri-v1/annual-window-report.json'
++    current_cache=[]
++    def current():
++        if not current_cache:current_cache.append(read_source(root,_source_selection))
++        return current_cache[0][0]
++    def report_at(path,json_role='status_report'):
++        if path==current_path:
++            try:return current()
++            except (ProfileResourceError,SourceProfileError):raise
++            except (OSError,ValueError):errors.append(path.name);return {}
++        return read_report(path,errors,json_role=json_role)
++
++    reports = sorted(root.glob('first-group*/**/annual-window-report.json'), key=lambda p: (p.stat().st_mtime_ns, str(p)))[-64:]
++    known_source_paths={current_path,*reports}
++    cells = {(province, year): {'province': province, 'year': year, 'image_available': False,
++        'label_available': False, 'bands': [], 'collection_status': 'unknown', 'latest_attempt_status': 'unknown',
++        'valid_pixel_ratio': None, 'quality_eligible': None, 'quality_mask_available': None,
++        'label_status': 'unknown', 'label_source': None, 'label_year': None, 'mode': None,
++        'source_report': None, 'latest_error': None} for province, _ in PROVINCES for year in YEARS}
++    for path in reports:
++        report = report_at(path,'source')
++        for scene in report.get('scenes', []):
++            try:
++                key = (scene['aoi'], int(scene['year']))
++            except (KeyError, ValueError, TypeError):
++                continue
++            if key not in cells:
++                continue
++            cell = cells[key]
++            error = scene.get('error') or {}
++            # 외부 오류 원문/서명 URL은 화면에 노출하지 않는다.
++            cell.update(latest_attempt_status=scene.get('status', 'unknown'),
++                        latest_error={'code': error.get('category'), 'http_status': error.get('http_status')} if error else None)
++            image = local_file(scene.get('image_path'), root)
++            label = local_file(scene.get('label_path'), root)
++            if image:
++                cell.update(image_available=True, label_available=bool(label), bands=scene.get('bands', []),
++                    collection_status=scene.get('status', 'unknown'), valid_pixel_ratio=scene.get('label_valid_pixel_ratio', scene.get('valid_pixel_ratio')),
++                    quality_eligible=None, quality_mask_available=bool(local_file(scene.get('quality_mask_path'), root)),
++                    label_status=scene.get('label_status', 'unknown'), label_source=scene.get('label_source'),
++                    label_year=scene.get('label_year'), mode='bounded_window', source_report=str(path.relative_to(root)))
++            elif not cell['image_available']:
++                cell.update(collection_status=scene.get('status', 'unknown'), label_status=scene.get('label_status', 'unknown'))
++    # 품질 적격은 별도 감사가 해당 수집 보고서의 해시를 확인한 경우만 표시한다.
++    for audit_name in ('quality-audit-2021.json', 'quality-audit-current.json'):
++        audit_path = root / 'first-group' / audit_name
++        audit = report_at(audit_path,'readiness') if audit_path.exists() else {}
++        verified_reports = set()
++        for entry in audit.get('inputs', []):
++            path = local_file(entry.get('path'), root)
++            if path and same_hash(path, entry.get('sha256'),**({'json_role':'source'} if active() is not None else {})):
++                verified_reports.add(str(path.relative_to(root)))
++        for row in audit.get('inventory', []):
++            key = (row.get('province'), row.get('year'))
++            cell = cells.get(key)
++            source = local_file(row.get('manifest_path'), root)
++            if cell and source and cell['source_report'] == str(source.relative_to(root)) and cell['source_report'] in verified_reports and cell['image_available']:
++                cell['quality_eligible'] = row.get('eligible_patch_count', 0) > 0
++                cell['label_year'] = row.get('label_year')
++    attempts = sorted(root.glob('first-group*/run-result.json'), key=lambda p: (p.stat().st_mtime_ns, str(p)))
++    latest_run = None
++    if attempts:
++        result_path = attempts[-1]
++        run = report_at(result_path)
++        rows = []
++        for value in run.get('manifests', []):
++            path = local_file(value, root)
++            if path:
++                known_source_paths.add(path)
++                rows.extend(report_at(path,'source').get('scenes', []))
++        latest_run = {key: run.get(key) for key in ('status', 'learning_ready', 'maximum_total_bytes', 'reserved_or_transferred_bytes_including_prior')}
++        latest_run.update({key: run.get(key) for key in ('new_supplementary_budget_bytes',
++            'new_charged_upper_bound_bytes', 'historical_charged_upper_bound_bytes',
++            'combined_historical_and_new_charged_upper_bound_bytes', 'combined_maximum_charged_upper_bound_bytes')})
++        latest_run.update(source_report=str(result_path.relative_to(root)),
++            rate_limited_cells=sum((row.get('error') or {}).get('http_status') == 429 for row in rows),
++            budget_exhausted_cells=sum('예산 소진' in str((row.get('error') or {}).get('sanitized_message', '')) for row in rows),
++            no_scene_cells=sum(row.get('status') in ('no_scene', 'no_scene_found', 'no_scenes') or
++                               '장면 없음' in str((row.get('error') or {}).get('sanitized_message', '')) for row in rows),
++            complete_windows=sum(bool(local_file(row.get('image_path'), root)) for row in rows))
++        run_error = run.get('error') or {}
++        latest_run['rate_limit_active'] = bool(run.get('circuit_breaker') or run.get('stopped_for_rate_limit') or
++                                              run_error.get('http_status') == 429 or latest_run['rate_limited_cells'])
++        latest_run['server_http_status'] = run_error.get('http_status')
++        latest_run['error_category'] = run_error.get('category')
++    reference_path = root / 'raw-reference/reference-report.json'
++    reference = report_at(reference_path) if reference_path.exists() else {}
++    record, raster = reference.get('record', {}), reference.get('raster_metadata', {})
++    file = local_file(record.get('path'), root)
++    full_reference = {'band': 'B04', 'status': reference.get('status', 'unknown'),
++        'file_available': bool(file), 'mode': 'full_single_band', 'bytes': file.stat().st_size if file else None,
++        'width': raster.get('width'), 'height': raster.get('height'), 'crs': raster.get('crs'),
++        'sha256': record.get('sha256'), 'hash_verified_now': False}
++    rows = list(cells.values())
++    blockers = ['충분한 패치 및 지역별 검증·시험 자료 부족', '물리 반사도 보정 검증 필요',
++                '독립 참조가 없으면 WorldCover 일치도만 평가 가능']
++    readiness_candidates = list((root / 'first-group').glob('readiness-*.json'))
++    readiness_candidates += list((root / 'first-group').glob('training-readiness.json'))
++    readiness_path = max(readiness_candidates, key=lambda p: (p.stat().st_mtime_ns, p.name)) if readiness_candidates else root / 'first-group/training-readiness.json'
++    readiness = report_at(readiness_path,'readiness') if readiness_path.exists() else {}
++    readiness_source = readiness_path.relative_to(root).as_posix() if readiness else None
++    current_path = root / 'first-group-training-esri-v1/annual-window-report.json'
++    current_manifest, current_sha = {}, None
++    if current_path.exists():
++        try:
++            current_manifest = current()
++            current_sha = current_cache[0][1][1]
++        except (ProfileResourceError,SourceProfileError):
++            raise
++        except (OSError, ValueError):
++            errors.append(current_path.name)
++            current_manifest = {}
++    ready = False
++    integrity_status = 'not_checked'
++    evidence_matched = False
++    evidence = readiness.get('input_manifests', []) + readiness.get('verified_files', [])
++    manifest_matches_current = not current_path.exists()
++    if current_sha:
++        manifest_matches_current = any(local_file(entry.get('path'), root) == current_path and
++            entry.get('sha256') == current_sha for entry in readiness.get('input_manifests', []))
++    # A stale manifest already fails freshness; do not hash its entire raster set.
++    if manifest_matches_current and readiness.get('input_manifests') and readiness.get('verified_files'):
++        try:
++            def verified(entry,role):
++                path=local_file(entry.get('path'),root)
++                return path is not None and same_hash(path,entry.get('sha256'),**({'json_role':role} if active() is not None else {}))
++            def manifest_role(entry):
++                path=local_file(entry.get('path'),root)
++                return 'source' if path in known_source_paths else None
++            kinds={'normalization_qa':'evidence','input_image':'binary','label':'binary','quality_mask':'binary','official_product_metadata':'binary'}
++            evidence_matched=all(verified(entry,manifest_role(entry)) for entry in readiness.get('input_manifests',[])) and all(verified(entry,manifest_role(entry) if entry.get('kind')=='collection_manifest' else kinds.get(entry.get('kind'))) for entry in readiness.get('verified_files',[]))
++        except OSError:
++            evidence_matched = False
++    # 과거 입력이 아직 남아 있더라도 현재 합산 manifest를 검사한 근거가 없으면 최신 검증으로 보지 않는다.
++    evidence_matched = evidence_matched and manifest_matches_current
++    freshness = 'current' if evidence_matched else ('stale_or_missing' if readiness else 'missing')
++    if readiness:
++        integrity_status = 'matched' if evidence_matched else 'stale_or_missing'
++    if readiness.get('schema_version') == 1 and readiness.get('status') == 'ready_for_weak_label_experiment' and readiness.get('ready_for_training') is True:
++        ready = evidence_matched
++        integrity_status = 'matched' if ready else 'stale_or_missing'
++    splits = readiness.get('patch_counts_by_split') or {}
++    counts_by_split = (readiness.get('class_counts_by_split') or {}) if evidence_matched else {}
++    class_counts = {str(index): sum(values[index] for values in counts_by_split.values()
++                    if isinstance(values, list) and len(values) == 9) for index in range(9)}
++    total_pixels = sum(class_counts.values())
++    patch_inventory = {'verified': evidence_matched, 'total': sum(splits.values()) if splits else None,
++        'by_split': splits, 'by_class': class_counts,
++        'class_names': (readiness.get('input_signature') or {}).get('class_names'),
++        'label_source': (readiness.get('input_signature') or {}).get('label_source'),
++        'class_ratios': {key: value / total_pixels if total_pixels else None for key, value in class_counts.items()},
++        'source_report': readiness_source, 'freshness': freshness,
++        'scope_note': '실험에 선택한 원본 창에서 품질 조건을 통과한 완전 256픽셀 패치 수. 격자 후보 계획 수나 혼합 RGB 재고 수가 아님.'}
++    if current_sha:
++        manifest_rows = current_manifest.get('scenes', [])
++        eligible = [row for row in manifest_rows if row.get('quality_status') == 'quality_eligible']
++        manifest_splits = {split: sum(row.get('split') == split for row in eligible) for split in ('train', 'val', 'test')}
++        # 재고 개수는 현재 manifest에서 계산하고 readiness의 과거 개수를 가져오지 않는다.
++        counts_match_inventory = splits == manifest_splits
++        if not counts_match_inventory:
++            patch_inventory.update(by_class={}, class_ratios={})
++        patch_inventory.update(total=len(eligible), physical_total=len(manifest_rows), by_split=manifest_splits,
++            verified=evidence_matched and counts_match_inventory, manifest_sha256=current_sha,
++            source_report=current_path.relative_to(root).as_posix(), freshness='current_manifest',
++            count_basis='manifest_quality_status', readiness_source_report=readiness_source,
++            scope_note='현재 합산 manifest의 품질 적격 패치 재고. 파일 무결성·학습 승인 여부는 별도 최신 readiness로 판정한다.')
++    if current_cache:verify_source(root,_source_selection,current_cache[0][1])
++    return {'schema_version': 1, 'recorded_at': datetime.now(timezone.utc).isoformat(),
++        'provinces': [{'id': key, 'name': name} for key, name in PROVINCES], 'years': YEARS, 'cells': rows,
++        'summary': {'expected_cells': 36, 'available_image_cells': sum(row['image_available'] for row in rows),
++            'available_label_cells': sum(row['label_available'] for row in rows),
++            'quality_eligible_cells': sum(row['quality_eligible'] is True for row in rows),
++            'learning_ready': ready, 'readiness_basis': '학습 전 검사 및 입력 해시 일치' if ready else '정식 데이터셋 구축·학습 gate 통과 기록 없음 또는 입력 변경'},
++        'training_readiness': {'status': readiness.get('status', 'unknown'), 'integrity_status': integrity_status,
++            'source_report': readiness_source, 'freshness': freshness,
++            'manifest_matches_current': manifest_matches_current, 'evidence_matched': evidence_matched,
++            'current_manifest_sha256': current_sha,
++            'ready_for_training': ready, 'blockers': readiness.get('blockers', []),
++            'patch_counts_by_split': readiness.get('patch_counts_by_split'),
++            'input_signature': readiness.get('input_signature'),
++            'required_bands': (readiness.get('policy') or {}).get('band_names'),
++            'minimum_patches': (readiness.get('policy') or {}).get('min_patches'),
++            'evaluation_kind': readiness.get('evaluation_kind'), 'scientific_accuracy_validated': False},
++        'latest_run': latest_run, 'full_reference': full_reference, 'blocked_reasons': blockers,
++        'patch_inventory': patch_inventory,
++        'collection_targets': collection_targets(current_manifest, current_sha, bare_target_review(root, current_sha)),
++        'candidate_quality': candidate_quality(root, current_sha, same_hash),
++        'limitations': ['실제 파일 존재와 독립 정확도 검증을 구분', '예약 예산은 실제 수신량이 아님',
++                        '부분 창을 주 전체나 전체 장면 확보로 계산하지 않음'],
++        'unreadable_reports': errors}
+--- a/backend/app/data/candidates.py
++++ b/backend/app/data/candidates.py
+@@ -1,4 +1,5 @@
+ """공개경계 근처의 추가 공간후보를 로컬에서만 검증한다. HTTP 호출 없음."""
++from ..ml.manifest_resource_profile import active,read_metadata,bounded_json_digest,ProfileResourceError
+ import hashlib
+ import json
+ import re
+@@ -18,7 +19,7 @@
+     return transform(inverse.transform, box(x-half,y-half,x+half,y+half))
+ 
+ 
+-def validate_candidate_plan(path, boundary_path, existing_centers=()):
++def validate_candidate_plan(path, boundary_path, existing_centers=(), *, json_role='local_plan'):
+     """후보의 실제 클래스 존재를 검증했다고 주장하지 않고 공간중복만 거부한다.
+ 
+     existing_centers는[{province,lon,lat,grid_crs},...]이다. 같은주내같은공간을
+@@ -27,10 +28,16 @@
+     import math
+     from shapely.geometry import Point, shape
+     boundary_path, path = Path(boundary_path), Path(path)
+-    digest = hashlib.sha256(boundary_path.read_bytes()).hexdigest()
+-    boundaries = json.loads(boundary_path.read_text(encoding="utf-8"))["features"]
++    if active() is not None:
++        if json_role not in ('local_plan','proposal'):raise ValueError('Explicit candidate plan role required')
++        boundary_document,digest,_=read_metadata(boundary_path,'boundary')
++        boundaries=boundary_document['features']
++    else:
++        digest = hashlib.sha256(boundary_path.read_bytes()).hexdigest()
++        boundaries = json.loads(boundary_path.read_text(encoding="utf-8"))["features"]
+     polygons = {feature["properties"]["province_id"]: shape(feature["geometry"]) for feature in boundaries}
+-    document = json.loads(path.read_text(encoding="utf-8"))
++    if active() is not None:document,document_digest,_=read_metadata(path,json_role)
++    else:document=json.loads(path.read_text(encoding="utf-8"))
+     if document.get("schema_version") != 1 or document.get("executed_network") is not False:
+         raise ValueError("스키마1/로컬제안기록이필요합니다")
+     previous = [(item["province"], footprint(item["lon"],item["lat"],item["grid_crs"])) for item in existing_centers]
+@@ -55,6 +62,9 @@
+         previous.append((province,polygon))
+         ids.add(identifier)
+         accepted.append(candidate.copy())
+-    return {"source_path": str(path.resolve()), "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
++    if active() is not None:
++        if bounded_json_digest(path,json_role)!=document_digest:raise ProfileResourceError('MANIFEST_JSON_CHANGED')
++        if bounded_json_digest(boundary_path,'boundary')!=digest:raise ProfileResourceError('MANIFEST_JSON_CHANGED')
++    return {"source_path": str(path.resolve()), "source_sha256": (document_digest if active() is not None else hashlib.sha256(path.read_bytes()).hexdigest()),
+         "boundary_sha256": digest, "candidates": accepted, "validated_spatial_only": True,
+         "class_presence_verified": False, "source_proposal_consumption_flag": document.get("collector_consumption_approved")}
+--- a/backend/app/ml/manifest_resource_profile.py
++++ b/backend/app/ml/manifest_resource_profile.py
+@@ -119,7 +119,7 @@
+             if active() is not None and code:raise ProfileResourceError(code) from None
+             raise
+     return wrapped
+-JSON_ROLE_CAPS=MappingProxyType({'source':128*1024**2,'candidate':128*1024**2,'evidence':2*1024**2,'readiness':16*1024**2,'saved_plan':4*1024**2,'receipt':65536,'policy':1024**2})
++JSON_ROLE_CAPS=MappingProxyType({'source':128*1024**2,'candidate':128*1024**2,'evidence':2*1024**2,'readiness':16*1024**2,'saved_plan':4*1024**2,'receipt':65536,'policy':1024**2,'boundary':2*1024**2,'local_config':2*1024**2,'local_plan':2*1024**2,'proposal':2*1024**2,'status_report':16*1024**2,'pointer':65536})
+ @serialized_io
+ def bounded_json_digest(path,role,*,_capture=False):
+     # Role is explicit; filenames/extensions never choose whether to charge.
+@@ -189,3 +189,27 @@
+     require_io_room(len(payload))
+     with path.open('xb',buffering=0) as stream:
+         for start in range(0,len(payload),65536):write_measured(stream,payload[start:start+65536])
++
++def metadata_identity(path,role):
++    """Stat-only exact logical identity for a role-bound cache; no size-based selection."""
++    from .split_json_io import _local,_stamp
++    if role not in JSON_ROLE_CAPS:raise ProfileResourceError('MANIFEST_JSON_ROLE_REQUIRED')
++    logical=_local(path)
++    if logical.resolve()!=logical or logical.is_symlink() or getattr(logical.lstat(),'st_file_attributes',0)&0x400:raise ProfileResourceError('MANIFEST_JSON_PATH_CHANGED')
++    identity=_stamp(logical.stat())
++    if identity[0]>JSON_ROLE_CAPS[role]:raise ProfileResourceError('MANIFEST_JSON_FILE_LIMIT')
++    return logical,identity
++
++@resource_boundary
++def read_metadata(path,role,expected=None):
++    """One bounded physical JSON read; preserve caller's semantic role and pin."""
++    from .split_json_io import _depth,_tree,_pairs,_constant
++    if role not in JSON_ROLE_CAPS:raise ProfileResourceError('MANIFEST_JSON_ROLE_REQUIRED')
++    digest,raw=bounded_json_digest(path,role,_capture=True)
++    if expected is not None and digest!=expected:raise ProfileResourceError('MANIFEST_JSON_PIN_MISMATCH')
++    text=raw.decode('utf-8')
++    if text.startswith('\ufeff') or '\x00' in text:raise ValueError('MANIFEST_JSON_ENCODING')
++    _depth(text,DESCRIPTOR['max_depth'])
++    document=json.loads(text,object_pairs_hook=_pairs,parse_constant=_constant)
++    _tree(document,DESCRIPTOR['max_depth'],JSON_ROLE_CAPS[role]);structure(document,role)
++    return document,digest,raw
+--- a/scripts/find_bare_targets173.py
++++ b/scripts/find_bare_targets173.py
+@@ -14,16 +14,21 @@
+ from backend.app.data.targeted_bare_plan import _json
+ from backend.app.ml.per_scene_normalization_files import _root,_relative,_snapshot
+ from backend.app.ml.readiness import esri_reference_matches_year,default_policy
+-from backend.app.ml.manifest_resource_profile import active,entry as profile_entry,pinned_source_bytes,NAME,MARKER,write_new_json_bytes
++from backend.app.ml.manifest_resource_profile import active,entry as profile_entry,pinned_source_bytes,NAME,MARKER,write_new_json_bytes,read_metadata,bounded_json_digest,ProfileResourceError
+ 
+ LIMITS={'max_files':256,'max_total_bytes':768*1024**2,'max_windows':32768,'max_candidates':128}
+ SPLITS=default_policy()['province_splits']
+ 
+ 
+-def pin(root,path,expected,cap):
++def pin(root,path,expected,cap,*,json_role=None):
++    if active() is not None and json_role!='binary':
++        if json_role!='boundary':raise ProfileResourceError('MANIFEST_JSON_ROLE_REQUIRED')
++        if cap!=2*1024**2:raise ValueError('Explicit boundary role requires original2MiB cap')
++        return read_metadata(path,json_role,expected)[2]
+     digest,raw=_snapshot(root,path,cap,'bare173',True)
+     if digest!=expected:raise ValueError('Pinned local bytes differ')
+     return raw
++
+ 
+ 
+ 
+@@ -60,7 +65,7 @@
+     for path in (manifest,boundary):
+         if not path.is_absolute() or not path.resolve().is_relative_to(root/'data'):raise ValueError('Local DATA input required')
+     raw=source_pin(root,manifest,manifest_sha);document=_json(raw);del raw
+-    geo=_json(pin(root,boundary,boundary_sha,2*1024**2))
++    geo=_json(pin(root,boundary,boundary_sha,2*1024**2,json_role='boundary'))
+     rows=document['scenes']+document.get('historical_noneligible_patches',[])
+     if len(rows)>3000:raise ValueError('Manifest row cap exceeded')
+     coverage=Counter((r['province'],int(r['year'])) for r in rows if r.get('quality_status')=='quality_eligible')
+@@ -111,7 +116,7 @@
+         path=item['path'];sha=item['sha256'];province=item['province'];year=item['year']
+         size=path.stat().st_size
+         if total+size>limits['max_total_bytes']:raise ValueError('Cumulative label byte cap exceeded')
+-        raw=pin(root,path,sha,64*1024**2);total+=len(raw)
++        raw=pin(root,path,sha,64*1024**2,json_role='binary');total+=len(raw)
+         inventory.append({'path':str(path.relative_to(root)),'sha256':sha,'bytes':len(raw),'province':province,'year':year})
+         summaries[province]['label_files']+=1
+         with rasterio.Env(GDAL_PAM_ENABLED='NO',GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',GDAL_GEOREF_SOURCES='INTERNAL'):
+@@ -143,7 +148,7 @@
+                             candidates.append({'year':year,'province':province,'fixed_split':SPLITS[province],'source_crop_path':str(path.relative_to(root)),'source_crop_sha256':sha,'local_window_xy':[x,y],'declared_weak_label_bare_pixels':bare,'bare_density':bare/65536,'cell_eligible_at_snapshot':coverage[province,year],'cell_deficit_to_28':max(0,28-coverage[province,year]),'geometric_inside_fraction':inside,'bbox_wgs84':[min(p[0] for p in xy),min(p[1] for p in xy),max(p[0] for p in xy),max(p[1] for p in xy)],'source_label_grid':{'crs':ds.crs.to_string(),'transform':list(t)[:6],'width':ds.width,'height':ds.height},'target_footprint_native':{'crs':ds.crs.to_string(),'corners':[list(p) for p in corners]},'execution_supported':False,'actual_quality_eligible':False,'scientifically_verified_bare':False,'spatial_independence_verified':False,'existing_image_overlap_checked':False,'pending_inventory_checked':False,'consumer_scope':'BANTEN_157_REVALIDATION_REQUIRED' if province=='banten' else 'PLANNED_CONSUMER_NOT_CONNECTED'})
+         if _snapshot(root,path,64*1024**2,'bare173')[0]!=sha:raise ValueError('Label changed after scan')
+     candidates.sort(key=lambda c:(-int(c['cell_deficit_to_28']>0),-c['declared_weak_label_bare_pixels'],-c['cell_deficit_to_28'],c['province'],c['year'],c['source_crop_sha256'],c['local_window_xy']))
+-    source_pin(root,manifest,manifest_sha);pin(root,boundary,boundary_sha,2*1024**2)
++    source_pin(root,manifest,manifest_sha);pin(root,boundary,boundary_sha,2*1024**2,json_role='boundary')
+     result={'schema_version':1,'kind':'LOCAL_SIX_PROVINCE_WEAK_LABEL_BARE_DISCOVERY','status':'LOCAL_LABEL_BYTES_VERIFIED_EXECUTION_UNAPPROVED','source_manifest_sha256':manifest_sha,'boundary_sha256':boundary_sha,'source_row_count':len(rows),'scope':'PINNED_SNAPSHOT_EXCLUDES_LATER_COLLECTION','limits':limits,'local_label_crops_read':len(inventory),'label_bytes_read':total,'windows_scanned':windows,'duplicate_sha_windows_excluded':duplicates,'qualified_dense_inside_windows':len(candidates),'rank_policy':'cell deficit present, bare pixels descending, cell deficit descending, fixed stable ties','ranked_windows':candidates[:limits['max_candidates']],'province_summary':summaries,'split_qualified_counts':dict(Counter(c['fixed_split'] for c in candidates)),'inventory':inventory,'skipped_row_references':dict(skipped),'execution_supported':False,'actual_quality_eligible':False,'scientifically_verified_bare':False,'ready_for_training':False,'network_requests':0,'collection_executed':False,'training_executed':False,'source_files_written':0,'limitations':['Weak ESRI labels are not independent field truth.','Existing image/SCL/B02/pending/support inventory and spatial overlaps require167/170 revalidation.','Current157 consumer accepts Banten/val only; train/test candidates remain PLANNED and unconnected.','Only aligned256 windows are searched; sliding or smaller-offset windows are outside this bounded scan.']}
+     if window_stride!=256 or provinces is not None or label_refs is not None:
+         result.update(window_stride=window_stride,province_filter=[p for p in SPLITS if p in selected])
+@@ -180,7 +185,7 @@
+     data=ROOT/'data'/('bare173-'+args.run_id);out=ROOT/'evidence/integration'/('bare173-'+args.run_id)
+     try:
+         if any(p.exists() or p.is_symlink() for p in (data,out)):raise ValueError('New paths required')
+-        source_raw=source_pin(ROOT,args.source,args.source_sha256);boundary_raw=pin(ROOT,args.boundary,args.boundary_sha256,2*1024**2)
++        source_raw=source_pin(ROOT,args.source,args.source_sha256);boundary_raw=pin(ROOT,args.boundary,args.boundary_sha256,2*1024**2,json_role='boundary')
+         data.mkdir(exist_ok=False);out.mkdir(exist_ok=False)
+         for path,raw in ((data/'source.json',source_raw),(data/'boundary.geojson',boundary_raw)):
+             if active() is not None:write_new_json_bytes(path,raw,'source' if path.name=='source.json' else 'evidence')
+@@ -190,12 +195,13 @@
+         proposal=out/'proposal.json'
+         payload=(json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False)+'\n').encode('utf8')
+         if len(payload)>2*1024**2:raise ValueError('Proposal byte cap exceeded')
+-        source_pin(ROOT,args.source,args.source_sha256);pin(ROOT,args.boundary,args.boundary_sha256,2*1024**2)
++        source_pin(ROOT,args.source,args.source_sha256);pin(ROOT,args.boundary,args.boundary_sha256,2*1024**2,json_role='boundary')
+         if active() is not None:write_new_json_bytes(proposal,payload,'evidence')
+         else:
+             with proposal.open('xb') as stream:stream.write(payload)
+         sha=hashlib.sha256(payload).hexdigest()
+-        if _snapshot(ROOT,proposal,2*1024**2,'proposal')[0]!=sha:raise ValueError('Proposal changed')
++        actual=bounded_json_digest(proposal,'proposal') if active() is not None else _snapshot(ROOT,proposal,2*1024**2,'proposal')[0]
++        if actual!=sha:raise ValueError('Proposal changed')
+         receipt={'status':'LOCAL_DISCOVERY_COMPLETE_UNAPPROVED','at':datetime.now(timezone.utc).isoformat(),'proposal_sha256':sha,'proposal_bytes':len(payload),'source_sha256':args.source_sha256,'boundary_sha256':args.boundary_sha256,'source_original_unchanged_at_publication':True,'label_file_pins_checked_before_and_after':True,'execution_supported':False,'training_executed':False}
+         if active() is not None:
+             raw=(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n').replace('\n',os.linesep).encode('utf8')
+--- a/scripts/propose_deficit_centers182.py
++++ b/scripts/propose_deficit_centers182.py
+@@ -11,7 +11,7 @@
+ from backend.app.data.candidates import validate_candidate_plan
+ from backend.app.ml.readiness import default_policy
+ from backend.app.ml.split_json_io import _local
+-from backend.app.ml.manifest_resource_profile import active,entry as profile_entry,pinned_source_bytes,NAME,MARKER
++from backend.app.ml.manifest_resource_profile import active,entry as profile_entry,pinned_source_bytes,NAME,MARKER,read_metadata,bounded_json_digest
+ from backend.app.ml.manifest_resource_profile import write_new_json_bytes
+ from collect_training_grid import spatial_centers
+ 
+@@ -22,7 +22,10 @@
+ def pinned(root,path,sha,cap,allow_config=False,json_role=None):
+     path=Path(path)
+     if not path.is_absolute() or not (path.resolve().is_relative_to(root/'data') or (allow_config and path.resolve().is_relative_to(root/'configs'))):raise ValueError('Explicit local input scope required')
+-    if active() is not None and json_role=='source':return _json(pinned_source_bytes(path,sha))
++    if active() is not None:
++        if json_role=='source':return _json(pinned_source_bytes(path,sha))
++        if json_role not in ('boundary','local_config','local_plan') or cap!=2*1024**2:raise ValueError('Explicit small JSON role/cap required')
++        return read_metadata(path,json_role,sha)[0]
+     actual,raw=_snapshot(root,path,cap,'centers182',True)
+     if actual!=sha:raise ValueError('Caller pin differs')
+     return _json(raw)
+@@ -46,7 +49,7 @@
+     _local(output)
+     _root(output.parent)
+     if not output.is_absolute() or not output.resolve().is_relative_to(root/'data') or output.exists() or output.is_symlink() or not output.parent.is_dir():raise ValueError('New DATA output with existing parent required')
+-    pins=[(source,source_sha,64*1024**2,False,'source'),(boundary,boundary_sha,2*1024**2),(config,config_sha,2*1024**2,True),(prior_plan,prior_sha,2*1024**2)]
++    pins=[(source,source_sha,64*1024**2,False,'source'),(boundary,boundary_sha,2*1024**2,False,'boundary'),(config,config_sha,2*1024**2,True,'local_config'),(prior_plan,prior_sha,2*1024**2,False,'local_plan')]
+     aggregate,geo,base,prior=[pinned(root,*values) for values in pins]
+     split=default_policy()['province_splits']
+     features={}
+@@ -153,10 +156,11 @@
+     if active() is not None:write_new_json_bytes(output,payload,'evidence')
+     else:
+         with output.open('xb') as stream:stream.write(payload)
+-    validated=validate_candidate_plan(output,boundary,existing)
++    validated=validate_candidate_plan(output,boundary,existing,json_role='proposal')
+     if len(validated['candidates'])!=len(candidates):raise ValueError('Candidate validator disagreement')
+     for values in pins:pinned(root,*values)
+-    if hashlib.sha256(output.read_bytes()).hexdigest()!=validated['source_sha256']:raise ValueError('Proposal changed')
++    actual=bounded_json_digest(output,'proposal') if active() is not None else hashlib.sha256(output.read_bytes()).hexdigest()
++    if actual!=validated['source_sha256']:raise ValueError('Proposal changed')
+     return document,validated
+ 
+ 
+--- /dev/null
++++ b/tests/test_manifest_profile237.py
+@@ -0,0 +1,229 @@
++"""237 Temp-only metadata I/O contract tests. No operating DATA/HTTP/QA."""
++import hashlib,importlib.util,json,os,tempfile,unittest
++from contextlib import contextmanager
++from datetime import datetime
++from pathlib import Path
++from types import SimpleNamespace
++from unittest.mock import patch
++from backend.app.ml import manifest_resource_profile as p
++from scripts import find_bare_targets173 as find,propose_deficit_centers182 as propose
++from backend.app.data import candidates
++from app import collection_status as status,collection_priority_status as priority
++import test_propose_deficit_centers182 as f182
++ROOT=Path(__file__).resolve().parents[1]
++PARENT=ROOT.parent/'preprocess230-workspace-20261018'
++sha=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
++@contextmanager
++def observed_reads(paths):
++    paths={Path(x) for x in paths};opened=[];counts={};original=Path.open
++    class Stream:
++        def __init__(self,path,stream):self.path=path;self.stream=stream
++        def __getattr__(self,name):return getattr(self.stream,name)
++        def __enter__(self):return self
++        def __exit__(self,*args):return self.stream.__exit__(*args)
++        def read(self,*args):
++            raw=self.stream.read(*args);counts[self.path]=counts.get(self.path,0)+len(raw if isinstance(raw,bytes) else raw.encode('utf-8'));return raw
++    def opening(path,*args,**kwargs):
++        if path in paths:
++            opened.append(path);return Stream(path,original(path,*args,**kwargs))
++        return original(path,*args,**kwargs)
++    with patch.object(Path,'open',opening):yield opened,counts
++class Metadata237Tests(unittest.TestCase):
++    def setUp(self):
++        self.temp=tempfile.TemporaryDirectory(dir=ROOT/'evidence');self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name)
++        status._HASH_CACHE.clear()
++    def put(self,name,value):
++        path=self.root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(value),encoding='utf-8');return path
++    def candidate(self):
++        source=self.put('pinned/source',{'scenes':[]});candidate=self.put('pinned/candidate',{'scenes':[]})
++        counts={'train':1,'val':2,'test':3};report=self.put('pinned/report',{'patch_counts_by_split':counts,'blockers':['bare']})
++        files=[{'path':x.relative_to(self.root).as_posix(),'sha256':sha(x)} for x in (source,candidate,report)]
++        pointer=self.put('first-group-training-priority/latest-candidate.json',{'files':files,'by_split':counts,'blocker_count':1,'source_manifest_sha256':files[0]['sha256'],'recorded_at':'synthetic','scene_split_conflicts':[]})
++        return source,candidate,report,pointer
++    def bare(self):
++        rows=[{'province':x,'candidates':0,'support_clear':0,'overlap':0,'local_invalid':0} for x in priority.PROVINCES]
++        report=self.put('bare/report.json',{'ui_summary':{'schema_version':1,'status':'LOCAL_TARGET_REVIEW_FINISHED','execution_supported':False,'actual_quality_verified':False,'scientific_accuracy_validated':False,'current_manifest_sha256':'a'*64,'recorded_at':'2026-10-18T00:00:00Z','summary_by_province':rows,'candidate_total':0}})
++        pointer=self.put('first-group-training-priority/latest-bare-review.json',{'schema_version':1,'report':{'path':report.relative_to(self.root).as_posix(),'sha256':sha(report)}})
++        return report,pointer
++    def test_role_caps_preserve_small_inputs_and_missing_role_fails(self):
++        self.assertEqual(p.JSON_ROLE_CAPS['source'],128*1024**2);self.assertEqual(p.JSON_ROLE_CAPS['candidate'],128*1024**2)
++        for role in ('boundary','local_config','local_plan','proposal','evidence'):self.assertEqual(p.JSON_ROLE_CAPS[role],2*1024**2)
++        self.assertEqual(p.JSON_ROLE_CAPS['status_report'],16*1024**2);self.assertEqual(p.JSON_ROLE_CAPS['pointer'],65536)
++        path=self.put('unknown',{})
++        with p.scope(p.NAME),patch.object(Path,'open',side_effect=AssertionError('no open')):
++            with self.assertRaisesRegex(p.ProfileResourceError,'ROLE_REQUIRED'):status.same_hash(path,'x')
++    def test_small_roles_and_new_status_cap_refuse_before_open(self):
++        path=self.root/'oversized'
++        for role in ('pointer','boundary','local_config','local_plan','proposal','status_report'):
++            with path.open('wb') as stream:stream.truncate(p.JSON_ROLE_CAPS[role]+1)
++            with p.scope(p.NAME) as usage,patch.object(Path,'open',side_effect=AssertionError('must not open')):
++                with self.assertRaisesRegex(p.ProfileResourceError,'FILE_LIMIT'):p.read_metadata(path,role)
++                self.assertEqual(usage.bytes,0)
++    def test_one_scope_exact_duplicate_reads_and_second_refusal_before_open(self):
++        path=self.put('metadata',{'x':1});size=path.stat().st_size
++        with p.scope(p.NAME) as usage,observed_reads([path]) as (opened,counts):
++            usage._maximum=2*size
++            p.read_metadata(path,'boundary');p.read_metadata(path,'boundary')
++            self.assertEqual((usage.reads,counts[path],len(opened)),(2*size,2*size,2))
++            with self.assertRaises(p.ProfileResourceError):p.read_metadata(path,'boundary')
++            self.assertEqual(len(opened),2)
++    def test_173_boundary_pin_all_rechecks_and_low_budget(self):
++        path=self.put('boundary',{'type':'FeatureCollection','features':[]});pin=sha(path)
++        with p.scope(p.NAME) as usage,observed_reads([path]) as (opened,counts):
++            for _ in range(3):find.pin(self.root,path,pin,2*1024**2,json_role='boundary')
++            self.assertEqual(usage.reads,3*path.stat().st_size);self.assertEqual(usage.reads,counts[path])
++        with p.scope(p.NAME) as usage,patch.object(Path,'open',side_effect=AssertionError('no open')):
++            usage._maximum=0
++            with self.assertRaises(p.ProfileResourceError):find.pin(self.root,path,pin,2*1024**2,json_role='boundary')
++    def test_173_cli_every_json_read_and_write_measured(self):
++        source=self.put('data/source',{'scenes':[]});boundary=self.put('data/boundary',{'type':'FeatureCollection','features':[]})
++        (self.root/'evidence/integration').mkdir(parents=True)
++        args=SimpleNamespace(run_id='synthetic',source=source,source_sha256=sha(source),boundary=boundary,boundary_sha256=sha(boundary),window_stride=256,province=None)
++        result={'local_label_crops_read':0,'windows_scanned':0,'qualified_dense_inside_windows':0,'split_qualified_counts':{}}
++        proposal=self.root/'evidence/integration/bare173-synthetic/proposal.json'
++        with p.scope(p.NAME) as usage,patch.object(find,'ROOT',self.root),patch.object(find,'discover',return_value=result),observed_reads([source,boundary,proposal]) as (_,counts):
++            self.assertEqual(find._run(args),0);self.assertEqual(usage.reads,sum(counts.values()))
++            self.assertEqual(counts[source],2*source.stat().st_size);self.assertEqual(counts[boundary],2*boundary.stat().st_size)
++            self.assertEqual(counts[proposal],proposal.stat().st_size)
++            outputs=list((self.root/'data/bare173-synthetic').glob('*'))+list(proposal.parent.glob('*'))
++            self.assertEqual(usage.writes,sum(x.stat().st_size for x in outputs))
++    def fixture182(self):
++        f=f182.DeficitCenters182Tests();f.setUp();self.addCleanup(f.doCleanups)
++        values={'root':f.root,'source':f.source,'source_sha':sha(f.source),'boundary':f.boundary,'boundary_sha':sha(f.boundary),'config':f.config,'config_sha':sha(f.config),'prior_plan':f.prior,'prior_sha':sha(f.prior),'output':f.output}
++        return f,values
++    def test_182_entire_json_consumption_matches_physical_reads(self):
++        f,values=self.fixture182();paths=[f.source,f.boundary,f.config,f.prior,f.output]
++        with p.scope(p.NAME) as usage,observed_reads(paths) as (_,counts):
++            doc,_=propose.propose(**values)
++            self.assertEqual(usage.reads,sum(counts.values()))
++            self.assertEqual(usage.writes,f.output.stat().st_size)
++            self.assertFalse(doc['collector_consumption_approved'])
++            for path,multiplier in ((f.source,3),(f.boundary,7),(f.config,3),(f.prior,5),(f.output,3)):
++                self.assertEqual(counts[path],multiplier*path.stat().st_size,path.name)
++    def test_candidates_validator_exact_repeated_reads_and_budget_before_open(self):
++        f,_=self.fixture182();paths=[f.boundary,f.prior];expected=sha(f.prior)
++        with p.scope(p.NAME) as usage,observed_reads(paths) as (_,counts):
++            result=candidates.validate_candidate_plan(f.prior,f.boundary)
++            self.assertEqual(result['source_sha256'],expected)
++            self.assertEqual(usage.reads,2*f.boundary.stat().st_size+2*f.prior.stat().st_size)
++        with p.scope(p.NAME) as usage,patch.object(Path,'open',side_effect=AssertionError('no open')):
++            usage._maximum=0
++            with self.assertRaises(p.ProfileResourceError):candidates.validate_candidate_plan(f.prior,f.boundary)
++    def test_validator_rejects_replacement_between_parse_and_final_hash(self):
++        for target_name in ('prior','boundary'):
++            f,_=self.fixture182();target=getattr(f,target_name);original=candidates.read_metadata;changed=[]
++            def replace(path,role,*args):
++                result=original(path,role,*args)
++                if path==f.prior and not changed:
++                    changed.append(True);value=json.loads(target.read_bytes());value['changed_after_parse']=True
++                    alternate=target.with_name('replacement');alternate.write_text(json.dumps(value),encoding='utf-8');alternate.replace(target)
++                return result
++            with p.scope(p.NAME),patch.object(candidates,'read_metadata',side_effect=replace):
++                with self.assertRaisesRegex(p.ProfileResourceError,'CHANGED'):candidates.validate_candidate_plan(f.prior,f.boundary)
++    def test_182_default_artifact_bytes_equal_frozen230(self):
++        f,values=self.fixture182()
++        spec=importlib.util.spec_from_file_location('scripts._baseline_centers237',PARENT/'scripts/propose_deficit_centers182.py');baseline=importlib.util.module_from_spec(spec);spec.loader.exec_module(baseline)
++        before=f.data/'baseline.json';baseline.propose(**(values|{'output':before}))
++        propose.propose(**values)
++        self.assertEqual(f.output.read_bytes(),before.read_bytes())
++
++    def test_growth_reads_initial_bytes_then_aborts(self):
++        path=self.put('growth',{'x':1});size=path.stat().st_size;original=Path.open;once=[]
++        class Growing:
++            def __init__(self,stream):self.stream=stream
++            def __enter__(self):return self
++            def __exit__(self,*args):self.stream.close()
++            def fileno(self):return self.stream.fileno()
++            def read(self,n):
++                raw=self.stream.read(n)
++                if not once:
++                    once.append(True)
++                    with original(path,'ab') as out:out.write(b' ')
++                return raw
++        def opened(target,*a,**kw):return Growing(original(target,*a,**kw)) if target==path else original(target,*a,**kw)
++        with p.scope(p.NAME) as usage,patch.object(Path,'open',opened):
++            with self.assertRaisesRegex(p.ProfileResourceError,'CHANGED'):p.read_metadata(path,'boundary')
++            self.assertEqual(usage.reads,size)
++    def test_cache_hit_no_read_role_change_rechecks_and_replacement_invalidates(self):
++        path=self.put('cache',{'x':1});expected=sha(path);size=path.stat().st_size
++        with p.scope(p.NAME) as usage,observed_reads([path]) as (opened,_):
++            self.assertTrue(status.same_hash(path,expected,json_role='source'));before=usage.reads
++            usage._maximum=before
++            self.assertTrue(status.same_hash(path,expected,json_role='source'));self.assertEqual((usage.reads,len(opened)),(size,1))
++            with self.assertRaises(p.ProfileResourceError):status.same_hash(path,expected,json_role='candidate')
++        replacement=self.put('new',{'x':1});replacement.replace(path)
++        with p.scope(p.NAME) as usage,observed_reads([path]) as (opened,_):
++            self.assertTrue(status.same_hash(path,expected,json_role='source'));self.assertEqual((usage.reads,len(opened)),(size,1))
++    def test_cache_hit_still_checks_logical_path_change(self):
++        path=self.put('cache',{});expected=sha(path)
++        with p.scope(p.NAME):self.assertTrue(status.same_hash(path,expected,json_role='source'))
++        identity=p.metadata_identity(path,'source');other=(self.root/'different',identity[1])
++        with p.scope(p.NAME),patch.object(status,'metadata_identity',side_effect=[identity,other]):
++            with self.assertRaisesRegex(p.ProfileResourceError,'CHANGED'):status.same_hash(path,expected,json_role='source')
++    def test_candidate_v1_exact_bytes_and_cache_hit_readiness_reread(self):
++        paths=self.candidate();source,candidate,report,pointer=paths
++        legacy=priority.candidate_quality(self.root,'later',status.same_hash)
++        with p.scope(p.NAME) as usage,observed_reads(paths) as (_,counts),patch('app.ml.candidate_qa_comparison.compare_candidate_qa',side_effect=AssertionError('separate v2')):
++            selected=priority.candidate_quality(self.root,'later',status.same_hash)
++            self.assertEqual(selected,legacy);self.assertFalse(selected['ready_for_training']);self.assertFalse(selected['source_matches_current_manifest'])
++            self.assertEqual(usage.reads,sum(counts.values()));self.assertEqual(counts[report],2*report.stat().st_size)
++            old=usage.reads;priority.candidate_quality(self.root,'later',status.same_hash)
++            self.assertEqual(usage.reads-old,pointer.stat().st_size+report.stat().st_size)
++    def test_candidate_bare_and_read_report_propagate_resource_errors(self):
++        self.candidate();self.bare();report=self.put('report',{})
++        for invoke in (lambda:priority.candidate_quality(self.root,None,status.same_hash),lambda:priority.bare_target_review(self.root,None),lambda:status.read_report(report,[])):
++            with p.scope(p.NAME) as usage,patch.object(Path,'open',side_effect=AssertionError('no open')):
++                usage._maximum=0
++                with self.assertRaises(p.ProfileResourceError):invoke()
++    def test_bare_exact_reads_and_legacy_result_same(self):
++        report,pointer=self.bare();legacy=priority.bare_target_review(self.root,'a'*64)
++        with p.scope(p.NAME) as usage,observed_reads([report,pointer]) as (_,counts):
++            self.assertEqual(priority.bare_target_review(self.root,'a'*64),legacy)
++            self.assertEqual(usage.reads,sum(counts.values()));self.assertEqual(usage.reads,report.stat().st_size+pointer.stat().st_size)
++    def test_configured_status_resource_failure_is_whole_unconfirmed(self):
++        source=self.put('first-group-training-esri-v1/annual-window-report.json',{'scenes':[]})
++        config=self.put('runtime/profile',{'schema_version':1,'kind':'ROOT_SELECTED_SOURCE_MANIFEST_PROFILE','manifest_profile':dict(p.MARKER),'source_manifest_sha256':sha(source)})
++        oversize=self.root/'first-group-old/run-result.json';oversize.parent.mkdir()
++        with oversize.open('wb') as stream:stream.truncate(16*1024**2+1)
++        with observed_reads([oversize]) as (opened,_):result=status.collection_status(self.root,source_profile_config_path=config)
++        self.assertEqual(result['status'],'UNCONFIRMED');self.assertFalse(result['summary']['learning_ready']);self.assertEqual(opened,[])
++    def test_unclassified_verified_entry_fails_explicit_instead_of_unmetered_hash(self):
++        source=self.put('first-group-training-esri-v1/annual-window-report.json',{'scenes':[]});unknown=self.put('unknown',{})
++        self.put('first-group/training-readiness.json',{'input_manifests':[{'path':source.relative_to(self.root).as_posix(),'sha256':sha(source)}],'verified_files':[{'path':unknown.name,'sha256':sha(unknown)}]})
++        config=self.put('runtime/profile',{'schema_version':1,'kind':'ROOT_SELECTED_SOURCE_MANIFEST_PROFILE','manifest_profile':dict(p.MARKER),'source_manifest_sha256':sha(source)})
++        with observed_reads([unknown]) as (opened,_):result=status.collection_status(self.root,source_profile_config_path=config)
++        self.assertEqual(result['status'],'UNCONFIRMED');self.assertEqual(opened,[])
++    def test_verified_kinds_require_context_for_collection_manifest(self):
++        source=self.put('first-group-training-esri-v1/annual-window-report.json',{'scenes':[]})
++        records=[{'path':source.relative_to(self.root).as_posix(),'sha256':sha(source),'kind':'collection_manifest'}]
++        for kind in ('input_image','label','quality_mask','official_product_metadata','normalization_qa'):
++            item=self.root/kind
++            item.write_bytes(b'{}' if kind=='normalization_qa' else b'binary-or-XML')
++            records.append({'path':item.name,'sha256':sha(item),'kind':kind})
++        report=self.put('first-group/training-readiness.json',{'input_manifests':[{'path':source.relative_to(self.root).as_posix(),'sha256':sha(source)}],'verified_files':records})
++        config=self.put('runtime/profile',{'schema_version':1,'kind':'ROOT_SELECTED_SOURCE_MANIFEST_PROFILE','manifest_profile':dict(p.MARKER),'source_manifest_sha256':sha(source)})
++        observed=status.collection_status(self.root,source_profile_config_path=config)
++        self.assertTrue(observed['training_readiness']['evidence_matched']);self.assertFalse(observed['summary']['learning_ready'])
++        # QA's collection_manifest kind can also name a staged candidate. Its kind
++        # alone cannot silently turn it into an original source in this reader.
++        candidate=self.put('staged-candidate',{'scenes':[]});document=json.loads(report.read_bytes())
++        document['verified_files'][0]={'path':candidate.name,'sha256':sha(candidate),'kind':'collection_manifest'}
++        report.write_text(json.dumps(document),encoding='utf-8')
++        with observed_reads([candidate]) as (opened,_):result=status.collection_status(self.root,source_profile_config_path=config)
++        self.assertEqual(result['status'],'UNCONFIRMED');self.assertEqual(opened,[])
++
++    def test_default_status_exact_result_matches_frozen230_and_dual_import_scope(self):
++        self.put('first-group-training-esri-v1/annual-window-report.json',{'scenes':[]})
++        self.put('first-group-old/annual-window-report.json',{'scenes':[]});report=self.put('some-report',{'x':1})
++        spec=importlib.util.spec_from_file_location('app._baseline_status237',PARENT/'backend/app/collection_status.py');baseline=importlib.util.module_from_spec(spec);spec.loader.exec_module(baseline)
++        clock=SimpleNamespace(now=lambda tz:datetime(2026,10,18,tzinfo=tz))
++        with patch.object(status,'datetime',clock),patch.object(baseline,'datetime',clock):self.assertEqual(status.collection_status(self.root),baseline.collection_status(self.root))
++        from backend.app import collection_status as other
++        from app.ml import manifest_resource_profile as alias
++        self.assertIs(p.ProfileResourceError,alias.ProfileResourceError)
++        with p.scope(p.NAME) as usage:
++            status.read_report(report,[]);other.read_report(report,[])
++            self.assertEqual(usage.reads,2*report.stat().st_size)
++            usage._maximum=usage.bytes
++            with self.assertRaises(alias.ProfileResourceError):other.read_report(report,[])
++if __name__=='__main__':unittest.main()

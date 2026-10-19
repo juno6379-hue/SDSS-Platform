@@ -1,0 +1,217 @@
+{
+  "scope": "READ_ONLY_INDEPENDENT174_SIX_PROVINCE_CONTRACT_REVIEW",
+  "status": "PLANNED_DESIGN_REVIEW_NOT_IMPLEMENTATION_OR_EXECUTION_APPROVAL",
+  "observed_at_utc": "2026-10-18T02:48:10.568208+00:00",
+  "source_test_document_server_edits": 0,
+  "new_tests_scans_network_plan_preflight_collectors": 0,
+  "document": {
+    "path": "docs\\implementation\\174_six_province_targeted_execution_plan.md",
+    "sha256": "35dc422cf1d7ad8a28966f2e8944f1e75f21c8ee05d28a3e59c0eec0907ebcb8",
+    "status": "PLANNED"
+  },
+  "code_snapshots": {
+    "backend/app/data/targeted_bare_plan.py": {
+      "sha256": "4042ca3302581e08c59dee8109ed6bc1d8b21f2fa5decf463747b2cb4b0e845a",
+      "bytes": 14305,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T10:19:04.274638+09:00",
+      "174_original_review_sha256": "4042ca3302581e08c59dee8109ed6bc1d8b21f2fa5decf463747b2cb4b0e845a",
+      "matches174_original_review_snapshot": true
+    },
+    "backend/app/data/targeted_live_guards.py": {
+      "sha256": "e42728f5a18b76439f5df88af8c0427fcff61f58fcfbac9d12eaf0e7bdaba0ec",
+      "bytes": 5907,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T11:19:25.718376+09:00",
+      "174_original_review_sha256": "e42728f5a18b76439f5df88af8c0427fcff61f58fcfbac9d12eaf0e7bdaba0ec",
+      "matches174_original_review_snapshot": true
+    },
+    "backend/app/data/targeted_inventory.py": {
+      "sha256": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+      "bytes": 10520,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T11:19:25.722373+09:00",
+      "174_original_review_sha256": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+      "matches174_original_review_snapshot": true
+    },
+    "backend/app/data/targeted_scene_claims.py": {
+      "sha256": "e9b07b7363e7aa053e1ad55bc15b0a3fb6680ac611a1c86604edc09abadcdaf7",
+      "bytes": 5889,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T10:58:28.564588+09:00",
+      "174_original_review_sha256": "e9b07b7363e7aa053e1ad55bc15b0a3fb6680ac611a1c86604edc09abadcdaf7",
+      "matches174_original_review_snapshot": true
+    },
+    "backend/app/data/targeted_execution.py": {
+      "sha256": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d",
+      "bytes": 6435,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T11:07:48.751328+09:00",
+      "174_original_review_sha256": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d",
+      "matches174_original_review_snapshot": true
+    },
+    "backend/app/data/parallel.py": {
+      "sha256": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+      "bytes": 4364,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T11:34:45.877588+09:00",
+      "174_original_review_sha256": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+      "matches174_original_review_snapshot": true
+    },
+    "backend/app/data/budget.py": {
+      "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+      "bytes": 5492,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-16T12:32:06.592467+09:00",
+      "174_original_review_sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+      "matches174_original_review_snapshot": true
+    },
+    "scripts/collect_targeted_bare.py": {
+      "sha256": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+      "bytes": 21431,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T11:44:11.190882+09:00",
+      "174_original_review_sha256": "663aff6fd88651622fe33c66d89a509114b665dcbb6367ca3e631bcb018e637d",
+      "matches174_original_review_snapshot": false
+    },
+    "scripts/collect_samples.py": {
+      "sha256": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+      "bytes": 47009,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T11:15:16.004752+09:00",
+      "174_original_review_sha256": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+      "matches174_original_review_snapshot": true
+    },
+    "scripts/collect_training_grid.py": {
+      "sha256": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+      "bytes": 25287,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T07:14:06.852731+09:00",
+      "174_original_review_sha256": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+      "matches174_original_review_snapshot": true
+    },
+    "scripts/find_bare_targets173.py": {
+      "sha256": "8da8a66d90a877487ce6d0f67221432eef39a6de72f28a5f65f34eb54477d9af",
+      "bytes": 12639,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T11:37:56.831507+09:00",
+      "174_original_review_sha256": null,
+      "matches174_original_review_snapshot": null
+    },
+    "tests/test_collect_targeted_bare.py": {
+      "sha256": "d7018f927356ec3d08aa6ecce7d244fef2a3c9920c60e8b49d574cb33d7b848c",
+      "bytes": 25662,
+      "read_stat_stable": true,
+      "mtime_kst": "2026-10-18T11:43:46.358927+09:00",
+      "174_original_review_sha256": null,
+      "matches174_original_review_snapshot": null
+    }
+  },
+  "original174_evidence": "bare174-gap-review-20261018.json",
+  "source_edits_after_original174_evidence_do_not_imply_new_validation": true,
+  "matched_crosswalk": {
+    "source_sha256": "6b74cfda9afd8a9ab238406bbf5007e50a2c1162989e2f8953a13a6289f7950c",
+    "proposal_sha256": "63368b398ff02382db10213753fb937a7653b925b912c7c5946a857b2152a0ee",
+    "candidate_total": 50,
+    "candidate_splits": {
+      "train": 29,
+      "val": 15,
+      "test": 6
+    },
+    "deficit_total": 54,
+    "deficit_cells_with_candidates": 5,
+    "candidate_windows_in_deficit_cells": 13,
+    "all13_in_train": true,
+    "not_actual13_patches_or_28_deficits_resolved": true,
+    "rows": [
+      {
+        "province": "east_java",
+        "year": 2025,
+        "deficit": 1,
+        "local_bare_candidates": 6,
+        "max_declared_weak_bare_pixels": 620
+      },
+      {
+        "province": "gorontalo",
+        "year": 2024,
+        "deficit": 3,
+        "local_bare_candidates": 1,
+        "max_declared_weak_bare_pixels": 271
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": 2021,
+        "deficit": 1,
+        "local_bare_candidates": 2,
+        "max_declared_weak_bare_pixels": 1112
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": 2024,
+        "deficit": 18,
+        "local_bare_candidates": 2,
+        "max_declared_weak_bare_pixels": 814
+      },
+      {
+        "province": "southeast_sulawesi",
+        "year": 2025,
+        "deficit": 5,
+        "local_bare_candidates": 2,
+        "max_declared_weak_bare_pixels": 840
+      }
+    ]
+  },
+  "accepted_design_contracts": [
+    "A local plan only then B live guard then C existing170 integration; no duplicate dispatcher.",
+    "Six fixed province splits and province-specific unique boundary/baseAOI.",
+    "No hardcoded CRS per province; actual projected metre10m north-up label/grid/native target validation.",
+    "Historical/noneligible images, pending actual B02/config, support files and out-of-aggregate reports remain exclusion inventory.",
+    "Current aggregate/ledger pin separate from old173 proposal source; actual B02/selectedURL/native256 and one-pixel alignment checks remain.",
+    "Single shared coordinator claim and global execution lock; no cross-process claim claim from memory registry alone.",
+    "Same 4GiB ledger, reserve/measured-settle,2worker/2second shared pacing, first429 persistent circuit and draining.",
+    "Physical3000 cap includes enrolled/history/unenrolled/partial patch directories; max1 patch per target and2 batches.",
+    "Failures preserve charge, physical files and uncertain settlement/publication; no automatic retry/refund/delete.",
+    "17350 positions not spatial independence, actual quality or training approval.",
+    "64MiB157 versus128MiB167/170 cap difference is explicit and not silently relaxed.",
+    "Final candidate native QA after new fixed snapshot remains separate from raw target success."
+  ],
+  "findings": [
+    {
+      "id": "D1",
+      "priority": "DESIGN_CLARIFICATION_BEFORE_C",
+      "topic": "Final bare count must use actual valid training-support pixels",
+      "current_evidence": "collect_training_grid.materialize_patches creates valid=(quality==1)&inside&(labels!=0)&all(finite and nonzero bands), then counts labels[valid]. collect_targeted_bare uses that sample_class_coverage code8, preserving under-threshold files as targeted_unenrolled.",
+      "recommendation": "State explicitly that raw173 bare>=256 is only candidate selection; final actual aligned valid-mask bare>=256 is required. Add raw>=256 with final255 rejection and final256 acceptance including QA/AOI loss tests.",
+      "changes_now": false
+    },
+    {
+      "id": "D2",
+      "priority": "DESIGN_CLARIFICATION_BEFORE_B",
+      "topic": "Timestamp year basis with non-UTC offsets",
+      "current_evidence": "TargetedLiveGuard.on_scene parses timezone-aware timestamp but compares observed.year directly without converting to UTC.",
+      "recommendation": "Specify UTC year normalization or an explicitly strict UTC-Z admission policy. Test timezone-offset timestamps straddling UTC New Year so job/label year cannot depend on textual offset date.",
+      "not_blocking_local_A175": true,
+      "changes_now": false
+    },
+    {
+      "id": "D3",
+      "priority": "IMPLEMENTATION_HANDOFF_BEFORE_A",
+      "topic": "Canonical fixed split map source",
+      "recommendation": "Name one existing fixed-six province split declaration and ensure A175 and later B use that exact immutable policy without caller override. Keep same-CRS WestJava/test fixture proving EPSG alone never determines split.",
+      "changes_now": false
+    }
+  ],
+  "overall_assessment": "No contradiction requiring immediate collector/source edits found. Three precision points should be carried into A/B/C acceptance contracts. Generic execution remains blocked.",
+  "ownership_update": {
+    "175_A_local_plan_owner": "Root/toolbox_review newly started implementation",
+    "175_A_success_execution_supported": false,
+    "B_liveguard_and_C170_F2_F3_owner": "Existing development chat; WIP snapshots only, not certified complete here",
+    "reviewer_new_source_implementation": 0
+  },
+  "limits": [
+    "Code source can change immediately after read; snapshot SHA/time governs these statements.",
+    "No F2/F3 tests, generic175 tests, actual preflight or operating dispatch were performed by reviewer.",
+    "No new raw label, spatial overlap or native pixel scan was run.",
+    "Actual multi-province execution remains PLANNED/BLOCKED."
+  ]
+}

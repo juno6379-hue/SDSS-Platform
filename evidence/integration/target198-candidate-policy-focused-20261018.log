@@ -1,0 +1,23 @@
+test_actual_selector_rejects_low_scl_then_tries_next_candidate (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_actual_selector_rejects_low_scl_then_tries_next_candidate) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_targeted_bare_plan.py:25: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  native=[self.affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_existing_collect_windows_passes_explicit_minimum_to_selector (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_existing_collect_windows_passes_explicit_minimum_to_selector) ... E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py:56: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[t*(0,0),t*(dataset.width,0),t*(dataset.width,dataset.height),t*(0,dataset.height)]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py:169: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*window));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_explicit_finite_range_is_forwarded_and_only_candidate_config_changes (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_explicit_finite_range_is_forwarded_and_only_candidate_config_changes) ... ok
+test_explicit_policy_preserves_inputs_and_actual_local_fixture_bytes (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_explicit_policy_preserves_inputs_and_actual_local_fixture_bytes) ... ok
+test_invalid_field_or_extra_policy_is_rejected_before_pinned_file_reads (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_invalid_field_or_extra_policy_is_rejected_before_pinned_file_reads) ... ok
+test_omitted_field_preserves_complete_existing_banten_job_and_key (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_omitted_field_preserves_complete_existing_banten_job_and_key) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.786s
+
+OK

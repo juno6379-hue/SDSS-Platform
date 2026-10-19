@@ -1,0 +1,82 @@
+{
+  "status": "STATIC_REVIEW_NO_REQUIRED_FULL179_FIX_DOWNSTREAM_TARGET256_BLOCKED_64M",
+  "at": "2026-10-18T14:11:05.139124+00:00",
+  "pins": [
+    {
+      "path": "evidence/integration/bare316-prepared-request-root-20261018.json",
+      "bytes": 878,
+      "sha256": "608a04e54e110bba4bc8f1df6b6998391704e240de9317c15376a4a32c4a56ee"
+    },
+    {
+      "path": "evidence/integration/bare316-preparation-freeze-root-20261018.json",
+      "bytes": 1372,
+      "sha256": "adbc6307b599df6e137c87da9626155e349c62b385f2d8c5c65e31b5f75a347f"
+    },
+    {
+      "path": "evidence/integration/bare316-before234-request-root-20261018.json",
+      "bytes": 899,
+      "sha256": "da86b1ac234820517c199a8c168b1a3964467a6328f704b6cc51be0a5e15de36"
+    },
+    {
+      "path": "scripts/review_bare_targets179.py",
+      "bytes": 15198,
+      "sha256": "25b3abcbc1f4e7da00d0d9b40624c415415e23489cec138c65bd1e4c6164c89d"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory_profile.py",
+      "bytes": 1900,
+      "sha256": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "bytes": 10945,
+      "sha256": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839"
+    },
+    {
+      "path": "backend/app/data/targeted_bare_plan.py",
+      "bytes": 15594,
+      "sha256": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1"
+    },
+    {
+      "path": "backend/app/data/targeted_live_guards.py",
+      "bytes": 7558,
+      "sha256": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238"
+    },
+    {
+      "path": "backend/app/ml/per_scene_normalization_files.py",
+      "bytes": 9136,
+      "sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "bytes": 21923,
+      "sha256": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8"
+    },
+    {
+      "path": "docs/implementation/317_bare316_independent_static_review.md",
+      "bytes": 9733,
+      "sha256": "980e8bec1e345e871409aa8cffb3b529d9de6521d3177c87b57e6bc93e7f11b6"
+    }
+  ],
+  "all6_freeze_references_verified": true,
+  "only_manifest_ledger_request_fields_changed": true,
+  "exact_3g_descriptor_sha_verified": true,
+  "full179_required_code_fixes_found": [],
+  "downstream_blockers": [
+    {
+      "path": "backend/app/data/targeted_bare_plan.py",
+      "line": 108,
+      "issue": "CURRENT_MANIFEST_STILL_64M_IN_TARGET256_PREPARATION",
+      "called_from": "scripts/collect_targeted_bare.py:150",
+      "current_source_bytes_from_completed309": 69564847,
+      "limit_bytes": 67108864,
+      "execution_not_attempted": true
+    }
+  ],
+  "operating_source_ledger_proposal_label_model_reads": 0,
+  "native_fullreview_tests_import_http": 0,
+  "product_edits": 0,
+  "actual_50_and_label_compatibility_verified": false,
+  "root_separate_go_required": true,
+  "training_approved": false
+}

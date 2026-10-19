@@ -1,0 +1,75 @@
+{
+  "status": "ROOT_APPROVED_ONE_SE2024_BATCH_AFTER_AUDITED_ZERO249",
+  "at_utc": "2026-10-18T08:34:31.762906+00:00",
+  "maximum_batches": 1,
+  "maximum_new_physical_patches": 16,
+  "request_sha256": "c0c7df51dcd8952c430f6a68eeb3329c4724b087ff43c7a3d877eb5aeccc9257",
+  "source_sha256": "6899f9019670e9eff3e40cd9e5441a91bbaf11fae236cbbc8c2eac27ffa31e15",
+  "ledger_sha256": "c7ef4985a0c7f55a4a0a48c1db2b8ab4bef8d87be3a91e5175a948f56d613f4f",
+  "source_pins": {
+    "backend/app/candidate_qa_comparison_api.py": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+    "backend/app/collection_budget_status.py": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108",
+    "backend/app/collection_priority_status.py": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9",
+    "backend/app/collection_source_profile.py": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef",
+    "backend/app/collection_status.py": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9",
+    "backend/app/data/budget.py": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+    "backend/app/data/candidates.py": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9",
+    "backend/app/data/deficit_candidate_guard.py": "a90ba9a70bb0b0eecf529a10961e12edd1d9519b881913eed2e997c52c182071",
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d",
+    "backend/app/data/targeted_inventory.py": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839",
+    "backend/app/data/targeted_inventory_profile.py": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/main.py": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b",
+    "backend/app/ml/candidate_materialization.py": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+    "backend/app/ml/candidate_qa_comparison.py": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+    "backend/app/ml/candidate_readiness_qa.py": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+    "backend/app/ml/candidate_staging.py": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d",
+    "backend/app/ml/manifest_resource_profile.py": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+    "backend/app/ml/readiness.py": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb",
+    "backend/app/ml/split_json_io.py": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+    "evidence/integration/deficit235-supervisor-root-20261018.py": "f5dc759bce17df50035f1a15930285e83a43e820979fbaf88ea6b72351eee0c1",
+    "evidence/integration/deficit249-supervisor-root-20261018.py": "3506f3f9baacb83c4d984582fdc2dd6ca906e50bd6a0ee5c5e5e5d14368b374d",
+    "evidence/integration/deficit258-supervisor-root-20261018.py": "d25e50aabce5613a605ccce4475b2a078a695830a38358039113ff0114934753",
+    "scripts/collect_deficit_guarded.py": "971c474b1c8217b1be958b61532ccf55e646804a083a045d2cda74a4a9d2bd09",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "scripts/collect_targeted_bare.py": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8",
+    "scripts/collect_training_grid.py": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+    "scripts/find_bare_targets173.py": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750",
+    "scripts/prepare_priority_candidate164.py": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437",
+    "scripts/propose_deficit_centers182.py": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+    "scripts/run_experiment.py": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772"
+  },
+  "prior249_audit_sha256": "6beed046a69e8cddce35df65fa2ea1ae6c16199dd42808d71a3045d7ef64146c",
+  "config_template_ref": {
+    "path": "evidence/integration/centers205-review-result-root-20261018.json",
+    "sha256": "529d6074903cae407bc6c40ef557c052fb1b1bbf77b09afa3fc771f22fe1b916"
+  },
+  "config_template_request_ref": {
+    "path": "evidence/integration/centers205-review-request-root-20261018.json",
+    "sha256": "26577411c419cfcd2ce47e768cab3a788d26b37208569536dc2c274f20c9c996"
+  },
+  "diagnostic255_freeze_ref": {
+    "path": "evidence/integration/alignment255-20261018/freeze255.json",
+    "sha256": "3b6dd4cb331adc81f584e3e3c297496745d01198466806c2e968e471441e9247"
+  },
+  "diagnostic255_review_ref": {
+    "path": "evidence/integration/alignment255-root-review-20261018.json",
+    "sha256": "d53a9b91ed67f2861d2f8eee727431f704e5e1de52ae1cdc3db7eeb121ec402c"
+  },
+  "actual_api_ref": {
+    "path": "evidence/integration/profile253-api-checks-root-20261018.json",
+    "sha256": "24f58e4901fde970a3259813017a4fed3b8539f1e31db7187321d2bd4d09a9a0"
+  },
+  "actual_ui_ref": {
+    "path": "evidence/integration/service253-post249-final-ui-20261018.json",
+    "sha256": "1fc4aa7138c8cd666ac8981b0bfcc4fe1e730628a363abd074dc01335d3d497b"
+  },
+  "existing_budget_maximum_bytes": 4294967296,
+  "oldpending_preserved_bytes": 136314880,
+  "new_budget_added": false,
+  "training_approved": false,
+  "fresh200_under_lock_required": true,
+  "config_template_not_inventory_proof": true,
+  "actual255_diagnostic_recording_not_yet_verified": true
+}

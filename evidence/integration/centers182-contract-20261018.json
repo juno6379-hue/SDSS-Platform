@@ -1,0 +1,38 @@
+{
+  "status": "TESTED_SYNTHETIC_OPERATING_SCAN_NOT_STARTED",
+  "scope": "NEW_LOCAL_PROPOSAL_ENTRY_AND_SYNTHETIC_NATIVE_GTiff_TESTS_ONLY",
+  "targets": [
+    {
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "fixed_split": "train"
+    },
+    {
+      "province": "gorontalo",
+      "year": 2024,
+      "fixed_split": "train"
+    },
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "fixed_split": "train"
+    }
+  ],
+  "maximum_candidates": 4,
+  "maximum_per_province": 2,
+  "existing_validator_reused": true,
+  "source_window_all_years_and_quality_states_excluded": true,
+  "pending_full_support_inventory_verified": false,
+  "consumer_current_source_config_pins_automatically_enforced": false,
+  "execution_supported": false,
+  "operating_data_written": false,
+  "operating_source_headers_scanned": false,
+  "operating_candidates_found": null,
+  "http_requests": 0,
+  "source_pins": {
+    "scripts/propose_deficit_centers182.py": "c7853c4c99a42509063508ffd0d3173abd6c53174ef591b3a5e979dc839ccf2d",
+    "tests/test_propose_deficit_centers182.py": "ecd3dc3a1aabf714b34b7a12c47b21f7d4d9845b2f2fe61f66ea63fa68cd459a"
+  },
+  "final_related_log": "evidence/integration/centers182-focused-combined-final-20261018.log",
+  "next_step": "ROOT_MUST_CONFIRM_ACTIVE_COLLECTOR_TERMINAL_AND_EXPLICITLY_REQUEST_PINNED_OPERATING_SCAN_BEFORE_ANY_DATA_OUTPUT"
+}

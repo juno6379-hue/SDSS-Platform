@@ -1,0 +1,449 @@
+Browser tab: 850119075, Title: "GreenBlue SDSS · Climate Action & GeoAI", URL: "http://127.0.0.1:5174/#/view/17".
+0 AXWebArea GreenBlue SDSS · Climate Action & GeoAI, URL: 127.0.0.1:5174/#/view/17
+	1 container root
+		2 container
+			3 button SDSS 홈
+			4 text 데이터로 만드는 더 안전한 오늘,
+			5 text 지속 가능한 내일 Data for a Resilient Indonesia
+			6 text field (settable) 플랫폼 데이터 검색
+			7 button 데이터 카탈로그 검색
+			8 button Description: 실제 작업·알림 보기, Help: 작업·알림
+			9 button 서버 연결 설정
+			10 button 서버 상태 새로고침
+				11 text ●
+				12 text SDSS Indonesia
+				13 text 로컬 분석 서버 연결됨
+				14 text ⌄
+			15 text Sustainable Indonesia
+			16 text for a Better Tomorrow
+		17 container
+			18 container 전체 플랫폼 메뉴
+				19 button 대시보드
+					20 text 대시보드
+				21 button 데이터 카탈로그
+					22 text 데이터 카탈로그
+				23 button GeoAI 툴박스
+					24 text GeoAI 툴박스
+				25 button WebGIS 분석
+					26 text WebGIS 분석
+				27 button GeoLLM Assistant
+					28 text GeoLLM Assistant
+				29 button 모델 & MLOps
+					30 text 모델 & MLOps
+				31 button 리포트 & RDTR
+					32 text 리포트 & RDTR
+			33 text AI와 공간데이터로
+			34 text 인도네시아의
+			35 text 기후행동을 지원합니다.
+		36 container
+			37 container 현재 위치
+				38 text ⌂ › Model & MLOps › 승인·배포
+			39 text SPATIAL DECISION SUPPORT SYSTEM
+			40 heading 승인·배포, Value: 1
+				41 text 승인·배포
+			42 text 인도네시아 기후행동을 위한 데이터, 분석, 검증과 의사결정. ◎ INDONESIA
+			43 container 현재 메뉴의 세부 기능
+				44 button Model Registry
+				45 button 재학습·재보정
+				46 button 승인·배포
+				47 button 운영 모니터링
+			48 text REGISTRY → REVIEW → DEPLOY
+			49 heading 실제 모델의 검증·배포 검토, Value: 2
+				50 text 실제 모델의 검증·배포 검토
+			51 button 수집 현황 새로 조회
+			446 container 동적 수집 재고·연차 목표·나지 보완 현황
+				447 container
+					448 text LCLUC · COLLECTION → QUALITY → TRAINING
+					449 heading 수집 재고와 아직 필요한 자료, Value: 3
+						450 text 수집 재고와 아직 필요한 자료
+					451 text 학습 준비 미충족 · 승인 아님
+				452 text 물리 패치
+				453 text 1,666
+				454 text 품질 적격
+				455 text 1,333
+				456 text 적격 외
+				457 text 333
+				458 text 적격 목표까지 0
+				459 container
+					460 text / 목표  1,200
+				461 container
+					462 text 원본 수집 manifest 기준 적격:  학습 791 · 검증 292 · 시험 250 . 적격 외에는 미달·미확인 등 기록 상태가 포함되며 모두 새 영상 QA로 판정한 수가 아닙니다.
+				463 container
+					464 text 패치 기준: 유효 비율 ≥  80%  · 주 경계 내부 ≥  95% . 학습 후보의 분할(split) 집계 기준: 최대 단일 클래스 비중 ≤  90% . 개별 순림 패치의 클래스 비율만으로 자동 탈락시키지 않습니다. 아래 재고는 저장된 quality_status 집계이며 지금 원본 래스터를 재검사한 결과가 아닙니다.
+				465 heading 6개 주 × 연도별 적격 패치, Value: 4
+					466 text 6개 주 × 연도별 적격 패치
+				467 container
+					468 text 셀별 계획 바닥  28 개에 못 미친 부분의 합은  33 개 입니다. 전체 적격 목표의 부족  0 개와 다른 지표이며 서로 더하지 않습니다.
+				469 container
+					470 text 연차별 수량은 가능한 한 균형 있게 확보하되,  28 개는 최소 확보 기준이며 모든 주·연도의 동일 개수를 강제하는 할당량은 아닙니다. 기존 자료를 삭제하거나 같은 영상을 중복 추가해서 수량을 맞추지 않습니다. 이후 전처리·표본 추출에서 공간·연차·클래스 대표성을 따로 검토합니다.
+				471 container
+					472 text 계획 우선순위:  Southeast Sulawesi → Gorontalo 의 부족 연차부터 보완합니다. 이는 다음 수집 계획 정책이며 현재 실행 중인 배치나 완료 성과를 뜻하지 않습니다.
+				473 container 주·연도별 적격 패치 가로 스크롤
+					474 table 현재 원본 manifest의 부분 창 재고 · 주 전체 공간 확보 아님
+						475 text 현재 원본 manifest의 부분 창 재고 · 주 전체 공간 확보 아님
+						476 row
+							477 cell
+								478 text 주 / 분할
+							479 cell
+								480 text 2020
+							481 cell
+								482 text 2021
+							483 cell
+								484 text 2022
+							485 cell
+								486 text 2023
+							487 cell
+								488 text 2024
+							489 cell
+								490 text 2025
+							491 cell
+								492 text 적격 합계
+							493 cell
+								494 text 셀 계획 부족
+						495 row
+							496 cell
+								497 text South Sulawesi
+								498 container
+									499 text 학습  · 물리  320
+							500 cell
+								501 text 53
+							502 cell
+								503 text 32
+							504 cell
+								505 text 40
+							506 cell
+								507 text 36
+							508 cell
+								509 text 36
+							510 cell
+								511 text 30
+							512 cell
+								513 text 227
+							514 cell
+								515 text 0
+						516 row
+							517 cell
+								518 text Gorontalo
+								519 container
+									520 text 학습  · 물리  240
+							521 cell
+								522 text 46
+							523 cell
+								524 text 31
+							525 cell
+								526 text 24
+							527 cell
+								528 text 30
+							529 cell
+								530 text 36
+							531 cell
+								532 text 18
+							533 cell
+								534 text 185
+							535 cell
+								536 text 14
+						537 row
+							538 cell
+								539 text Southeast Sulawesi
+								540 container
+									541 text 학습  · 물리  273
+							542 cell
+								543 text 41
+							544 cell
+								545 text 27
+							546 cell
+								547 text 37
+							548 cell
+								549 text 33
+							550 cell
+								551 text 11
+							552 cell
+								553 text 37
+							554 cell
+								555 text 186
+							556 cell
+								557 text 18
+						558 row
+							559 cell
+								560 text East Java
+								561 container
+									562 text 학습  · 물리  232
+							563 cell
+								564 text 33
+							565 cell
+								566 text 32
+							567 cell
+								568 text 34
+							569 cell
+								570 text 28
+							571 cell
+								572 text 39
+							573 cell
+								574 text 27
+							575 cell
+								576 text 193
+							577 cell
+								578 text 1
+						579 row
+							580 cell
+								581 text Banten
+								582 container
+									583 text 검증  · 물리  337
+							584 cell
+								585 text 54
+							586 cell
+								587 text 58
+							588 cell
+								589 text 51
+							590 cell
+								591 text 32
+							592 cell
+								593 text 49
+							594 cell
+								595 text 48
+							596 cell
+								597 text 292
+							598 cell
+								599 text 0
+						600 row
+							601 cell
+								602 text West Java
+								603 container
+									604 text 시험  · 물리  264
+							605 cell
+								606 text 57
+							607 cell
+								608 text 41
+							609 cell
+								610 text 56
+							611 cell
+								612 text 32
+							613 cell
+								614 text 32
+							615 cell
+								616 text 32
+							617 cell
+								618 text 250
+							619 cell
+								620 text 0
+				621 heading 나지(bare) 부족은 세 조건을 따로 확인, Value: 4
+					622 text 나지(bare) 부족은 세 조건을 따로 확인
+				623 container
+					624 text 분할별 최소  256 픽셀, 유효 참조 픽셀 중  0.5%  이상, 한 패치에 나지  256 픽셀 이상인 기여 패치  5 개 이상이 각각 필요합니다. 한 조건을 채워도 다른 조건은 남을 수 있습니다.
+				625 container 나지 조건별 보완 현황 가로 스크롤
+					626 table 현재 원본의 저장 참조 라벨 집계 · 독립 정답/실물 재QA 아님
+						627 text 현재 원본의 저장 참조 라벨 집계 · 독립 정답/실물 재QA 아님
+						628 row
+							629 cell
+								630 text 분할
+							631 cell
+								632 text 나지 픽셀 / 절대 부족
+							633 cell
+								634 text 나지 비율
+							635 cell
+								636 text 기여 패치 / 부족
+						637 row
+							638 cell
+								639 text 학습  ( train )
+							640 cell
+								641 text 2,562  /  0  부족
+							642 cell
+								643 text 0.00507%
+								644 text 비율 기준 미달
+							645 cell
+								646 text 1  /  4  부족
+						647 row
+							648 cell
+								649 text 검증  ( val )
+							650 cell
+								651 text 2,998  /  0  부족
+							652 cell
+								653 text 0.01593%
+								654 text 비율 기준 미달
+							655 cell
+								656 text 2  /  3  부족
+						657 row
+							658 cell
+								659 text 시험  ( test )
+							660 cell
+								661 text 1,025  /  0  부족
+							662 cell
+								663 text 0.00631%
+								664 text 비율 기준 미달
+							665 cell
+								666 text 0  /  5  부족
+				667 container 6개 주 나지 표적 후보 로컬 검토
+					668 heading 나지 표적 후보: 로컬 검사와 실제 수집을 구분, Value: 4
+						669 text 나지 표적 후보: 로컬 검사와 실제 수집을 구분
+					670 container
+						671 text 고정 보고서의 후보  50 개 · 관측  2026-10-18T03:08:03.967441+00:00 .  검토 후 원본이 변경됐습니다. 현재 재고 기준의 최신 겹침 검사나 집행 허가로 해석하지 않습니다.
+					672 container 주별 나지 후보 검사 결과
+						673 table 참조 라벨·과거 저장 영상 범위의 로컬 검사 · 실제 신규 영상 품질 미검사
+							674 text 참조 라벨·과거 저장 영상 범위의 로컬 검사 · 실제 신규 영상 품질 미검사
+							675 row
+								676 cell
+									677 text 주
+								678 cell
+									679 text 후보
+								680 cell
+									681 text 과거 범위와 비겹침
+								682 cell
+									683 text 과거 범위와 겹침
+								684 cell
+									685 text 로컬 부적합
+								686 cell
+									687 text 원격 SCL·B02 품질
+							688 row
+								689 cell
+									690 text South Sulawesi
+								691 cell
+									692 text 9
+								693 cell
+									694 text 8
+								695 cell
+									696 text 1
+								697 cell
+									698 text 0
+								699 cell
+									700 text 미검사 · 집행 미승인
+							701 row
+								702 cell
+									703 text Gorontalo
+								704 cell
+									705 text 1
+								706 cell
+									707 text 0
+								708 cell
+									709 text 1
+								710 cell
+									711 text 0
+								712 cell
+									713 text 미검사 · 집행 미승인
+							714 row
+								715 cell
+									716 text Southeast Sulawesi
+								717 cell
+									718 text 11
+								719 cell
+									720 text 8
+								721 cell
+									722 text 3
+								723 cell
+									724 text 0
+								725 cell
+									726 text 미검사 · 집행 미승인
+							727 row
+								728 cell
+									729 text East Java
+								730 cell
+									731 text 8
+								732 cell
+									733 text 3
+								734 cell
+									735 text 5
+								736 cell
+									737 text 0
+								738 cell
+									739 text 미검사 · 집행 미승인
+							740 row
+								741 cell
+									742 text Banten
+								743 cell
+									744 text 15
+								745 cell
+									746 text 4
+								747 cell
+									748 text 11
+								749 cell
+									750 text 0
+								751 cell
+									752 text 미검사 · 집행 미승인
+							753 row
+								754 cell
+									755 text West Java
+								756 cell
+									757 text 6
+								758 cell
+									759 text 0
+								760 cell
+									761 text 6
+								762 cell
+									763 text 0
+								764 cell
+									765 text 미검사 · 집행 미승인
+					766 container
+						767 text 후보끼리의 겹침과 실제 선택 장면·SCL·B02·물리 출력은 집행 직전 별도 보호 장치로 다시 확인해야 합니다. 이 표의 비겹침은 과거 저장 범위 검사이며 신규 적격 패치 확보·과학적 독립성·학습 승인이 아닙니다. 근거  first-group-training-priority/bare-review179-20261018.json  · 원본 SHA  03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367 .
+				768 container 원본과 누출 제외 후보 구분
+					769 heading 원본과 누출 해소 후보는 다른 자료 묶음입니다, Value: 4
+						770 text 원본과 누출 해소 후보는 다른 자료 묶음입니다
+					771 container
+						772 text 위 표는 원본 재고이며 분할 공유 장면  1 건을 관측했습니다. 후보는 별도로 고정된 manifest·QA 기록입니다. 원본의 새 수집분을 자동으로 포함하거나 원본을 교체하지 않습니다.
+					773 container 원본과 고정 후보 비교
+						774 table 현재 원본 선언 집계와 고정 후보 QA 기록을 분리
+							775 text 현재 원본 선언 집계와 고정 후보 QA 기록을 분리
+							776 row
+								777 cell
+									778 text 자료 묶음
+								779 cell
+									780 text 적격 합계
+								781 cell
+									782 text 학습
+								783 cell
+									784 text 검증
+								785 cell
+									786 text 시험
+								787 cell
+									788 text 학습 준비
+							789 row
+								790 cell
+									791 text 현재 원본
+								792 cell
+									793 text 1,333
+								794 cell
+									795 text 791
+								796 cell
+									797 text 292
+								798 cell
+									799 text 250
+								800 cell
+									801 text 선언 집계 · 재QA 아님
+							802 row
+								803 cell
+									804 text 고정 누출 제외 후보
+								805 cell
+									806 text 1,219
+								807 cell
+									808 text 720
+								809 cell
+									810 text 249
+								811 cell
+									812 text 250
+								813 cell
+									814 text 미충족 · 차단  3 건
+					815 container
+						816 text 후보 관측:  2026-10-18T02:33:11.635555+00:00  · 저장 source/candidate/QA 지문 확인.  후보 생성 원본 SHA가 현재 원본과 다릅니다. 새 수집분을 포함한 최신 후보라고 해석하지 않습니다.  후보의 분할 공유 장면은  0 건으로 기록됐으나 완전한 공간 독립성이나 현장 정답 인증은 아닙니다.
+					817 container
+						818 text 후보 QA 근거  priority164-cohort-20261018/qa/readiness.json  · 생성 원본 SHA  0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf . 위 나지 표는 현재 원본 집계이며 후보의 나지 재QA 수치로 대신 해석하지 않습니다.
+					819 button (collapsed) 원본에서 관측된 분할 공유 장면, Secondary Actions: Expand
+						820 text 원본에서 관측된 분할 공유 장면
+				821 container
+					822 text manifest SHA  ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f  · 응답 시각  2026-10-18T04:06:08.277881+00:00 . 해시와 선언 집계는 기관 품질·독립 정확도·자료 대표성·모델 학습/배포 승인이 아닙니다. 신규 자료 확보와 후보 QA·실험 모델·독립 평가를 구분합니다.
+			429 button (collapsed) 실제 완료 실험 보고서로 Draft 등록, Secondary Actions: Expand
+				430 text 실제 완료 실험 보고서로 Draft 등록
+			431 container
+				432 text 등록 모델
+				433 pop up button (collapsed, settable) 등록 모델, Value: 모델을 선택하세요, Secondary Actions: Expand
+					434 menu
+						435 (selected) 모델을 선택하세요
+						436 baseline2021_cpu_v1_model · Draft
+			437 button (collapsed) 연차 입력 진단, Secondary Actions: Expand
+				438 text 연차 입력 진단
+			439 button (collapsed) 서버 연결 설정 · /api, Secondary Actions: Expand
+				440 text 서버 연결 설정 · 
+				441 text /api
+			442 text ◉ SDSS
+			443 text Spatial Decision Support System for Climate Action & GeoAI
+			444 text 독립 검증·운영 승인 전 분석 결과 게시 차단
+			445 text ◎ KO　⌄　　 ❧ Together for a Resilient Indonesia
+
+The focused UI element is 0 AXWebArea GreenBlue SDSS · Climate Action & GeoAI, URL: 127.0.0.1:5174/#/view/17

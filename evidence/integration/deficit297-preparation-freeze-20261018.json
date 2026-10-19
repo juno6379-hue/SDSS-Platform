@@ -1,0 +1,59 @@
+{
+  "status": "FROZEN_PREPARED_AWAITING_ROOT_AND_INDEPENDENT_REVIEW_NO_EXECUTION",
+  "files": [
+    {
+      "path": "evidence/integration/deficit297-before285-supervisor-20261018.py",
+      "bytes": 7572,
+      "sha256": "66fe2ed5b76ed53342ce7cb84617cc500a3bb54c03ece64e65b65249fdee80ed"
+    },
+    {
+      "path": "evidence/integration/deficit297-supervisor-root-20261018.py",
+      "bytes": 7815,
+      "sha256": "1b41991db71ce006f7ef46ed5fc67cb5e7ad92d79a4b484b30e50bef4993bfaa"
+    },
+    {
+      "path": "evidence/integration/deficit297-prepared-request-root-20261018.json",
+      "bytes": 1277,
+      "sha256": "abca225f439aa6adcceac5fdd126824e080c8490d188742c1463f31006c5b629"
+    },
+    {
+      "path": "evidence/integration/deficit297-expected-config-20261018.json",
+      "bytes": 3114,
+      "sha256": "4d2c6b83dfce69b66e929fbbae24bd4e4f7bd3a6bc4ad4240970c2a51370c385"
+    },
+    {
+      "path": "evidence/integration/deficit297-prepared-review-20261018.json",
+      "bytes": 7694,
+      "sha256": "24c6dffb3969de196590e12b7467c914c8fe1bd0ab939a9d211480eb853498b3"
+    },
+    {
+      "path": "evidence/integration/deficit297-vs285-20261018.patch",
+      "bytes": 8874,
+      "sha256": "060239354636e54fb487f429836cc71fe69ed96ed4c5203578dca513080139f2"
+    },
+    {
+      "path": "docs/implementation/297_gorontalo2025_single_batch_preparation.md",
+      "bytes": 7604,
+      "sha256": "3eba37dd89bf908cc51bfa451af3876231ab99972fc3e7bf848d46acb0a81688"
+    }
+  ],
+  "request_canonical_sha256": "e9ebe6f7dcbb986a853ed1749e97c4feafcacde1702c1937c946d7f6e2602487",
+  "expected_config_sha256": "9d3618a258fbfd272c227cde90bffd3fc98fac2fd574864a69349a5825e41f71",
+  "selected": [
+    {
+      "spatial_window_id": "centers182-gorontalo-836ae25bed8a",
+      "year": 2025
+    }
+  ],
+  "expected_job_key": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072",
+  "source_pin_count": 40,
+  "compile_passed": true,
+  "config_fragment_equal_to_independent_expected": true,
+  "fresh_inventory_executed": false,
+  "operating_source_ledger_model_reads": 0,
+  "http": 0,
+  "collector_started": false,
+  "maximum_batches": 1,
+  "maximum_new_physical_patches": 16,
+  "training_approved": false
+}

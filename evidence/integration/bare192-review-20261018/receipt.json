@@ -1,0 +1,145 @@
+{
+  "status": "LOCAL37_NATIVE_SUPPORT_REVIEW_COMPLETE_UNAPPROVED",
+  "at_kst": "2026-10-18T13:07:17.314912+09:00",
+  "cli_seconds": 69.797,
+  "total_seconds": 74.437,
+  "cli_exit_code": 0,
+  "product_cli_invocations": 1,
+  "inventory_scan_count": 1,
+  "source_sha256": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f",
+  "ledger_sha256": "7839929111f3e70e8b9ba2bda3eb0972bc8c0055bb8c03b9273f4c0b381e353f",
+  "proposal_sha256": "1cda6dd428dfffcca9df4ac690d9f79ca2187fdc953de0dd3b67d0d1226dce92",
+  "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+  "request": {
+    "path": "evidence/integration/bare192-review-20261018/request.json",
+    "sha256": "1afc3efe28eb008f88567d68e43d34610ec67e871b856c0fbe810e9c18f9f935",
+    "bytes": 695
+  },
+  "report": {
+    "path": "evidence/integration/bare192-review-20261018/report.json",
+    "bytes": 641452,
+    "sha256": "857b1384c09e3cc8d921ed5a03c445e6464a0805f457cd40bc2a24d1a8e2ec0a"
+  },
+  "candidate_total": 37,
+  "historical_clear_count": 4,
+  "summary_by_province": [
+    {
+      "province": "south_sulawesi",
+      "candidates": 0,
+      "support_clear": 0,
+      "overlap": 0,
+      "local_invalid": 0
+    },
+    {
+      "province": "gorontalo",
+      "candidates": 8,
+      "support_clear": 2,
+      "overlap": 6,
+      "local_invalid": 0
+    },
+    {
+      "province": "southeast_sulawesi",
+      "candidates": 0,
+      "support_clear": 0,
+      "overlap": 0,
+      "local_invalid": 0
+    },
+    {
+      "province": "east_java",
+      "candidates": 0,
+      "support_clear": 0,
+      "overlap": 0,
+      "local_invalid": 0
+    },
+    {
+      "province": "banten",
+      "candidates": 0,
+      "support_clear": 0,
+      "overlap": 0,
+      "local_invalid": 0
+    },
+    {
+      "province": "west_java",
+      "candidates": 29,
+      "support_clear": 2,
+      "overlap": 27,
+      "local_invalid": 0
+    }
+  ],
+  "mutual_overlap_pairs": 292,
+  "native_label_files_read": 10,
+  "native_label_bytes_read": 1662885,
+  "support_files_verified": 1233,
+  "inventory_asset_count": 1233,
+  "inventory_bytes_verified": null,
+  "pending": [
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "b02_files": 1
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "b02_files": 1
+    }
+  ],
+  "clear_targets_for_root_revalidation": [
+    {
+      "index": 1,
+      "target_id": "local-rank1-2024",
+      "province": "gorontalo",
+      "year": 2024,
+      "bare_pixels": 273
+    },
+    {
+      "index": 33,
+      "target_id": "local-rank33-2021",
+      "province": "west_java",
+      "year": 2021,
+      "bare_pixels": 500
+    },
+    {
+      "index": 34,
+      "target_id": "local-rank34-2021",
+      "province": "west_java",
+      "year": 2021,
+      "bare_pixels": 498
+    },
+    {
+      "index": 36,
+      "target_id": "local-rank36-2021",
+      "province": "gorontalo",
+      "year": 2021,
+      "bare_pixels": 267
+    }
+  ],
+  "protected_pins_after": {
+    "evidence/integration/bare173-verified-20261018/proposal.json": "63368b398ff02382db10213753fb937a7653b925b912c7c5946a857b2152a0ee",
+    "evidence/integration/bare173-verified-20261018/receipt.json": "40c62d770b3dfb03e6ce0e976acdb8a6cbfe3be9ba6d458c6371742ef4d9f743",
+    "evidence/integration/bare179-report-20261018.json": "36aaf1107292eee74b0f6a2ce462d90e40a22de498ca31aaff1c1ded636775f0",
+    "data/first-group-training-priority/latest-bare-review.json": "471a2e4274d8916eb0e09d1a89cdd92ab51e8dbfda73c337c9678c172340a8dd",
+    "data/first-group-training-priority/bare-review179-20261018.json": "36aaf1107292eee74b0f6a2ce462d90e40a22de498ca31aaff1c1ded636775f0",
+    "evidence/integration/bare190-gap-20261018/proposal.json": "1cda6dd428dfffcca9df4ac690d9f79ca2187fdc953de0dd3b67d0d1226dce92"
+  },
+  "operational_source_and_ledger_stable": true,
+  "snapshot_inputs_stable": true,
+  "old50report_and_pointer_preserved": true,
+  "UI_publication_performed": false,
+  "collection_executed": false,
+  "network_requests": 0,
+  "source_or_ledger_writes": 0,
+  "native191_repeated": false,
+  "execution_supported": false,
+  "actual_quality_eligible": false,
+  "scientifically_verified_bare": false,
+  "ready_for_training": false,
+  "limitations": [
+    "Historical-clear is not mutual independence or collection authorization.",
+    "Native labels are weak reference; Sentinel/SCL/B02/scene/budget quality requires fresh175/176/170 checks.",
+    "Root must revalidate current input pins before any execution.",
+    "New source/ledger snapshots were created; operational original writes are0."
+  ]
+}

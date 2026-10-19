@@ -1,0 +1,59 @@
+{
+  "status": "FROZEN_PREPARED_ROOT_QA_GO_REQUIRED_NOT_EXECUTED",
+  "at": "2026-10-18T13:34:13.635693+00:00",
+  "files": [
+    {
+      "path": "evidence/integration/priority309-before290-preparation-20261018.json",
+      "bytes": 5995,
+      "sha256": "e9260f8ee5c81a63a9a8221e24b439f5e7c0b2b5e5955129be6b0cf169ace4ef"
+    },
+    {
+      "path": "evidence/integration/priority309-before290-runner-20261018.py",
+      "bytes": 8887,
+      "sha256": "68b271471887eca7259dd72196a1515ecef57a50239f25ba917ea194c3877c3e"
+    },
+    {
+      "path": "evidence/integration/priority309-preparation-20261018.json",
+      "bytes": 6173,
+      "sha256": "698bb2a02155de2027d138d65820e836767f6475003f57301cc0f1a5de73fd33"
+    },
+    {
+      "path": "evidence/integration/priority309-runner-20261018.py",
+      "bytes": 8887,
+      "sha256": "922e70584c51ac0c9cd247bc22d49be4bdf9936c8fcdb3b800be5b5874ea4e83"
+    },
+    {
+      "path": "evidence/integration/priority309-runner-vs290-20261018.diff",
+      "bytes": 4072,
+      "sha256": "1329d3eb2379910edfde1f9a5dd7d698b6837e522a243fa64ab5c9150c7ab5a7"
+    },
+    {
+      "path": "docs/implementation/309_post304_candidate_qa_preparation.md",
+      "bytes": 6747,
+      "sha256": "14d6930a8621172002bff0761e7690553303ca32346fead61aba2e67858d2b72"
+    }
+  ],
+  "run_id": "guarded309-20261018",
+  "code_pin_count": 16,
+  "current_code_pins_exact290": true,
+  "compile_passed": true,
+  "new_run_paths_absent": true,
+  "os_matching_qa_collector_native": 0,
+  "execution_lock_absent": true,
+  "source_bytes": 69564847,
+  "source_default64_excess_bytes": 2455983,
+  "candidate_count": null,
+  "history_count": null,
+  "qa_started": false,
+  "http": 0,
+  "training": false,
+  "published": false,
+  "operating_writes": 0,
+  "automatic_retry_allowed": false,
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "maximum_json_io_bytes": 17179869184,
+  "preparation_scope": "ONLY_CURRENT_SOURCE_LEDGER_POLICY_METADATA_HASH_AND_NATIVE_FIXED_RESULT_NO_RASTER"
+}

@@ -1,0 +1,49 @@
+{
+  "started_at": "2026-10-18T04:38:21.621649+00:00",
+  "status": "STARTED_PREFLIGHT_NOT_COMPLETED",
+  "manifest_before_sha256": "1a12b7bca384dd09d73a04cc31df21f75377fc34c332b501a6ee37508dd46fb5",
+  "ledger_before_sha256": "f49d7e778359c1f60743f617edb599fe2ba3170e9e9243a3459211aa4bc9b0fe",
+  "source_rows_before": 1667,
+  "pending_before": {
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+    },
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+    }
+  },
+  "request_sha256": "a1de5a85284e2f00321d2bf616b177506dd34a96d52647069f54da55be8fae31",
+  "selected_targets": [
+    {
+      "target_id": "local-rank1-2024",
+      "year": 2024,
+      "declared_bare_pixels": 273
+    }
+  ],
+  "command": [
+    "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-X",
+    "faulthandler",
+    "E:\\GeoAI–MLOps–SDSS\\scripts\\collect_targeted_bare.py",
+    "--request",
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\target203-request-root-20261018.json",
+    "--expected-request-sha256",
+    "a1de5a85284e2f00321d2bf616b177506dd34a96d52647069f54da55be8fae31",
+    "--execute"
+  ],
+  "new_budget_added": false,
+  "training_started": false,
+  "source_pins": {
+    "scripts/collect_targeted_bare.py": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/data/targeted_bare_plan.py": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1",
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3"
+  },
+  "pid": 29212
+}

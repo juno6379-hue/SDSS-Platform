@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "PREPARED_AWAITING_FINAL_PUBLICATION293_AND_ROOT_REVIEW",
+  "execution_authorized": false,
+  "profile_rebound": false,
+  "http_calls": 0,
+  "qa_repeated": false,
+  "published": false,
+  "training_started": false,
+  "operating_metadata_read_during_preparation": false,
+  "source_sha256_expected": "9d491e6ede51cf29407add25b83919cc5d4150576a694c5019814b973d20c2b7",
+  "ledger_sha256_expected": "4a4f4a47b522b9497b944ac00b29d2368a977c1a4eb6dfe972a34959fcc68722",
+  "old_config_sha256_expected": "ef093110c8bc180eddf122b64f831f86278cc3d30731ed98818dbbaf10a85e1e",
+  "publication293_sha256": null,
+  "candidate_eligible_actual": null,
+  "api_verified": false,
+  "browser_verified": false,
+  "automatic_retry_allowed": false,
+  "automatic_rollback_allowed": false,
+  "syntax_parsed": true,
+  "urlopen_call_sites": 1,
+  "baseline276_sha256": "01cd78fa391a153740b9a29238ec730c5509c9df052051a466190aa46bbde23d",
+  "files": {
+    "evidence/integration/profile294-post290-root-20261018.py": {
+      "bytes": 5904,
+      "sha256": "a75fdac5f66830ba5c322aa1bd7237ad4939b6b644f73edc6fd340b303d5928a"
+    },
+    "evidence/integration/profile294-vs276-root-20261018.diff": {
+      "bytes": 9037,
+      "sha256": "925db05949a343f26e2801ce52c70635326bef4a5274fcc1627a3197821d3b9d"
+    },
+    "docs/implementation/294_post290_source_profile_rebind_preparation.md": {
+      "bytes": 5183,
+      "sha256": "8c4bf346f7bdaf632a50474fbe1bf5129852ddde6d738d77acd5ba1620a2321e"
+    }
+  }
+}

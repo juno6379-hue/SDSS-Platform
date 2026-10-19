@@ -1,0 +1,138 @@
+--- bare234
++++ bare320
+@@ -1,45 +1,91 @@
+-"""Publish one completed local-only review, preserving the prior receipt bytes."""
++"""Root 승인 후 최신316 로컬 검토만 게시. 수집/QA/HTTP/원본원장 쓰기 없음."""
+ from pathlib import Path
+-from datetime import datetime,timezone
+-import hashlib,json,os,sys
+-R=Path(__file__).resolve().parents[2];D=R/'data';E=R/'evidence/integration'
+-sys.path.insert(0,str(R/'backend'))
+-from app.collection_priority_status import bare_target_review
+-def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+-def read(p):return json.loads(p.read_text('utf-8-sig'))
+-result=read(E/'bare234-result-root-20261018.json')
+-assert result['status']=='LOCAL_FULL_REVIEW_COMPLETE_EXECUTION_UNAPPROVED'
+-assert result['inventory_scan_count']==1 and all(result['pins_stable_after'].values())
+-assert result['network_requests']==0 and result['collection_started'] is False
+-source=D/'first-group-training-esri-v1/annual-window-report.json'
+-ledger=D/'first-group-training-budget/global-ledger.json'
+-assert sha(source)==result['pins_before']['source'] and sha(ledger)==result['pins_before']['ledger']
+-assert not (ledger.parent/'global-ledger.execution.lock').exists()
+-p=E/'bare234-report-root-20261018.json';raw=p.read_bytes();report=json.loads(raw)
+-assert len(raw)<=2*1024**2 and sha(p)==result['report_sha256']=='c936575e2937d5c8ec9f1e4675de89eed0f5dbabce26bbd26bea8661c4b18458'
+-assert report['inventory']['inventory_verified'] and report['inventory']['pending_footprints_verified'] and report['inventory']['source_pins_verified']
+-assert len(report['targets'])==50 and report['historical_clear_count']==15
+-assert sum(o['historical_overlap'] for o in report['observations'])==35
+-assert report['execution_supported'] is False and report['actual_quality_eligible'] is False
+-folder=D/'first-group-training-priority';pointer=folder/'latest-bare-review.json'
+-prior=pointer.read_bytes();old=json.loads(prior)
+-assert old['report']['sha256']=='6d72cfceb04589d59fe55674ca10d79764672dbd09bfb3e4345b69cd67f3009f'
+-target=folder/'bare-review234-20261018.json'
+-with target.open('xb') as f:f.write(raw)
+-receipt={'schema_version':1,'report':{'path':target.relative_to(D).as_posix(),'sha256':sha(target)}}
+-payload=(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n').encode()
+-for path,data in [(folder/'bare-review-pointer-before234-20261018.json',prior),(folder/'bare-review-receipt234-20261018.json',payload)]:
+-    with path.open('xb') as f:f.write(data)
+-tmp=folder/'latest-bare-review234.tmp'
+-with tmp.open('xb') as f:f.write(payload);f.flush();os.fsync(f.fileno())
+-assert pointer.read_bytes()==prior and sha(source)==result['pins_before']['source'] and sha(ledger)==result['pins_before']['ledger']
+-os.replace(tmp,pointer)
+-view=bare_target_review(D,result['pins_before']['source'])
+-assert view['available'] and view['source_matches_current_manifest'] and view['candidate_total']==50
+-assert view['execution_supported'] is False and view['actual_quality_verified'] is False
+-assert sha(source)==result['pins_before']['source'] and sha(ledger)==result['pins_before']['ledger']
+-out={'status':'LOCAL_ONLY_REVIEW_PUBLISHED_READER_VERIFIED','at_utc':datetime.now(timezone.utc).isoformat(),
+- 'report_sha256':sha(target),'pointer_sha256':sha(pointer),'prior_pointer_sha256':hashlib.sha256(prior).hexdigest(),
+- 'previous_pointer_preserved':True,'view':view,'source_or_ledger_written':False,'collection_started':False,'training_started':False}
+-with (E/'bare234-publication-root-20261018.json').open('x',encoding='utf-8') as f:json.dump(out,f,ensure_ascii=False,indent=2)
+-print(json.dumps(out,ensure_ascii=True),flush=True)
++from datetime import datetime, timezone
++import argparse, json, os, sys
++R=Path(__file__).resolve().parents[2]; D=R/'data'; E=R/'evidence/integration'
++sys.path[:0]=[str(R),str(R/'backend')]
++from backend.app.ml.manifest_resource_profile import scope,NAME,MARKER,read_metadata,bounded_json_digest,write_new_json_bytes,write_measured
++from backend.app.collection_priority_status import bare_target_review
++
++SOURCE='0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658'
++LEDGER='d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91'
++CANDIDATE='25d7bf6d37a7c96ab6a9eaa2a74e78b94f52e8186b22a8ac705184ff96b5832e'
++OLD_POINTER='1018b59294871df8f9e339d63695f08632a5632419b3831e47bdeb2f88c785ab'
++OLD_REPORT='c936575e2937d5c8ec9f1e4675de89eed0f5dbabce26bbd26bea8661c4b18458'
++RESULT='aaa97f9b64fca9e6a11d8fe9f07a4e649c224ed69fbae599605d28f49490887e'
++REPORT='16b923a42c28d89e26b2003c24ab4ca46e9bb9b28e95f2d8a1e8d3f25b1f9093'
++
++def need(value):
++    if not value: raise ValueError('BARE320_PUBLICATION_CONTRACT_FAILED')
++
++def payload(value): return (json.dumps(value,ensure_ascii=False,allow_nan=False,indent=2)+'\n').encode()
++
++def main():
++    parser=argparse.ArgumentParser(allow_abbrev=False)
++    parser.add_argument('--approval',type=Path,required=True); args=parser.parse_args()
++    with scope(NAME) as budget:
++        need(args.approval.is_absolute() and args.approval.resolve().is_relative_to(E))
++        approval,approval_pin,_=read_metadata(args.approval,'local_plan')
++        expected={'kind':'ROOT_BARE320_LOCAL_REVIEW_PUBLICATION_GO','approved':True,'result_sha256':RESULT,
++                  'report_sha256':REPORT,'source_sha256':SOURCE,'ledger_sha256':LEDGER,
++                  'candidate_pointer_sha256':CANDIDATE,'previous_bare_pointer_sha256':OLD_POINTER}
++        need(type(approval) is dict and set(approval)==set(expected) and approval==expected and approval['approved'] is True)
++        result,_,_=read_metadata(E/'bare316-result-root-20261018.json','local_plan',RESULT)
++        need(result['status']=='LOCAL_FULL_REVIEW_COMPLETE_EXECUTION_UNAPPROVED' and result['exit_code']==0)
++        need(result['inventory_scan_count']==1 and result['inventory_status']=='BLOCKED' and result['inventory_issue']=='EXISTING_SUPPORT_OVERLAP')
++        need(all(result[k] is True for k in ('inventory_verified','pending_footprints_verified','source_pins_verified')))
++        need(set(result['pins_stable_after'])=={'manifest','ledger','proposal','boundary'} and all(v is True for v in result['pins_stable_after'].values()))
++        need(result['source_sha256']==SOURCE and result['ledger_sha256']==LEDGER and result['report_sha256']==REPORT)
++        need((result['targets'],result['historical_clear_count'],result['historical_overlap_count'],result['mutual_overlap_pairs'])==(50,15,35,56))
++        need(result['network_requests']==0 and all(result[k] is False for k in ('execution_supported','actual_quality_eligible','collection_started','source_or_ledger_written')))
++        report_path=E/'bare316-report-root-20261018.json'
++        report,_,raw=read_metadata(report_path,'local_plan',REPORT)
++        need(len(raw)==707005 and report['schema_version']==2 and report['status']=='LOCAL_NATIVE_REVIEW_COMPLETE_EXECUTION_UNAPPROVED')
++        need(all(report['inventory'][k] is True for k in ('inventory_verified','pending_footprints_verified','source_pins_verified')))
++        need(len(report['targets'])==len(report['observations'])==50 and report['historical_clear_count']==15 and len(report['candidate_mutual_overlap_pairs'])==56)
++        need(all(type(o['historical_overlap']) is bool for o in report['observations']) and sum(o['historical_overlap'] for o in report['observations'])==35)
++        need(report['native_label_recheck'] is True and report['network_requests']==0)
++        need(all(report[k] is False for k in ('execution_supported','actual_quality_eligible','scientifically_verified_bare')))
++        need(report['request']['manifest_ref']['sha256']==SOURCE and report['request']['ledger_ref']['sha256']==LEDGER and report['ui_summary']['current_manifest_sha256']==SOURCE)
++        source=D/'first-group-training-esri-v1/annual-window-report.json'; ledger=D/'first-group-training-budget/global-ledger.json'
++        folder=D/'first-group-training-priority'; pointer=folder/'latest-bare-review.json'; candidate=folder/'latest-candidate.json'
++        protected={source:('source',SOURCE),ledger:('status_report',LEDGER),candidate:('pointer',CANDIDATE)}
++        need(all(bounded_json_digest(p,role)==pin for p,(role,pin) in protected.items()))
++        need(not (ledger.parent/'global-ledger.execution.lock').exists())
++        old,_,prior=read_metadata(pointer,'pointer',OLD_POINTER)
++        need(old['schema_version']==1 and old['report']=={'path':'first-group-training-priority/bare-review234-20261018.json','sha256':OLD_REPORT})
++        need(bounded_json_digest(folder/'bare-review234-20261018.json','local_plan')==OLD_REPORT)
++        target=folder/'bare-review320-20261018.json'; archive=folder/'bare-review-pointer-before320-20261018.json'
++        receipt_path=folder/'bare-review-receipt320-20261018.json'; tmp=folder/'latest-bare-review320.tmp'; publication=E/'bare320-publication-root-20261018.json'
++        need(all(not p.exists() and not p.is_symlink() for p in (target,archive,receipt_path,tmp,publication)))
++        write_new_json_bytes(target,raw,'local_plan'); need(bounded_json_digest(target,'local_plan')==REPORT)
++        receipt={'schema_version':1,'report':{'path':target.relative_to(D).as_posix(),'sha256':REPORT}}
++        data=payload(receipt)
++        write_new_json_bytes(archive,prior,'pointer'); need(bounded_json_digest(archive,'pointer')==OLD_POINTER)
++        write_new_json_bytes(receipt_path,data,'pointer'); receipt_pin=bounded_json_digest(receipt_path,'pointer')
++        write_new_json_bytes(tmp,data,'pointer')
++        with tmp.open('r+b',buffering=0) as stream: stream.flush(); os.fsync(stream.fileno())
++        need(bounded_json_digest(tmp,'pointer')==receipt_pin and bounded_json_digest(pointer,'pointer')==OLD_POINTER)
++        need(all(bounded_json_digest(p,role)==pin for p,(role,pin) in protected.items()))
++        need(bounded_json_digest(report_path,'local_plan')==bounded_json_digest(target,'local_plan')==REPORT)
++        need(not (ledger.parent/'global-ledger.execution.lock').exists())
++        os.replace(tmp,pointer)
++        view=bare_target_review(D,SOURCE)
++        need(view['available'] is True and view['source_matches_current_manifest'] is True and view['candidate_total']==50 and view['report_sha256']==REPORT)
++        need(all(view[k] is False for k in ('execution_supported','actual_quality_verified','scientific_accuracy_validated')))
++        need(sum(v['overlap'] for v in view['rows'])==35 and sum(v['support_clear'] for v in view['rows'])==15 and sum(v['local_invalid'] for v in view['rows'])==0)
++        need(bounded_json_digest(pointer,'pointer')==receipt_pin and all(bounded_json_digest(p,role)==pin for p,(role,pin) in protected.items()))
++        need(bounded_json_digest(folder/'bare-review234-20261018.json','local_plan')==OLD_REPORT and bounded_json_digest(target,'local_plan')==REPORT)
++        out={'status':'LOCAL_ONLY_REVIEW_PUBLISHED_READER_VERIFIED','at_utc':datetime.now(timezone.utc).isoformat(),
++             'approval_sha256':approval_pin,'result_sha256':RESULT,'report_sha256':REPORT,'pointer_sha256':receipt_pin,
++             'prior_pointer_sha256':OLD_POINTER,'previous_pointer_preserved':True,'source_sha256':SOURCE,'ledger_sha256':LEDGER,
++             'candidate_pointer_sha256':CANDIDATE,'view':view,'inventory_status':'BLOCKED','inventory_issue':'EXISTING_SUPPORT_OVERLAP',
++             'historical_clear_count':15,'historical_overlap_count':35,'mutual_overlap_pairs':56,'remote_requests':0,
++             'source_or_ledger_written':False,'collection_started':False,'training_started':False,'manifest_profile':dict(MARKER),
++             'proposal_scope':'OLD_50_PROPOSALS_REVIEWED_AGAINST_POST304_CURRENT309_SOURCE_NOT_NEW_COLLECTION',
++             'json_io_before_publication_write':{'read_bytes':budget.reads,'write_bytes':budget.writes,'json_io_bytes':budget.bytes,'maximum_bytes':budget.maximum}}
++        publication_payload=payload(out)
++        write_new_json_bytes(publication,publication_payload,'local_plan')
++        write_measured(sys.stdout.buffer,publication_payload); sys.stdout.buffer.flush()
++
++if __name__=='__main__': main()

@@ -1,0 +1,154 @@
+{
+  "scope": "READ_ONLY_CURRENT_MAIN_TOOLBOX_BRANCH_SCOPE_REVIEW",
+  "observed_at_utc": "2026-10-18T02:07:47.888252+00:00",
+  "base_commit": "8cf7b9421ea3d5916058a9e4622dc19c9075e9f2",
+  "head_at_review": "8cf7b9421ea3d5916058a9e4622dc19c9075e9f2",
+  "source_test_document_edits": 0,
+  "new_test_build_browser_runs": 0,
+  "api_collection_calls": 0,
+  "sources": {
+    "frontend/src/GeoAIToolbox.tsx": {
+      "sha256": "f4456f604287e0deaeca4ef85e0e2b2b62cb245d91ff0b25127a2b5781307769",
+      "matches_previous_toolbox_final_sha": true
+    },
+    "frontend/src/geoai-toolbox.css": {
+      "sha256": "daf2889fd89f97854cd2ed4669e27aaa97d4b4f0f726631f48254e13f622377f",
+      "matches_previous_toolbox_final_sha": true
+    },
+    "frontend/src/toolboxAdapter.ts": {
+      "sha256": "0528fa173dba0d52ef6009a53c551beaee33aae9c3ee2afdd09388180e1898cd",
+      "matches_previous_toolbox_final_sha": true
+    },
+    "frontend/src/toolboxAdapter.test.mjs": {
+      "sha256": "7378b0831832746a6056e98d6d6dbbb89d9e4c8f54cff0dd9e64c225185ead63",
+      "matches_previous_toolbox_final_sha": true
+    },
+    "frontend/src/App.tsx": {
+      "sha256": "de808c64825758c93822cc3b7fda05b9c5fdd0a0332e74300263decfdc78e24b",
+      "matches_previous_toolbox_final_sha": true
+    },
+    "frontend/src/PlatformShell.tsx": {
+      "sha256": "7116e9f266521b8125dc44e933d3b55c84677c389102cd9c85cf29b0c03bf9c9",
+      "matches_previous_toolbox_final_sha": true
+    }
+  },
+  "tracked_frontend_diff_paths": [
+    "frontend/src/App.tsx",
+    "frontend/src/PlatformShell.tsx"
+  ],
+  "tracked_frontend_diff_exactly_app_platformshell": true,
+  "new_toolbox_files": [
+    "frontend/src/GeoAIToolbox.tsx",
+    "frontend/src/geoai-toolbox.css",
+    "frontend/src/toolboxAdapter.ts",
+    "frontend/src/toolboxAdapter.test.mjs"
+  ],
+  "wiring_diff": {
+    "frontend/src/App.tsx": "diff --git a/frontend/src/App.tsx b/frontend/src/App.tsx\nindex 809858c..b223a6a 100644\n--- a/frontend/src/App.tsx\n+++ b/frontend/src/App.tsx\n@@ -198 +198 @@ export default function App() {\n-  return <div className={step===24?\"app reference-workspace\":\"app\"}><SDSSHeader onSearch={query=>{setCatalogSearch(query);navigate(11);}} onNavigate={navigate} onRefresh={()=>void refresh()} loading={loading} connected={connected}/><PlatformSidebar step={step===25?1:step} connected={connected} onNavigate={navigate}/><main><div className=\"content\"><PlatformContext step={step} agent={workspaceAgent} tab={workspaceTab}/>{import.meta.env.VITE_FIXTURE_MODE === 'true' && <div className=\"readiness-warning\" role=\"status\"><strong>합성 통합시험 전용 · 실제 정확도 아님</strong><span>운영 API·카탈로그와 분리된 임시 시험 화면입니다.</span></div>}<div className=\"page-heading\"><div><span className=\"eyebrow\">SPATIAL DECISION SUPPORT SYSTEM</span><h1>{step === 24 ? 'Model Analysis Workspace' : step===25?'관측자료 검색·다운로드':titleForStep(step)}</h1><p>인도네시아 기후행동을 위한 데이터, 분석, 검증과 의사결정.</p></div><span className=\"region-badge\">◎ INDONESIA</span></div>\r\n+  return <div className={step===24?\"app reference-workspace\":step===12||step===13?\"app toolbox-page\":\"app\"}><SDSSHeader onSearch={query=>{setCatalogSearch(query);navigate(11);}} onNavigate={navigate} onRefresh={()=>void refresh()} loading={loading} connected={connected}/><PlatformSidebar step={step===25?1:step} connected={connected} onNavigate={navigate}/><main><div className=\"content\"><PlatformContext step={step} agent={workspaceAgent} tab={workspaceTab}/>{import.meta.env.VITE_FIXTURE_MODE === 'true' && <div className=\"readiness-warning\" role=\"status\"><strong>합성 통합시험 전용 · 실제 정확도 아님</strong><span>운영 API·카탈로그와 분리된 임시 시험 화면입니다.</span></div>}<div className=\"page-heading\"><div><span className=\"eyebrow\">SPATIAL DECISION SUPPORT SYSTEM</span><h1>{step === 24 ? 'Model Analysis Workspace' : step===25?'관측자료 검색·다운로드':titleForStep(step)}</h1><p>인도네시아 기후행동을 위한 데이터, 분석, 검증과 의사결정.</p></div><span className=\"region-badge\">◎ INDONESIA</span></div>\r\n@@ -200 +200 @@ export default function App() {\n-      {(step === 12 || step === 13) && <ToolboxHub tools={rows(resources.tools)} onOpen={id => {setWorkspaceAgent(id);setWorkspaceTab('input');navigate(24);}}/>}\r\n+      {(step === 12 || step === 13) && <ToolboxHub tools={resources.tools===undefined?undefined:rows(resources.tools)} datasets={resources.datasets===undefined?undefined:datasets} models={resources.models===undefined?undefined:models} jobs={resources.jobs===undefined?undefined:rows(resources.jobs)} errors={errors} loading={loading} connected={connected} onNavigate={navigate} onRefresh={()=>void refresh()} onOpen={id => {setWorkspaceAgent(id);setWorkspaceTab('input');navigate(24);}}/>}\r\n",
+    "frontend/src/PlatformShell.tsx": "diff --git a/frontend/src/PlatformShell.tsx b/frontend/src/PlatformShell.tsx\nindex 20ad043..b08fd9b 100644\n--- a/frontend/src/PlatformShell.tsx\n+++ b/frontend/src/PlatformShell.tsx\n@@ -3 +3 @@ export { default as ModelWorkspace } from './ModelAnalysisWorkspace';\n-import type { EvidenceRecord } from './integrationAdapter';\r\n+export { default as ToolboxHub } from './GeoAIToolbox';\r\n@@ -23 +22,0 @@ export function PlatformContext({step,agent,tab}:{step:number;agent:string;tab:s\n-export function ToolboxHub({tools,onOpen}:{tools:EvidenceRecord[];onOpen:(id:string)=>void}) { return <><section className=\"panel\"><div className=\"section-title\"><div><span className=\"eyebrow\">LEVEL 3 · SPECIALIZED WORKSPACES</span><h2>기후행동을 위한 6개 모델</h2></div><span className=\"pill\">모델 선택 → 입력 → 검증 → 결과</span></div><p className=\"muted\">분석 분야를 선택하여 전용 Workspace를 여세요. 모델의 실행 코드, 데이터 준비도, 독립 검증과 운영 승인은 각각 확인합니다.</p></section><div className=\"model-hub\">{agents.map((a,i)=>{const tool=tools.find(t=>t.id===a.id);return <button key={a.id} className=\"model-tile\" onClick={()=>onOpen(a.id)}><div className={'model-symbol tone-'+i}>{a.icon}</div><span className=\"pill\">{tool?.implemented===true?'기존 구현 · 승인 확인 필요':a.id==='lcluc'?'준비도 확인 필요':'외부 모델 연계 대기'}</span><h2>{a.title}</h2><strong>{a.ko}</strong><p>{a.desc}</p><span className=\"model-open\">Workspace 열기 <b>↗</b></span></button>})}</div></>; }\r\n"
+  },
+  "detail_five": {
+    "frontend/src/ModelAnalysisWorkspace.tsx": {
+      "sha256": "137a48fe30a9974a3ea5f9b5a2de0211881b3b91ae01aaa86ef4a203e3750324",
+      "bytes": 26991,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    },
+    "frontend/src/model-workspace.css": {
+      "sha256": "2c66a36b75c57aaf500a39897e26398a1a22bfc3cb5880d9f6e8a32b81d95448",
+      "bytes": 17407,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    },
+    "frontend/src/LclucWorkflowPanel.tsx": {
+      "sha256": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+      "bytes": 7755,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    },
+    "frontend/src/SDSSChrome.tsx": {
+      "sha256": "d6b735ec6ee76dc4f2a24906376f5069f648185770969758a6755b0f164f71a0",
+      "bytes": 2405,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    },
+    "frontend/src/sdss-chrome.css": {
+      "sha256": "c82594ab1c224515e0c69c10050e39e689c024a0d723a3e8bba515b2f2c0e219",
+      "bytes": 6494,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    }
+  },
+  "collection_ml_seven": {
+    "frontend/src/CollectionProgress.tsx": {
+      "sha256": "2dc92ee86e96e78cbdc47863596e2c57f3fbaa18c548328a3ec6663116c3e7d0",
+      "bytes": 9958,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    },
+    "frontend/src/collectionProgressAdapter.ts": {
+      "sha256": "f209f66d7ef07b5f5b9013f71b345fe351a8fe49474a1e75d0b3552214a9716f",
+      "bytes": 7943,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    },
+    "frontend/src/collectionProgressClient.ts": {
+      "sha256": "015500db7f4f1d61b6d478eef1bf24b58902683f614c0aede45150e4f421cacb",
+      "bytes": 1461,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    },
+    "frontend/src/collection-progress.css": {
+      "sha256": "fdc05a6708fcff9e62ca61073319d993e5c6563416532f6b3aa696333fb40fbb",
+      "bytes": 3292,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    },
+    "frontend/src/collectionProgressAdapter.test.mjs": {
+      "sha256": "8d79294242f89e55a39a74a273284cf888329cd2ac8a82f5ee0f5cd1d18d9516",
+      "bytes": 9697,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    },
+    "frontend/src/CollectionStatus.tsx": {
+      "sha256": "80b4a1aef652c3e2ebb77e1b07ce602b23b4a5828c3166ffd74dc79370798d10",
+      "bytes": 13788,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    },
+    "frontend/src/ModelReview.tsx": {
+      "sha256": "f172c6693b45f2cde13c00c5487580a694607e9a632bea11d6e4d908d15f64d1",
+      "bytes": 11292,
+      "matches_base_raw_bytes": true,
+      "matches_previous_sha": true
+    }
+  },
+  "detail_five_preserved": true,
+  "collection_ml_seven_base_preserved": true,
+  "semantic_counts": {
+    "prior_recorded_live_counts": {
+      "tools": 6,
+      "datasets": 6,
+      "models": 1,
+      "jobs": 0
+    },
+    "prior_live_evidence": "toolbox-ui-independent-20261018.json",
+    "new_live_counts_read_in_this_audit": false,
+    "tool_cards": "Six named workspaces; implemented is code status, not model approval",
+    "dataset_count": "Catalog registration rows, not acquired patches",
+    "model_count": "Registered model records, not six tool cards or approved deployments",
+    "job_count": "Stored Job records, not background collector process state",
+    "root_reported_1235": "Current collector quality-eligible patch context only; not independently requeried in this audit",
+    "ui_registration_labels_correct": true,
+    "collection_status_counts_not_merged_into_toolbox": true,
+    "scientific_training_deployment_approval_claimed": false
+  },
+  "assessment": "Toolbox branch can use two narrow App/PlatformShell wiring changes plus four new scoped files on 8cf7b94. Collection/ML seven files and existing detail five are untouched. Exclude unrelated execution/preprocessing164 WIP.",
+  "validation_owner": "Root owns fresh full frontend tests/build/browser. No duplicate runs by reviewer.",
+  "limitations": [
+    "Live resource counts are prior recorded observations.",
+    "Branch creation/commit not performed.",
+    "Source review and SHA pins only."
+  ],
+  "initial_audit_command_issue": "Initial read-only script hit Windows default cp949 while decoding git diff; rerun explicitly decoded UTF-8. No partial evidence was written."
+}

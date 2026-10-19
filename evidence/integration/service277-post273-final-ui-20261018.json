@@ -1,0 +1,107 @@
+{
+  "status": "VERIFIED_REAL_POST273_CURRENT_CANDIDATE_BROWSER",
+  "at": "2026-10-18T20:40:10.398710+09:00",
+  "root_actual_api": {
+    "status": "REAL_API_POST273_CURRENT_CANDIDATE_VERIFIED",
+    "at_utc": "2026-10-18T11:36:52.011679+00:00",
+    "seconds": 31.968,
+    "checks": {
+      "http200": true,
+      "raw1364": true,
+      "gap15": true,
+      "candidate_actual": true,
+      "candidate_current_source": true,
+      "bare50_stale": true,
+      "not_ready": true,
+      "budget_remaining": true,
+      "oldpending": true,
+      "operating_pins_preserved": true,
+      "config_preserved": true
+    },
+    "recorded_at": "2026-10-18T11:36:50.278733+00:00",
+    "budget_observed_at": "2026-10-18T11:36:51.800994+00:00",
+    "source_sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+    "config_sha256": "a6113a2563f69c44de9b1834f74a0e06c79b1631d226d816ef12e3adb42beba8",
+    "training_started": false,
+    "browser_verified": false,
+    "candidate_qa_repeated": false
+  },
+  "browser": {
+    "tab": "850119075",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "explicit_refreshes": 1,
+    "new_tabs": 0,
+    "recorded_at": "2026-10-18T11:38:48.617470+00:00",
+    "budget_observed_at": "2026-10-18T11:38:49.167988+00:00",
+    "checks_at": "2026-10-18T11:39:11.369Z",
+    "console_warn_error": [],
+    "scrollWidth": 1573,
+    "clientWidth": 1573,
+    "bodyWidth": 1573,
+    "horizontal_overflow": false
+  },
+  "source_sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+  "ledger_sha256": "5d1ef4d2c1b917402ffdda2365c69d81984b1e682bad22a8cc00ad238456e86e",
+  "current": {
+    "registered": 1731,
+    "eligible": 1364,
+    "cell_gap": 15,
+    "split": [
+      822,
+      292,
+      250
+    ]
+  },
+  "candidate": {
+    "eligible": 1348,
+    "blockers": 3,
+    "source_matches_current": true,
+    "warning": null,
+    "source_sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+    "split": [
+      822,
+      276,
+      250
+    ],
+    "recorded_at": "2026-10-18T11:35:53.511509+00:00",
+    "source_report": "priority164-guarded273-20261018/qa/readiness.json",
+    "stale_warning_removed": true
+  },
+  "bare": {
+    "total": 50,
+    "source_matches_current": false,
+    "warning": "검토 후 원본이 변경됐습니다. 현재 재고 기준의 최신 겹침 검사나 집행 허가로 해석하지 않습니다.",
+    "remote_quality": "미검사",
+    "execution": "집행 미승인"
+  },
+  "budget": {
+    "maximum": 4294967296,
+    "used_including_pending": 2424906817,
+    "remaining": 1870060479,
+    "old_pending": 136314880,
+    "old_pending_count": 2,
+    "old_pending_already_in_used": true,
+    "process_verification": "UNKNOWN"
+  },
+  "manual_API_GET_by_web_ui": 0,
+  "product_or_raw_ledger_pointer_writes": 0,
+  "server_restarts": 0,
+  "collector_starts": 0,
+  "limits": [
+    "Root API and actual browser have separate timestamps.",
+    "Zero new patches does not mean no network charge or unchanged source metadata.",
+    "No candidate QA rerun, native raster QA, training, model approval or remote collection by this task.",
+    "Console result is current observed session only; not all historic logs."
+  ],
+  "context": "275 publication and276 profile binding followed by277 actual browser check; bare50 remains historical/stale",
+  "operating_processes_observed": {
+    "API": 40156,
+    "Vite": 32748,
+    "other_8000_untouched": true
+  },
+  "proof": [
+    "service277-post273-final-ui-20261018-dom.txt",
+    "service277-post273-final-ui-20261018-candidate.png",
+    "service277-post273-final-ui-20261018-bare.png"
+  ]
+}

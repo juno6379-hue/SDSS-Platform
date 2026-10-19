@@ -1,0 +1,61 @@
+{
+  "status": "METADATA_HANDOFF_VERIFIED",
+  "at": "2026-10-18T05:36:17.222043+00:00",
+  "summary_sha256": "d80bad5650ff8c32f4b8a297ac1017b27aaec6cbdb0fc2f110f240f3875a5ec9",
+  "summary_bytes": 4820,
+  "output_pins_verified": 11,
+  "output_pin_mismatches": [],
+  "exact_retained_rows": true,
+  "partition_complete": true,
+  "source_current_matches_snapshot": true,
+  "previous_193_artifacts_unchanged": {
+    "data/first-group-training-priority/latest-candidate.json": "3f54fb6cbe098a487a3dcd76cc951a3b713dae9aa14a1f3f0f6ccf6d8304b081",
+    "data/first-group-training-priority/candidate-receipt193-20261018.json": "3f54fb6cbe098a487a3dcd76cc951a3b713dae9aa14a1f3f0f6ccf6d8304b081",
+    "evidence/integration/priority164-recovery193-20261018/summary.json": "692dccf9a8d50a7466ea39ba6cbb25874226f043f3896ddd8623d4ec3f61bf52"
+  },
+  "source_verified_file_records": 5326,
+  "candidate_verified_file_records": 5276,
+  "excluded_rows": [
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303
+  ],
+  "class_statistics": {
+    "train": {
+      "valid_label_pixels": 51859864,
+      "bare_pixels": 2562,
+      "bare_percent": 0.004940236634635216,
+      "bare_contributing_patches": 1
+    },
+    "val": {
+      "valid_label_pixels": 17776457,
+      "bare_pixels": 2998,
+      "bare_percent": 0.01686500296431398,
+      "bare_contributing_patches": 2
+    },
+    "test": {
+      "valid_label_pixels": 16252940,
+      "bare_pixels": 1025,
+      "bare_percent": 0.006306551307025068,
+      "bare_contributing_patches": 0
+    }
+  },
+  "source_rows_modified": false,
+  "pointer_written": false,
+  "additional_native_scans": 0,
+  "training_executed": false,
+  "network_requests": 0
+}

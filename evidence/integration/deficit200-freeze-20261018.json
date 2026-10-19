@@ -1,0 +1,54 @@
+{
+  "at_utc": "2026-10-18T04:50:47.373385+00:00",
+  "status": "CODE_FROZEN_TESTED_SYNTHETIC_OPERATIONAL_EXECUTION_NOT_PERFORMED",
+  "owned": {
+    "scripts/collect_deficit_guarded.py": {
+      "sha256": "9797930f8ad04728af5f2f2fb4e49218dbf1f046f9c47c78b7a6e675821c627b",
+      "bytes": 19794
+    },
+    "tests/test_collect_deficit_guarded.py": {
+      "sha256": "db76f1929586d3fdbb1eca40119533e20d25c39faf4b56221c016b126fe1086a",
+      "bytes": 21990
+    },
+    "docs/implementation/200_deficit_guarded_coordinator.md": {
+      "sha256": "6210d79b89ad5f547e8974ac13161e0d04f9d210534bdad79faa5c40e886711b",
+      "bytes": 12243
+    }
+  },
+  "read_only_dependencies": {
+    "backend/app/data/deficit_candidate_guard.py": {
+      "sha256": "c8eece7cbb0d3fed77f704b65eda9e51fe2e300ea56fdfd4aa020d9c9653204f",
+      "bytes": 19481
+    },
+    "scripts/collect_targeted_bare.py": {
+      "sha256": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+      "bytes": 21431
+    },
+    "scripts/collect_samples.py": {
+      "sha256": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+      "bytes": 47009
+    },
+    "backend/app/data/parallel.py": {
+      "sha256": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+      "bytes": 4364
+    }
+  },
+  "focused": {
+    "passed": 22,
+    "seconds": 17.678,
+    "scope": "last one-line witness-finally observation addition rerun in final related77"
+  },
+  "related_final": {
+    "passed": 77,
+    "skipped": 0,
+    "seconds": 28.002
+  },
+  "operational_inventory_scans": 0,
+  "http_requests": 0,
+  "operational_collectors_started": 0,
+  "native_revalidations": 0,
+  "operational_source_or_ledger_writes": 0,
+  "request_copy_contract": "DATA source/ledger snapshots permitted when proof pins and active fixed-path SHA match; actual ledger path is fixed",
+  "unmeasured_failure_contract": "Post-reserve selection or worker finally failure retains full unsettled pending reservation; no fabricated measurement/refund",
+  "targeted_helper_execution_flags_modified": false
+}

@@ -1,6 +1,7 @@
+from .ml.manifest_resource_profile import NAME,validate_name
 """고정 원본/후보 QA 보고서 비교의 명시 조회 API. 경로·상세 원문은 반환하지 않는다."""
 import threading
-from fastapi import APIRouter,Request
+from fastapi import APIRouter,Request,Query
 from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import JSONResponse
 from .ml.candidate_qa_comparison import compare_candidate_qa,PIN_NAMES,FALSE_FIELDS,_sha
@@ -34,17 +35,18 @@ def _request(raw):
 def create_candidate_qa_comparison_router(get_store):
     router=APIRouter();gate=threading.BoundedSemaphore(1)
     @router.post('/v1/diagnostics/candidate-readiness-comparison',responses={200:{'content':{'application/json':{'schema':RESPONSE_SCHEMA}}},**{code:{'description':'Safe diagnostic error','content':{'application/json':{'schema':ERROR_SCHEMA}}} for code in [400,409,413,429,503]}},openapi_extra={'requestBody':{'required':True,'content':{'application/json':{'schema':REQUEST_SCHEMA}}}})
-    async def inspect(request:Request):
+    async def inspect(request:Request,manifest_profile:str|None=Query(None,enum=[NAME])):
         body=bytearray()
         try:
             async for chunk in request.stream():
                 if len(body)+len(chunk)>BODY_BYTES:return _error('REQUEST_TOO_LARGE',413)
                 body.extend(chunk)
             pins=_request(bytes(body))
+            validate_name(manifest_profile)
         except Exception:return _error('INVALID_REQUEST',400)
         def worker():
             if not gate.acquire(blocking=False):return None
-            try:return compare_candidate_qa(get_store().root,pins)
+            try:return compare_candidate_qa(get_store().root,pins,manifest_profile=manifest_profile) if manifest_profile is not None else compare_candidate_qa(get_store().root,pins)
             finally:gate.release()
         try:result=await run_in_threadpool(worker)
         except ValueError as exc:

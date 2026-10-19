@@ -1,0 +1,25 @@
+test_all_excluded_no_scl_or_scene_fallback_including_limit_one (test_deficit_metadata_selection260.MetadataSelectionTests.test_all_excluded_no_scl_or_scene_fallback_including_limit_one) ... ok
+test_bbox_missing_invalid_partial_raw_mismatch_fail_closed (test_deficit_metadata_selection260.MetadataSelectionTests.test_bbox_missing_invalid_partial_raw_mismatch_fail_closed) ... ok
+test_default_256_dry_output_exactly_equals_archived_collector (test_deficit_metadata_selection260.MetadataSelectionTests.test_default_256_dry_output_exactly_equals_archived_collector) ... ok
+test_explicit_callback_rejects_256_and_search_above_twenty_before_network (test_deficit_metadata_selection260.MetadataSelectionTests.test_explicit_callback_rejects_256_and_search_above_twenty_before_network) ... ok
+test_first_five_metadata_rejects_allow_six_to_ten_but_scl_pool_stays_five (test_deficit_metadata_selection260.MetadataSelectionTests.test_first_five_metadata_rejects_allow_six_to_ten_but_scl_pool_stays_five) ... ok
+test_identity_time_provider_response_and_binding_validation (test_deficit_metadata_selection260.MetadataSelectionTests.test_identity_time_provider_response_and_binding_validation) ... ok
+test_limit_one_filters_before_scene_and_never_falls_back_to_partial_first (test_deficit_metadata_selection260.MetadataSelectionTests.test_limit_one_filters_before_scene_and_never_falls_back_to_partial_first) ... ok
+test_metadata_pass_does_not_bypass_existing_support_window_guard (test_deficit_metadata_selection260.MetadataSelectionTests.test_metadata_pass_does_not_bypass_existing_support_window_guard) ... ok
+test_policy_unknown_missing_boolean_and_extra_rejected_before_inventory (test_deficit_metadata_selection260.MetadataSelectionTests.test_policy_unknown_missing_boolean_and_extra_rejected_before_inventory) ... ok
+test_real_quality_selector_reads_only_five_and_does_not_refill_after_failure (test_deficit_metadata_selection260.MetadataSelectionTests.test_real_quality_selector_reads_only_five_and_does_not_refill_after_failure) ... ok
+test_stable_cloud_order_full_twenty_and_no_input_mutation (test_deficit_metadata_selection260.MetadataSelectionTests.test_stable_cloud_order_full_twenty_and_no_input_mutation) ... ok
+{"status": "deficit_worker_started", "key": "center1024-banten-2024-938052045129-fa0efe65"}
+{"status": "deficit_worker_finished", "key": "center1024-banten-2024-938052045129-fa0efe65", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": true, "rate_limited": false}
+test_v1_coordinator_never_passes_optional_callback (test_deficit_metadata_selection260.MetadataSelectionTests.test_v1_coordinator_never_passes_optional_callback) ... ok
+test_v1_full_proof_equals_archived_baseline_and_has_no_policy_output (test_deficit_metadata_selection260.MetadataSelectionTests.test_v1_full_proof_equals_archived_baseline_and_has_no_policy_output) ... ok
+test_v2_binding_tamper_fails_before_reservation_or_worker (test_deficit_metadata_selection260.MetadataSelectionTests.test_v2_binding_tamper_fails_before_reservation_or_worker) ... ok
+{"status": "deficit_worker_started", "key": "center1024-banten-2024-34935b4f1e9e-fa0efe65"}
+{"status": "deficit_worker_finished", "key": "center1024-banten-2024-34935b4f1e9e-fa0efe65", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": true, "rate_limited": false}
+test_v2_coordinator_passes_callback_and_preserves_temp_settlement (test_deficit_metadata_selection260.MetadataSelectionTests.test_v2_coordinator_passes_callback_and_preserves_temp_settlement) ... ok
+test_v2_request_and_config_digests_bind_policy_source_and_request (test_deficit_metadata_selection260.MetadataSelectionTests.test_v2_request_and_config_digests_bind_policy_source_and_request) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 14.378s
+
+OK

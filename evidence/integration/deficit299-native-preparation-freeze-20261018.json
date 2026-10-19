@@ -1,0 +1,49 @@
+{
+  "status": "FROZEN_PREPARATION_ONLY_AWAITING_SEPARATE_ROOT_NATIVE_GO",
+  "at": "2026-10-18T12:57:39.564523+00:00",
+  "files": [
+    {
+      "path": "evidence/integration/deficit299-before285-native-runner-20261018.py",
+      "bytes": 14334,
+      "sha256": "479dff23370e2db3fd58918e456fc9b263ad614afd3b69baa1f252a66011a4cb"
+    },
+    {
+      "path": "evidence/integration/deficit297-native-runner-root-20261018.py",
+      "bytes": 15973,
+      "sha256": "a8a9ed9fcdbb0fafb60c3c71f028f188b6f855ccc5f7c6768a328c327da608ca"
+    },
+    {
+      "path": "evidence/integration/deficit299-native-runner-vs285-20261018.diff",
+      "bytes": 7881,
+      "sha256": "e23333cc268f8a9cf41a60fab2cfd0440e5ae2188880d4a268213a96ee2bd9fe"
+    },
+    {
+      "path": "docs/implementation/299_post297_bounded_native_preparation.md",
+      "bytes": 7989,
+      "sha256": "abf457fc0179cbae9617f3d2e4ab943481e01b175f2c2a17c5b885b8cb4fd9df"
+    }
+  ],
+  "baseline285_original_preserved": true,
+  "audit165_code_pin": {
+    "path": "scripts/audit_priority_increment165.py",
+    "bytes": 17835,
+    "sha256": "ba4da0b03bd19a0d327200a49eb5c75b28a1f42620be43c84826092c50c661ba"
+  },
+  "parent297_preparation_freeze_pin": {
+    "path": "evidence/integration/deficit297-preparation-freeze-20261018.json",
+    "bytes": 2183,
+    "sha256": "57dda7cae3e55ce489930eb0eae69bd2ca16b3c9e2344c1bc5d49f368683b8ad"
+  },
+  "compile_passed": true,
+  "runner_imported_or_executed": false,
+  "actual_native_helper_calls": 0,
+  "operational_source_ledger_raster_model_reads": 0,
+  "http": 0,
+  "collector_starts": 0,
+  "maximum_new_patches": 16,
+  "zero_branch": "HELPER0_NATIVE_FALSE_EXIT2_SEPARATE_ROOT_AUDIT_REQUIRED",
+  "future_source_ledger_pins": null,
+  "new_eligible_or_bare_results": null,
+  "automatic_retry_allowed": false,
+  "training_approved": false
+}

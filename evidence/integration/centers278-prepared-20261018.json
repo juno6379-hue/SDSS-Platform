@@ -1,0 +1,93 @@
+{
+  "status": "PLANNED_AWAITING_ROOT_EXACT_GO_NO_OPERATIONAL_READ",
+  "source_path": "data/first-group-training-esri-v1/annual-window-report.json",
+  "ledger_path": "data/first-group-training-budget/global-ledger.json",
+  "source_sha256_reported_by_root_not_read_at_prepare": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+  "source_bytes_reported_by_root": 67518599,
+  "ledger_sha256_reported_by_root_not_read_at_prepare": "5d1ef4d2c1b917402ffdda2365c69d81984b1e682bad22a8cc00ad238456e86e",
+  "inputs": {
+    "prior": {
+      "path": "data/centers269-fresh-20261018/prior-merged.json",
+      "sha256": "bfe4b55d9413eea8972784748b1354ebc683285043dcc8f2a5c4fc5b8b03933e",
+      "candidate_count": 52,
+      "candidate_array_sha256": "661a233ee741aa2ef4046fd0db492db19730aa81ead9378e9f6cb81eb6dfc19b"
+    },
+    "proposal": {
+      "path": "data/centers269-fresh-20261018/proposal.json",
+      "sha256": "661de17b3bed3f3cceb2624315a837ac0eec2bd4b71af039ac22f6299ee7d4de",
+      "candidate_count": 4,
+      "candidate_array_sha256": "2a90e3d076a106723a5f2821f26e70d7e8e03e4894d8de7cdefa1ae0af6b6a10"
+    }
+  },
+  "merged_candidate_array_sha256": "f6b728df70f2296809e7132b99239377d9f0f347ee7bef92dfd7c11f0df91862",
+  "boundary_ref": {
+    "path": "data/first-group-boundaries/selected-six.geojson",
+    "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+  },
+  "config_ref": {
+    "path": "configs/first-group.collection.json",
+    "sha256": "8b0c1b2aad13a3344200998ec62a18853c5308adf4ec57b1af835333845fd7e3"
+  },
+  "code_pins": {
+    "backend/app/candidate_qa_comparison_api.py": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+    "backend/app/collection_budget_status.py": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108",
+    "backend/app/collection_priority_status.py": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9",
+    "backend/app/collection_source_profile.py": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef",
+    "backend/app/collection_status.py": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9",
+    "backend/app/data/candidates.py": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9",
+    "backend/app/data/targeted_bare_plan.py": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1",
+    "backend/app/main.py": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b",
+    "backend/app/ml/candidate_materialization.py": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+    "backend/app/ml/candidate_qa_comparison.py": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+    "backend/app/ml/candidate_readiness_qa.py": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+    "backend/app/ml/candidate_staging.py": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d",
+    "backend/app/ml/manifest_resource_profile.py": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+    "backend/app/ml/per_scene_normalization_contract.py": "b2f1f79c5b9773d9588d4e9b560f9df12ed94d2c1e5301b638cc9c432090f8ea",
+    "backend/app/ml/per_scene_normalization_files.py": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+    "backend/app/ml/readiness.py": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb",
+    "backend/app/ml/split_json_io.py": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+    "scripts/collect_samples.py": "9ce6cf2a520edb14d8c67260e79fc5f605f11eab03d9d6773117e0fd193eb165",
+    "scripts/collect_training_grid.py": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+    "scripts/diagnose_stac.py": "a30a43cca57c9368fa977701084b73f93d3f8e89526d9e40eb35f6fc44e531d9",
+    "scripts/find_bare_targets173.py": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750",
+    "scripts/prepare_priority_candidate164.py": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437",
+    "scripts/propose_deficit_centers182.py": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+    "scripts/run_experiment.py": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772",
+    "backend/app/data/deficit_candidate_guard.py": "4052759b683f6f4f545a629466f2d4145e3ad9cc2ad8e6cdf5b1e3c0004a5dd2",
+    "scripts/collect_deficit_guarded.py": "9ae5ba986d3d48e89cfb269d8a242ffd6189d281649d98a11614c03e5ab3c9ab",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238"
+  },
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "targets": [
+    "gorontalo:2025",
+    "gorontalo:2022",
+    "east_java:2025"
+  ],
+  "new_paths": {
+    "work": "data/centers278-fresh-20261018",
+    "source_snapshot": "data/centers278-fresh-20261018/source.json",
+    "prior": "data/centers278-fresh-20261018/prior-merged.json",
+    "proposal": "data/centers278-fresh-20261018/proposal.json"
+  },
+  "maximum_cli_invocations": 1,
+  "maximum_new_candidates": 4,
+  "execution_started": false,
+  "network_requests": 0,
+  "collector_started": false,
+  "native_audit_executed": false,
+  "active_source_or_ledger_read_at_prepare": false,
+  "historical_main268_result": "FAILED_95_PASS_1_IMPORT_ENV_FAILURE_PRESERVED_BY_ROOT",
+  "required_main_validation": "ROOT_PINNED_VALIDATION_REF_AND_EXPLICIT_TRUE_CURRENT_CODE_PINS",
+  "root_reported_eligible_total": 1364,
+  "root_reported_registered_rows": 1731,
+  "root_reported_remaining_budget": 1870060479,
+  "root_reported_remaining_cells": {
+    "gorontalo:2025": 10,
+    "gorontalo:2022": 4,
+    "east_java:2025": 1
+  },
+  "preparation_imports_runtime_consumers": false
+}

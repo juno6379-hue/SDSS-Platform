@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "kind": "GUARDED_DEFICIT_1024_REQUEST",
+  "proposal_ref": {
+    "path": "data/centers302-fresh-20261018/proposal.json",
+    "sha256": "e145e1fc2028bb00c26ceace8f814281fa8c48a9663ea18b1f31548d4eeec842"
+  },
+  "current_manifest_ref": {
+    "path": "data/centers302-fresh-20261018/source.json",
+    "sha256": "9e63564c87647a144665bbb6bbe49b4a95d09bbd2c3bc0f3725861c54d5e7109"
+  },
+  "ledger_ref": {
+    "path": "data/first-group-training-budget/global-ledger.json",
+    "sha256": "574d382dd9da51ae56dc8fb135532f8f2e5c542b2c4cafdf73a6ee8dd9c6045f"
+  },
+  "boundary_ref": {
+    "path": "data/first-group-boundaries/selected-six.geojson",
+    "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+  },
+  "config_ref": {
+    "path": "configs/first-group.collection.json",
+    "sha256": "8b0c1b2aad13a3344200998ec62a18853c5308adf4ec57b1af835333845fd7e3"
+  },
+  "prior_plan_ref": {
+    "path": "data/centers302-fresh-20261018/prior-merged.json",
+    "sha256": "60b748a50f05d847bb1807fa18a763d44e88007c672eb805a52e255d5e5e74fa"
+  },
+  "selected": [
+    {
+      "spatial_window_id": "centers182-east_java-5141c64815b2",
+      "year": 2025
+    }
+  ],
+  "maximum_batches": 1,
+  "candidate_metadata_policy": "DEFICIT_AOI_BBOX_CONTAINS_V1"
+}

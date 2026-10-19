@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-18T04:00:24.272918+00:00",
+  "status": "STARTED_NOT_COMPLETED",
+  "plan_sha256": "5d7b36a4096172e559aec91ddb8d6b867d0d2a26a4325bad12967c071f0e0194",
+  "selected_jobs": [
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2024-g03",
+      "province": "gorontalo",
+      "year": 2024,
+      "split": "train",
+      "spatial_window_id": "03",
+      "eligible_patches": 25,
+      "deficit": 3,
+      "config_sha256": "2ebb95b625c570a08eeb5173c6ad62c3c1f1379173baf99ef48f9d13832105ed"
+    }
+  ],
+  "pending_before": {
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+    },
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+    }
+  },
+  "manifest_before_rows": 1650,
+  "manifest_before_sha256": "99b8ef37bfc64767f5175a813dcf664599cc52def11a6a5f4a5c7427a3a87877",
+  "old_rows_canonical_sha256": "9350e4eeb0040c27f7524d8e8e1d7039a52c976044b2b433d98011ce7b2cf6cc",
+  "ledger_before_sha256": "954bab9d6692fa0a840f7ffc6255b0c6b36281d1111ec165c465c5d9351d41a4",
+  "new_charged_before": 2292733773,
+  "budget_remaining_before": 2002233523,
+  "new_budget_added": false,
+  "training_started": false,
+  "pending_refund": false,
+  "source_pins": {
+    "scripts/collect_training_priority.py": "27a13917bf90941ea68b2400028fe1b1300365ac63721e4ccf0eabd1e004040c",
+    "scripts/collect_training_parallel.py": "5e99234379cd45804d6eaf1b3b349210d5b9f26d5344e8ff6193dd74eb136b0c",
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3"
+  },
+  "wrapper_pid": 9048,
+  "command": [
+    "C:\\Users\\\ucd5c\uc900\uc624\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "E:\\GeoAI\u2013MLOps\u2013SDSS\\scripts\\collect_training_priority.py",
+    "--max-batches",
+    "1",
+    "--continue-unrelated-pending",
+    "--priority-province",
+    "southeast_sulawesi",
+    "--priority-province",
+    "gorontalo",
+    "--expected-plan-sha256",
+    "5d7b36a4096172e559aec91ddb8d6b867d0d2a26a4325bad12967c071f0e0194",
+    "--execute"
+  ]
+}

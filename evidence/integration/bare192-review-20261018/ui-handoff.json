@@ -1,0 +1,86 @@
+{
+  "status": "PREPARED_NOT_PUBLISHED",
+  "report": {
+    "path": "evidence/integration/bare192-review-20261018/report.json",
+    "bytes": 641452,
+    "sha256": "857b1384c09e3cc8d921ed5a03c445e6464a0805f457cd40bc2a24d1a8e2ec0a"
+  },
+  "request": {
+    "schema_version": 1,
+    "proposal_ref": {
+      "path": "evidence/integration/bare190-gap-20261018/proposal.json",
+      "sha256": "1cda6dd428dfffcca9df4ac690d9f79ca2187fdc953de0dd3b67d0d1226dce92"
+    },
+    "manifest_ref": {
+      "path": "data/bare192-review-20261018/source.json",
+      "sha256": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f"
+    },
+    "ledger_ref": {
+      "path": "data/bare192-review-20261018/ledger.json",
+      "sha256": "7839929111f3e70e8b9ba2bda3eb0972bc8c0055bb8c03b9273f4c0b381e353f"
+    },
+    "boundary_ref": {
+      "path": "data/first-group-boundaries/selected-six.geojson",
+      "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+    }
+  },
+  "ui_summary": {
+    "schema_version": 1,
+    "status": "LOCAL_TARGET_REVIEW_FINISHED",
+    "recorded_at": "2026-10-18T04:07:16.755147+00:00",
+    "current_manifest_sha256": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f",
+    "execution_supported": false,
+    "actual_quality_verified": false,
+    "scientific_accuracy_validated": false,
+    "summary_by_province": [
+      {
+        "province": "south_sulawesi",
+        "candidates": 0,
+        "support_clear": 0,
+        "overlap": 0,
+        "local_invalid": 0
+      },
+      {
+        "province": "gorontalo",
+        "candidates": 8,
+        "support_clear": 2,
+        "overlap": 6,
+        "local_invalid": 0
+      },
+      {
+        "province": "southeast_sulawesi",
+        "candidates": 0,
+        "support_clear": 0,
+        "overlap": 0,
+        "local_invalid": 0
+      },
+      {
+        "province": "east_java",
+        "candidates": 0,
+        "support_clear": 0,
+        "overlap": 0,
+        "local_invalid": 0
+      },
+      {
+        "province": "banten",
+        "candidates": 0,
+        "support_clear": 0,
+        "overlap": 0,
+        "local_invalid": 0
+      },
+      {
+        "province": "west_java",
+        "candidates": 29,
+        "support_clear": 2,
+        "overlap": 27,
+        "local_invalid": 0
+      }
+    ],
+    "candidate_total": 37
+  },
+  "mutual_overlap_pairs": 292,
+  "existing_UI_pointer_preserved": true,
+  "published_to_DATA": false,
+  "API_or_browser_verified": false,
+  "note": "Existing UI remains prior50 review. Root/UI owner decides explicit immutable report copy and pointer publication; do not silently replace50 with37."
+}

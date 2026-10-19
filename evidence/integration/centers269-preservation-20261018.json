@@ -1,0 +1,83 @@
+{
+  "status": "PRIOR52_EXACT_AND_SMALL_INPUTS_PRESERVED_AFTER_LOCAL_PLAN",
+  "checks": {
+    "prior48_exact_order": true,
+    "proposal4_exact_order": true,
+    "prior52_count": true,
+    "all52_unique": true,
+    "new_ids_exclude_all52": true,
+    "code_pins_after_exact": true,
+    "boundary_ref_after_exact": true,
+    "config_ref_after_exact": true
+  },
+  "new_candidates": [
+    {
+      "province": "southeast_sulawesi",
+      "years": [
+        2024
+      ],
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-southeast_sulawesi-411ad85627a7",
+      "lon": 121.86859768157333,
+      "lat": -4.001683264364351,
+      "bbox": [
+        121.8224167310714,
+        -4.048057380087264,
+        121.9147734537834,
+        -3.9553079770713686
+      ]
+    },
+    {
+      "province": "gorontalo",
+      "years": [
+        2025
+      ],
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-gorontalo-da1b8a06c2fe",
+      "lon": 122.05818614879377,
+      "lat": 0.5644754129351152,
+      "bbox": [
+        122.0121702164231,
+        0.5181524547030899,
+        122.10420135342737,
+        0.6107992283913153
+      ]
+    },
+    {
+      "province": "gorontalo",
+      "years": [
+        2022
+      ],
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-gorontalo-4771439e4b2d",
+      "lon": 122.43198529961823,
+      "lat": 0.846786054863159,
+      "bbox": [
+        122.38596313885432,
+        0.8004595213227725,
+        122.47800636819683,
+        0.8931127700951521
+      ]
+    },
+    {
+      "province": "southeast_sulawesi",
+      "years": [
+        2024
+      ],
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-southeast_sulawesi-4976b0b4efb8",
+      "lon": 121.68183612318998,
+      "lat": -3.625151297254438,
+      "bbox": [
+        121.63567521067026,
+        -3.671526364603358,
+        121.72799234936517,
+        -3.5787755527601695
+      ]
+    }
+  ],
+  "metadata_summarizer_initial_error": "KeyError(year); corrected to actual proposal years list; no CLI retry or product change",
+  "full_pending_support_inventory_verified": false,
+  "collection_started": false,
+  "training_started": false
+}

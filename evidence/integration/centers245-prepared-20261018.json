@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "kind": "CENTERS245_PREPARED_LOCAL_PLAN_ONLY",
+  "status": "PLANNED_AWAITING_ROOT_GO",
+  "inputs": {
+    "prior": {
+      "path": "data/centers235-fresh-20261018/prior-merged.json",
+      "sha256": "35400c8d857cc06df56632e49ba1f63d475914ab2bd7f7f664f80be0a8ce6bca",
+      "candidate_count": 40,
+      "candidate_array_sha256": "446c29f31eeb03b980b19697b782b7be248befb1b737ac41d59cf10dfbd64ef4"
+    },
+    "proposal": {
+      "path": "data/centers235-fresh-20261018/proposal.json",
+      "sha256": "87e6f5f157d940e00c624f46821d30329135ef9182a0acb1db248bfb59a712da",
+      "candidate_count": 4,
+      "candidate_array_sha256": "d0ca4e5823a8213d1bcb07a559e086e58d00aaabfbdaf925d9c36c8ce937ccce"
+    }
+  },
+  "merged_candidate_array_sha256": "d5f51a53dfff220e25f1326cc04c772afc9215c41c367f2c7c985e63fe805651",
+  "merged_prior_count": 44,
+  "unique_spatial_ids": 44,
+  "source_path": "data/first-group-training-esri-v1/annual-window-report.json",
+  "ledger_path": "data/first-group-training-budget/global-ledger.json",
+  "source_sha256_reported_by_root_not_read_at_prepare": "4f8fcaff71868539aff16b3c351992696a6464b9cb229a5ff0f243778b7cd3e8",
+  "ledger_sha256_reported_by_root_not_read_at_prepare": "9c452bfb3773dddf08dc1091640ed33cb7885b30bdd6b1f7b7ebb58616646c86",
+  "boundary_ref": {
+    "path": "data/first-group-boundaries/selected-six.geojson",
+    "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+  },
+  "config_ref": {
+    "path": "configs/first-group.collection.json",
+    "sha256": "8b0c1b2aad13a3344200998ec62a18853c5308adf4ec57b1af835333845fd7e3"
+  },
+  "code_pins": {
+    "backend/app/candidate_qa_comparison_api.py": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+    "backend/app/collection_budget_status.py": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108",
+    "backend/app/collection_priority_status.py": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9",
+    "backend/app/collection_source_profile.py": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef",
+    "backend/app/collection_status.py": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9",
+    "backend/app/data/candidates.py": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9",
+    "backend/app/data/targeted_bare_plan.py": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1",
+    "backend/app/main.py": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b",
+    "backend/app/ml/candidate_materialization.py": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+    "backend/app/ml/candidate_qa_comparison.py": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+    "backend/app/ml/candidate_readiness_qa.py": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+    "backend/app/ml/candidate_staging.py": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d",
+    "backend/app/ml/manifest_resource_profile.py": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+    "backend/app/ml/per_scene_normalization_contract.py": "b2f1f79c5b9773d9588d4e9b560f9df12ed94d2c1e5301b638cc9c432090f8ea",
+    "backend/app/ml/per_scene_normalization_files.py": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366",
+    "backend/app/ml/readiness.py": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb",
+    "backend/app/ml/split_json_io.py": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "scripts/collect_training_grid.py": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+    "scripts/diagnose_stac.py": "a30a43cca57c9368fa977701084b73f93d3f8e89526d9e40eb35f6fc44e531d9",
+    "scripts/find_bare_targets173.py": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750",
+    "scripts/prepare_priority_candidate164.py": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437",
+    "scripts/propose_deficit_centers182.py": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+    "scripts/run_experiment.py": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772"
+  },
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "targets": [
+    "southeast_sulawesi:2024",
+    "gorontalo:2025",
+    "gorontalo:2022"
+  ],
+  "new_paths": {
+    "work": "data/centers245-fresh-20261018",
+    "source_snapshot": "data/centers245-fresh-20261018/source.json",
+    "prior": "data/centers245-fresh-20261018/prior-merged.json",
+    "proposal": "data/centers245-fresh-20261018/proposal.json"
+  },
+  "maximum_cli_invocations": 1,
+  "execution_started": false,
+  "network_requests": 0,
+  "collector_started": false,
+  "native_audit_executed": false,
+  "active_source_or_ledger_read_at_prepare": false
+}

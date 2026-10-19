@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "scope": "READONLY_FIXED_LAUNCH_INCREMENT_NATIVE_AUDIT",
+  "recorded_at": "2026-10-18T04:04:26.205690+00:00",
+  "status": "COMPLETED_NATIVE_CHECKED",
+  "issue": null,
+  "native_validation_complete": true,
+  "batches": [
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2024-g03",
+      "settled": true,
+      "stored_config_sha256": "2ebb95b625c570a08eeb5173c6ad62c3c1f1379173baf99ef48f9d13832105ed",
+      "effective_config_sha256": "5a50f14898a7c2c6fb9d8a38839cac31afab79c2f8c9a6724b9717734b57377a",
+      "charged_bytes": 22948591,
+      "worker_error": false,
+      "worker_error_category": null,
+      "rate_limited": false,
+      "scene_status_counts": {
+        "rgb_window_downloaded": 1
+      },
+      "scene_failure_count": 0,
+      "patches": [
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r0-c0",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 47800,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 42166,
+            "5": 613,
+            "11": 5021
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8821338912133891,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r0-c1",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 42404,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 16472,
+            "5": 3470,
+            "7": 18,
+            "11": 22444
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.5292896896519196,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r0-c2",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 43528,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 3588,
+            "5": 26305,
+            "7": 2209,
+            "11": 11426
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.6043236537401213,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r0-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 10036,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 3409,
+            "5": 5513,
+            "7": 370,
+            "11": 744
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.5493224392188123,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r1-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 61740,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 40981,
+            "5": 14058,
+            "7": 17,
+            "11": 6684
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.6637674117265954,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r1-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 58288,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 34905,
+            "5": 3195,
+            "7": 45,
+            "11": 20143
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.5988368103211639,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r1-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 64676,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 12585,
+            "5": 24412,
+            "7": 575,
+            "11": 27104
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.4190735357783413,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r1-c3",
+          "quality_status": "quality_insufficient",
+          "valid_pixels": 48456,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 10527,
+            "5": 31054,
+            "7": 297,
+            "11": 6578
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.6408700676902758,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r2-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 63284,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 43301,
+            "5": 924,
+            "7": 2231,
+            "11": 16828
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.684232981480311,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r2-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65533,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 27066,
+            "5": 7923,
+            "7": 1928,
+            "11": 28616
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.4366654967726184,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r2-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 25540,
+            "5": 7540,
+            "7": 1924,
+            "8": 61,
+            "11": 30471
+          },
+          "eligible_bare_pixels": 61,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.4649505615234375,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r2-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65180,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 13161,
+            "5": 38888,
+            "7": 5991,
+            "8": 31,
+            "11": 7109
+          },
+          "eligible_bare_pixels": 31,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.596624731512734,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r3-c0",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 60579,
+            "5": 435,
+            "11": 4522
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.9243621826171875,
+          "maximum_class_fraction_over_90_percent": true
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r3-c1",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 25206,
+            "5": 26369,
+            "7": 93,
+            "8": 32,
+            "11": 13836
+          },
+          "eligible_bare_pixels": 32,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.4023590087890625,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r3-c2",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 52855,
+            "5": 403,
+            "7": 4,
+            "11": 12274
+          },
+          "eligible_bare_pixels": 0,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.8065032958984375,
+          "maximum_class_fraction_over_90_percent": false
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g03-r3-c3",
+          "quality_status": "quality_eligible",
+          "valid_pixels": 65536,
+          "province_inside_pixels": 65536,
+          "class_histogram": {
+            "2": 12808,
+            "5": 37243,
+            "7": 6002,
+            "8": 38,
+            "11": 9445
+          },
+          "eligible_bare_pixels": 38,
+          "image_band_descriptions": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "maximum_class_fraction": 0.5682830810546875,
+          "maximum_class_fraction_over_90_percent": false
+        }
+      ],
+      "native_patches_checked": 16,
+      "native_eligible_patches": 11,
+      "eligible_bare_pixels": 162,
+      "data_outcome": "PATCHES_NATIVE_CHECKED"
+    }
+  ],
+  "native_patches_checked": 16,
+  "native_eligible_patches": 11,
+  "eligible_bare_pixels": 162,
+  "source_or_ledger_writes": 0,
+  "collection_executed": false,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "limitations": [
+    "Sequential observations, not an atomic filesystem/DB snapshot.",
+    "Only selected launch batches get native patch checks; prior rows are canonical metadata checks.",
+    "Esri weak labels and training support masks are not independent truth or QA/model approval.",
+    "Stored whole-pool counts/leakage are metadata only, not whole-pool raster revalidation.",
+    "No HTTP, collection, retries, refunds, reservation edits or source reconstruction."
+  ],
+  "launch_sha256": "ffbf23c16421a1320ae95de5060b9ef7d68f48fb13a58029ab8d689656ff0686",
+  "aggregate_sha256_at_read": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f",
+  "ledger_sha256_at_read": "7839929111f3e70e8b9ba2bda3eb0972bc8c0055bb8c03b9273f4c0b381e353f",
+  "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+  "old_rows_verified": 1650,
+  "pending_rows_verified": 2,
+  "pending_reserved_bytes": 136314880,
+  "physical_total_at_read": 1666,
+  "eligible_total_at_read": 1333,
+  "execution_lock_present_at_read": false,
+  "cell_gap_total_at_read": 33,
+  "eligible_target_gap_at_read": 0,
+  "selected_ledger_observations": {
+    "parallel-v2-grid-esri_io-gorontalo-2024-g03": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 22948591,
+      "config_sha256": "2ebb95b625c570a08eeb5173c6ad62c3c1f1379173baf99ef48f9d13832105ed",
+      "report_path": "E:\\GeoAI\u2013MLOps\u2013SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2024-g03\\annual-window-report.json"
+    }
+  },
+  "file_sha_rechecks": 52,
+  "external_metadata_changed_during_audit": {
+    "aggregate": false,
+    "ledger": false
+  },
+  "declared_cross_split_scene_ids": [
+    "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+  ],
+  "seconds": 6.6728533000000425
+}

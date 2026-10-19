@@ -1,0 +1,90 @@
+{
+  "observed_at_utc": "2026-10-18T01:23:46.203915+00:00",
+  "source_sha256": {
+    "frontend/src/App.tsx": "de808c64825758c93822cc3b7fda05b9c5fdd0a0332e74300263decfdc78e24b",
+    "frontend/src/PlatformShell.tsx": "7116e9f266521b8125dc44e933d3b55c84677c389102cd9c85cf29b0c03bf9c9",
+    "frontend/src/GeoAIToolbox.tsx": "f4456f604287e0deaeca4ef85e0e2b2b62cb245d91ff0b25127a2b5781307769",
+    "frontend/src/geoai-toolbox.css": "daf2889fd89f97854cd2ed4669e27aaa97d4b4f0f726631f48254e13f622377f",
+    "frontend/src/toolboxAdapter.ts": "0528fa173dba0d52ef6009a53c551beaee33aae9c3ee2afdd09388180e1898cd",
+    "frontend/src/toolboxAdapter.test.mjs": "7378b0831832746a6056e98d6d6dbbb89d9e4c8f54cff0dd9e64c225185ead63",
+    "frontend/src/ModelAnalysisWorkspace.tsx": "137a48fe30a9974a3ea5f9b5a2de0211881b3b91ae01aaa86ef4a203e3750324",
+    "frontend/src/model-workspace.css": "2c66a36b75c57aaf500a39897e26398a1a22bfc3cb5880d9f6e8a32b81d95448",
+    "frontend/src/LclucWorkflowPanel.tsx": "23ad381efc6a09f2b18fc1aeedeac89bd769efa0e088463f9025d8edc588fb45",
+    "frontend/src/SDSSChrome.tsx": "d6b735ec6ee76dc4f2a24906376f5069f648185770969758a6755b0f164f71a0",
+    "frontend/src/sdss-chrome.css": "c82594ab1c224515e0c69c10050e39e689c024a0d723a3e8bba515b2f2c0e219"
+  },
+  "detail_files_unchanged": {
+    "ModelAnalysisWorkspace.tsx": true,
+    "model-workspace.css": true,
+    "LclucWorkflowPanel.tsx": true,
+    "SDSSChrome.tsx": true,
+    "sdss-chrome.css": true
+  },
+  "frontend_all": {
+    "command": "node --test src/*.test.mjs",
+    "pass": 293,
+    "fail": 0,
+    "skip": 0,
+    "duration_ms": 43750.147,
+    "exit": 0
+  },
+  "focused_adapter": {
+    "pass": 5,
+    "overlaps_full_suite": true
+  },
+  "independent_checks": {
+    "pass": 11,
+    "evidence": "toolbox-ui-independent-20261018.json"
+  },
+  "build": {
+    "command": "npm run build",
+    "exit": 0,
+    "modules": 123,
+    "vite_seconds": 44.32,
+    "warning": "JavaScript chunk exceeds 500 kB; output 1739.26 kB"
+  },
+  "browser": {
+    "url": "http://127.0.0.1:5174/#/view/12",
+    "cards_verified": [
+      "lcluc",
+      "climate",
+      "carbon",
+      "biodiversity",
+      "coastal",
+      "flood"
+    ],
+    "return_to_hub": true,
+    "banten_map_and_overview": true,
+    "catalog_quick_action": "#/catalog",
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "document_scroll_width": 375,
+      "card_columns": 1
+    },
+    "default": {
+      "width": 1280,
+      "document_scroll_width": 1265
+    },
+    "viewport_reset": true,
+    "new_console_errors_after_final_reload": 0,
+    "historical_hmr_error": "2026-10-18T01:17:10.289Z intermediate wiring; corrected before final verification"
+  },
+  "screenshots": [
+    "toolbox-ui-desktop-top-20261018.jpg",
+    "toolbox-ui-desktop-20261018.jpg",
+    "toolbox-ui-mobile-20261018.jpg"
+  ],
+  "scope": {
+    "api_writes": 0,
+    "service_restarts": 0,
+    "collection_changes": 0,
+    "scientific_approval": false
+  },
+  "coordination": {
+    "other_thread": "01a1470d-b3a0-7a50-95ac-0e050d4cef86",
+    "other_thread_observed_active": true,
+    "automation": "geoai-2",
+    "duplicate_collection_started": false
+  }
+}

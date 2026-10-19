@@ -1,0 +1,84 @@
+--- deficit307-before299-native-runner-20261018.py
++++ deficit304-native-runner-root-20261018.py
+@@ -1,4 +1,4 @@
+-"""Root GO 뒤 새297분만 1회 검사. 제품/운영자료/원장 쓰기와 HTTP 없음."""
++"""Root GO 뒤 새304분만 1회 검사. 제품/운영자료/원장 쓰기와 HTTP 없음."""
+ from pathlib import Path
+ import argparse
+ import copy
+@@ -21,7 +21,7 @@
+     from app.data.readiness_connectivity_witness import FIXED_PROVINCE_SPLITS
+ 
+     go = read_json(go_path, 1 << 20)[1]
+-    assert go['status'] == 'GO_297_BOUNDED_NEW_MAX16_NATIVE_AUDIT'
++    assert go['status'] == 'GO_304_BOUNDED_NEW_MAX16_NATIVE_AUDIT'
+     assert go['no_active_collector_or_duplicate_audit'] is True
+     assert go['collector_terminated_and_settled'] is True
+     assert type(go['source_bytes']) is int and 0 < go['source_bytes'] <= 128 << 20
+@@ -31,23 +31,23 @@
+     data = ROOT / 'data'
+     evidence = ROOT / 'evidence/integration'
+     read = lambda p, cap=16 << 20: read_json(p, cap)[1]
+-    launch_path = evidence / 'deficit297-launch-root-20261018.json'
++    launch_path = evidence / 'deficit304-launch-root-20261018.json'
+     launch_raw = snapshot(launch_path, 1 << 20)
+     assert sha(launch_raw) == go['launch_sha256']
+     launch = json.loads(launch_raw)
+-    terminal_raw, terminal = read_json(evidence / 'deficit297-terminal-root-20261018.json', 16 << 20)
++    terminal_raw, terminal = read_json(evidence / 'deficit304-terminal-root-20261018.json', 16 << 20)
+     assert sha(terminal_raw) == go['terminal_sha256']
+-    request = read(evidence / 'deficit297-request-root-20261018.json')
++    request = read(evidence / 'deficit304-request-root-20261018.json')
+     assert sha(json.dumps(request, sort_keys=True, ensure_ascii=False, allow_nan=False,
+                           separators=(',', ':')).encode()) == launch['request_sha256']
+     assert terminal['exit_code'] == 0 and terminal['lock_present'] is False
+-    assert launch['request_sha256'] == 'e9ebe6f7dcbb986a853ed1749e97c4feafcacde1702c1937c946d7f6e2602487'
++    assert launch['request_sha256'] == '981abcd9b78b6eaa94dcb48a2f2bc62346ac939967076490b41c0c10e03f0987'
+     assert len(launch['selected_jobs']) == 1 and launch['maximum_new_physical_patches'] == 16
+     job = launch['selected_jobs'][0]
+     key = job['key']
+-    assert key == 'center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072'
+-    assert job['province'] == 'gorontalo' and job['year'] == 2025 and job['split'] == 'train'
+-    assert job['config_sha256'] == '9d3618a258fbfd272c227cde90bffd3fc98fac2fd574864a69349a5825e41f71'
++    assert key == 'center1024-east_java-2025-981abcd9b78b-9c40f177'
++    assert job['province'] == 'east_java' and job['year'] == 2025 and job['split'] == 'train'
++    assert job['config_sha256'] == '31044c97e5dd1cf84648eec174975eacd9b5f8e1eacfcbf50e355bc0bb7d657a'
+     mp = data / 'first-group-training-esri-v1/annual-window-report.json'
+     lp = data / 'first-group-training-budget/global-ledger.json'
+     assert not (lp.parent / 'global-ledger.execution.lock').exists()
+@@ -58,7 +58,7 @@
+     prior_raw, prior = read_json(local(ROOT, request['current_manifest_ref']['path']), 128 << 20)
+     assert sha(prior_raw) == request['current_manifest_ref']['sha256'] == launch['manifest_before_sha256']
+     old_count = launch['source_rows_before']
+-    assert old_count == len(prior['scenes']) == 1747
++    assert old_count == len(prior['scenes']) == 1763
+     assert manifest['scenes'][:old_count] == prior['scenes']
+     assert manifest.get('historical_noneligible_patches', []) == prior.get('historical_noneligible_patches', [])
+     rows = manifest['scenes'][old_count:]
+@@ -80,7 +80,7 @@
+     adapter.update(manifest_before_rows=old_count, old_rows_canonical_sha256=canonical(prior['scenes']))
+     result['native_helper_invocations'] = 1
+     print('NATIVE_HELPER_ONCE_BEGIN', flush=True)
+-    with tempfile.TemporaryDirectory(prefix='geoai297-native-') as temp:
++    with tempfile.TemporaryDirectory(prefix='geoai304-native-') as temp:
+         adapted_path = Path(temp) / 'launch165-adapter.json'
+         adapted_path.write_text(json.dumps(adapter, ensure_ascii=False), encoding='utf-8')
+         product = audit_increment(data, adapted_path, (data / 'first-group-boundaries/selected-six.geojson').absolute())
+@@ -179,7 +179,7 @@
+     assert snapshot(mp, 128 << 20) == manifest_raw and snapshot(lp, 16 << 20) == ledger_raw
+     assert snapshot(launch_path, 1 << 20) == launch_raw
+     worker = read(mp.parent / 'sources' / key / 'worker-result.json')
+-    final = [json.loads(x) for x in (evidence / 'deficit297-live-root-20261018-stdout.log').read_text('utf-8-sig').splitlines() if x.strip()][-1]
++    final = [json.loads(x) for x in (evidence / 'deficit304-live-root-20261018-stdout.log').read_text('utf-8-sig').splitlines() if x.strip()][-1]
+     assert all(final['execution_progress'][name] == [key] for name in ('finalization_attempted_batches', 'settled_batches', 'published_batches'))
+     result['candidate_observations'] = [{k: c.get(k) for k in ('scene_id', 'status', 'estimated_valid_fraction', 'minimum_fraction', 'error')} for c in scene.get('candidate_selection', [])]
+     result['new_patch_quality_observations'] = [dict(p) for batch in product['batches'] for p in batch['patches']]
+@@ -211,7 +211,7 @@
+     args = parser.parse_args()
+     if not args.root_go:
+         parser.error('ROOT_FIXED_SOURCE_GO_REQUIRED')
+-    prefix = ROOT / 'evidence/integration/deficit297-native-root-20261018'
++    prefix = ROOT / 'evidence/integration/deficit304-native-root-20261018'
+     result = {'status': 'INCOMPLETE', 'native_helper_invocations': 0, 'native_validation_complete': False,
+               'reviewer_http_calls': 0, 'reviewer_collection_starts': 0, 'operating_writes': 0,
+               'learning_ready': False, 'scientific_accuracy_validated': False}

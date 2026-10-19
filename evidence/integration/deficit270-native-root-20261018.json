@@ -1,0 +1,701 @@
+{
+  "status": "COMPLETED_BOUNDED_NATIVE_AND_TRACE_CHECKED",
+  "native_helper_invocations": 1,
+  "native_validation_complete": true,
+  "reviewer_http_calls": 0,
+  "reviewer_collection_starts": 0,
+  "operating_writes": 0,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "product165": {
+    "schema_version": 1,
+    "scope": "READONLY_FIXED_LAUNCH_INCREMENT_NATIVE_AUDIT",
+    "recorded_at": "2026-10-18T10:58:37.491507+00:00",
+    "status": "COMPLETED_NATIVE_CHECKED",
+    "issue": null,
+    "native_validation_complete": true,
+    "batches": [
+      {
+        "key": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f",
+        "settled": true,
+        "stored_config_sha256": "26d6f1841f0da68f0c60a5065e35e0869174ba53c747f6f7d74a864da2d5ddfc",
+        "effective_config_sha256": "98de99b1ff5ac6774d374fd873f1a05b6056f118686479f2c7a6357a44eeac33",
+        "charged_bytes": 23095835,
+        "worker_error": false,
+        "worker_error_category": null,
+        "rate_limited": false,
+        "scene_status_counts": {
+          "rgb_window_downloaded": 1
+        },
+        "scene_failure_count": 0,
+        "patches": [
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r0-c0",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 44979,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 1,
+              "2": 40004,
+              "5": 2692,
+              "7": 2143,
+              "11": 139
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.8893928277640677,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r0-c1",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 53344,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 53344
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 1.0,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r0-c2",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 16002,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 16002
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 1.0,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r0-c3",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 14279,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 14279
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 1.0,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r1-c0",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 50779,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 44481,
+              "5": 963,
+              "7": 347,
+              "11": 4988
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.8759723507749266,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r1-c1",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 40922,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 40245,
+              "7": 677
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.9834563315575974,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r1-c2",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 16359,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 15731,
+              "7": 448,
+              "11": 180
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.9616113454367626,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r1-c3",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 19752,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 18999,
+              "7": 139,
+              "11": 614
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.9618772782503038,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r2-c0",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65365,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 64949,
+              "5": 35,
+              "7": 368,
+              "11": 13
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.9936357377801576,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r2-c1",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 53102,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 50076,
+              "7": 3020,
+              "11": 6
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.9430153289894919,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r2-c2",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 43736,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 2,
+              "2": 40234,
+              "7": 2730,
+              "11": 770
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.9199286628864094,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r2-c3",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 59804,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 57147,
+              "5": 752,
+              "7": 207,
+              "11": 1698
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.9555715336766771,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r3-c0",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 30610,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 30610
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 1.0,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r3-c1",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 59674,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 59168,
+              "7": 44,
+              "11": 462
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.9915205952341053,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r3-c2",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65276,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 54903,
+              "7": 10347,
+              "11": 26
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.841090140327226,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r3-c3",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 50535,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 6,
+              "2": 41209,
+              "5": 128,
+              "7": 8677,
+              "11": 515
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.8154546354012071,
+            "maximum_class_fraction_over_90_percent": false
+          }
+        ],
+        "native_patches_checked": 16,
+        "native_eligible_patches": 6,
+        "eligible_bare_pixels": 0,
+        "data_outcome": "PATCHES_NATIVE_CHECKED"
+      }
+    ],
+    "native_patches_checked": 16,
+    "native_eligible_patches": 6,
+    "eligible_bare_pixels": 0,
+    "source_or_ledger_writes": 0,
+    "collection_executed": false,
+    "learning_ready": false,
+    "scientific_accuracy_validated": false,
+    "limitations": [
+      "Sequential observations, not an atomic filesystem/DB snapshot.",
+      "Only selected launch batches get native patch checks; prior rows are canonical metadata checks.",
+      "Esri weak labels and training support masks are not independent truth or QA/model approval.",
+      "Stored whole-pool counts/leakage are metadata only, not whole-pool raster revalidation.",
+      "No HTTP, collection, retries, refunds, reservation edits or source reconstruction."
+    ],
+    "launch_sha256": "b0cb16948845d7c19489d761e1d4644b061bcd8c06deee69d5ea4cb8c75b9bfd",
+    "aggregate_sha256_at_read": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+    "ledger_sha256_at_read": "5d1ef4d2c1b917402ffdda2365c69d81984b1e682bad22a8cc00ad238456e86e",
+    "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+    "old_rows_verified": 1715,
+    "pending_rows_verified": 2,
+    "pending_reserved_bytes": 136314880,
+    "physical_total_at_read": 1731,
+    "eligible_total_at_read": 1364,
+    "execution_lock_present_at_read": false,
+    "cell_gap_total_at_read": 15,
+    "eligible_target_gap_at_read": 0,
+    "selected_ledger_observations": {
+      "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f": {
+        "status": "settled",
+        "reserved_bytes": 68157440,
+        "charged_bytes": 23095835,
+        "config_sha256": "26d6f1841f0da68f0c60a5065e35e0869174ba53c747f6f7d74a864da2d5ddfc",
+        "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-de75233675e6-e44e705f\\annual-window-report.json"
+      }
+    },
+    "file_sha_rechecks": 52,
+    "external_metadata_changed_during_audit": {
+      "aggregate": false,
+      "ledger": false
+    },
+    "declared_cross_split_scene_ids": [
+      "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+    ],
+    "seconds": 13.435761400000047
+  },
+  "original_launch_sha256": "c096d0897088e2e8db7019537982dfe4e159853b45721437e105f55171c013cb",
+  "source_sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+  "ledger_sha256": "5d1ef4d2c1b917402ffdda2365c69d81984b1e682bad22a8cc00ad238456e86e",
+  "source_bytes": 67518599,
+  "old_rows_exact": true,
+  "old_history_exact": true,
+  "old_pending_exact": true,
+  "old_pending_reserved_bytes": 136314880,
+  "metadata_filter_summary": {
+    "schema_version": 1,
+    "policy": "DEFICIT_AOI_BBOX_CONTAINS_V1",
+    "request_sha256": "de75233675e69967e74861ae63178d92912a92b9101c905dd0639c8873c7442c",
+    "source_sha256": "9473861797b729b6b6eb60607a7edfb67921fa2b259bc2b0ffa8b2af08fc1353",
+    "input_count": 11,
+    "retained_count": 11,
+    "excluded_count": 0,
+    "items": [
+      {
+        "input_index": 0,
+        "cloud_rank": 0,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 1,
+        "cloud_rank": 1,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 2,
+        "cloud_rank": 2,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 3,
+        "cloud_rank": 3,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 4,
+        "cloud_rank": 4,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 5,
+        "cloud_rank": 5,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 6,
+        "cloud_rank": 6,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 7,
+        "cloud_rank": 7,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 8,
+        "cloud_rank": 8,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 9,
+        "cloud_rank": 9,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 10,
+        "cloud_rank": 10,
+        "reason": "METADATA_CONTAINS_AOI"
+      }
+    ],
+    "selected_pool_count": 5
+  },
+  "metadata_filter_trace_scope": "Stored bounded summary + selectedSTACbbox verified; all20 originalfeatures not independently replayed",
+  "selected_scene": "S2B_MSIL2A_20240912T021209_R060_T51MUR_20240912T055427",
+  "selected_datetime": "2024-09-12T02:12:09.024000Z",
+  "actual_source_grid": {
+    "crs": "EPSG:32751",
+    "transform": [
+      10.0,
+      0.0,
+      369270.0,
+      0.0,
+      -10.0,
+      9562730.0
+    ],
+    "shape": [
+      1024,
+      1024
+    ],
+    "bands": 6
+  },
+  "raw_b02_source_firstband_equal": true,
+  "patch_firstband_and_grid_matches": 16,
+  "actual_new_patch_rasters": 48,
+  "new_unreferenced_patch_rasters": 0,
+  "source_trace_file_sha_rechecks": 21,
+  "trace_counts_overlap_product_image_files": 16,
+  "bare_per_patch": [
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r0-c0",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r0-c1",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r0-c2",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r0-c3",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r1-c0",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r1-c1",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r1-c2",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r1-c3",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r2-c0",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r2-c1",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r2-c2",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r2-c3",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r3-c0",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r3-c1",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r3-c2",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-southeast_sulawesi-2024-de75233675e6-e44e705f-r3-c3",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    }
+  ],
+  "raw_aligned_bare_pixels": 0,
+  "after_source_quality_bare_pixels": 0,
+  "final_supported_bare_pixels": 0,
+  "eligible_bare_pixels": 0,
+  "eligible_bare_contribution_patches": 0,
+  "cog_charged_bytes": 22872064,
+  "metadata_charged_bytes": 223771,
+  "total_settled_bytes": 23095835,
+  "remaining_budget": 1870060479,
+  "physical_before": {
+    "physical_patch_count": 1716,
+    "referenced_patch_count": 1716,
+    "unreferenced_physical_directories": 0,
+    "worker_receipt_count": 142,
+    "limit": 3000,
+    "observation_sha256": "c56c522677748023fe6ba8a4231ad82c24faef2b24d5644a89c4dc87b6f8b30b"
+  },
+  "physical_after_inferred": 1732,
+  "metadata_two_reads_stable": true,
+  "terminal_seconds": 409.5629999999983
+}

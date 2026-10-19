@@ -1,0 +1,1102 @@
+{
+  "status": "COMPLETED_BOUNDED_NATIVE_AND_TRACE_CHECKED",
+  "native_helper_invocations": 1,
+  "native_validation_complete": true,
+  "reviewer_http_calls": 0,
+  "reviewer_collection_starts": 0,
+  "operating_writes": 0,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "product165": {
+    "schema_version": 1,
+    "scope": "READONLY_FIXED_LAUNCH_INCREMENT_NATIVE_AUDIT",
+    "recorded_at": "2026-10-18T13:05:52.299957+00:00",
+    "status": "COMPLETED_NATIVE_CHECKED",
+    "issue": null,
+    "native_validation_complete": true,
+    "batches": [
+      {
+        "key": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072",
+        "settled": true,
+        "stored_config_sha256": "9d3618a258fbfd272c227cde90bffd3fc98fac2fd574864a69349a5825e41f71",
+        "effective_config_sha256": "9c0a072bd4440f539592c65e33e9567603b28d5cff454420c0ab90a4deb58ff3",
+        "charged_bytes": 22680361,
+        "worker_error": false,
+        "worker_error_category": null,
+        "rate_limited": false,
+        "scene_status_counts": {
+          "rgb_window_downloaded": 1
+        },
+        "scene_failure_count": 0,
+        "patches": [
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c0",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65536,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 33887,
+              "5": 7081,
+              "7": 18,
+              "11": 24550
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.5170745849609375,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c1",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65536,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 46230,
+              "5": 6378,
+              "7": 70,
+              "11": 12858
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.705413818359375,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c2",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65536,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 51150,
+              "5": 2491,
+              "7": 165,
+              "11": 11730
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.780487060546875,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c3",
+            "quality_status": "quality_insufficient",
+            "valid_pixels": 41380,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 17,
+              "2": 34420,
+              "5": 110,
+              "11": 6833
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.8318028032866119,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c0",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65528,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 11352,
+              "5": 43986,
+              "7": 6928,
+              "11": 3262
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.6712550360151386,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c1",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 64088,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 140,
+              "2": 19584,
+              "5": 41799,
+              "7": 1944,
+              "11": 621
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.6522125826987891,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c2",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 61472,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 53,
+              "2": 8493,
+              "5": 49004,
+              "7": 2489,
+              "11": 1433
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.7971759500260281,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c3",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 56886,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 16,
+              "2": 5475,
+              "5": 49532,
+              "7": 1198,
+              "11": 665
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.8707239039482474,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c0",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65536,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 5049,
+              "2": 69,
+              "5": 54987,
+              "7": 5431
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.8390350341796875,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c1",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65536,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 583,
+              "2": 27,
+              "5": 56337,
+              "7": 8589
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.8596343994140625,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c2",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65080,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 70,
+              "2": 352,
+              "5": 58464,
+              "7": 6194
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.898340503995083,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c3",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65280,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "2": 12,
+              "5": 60877,
+              "7": 4391
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.9325520833333333,
+            "maximum_class_fraction_over_90_percent": true
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c0",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65280,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 2466,
+              "2": 1,
+              "5": 55825,
+              "7": 6988
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.8551623774509803,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c1",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65280,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 5982,
+              "2": 10,
+              "5": 58699,
+              "7": 589
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.899188112745098,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c2",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65280,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "1": 39,
+              "2": 33,
+              "5": 49580,
+              "7": 15628
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.7594975490196079,
+            "maximum_class_fraction_over_90_percent": false
+          },
+          {
+            "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c3",
+            "quality_status": "quality_eligible",
+            "valid_pixels": 65025,
+            "province_inside_pixels": 65536,
+            "class_histogram": {
+              "5": 60886,
+              "7": 4139
+            },
+            "eligible_bare_pixels": 0,
+            "image_band_descriptions": [
+              "B02",
+              "B03",
+              "B04",
+              "B08",
+              "B11",
+              "B12"
+            ],
+            "maximum_class_fraction": 0.9363475586312957,
+            "maximum_class_fraction_over_90_percent": true
+          }
+        ],
+        "native_patches_checked": 16,
+        "native_eligible_patches": 15,
+        "eligible_bare_pixels": 0,
+        "data_outcome": "PATCHES_NATIVE_CHECKED"
+      }
+    ],
+    "native_patches_checked": 16,
+    "native_eligible_patches": 15,
+    "eligible_bare_pixels": 0,
+    "source_or_ledger_writes": 0,
+    "collection_executed": false,
+    "learning_ready": false,
+    "scientific_accuracy_validated": false,
+    "limitations": [
+      "Sequential observations, not an atomic filesystem/DB snapshot.",
+      "Only selected launch batches get native patch checks; prior rows are canonical metadata checks.",
+      "Esri weak labels and training support masks are not independent truth or QA/model approval.",
+      "Stored whole-pool counts/leakage are metadata only, not whole-pool raster revalidation.",
+      "No HTTP, collection, retries, refunds, reservation edits or source reconstruction."
+    ],
+    "launch_sha256": "7c66d2b8c90260db0647dec505889c31b4f2b7958535f3d0887ada5a652a6b02",
+    "aggregate_sha256_at_read": "9e63564c87647a144665bbb6bbe49b4a95d09bbd2c3bc0f3725861c54d5e7109",
+    "ledger_sha256_at_read": "574d382dd9da51ae56dc8fb135532f8f2e5c542b2c4cafdf73a6ee8dd9c6045f",
+    "boundary_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+    "old_rows_verified": 1747,
+    "pending_rows_verified": 2,
+    "pending_reserved_bytes": 136314880,
+    "physical_total_at_read": 1763,
+    "eligible_total_at_read": 1391,
+    "execution_lock_present_at_read": false,
+    "cell_gap_total_at_read": 1,
+    "eligible_target_gap_at_read": 0,
+    "selected_ledger_observations": {
+      "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072": {
+        "status": "settled",
+        "reserved_bytes": 68157440,
+        "charged_bytes": 22680361,
+        "config_sha256": "9d3618a258fbfd272c227cde90bffd3fc98fac2fd574864a69349a5825e41f71",
+        "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072\\annual-window-report.json"
+      }
+    },
+    "file_sha_rechecks": 52,
+    "external_metadata_changed_during_audit": {
+      "aggregate": false,
+      "ledger": false
+    },
+    "declared_cross_split_scene_ids": [
+      "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+    ],
+    "seconds": 4.474027999996906
+  },
+  "candidate_observations": [
+    {
+      "scene_id": "S2B_MSIL2A_20250629T021209_R060_T51NVA_20250629T035540",
+      "status": "eligible",
+      "estimated_valid_fraction": 0.96343994140625,
+      "minimum_fraction": 0.65,
+      "error": null
+    }
+  ],
+  "new_patch_quality_observations": [
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c0",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65536,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "2": 33887,
+        "5": 7081,
+        "7": 18,
+        "11": 24550
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.5170745849609375,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c1",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65536,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "2": 46230,
+        "5": 6378,
+        "7": 70,
+        "11": 12858
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.705413818359375,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c2",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65536,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "2": 51150,
+        "5": 2491,
+        "7": 165,
+        "11": 11730
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.780487060546875,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c3",
+      "quality_status": "quality_insufficient",
+      "valid_pixels": 41380,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "1": 17,
+        "2": 34420,
+        "5": 110,
+        "11": 6833
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.8318028032866119,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c0",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65528,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "2": 11352,
+        "5": 43986,
+        "7": 6928,
+        "11": 3262
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.6712550360151386,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c1",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 64088,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "1": 140,
+        "2": 19584,
+        "5": 41799,
+        "7": 1944,
+        "11": 621
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.6522125826987891,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c2",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 61472,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "1": 53,
+        "2": 8493,
+        "5": 49004,
+        "7": 2489,
+        "11": 1433
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.7971759500260281,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c3",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 56886,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "1": 16,
+        "2": 5475,
+        "5": 49532,
+        "7": 1198,
+        "11": 665
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.8707239039482474,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c0",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65536,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "1": 5049,
+        "2": 69,
+        "5": 54987,
+        "7": 5431
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.8390350341796875,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c1",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65536,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "1": 583,
+        "2": 27,
+        "5": 56337,
+        "7": 8589
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.8596343994140625,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c2",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65080,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "1": 70,
+        "2": 352,
+        "5": 58464,
+        "7": 6194
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.898340503995083,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c3",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65280,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "2": 12,
+        "5": 60877,
+        "7": 4391
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.9325520833333333,
+      "maximum_class_fraction_over_90_percent": true
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c0",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65280,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "1": 2466,
+        "2": 1,
+        "5": 55825,
+        "7": 6988
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.8551623774509803,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c1",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65280,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "1": 5982,
+        "2": 10,
+        "5": 58699,
+        "7": 589
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.899188112745098,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c2",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65280,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "1": 39,
+        "2": 33,
+        "5": 49580,
+        "7": 15628
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.7594975490196079,
+      "maximum_class_fraction_over_90_percent": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c3",
+      "quality_status": "quality_eligible",
+      "valid_pixels": 65025,
+      "province_inside_pixels": 65536,
+      "class_histogram": {
+        "5": 60886,
+        "7": 4139
+      },
+      "eligible_bare_pixels": 0,
+      "image_band_descriptions": [
+        "B02",
+        "B03",
+        "B04",
+        "B08",
+        "B11",
+        "B12"
+      ],
+      "maximum_class_fraction": 0.9363475586312957,
+      "maximum_class_fraction_over_90_percent": true
+    }
+  ],
+  "original_launch_sha256": "a09147508317777a540201d0c990a926f33d5f57a5989ce520c18d0a0197f91d",
+  "source_sha256": "9e63564c87647a144665bbb6bbe49b4a95d09bbd2c3bc0f3725861c54d5e7109",
+  "ledger_sha256": "574d382dd9da51ae56dc8fb135532f8f2e5c542b2c4cafdf73a6ee8dd9c6045f",
+  "source_bytes": 68887373,
+  "old_rows_exact": true,
+  "old_history_exact": true,
+  "old_pending_exact": true,
+  "old_pending_reserved_bytes": 136314880,
+  "metadata_filter_summary": {
+    "schema_version": 1,
+    "policy": "DEFICIT_AOI_BBOX_CONTAINS_V1",
+    "request_sha256": "e9ebe6f7dcbb986a853ed1749e97c4feafcacde1702c1937c946d7f6e2602487",
+    "source_sha256": "9d491e6ede51cf29407add25b83919cc5d4150576a694c5019814b973d20c2b7",
+    "input_count": 12,
+    "retained_count": 12,
+    "excluded_count": 0,
+    "items": [
+      {
+        "input_index": 0,
+        "cloud_rank": 0,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 1,
+        "cloud_rank": 1,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 2,
+        "cloud_rank": 2,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 3,
+        "cloud_rank": 3,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 4,
+        "cloud_rank": 4,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 5,
+        "cloud_rank": 5,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 6,
+        "cloud_rank": 6,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 8,
+        "cloud_rank": 7,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 7,
+        "cloud_rank": 8,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 9,
+        "cloud_rank": 9,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 10,
+        "cloud_rank": 10,
+        "reason": "METADATA_CONTAINS_AOI"
+      },
+      {
+        "input_index": 11,
+        "cloud_rank": 11,
+        "reason": "METADATA_CONTAINS_AOI"
+      }
+    ],
+    "selected_pool_count": 5
+  },
+  "metadata_filter_trace_scope": "Stored bounded summary + selectedSTACbbox verified; all20 originalfeatures not independently replayed",
+  "selected_scene": "S2B_MSIL2A_20250629T021209_R060_T51NVA_20250629T035540",
+  "selected_datetime": "2025-06-29T02:12:09.024000Z",
+  "actual_source_grid": {
+    "crs": "EPSG:32651",
+    "transform": [
+      10.0,
+      0.0,
+      442070.0,
+      0.0,
+      -10.0,
+      88330.0
+    ],
+    "shape": [
+      1024,
+      1024
+    ],
+    "bands": 6
+  },
+  "raw_b02_source_firstband_equal": true,
+  "patch_firstband_and_grid_matches": 16,
+  "actual_new_patch_rasters": 48,
+  "new_unreferenced_patch_rasters": 0,
+  "source_trace_file_sha_rechecks": 21,
+  "trace_counts_overlap_product_image_files": 16,
+  "bare_per_patch": [
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c0",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c1",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c2",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r0-c3",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_insufficient",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c0",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c1",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c2",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r1-c3",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c0",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c1",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c2",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r2-c3",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c0",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c1",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c2",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    },
+    {
+      "patch_id": "center1024-gorontalo-2025-e9ebe6f7dcbb-73cbb072-r3-c3",
+      "raw_aligned_bare_pixels": 0,
+      "after_source_quality_bare_pixels": 0,
+      "final_supported_bare_pixels": 0,
+      "quality_status": "quality_eligible",
+      "eligible_bare_pixels": 0,
+      "eligible_bare_contribution": false
+    }
+  ],
+  "raw_aligned_bare_pixels": 0,
+  "after_source_quality_bare_pixels": 0,
+  "final_supported_bare_pixels": 0,
+  "eligible_bare_pixels": 0,
+  "eligible_bare_contribution_patches": 0,
+  "cog_charged_bytes": 22413312,
+  "metadata_charged_bytes": 267049,
+  "total_settled_bytes": 22680361,
+  "remaining_budget": 1822603826,
+  "physical_before": {
+    "physical_patch_count": 1748,
+    "referenced_patch_count": 1748,
+    "unreferenced_physical_directories": 0,
+    "worker_receipt_count": 145,
+    "limit": 3000,
+    "observation_sha256": "fde0f2c00d1b151b4b289c809fe611b8e34ffb21c1fae96727cb54850a1f83a4"
+  },
+  "physical_after_inferred": 1764,
+  "metadata_two_reads_stable": true,
+  "terminal_seconds": 350.3899999999994
+}

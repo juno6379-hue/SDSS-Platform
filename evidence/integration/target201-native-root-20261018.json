@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-18T04:37:57.314045+00:00",
+  "status": "BLOCKED_PREFLIGHT_NO_NEW_PATCH",
+  "issue": "TARGETED_INVENTORY_EXISTING_SUPPORT_OVERLAP",
+  "terminal_exit_code": 2,
+  "terminal_seconds": 96.54699999999957,
+  "stdout_events": [
+    {
+      "status": "BLOCKED",
+      "executed": false,
+      "execute_requested": true,
+      "execution_started": false,
+      "execution_progress": null,
+      "issue": "TARGETED_INVENTORY_EXISTING_SUPPORT_OVERLAP"
+    }
+  ],
+  "worker_started_records": 0,
+  "worker_finished_records": 0,
+  "checks": {
+    "source_launch_sha_unchanged": true,
+    "ledger_launch_sha_unchanged": true,
+    "snapshot_pin_matches_launch": true,
+    "old1667_rows_unchanged": true,
+    "oldpending2_unchanged": true,
+    "no_new_batch_reserved": true,
+    "source_leaf_absent": true,
+    "patch_leaf_absent": true,
+    "lock_absent": true,
+    "manifest_ledger_two_reads_stable": true
+  },
+  "target_id": "local-rank10-2025",
+  "province": "southeast_sulawesi",
+  "year": 2025,
+  "declared_bare_pixels": 321,
+  "target_crs": "EPSG:32751",
+  "target_native_bounds": [
+    501910.0,
+    9554880.0,
+    504470.0,
+    9557440.0
+  ],
+  "narrow196_recorded_support_overlap_candidates": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\raw-B11.tif",
+      "recorded_sha256": "17790481b86b6360d9fb68d268a78fed5a3909ac75cf7ab886400e37d8d9a91d",
+      "recorded_crs": "EPSG:32751",
+      "recorded_bounds": [
+        504440.0,
+        9554880.0,
+        507040.0,
+        9557480.0
+      ],
+      "positive_intersection_square_native_units": 76800.0,
+      "evidence_level": "Recorded native-crop metadata corroboration only; this file was not reopened or independently rehashed for201."
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\raw-B12.tif",
+      "recorded_sha256": "725d157942fd746c10445c7bb0512038ce8bac9259d8dba21a5f8d150890a484",
+      "recorded_crs": "EPSG:32751",
+      "recorded_bounds": [
+        504440.0,
+        9554880.0,
+        507040.0,
+        9557480.0
+      ],
+      "positive_intersection_square_native_units": 76800.0,
+      "evidence_level": "Recorded native-crop metadata corroboration only; this file was not reopened or independently rehashed for201."
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\raw-SCL.tif",
+      "recorded_sha256": "8ad94d35896963be06a6967321ca96b2b592f3d06b5c1fd5c0cde341f9c2597d",
+      "recorded_crs": "EPSG:32751",
+      "recorded_bounds": [
+        504460.0,
+        9554900.0,
+        507020.0,
+        9557460.0
+      ],
+      "positive_intersection_square_native_units": 25400.0,
+      "evidence_level": "Recorded native-crop metadata corroboration only; this file was not reopened or independently rehashed for201."
+    }
+  ],
+  "physical_new_patches": 0,
+  "eligible_new_patches": 0,
+  "native_patch_checks": 0,
+  "native_validation_complete": false,
+  "source_row_count": 1667,
+  "stored_eligible_count": 1333,
+  "old_pending_reserved_bytes": 136314880,
+  "new_reserved_or_charged_bytes": 0,
+  "remaining_budget": 1963547857,
+  "rate_limit_active": false,
+  "source_sha256": "1a12b7bca384dd09d73a04cc31df21f75377fc34c332b501a6ee37508dd46fb5",
+  "ledger_sha256": "f49d7e778359c1f60743f617edb599fe2ba3170e9e9243a3459211aa4bc9b0fe",
+  "launch_source_pins_match_now": {
+    "scripts/collect_targeted_bare.py": true,
+    "backend/app/data/targeted_live_guards.py": true,
+    "backend/app/data/targeted_bare_plan.py": true,
+    "backend/app/data/parallel.py": true
+  },
+  "scope_limits": [
+    "Inventory veto reported by actual201preflight; no independent167 rerun or allsupport enumeration. Exact first offendingpath was not emitted by170stdout.",
+    "Metadata-only narrow196overlap candidates can corroborate a possible source but are not a newly independent nativeproof or exactfirstveto attribution.",
+    "No worker started/reservation/outputleaf; unchangedledger/source and codeorder support no newcollectorHTTP. No networksyscalltraceperformed.",
+    "No newpatch means no nativeQA. Prior196native/193candidatewasnotrerun. Rootretainscollectorownership; no retry/guardbypass/refund/lockwrite."
+  ],
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "reviewer_network_calls": 0,
+  "reviewer_collection_starts": 0,
+  "source_or_ledger_writes": 0,
+  "previously_native_checked196_B02_metadata_comparison": {
+    "previous_B02_bounds": [
+      504470,
+      9554890,
+      507030,
+      9557450
+    ],
+    "target_bounds": [
+      501910.0,
+      9554880.0,
+      504470.0,
+      9557440.0
+    ],
+    "positive_intersection_area": 0.0,
+    "source": "target196-native-root-20261018.json actual verified grid; no201native reread"
+  }
+}

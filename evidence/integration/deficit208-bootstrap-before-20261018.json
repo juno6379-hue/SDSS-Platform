@@ -1,0 +1,10 @@
+{
+  "source_sha256": "9797930f8ad04728af5f2f2fb4e49218dbf1f046f9c47c78b7a6e675821c627b",
+  "probe_scope": "Fresh subprocess; cwd and sys.path0 are Temp outside workspace; PYTHONPATH only .runtime; real200 bootstrap then real199 delayed import; no inventory/files/network calls after missing import",
+  "returncode": 0,
+  "stdout": "{\"exception_type\": \"ModuleNotFoundError\", \"missing_module\": \"scripts\", \"message\": \"No module named 'scripts'\", \"root_present_after_bootstrap\": false, \"scripts_present_after_bootstrap\": true}\n",
+  "stderr": "",
+  "operational_inventory_scans": 0,
+  "http_requests": 0,
+  "operational_writes": 0
+}

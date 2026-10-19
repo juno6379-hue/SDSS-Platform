@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-18T04:54:58.412060+00:00",
+  "status": "BLOCKED_PREFLIGHT_NO_NEW_PATCH",
+  "classification": "VERIFIED_REAL",
+  "terminal_exit_code": 2,
+  "terminal_seconds": 81.26499999999942,
+  "stdout": {
+    "status": "BLOCKED",
+    "executed": false,
+    "execute_requested": true,
+    "execution_started": false,
+    "execution_progress": null,
+    "issue": "DEFICIT_LOCAL_PROOF_INVALID"
+  },
+  "checks": {
+    "source_exact_launch_sha": true,
+    "ledger_exact_launch_sha": true,
+    "source_rows_unchanged": true,
+    "pending_exact": true,
+    "no_selected_reservations": true,
+    "no_selected_output_directories": true,
+    "lock_absent": true,
+    "worker_started_records_zero": true,
+    "worker_finished_records_zero": true,
+    "blocked_before_execution": true,
+    "metadata_double_read_stable": true
+  },
+  "source_sha256": "39bb0245e586342bd116f5b052428fcf857fb26eae0ee1413c9c5f5275c40ba9",
+  "ledger_sha256": "024f5eabb2cadf88af4f34661fab6e6c209bf9aa8d105c2d1fbadf10f1c0dae3",
+  "source_rows": 1667,
+  "eligible_stored": 1333,
+  "old_pending_count": 2,
+  "old_pending_reserved_bytes": 136314880,
+  "remaining_budget": 1963547538,
+  "rate_limit_active": false,
+  "selected_keys": [
+    "center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440",
+    "center1024-southeast_sulawesi-2021-c28a69f1093e-2ce2bf2f"
+  ],
+  "selected_output_directories": {
+    "center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440": {
+      "sources": false,
+      "patches": false
+    },
+    "center1024-southeast_sulawesi-2021-c28a69f1093e-2ce2bf2f": {
+      "sources": false,
+      "patches": false
+    }
+  },
+  "launch_source_pins_match_now": {
+    "backend/app/data/deficit_candidate_guard.py": true,
+    "scripts/collect_targeted_bare.py": true,
+    "scripts/collect_samples.py": true,
+    "backend/app/data/parallel.py": true,
+    "scripts/collect_deficit_guarded.py": true,
+    "scripts/collect_training_grid.py": true,
+    "backend/app/data/targeted_live_guards.py": true,
+    "backend/app/data/targeted_inventory.py": true,
+    "backend/app/data/targeted_execution.py": true,
+    "backend/app/data/budget.py": true,
+    "backend/app/data/candidates.py": true
+  },
+  "collector_processes_observed": [],
+  "process_observation_method": "Win32_Process python CommandLine matching collect_deficit_guarded or deficit206-supervisor; none at independent read",
+  "native_patch_checks": 0,
+  "native_validation_complete": false,
+  "new_physical_patches": 0,
+  "new_eligible_patches": 0,
+  "new_bare_contribution_patches": 0,
+  "physical_inventory_before": 1668,
+  "physical_inventory_before_provenance": "205 existing frozen full inventory; not rescanned in206",
+  "physical_inventory_after_inferred": 1668,
+  "limitations": [
+    "전검사 차단으로 신규 배열이 없어 native 검사를 실행하지 않았다.",
+    "원본 전체 파일 재스캔 없이 launch SHA와 원장 SHA 완전일치 및 선택 산출물 디렉터리 부재를 확인했다.",
+    "DEFICIT_LOCAL_PROOF_INVALID는 반환 계약 불충족 코드이며 내부 최초 실패 원인은208 별도 조사 전 미확정이다.",
+    "HTTP 시스템 호출 추적을 추가 실행하지 않았다. 예약/worker/출력 시작 전 차단과 계상 불변을 검증했다."
+  ],
+  "learning_ready": false,
+  "reviewer_network_calls": 0,
+  "reviewer_collection_starts": 0,
+  "source_or_ledger_writes": 0
+}

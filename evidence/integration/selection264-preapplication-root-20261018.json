@@ -1,0 +1,58 @@
+{
+  "status": "PREAPPLICATION_BLOCKED_TWO_REVIEW_FINDINGS_PENDING265",
+  "at_utc": "2026-10-18T08:57:59.986727+00:00",
+  "freeze260_sha256": "66d25b903db870ca6607bb56dc76bf8117b56d468f12ffafd1a20843e9313a8b",
+  "checks": {
+    "isolated:backend/app/data/deficit_candidate_guard.py": true,
+    "isolated:scripts/collect_deficit_guarded.py": true,
+    "isolated:scripts/collect_samples.py": true,
+    "isolated:tests/test_deficit_metadata_selection260.py": true,
+    "protected:backend/app/data/deficit_candidate_guard.py": true,
+    "protected:scripts/collect_deficit_guarded.py": true,
+    "protected:backend/app/data/bare_survey_stac_binding.py": true,
+    "protected:tests/test_bare_survey_stac_binding.py": true,
+    "protected:docs/implementation/246_survey_stac_source_binding.md": true,
+    "protected:tests/test_deficit_candidate_guard.py": true,
+    "protected:tests/test_collect_deficit_guarded.py": true,
+    "protected:docs/implementation/255_b02_alignment_failure_diagnostics.md": true,
+    "evidence:baseline260.json": true,
+    "evidence:patch260-manifest.json": true,
+    "evidence:patch260.diff": true,
+    "evidence:focused260.log": true,
+    "evidence:focused260-final.log": true,
+    "evidence:regression260.log": true,
+    "evidence:regression260-final.log": true,
+    "document": true
+  },
+  "delta": [
+    {
+      "path": "backend/app/data/deficit_candidate_guard.py",
+      "baseline_matches_or_new_path_absent": true,
+      "final260_sha256": "4052759b683f6f4f545a629466f2d4145e3ad9cc2ad8e6cdf5b1e3c0004a5dd2"
+    },
+    {
+      "path": "scripts/collect_deficit_guarded.py",
+      "baseline_matches_or_new_path_absent": true,
+      "final260_sha256": "9ae5ba986d3d48e89cfb269d8a242ffd6189d281649d98a11614c03e5ab3c9ab"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "baseline_matches_or_new_path_absent": true,
+      "final260_sha256": "eac2c2ea7a21f809328ea7572f490584ff7313c2b1ff95191ee976204ac2b424"
+    },
+    {
+      "path": "tests/test_deficit_metadata_selection260.py",
+      "baseline_matches_or_new_path_absent": true,
+      "final260_sha256": "c3c129ce5c95882df5dc9381c360629f325d931233f080982471ee19f7300f45"
+    }
+  ],
+  "findings": [
+    "marked config without callback can take legacy branch",
+    "new test depends on ROOT/baseline files absent in main layout"
+  ],
+  "required_followup": "265 isolated repair and portable fixtures; independent review before any shared apply",
+  "main_mutations": 0,
+  "operating_data_reads": 0,
+  "collector": 0,
+  "http": 0
+}

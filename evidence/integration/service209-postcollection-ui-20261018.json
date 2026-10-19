@@ -1,0 +1,62 @@
+{
+  "status": "VERIFIED_REAL_POST209_BROWSER",
+  "at": "2026-10-18T05:14:19.564411+00:00",
+  "method": "One explicit refresh existing Chrome view17; no separate HTTP request/restart",
+  "response_recorded_at": "2026-10-18T05:13:23.707032+00:00",
+  "response_kst": "2026-10-18 14:13:23.707032",
+  "source_sha256": "80eef2d274942c7a7f9bf8ee2483af070a729060d84ceb1a19baacb52ae4976a",
+  "registered_manifest": {
+    "physical_total": 1699,
+    "eligible": 1355,
+    "other": 344,
+    "split": [
+      813,
+      292,
+      250
+    ],
+    "cell_gap": 24
+  },
+  "physical_outputs_parent_native_audit": 1700,
+  "physical_scope_note": "UI counts registered manifest rows, not all physical files;1700 is parent audit handoff not re-counted here.",
+  "candidate": {
+    "eligible": 1317,
+    "split": [
+      791,
+      276,
+      250
+    ],
+    "blockers": 3,
+    "source_mismatch_warning": true
+  },
+  "bare_review": {
+    "total": 37,
+    "searched_provinces": [
+      "gorontalo",
+      "west_java"
+    ],
+    "source_mismatch_warning": true,
+    "remote_quality": "미검사",
+    "execution": "미승인"
+  },
+  "checks": {
+    "at": "2026-10-18T05:14:03.400Z",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    }
+  },
+  "proof": [
+    "service209-postcollection-ui-20261018.dom.txt",
+    "service209-postcollection-ui-20261018.inventory.png",
+    "service209-postcollection-ui-20261018.png",
+    "service209-postcollection-ui-20261018.checks.json"
+  ],
+  "limitations": [
+    "207 new QA is not published or certified by this browser observation.",
+    "No source, ledger, pointer, registry or operating-data writes; no duplicate refresh/separate API request/server restart.",
+    "Previous evidence preserved as separate time snapshots.",
+    "No HTTP timing/SLA claim."
+  ]
+}

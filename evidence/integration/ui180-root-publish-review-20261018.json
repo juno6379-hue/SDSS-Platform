@@ -1,0 +1,72 @@
+{
+  "recorded_at": "2026-10-18T03:11:00.883082+00:00",
+  "status": "PINNED_REVIEW_PUBLISHED_READER_VERIFIED",
+  "receipt": {
+    "schema_version": 1,
+    "report": {
+      "path": "first-group-training-priority/bare-review179-20261018.json",
+      "sha256": "36aaf1107292eee74b0f6a2ce462d90e40a22de498ca31aaff1c1ded636775f0"
+    }
+  },
+  "reader": {
+    "available": true,
+    "status": "LOCAL_TARGET_REVIEW_FINISHED",
+    "scope": "LOCAL_LABEL_AND_HISTORICAL_SUPPORT_NOT_REMOTE_QUALITY",
+    "source_manifest_sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+    "source_matches_current_manifest": true,
+    "recorded_at": "2026-10-18T03:08:03.967441+00:00",
+    "source_report": "first-group-training-priority/bare-review179-20261018.json",
+    "report_sha256": "36aaf1107292eee74b0f6a2ce462d90e40a22de498ca31aaff1c1ded636775f0",
+    "candidate_total": 50,
+    "rows": [
+      {
+        "province": "south_sulawesi",
+        "candidates": 9,
+        "support_clear": 8,
+        "overlap": 1,
+        "local_invalid": 0
+      },
+      {
+        "province": "gorontalo",
+        "candidates": 1,
+        "support_clear": 0,
+        "overlap": 1,
+        "local_invalid": 0
+      },
+      {
+        "province": "southeast_sulawesi",
+        "candidates": 11,
+        "support_clear": 8,
+        "overlap": 3,
+        "local_invalid": 0
+      },
+      {
+        "province": "east_java",
+        "candidates": 8,
+        "support_clear": 3,
+        "overlap": 5,
+        "local_invalid": 0
+      },
+      {
+        "province": "banten",
+        "candidates": 15,
+        "support_clear": 4,
+        "overlap": 11,
+        "local_invalid": 0
+      },
+      {
+        "province": "west_java",
+        "candidates": 6,
+        "support_clear": 0,
+        "overlap": 6,
+        "local_invalid": 0
+      }
+    ],
+    "execution_supported": false,
+    "actual_quality_verified": false,
+    "scientific_accuracy_validated": false
+  },
+  "receipt_sha256": "471a2e4274d8916eb0e09d1a89cdd92ab51e8dbfda73c337c9678c172340a8dd",
+  "training_started": false,
+  "source_or_ledger_written": false
+}

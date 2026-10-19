@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "IMPLEMENTED_TESTED_SYNTHETIC_AWAITING_INDEPENDENT_REVIEW",
+  "products": {
+    "backend/app/data/deficit_candidate_guard.py": {
+      "bytes": 22548,
+      "sha256": "a90ba9a70bb0b0eecf529a10961e12edd1d9519b881913eed2e997c52c182071"
+    },
+    "scripts/collect_deficit_guarded.py": {
+      "bytes": 21165,
+      "sha256": "971c474b1c8217b1be958b61532ccf55e646804a083a045d2cda74a4a9d2bd09"
+    },
+    "tests/test_deficit_candidate_guard.py": {
+      "bytes": 30495,
+      "sha256": "b44676ddcaeaae5cae818021f68e6b19df164890e6b42736b46921e90e6e5f08"
+    },
+    "tests/test_collect_deficit_guarded.py": {
+      "bytes": 32485,
+      "sha256": "6bf662ea4ed83afab807c1dda9eccdfb39acd452b1a92aa84508957d597245aa"
+    },
+    "docs/implementation/255_b02_alignment_failure_diagnostics.md": {
+      "bytes": 8336,
+      "sha256": "0ca129ef668bf6764ff0c2cd5de4b0fcb3d90ccdb3b59bb29a1e82fb1616f82a"
+    }
+  },
+  "evidence": {
+    "evidence/integration/alignment255-20261018/baseline.json": {
+      "bytes": 1044,
+      "sha256": "7d3f3f4b5ae309249aa0959812199956f22ec8238914475af05349f0fcc6e2ec"
+    },
+    "evidence/integration/alignment255-20261018/focused.log": {
+      "bytes": 1832,
+      "sha256": "36eb2c6e6d739c3839227ddd7716d1c183ae24cc20987525e104920c0b94b23a"
+    },
+    "evidence/integration/alignment255-20261018/patch255.diff": {
+      "bytes": 12917,
+      "sha256": "b2ff446d4dc8d45ca93a477ee04fc017a6900bc8f64f5b90ea551290b856a148"
+    },
+    "evidence/integration/alignment255-20261018/regression.log": {
+      "bytes": 12874,
+      "sha256": "e93cc25e4b1831014f217acc13a52d5d3b0d41c1adba5bc5fc2ceb53d9130018"
+    },
+    "evidence/integration/alignment255-20261018/original/backend/app/data/deficit_candidate_guard.py": {
+      "bytes": 20475,
+      "sha256": "f3528592f335be1c69f562ade59e8fcab22e20c6c83c8363ad84a751b3d1c803"
+    },
+    "evidence/integration/alignment255-20261018/original/scripts/collect_deficit_guarded.py": {
+      "bytes": 21000,
+      "sha256": "cb9a52f75b6c97771bbb0b109a91612f65b3975742342fe2a92eaf8073dbf3ec"
+    },
+    "evidence/integration/alignment255-20261018/original/tests/test_collect_deficit_guarded.py": {
+      "bytes": 29658,
+      "sha256": "804a6a6341ebea939c3c986fcb91a13cccc4f00312c965f6a87fb71ac0e04d9f"
+    },
+    "evidence/integration/alignment255-20261018/original/tests/test_deficit_candidate_guard.py": {
+      "bytes": 26295,
+      "sha256": "447c89f864a0217e3aea3d901d127b3dcc1f89ea5462e6d94c37c46d0dcb21a3"
+    }
+  },
+  "protected246": {
+    "backend/app/data/bare_survey_stac_binding.py": "16a1d8684e47b2d7f1cb63e062f9fe1e2831f10eb4bd68eedae6e6ee7e788b4a",
+    "tests/test_bare_survey_stac_binding.py": "1778d168b3ab6914a57a1607a8bab096f4899c7cee688198749ae507287809e2",
+    "docs/implementation/246_survey_stac_source_binding.md": "f86f51c4ac6638e06938dbac3ee7992ea7a6c999c8f012c43be3540bd9e54154"
+  },
+  "tests": {
+    "focused": {
+      "passed": 6,
+      "seconds": 3.64
+    },
+    "final_regression": {
+      "passed": 54,
+      "seconds": 17.982
+    },
+    "sets_are_not_additive": true
+  },
+  "operating_source_ledger_reads": 0,
+  "http": 0,
+  "operational_collection": 0,
+  "native_qa": 0,
+  "guard_tolerance_m_unchanged": 10.000001,
+  "actual249_geometry_reconstructed": false,
+  "execution_authorized": false
+}

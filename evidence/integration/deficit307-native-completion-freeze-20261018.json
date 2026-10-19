@@ -1,0 +1,115 @@
+{
+  "status": "VERIFIED_REAL_ONE_BOUNDED_NATIVE_AND_TRACE_COMPLETED",
+  "at": "2026-10-18T13:32:19.763767+00:00",
+  "exec_session": 64841,
+  "actual_pid": 43896,
+  "exit_code": 0,
+  "helper_invocations": 1,
+  "native_validation_complete": true,
+  "new_native_patches": 16,
+  "new_eligible": 16,
+  "registered_rows": 1779,
+  "source_eligible": 1407,
+  "cell_gap": 0,
+  "source_sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+  "source_bytes": 69564847,
+  "ledger_sha256": "d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91",
+  "old_rows_history_pending_exact": true,
+  "file_sha_rechecks": 52,
+  "new_rasters": 48,
+  "trace_files": 21,
+  "trace_duplicate_images": 16,
+  "bare_stages": {
+    "raw_aligned_bare_pixels": 0,
+    "after_source_quality_bare_pixels": 0,
+    "final_supported_bare_pixels": 0,
+    "eligible_bare_pixels": 0,
+    "eligible_bare_contribution_patches": 0
+  },
+  "charged_bytes": 22845886,
+  "remaining_budget": 1799757940,
+  "native_helper_seconds": 6.346999399997003,
+  "whole_wall_rss_observed": false,
+  "http": 0,
+  "operating_writes": 0,
+  "additional_qa_native": 0,
+  "training_approved": false,
+  "pins": [
+    {
+      "path": "evidence/integration/deficit304-native-go-root-20261018.json",
+      "bytes": 743,
+      "sha256": "4d76b1211f730055417dfb126d8661e6f972cf00d1cedf10c3d825b191d4d452"
+    },
+    {
+      "path": "evidence/integration/deficit304-native-runner-root-20261018.py",
+      "bytes": 15973,
+      "sha256": "36a6cf451a86e0b3f0f963e689f732b4228f73d03f21e20687a08582ec141e8f"
+    },
+    {
+      "path": "evidence/integration/deficit307-native-preparation-freeze-20261018.json",
+      "bytes": 1668,
+      "sha256": "7aa69e84b0ead75c825228d0f2de93f5723dced81e3a728ae66f0ba405e88ba1"
+    },
+    {
+      "path": "evidence/integration/deficit307-before299-native-runner-20261018.py",
+      "bytes": 15973,
+      "sha256": "a8a9ed9fcdbb0fafb60c3c71f028f188b6f855ccc5f7c6768a328c327da608ca"
+    },
+    {
+      "path": "evidence/integration/deficit307-native-runner-vs299-20261018.diff",
+      "bytes": 5985,
+      "sha256": "009fd49a2a28a07258db7553169186739cfd9ed5bbe2c8112d1a3ef81769e504"
+    },
+    {
+      "path": "evidence/integration/deficit307-preparation-doc-before-native-20261018.md",
+      "bytes": 7068,
+      "sha256": "78e5809a074bc4bd9a96de2701b58fcc8d2011d3a54f027db2697cb8fdfa5fc2"
+    },
+    {
+      "path": "evidence/integration/deficit307-termination-observation-20261018.json",
+      "bytes": 2766,
+      "sha256": "44541e07ec8d693ca6ec482f1c17b8f979bed8078ce35b7c40b6d87a6d786c78"
+    },
+    {
+      "path": "evidence/integration/deficit304-launch-root-20261018.json",
+      "bytes": 7511,
+      "sha256": "309186bdff3c24a0a1ac67409924d8210c15c5d162ef0cefecab393d4b1f199c"
+    },
+    {
+      "path": "evidence/integration/deficit304-terminal-root-20261018.json",
+      "bytes": 7642,
+      "sha256": "0acb1c650c203b2c6486b7a15001dc5a6c61a7534762e48ebba27b6c35331d52"
+    },
+    {
+      "path": "evidence/integration/deficit304-live-root-20261018-stdout.log",
+      "bytes": 1943,
+      "sha256": "6fbb09bcdf417b009a6a0d3a2a1e297d6ba81652e9e7202e8dda5db1a22afaff"
+    },
+    {
+      "path": "evidence/integration/deficit304-live-root-20261018-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/integration/deficit304-native-root-20261018.json",
+      "bytes": 34588,
+      "sha256": "7e933d923f6a7507a878f66bd7fea391b7b181779746f175567f0febdf8c884c"
+    },
+    {
+      "path": "evidence/integration/deficit304-native-root-20261018.log",
+      "bytes": 26,
+      "sha256": "8e5ed701297271b2a3a1ddd311775ed5313e1edd18a21545e1041ddd15b0d565"
+    },
+    {
+      "path": "evidence/integration/deficit304-native-root-20261018-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/implementation/307_post304_bounded_native_preparation.md",
+      "bytes": 11018,
+      "sha256": "d6c72eba30f817b4536587a97b7d43b8f47849f1803a9483e81d8b49e03c3340"
+    }
+  ],
+  "understanding_handoff": "ROOT_SEPARATE_FOLLOWUP_REQUIRED"
+}

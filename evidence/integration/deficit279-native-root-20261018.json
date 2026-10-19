@@ -1,0 +1,254 @@
+{
+  "status": "COMPLETED_ZERO_PATCH_NARROW_AUDIT",
+  "native_validation_complete": false,
+  "native_raster_reads": 0,
+  "reviewer_http_calls": 0,
+  "reviewer_collection_starts": 0,
+  "operating_writes": 0,
+  "learning_ready": false,
+  "scientific_accuracy_validated": false,
+  "recorded_at": "2026-10-18T11:49:55.248501+00:00",
+  "terminal_exit_code": 0,
+  "terminal_seconds": 179.65599999999904,
+  "original_launch_sha256": "39e61bee1036a35aba5edca51b5ef22564e615a3abb1b9e8f988e8745bd879f9",
+  "request_sha256": "7b942e4768677fc0ee7721ff9a76df8fa9b43e6e9dc2936fe0eb57d7bbfdea15",
+  "before_source_sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+  "source_sha256": "9b580b338c8a2bca9b1a65ae5184b05622c457480acfec7ff9ddf169260bf89c",
+  "source_bytes": 67518753,
+  "ledger_sha256": "3e8d7a98cbec1ac8b3a4a00ce546a7eb76014ec61e94e048c0b6ac5fd4f86225",
+  "before_ledger_sha256": "5d1ef4d2c1b917402ffdda2365c69d81984b1e682bad22a8cc00ad238456e86e",
+  "old_rows_exact": true,
+  "old_history_exact": true,
+  "old_pending_exact": true,
+  "old_pending_reserved_bytes": 136314880,
+  "changed_manifest_keys": [
+    "source_manifests"
+  ],
+  "registered_total": 1731,
+  "eligible_total": 1364,
+  "new_patch_files": 0,
+  "new_eligible_patches": 0,
+  "new_bare_contribution_patches": 0,
+  "stored_config_sha256": "b92be0595185eec1365e33147395d3c7de9f466029314bccc3a3e14df8c6a74e",
+  "effective_config_sha256": "3515b4fb281073e02773644afcebdc59d2824f945363165d2cde7088a5f41373",
+  "worker_error": null,
+  "worker_b02_alignment_diagnostic": null,
+  "scene_observations": [
+    {
+      "scene_id": "S2B_MSIL2A_20250729T021209_R060_T51NUA_20250729T035650",
+      "status": "reference_diversity_deferred",
+      "quality_status": null,
+      "error": null,
+      "b02_alignment_diagnostic": null,
+      "label_first_preview": {
+        "year": 2025,
+        "class_counts": {
+          "1": 237,
+          "2": 4169915,
+          "7": 138,
+          "10": 17843,
+          "11": 6171
+        },
+        "selection_context": {
+          "priority_source_classes": [
+            8
+          ],
+          "allow_dominant_class_deferral": true,
+          "snapshot_eligible_patches": 185
+        },
+        "note": "확대원본범위예비분포이며최종256/SCL/polygon필터후분포와다름"
+      },
+      "stored_preview_total_pixels": 4194304,
+      "stored_preview_dominant_fraction": 0.994185209274292,
+      "stored_preview_priority_fraction": 0.0,
+      "preview_array_independently_recounted": false
+    }
+  ],
+  "candidate_observations": [
+    {
+      "scene_id": "S2B_MSIL2A_20250729T021209_R060_T51NUA_20250729T035650",
+      "status": "eligible",
+      "estimated_valid_fraction": 0.8517799377441406,
+      "minimum_fraction": 0.65,
+      "error": null,
+      "raw_scl_sha256": "9ceb45907f7290705cc78b04c4c65e26bea6ecb8dca2f2095170acb099618aa4",
+      "b02_alignment_diagnostic": null
+    }
+  ],
+  "metadata_filter_summaries": [
+    {
+      "schema_version": 1,
+      "policy": "DEFICIT_AOI_BBOX_CONTAINS_V1",
+      "request_sha256": "7b942e4768677fc0ee7721ff9a76df8fa9b43e6e9dc2936fe0eb57d7bbfdea15",
+      "source_sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+      "input_count": 20,
+      "retained_count": 4,
+      "excluded_count": 16,
+      "items": [
+        {
+          "input_index": 0,
+          "cloud_rank": 0,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 1,
+          "cloud_rank": 1,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 2,
+          "cloud_rank": 2,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 4,
+          "cloud_rank": 3,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 3,
+          "cloud_rank": 4,
+          "reason": "METADATA_CONTAINS_AOI"
+        },
+        {
+          "input_index": 6,
+          "cloud_rank": 5,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 7,
+          "cloud_rank": 6,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 5,
+          "cloud_rank": 7,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 8,
+          "cloud_rank": 8,
+          "reason": "METADATA_CONTAINS_AOI"
+        },
+        {
+          "input_index": 9,
+          "cloud_rank": 9,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 10,
+          "cloud_rank": 10,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 12,
+          "cloud_rank": 11,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 11,
+          "cloud_rank": 12,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 13,
+          "cloud_rank": 13,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 15,
+          "cloud_rank": 14,
+          "reason": "METADATA_CONTAINS_AOI"
+        },
+        {
+          "input_index": 14,
+          "cloud_rank": 15,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 17,
+          "cloud_rank": 16,
+          "reason": "METADATA_CONTAINS_AOI"
+        },
+        {
+          "input_index": 16,
+          "cloud_rank": 17,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 18,
+          "cloud_rank": 18,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        },
+        {
+          "input_index": 19,
+          "cloud_rank": 19,
+          "reason": "METADATA_PARTIAL_OR_DISJOINT"
+        }
+      ],
+      "selected_pool_count": 4
+    }
+  ],
+  "independent_raw_scl_sha_checks": [
+    {
+      "path": "data\\first-group-training-esri-v1\\sources\\center1024-gorontalo-2025-7b942e476867-15093b16\\centers182-gorontalo-921d1fd07f85-2025\\qa-candidate-00-SCL.tif",
+      "sha256": "9ceb45907f7290705cc78b04c4c65e26bea6ecb8dca2f2095170acb099618aa4",
+      "bytes": 11141
+    }
+  ],
+  "bounded_file_pins": {
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-gorontalo-2025-7b942e476867-15093b16\\config.json": "d357782ae1429f7c7d02934e2a6ebb5635708ac9b837a50f67f183198f879d16",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-gorontalo-2025-7b942e476867-15093b16\\window-state.json": "8afef684f4b195c5b0731e9bf98e884c456c04de25ff23aefba3cdeed03ba442",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-gorontalo-2025-7b942e476867-15093b16\\worker-result.json": "1e8fe8a8249ef88d941c857fc40091ac50bdf32c15be41a50fdb1c9ab02138cb",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-gorontalo-2025-7b942e476867-15093b16\\annual-window-report.json": "6b4fcd4923aebc6d4868880a01a91a26bfac28507dae0cb7aad55de977bfa806",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-gorontalo-2025-7b942e476867-15093b16\\selection-context.json": "62963f5a7ba7f3c6c672919c0dfa9bc1a5c193f2867c1f884990fd39b24ac9ac",
+    "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-gorontalo-2025-7b942e476867-15093b16\\centers182-gorontalo-921d1fd07f85-2025\\qa-candidate-00-SCL.tif": "9ceb45907f7290705cc78b04c4c65e26bea6ecb8dca2f2095170acb099618aa4"
+  },
+  "execution_progress": {
+    "reservation_attempted_batches": [
+      "center1024-gorontalo-2025-7b942e476867-15093b16"
+    ],
+    "reserved_batches": [
+      "center1024-gorontalo-2025-7b942e476867-15093b16"
+    ],
+    "collector_entered_batches": [
+      "center1024-gorontalo-2025-7b942e476867-15093b16"
+    ],
+    "settled_batches": [
+      "center1024-gorontalo-2025-7b942e476867-15093b16"
+    ],
+    "published_batches": [
+      "center1024-gorontalo-2025-7b942e476867-15093b16"
+    ],
+    "finalization_attempted_batches": [
+      "center1024-gorontalo-2025-7b942e476867-15093b16"
+    ],
+    "execution_started": true,
+    "transfer_status": "NOT_INDEPENDENTLY_VERIFIED",
+    "reservation_status": "ALL_ATTEMPTS_CONFIRMED_RESERVED",
+    "settlement_status": "ALL_RESERVED_SETTLED",
+    "publication_status": "ALL_RESERVED_PUBLISHED"
+  },
+  "physical_before": {
+    "physical_patch_count": 1732,
+    "referenced_patch_count": 1732,
+    "unreferenced_physical_directories": 0,
+    "worker_receipt_count": 143,
+    "limit": 3000,
+    "observation_sha256": "c9f44b05d5ee85803bd3a4bcc7c4ca4423b7a874c0e80340fdb4bb1ac4a1fc6b"
+  },
+  "physical_after_inferred": 1732,
+  "cog_charged_bytes": 655360,
+  "metadata_charged_bytes": 361869,
+  "total_settled_bytes": 1017229,
+  "new_charged_bytes": 2425924046,
+  "remaining_budget": 1869043250,
+  "source_ledger_two_reads_stable": true,
+  "collector_os_exit_observed": true,
+  "lock_absent": true,
+  "limitations": [
+    "새 SCL은 저장바이트 SHA만 검사했으며 픽셀 배열 재측정은 하지 않았다.",
+    "후보 수·탈락 사유는 저장된 보고서에서 집계했다. 원격 원문 검색 응답을 재요청하지 않았다.",
+    "실물 총량은 수집기 사전검사와 신규 패치 없음에 근거하며 기존 전체 파일을 재검사하지 않았다."
+  ]
+}

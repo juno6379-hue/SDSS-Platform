@@ -1,0 +1,65 @@
+{
+  "status": "DESIGN_ONLY_EXECUTION_BLOCKED_NO_CODE_GO",
+  "at": "2026-10-18T14:13:43.572442+00:00",
+  "pins": [
+    {
+      "path": "docs/implementation/318_target256_explicit_source_profile_design.md",
+      "bytes": 11219,
+      "sha256": "b8d2df2d0d012a68cb0d3722176800c994b514a3cd92b49fbcc9fd3578bc64f0"
+    },
+    {
+      "path": "backend/app/data/targeted_bare_plan.py",
+      "bytes": 15594,
+      "sha256": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "bytes": 10945,
+      "sha256": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory_profile.py",
+      "bytes": 1900,
+      "sha256": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d"
+    },
+    {
+      "path": "backend/app/data/targeted_live_guards.py",
+      "bytes": 7558,
+      "sha256": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238"
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "bytes": 21923,
+      "sha256": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8"
+    },
+    {
+      "path": "scripts/review_bare_targets179.py",
+      "bytes": 15198,
+      "sha256": "25b3abcbc1f4e7da00d0d9b40624c415415e23489cec138c65bd1e4c6164c89d"
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "bytes": 11756,
+      "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3"
+    }
+  ],
+  "proposed_outer_version": 3,
+  "proposed_plan_version": 2,
+  "marker": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "source_cap": 134217728,
+  "row_cap_source_plus_history": 3000,
+  "depth": 32,
+  "nodes": 4000000,
+  "json_io_cap": 17179869184,
+  "legacy64_default_unchanged": true,
+  "per_role_caps_preservation_required": true,
+  "whole_metadata_thread_writer_scope_unimplemented": true,
+  "source64_downstream_blocker_fixed": false,
+  "operating_reads_tests_native_http": 0,
+  "product_edits": 0,
+  "execution_authorized": false,
+  "training_approved": false
+}

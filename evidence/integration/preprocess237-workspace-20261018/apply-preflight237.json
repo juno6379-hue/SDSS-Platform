@@ -1,0 +1,1449 @@
+{
+  "at_utc": "2026-10-18T07:46:32.121104+00:00",
+  "scope": "ROOT241_READ_ONLY_COMPOSED228_230_237_PREFLIGHT_NOT_APPLY_AUTHORIZATION",
+  "manifest_union_file_count": 21,
+  "counts": {
+    "BASELINE_MATCH": 16,
+    "NEW_PATH_ABSENT": 5
+  },
+  "runtime_product_count": 18,
+  "synthetic_test_source_count": 3,
+  "files": [
+    {
+      "path": "backend/app/candidate_qa_comparison_api.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "6268dd381198309daee474598788a9c2a1eb385eb0cee9c4f9e60ad1085f1a5b",
+        "bytes": 4690
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\candidate_qa_comparison_api.py",
+      "main_observed": {
+        "bytes": 4690,
+        "sha256": "6268dd381198309daee474598788a9c2a1eb385eb0cee9c4f9e60ad1085f1a5b"
+      },
+      "final237": {
+        "sha256": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+        "bytes": 5023
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/collection_budget_status.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "670d3262e6ea7ccd25995a8c0b42bc0441dd1618d1d380360978c213da3a6d52",
+        "bytes": 8643
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\baseline230-code\\backend\\app\\collection_budget_status.py",
+      "main_observed": {
+        "bytes": 8643,
+        "sha256": "670d3262e6ea7ccd25995a8c0b42bc0441dd1618d1d380360978c213da3a6d52"
+      },
+      "final237": {
+        "sha256": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108",
+        "bytes": 9420
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/collection_priority_status.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        237
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "57401082fea929ba8ecc396a48596a5253e18408f6a641064395722242aea21a",
+        "bytes": 11716
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\baseline237-code\\backend\\app\\collection_priority_status.py",
+      "main_observed": {
+        "bytes": 11716,
+        "sha256": "57401082fea929ba8ecc396a48596a5253e18408f6a641064395722242aea21a"
+      },
+      "final237": {
+        "sha256": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9",
+        "bytes": 12380
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/collection_source_profile.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230
+      ],
+      "baseline_before_any_profile_revision": null,
+      "baseline_code_archive": null,
+      "main_observed": null,
+      "final237": {
+        "sha256": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef",
+        "bytes": 4882
+      },
+      "status": "NEW_PATH_ABSENT",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/collection_status.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230,
+        237
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "ff76a2bede8f538b0f25f7a68221773c2e037213f437da1e02ef5e20971b64fd",
+        "bytes": 16533
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\baseline230-code\\backend\\app\\collection_status.py",
+      "main_observed": {
+        "bytes": 16533,
+        "sha256": "ff76a2bede8f538b0f25f7a68221773c2e037213f437da1e02ef5e20971b64fd"
+      },
+      "final237": {
+        "sha256": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9",
+        "bytes": 19153
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/data/candidates.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        237
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "c72257998d14c8b874ee9c9b532e50d78b3e3417a8b47c1688a54c656966dba6",
+        "bytes": 3752
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\baseline237-code\\backend\\app\\data\\candidates.py",
+      "main_observed": {
+        "bytes": 3752,
+        "sha256": "c72257998d14c8b874ee9c9b532e50d78b3e3417a8b47c1688a54c656966dba6"
+      },
+      "final237": {
+        "sha256": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9",
+        "bytes": 4564
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/main.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "0713249307cf83ae5eb5e0223288ce2003c7b661cdb38a1c71a807402ac0a44b",
+        "bytes": 22739
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\baseline230-code\\backend\\app\\main.py",
+      "main_observed": {
+        "bytes": 22739,
+        "sha256": "0713249307cf83ae5eb5e0223288ce2003c7b661cdb38a1c71a807402ac0a44b"
+      },
+      "final237": {
+        "sha256": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b",
+        "bytes": 23838
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/candidate_materialization.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b",
+        "bytes": 8716
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\candidate_materialization.py",
+      "main_observed": {
+        "bytes": 8716,
+        "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b"
+      },
+      "final237": {
+        "sha256": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+        "bytes": 9036
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/candidate_qa_comparison.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e",
+        "bytes": 17204
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\candidate_qa_comparison.py",
+      "main_observed": {
+        "bytes": 17204,
+        "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e"
+      },
+      "final237": {
+        "sha256": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+        "bytes": 17672
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/candidate_readiness_qa.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "b93aa5964bbe54955411ff978680a06e5380d1507f562cf3a6675d30d7cd4aaf",
+        "bytes": 17817
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\candidate_readiness_qa.py",
+      "main_observed": {
+        "bytes": 17817,
+        "sha256": "b93aa5964bbe54955411ff978680a06e5380d1507f562cf3a6675d30d7cd4aaf"
+      },
+      "final237": {
+        "sha256": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+        "bytes": 18326
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/candidate_staging.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "a96bcb55d08f7605fb57b9f45f86a6c392e6c15068b09efdb4761aabe5955862",
+        "bytes": 12357
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\candidate_staging.py",
+      "main_observed": {
+        "bytes": 12357,
+        "sha256": "a96bcb55d08f7605fb57b9f45f86a6c392e6c15068b09efdb4761aabe5955862"
+      },
+      "final237": {
+        "sha256": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d",
+        "bytes": 13715
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230,
+        237
+      ],
+      "baseline_before_any_profile_revision": null,
+      "baseline_code_archive": null,
+      "main_observed": null,
+      "final237": {
+        "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+        "bytes": 11756
+      },
+      "status": "NEW_PATH_ABSENT",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/readiness.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc",
+        "bytes": 32867
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\readiness.py",
+      "main_observed": {
+        "bytes": 32867,
+        "sha256": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc"
+      },
+      "final237": {
+        "sha256": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb",
+        "bytes": 33396
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "5f8774150d7c6bd11b8682fe2027059191ac6d5a9d64a79f03a3c9e60ef0165b",
+        "bytes": 7699
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\backend\\app\\ml\\split_json_io.py",
+      "main_observed": {
+        "bytes": 7699,
+        "sha256": "5f8774150d7c6bd11b8682fe2027059191ac6d5a9d64a79f03a3c9e60ef0165b"
+      },
+      "final237": {
+        "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+        "bytes": 8513
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "scripts/find_bare_targets173.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230,
+        237
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "64d7a8f09f1a87edeecf72665e4f6a097d793d9e168c5b4d03ae1839daef917f",
+        "bytes": 16216
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\baseline230-code\\scripts\\find_bare_targets173.py",
+      "main_observed": {
+        "bytes": 16216,
+        "sha256": "64d7a8f09f1a87edeecf72665e4f6a097d793d9e168c5b4d03ae1839daef917f"
+      },
+      "final237": {
+        "sha256": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750",
+        "bytes": 17919
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "scripts/prepare_priority_candidate164.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "8a113c2efa530744662734b31386bf99a41bc31db9d279f53c2074dfc3173ba7",
+        "bytes": 10443
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\scripts\\prepare_priority_candidate164.py",
+      "main_observed": {
+        "bytes": 10443,
+        "sha256": "8a113c2efa530744662734b31386bf99a41bc31db9d279f53c2074dfc3173ba7"
+      },
+      "final237": {
+        "sha256": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437",
+        "bytes": 13570
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "scripts/propose_deficit_centers182.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        230,
+        237
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "c8ab85d7e3f39cda8a0c5a8259bf212a5bf9bc699e7f7b17652a90cfdacd6cf9",
+        "bytes": 13575
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\baseline230-code\\scripts\\propose_deficit_centers182.py",
+      "main_observed": {
+        "bytes": 13575,
+        "sha256": "c8ab85d7e3f39cda8a0c5a8259bf212a5bf9bc699e7f7b17652a90cfdacd6cf9"
+      },
+      "final237": {
+        "sha256": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+        "bytes": 14399
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "scripts/run_experiment.py",
+      "artifact_class": "RUNTIME_PRODUCT_CODE",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": {
+        "sha256": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3",
+        "bytes": 13221
+      },
+      "baseline_code_archive": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\baseline-code\\scripts\\run_experiment.py",
+      "main_observed": {
+        "bytes": 13221,
+        "sha256": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3"
+      },
+      "final237": {
+        "sha256": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772",
+        "bytes": 13682
+      },
+      "status": "BASELINE_MATCH",
+      "main_written": false
+    },
+    {
+      "path": "tests/test_manifest_profile228.py",
+      "artifact_class": "SYNTHETIC_TEST_SOURCE_NOT_RUNTIME_PRODUCT",
+      "revisions": [
+        228,
+        230
+      ],
+      "baseline_before_any_profile_revision": null,
+      "baseline_code_archive": null,
+      "main_observed": null,
+      "final237": {
+        "sha256": "f6c32f189ac7674f23dd11d3e65958896a388aa13adffd068babaf10ad5fec1a",
+        "bytes": 11801
+      },
+      "status": "NEW_PATH_ABSENT",
+      "main_written": false
+    },
+    {
+      "path": "tests/test_manifest_profile230.py",
+      "artifact_class": "SYNTHETIC_TEST_SOURCE_NOT_RUNTIME_PRODUCT",
+      "revisions": [
+        230
+      ],
+      "baseline_before_any_profile_revision": null,
+      "baseline_code_archive": null,
+      "main_observed": null,
+      "final237": {
+        "sha256": "431e44c787c594bd0cb40d90528ca80e87f01b1daa92b85250b61223131f10de",
+        "bytes": 20898
+      },
+      "status": "NEW_PATH_ABSENT",
+      "main_written": false
+    },
+    {
+      "path": "tests/test_manifest_profile237.py",
+      "artifact_class": "SYNTHETIC_TEST_SOURCE_NOT_RUNTIME_PRODUCT",
+      "revisions": [
+        237
+      ],
+      "baseline_before_any_profile_revision": null,
+      "baseline_code_archive": null,
+      "main_observed": null,
+      "final237": {
+        "sha256": "82952348b0c5d33f25f879e8716393c5970ae00d6c46bb80b44b52a028c9f7eb",
+        "bytes": 19353
+      },
+      "status": "NEW_PATH_ABSENT",
+      "main_written": false
+    }
+  ],
+  "excluded_232_and_shared_files": [
+    {
+      "path": "scripts/review_bare_targets179.py",
+      "included": false,
+      "main_code_observed": {
+        "bytes": 15198,
+        "sha256": "25b3abcbc1f4e7da00d0d9b40624c415415e23489cec138c65bd1e4c6164c89d"
+      }
+    },
+    {
+      "path": "scripts/collect_targeted_bare.py",
+      "included": false,
+      "main_code_observed": {
+        "bytes": 21923,
+        "sha256": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8"
+      }
+    },
+    {
+      "path": "backend/app/data/targeted_inventory_profile.py",
+      "included": false,
+      "main_code_observed": {
+        "bytes": 1900,
+        "sha256": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d"
+      }
+    },
+    {
+      "path": "tests/test_targeted_inventory_profile232.py",
+      "included": false,
+      "main_code_observed": {
+        "bytes": 14614,
+        "sha256": "294f4deca06489a0b34b4c936a43f9f9606ea49551f431be78c805d59ce6d33b"
+      }
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "included": false,
+      "main_code_observed": {
+        "bytes": 10945,
+        "sha256": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839"
+      }
+    },
+    {
+      "path": "backend/app/data/deficit_candidate_guard.py",
+      "included": false,
+      "main_code_observed": {
+        "bytes": 20475,
+        "sha256": "f3528592f335be1c69f562ade59e8fcab22e20c6c83c8363ad84a751b3d1c803"
+      }
+    }
+  ],
+  "frozen_pin_checks": [
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\freeze228.json",
+      "expected": {
+        "bytes": 6917,
+        "sha256": "377f8112c0b503a24bc15556bad24b7e1eb75dd1a82465d76ada05ecaa21fc67"
+      },
+      "observed": {
+        "bytes": 6917,
+        "sha256": "377f8112c0b503a24bc15556bad24b7e1eb75dd1a82465d76ada05ecaa21fc67"
+      },
+      "match": true,
+      "trusted_freeze_sha_from_prior_handoff": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\backend\\app\\candidate_qa_comparison_api.py",
+      "expected": {
+        "sha256": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+        "bytes": 5023
+      },
+      "observed": {
+        "bytes": 5023,
+        "sha256": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\backend\\app\\ml\\candidate_materialization.py",
+      "expected": {
+        "sha256": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+        "bytes": 9036
+      },
+      "observed": {
+        "bytes": 9036,
+        "sha256": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\backend\\app\\ml\\candidate_qa_comparison.py",
+      "expected": {
+        "sha256": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+        "bytes": 17672
+      },
+      "observed": {
+        "bytes": 17672,
+        "sha256": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\backend\\app\\ml\\candidate_readiness_qa.py",
+      "expected": {
+        "sha256": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+        "bytes": 18326
+      },
+      "observed": {
+        "bytes": 18326,
+        "sha256": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\backend\\app\\ml\\candidate_staging.py",
+      "expected": {
+        "sha256": "eef485a01864e6ddc17bcfcb28dabae923579b2f6eb3b4df8ce4efc6f202e0fd",
+        "bytes": 12770
+      },
+      "observed": {
+        "bytes": 12770,
+        "sha256": "eef485a01864e6ddc17bcfcb28dabae923579b2f6eb3b4df8ce4efc6f202e0fd"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\backend\\app\\ml\\readiness.py",
+      "expected": {
+        "sha256": "f5e701152d064c794e8723aee2f1bc5ae7ec9f7dc386e180754e37f2cd5c6d3c",
+        "bytes": 33203
+      },
+      "observed": {
+        "bytes": 33203,
+        "sha256": "f5e701152d064c794e8723aee2f1bc5ae7ec9f7dc386e180754e37f2cd5c6d3c"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\backend\\app\\ml\\split_json_io.py",
+      "expected": {
+        "sha256": "f0cb93fe0a3d10bac163d705b748660f4d20276229fe043489503c3558601476",
+        "bytes": 8302
+      },
+      "observed": {
+        "bytes": 8302,
+        "sha256": "f0cb93fe0a3d10bac163d705b748660f4d20276229fe043489503c3558601476"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\scripts\\prepare_priority_candidate164.py",
+      "expected": {
+        "sha256": "197d81b9ed40e6cd3a74358a88335e8eda0c396dbd6c1e28dfd85f658226a6c2",
+        "bytes": 12705
+      },
+      "observed": {
+        "bytes": 12705,
+        "sha256": "197d81b9ed40e6cd3a74358a88335e8eda0c396dbd6c1e28dfd85f658226a6c2"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\scripts\\run_experiment.py",
+      "expected": {
+        "sha256": "b045de37b36a22e6ac75e0749c93b98f05cf166b58569904bf880cdf7ad4f4d1",
+        "bytes": 13652
+      },
+      "observed": {
+        "bytes": 13652,
+        "sha256": "b045de37b36a22e6ac75e0749c93b98f05cf166b58569904bf880cdf7ad4f4d1"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\backend\\app\\ml\\manifest_resource_profile.py",
+      "expected": {
+        "sha256": "a7bdef52d2d44cac90ad1157a51c54012520a12fefacc2c980db328077557a60",
+        "bytes": 4200
+      },
+      "observed": {
+        "bytes": 4200,
+        "sha256": "a7bdef52d2d44cac90ad1157a51c54012520a12fefacc2c980db328077557a60"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\tests\\test_manifest_profile228.py",
+      "expected": {
+        "sha256": "94add11a4af11c61c4a6b3621c71502775441d4db54d95ef8202c6799a1dbe34",
+        "bytes": 11800
+      },
+      "observed": {
+        "bytes": 11800,
+        "sha256": "94add11a4af11c61c4a6b3621c71502775441d4db54d95ef8202c6799a1dbe34"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\input-source-manifest.json",
+      "expected": {
+        "bytes": 58498,
+        "sha256": "60bd97bd1ec01b0c6b0ab8e07c9f546e859e0b3c0303859fa6399bd183021fbf"
+      },
+      "observed": {
+        "bytes": 58498,
+        "sha256": "60bd97bd1ec01b0c6b0ab8e07c9f546e859e0b3c0303859fa6399bd183021fbf"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\patch228.diff",
+      "expected": {
+        "bytes": 64820,
+        "sha256": "64238b9f52d4526b44bd4ccfa2c40b46d8443973ecd4bb238d6f8ff8e04c19ba"
+      },
+      "observed": {
+        "bytes": 64820,
+        "sha256": "64238b9f52d4526b44bd4ccfa2c40b46d8443973ecd4bb238d6f8ff8e04c19ba"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\patch228-manifest.json",
+      "expected": {
+        "bytes": 6034,
+        "sha256": "4b739df89075c0823eee276471522198862bcf30194a65c40b7be883c532c35f"
+      },
+      "observed": {
+        "bytes": 6034,
+        "sha256": "4b739df89075c0823eee276471522198862bcf30194a65c40b7be883c532c35f"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\docs\\ISOLATED228.md",
+      "expected": {
+        "bytes": 1326,
+        "sha256": "12a903751d2e7676ccbd5f4bdbcd49c5a93cf4800c0b39f3143e578526305889"
+      },
+      "observed": {
+        "bytes": 1326,
+        "sha256": "12a903751d2e7676ccbd5f4bdbcd49c5a93cf4800c0b39f3143e578526305889"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\profile228-freeze-regression.log",
+      "expected": {
+        "bytes": 17090,
+        "sha256": "51d283f8e669938c150c4aae62ddb7c89448e43e139e24ae8d34c9de58b76dbb"
+      },
+      "observed": {
+        "bytes": 17090,
+        "sha256": "51d283f8e669938c150c4aae62ddb7c89448e43e139e24ae8d34c9de58b76dbb"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\benchmark228-child.py",
+      "expected": {
+        "bytes": 2459,
+        "sha256": "a303448e84117c7b0077cdc8c55e24795dfc3a2f822313eaa7b342953384e187"
+      },
+      "observed": {
+        "bytes": 2459,
+        "sha256": "a303448e84117c7b0077cdc8c55e24795dfc3a2f822313eaa7b342953384e187"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\benchmark228-monitor.py",
+      "expected": {
+        "bytes": 1093,
+        "sha256": "312cbe3f5bcc037b530347499741ba75df6e58b7ac3d22c246db8e383399f00a"
+      },
+      "observed": {
+        "bytes": 1093,
+        "sha256": "312cbe3f5bcc037b530347499741ba75df6e58b7ac3d22c246db8e383399f00a"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\benchmark228-child.log",
+      "expected": {
+        "bytes": 1490,
+        "sha256": "177b314769ad78ec3d051a9e23c5a1c63a38dd830ca2bef8c7054a6c29d267e9"
+      },
+      "observed": {
+        "bytes": 1490,
+        "sha256": "177b314769ad78ec3d051a9e23c5a1c63a38dd830ca2bef8c7054a6c29d267e9"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\benchmark228-result.json",
+      "expected": {
+        "bytes": 1149,
+        "sha256": "22b9eea511583a782c2f60459dcdbad038987719542a3409e2dd355207f7540f"
+      },
+      "observed": {
+        "bytes": 1149,
+        "sha256": "22b9eea511583a782c2f60459dcdbad038987719542a3409e2dd355207f7540f"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess228-workspace-20261018\\benchmark228-supervision.json",
+      "expected": {
+        "bytes": 231,
+        "sha256": "182ef6bd4606ad29898bfa5ac29446e805a93048e57e2442e84804d3aca7a969"
+      },
+      "observed": {
+        "bytes": 231,
+        "sha256": "182ef6bd4606ad29898bfa5ac29446e805a93048e57e2442e84804d3aca7a969"
+      },
+      "match": true
+    },
+    {
+      "revision": 228,
+      "path": "E:\\GeoAI–MLOps–SDSS\\docs\\implementation\\228_explicit_manifest_profile_isolated.md",
+      "expected": {
+        "bytes": 13675,
+        "sha256": "25bed27d63d39ae849fcdfb7afe052418975fa50fa5edc976302f81649f219f9"
+      },
+      "observed": {
+        "bytes": 13675,
+        "sha256": "25bed27d63d39ae849fcdfb7afe052418975fa50fa5edc976302f81649f219f9"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\freeze230.json",
+      "expected": {
+        "bytes": 8448,
+        "sha256": "e92b962361def809675bbfa498c44b7ede2953cb1e263bc30cd991eaf6f92401"
+      },
+      "observed": {
+        "bytes": 8448,
+        "sha256": "e92b962361def809675bbfa498c44b7ede2953cb1e263bc30cd991eaf6f92401"
+      },
+      "match": true,
+      "trusted_freeze_sha_from_prior_handoff": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\backend\\app\\collection_budget_status.py",
+      "expected": {
+        "sha256": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108",
+        "bytes": 9420
+      },
+      "observed": {
+        "bytes": 9420,
+        "sha256": "3891f2c01196e443bc2fa33c9d30f4a16f78eae83aa3471cfab3983c2e4f1108"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\backend\\app\\collection_status.py",
+      "expected": {
+        "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4",
+        "bytes": 17192
+      },
+      "observed": {
+        "bytes": 17192,
+        "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\backend\\app\\main.py",
+      "expected": {
+        "sha256": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b",
+        "bytes": 23838
+      },
+      "observed": {
+        "bytes": 23838,
+        "sha256": "1245d9c46af238f64551584f007a2bd9b703a484f6a5162c3c2e1ba510bf9e1b"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\backend\\app\\ml\\candidate_staging.py",
+      "expected": {
+        "sha256": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d",
+        "bytes": 13715
+      },
+      "observed": {
+        "bytes": 13715,
+        "sha256": "1b3be0a357b55218babaaa38069012d671e386760ca479bc2e3014141d18fa6d"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\backend\\app\\ml\\manifest_resource_profile.py",
+      "expected": {
+        "sha256": "e6c411962d4dda859274b117e4fd10ade981105ba08aa8698b43e06f3e6c15d9",
+        "bytes": 10172
+      },
+      "observed": {
+        "bytes": 10172,
+        "sha256": "e6c411962d4dda859274b117e4fd10ade981105ba08aa8698b43e06f3e6c15d9"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\backend\\app\\ml\\readiness.py",
+      "expected": {
+        "sha256": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb",
+        "bytes": 33396
+      },
+      "observed": {
+        "bytes": 33396,
+        "sha256": "63946e45285f9fa8fe3756ce7d94cfbb67b3de1e3d1b6a63584ccaeb5091c7bb"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\backend\\app\\ml\\split_json_io.py",
+      "expected": {
+        "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+        "bytes": 8513
+      },
+      "observed": {
+        "bytes": 8513,
+        "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\scripts\\find_bare_targets173.py",
+      "expected": {
+        "sha256": "39850ac9ffcf6ca96d3ec9cab116d55e9f3b8f1e3564950240e39889d3e12c11",
+        "bytes": 17355
+      },
+      "observed": {
+        "bytes": 17355,
+        "sha256": "39850ac9ffcf6ca96d3ec9cab116d55e9f3b8f1e3564950240e39889d3e12c11"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\scripts\\prepare_priority_candidate164.py",
+      "expected": {
+        "sha256": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437",
+        "bytes": 13570
+      },
+      "observed": {
+        "bytes": 13570,
+        "sha256": "e07b8e452543bb2affd138f866a5db9899252bf86b7f1efbbf051045540d3437"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\scripts\\propose_deficit_centers182.py",
+      "expected": {
+        "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d",
+        "bytes": 14002
+      },
+      "observed": {
+        "bytes": 14002,
+        "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\scripts\\run_experiment.py",
+      "expected": {
+        "sha256": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772",
+        "bytes": 13682
+      },
+      "observed": {
+        "bytes": 13682,
+        "sha256": "f7c74159d5d8f804d551263f563de16c7bdd50bce950e2715908ab2069ee9772"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\tests\\test_manifest_profile228.py",
+      "expected": {
+        "sha256": "f6c32f189ac7674f23dd11d3e65958896a388aa13adffd068babaf10ad5fec1a",
+        "bytes": 11801
+      },
+      "observed": {
+        "bytes": 11801,
+        "sha256": "f6c32f189ac7674f23dd11d3e65958896a388aa13adffd068babaf10ad5fec1a"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\backend\\app\\collection_source_profile.py",
+      "expected": {
+        "sha256": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef",
+        "bytes": 4882
+      },
+      "observed": {
+        "bytes": 4882,
+        "sha256": "e77ac277e2b71378c773e680c8997ac39ecb4dfbd76295e8d577496226c000ef"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\tests\\test_manifest_profile230.py",
+      "expected": {
+        "sha256": "431e44c787c594bd0cb40d90528ca80e87f01b1daa92b85250b61223131f10de",
+        "bytes": 20898
+      },
+      "observed": {
+        "bytes": 20898,
+        "sha256": "431e44c787c594bd0cb40d90528ca80e87f01b1daa92b85250b61223131f10de"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\patch230.diff",
+      "expected": {
+        "bytes": 215175,
+        "sha256": "6f3d14efaba86bdaaf112e029b76b5e348fab9a40667c4d11150e29471fbd089"
+      },
+      "observed": {
+        "bytes": 215175,
+        "sha256": "6f3d14efaba86bdaaf112e029b76b5e348fab9a40667c4d11150e29471fbd089"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\patch230-manifest.json",
+      "expected": {
+        "bytes": 5594,
+        "sha256": "ee6432ac6e1fcade043257f3b234be71bb7741b4797bbd9917c795b2c249a3e6"
+      },
+      "observed": {
+        "bytes": 5594,
+        "sha256": "ee6432ac6e1fcade043257f3b234be71bb7741b4797bbd9917c795b2c249a3e6"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\input-source-manifest.json",
+      "expected": {
+        "bytes": 58761,
+        "sha256": "dcac213ba9497ed694419eae9e57fa0020d14690e0e1add132f5f9bef06f0cd6"
+      },
+      "observed": {
+        "bytes": 58761,
+        "sha256": "dcac213ba9497ed694419eae9e57fa0020d14690e0e1add132f5f9bef06f0cd6"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\docs\\ISOLATED230.md",
+      "expected": {
+        "bytes": 9499,
+        "sha256": "e04244d1d8287b4739fe7d66e54f96087ae207a39bbeb9092a119e6e8f4b0fc4"
+      },
+      "observed": {
+        "bytes": 9499,
+        "sha256": "e04244d1d8287b4739fe7d66e54f96087ae207a39bbeb9092a119e6e8f4b0fc4"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\seal230.py",
+      "expected": {
+        "bytes": 5012,
+        "sha256": "478d78f82c7472a46e113c322cb14cd43ecbcbca6498bd1c7b0ee7bb1e9d96ed"
+      },
+      "observed": {
+        "bytes": 5012,
+        "sha256": "478d78f82c7472a46e113c322cb14cd43ecbcbca6498bd1c7b0ee7bb1e9d96ed"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\docs\\implementation\\230_explicit_source_profile_and_resource_guards_isolated.md",
+      "expected": {
+        "bytes": 9499,
+        "sha256": "e04244d1d8287b4739fe7d66e54f96087ae207a39bbeb9092a119e6e8f4b0fc4"
+      },
+      "observed": {
+        "bytes": 9499,
+        "sha256": "e04244d1d8287b4739fe7d66e54f96087ae207a39bbeb9092a119e6e8f4b0fc4"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\profile230-focused-final.log",
+      "expected": {
+        "bytes": 9994,
+        "sha256": "016d90fd4b54d46b78f3ccb0d116d06a322a562c1d8d4ac52345253edecbcf34"
+      },
+      "observed": {
+        "bytes": 9994,
+        "sha256": "016d90fd4b54d46b78f3ccb0d116d06a322a562c1d8d4ac52345253edecbcf34"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\profile230-related-176-before-cli-output-final.log",
+      "expected": {
+        "bytes": 37162,
+        "sha256": "609c87d16fa299a5994222d980ceb9229c1d211685eb53bad14b13b17a1da213"
+      },
+      "observed": {
+        "bytes": 37162,
+        "sha256": "609c87d16fa299a5994222d980ceb9229c1d211685eb53bad14b13b17a1da213"
+      },
+      "match": true
+    },
+    {
+      "revision": 230,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess230-workspace-20261018\\profile230-final-cli-output-check.log",
+      "expected": {
+        "bytes": 16826,
+        "sha256": "278c8458f0462ad8edd45bfe8dcd7820f18831a5ea82f07e33e98b2b64d9a367"
+      },
+      "observed": {
+        "bytes": 16826,
+        "sha256": "278c8458f0462ad8edd45bfe8dcd7820f18831a5ea82f07e33e98b2b64d9a367"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\freeze237.json",
+      "expected": {
+        "bytes": 6352,
+        "sha256": "56c9f57bf4929338835170e48d15495385e48cf58140f7ca396bdbbf4a07ceb6"
+      },
+      "observed": {
+        "bytes": 6352,
+        "sha256": "56c9f57bf4929338835170e48d15495385e48cf58140f7ca396bdbbf4a07ceb6"
+      },
+      "match": true,
+      "trusted_freeze_sha_from_prior_handoff": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\backend\\app\\collection_priority_status.py",
+      "expected": {
+        "sha256": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9",
+        "bytes": 12380
+      },
+      "observed": {
+        "bytes": 12380,
+        "sha256": "9322558e3c60834413ea77ef8a998d6ba20ca41ef28e8c7d673f86341485d9e9"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\backend\\app\\collection_status.py",
+      "expected": {
+        "sha256": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9",
+        "bytes": 19153
+      },
+      "observed": {
+        "bytes": 19153,
+        "sha256": "0c2514059ba3068a9dec06b242a7d39b7983d10d500edb9fae169202648202d9"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\backend\\app\\data\\candidates.py",
+      "expected": {
+        "sha256": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9",
+        "bytes": 4564
+      },
+      "observed": {
+        "bytes": 4564,
+        "sha256": "380398a8b99fe3e41f8dce116600c5cce6321a58b7b8b15133417ab6334f78f9"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\backend\\app\\ml\\manifest_resource_profile.py",
+      "expected": {
+        "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3",
+        "bytes": 11756
+      },
+      "observed": {
+        "bytes": 11756,
+        "sha256": "e74a18bc20d928a58cced7738cb3b8a3e3b1a4e5ca7a0196bfea7adef52362c3"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\scripts\\find_bare_targets173.py",
+      "expected": {
+        "sha256": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750",
+        "bytes": 17919
+      },
+      "observed": {
+        "bytes": 17919,
+        "sha256": "f2d35acde865034d0e8182e9ddaf545fcbc8dd7900be958ae0ccd8be0c830750"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\scripts\\propose_deficit_centers182.py",
+      "expected": {
+        "sha256": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697",
+        "bytes": 14399
+      },
+      "observed": {
+        "bytes": 14399,
+        "sha256": "65fc9419680edbdc4daeb16a321eb8ca82d07df07f961d696b6a6a24a9742697"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\tests\\test_manifest_profile237.py",
+      "expected": {
+        "sha256": "82952348b0c5d33f25f879e8716393c5970ae00d6c46bb80b44b52a028c9f7eb",
+        "bytes": 19353
+      },
+      "observed": {
+        "bytes": 19353,
+        "sha256": "82952348b0c5d33f25f879e8716393c5970ae00d6c46bb80b44b52a028c9f7eb"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\input-source-manifest237.json",
+      "expected": {
+        "bytes": 57717,
+        "sha256": "e8b22e3cc3c41865f49f56285bb2c4e4688c03c927614a9a3fb9cae87faac45c"
+      },
+      "observed": {
+        "bytes": 57717,
+        "sha256": "e8b22e3cc3c41865f49f56285bb2c4e4688c03c927614a9a3fb9cae87faac45c"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\input-test-code-supplement237.json",
+      "expected": {
+        "bytes": 254,
+        "sha256": "01b8f1daa3a6d628e642b68fee9751434d29c799bac88801bd3eb7ea067311de"
+      },
+      "observed": {
+        "bytes": 254,
+        "sha256": "01b8f1daa3a6d628e642b68fee9751434d29c799bac88801bd3eb7ea067311de"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\resource237-live-observation.json",
+      "expected": {
+        "bytes": 451,
+        "sha256": "e30ca75b71f7aec14119bd6d1984618f93b7230aefc7dcda3d608fd9df359115"
+      },
+      "observed": {
+        "bytes": 451,
+        "sha256": "e30ca75b71f7aec14119bd6d1984618f93b7230aefc7dcda3d608fd9df359115"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\profile237-focused-first.log",
+      "expected": {
+        "bytes": 3030,
+        "sha256": "c10c87d309fcd230f23ba884e553eff26f1a95e0f125ef08f44455884eccd583"
+      },
+      "observed": {
+        "bytes": 3030,
+        "sha256": "c10c87d309fcd230f23ba884e553eff26f1a95e0f125ef08f44455884eccd583"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\profile237-inherited-ui-check.log",
+      "expected": {
+        "bytes": 12431,
+        "sha256": "2874e419e794b2b3d974942cdd73ba25b1452294c1259810a4d5da46178b5e81"
+      },
+      "observed": {
+        "bytes": 12431,
+        "sha256": "2874e419e794b2b3d974942cdd73ba25b1452294c1259810a4d5da46178b5e81"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\profile237-related-fixture-missing-failed.log",
+      "expected": {
+        "bytes": 26364,
+        "sha256": "9c1f2774ce510b6cb8eba9997c9b27e592f3cc35bd5dbf4c6d9493b52ffce711"
+      },
+      "observed": {
+        "bytes": 26364,
+        "sha256": "9c1f2774ce510b6cb8eba9997c9b27e592f3cc35bd5dbf4c6d9493b52ffce711"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\profile237-related-final.log",
+      "expected": {
+        "bytes": 25509,
+        "sha256": "df7a4c75b09eae1dfa2f7f79d5bc575ad2ac4e50283209bd3257e5c8803d8c68"
+      },
+      "observed": {
+        "bytes": 25509,
+        "sha256": "df7a4c75b09eae1dfa2f7f79d5bc575ad2ac4e50283209bd3257e5c8803d8c68"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\patch237-manifest.json",
+      "expected": {
+        "bytes": 3385,
+        "sha256": "234d3876fab0e1ce04c77c9f227314120c68818f3be354fb98e3a74a41a33ddc"
+      },
+      "observed": {
+        "bytes": 3385,
+        "sha256": "234d3876fab0e1ce04c77c9f227314120c68818f3be354fb98e3a74a41a33ddc"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\patch237.diff",
+      "expected": {
+        "bytes": 98237,
+        "sha256": "3ac0e7abe78783dd3f45f09150d41fe158910a50e55c22b0033a11d935169989"
+      },
+      "observed": {
+        "bytes": 98237,
+        "sha256": "3ac0e7abe78783dd3f45f09150d41fe158910a50e55c22b0033a11d935169989"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\docs\\ISOLATED237.md",
+      "expected": {
+        "bytes": 10194,
+        "sha256": "5935e229897d96fd823c79b0d073a45d3f1ca1617afe594660d67510bb28ec68"
+      },
+      "observed": {
+        "bytes": 10194,
+        "sha256": "5935e229897d96fd823c79b0d073a45d3f1ca1617afe594660d67510bb28ec68"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\preprocess237-workspace-20261018\\seal237.py",
+      "expected": {
+        "bytes": 5515,
+        "sha256": "52bc5fd463a41d56c14522b92887b73ff0d6dcf295eeb3680bffd89bcca551de"
+      },
+      "observed": {
+        "bytes": 5515,
+        "sha256": "52bc5fd463a41d56c14522b92887b73ff0d6dcf295eeb3680bffd89bcca551de"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\docs\\implementation\\237_complete_metadata_io_isolated.md",
+      "expected": {
+        "bytes": 10194,
+        "sha256": "5935e229897d96fd823c79b0d073a45d3f1ca1617afe594660d67510bb28ec68"
+      },
+      "observed": {
+        "bytes": 10194,
+        "sha256": "5935e229897d96fd823c79b0d073a45d3f1ca1617afe594660d67510bb28ec68"
+      },
+      "match": true
+    },
+    {
+      "revision": 237,
+      "path": "E:\\GeoAI–MLOps–SDSS\\docs\\implementation\\231_manifest_profile_followup230_review.md",
+      "expected": {
+        "bytes": 12755,
+        "sha256": "6f47181a067963cd7f05d42e63a9c1a435c8754d05f773bbed230fb53d441e4f"
+      },
+      "observed": {
+        "bytes": 12755,
+        "sha256": "6f47181a067963cd7f05d42e63a9c1a435c8754d05f773bbed230fb53d441e4f"
+      },
+      "match": true
+    }
+  ],
+  "frozen_pin_mismatches": 0,
+  "process_observation": {
+    "python_processes": [
+      {
+        "pid": 40492,
+        "name": "python.exe",
+        "collector_cli": false,
+        "qa_cli": false,
+        "unittest_cli": false,
+        "api_server": true,
+        "project_api_8002": true
+      },
+      {
+        "pid": 38536,
+        "name": "python.exe",
+        "collector_cli": false,
+        "qa_cli": false,
+        "unittest_cli": false,
+        "api_server": true,
+        "project_api_8002": false
+      },
+      {
+        "pid": 40448,
+        "name": "python.exe",
+        "collector_cli": false,
+        "qa_cli": false,
+        "unittest_cli": false,
+        "api_server": true,
+        "project_api_8002": false
+      }
+    ],
+    "recognized_collector_cli_count": 0,
+    "recognized_qa_cli_count": 0,
+    "recognized_unittest_count": 0,
+    "api_server_count": 3,
+    "process_observation_does_not_authorize_apply": true,
+    "limitations": "Command-line observation of Python processes only; API server presence is separate and does not prove loaded source revision or absence of hidden in-process work."
+  },
+  "application_rules": [
+    "Use exact manifest union only; never copy an entire workspace directory.",
+    "Archive exact main baseline bytes after Root approval before replacement.",
+    "Compare pre228 baseline to final237 bytes directly, not patch sequence assumptions.",
+    "Recheck every main before SHA/new-path absence immediately before any approved apply.",
+    "Tests are separate validation sources, not production runtime files.",
+    "Historical source-code fixture and input supplement are test-only inputs outside the apply union."
+  ],
+  "main_written": 0,
+  "operating_data_read": 0,
+  "ledger_read": 0,
+  "model_read": 0,
+  "additional_tests_run": 0,
+  "http": 0,
+  "collector": 0,
+  "live_qa": 0
+}

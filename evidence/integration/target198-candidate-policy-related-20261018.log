@@ -1,0 +1,144 @@
+test_actual_selector_rejects_low_scl_then_tries_next_candidate (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_actual_selector_rejects_low_scl_then_tries_next_candidate) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_targeted_bare_plan.py:25: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  native=[self.affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_existing_collect_windows_passes_explicit_minimum_to_selector (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_existing_collect_windows_passes_explicit_minimum_to_selector) ... E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py:56: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[t*(0,0),t*(dataset.width,0),t*(dataset.width,dataset.height),t*(0,dataset.height)]
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI\u2013MLOps\u2013SDSS\backend\app\data\targeted_bare_plan.py:169: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*window));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_explicit_finite_range_is_forwarded_and_only_candidate_config_changes (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_explicit_finite_range_is_forwarded_and_only_candidate_config_changes) ... ok
+test_explicit_policy_preserves_inputs_and_actual_local_fixture_bytes (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_explicit_policy_preserves_inputs_and_actual_local_fixture_bytes) ... ok
+test_invalid_field_or_extra_policy_is_rejected_before_pinned_file_reads (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_invalid_field_or_extra_policy_is_rejected_before_pinned_file_reads) ... ok
+test_omitted_field_preserves_complete_existing_banten_job_and_key (test_targeted_candidate_quality_policy.TargetedCandidateQualityPolicyTests.test_omitted_field_preserves_complete_existing_banten_job_and_key) ... ok
+test_actual_gcp_rpc_and_nonfinite_native_transform_are_rejected (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_gcp_rpc_and_nonfinite_native_transform_are_rejected) ... E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_targeted_bare_plan.py:135: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  inverse=Transformer.from_crs(crs,4326,always_xy=True);native=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_actual_local_pixels_geometry_and_proposal_jobs_not_execution (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_local_pixels_geometry_and_proposal_jobs_not_execution) ... ok
+test_actual_noneligible_different_year_image_overlap_is_rejected (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_noneligible_different_year_image_overlap_is_rejected) ... ok
+test_bare_255_rejected_and_256_accepted (test_targeted_bare_plan.TargetedBarePlanTests.test_bare_255_rejected_and_256_accepted) ... ok
+test_bbox_native_window_counts_and_lineage_are_not_inferred (test_targeted_bare_plan.TargetedBarePlanTests.test_bbox_native_window_counts_and_lineage_are_not_inferred) ... ok
+test_changed_label_or_proposal_pin_blocks_no_partial_jobs (test_targeted_bare_plan.TargetedBarePlanTests.test_changed_label_or_proposal_pin_blocks_no_partial_jobs) ... ok
+test_existing_banten_complete_job_and_key_contract_remains_unchanged (test_targeted_bare_plan.TargetedBarePlanTests.test_existing_banten_complete_job_and_key_contract_remains_unchanged) ... ok
+test_mixed_province_geometry_is_bound_to_each_target (test_targeted_bare_plan.TargetedBarePlanTests.test_mixed_province_geometry_is_bound_to_each_target) ... ok
+test_non_metre_or_wrong_resolution_and_geographic_labels_block (test_targeted_bare_plan.TargetedBarePlanTests.test_non_metre_or_wrong_resolution_and_geographic_labels_block) ... ok
+test_path_escape_does_not_return_original_path_or_partial_payload (test_targeted_bare_plan.TargetedBarePlanTests.test_path_escape_does_not_return_original_path_or_partial_payload) ... ok
+test_same_space_across_requested_years_not_counted_as_independent (test_targeted_bare_plan.TargetedBarePlanTests.test_same_space_across_requested_years_not_counted_as_independent) ... ok
+test_six_provinces_six_years_native_metre_crs_and_fixed_splits (test_targeted_bare_plan.TargetedBarePlanTests.test_six_provinces_six_years_native_metre_crs_and_fixed_splits) ... ok
+test_strict_target_count_policy_bool_and_extra_fail_before_file_io (test_targeted_bare_plan.TargetedBarePlanTests.test_strict_target_count_policy_bool_and_extra_fail_before_file_io) ... ok
+test_synthetic_local_read_only_with_network_unavailable (test_targeted_bare_plan.TargetedBarePlanTests.test_synthetic_local_read_only_with_network_unavailable) ... ok
+test_unknown_province_wrong_fixed_split_and_missing_or_duplicate_bindings (test_targeted_bare_plan.TargetedBarePlanTests.test_unknown_province_wrong_fixed_split_and_missing_or_duplicate_bindings) ... ok
+test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins (test_targeted_bare_plan.TargetedBarePlanTests.test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": false}
+test_absent_b02_witness_never_materializes_or_yields_patches (test_collect_targeted_bare.CollectTargetedBareTests.test_absent_b02_witness_never_materializes_or_yields_patches) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_bare_minimum_applies_after_materialization_without_inventing_quality (test_collect_targeted_bare.CollectTargetedBareTests.test_bare_minimum_applies_after_materialization_without_inventing_quality) ... ok
+test_dry_run_does_not_construct_ledger_reserve_output_or_execute (test_collect_targeted_bare.CollectTargetedBareTests.test_dry_run_does_not_construct_ledger_reserve_output_or_execute) ... ok
+test_existing_exclusive_output_even_empty_is_not_reused_or_charged (test_collect_targeted_bare.CollectTargetedBareTests.test_existing_exclusive_output_even_empty_is_not_reused_or_charged) ... ok
+test_existing_global_lock_is_preserved_without_validation_or_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_existing_global_lock_is_preserved_without_validation_or_dispatch) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_f2_cleanup_failure_retains_execution_and_settlement_progress (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_cleanup_failure_retains_execution_and_settlement_progress) ... ok
+test_f2_cli_subprocess_failure_json_and_exit_code_are_phase_sensitive (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_cli_subprocess_failure_json_and_exit_code_are_phase_sensitive) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_f2_publication_failure_distinguishes_successful_financial_settlement (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_publication_failure_distinguishes_successful_financial_settlement) ... ok
+test_f2_reserve_exception_after_write_preserves_unknown_pending_status (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_reserve_exception_after_write_preserves_unknown_pending_status) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_f2_second_reserve_failure_reports_first_worker_settlement (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_second_reserve_failure_reports_first_worker_settlement) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+test_f2_settlement_failure_stays_pending_and_is_not_false_nonexecution (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_settlement_failure_stays_pending_and_is_not_false_nonexecution) ... ok
+test_f3_counts_unenrolled_receipt_and_unreported_partial_directory (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_counts_unenrolled_receipt_and_unreported_partial_directory) ... ok
+test_f3_duplicate_or_missing_references_and_missing_receipts_fail_closed (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_duplicate_or_missing_references_and_missing_receipts_fail_closed) ... ok
+test_f3_existing_unenrolled_alias_cannot_be_registered_twice (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_existing_unenrolled_alias_cannot_be_registered_twice) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": false}
+test_f3_oversized_source_is_blocked_before_physical_materialization (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_oversized_source_is_blocked_before_physical_materialization) ... ok
+test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job) ... ok
+test_ledger_pin_drift_rejected_without_refund (test_collect_targeted_bare.CollectTargetedBareTests.test_ledger_pin_drift_rejected_without_refund) ... ok
+test_manifest_pin_drift_rejected_read_only (test_collect_targeted_bare.CollectTargetedBareTests.test_manifest_pin_drift_rejected_read_only) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": true}
+test_provider_circuit_is_settled_globally_and_stops_future_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_provider_circuit_is_settled_globally_and_stops_future_dispatch) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 1, "eligible": 1, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows (test_collect_targeted_bare.CollectTargetedBareTests.test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows) ... ok
+test_second_output_collision_rolls_back_only_own_empty_first_output (test_collect_targeted_bare.CollectTargetedBareTests.test_second_output_collision_rolls_back_only_own_empty_first_output) ... ok
+{"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 68157440, "live_b02_checked": false, "rate_limited": false}
+test_unmeasured_worker_finally_failure_settles_full_reservation (test_collect_targeted_bare.CollectTargetedBareTests.test_unmeasured_worker_finally_failure_settles_full_reservation) ... ok
+test_wrong_request_sha_rejected_before_source_or_ledger_mutation (test_collect_targeted_bare.CollectTargetedBareTests.test_wrong_request_sha_rejected_before_source_or_ledger_mutation) ... ok
+test_actual_native_assets_reserve_without_execution_or_source_changes (test_targeted_execution.TargetedExecutionTests.test_actual_native_assets_reserve_without_execution_or_source_changes) ... ok
+test_changed_parent_identity_preserves_old_directory (test_targeted_execution.TargetedExecutionTests.test_changed_parent_identity_preserves_old_directory) ... ok
+test_exclusive_output_race_one_winner (test_targeted_execution.TargetedExecutionTests.test_exclusive_output_race_one_winner) ... ok
+test_existing_directory_or_file_never_overwritten (test_targeted_execution.TargetedExecutionTests.test_existing_directory_or_file_never_overwritten) ... ok
+test_failure_preserves_other_files_and_existing_reservations (test_targeted_execution.TargetedExecutionTests.test_failure_preserves_other_files_and_existing_reservations) ... ok
+test_fixed_split_and_seeded_split_veto (test_targeted_execution.TargetedExecutionTests.test_fixed_split_and_seeded_split_veto) ... ok
+test_pin_failure_releases_own_empty_output_and_keeps_claim (test_targeted_execution.TargetedExecutionTests.test_pin_failure_releases_own_empty_output_and_keeps_claim) ... ok
+test_reparse_directory_attribute_rejected_without_symlink_privilege (test_targeted_execution.TargetedExecutionTests.test_reparse_directory_attribute_rejected_without_symlink_privilege) ... ok
+test_replaced_leaf_not_removed_on_failure (test_targeted_execution.TargetedExecutionTests.test_replaced_leaf_not_removed_on_failure) ... ok
+test_shared_scene_race_releases_only_loser_empty_output (test_targeted_execution.TargetedExecutionTests.test_shared_scene_race_releases_only_loser_empty_output) ... ok
+test_symlink_parent_or_leaf_rejected_without_touching_target (test_targeted_execution.TargetedExecutionTests.test_symlink_parent_or_leaf_rejected_without_touching_target) ... skipped 'OS does not permit symlink creation'
+test_unsafe_names_bad_controller_and_request_rejected (test_targeted_execution.TargetedExecutionTests.test_unsafe_names_bad_controller_and_request_rejected) ... ok
+test_allowed_guard_observes_actual_header_window_without_signed_url (test_targeted_collection_hooks.TargetedCollectionHookTests.test_allowed_guard_observes_actual_header_window_without_signed_url) ... ok
+test_candidate_scl_can_precede_scene_veto_and_is_also_window_guarded (test_targeted_collection_hooks.TargetedCollectionHookTests.test_candidate_scl_can_precede_scene_veto_and_is_also_window_guarded) ... ok
+test_collector_window_hook_forwards_url_and_refunds_only_known_measurement (test_targeted_collection_hooks.TargetedCollectionHookTests.test_collector_window_hook_forwards_url_and_refunds_only_known_measurement) ... ok
+test_dry_run_invokes_neither_guard_nor_network (test_targeted_collection_hooks.TargetedCollectionHookTests.test_dry_run_invokes_neither_guard_nor_network) ... ok
+test_header_429_preserves_original_cause_and_does_not_call_guard (test_targeted_collection_hooks.TargetedCollectionHookTests.test_header_429_preserves_original_cause_and_does_not_call_guard) ... ok
+test_header_guard_rejection_precedes_pixel_read_and_keeps_measured_accounting (test_targeted_collection_hooks.TargetedCollectionHookTests.test_header_guard_rejection_precedes_pixel_read_and_keeps_measured_accounting) ... ok
+test_legacy_wrapper_retains_five_positional_impl_arguments (test_targeted_collection_hooks.TargetedCollectionHookTests.test_legacy_wrapper_retains_five_positional_impl_arguments) ... ok
+test_opt_in_wrapper_passes_callback_only_as_keyword (test_targeted_collection_hooks.TargetedCollectionHookTests.test_opt_in_wrapper_passes_callback_only_as_keyword) ... ok
+test_scene_veto_precedes_metadata_and_pixel_fetch (test_targeted_collection_hooks.TargetedCollectionHookTests.test_scene_veto_precedes_metadata_and_pixel_fetch) ... ok
+test_unknown_measurement_keeps_full_reservation_charged (test_targeted_collection_hooks.TargetedCollectionHookTests.test_unknown_measurement_keeps_full_reservation_charged) ... ok
+test_actual_collector_string_year_selects_scene_and_b02_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_actual_collector_string_year_selects_scene_and_b02_witness) ... ok
+test_all_provinces_reject_caller_split_reassignment_before_preselection_scl (test_targeted_live_guards.TargetedLiveGuardTests.test_all_provinces_reject_caller_split_reassignment_before_preselection_scl) ... ok
+test_b02_alignment_over_one_pixel_rejected_and_exact_boundary_allowed (test_targeted_live_guards.TargetedLiveGuardTests.test_b02_alignment_over_one_pixel_rejected_and_exact_boundary_allowed) ... ok
+test_concurrent_overlapping_workers_claim_exactly_once (test_targeted_live_guards.TargetedLiveGuardTests.test_concurrent_overlapping_workers_claim_exactly_once) ... ok
+test_cross_split_seed_veto_and_quarantined_seed (test_targeted_live_guards.TargetedLiveGuardTests.test_cross_split_seed_veto_and_quarantined_seed) ... ok
+test_failed_b02_check_retains_scene_claim (test_targeted_live_guards.TargetedLiveGuardTests.test_failed_b02_check_retains_scene_claim) ... ok
+test_historical_support_overlap_denied_but_edge_touch_allowed (test_targeted_live_guards.TargetedLiveGuardTests.test_historical_support_overlap_denied_but_edge_touch_allowed) ... ok
+test_input_objects_cannot_reassign_bound_province_after_construction (test_targeted_live_guards.TargetedLiveGuardTests.test_input_objects_cannot_reassign_bound_province_after_construction) ... ok
+test_invalid_year_split_aoi_or_grid_fails_without_claim_or_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_invalid_year_split_aoi_or_grid_fails_without_claim_or_witness) ... ok
+test_metric_native_crs_is_not_hardcoded_per_province_and_unsupported_units_fail (test_targeted_live_guards.TargetedLiveGuardTests.test_metric_native_crs_is_not_hardcoded_per_province_and_unsupported_units_fail) ... ok
+test_new_province_b02_crs_mismatch_and_reference_spoof_never_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_new_province_b02_crs_mismatch_and_reference_spoof_never_witness) ... ok
+test_new_province_failed_window_claim_is_retained_and_other_owner_denied (test_targeted_live_guards.TargetedLiveGuardTests.test_new_province_failed_window_claim_is_retained_and_other_owner_denied) ... ok
+test_preselection_scl_observed_but_unselected_imagery_denied (test_targeted_live_guards.TargetedLiveGuardTests.test_preselection_scl_observed_but_unselected_imagery_denied) ... ok
+test_registry_includes_historical_noneligible_split_rows (test_targeted_live_guards.TargetedLiveGuardTests.test_registry_includes_historical_noneligible_split_rows) ... ok
+test_same_owner_bands_overlap_allowed_other_owner_blocked (test_targeted_live_guards.TargetedLiveGuardTests.test_same_owner_bands_overlap_allowed_other_owner_blocked) ... ok
+test_scene_requery_same_owner_is_rejected_and_claim_kept (test_targeted_live_guards.TargetedLiveGuardTests.test_scene_requery_same_owner_is_rejected_and_claim_kept) ... ok
+test_six_fixed_provinces_all_six_years_support_three_splits (test_targeted_live_guards.TargetedLiveGuardTests.test_six_fixed_provinces_all_six_years_support_three_splits) ... ok
+test_train_and_test_shared_scene_conflict_and_history_support_reject (test_targeted_live_guards.TargetedLiveGuardTests.test_train_and_test_shared_scene_conflict_and_history_support_reject) ... ok
+test_unknown_province_target_binding_and_province_aoi_mutation_fail_closed (test_targeted_live_guards.TargetedLiveGuardTests.test_unknown_province_target_binding_and_province_aoi_mutation_fail_closed) ... ok
+test_year_matched_esri_reference_reusable_without_b02_witness (test_targeted_live_guards.TargetedLiveGuardTests.test_year_matched_esri_reference_reusable_without_b02_witness) ... ok
+test_concurrent_cap_and_idempotent_replay_when_full (test_targeted_scene_claims.TargetedSceneClaimsTests.test_concurrent_cap_and_idempotent_replay_when_full) ... ok
+test_copy_failure_from_concurrent_caller_mutation_is_fixed_and_recoverable (test_targeted_scene_claims.TargetedSceneClaimsTests.test_copy_failure_from_concurrent_caller_mutation_is_fixed_and_recoverable) ... ok
+test_existing_cross_split_veto_and_multi_split_quarantine (test_targeted_scene_claims.TargetedSceneClaimsTests.test_existing_cross_split_veto_and_multi_split_quarantine) ... ok
+test_invalid_requests_do_not_consume_capacity_or_leak_inputs (test_targeted_scene_claims.TargetedSceneClaimsTests.test_invalid_requests_do_not_consume_capacity_or_leak_inputs) ... ok
+test_invalid_seeds_and_caps_fail_closed_without_partial_state (test_targeted_scene_claims.TargetedSceneClaimsTests.test_invalid_seeds_and_caps_fail_closed_without_partial_state) ... ok
+test_no_io_and_all_unverified_guards_remain_false (test_targeted_scene_claims.TargetedSceneClaimsTests.test_no_io_and_all_unverified_guards_remain_false) ... ok
+test_owner_replay_only_for_same_scene_and_split (test_targeted_scene_claims.TargetedSceneClaimsTests.test_owner_replay_only_for_same_scene_and_split) ... ok
+test_return_value_pollution_and_input_mutation_do_not_change_registry (test_targeted_scene_claims.TargetedSceneClaimsTests.test_return_value_pollution_and_input_mutation_do_not_change_registry) ... ok
+test_same_unseen_scene_cross_split_race_has_exactly_one_claim (test_targeted_scene_claims.TargetedSceneClaimsTests.test_same_unseen_scene_cross_split_race_has_exactly_one_claim) ... ok
+test_separate_coordinators_are_explicitly_not_shared (test_targeted_scene_claims.TargetedSceneClaimsTests.test_separate_coordinators_are_explicitly_not_shared) ... ok
+test_actual_projected_different_resolution_and_input_files_unchanged (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_actual_projected_different_resolution_and_input_files_unchanged) ... ok
+test_catalog_hint_cannot_override_actual_grid (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_catalog_hint_cannot_override_actual_grid) ... ok
+test_center_inside_but_full_bbox_outside_rejected (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_center_inside_but_full_bbox_outside_rejected) ... ok
+test_changed_sha_and_post_observation_mutation_are_blocked (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_changed_sha_and_post_observation_mutation_are_blocked) ... ok
+test_different_actual_crs_checked_independently (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_different_actual_crs_checked_independently) ... ok
+test_exact_geographic_boundary_is_accepted (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_exact_geographic_boundary_is_accepted) ... ok
+test_image_inside_label_outside_even_with_successful_scl_not_used (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_image_inside_label_outside_even_with_successful_scl_not_used) ... ok
+test_invalid_request_and_year_precede_file_reads (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_invalid_request_and_year_precede_file_reads) ... ok
+test_malformed_tiff_and_projected_boundary_fail_closed (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_malformed_tiff_and_projected_boundary_fail_closed) ... ok
+test_vrt_and_rotated_grid_and_path_escape_rejected (test_targeted_asset_geometry.TargetedAssetGeometryTests.test_vrt_and_rotated_grid_and_path_escape_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 107 tests in 19.374s
+
+OK (skipped=1)

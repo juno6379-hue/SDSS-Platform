@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "PINNED_MANIFEST_PROFILE_TEST_BASELINES",
+  "no_mutable_current_source_fallback": true,
+  "files": [
+    {
+      "name": "candidate_materialization_pre228",
+      "file": "candidate_materialization_pre228.py",
+      "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b",
+      "bytes": 8716,
+      "historical_source": "preprocess228-workspace-20261018/baseline-code/backend/app/ml/candidate_materialization.py",
+      "scope": "PINNED_SOURCE_CODE_FOR_SYNTHETIC_TEST_ONLY_NOT_RUNTIME"
+    },
+    {
+      "name": "candidate_qa_comparison_pre228",
+      "file": "candidate_qa_comparison_pre228.py",
+      "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e",
+      "bytes": 17204,
+      "historical_source": "preprocess228-workspace-20261018/baseline-code/backend/app/ml/candidate_qa_comparison.py",
+      "scope": "PINNED_SOURCE_CODE_FOR_SYNTHETIC_TEST_ONLY_NOT_RUNTIME"
+    },
+    {
+      "name": "centers230",
+      "file": "centers230.py",
+      "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d",
+      "bytes": 14002,
+      "historical_source": "preprocess230-workspace-20261018/scripts/propose_deficit_centers182.py",
+      "scope": "PINNED_SOURCE_CODE_FOR_SYNTHETIC_TEST_ONLY_NOT_RUNTIME"
+    },
+    {
+      "name": "status230",
+      "file": "status230.py",
+      "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4",
+      "bytes": 17192,
+      "historical_source": "preprocess230-workspace-20261018/backend/app/collection_status.py",
+      "scope": "PINNED_SOURCE_CODE_FOR_SYNTHETIC_TEST_ONLY_NOT_RUNTIME"
+    }
+  ]
+}

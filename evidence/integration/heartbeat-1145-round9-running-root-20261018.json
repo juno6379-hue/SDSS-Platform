@@ -1,0 +1,59 @@
+{
+  "at_utc": "2026-10-18T03:00:19.188489+00:00",
+  "scope": "READ_ONLY_EXISTING_ROUND9",
+  "selected_batches": {
+    "parallel-v2-grid-esri_io-east_java-2020-g02": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 630522,
+      "config_sha256": "10f823f54dca9c322a0de62e52ceb14344850e0715107c4496274067aa2d3681",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2020-g02\\annual-window-report.json"
+    },
+    "parallel-v2-grid-esri_io-east_java-2020-g03": {
+      "status": "settled",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 21728847,
+      "config_sha256": "5e37068ea7a085233e78d61d3f968c7a3133689aea8e0d7ad552cf0f7f9a5cd3",
+      "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-east_java-2020-g03\\annual-window-report.json"
+    }
+  },
+  "worker_events": [
+    {
+      "status": "worker_started",
+      "key": "parallel-v2-grid-esri_io-east_java-2020-g02",
+      "thread": 36424
+    },
+    {
+      "status": "worker_started",
+      "key": "parallel-v2-grid-esri_io-east_java-2020-g03",
+      "thread": 36820
+    },
+    {
+      "status": "worker_finished",
+      "key": "parallel-v2-grid-esri_io-east_java-2020-g02",
+      "charged_bytes": 630522,
+      "new_patches": 0,
+      "eligible_total": 1286,
+      "rate_limited": false
+    },
+    {
+      "status": "worker_finished",
+      "key": "parallel-v2-grid-esri_io-east_java-2020-g03",
+      "charged_bytes": 21728847,
+      "new_patches": 16,
+      "eligible_total": 1296,
+      "rate_limited": false
+    }
+  ],
+  "old_rows_prefix_preserved": true,
+  "old_pending_exact_preserved": true,
+  "old_pending_reserved_bytes": 136314880,
+  "remaining_including_current_reservations": 2051329434,
+  "rate_limit_active": false,
+  "physical_total": 1617,
+  "eligible_total": 1296,
+  "lock_present": false,
+  "second_read_stable": true,
+  "operating_writes": 0,
+  "collection_starts": 0
+}

@@ -1,0 +1,271 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_actual_gcp_rpc_and_nonfinite_native_transform_are_rejected (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_gcp_rpc_and_nonfinite_native_transform_are_rejected) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI–MLOps–SDSS\tests\test_targeted_bare_plan.py:25: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  native=[self.affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI–MLOps–SDSS\tests\test_targeted_bare_plan.py:135: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  inverse=Transformer.from_crs(crs,4326,always_xy=True);native=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+E:\GeoAI–MLOps–SDSS\backend\app\data\targeted_bare_plan.py:57: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[t*(0,0),t*(dataset.width,0),t*(dataset.width,dataset.height),t*(0,dataset.height)]
+ok
+test_actual_local_pixels_geometry_and_proposal_jobs_not_execution (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_local_pixels_geometry_and_proposal_jobs_not_execution) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI–MLOps–SDSS\backend\app\data\targeted_bare_plan.py:188: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*window));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_actual_noneligible_different_year_image_overlap_is_rejected (test_targeted_bare_plan.TargetedBarePlanTests.test_actual_noneligible_different_year_image_overlap_is_rejected) ... ok
+test_bare_255_rejected_and_256_accepted (test_targeted_bare_plan.TargetedBarePlanTests.test_bare_255_rejected_and_256_accepted) ... ok
+test_bbox_native_window_counts_and_lineage_are_not_inferred (test_targeted_bare_plan.TargetedBarePlanTests.test_bbox_native_window_counts_and_lineage_are_not_inferred) ... ok
+test_changed_label_or_proposal_pin_blocks_no_partial_jobs (test_targeted_bare_plan.TargetedBarePlanTests.test_changed_label_or_proposal_pin_blocks_no_partial_jobs) ... ok
+test_existing_banten_complete_job_and_key_contract_remains_unchanged (test_targeted_bare_plan.TargetedBarePlanTests.test_existing_banten_complete_job_and_key_contract_remains_unchanged) ... ok
+test_mixed_province_geometry_is_bound_to_each_target (test_targeted_bare_plan.TargetedBarePlanTests.test_mixed_province_geometry_is_bound_to_each_target) ... ok
+test_non_metre_or_wrong_resolution_and_geographic_labels_block (test_targeted_bare_plan.TargetedBarePlanTests.test_non_metre_or_wrong_resolution_and_geographic_labels_block) ... ok
+test_path_escape_does_not_return_original_path_or_partial_payload (test_targeted_bare_plan.TargetedBarePlanTests.test_path_escape_does_not_return_original_path_or_partial_payload) ... ok
+test_same_space_across_requested_years_not_counted_as_independent (test_targeted_bare_plan.TargetedBarePlanTests.test_same_space_across_requested_years_not_counted_as_independent) ... ok
+test_six_provinces_six_years_native_metre_crs_and_fixed_splits (test_targeted_bare_plan.TargetedBarePlanTests.test_six_provinces_six_years_native_metre_crs_and_fixed_splits) ... ok
+test_strict_target_count_policy_bool_and_extra_fail_before_file_io (test_targeted_bare_plan.TargetedBarePlanTests.test_strict_target_count_policy_bool_and_extra_fail_before_file_io) ... ok
+test_synthetic_local_read_only_with_network_unavailable (test_targeted_bare_plan.TargetedBarePlanTests.test_synthetic_local_read_only_with_network_unavailable) ... ok
+test_unknown_province_wrong_fixed_split_and_missing_or_duplicate_bindings (test_targeted_bare_plan.TargetedBarePlanTests.test_unknown_province_wrong_fixed_split_and_missing_or_duplicate_bindings) ... ok
+test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins (test_targeted_bare_plan.TargetedBarePlanTests.test_wrong_label_crs_and_opaque_label_rejected_with_rebound_pins) ... ok
+test_all_authority_false (test_targeted_source_profile319.Contracts.test_all_authority_false) ... ok
+test_bad_target_types_and_fixedsplit (test_targeted_source_profile319.Contracts.test_bad_target_types_and_fixedsplit) ... ok
+test_bad_upgrades_cannot_smuggle_marker_into_legacy (test_targeted_source_profile319.Contracts.test_bad_upgrades_cannot_smuggle_marker_into_legacy) ... ok
+test_batch_count_exact (test_targeted_source_profile319.Contracts.test_batch_count_exact) ... ok
+test_caller_mutation_after_detachment_never_revalidated_original (test_targeted_source_profile319.Contracts.test_caller_mutation_after_detachment_never_revalidated_original) ... ok
+test_canonical_v3_preserved_and_envelope_is_not_executable_planv1 (test_targeted_source_profile319.Contracts.test_canonical_v3_preserved_and_envelope_is_not_executable_planv1) ... ok
+test_cycles_depth_nodes_and_canonical_utf8_size (test_targeted_source_profile319.Contracts.test_cycles_depth_nodes_and_canonical_utf8_size) ... ok
+test_descriptor_exact_common_profile (test_targeted_source_profile319.Contracts.test_descriptor_exact_common_profile) ... ok
+test_detected_iteration_mutation_is_fixed_code (test_targeted_source_profile319.Contracts.test_detected_iteration_mutation_is_fixed_code) ... ok
+test_duplicate_targets_and_empty (test_targeted_source_profile319.Contracts.test_duplicate_targets_and_empty) ... ok
+test_fixture_missing_and_tampered_fail_without_fallback (test_targeted_source_profile319.Contracts.test_fixture_missing_and_tampered_fail_without_fallback) ... ok
+test_immutable_limits_and_descriptors (test_targeted_source_profile319.Contracts.test_immutable_limits_and_descriptors) ... ok
+test_key_order_invariance_and_nonascii_canonical_utf8 (test_targeted_source_profile319.Contracts.test_key_order_invariance_and_nonascii_canonical_utf8) ... ok
+test_legacy232_v1_v2_exact_and_new_version_rejected (test_targeted_source_profile319.Contracts.test_legacy232_v1_v2_exact_and_new_version_rejected) ... ok
+test_nested_key_and_policy_cap_manipulation (test_targeted_source_profile319.Contracts.test_nested_key_and_policy_cap_manipulation) ... ok
+test_nonfinite_huge_numbers_and_utf8_surrogates (test_targeted_source_profile319.Contracts.test_nonfinite_huge_numbers_and_utf8_surrogates) ... ok
+test_outer_versions (test_targeted_source_profile319.Contracts.test_outer_versions) ... ok
+test_plan_versions (test_targeted_source_profile319.Contracts.test_plan_versions) ... ok
+test_profile_markers_both_exact_and_required (test_targeted_source_profile319.Contracts.test_profile_markers_both_exact_and_required) ... ok
+test_pure_no_open_socket_or_environment_profile_import (test_targeted_source_profile319.Contracts.test_pure_no_open_socket_or_environment_profile_import) ... ok
+test_reference_sha_and_path_aliases (test_targeted_source_profile319.Contracts.test_reference_sha_and_path_aliases) ... ok
+test_return_copy_cannot_mutate_validated_digest (test_targeted_source_profile319.Contracts.test_return_copy_cannot_mutate_validated_digest) ... ok
+test_subclasses_and_bytes_fail_without_invoking_methods (test_targeted_source_profile319.Contracts.test_subclasses_and_bytes_fail_without_invoking_methods) ... ok
+test_token_not_accepted_as_request (test_targeted_source_profile319.Contracts.test_token_not_accepted_as_request) ... ok
+test_two_targets_explicit_valid (test_targeted_source_profile319.Contracts.test_two_targets_explicit_valid) ... ok
+test_unknown_or_missing_outer_keys (test_targeted_source_profile319.Contracts.test_unknown_or_missing_outer_keys) ... ok
+test_upgrade_deepcopy_and_original_unmodified (test_targeted_source_profile319.Contracts.test_upgrade_deepcopy_and_original_unmodified) ... ok
+test_cache_hit_has_zero_actual_read_and_pin_mismatch_fails (test_target325_local_profile.LocalPreflightTests.test_cache_hit_has_zero_actual_read_and_pin_mismatch_fails) ... ok
+test_coordinator_absent_in_fresh_process (test_target325_local_profile.LocalPreflightTests.test_coordinator_absent_in_fresh_process) ... ok
+test_explicit_local175_path_success_false_and_canonical_bound (test_target325_local_profile.LocalPreflightTests.test_explicit_local175_path_success_false_and_canonical_bound) ... E:\GeoAI–MLOps–SDSS\tests\fixtures\target325\legacy_targeted_bare_plan.py.fixture:56: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[t*(0,0),t*(dataset.width,0),t*(dataset.width,dataset.height),t*(0,dataset.height)]
+E:\GeoAI–MLOps–SDSS\tests\fixtures\target325\legacy_targeted_bare_plan.py.fixture:169: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*window));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_final_same_content_replacement_detected (test_target325_local_profile.LocalPreflightTests.test_final_same_content_replacement_detected) ... ok
+test_implementation_descriptor_mismatch_before_root (test_target325_local_profile.LocalPreflightTests.test_implementation_descriptor_mismatch_before_root) ... ok
+test_legacy64_unchanged_with_sparse_overcap (test_target325_local_profile.LocalPreflightTests.test_legacy64_unchanged_with_sparse_overcap) ... ok
+test_legacy_result_and_errors_exact_even_ambient128 (test_target325_local_profile.LocalPreflightTests.test_legacy_result_and_errors_exact_even_ambient128) ... ok
+test_markers_fail_before_root_or_any_file_open (test_target325_local_profile.LocalPreflightTests.test_markers_fail_before_root_or_any_file_open) ... ok
+test_no_170_or_worker_or_network_import (test_target325_local_profile.LocalPreflightTests.test_no_170_or_worker_or_network_import) ... ok
+test_resource_error_propagates_past_175_catches (test_target325_local_profile.LocalPreflightTests.test_resource_error_propagates_past_175_catches) ... ok
+test_declared_role_cap_cannot_be_raised (test_target325_local_profile.NarrowCapTests.test_declared_role_cap_cannot_be_raised) ... ok
+test_default_and_none_are_exact (test_target325_local_profile.NarrowCapTests.test_default_and_none_are_exact) ... ok
+test_growth_during_actual_read_is_detected_and_charged (test_target325_local_profile.NarrowCapTests.test_growth_during_actual_read_is_detected_and_charged) ... ok
+test_hash_mismatch (test_target325_local_profile.NarrowCapTests.test_hash_mismatch) ... ok
+test_ledger8m_overcap_before_open (test_target325_local_profile.NarrowCapTests.test_ledger8m_overcap_before_open) ... ok
+test_narrow_exact_boundary_and_effective_tree_cap (test_target325_local_profile.NarrowCapTests.test_narrow_exact_boundary_and_effective_tree_cap) ... ok
+test_percall_invalid_values_before_open (test_target325_local_profile.NarrowCapTests.test_percall_invalid_values_before_open) ... ok
+test_replaced_same_content_before_open_fails_identity (test_target325_local_profile.NarrowCapTests.test_replaced_same_content_before_open_fails_identity) ... ok
+test_row_history_and_depth_resource_errors (test_target325_local_profile.NarrowCapTests.test_row_history_and_depth_resource_errors) ... ok
+test_shared_scope_budget_exhaustion_not_reset (test_target325_local_profile.NarrowCapTests.test_shared_scope_budget_exhaustion_not_reset) ... ok
+test_source128_overcap_before_open (test_target325_local_profile.NarrowCapTests.test_source128_overcap_before_open) ... ok
+test_164_cli_explicit_choice_and_no_flag_preserves_default (test_manifest_profile228.Profile228Tests.test_164_cli_explicit_choice_and_no_flag_preserves_default) ... {"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+usage: python.exe -m unittest [-h] --data-root DATA_ROOT --source SOURCE
+                              --policy POLICY --source-sha256 SOURCE_SHA256
+                              --policy-sha256 POLICY_SHA256 --run-id RUN_ID
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'bad' (choose from 'bounded128m-3000-v1')
+ok
+test_both_import_names_share_only_the_explicit_operation_budget (test_manifest_profile228.Profile228Tests.test_both_import_names_share_only_the_explicit_operation_budget) ... ok
+test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper (test_manifest_profile228.Profile228Tests.test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper) ... ok
+test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict (test_manifest_profile228.Profile228Tests.test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict) ... ok
+test_explicit_materialization_staging_v2_and_old_contract_fail_closed (test_manifest_profile228.Profile228Tests.test_explicit_materialization_staging_v2_and_old_contract_fail_closed) ... ok
+test_profile_exact_name_scope_reset_and_legacy_receipts (test_manifest_profile228.Profile228Tests.test_profile_exact_name_scope_reset_and_legacy_receipts) ... ok
+test_qa_v2_same_profile_and_default_rejection (test_manifest_profile228.Profile228Tests.test_qa_v2_same_profile_and_default_rejection) ... ok
+test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate (test_manifest_profile228.Profile228Tests.test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate) ... {"stage": "SNAPSHOT_PINNED", "at": "2026-10-18T14:54:55.280418+00:00", "rows": 1, "source_sha256": "1f816e20c9db2fab9f6039fa85cfd98eae8bb9e8aaa137356baace41bf1a478c"}
+{"stage": "SOURCE_QA_COMPLETE", "seconds": 0.0, "eligible": {"train": 0, "val": 0, "test": 0}}
+{"stage": "CANDIDATE_STAGED", "excluded_rows": 0, "eligible": {"test": 0, "val": 0, "train": 0}}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {"train": 0, "val": 0, "test": 0}, "ready_for_training": false}
+ok
+test_rows_nodes_depth_io_and_output_budget_fail_closed (test_manifest_profile228.Profile228Tests.test_rows_nodes_depth_io_and_output_budget_fail_closed) ... ok
+test_164_snapshot_uses_bounded_copy_with_actual_partial_accounting (test_manifest_profile230.Profile230Tests.test_164_snapshot_uses_bounded_copy_with_actual_partial_accounting) ... ok
+test_173_182_profile_only_expands_source_and_default_scope_stays_off (test_manifest_profile230.Profile230Tests.test_173_182_profile_only_expands_source_and_default_scope_stays_off) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI–MLOps–SDSS\scripts\find_bare_targets173.py:143: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(x,y,256,256));corners=[affine*p for p in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\tempfile.py:934: ResourceWarning: Implicitly cleaning up <TemporaryDirectory 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmpgx69hjwy'>
+  _warnings.warn(warn_message, ResourceWarning)
+ok
+test_173_cli_snapshot_and_proposal_writes_are_measured (test_manifest_profile230.Profile230Tests.test_173_cli_snapshot_and_proposal_writes_are_measured) ... {"status": "LOCAL_DISCOVERY_COMPLETE_UNAPPROVED", "crops": 0, "windows": 0, "qualified": 0, "split_counts": {}, "proposal_sha256": "a748af344da2ad63b87af59d822497d5f67ab56c8a2f32c059a93b63e4ad51de"}
+ok
+test_api_uses_root_internal_path_no_browser_profile_switch (test_manifest_profile230.Profile230Tests.test_api_uses_root_internal_path_no_browser_profile_switch) ... ok
+test_budget_root_config_is_explicit_strict_pinned_readonly (test_manifest_profile230.Profile230Tests.test_budget_root_config_is_explicit_strict_pinned_readonly) ... ok
+test_cli_profile_forwarding_and_strict_unknown_choice (test_manifest_profile230.Profile230Tests.test_cli_profile_forwarding_and_strict_unknown_choice) ... usage: python.exe -m unittest [-h] --source SOURCE --source-sha256
+                              SOURCE_SHA256 --boundary BOUNDARY
+                              --boundary-sha256 BOUNDARY_SHA256 --run-id
+                              RUN_ID [--window-stride {128,256}]
+                              [--province {south_sulawesi,gorontalo,southeast_sulawesi,east_java,banten,west_java}]
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'automatic' (choose from 'bounded128m-3000-v1')
+usage: python.exe -m unittest [-h] --source SOURCE --source-sha256
+                              SOURCE_SHA256 --boundary BOUNDARY
+                              --boundary-sha256 BOUNDARY_SHA256 --run-id
+                              RUN_ID [--window-stride {128,256}]
+                              [--province {south_sulawesi,gorontalo,southeast_sulawesi,east_java,banten,west_java}]
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: Safe explicit run ID required
+{"status": "LOCAL_CENTERS_PROPOSED_UNAPPROVED", "candidates": 0, "proposal_sha256": "4444444444444444444444444444444444444444444444444444444444444444", "target_status": [], "execution_supported": false}
+{"status": "LOCAL_CENTERS_PROPOSED_UNAPPROVED", "candidates": 0, "proposal_sha256": "4444444444444444444444444444444444444444444444444444444444444444", "target_status": [], "execution_supported": false}
+usage: python.exe -m unittest [-h] --source SOURCE --source-sha256
+                              SOURCE_SHA256 --boundary BOUNDARY
+                              --boundary-sha256 BOUNDARY_SHA256 --config
+                              CONFIG --config-sha256 CONFIG_SHA256
+                              --prior-plan PRIOR_PLAN --prior-plan-sha256
+                              PRIOR_PLAN_SHA256 [--target TARGET]
+                              [--manifest-profile {bounded128m-3000-v1}]
+                              --output OUTPUT
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'automatic' (choose from 'bounded128m-3000-v1')
+ok
+test_config_changes_mid_observation_and_source_drift_are_unconfirmed (test_manifest_profile230.Profile230Tests.test_config_changes_mid_observation_and_source_drift_are_unconfirmed) ... ok
+test_copy_counts_both_directions_and_checks_before_destination_open (test_manifest_profile230.Profile230Tests.test_copy_counts_both_directions_and_checks_before_destination_open) ... ok
+test_copy_partial_write_failure_preserves_measured_bytes (test_manifest_profile230.Profile230Tests.test_copy_partial_write_failure_preserves_measured_bytes) ... ok
+test_dual_import_has_same_error_class_and_budget (test_manifest_profile230.Profile230Tests.test_dual_import_has_same_error_class_and_budget) ... ok
+test_growing_hash_reads_only_initial_bound_then_aborts (test_manifest_profile230.Profile230Tests.test_growing_hash_reads_only_initial_bound_then_aborts) ... ok
+test_independent_threads_and_async_tasks_do_not_leak_scope (test_manifest_profile230.Profile230Tests.test_independent_threads_and_async_tasks_do_not_leak_scope) ... ok
+test_json_output_precheck_and_actual_partial_write (test_manifest_profile230.Profile230Tests.test_json_output_precheck_and_actual_partial_write) ... ok
+test_json_role_is_extension_independent_and_oversize_refused_before_open (test_manifest_profile230.Profile230Tests.test_json_role_is_extension_independent_and_oversize_refused_before_open) ... ok
+test_profile_is_hard_ceiling_and_readonly_not_caller_controlled (test_manifest_profile230.Profile230Tests.test_profile_is_hard_ceiling_and_readonly_not_caller_controlled) ... ok
+test_resource_error_aborts_entire_qa_legacy_metadata_error_stays_scene_blocker (test_manifest_profile230.Profile230Tests.test_resource_error_aborts_entire_qa_legacy_metadata_error_stays_scene_blocker) ... E:\GeoAI–MLOps–SDSS\backend\app\ml\readiness.py:234: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  point=ip['transform']*(x,y)
+ok
+test_shared_copied_context_serializes_precheck_read_charge (test_manifest_profile230.Profile230Tests.test_shared_copied_context_serializes_precheck_read_charge) ... ok
+test_ui_default_does_not_inherit_unrelated_parent_profile (test_manifest_profile230.Profile230Tests.test_ui_default_does_not_inherit_unrelated_parent_profile) ... ok
+test_v1_published_candidate_is_pinned_cohort_not_v2_comparison_or_current_source (test_manifest_profile230.Profile230Tests.test_v1_published_candidate_is_pinned_cohort_not_v2_comparison_or_current_source) ... ok
+test_173_boundary_pin_all_rechecks_and_low_budget (test_manifest_profile237.Metadata237Tests.test_173_boundary_pin_all_rechecks_and_low_budget) ... ok
+test_173_cli_every_json_read_and_write_measured (test_manifest_profile237.Metadata237Tests.test_173_cli_every_json_read_and_write_measured) ... {"status": "LOCAL_DISCOVERY_COMPLETE_UNAPPROVED", "crops": 0, "windows": 0, "qualified": 0, "split_counts": {}, "proposal_sha256": "a748af344da2ad63b87af59d822497d5f67ab56c8a2f32c059a93b63e4ad51de"}
+ok
+test_182_default_artifact_bytes_equal_frozen230 (test_manifest_profile237.Metadata237Tests.test_182_default_artifact_bytes_equal_frozen230) ... ok
+test_182_entire_json_consumption_matches_physical_reads (test_manifest_profile237.Metadata237Tests.test_182_entire_json_consumption_matches_physical_reads) ... ok
+test_bare_exact_reads_and_legacy_result_same (test_manifest_profile237.Metadata237Tests.test_bare_exact_reads_and_legacy_result_same) ... ok
+test_cache_hit_no_read_role_change_rechecks_and_replacement_invalidates (test_manifest_profile237.Metadata237Tests.test_cache_hit_no_read_role_change_rechecks_and_replacement_invalidates) ... ok
+test_cache_hit_still_checks_logical_path_change (test_manifest_profile237.Metadata237Tests.test_cache_hit_still_checks_logical_path_change) ... ok
+test_candidate_bare_and_read_report_propagate_resource_errors (test_manifest_profile237.Metadata237Tests.test_candidate_bare_and_read_report_propagate_resource_errors) ... ok
+test_candidate_v1_exact_bytes_and_cache_hit_readiness_reread (test_manifest_profile237.Metadata237Tests.test_candidate_v1_exact_bytes_and_cache_hit_readiness_reread) ... ok
+test_candidates_validator_exact_repeated_reads_and_budget_before_open (test_manifest_profile237.Metadata237Tests.test_candidates_validator_exact_repeated_reads_and_budget_before_open) ... ok
+test_configured_status_resource_failure_is_whole_unconfirmed (test_manifest_profile237.Metadata237Tests.test_configured_status_resource_failure_is_whole_unconfirmed) ... ok
+test_default_status_exact_result_matches_frozen230_and_dual_import_scope (test_manifest_profile237.Metadata237Tests.test_default_status_exact_result_matches_frozen230_and_dual_import_scope) ... ok
+test_growth_reads_initial_bytes_then_aborts (test_manifest_profile237.Metadata237Tests.test_growth_reads_initial_bytes_then_aborts) ... ok
+test_one_scope_exact_duplicate_reads_and_second_refusal_before_open (test_manifest_profile237.Metadata237Tests.test_one_scope_exact_duplicate_reads_and_second_refusal_before_open) ... ok
+test_role_caps_preserve_small_inputs_and_missing_role_fails (test_manifest_profile237.Metadata237Tests.test_role_caps_preserve_small_inputs_and_missing_role_fails) ... ok
+test_small_roles_and_new_status_cap_refuse_before_open (test_manifest_profile237.Metadata237Tests.test_small_roles_and_new_status_cap_refuse_before_open) ... ok
+test_unclassified_verified_entry_fails_explicit_instead_of_unmetered_hash (test_manifest_profile237.Metadata237Tests.test_unclassified_verified_entry_fails_explicit_instead_of_unmetered_hash) ... ok
+test_validator_rejects_replacement_between_parse_and_final_hash (test_manifest_profile237.Metadata237Tests.test_validator_rejects_replacement_between_parse_and_final_hash) ... ok
+test_verified_kinds_require_context_for_collection_manifest (test_manifest_profile237.Metadata237Tests.test_verified_kinds_require_context_for_collection_manifest) ... ok
+test_all_explicit_fixture_pins_and_provenance_match (test_manifest_profile242_portability.BaselinePackaging242Tests.test_all_explicit_fixture_pins_and_provenance_match) ... ok
+test_baseline_script_loader_restores_sys_path (test_manifest_profile242_portability.BaselinePackaging242Tests.test_baseline_script_loader_restores_sys_path) ... ok
+test_missing_fixture_does_not_fall_back_or_skip (test_manifest_profile242_portability.BaselinePackaging242Tests.test_missing_fixture_does_not_fall_back_or_skip) ... ok
+test_tampered_code_or_manifest_cannot_rebase_expected_sha (test_manifest_profile242_portability.BaselinePackaging242Tests.test_tampered_code_or_manifest_cannot_rebase_expected_sha) ... ok
+test_collector_default_exact_and_every_v2_inventory_uses_same_cap (test_targeted_inventory_profile232.TargetedProfile232Tests.test_collector_default_exact_and_every_v2_inventory_uses_same_cap) ... ok
+test_exact_profile_default_and_contaminated_marker (test_targeted_inventory_profile232.TargetedProfile232Tests.test_exact_profile_default_and_contaminated_marker) ... ok
+test_invalid_profile_and_changed_request_pin_reserve_nothing (test_targeted_inventory_profile232.TargetedProfile232Tests.test_invalid_profile_and_changed_request_pin_reserve_nothing) ... ok
+test_mocked_stat_over_two_gib_still_honors_three_gib_boundary (test_targeted_inventory_profile232.TargetedProfile232Tests.test_mocked_stat_over_two_gib_still_honors_three_gib_boundary) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+ok
+test_real_cli_isolated_invalid_v2_never_reaches_operating_inputs (test_targeted_inventory_profile232.TargetedProfile232Tests.test_real_cli_isolated_invalid_v2_never_reaches_operating_inputs) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI–MLOps–SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_review_legacy_exact_output_matches_archived_code (test_targeted_inventory_profile232.TargetedProfile232Tests.test_review_legacy_exact_output_matches_archived_code) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI–MLOps–SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI–MLOps–SDSS\evidence\integration\targeted232-20261018\baseline\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_review_v2_cap_canonical_binding_and_plan_stays256_v1 (test_targeted_inventory_profile232.TargetedProfile232Tests.test_review_v2_cap_canonical_binding_and_plan_stays256_v1) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI–MLOps–SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:360: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  x, y = transform * (window.col_off or 0.0, window.row_off or 0.0)
+C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\windows.py:361: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(
+E:\GeoAI–MLOps–SDSS\scripts\review_bare_targets179.py:106: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  affine=ds.window_transform(Window(*xy,256,256));corners=[list(affine*p) for p in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_valid_v2_both_cli_temp_contracts (test_targeted_inventory_profile232.TargetedProfile232Tests.test_valid_v2_both_cli_temp_contracts) ... C:\Users\최준오\AppData\Local\Programs\Python\Python311\Lib\site-packages\rasterio\transform.py:178: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  return Affine.translation(west, north) * Affine.scale(xsize, -ysize)
+E:\GeoAI–MLOps–SDSS\tests\test_review_bare_targets179.py:41: PendingDeprecationWarning: Use `@` matmul instead of `*` mul operator for matrix multiplication
+  corners=[list(self.affine*(x+dx,dy)) for dx,dy in ((0,0),(256,0),(256,256),(0,256))]
+ok
+test_absent_b02_witness_never_materializes_or_yields_patches (test_collect_targeted_bare.CollectTargetedBareTests.test_absent_b02_witness_never_materializes_or_yields_patches) ... {"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": false}
+ok
+test_bare_minimum_applies_after_materialization_without_inventing_quality (test_collect_targeted_bare.CollectTargetedBareTests.test_bare_minimum_applies_after_materialization_without_inventing_quality) ... {"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+ok
+test_dry_run_does_not_construct_ledger_reserve_output_or_execute (test_collect_targeted_bare.CollectTargetedBareTests.test_dry_run_does_not_construct_ledger_reserve_output_or_execute) ... ok
+test_existing_exclusive_output_even_empty_is_not_reused_or_charged (test_collect_targeted_bare.CollectTargetedBareTests.test_existing_exclusive_output_even_empty_is_not_reused_or_charged) ... ok
+test_existing_global_lock_is_preserved_without_validation_or_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_existing_global_lock_is_preserved_without_validation_or_dispatch) ... ok
+test_f2_cleanup_failure_retains_execution_and_settlement_progress (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_cleanup_failure_retains_execution_and_settlement_progress) ... {"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+ok
+test_f2_cli_subprocess_failure_json_and_exit_code_are_phase_sensitive (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_cli_subprocess_failure_json_and_exit_code_are_phase_sensitive) ... ok
+test_f2_publication_failure_distinguishes_successful_financial_settlement (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_publication_failure_distinguishes_successful_financial_settlement) ... {"status": "targeted_worker_started", "key": "target256-test"}
+ok
+test_f2_reserve_exception_after_write_preserves_unknown_pending_status (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_reserve_exception_after_write_preserves_unknown_pending_status) ... ok
+test_f2_second_reserve_failure_reports_first_worker_settlement (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_second_reserve_failure_reports_first_worker_settlement) ... {"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+ok
+test_f2_settlement_failure_stays_pending_and_is_not_false_nonexecution (test_collect_targeted_bare.CollectTargetedBareTests.test_f2_settlement_failure_stays_pending_and_is_not_false_nonexecution) ... {"status": "targeted_worker_started", "key": "target256-test"}
+ok
+test_f3_counts_unenrolled_receipt_and_unreported_partial_directory (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_counts_unenrolled_receipt_and_unreported_partial_directory) ... ok
+test_f3_duplicate_or_missing_references_and_missing_receipts_fail_closed (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_duplicate_or_missing_references_and_missing_receipts_fail_closed) ... ok
+test_f3_existing_unenrolled_alias_cannot_be_registered_twice (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_existing_unenrolled_alias_cannot_be_registered_twice) ... ok
+test_f3_oversized_source_is_blocked_before_physical_materialization (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_oversized_source_is_blocked_before_physical_materialization) ... {"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": false}
+ok
+test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job (test_collect_targeted_bare.CollectTargetedBareTests.test_f3_reserves_maximum_additional_slots_and_rejects_oversized_job) ... ok
+test_ledger_pin_drift_rejected_without_refund (test_collect_targeted_bare.CollectTargetedBareTests.test_ledger_pin_drift_rejected_without_refund) ... ok
+test_manifest_pin_drift_rejected_read_only (test_collect_targeted_bare.CollectTargetedBareTests.test_manifest_pin_drift_rejected_read_only) ... ok
+test_provider_circuit_is_settled_globally_and_stops_future_dispatch (test_collect_targeted_bare.CollectTargetedBareTests.test_provider_circuit_is_settled_globally_and_stops_future_dispatch) ... {"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": false, "rate_limited": true}
+ok
+test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows (test_collect_targeted_bare.CollectTargetedBareTests.test_real_ledger_and_workers_preserve_pending_and_append_only_new_rows) ... {"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 1, "eligible": 1, "charged_bytes": 1234, "live_b02_checked": true, "rate_limited": false}
+ok
+test_second_output_collision_rolls_back_only_own_empty_first_output (test_collect_targeted_bare.CollectTargetedBareTests.test_second_output_collision_rolls_back_only_own_empty_first_output) ... ok
+test_unmeasured_worker_finally_failure_settles_full_reservation (test_collect_targeted_bare.CollectTargetedBareTests.test_unmeasured_worker_finally_failure_settles_full_reservation) ... {"status": "targeted_worker_started", "key": "target256-test"}
+{"status": "targeted_worker_finished", "key": "target256-test", "patches": 0, "eligible": 0, "charged_bytes": 68157440, "live_b02_checked": false, "rate_limited": false}
+ok
+test_wrong_request_sha_rejected_before_source_or_ledger_mutation (test_collect_targeted_bare.CollectTargetedBareTests.test_wrong_request_sha_rejected_before_source_or_ledger_mutation) ... ok
+
+----------------------------------------------------------------------
+Ran 146 tests in 93.214s
+
+OK

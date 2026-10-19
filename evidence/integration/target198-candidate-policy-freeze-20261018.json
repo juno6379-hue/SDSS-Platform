@@ -1,0 +1,56 @@
+{
+  "at_utc": "2026-10-18T04:31:00.705780+00:00",
+  "scope": "198_CODE_FREEZE_AND_SYNTHETIC_TESTS",
+  "files": {
+    "backend/app/data/targeted_bare_plan.py": {
+      "sha256": "3fe849e76e64a0d64804c76f99f3ca073b2241fa9aa0c6e1fa74412a6845bfa1",
+      "bytes": 15594
+    },
+    "tests/test_targeted_candidate_quality_policy.py": {
+      "sha256": "0446539868764c70b9e3b72ede58ae01ee0f0ad98c3021df0ed4b277444aa557",
+      "bytes": 6637
+    },
+    "docs/implementation/198_targeted_candidate_quality_policy.md": {
+      "sha256": "26dbc6bde79bbaf35438162a095d76ff03b8e81e736de3ff3021ac883b6961a5",
+      "bytes": 7322
+    },
+    "scripts/collect_samples.py": {
+      "sha256": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+      "bytes": 47009
+    },
+    "scripts/collect_targeted_bare.py": {
+      "sha256": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+      "bytes": 21431
+    }
+  },
+  "focused": {
+    "tests": 6,
+    "passed": 6,
+    "skipped": 0,
+    "seconds": 1.786
+  },
+  "related": {
+    "tests": 107,
+    "passed": 106,
+    "skipped": 1,
+    "seconds": 19.374
+  },
+  "collector_changed": false,
+  "remote_requests": 0,
+  "operational_collector_started": false,
+  "native_revalidation_run": false,
+  "candidate_scan_run": false,
+  "selection_minimum_evidence": {
+    "test": "test_existing_collect_windows_passes_explicit_minimum_to_selector",
+    "generated_config_candidate_valid_fraction": 0.8,
+    "select_quality_candidate_minimum": 0.8,
+    "fixture_scope": "STAC and selector mocked; actual collect_windows executed in new Temp directory; remote raster calls0"
+  },
+  "actual_selector_evidence": {
+    "test": "test_actual_selector_rejects_low_scl_then_tries_next_candidate",
+    "mocked_fetch": true,
+    "real_temp_scl_writer": true,
+    "minimum_065_selects": "low",
+    "minimum_080_selects": "clear"
+  }
+}

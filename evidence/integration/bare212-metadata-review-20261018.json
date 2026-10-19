@@ -1,0 +1,4326 @@
+{
+  "schema_version": 1,
+  "scope": "SAVED_METADATA_ONLY_NOT_NATIVE_OR_FULL_SUPPORT_RECHECK",
+  "at_utc": "2026-10-18T05:19:49.473632+00:00",
+  "inputs": {
+    "data/priority164-recovery193-20261018/source-readiness.json": {
+      "sha256": "10bec774167335da2305579b5bae0e31494dba266a018e20985038c2006a8aab",
+      "bytes": 1341067
+    },
+    "data/priority164-recovery193-20261018/qa/readiness.json": {
+      "sha256": "c20e7322958ea52b4d98f8e842754f5f65c8108d512641178a107af3149058bc",
+      "bytes": 1328597
+    },
+    "evidence/integration/deficit209-native-root-20261018.json": {
+      "sha256": "ccc43bda5ebbb02bb134155ac1d1f8960462e30975044db08fdd5431b3567e04",
+      "bytes": 46184
+    },
+    "evidence/integration/bare179-report-20261018.json": {
+      "sha256": "36aaf1107292eee74b0f6a2ce462d90e40a22de498ca31aaff1c1ded636775f0",
+      "bytes": 632883
+    },
+    "evidence/integration/bare192-review-20261018/report.json": {
+      "sha256": "857b1384c09e3cc8d921ed5a03c445e6464a0805f457cd40bc2a24d1a8e2ec0a",
+      "bytes": 641452
+    },
+    "evidence/integration/bare173-verified-20261018/proposal.json": {
+      "sha256": "63368b398ff02382db10213753fb937a7653b925b912c7c5946a857b2152a0ee",
+      "bytes": 121247
+    },
+    "evidence/integration/bare190-gap-20261018/proposal.json": {
+      "sha256": "1cda6dd428dfffcca9df4ac690d9f79ca2187fdc953de0dd3b67d0d1226dce92",
+      "bytes": 75672
+    },
+    "evidence/integration/target189-native-root-20261018.json": {
+      "sha256": "4fbb3e31aecde0fb5d01b39a0ffd2f4e2d6b8dae0ecc1d2d5e46f112ff81988e",
+      "bytes": 4320
+    },
+    "evidence/integration/target196-native-root-20261018.json": {
+      "sha256": "d1b74dee1b07bcec30abf4347471c4d4587b8bb79c35fde1918a07b65d741e62",
+      "bytes": 11463
+    },
+    "evidence/integration/target201-native-root-20261018.json": {
+      "sha256": "c074ba4537cd0f7552180df5802068bc180a55dc864d3fee37b825ffe9dd27dc",
+      "bytes": 5234
+    },
+    "evidence/integration/target203-native-root-20261018.json": {
+      "sha256": "e3c3d21eacdaa44cf893679379be17a693523e0aafeedf515c2440048aa30c9d",
+      "bytes": 3700
+    }
+  },
+  "authorized_current_ledger_observation": {
+    "sha256": "6e9e27b0ba9e4d222f9fde6b1e22f2adfd604701163d8e2c4653617c47af02fc",
+    "bytes": 64043,
+    "before_after_same": true,
+    "scope": "One Root-authorized read cycle, before/after SHA match; target-key status only. Not historical terminal reconstruction.",
+    "target_keys_settled": [
+      "target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc",
+      "target256-bare-southeast_sulawesi-2024-local-rank2-2024-af6c81c01410",
+      "target256-bare-southeast_sulawesi-2024-local-rank12-2024-a40b24388dbd",
+      "target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd",
+      "target256-bare-gorontalo-2024-local-rank1-2024-8ebfbcf25cc5"
+    ]
+  },
+  "metrics": {
+    "original_193_frozen": {
+      "train": {
+        "valid_pixel_denominator": 50499630,
+        "bare_pixels": 2562,
+        "bare_ratio": 5.073304497478496e-05,
+        "bare_percent": 0.005073304497478496,
+        "required_bare_at_fixed_denominator_ceil": 252499,
+        "missing_at_fixed_denominator": 249937,
+        "contributing_patches_ge256": 1,
+        "missing_contributing_patches_to5": 4,
+        "pure_bare_addition_pixels_needed_including_denominator_growth": 251193,
+        "hypothetical_pure_bare_full256_patches_for_ratio": 4,
+        "hypothetical_pure_bare_full256_patches_for_both": 4
+      },
+      "val": {
+        "valid_pixel_denominator": 18824769,
+        "bare_pixels": 2998,
+        "bare_ratio": 0.00015925826234574247,
+        "bare_percent": 0.015925826234574246,
+        "required_bare_at_fixed_denominator_ceil": 94124,
+        "missing_at_fixed_denominator": 91126,
+        "contributing_patches_ge256": 2,
+        "missing_contributing_patches_to5": 3,
+        "pure_bare_addition_pixels_needed_including_denominator_growth": 91584,
+        "hypothetical_pure_bare_full256_patches_for_ratio": 2,
+        "hypothetical_pure_bare_full256_patches_for_both": 3
+      },
+      "test": {
+        "valid_pixel_denominator": 16252940,
+        "bare_pixels": 1025,
+        "bare_ratio": 6.306551307025068e-05,
+        "bare_percent": 0.006306551307025068,
+        "required_bare_at_fixed_denominator_ceil": 81265,
+        "missing_at_fixed_denominator": 80240,
+        "contributing_patches_ge256": 0,
+        "missing_contributing_patches_to5": 5,
+        "pure_bare_addition_pixels_needed_including_denominator_growth": 80643,
+        "hypothetical_pure_bare_full256_patches_for_ratio": 2,
+        "hypothetical_pure_bare_full256_patches_for_both": 5
+      }
+    },
+    "published_1317_frozen": {
+      "train": {
+        "valid_pixel_denominator": 50499630,
+        "bare_pixels": 2562,
+        "bare_ratio": 5.073304497478496e-05,
+        "bare_percent": 0.005073304497478496,
+        "required_bare_at_fixed_denominator_ceil": 252499,
+        "missing_at_fixed_denominator": 249937,
+        "contributing_patches_ge256": 1,
+        "missing_contributing_patches_to5": 4,
+        "pure_bare_addition_pixels_needed_including_denominator_growth": 251193,
+        "hypothetical_pure_bare_full256_patches_for_ratio": 4,
+        "hypothetical_pure_bare_full256_patches_for_both": 4
+      },
+      "val": {
+        "valid_pixel_denominator": 17776457,
+        "bare_pixels": 2998,
+        "bare_ratio": 0.0001686500296431398,
+        "bare_percent": 0.01686500296431398,
+        "required_bare_at_fixed_denominator_ceil": 88883,
+        "missing_at_fixed_denominator": 85885,
+        "contributing_patches_ge256": 2,
+        "missing_contributing_patches_to5": 3,
+        "pure_bare_addition_pixels_needed_including_denominator_growth": 86316,
+        "hypothetical_pure_bare_full256_patches_for_ratio": 2,
+        "hypothetical_pure_bare_full256_patches_for_both": 3
+      },
+      "test": {
+        "valid_pixel_denominator": 16252940,
+        "bare_pixels": 1025,
+        "bare_ratio": 6.306551307025068e-05,
+        "bare_percent": 0.006306551307025068,
+        "required_bare_at_fixed_denominator_ceil": 81265,
+        "missing_at_fixed_denominator": 80240,
+        "contributing_patches_ge256": 0,
+        "missing_contributing_patches_to5": 5,
+        "pure_bare_addition_pixels_needed_including_denominator_growth": 80643,
+        "hypothetical_pure_bare_full256_patches_for_ratio": 2,
+        "hypothetical_pure_bare_full256_patches_for_both": 5
+      }
+    },
+    "original_209_derived_from193_plus_saved_native": {
+      "train": {
+        "valid_pixel_denominator": 51859864,
+        "bare_pixels": 2562,
+        "bare_ratio": 4.940236634635216e-05,
+        "bare_percent": 0.004940236634635216,
+        "required_bare_at_fixed_denominator_ceil": 259300,
+        "missing_at_fixed_denominator": 256738,
+        "contributing_patches_ge256": 1,
+        "missing_contributing_patches_to5": 4,
+        "pure_bare_addition_pixels_needed_including_denominator_growth": 258028,
+        "hypothetical_pure_bare_full256_patches_for_ratio": 4,
+        "hypothetical_pure_bare_full256_patches_for_both": 4
+      },
+      "val": {
+        "valid_pixel_denominator": 18824769,
+        "bare_pixels": 2998,
+        "bare_ratio": 0.00015925826234574247,
+        "bare_percent": 0.015925826234574246,
+        "required_bare_at_fixed_denominator_ceil": 94124,
+        "missing_at_fixed_denominator": 91126,
+        "contributing_patches_ge256": 2,
+        "missing_contributing_patches_to5": 3,
+        "pure_bare_addition_pixels_needed_including_denominator_growth": 91584,
+        "hypothetical_pure_bare_full256_patches_for_ratio": 2,
+        "hypothetical_pure_bare_full256_patches_for_both": 3
+      },
+      "test": {
+        "valid_pixel_denominator": 16252940,
+        "bare_pixels": 1025,
+        "bare_ratio": 6.306551307025068e-05,
+        "bare_percent": 0.006306551307025068,
+        "required_bare_at_fixed_denominator_ceil": 81265,
+        "missing_at_fixed_denominator": 80240,
+        "contributing_patches_ge256": 0,
+        "missing_contributing_patches_to5": 5,
+        "pure_bare_addition_pixels_needed_including_denominator_growth": 80643,
+        "hypothetical_pure_bare_full256_patches_for_ratio": 2,
+        "hypothetical_pure_bare_full256_patches_for_both": 5
+      }
+    }
+  },
+  "current209_derivation": {
+    "baseline193_source_sha256": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f",
+    "source193_eligible_by_split": {
+      "train": 791,
+      "val": 292,
+      "test": 250
+    },
+    "new209_eligible_train_patches": 22,
+    "new209_valid_pixels": 1360234,
+    "new209_bare_pixels": 0,
+    "new209_contributing_patches": 0,
+    "assumption": "Saved193 source native metrics plus196/201/203 no newly enrolled eligible patch and209 exact prefix/native22. This is metadata arithmetic, not whole current pool QA.",
+    "derived_eligible_splits": {
+      "train": 813,
+      "val": 292,
+      "test": 250
+    }
+  },
+  "candidate_cohorts": {
+    "old50_179": {
+      "targets": 50,
+      "source_manifest_sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+      "ledger_sha256_at_report": "7d27c5231c43c0014de92a11fa517c5a4d5c662005785ac75054d37dc27544fb",
+      "declared_bare_sum_all_including_overlap_and_attempts": {
+        "train": 15546,
+        "val": 17081,
+        "test": 4185
+      },
+      "declared_bare_sum_historical_clear_including_mutual_overlap_and_attempts": {
+        "train": 10867,
+        "val": 3085
+      },
+      "historical_clear_count": 23,
+      "saved_mutual_pairs": 56
+    },
+    "new37_192": {
+      "targets": 37,
+      "source_manifest_sha256": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f",
+      "ledger_sha256_at_report": "7839929111f3e70e8b9ba2bda3eb0972bc8c0055bb8c03b9273f4c0b381e353f",
+      "declared_bare_sum_all_including_overlap_and_attempts": {
+        "train": 2262,
+        "test": 24440
+      },
+      "declared_bare_sum_historical_clear_including_mutual_overlap_and_attempts": {
+        "train": 540,
+        "test": 998
+      },
+      "historical_clear_count": 4,
+      "saved_mutual_pairs": 292
+    }
+  },
+  "candidate_metadata": [
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank0-2021",
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "split": "train",
+      "declared_bare_pixels": 1112,
+      "saved_native_label_bare_pixels": 1112,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank2-2024",
+        "local-rank18-2020",
+        "local-rank23-2023"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [
+        "local-rank2-2024"
+      ],
+      "same_space_group": "c9e4bfbb7cff",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          389920.0,
+          9401760.0,
+          392480.0,
+          9404320.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [
+        "local-rank2-2024"
+      ],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank1-2025",
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 840,
+      "saved_native_label_bare_pixels": 840,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [
+        "target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd"
+      ],
+      "attempt_status": "196_QUALITY_BELOW80_ALREADY_ATTEMPTED",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "19bd9a225f53",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          504470.0,
+          9554880.0,
+          507030.0,
+          9557440.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank2-2024",
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 814,
+      "saved_native_label_bare_pixels": 814,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [
+        "target256-bare-southeast_sulawesi-2024-local-rank2-2024-af6c81c01410"
+      ],
+      "attempt_status": "189_SUCCESS_ALREADY_CONTRIBUTING",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank0-2021",
+        "local-rank18-2020",
+        "local-rank23-2023"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "c9e4bfbb7cff",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          389920.0,
+          9401760.0,
+          392480.0,
+          9404320.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank3-2025",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 620,
+      "saved_native_label_bare_pixels": 620,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "dbb1facefde4",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          761760.0,
+          9229920.0,
+          764320.0,
+          9232480.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank4-2025",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 538,
+      "saved_native_label_bare_pixels": 538,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "7fe18e6a1fd5",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          764320.0,
+          9222240.0,
+          766880.0,
+          9224800.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank5-2021",
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "split": "train",
+      "declared_bare_pixels": 469,
+      "saved_native_label_bare_pixels": 469,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank35-2020"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "d2fc4259e9cf",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          389920.0,
+          9409440.0,
+          392480.0,
+          9412000.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank6-2025",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 423,
+      "saved_native_label_bare_pixels": 423,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "375462cdfd53",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          764320.0,
+          9227360.0,
+          766880.0,
+          9229920.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank7-2025",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 390,
+      "saved_native_label_bare_pixels": 390,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "f5e7fcde0dc4",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          761760.0,
+          9227360.0,
+          764320.0,
+          9229920.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank8-2025",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 388,
+      "saved_native_label_bare_pixels": 388,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "444976cb8fb6",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          766880.0,
+          9224800.0,
+          769440.0,
+          9227360.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 14,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank9-2025",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 350,
+      "saved_native_label_bare_pixels": 350,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "5a3dd2c6a020",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          766880.0,
+          9219680.0,
+          769440.0,
+          9222240.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 15,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank10-2025",
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 321,
+      "saved_native_label_bare_pixels": 321,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "201_PREFLIGHT_SUPPORT_OVERLAP_NO_WORKER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "527e6ec95caf",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          501910.0,
+          9554880.0,
+          504470.0,
+          9557440.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank11-2024",
+      "province": "gorontalo",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 271,
+      "saved_native_label_bare_pixels": 271,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "9e077eee7260",
+      "footprint": {
+        "crs": "EPSG:32651",
+        "bounds": [
+          535680.0,
+          46880.0,
+          538240.0,
+          49440.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank12-2024",
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 266,
+      "saved_native_label_bare_pixels": 266,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [
+        "target256-bare-southeast_sulawesi-2024-local-rank12-2024-a40b24388dbd"
+      ],
+      "attempt_status": "196_BARE103_BELOW256_ALREADY_ATTEMPTED",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank48-2023"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "7b871336cad4",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          374560.0,
+          9412000.0,
+          377120.0,
+          9414560.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank13-2020",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "declared_bare_pixels": 3910,
+      "saved_native_label_bare_pixels": 3910,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank14-2020",
+        "local-rank15-2025",
+        "local-rank16-2020",
+        "local-rank17-2025",
+        "local-rank19-2021",
+        "local-rank20-2022",
+        "local-rank22-2020",
+        "local-rank29-2022",
+        "local-rank33-2021",
+        "local-rank36-2021",
+        "local-rank37-2025"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "e4e7b013b688",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          682400.0,
+          9322250.0,
+          684960.0,
+          9324810.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank14-2020",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "declared_bare_pixels": 2411,
+      "saved_native_label_bare_pixels": 2411,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank15-2025",
+        "local-rank19-2021",
+        "local-rank29-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "58b13d66ef66",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          683680.0,
+          9323520.0,
+          686240.0,
+          9326080.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank15-2025",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "declared_bare_pixels": 1559,
+      "saved_native_label_bare_pixels": 1559,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank14-2020",
+        "local-rank19-2021",
+        "local-rank29-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "58b13d66ef66",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          683680.0,
+          9323520.0,
+          686240.0,
+          9326080.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank16-2020",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "declared_bare_pixels": 1497,
+      "saved_native_label_bare_pixels": 1497,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank33-2021",
+        "local-rank37-2025"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "57eee616e2fb",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          683680.0,
+          9320960.0,
+          686240.0,
+          9323520.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 3,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank17-2025",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "declared_bare_pixels": 1180,
+      "saved_native_label_bare_pixels": 1180,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank20-2022",
+        "local-rank22-2020",
+        "local-rank36-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "fbc3afc09dd5",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          681120.0,
+          9320960.0,
+          683680.0,
+          9323520.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank18-2020",
+      "province": "southeast_sulawesi",
+      "year": 2020,
+      "split": "train",
+      "declared_bare_pixels": 1171,
+      "saved_native_label_bare_pixels": 1171,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank0-2021",
+        "local-rank2-2024",
+        "local-rank23-2023"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [
+        "local-rank2-2024"
+      ],
+      "same_space_group": "c9e4bfbb7cff",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          389920.0,
+          9401760.0,
+          392480.0,
+          9404320.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [
+        "local-rank2-2024"
+      ],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank19-2021",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "declared_bare_pixels": 1129,
+      "saved_native_label_bare_pixels": 1129,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank14-2020",
+        "local-rank15-2025",
+        "local-rank29-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "58b13d66ef66",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          683680.0,
+          9323520.0,
+          686240.0,
+          9326080.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank20-2022",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "declared_bare_pixels": 993,
+      "saved_native_label_bare_pixels": 993,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank17-2025",
+        "local-rank22-2020",
+        "local-rank36-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "fbc3afc09dd5",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          681120.0,
+          9320960.0,
+          683680.0,
+          9323520.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank21-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 961,
+      "saved_native_label_bare_pixels": 961,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank42-2025",
+        "local-rank43-2020",
+        "local-rank49-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "955355a562c2",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9388480.0,
+          811030.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 7,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank22-2020",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "declared_bare_pixels": 816,
+      "saved_native_label_bare_pixels": 816,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank17-2025",
+        "local-rank20-2022",
+        "local-rank36-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "fbc3afc09dd5",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          681120.0,
+          9320960.0,
+          683680.0,
+          9323520.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank23-2023",
+      "province": "southeast_sulawesi",
+      "year": 2023,
+      "split": "train",
+      "declared_bare_pixels": 816,
+      "saved_native_label_bare_pixels": 816,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank0-2021",
+        "local-rank2-2024",
+        "local-rank18-2020"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [
+        "local-rank2-2024"
+      ],
+      "same_space_group": "c9e4bfbb7cff",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          389920.0,
+          9401760.0,
+          392480.0,
+          9404320.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [
+        "local-rank2-2024"
+      ],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank24-2024",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "declared_bare_pixels": 802,
+      "saved_native_label_bare_pixels": 802,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank25-2020",
+        "local-rank27-2023",
+        "local-rank28-2021",
+        "local-rank32-2025",
+        "local-rank34-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank25-2020",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "declared_bare_pixels": 797,
+      "saved_native_label_bare_pixels": 797,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank24-2024",
+        "local-rank27-2023",
+        "local-rank28-2021",
+        "local-rank32-2025",
+        "local-rank34-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank26-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 758,
+      "saved_native_label_bare_pixels": 758,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "5770c2457347",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          803350.0,
+          9388480.0,
+          805910.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 8,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank27-2023",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "declared_bare_pixels": 706,
+      "saved_native_label_bare_pixels": 706,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank24-2024",
+        "local-rank25-2020",
+        "local-rank28-2021",
+        "local-rank32-2025",
+        "local-rank34-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank28-2021",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "declared_bare_pixels": 696,
+      "saved_native_label_bare_pixels": 696,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank24-2024",
+        "local-rank25-2020",
+        "local-rank27-2023",
+        "local-rank32-2025",
+        "local-rank34-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank29-2022",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "declared_bare_pixels": 638,
+      "saved_native_label_bare_pixels": 638,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank14-2020",
+        "local-rank15-2025",
+        "local-rank19-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "58b13d66ef66",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          683680.0,
+          9323520.0,
+          686240.0,
+          9326080.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank30-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 631,
+      "saved_native_label_bare_pixels": 631,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "d3697c11fbe0",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9385920.0,
+          811030.0,
+          9388480.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 9,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank31-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 623,
+      "saved_native_label_bare_pixels": 623,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "c597655d5ffa",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          798230.0,
+          9385920.0,
+          800790.0,
+          9388480.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank32-2025",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "declared_bare_pixels": 603,
+      "saved_native_label_bare_pixels": 603,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank24-2024",
+        "local-rank25-2020",
+        "local-rank27-2023",
+        "local-rank28-2021",
+        "local-rank34-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank33-2021",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "declared_bare_pixels": 599,
+      "saved_native_label_bare_pixels": 599,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank16-2020",
+        "local-rank37-2025"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "57eee616e2fb",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          683680.0,
+          9320960.0,
+          686240.0,
+          9323520.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 4,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank34-2022",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "declared_bare_pixels": 581,
+      "saved_native_label_bare_pixels": 581,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank24-2024",
+        "local-rank25-2020",
+        "local-rank27-2023",
+        "local-rank28-2021",
+        "local-rank32-2025"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank35-2020",
+      "province": "southeast_sulawesi",
+      "year": 2020,
+      "split": "train",
+      "declared_bare_pixels": 557,
+      "saved_native_label_bare_pixels": 557,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank5-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "d2fc4259e9cf",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          389920.0,
+          9409440.0,
+          392480.0,
+          9412000.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank36-2021",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "declared_bare_pixels": 546,
+      "saved_native_label_bare_pixels": 546,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank17-2025",
+        "local-rank20-2022",
+        "local-rank22-2020"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "fbc3afc09dd5",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          681120.0,
+          9320960.0,
+          683680.0,
+          9323520.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank37-2025",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "declared_bare_pixels": 538,
+      "saved_native_label_bare_pixels": 538,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank16-2020",
+        "local-rank33-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "57eee616e2fb",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          683680.0,
+          9320960.0,
+          686240.0,
+          9323520.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 5,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank38-2023",
+      "province": "east_java",
+      "year": 2023,
+      "split": "train",
+      "declared_bare_pixels": 484,
+      "saved_native_label_bare_pixels": 484,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "412c49315335",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          207340.0,
+          9084820.0,
+          209900.0,
+          9087380.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank39-2022",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "declared_bare_pixels": 451,
+      "saved_native_label_bare_pixels": 451,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank40-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "b04bb82b82cc",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          668160.0,
+          9315690.0,
+          670720.0,
+          9318250.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 6,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank40-2022",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "declared_bare_pixels": 451,
+      "saved_native_label_bare_pixels": 451,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank39-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "b7702f968b26",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          668320.0,
+          9315840.0,
+          670880.0,
+          9318400.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank41-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 421,
+      "saved_native_label_bare_pixels": 421,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "95d2f001602e",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          805910.0,
+          9388480.0,
+          808470.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 10,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank42-2025",
+      "province": "south_sulawesi",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 408,
+      "saved_native_label_bare_pixels": 408,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank21-2022",
+        "local-rank43-2020",
+        "local-rank49-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "955355a562c2",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9388480.0,
+          811030.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 11,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank43-2020",
+      "province": "south_sulawesi",
+      "year": 2020,
+      "split": "train",
+      "declared_bare_pixels": 388,
+      "saved_native_label_bare_pixels": 388,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank21-2022",
+        "local-rank42-2025",
+        "local-rank49-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "955355a562c2",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9388480.0,
+          811030.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 12,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank44-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 388,
+      "saved_native_label_bare_pixels": 388,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "4b52f00c0bf3",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9380800.0,
+          811030.0,
+          9383360.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 13,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank45-2025",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "declared_bare_pixels": 363,
+      "saved_native_label_bare_pixels": 363,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "24a78b4c1498",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          569440.0,
+          9253440.0,
+          572000.0,
+          9256000.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank46-2020",
+      "province": "southeast_sulawesi",
+      "year": 2020,
+      "split": "train",
+      "declared_bare_pixels": 304,
+      "saved_native_label_bare_pixels": 304,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37379e0c71b9",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          377120.0,
+          9404320.0,
+          379680.0,
+          9406880.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank47-2024",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 282,
+      "saved_native_label_bare_pixels": 282,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "6c359f2f24e6",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          517270.0,
+          9100000.0,
+          519830.0,
+          9102560.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 16,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank48-2023",
+      "province": "southeast_sulawesi",
+      "year": 2023,
+      "split": "train",
+      "declared_bare_pixels": 281,
+      "saved_native_label_bare_pixels": 281,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank12-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [
+        "local-rank12-2024"
+      ],
+      "same_space_group": "7b871336cad4",
+      "footprint": {
+        "crs": "EPSG:32751",
+        "bounds": [
+          374560.0,
+          9412000.0,
+          377120.0,
+          9414560.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [
+        "local-rank12-2024"
+      ],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank49-2024",
+      "province": "south_sulawesi",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 271,
+      "saved_native_label_bare_pixels": 271,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank21-2022",
+        "local-rank42-2025",
+        "local-rank43-2020"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "955355a562c2",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9388480.0,
+          811030.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 17,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank0-2024",
+      "province": "gorontalo",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 360,
+      "saved_native_label_bare_pixels": 360,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank1-2024",
+        "local-rank35-2021",
+        "local-rank36-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [
+        "local-rank1-2024"
+      ],
+      "same_space_group": "14f240859a5f",
+      "footprint": {
+        "crs": "EPSG:32651",
+        "bounds": [
+          545920.0,
+          53280.0,
+          548480.0,
+          55840.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": [
+        "local-rank1-2024"
+      ]
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank1-2024",
+      "province": "gorontalo",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 273,
+      "saved_native_label_bare_pixels": 273,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [
+        "target256-bare-gorontalo-2024-local-rank1-2024-8ebfbcf25cc5"
+      ],
+      "attempt_status": "203_EXECUTED_NO_SCENE_NO_PATCH",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank0-2024",
+        "local-rank35-2021",
+        "local-rank36-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "81a458f49bec",
+      "footprint": {
+        "crs": "EPSG:32651",
+        "bounds": [
+          547200.0,
+          53280.0,
+          549760.0,
+          55840.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank2-2024",
+      "province": "gorontalo",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 271,
+      "saved_native_label_bare_pixels": 271,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank3-2024",
+        "local-rank4-2024",
+        "local-rank5-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "293b4f61b160",
+      "footprint": {
+        "crs": "EPSG:32651",
+        "bounds": [
+          535680.0,
+          48160.0,
+          538240.0,
+          50720.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank3-2024",
+      "province": "gorontalo",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 271,
+      "saved_native_label_bare_pixels": 271,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank2-2024",
+        "local-rank4-2024",
+        "local-rank5-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "9e077eee7260",
+      "footprint": {
+        "crs": "EPSG:32651",
+        "bounds": [
+          535680.0,
+          46880.0,
+          538240.0,
+          49440.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank4-2024",
+      "province": "gorontalo",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 271,
+      "saved_native_label_bare_pixels": 271,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank2-2024",
+        "local-rank3-2024",
+        "local-rank5-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "7319e2624c82",
+      "footprint": {
+        "crs": "EPSG:32651",
+        "bounds": [
+          536960.0,
+          48160.0,
+          539520.0,
+          50720.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank5-2024",
+      "province": "gorontalo",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 271,
+      "saved_native_label_bare_pixels": 271,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank2-2024",
+        "local-rank3-2024",
+        "local-rank4-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "a952611d7d10",
+      "footprint": {
+        "crs": "EPSG:32651",
+        "bounds": [
+          536960.0,
+          46880.0,
+          539520.0,
+          49440.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank6-2023",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "declared_bare_pixels": 1706,
+      "saved_native_label_bare_pixels": 1706,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank7-2023",
+        "local-rank8-2023"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "4ebcd4871a5b",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          257250.0,
+          9219470.0,
+          259810.0,
+          9222030.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank7-2023",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "declared_bare_pixels": 1661,
+      "saved_native_label_bare_pixels": 1661,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank6-2023",
+        "local-rank8-2023"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "973ab8e1dfcd",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          255970.0,
+          9220750.0,
+          258530.0,
+          9223310.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank8-2023",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "declared_bare_pixels": 1659,
+      "saved_native_label_bare_pixels": 1659,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank6-2023",
+        "local-rank7-2023"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "e437804d7cb4",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          255970.0,
+          9219470.0,
+          258530.0,
+          9222030.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank9-2020",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "declared_bare_pixels": 981,
+      "saved_native_label_bare_pixels": 981,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "aa7112462e70",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9236480.0,
+          786550.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank10-2020",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "declared_bare_pixels": 981,
+      "saved_native_label_bare_pixels": 981,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "6fac9c9df065",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9235200.0,
+          786550.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank11-2024",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "declared_bare_pixels": 936,
+      "saved_native_label_bare_pixels": 936,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "aa7112462e70",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9236480.0,
+          786550.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank12-2024",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "declared_bare_pixels": 936,
+      "saved_native_label_bare_pixels": 936,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "6fac9c9df065",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9235200.0,
+          786550.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank13-2023",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "declared_bare_pixels": 844,
+      "saved_native_label_bare_pixels": 844,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "aa7112462e70",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9236480.0,
+          786550.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank14-2023",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "declared_bare_pixels": 844,
+      "saved_native_label_bare_pixels": 844,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "6fac9c9df065",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9235200.0,
+          786550.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank15-2021",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "declared_bare_pixels": 840,
+      "saved_native_label_bare_pixels": 840,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "aa7112462e70",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9236480.0,
+          786550.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank16-2021",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "declared_bare_pixels": 840,
+      "saved_native_label_bare_pixels": 840,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "6fac9c9df065",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9235200.0,
+          786550.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank17-2024",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "declared_bare_pixels": 802,
+      "saved_native_label_bare_pixels": 802,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "0e02bdad464e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9236480.0,
+          785270.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank18-2024",
+      "province": "west_java",
+      "year": 2024,
+      "split": "test",
+      "declared_bare_pixels": 802,
+      "saved_native_label_bare_pixels": 802,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank19-2020",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "declared_bare_pixels": 797,
+      "saved_native_label_bare_pixels": 797,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "0e02bdad464e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9236480.0,
+          785270.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank20-2020",
+      "province": "west_java",
+      "year": 2020,
+      "split": "test",
+      "declared_bare_pixels": 797,
+      "saved_native_label_bare_pixels": 797,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank21-2022",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "declared_bare_pixels": 748,
+      "saved_native_label_bare_pixels": 748,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "aa7112462e70",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9236480.0,
+          786550.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank22-2022",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "declared_bare_pixels": 748,
+      "saved_native_label_bare_pixels": 748,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "6fac9c9df065",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9235200.0,
+          786550.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank23-2023",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "declared_bare_pixels": 706,
+      "saved_native_label_bare_pixels": 706,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "0e02bdad464e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9236480.0,
+          785270.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank24-2023",
+      "province": "west_java",
+      "year": 2023,
+      "split": "test",
+      "declared_bare_pixels": 706,
+      "saved_native_label_bare_pixels": 706,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank25-2021",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "declared_bare_pixels": 696,
+      "saved_native_label_bare_pixels": 696,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "0e02bdad464e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9236480.0,
+          785270.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank26-2021",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "declared_bare_pixels": 696,
+      "saved_native_label_bare_pixels": 696,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank27-2025",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "declared_bare_pixels": 674,
+      "saved_native_label_bare_pixels": 674,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "aa7112462e70",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9236480.0,
+          786550.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank28-2025",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "declared_bare_pixels": 674,
+      "saved_native_label_bare_pixels": 674,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "6fac9c9df065",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          783990.0,
+          9235200.0,
+          786550.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank29-2025",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "declared_bare_pixels": 603,
+      "saved_native_label_bare_pixels": 603,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank30-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "0e02bdad464e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9236480.0,
+          785270.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank30-2025",
+      "province": "west_java",
+      "year": 2025,
+      "split": "test",
+      "declared_bare_pixels": 603,
+      "saved_native_label_bare_pixels": 603,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank31-2022",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank31-2022",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "declared_bare_pixels": 581,
+      "saved_native_label_bare_pixels": 581,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank32-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "0e02bdad464e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9236480.0,
+          785270.0,
+          9239040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank32-2022",
+      "province": "west_java",
+      "year": 2022,
+      "split": "test",
+      "declared_bare_pixels": 581,
+      "saved_native_label_bare_pixels": 581,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank9-2020",
+        "local-rank10-2020",
+        "local-rank11-2024",
+        "local-rank12-2024",
+        "local-rank13-2023",
+        "local-rank14-2023",
+        "local-rank15-2021",
+        "local-rank16-2021",
+        "local-rank17-2024",
+        "local-rank18-2024",
+        "local-rank19-2020",
+        "local-rank20-2020",
+        "local-rank21-2022",
+        "local-rank22-2022",
+        "local-rank23-2023",
+        "local-rank24-2023",
+        "local-rank25-2021",
+        "local-rank26-2021",
+        "local-rank27-2025",
+        "local-rank28-2025",
+        "local-rank29-2025",
+        "local-rank30-2025",
+        "local-rank31-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "37e0f03fed3e",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          782710.0,
+          9235200.0,
+          785270.0,
+          9237760.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank33-2021",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "declared_bare_pixels": 500,
+      "saved_native_label_bare_pixels": 500,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank34-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "d893272cde7e",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          244450.0,
+          9216910.0,
+          247010.0,
+          9219470.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 1,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank34-2021",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "declared_bare_pixels": 498,
+      "saved_native_label_bare_pixels": 498,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank33-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "cfb937467b60",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          243170.0,
+          9216910.0,
+          245730.0,
+          9219470.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 2,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank35-2021",
+      "province": "gorontalo",
+      "year": 2021,
+      "split": "train",
+      "declared_bare_pixels": 278,
+      "saved_native_label_bare_pixels": 278,
+      "saved_historical_overlap": true,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank0-2024",
+        "local-rank1-2024",
+        "local-rank36-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [
+        "local-rank1-2024"
+      ],
+      "same_space_group": "14f240859a5f",
+      "footprint": {
+        "crs": "EPSG:32651",
+        "bounds": [
+          545920.0,
+          53280.0,
+          548480.0,
+          55840.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": false,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": [
+        "local-rank1-2024"
+      ]
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank36-2021",
+      "province": "gorontalo",
+      "year": 2021,
+      "split": "train",
+      "declared_bare_pixels": 267,
+      "saved_native_label_bare_pixels": 267,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank0-2024",
+        "local-rank1-2024",
+        "local-rank35-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [
+        "local-rank1-2024"
+      ],
+      "same_space_group": "81a458f49bec",
+      "footprint": {
+        "crs": "EPSG:32651",
+        "bounds": [
+          547200.0,
+          53280.0,
+          549760.0,
+          55840.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": [
+        "local-rank1-2024"
+      ],
+      "metadata_review_rank": 18
+    }
+  ],
+  "ranked_for_fresh_metadata_and_support_review_only": [
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank33-2021",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "declared_bare_pixels": 500,
+      "saved_native_label_bare_pixels": 500,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank34-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "d893272cde7e",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          244450.0,
+          9216910.0,
+          247010.0,
+          9219470.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 1,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank34-2021",
+      "province": "west_java",
+      "year": 2021,
+      "split": "test",
+      "declared_bare_pixels": 498,
+      "saved_native_label_bare_pixels": 498,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank33-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "cfb937467b60",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          243170.0,
+          9216910.0,
+          245730.0,
+          9219470.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 2,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank16-2020",
+      "province": "banten",
+      "year": 2020,
+      "split": "val",
+      "declared_bare_pixels": 1497,
+      "saved_native_label_bare_pixels": 1497,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank33-2021",
+        "local-rank37-2025"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "57eee616e2fb",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          683680.0,
+          9320960.0,
+          686240.0,
+          9323520.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 3,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank33-2021",
+      "province": "banten",
+      "year": 2021,
+      "split": "val",
+      "declared_bare_pixels": 599,
+      "saved_native_label_bare_pixels": 599,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank16-2020",
+        "local-rank37-2025"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "57eee616e2fb",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          683680.0,
+          9320960.0,
+          686240.0,
+          9323520.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 4,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank37-2025",
+      "province": "banten",
+      "year": 2025,
+      "split": "val",
+      "declared_bare_pixels": 538,
+      "saved_native_label_bare_pixels": 538,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank13-2020",
+        "local-rank16-2020",
+        "local-rank33-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "57eee616e2fb",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          683680.0,
+          9320960.0,
+          686240.0,
+          9323520.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 5,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank39-2022",
+      "province": "banten",
+      "year": 2022,
+      "split": "val",
+      "declared_bare_pixels": 451,
+      "saved_native_label_bare_pixels": 451,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank40-2022"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "b04bb82b82cc",
+      "footprint": {
+        "crs": "EPSG:32748",
+        "bounds": [
+          668160.0,
+          9315690.0,
+          670720.0,
+          9318250.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 6,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank21-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 961,
+      "saved_native_label_bare_pixels": 961,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank42-2025",
+        "local-rank43-2020",
+        "local-rank49-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "955355a562c2",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9388480.0,
+          811030.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 7,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank26-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 758,
+      "saved_native_label_bare_pixels": 758,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "5770c2457347",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          803350.0,
+          9388480.0,
+          805910.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 8,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank30-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 631,
+      "saved_native_label_bare_pixels": 631,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "d3697c11fbe0",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9385920.0,
+          811030.0,
+          9388480.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 9,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank41-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 421,
+      "saved_native_label_bare_pixels": 421,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "95d2f001602e",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          805910.0,
+          9388480.0,
+          808470.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 10,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank42-2025",
+      "province": "south_sulawesi",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 408,
+      "saved_native_label_bare_pixels": 408,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank21-2022",
+        "local-rank43-2020",
+        "local-rank49-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "955355a562c2",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9388480.0,
+          811030.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 11,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank43-2020",
+      "province": "south_sulawesi",
+      "year": 2020,
+      "split": "train",
+      "declared_bare_pixels": 388,
+      "saved_native_label_bare_pixels": 388,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank21-2022",
+        "local-rank42-2025",
+        "local-rank49-2024"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "955355a562c2",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9388480.0,
+          811030.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 12,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank44-2022",
+      "province": "south_sulawesi",
+      "year": 2022,
+      "split": "train",
+      "declared_bare_pixels": 388,
+      "saved_native_label_bare_pixels": 388,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "4b52f00c0bf3",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9380800.0,
+          811030.0,
+          9383360.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 13,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank8-2025",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 388,
+      "saved_native_label_bare_pixels": 388,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "444976cb8fb6",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          766880.0,
+          9224800.0,
+          769440.0,
+          9227360.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 14,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank9-2025",
+      "province": "east_java",
+      "year": 2025,
+      "split": "train",
+      "declared_bare_pixels": 350,
+      "saved_native_label_bare_pixels": 350,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "5a3dd2c6a020",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          766880.0,
+          9219680.0,
+          769440.0,
+          9222240.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 15,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank47-2024",
+      "province": "east_java",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 282,
+      "saved_native_label_bare_pixels": 282,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "6c359f2f24e6",
+      "footprint": {
+        "crs": "EPSG:32749",
+        "bounds": [
+          517270.0,
+          9100000.0,
+          519830.0,
+          9102560.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 16,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "old50_179",
+      "target_id": "local-rank49-2024",
+      "province": "south_sulawesi",
+      "year": 2024,
+      "split": "train",
+      "declared_bare_pixels": 271,
+      "saved_native_label_bare_pixels": 271,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank21-2022",
+        "local-rank42-2025",
+        "local-rank43-2020"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [],
+      "same_space_group": "955355a562c2",
+      "footprint": {
+        "crs": "EPSG:32750",
+        "bounds": [
+          808470.0,
+          9388480.0,
+          811030.0,
+          9391040.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "metadata_review_rank": 17,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": []
+    },
+    {
+      "cohort": "new37_192",
+      "target_id": "local-rank36-2021",
+      "province": "gorontalo",
+      "year": 2021,
+      "split": "train",
+      "declared_bare_pixels": 267,
+      "saved_native_label_bare_pixels": 267,
+      "saved_historical_overlap": false,
+      "current_ledger_target_identity_matches": [],
+      "attempt_status": "NO_MATCHING_TARGET_ID_IN_CURRENT_LEDGER",
+      "saved_mutual_overlap_neighbors": [
+        "local-rank0-2024",
+        "local-rank1-2024",
+        "local-rank35-2021"
+      ],
+      "saved_overlap_with_already_settled_target_ids": [
+        "local-rank1-2024"
+      ],
+      "same_space_group": "81a458f49bec",
+      "footprint": {
+        "crs": "EPSG:32651",
+        "bounds": [
+          547200.0,
+          53280.0,
+          549760.0,
+          55840.0
+        ]
+      },
+      "suggested_metadata_recheck_candidate": true,
+      "current_full_support_approved": false,
+      "future_quality_verified": false,
+      "execution_authorized_by_analysis": false,
+      "saved_overlap_with_physically_acquired_target_ids": [],
+      "saved_overlap_with_settled_no_scene_target_ids": [
+        "local-rank1-2024"
+      ],
+      "metadata_review_rank": 18
+    }
+  ],
+  "old50_optimistic_declared_sum_comparison": {
+    "train": {
+      "old50_declared_sum_optimistic": 15546,
+      "original209_fixed_denominator_gap": 256738,
+      "short_even_if_every_declaration_is_added_without_denominator_growth": true
+    },
+    "val": {
+      "old50_declared_sum_optimistic": 17081,
+      "original209_fixed_denominator_gap": 91126,
+      "short_even_if_every_declaration_is_added_without_denominator_growth": true
+    },
+    "test": {
+      "old50_declared_sum_optimistic": 4185,
+      "original209_fixed_denominator_gap": 80240,
+      "short_even_if_every_declaration_is_added_without_denominator_growth": true
+    }
+  },
+  "assumptions_and_limits": [
+    "Fixed-denominator gap is ceil(D/200)-B; new patches also enlarge D.",
+    "Hypothetical pure-bare additions solve199*x>=D-200*B and assume every new valid pixel is bare; patch lower bounds are not acquisition guarantees.",
+    "Only256 bare pixels in a fully valid65536-pixel patch is0.390625%, below0.5%; contribution-count success alone cannot solve ratio.",
+    "Declared sums deliberately double-count overlap, used as a generous ceiling only if future contribution never exceeds those exact declarations. Future raster alignment/quality may differ.",
+    "Saved179 and192 support-clear statuses belong to their own source/ledger snapshots, never current support approval.",
+    "No matching target ID in ledger is not proof of no earlier acquisition under another ID; current footprint/scene/support checks remain required.",
+    "Overlapping or same-coordinate years are not independent new spatial patches. Cross-cohort overlap is not newly scanned.",
+    "A settled no-scene203 request is not a physical acquisition: its overlapping2021 candidate remains a single-location review option; no automatic retry or claim of clear2021 imagery.",
+    "Pure-bare patch lower bounds are arithmetic only, not feasible acquisition plans satisfying clouds/quality/province masks/dominant deferral/class balance/independent truth."
+  ],
+  "product_source_edits": 0,
+  "raster_reads": 0,
+  "native_revalidations": 0,
+  "full_support_scans": 0,
+  "http_requests": 0,
+  "collector_starts": 0,
+  "training_runs": 0,
+  "operational_source_or_ledger_writes": 0,
+  "old50_plus_new37_optimistic_comparison": {
+    "train": {
+      "declared_sum_including_overlap_and_attempts": 17808,
+      "fixed_denominator_gap": 256738,
+      "still_short": true
+    },
+    "val": {
+      "declared_sum_including_overlap_and_attempts": 17081,
+      "fixed_denominator_gap": 91126,
+      "still_short": true
+    },
+    "test": {
+      "declared_sum_including_overlap_and_attempts": 28625,
+      "fixed_denominator_gap": 80240,
+      "still_short": true
+    }
+  }
+}

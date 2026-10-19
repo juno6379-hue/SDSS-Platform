@@ -1,0 +1,11 @@
+{
+  "scope": "VERIFIED_REAL read-only browser on running 5174; manual collection-status GET",
+  "url": "http://127.0.0.1:5174/#/view/17",
+  "response_at_utc_displayed": "2026-10-18T01:37:21.574602+00:00",
+  "current": {"physical":1464,"eligible":1164,"ineligible":300,"by_split":{"train":681,"val":233,"test":250},"target_gap":36,"cell_gap":109,"manifest_sha256":"c57a1768a87fae7b0fd0c5ec8e451c439d35c65bf54d99f1f7b38dc98928e33e"},
+  "fixed_candidate": {"eligible":1106,"by_split":{"train":639,"val":217,"test":250},"blockers":4,"source_matches_current":false,"source_manifest_sha256":"9211524656d92f0fcfcdf11f2ec382965e3aeacbc7f80da5b02f4f59784df1e7"},
+  "checks":{"current_inventory_displayed":true,"candidate_separate":true,"source_mismatch_warning":true,"training_not_ready":true,"console_errors_or_warnings":0},
+  "limitations":["Long busy state before successful response; exact browser latency not timed","Independent API latency48.2918s belongs to heartbeat-1035-ui-audit, not this browser measurement","Current inventory is manifest declarations, not native QA of1464 rows","Next fixed1432 cohort QA is separate and not complete at observation"],
+  "evidence":["heartbeat-1035-browser-20261018.txt","heartbeat-1035-candidate-browser-20261018.jpg"],
+  "api_writes":0,"training_runs_started":0,"collectors_started":0
+}

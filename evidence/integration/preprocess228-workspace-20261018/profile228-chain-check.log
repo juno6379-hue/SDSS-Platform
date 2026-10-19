@@ -1,0 +1,26 @@
+E:\GeoAI–MLOps–SDSS\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {}, "ready_for_training": false}
+test_164_cli_explicit_choice_and_no_flag_preserves_default (test_manifest_profile228.Profile228Tests.test_164_cli_explicit_choice_and_no_flag_preserves_default) ... usage: python.exe -m unittest [-h] --data-root DATA_ROOT --source SOURCE
+                              --policy POLICY --source-sha256 SOURCE_SHA256
+                              --policy-sha256 POLICY_SHA256 --run-id RUN_ID
+                              [--manifest-profile {bounded128m-3000-v1}]
+python.exe -m unittest: error: argument --manifest-profile: invalid choice: 'bad' (choose from 'bounded128m-3000-v1')
+ok
+test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper (test_manifest_profile228.Profile228Tests.test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper) ... ok
+test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict (test_manifest_profile228.Profile228Tests.test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict) ... ok
+test_explicit_materialization_staging_v2_and_old_contract_fail_closed (test_manifest_profile228.Profile228Tests.test_explicit_materialization_staging_v2_and_old_contract_fail_closed) ... ok
+test_profile_exact_name_scope_reset_and_legacy_receipts (test_manifest_profile228.Profile228Tests.test_profile_exact_name_scope_reset_and_legacy_receipts) ... ok
+test_qa_v2_same_profile_and_default_rejection (test_manifest_profile228.Profile228Tests.test_qa_v2_same_profile_and_default_rejection) ... ok
+{"stage": "SNAPSHOT_PINNED", "at": "2026-10-18T06:28:01.058974+00:00", "rows": 1, "source_sha256": "fc912c9302d84e7d18b3e98b72c3f1f5342adfa7ab103dd7b1c35c1bab87497a"}
+{"stage": "SOURCE_QA_COMPLETE", "seconds": 0.0, "eligible": {"train": 0, "val": 0, "test": 0}}
+{"stage": "CANDIDATE_STAGED", "excluded_rows": 0, "eligible": {"test": 0, "val": 0, "train": 0}}
+{"stage": "PINNED_CANDIDATE_QA_COMPLETED", "candidate_eligible": {"train": 0, "val": 0, "test": 0}, "ready_for_training": false}
+test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate (test_manifest_profile228.Profile228Tests.test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate) ... ok
+test_rows_nodes_depth_io_and_output_budget_fail_closed (test_manifest_profile228.Profile228Tests.test_rows_nodes_depth_io_and_output_budget_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 4.722s
+
+OK

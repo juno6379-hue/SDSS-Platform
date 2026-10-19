@@ -1,0 +1,208 @@
+{
+  "status": "METADATA_HANDOFF_VERIFIED",
+  "at": "2026-10-18T11:34:14.129782+00:00",
+  "summary_sha256": "6978fc4cfe1b3b05d37b08c899a3c9b4edbaf24a9fe26cd2841f68f64bf730f0",
+  "terminal_sha256": "8ed1d8264abfd810b713478dc850a1d93837f3092532bd22a67c4f496f99eb0e",
+  "output_pins": {
+    "data\\priority164-guarded273-20261018\\source.json": {
+      "sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b",
+      "bytes": 67518599
+    },
+    "data\\priority164-guarded273-20261018\\source-readiness.json": {
+      "sha256": "3b3886668618535714d07fb8c00230dccceeb074bab215d615fd73d3e93a5db6",
+      "bytes": 1395390
+    },
+    "evidence\\integration\\priority164-guarded273-20261018\\split-plan.json": {
+      "sha256": "b55dd8df0e233ccd7df6d5a0eea17c4dd14417260248491f6bdecf92c273e343",
+      "bytes": 26121
+    },
+    "evidence\\integration\\priority164-guarded273-20261018\\candidate-package\\plan.json": {
+      "sha256": "b55dd8df0e233ccd7df6d5a0eea17c4dd14417260248491f6bdecf92c273e343",
+      "bytes": 26121
+    },
+    "evidence\\integration\\priority164-guarded273-20261018\\candidate-package\\candidate.json": {
+      "sha256": "944e34b5b8f6f8c8da8d39c6ade24353cddf105e804f30dfbb6869e808af2b10",
+      "bytes": 66897322
+    },
+    "evidence\\integration\\priority164-guarded273-20261018\\candidate-package\\receipt.json": {
+      "sha256": "be0a3d3748cf5dcdb433095096673b1e265eab4781ea3f55377e18a6f6cbdb05",
+      "bytes": 4101
+    },
+    "data\\priority164-guarded273-20261018\\stage\\candidate.json": {
+      "sha256": "944e34b5b8f6f8c8da8d39c6ade24353cddf105e804f30dfbb6869e808af2b10",
+      "bytes": 66897322
+    },
+    "data\\priority164-guarded273-20261018\\stage\\staging-receipt.json": {
+      "sha256": "fcb04a952ee75a61d4a0f959d16c62b9ab54f3ededc777e9a7e98e2abc61f68f",
+      "bytes": 3836
+    },
+    "data\\first-group\\experiment-esri-v003-2020-2025.json": {
+      "sha256": "01991d69bc26487d4ef890de72689da092806bc58cc80ca5f6d6026cf3c79ed7",
+      "bytes": 1306
+    },
+    "data\\priority164-guarded273-20261018\\qa\\readiness.json": {
+      "sha256": "4f6a1e1bac5b236de757176ec6d49c56c1ee6c9ec917f2c859e90e9ad0bd2bfb",
+      "bytes": 1382920
+    },
+    "data\\priority164-guarded273-20261018\\qa\\qa-receipt.json": {
+      "sha256": "fe131b495609681eeac6ecab9bc53c4c8f94159d0f59055ce9df294ccffe661f",
+      "bytes": 3069
+    }
+  },
+  "output_pin_mismatches": 0,
+  "v2_receipts": {
+    "evidence\\integration\\priority164-guarded273-20261018\\candidate-package\\receipt.json": "be0a3d3748cf5dcdb433095096673b1e265eab4781ea3f55377e18a6f6cbdb05",
+    "data\\priority164-guarded273-20261018\\stage\\staging-receipt.json": "fcb04a952ee75a61d4a0f959d16c62b9ab54f3ededc777e9a7e98e2abc61f68f",
+    "data\\priority164-guarded273-20261018\\qa\\qa-receipt.json": "fe131b495609681eeac6ecab9bc53c4c8f94159d0f59055ce9df294ccffe661f"
+  },
+  "manifest_profile": {
+    "name": "bounded128m-3000-v1",
+    "sha256": "db44041c31fd28ef05c3157725fb07356e0799014f7d3300361d0f985ce6afe4"
+  },
+  "exact_retained_rows": true,
+  "partition_complete": true,
+  "source_current_matches_snapshot": true,
+  "source_rows": 1731,
+  "candidate_rows": 1715,
+  "candidate_eligible": {
+    "train": 822,
+    "val": 276,
+    "test": 250
+  },
+  "excluded_rows": [
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303
+  ],
+  "conflicts": [
+    {
+      "scene_ids": [
+        "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+      ],
+      "source_groups": [
+        "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+        "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+      ],
+      "row_indexes": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107
+      ],
+      "keep_split": "test",
+      "excluded_row_indexes": [
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ]
+    }
+  ],
+  "remaining_source_identity_conflicts": 0,
+  "candidate_verified_file_records": 5376,
+  "verified_file_sha_recheck": "EXISTING_164_CLI_RECHECKED_ALL_5376_ZERO_MISMATCH_NOT_REPEATED_HERE",
+  "class_statistics": {
+    "train": {
+      "valid_label_pixels": 52383086,
+      "bare_pixels": 2562,
+      "bare_percent": 0.004890891689733591,
+      "bare_contributing_patches": 1
+    },
+    "val": {
+      "valid_label_pixels": 17776457,
+      "bare_pixels": 2998,
+      "bare_percent": 0.01686500296431398,
+      "bare_contributing_patches": 2
+    },
+    "test": {
+      "valid_label_pixels": 16252940,
+      "bare_pixels": 1025,
+      "bare_percent": 0.006306551307025068,
+      "bare_contributing_patches": 0
+    }
+  },
+  "candidate_blockers": [
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "train: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "val: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    },
+    {
+      "code": "REFERENCE_CLASS_IMBALANCE",
+      "detail": "test: ['class7_pixel_ratio', 'class7_patch_representation']",
+      "scene": null
+    }
+  ],
+  "connectivity_capture_status": "NOT_CAPTURED_BUDGET",
+  "protected_before_and_now": {
+    "data/first-group-training-priority/latest-candidate.json": "920ceb52dca0aba32f11389fd2f9c5f2719ca40b47f44e650c3a38b57c3b3d40",
+    "data/first-group-training-priority/candidate-receipt227-20261018.json": "920ceb52dca0aba32f11389fd2f9c5f2719ca40b47f44e650c3a38b57c3b3d40"
+  },
+  "carried_forward_qa_usage_before_terminal": {
+    "read_bytes": 4314871515,
+    "write_bytes": 204165550,
+    "json_io_bytes": 4519037065,
+    "maximum_bytes": 17179869184
+  },
+  "cumulative_qa_plus_handoff_budget_before_proof_write": 4926559212,
+  "maximum_json_io_bytes": 17179869184,
+  "additional_native_scans": 0,
+  "network_requests": 0,
+  "source_or_pointer_written": false,
+  "training_executed": false,
+  "registry_called": false
+}

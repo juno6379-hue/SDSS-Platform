@@ -1,0 +1,97 @@
+{
+  "status": "PRIOR56_EXACT_AND_CODE_SMALL_INPUTS_PRESERVED_AFTER_LOCAL_PLAN",
+  "checks": {
+    "prior52_exact_order": true,
+    "proposal4_exact_order": true,
+    "prior56_count": true,
+    "prior56_unique": true,
+    "new4_unique": true,
+    "new_ids_exclude_all56": true,
+    "code_pins_after_exact": true,
+    "boundary_ref_after_exact": true,
+    "config_ref_after_exact": true,
+    "preparation_freeze_unchanged": true
+  },
+  "new_candidates_in_actual_array_order": [
+    {
+      "province": "gorontalo",
+      "years": [
+        2025
+      ],
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-gorontalo-921d1fd07f85",
+      "lon": 122.05812938800413,
+      "lat": 0.8467127710078407,
+      "bbox": [
+        122.01210677508304,
+        0.8003860255488157,
+        122.10415090921032,
+        0.8930401869082149
+      ],
+      "inside_fraction_native": 1.0,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    },
+    {
+      "province": "gorontalo",
+      "years": [
+        2022
+      ],
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-gorontalo-e27f44e403e0",
+      "lon": 122.24503408578502,
+      "lat": 0.9408375575931044,
+      "bbox": [
+        122.19900922477397,
+        0.8945096602887959,
+        122.29105773343464,
+        0.9871658187068999
+      ],
+      "inside_fraction_native": 1.0,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    },
+    {
+      "province": "east_java",
+      "years": [
+        2025
+      ],
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-east_java-daff7cfcb87f",
+      "lon": 112.21882981517928,
+      "lat": -7.7639911984687915,
+      "bbox": [
+        112.17227701543476,
+        -7.810425697917147,
+        112.26539277361417,
+        -7.717553136240158
+      ],
+      "inside_fraction_native": 1.0,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    },
+    {
+      "province": "east_java",
+      "years": [
+        2025
+      ],
+      "fixed_split": "train",
+      "spatial_window_id": "centers182-east_java-226a7fa921e4",
+      "lon": 112.3128375419827,
+      "lat": -7.669660250644265,
+      "bbox": [
+        112.2662881365736,
+        -7.716101890393722,
+        112.35939697749588,
+        -7.623215235423908
+      ],
+      "inside_fraction_native": 1.0,
+      "actual_quality_eligible": false,
+      "execution_supported": false
+    }
+  ],
+  "new_eligible_count": 0,
+  "full_pending_support_inventory_verified": false,
+  "collection_started": false,
+  "ready_for_training": false
+}

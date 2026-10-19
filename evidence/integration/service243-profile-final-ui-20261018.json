@@ -1,0 +1,152 @@
+{
+  "status": "VERIFIED_REAL_CURRENT243_BROWSER_RENDER",
+  "at": "2026-10-18T16:55:54.307723+09:00",
+  "method": "ONE_EXPLICIT_BROWSER_COLLECTION_REFRESH_EXISTING_TAB_NO_EXTRA_MANUAL_API_GET",
+  "browser": {
+    "id": "1",
+    "tab": "850119094",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "reconnected": true,
+    "new_tabs": 0,
+    "refreshes": 1,
+    "collection_recorded_at": "2026-10-18T07:54:33.928232+00:00",
+    "budget_observed_at": "2026-10-18T07:54:34.849400+00:00",
+    "console_warn_error_logs": [],
+    "console_observed_at": "2026-10-18T07:54:54.434Z",
+    "scrollWidth": 1187,
+    "clientWidth": 1187,
+    "bodyWidth": 1187,
+    "horizontal_overflow": false,
+    "screenshots_visually_reviewed_in_tool": 2,
+    "screenshots_saved_to_disk": false
+  },
+  "root_actual_api": {
+    "status": "REAL_LOCAL_API_PROFILE_STATUS_VERIFIED",
+    "at_utc": "2026-10-18T07:52:23.286035+00:00",
+    "http_status": 200,
+    "seconds": 21.78099999999904,
+    "checks": {
+      "http200": true,
+      "cors_preserved": true,
+      "inventory_available": true,
+      "raw_eligible1358": true,
+      "gap21": true,
+      "candidate1342": true,
+      "candidate3blocked": true,
+      "candidate_current": true,
+      "bare50_current": true,
+      "budget_available": true,
+      "remaining_preserved": true,
+      "oldpending_preserved": true,
+      "pins_unchanged": true
+    },
+    "recorded_at": "2026-10-18T07:52:21.650782+00:00",
+    "budget_observed_at": "2026-10-18T07:52:23.091159+00:00",
+    "source_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+    "config_sha256": "61dd13f8de88f8eef826a0ad4461f22c1a3f4bb698d5b7c5c4833d730fe3ffcc",
+    "response_sha256": "889c03739b81fc13a7d0fd05e3e1e7cf4accce3ba64357ef5fab47d5329c2284",
+    "source_profile_explicitly_selected": true,
+    "source_bytes": 66826849,
+    "real128m_maximum_proven": false,
+    "native_qa_executed": false,
+    "browser_render_verified": false,
+    "collector_started": false,
+    "training_started": false
+  },
+  "source_sha256": "9c24eec337a17f95855d190918c9999c25aeb1925a7642b1ade26afa4e20d987",
+  "raw": {
+    "registered": 1715,
+    "eligible": 1358,
+    "split": [
+      816,
+      292,
+      250
+    ],
+    "cell_gap": 21
+  },
+  "candidate": {
+    "eligible": 1342,
+    "split": [
+      816,
+      276,
+      250
+    ],
+    "blocked": 3,
+    "source_matches_current": true,
+    "learning_ready": false
+  },
+  "bare": {
+    "total": 50,
+    "searched_provinces": 6,
+    "clear": 15,
+    "overlap": 35,
+    "invalid": 0,
+    "source_matches_current": true,
+    "recorded_at": "2026-10-18T07:10:40.638011+00:00",
+    "rows": [
+      [
+        "South Sulawesi",
+        9,
+        8,
+        1,
+        0
+      ],
+      [
+        "Gorontalo",
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        "Southeast Sulawesi",
+        11,
+        0,
+        11,
+        0
+      ],
+      [
+        "East Java",
+        8,
+        3,
+        5,
+        0
+      ],
+      [
+        "Banten",
+        15,
+        4,
+        11,
+        0
+      ],
+      [
+        "West Java",
+        6,
+        0,
+        6,
+        0
+      ]
+    ],
+    "remote_quality": "미검사",
+    "execution": "집행 미승인"
+  },
+  "budget": {
+    "maximum": 4294967296,
+    "charged_including_pending": 2398022341,
+    "remaining": 1896944955,
+    "old_pending": 136314880,
+    "old_pending_count": 2,
+    "already_in_used": true,
+    "process_verification": "UNKNOWN"
+  },
+  "product_source_edits": 0,
+  "service_restarts_by_web_ui": 0,
+  "manual_api_GET_by_web_ui": 0,
+  "collector_or_raw_ledger_pointer_writes": 0,
+  "limits": [
+    "Root API evidence and current actual browser rendering are separate.",
+    "237/243 source application and Root process40156 memory reload have separate Root evidence; UI has no profile label.",
+    "No actual128MiB maximum trial, native raster QA, remote collection, model training, scientific or operational approval.",
+    "Warn/error logs are observed session only, not all historic console traffic."
+  ]
+}

@@ -119,6 +119,8 @@ def main():
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--priority-deficit", action="store_true", help="고정 계획의 부족 주·연도 최대2개만 수집")
     parser.add_argument("--priority-plan-sha256", help="명시 우선 수집 dryrun 계획 SHA256")
+    parser.add_argument("--priority-province", action="append", default=None,
+                        help="부족 주의 명시 우선순위; --priority-deficit에서만 사용")
     parser.add_argument("--continue-unrelated-pending", action="store_true",
                         help="기존 pending의 설정/전액예약을 보존하고 다른 미예약 작업만 계속; lock 자동해제/정산 없음")
     args = parser.parse_args()
@@ -126,6 +128,11 @@ def main():
         raise ValueError("우선 수집은 명시 실행과 최대1~2개 batch가 필요합니다")
     if args.priority_plan_sha256 and not args.priority_deficit:
         raise ValueError("우선 계획 SHA는 우선 수집 모드에서만 사용합니다")
+    if args.priority_province is not None:
+        if not args.priority_deficit:
+            raise ValueError("주 우선순위는 우선 수집 모드에서만 사용합니다")
+        from collect_training_priority import validate_province_priority
+        validate_province_priority(args.priority_province)
     service._integer(args.centers_per_province, "centers_per_province", 1, 16)
     service._integer(args.max_batches, "max_batches", 0, 1000)
     output = args.output.resolve()
@@ -150,6 +157,8 @@ def main():
         "pending_continuation": continuation,
         "jobs": [{k: v for k, v in job.items() if k not in ("config", "geometry")} for job in jobs], "learning_ready": False}
     plan_path = output / "parallel-v2-plan.json"
+    if args.priority_province is not None:
+        plan["province_priority_order"] = list(args.priority_province)
     if plan_path.exists():
         old_bytes = plan_path.read_bytes()
         archived = output / "plans" / f"{hashlib.sha256(old_bytes).hexdigest()}.json"
@@ -186,7 +195,8 @@ def main():
         try:
             from collect_training_priority import verify_priority_plan
             jobs = verify_priority_plan(jobs, aggregate['scenes'], ledger.snapshot(),
-                limit=args.max_batches, expected_sha256=args.priority_plan_sha256)
+                limit=args.max_batches, expected_sha256=args.priority_plan_sha256,
+                province_priority=args.priority_province)
         except BaseException:
             service.configure_request_circuit(None)
             os.close(descriptor)

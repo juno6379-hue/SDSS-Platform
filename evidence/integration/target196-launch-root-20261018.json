@@ -1,0 +1,54 @@
+{
+  "started_at": "2026-10-18T04:19:37.338648+00:00",
+  "status": "STARTED_PREFLIGHT_NOT_COMPLETED",
+  "manifest_before_sha256": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f",
+  "ledger_before_sha256": "7839929111f3e70e8b9ba2bda3eb0972bc8c0055bb8c03b9273f4c0b381e353f",
+  "source_rows_before": 1666,
+  "pending_before": {
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+    },
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+    }
+  },
+  "request_sha256": "76a49f4641791e15ce585407e4b3f0e8eb7563bb48f57299f00c4839e7dd886d",
+  "selected_targets": [
+    {
+      "target_id": "local-rank12-2024",
+      "year": 2024,
+      "declared_bare_pixels": 266
+    },
+    {
+      "target_id": "local-rank1-2025",
+      "year": 2025,
+      "declared_bare_pixels": 840
+    }
+  ],
+  "command": [
+    "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-X",
+    "faulthandler",
+    "E:\\GeoAI–MLOps–SDSS\\scripts\\collect_targeted_bare.py",
+    "--request",
+    "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\target196-request-root-20261018.json",
+    "--expected-request-sha256",
+    "76a49f4641791e15ce585407e4b3f0e8eb7563bb48f57299f00c4839e7dd886d",
+    "--execute"
+  ],
+  "new_budget_added": false,
+  "training_started": false,
+  "source_pins": {
+    "scripts/collect_targeted_bare.py": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/data/targeted_bare_plan.py": "c2011f678a7860d734889abb96514daf1944b9ed888ee02dd502de8030a0fccb",
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3"
+  },
+  "pid": 33344
+}

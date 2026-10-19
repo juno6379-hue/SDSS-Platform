@@ -9,6 +9,7 @@ import re
 from ..ml.per_scene_normalization_files import _root,_relative,_snapshot,_Blocked
 from .quality_mask_bundle import _copy_json,_Invalid
 from .readiness_connectivity_witness import FIXED_PROVINCE_SPLITS
+from ..ml.manifest_resource_profile import ProfileResourceError
 
 TOP={'schema_version','kind','proposal_ref','current_manifest_ref','boundary_ref','policy','targets'}
 TARGET={'target_id','proposal_window_index','province','fixed_split','year','source_label_ref','source_lineage_ref',
@@ -59,6 +60,16 @@ def _polygon(dataset):
 
 
 def prepare_targeted_bare_jobs(project_root,plan,base_config):
+    # Legacy entry always retains the original v1/64MiB path, even in ambient scope.
+    return _prepare_targeted_bare_jobs(project_root,plan,base_config)
+
+
+def prepare_explicit_targeted_bare_jobs(project_root,request,base_config):
+    from .targeted_source_io import run_explicit_local_preflight
+    return run_explicit_local_preflight(project_root,request,base_config)
+
+
+def _prepare_targeted_bare_jobs(project_root,plan,base_config,*,_metadata_reader=None):
     """Return plan-only job proposals or fixed BLOCKED; no HTTP/Store/writes.
 
     Existing image overlap is observed from the pinned aggregate's listed patch
@@ -71,13 +82,27 @@ def prepare_targeted_bare_jobs(project_root,plan,base_config):
         'execution_supported':False,'actual_quality_eligible':False,'scientifically_verified_bare':False,
         'pending_footprints_verified':False,'source_scene_split_verified':False,'training_ready':False}
     result=copy.deepcopy(blocked)
+    def document(ref,maximum,role,proposal=False):
+        if _metadata_reader is not None:return _metadata_reader(ref,role)
+        path,raw=_pinned(root,ref,maximum,proposal=proposal)
+        return path,_json(raw)
     try:
         plan=_copy_json(plan,'plan');base=_copy_json(base_config,'base_config');root=_root(project_root)
-        _need(_keys(plan,TOP) and type(plan['schema_version']) is int and plan['schema_version']==1 and
+        explicit=_metadata_reader is not None
+        if explicit:
+            from .targeted_source_profile import MARKER
+            _need(plan.get('manifest_profile')==dict(MARKER),'PLAN_INVALID')
+        _need(_keys(plan,TOP|{'manifest_profile'} if explicit else TOP) and type(plan['schema_version']) is int and plan['schema_version']==(2 if explicit else 1) and
             plan['kind']=='TARGETED_BARE_256_COLLECTION_PLAN','PLAN_INVALID')
         policy=plan['policy']
-        _need(_keys(policy,set(POLICY)|{'maximum_new_batches'}),'POLICY_INVALID')
+        required_policy=set(POLICY)|{'maximum_new_batches'}
+        _need(_keys(policy,required_policy) or _keys(policy,required_policy|{'minimum_candidate_valid_fraction'}),'POLICY_INVALID')
         for key,expected in POLICY.items():_need(type(policy[key]) is type(expected) and policy[key]==expected,'POLICY_INVALID')
+        candidate_minimum=.65
+        if 'minimum_candidate_valid_fraction' in policy:
+            candidate_minimum=policy['minimum_candidate_valid_fraction']
+            _need(type(candidate_minimum) in (int,float) and math.isfinite(candidate_minimum) and
+                .8<=candidate_minimum<=1,'POLICY_INVALID')
         maximum=policy['maximum_new_batches']
         _need(type(maximum) is int and 1<=maximum<=2,'POLICY_INVALID')
         _need(type(plan['targets']) is list and 1<=len(plan['targets'])<=maximum,'TARGETS_INVALID')
@@ -98,9 +123,9 @@ def prepare_targeted_bare_jobs(project_root,plan,base_config):
                 all(type(v) in (int,float) and math.isfinite(v) for v in grid['transform']),'LABEL_GRID_INVALID')
             _need(_keys(native,{'crs','corners'}) and type(native['crs']) is str and type(native['corners']) is list and len(native['corners'])==4 and
                 all(type(pair) is list and len(pair)==2 and all(type(v) in (int,float) and math.isfinite(v) for v in pair) for pair in native['corners']),'TARGET_GEOMETRY_MISMATCH')
-        _,raw=_pinned(root,plan['proposal_ref'],2*1024**2,proposal=True);proposal=_json(raw)
-        _,raw=_pinned(root,plan['current_manifest_ref'],64*1024**2);aggregate=_json(raw)
-        _,raw=_pinned(root,plan['boundary_ref'],2*1024**2);boundary=_json(raw)
+        _,proposal=document(plan['proposal_ref'],2*1024**2,'proposal',proposal=True)
+        _,aggregate=document(plan['current_manifest_ref'],64*1024**2,'source')
+        _,boundary=document(plan['boundary_ref'],2*1024**2,'boundary')
         from shapely.geometry import shape,Polygon
         from shapely.ops import transform as geometry_transform
         from pyproj import Transformer
@@ -140,7 +165,7 @@ def prepare_targeted_bare_jobs(project_root,plan,base_config):
             label_path,raw=_pinned(root,target['source_label_ref'],64*1024**2)
             _need(raw[:4] in (b'II*\x00',b'MM\x00*',b'II+\x00',b'MM\x00+'),'LABEL_GRID_INVALID')
             _need(label_path==_relative(root,proposed['source_crop_path'],'label') and target['source_label_ref']['sha256']==proposed['source_crop_sha256'],'PROPOSAL_MISMATCH')
-            _,lineage_raw=_pinned(root,target['source_lineage_ref'],8*1024**2);lineage=_json(lineage_raw)
+            _,lineage=document(target['source_lineage_ref'],8*1024**2,'lineage')
             matches=[row for row in lineage['scenes'] if row.get('source_crops',{}).get('raw-esri_io.tif',{}).get('sha256')==target['source_label_ref']['sha256']]
             _need(len(matches)==1,'LABEL_LINEAGE_INVALID');source=matches[0];year=target['year']
             crop=source['source_crops']['raw-esri_io.tif'];crop_path=Path(crop['path'])
@@ -185,7 +210,7 @@ def prepare_targeted_bare_jobs(project_root,plan,base_config):
             aoi.update(id='bare-'+target['target_id'],province_id=province,bbox=bbox)
             config.update(aois=[aoi],years=[year],annual_reference='esri_io',window_size=256,
                 bands=['blue','green','red','nir','swir16','swir22'],max_total_bytes=64*1024**2,prior_download_budget_bytes=0,
-                candidate_limit=5,min_valid_fraction=.8,candidate_valid_fraction=.65,verify_product_metadata=True,
+                candidate_limit=5,min_valid_fraction=.8,candidate_valid_fraction=candidate_minimum,verify_product_metadata=True,
                 preserve_source_crops=True,transient_asset_retries=0,minimum_complete_scenes=1,search_limit=20,sort_by_cloud=True,
                 collection_policy_version='targeted-bare-256-PLAN-ONLY')
             jobs.append({'province':province,'year':year,'split':target['fixed_split'],'nominal_patches':1,'geometry':copy.deepcopy(geometry),
@@ -196,6 +221,9 @@ def prepare_targeted_bare_jobs(project_root,plan,base_config):
             job['config_sha256']=hashlib.sha256(json.dumps(job['config'],sort_keys=True).encode()).hexdigest()
         result.update(status='LOCAL_TARGETS_VERIFIED_EXECUTION_BLOCKED',issue='EXECUTION_GUARDS_NOT_CONNECTED',plan_sha256=digest,
             targets=checked,job_proposals=jobs,existing_images_observed=len(images),local_label_bytes_verified=True,listed_image_overlap_checked=True)
+    except ProfileResourceError as exc:
+        if _metadata_reader is not None:raise
+        code=str(exc);result['issue']=code if re.fullmatch('[A-Z_]{1,64}',code) else 'PLAN_INVALID'
     except _Blocked as exc:result['issue']=exc.code
     except _Invalid:result['issue']='PLAN_INVALID'
     except ValueError as exc:

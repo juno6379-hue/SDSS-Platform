@@ -1,0 +1,43 @@
+test_all_approval_and_training_flags_prohibited (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_all_approval_and_training_flags_prohibited) ... ok
+test_bbox_period_numeric_and_structure_failclosed (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_bbox_period_numeric_and_structure_failclosed) ... ok
+test_budget_is_existing_bound_not_new_authorization (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_budget_is_existing_bound_not_new_authorization) ... ok
+test_declared_measured_accounting_exact_caps_and_sum (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_declared_measured_accounting_exact_caps_and_sum) ... ok
+test_dict_changed_during_copy_runtimeerror_becomes_fixed_error (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_dict_changed_during_copy_runtimeerror_becomes_fixed_error) ... ok
+test_esri_exact_scene_supercell_year_version_and_unsigned_url (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_esri_exact_scene_supercell_year_version_and_unsigned_url) ... ok
+test_exact_keys_types_and_unknown_execute_rejected (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_exact_keys_types_and_unknown_execute_rejected) ... ok
+test_exact_policy_cannot_increase_budget_or_relax_circuit (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_exact_policy_cannot_increase_budget_or_relax_circuit) ... ok
+test_fixed_province_split_year_and_scene (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_fixed_province_split_year_and_scene) ... ok
+test_fractional_utc_exact_zero_is_allowed_nonzero_or_precision_loss_rejected (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_fractional_utc_exact_zero_is_allowed_nonzero_or_precision_loss_rejected) ... ok
+test_growth_during_copy_cannot_bypass_container_or_node_limits (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_growth_during_copy_cannot_bypass_container_or_node_limits) ... ok
+test_label_and_scl_grid_shape_crs_contract (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_label_and_scl_grid_shape_crs_contract) ... ok
+test_lone_surrogate_value_and_key_return_fixed_code_without_leakage (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_lone_surrogate_value_and_key_return_fixed_code_without_leakage) ... FAIL
+test_no_io_for_request_or_receipt (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_no_io_for_request_or_receipt) ... ok
+test_normal_sensors_and_orbit_boundaries_and_leap_calendar (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_normal_sensors_and_orbit_boundaries_and_leap_calendar) ... ok
+test_only_detached_checked_tree_is_serialized_after_caller_mutation (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_only_detached_checked_tree_is_serialized_after_caller_mutation) ... ok
+test_other_year_acquisition_and_period_boundary_never_use_declaration_only (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_other_year_acquisition_and_period_boundary_never_use_declaration_only) ... ok
+test_output_is_separate_survey_only (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_output_is_separate_survey_only) ... ok
+test_paths_are_lexical_local_and_canonical_only (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_paths_are_lexical_local_and_canonical_only) ... ok
+test_receipt_request_and_scene_digest_binding (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_receipt_request_and_scene_digest_binding) ... ok
+test_receipt_validates_only_declared_facts_not_operational_truth (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_receipt_validates_only_declared_facts_not_operational_truth) ... ok
+test_refs_sha_alias_and_nondata_operational_ref (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_refs_sha_alias_and_nondata_operational_ref) ... ok
+test_scene_datetime_exact_acquisition_and_production_calendar (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_scene_datetime_exact_acquisition_and_production_calendar) ... ok
+test_scl_selected_scene_required_and_no_duplicate_alias (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_scl_selected_scene_required_and_no_duplicate_alias) ... ok
+test_split_mapping_uses_canonical_values_without_shared_mutable_exposure (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_split_mapping_uses_canonical_values_without_shared_mutable_exposure) ... ok
+test_strict_full_scene_id_calendar_sensor_orbit_and_mgrs (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_strict_full_scene_id_calendar_sensor_orbit_and_mgrs) ... ok
+test_unsettled_must_preserve_full_reservation_and_unknown_measurement (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_unsettled_must_preserve_full_reservation_and_unknown_measurement) ... ok
+test_valid_request_immutable_typed_copy_and_false_status (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_valid_request_immutable_typed_copy_and_false_status) ... ok
+
+======================================================================
+FAIL: test_lone_surrogate_value_and_key_return_fixed_code_without_leakage (test_bare_label_survey_contract.BareLabelSurveyContractTests.test_lone_surrogate_value_and_key_return_fixed_code_without_leakage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_bare_label_survey_contract.py", line 265, in test_lone_surrogate_value_and_key_return_fixed_code_without_leakage
+    self.assert_bad_request(lambda d:d['seed']['justification_ref'].update(
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_bare_label_survey_contract.py", line 53, in assert_bad_request
+    self.assertRegex(str(caught.exception),r'^SURVEY_[A-Z_]+$')
+AssertionError: Regex didn't match: '^SURVEY_[A-Z_]+$' not found in 'SURVEY_UTF8_INVALID'
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.182s
+
+FAILED (failures=1)

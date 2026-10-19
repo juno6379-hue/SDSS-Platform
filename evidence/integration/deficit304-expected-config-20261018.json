@@ -1,0 +1,109 @@
+{
+  "schema_version": 2,
+  "description": "사용자 지정 First Group 6개 주. 공개 ADM1 경계와 소규모 검증 창을 분리합니다.",
+  "endpoint": "planetary-computer",
+  "collection": "sentinel-2-l2a",
+  "collection_mode": "bounded_windows",
+  "window_size": 1024,
+  "years": [
+    2025
+  ],
+  "season_start": "06-01",
+  "season_end": "09-30",
+  "cloud_cover": 60,
+  "bands": [
+    "blue",
+    "green",
+    "red",
+    "nir",
+    "swir16",
+    "swir22"
+  ],
+  "max_total_bytes": 67108864,
+  "max_asset_bytes": 268435456,
+  "prior_download_budget_bytes": 0,
+  "prior_budget_note": "2021기존창8912896 + B04전체221758050 + 2023진단창HTTP458966. 새작업 예산에서 차감.",
+  "download_worldcover": true,
+  "worldcover_year": 2021,
+  "minimum_complete_scenes": 6,
+  "target_verified_patches": [
+    1000,
+    3000
+  ],
+  "boundary_status": "public_ADM1_reference_fetched",
+  "boundary_api": "https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM1/",
+  "provinces": [
+    {
+      "id": "south_sulawesi",
+      "name": "South Sulawesi",
+      "local_name": "Sulawesi Selatan"
+    },
+    {
+      "id": "gorontalo",
+      "name": "Gorontalo",
+      "local_name": "Gorontalo"
+    },
+    {
+      "id": "southeast_sulawesi",
+      "name": "Southeast Sulawesi",
+      "local_name": "Sulawesi Tenggara"
+    },
+    {
+      "id": "banten",
+      "name": "Banten",
+      "local_name": "Banten"
+    },
+    {
+      "id": "west_java",
+      "name": "West Java",
+      "local_name": "Jawa Barat"
+    },
+    {
+      "id": "east_java",
+      "name": "East Java",
+      "local_name": "Jawa Timur"
+    }
+  ],
+  "aois": [
+    {
+      "id": "centers182-east_java-5141c64815b2",
+      "province_name": "East Java",
+      "local_name": "Jawa Timur",
+      "bbox": [
+        112.07798445151195,
+        -7.810676790393404,
+        112.17108277600694,
+        -7.717821675089114
+      ],
+      "province_bbox": [
+        110.8972111,
+        -8.7808254,
+        116.2703024,
+        -5.0432281
+      ],
+      "representative_interior_point": [
+        112.27683100308779,
+        -7.76213925
+      ],
+      "sample_bbox_inside_province": true,
+      "boundary_status": "public_geoboundaries_ADM1_reference_not_legal_certification",
+      "boundary_feature_id": "65028918B43243108525571",
+      "boundary_geojson": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\selected-six.geojson",
+      "scope_note": "province_bbox는 전체 주 범위; bbox는 내부 대표점 주변 STAC 검색용 작은 범위; 실제256창은 주 전체가 아님",
+      "province_id": "east_java"
+    }
+  ],
+  "boundary_manifest": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-boundaries\\boundary-manifest.json",
+  "annual_reference": "esri_io",
+  "candidate_limit": 5,
+  "search_limit": 20,
+  "sort_by_cloud": true,
+  "min_valid_fraction": 0.8,
+  "candidate_valid_fraction": 0.65,
+  "label_first": true,
+  "verify_product_metadata": true,
+  "preserve_source_crops": true,
+  "transient_asset_retries": 0,
+  "collection_policy_version": "deficit-center-1024-PLAN-ONLY",
+  "candidate_metadata_policy": "DEFICIT_AOI_BBOX_CONTAINS_V1"
+}

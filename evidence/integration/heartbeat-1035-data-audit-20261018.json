@@ -1,0 +1,52 @@
+{
+  "at_utc": "2026-10-18T01:36:26.924735+00:00",
+  "checks": {
+    "manifest_sha_final_matches": true,
+    "old_rows_unchanged": true,
+    "old_pending_unchanged": true,
+    "both_settled": true,
+    "stdout_started2_finished2": true,
+    "no_worker429": true,
+    "declared_final_counts_match": true
+  },
+  "physical_total": 1464,
+  "eligible_total": 1164,
+  "ineligible_total": 300,
+  "new_physical": 32,
+  "new_eligible": 23,
+  "cell_gap_total": 109,
+  "populated_cells": 36,
+  "expected_cells": 36,
+  "new_bare_declared_pixels": 148,
+  "new_bare_ge256_contribution_patches": 0,
+  "pending_reserved_bytes": 136314880,
+  "charged_delta": 42273334,
+  "remaining_budget": 2254269438,
+  "rate_limit_active": false,
+  "lock_present": false,
+  "by_job": [
+    {
+      "key": "parallel-v2-grid-esri_io-east_java-2025-g03",
+      "source_status": "rgb_window_downloaded",
+      "new_physical": 16,
+      "new_eligible": 13,
+      "new_bare_pixels": 148,
+      "contributing_bare_ge256_patch_count": 0,
+      "charged_bytes": 23103474
+    },
+    {
+      "key": "parallel-v2-grid-esri_io-gorontalo-2022-g03",
+      "source_status": "rgb_window_downloaded",
+      "new_physical": 16,
+      "new_eligible": 10,
+      "new_bare_pixels": 0,
+      "contributing_bare_ge256_patch_count": 0,
+      "charged_bytes": 19169860
+    }
+  ],
+  "round2_stdout_phrase": "Sequential reads, not an atomic OS snapshot. Stored quality counts are not a new native raster QA. Round2 stdout forwarded worker-started and worker-finished twice each; central ledger/source reports independently read.",
+  "round2_stdout_empty_phrase_corrected": true,
+  "limits": "Sequential stored-row/read-only observations; no native-pixel reread, no current training split readiness QA, no scientific accuracy validation. New bare pixel counts are declared weak-label values, not independent truth.",
+  "operating_data_writes": 0,
+  "collection_starts": 0
+}

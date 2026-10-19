@@ -1,0 +1,22 @@
+{
+  "status": "SUPERVISOR_CHILD_OWNERSHIP_FAILURE_TESTS_PASSED",
+  "tests": [
+    {
+      "launch_write_failure": false,
+      "actual_child_exit_code": 7,
+      "completion_marker_verified": true,
+      "test_passed": true
+    },
+    {
+      "launch_write_failure": true,
+      "actual_child_exit_code": 7,
+      "completion_marker_verified": true,
+      "test_passed": true
+    }
+  ],
+  "collector_started": false,
+  "network_requests": 0,
+  "operating_source_or_ledger_read": false,
+  "supervisor_sha256": "a2945ec4cbda123cd57ed58ef1eb0c65455618a22c2de9add33cb490c7f1c13b",
+  "scope": "Actual bounded temp child, ordinary launch and forced existing-evidence write failure. Not a full collector test."
+}

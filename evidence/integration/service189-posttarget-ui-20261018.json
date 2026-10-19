@@ -1,0 +1,70 @@
+{
+  "status": "VERIFIED_REAL_BROWSER_RESPONSE_POST189",
+  "observed_at": "2026-10-18T04:00:57.388712+00:00",
+  "method": "Existing Chrome view17 one explicit refresh; no duplicate refresh or separate API request",
+  "response_recorded_at": "2026-10-18T03:59:44.771027+00:00",
+  "response_time_kst": "2026-10-18 12:59:44.771027",
+  "current": {
+    "physical": 1650,
+    "eligible": 1322,
+    "other": 328,
+    "split": {
+      "train": 780,
+      "val": 292,
+      "test": 250
+    },
+    "cell_gap": 36,
+    "source_sha256": "99b8ef37bfc64767f5175a813dcf664599cc52def11a6a5f4a5c7427a3a87877"
+  },
+  "fixed_candidate": {
+    "eligible": 1219,
+    "split": [
+      720,
+      249,
+      250
+    ],
+    "blockers": 3,
+    "source_mismatch_warning_visible": true
+  },
+  "bare179": {
+    "candidates": 50,
+    "historical_clear": 23,
+    "historical_overlap": 27,
+    "source_stale_warning_visible": true,
+    "remote_quality": "미검사",
+    "execution": "미승인"
+  },
+  "current_bare": {
+    "train_pixels": 2400,
+    "train_increase_from_post188": 814,
+    "train_percent": 0.00482,
+    "train_contributing_patches": 1,
+    "train_contributing_gap": 4,
+    "val_pixels": 2998,
+    "test_pixels": 1025
+  },
+  "browser_checks": {
+    "observedAt": "2026-10-18T04:00:40.515Z",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "singleRefresh": true,
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    }
+  },
+  "proof": [
+    "service189-posttarget-ui-20261018.dom.txt",
+    "service189-posttarget-ui-20261018.inventory.png",
+    "service189-posttarget-ui-20261018.cohort.png",
+    "service189-posttarget-ui-20261018.checks.json"
+  ],
+  "limits": [
+    "This verifies stored status displayed by a real HTTP-backed UI, not a separate native audit.",
+    "189 native audit was owned by another agent; this task does not certify it.",
+    "Future Gorontalo collection results are excluded from this response snapshot.",
+    "No source/tests/collector/ledger/pointer/operating-data mutation.",
+    "No HTTP timing claim for this browser request."
+  ],
+  "documentation": "docs/implementation/service185_ui_recovery_20261018.md"
+}

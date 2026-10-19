@@ -1,0 +1,111 @@
+{
+  "status": "VERIFIED_REAL_CURRENT_BARE_REVIEW_EXISTING_TAB_SINGLE_REFRESH",
+  "tabId": "850119075",
+  "url": "http://127.0.0.1:5174/#/view/17",
+  "refreshStartedAt": "2026-10-18T14:29:14.319Z",
+  "observedAt": "2026-10-18T14:30:49.415Z",
+  "uiRefreshClicks": 1,
+  "manualGET": 0,
+  "newTabs": 0,
+  "serverRestarts": 0,
+  "productEdits": 0,
+  "sourceRecordedAt": "2026-10-18T14:29:38.937374+00:00",
+  "budgetObservedAt": "2026-10-18T14:29:39.451833+00:00",
+  "bareReviewRecordedAt": "2026-10-18T14:14:05.588803+00:00",
+  "candidateRecordedAt": "2026-10-18T14:06:10.442585+00:00",
+  "sourceSha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+  "ledgerSha256": "d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91",
+  "rawRegisteredRows": 1779,
+  "rawEligible": 1407,
+  "cellGap": 0,
+  "candidateEligible": 1391,
+  "candidateBySplit": {
+    "train": 865,
+    "val": 276,
+    "test": 250
+  },
+  "candidateCurrentSource": true,
+  "candidateReady": false,
+  "candidateBlockers": 3,
+  "bareCandidateTotal": 50,
+  "bareCurrentSource": true,
+  "bareRows": [
+    {
+      "province": "south_sulawesi",
+      "candidates": 9,
+      "clear": 8,
+      "overlap": 1
+    },
+    {
+      "province": "gorontalo",
+      "candidates": 1,
+      "clear": 0,
+      "overlap": 1
+    },
+    {
+      "province": "southeast_sulawesi",
+      "candidates": 11,
+      "clear": 0,
+      "overlap": 11
+    },
+    {
+      "province": "east_java",
+      "candidates": 8,
+      "clear": 3,
+      "overlap": 5
+    },
+    {
+      "province": "banten",
+      "candidates": 15,
+      "clear": 4,
+      "overlap": 11
+    },
+    {
+      "province": "west_java",
+      "candidates": 6,
+      "clear": 0,
+      "overlap": 6
+    }
+  ],
+  "bareRemoteQuality": "NOT_INSPECTED_EXECUTION_NOT_APPROVED",
+  "remainingBytes": 1799757940,
+  "oldPendingBytesIncluded": 136314880,
+  "processStatus": "UNKNOWN",
+  "layout": {
+    "bodyWidth": 1573,
+    "documentWidth": 1573,
+    "overflow": false,
+    "viewportWidth": 1588
+  },
+  "consoleWarningsErrors": [],
+  "checks": {
+    "raw1779": true,
+    "rawEligible1407": true,
+    "gap0": true,
+    "candidate1391Current": true,
+    "bare50Current": true,
+    "barePreviousStaleCleared": true,
+    "bare320Reference": true,
+    "sixProvinceRows": true,
+    "clear15Overlap35": true,
+    "notReady3Blockers": true,
+    "remoteUninspectedExecutionUnapproved": true,
+    "sourceSha": true,
+    "ledgerSha": true,
+    "remaining1799757940": true,
+    "pendingIncluded": true,
+    "processUnknown": true,
+    "noConsoleWarningsErrors": true,
+    "noHorizontalOverflow": true
+  },
+  "screenshotOptions": {
+    "fullPage": false,
+    "captures": 2
+  },
+  "limitations": [
+    "실화면의 물리 패치1779는 manifest 등록행 표시이며 전체 실물 재스캔이 아니다.",
+    "clear15는 현재 저장 support와의 로컬 비겹침이며 후보끼리의 독립성 또는 원격 품질/집행 승인이 아니다.",
+    "319/325 source64 계약 격리 구현과 이 UI 게시 검증은 별도 범위다.",
+    "현재50은 과거 제안50의 현재 source 재검토이며 신규영상50 취득이 아니다."
+  ]
+}

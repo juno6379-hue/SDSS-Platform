@@ -1,0 +1,54 @@
+{
+  "at_utc": "2026-10-18T02:44:45.040611+00:00",
+  "launch_at_utc": "2026-10-18T02:43:32.208745+00:00",
+  "processes": [
+    {
+      "ProcessId": 8860,
+      "Name": "python.exe"
+    },
+    {
+      "ProcessId": 31156,
+      "Name": "python.exe"
+    }
+  ],
+  "lock_present": true,
+  "lock_owner": "",
+  "worker_start_count": 2,
+  "worker_finished_count": 0,
+  "selected_ledger": {
+    "parallel-v2-grid-esri_io-banten-2024-g01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "ed1f80354faf4723f943bdc7474dd228cce1845e2ba4486272f6d9e4ccc68db4"
+    },
+    "parallel-v2-grid-esri_io-banten-2024-g02": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "b22f6a2d1e0f6077adbe7b760a5139c18edb8aa44432a4a3f2301721ab8509e4"
+    }
+  },
+  "old_pending_two_rows_unchanged": true,
+  "old_pending_reserved_bytes": 136314880,
+  "new_selected_reserved_bytes": 136314880,
+  "remaining_budget_including_active_reservations": 1982505574,
+  "rate_limit_active": false,
+  "old1569prefix_unchanged": true,
+  "manifest_entire_file_matches_launch": true,
+  "physical_total": 1569,
+  "eligible_total": 1260,
+  "source_pins_match": {
+    "scripts/collect_training_priority.py": true,
+    "scripts/collect_training_parallel.py": true,
+    "backend/app/data/parallel.py": true
+  },
+  "parallel_launch_sha256": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+  "manifest_ledger_double_read_stable": true,
+  "round8_final_evidence_exists": false,
+  "completion_verified": false,
+  "limits": "Read-only sequential observation. Active reservations are not settled actual transfer charges. No new patch count or nativeQA claimed until worker completion/central finalization. Existing target1 patch audit and oldpending are separate.",
+  "collector_starts": 0,
+  "planner_or_QA_runs": 0,
+  "operating_data_writes": 0
+}

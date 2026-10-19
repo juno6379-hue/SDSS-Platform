@@ -1,0 +1,1121 @@
+--- /dev/null
++++ b/tests/fixtures/manifest_profile_baselines/candidate_materialization_pre228.py
+@@ -0,0 +1,85 @@
++"""Evidence-only candidate materialization through existing bounded writer/validator."""
++import copy
++from pathlib import Path
++import re
++from .split_json_io import BoundedJSONIO,_local,_stamp
++from .split_validation import validate_split_repair_plan
++from .split_planning import write_plan
++from ..data.readiness_connectivity_witness import FIXED_PROVINCE_SPLITS
++from ..data.recovery_terminal import _confined
++
++INPUT_ROLES=('source','readiness','saved_plan')
++BASENAMES=('plan.json','candidate.json','receipt.json')
++RECEIPT_CAP=65536
++POLICY={'input_caps':{'source':64*1024**2,'readiness':16*1024**2,'saved_plan':4*1024**2,'candidate':64*1024**2},'output_caps':{'plan':4*1024**2,'candidate':64*1024**2},'max_depth':32}
++
++
++def _need(value,message):
++    if not value:raise ValueError(message)
++
++
++def _dir_identity(path):
++    value=path.stat();_need(path.is_dir(),'Existing output parent directory required')
++    return (value.st_dev,value.st_ino,value.st_ctime_ns)
++
++
++def materialize_split_candidate(data_root,paths,pins,output_dir,*,evidence_root):
++    """Create a new metadata-only evidence package; receipt is written last.
++
++    No pixels/assess/registry/training. A valid receipt is not training approval.
++    Failures preserve new partial artifacts and raise; no automatic cleanup.
++    """
++    _need(type(paths) is dict and set(paths)==set(INPUT_ROLES) and type(pins) is dict and set(pins)==set(INPUT_ROLES),'Exactly three input paths and SHA pins required')
++    _need(all(type(p) is str and re.fullmatch('[0-9a-f]{64}',p) is not None for p in pins.values()),'Explicit lowercase SHA pins required')
++    roots=[_local(data_root),_local(evidence_root)];resolved=[p.resolve() for p in roots]
++    for root in resolved:_local(root);_need(root.is_dir(),'Existing local input roots required')
++    data,evidence=resolved;_need(not evidence.is_relative_to(data),'Evidence root must be outside DATA')
++    logical={};targets={};stamps={}
++    for role in INPUT_ROLES:
++        scope=data if role!='saved_plan' else evidence
++        value=Path(paths[role]);value=value if value.is_absolute() else scope/value
++        logical[role]=_local(value);targets[role]=_confined(scope,logical[role]);_local(targets[role]);stamps[role]=_stamp(targets[role].stat())
++        _need(stamps[role][0]<=POLICY['input_caps'][role],'Input exceeds role byte cap')
++    _need(len(set(targets.values()))==3 and len({(s[3],s[4]) for s in stamps.values()})==3,'Inputs must be distinct regular files')
++    out=_local(output_dir);target=_confined(evidence,out);_need(not target.is_relative_to(data),'Output must be outside DATA')
++    _need(not out.is_symlink() and not out.exists(),'New explicit output directory required')
++    parent=out.parent.resolve();parent_id=_dir_identity(parent)
++    _need(target.parent==parent and all(target/name not in targets.values() for name in BASENAMES),'Output/input alias prohibited')
++    io=BoundedJSONIO(copy.deepcopy(POLICY));docs={role:io.read(logical[role],role,pins[role])[0] for role in INPUT_ROLES}
++    def check_paths():
++        _need(all(p.resolve()==r for p,r in zip(roots,resolved)),'Input root target changed')
++        for role in INPUT_ROLES:
++            scope=data if role!='saved_plan' else evidence
++            _need(_confined(scope,logical[role])==targets[role],'Input target changed')
++        _need(out.resolve()==target and out.parent.resolve()==parent and _dir_identity(parent)==parent_id and not out.is_symlink(),'Evidence parent or output target changed')
++        _need(not out.exists(),'New output directory already exists')
++    plan=docs['saved_plan'];_need(type(plan) is dict,'Saved plan must be JSON object')
++    verified=validate_split_repair_plan(logical['saved_plan'],logical['source'],pins['source'],province_splits=dict(FIXED_PROVINCE_SPLITS),readiness_path=logical['readiness'],readiness_sha256=pins['readiness'],data_root=data,io_policy=io)
++    _need(verified.get('status')=='METADATA_INTEGRITY_VERIFIED' and verified.get('plan_integrity_valid') is True and verified.get('ready_for_training') is False and verified.get('training_executed') is False and verified.get('scientific_accuracy_validated') is False,'Plan full metadata validation failed')
++    io.verify();check_paths();out.mkdir(exist_ok=False);created_id=_dir_identity(out)
++    # Directory ctime changes when children are created on Windows, so identity checks
++    # below use only dev/inode for the new directory (parent identity stays fixed).
++    plan_out=target/BASENAMES[0];candidate_out=target/BASENAMES[1];receipt_out=target/BASENAMES[2]
++    write_plan(plan,plan_out,derived_manifest=candidate_out,io_policy=io)
++    plan_document,plan_sha=io.read(plan_out,'saved_plan');candidate,candidate_sha=io.read(candidate_out,'candidate')
++    output_identities=[_stamp(p.stat())[3:] for p in (plan_out,candidate_out)]
++    _need(len(set(output_identities))==2 and not set(output_identities)&{s[3:] for s in stamps.values()},'Generated files must be distinct from each other and inputs')
++    _need(type(candidate) is dict and candidate.get('status')=='PLANNED_DERIVED_CANDIDATE' and candidate.get('executed') is False and candidate.get('learning_ready') is False,'Candidate false approval contract invalid')
++    roundtrip=validate_split_repair_plan(plan_out,logical['source'],pins['source'],province_splits=dict(FIXED_PROVINCE_SPLITS),readiness_path=logical['readiness'],readiness_sha256=pins['readiness'],data_root=data,candidate_path=candidate_out,candidate_sha256=candidate_sha,io_policy=io)
++    _need(roundtrip.get('status')=='METADATA_INTEGRITY_VERIFIED' and roundtrip.get('ready_for_training') is False and roundtrip.get('training_executed') is False and roundtrip.get('scientific_accuracy_validated') is False and roundtrip.get('plan_integrity_valid') is True and roundtrip.get('candidate_validation',{}).get('status')=='EXACT_METADATA_MATCH' and roundtrip['candidate_validation'].get('candidate_integrity_valid') is True,'Candidate exact metadata roundtrip failed')
++    receipt={'schema_version':1,'kind':'EVIDENCE_SPLIT_CANDIDATE_RECEIPT','status':'METADATA_ROUNDTRIP_VERIFIED','candidate_status':'PLANNED_DERIVED_CANDIDATE','readiness_status':'BLOCKED','scope':'PINNED_JSON_METADATA_ONLY_NOT_RASTER_READINESS',
++      'inputs':{role:{'path':str(targets[role]),'sha256':pins[role],'bytes':stamps[role][0]} for role in INPUT_ROLES},
++      'outputs':{'plan':{'name':BASENAMES[0],'sha256':plan_sha,'bytes':plan_out.stat().st_size},'candidate':{'name':BASENAMES[1],'sha256':candidate_sha,'bytes':candidate_out.stat().st_size}},
++      'derived_manifest_version':plan_document['derived_manifest_version'],'fixed_province_splits':dict(FIXED_PROVINCE_SPLITS),'source_row_count':len(docs['source']['scenes']),'candidate_row_count':len(candidate['scenes']),'excluded_source_row_count':len(plan['excluded_row_indexes']),'projected_after':copy.deepcopy(plan['projected_after']),
++      'metadata_integrity_verified':True,'raster_readiness_rechecked':False,'source_rows_modified_or_reassigned':False,'executed':False,'learning_ready':False,'ready_for_training':False,'scientific_accuracy_validated':False,'source_authenticity_verified':False,'exact_row_binding_verified':False,'spatial_overlap_rechecked':False,'exact_class_counts_recomputed':False,'training_split_leakage_resolved':False,'execution_authorized':False,'registry_called':False,'settlement_authorized':False,'automatic_resume_allowed':False,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN',
++      'completion_contract':'Receipt requires strict schema and output SHA verification; absent or invalid receipt means incomplete. Final stability check immediately precedes exclusive receipt write; no atomic multi-file snapshot guarantee.'}
++    receipt_io=BoundedJSONIO({'input_caps':dict(POLICY['input_caps']),'output_caps':{'plan':RECEIPT_CAP,'candidate':RECEIPT_CAP},'max_depth':32});size=receipt_io.measure(receipt,'plan')
++    # ctime of directories changes as files are added: compare inode/device here.
++    _need(_dir_identity(out)[:2]==created_id[:2],'New output directory replaced')
++    io.verify()
++    _need(all(p.resolve()==r for p,r in zip(roots,resolved)) and out.resolve()==target and out.parent.resolve()==parent and _dir_identity(parent)[:2]==parent_id[:2] and _dir_identity(out)[:2]==created_id[:2] and not out.is_symlink(),'Final path identity changed')
++    _need(not receipt_out.exists() and not receipt_out.is_symlink(),'Receipt must be new')
++    # No post-receipt input check: an exception after a completed receipt must not
++    # leave a success-looking marker for a failed final input verification.
++    receipt_io.write(receipt_out,receipt,'plan',size)
++    return receipt
+--- /dev/null
++++ b/tests/fixtures/manifest_profile_baselines/candidate_qa_comparison_pre228.py
+@@ -0,0 +1,130 @@
++"""고정 보고서 4JSON만 대조한다. 원본/후보 manifest·래스터·assess는 읽거나 실행하지 않는다."""
++from collections import Counter
++import copy
++from pathlib import Path
++import re
++from .split_json_io import BoundedJSONIO,_local,_stamp
++from .split_validation import _same
++from ..data.readiness_connectivity_witness import FIXED_PROVINCE_SPLITS,PROVINCES
++from ..data.readiness_connectivity_lineage import _lexical_identity_path
++from ..data.recovery_terminal import _confined
++
++PIN_NAMES=('original_report_sha256','candidate_report_sha256','qa_receipt_sha256','staging_receipt_sha256')
++FIXED_PATHS={'original_report_sha256':'first-group/readiness-resume-20261017.json','candidate_report_sha256':'first-group-candidate-readiness-qa-20261017/readiness.json','qa_receipt_sha256':'first-group-candidate-readiness-qa-20261017/qa-receipt.json','staging_receipt_sha256':'first-group-candidate-qa-stage-20261017/staging-receipt.json'}
++CAPS={k:(16*1024**2 if 'report' in k else 65536) for k in PIN_NAMES}
++FALSE_FIELDS={'ready_for_training','scientific_accuracy_validated','source_authenticity_verified','exact_row_binding_verified','training_executed','execution_authorized','registry_called','training_split_leakage_resolved','automatic_resume_allowed','settlement_authorized'}
++STAGE_FALSE={'qa_performed','readiness_assess_called','registered','registry_called','executed','learning_ready','ready_for_training','scientific_accuracy_validated','source_authenticity_verified','exact_row_binding_verified','spatial_overlap_rechecked','exact_class_counts_recomputed','training_split_leakage_resolved','source_rows_modified_or_reassigned','execution_authorized','settlement_authorized','automatic_resume_allowed'}
++STAGE_FIELDS={'schema_version','kind','status','next_step','qa_status','package_reference','input_pins','verified_package_outputs','staged_candidate','derived_manifest_version','source_row_count','candidate_row_count','projected_after','metadata_integrity_verified','original_candidate_bytes_preserved','proposed_refund_bytes','exactly_once_applied','completion_contract'}|STAGE_FALSE
++QA_FALSE={'full_plan_recomputation_performed','package_revalidated','prepared_dataset_registered','training_executed','execution_authorized','ready_for_training','scientific_accuracy_validated','source_authenticity_verified','exact_row_binding_verified','training_split_leakage_resolved','registry_called','resume_requested','settlement_authorized','automatic_resume_allowed'}
++QA_FIELDS={'schema_version','kind','status','qa_scope','inputs','readiness_report','observed_readiness_status','observed_gate_ready_for_training','saved_blockers','patch_counts_by_split','connectivity_capture_status','qa_performed','proposed_refund_bytes','exactly_once_applied','completion_contract'}|QA_FALSE
++
++
++def _need(value,message='저장 QA 비교 계약이 올바르지 않습니다.'):
++    if not value:raise ValueError(message)
++
++
++def _sha(value):return type(value) is str and re.fullmatch('[0-9a-f]{64}',value) is not None
++
++def _uint(value,maximum):return type(value) is int and 0<=value<=maximum
++
++def _path(value,root):
++    _need(type(value) is str and 0<len(value)<=4096);key=_lexical_identity_path(value,root);_need(key is not None);return key
++
++
++def _ref(value,root,*,path=None,pin=None,size=None):
++    _need(type(value) is dict and set(value)=={'path','sha256','bytes'} and _sha(value['sha256']) and _uint(value['bytes'],64*1024**2) and value['bytes']>0)
++    key=_path(value['path'],root)
++    if path is not None:_need(key==_path(path,root))
++    if pin is not None:_need(value['sha256']==pin)
++    if size is not None:_need(_same(value['bytes'],size))
++
++
++def _counts(report):
++    counts=report.get('patch_counts_by_split');_need(type(counts) is dict and set(counts)=={'train','val','test'} and all(_uint(v,3000) for v in counts.values()))
++    return {'eligible_patches_by_split':copy.deepcopy(counts),'eligible_patch_count':sum(counts.values()),'blocker_count':len(report['blockers'])}
++
++
++def _report(report,root):
++    _need(type(report) is dict and _same(report.get('schema_version'),1) and report.get('status')=='blocked' and report.get('ready_for_training') is False and report.get('scientific_accuracy_validated') is False)
++    blockers=report.get('blockers');_need(type(blockers) is list and 0<len(blockers)<=10000)
++    for item in blockers:_need(type(item) is dict and type(item.get('code')) is str and re.fullmatch('[A-Z][A-Z0-9_]{0,63}',item['code']) is not None)
++    policy=report.get('policy');_need(type(policy) is dict and _same(policy.get('province_splits'),FIXED_PROVINCE_SPLITS) and _same(policy.get('patch_size'),256) and type(policy.get('required_classes')) is list and all(type(x) is int and 0<=x<9 for x in policy['required_classes']) and len(policy['required_classes'])==len(set(policy['required_classes'])) and 7 in policy['required_classes'])
++    _need(type(policy.get('min_class_pixels_per_split')) is int and 256<=policy['min_class_pixels_per_split']<=65536 and type(policy.get('min_class_patches_per_split')) is int and 5<=policy['min_class_patches_per_split']<=3000)
++    _need(_same(policy.get('required_provinces'),list(PROVINCES)) and _same(policy.get('required_years'),list(range(2020,2026))) and _same(policy.get('band_names'),['B02','B03','B04','B08','B11','B12']))
++    refs=report.get('input_manifests');_need(type(refs) is list and len(refs)==1 and type(refs[0]) is dict and set(refs[0])=={'path','sha256'} and _sha(refs[0]['sha256']));_path(refs[0]['path'],root)
++    signature=report.get('input_signature');_need(type(signature) is dict and set(signature)=={'band_names','band_indices','patch_size','normalization_mode','label_source','class_names'} and type(signature['label_source']) is str and signature['label_source'] in {'esri_io','worldcover','dynamic_world','classes'} and signature['label_source']==policy.get('label_source') and _same(signature['band_names'],policy['band_names']) and _same(signature['band_indices'],list(range(1,7))) and _same(signature['patch_size'],256) and signature['normalization_mode']=='per_scene_product_metadata' and type(signature['class_names']) is list and len(signature['class_names'])==9 and all(type(v) is str and 0<len(v)<=256 for v in signature['class_names']) and signature['class_names'][7]=='bare')
++    counts=_counts(report)
++    for key in ['class_counts_by_split','class_patch_counts_by_split']:
++        values=report.get(key);_need(type(values) is dict and set(values)=={'train','val','test'})
++        for split,items in values.items():
++            _need(type(items) is list and len(items)==9 and all(_uint(n,9007199254740991 if key=='class_counts_by_split' else 3000) for n in items))
++            _need(all(n<=counts['eligible_patches_by_split'][split]*(65536 if key=='class_counts_by_split' else 1) for n in items))
++            if key=='class_counts_by_split':_need(sum(items)<=counts['eligible_patches_by_split'][split]*65536)
++    return counts,Counter(item['code'] for item in blockers)
++
++
++def project_candidate_qa(documents,pins,references,*,data_root_literal):
++    """메모리 안의 선택 보고서 계약 대조. pin의 실제 바이트 검증은 reader 담당."""
++    _need(type(documents) is dict and set(documents)==set(PIN_NAMES) and type(pins) is dict and set(pins)==set(PIN_NAMES) and all(_sha(p) for p in pins.values()) and type(references) is dict and set(references)==set(PIN_NAMES))
++    old,new,qa,stage=(documents[k] for k in PIN_NAMES);root=data_root_literal
++    for k,ref in references.items():_need(type(ref) is dict and set(ref)=={'path','bytes'} and _uint(ref['bytes'],CAPS[k]) and ref['bytes']>0);_path(ref['path'],root)
++    old_summary,old_codes=_report(old,root);new_summary,new_codes=_report(new,root)
++    _need(old.get('prepared_payload') is None and 'connectivity_diagnostics' not in old and old.get('scene_count') is None,'Original physical scene count is outside supported stored scope')
++    _need(_same(old['policy'],new['policy']) and _same(old['input_signature'],new['input_signature']))
++    _need(type(stage) is dict and set(stage)==STAGE_FIELDS and type(qa) is dict and set(qa)==QA_FIELDS)
++    for item,states,false_fields in [(stage,{'schema_version':1,'kind':'DATA_CANDIDATE_STAGING_RECEIPT','status':'METADATA_STAGED_FOR_QA','next_step':'NEXT_QA_NOT_PERFORMED','qa_status':'NOT_PERFORMED','metadata_integrity_verified':True,'original_candidate_bytes_preserved':True,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN'},STAGE_FALSE),(qa,{'schema_version':1,'kind':'STAGED_CANDIDATE_READINESS_QA_RECEIPT','status':'QA_COMPLETED','qa_scope':'EXISTING_READINESS_GATE_NO_EXECUTION','observed_readiness_status':'blocked','observed_gate_ready_for_training':False,'qa_performed':True,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN'},QA_FALSE)]:
++        for k,v in states.items():_need(_same(item[k],v))
++        for k in false_fields:_need(item[k] is False)
++        _need(type(item['completion_contract']) is str and 0<len(item['completion_contract'])<=4096)
++    _need(type(stage['derived_manifest_version']) is str and re.fullmatch('split-repair-v1-[0-9a-f]{16}',stage['derived_manifest_version']) is not None)
++    package=stage['package_reference'];_need(type(package) is dict and set(package)=={'path','receipt_sha256'} and type(package['path']) is str and 0<len(package['path'])<=4096 and _sha(package['receipt_sha256']));_local(package['path'])
++    source_pins=stage['input_pins'];_need(type(source_pins) is dict and set(source_pins)=={'source','readiness','saved_plan'} and all(_sha(v) for v in source_pins.values()) and source_pins['readiness']==pins['original_report_sha256'] and old['input_manifests'][0]['sha256']==source_pins['source'])
++    staged=stage['staged_candidate'];_ref(staged,root);_need(staged['sha256']==new['input_manifests'][0]['sha256'] and _path(staged['path'],root)==_path(new['input_manifests'][0]['path'],root))
++    outputs=stage['verified_package_outputs'];_need(type(outputs) is dict and set(outputs)=={'plan','candidate'})
++    for k,item in outputs.items():_need(type(item) is dict and set(item)=={'name','sha256','bytes'} and item['name']==k+'.json' and _sha(item['sha256']) and _uint(item['bytes'],4*1024**2 if k=='plan' else 64*1024**2) and item['bytes']>0)
++    _need(outputs['candidate']['sha256']==staged['sha256'] and _same(outputs['candidate']['bytes'],staged['bytes']))
++    inputs=qa['inputs'];_need(type(inputs) is dict and set(inputs)=={'candidate','staging_receipt','policy','old_readiness'})
++    _ref(inputs['candidate'],root,path=staged['path'],pin=staged['sha256'],size=staged['bytes'])
++    _ref(inputs['old_readiness'],root,path=references['original_report_sha256']['path'],pin=pins['original_report_sha256'],size=references['original_report_sha256']['bytes'])
++    _ref(inputs['staging_receipt'],root,path=references['staging_receipt_sha256']['path'],pin=pins['staging_receipt_sha256'],size=references['staging_receipt_sha256']['bytes'])
++    _ref(inputs['policy'],root);_need(inputs['policy']['bytes']<=1024**2)
++    report_ref=qa['readiness_report'];_need(type(report_ref) is dict and set(report_ref)=={'name','sha256','bytes'} and report_ref['name']=='readiness.json' and report_ref['sha256']==pins['candidate_report_sha256'] and _same(report_ref['bytes'],references['candidate_report_sha256']['bytes']))
++    _need(_same(qa['saved_blockers'],new['blockers']) and _same(qa['patch_counts_by_split'],new['patch_counts_by_split']))
++    capture=new.get('connectivity_diagnostics');_need(type(capture) is dict and _same(capture.get('schema_version'),1) and capture.get('status')=='BLOCKED' and type(capture.get('capture_status')) is str and qa['connectivity_capture_status']==capture['capture_status'])
++    for k in ['gate_result_modified','ready_for_training','scientific_accuracy_validated','settlement_authorized','execution_authorized','automatic_resume_allowed']:_need(capture.get(k) is False)
++    _need(_same(capture.get('proposed_refund_bytes'),0))
++    for k in ['source_files_read','source_files_written','network_requests']:
++        if k in capture:_need(_same(capture[k],0))
++    for k in ['training_executed','eligibility_recomputed','eligible_patch_count_is_scene_count','historical_readiness_cause_reconstructed','provenance_verified','executing_code_verified']:
++        if k in capture:_need(capture[k] is False)
++    captured=capture['capture_status'] in {'CAPTURED_COMPONENTS_MATCH','CAPTURED_COMPONENT_MISMATCH'}
++    if captured:
++        _need(capture.get('scope')=='ALL_APPENDED_ASSESS_SCENES_INCLUDING_ZERO_PATCH' and capture.get('gate_components_match') is (capture['capture_status']=='CAPTURED_COMPONENTS_MATCH'))
++        _need(_same(capture.get('manifest_input_references'),new['input_manifests']) and _uint(capture.get('scene_count'),2000) and _same(capture.get('supplied_eligible_patch_sum'),new_summary['eligible_patch_count']))
++        scene_count=capture['scene_count']
++    else:
++        _need(capture['capture_status'] in {'NOT_CAPTURED_UNSUPPORTED_POLICY','NOT_CAPTURED_BUDGET','NOT_CAPTURED_UNSUPPORTED_METADATA','FAILED_DIAGNOSTIC','FAILED_ADAPTER_BOUNDARY'});scene_count=None
++    _need(_uint(stage['source_row_count'],100000) and _uint(stage['candidate_row_count'],100000) and stage['candidate_row_count']<=stage['source_row_count'])
++    if captured:_need(scene_count==stage['candidate_row_count'])
++    projected=stage['projected_after'];_need(type(projected) is dict and set(projected)=={'eligible_patches_by_split','eligible_total','eligible_by_province_year'} and type(projected['eligible_patches_by_split']) is dict and set(projected['eligible_patches_by_split'])=={'train','val','test'} and all(_uint(n,stage['candidate_row_count']) for n in projected['eligible_patches_by_split'].values()) and _same(projected['eligible_total'],sum(projected['eligible_patches_by_split'].values())) and type(projected['eligible_by_province_year']) is dict and all(type(k) is str and len(k)<=128 and _uint(v,stage['candidate_row_count']) for k,v in projected['eligible_by_province_year'].items()) and sum(projected['eligible_by_province_year'].values())==projected['eligible_total'])
++    codes=sorted(set(old_codes)|set(new_codes));_need(len(codes)<=32)
++    bare={'class_index':7,'class_name':'bare','original_pixels_by_split':{s:old['class_counts_by_split'][s][7] for s in ('train','val','test')},'candidate_pixels_by_split':{s:new['class_counts_by_split'][s][7] for s in ('train','val','test')},'original_patch_counts_by_split':{s:old['class_patch_counts_by_split'][s][7] for s in ('train','val','test')},'candidate_patch_counts_by_split':{s:new['class_patch_counts_by_split'][s][7] for s in ('train','val','test')},'required_min_pixels_per_split':new['policy']['min_class_pixels_per_split'],'required_min_class_patches_per_split':new['policy']['min_class_patches_per_split'],'shortage_resolved':False}
++    bare['candidate_shortage_observed']=any(bare['candidate_pixels_by_split'][s]<bare['required_min_pixels_per_split'] or bare['candidate_patch_counts_by_split'][s]<bare['required_min_class_patches_per_split'] for s in ('train','val','test'))
++    code='SHARED_SOURCE_CROSSES_FIXED_SPLIT'
++    return {'schema_version':1,'status':'BLOCKED','scope':'PINNED_REPORT_COMPARISON_ONLY','pins':dict(pins),'original':old_summary,'candidate':new_summary,'blocker_frequencies':[{'code':k,'original_count':old_codes[k],'candidate_count':new_codes[k]} for k in codes],
++      'shared_source_blocker':{'code':code,'original_observed':bool(old_codes[code]),'candidate_observed':bool(new_codes[code]),'absence_proves_independence':False},
++      'row_counts':{'original_report_physical_scene_count':None,'original_report_scope':'NOT_PERSISTED','source_rows_declared':stage['source_row_count'],'candidate_rows_declared':stage['candidate_row_count'],'declared_scope':'PINNED_STAGING_RECEIPT_DECLARATION','candidate_appended_scene_count':scene_count,'candidate_capture_scope':'STORED_QA_CAPTURE' if captured else 'NOT_CAPTURED'},'bare_class':bare,**{k:False for k in sorted(FALSE_FIELDS)}}
++
++
++def compare_candidate_qa(data_root,pins):
++    _need(type(pins) is dict and set(pins)==set(PIN_NAMES) and all(_sha(v) for v in pins.values()))
++    logical_root=_local(data_root);root=logical_root.resolve();_local(root);targets={};contexts={};references={}
++    for k in PIN_NAMES:
++        logical=logical_root/FIXED_PATHS[k];target=_confined(root,logical);_local(target);stamp=_stamp(target.stat());_need(stamp[0]<=CAPS[k],'Pinned comparison input exceeds byte cap')
++        targets[k]=logical;references[k]={'path':str(target),'bytes':stamp[0]};contexts[k]=BoundedJSONIO({'input_caps':{'source':CAPS[k],'readiness':CAPS[k],'saved_plan':CAPS[k],'candidate':CAPS[k]},'output_caps':{'plan':65536,'candidate':65536},'max_depth':32})
++    _need(len({references[k]['path'] for k in PIN_NAMES})==4)
++    documents={k:contexts[k].read(targets[k],'source',pins[k])[0] for k in PIN_NAMES}
++    result=project_candidate_qa(documents,pins,references,data_root_literal=str(root))
++    for context in contexts.values():context.verify()
++    _need(logical_root.resolve()==root,'Pinned comparison root changed')
++    return result
+--- /dev/null
++++ b/tests/fixtures/manifest_profile_baselines/centers230.py
+@@ -0,0 +1,184 @@
++"""Local additional1024 centers only; no collection or consumption approval."""
++import argparse
++from collections import Counter
++import hashlib,json,math,os,re,sys
++from pathlib import Path
++
++ROOT=Path(__file__).resolve().parents[1]
++sys.path[:0]=[str(ROOT),str(ROOT/'.runtime'),str(ROOT/'backend'),str(ROOT/'scripts')]
++from backend.app.data.targeted_bare_plan import _json
++from backend.app.ml.per_scene_normalization_files import _root,_snapshot
++from backend.app.data.candidates import validate_candidate_plan
++from backend.app.ml.readiness import default_policy
++from backend.app.ml.split_json_io import _local
++from backend.app.ml.manifest_resource_profile import active,entry as profile_entry,pinned_source_bytes,NAME,MARKER
++from backend.app.ml.manifest_resource_profile import write_new_json_bytes
++from collect_training_grid import spatial_centers
++
++TARGETS=(('southeast_sulawesi',2024),('gorontalo',2024),('gorontalo',2025))
++MAX_FILES=256;MAX_BYTES=2*1024**3;MAX_GRID=100000
++
++
++def pinned(root,path,sha,cap,allow_config=False,json_role=None):
++    path=Path(path)
++    if not path.is_absolute() or not (path.resolve().is_relative_to(root/'data') or (allow_config and path.resolve().is_relative_to(root/'configs'))):raise ValueError('Explicit local input scope required')
++    if active() is not None and json_role=='source':return _json(pinned_source_bytes(path,sha))
++    actual,raw=_snapshot(root,path,cap,'centers182',True)
++    if actual!=sha:raise ValueError('Caller pin differs')
++    return _json(raw)
++
++
++@profile_entry
++def propose(root,source,source_sha,boundary,boundary_sha,config,config_sha,prior_plan,prior_sha,output,targets=None):
++    """Write a new plan after bounded pinned local geometry checks only."""
++    explicit_targets=targets is not None
++    if targets is None:targets=TARGETS
++    if type(targets) not in (list,tuple) or not 1<=len(targets)<=6:raise ValueError('One to six explicit target cells required')
++    checked=[]
++    for target in targets:
++        if type(target) not in (list,tuple) or len(target)!=2:raise ValueError('Province/year pair required')
++        province,year=target
++        if type(province) is not str or province not in default_policy()['province_splits'] or type(year) is not int or not 2020<=year<=2025:raise ValueError('Official province and integer year2020-2025 required')
++        if (province,year) in checked:raise ValueError('Duplicate target cell')
++        checked.append((province,year))
++    targets=tuple(checked)
++    root=_root(root);output=Path(output)
++    _local(output)
++    _root(output.parent)
++    if not output.is_absolute() or not output.resolve().is_relative_to(root/'data') or output.exists() or output.is_symlink() or not output.parent.is_dir():raise ValueError('New DATA output with existing parent required')
++    pins=[(source,source_sha,64*1024**2,False,'source'),(boundary,boundary_sha,2*1024**2),(config,config_sha,2*1024**2,True),(prior_plan,prior_sha,2*1024**2)]
++    aggregate,geo,base,prior=[pinned(root,*values) for values in pins]
++    split=default_policy()['province_splits']
++    features={}
++    for f in geo['features']:
++        p=f['properties']['province_id']
++        if p in features:raise ValueError('Duplicate province boundary')
++        features[p]=f['geometry']
++    if set(features)!=set(split) or set(a['id'] for a in base['aois'])!=set(split) or len(base['aois'])!=6:raise ValueError('Fixed six boundaries/config AOIs required')
++    if prior.get('schema_version')!=1 or prior.get('executed_network') is not False:raise ValueError('Existing local candidate plan required')
++    rows=aggregate['scenes']+aggregate.get('historical_noneligible_patches',[])
++    if len(rows)>3000:raise ValueError('Source row cap exceeded')
++    counts=Counter((r['province'],int(r['year'])) for r in rows if r.get('quality_status')=='quality_eligible')
++    import rasterio
++    from rasterio.io import MemoryFile
++    from rasterio.warp import transform_bounds
++    from shapely.geometry import shape,box,Point
++    from shapely.ops import transform as gt
++    from pyproj import Transformer
++    os.environ['PROJ_NETWORK']='OFF'
++    blocked=[];existing=[];existing_ids=set()
++    def center_block(c):
++        crs=c['grid_crs'];forward=Transformer.from_crs(4326,crs,always_xy=True)
++        x,y=forward.transform(c['lon'],c['lat']);blocked.append((crs,(x-5120,y-5120,x+5120,y+5120)))
++        existing.append({k:c[k] for k in ('province','lon','lat','grid_crs')})
++    # Recreate the exact deterministic first four v2 centers, across all years.
++    for p,geometry in features.items():
++        polygon=shape(geometry);rep=polygon.representative_point();epsg=(32600 if rep.y>=0 else 32700)+int((rep.x+180)//6)+1
++        projected=gt(Transformer.from_crs(4326,epsg,always_xy=True).transform,polygon)
++        xmin,ymin,xmax,ymax=projected.bounds
++        if (math.ceil((xmax-xmin)/10400)+3)*(math.ceil((ymax-ymin)/10400)+3)>MAX_GRID:raise ValueError('Projected grid budget exceeded')
++        for c in spatial_centers(geometry,4):center_block({'province':p,**c})
++    validate_candidate_plan(prior_plan,boundary,existing)
++    for c in prior.get('candidates',[]):
++        if c.get('boundary_sha256')!=boundary_sha or c.get('window_size')!=1024 or c.get('reference')!='esri_io' or c['province'] not in split:raise ValueError('Prior candidate boundary/scope differs')
++        existing_ids.add(c['spatial_window_id']);center_block(c)
++    refs={}
++    for row in rows:
++        ref=row.get('source_window')
++        if type(ref) is not dict:raise ValueError('Every source row needs source-window lineage')
++        path=Path(ref['path'])
++        if not path.is_absolute():path=root/path
++        if not path.resolve().is_relative_to(root/'data'):raise ValueError('Local source header required')
++        if path in refs and refs[path]!=ref['sha256']:raise ValueError('Conflicting source-window pin')
++        refs[path]=ref['sha256']
++    if len(refs)>MAX_FILES:raise ValueError('Source header file cap exceeded')
++    total=0;header_inventory=[]
++    with rasterio.Env(GDAL_PAM_ENABLED='NO',GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',GDAL_GEOREF_SOURCES='INTERNAL'):
++        for path,expected in sorted(refs.items()):
++            if total+path.stat().st_size>MAX_BYTES:raise ValueError('Header payload byte cap exceeded')
++            actual,raw=_snapshot(root,path,64*1024**2,'source_header',True)
++            if actual!=expected:raise ValueError('Source-window SHA differs')
++            total+=len(raw)
++            with MemoryFile(raw) as mem,mem.open(driver='GTiff') as ds:
++                t=ds.transform
++                if ds.crs is None or not ds.crs.is_projected or abs(ds.crs.linear_units_factor[1]-1)>1e-9 or t.b or t.d or t.a<=0 or t.e>=0 or not all(math.isfinite(v) for v in ds.bounds) or ds.subdatasets or ds.gcps[0] or ds.rpcs is not None:raise ValueError('Native metric source grid required')
++                blocked.append((ds.crs.to_string(),tuple(ds.bounds)))
++                header_inventory.append({'path':str(path.relative_to(root)),'sha256':actual,'crs':ds.crs.to_string(),'bounds':list(ds.bounds)})
++    grids={};projected_boundaries={};rejections=Counter();index={p:0 for p,_ in targets}
++    for p,_ in targets:
++        if p in grids:continue
++        polygon=shape(features[p]);rep=polygon.representative_point();crs=f'EPSG:{(32600 if rep.y>=0 else 32700)+int((rep.x+180)//6)+1}'
++        forward=Transformer.from_crs(4326,crs,always_xy=True);inverse=Transformer.from_crs(crs,4326,always_xy=True)
++        projected=gt(forward.transform,polygon);projected_boundaries[p]=(crs,projected,inverse)
++        interior=projected.buffer(-(10240/math.sqrt(2)+100));points=[]
++        if not interior.is_empty:
++            xmin,ymin,xmax,ymax=interior.bounds
++            for ix in range(math.floor(xmin/10400),math.ceil(xmax/10400)+1):
++                for iy in range(math.floor(ymin/10400),math.ceil(ymax/10400)+1):
++                    if interior.covers(Point(ix*10400,iy*10400)):points.append((ix*10400,iy*10400))
++        if len(points)>MAX_GRID:raise ValueError('Candidate center grid budget exceeded')
++        rx,ry=forward.transform(rep.x,rep.y);points.sort(key=lambda xy:((xy[0]-rx)**2+(xy[1]-ry)**2,xy))
++        grids[p]=points
++    candidates=[];per_province=Counter()
++    for _round in range(2):
++        for p,year in targets:
++            if len(candidates)>=4 or per_province[p]>=2 or counts[p,year]>=28:continue
++            crs,province,inverse=projected_boundaries[p]
++            while index[p]<len(grids[p]):
++                x,y=grids[p][index[p]];index[p]+=1;window=box(x-5120,y-5120,x+5120,y+5120)
++                inside=province.intersection(window).area/window.area
++                if inside<.95:rejections['inside_fraction']+=1;continue
++                overlap=False
++                for old_crs,bounds in blocked:
++                    projected=tuple(bounds) if old_crs==crs else transform_bounds(old_crs,crs,*bounds,densify_pts=1024)
++                    if not all(math.isfinite(v) for v in projected):raise ValueError('Nonfinite support projection')
++                    # One metre conservative padding retains source/header uncertainty.
++                    if window.intersection(box(projected[0]-1,projected[1]-1,projected[2]+1,projected[3]+1)).area>0:overlap=True;break
++                if overlap:rejections['existing_center_or_source_overlap']+=1;continue
++                lon,lat=inverse.transform(x,y)
++                identity=hashlib.sha256(json.dumps([p,year,x,y,source_sha,boundary_sha,config_sha],sort_keys=True).encode()).hexdigest()[:12]
++                identifier=f'centers182-{p}-{identity}'
++                if identifier in existing_ids:raise ValueError('Existing spatial ID collision')
++                corners=[inverse.transform(px,py) for px,py in ((x-5120,y-5120),(x+5120,y-5120),(x+5120,y+5120),(x-5120,y+5120))]
++                c={'province':p,'fixed_split':split[p],'spatial_window_id':identifier,'lon':lon,'lat':lat,'bbox':[min(a for a,b in corners),min(b for a,b in corners),max(a for a,b in corners),max(b for a,b in corners)],'window_size':1024,'grid_crs':crs,'boundary_sha256':boundary_sha,'years':[year],'reference':'esri_io','inside_fraction_native':inside,'source_snapshot_sha256':source_sha,'deficit_at_snapshot':28-counts[p,year],'class_presence_verified':False,'actual_quality_eligible':False,'execution_supported':False}
++                candidates.append(c);per_province[p]+=1;existing_ids.add(identifier);blocked.append((crs,window.bounds));break
++    document={'schema_version':1,'executed_network':False,'collector_consumption_approved':False,'candidates':candidates,'scope':'PINNED_LOCAL_GEOMETRY_ONLY_NOT_PENDING_SUPPORT_OR_QUALITY','source_sha256':source_sha,'boundary_sha256':boundary_sha,'config_sha256':config_sha,'prior_plan_sha256':prior_sha,'source_header_inventory':header_inventory,'limits':{'maximum_candidates':4,'maximum_per_province':2,'maximum_header_files':MAX_FILES,'maximum_header_payload_bytes':MAX_BYTES,'maximum_grid_points_per_province':MAX_GRID},'rejections':dict(rejections),'target_status':[{'province':p,'year':year,'fixed_split':split[p],'eligible_at_snapshot':counts[p,year],'deficit_to_28':max(0,28-counts[p,year]),'proposed_candidates':sum(c['province']==p and year in c['years'] for c in candidates)} for p,year in targets],'full_pending_support_inventory_verified':False,'training_ready':False,'network_requests':0}
++    if active() is not None:document['manifest_profile']=dict(MARKER)
++    if explicit_targets:document['requested_targets']=[{'province':p,'year':year} for p,year in targets]
++    for values in pins:pinned(root,*values)
++    for path,sha in refs.items():
++        if _snapshot(root,path,64*1024**2,'header')[0]!=sha:raise ValueError('Source header changed')
++    payload=(json.dumps(document,ensure_ascii=False,indent=2,allow_nan=False)+'\n').encode('utf8')
++    if len(payload)>2*1024**2:raise ValueError('Proposal byte cap exceeded')
++    if active() is not None:write_new_json_bytes(output,payload,'evidence')
++    else:
++        with output.open('xb') as stream:stream.write(payload)
++    validated=validate_candidate_plan(output,boundary,existing)
++    if len(validated['candidates'])!=len(candidates):raise ValueError('Candidate validator disagreement')
++    for values in pins:pinned(root,*values)
++    if hashlib.sha256(output.read_bytes()).hexdigest()!=validated['source_sha256']:raise ValueError('Proposal changed')
++    return document,validated
++
++
++def main(argv=None):
++    parser=argparse.ArgumentParser(description=__doc__,allow_abbrev=False)
++    for name in ('source','boundary','config','prior-plan'):
++        parser.add_argument('--'+name,type=Path,required=True);parser.add_argument('--'+name+'-sha256',required=True)
++    parser.add_argument('--target',action='append',help='Explicit province:year, repeat in priority order; default legacy targets')
++    parser.add_argument('--manifest-profile',choices=[NAME],default=None)
++    parser.add_argument('--output',type=Path,required=True);args=parser.parse_args(argv)
++    try:
++        targets=None
++        if args.target is not None:
++            targets=[]
++            for value in args.target:
++                province,year=value.split(':')
++                if not re.fullmatch(r'202[0-5]',year):raise ValueError('Target year must be2020-2025')
++                targets.append((province,int(year)))
++        doc,verified=propose(ROOT,args.source,args.source_sha256,args.boundary,args.boundary_sha256,args.config,args.config_sha256,args.prior_plan,args.prior_plan_sha256,args.output,targets=targets,manifest_profile=args.manifest_profile)
++        print(json.dumps({'status':'LOCAL_CENTERS_PROPOSED_UNAPPROVED','candidates':len(doc['candidates']),'proposal_sha256':verified['source_sha256'],'target_status':doc['target_status'],'execution_supported':False}),flush=True);return 0
++    except (ValueError,OSError,KeyError,TypeError):
++        print(json.dumps({'status':'PROPOSAL_INCOMPLETE','partial_output_preserved':True,'execution_supported':False}),file=sys.stderr);return 2
++
++
++if __name__=='__main__':raise SystemExit(main())
+--- /dev/null
++++ b/tests/fixtures/manifest_profile_baselines/manifest.json
+@@ -0,0 +1,39 @@
++{
++  "schema_version": 1,
++  "kind": "PINNED_MANIFEST_PROFILE_TEST_BASELINES",
++  "no_mutable_current_source_fallback": true,
++  "files": [
++    {
++      "name": "candidate_materialization_pre228",
++      "file": "candidate_materialization_pre228.py",
++      "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b",
++      "bytes": 8716,
++      "historical_source": "preprocess228-workspace-20261018/baseline-code/backend/app/ml/candidate_materialization.py",
++      "scope": "PINNED_SOURCE_CODE_FOR_SYNTHETIC_TEST_ONLY_NOT_RUNTIME"
++    },
++    {
++      "name": "candidate_qa_comparison_pre228",
++      "file": "candidate_qa_comparison_pre228.py",
++      "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e",
++      "bytes": 17204,
++      "historical_source": "preprocess228-workspace-20261018/baseline-code/backend/app/ml/candidate_qa_comparison.py",
++      "scope": "PINNED_SOURCE_CODE_FOR_SYNTHETIC_TEST_ONLY_NOT_RUNTIME"
++    },
++    {
++      "name": "centers230",
++      "file": "centers230.py",
++      "sha256": "c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d",
++      "bytes": 14002,
++      "historical_source": "preprocess230-workspace-20261018/scripts/propose_deficit_centers182.py",
++      "scope": "PINNED_SOURCE_CODE_FOR_SYNTHETIC_TEST_ONLY_NOT_RUNTIME"
++    },
++    {
++      "name": "status230",
++      "file": "status230.py",
++      "sha256": "bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4",
++      "bytes": 17192,
++      "historical_source": "preprocess230-workspace-20261018/backend/app/collection_status.py",
++      "scope": "PINNED_SOURCE_CODE_FOR_SYNTHETIC_TEST_ONLY_NOT_RUNTIME"
++    }
++  ]
++}
+--- /dev/null
++++ b/tests/fixtures/manifest_profile_baselines/status230.py
+@@ -0,0 +1,264 @@
++from .collection_source_profile import configured,read_source,verify_source
++"""수집 보고서를 읽어 성공 재고와 최근 실패를 분리하는 읽기 전용 현황."""
++from datetime import datetime, timezone
++import hashlib
++import json
++import os
++import stat
++from pathlib import Path
++from .collection_priority_status import collection_targets, candidate_quality, bare_target_review
++
++_HASH_CACHE = {}
++
++
++def same_hash(path, expected):
++    """큰 입력의 재해시는 내용 변경을 시사하는 파일 메타데이터가 바뀔 때 수행한다."""
++    before = path.stat()
++    key = (str(path), before.st_mtime_ns, before.st_ctime_ns, before.st_size)
++    if key not in _HASH_CACHE:
++        digest = hashlib.sha256()
++        with path.open('rb') as stream:
++            for chunk in iter(lambda: stream.read(1024 * 1024), b''):
++                digest.update(chunk)
++        after = path.stat()
++        if (before.st_mtime_ns, before.st_ctime_ns, before.st_size) != (after.st_mtime_ns, after.st_ctime_ns, after.st_size):
++            return False
++        if len(_HASH_CACHE) > 20000:
++            _HASH_CACHE.clear()
++        _HASH_CACHE[key] = digest.hexdigest()
++    return isinstance(expected, str) and _HASH_CACHE[key] == expected
++
++PROVINCES = [('south_sulawesi', 'South Sulawesi'), ('gorontalo', 'Gorontalo'),
++             ('southeast_sulawesi', 'Southeast Sulawesi'), ('banten', 'Banten'),
++             ('west_java', 'West Java'), ('east_java', 'East Java')]
++YEARS = list(range(2020, 2026))
++
++
++def read_report(path, errors):
++    try:
++        value = json.loads(path.read_text(encoding='utf-8'))
++        if not isinstance(value, dict):
++            raise ValueError('보고서 객체가 아님')
++        return value
++    except (OSError, ValueError):
++        # 작성 중인 파일은 미확인으로 표시하며 과거 성공을 실패로 바꾸지 않는다.
++        errors.append(path.name)
++        return {}
++
++
++def local_file(value, root):
++    if not isinstance(value, str) or not value:
++        return None
++    # Resolve the trusted data root once in collection_status, not thousands of
++    # historical raster paths through Windows realpath. Reject outside paths
++    # lexically before touching them, then inspect every local component without
++    # following links (including Windows junctions/reparse points).
++    try:
++        if any(part not in ('.', '..') and part.endswith((' ', '.'))
++               for part in Path(value).parts):
++            return None
++        root = Path(os.path.abspath(root))
++        path = Path(os.path.abspath(os.path.join(root, value)))
++        relative = path.relative_to(root)
++        if not relative.parts:
++            return None
++        if any(':' in part or part.endswith((' ', '.')) for part in relative.parts):
++            return None
++        current = root
++        for index, part in enumerate((None, *relative.parts)):
++            if part is not None:
++                current = current / part
++            info = current.lstat()
++            if stat.S_ISLNK(info.st_mode) or getattr(info, 'st_file_attributes', 0) & 0x400:
++                return None
++            last = index == len(relative.parts)
++            if not (stat.S_ISREG(info.st_mode) if last else stat.S_ISDIR(info.st_mode)):
++                return None
++        return path
++    except (OSError, ValueError):
++        return None
++
++
++@configured('status')
++def collection_status(data_root,*,_source_selection=None):
++    root = Path(data_root).resolve()
++    errors = []
++    current_path=root/'first-group-training-esri-v1/annual-window-report.json'
++    current_cache=[]
++    def current():
++        if not current_cache:current_cache.append(read_source(root,_source_selection))
++        return current_cache[0][0]
++    def report_at(path):
++        if path==current_path:
++            try:return current()
++            except (OSError,ValueError):errors.append(path.name);return {}
++        return read_report(path,errors)
++
++    reports = sorted(root.glob('first-group*/**/annual-window-report.json'), key=lambda p: (p.stat().st_mtime_ns, str(p)))[-64:]
++    cells = {(province, year): {'province': province, 'year': year, 'image_available': False,
++        'label_available': False, 'bands': [], 'collection_status': 'unknown', 'latest_attempt_status': 'unknown',
++        'valid_pixel_ratio': None, 'quality_eligible': None, 'quality_mask_available': None,
++        'label_status': 'unknown', 'label_source': None, 'label_year': None, 'mode': None,
++        'source_report': None, 'latest_error': None} for province, _ in PROVINCES for year in YEARS}
++    for path in reports:
++        report = report_at(path)
++        for scene in report.get('scenes', []):
++            try:
++                key = (scene['aoi'], int(scene['year']))
++            except (KeyError, ValueError, TypeError):
++                continue
++            if key not in cells:
++                continue
++            cell = cells[key]
++            error = scene.get('error') or {}
++            # 외부 오류 원문/서명 URL은 화면에 노출하지 않는다.
++            cell.update(latest_attempt_status=scene.get('status', 'unknown'),
++                        latest_error={'code': error.get('category'), 'http_status': error.get('http_status')} if error else None)
++            image = local_file(scene.get('image_path'), root)
++            label = local_file(scene.get('label_path'), root)
++            if image:
++                cell.update(image_available=True, label_available=bool(label), bands=scene.get('bands', []),
++                    collection_status=scene.get('status', 'unknown'), valid_pixel_ratio=scene.get('label_valid_pixel_ratio', scene.get('valid_pixel_ratio')),
++                    quality_eligible=None, quality_mask_available=bool(local_file(scene.get('quality_mask_path'), root)),
++                    label_status=scene.get('label_status', 'unknown'), label_source=scene.get('label_source'),
++                    label_year=scene.get('label_year'), mode='bounded_window', source_report=str(path.relative_to(root)))
++            elif not cell['image_available']:
++                cell.update(collection_status=scene.get('status', 'unknown'), label_status=scene.get('label_status', 'unknown'))
++    # 품질 적격은 별도 감사가 해당 수집 보고서의 해시를 확인한 경우만 표시한다.
++    for audit_name in ('quality-audit-2021.json', 'quality-audit-current.json'):
++        audit_path = root / 'first-group' / audit_name
++        audit = report_at(audit_path) if audit_path.exists() else {}
++        verified_reports = set()
++        for entry in audit.get('inputs', []):
++            path = local_file(entry.get('path'), root)
++            if path and same_hash(path, entry.get('sha256')):
++                verified_reports.add(str(path.relative_to(root)))
++        for row in audit.get('inventory', []):
++            key = (row.get('province'), row.get('year'))
++            cell = cells.get(key)
++            source = local_file(row.get('manifest_path'), root)
++            if cell and source and cell['source_report'] == str(source.relative_to(root)) and cell['source_report'] in verified_reports and cell['image_available']:
++                cell['quality_eligible'] = row.get('eligible_patch_count', 0) > 0
++                cell['label_year'] = row.get('label_year')
++    attempts = sorted(root.glob('first-group*/run-result.json'), key=lambda p: (p.stat().st_mtime_ns, str(p)))
++    latest_run = None
++    if attempts:
++        result_path = attempts[-1]
++        run = report_at(result_path)
++        rows = []
++        for value in run.get('manifests', []):
++            path = local_file(value, root)
++            if path:
++                rows.extend(report_at(path).get('scenes', []))
++        latest_run = {key: run.get(key) for key in ('status', 'learning_ready', 'maximum_total_bytes', 'reserved_or_transferred_bytes_including_prior')}
++        latest_run.update({key: run.get(key) for key in ('new_supplementary_budget_bytes',
++            'new_charged_upper_bound_bytes', 'historical_charged_upper_bound_bytes',
++            'combined_historical_and_new_charged_upper_bound_bytes', 'combined_maximum_charged_upper_bound_bytes')})
++        latest_run.update(source_report=str(result_path.relative_to(root)),
++            rate_limited_cells=sum((row.get('error') or {}).get('http_status') == 429 for row in rows),
++            budget_exhausted_cells=sum('예산 소진' in str((row.get('error') or {}).get('sanitized_message', '')) for row in rows),
++            no_scene_cells=sum(row.get('status') in ('no_scene', 'no_scene_found', 'no_scenes') or
++                               '장면 없음' in str((row.get('error') or {}).get('sanitized_message', '')) for row in rows),
++            complete_windows=sum(bool(local_file(row.get('image_path'), root)) for row in rows))
++        run_error = run.get('error') or {}
++        latest_run['rate_limit_active'] = bool(run.get('circuit_breaker') or run.get('stopped_for_rate_limit') or
++                                              run_error.get('http_status') == 429 or latest_run['rate_limited_cells'])
++        latest_run['server_http_status'] = run_error.get('http_status')
++        latest_run['error_category'] = run_error.get('category')
++    reference_path = root / 'raw-reference/reference-report.json'
++    reference = report_at(reference_path) if reference_path.exists() else {}
++    record, raster = reference.get('record', {}), reference.get('raster_metadata', {})
++    file = local_file(record.get('path'), root)
++    full_reference = {'band': 'B04', 'status': reference.get('status', 'unknown'),
++        'file_available': bool(file), 'mode': 'full_single_band', 'bytes': file.stat().st_size if file else None,
++        'width': raster.get('width'), 'height': raster.get('height'), 'crs': raster.get('crs'),
++        'sha256': record.get('sha256'), 'hash_verified_now': False}
++    rows = list(cells.values())
++    blockers = ['충분한 패치 및 지역별 검증·시험 자료 부족', '물리 반사도 보정 검증 필요',
++                '독립 참조가 없으면 WorldCover 일치도만 평가 가능']
++    readiness_candidates = list((root / 'first-group').glob('readiness-*.json'))
++    readiness_candidates += list((root / 'first-group').glob('training-readiness.json'))
++    readiness_path = max(readiness_candidates, key=lambda p: (p.stat().st_mtime_ns, p.name)) if readiness_candidates else root / 'first-group/training-readiness.json'
++    readiness = report_at(readiness_path) if readiness_path.exists() else {}
++    readiness_source = readiness_path.relative_to(root).as_posix() if readiness else None
++    current_path = root / 'first-group-training-esri-v1/annual-window-report.json'
++    current_manifest, current_sha = {}, None
++    if current_path.exists():
++        try:
++            current_manifest = current()
++            current_sha = current_cache[0][1][1]
++        except (OSError, ValueError):
++            errors.append(current_path.name)
++            current_manifest = {}
++    ready = False
++    integrity_status = 'not_checked'
++    evidence_matched = False
++    evidence = readiness.get('input_manifests', []) + readiness.get('verified_files', [])
++    manifest_matches_current = not current_path.exists()
++    if current_sha:
++        manifest_matches_current = any(local_file(entry.get('path'), root) == current_path and
++            entry.get('sha256') == current_sha for entry in readiness.get('input_manifests', []))
++    # A stale manifest already fails freshness; do not hash its entire raster set.
++    if manifest_matches_current and readiness.get('input_manifests') and readiness.get('verified_files'):
++        try:
++            evidence_matched = all((path := local_file(entry.get('path'), root)) is not None and
++                                   same_hash(path, entry.get('sha256')) for entry in evidence)
++        except OSError:
++            evidence_matched = False
++    # 과거 입력이 아직 남아 있더라도 현재 합산 manifest를 검사한 근거가 없으면 최신 검증으로 보지 않는다.
++    evidence_matched = evidence_matched and manifest_matches_current
++    freshness = 'current' if evidence_matched else ('stale_or_missing' if readiness else 'missing')
++    if readiness:
++        integrity_status = 'matched' if evidence_matched else 'stale_or_missing'
++    if readiness.get('schema_version') == 1 and readiness.get('status') == 'ready_for_weak_label_experiment' and readiness.get('ready_for_training') is True:
++        ready = evidence_matched
++        integrity_status = 'matched' if ready else 'stale_or_missing'
++    splits = readiness.get('patch_counts_by_split') or {}
++    counts_by_split = (readiness.get('class_counts_by_split') or {}) if evidence_matched else {}
++    class_counts = {str(index): sum(values[index] for values in counts_by_split.values()
++                    if isinstance(values, list) and len(values) == 9) for index in range(9)}
++    total_pixels = sum(class_counts.values())
++    patch_inventory = {'verified': evidence_matched, 'total': sum(splits.values()) if splits else None,
++        'by_split': splits, 'by_class': class_counts,
++        'class_names': (readiness.get('input_signature') or {}).get('class_names'),
++        'label_source': (readiness.get('input_signature') or {}).get('label_source'),
++        'class_ratios': {key: value / total_pixels if total_pixels else None for key, value in class_counts.items()},
++        'source_report': readiness_source, 'freshness': freshness,
++        'scope_note': '실험에 선택한 원본 창에서 품질 조건을 통과한 완전 256픽셀 패치 수. 격자 후보 계획 수나 혼합 RGB 재고 수가 아님.'}
++    if current_sha:
++        manifest_rows = current_manifest.get('scenes', [])
++        eligible = [row for row in manifest_rows if row.get('quality_status') == 'quality_eligible']
++        manifest_splits = {split: sum(row.get('split') == split for row in eligible) for split in ('train', 'val', 'test')}
++        # 재고 개수는 현재 manifest에서 계산하고 readiness의 과거 개수를 가져오지 않는다.
++        counts_match_inventory = splits == manifest_splits
++        if not counts_match_inventory:
++            patch_inventory.update(by_class={}, class_ratios={})
++        patch_inventory.update(total=len(eligible), physical_total=len(manifest_rows), by_split=manifest_splits,
++            verified=evidence_matched and counts_match_inventory, manifest_sha256=current_sha,
++            source_report=current_path.relative_to(root).as_posix(), freshness='current_manifest',
++            count_basis='manifest_quality_status', readiness_source_report=readiness_source,
++            scope_note='현재 합산 manifest의 품질 적격 패치 재고. 파일 무결성·학습 승인 여부는 별도 최신 readiness로 판정한다.')
++    if current_cache:verify_source(root,_source_selection,current_cache[0][1])
++    return {'schema_version': 1, 'recorded_at': datetime.now(timezone.utc).isoformat(),
++        'provinces': [{'id': key, 'name': name} for key, name in PROVINCES], 'years': YEARS, 'cells': rows,
++        'summary': {'expected_cells': 36, 'available_image_cells': sum(row['image_available'] for row in rows),
++            'available_label_cells': sum(row['label_available'] for row in rows),
++            'quality_eligible_cells': sum(row['quality_eligible'] is True for row in rows),
++            'learning_ready': ready, 'readiness_basis': '학습 전 검사 및 입력 해시 일치' if ready else '정식 데이터셋 구축·학습 gate 통과 기록 없음 또는 입력 변경'},
++        'training_readiness': {'status': readiness.get('status', 'unknown'), 'integrity_status': integrity_status,
++            'source_report': readiness_source, 'freshness': freshness,
++            'manifest_matches_current': manifest_matches_current, 'evidence_matched': evidence_matched,
++            'current_manifest_sha256': current_sha,
++            'ready_for_training': ready, 'blockers': readiness.get('blockers', []),
++            'patch_counts_by_split': readiness.get('patch_counts_by_split'),
++            'input_signature': readiness.get('input_signature'),
++            'required_bands': (readiness.get('policy') or {}).get('band_names'),
++            'minimum_patches': (readiness.get('policy') or {}).get('min_patches'),
++            'evaluation_kind': readiness.get('evaluation_kind'), 'scientific_accuracy_validated': False},
++        'latest_run': latest_run, 'full_reference': full_reference, 'blocked_reasons': blockers,
++        'patch_inventory': patch_inventory,
++        'collection_targets': collection_targets(current_manifest, current_sha, bare_target_review(root, current_sha)),
++        'candidate_quality': candidate_quality(root, current_sha, same_hash),
++        'limitations': ['실제 파일 존재와 독립 정확도 검증을 구분', '예약 예산은 실제 수신량이 아님',
++                        '부분 창을 주 전체나 전체 장면 확보로 계산하지 않음'],
++        'unreadable_reports': errors}
+--- /dev/null
++++ b/tests/manifest_profile_baseline_fixtures.py
+@@ -0,0 +1,28 @@
++"""Self-contained SHA-pinned historical test code; never fall back to current code."""
++import hashlib
++import sys
++import types
++from pathlib import Path
++from types import MappingProxyType
++BASELINE_ROOT=Path(__file__).resolve().parent/'fixtures/manifest_profile_baselines'
++MANIFEST_SHA256='7e4babd8f30ff31ca70e677c1eb1cabae0e715bd7a386136c4cb6be84abde637'
++BASELINES=MappingProxyType({'candidate_materialization_pre228': {'file': 'candidate_materialization_pre228.py', 'sha256': '6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b', 'bytes': 8716}, 'candidate_qa_comparison_pre228': {'file': 'candidate_qa_comparison_pre228.py', 'sha256': '7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e', 'bytes': 17204}, 'centers230': {'file': 'centers230.py', 'sha256': 'c67e868ac693d62f5384c84c173d6e9fea7a221f56df8bade9140eca4be09f8d', 'bytes': 14002}, 'status230': {'file': 'status230.py', 'sha256': 'bacd9f17a1b256b51752e639a02458f623286506aba2bc59664f3153513ddce4', 'bytes': 17192}})
++
++def _pinned(path,expected):
++    if path.is_symlink() or path.resolve().parent!=BASELINE_ROOT.resolve():raise AssertionError('Baseline fixture path mismatch')
++    raw=path.read_bytes()
++    if hashlib.sha256(raw).hexdigest()!=expected:raise AssertionError('Baseline fixture SHA mismatch: '+path.name)
++    return raw
++
++def baseline_bytes(name):
++    _pinned(BASELINE_ROOT/'manifest.json',MANIFEST_SHA256)
++    record=BASELINES[name]
++    return _pinned(BASELINE_ROOT/record['file'],record['sha256'])
++
++def load_baseline(name,module_name,package):
++    raw=baseline_bytes(name);path=BASELINE_ROOT/BASELINES[name]['file']
++    module=types.ModuleType(module_name);module.__package__=package;module.__file__=str(path)
++    original_path=sys.path[:]
++    try:exec(compile(raw,str(path),'exec'),module.__dict__)
++    finally:sys.path[:]=original_path
++    return module
+--- a/tests/test_manifest_profile228.py
++++ b/tests/test_manifest_profile228.py
+@@ -1,147 +1,145 @@
+-"""Isolated228 only: Temp metadata, mocked gate, no real source/raster/HTTP."""
+-import copy,hashlib,json,types,unittest
+-from pathlib import Path
+-from unittest.mock import patch
+-from backend.app.ml import manifest_resource_profile as profile
+-from backend.app.ml.split_json_io import BoundedJSONIO
+-from backend.app.ml import split_json_io as bounded
+-from backend.app.ml import candidate_materialization as material
+-from backend.app.ml import candidate_staging as staging
+-from backend.app.ml import candidate_readiness_qa as qa
+-from backend.app.ml import candidate_qa_comparison as comparison
+-from scripts import prepare_priority_candidate164 as cli
+-import test_candidate_materialization as mf
+-import test_candidate_readiness_qa as qf
+-import test_candidate_qa_comparison as cf
+-
+-ROOT=Path(__file__).resolve().parents[1]
+-def original(name):
+-    module=types.ModuleType('backend.app.ml.original228_'+name);module.__package__='backend.app.ml'
+-    path=ROOT/'baseline-code/backend/app/ml'/str(name+'.py')
+-    exec(compile(path.read_text('utf-8'),str(path),'exec'),module.__dict__)
+-    return module
+-class Profile228Tests(unittest.TestCase):
+-    def test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict(self):
+-        f=mf.CandidateMaterializationTests();f.setUp();self.addCleanup(f.tearDown)
+-        old=original('candidate_materialization');oldout=f.f.workspace/'old-package'
+-        old.materialize_split_candidate(f.f.root,f.paths,f.pins,oldout,evidence_root=f.f.workspace)
+-        f.run_package()
+-        for name in ('plan.json','candidate.json','receipt.json'):
+-            self.assertEqual((f.out/name).read_bytes(),(oldout/name).read_bytes())
+-    def test_explicit_materialization_staging_v2_and_old_contract_fail_closed(self):
+-        f=mf.CandidateMaterializationTests();f.setUp();self.addCleanup(f.tearDown)
+-        evidence=f.f.workspace/'evidence';evidence.mkdir();f.out=evidence/'new-package'
+-        moved=evidence/'saved.json';f.saved.rename(moved);f.saved=moved;f.paths['saved_plan']=moved
+-        receipt=material.materialize_split_candidate(f.f.root,f.paths,f.pins,f.out,evidence_root=evidence,manifest_profile=profile.NAME)
+-        self.assertEqual(receipt['schema_version'],2);self.assertEqual(receipt['manifest_profile'],profile.MARKER)
+-        with self.assertRaises(ValueError):staging._receipt_contract(receipt,f.pins)
+-        stamp=f.f.sha(f.out/'receipt.json');out=f.f.root/'new-stage'
+-        staged=staging.stage_split_candidate(f.f.root,f.out,stamp,f.pins,out,evidence_root=evidence,manifest_profile=profile.NAME)
+-        self.assertEqual(staged['manifest_profile'],profile.MARKER);self.assertEqual(staged['schema_version'],2)
+-        self.assertFalse(staged['ready_for_training'])
+-    def test_qa_v2_same_profile_and_default_rejection(self):
+-        f=qf.CandidateReadinessQATests();f.setUp();self.addCleanup(f.tearDown)
+-        with profile.scope(profile.NAME):f.stage=profile.stamp(f.stage)
+-        f.write('staging_receipt',f.stage);f.refresh()
+-        with patch.object(qa,'run',side_effect=f.fake_run):
+-            receipt=qa.assess_staged_candidate(f.data,f.paths,f.pins,f.out,manifest_profile=profile.NAME)
+-        self.assertEqual(receipt['schema_version'],2);self.assertEqual(receipt['manifest_profile'],profile.MARKER)
+-        self.assertFalse(receipt['ready_for_training'])
+-    def test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper(self):
+-        f=cf.CandidateQAComparisonTests();f.setUp();self.addCleanup(f.tearDown)
+-        with profile.scope(profile.NAME):
+-            f.stage=profile.stamp(f.stage);f.qa=profile.stamp(f.qa)
+-        f.documents['staging_receipt_sha256']=f.stage;f.documents['qa_receipt_sha256']=f.qa
+-        f.write('staging_receipt_sha256')
+-        f.qa['inputs']['staging_receipt']['sha256']=f.sha(f.paths['staging_receipt_sha256'])
+-        f.qa['inputs']['staging_receipt']['bytes']=f.paths['staging_receipt_sha256'].stat().st_size
+-        f.write('qa_receipt_sha256');f.pins={k:f.sha(p) for k,p in f.paths.items()}
+-        f.refs={k:{'path':str(p),'bytes':p.stat().st_size} for k,p in f.paths.items()}
+-        with self.assertRaises(ValueError):f.project()
+-        with self.assertRaises(ValueError):original('candidate_qa_comparison').project_candidate_qa(f.documents,f.pins,f.refs,data_root_literal=str(f.root))
+-        with profile.scope(profile.NAME):self.assertEqual(f.project()['status'],'BLOCKED')
+-        response=f.client.post('/v1/diagnostics/candidate-readiness-comparison?manifest_profile='+profile.NAME,json=f.pins)
+-        self.assertEqual(response.status_code,200,response.text)
+-        self.assertEqual(f.client.post('/v1/diagnostics/candidate-readiness-comparison?manifest_profile=bad',json=f.pins).status_code,400)
+-        self.assertEqual(f.client.post('/v1/diagnostics/candidate-readiness-comparison',json=f.pins).status_code,503)
+-        f.stage['manifest_profile']['sha256']='0'*64
+-        with profile.scope(profile.NAME),self.assertRaises(ValueError):f.project()
+-    def test_profile_exact_name_scope_reset_and_legacy_receipts(self):
+-        for bad in ('bad','128m','',True,{},128):
+-            with self.assertRaises(ValueError):
+-                with profile.scope(bad):pass
+-        with profile.scope(profile.NAME):
+-            self.assertEqual(BoundedJSONIO(material.POLICY).input_caps['source'],128*1024**2)
+-            self.assertEqual(BoundedJSONIO(material.POLICY).input_caps['readiness'],16*1024**2)
+-            with self.assertRaises(ValueError):profile.receipt({'schema_version':1})
+-        self.assertIsNone(profile.active());self.assertEqual(BoundedJSONIO(material.POLICY).input_caps['source'],64*1024**2)
+-        self.assertEqual(profile.receipt({'schema_version':1}),{'schema_version':1})
+-    def test_rows_nodes_depth_io_and_output_budget_fail_closed(self):
+-        with profile.scope(profile.NAME) as budget:
+-            io=BoundedJSONIO(material.POLICY)
+-            io.measure({'scenes':[{}]*3000},'candidate')
+-            with self.assertRaisesRegex(ValueError,'MANIFEST_ROW_LIMIT'):io.measure({'scenes':[{}]*2999,'historical_noneligible_patches':[{},{}]},'candidate')
+-            with patch.object(bounded,'DESCRIPTOR',{**profile.DESCRIPTOR,'max_nodes':10}),self.assertRaisesRegex(ValueError,'MANIFEST_NODE_LIMIT'):io.measure({'scenes':[{}]*20},'candidate')
+-            deep={};at=deep
+-            for _ in range(34):at['next']={};at=at['next']
+-            with self.assertRaises(ValueError):io.measure(deep,'candidate')
+-            budget._maximum=4
+-            with self.assertRaisesRegex(ValueError,'MANIFEST_JSON_IO_LIMIT'):profile.charge(5)
+-        with profile.scope(profile.NAME):
+-            small=copy.deepcopy(material.POLICY);small['output_caps']['candidate']=64
+-            with self.assertRaises(ValueError):BoundedJSONIO(small).measure({'large':'x'*65},'candidate')
+-    def test_164_cli_explicit_choice_and_no_flag_preserves_default(self):
+-        args=['--data-root',str(ROOT/'evidence'),'--source',str(ROOT/'evidence/source.json'),'--source-sha256','a'*64,'--policy',str(ROOT/'evidence/policy.json'),'--policy-sha256','b'*64,'--run-id','synthetic228']
+-        with patch.object(cli,'prepare',return_value={'status':'PINNED_CANDIDATE_QA_COMPLETED','candidate_eligible':{}}) as prepare:
+-            self.assertEqual(cli.main(args+['--manifest-profile',profile.NAME]),0)
+-            self.assertEqual(prepare.call_args.kwargs['manifest_profile'],profile.NAME)
+-            self.assertEqual(cli.main(args),0);self.assertIsNone(prepare.call_args.kwargs['manifest_profile'])
+-        with self.assertRaises(SystemExit):cli.main(args+['--manifest-profile','bad'])
+-
+-    def test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate(self):
+-        import tempfile
+-        from backend.app.ml.readiness import default_policy
+-        from backend.app.ml.readiness_connectivity_adapter import failure_capture
+-        from scripts import run_experiment
+-        with tempfile.TemporaryDirectory(dir=ROOT/'evidence') as directory:
+-            base=Path(directory);data=base/'data';data.mkdir();evidence=base/'evidence/integration';evidence.mkdir(parents=True)
+-            source=data/'source.json';policy=data/'policy.json'
+-            document={'synthetic':True,'scenes':[{'province':'banten','year':'2021','quality_status':'quality_insufficient',
+-                'source_group':'banten/synthetic','scene_id':'synthetic','image_path':str(data/'missing-image.tif'),
+-                'label_path':str(data/'missing-label.tif'),'quality_mask_path':str(data/'missing-quality.tif')}]}
+-            source.write_text(json.dumps(document),encoding='utf-8');policy_doc=default_policy();policy.write_text(json.dumps(policy_doc),encoding='utf-8')
+-            def fake_assess(manifests,root,policy_arg,**kwargs):
+-                path=Path(manifests[0]);pin=hashlib.sha256(path.read_bytes()).hexdigest();refs=[{'path':path.relative_to(data).as_posix(),'sha256':pin}]
+-                capture=failure_capture();capture.update(capture_status='NOT_CAPTURED_BUDGET',scene_count=1,supplied_eligible_patch_sum=0)
+-                return {'schema_version':1,'status':'blocked','ready_for_training':False,'scientific_accuracy_validated':False,
+-                    'policy':copy.deepcopy(policy_doc),'blockers':[{'code':'CLASS_COVERAGE'}],
+-                    'patch_counts_by_split':dict.fromkeys(('train','val','test'),0),'input_manifests':refs,
+-                    'verified_files':[{'path':refs[0]['path'],'sha256':pin,'kind':'collection_manifest'}],
+-                    'input_signature':{'band_names':policy_doc['band_names'],'class_names':['x']*9,'label_source':'esri_io'},
+-                    'class_counts_by_split':{k:[0]*9 for k in ('train','val','test')},
+-                    'class_patch_counts_by_split':{k:[0]*9 for k in ('train','val','test')},'connectivity_diagnostics':capture,'prepared_payload':None}
+-            args=['--data-root',str(data),'--source',str(source),'--source-sha256',hashlib.sha256(source.read_bytes()).hexdigest(),
+-                  '--policy',str(policy),'--policy-sha256',hashlib.sha256(policy.read_bytes()).hexdigest(),'--run-id','profile228-chain','--manifest-profile',profile.NAME]
+-            with patch.object(cli,'ROOT',base),patch.object(cli,'assess',side_effect=fake_assess),patch.object(run_experiment,'assess',side_effect=fake_assess):
+-                self.assertEqual(cli.main(args),0)
+-            package=evidence/'priority164-profile228-chain/candidate-package/receipt.json'
+-            package_value=json.loads(package.read_text('utf-8'))
+-            self.assertEqual(package_value['manifest_profile'],profile.MARKER);self.assertEqual(package_value['schema_version'],2)
+-            for leaf in ('stage/staging-receipt.json','qa/qa-receipt.json'):
+-                value=json.loads((data/'priority164-profile228-chain'/leaf).read_text('utf-8'))
+-                self.assertEqual(value['manifest_profile'],profile.MARKER);self.assertEqual(value['schema_version'],2)
+-
+-
+-    def test_both_import_names_share_only_the_explicit_operation_budget(self):
+-        from app.ml import manifest_resource_profile as alias
+-        from app.ml.split_json_io import BoundedJSONIO as AliasIO
+-        self.assertTrue(Path(alias.__file__).resolve().is_relative_to(ROOT))
+-        self.assertIsNone(alias.active())
+-        with profile.scope(profile.NAME) as budget:
+-            self.assertIs(alias.active(),budget)
+-            self.assertEqual(AliasIO(material.POLICY).input_caps['source'],128*1024**2)
+-            alias.charge(17)
+-            self.assertEqual(budget.bytes,17)
+-        self.assertIsNone(alias.active());self.assertIsNone(profile.active())
+-
+-if __name__=='__main__':unittest.main()
++"""Isolated228 only: Temp metadata, mocked gate, no real source/raster/HTTP."""
++import copy,hashlib,json,unittest
++from manifest_profile_baseline_fixtures import load_baseline
++from pathlib import Path
++from unittest.mock import patch
++from backend.app.ml import manifest_resource_profile as profile
++from backend.app.ml.split_json_io import BoundedJSONIO
++from backend.app.ml import split_json_io as bounded
++from backend.app.ml import candidate_materialization as material
++from backend.app.ml import candidate_staging as staging
++from backend.app.ml import candidate_readiness_qa as qa
++from backend.app.ml import candidate_qa_comparison as comparison
++from scripts import prepare_priority_candidate164 as cli
++import test_candidate_materialization as mf
++import test_candidate_readiness_qa as qf
++import test_candidate_qa_comparison as cf
++
++ROOT=Path(__file__).resolve().parents[1]
++def original(name):
++    return load_baseline(name+'_pre228','backend.app.ml.original228_'+name,'backend.app.ml')
++class Profile228Tests(unittest.TestCase):
++    def test_default_artifacts_byte_equal_to_original_and_old_reader_stays_strict(self):
++        f=mf.CandidateMaterializationTests();f.setUp();self.addCleanup(f.tearDown)
++        old=original('candidate_materialization');oldout=f.f.workspace/'old-package'
++        old.materialize_split_candidate(f.f.root,f.paths,f.pins,oldout,evidence_root=f.f.workspace)
++        f.run_package()
++        for name in ('plan.json','candidate.json','receipt.json'):
++            self.assertEqual((f.out/name).read_bytes(),(oldout/name).read_bytes())
++    def test_explicit_materialization_staging_v2_and_old_contract_fail_closed(self):
++        f=mf.CandidateMaterializationTests();f.setUp();self.addCleanup(f.tearDown)
++        evidence=f.f.workspace/'evidence';evidence.mkdir();f.out=evidence/'new-package'
++        moved=evidence/'saved.json';f.saved.rename(moved);f.saved=moved;f.paths['saved_plan']=moved
++        receipt=material.materialize_split_candidate(f.f.root,f.paths,f.pins,f.out,evidence_root=evidence,manifest_profile=profile.NAME)
++        self.assertEqual(receipt['schema_version'],2);self.assertEqual(receipt['manifest_profile'],profile.MARKER)
++        with self.assertRaises(ValueError):staging._receipt_contract(receipt,f.pins)
++        stamp=f.f.sha(f.out/'receipt.json');out=f.f.root/'new-stage'
++        staged=staging.stage_split_candidate(f.f.root,f.out,stamp,f.pins,out,evidence_root=evidence,manifest_profile=profile.NAME)
++        self.assertEqual(staged['manifest_profile'],profile.MARKER);self.assertEqual(staged['schema_version'],2)
++        self.assertFalse(staged['ready_for_training'])
++    def test_qa_v2_same_profile_and_default_rejection(self):
++        f=qf.CandidateReadinessQATests();f.setUp();self.addCleanup(f.tearDown)
++        with profile.scope(profile.NAME):f.stage=profile.stamp(f.stage)
++        f.write('staging_receipt',f.stage);f.refresh()
++        with patch.object(qa,'run',side_effect=f.fake_run):
++            receipt=qa.assess_staged_candidate(f.data,f.paths,f.pins,f.out,manifest_profile=profile.NAME)
++        self.assertEqual(receipt['schema_version'],2);self.assertEqual(receipt['manifest_profile'],profile.MARKER)
++        self.assertFalse(receipt['ready_for_training'])
++    def test_comparison_and_api_explicit_selection_old_reader_and_profile_tamper(self):
++        f=cf.CandidateQAComparisonTests();f.setUp();self.addCleanup(f.tearDown)
++        with profile.scope(profile.NAME):
++            f.stage=profile.stamp(f.stage);f.qa=profile.stamp(f.qa)
++        f.documents['staging_receipt_sha256']=f.stage;f.documents['qa_receipt_sha256']=f.qa
++        f.write('staging_receipt_sha256')
++        f.qa['inputs']['staging_receipt']['sha256']=f.sha(f.paths['staging_receipt_sha256'])
++        f.qa['inputs']['staging_receipt']['bytes']=f.paths['staging_receipt_sha256'].stat().st_size
++        f.write('qa_receipt_sha256');f.pins={k:f.sha(p) for k,p in f.paths.items()}
++        f.refs={k:{'path':str(p),'bytes':p.stat().st_size} for k,p in f.paths.items()}
++        with self.assertRaises(ValueError):f.project()
++        with self.assertRaises(ValueError):original('candidate_qa_comparison').project_candidate_qa(f.documents,f.pins,f.refs,data_root_literal=str(f.root))
++        with profile.scope(profile.NAME):self.assertEqual(f.project()['status'],'BLOCKED')
++        response=f.client.post('/v1/diagnostics/candidate-readiness-comparison?manifest_profile='+profile.NAME,json=f.pins)
++        self.assertEqual(response.status_code,200,response.text)
++        self.assertEqual(f.client.post('/v1/diagnostics/candidate-readiness-comparison?manifest_profile=bad',json=f.pins).status_code,400)
++        self.assertEqual(f.client.post('/v1/diagnostics/candidate-readiness-comparison',json=f.pins).status_code,503)
++        f.stage['manifest_profile']['sha256']='0'*64
++        with profile.scope(profile.NAME),self.assertRaises(ValueError):f.project()
++    def test_profile_exact_name_scope_reset_and_legacy_receipts(self):
++        for bad in ('bad','128m','',True,{},128):
++            with self.assertRaises(ValueError):
++                with profile.scope(bad):pass
++        with profile.scope(profile.NAME):
++            self.assertEqual(BoundedJSONIO(material.POLICY).input_caps['source'],128*1024**2)
++            self.assertEqual(BoundedJSONIO(material.POLICY).input_caps['readiness'],16*1024**2)
++            with self.assertRaises(ValueError):profile.receipt({'schema_version':1})
++        self.assertIsNone(profile.active());self.assertEqual(BoundedJSONIO(material.POLICY).input_caps['source'],64*1024**2)
++        self.assertEqual(profile.receipt({'schema_version':1}),{'schema_version':1})
++    def test_rows_nodes_depth_io_and_output_budget_fail_closed(self):
++        with profile.scope(profile.NAME) as budget:
++            io=BoundedJSONIO(material.POLICY)
++            io.measure({'scenes':[{}]*3000},'candidate')
++            with self.assertRaisesRegex(ValueError,'MANIFEST_ROW_LIMIT'):io.measure({'scenes':[{}]*2999,'historical_noneligible_patches':[{},{}]},'candidate')
++            with patch.object(bounded,'DESCRIPTOR',{**profile.DESCRIPTOR,'max_nodes':10}),self.assertRaisesRegex(ValueError,'MANIFEST_NODE_LIMIT'):io.measure({'scenes':[{}]*20},'candidate')
++            deep={};at=deep
++            for _ in range(34):at['next']={};at=at['next']
++            with self.assertRaises(ValueError):io.measure(deep,'candidate')
++            budget._maximum=4
++            with self.assertRaisesRegex(ValueError,'MANIFEST_JSON_IO_LIMIT'):profile.charge(5)
++        with profile.scope(profile.NAME):
++            small=copy.deepcopy(material.POLICY);small['output_caps']['candidate']=64
++            with self.assertRaises(ValueError):BoundedJSONIO(small).measure({'large':'x'*65},'candidate')
++    def test_164_cli_explicit_choice_and_no_flag_preserves_default(self):
++        args=['--data-root',str(ROOT/'evidence'),'--source',str(ROOT/'evidence/source.json'),'--source-sha256','a'*64,'--policy',str(ROOT/'evidence/policy.json'),'--policy-sha256','b'*64,'--run-id','synthetic228']
++        with patch.object(cli,'prepare',return_value={'status':'PINNED_CANDIDATE_QA_COMPLETED','candidate_eligible':{}}) as prepare:
++            self.assertEqual(cli.main(args+['--manifest-profile',profile.NAME]),0)
++            self.assertEqual(prepare.call_args.kwargs['manifest_profile'],profile.NAME)
++            self.assertEqual(cli.main(args),0);self.assertIsNone(prepare.call_args.kwargs['manifest_profile'])
++        with self.assertRaises(SystemExit):cli.main(args+['--manifest-profile','bad'])
++
++    def test_real_164_cli_entire_metadata_pipeline_with_mock_native_gate(self):
++        import tempfile
++        from backend.app.ml.readiness import default_policy
++        from backend.app.ml.readiness_connectivity_adapter import failure_capture
++        from scripts import run_experiment
++        with tempfile.TemporaryDirectory(dir=ROOT/'evidence') as directory:
++            base=Path(directory);data=base/'data';data.mkdir();evidence=base/'evidence/integration';evidence.mkdir(parents=True)
++            source=data/'source.json';policy=data/'policy.json'
++            document={'synthetic':True,'scenes':[{'province':'banten','year':'2021','quality_status':'quality_insufficient',
++                'source_group':'banten/synthetic','scene_id':'synthetic','image_path':str(data/'missing-image.tif'),
++                'label_path':str(data/'missing-label.tif'),'quality_mask_path':str(data/'missing-quality.tif')}]}
++            source.write_text(json.dumps(document),encoding='utf-8');policy_doc=default_policy();policy.write_text(json.dumps(policy_doc),encoding='utf-8')
++            def fake_assess(manifests,root,policy_arg,**kwargs):
++                path=Path(manifests[0]);pin=hashlib.sha256(path.read_bytes()).hexdigest();refs=[{'path':path.relative_to(data).as_posix(),'sha256':pin}]
++                capture=failure_capture();capture.update(capture_status='NOT_CAPTURED_BUDGET',scene_count=1,supplied_eligible_patch_sum=0)
++                return {'schema_version':1,'status':'blocked','ready_for_training':False,'scientific_accuracy_validated':False,
++                    'policy':copy.deepcopy(policy_doc),'blockers':[{'code':'CLASS_COVERAGE'}],
++                    'patch_counts_by_split':dict.fromkeys(('train','val','test'),0),'input_manifests':refs,
++                    'verified_files':[{'path':refs[0]['path'],'sha256':pin,'kind':'collection_manifest'}],
++                    'input_signature':{'band_names':policy_doc['band_names'],'class_names':['x']*9,'label_source':'esri_io'},
++                    'class_counts_by_split':{k:[0]*9 for k in ('train','val','test')},
++                    'class_patch_counts_by_split':{k:[0]*9 for k in ('train','val','test')},'connectivity_diagnostics':capture,'prepared_payload':None}
++            args=['--data-root',str(data),'--source',str(source),'--source-sha256',hashlib.sha256(source.read_bytes()).hexdigest(),
++                  '--policy',str(policy),'--policy-sha256',hashlib.sha256(policy.read_bytes()).hexdigest(),'--run-id','profile228-chain','--manifest-profile',profile.NAME]
++            with patch.object(cli,'ROOT',base),patch.object(cli,'assess',side_effect=fake_assess),patch.object(run_experiment,'assess',side_effect=fake_assess):
++                self.assertEqual(cli.main(args),0)
++            package=evidence/'priority164-profile228-chain/candidate-package/receipt.json'
++            package_value=json.loads(package.read_text('utf-8'))
++            self.assertEqual(package_value['manifest_profile'],profile.MARKER);self.assertEqual(package_value['schema_version'],2)
++            for leaf in ('stage/staging-receipt.json','qa/qa-receipt.json'):
++                value=json.loads((data/'priority164-profile228-chain'/leaf).read_text('utf-8'))
++                self.assertEqual(value['manifest_profile'],profile.MARKER);self.assertEqual(value['schema_version'],2)
++
++
++    def test_both_import_names_share_only_the_explicit_operation_budget(self):
++        from app.ml import manifest_resource_profile as alias
++        from app.ml.split_json_io import BoundedJSONIO as AliasIO
++        self.assertTrue(Path(alias.__file__).resolve().is_relative_to(ROOT))
++        self.assertIsNone(alias.active())
++        with profile.scope(profile.NAME) as budget:
++            self.assertIs(alias.active(),budget)
++            self.assertEqual(AliasIO(material.POLICY).input_caps['source'],128*1024**2)
++            alias.charge(17)
++            self.assertEqual(budget.bytes,17)
++        self.assertIsNone(alias.active());self.assertIsNone(profile.active())
++
++if __name__=='__main__':unittest.main()
+--- a/tests/test_manifest_profile237.py
++++ b/tests/test_manifest_profile237.py
+@@ -1,17 +1,17 @@
+ """237 Temp-only metadata I/O contract tests. No operating DATA/HTTP/QA."""
+-import hashlib,importlib.util,json,os,tempfile,unittest
++import hashlib,json,os,tempfile,unittest
+ from contextlib import contextmanager
+ from datetime import datetime
+ from pathlib import Path
+ from types import SimpleNamespace
+ from unittest.mock import patch
++from manifest_profile_baseline_fixtures import load_baseline
+ from backend.app.ml import manifest_resource_profile as p
+ from scripts import find_bare_targets173 as find,propose_deficit_centers182 as propose
+ from backend.app.data import candidates
+ from app import collection_status as status,collection_priority_status as priority
+ import test_propose_deficit_centers182 as f182
+ ROOT=Path(__file__).resolve().parents[1]
+-PARENT=ROOT.parent/'preprocess230-workspace-20261018'
+ sha=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+ @contextmanager
+ def observed_reads(paths):
+@@ -122,7 +122,7 @@
+                 with self.assertRaisesRegex(p.ProfileResourceError,'CHANGED'):candidates.validate_candidate_plan(f.prior,f.boundary)
+     def test_182_default_artifact_bytes_equal_frozen230(self):
+         f,values=self.fixture182()
+-        spec=importlib.util.spec_from_file_location('scripts._baseline_centers237',PARENT/'scripts/propose_deficit_centers182.py');baseline=importlib.util.module_from_spec(spec);spec.loader.exec_module(baseline)
++        baseline=load_baseline('centers230','scripts._baseline_centers237','scripts')
+         before=f.data/'baseline.json';baseline.propose(**(values|{'output':before}))
+         propose.propose(**values)
+         self.assertEqual(f.output.read_bytes(),before.read_bytes())
+@@ -215,7 +215,7 @@
+     def test_default_status_exact_result_matches_frozen230_and_dual_import_scope(self):
+         self.put('first-group-training-esri-v1/annual-window-report.json',{'scenes':[]})
+         self.put('first-group-old/annual-window-report.json',{'scenes':[]});report=self.put('some-report',{'x':1})
+-        spec=importlib.util.spec_from_file_location('app._baseline_status237',PARENT/'backend/app/collection_status.py');baseline=importlib.util.module_from_spec(spec);spec.loader.exec_module(baseline)
++        baseline=load_baseline('status230','app._baseline_status237','app')
+         clock=SimpleNamespace(now=lambda tz:datetime(2026,10,18,tzinfo=tz))
+         with patch.object(status,'datetime',clock),patch.object(baseline,'datetime',clock):self.assertEqual(status.collection_status(self.root),baseline.collection_status(self.root))
+         from backend.app import collection_status as other
+--- /dev/null
++++ b/tests/test_manifest_profile242_portability.py
+@@ -0,0 +1,35 @@
++"""Portable pinned test fixture loader; code-only synthetic checks."""
++import hashlib,json,sys,tempfile,unittest
++from pathlib import Path
++from unittest.mock import patch
++import manifest_profile_baseline_fixtures as baseline
++class BaselinePackaging242Tests(unittest.TestCase):
++    def test_all_explicit_fixture_pins_and_provenance_match(self):
++        document=json.loads((baseline.BASELINE_ROOT/'manifest.json').read_text('utf-8'))
++        self.assertTrue(document['no_mutable_current_source_fallback'])
++        self.assertEqual(set(baseline.BASELINES),{entry['name'] for entry in document['files']})
++        for entry in document['files']:
++            self.assertEqual(baseline.BASELINES[entry['name']]['sha256'],entry['sha256'])
++            raw=baseline.baseline_bytes(entry['name'])
++            self.assertEqual((len(raw),hashlib.sha256(raw).hexdigest()),(entry['bytes'],entry['sha256']))
++    def test_missing_fixture_does_not_fall_back_or_skip(self):
++        manifest=(baseline.BASELINE_ROOT/'manifest.json').read_bytes()
++        with tempfile.TemporaryDirectory() as directory:
++            root=Path(directory);(root/'manifest.json').write_bytes(manifest)
++            with patch.object(baseline,'BASELINE_ROOT',root):
++                with self.assertRaises(FileNotFoundError):baseline.load_baseline('status230','app._missing_baseline242','app')
++    def test_tampered_code_or_manifest_cannot_rebase_expected_sha(self):
++        manifest=(baseline.BASELINE_ROOT/'manifest.json').read_bytes();code=baseline.baseline_bytes('status230')
++        with tempfile.TemporaryDirectory() as directory:
++            root=Path(directory);(root/'manifest.json').write_bytes(manifest);path=root/baseline.BASELINES['status230']['file'];path.write_bytes(code+b'\n# altered')
++            with patch.object(baseline,'BASELINE_ROOT',root):
++                with self.assertRaisesRegex(AssertionError,'SHA mismatch'):baseline.load_baseline('status230','app._changed_baseline242','app')
++                path.write_bytes(code);(root/'manifest.json').write_bytes(manifest+b' ')
++                with self.assertRaisesRegex(AssertionError,'SHA mismatch'):baseline.load_baseline('status230','app._changed_manifest242','app')
++    def test_baseline_script_loader_restores_sys_path(self):
++        before=sys.path[:]
++        module=baseline.load_baseline('centers230','scripts._pinned_baseline242','scripts')
++        self.assertEqual(sys.path,before)
++        self.assertEqual(Path(module.__file__).parent,baseline.BASELINE_ROOT)
++        self.assertFalse(any(parent.name.startswith('preprocess230-workspace') for parent in Path(__file__).resolve().parents))
++if __name__=='__main__':unittest.main()

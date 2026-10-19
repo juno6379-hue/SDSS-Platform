@@ -1,0 +1,189 @@
+{
+  "scope": "ISOLATED_ONLY_NOT_APPLIED_TO_SHARED_PRODUCTS",
+  "files": [
+    {
+      "path": "backend/app/candidate_qa_comparison_api.py",
+      "before": {
+        "sha256": "6268dd381198309daee474598788a9c2a1eb385eb0cee9c4f9e60ad1085f1a5b",
+        "bytes": 4690
+      },
+      "after": {
+        "sha256": "56fd7d9a4a0e78635dab7eb19c03ced03bb5a0b5d42da4245a37cc07fab864be",
+        "bytes": 5023
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/candidate_materialization.py",
+      "before": {
+        "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b",
+        "bytes": 8716
+      },
+      "after": {
+        "sha256": "59f228be4dd8fe5aa74d64714f43705945889edf173d0d17498e8262dfe690ff",
+        "bytes": 9036
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/candidate_qa_comparison.py",
+      "before": {
+        "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e",
+        "bytes": 17204
+      },
+      "after": {
+        "sha256": "e30894a1cee83d8fec8eb544b7a22e4c3723399fcf84627ceab6f7755d495860",
+        "bytes": 17672
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/candidate_readiness_qa.py",
+      "before": {
+        "sha256": "b93aa5964bbe54955411ff978680a06e5380d1507f562cf3a6675d30d7cd4aaf",
+        "bytes": 17817
+      },
+      "after": {
+        "sha256": "e769ef7eaaeac57b61510f4a11155b7dc087f0fef1c923b7883783f4cc436054",
+        "bytes": 18326
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/candidate_staging.py",
+      "before": {
+        "sha256": "a96bcb55d08f7605fb57b9f45f86a6c392e6c15068b09efdb4761aabe5955862",
+        "bytes": 12357
+      },
+      "after": {
+        "sha256": "eef485a01864e6ddc17bcfcb28dabae923579b2f6eb3b4df8ce4efc6f202e0fd",
+        "bytes": 12770
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/readiness.py",
+      "before": {
+        "sha256": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc",
+        "bytes": 32867
+      },
+      "after": {
+        "sha256": "f5e701152d064c794e8723aee2f1bc5ae7ec9f7dc386e180754e37f2cd5c6d3c",
+        "bytes": 33203
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "before": {
+        "sha256": "5f8774150d7c6bd11b8682fe2027059191ac6d5a9d64a79f03a3c9e60ef0165b",
+        "bytes": 7699
+      },
+      "after": {
+        "sha256": "f0cb93fe0a3d10bac163d705b748660f4d20276229fe043489503c3558601476",
+        "bytes": 8302
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "scripts/prepare_priority_candidate164.py",
+      "before": {
+        "sha256": "8a113c2efa530744662734b31386bf99a41bc31db9d279f53c2074dfc3173ba7",
+        "bytes": 10443
+      },
+      "after": {
+        "sha256": "197d81b9ed40e6cd3a74358a88335e8eda0c396dbd6c1e28dfd85f658226a6c2",
+        "bytes": 12705
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "scripts/run_experiment.py",
+      "before": {
+        "sha256": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3",
+        "bytes": 13221
+      },
+      "after": {
+        "sha256": "b045de37b36a22e6ac75e0749c93b98f05cf166b58569904bf880cdf7ad4f4d1",
+        "bytes": 13652
+      },
+      "main_unchanged": true
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "before": null,
+      "after": {
+        "sha256": "a7bdef52d2d44cac90ad1157a51c54012520a12fefacc2c980db328077557a60",
+        "bytes": 4200
+      },
+      "main_absent": true
+    },
+    {
+      "path": "tests/test_manifest_profile228.py",
+      "before": null,
+      "after": {
+        "sha256": "94add11a4af11c61c4a6b3621c71502775441d4db54d95ef8202c6799a1dbe34",
+        "bytes": 11800
+      },
+      "main_absent": true
+    }
+  ],
+  "protected_main_products": [
+    {
+      "path": "backend/app/candidate_qa_comparison_api.py",
+      "sha256": "6268dd381198309daee474598788a9c2a1eb385eb0cee9c4f9e60ad1085f1a5b",
+      "bytes": 4690,
+      "matches_initial_input": true
+    },
+    {
+      "path": "backend/app/ml/candidate_materialization.py",
+      "sha256": "6caec21389aa68472a50097f6f5d70d1554f17a8cda67b85e9d1e21f8a32f37b",
+      "bytes": 8716,
+      "matches_initial_input": true
+    },
+    {
+      "path": "backend/app/ml/candidate_qa_comparison.py",
+      "sha256": "7c472e37a5df7a56a6935adeff991a966d90ce9fd4337c3326777b00be57f18e",
+      "bytes": 17204,
+      "matches_initial_input": true
+    },
+    {
+      "path": "backend/app/ml/candidate_readiness_qa.py",
+      "sha256": "b93aa5964bbe54955411ff978680a06e5380d1507f562cf3a6675d30d7cd4aaf",
+      "bytes": 17817,
+      "matches_initial_input": true
+    },
+    {
+      "path": "backend/app/ml/candidate_staging.py",
+      "sha256": "a96bcb55d08f7605fb57b9f45f86a6c392e6c15068b09efdb4761aabe5955862",
+      "bytes": 12357,
+      "matches_initial_input": true
+    },
+    {
+      "path": "backend/app/ml/readiness.py",
+      "sha256": "90b6b3a82c734c481c1477828c1630061ad495034cd38e950523e3a7a35fb4dc",
+      "bytes": 32867,
+      "matches_initial_input": true
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "sha256": "5f8774150d7c6bd11b8682fe2027059191ac6d5a9d64a79f03a3c9e60ef0165b",
+      "bytes": 7699,
+      "matches_initial_input": true
+    },
+    {
+      "path": "scripts/prepare_priority_candidate164.py",
+      "sha256": "8a113c2efa530744662734b31386bf99a41bc31db9d279f53c2074dfc3173ba7",
+      "bytes": 10443,
+      "matches_initial_input": true
+    },
+    {
+      "path": "scripts/run_experiment.py",
+      "sha256": "a1b372fc5f920f2d8f83d889a2d1303e6e52a4e76b79841b14b477cf078e3cf3",
+      "bytes": 13221,
+      "matches_initial_input": true
+    }
+  ],
+  "added_main_products": 0,
+  "input_file_count": 329
+}

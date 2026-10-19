@@ -1,0 +1,83 @@
+{
+  "status": "VERIFIED_REAL_FINAL_API_BACKED_BROWSER_AFTER192_193_PUBLISH",
+  "observed_at": "2026-10-18T04:20:01.595090+00:00",
+  "method": "One explicit refresh on existing Chrome view17 using new API20676. Separate from preceding HMR/legacy179 observation.",
+  "response_recorded_at": "2026-10-18T04:18:35.852026+00:00",
+  "response_kst": "2026-10-18 13:18:35.852026",
+  "source_sha256": "ab745b908e2e0adce80907554216c0529e950c7e0123a7f85ee664cf26d50d0f",
+  "current": {
+    "physical": 1666,
+    "eligible": 1333,
+    "split": [
+      791,
+      292,
+      250
+    ],
+    "cell_gap": 33
+  },
+  "bare_review": {
+    "report": "first-group-training-priority/bare-review192-20261018.json",
+    "total": 37,
+    "searched_provinces": [
+      "gorontalo",
+      "west_java"
+    ],
+    "rendered_province_rows": 2,
+    "rows": [
+      {
+        "province": "gorontalo",
+        "candidates": 8,
+        "clear": 2,
+        "overlap": 6,
+        "invalid": 0
+      },
+      {
+        "province": "west_java",
+        "candidates": 29,
+        "clear": 2,
+        "overlap": 27,
+        "invalid": 0
+      }
+    ],
+    "unsearched_explanation_visible": true,
+    "source_matches_current": true,
+    "remote_quality_verified": false,
+    "execution_approved": false
+  },
+  "candidate": {
+    "eligible": 1317,
+    "split": {
+      "train": 791,
+      "val": 276,
+      "test": 250
+    },
+    "blockers": 3,
+    "source_matches_current": true,
+    "qa_report": "priority164-recovery193-20261018/qa/readiness.json",
+    "ready": false
+  },
+  "checks": {
+    "at": "2026-10-18T04:19:38.714Z",
+    "url": "http://127.0.0.1:5174/#/view/17",
+    "logs": [],
+    "viewport": {
+      "scrollWidth": 1573,
+      "width": 1588
+    }
+  },
+  "proof": [
+    "service193-195-final-ui-20261018.dom.txt",
+    "service193-195-final-ui-20261018.inventory.png",
+    "service193-195-final-ui-20261018.png",
+    "service193-195-final-ui-20261018.checks.json"
+  ],
+  "limits": [
+    "No target196 future result included.",
+    "No duplicate refresh, separate HTTP request, pointer/operating data mutation or native QA rerun.",
+    "No HTTP timing/SLA claim or independent ground truth/training/deployment approval."
+  ],
+  "docs": {
+    "docs/implementation/195_bare_review_scope_ui.md": "6644a99bbc33d7ebdca32ebf963b4dea82b88e0c7d37c44197138b246a70dfbd",
+    "docs/implementation/service185_ui_recovery_20261018.md": "181c91006d8334ae8da809a7c24172a13467594678f05cdcebebcadbf5e4132c"
+  }
+}

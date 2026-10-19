@@ -1,0 +1,208 @@
+--- before/backend/app/data/deficit_candidate_guard.py
++++ after/backend/app/data/deficit_candidate_guard.py
+@@ -86,6 +86,36 @@
+ 
+ class DeficitCandidateLiveGuard(TargetedLiveGuard):
+     """256 부모를 수정하지 않고 선택 B02의1024 규격만 별도로 확인한다."""
++    def alignment_diagnostic(self):
++        """선택 B02 정렬 실패만 반환한다. URL/원 geometry를 보관하지 않는다."""
++        return copy.deepcopy(getattr(self, '_alignment_diagnostic', None))
++
++    def _record_alignment_failure(self, planned, actual, crs, geometry):
++        # 진단 생성 실패가 원래 차단 예외를 가리면 안 된다.
++        fixed = {'schema_version': 1, 'code': 'CENTER_B02_ALIGNMENT_SHORTFALL',
++                 'stage': 'window_geometry_guard', 'available': False,
++                 'reason': 'ALIGNMENT_DIAGNOSTIC_UNAVAILABLE'}
++        self._alignment_diagnostic = fixed
++        try:
++            delta = [a-b for a, b in zip(actual, planned)]
++            values = [*planned, *actual, *delta, *geometry['window_transform']]
++            if not all(type(v) in (int, float) and math.isfinite(v) for v in values):
++                return
++            epsg = crs.to_epsg()
++            crs_name = ('EPSG:' + str(epsg) if type(epsg) is int and 1 <= epsg <= 999999
++                        else 'PROJECTED_METRE_CRS_UNIDENTIFIED')
++            self._alignment_diagnostic = {
++                'schema_version': 1, 'code': fixed['code'], 'stage': fixed['stage'],
++                'available': True, 'crs': crs_name, 'tolerance_m': 10.000001,
++                'planned_bounds_m': list(planned), 'actual_bounds_m': list(actual),
++                'delta_actual_minus_planned_m': delta,
++                'abs_delta_m': [abs(v) for v in delta],
++                'excess_over_tolerance_m': [max(0., abs(v)-10.000001) for v in delta],
++                'requested_side': 1024, 'window_width': 1024, 'window_height': 1024,
++                'window_transform': list(geometry['window_transform'])}
++        except Exception:
++            self._alignment_diagnostic = fixed
++
+     def _binding(self):
+         aoi = super()._binding()
+         _need(type(self.job.get('key')) is str and
+@@ -106,6 +136,7 @@
+         return aoi
+ 
+     def on_window(self, url, geometry):
++        self._alignment_diagnostic = None
+         _need(type(url) is str and bool(url), 'CENTER_ASSET_URL_INVALID')
+         if self.selected is None or url != self.blue:
+             # 후보 SCL·동년 확대라벨·다른 선택asset은 기존 부모의 검사를 유지한다.
+@@ -121,8 +152,15 @@
+               geometry['window_transform'][0] == 10 and geometry['window_transform'][4] == -10,
+               'CENTER_B02_GRID_INVALID')
+         planned = _rectangle(self.target['target_footprint_native']).bounds
+-        _need(all(abs(a-b) <= 10.000001 for a, b in zip(bounds, planned)),
+-              'CENTER_B02_ALIGNMENT_SHORTFALL')
++        try:
++            _need(all(abs(a-b) <= 10.000001 for a, b in zip(bounds, planned)),
++                  'CENTER_B02_ALIGNMENT_SHORTFALL')
++        except ValueError:
++            try:
++                self._record_alignment_failure(planned, bounds, crs, geometry)
++            except Exception:
++                self._alignment_diagnostic = None
++            raise
+         self.windows.claim(self.job['key'], geometry['crs'], bounds)
+         self.b02_checked = True
+ 
+--- before/scripts/collect_deficit_guarded.py
++++ after/scripts/collect_deficit_guarded.py
+@@ -215,6 +215,9 @@
+                 result['error']=classify_error(exc)
+             finally:
+                 result['live_b02_checked']=guard.b02_checked
++                diagnostic=guard.alignment_diagnostic()
++                if diagnostic is not None:
++                    result['b02_alignment_diagnostic']=diagnostic
+                 path=directory/'window-state.json';state=_json(path.read_bytes()) if path.exists() else {}
+                 metadata=service.metadata_budget_status()
+                 result.update(charged_bytes=state.get('http_body_bytes',0)+metadata['charged_bytes'],
+--- before/tests/test_deficit_candidate_guard.py
++++ after/tests/test_deficit_candidate_guard.py
+@@ -310,6 +310,7 @@
+             guard = self.guard(); self.select(guard)
+             with self.assertRaises(ValueError): guard.on_window(self.item['assets']['B02']['href'],geometry)
+             self.assertFalse(guard.b02_checked)
++            self.assertIsNone(guard.alignment_diagnostic())
+ 
+     def test_alignment_one_pixel_allowed_over_one_pixel_denied(self):
+         guard = self.guard(); self.select(guard)
+@@ -317,6 +318,63 @@
+             guard.on_window(self.item['assets']['B02']['href'],self.geometry(shift=11))
+         guard.on_window(self.item['assets']['B02']['href'],self.geometry(shift=10))
+         self.assertTrue(guard.b02_checked)
++
++    def test_alignment_diagnostic_signed_edges_detached_and_stale_reset(self):
++        guard = self.guard(); self.select(guard)
++        for shift in (-11, 11):
++            geometry = self.geometry(shift=shift)
++            with self.assertRaisesRegex(ValueError, 'CENTER_B02_ALIGNMENT_SHORTFALL'):
++                guard.on_window(self.item['assets']['B02']['href'], geometry)
++            diagnostic = guard.alignment_diagnostic()
++            self.assertTrue(diagnostic['available'])
++            self.assertEqual(diagnostic['delta_actual_minus_planned_m'], [shift, 0, shift, 0])
++            self.assertEqual(diagnostic['abs_delta_m'], [11, 0, 11, 0])
++            self.assertAlmostEqual(diagnostic['excess_over_tolerance_m'][0], .999999)
++            self.assertFalse(guard.b02_checked)
++            geometry['window_transform'][2] = 0
++            diagnostic['actual_bounds_m'][0] = 0
++            self.assertNotEqual(guard.alignment_diagnostic()['actual_bounds_m'][0], 0)
++            self.assertNotIn('https', json.dumps(guard.alignment_diagnostic()))
++        guard.on_window(self.item['assets']['SCL']['href'], self.geometry())
++        self.assertIsNone(guard.alignment_diagnostic())
++        guard.on_window(self.item['assets']['B02']['href'], self.geometry())
++        self.assertIsNone(guard.alignment_diagnostic())
++
++    def test_alignment_diagnostic_boundary_and_unavailable_do_not_change_guard(self):
++        guard = self.guard(); self.select(guard)
++        # Isolate the exact comparison boundary from large-coordinate subtraction rounding.
++        planned = (0., 0., 0., 0.)
++        for shift in (-10.000001, 10.000001):
++            actual = tuple(v+shift for v in planned)
++            with patch.object(subject, '_rectangle') as rectangle, patch.object(subject, '_bounds', return_value=actual):
++                rectangle.return_value.bounds = planned
++                guard.on_window(self.item['assets']['B02']['href'], self.geometry())
++            self.assertIsNone(guard.alignment_diagnostic())
++        for actual in ((float('nan'), 0., 0., 0.), (float('inf'), 0., 0., 0.)):
++            with patch.object(subject, '_bounds', return_value=actual):
++                with self.assertRaisesRegex(ValueError, 'CENTER_B02_ALIGNMENT_SHORTFALL'):
++                    guard.on_window(self.item['assets']['B02']['href'], self.geometry())
++            self.assertFalse(guard.alignment_diagnostic()['available'])
++        with patch.object(subject, '_rectangle') as rectangle, \
++             patch.object(subject, '_bounds', return_value=(1e308, 0., 1e308, 1.)):
++            rectangle.return_value.bounds = (-1e308, 0., -1e308, 1.)
++            with self.assertRaisesRegex(ValueError, 'CENTER_B02_ALIGNMENT_SHORTFALL'):
++                guard.on_window(self.item['assets']['B02']['href'], self.geometry())
++        self.assertFalse(guard.alignment_diagnostic()['available'])
++
++    def test_alignment_diagnostic_formatter_failure_preserves_original_error(self):
++        guard = self.guard(); self.select(guard)
++        # _metric_crs is still the real projected-metre validator; formatting alone fails.
++        crs = MagicMock(); crs.to_epsg.side_effect = RuntimeError('https://private/token')
++        guard._record_alignment_failure((0., 0., 1., 1.), (11., 0., 12., 1.), crs, self.geometry())
++        self.assertEqual(guard.alignment_diagnostic()['reason'], 'ALIGNMENT_DIAGNOSTIC_UNAVAILABLE')
++        with patch.object(subject.DeficitCandidateLiveGuard, '_record_alignment_failure', wraps=guard._record_alignment_failure):
++            with self.assertRaisesRegex(ValueError, 'CENTER_B02_ALIGNMENT_SHORTFALL'):
++                guard.on_window(self.item['assets']['B02']['href'], self.geometry(shift=11))
++        with patch.object(guard, '_record_alignment_failure', side_effect=RuntimeError('secret diagnostic failure')):
++            with self.assertRaisesRegex(ValueError, 'CENTER_B02_ALIGNMENT_SHORTFALL'):
++                guard.on_window(self.item['assets']['B02']['href'], self.geometry(shift=-11))
++        self.assertIsNone(guard.alignment_diagnostic())
+ 
+     def test_parent_scl_label_asset_and_cross_split_protections(self):
+         guard = self.guard()
+@@ -367,6 +425,7 @@
+                 service._read_cog_window_impl(url,self.aoi['bbox'],1024,1024**2,{},
+                     window_guard=lambda geometry:guard.on_window(url,geometry))
+         dataset.read.assert_not_called(); self.assertFalse(guard.b02_checked)
++        self.assertEqual(guard.alignment_diagnostic()['code'], 'CENTER_B02_ALIGNMENT_SHORTFALL')
+ 
+     def test_preflight_and_live_guard_preserve_all_six_fixed_splits(self):
+         from pyproj import Transformer
+--- before/tests/test_collect_deficit_guarded.py
++++ after/tests/test_collect_deficit_guarded.py
+@@ -244,6 +244,46 @@
+         self.assertFalse(self.lock.exists());self.assertFalse(result['learning_ready'])
+         self.assertEqual(result['execution_progress']['settlement_status'],'ALL_RESERVED_SETTLED')
+ 
++    def test_alignment_failure_finally_records_bounded_diagnostic_without_changing_settlement(self):
++        from shapely.geometry import Polygon
++        def collect(config, directory, **kwargs):
++            guard = kwargs['collection_guard']
++            url = 'https://example.org/B02.tif?token=never-record'
++            item = {'id': 'S2A_MSIL2A_20240601T030405_N0511_R000_T48MXU_20240601T040405',
++                    'datetime': '2024-06-01T03:04:05Z', 'assets': {'B02': {'href': url}}}
++            aoi = config['aois'][0]
++            guard.on_scene(item, aoi, guard.job['year'])
++            left, bottom, right, top = Polygon(guard.target['target_footprint_native']['corners']).bounds
++            geometry = {'crs': guard.target['target_footprint_native']['crs'],
++                'requested_bbox_wgs84': aoi['bbox'], 'requested_side': 1024,
++                'window_transform': [10, 0, left+11, 0, -10, top],
++                'window_width': 1024, 'window_height': 1024,
++                'window': {'width': 1024, 'height': 1024}}
++            (directory/'window-state.json').write_text(json.dumps({'http_body_bytes': 97}), encoding='utf-8')
++            guard.on_window(url, geometry)
++            self.fail('alignment rejection must stop this fake worker')
++        result, _, materialize = self.execute(collect=collect)
++        materialize.assert_not_called()
++        self.assertEqual(result['batches'][0]['patches'], 0)
++        self.assertEqual(result['batches'][0]['charged_bytes'], 97)
++        worker = json.loads(next(self.output.glob('sources/*/worker-result.json')).read_text(encoding='utf-8'))
++        self.assertFalse(worker['live_b02_checked'])
++        diagnostic = worker['b02_alignment_diagnostic']
++        self.assertEqual(diagnostic['code'], 'CENTER_B02_ALIGNMENT_SHORTFALL')
++        self.assertEqual(diagnostic['delta_actual_minus_planned_m'], [11, 0, 11, 0])
++        self.assertNotIn('https', json.dumps(diagnostic)); self.assertNotIn('never-record', json.dumps(diagnostic))
++        state = json.loads(self.fixture.paths['ledger'].read_text(encoding='utf-8'))
++        for key, value in self.pending.items(): self.assertEqual(state['batches'][key], value)
++        self.assertEqual(state['new_charged_bytes'], 136314880+97)
++        self.assertEqual(result['execution_progress']['settlement_status'], 'ALL_RESERVED_SETTLED')
++        self.assertEqual(json.loads(self.fixture.paths['source'].read_text(encoding='utf-8'))['scenes'], [self.original])
++        self.assertFalse(self.lock.exists())
++
++    def test_success_without_alignment_observation_keeps_legacy_worker_fields(self):
++        self.execute()
++        worker = json.loads(next(self.output.glob('sources/*/worker-result.json')).read_text(encoding='utf-8'))
++        self.assertNotIn('b02_alignment_diagnostic', worker)
++
+     def test_two_workers_share_scene_and_window_claims_and_preserve_old_files(self):
+         self.two_jobs();barrier=threading.Barrier(2);guards=[]
+         model=self.root/'data/model-preserved.bin';model.write_bytes(b'original model')

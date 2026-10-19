@@ -1,0 +1,211 @@
+{
+  "scope": "READ_ONLY_1205_BARE179_UI180_CONTRACT_OBSERVATION",
+  "observed_at_utc": "2026-10-18T03:08:18.312618+00:00",
+  "source_test_document_server_edits": 0,
+  "native_scan_preflight_api_collector_browser_test_build_executions": 0,
+  "source_pins": {
+    "backend/app/collection_priority_status.py": {
+      "sha256": "445faf9f085c0fcc66e2b20463b290463cd0d9684be636474d41e15f6277b745",
+      "matches_ui180_reported_snapshot": true
+    },
+    "backend/app/collection_status.py": {
+      "sha256": "01b4173c0186c5686d30090d3379dd86daab0ef1364778c03171f0306ea5dfbd",
+      "matches_ui180_reported_snapshot": true
+    },
+    "tests/test_collection_priority_status.py": {
+      "sha256": "8b0a433bc51c922acb4f2af13aac3e593ceea9949805d2808536baa00654f7a7",
+      "matches_ui180_reported_snapshot": true
+    },
+    "frontend/src/CollectionProgress.tsx": {
+      "sha256": "ee147a0e26133dc0492c228a9c67246b934e56d70fb9ecc86dc52c3ea5f18758",
+      "matches_ui180_reported_snapshot": true
+    },
+    "frontend/src/collectionProgressAdapter.ts": {
+      "sha256": "b9044126e3c986af1eeb8c21b4eddec9e79749308bb4679cbcb0b7a3ca262a8d",
+      "matches_ui180_reported_snapshot": true
+    },
+    "frontend/src/collectionProgressAdapter.test.mjs": {
+      "sha256": "7f8b56c4697a8a3c24c143a3c0c7159d33230df7c3bddc86c4b92b281dbd01da",
+      "matches_ui180_reported_snapshot": true
+    },
+    "docs/implementation/180_ui_priority_and_bare_review.md": {
+      "sha256": "c0fe061e9eb4cfb5a1f41236ce38f821f4dd5d5acbb09fd2170a8db1763205d3",
+      "matches_ui180_reported_snapshot": true
+    },
+    "scripts/review_bare_targets179.py": {
+      "sha256": "ed312191ec28c7b12770342fd62019ee616101a21ff60474a8b7046b99062d2d"
+    },
+    "tests/test_review_bare_targets179.py": {
+      "sha256": "9ed8b86890cb095cd10224eeacb8f97d0d4a6ff1251dba46b60be3be48dd5e11"
+    },
+    "docs/implementation/179_six_province_bare_review.md": {
+      "sha256": "587e3c5276f47ae8efad0adca1e894cc1b2dfda092e038df2ce01785c3db53f6"
+    },
+    "frontend/src/collectionProgressClient.ts": {
+      "sha256": "015500db7f4f1d61b6d478eef1bf24b58902683f614c0aede45150e4f421cacb"
+    }
+  },
+  "other_owner_implementation_and_runtime_not_certified_by_this_review": true,
+  "179_run_observation": {
+    "pid_observed": 39096,
+    "start_kst_observed": "2026-10-18T12:02:58.891078+09:00",
+    "request": {
+      "schema_version": 1,
+      "manifest_ref": {
+        "path": "data/bare179-review-20261018/source.json",
+        "sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367"
+      },
+      "ledger_ref": {
+        "path": "data/bare179-review-20261018/ledger.json",
+        "sha256": "7d27c5231c43c0014de92a11fa517c5a4d5c662005785ac75054d37dc27544fb"
+      },
+      "proposal_ref": {
+        "path": "evidence/integration/bare173-verified-20261018/proposal.json",
+        "sha256": "63368b398ff02382db10213753fb937a7653b925b912c7c5946a857b2152a0ee"
+      },
+      "boundary_ref": {
+        "path": "data/first-group-boundaries/selected-six.geojson",
+        "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+      }
+    },
+    "stdout_bytes_at_observation": 225,
+    "final_report_exists": true,
+    "latest_bare_review_receipt_exists": false,
+    "completion_claimed": true,
+    "historical_clear_counts_claimed": false,
+    "correct_ui_state_before_valid_publication": "Unknown/not published; never zero candidates or collection complete",
+    "final_report_appeared_during_review": true,
+    "final_report_status": "LOCAL_NATIVE_REVIEW_COMPLETE_EXECUTION_UNAPPROVED",
+    "final_report_sha256": "36aaf1107292eee74b0f6a2ce462d90e40a22de498ca31aaff1c1ded636775f0",
+    "final_report_ui_summary": {
+      "schema_version": 1,
+      "status": "LOCAL_TARGET_REVIEW_FINISHED",
+      "recorded_at": "2026-10-18T03:08:03.967441+00:00",
+      "current_manifest_sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+      "execution_supported": false,
+      "actual_quality_verified": false,
+      "scientific_accuracy_validated": false,
+      "summary_by_province": [
+        {
+          "province": "south_sulawesi",
+          "candidates": 9,
+          "support_clear": 8,
+          "overlap": 1,
+          "local_invalid": 0
+        },
+        {
+          "province": "gorontalo",
+          "candidates": 1,
+          "support_clear": 0,
+          "overlap": 1,
+          "local_invalid": 0
+        },
+        {
+          "province": "southeast_sulawesi",
+          "candidates": 11,
+          "support_clear": 8,
+          "overlap": 3,
+          "local_invalid": 0
+        },
+        {
+          "province": "east_java",
+          "candidates": 8,
+          "support_clear": 3,
+          "overlap": 5,
+          "local_invalid": 0
+        },
+        {
+          "province": "banten",
+          "candidates": 15,
+          "support_clear": 4,
+          "overlap": 11,
+          "local_invalid": 0
+        },
+        {
+          "province": "west_java",
+          "candidates": 6,
+          "support_clear": 0,
+          "overlap": 6,
+          "local_invalid": 0
+        }
+      ],
+      "candidate_total": 50
+    },
+    "candidate_mutual_overlap_pairs": 56,
+    "report_completion_observed_but_not_independently_native_reexecuted": true,
+    "reported_historical_clear_count": 23,
+    "final_verifier_artifact_exists": false
+  },
+  "current_vs_fixed_candidate": {
+    "existing_root_browser_evidence": "heartbeat-1145-ui-round9-root-20261018.json",
+    "existing_browser_fields": {
+      "context": [
+        "셀별 계획 바닥 28개에 못 미친 부분의 합은 44개입니다. 전체 적격 목표의 부족 0개와 다른 지표이며 서로 더하지 않습니다.",
+        "후보 관측: 2026-10-18T02:33:11.635555+00:00 · 저장 source/candidate/QA 지문 확인. 후보 생성 원본 SHA가 현재 원본과 다릅니다. 새 수집분을 포함한 최신 후보라고 해석하지 않습니다. 후보의 분할 공유 장면은 0건으로 기록됐으나 완전한 공간 독립성이나 현장 정답 인증은 아닙니다."
+      ],
+      "observed_at": "2026-10-18T03:03:21.701Z",
+      "overflow": false,
+      "rows": [
+        "현재 원본\t1,296\t754\t292\t250\t선언 집계 · 재QA 아님",
+        "고정 누출 제외 후보\t1,219\t720\t249\t250\t미충족 · 차단 3건"
+      ],
+      "url": "http://127.0.0.1:5174/#/view/17"
+    },
+    "fixed_pointer_eligible": 1219,
+    "fixed_pointer_by_split": {
+      "train": 720,
+      "val": 249,
+      "test": 250
+    },
+    "fixed_source_sha256": "0f04a075a599f4ff74f111652c070c33c817ce668ffba2b7fde1df000731d2cf",
+    "fixed_blockers": 3,
+    "bare179_review_source_sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+    "existing_current1296_basis": "CONTINUOUS_DEVELOPMENT12:04 and Root browser response12:02:13; no new API by this reviewer",
+    "current_source_sha256_from_existing_evidence": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+    "source_freshness_and_pinned_candidate_separate": true
+  },
+  "separated_status_contracts": {
+    "173_raw_local_discovery": "50 positions, train29/val15/test6; no actual imagery or execution approval",
+    "179_local_native_label_review": "Actual local raw label report now observed completed during this review; no independent native/inventory rerun performed.",
+    "179_historical_support_overlap": "Past stored imagery/support overlap, separate from candidate mutual pairs and actual image quality",
+    "actual_remote_scl_b02_quality": "Always displayed as untested / execution unapproved",
+    "fixed_candidate_qa": "Pinned1219 cohort,3 blockers; no automatic173 or new collection merge",
+    "execution_and_science": "execution_supported,actual_quality_verified,scientific_accuracy_validated remain false"
+  },
+  "source_review_checks": {
+    "new_bare_projection_additive_no_new_polling_or_write_calls": true,
+    "missing_new_fields_preserve_old_inventory": true,
+    "bare_projection_failure_isolated_from_valid_inventory_and_fixed_candidate": true,
+    "bare_report_source_match_boolean_independently_compared_to_current_sha": true,
+    "six_unique_provinces_count_sums_and_false_approval_flags_checked": true,
+    "report_time_and_report_path_and_source_sha_present": true,
+    "current_manifest_source_sha_and_response_recorded_at_present": true,
+    "fixed_candidate_source_sha_and_receipt_recorded_at_present": true,
+    "stale_bare_review_warning_does_not_claim_current_overlap_clearance": true,
+    "candidate_mutual_overlap_disclaimer_present": true,
+    "balance_policy_floor28_not_equal_quota_and_priority_not_running_jobs": true,
+    "unpublished_invalid_and_blocked_projection_not_zero_fallback": true
+  },
+  "owner_reported_validation_only": {
+    "backend_related": "19PASS2.161s",
+    "frontend_focused": "11PASS0.982s",
+    "typescript": "exit0 30.844s",
+    "root_isolated_frontend_focused_log": "11PASS2.317s",
+    "root_isolated_build_log": "built52.00s with existing chunk warning",
+    "new_runtime_bare_publication_or_browser_validation_by_reviewer": false
+  },
+  "findings": [
+    {
+      "id": "C1",
+      "priority": "PUBLISHER_ACCEPTANCE_CHECK",
+      "observation": "Backend bare_target_review validates report ui_summary but does not check report root status/kind or the complete179 body state. A syntactically complete blocked report carrying a valid-looking summary is not explicitly rejected by that root-state predicate.",
+      "recommendation": "Publisher must require LOCAL_NATIVE_REVIEW_COMPLETE_EXECUTION_UNAPPROVED plus final179 pins before latest receipt publication; owner should consider matching root-state validation in the API to align the documented blocked/partial report rejection.",
+      "static_review_only_no_probe_or_edit": true
+    }
+  ],
+  "limits": [
+    "Source/synthetic validation and finished build logs are not proof of running API process application or actual browser publication.",
+    "The179 report may complete after this observation; this evidence must remain a time-scoped snapshot.",
+    "No new native label, support inventory, quality, current manifest or raster scan executed by reviewer."
+  ]
+}

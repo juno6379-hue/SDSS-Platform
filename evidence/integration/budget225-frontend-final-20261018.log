@@ -1,0 +1,108 @@
+TAP version 13
+# Subtest: rendered two-province review explicitly marks scope and omits unsearched province rows
+ok 1 - rendered two-province review explicitly marks scope and omits unsearched province rows
+  ---
+  duration_ms: 63.0535
+  type: 'test'
+  ...
+# Subtest: legacy report renders all six rows and corrupted scope renders unknown without zero review
+ok 2 - legacy report renders all six rows and corrupted scope renders unknown without zero review
+  ---
+  duration_ms: 23.1018
+  type: 'test'
+  ...
+# Subtest: budget card renders observation pins and unknown process, then drops stale amounts
+ok 3 - budget card renders observation pins and unknown process, then drops stale amounts
+  ---
+  duration_ms: 27.1102
+  type: 'test'
+  ...
+# (node:33128) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: live totals and targets are derived from response, not production hardcoded numbers
+ok 4 - live totals and targets are derived from response, not production hardcoded numbers
+  ---
+  duration_ms: 57.8412
+  type: 'test'
+  ...
+# Subtest: missing data is unknown and contaminated sums, typed counters and false flags are rejected
+ok 5 - missing data is unknown and contaminated sums, typed counters and false flags are rejected
+  ---
+  duration_ms: 8.9044
+  type: 'test'
+  ...
+# Subtest: detached rows and bare metrics keep zero, null and original declaration boundaries
+ok 6 - detached rows and bare metrics keep zero, null and original declaration boundaries
+  ---
+  duration_ms: 3.7258
+  type: 'test'
+  ...
+# Subtest: pinned candidate is separate from current raw cohort, unavailable never becomes zero and pins/types are checked
+ok 7 - pinned candidate is separate from current raw cohort, unavailable never becomes zero and pins/types are checked
+  ---
+  duration_ms: 5.3291
+  type: 'test'
+  ...
+# Subtest: synchronous duplicate guard, route/back/unmount/refresh generations discard old success/error/finally
+ok 8 - synchronous duplicate guard, route/back/unmount/refresh generations discard old success/error/finally
+  ---
+  duration_ms: 8.5192
+  type: 'test'
+  ...
+# Subtest: GET existing real endpoint preserves token/cache and parses dynamic response with no writes
+ok 9 - GET existing real endpoint preserves token/cache and parses dynamic response with no writes
+  ---
+  duration_ms: 49.7589
+  type: 'test'
+  ...
+# Subtest: bounded reader cancels declared/cumulative overflow and stale response without rendering
+ok 10 - bounded reader cancels declared/cumulative overflow and stale response without rendering
+  ---
+  duration_ms: 3.8417
+  type: 'test'
+  ...
+# Subtest: collection view reuses parent GET while model review has standalone loader; no hardcoded inventory
+ok 11 - collection view reuses parent GET while model review has standalone loader; no hardcoded inventory
+  ---
+  duration_ms: 2.4771
+  type: 'test'
+  ...
+# Subtest: patch validity/province criteria and split class dominance have separate scopes
+ok 12 - patch validity/province criteria and split class dominance have separate scopes
+  ---
+  duration_ms: 1.3675
+  type: 'test'
+  ...
+# Subtest: minimum floor and requested priority are planned policy, old responses remain compatible
+ok 13 - minimum floor and requested priority are planned policy, old responses remain compatible
+  ---
+  duration_ms: 4.1781
+  type: 'test'
+  ...
+# Subtest: local bare review keeps unknown, stale and remote quality separate with bounded identity and sums
+ok 14 - local bare review keeps unknown, stale and remote quality separate with bounded identity and sums
+  ---
+  duration_ms: 5.6801
+  type: 'test'
+  ...
+# Subtest: searched province scope defaults to six, subsets stay detached and outside positives fail closed
+ok 15 - searched province scope defaults to six, subsets stay detached and outside positives fail closed
+  ---
+  duration_ms: 1.7677
+  type: 'test'
+  ...
+# Subtest: budget preserves fully charged pending once and refuses invalid or mismatched snapshots
+ok 16 - budget preserves fully charged pending once and refuses invalid or mismatched snapshots
+  ---
+  duration_ms: 9.5008
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2068.4529

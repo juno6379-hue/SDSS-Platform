@@ -11,7 +11,9 @@ from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT / '.runtime'), str(ROOT / 'backend')]
-from backend.app.ml.split_json_io import _local
+from backend.app.ml.split_json_io import _local,BoundedJSONIO
+from backend.app.ml.manifest_resource_profile import entry as profile_entry,active,cap as profile_cap,charge as profile_charge,read_json as profile_read_json,NAME,require_io_room,MARKER,bounded_json_digest,serialized_io,write_measured,JSON_ROLE_CAPS
+from backend.app.ml.candidate_materialization import POLICY
 from backend.app.data.recovery_terminal import _confined
 from backend.app.ml.readiness import assess
 from backend.app.ml.split_planning import plan_split_repair, write_plan
@@ -20,27 +22,48 @@ from backend.app.ml.candidate_staging import stage_split_candidate
 from backend.app.ml.candidate_readiness_qa import assess_staged_candidate
 
 
-def digest(path):
-    h = hashlib.sha256()
+def digest(path,*,json_role='source'):
+    if active() is not None and json_role is not None:return bounded_json_digest(path,json_role)
+    h=hashlib.sha256()
     with path.open('rb') as stream:
-        for chunk in iter(lambda: stream.read(1024 * 1024), b''):
-            h.update(chunk)
+        for chunk in iter(lambda:stream.read(1024*1024),b''):h.update(chunk)
     return h.hexdigest()
 
 
-def write_new(path, value):
+@serialized_io
+def write_new(path, value, *, json_role='saved_plan'):
+    if active() is not None:
+        maximum=JSON_ROLE_CAPS[json_role]
+        bounded=BoundedJSONIO({'input_caps':dict(POLICY['input_caps']),'output_caps':{'plan':maximum,'candidate':65536},'max_depth':32})
+        size=bounded.measure(value,'plan');newline=os.linesep.encode()
+        if size+len(newline)>maximum:raise ValueError('JSON output exceeds role byte cap')
+        require_io_room(size+len(newline))
+        with path.open('xb',buffering=0) as stream:
+            for block in bounded.chunks(value):write_measured(stream,block)
+            write_measured(stream,newline)
+        return
     with path.open('x', encoding='utf-8') as stream:
         json.dump(value, stream, ensure_ascii=False, indent=2, allow_nan=False)
         stream.write('\n')
 
 
+@serialized_io
 def copy_pinned(source, output, pin, cap=64 * 1024**2):
     """Bounded exclusive copy. A failed partial copy is preserved, never reused."""
+    cap=profile_cap('source',cap)
     if not source.is_file() or source.is_symlink() or source.stat().st_size > cap:
         raise ValueError('Source must be a bounded regular local file')
     before = source.stat()
+    require_io_room(2*before.st_size)
     if digest(source) != pin:
         raise ValueError('Source pin differs before copy')
+    require_io_room(2*before.st_size)
+    if active() is not None:
+        from backend.app.ml.candidate_staging import _copy_bytes
+        from backend.app.ml.split_json_io import _stamp
+        count=_copy_bytes(source,output,_stamp(before),pin,cap)
+        if digest(source)!=pin or digest(output)!=pin:raise ValueError('Snapshot pin differs after bounded copy')
+        return count
     h = hashlib.sha256(); count = 0
     with source.open('rb') as src, output.open('xb') as dst:
         opened = os.fstat(src.fileno())
@@ -50,7 +73,7 @@ def copy_pinned(source, output, pin, cap=64 * 1024**2):
             count += len(chunk)
             if count > cap or count > before.st_size:
                 raise ValueError('Source grew during copy')
-            dst.write(chunk); h.update(chunk)
+            profile_charge(len(chunk));profile_charge(len(chunk),'write');dst.write(chunk); h.update(chunk)
     after = source.stat()
     if count != before.st_size or h.hexdigest() != pin or digest(source) != pin or (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns) != (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns):
         raise ValueError('Source changed during copy')
@@ -59,6 +82,7 @@ def copy_pinned(source, output, pin, cap=64 * 1024**2):
     return count
 
 
+@profile_entry
 def prepare(data_root, source, source_pin, policy, policy_pin, run_id, *, evidence_root=None):
     for pin in (source_pin, policy_pin):
         if type(pin) is not str or re.fullmatch('[0-9a-f]{64}', pin) is None:
@@ -76,7 +100,7 @@ def prepare(data_root, source, source_pin, policy, policy_pin, run_id, *, eviden
     _confined(data, source); _confined(data, policy)
     if source.resolve() == policy.resolve() or not policy.is_file() or policy.is_symlink() or policy.stat().st_size > 1024**2:
         raise ValueError('Distinct bounded policy required')
-    if digest(source) != source_pin or digest(policy) != policy_pin:
+    if digest(source) != source_pin or digest(policy,json_role='policy') != policy_pin:
         raise ValueError('Caller pin differs')
     evidence = Path(evidence_root or ROOT / 'evidence/integration').resolve()
     _local(evidence)
@@ -89,8 +113,8 @@ def prepare(data_root, source, source_pin, policy, policy_pin, run_id, *, eviden
     work.mkdir(exist_ok=False); out.mkdir(exist_ok=False)
     snapshot = work / 'source.json'
     size = copy_pinned(source, snapshot, source_pin)
-    policy_doc = json.loads(policy.read_text(encoding='utf-8'))
-    document = json.loads(snapshot.read_text(encoding='utf-8'))
+    policy_doc = profile_read_json(policy,'source',maximum=1024**2) if active() is not None else json.loads(policy.read_text(encoding='utf-8'))
+    document = profile_read_json(snapshot,'source') if active() is not None else json.loads(snapshot.read_text(encoding='utf-8'))
     rows = document['scenes']
     if not rows or not all(Path(r[k]).is_absolute() for r in rows for k in ('image_path', 'label_path', 'quality_mask_path')):
         raise ValueError('Snapshot requires nonempty rows with absolute raster paths')
@@ -102,33 +126,38 @@ def prepare(data_root, source, source_pin, policy, policy_pin, run_id, *, eviden
     start = time.monotonic()
     raw_report = assess([snapshot], data, policy_doc, connectivity_diagnostics=True)
     raw_seconds = round(time.monotonic() - start, 3)
-    old_readiness = work / 'source-readiness.json'; write_new(old_readiness, raw_report)
+    old_readiness = work / 'source-readiness.json'; write_new(old_readiness, raw_report,json_role='readiness')
     print(json.dumps({'stage': 'SOURCE_QA_COMPLETE', 'seconds': raw_seconds, 'eligible': raw_report['patch_counts_by_split']}), flush=True)
-    if digest(snapshot) != source_pin or digest(policy) != policy_pin:
+    if digest(snapshot) != source_pin or digest(policy,json_role='policy') != policy_pin:
         raise ValueError('Pinned input changed after source QA')
-    plan = plan_split_repair(snapshot, source_pin, province_splits=policy_doc['province_splits'], readiness_path=old_readiness, readiness_sha256=digest(old_readiness), data_root=data)
-    saved = out / 'split-plan.json'; write_plan(plan, saved)
+    plan = plan_split_repair(snapshot, source_pin, province_splits=policy_doc['province_splits'], readiness_path=old_readiness, readiness_sha256=digest(old_readiness,json_role='readiness'), data_root=data,**({'io_policy':BoundedJSONIO(POLICY)} if active() is not None else {}))
+    saved = out / 'split-plan.json'; write_plan(plan, saved,**({'io_policy':BoundedJSONIO(POLICY)} if active() is not None else {}))
     paths = {'source': snapshot, 'readiness': old_readiness, 'saved_plan': saved}
-    pins = {k: digest(p) for k, p in paths.items()}
+    pins = {k: digest(p,json_role=k) for k, p in paths.items()}
     package = out / 'candidate-package'
     receipt = materialize_split_candidate(data, paths, pins, package, evidence_root=evidence)
     stage_dir = work / 'stage'
-    stage_split_candidate(data, package, digest(package / 'receipt.json'), pins, stage_dir, evidence_root=evidence)
+    stage_split_candidate(data, package, digest(package / 'receipt.json',json_role='receipt'), pins, stage_dir, evidence_root=evidence)
     print(json.dumps({'stage': 'CANDIDATE_STAGED', 'excluded_rows': len(plan['excluded_row_indexes']), 'eligible': plan['projected_after']['eligible_patches_by_split']}), flush=True)
     qa_paths = {'candidate': stage_dir / 'candidate.json', 'staging_receipt': stage_dir / 'staging-receipt.json', 'policy': policy, 'old_readiness': old_readiness}
-    qa_pins = {k: digest(p) for k, p in qa_paths.items()}
+    qa_roles={'candidate':'candidate','staging_receipt':'receipt','policy':'policy','old_readiness':'readiness'}
+    qa_pins = {k: digest(p,json_role=qa_roles[k]) for k, p in qa_paths.items()}
     qa_dir = work / 'qa'; start = time.monotonic()
     qa_receipt = assess_staged_candidate(data, qa_paths, qa_pins, qa_dir)
     qa_seconds = round(time.monotonic() - start, 3)
-    report = json.loads((qa_dir / 'readiness.json').read_text(encoding='utf-8'))
-    if digest(snapshot) != source_pin or digest(policy) != policy_pin or any(digest(p) != qa_pins[k] for k, p in qa_paths.items()):
+    report = profile_read_json(qa_dir/'readiness.json','readiness') if active() is not None else json.loads((qa_dir / 'readiness.json').read_text(encoding='utf-8'))
+    if digest(snapshot) != source_pin or digest(policy,json_role='policy') != policy_pin or any(digest(p,json_role=qa_roles[k]) != qa_pins[k] for k, p in qa_paths.items()):
         raise ValueError('Pinned input changed after candidate QA')
     # Recheck actual files after the native gate, without invoking training.
-    mismatches = [r['path'] for r in report['verified_files'] if digest(data / r['path']) != r['sha256']]
+    mismatches = [r['path'] for r in report['verified_files'] if digest(data/r['path'],json_role={'collection_manifest':'candidate','normalization_qa':'evidence'}.get(r['kind'])) != r['sha256']]
     if mismatches:
         raise ValueError('Actual QA file changed during final verification')
     outputs = [snapshot, old_readiness, saved, package / 'plan.json', package / 'candidate.json', package / 'receipt.json', *qa_paths.values(), qa_dir / 'readiness.json', qa_dir / 'qa-receipt.json']
-    summary = {'status': 'PINNED_CANDIDATE_QA_COMPLETED', 'at': datetime.now(timezone.utc).isoformat(), 'source_snapshot_at': stamp, 'scope': 'PINNED_COHORT_EXCLUDES_LATER_COLLECTION', 'source_sha256': source_pin, 'source_row_count': len(rows), 'source_eligible': raw_report['patch_counts_by_split'], 'source_blockers': raw_report['blockers'], 'candidate_row_count': receipt['candidate_row_count'], 'candidate_eligible': report['patch_counts_by_split'], 'excluded_source_rows': len(plan['excluded_row_indexes']), 'remaining_source_identity_conflicts': plan['remaining_source_identity_conflicts'], 'candidate_blockers': report['blockers'], 'bare_pixels': {s: v[7] for s, v in report['class_counts_by_split'].items()}, 'bare_contributing_patches': {s: v[7] for s, v in report['class_patch_counts_by_split'].items()}, 'observed_gate_ready_for_training': report['ready_for_training'], 'ready_for_training': False, 'scientific_accuracy_validated': False, 'training_executed': False, 'network_requests': 0, 'registry_called': False, 'source_qa_seconds': raw_seconds, 'candidate_qa_seconds': qa_seconds, 'verified_file_records': len(report['verified_files']), 'file_sha_mismatches': 0, 'connectivity_capture_status': qa_receipt['connectivity_capture_status'], 'outputs': {str(p): {'sha256': digest(p), 'bytes': p.stat().st_size} for p in outputs}}
+    output_roles={snapshot:'source',old_readiness:'readiness',saved:'saved_plan',package/'plan.json':'saved_plan',package/'candidate.json':'candidate',package/'receipt.json':'receipt',stage_dir/'candidate.json':'candidate',stage_dir/'staging-receipt.json':'receipt',policy:'policy',qa_dir/'readiness.json':'readiness',qa_dir/'qa-receipt.json':'receipt'}
+    summary = {'status': 'PINNED_CANDIDATE_QA_COMPLETED', 'at': datetime.now(timezone.utc).isoformat(), 'source_snapshot_at': stamp, 'scope': 'PINNED_COHORT_EXCLUDES_LATER_COLLECTION', 'source_sha256': source_pin, 'source_row_count': len(rows), 'source_eligible': raw_report['patch_counts_by_split'], 'source_blockers': raw_report['blockers'], 'candidate_row_count': receipt['candidate_row_count'], 'candidate_eligible': report['patch_counts_by_split'], 'excluded_source_rows': len(plan['excluded_row_indexes']), 'remaining_source_identity_conflicts': plan['remaining_source_identity_conflicts'], 'candidate_blockers': report['blockers'], 'bare_pixels': {s: v[7] for s, v in report['class_counts_by_split'].items()}, 'bare_contributing_patches': {s: v[7] for s, v in report['class_patch_counts_by_split'].items()}, 'observed_gate_ready_for_training': report['ready_for_training'], 'ready_for_training': False, 'scientific_accuracy_validated': False, 'training_executed': False, 'network_requests': 0, 'registry_called': False, 'source_qa_seconds': raw_seconds, 'candidate_qa_seconds': qa_seconds, 'verified_file_records': len(report['verified_files']), 'file_sha_mismatches': 0, 'connectivity_capture_status': qa_receipt['connectivity_capture_status'], 'outputs': {str(p): {'sha256': digest(p,json_role=output_roles[p]), 'bytes': p.stat().st_size} for p in outputs}}
+    if active() is not None:
+        summary['manifest_profile']=dict(MARKER)
+        summary['manifest_resource_usage_before_summary_write']={'json_io_bytes':active().bytes,'read_bytes':active().reads,'write_bytes':active().writes,'maximum_bytes':active().maximum}
     write_new(out / 'summary.json', summary)
     return summary
 
@@ -140,9 +169,10 @@ def main(argv=None):
     parser.add_argument('--source-sha256', required=True)
     parser.add_argument('--policy-sha256', required=True)
     parser.add_argument('--run-id', required=True)
+    parser.add_argument('--manifest-profile',choices=[NAME],default=None)
     args = parser.parse_args(argv)
     try:
-        result = prepare(args.data_root, args.source, args.source_sha256, args.policy, args.policy_sha256, args.run_id)
+        result = prepare(args.data_root, args.source, args.source_sha256, args.policy, args.policy_sha256, args.run_id,manifest_profile=args.manifest_profile)
         print(json.dumps({'stage': result['status'], 'candidate_eligible': result['candidate_eligible'], 'ready_for_training': False}), flush=True)
         return 0
     except (ValueError, OSError, TypeError, KeyError, IndexError, AssertionError):

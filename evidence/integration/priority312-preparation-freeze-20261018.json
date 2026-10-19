@@ -1,0 +1,47 @@
+{
+  "status": "FROZEN_PUBLICATION_PREPARATION_ONLY_NOT_EXECUTED",
+  "files": [
+    {
+      "path": "evidence/integration/priority312-before293-20261018.py",
+      "bytes": 8393,
+      "sha256": "08f58cf98db254c73679f27d1fd6ef4b99be96e90f94c49aed1c271d2fbfd789"
+    },
+    {
+      "path": "evidence/integration/priority312-promote-root-20261018.py",
+      "bytes": 8394,
+      "sha256": "3460bbfd863162e15f40b8fc622fb24bc4d0b46ae3e1d5645ec24075262ab13e"
+    },
+    {
+      "path": "evidence/integration/priority312-minimal-diff-20261018.patch",
+      "bytes": 7012,
+      "sha256": "39c7916c44141e1c044d5218041b9daf4f463c4510871feb76b0ebf34743500b"
+    },
+    {
+      "path": "docs/implementation/312_post309_candidate_publication_preparation.md",
+      "bytes": 6040,
+      "sha256": "766b2fd6b98a00d9fd9a8d08bc1d7e4966c5466c501be41ea596476a27ee7fb5"
+    }
+  ],
+  "original293_ref": {
+    "path": "evidence/integration/priority293-promote-root-20261018.py",
+    "sha256": "08f58cf98db254c73679f27d1fd6ef4b99be96e90f94c49aed1c271d2fbfd789"
+  },
+  "validation": "IN_MEMORY_COMPILE_NO_IMPORT_NO_OPERATING_READ",
+  "source_sha256_declared_by_root": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+  "ledger_sha256_declared_by_root": "d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91",
+  "previous_pointer_sha256_from_completed293": "996a88de2034e9803381d7ae4e906a0d1f418075675d13ef796fb5648bb472c0",
+  "previous_by_split": {
+    "train": 834,
+    "val": 276,
+    "test": 250
+  },
+  "final309_summary_handoff_terminal_pins_received": false,
+  "new_candidate_count": null,
+  "partial309_results_read": false,
+  "operating_source_ledger_pointer_model_reads": 0,
+  "publication_executed": false,
+  "http": 0,
+  "actual_qa_repeated": false,
+  "main_product_changes": 0,
+  "ready_for_training": false
+}

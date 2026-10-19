@@ -5,6 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
+from types import SimpleNamespace
 
 import numpy as np
 import rasterio
@@ -88,6 +89,59 @@ class TargetedInventoryTests(unittest.TestCase):
         self.assertEqual(self.run_guard(max_files=1)['issue'],'INVENTORY_LIMIT')
         self.assertEqual(self.run_guard(max_bytes=1)['issue'],'INVENTORY_LIMIT')
         self.assertEqual(self.run_guard(max_files=True)['issue'],'INVENTORY_LIMIT')
+
+    def test_support_byte_policy_rejects_invalid_types_and_over_four_gib(self):
+        for value in (True, False, 0, -1, 3.0, float('nan'), 4*1024**3+1):
+            with self.subTest(value=value), patch.object(module,'_pinned') as pinned:
+                self.assertEqual(self.run_guard(max_bytes=value)['issue'],'INVENTORY_LIMIT')
+                pinned.assert_not_called()
+
+    def simulated_support_sizes(self, count):
+        # Mock stat sizes only: tiny real TIFF headers, no multi-GiB file reads.
+        # All simulated individual assets stay at the existing64MiB cap.
+        for i in range(count-2):
+            p=self.folder/f'bulk-{i}/raw-B03.tif';p.parent.mkdir()
+            p.write_bytes(self.image.read_bytes())
+        support={p for p in self.folder.rglob('*.tif') if p.name not in module.LABELS}
+        original_stat=Path.stat;original_snapshot=module._snapshot
+        def fake_stat(path,*a,**kw):
+            value=original_stat(path,*a,**kw)
+            if path not in support:return value
+            fields={k:getattr(value,k) for k in dir(value) if k.startswith('st_')}
+            fields['st_size']=64*1024**2
+            return SimpleNamespace(**fields)
+        def fake_snapshot(root,path,maximum,field,copy_bytes=False):
+            if field!='support':return original_snapshot(root,path,maximum,field,copy_bytes)
+            self.assertEqual(maximum,64*1024**2)
+            raw=path.read_bytes()
+            return hashlib.sha256(raw).hexdigest(),raw
+        return fake_stat,fake_snapshot
+
+    def test_default_two_gib_blocks_before_support_reads_and_fixed_three_accepts(self):
+        stat,snapshot=self.simulated_support_sizes(34)
+        before={p:p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+        with patch.object(Path,'stat',stat),patch.object(module,'_snapshot',side_effect=snapshot) as reads:
+            blocked=self.run_guard()
+            self.assertEqual(blocked['issue'],'INVENTORY_LIMIT')
+            self.assertEqual(blocked['resource_limits']['max_support_bytes'],2*1024**3)
+            self.assertEqual(blocked['observed'],{'enumerated_files':35,'support_files':34,
+                                                   'support_bytes':34*64*1024**2})
+            self.assertFalse(any(c.args[3]=='support' for c in reads.call_args_list))
+            good=self.run_guard(max_bytes=3*1024**3)
+            self.assertTrue(good['inventory_verified'],good)
+            self.assertEqual(good['support_files_verified'],34)
+            self.assertEqual(good['resource_limits']['max_support_bytes'],3*1024**3)
+        self.assertEqual(before,{p:p.read_bytes() for p in before})
+
+    def test_fixed_three_gib_boundary_and_excess_remain_fail_closed(self):
+        stat,snapshot=self.simulated_support_sizes(48)
+        with patch.object(Path,'stat',stat),patch.object(module,'_snapshot',side_effect=snapshot):
+            exact=self.run_guard(max_bytes=3*1024**3)
+            self.assertTrue(exact['inventory_verified'],exact)
+            self.assertEqual(exact['observed']['support_bytes'],3*1024**3)
+            over=self.run_guard(max_bytes=3*1024**3-1)
+            self.assertEqual(over['issue'],'INVENTORY_LIMIT')
+            self.assertFalse(over['inventory_verified']);self.assertEqual(over['assets'],[])
 
     def test_target_invalid_and_missing_source_reference_block(self):
         request=copy.deepcopy(self.request);request['target']['corners'][0][0]=float('nan')

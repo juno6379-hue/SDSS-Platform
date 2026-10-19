@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "kind": "GUARDED_DEFICIT_1024_REQUEST",
+  "proposal_ref": {
+    "path": "data/centers278-fresh-20261018/proposal.json",
+    "sha256": "8f88429c4381ef3d3cfcb363912cc0277b81a112e05f77deaba798ba720f78f9"
+  },
+  "current_manifest_ref": {
+    "path": "data/centers278-fresh-20261018/source.json",
+    "sha256": "0f436db2c320ca6a3b54ae265470d7c26e1e9d64fc657d35aa12619c3bb73b2b"
+  },
+  "ledger_ref": {
+    "path": "data/first-group-training-budget/global-ledger.json",
+    "sha256": "5d1ef4d2c1b917402ffdda2365c69d81984b1e682bad22a8cc00ad238456e86e"
+  },
+  "boundary_ref": {
+    "path": "data/first-group-boundaries/selected-six.geojson",
+    "sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909"
+  },
+  "config_ref": {
+    "path": "configs/first-group.collection.json",
+    "sha256": "8b0c1b2aad13a3344200998ec62a18853c5308adf4ec57b1af835333845fd7e3"
+  },
+  "prior_plan_ref": {
+    "path": "data/centers278-fresh-20261018/prior-merged.json",
+    "sha256": "9322e05e8ba46b407b6130f7cc161fbd9b3bcd6efbd4d933865347be676dff77"
+  },
+  "selected": [
+    {
+      "spatial_window_id": "centers182-gorontalo-921d1fd07f85",
+      "year": 2025
+    }
+  ],
+  "maximum_batches": 1,
+  "candidate_metadata_policy": "DEFICIT_AOI_BBOX_CONTAINS_V1"
+}

@@ -1,0 +1,36 @@
+{
+  "at_utc": "2026-10-18T01:52:43.618695+00:00",
+  "checks": {
+    "manifest_sha_final_matches": true,
+    "old_rows_unchanged": true,
+    "old_pending_unchanged": true,
+    "both_settled": true,
+    "stdout_started2_finished2": true,
+    "no_worker429": true,
+    "declared_final_counts_match": true
+  },
+  "physical_total": 1496,
+  "eligible_total": 1196,
+  "ineligible_total": 300,
+  "new_physical": 32,
+  "new_eligible": 32,
+  "cell_gap_total": 97,
+  "populated_cells": 36,
+  "banten_2025_eligible_total": 48,
+  "new_bare_declared_pixels": 391,
+  "new_bare_ge256_contribution_patches": 1,
+  "largest_new_patch_bare_pixels": 363,
+  "pending_reserved_bytes": 136314880,
+  "charged_delta": 44682247,
+  "remaining_budget": 2209587191,
+  "rate_limit_active": false,
+  "lock_present": false,
+  "new_bare_pixels_by_split": {
+    "train": 0,
+    "val": 391,
+    "test": 0
+  },
+  "limits": "Sequential stored-row observations. This1196 aggregate is distinct from fixed159 cohort1125; not native-pixel re-QA or current split readiness/independent truth verification. No collection starts/operating-data writes.",
+  "collection_starts": 0,
+  "operating_data_writes": 0
+}

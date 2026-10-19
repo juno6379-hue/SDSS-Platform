@@ -1,3 +1,4 @@
+from .manifest_resource_profile import active,cap as profile_cap,policy as resource_policy,charge as profile_charge,structure as profile_structure,entry as profile_entry,stamp as profile_stamp,receipt as profile_receipt,DESCRIPTOR,require_io_room,ProfileResourceError,serialized_io
 """엄격한 evidence 영수증 검증과 동일 바이트 DATA metadata staging. QA는 실행하지 않는다."""
 import copy
 import hashlib
@@ -25,35 +26,53 @@ def _uint(value):return type(value) is int and value>=0
 
 
 def _receipt_contract(receipt,input_pins):
+    receipt=profile_receipt(receipt)
     _need(type(receipt) is dict and set(receipt)==RECEIPT_FIELDS,'Exact materialization receipt schema required')
     for key,value in {'schema_version':1,'kind':'EVIDENCE_SPLIT_CANDIDATE_RECEIPT','status':'METADATA_ROUNDTRIP_VERIFIED','candidate_status':'PLANNED_DERIVED_CANDIDATE','readiness_status':'BLOCKED','scope':'PINNED_JSON_METADATA_ONLY_NOT_RASTER_READINESS','metadata_integrity_verified':True,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN'}.items():_need(_same(receipt[key],value),'Receipt status/type claim invalid: '+key)
     for key in FALSE_FIELDS:_need(receipt[key] is False,'Receipt false claim invalid: '+key)
     _need(type(receipt['completion_contract']) is str and 0<len(receipt['completion_contract'])<=4096,'Receipt completion text invalid')
     _need(type(receipt['derived_manifest_version']) is str and re.fullmatch('split-repair-v1-[0-9a-f]{16}',receipt['derived_manifest_version']) is not None and _same(receipt['fixed_province_splits'],FIXED_PROVINCE_SPLITS),'Receipt version/fixed split invalid')
-    for key in ['source_row_count','candidate_row_count','excluded_source_row_count']:_need(_uint(receipt[key]) and receipt[key]<=100000,'Receipt row count invalid')
+    for key in ['source_row_count','candidate_row_count','excluded_source_row_count']:_need(_uint(receipt[key]) and receipt[key]<=(3000 if active() is not None else 100000),'Receipt row count invalid')
     _need(receipt['source_row_count']==receipt['candidate_row_count']+receipt['excluded_source_row_count'],'Receipt row partition invalid')
     inputs=receipt['inputs'];outputs=receipt['outputs'];_need(type(inputs) is dict and set(inputs)==set(INPUT_ROLES) and type(outputs) is dict and set(outputs)=={'plan','candidate'},'Receipt reference keys invalid')
     for role,value in inputs.items():
-        _need(type(value) is dict and set(value)=={'path','sha256','bytes'} and type(value['path']) is str and 0<len(value['path'])<=4096 and _sha(value['sha256']) and value['sha256']==input_pins[role] and _uint(value['bytes']) and 0<value['bytes']<=POLICY['input_caps'][role],'Receipt input reference invalid')
+        _need(type(value) is dict and set(value)=={'path','sha256','bytes'} and type(value['path']) is str and 0<len(value['path'])<=4096 and _sha(value['sha256']) and value['sha256']==input_pins[role] and _uint(value['bytes']) and 0<value['bytes']<=resource_policy(POLICY)['input_caps'][role],'Receipt input reference invalid')
     for role,value in outputs.items():
-        _need(type(value) is dict and set(value)=={'name','sha256','bytes'} and value['name']==role+'.json' and _sha(value['sha256']) and _uint(value['bytes']) and 0<value['bytes']<=POLICY['output_caps'][role],'Receipt output reference invalid')
+        _need(type(value) is dict and set(value)=={'name','sha256','bytes'} and value['name']==role+'.json' and _sha(value['sha256']) and _uint(value['bytes']) and 0<value['bytes']<=resource_policy(POLICY)['output_caps'][role],'Receipt output reference invalid')
 
 
+@serialized_io
 def _copy_bytes(source,destination,stamp,pin,maximum):
     """原本JSON 바이트만 복사. 픽셀/직렬화/권한·상태 변경 없음."""
+    require_io_room(2*stamp[0])
     _need(_stamp(source.stat())==stamp,'Candidate changed before copy');digest=hashlib.sha256();count=0
     with source.open('rb',buffering=0) as src:
         _need(_stamp(os.fstat(src.fileno()))==stamp,'Candidate descriptor changed')
-        with destination.open('xb') as dst:
+        with destination.open('xb',buffering=0 if active() is not None else -1) as dst:
             while count<stamp[0]:
-                block=src.read(min(65536,stamp[0]-count));_need(bool(block),'Candidate ended before expected size')
+                require_io_room(2*min(65536,stamp[0]-count))
+                block=src.read(min(65536,stamp[0]-count));profile_charge(len(block));_need(bool(block),'Candidate ended before expected size')
                 _need(count+len(block)<=maximum and count+len(block)<=stamp[0],'Candidate copy exceeds byte cap')
-                _need(dst.write(block)==len(block),'Incomplete metadata copy');count+=len(block);digest.update(block)
+                try:
+                    written=dst.write(block)
+                except OSError:
+                    if active() is not None:
+                        try:
+                            actual=os.fstat(dst.fileno()).st_size-count
+                            if not 0<=actual<=len(block):raise ValueError('unknown')
+                        except Exception:
+                            profile_charge(len(block),'write')
+                            raise ProfileResourceError('MANIFEST_JSON_COPY_MEASUREMENT_UNKNOWN') from None
+                        profile_charge(actual,'write')
+                    raise
+                if type(written) is int and written>0:profile_charge(written,'write')
+                _need(written==len(block),'Incomplete metadata copy');count+=len(block);digest.update(block)
         _need(_stamp(os.fstat(src.fileno()))==stamp,'Candidate changed during copy')
     _need(_stamp(source.stat())==stamp and count==stamp[0] and digest.hexdigest()==pin,'Copied candidate SHA/size mismatch')
     return count
 
 
+@profile_entry
 def stage_split_candidate(data_root,package_dir,receipt_sha256,input_pins,output_dir,*,evidence_root):
     """3 외부 pin + pinned receipt를 검증한 뒤 DATA 새 metadata 파일만 staging."""
     _need(_sha(receipt_sha256) and type(input_pins) is dict and set(input_pins)==set(INPUT_ROLES) and all(_sha(p) for p in input_pins.values()),'Explicit receipt SHA and three external lowercase SHA pins required')
@@ -64,7 +83,7 @@ def stage_split_candidate(data_root,package_dir,receipt_sha256,input_pins,output
     out=_local(output_dir);target=_confined(data,out);_need(not out.exists() and not out.is_symlink(),'New DATA staging directory required')
     parent=out.parent.resolve();parent_id=_dir_identity(parent)[:2];_need(target.parent==parent,'Staging parent mismatch')
     receipt_path=package/'receipt.json';receipt_target=_confined(evidence,receipt_path)
-    receipt_policy=copy.deepcopy(POLICY);receipt_policy['input_caps']['saved_plan']=RECEIPT_CAP;receipt_policy['output_caps']={'plan':RECEIPT_CAP,'candidate':RECEIPT_CAP}
+    receipt_policy=resource_policy(POLICY);receipt_policy['input_caps']['saved_plan']=RECEIPT_CAP;receipt_policy['output_caps']={'plan':RECEIPT_CAP,'candidate':RECEIPT_CAP}
     receipt_io=BoundedJSONIO(receipt_policy);receipt=receipt_io.read(receipt_path,'saved_plan',receipt_sha256)[0];_receipt_contract(receipt,input_pins)
     paths={};stamps={};targets={}
     for role,reference in receipt['inputs'].items():
@@ -77,7 +96,7 @@ def stage_split_candidate(data_root,package_dir,receipt_sha256,input_pins,output
         info=receipt['outputs']['plan' if role=='new_plan' else 'candidate'];_need(stamps[role][0]==info['bytes'],'Receipt output size mismatch')
     targets['receipt']=receipt_target;stamps['receipt']=_stamp(receipt_target.stat())
     _need(len(set(targets.values()))==6 and len({s[3:] for s in stamps.values()})==6,'Receipt/package/inputs must be distinct regular files')
-    io=BoundedJSONIO(copy.deepcopy(POLICY));docs={r:io.read(paths[r],r,input_pins[r])[0] for r in INPUT_ROLES}
+    io=BoundedJSONIO(resource_policy(POLICY));docs={r:io.read(paths[r],r,input_pins[r])[0] for r in INPUT_ROLES}
     plan,plan_sha=io.read(package_paths['new_plan'],'saved_plan',receipt['outputs']['plan']['sha256']);candidate,candidate_sha=io.read(package_paths['candidate'],'candidate',receipt['outputs']['candidate']['sha256'])
     _need(all(type(d) is dict for d in [*docs.values(),plan,candidate]),'Pinned JSON documents must be objects')
     _need(_same(plan,docs['saved_plan']),'Package plan differs from caller-pinned original plan')
@@ -92,13 +111,14 @@ def stage_split_candidate(data_root,package_dir,receipt_sha256,input_pins,output
         if created:_need(_dir_identity(out)[:2]==created_id,'Staging directory replaced')
         else:_need(not out.exists(),'Staging directory appeared')
     io.verify();receipt_io.verify();check_paths();out.mkdir(exist_ok=False);created_id=_dir_identity(out)[:2]
-    staged=target/'candidate.json';_copy_bytes(targets['candidate'],staged,stamps['candidate'],candidate_sha,POLICY['input_caps']['candidate'])
+    staged=target/'candidate.json';_copy_bytes(targets['candidate'],staged,stamps['candidate'],candidate_sha,resource_policy(POLICY)['input_caps']['candidate'])
     staged_doc,staged_sha=io.read(staged,'candidate',candidate_sha);_need(_same(staged_doc,candidate) and staged.stat().st_size==receipt['outputs']['candidate']['bytes'],'Staged metadata differs')
     staging={'schema_version':1,'kind':'DATA_CANDIDATE_STAGING_RECEIPT','status':'METADATA_STAGED_FOR_QA','next_step':'NEXT_QA_NOT_PERFORMED','qa_status':'NOT_PERFORMED',
       'package_reference':{'path':str(package_target),'receipt_sha256':receipt_sha256},'input_pins':dict(input_pins),'verified_package_outputs':copy.deepcopy(receipt['outputs']),
       'staged_candidate':{'path':str(staged.relative_to(data)),'sha256':staged_sha,'bytes':staged.stat().st_size},'derived_manifest_version':receipt['derived_manifest_version'],'source_row_count':receipt['source_row_count'],'candidate_row_count':receipt['candidate_row_count'],'projected_after':copy.deepcopy(receipt['projected_after']),
       'metadata_integrity_verified':True,'original_candidate_bytes_preserved':True,'qa_performed':False,'readiness_assess_called':False,'registered':False,'registry_called':False,'executed':False,'learning_ready':False,'ready_for_training':False,'scientific_accuracy_validated':False,'source_authenticity_verified':False,'exact_row_binding_verified':False,'spatial_overlap_rechecked':False,'exact_class_counts_recomputed':False,'training_split_leakage_resolved':False,'source_rows_modified_or_reassigned':False,'execution_authorized':False,'settlement_authorized':False,'automatic_resume_allowed':False,'proposed_refund_bytes':0,'exactly_once_applied':'UNKNOWN',
       'completion_contract':'Absent, partial or invalid staging receipt is incomplete. Validate receipt schema and staged SHA before QA. Receipt follows final stability check; no atomic snapshot guarantee.'}
+    staging=profile_stamp(staging)
     size=receipt_io.measure(staging,'plan');io.verify();receipt_io.verify();check_paths(created=True)
     receipt_out=target/'staging-receipt.json';_need(not receipt_out.exists() and not receipt_out.is_symlink(),'New staging receipt required')
     receipt_io.write(receipt_out,staging,'plan',size)

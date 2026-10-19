@@ -231,7 +231,8 @@ def collect(config, root, execute=False):
     return report
 
 
-def collect_windows(config, root, execute=False, selection_context=None, collection_guard=None):
+def collect_windows(config, root, execute=False, selection_context=None, collection_guard=None,
+                    candidate_metadata_filter=None):
     """연차별 실제 RGB/SCL/라벨 창을 수집하되 연차 라벨 부재와 품질을 분리한다."""
     if execute:
         import numpy as np
@@ -243,6 +244,12 @@ def collect_windows(config, root, execute=False, selection_context=None, collect
     minimum_valid = service._number(config.get("min_valid_fraction", .8), "min_valid_fraction", 0, 1)
     candidate_limit = service._integer(config.get("candidate_limit", 1), "candidate_limit", 1, 5)
     search_limit = service._integer(config.get("search_limit", candidate_limit), "search_limit", candidate_limit, 50)
+    marked = 'candidate_metadata_policy' in config
+    if (marked or candidate_metadata_filter is not None) and not (
+            marked and type(config['candidate_metadata_policy']) is str and
+            config['candidate_metadata_policy'] == 'DEFICIT_AOI_BBOX_CONTAINS_V1' and
+            callable(candidate_metadata_filter) and side == 1024 and search_limit <= 20):
+        raise ValueError('CENTER_METADATA_CALLBACK_INVALID')
     reference_kind = config.get("annual_reference", "worldcover")
     if reference_kind not in ("worldcover", "esri_io"):
         raise ValueError("지원하는 연차 참조는 worldcover/esri_io 입니다")
@@ -353,8 +360,19 @@ def collect_windows(config, root, execute=False, selection_context=None, collect
                 directory = root / key
                 directory.mkdir(exist_ok=True)
                 selected_scl = None
+                metadata_pool = None
+                if candidate_metadata_filter is not None:
+                    metadata_pool, metadata_audit = candidate_metadata_filter(result, aoi, year)
+                    metadata_pool = metadata_pool[:candidate_limit]
+                    metadata_audit['selected_pool_count'] = len(metadata_pool)
+                    row['candidate_metadata_filter'] = metadata_audit
+                    if not metadata_pool:
+                        row.update(status='metadata_coverage_insufficient', quality_status='quality_unverified')
+                        record_event(root, {'event': 'all_candidates_metadata_excluded', 'key': key})
+                        continue
                 if candidate_limit > 1:
-                    pool = sorted(result["items"], key=lambda value: value.get("cloud_cover", 101))[:candidate_limit]
+                    pool = (metadata_pool if metadata_pool is not None else
+                            sorted(result["items"], key=lambda value: value.get("cloud_cover", 101))[:candidate_limit])
                     item, selected_scl, candidates = select_quality_candidate(pool, fetch, aoi, side, directory, root,
                         service._number(config.get("candidate_valid_fraction", .85), "candidate_valid_fraction", 0, 1))
                     row["candidate_selection"] = candidates
@@ -363,7 +381,7 @@ def collect_windows(config, root, execute=False, selection_context=None, collect
                         record_event(root, {"event": "all_candidates_quality_insufficient", "key": key})
                         continue
                 else:
-                    item = result["items"][0]
+                    item = metadata_pool[0] if metadata_pool is not None else result["items"][0]
                 # Candidate SCL reads may already have occurred during selection.
                 # Reject before selected-scene metadata and remaining pixel reads.
                 if collection_guard is not None:

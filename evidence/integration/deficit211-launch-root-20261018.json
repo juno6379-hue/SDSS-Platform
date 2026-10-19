@@ -1,0 +1,70 @@
+{
+  "started_at": "2026-10-18T05:42:22.124914+00:00",
+  "status": "STARTED_PREFLIGHT_NOT_COMPLETED",
+  "manifest_before_sha256": "80eef2d274942c7a7f9bf8ee2483af070a729060d84ceb1a19baacb52ae4976a",
+  "ledger_before_sha256": "6e9e27b0ba9e4d222f9fde6b1e22f2adfd604701163d8e2c4653617c47af02fc",
+  "source_rows_before": 1699,
+  "pending_before": {
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "efa62f34c493d430bce433a10da097f3600bea00a0af7364b3fd80abdf1229b8"
+    },
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01": {
+      "status": "pending",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440,
+      "config_sha256": "beb3767e75f5152fc174ea1314d04729bea27dd5112646c0a1c9d41e097b5593"
+    }
+  },
+  "request_sha256": "e3e88cc6da31c2aef4e6118f27e43c20126e928009acc11077d5654f6070ce63",
+  "selected_jobs": [
+    {
+      "key": "center1024-southeast_sulawesi-2024-e3e88cc6da31-c541fe0f",
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "split": "train",
+      "nominal_patches": 16,
+      "spatial_window_id": "centers182-southeast_sulawesi-370a8a3c7774",
+      "config_sha256": "ad1b90b31f745bad1559aabbb2d6a35d83bf35c8e590160146e3e601909c869c"
+    }
+  ],
+  "command": [
+    "C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-X",
+    "faulthandler",
+    "E:\\GeoAI–MLOps–SDSS\\scripts\\collect_deficit_guarded.py",
+    "--request",
+    "evidence/integration/deficit211-request-root-20261018.json",
+    "--expected-request-sha256",
+    "e3e88cc6da31c2aef4e6118f27e43c20126e928009acc11077d5654f6070ce63",
+    "--execute"
+  ],
+  "new_budget_added": false,
+  "training_started": false,
+  "source_pins": {
+    "backend/app/data/deficit_candidate_guard.py": "c8eece7cbb0d3fed77f704b65eda9e51fe2e300ea56fdfd4aa020d9c9653204f",
+    "scripts/collect_targeted_bare.py": "643a3e8327a30ebac671267f451636bf3ce18828cce42855ef643d9945694581",
+    "scripts/collect_samples.py": "68d4b986b5500cb19eb810c5b086f668fc698d124551a268c190cdf5a5211301",
+    "backend/app/data/parallel.py": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3",
+    "scripts/collect_deficit_guarded.py": "6e41c4ead9262133b497e802050671da1bc0a969027a39735429a72c720f112a",
+    "scripts/collect_training_grid.py": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6",
+    "backend/app/data/targeted_live_guards.py": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238",
+    "backend/app/data/targeted_inventory.py": "f4cc45b0e0cb6d94e112cd6c377ca1130c2e32359f7b01b8fdf8f9f210dffee9",
+    "backend/app/data/targeted_execution.py": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d",
+    "backend/app/data/budget.py": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+    "backend/app/data/candidates.py": "c72257998d14c8b874ee9c9b532e50d78b3e3417a8b47c1688a54c656966dba6"
+  },
+  "maximum_new_physical_patches": 16,
+  "expected_config_derivation": {
+    "template_proof_sha256": "529d6074903cae407bc6c40ef557c052fb1b1bbf77b09afa3fc771f22fe1b916",
+    "template_key": "center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440",
+    "changes": [
+      "AOI id",
+      "AOI bbox"
+    ],
+    "scope": "Expected config only;200 still performs fresh real full preflight"
+  },
+  "pid": 10644
+}

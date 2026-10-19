@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T09:13:51.132675+00:00",
+  "status": "STATIC_REVIEW_COMPLETED_NO_BLOCKING_FINDINGS_IN_REVIEWED_SCOPE",
+  "reviewed_file": "evidence\\integration\\deficit270-supervisor-root-20261018.py",
+  "reviewed_sha256": "9a42f1d38a90fe7224599f0bc60ef9d8bb7228b95c81efc22e783a6bf526f9fa",
+  "baseline_file": "evidence\\integration\\deficit258-supervisor-root-20261018.py",
+  "launch_and_wait_ast_identical": true,
+  "checks_static": {
+    "v2_marker_before_expected_config_hash": true,
+    "runtime_validation_status_and_sha_required": true,
+    "new_prior258_audit_sha_required": true,
+    "original_pending_exact_comparison_preserved": true,
+    "source_ledger_ref_and_code_pins_preserved": true,
+    "single_batch16_and_fresh_core_guard_preserved": true,
+    "measurement_settlement_not_fabricated_by_wrapper": true
+  },
+  "new_blocking_findings": [],
+  "document_path": "docs\\implementation\\272_deficit270_supervisor_static_review.md",
+  "document_sha256": "7935ad5549c6901ed314181c983c4c4c15c3050bbaa0f044495af3d032eff65e",
+  "tests_executed": 0,
+  "operating_io": 0,
+  "http_calls": 0,
+  "collector_starts": 0,
+  "native_raster_reads": 0,
+  "source_edits": 0,
+  "request_or_approval_actual_validation_performed": false,
+  "execution_approved": false
+}

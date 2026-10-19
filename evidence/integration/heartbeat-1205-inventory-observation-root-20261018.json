@@ -1,0 +1,52 @@
+{
+  "at_utc": "2026-10-18T03:06:35.676182+00:00",
+  "scope": "READONLY_STORED_INVENTORY_AND179_PIN_OBSERVATION",
+  "physical_total": 1617,
+  "eligible_total": 1296,
+  "ineligible_total": 321,
+  "populated_cells": 36,
+  "cell_gap_total": 44,
+  "remaining_budget": 2051329434,
+  "expected1296_44_2051329434_matches": true,
+  "old_pending_two_rows_unchanged": true,
+  "old_pending_reserved_bytes": 136314880,
+  "all_current_pending": [
+    {
+      "key": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440
+    },
+    {
+      "key": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01",
+      "reserved_bytes": 68157440,
+      "charged_bytes": 68157440
+    }
+  ],
+  "manifest_sha256": "03c58af67c5f44e9824488c3e7f0595746b007addb37f846119511b0f19dd367",
+  "ledger_sha256": "7d27c5231c43c0014de92a11fa517c5a4d5c662005785ac75054d37dc27544fb",
+  "179_original_pins_match_current": {
+    "data/first-group-training-esri-v1/annual-window-report.json": true,
+    "data/first-group-training-budget/global-ledger.json": true,
+    "evidence/integration/bare173-verified-20261018/proposal.json": true,
+    "data/first-group-boundaries/selected-six.geojson": true
+  },
+  "179_manifest_ledger_snapshots_pin_match": {
+    "manifest_ref": true,
+    "ledger_ref": true
+  },
+  "manifest_ledger_two_reads_stable": true,
+  "lock_present": false,
+  "rate_limit_active": false,
+  "processes": {
+    "ProcessId": 39096,
+    "Name": "python.exe",
+    "role": "OTHER_CHAT_179_REVIEW"
+  },
+  "179_report_exists": false,
+  "ownership": "Other development chat owns176/177/179/180/182 andcollector; absence of activecollector does not release ownership. No duplicate50candidate/support/native review launched.",
+  "limits": "Stored metadata counts and declared pins, sequential reads not atomic snapshot; no raster/sample/learning readiness validation.",
+  "native_QA_or_planner_runs": 0,
+  "collector_starts": 0,
+  "network_calls": 0,
+  "operating_data_writes": 0
+}

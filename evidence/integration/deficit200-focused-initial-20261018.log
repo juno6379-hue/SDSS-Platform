@@ -1,0 +1,50 @@
+{"status": "deficit_worker_started", "key": "center1024-banten-2024-938052045129-fa0efe65"}
+{"status": "deficit_worker_finished", "key": "center1024-banten-2024-938052045129-fa0efe65", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": true, "rate_limited": true}
+test_429_event_is_preserved_in_settlement_and_no_followup_requests (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_429_event_is_preserved_in_settlement_and_no_followup_requests) ... ok
+test_changed_active_input_rejected_after_fresh_helper_proof (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_changed_active_input_rejected_after_fresh_helper_proof) ... ok
+test_contaminated_proof_flags_job_size_and_config_digest_fail_closed (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_contaminated_proof_flags_job_size_and_config_digest_fail_closed) ... C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\tempfile.py:934: ResourceWarning: Implicitly cleaning up <TemporaryDirectory 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmpke7blmru'>
+  _warnings.warn(warn_message, ResourceWarning)
+ok
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\tempfile.py:934: ResourceWarning: Implicitly cleaning up <TemporaryDirectory 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmp5vratoiv'>
+  _warnings.warn(warn_message, ResourceWarning)
+test_dry_run_never_constructs_ledger_lock_outputs_or_collects (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_dry_run_never_constructs_ledger_lock_outputs_or_collects) ... ok
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\tempfile.py:934: ResourceWarning: Implicitly cleaning up <TemporaryDirectory 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmp4tggsmmf'>
+  _warnings.warn(warn_message, ResourceWarning)
+test_existing_lock_rejected_without_proof_or_writes (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_existing_lock_rejected_without_proof_or_writes) ... ok
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\tempfile.py:934: ResourceWarning: Implicitly cleaning up <TemporaryDirectory 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmpk9yzanc0'>
+  _warnings.warn(warn_message, ResourceWarning)
+{"status": "deficit_worker_started", "key": "center1024-banten-2024-938052045129-fa0efe65"}
+{"status": "deficit_worker_finished", "key": "center1024-banten-2024-938052045129-fa0efe65", "patches": 0, "eligible": 0, "charged_bytes": 97, "live_b02_checked": true, "rate_limited": false}
+test_helper_proof_is_recomputed_under_global_lock (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_helper_proof_is_recomputed_under_global_lock) ... ok
+{"status": "deficit_worker_started", "key": "center1024-banten-2024-938052045129-fa0efe65"}
+{"status": "deficit_worker_finished", "key": "center1024-banten-2024-938052045129-fa0efe65", "patches": 1, "eligible": 1, "charged_bytes": 97, "live_b02_checked": true, "rate_limited": false}
+test_measured_settlement_preserves_pending_records_and_source_prefix (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_measured_settlement_preserves_pending_records_and_source_prefix) ... ERROR
+{"status": "deficit_worker_started", "key": "center1024-banten-2024-938052045129-fa0efe65"}
+{"status": "deficit_worker_finished", "key": "center1024-banten-2024-938052045129-fa0efe65", "patches": 0, "eligible": 0, "charged_bytes": 23, "live_b02_checked": false, "rate_limited": false}
+test_missing_b02_witness_cannot_materialize (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_missing_b02_witness_cannot_materialize) ... ok
+C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\tempfile.py:934: ResourceWarning: Implicitly cleaning up <TemporaryDirectory 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmphbeaw57l'>
+  _warnings.warn(warn_message, ResourceWarning)
+test_output_collision_is_not_overwritten_or_reserved (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_output_collision_is_not_overwritten_or_reserved) ... ok
+test_physical_sixteen_patch_projection_refuses_before_reserve (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_physical_sixteen_patch_projection_refuses_before_reserve) ... ok
+{"status": "deficit_worker_started", "key": "center1024-banten-2024-938052045129-fa0efe65"}
+test_publication_failure_distinguishes_completed_settlement (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_publication_failure_distinguishes_completed_settlement) ... ok
+{"status": "deficit_worker_started", "key": "center1024-banten-2024-938052045129-fa0efe65"}
+test_worker_finally_failure_retains_full_unsettled_reservation (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_worker_finally_failure_retains_full_unsettled_reservation) ... ok
+test_wrong_digest_fails_before_helper_and_cleans_owned_lock (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_wrong_digest_fails_before_helper_and_cleans_owned_lock) ... ok
+
+======================================================================
+ERROR: test_measured_settlement_preserves_pending_records_and_source_prefix (test_collect_deficit_guarded.CollectDeficitGuardedTests.test_measured_settlement_preserves_pending_records_and_source_prefix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GeoAI\u2013MLOps\u2013SDSS\tests\test_collect_deficit_guarded.py", line 108, in test_measured_settlement_preserves_pending_records_and_source_prefix
+    aggregate=json.loads(self.fixture.paths['source'].read_text())
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\���ؿ�\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'cp949' codec can't decode byte 0xec in position 3062: illegal multibyte sequence
+
+----------------------------------------------------------------------
+Ran 13 tests in 10.010s
+
+FAILED (errors=1)

@@ -1,0 +1,46 @@
+{
+  "status": "FROZEN_PREPARATION_ONLY_ROOT_GO_REQUIRED",
+  "at": "2026-10-18T13:19:49.526152+00:00",
+  "files": [
+    {
+      "path": "evidence/integration/deficit307-before299-native-runner-20261018.py",
+      "bytes": 15973,
+      "sha256": "a8a9ed9fcdbb0fafb60c3c71f028f188b6f855ccc5f7c6768a328c327da608ca"
+    },
+    {
+      "path": "evidence/integration/deficit304-native-runner-root-20261018.py",
+      "bytes": 15973,
+      "sha256": "36a6cf451a86e0b3f0f963e689f732b4228f73d03f21e20687a08582ec141e8f"
+    },
+    {
+      "path": "evidence/integration/deficit307-native-runner-vs299-20261018.diff",
+      "bytes": 5985,
+      "sha256": "009fd49a2a28a07258db7553169186739cfd9ed5bbe2c8112d1a3ef81769e504"
+    },
+    {
+      "path": "docs/implementation/307_post304_bounded_native_preparation.md",
+      "bytes": 7068,
+      "sha256": "78e5809a074bc4bd9a96de2701b58fcc8d2011d3a54f027db2697cb8fdfa5fc2"
+    }
+  ],
+  "compile_passed": true,
+  "original299_runner_preserved": true,
+  "audit165_code_pin": {
+    "path": "scripts/audit_priority_increment165.py",
+    "bytes": 17835,
+    "sha256": "ba4da0b03bd19a0d327200a49eb5c75b28a1f42620be43c84826092c50c661ba"
+  },
+  "parent304_preparation_freeze": {
+    "path": "evidence/integration/deficit304-preparation-freeze-20261018.json",
+    "bytes": 2066,
+    "sha256": "a6a6a4b996a06c515d53aabadf871932b49e74e3408349d6ab28ccda9e12f9ab"
+  },
+  "operating_source_ledger_raster_model_reads": 0,
+  "native_calls": 0,
+  "http": 0,
+  "collector_starts": 0,
+  "new_results": null,
+  "postsource_ledger_pins": null,
+  "automatic_retry_allowed": false,
+  "training_approved": false
+}
