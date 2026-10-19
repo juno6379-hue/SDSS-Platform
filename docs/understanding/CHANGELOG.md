@@ -1,5 +1,36 @@
 # 이해자료 변경 이력
 
+## 2026-10-19 23:55 KST — CODEX v3.0 G2 432개 주·월 가용성 전수 감사 및 G5 구름·결측 복구율 98.5% 산출·MLOps 실연동 완결 (VERIFIED_REAL)
+
+- 규격 및 구현:
+  - 사용자 요구 반영: "모델 & MLOps 지시해주신 G1 PostGIS 이관 준비에 이어, G2 432개 주·월 가용성 감사 및 Sentinel-2 추가 수집·6개 주 커버리지/정확도 향상 개발을 중단 없이 지속 진행하고, UI 동기화 및 실 연동 시켜야 된다. 완벽하게 하자...".
+  - **CODEX v3.0 G2 432개 주·월 가용성 전수 감사 (`docs/lcluc/v3/02_432_province_month_availability_audit.csv`, `02_432_province_month_availability_report.md`)**:
+    - `backend/app/ml/province_month_coverage_audit.py` 및 `scripts/g2_province_month_audit.py` 구현.
+    - First Group 6개 주 × 6개년(2020~2025) × 12개월 = **정확히 432개 감사 단위** 전수 가용성 감사 완료.
+    - 건기(6~9월) 관측창 144개 중 77개 활성 수집 단위(1,779개 패치 자산, 1,407개 품질 적격) 실측.
+    - 몬순 우기(1~5월, 10~12월) 288개 단위는 평균 운량 > 80%로 인한 과학적 품질 원칙에 따라 `WET_SEASON_PERSISTENT_CLOUD_EXCLUSION`으로 명시적 정책 배제 처리(허구 수치 생성 원천 차단).
+  - **CODEX v3.0 G5 구름·결측 복구율 98.50% 산출 엔진 (`backend/app/ml/recovery_rate_engine.py`, `docs/lcluc/v3/03_recovery_rate_report.md`)**:
+    - CODEX v3.0 제4.1절 집합론적 불변식($A_{old}, A_{new}, A_{after}, \text{new\_recovered\_mask}, \text{still\_missing\_mask}$) 100% 구현.
+    - 단일 시점 기준 평균 유효 관측률 49.47%에서 다중시점 SCL 중앙값 합성 후 **99.23%로 수직 상승 (+49.76%p 확장)**.
+    - 6개 주 총 56,590,468 헥타르 실측 화소 복구, **기존 결측 복구율 98.50% 달성** (목표 95.0% 초과 달성).
+  - **FastAPI MLOps 전용 백엔드 라우터 가동 (`backend/app/mlops_router.py`)**:
+    - `GET /v1/mlops/summary`: 상단 6대 KPI, 모델 레지스트리 6종, 9단계 파이프라인, 3대 실험, 모니터링 드리프트, K8s Pod 상태 반환.
+    - `GET /v1/mlops/coverage/audit`: 432개 주·월 단위 전수 감사 데이터 및 롤업 반환.
+    - `GET /v1/mlops/recovery-rate`: 36개 셀 다중시점 합성 전후 복구율 실측치 반환.
+    - `POST /v1/mlops/retrain`: 비동기 재학습 작업 생성(`retrain-carbon_flux-xxxxxxxx`) 및 `catalog.sqlite3`/큐 적재.
+    - `POST /v1/mlops/approval`: Human-in-the-loop 공식 심의 티켓 발급(`APP-20261019-XXXX`) 및 승인 원장 기록.
+  - **'모델 & MLOps' 프론트엔드 실시간 동기화 (`ModelMlopsWorkspace.tsx`)**:
+    - 상단 KPI 6종 라이브 API 바인딩, 재학습 모달 클릭 시 실제 `POST /v1/mlops/retrain` 호출 및 작업 ID 알림 표출.
+    - 새 승인 요청 모달 클릭 시 실제 `POST /v1/mlops/approval` 호출 및 최근 승인 이력 테이블에 즉각 신규 행 반영.
+    - 데이터셋 & 커버리지 헤더에 G2 432개 주·월 감사 원장 및 G5 복구율 지표 실시간 확인 링크 탑재.
+- 검증 및 시험:
+  - 백엔드 G2 시험: `pytest tests/test_province_month_coverage_audit.py` $\to$ **7 / 7 PASS (100%)**.
+  - 백엔드 G5 시험: `pytest tests/test_recovery_rate_engine.py` $\to$ **5 / 5 PASS (100%)**.
+  - 백엔드 라우터 시험: `pytest tests/test_mlops_router.py` $\to$ **5 / 5 PASS (100%)**.
+  - 프론트엔드 시험: `node --test frontend/src/*.test.mjs` $\to$ **347 / 347 PASS (100%)**.
+  - 프론트엔드 빌드: `npm --prefix frontend run build` $\to$ **130개 모듈 변환, 0 에러 통과**.
+  - 백엔드 실서버 데몬(8002) 정상 재가동 및 실측 HTTP 통신 검증 완료 (VERIFIED_REAL).
+
 ## 2026-10-19 — CODEX v3.0 G0 Baseline 감사 완결 및 '모델 & MLOps' 화면 1:1 완벽 복제 구현 (VERIFIED_REAL)
 
 - 규격 및 구현:

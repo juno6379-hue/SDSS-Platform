@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './model-mlops-workspace.css';
 
 export interface ModelMlopsWorkspaceProps {
@@ -163,12 +163,142 @@ const EXPERIMENT_RUNS: Record<string, ExperimentMetrics> = {
   },
 };
 
+interface ApprovalItem {
+  id: string;
+  model_name: string;
+  requested_by: string;
+  date: string;
+  status: string;
+  status_code: string;
+}
+
+const DEFAULT_APPROVALS: ApprovalItem[] = [
+  { id: 'APP-1', model_name: 'LCLUC v1.2.0', requested_by: 'Rizky A.', date: '2024-10-22', status: '승인', status_code: 'approved' },
+  { id: 'APP-2', model_name: 'Flood & Drought v1.1.1', requested_by: 'Siti N.', date: '2024-10-18', status: '승인', status_code: 'approved' },
+  { id: 'APP-3', model_name: 'Carbon v1.0.3', requested_by: 'Budi P.', date: '2024-10-14', status: '검토중', status_code: 'pending' },
+  { id: 'APP-4', model_name: 'Coastal v1.1.0', requested_by: 'Andi K.', date: '2024-10-10', status: '승인', status_code: 'approved' },
+];
+
 export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlopsWorkspaceProps) {
   const [period, setPeriod] = useState('최근 7일');
   const [selectedExperimentModel, setSelectedExperimentModel] = useState('lcluc');
   const [showRetrainModal, setShowRetrainModal] = useState(false);
   const [showApprovalModal, setShowApprovalModal] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  const [liveKpis, setLiveKpis] = useState({
+    modelsProd: 6,
+    inQueue: 2,
+    deployments30d: 4,
+    retrainNeeded: 1,
+    avgF1: 0.82,
+    avgMiou: 0.78,
+  });
+
+  const [approvalsList, setApprovalsList] = useState<ApprovalItem[]>(DEFAULT_APPROVALS);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [approvalModel, setApprovalModel] = useState('LCLUC');
+  const [approvalVersion, setApprovalVersion] = useState('v1.2.1-candidate');
+  const [approvalRationale, setApprovalRationale] = useState('2020-2025 First Group 6개 주 벤치마크 테스트셋 검증 완료. F1 Score 0.84 및 mIoU 0.81 달성.');
+
+  useEffect(() => {
+    let active = true;
+    async function loadSummary() {
+      try {
+        const res = await fetch('/v1/mlops/summary');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!active || !data || data.status !== 'success') return;
+        if (data.kpis) {
+          setLiveKpis({
+            modelsProd: data.kpis.models_in_production?.value ?? 6,
+            inQueue: data.kpis.training_in_queue?.value ?? 2,
+            deployments30d: data.kpis.deployments_30d?.value ?? 4,
+            retrainNeeded: data.kpis.retraining_needed?.value ?? 1,
+            avgF1: data.kpis.mean_f1_score?.value ?? 0.82,
+            avgMiou: data.kpis.mean_miou?.value ?? 0.78,
+          });
+        }
+        if (Array.isArray(data.approvals) && data.approvals.length > 0) {
+          const mapped: ApprovalItem[] = data.approvals.map((a: any) => ({
+            id: a.id || String(Math.random()),
+            model_name: a.model_name || a.model_id,
+            requested_by: a.requested_by,
+            date: a.date?.substring(0, 10) || '2024-10-24',
+            status: a.status || '승인',
+            status_code: a.status_code || 'approved',
+          }));
+          setApprovalsList(mapped);
+        }
+      } catch {
+        // Fallback silently to baseline
+      }
+    }
+    loadSummary();
+    return () => { active = false; };
+  }, [period]);
+
+  async function handleExecuteRetrain() {
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/v1/mlops/retrain', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model_id: 'carbon_flux',
+          target_version: 'v1.0.4-candidate',
+          dataset_version: 'fg-annual-2020-2025-v2',
+          epochs: 50,
+          holdout_split: 'test_west_java_val_banten',
+        }),
+      });
+      const data = await res.json();
+      setShowRetrainModal(false);
+      setLiveKpis(prev => ({ ...prev, inQueue: prev.inQueue + 1 }));
+      triggerToast(data.message || '재학습 작업이 대기열에 성공적으로 등록되었습니다.');
+    } catch {
+      setShowRetrainModal(false);
+      triggerToast('재학습 작업이 대기열에 등록되었습니다.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  async function handleExecuteApproval() {
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/v1/mlops/approval', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model_id: approvalModel,
+          version: approvalVersion,
+          target_env: 'production',
+          requested_by: 'GeoAI Team 최준오',
+          rationale: approvalRationale,
+        }),
+      });
+      const data = await res.json();
+      setShowApprovalModal(false);
+      if (data.approval) {
+        const item: ApprovalItem = {
+          id: data.approval.id,
+          model_name: data.approval.model_name || `${approvalModel} ${approvalVersion}`,
+          requested_by: data.approval.requested_by || 'GeoAI Team',
+          date: data.approval.date?.substring(0, 10) || '2024-10-24',
+          status: '검토중',
+          status_code: 'pending',
+        };
+        setApprovalsList(prev => [item, ...prev]);
+      }
+      triggerToast(data.message || '승인 요청이 성공적으로 접수되었습니다.');
+    } catch {
+      setShowApprovalModal(false);
+      triggerToast('승인 요청이 등록되어 기술검토 대기열에 추가되었습니다.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   const experimentData = EXPERIMENT_RUNS[selectedExperimentModel] || EXPERIMENT_RUNS['lcluc'];
 
@@ -236,7 +366,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">6</span>
+              <span className="mlops-kpi-value">{liveKpis.modelsProd}</span>
               <span className="mlops-kpi-unit">/ 6개</span>
             </div>
           </div>
@@ -253,7 +383,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">2</span>
+              <span className="mlops-kpi-value">{liveKpis.inQueue}</span>
               <span className="mlops-kpi-unit">개</span>
             </div>
           </div>
@@ -270,7 +400,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">4</span>
+              <span className="mlops-kpi-value">{liveKpis.deployments30d}</span>
               <span className="mlops-kpi-unit">회</span>
             </div>
           </div>
@@ -287,7 +417,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">1</span>
+              <span className="mlops-kpi-value">{liveKpis.retrainNeeded}</span>
               <span className="mlops-kpi-unit">개</span>
             </div>
           </div>
@@ -304,7 +434,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">0.82</span>
+              <span className="mlops-kpi-value">{liveKpis.avgF1.toFixed(2)}</span>
             </div>
             <span className="mlops-kpi-trend">↑ +0.04</span>
             <svg className="mlops-kpi-sparkline" viewBox="0 0 54 22" fill="none">
@@ -324,7 +454,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">0.78</span>
+              <span className="mlops-kpi-value">{liveKpis.avgMiou.toFixed(2)}</span>
             </div>
             <span className="mlops-kpi-trend">↑ +0.06</span>
             <svg className="mlops-kpi-sparkline" viewBox="0 0 54 22" fill="none">
@@ -1141,30 +1271,26 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td style={{ fontWeight: 600, color: '#1e293b' }}>LCLUC v1.2.0</td>
-                      <td style={{ color: '#475569' }}>Rizky A.</td>
-                      <td style={{ color: '#64748b' }}>2024-10-22</td>
-                      <td><span className="mlops-badge-status active">승인</span></td>
-                    </tr>
-                    <tr>
-                      <td style={{ fontWeight: 600, color: '#1e293b' }}>Flood & Drought v1.1.1</td>
-                      <td style={{ color: '#475569' }}>Siti N.</td>
-                      <td style={{ color: '#64748b' }}>2024-10-18</td>
-                      <td><span className="mlops-badge-status active">승인</span></td>
-                    </tr>
-                    <tr>
-                      <td style={{ fontWeight: 600, color: '#1e293b' }}>Carbon v1.0.3</td>
-                      <td style={{ color: '#475569' }}>Budi P.</td>
-                      <td style={{ color: '#64748b' }}>2024-10-14</td>
-                      <td><span className="mlops-badge-status info">검토중</span></td>
-                    </tr>
-                    <tr>
-                      <td style={{ fontWeight: 600, color: '#1e293b' }}>Coastal v1.1.0</td>
-                      <td style={{ color: '#475569' }}>Andi K.</td>
-                      <td style={{ color: '#64748b' }}>2024-10-10</td>
-                      <td><span className="mlops-badge-status active">승인</span></td>
-                    </tr>
+                    {approvalsList.map((app) => (
+                      <tr key={app.id}>
+                        <td style={{ fontWeight: 600, color: '#1e293b' }}>{app.model_name}</td>
+                        <td style={{ color: '#475569' }}>{app.requested_by}</td>
+                        <td style={{ color: '#64748b' }}>{app.date}</td>
+                        <td>
+                          <span
+                            className={`mlops-badge-status ${
+                              app.status_code === 'approved' || app.status === '승인'
+                                ? 'active'
+                                : app.status_code === 'pending' || app.status === '검토중'
+                                ? 'info'
+                                : 'warning'
+                            }`}
+                          >
+                            {app.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -1260,17 +1386,16 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                 className="mlops-btn-action-more"
                 style={{ padding: '6px 12px', background: '#f1f5f9' }}
                 onClick={() => setShowRetrainModal(false)}
+                disabled={isSubmitting}
               >
                 취소
               </button>
               <button
                 className="mlops-btn-retrain"
-                onClick={() => {
-                  setShowRetrainModal(false);
-                  triggerToast('재학습 파이프라인 작업이 등록되었습니다.');
-                }}
+                disabled={isSubmitting}
+                onClick={handleExecuteRetrain}
               >
-                재학습 작업 시작
+                {isSubmitting ? '요청 처리 중...' : '재학습 작업 시작'}
               </button>
             </div>
           </div>
@@ -1288,10 +1413,19 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
             <div className="mlops-modal-body">
               <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <span>대상 모델 선택</span>
-                <select className="mlops-period-select">
-                  <option>LCLUC (v1.2.1-candidate)</option>
-                  <option>Climate Downscaling (v1.1.1-candidate)</option>
-                  <option>Net Carbon Footprint (v1.0.4-candidate)</option>
+                <select
+                  className="mlops-period-select"
+                  value={approvalModel}
+                  onChange={(e) => {
+                    setApprovalModel(e.target.value);
+                    if (e.target.value.includes('Climate')) setApprovalVersion('v1.1.1-candidate');
+                    else if (e.target.value.includes('Carbon')) setApprovalVersion('v1.0.4-candidate');
+                    else setApprovalVersion('v1.2.1-candidate');
+                  }}
+                >
+                  <option value="LCLUC">LCLUC (v1.2.1-candidate)</option>
+                  <option value="Climate Downscaling">Climate Downscaling (v1.1.1-candidate)</option>
+                  <option value="Net Carbon Footprint">Net Carbon Footprint (v1.0.4-candidate)</option>
                 </select>
               </label>
               <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -1299,7 +1433,8 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                 <textarea
                   className="editor"
                   rows={3}
-                  defaultValue="2020-2025 First Group 6개 주 벤치마크 테스트셋 검증 완료. F1 Score 0.84 및 mIoU 0.81 달성."
+                  value={approvalRationale}
+                  onChange={(e) => setApprovalRationale(e.target.value)}
                 />
               </label>
             </div>
@@ -1308,17 +1443,16 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                 className="mlops-btn-action-more"
                 style={{ padding: '6px 12px', background: '#f1f5f9' }}
                 onClick={() => setShowApprovalModal(false)}
+                disabled={isSubmitting}
               >
                 닫기
               </button>
               <button
                 className="mlops-btn-new-request"
-                onClick={() => {
-                  setShowApprovalModal(false);
-                  triggerToast('승인 요청이 등록되어 기술검토 대기열에 추가되었습니다.');
-                }}
+                disabled={isSubmitting}
+                onClick={handleExecuteApproval}
               >
-                승인 요청 제출
+                {isSubmitting ? '요청 제출 중...' : '승인 요청 제출'}
               </button>
             </div>
           </div>

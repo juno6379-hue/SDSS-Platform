@@ -32,6 +32,7 @@ from .tile_router import create_lcluc_tile_router
 from .export_router import create_lcluc_export_router
 from .annual_diagnostics_api import create_annual_diagnostics_router
 from .model_error_analysis_api import create_model_error_analysis_router
+from .mlops_router import create_mlops_router
 from .store import Store, now
 
 ROOT = Path(os.getenv('GEOAI_DATA_ROOT', str(Path(__file__).resolve().parents[2] / 'data')))
@@ -458,3 +459,4 @@ app.include_router(create_lcluc_tile_router(lambda: store))
 app.include_router(create_lcluc_export_router(lambda: store))
 app.include_router(create_annual_diagnostics_router(lambda: store))
 app.include_router(create_model_error_analysis_router(lambda: store))
+app.include_router(create_mlops_router(lambda: store))
