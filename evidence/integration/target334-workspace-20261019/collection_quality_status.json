@@ -1,0 +1,3775 @@
+{
+  "schema_version": "1.0",
+  "report_title": "First Group 6 Provinces Collection Status & Degraded Quality Tracker (2020-2025)",
+  "generated_at": "2026-10-19T10:48:55.788153+00:00",
+  "scope": {
+    "provinces": [
+      {
+        "id": "banten",
+        "name": "Banten",
+        "island": "Java",
+        "split": "val"
+      },
+      {
+        "id": "west_java",
+        "name": "West Java",
+        "island": "Java",
+        "split": "test"
+      },
+      {
+        "id": "east_java",
+        "name": "East Java",
+        "island": "Java",
+        "split": "train"
+      },
+      {
+        "id": "south_sulawesi",
+        "name": "South Sulawesi",
+        "island": "Sulawesi",
+        "split": "train"
+      },
+      {
+        "id": "gorontalo",
+        "name": "Gorontalo",
+        "island": "Sulawesi",
+        "split": "train"
+      },
+      {
+        "id": "southeast_sulawesi",
+        "name": "Southeast Sulawesi",
+        "island": "Sulawesi",
+        "split": "train"
+      }
+    ],
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "total_expected_cells": 36,
+    "rejected_provinces": [
+      {
+        "id": "central_java",
+        "name": "Central Java",
+        "reason": "Explicitly excluded; not in First Group 6"
+      },
+      {
+        "id": "papua",
+        "name": "Papua",
+        "reason": "Excluded from First Group"
+      },
+      {
+        "id": "dki_jakarta",
+        "name": "DKI Jakarta",
+        "reason": "Excluded from First Group"
+      },
+      {
+        "id": "east_kalimantan",
+        "name": "East Kalimantan",
+        "reason": "Excluded from First Group"
+      },
+      {
+        "id": "north_sumatra",
+        "name": "North Sumatra",
+        "reason": "Excluded (part of 10 rejected provinces)"
+      },
+      {
+        "id": "south_sumatra",
+        "name": "South Sumatra",
+        "reason": "Excluded (part of 10 rejected provinces)"
+      },
+      {
+        "id": "west_sumatra",
+        "name": "West Sumatra",
+        "reason": "Excluded (part of 10 rejected provinces)"
+      },
+      {
+        "id": "riau",
+        "name": "Riau",
+        "reason": "Excluded (part of 10 rejected provinces)"
+      },
+      {
+        "id": "lampung",
+        "name": "Lampung",
+        "reason": "Excluded (part of 10 rejected provinces)"
+      },
+      {
+        "id": "bali",
+        "name": "Bali",
+        "reason": "Excluded (part of 10 rejected provinces)"
+      },
+      {
+        "id": "west_nusa_tenggara",
+        "name": "West Nusa Tenggara",
+        "reason": "Excluded (part of 10 rejected provinces)"
+      },
+      {
+        "id": "east_nusa_tenggara",
+        "name": "East Nusa Tenggara",
+        "reason": "Excluded (part of 10 rejected provinces)"
+      },
+      {
+        "id": "west_kalimantan",
+        "name": "West Kalimantan",
+        "reason": "Excluded (part of 10 rejected provinces)"
+      },
+      {
+        "id": "south_kalimantan",
+        "name": "South Kalimantan",
+        "reason": "Excluded (part of 10 rejected provinces)"
+      }
+    ]
+  },
+  "summary": {
+    "total_cells": 36,
+    "nominal_cells": 22,
+    "degraded_cells": 14,
+    "total_patches": 1779,
+    "eligible_patches": 1407,
+    "insufficient_patches": 372
+  },
+  "province_rollups": [
+    {
+      "province": "banten",
+      "name": "Banten",
+      "island": "Java",
+      "split": "val",
+      "total_patches": 337,
+      "eligible_patches": 292,
+      "insufficient_patches": 45,
+      "eligible_rate": 0.866,
+      "degraded_cells_count": 1,
+      "nominal_cells_count": 5,
+      "avg_cloud_cover_pct": 3.76,
+      "avg_valid_pixel_ratio": 0.933
+    },
+    {
+      "province": "west_java",
+      "name": "West Java",
+      "island": "Java",
+      "split": "test",
+      "total_patches": 264,
+      "eligible_patches": 250,
+      "insufficient_patches": 14,
+      "eligible_rate": 0.947,
+      "degraded_cells_count": 0,
+      "nominal_cells_count": 6,
+      "avg_cloud_cover_pct": 3.45,
+      "avg_valid_pixel_ratio": 0.964
+    },
+    {
+      "province": "east_java",
+      "name": "East Java",
+      "island": "Java",
+      "split": "train",
+      "total_patches": 248,
+      "eligible_patches": 209,
+      "insufficient_patches": 39,
+      "eligible_rate": 0.843,
+      "degraded_cells_count": 1,
+      "nominal_cells_count": 5,
+      "avg_cloud_cover_pct": 2.31,
+      "avg_valid_pixel_ratio": 0.932
+    },
+    {
+      "province": "south_sulawesi",
+      "name": "South Sulawesi",
+      "island": "Sulawesi",
+      "split": "train",
+      "total_patches": 320,
+      "eligible_patches": 227,
+      "insufficient_patches": 93,
+      "eligible_rate": 0.709,
+      "degraded_cells_count": 5,
+      "nominal_cells_count": 1,
+      "avg_cloud_cover_pct": 12.33,
+      "avg_valid_pixel_ratio": 0.807
+    },
+    {
+      "province": "gorontalo",
+      "name": "Gorontalo",
+      "island": "Sulawesi",
+      "split": "train",
+      "total_patches": 272,
+      "eligible_patches": 212,
+      "insufficient_patches": 60,
+      "eligible_rate": 0.779,
+      "degraded_cells_count": 4,
+      "nominal_cells_count": 2,
+      "avg_cloud_cover_pct": 12.49,
+      "avg_valid_pixel_ratio": 0.885
+    },
+    {
+      "province": "southeast_sulawesi",
+      "name": "Southeast Sulawesi",
+      "island": "Sulawesi",
+      "split": "train",
+      "total_patches": 338,
+      "eligible_patches": 217,
+      "insufficient_patches": 121,
+      "eligible_rate": 0.642,
+      "degraded_cells_count": 3,
+      "nominal_cells_count": 3,
+      "avg_cloud_cover_pct": 9.35,
+      "avg_valid_pixel_ratio": 0.831
+    }
+  ],
+  "year_rollups": [
+    {
+      "year": 2020,
+      "period": "T1_BASELINE",
+      "total_patches": 337,
+      "eligible_patches": 284,
+      "insufficient_patches": 53,
+      "eligible_rate": 0.843,
+      "degraded_cells_count": 1,
+      "nominal_cells_count": 5,
+      "avg_cloud_cover_pct": 4.94,
+      "avg_valid_pixel_ratio": 0.912
+    },
+    {
+      "year": 2021,
+      "period": "T1_BASELINE",
+      "total_patches": 292,
+      "eligible_patches": 235,
+      "insufficient_patches": 57,
+      "eligible_rate": 0.805,
+      "degraded_cells_count": 2,
+      "nominal_cells_count": 4,
+      "avg_cloud_cover_pct": 6.94,
+      "avg_valid_pixel_ratio": 0.892
+    },
+    {
+      "year": 2022,
+      "period": "T2_MONITORING",
+      "total_patches": 332,
+      "eligible_patches": 254,
+      "insufficient_patches": 78,
+      "eligible_rate": 0.765,
+      "degraded_cells_count": 4,
+      "nominal_cells_count": 2,
+      "avg_cloud_cover_pct": 11.79,
+      "avg_valid_pixel_ratio": 0.859
+    },
+    {
+      "year": 2023,
+      "period": "T2_MONITORING",
+      "total_patches": 232,
+      "eligible_patches": 191,
+      "insufficient_patches": 41,
+      "eligible_rate": 0.823,
+      "degraded_cells_count": 1,
+      "nominal_cells_count": 5,
+      "avg_cloud_cover_pct": 3.68,
+      "avg_valid_pixel_ratio": 0.919
+    },
+    {
+      "year": 2024,
+      "period": "T2_MONITORING",
+      "total_patches": 305,
+      "eligible_patches": 220,
+      "insufficient_patches": 85,
+      "eligible_rate": 0.721,
+      "degraded_cells_count": 3,
+      "nominal_cells_count": 3,
+      "avg_cloud_cover_pct": 8.8,
+      "avg_valid_pixel_ratio": 0.869
+    },
+    {
+      "year": 2025,
+      "period": "T2_MONITORING",
+      "total_patches": 281,
+      "eligible_patches": 223,
+      "insufficient_patches": 58,
+      "eligible_rate": 0.794,
+      "degraded_cells_count": 3,
+      "nominal_cells_count": 3,
+      "avg_cloud_cover_pct": 7.54,
+      "avg_valid_pixel_ratio": 0.901
+    }
+  ],
+  "degraded_zones_registry": {
+    "total_degraded_zones": 14,
+    "criteria": [
+      "Average raw scene cloud cover > 12.0%",
+      "Multiple patches (>15) with cloud cover > 20%",
+      "Average SCL cloud shadow interference > 3.0%",
+      "Average valid pixel ratio < 0.85",
+      "Quality insufficient patch ratio > 25.0%"
+    ],
+    "zones": [
+      {
+        "cell_id": "banten_2022",
+        "province": "banten",
+        "province_name": "Banten",
+        "island": "Java",
+        "year": 2022,
+        "period": "T2_MONITORING",
+        "total_patches": 64,
+        "insufficient_patches": 13,
+        "avg_cloud_cover_pct": 12.97,
+        "cloud_gt_20_count": 16,
+        "avg_cloud_shadow_pct": 2.64,
+        "avg_valid_pixel_ratio": 0.87,
+        "reasons": [
+          "High average cloud cover (13.0% > 12.0%)",
+          "16/64 patches have raw cloud cover > 20%"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "east_java_2022",
+        "province": "east_java",
+        "province_name": "East Java",
+        "island": "Java",
+        "year": 2022,
+        "period": "T2_MONITORING",
+        "total_patches": 48,
+        "insufficient_patches": 14,
+        "avg_cloud_cover_pct": 3.95,
+        "cloud_gt_20_count": 0,
+        "avg_cloud_shadow_pct": 1.75,
+        "avg_valid_pixel_ratio": 0.842,
+        "reasons": [
+          "Low average valid pixel ratio (0.842 < 0.85)",
+          "High insufficient patch ratio (14/48 = 29.2% > 25%)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "south_sulawesi_2020",
+        "province": "south_sulawesi",
+        "province_name": "South Sulawesi",
+        "island": "Sulawesi",
+        "year": 2020,
+        "period": "T1_BASELINE",
+        "total_patches": 64,
+        "insufficient_patches": 11,
+        "avg_cloud_cover_pct": 11.65,
+        "cloud_gt_20_count": 16,
+        "avg_cloud_shadow_pct": 1.7,
+        "avg_valid_pixel_ratio": 0.877,
+        "reasons": [
+          "16/64 patches have raw cloud cover > 20%"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "south_sulawesi_2021",
+        "province": "south_sulawesi",
+        "province_name": "South Sulawesi",
+        "island": "Sulawesi",
+        "year": 2021,
+        "period": "T1_BASELINE",
+        "total_patches": 48,
+        "insufficient_patches": 16,
+        "avg_cloud_cover_pct": 10.05,
+        "cloud_gt_20_count": 0,
+        "avg_cloud_shadow_pct": 1.35,
+        "avg_valid_pixel_ratio": 0.791,
+        "reasons": [
+          "Low average valid pixel ratio (0.791 < 0.85)",
+          "High insufficient patch ratio (16/48 = 33.3% > 25%)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "south_sulawesi_2022",
+        "province": "south_sulawesi",
+        "province_name": "South Sulawesi",
+        "island": "Sulawesi",
+        "year": 2022,
+        "period": "T2_MONITORING",
+        "total_patches": 64,
+        "insufficient_patches": 24,
+        "avg_cloud_cover_pct": 16.87,
+        "cloud_gt_20_count": 32,
+        "avg_cloud_shadow_pct": 5.45,
+        "avg_valid_pixel_ratio": 0.762,
+        "reasons": [
+          "High average cloud cover (16.9% > 12.0%)",
+          "32/64 patches have raw cloud cover > 20%",
+          "Substantial SCL cloud shadow interference (5.5% > 3.0%)",
+          "Low average valid pixel ratio (0.762 < 0.85)",
+          "High insufficient patch ratio (24/64 = 37.5% > 25%)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "south_sulawesi_2024",
+        "province": "south_sulawesi",
+        "province_name": "South Sulawesi",
+        "island": "Sulawesi",
+        "year": 2024,
+        "period": "T2_MONITORING",
+        "total_patches": 48,
+        "insufficient_patches": 12,
+        "avg_cloud_cover_pct": 15.73,
+        "cloud_gt_20_count": 16,
+        "avg_cloud_shadow_pct": 3.69,
+        "avg_valid_pixel_ratio": 0.802,
+        "reasons": [
+          "High average cloud cover (15.7% > 12.0%)",
+          "16/48 patches have raw cloud cover > 20%",
+          "Substantial SCL cloud shadow interference (3.7% > 3.0%)",
+          "Low average valid pixel ratio (0.802 < 0.85)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "south_sulawesi_2025",
+        "province": "south_sulawesi",
+        "province_name": "South Sulawesi",
+        "island": "Sulawesi",
+        "year": 2025,
+        "period": "T2_MONITORING",
+        "total_patches": 48,
+        "insufficient_patches": 18,
+        "avg_cloud_cover_pct": 14.69,
+        "cloud_gt_20_count": 16,
+        "avg_cloud_shadow_pct": 3.79,
+        "avg_valid_pixel_ratio": 0.782,
+        "reasons": [
+          "High average cloud cover (14.7% > 12.0%)",
+          "16/48 patches have raw cloud cover > 20%",
+          "Substantial SCL cloud shadow interference (3.8% > 3.0%)",
+          "Low average valid pixel ratio (0.782 < 0.85)",
+          "High insufficient patch ratio (18/48 = 37.5% > 25%)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "gorontalo_2021",
+        "province": "gorontalo",
+        "province_name": "Gorontalo",
+        "island": "Sulawesi",
+        "year": 2021,
+        "period": "T1_BASELINE",
+        "total_patches": 48,
+        "insufficient_patches": 17,
+        "avg_cloud_cover_pct": 18.17,
+        "cloud_gt_20_count": 16,
+        "avg_cloud_shadow_pct": 0.68,
+        "avg_valid_pixel_ratio": 0.804,
+        "reasons": [
+          "High average cloud cover (18.2% > 12.0%)",
+          "16/48 patches have raw cloud cover > 20%",
+          "Low average valid pixel ratio (0.804 < 0.85)",
+          "High insufficient patch ratio (17/48 = 35.4% > 25%)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "gorontalo_2022",
+        "province": "gorontalo",
+        "province_name": "Gorontalo",
+        "island": "Sulawesi",
+        "year": 2022,
+        "period": "T2_MONITORING",
+        "total_patches": 48,
+        "insufficient_patches": 12,
+        "avg_cloud_cover_pct": 18.77,
+        "cloud_gt_20_count": 16,
+        "avg_cloud_shadow_pct": 4.14,
+        "avg_valid_pixel_ratio": 0.874,
+        "reasons": [
+          "High average cloud cover (18.8% > 12.0%)",
+          "16/48 patches have raw cloud cover > 20%",
+          "Substantial SCL cloud shadow interference (4.1% > 3.0%)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "gorontalo_2024",
+        "province": "gorontalo",
+        "province_name": "Gorontalo",
+        "island": "Sulawesi",
+        "year": 2024,
+        "period": "T2_MONITORING",
+        "total_patches": 48,
+        "insufficient_patches": 12,
+        "avg_cloud_cover_pct": 12.9,
+        "cloud_gt_20_count": 16,
+        "avg_cloud_shadow_pct": 2.76,
+        "avg_valid_pixel_ratio": 0.857,
+        "reasons": [
+          "High average cloud cover (12.9% > 12.0%)",
+          "16/48 patches have raw cloud cover > 20%"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "gorontalo_2025",
+        "province": "gorontalo",
+        "province_name": "Gorontalo",
+        "island": "Sulawesi",
+        "year": 2025,
+        "period": "T2_MONITORING",
+        "total_patches": 48,
+        "insufficient_patches": 15,
+        "avg_cloud_cover_pct": 18.09,
+        "cloud_gt_20_count": 0,
+        "avg_cloud_shadow_pct": 3.73,
+        "avg_valid_pixel_ratio": 0.831,
+        "reasons": [
+          "High average cloud cover (18.1% > 12.0%)",
+          "Substantial SCL cloud shadow interference (3.7% > 3.0%)",
+          "Low average valid pixel ratio (0.831 < 0.85)",
+          "High insufficient patch ratio (15/48 = 31.2% > 25%)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "southeast_sulawesi_2023",
+        "province": "southeast_sulawesi",
+        "province_name": "Southeast Sulawesi",
+        "island": "Sulawesi",
+        "year": 2023,
+        "period": "T2_MONITORING",
+        "total_patches": 56,
+        "insufficient_patches": 23,
+        "avg_cloud_cover_pct": 8.03,
+        "cloud_gt_20_count": 0,
+        "avg_cloud_shadow_pct": 2.44,
+        "avg_valid_pixel_ratio": 0.779,
+        "reasons": [
+          "Low average valid pixel ratio (0.779 < 0.85)",
+          "High insufficient patch ratio (23/56 = 41.1% > 25%)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "southeast_sulawesi_2024",
+        "province": "southeast_sulawesi",
+        "province_name": "Southeast Sulawesi",
+        "island": "Sulawesi",
+        "year": 2024,
+        "period": "T2_MONITORING",
+        "total_patches": 73,
+        "insufficient_patches": 45,
+        "avg_cloud_cover_pct": 19.66,
+        "cloud_gt_20_count": 56,
+        "avg_cloud_shadow_pct": 7.32,
+        "avg_valid_pixel_ratio": 0.699,
+        "reasons": [
+          "High average cloud cover (19.7% > 12.0%)",
+          "56/73 patches have raw cloud cover > 20%",
+          "Substantial SCL cloud shadow interference (7.3% > 3.0%)",
+          "Low average valid pixel ratio (0.699 < 0.85)",
+          "High insufficient patch ratio (45/73 = 61.6% > 25%)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      },
+      {
+        "cell_id": "southeast_sulawesi_2025",
+        "province": "southeast_sulawesi",
+        "province_name": "Southeast Sulawesi",
+        "island": "Sulawesi",
+        "year": 2025,
+        "period": "T2_MONITORING",
+        "total_patches": 57,
+        "insufficient_patches": 20,
+        "avg_cloud_cover_pct": 5.69,
+        "cloud_gt_20_count": 0,
+        "avg_cloud_shadow_pct": 3.15,
+        "avg_valid_pixel_ratio": 0.842,
+        "reasons": [
+          "Substantial SCL cloud shadow interference (3.1% > 3.0%)",
+          "Low average valid pixel ratio (0.842 < 0.85)",
+          "High insufficient patch ratio (20/57 = 35.1% > 25%)"
+        ],
+        "recommended_mitigation": "Apply SCL dilation mask (mask classes 3, 8, 9, 10) and combine multi-temporal composite within dry season window or downweight insufficient patches in weak-label loss computation."
+      }
+    ]
+  },
+  "provenance_matrix": {
+    "T1_baseline_years": [
+      2020,
+      2021
+    ],
+    "T2_monitoring_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "label_datasets": {
+      "esa_worldcover_10m": {
+        "official_versions": {
+          "2020": "ESA WorldCover 10m 2020 v100 (Global release, CC-BY 4.0)",
+          "2021": "ESA WorldCover 10m 2021 v200 (Global release, CC-BY 4.0; 6 scenes in data/first-group-2021/)",
+          "2022_to_2025": "Not released by ESA (ESA WorldCover project limited to 2020 and 2021)"
+        },
+        "classes_count": 11,
+        "native_resolution": 10.0,
+        "role": "Authoritative Static Reference & Cross-Validation Baseline for 2021"
+      },
+      "esri_10m_annual_land_cover": {
+        "official_versions": {
+          "2020": "Esri 10m Land Cover 2020 (Impact Observatory deep learning model on S2 L2A)",
+          "2021": "Esri 10m Land Cover 2021",
+          "2022": "Esri 10m Land Cover 2022",
+          "2023": "Esri 10m Land Cover 2023",
+          "2024": "Esri 10m Land Cover 2024",
+          "2025": "Esri 10m Land Cover 2025 (Annual series)"
+        },
+        "classes_count": 8,
+        "native_resolution": 10.0,
+        "role": "Continuous Annual Time-Series (2020-2025) Training & Evaluation Labels"
+      },
+      "sentinel2_msi_l2a": {
+        "sources": [
+          "Sentinel-2A",
+          "Sentinel-2B",
+          "Sentinel-2C"
+        ],
+        "observation_window": "Annual dry season (June - September) to minimize cloud cover",
+        "bands": [
+          "B02 (Blue)",
+          "B03 (Green)",
+          "B04 (Red)",
+          "B08 (NIR)",
+          "B11 (SWIR-1)",
+          "B12 (SWIR-2)"
+        ],
+        "scl_band": "Scene Classification Layer (SCL) 20m resampled to 10m quality mask"
+      }
+    },
+    "observation_year_integrity": {
+      "total_scenes_checked": 1779,
+      "discrepancies_count": 0,
+      "verification_status": "VERIFIED_MATCH",
+      "statement": "All 1,779 patches have satellite acquisition timestamps matching their assigned calendar year (2020-2025) with zero temporal drift."
+    }
+  },
+  "cells_36": [
+    {
+      "cell_id": "banten_2020",
+      "province": "banten",
+      "province_name": "Banten",
+      "island": "Java",
+      "year": 2020,
+      "period": "T1_BASELINE",
+      "split": "val",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 65,
+        "quality_eligible": 54,
+        "quality_insufficient": 11,
+        "eligible_ratio": 0.831
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 3.68,
+        "max_cloud_cover_pct": 4.1,
+        "min_cloud_cover_pct": 2.68,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.19,
+        "high_proba_cloud_pct": 2.41,
+        "medium_proba_cloud_pct": 1.11,
+        "thin_cirrus_pct": 0.17,
+        "total_atmospheric_interference_pct": 3.88,
+        "vegetation_pct": 23.35,
+        "water_pct": 55.0,
+        "not_vegetated_pct": 11.89
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.926,
+        "min_valid_pixel_ratio": 0.018
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MWT",
+          "48MXT",
+          "48MXU"
+        ],
+        "platforms": {
+          "Sentinel-2A": 65
+        },
+        "observation_date_range": "2020-06-28 to 2020-08-07",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2020,
+          "actual_label_year": 2020,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "grid-esri_io-banten-2020-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_ESRI_20200816T134808_A026484_T48MXT_N02.12",
+          "s2_product_uri": "S2A_MSIL2A_20200718T025551_N0212_R032_T48MXT_20200816T134806.SAFE",
+          "s2_mgrs_tile": "48MXT",
+          "platform": "Sentinel-2A",
+          "datetime": "2020-07-18T02:55:51.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2020,
+          "calibration_sha256": "fd6284a2de3bd11b54b51bb91363cb68a61e77190f0a30c0ba78ff7976dad732",
+          "stac_item_sha256": "abce4c65dd4338fecac9ba560044457a394c7b1a06b8620d416f3901e4c529ec"
+        }
+      }
+    },
+    {
+      "cell_id": "banten_2021",
+      "province": "banten",
+      "province_name": "Banten",
+      "island": "Java",
+      "year": 2021,
+      "period": "T1_BASELINE",
+      "split": "val",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 64,
+        "quality_eligible": 58,
+        "quality_insufficient": 6,
+        "eligible_ratio": 0.906
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 0.89,
+        "max_cloud_cover_pct": 2.46,
+        "min_cloud_cover_pct": 0.22,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.1,
+        "high_proba_cloud_pct": 0.54,
+        "medium_proba_cloud_pct": 0.32,
+        "thin_cirrus_pct": 0.03,
+        "total_atmospheric_interference_pct": 0.99,
+        "vegetation_pct": 35.15,
+        "water_pct": 54.51,
+        "not_vegetated_pct": 7.98
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.954,
+        "min_valid_pixel_ratio": 0.018
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MWT",
+          "48MXT",
+          "48MXU"
+        ],
+        "platforms": {
+          "Sentinel-2B": 32,
+          "Sentinel-2A": 32
+        },
+        "observation_date_range": "2021-07-28 to 2021-08-12",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2021,
+          "actual_label_year": 2021,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": {
+          "dataset": "ESA WorldCover 10m 2021 v200",
+          "scene_id": "S2A_MSIL2A_20210921T025551_R032_T48MXT_20210921T165033",
+          "datetime": "2021-09-21T02:55:51.024000Z",
+          "cloud_cover": 16.05,
+          "label_source": "worldcover",
+          "image_path": "data/first-group-2021/banten-2021/image.tif",
+          "label_path": "data/first-group-2021/banten-2021/label-worldcover.tif"
+        },
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_ESRI_20210728T171148_A022938_T48MXU_N03.00",
+          "s2_product_uri": "S2B_MSIL2A_20210728T025549_N0300_R032_T48MXU_20210728T171147.SAFE",
+          "s2_mgrs_tile": "48MXU",
+          "platform": "Sentinel-2B",
+          "datetime": "2021-07-28T02:55:49.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2021,
+          "calibration_sha256": "501abd722fad95f756dfb7e4a95e30da18bdfb667b58c3edc348400030dedc62",
+          "stac_item_sha256": "7eee9008c2e9a3b409f74434b9ce27320c6651e264df72656343f603cdf074ed"
+        }
+      }
+    },
+    {
+      "cell_id": "banten_2022",
+      "province": "banten",
+      "province_name": "Banten",
+      "island": "Java",
+      "year": 2022,
+      "period": "T2_MONITORING",
+      "split": "val",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "High average cloud cover (13.0% > 12.0%)",
+        "16/64 patches have raw cloud cover > 20%"
+      ],
+      "patches": {
+        "total": 64,
+        "quality_eligible": 51,
+        "quality_insufficient": 13,
+        "eligible_ratio": 0.797
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 12.97,
+        "max_cloud_cover_pct": 20.64,
+        "min_cloud_cover_pct": 8.27,
+        "patches_cloud_gt_20_count": 16
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 2.64,
+        "high_proba_cloud_pct": 4.64,
+        "medium_proba_cloud_pct": 4.32,
+        "thin_cirrus_pct": 4.01,
+        "total_atmospheric_interference_pct": 15.61,
+        "vegetation_pct": 28.58,
+        "water_pct": 47.39,
+        "not_vegetated_pct": 7.91
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.87,
+        "min_valid_pixel_ratio": 0.008
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MWT",
+          "48MXT",
+          "48MXU"
+        ],
+        "platforms": {
+          "Sentinel-2A": 48,
+          "Sentinel-2B": 16
+        },
+        "observation_date_range": "2022-06-03 to 2022-07-08",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2022,
+          "actual_label_year": 2022,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_ESRI_20220708T190433_A036780_T48MXU_N04.00",
+          "s2_product_uri": "S2A_MSIL2A_20220708T025541_N0400_R032_T48MXU_20220708T190432.SAFE",
+          "s2_mgrs_tile": "48MXU",
+          "platform": "Sentinel-2A",
+          "datetime": "2022-07-08T02:55:41.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2022,
+          "calibration_sha256": "cab0326b59a4f7873582d1ebc6932fcc4d014c6d62bafcccfc82b5547afb8f8d",
+          "stac_item_sha256": "8de8546de696cab5e1e8dcce5baf9a25f69de1fcabbe385c658af9c0dcdeaac1"
+        }
+      }
+    },
+    {
+      "cell_id": "banten_2023",
+      "province": "banten",
+      "province_name": "Banten",
+      "island": "Java",
+      "year": 2023,
+      "period": "T2_MONITORING",
+      "split": "val",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 32,
+        "quality_eligible": 32,
+        "quality_insufficient": 0,
+        "eligible_ratio": 1.0
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 2.25,
+        "max_cloud_cover_pct": 2.9,
+        "min_cloud_cover_pct": 1.61,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 1.21,
+        "high_proba_cloud_pct": 1.47,
+        "medium_proba_cloud_pct": 0.78,
+        "thin_cirrus_pct": 0.0,
+        "total_atmospheric_interference_pct": 3.46,
+        "vegetation_pct": 37.2,
+        "water_pct": 34.79,
+        "not_vegetated_pct": 18.08
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.984,
+        "min_valid_pixel_ratio": 0.822
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MXT",
+          "48MXU"
+        ],
+        "platforms": {
+          "Sentinel-2B": 16,
+          "Sentinel-2A": 16
+        },
+        "observation_date_range": "2023-09-01 to 2023-09-16",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2023,
+          "actual_label_year": 2023,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_S2RP_20240915T095036_A034092_T48MXU_N05.10",
+          "s2_product_uri": "S2B_MSIL2A_20230916T025529_N0510_R032_T48MXU_20240915T095036.SAFE",
+          "s2_mgrs_tile": "48MXU",
+          "platform": "Sentinel-2B",
+          "datetime": "2023-09-16T02:55:29.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2023,
+          "calibration_sha256": "1569610d5bc2ab8d936d0a2eccc67b99fc48ebc9780423334567d0a1698a69a0",
+          "stac_item_sha256": "fb85fdd46021b251df364e87f570e9e6f78c2583cf3956a167e985dc39b1fa3a"
+        }
+      }
+    },
+    {
+      "cell_id": "banten_2024",
+      "province": "banten",
+      "province_name": "Banten",
+      "island": "Java",
+      "year": 2024,
+      "period": "T2_MONITORING",
+      "split": "val",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 64,
+        "quality_eligible": 49,
+        "quality_insufficient": 15,
+        "eligible_ratio": 0.766
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 1.81,
+        "max_cloud_cover_pct": 2.97,
+        "min_cloud_cover_pct": 1.02,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 1.18,
+        "high_proba_cloud_pct": 0.85,
+        "medium_proba_cloud_pct": 0.94,
+        "thin_cirrus_pct": 0.02,
+        "total_atmospheric_interference_pct": 2.99,
+        "vegetation_pct": 31.88,
+        "water_pct": 54.9,
+        "not_vegetated_pct": 9.91
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.866,
+        "min_valid_pixel_ratio": 0.243
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MWT",
+          "48MXT",
+          "48MXU"
+        ],
+        "platforms": {
+          "Sentinel-2A": 32,
+          "Sentinel-2B": 32
+        },
+        "observation_date_range": "2024-07-22 to 2024-08-11",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2024,
+          "actual_label_year": 2024,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_2APS_20240727T092050_A047505_T48MXU_N05.11",
+          "s2_product_uri": "S2A_MSIL2A_20240727T025531_N0511_R032_T48MXU_20240727T092050.SAFE",
+          "s2_mgrs_tile": "48MXU",
+          "platform": "Sentinel-2A",
+          "datetime": "2024-07-27T02:55:31.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2024,
+          "calibration_sha256": "4d1677c1df2d56c596b60021bf97713084647db0e052b147738475860830926f",
+          "stac_item_sha256": "643ec281b084d25657457682e3e5927ab6883cb13b777782593a52746c77b2d7"
+        }
+      }
+    },
+    {
+      "cell_id": "banten_2025",
+      "province": "banten",
+      "province_name": "Banten",
+      "island": "Java",
+      "year": 2025,
+      "period": "T2_MONITORING",
+      "split": "val",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 48,
+        "quality_insufficient": 0,
+        "eligible_ratio": 1.0
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 0.97,
+        "max_cloud_cover_pct": 1.42,
+        "min_cloud_cover_pct": 0.74,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.25,
+        "high_proba_cloud_pct": 0.31,
+        "medium_proba_cloud_pct": 0.54,
+        "thin_cirrus_pct": 0.12,
+        "total_atmospheric_interference_pct": 1.22,
+        "vegetation_pct": 38.2,
+        "water_pct": 52.71,
+        "not_vegetated_pct": 7.59
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.997,
+        "min_valid_pixel_ratio": 0.911
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MWT",
+          "48MXT",
+          "48MXU"
+        ],
+        "platforms": {
+          "Sentinel-2B": 48
+        },
+        "observation_date_range": "2025-08-26 to 2025-08-26",
+        "total_acquisition_dates": 1
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2025,
+          "actual_label_year": 2025,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2025-g00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_2BPS_20250826T063629_A044245_T48MXT_N05.11",
+          "s2_product_uri": "S2B_MSIL2A_20250826T025529_N0511_R032_T48MXT_20250826T063629.SAFE",
+          "s2_mgrs_tile": "48MXT",
+          "platform": "Sentinel-2B",
+          "datetime": "2025-08-26T02:55:29.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2025,
+          "calibration_sha256": "420c5829091a4cd9988dc683fc321006e2cae090a7f29f3206b12cf73aa26f74",
+          "stac_item_sha256": "ce147f95b3f8935321ac70a206d4a64ac5f4541d7c565ab94435feec6d56eb6b"
+        }
+      }
+    },
+    {
+      "cell_id": "west_java_2020",
+      "province": "west_java",
+      "province_name": "West Java",
+      "island": "Java",
+      "year": 2020,
+      "period": "T1_BASELINE",
+      "split": "test",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 64,
+        "quality_eligible": 57,
+        "quality_insufficient": 7,
+        "eligible_ratio": 0.891
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 4.24,
+        "max_cloud_cover_pct": 10.94,
+        "min_cloud_cover_pct": 1.23,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.34,
+        "high_proba_cloud_pct": 3.31,
+        "medium_proba_cloud_pct": 0.93,
+        "thin_cirrus_pct": 0.0,
+        "total_atmospheric_interference_pct": 4.58,
+        "vegetation_pct": 41.11,
+        "water_pct": 43.67,
+        "not_vegetated_pct": 7.9
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.917,
+        "min_valid_pixel_ratio": 0.014
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MXS",
+          "48MYT",
+          "49MBM",
+          "49MBN"
+        ],
+        "platforms": {
+          "Sentinel-2A": 48,
+          "Sentinel-2B": 16
+        },
+        "observation_date_range": "2020-07-18 to 2020-09-23",
+        "total_acquisition_dates": 4
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2020,
+          "actual_label_year": 2020,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "grid-esri_io-west_java-2020-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_ESRI_20200816T134832_A026484_T48MYT_N02.12",
+          "s2_product_uri": "S2A_MSIL2A_20200718T025551_N0212_R032_T48MYT_20200816T134828.SAFE",
+          "s2_mgrs_tile": "48MYT",
+          "platform": "Sentinel-2A",
+          "datetime": "2020-07-18T02:55:51.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2020,
+          "calibration_sha256": "c392571d0969f22d925e3c77edc17e2a6e10cf1d3ded5410a8cbba8ddfbc878a",
+          "stac_item_sha256": "52d8be5492ecb2aeebc3f4c1820f9a628d19f71e580868835508e76adb535c8c"
+        }
+      }
+    },
+    {
+      "cell_id": "west_java_2021",
+      "province": "west_java",
+      "province_name": "West Java",
+      "island": "Java",
+      "year": 2021,
+      "period": "T1_BASELINE",
+      "split": "test",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 44,
+        "quality_eligible": 41,
+        "quality_insufficient": 3,
+        "eligible_ratio": 0.932
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 2.42,
+        "max_cloud_cover_pct": 5.04,
+        "min_cloud_cover_pct": 0.64,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.53,
+        "high_proba_cloud_pct": 1.94,
+        "medium_proba_cloud_pct": 0.46,
+        "thin_cirrus_pct": 0.02,
+        "total_atmospheric_interference_pct": 2.95,
+        "vegetation_pct": 62.74,
+        "water_pct": 21.03,
+        "not_vegetated_pct": 9.51
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.943,
+        "min_valid_pixel_ratio": 0.022
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MXT",
+          "48MYT",
+          "49MBN"
+        ],
+        "platforms": {
+          "Sentinel-2B": 32,
+          "Sentinel-2A": 12
+        },
+        "observation_date_range": "2021-07-18 to 2021-08-12",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2021,
+          "actual_label_year": 2021,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": {
+          "dataset": "ESA WorldCover 10m 2021 v200",
+          "scene_id": "S2A_MSIL2A_20210918T024551_R132_T48MYT_20210918T144558",
+          "datetime": "2021-09-18T02:45:51.024000Z",
+          "cloud_cover": 2.6,
+          "label_source": "worldcover",
+          "image_path": "data/first-group-2021/west_java-2021/image.tif",
+          "label_path": "data/first-group-2021/west_java-2021/label-worldcover.tif"
+        },
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_ESRI_20210725T123636_A022895_T49MBN_N03.00",
+          "s2_product_uri": "S2B_MSIL2A_20210725T024549_N0300_R132_T49MBN_20210725T123635.SAFE",
+          "s2_mgrs_tile": "49MBN",
+          "platform": "Sentinel-2B",
+          "datetime": "2021-07-25T02:45:49.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2021,
+          "calibration_sha256": "600dcc1f764bc9060529e61d759648368f962adb849280c06940d9217cc75d2b",
+          "stac_item_sha256": "4d28495ca556f178297828d1c9dd492a5d4034dd8c66df89671478a24f71dba1"
+        }
+      }
+    },
+    {
+      "cell_id": "west_java_2022",
+      "province": "west_java",
+      "province_name": "West Java",
+      "island": "Java",
+      "year": 2022,
+      "period": "T2_MONITORING",
+      "split": "test",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 60,
+        "quality_eligible": 56,
+        "quality_insufficient": 4,
+        "eligible_ratio": 0.933
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 8.81,
+        "max_cloud_cover_pct": 19.9,
+        "min_cloud_cover_pct": 4.45,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 2.03,
+        "high_proba_cloud_pct": 4.0,
+        "medium_proba_cloud_pct": 3.51,
+        "thin_cirrus_pct": 1.3,
+        "total_atmospheric_interference_pct": 10.84,
+        "vegetation_pct": 51.73,
+        "water_pct": 27.31,
+        "not_vegetated_pct": 8.65
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.929,
+        "min_valid_pixel_ratio": 0.023
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MXT",
+          "48MYT",
+          "49MBM",
+          "49MBN"
+        ],
+        "platforms": {
+          "Sentinel-2A": 44,
+          "Sentinel-2B": 16
+        },
+        "observation_date_range": "2022-06-30 to 2022-07-18",
+        "total_acquisition_dates": 4
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2022,
+          "actual_label_year": 2022,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_S2RP_20240630T200503_A036737_T49MBN_N05.10",
+          "s2_product_uri": "S2A_MSIL2A_20220705T024541_N0510_R132_T49MBN_20240630T200503.SAFE",
+          "s2_mgrs_tile": "49MBN",
+          "platform": "Sentinel-2A",
+          "datetime": "2022-07-05T02:45:41.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2022,
+          "calibration_sha256": "16659e115284572fbdfd15afcd7c48c4a2060a66f9a2a3517ec5aa96d776a3a3",
+          "stac_item_sha256": "6036073fd3fbbc9443aa2387a2151b8077244b59ea784e08aa1da0fc6d3244af"
+        }
+      }
+    },
+    {
+      "cell_id": "west_java_2023",
+      "province": "west_java",
+      "province_name": "West Java",
+      "island": "Java",
+      "year": 2023,
+      "period": "T2_MONITORING",
+      "split": "test",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 32,
+        "quality_eligible": 32,
+        "quality_insufficient": 0,
+        "eligible_ratio": 1.0
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 1.08,
+        "max_cloud_cover_pct": 1.93,
+        "min_cloud_cover_pct": 0.23,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.39,
+        "high_proba_cloud_pct": 0.5,
+        "medium_proba_cloud_pct": 0.36,
+        "thin_cirrus_pct": 0.22,
+        "total_atmospheric_interference_pct": 1.47,
+        "vegetation_pct": 59.1,
+        "water_pct": 19.65,
+        "not_vegetated_pct": 18.13
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.998,
+        "min_valid_pixel_ratio": 0.984
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MYT",
+          "49MBN"
+        ],
+        "platforms": {
+          "Sentinel-2A": 32
+        },
+        "observation_date_range": "2023-07-20 to 2023-09-01",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2023,
+          "actual_label_year": 2023,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_S2RP_20240818T173422_A042171_T49MBN_N05.10",
+          "s2_product_uri": "S2A_MSIL2A_20230720T024531_N0510_R132_T49MBN_20240818T173422.SAFE",
+          "s2_mgrs_tile": "49MBN",
+          "platform": "Sentinel-2A",
+          "datetime": "2023-07-20T02:45:31.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2023,
+          "calibration_sha256": "ddc2ccfca1a2781928b554598bfe7c0413de6d6a040a758fa73052c7ab5fb2dc",
+          "stac_item_sha256": "b90753ce6ef99666e055d47875485407556ef5ff82f15e03eaef328da72a0d98"
+        }
+      }
+    },
+    {
+      "cell_id": "west_java_2024",
+      "province": "west_java",
+      "province_name": "West Java",
+      "island": "Java",
+      "year": 2024,
+      "period": "T2_MONITORING",
+      "split": "test",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 32,
+        "quality_eligible": 32,
+        "quality_insufficient": 0,
+        "eligible_ratio": 1.0
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 2.14,
+        "max_cloud_cover_pct": 3.17,
+        "min_cloud_cover_pct": 1.11,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.39,
+        "high_proba_cloud_pct": 0.28,
+        "medium_proba_cloud_pct": 0.44,
+        "thin_cirrus_pct": 1.42,
+        "total_atmospheric_interference_pct": 2.53,
+        "vegetation_pct": 59.05,
+        "water_pct": 20.08,
+        "not_vegetated_pct": 17.3
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.999,
+        "min_valid_pixel_ratio": 0.992
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MYT",
+          "49MBN"
+        ],
+        "platforms": {
+          "Sentinel-2B": 32
+        },
+        "observation_date_range": "2024-08-18 to 2024-08-21",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2024,
+          "actual_label_year": 2024,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_2BPS_20240818T064409_A038911_T49MBN_N05.11",
+          "s2_product_uri": "S2B_MSIL2A_20240818T024529_N0511_R132_T49MBN_20240818T064409.SAFE",
+          "s2_mgrs_tile": "49MBN",
+          "platform": "Sentinel-2B",
+          "datetime": "2024-08-18T02:45:29.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2024,
+          "calibration_sha256": "6f2bb142cc6fbf518b1934f2ba45f929f8d537138c743a6db277ecd79cbaa73b",
+          "stac_item_sha256": "4272aa6788783fd926b9432d07aaa875f4af63ff00d7eae7af3e5cdef48c036b"
+        }
+      }
+    },
+    {
+      "cell_id": "west_java_2025",
+      "province": "west_java",
+      "province_name": "West Java",
+      "island": "Java",
+      "year": 2025,
+      "period": "T2_MONITORING",
+      "split": "test",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 32,
+        "quality_eligible": 32,
+        "quality_insufficient": 0,
+        "eligible_ratio": 1.0
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 1.98,
+        "max_cloud_cover_pct": 2.53,
+        "min_cloud_cover_pct": 1.44,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.74,
+        "high_proba_cloud_pct": 0.95,
+        "medium_proba_cloud_pct": 1.01,
+        "thin_cirrus_pct": 0.02,
+        "total_atmospheric_interference_pct": 2.72,
+        "vegetation_pct": 61.6,
+        "water_pct": 20.11,
+        "not_vegetated_pct": 14.01
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.999,
+        "min_valid_pixel_ratio": 0.992
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "48MYT",
+          "49MBN"
+        ],
+        "platforms": {
+          "Sentinel-2A": 16,
+          "Sentinel-2B": 16
+        },
+        "observation_date_range": "2025-07-21 to 2025-08-26",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2025,
+          "actual_label_year": 2025,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_2APS_20250721T074614_A052639_T49MBN_N05.11",
+          "s2_product_uri": "S2A_MSIL2A_20250721T025201_N0511_R132_T49MBN_20250721T074614.SAFE",
+          "s2_mgrs_tile": "49MBN",
+          "platform": "Sentinel-2A",
+          "datetime": "2025-07-21T02:52:01.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2025,
+          "calibration_sha256": "36e5772625cf0e7e06fc85725aefef564d110f49434cae26b879f7d9ab97e413",
+          "stac_item_sha256": "ffcc2acf275e7a1347a662836fa96566bbef674e62b025d4f47f282a516cd274"
+        }
+      }
+    },
+    {
+      "cell_id": "east_java_2020",
+      "province": "east_java",
+      "province_name": "East Java",
+      "island": "Java",
+      "year": 2020,
+      "period": "T1_BASELINE",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [
+        "High insufficient patch ratio (15/48 = 31.2% > 25%)"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 33,
+        "quality_insufficient": 15,
+        "eligible_ratio": 0.688
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 3.56,
+        "max_cloud_cover_pct": 5.42,
+        "min_cloud_cover_pct": 0.94,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.77,
+        "high_proba_cloud_pct": 2.61,
+        "medium_proba_cloud_pct": 0.75,
+        "thin_cirrus_pct": 0.19,
+        "total_atmospheric_interference_pct": 4.32,
+        "vegetation_pct": 36.5,
+        "water_pct": 45.1,
+        "not_vegetated_pct": 11.81
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.851,
+        "min_valid_pixel_ratio": 0.351
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "49MFM",
+          "49MGN",
+          "50LKR"
+        ],
+        "platforms": {
+          "Sentinel-2A": 32,
+          "Sentinel-2B": 16
+        },
+        "observation_date_range": "2020-07-04 to 2020-09-17",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2020,
+          "actual_label_year": 2020,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "grid-esri_io-east_java-2020-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_ESRI_20200825T115450_A026970_T49MFM_N02.12",
+          "s2_product_uri": "S2A_MSIL2A_20200821T023551_N0212_R089_T49MFM_20200825T115449.SAFE",
+          "s2_mgrs_tile": "49MFM",
+          "platform": "Sentinel-2A",
+          "datetime": "2020-08-21T02:35:51.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2020,
+          "calibration_sha256": "34a22036852e92ec4140fc9dcc7eb841aa9e62dd67ceb58a74355a81019ad910",
+          "stac_item_sha256": "6aff15b1a65849a9d8d623da9e97c1be0561f9f0e8f9db4d5b7a099fb0c94003"
+        }
+      }
+    },
+    {
+      "cell_id": "east_java_2021",
+      "province": "east_java",
+      "province_name": "East Java",
+      "island": "Java",
+      "year": 2021,
+      "period": "T1_BASELINE",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 32,
+        "quality_eligible": 32,
+        "quality_insufficient": 0,
+        "eligible_ratio": 1.0
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 1.42,
+        "max_cloud_cover_pct": 2.14,
+        "min_cloud_cover_pct": 0.69,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.57,
+        "high_proba_cloud_pct": 0.78,
+        "medium_proba_cloud_pct": 0.2,
+        "thin_cirrus_pct": 0.44,
+        "total_atmospheric_interference_pct": 1.99,
+        "vegetation_pct": 48.4,
+        "water_pct": 35.05,
+        "not_vegetated_pct": 12.12
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.999,
+        "min_valid_pixel_ratio": 0.996
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "49MFM",
+          "49MGN"
+        ],
+        "platforms": {
+          "Sentinel-2A": 32
+        },
+        "observation_date_range": "2021-07-24 to 2021-07-27",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2021,
+          "actual_label_year": 2021,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": {
+          "dataset": "ESA WorldCover 10m 2021 v200",
+          "scene_id": "S2B_MSIL2A_20210910T023549_R089_T49MFM_20210910T101948",
+          "datetime": "2021-09-10T02:35:49.024000Z",
+          "cloud_cover": 11.21,
+          "label_source": "worldcover",
+          "image_path": "data/first-group-2021/east_java-2021/image.tif",
+          "label_path": "data/first-group-2021/east_java-2021/label-worldcover.tif"
+        },
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2021-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_ESRI_20210727T112925_A031832_T49MFM_N03.00",
+          "s2_product_uri": "S2A_MSIL2A_20210727T023551_N0300_R089_T49MFM_20210727T112924.SAFE",
+          "s2_mgrs_tile": "49MFM",
+          "platform": "Sentinel-2A",
+          "datetime": "2021-07-27T02:35:51.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2021,
+          "calibration_sha256": "0315b5cfcfb348cb4751077027300409e1cea6eff989917dc2fda431cdf6f27c",
+          "stac_item_sha256": "f764f03a96ccfe16fa562fc4153e7c531e57be810f8d083bc939edda1dc0af32"
+        }
+      }
+    },
+    {
+      "cell_id": "east_java_2022",
+      "province": "east_java",
+      "province_name": "East Java",
+      "island": "Java",
+      "year": 2022,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "Low average valid pixel ratio (0.842 < 0.85)",
+        "High insufficient patch ratio (14/48 = 29.2% > 25%)"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 34,
+        "quality_insufficient": 14,
+        "eligible_ratio": 0.708
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 3.95,
+        "max_cloud_cover_pct": 5.93,
+        "min_cloud_cover_pct": 0.93,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 1.75,
+        "high_proba_cloud_pct": 2.24,
+        "medium_proba_cloud_pct": 1.71,
+        "thin_cirrus_pct": 0.0,
+        "total_atmospheric_interference_pct": 5.7,
+        "vegetation_pct": 35.45,
+        "water_pct": 50.93,
+        "not_vegetated_pct": 7.04
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.842,
+        "min_valid_pixel_ratio": 0.249
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "49MFM",
+          "50LKR",
+          "50MKS"
+        ],
+        "platforms": {
+          "Sentinel-2A": 32,
+          "Sentinel-2B": 16
+        },
+        "observation_date_range": "2022-06-22 to 2022-09-02",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2022,
+          "actual_label_year": 2022,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_ESRI_20220711T132406_A036794_T50LKR_N04.00",
+          "s2_product_uri": "S2A_MSIL2A_20220709T022601_N0400_R046_T50LKR_20220711T132404.SAFE",
+          "s2_mgrs_tile": "50LKR",
+          "platform": "Sentinel-2A",
+          "datetime": "2022-07-09T02:26:01.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2022,
+          "calibration_sha256": "fa0f8590c8b097dcfc5dad70ee5e5ab5e1ffa30c21e4100bdd0a0e80acb6fec2",
+          "stac_item_sha256": "0f242f10b1cb839f5490bd7917af82441a207f1d0ce2f455a58b39a7688837f7"
+        }
+      }
+    },
+    {
+      "cell_id": "east_java_2023",
+      "province": "east_java",
+      "province_name": "East Java",
+      "island": "Java",
+      "year": 2023,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 32,
+        "quality_eligible": 28,
+        "quality_insufficient": 4,
+        "eligible_ratio": 0.875
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 0.53,
+        "max_cloud_cover_pct": 0.64,
+        "min_cloud_cover_pct": 0.42,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.15,
+        "high_proba_cloud_pct": 0.24,
+        "medium_proba_cloud_pct": 0.1,
+        "thin_cirrus_pct": 0.18,
+        "total_atmospheric_interference_pct": 0.67,
+        "vegetation_pct": 42.39,
+        "water_pct": 33.32,
+        "not_vegetated_pct": 22.63
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.955,
+        "min_valid_pixel_ratio": 0.369
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "49MFM",
+          "50LKR"
+        ],
+        "platforms": {
+          "Sentinel-2B": 16,
+          "Sentinel-2A": 16
+        },
+        "observation_date_range": "2023-06-19 to 2023-09-05",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2023,
+          "actual_label_year": 2023,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_S2RP_20241002T003726_A032819_T50LKR_N05.10",
+          "s2_product_uri": "S2B_MSIL2A_20230619T022539_N0510_R046_T50LKR_20241002T003726.SAFE",
+          "s2_mgrs_tile": "50LKR",
+          "platform": "Sentinel-2B",
+          "datetime": "2023-06-19T02:25:39.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2023,
+          "calibration_sha256": "610a6ee2c0e1e02f438db183259bc1ed0a2a999022346ea359185d4ac1338e5e",
+          "stac_item_sha256": "e54b483a15a0e45c6cbcb7c303fb4b9a14f7a0756e36e5161dd164f0a7f11a70"
+        }
+      }
+    },
+    {
+      "cell_id": "east_java_2024",
+      "province": "east_java",
+      "province_name": "East Java",
+      "island": "Java",
+      "year": 2024,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 40,
+        "quality_eligible": 39,
+        "quality_insufficient": 1,
+        "eligible_ratio": 0.975
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 0.55,
+        "max_cloud_cover_pct": 0.77,
+        "min_cloud_cover_pct": 0.0,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.42,
+        "high_proba_cloud_pct": 0.22,
+        "medium_proba_cloud_pct": 0.33,
+        "thin_cirrus_pct": 0.0,
+        "total_atmospheric_interference_pct": 0.97,
+        "vegetation_pct": 50.94,
+        "water_pct": 35.26,
+        "not_vegetated_pct": 12.1
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.99,
+        "min_valid_pixel_ratio": 0.725
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "49LDL",
+          "49MFM",
+          "50MKS"
+        ],
+        "platforms": {
+          "Sentinel-2B": 40
+        },
+        "observation_date_range": "2024-06-16 to 2024-08-12",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2024,
+          "actual_label_year": 2024,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_MSFT_20240716T073250_A038439_T49MFM_N05.10",
+          "s2_product_uri": "S2B_MSIL2A_20240716T023529_N0510_R089_T49MFM_20240716T073248.SAFE",
+          "s2_mgrs_tile": "49MFM",
+          "platform": "Sentinel-2B",
+          "datetime": "2024-07-16T02:35:29.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2024,
+          "calibration_sha256": "c9a5cc65561390ee2fab319ce40a1bf776e47fd0a89a8f7b22d1a4f829945a02",
+          "stac_item_sha256": "d0681ede9b3424d8454b31f8fff88a79b649df9ee6284218bb6e3694a1e956ba"
+        }
+      }
+    },
+    {
+      "cell_id": "east_java_2025",
+      "province": "east_java",
+      "province_name": "East Java",
+      "island": "Java",
+      "year": 2025,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 43,
+        "quality_insufficient": 5,
+        "eligible_ratio": 0.896
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 3.82,
+        "max_cloud_cover_pct": 7.5,
+        "min_cloud_cover_pct": 1.97,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.99,
+        "high_proba_cloud_pct": 0.93,
+        "medium_proba_cloud_pct": 0.95,
+        "thin_cirrus_pct": 1.93,
+        "total_atmospheric_interference_pct": 4.8,
+        "vegetation_pct": 57.74,
+        "water_pct": 21.75,
+        "not_vegetated_pct": 13.88
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.955,
+        "min_valid_pixel_ratio": 0.523
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "49MFM",
+          "49MGN"
+        ],
+        "platforms": {
+          "Sentinel-2C": 32,
+          "Sentinel-2B": 16
+        },
+        "observation_date_range": "2025-06-06 to 2025-08-27",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2025,
+          "actual_label_year": 2025,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2025-g00-r0-c0",
+          "s2_granule_id": "S2C_OPER_MSI_L2A_TL_2CPS_20250606T065914_A003920_T49MFM_N05.11",
+          "s2_product_uri": "S2C_MSIL2A_20250606T023551_N0511_R089_T49MFM_20250606T065914.SAFE",
+          "s2_mgrs_tile": "49MFM",
+          "platform": "Sentinel-2C",
+          "datetime": "2025-06-06T02:35:51.025000Z",
+          "label_source": "esri_io",
+          "label_year": 2025,
+          "calibration_sha256": "c738f1e23854456b6f70a2b29c903d4b6a6a5a9438d3cfb28ac5e352b16acd6d",
+          "stac_item_sha256": "bb3b1c9a408ba7001ea51a465ac159f112089257ed1b1fc253c0f493cd5cf4a5"
+        }
+      }
+    },
+    {
+      "cell_id": "south_sulawesi_2020",
+      "province": "south_sulawesi",
+      "province_name": "South Sulawesi",
+      "island": "Sulawesi",
+      "year": 2020,
+      "period": "T1_BASELINE",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "16/64 patches have raw cloud cover > 20%"
+      ],
+      "patches": {
+        "total": 64,
+        "quality_eligible": 53,
+        "quality_insufficient": 11,
+        "eligible_ratio": 0.828
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 11.65,
+        "max_cloud_cover_pct": 31.97,
+        "min_cloud_cover_pct": 1.11,
+        "patches_cloud_gt_20_count": 16
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 1.7,
+        "high_proba_cloud_pct": 9.11,
+        "medium_proba_cloud_pct": 2.19,
+        "thin_cirrus_pct": 0.34,
+        "total_atmospheric_interference_pct": 13.34,
+        "vegetation_pct": 35.63,
+        "water_pct": 44.75,
+        "not_vegetated_pct": 2.48
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.877,
+        "min_valid_pixel_ratio": 0.0
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "50MQU",
+          "50MRA",
+          "50MRC",
+          "51MUT"
+        ],
+        "platforms": {
+          "Sentinel-2A": 32,
+          "Sentinel-2B": 32
+        },
+        "observation_date_range": "2020-06-23 to 2020-09-16",
+        "total_acquisition_dates": 4
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2020,
+          "actual_label_year": 2020,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2020-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_ESRI_20201027T080041_A026126_T50MRA_N02.12",
+          "s2_product_uri": "S2A_MSIL2A_20200623T022331_N0212_R103_T50MRA_20201027T080040.SAFE",
+          "s2_mgrs_tile": "50MRA",
+          "platform": "Sentinel-2A",
+          "datetime": "2020-06-23T02:23:31.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2020,
+          "calibration_sha256": "f4e19068fc73f60cff2cb939791a76592f66cd4382fa0b8840d29101d6d06366",
+          "stac_item_sha256": "937997f67f18bce482d14747fb84a125cac913898e7721264fe39592baf07335"
+        }
+      }
+    },
+    {
+      "cell_id": "south_sulawesi_2021",
+      "province": "south_sulawesi",
+      "province_name": "South Sulawesi",
+      "island": "Sulawesi",
+      "year": 2021,
+      "period": "T1_BASELINE",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "Low average valid pixel ratio (0.791 < 0.85)",
+        "High insufficient patch ratio (16/48 = 33.3% > 25%)"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 32,
+        "quality_insufficient": 16,
+        "eligible_ratio": 0.667
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 10.05,
+        "max_cloud_cover_pct": 15.21,
+        "min_cloud_cover_pct": 0.2,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 1.35,
+        "high_proba_cloud_pct": 6.13,
+        "medium_proba_cloud_pct": 1.3,
+        "thin_cirrus_pct": 2.63,
+        "total_atmospheric_interference_pct": 11.41,
+        "vegetation_pct": 28.96,
+        "water_pct": 55.44,
+        "not_vegetated_pct": 2.04
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.791,
+        "min_valid_pixel_ratio": 0.0
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "50MQU",
+          "50MRA",
+          "51MUT"
+        ],
+        "platforms": {
+          "Sentinel-2A": 48
+        },
+        "observation_date_range": "2021-07-25 to 2021-09-26",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2021,
+          "actual_label_year": 2021,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": {
+          "dataset": "ESA WorldCover 10m 2021 v200",
+          "scene_id": "S2A_MSIL2A_20210728T022331_R103_T50MRA_20210728T133256",
+          "datetime": "2021-07-28T02:23:31.024000Z",
+          "cloud_cover": 14.73,
+          "label_source": "worldcover",
+          "image_path": "data/first-group-2021/south_sulawesi-2021/image.tif",
+          "label_path": "data/first-group-2021/south_sulawesi-2021/label-worldcover.tif"
+        },
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2021-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_ESRI_20210728T133257_A031846_T50MRA_N03.00",
+          "s2_product_uri": "S2A_MSIL2A_20210728T022331_N0300_R103_T50MRA_20210728T133256.SAFE",
+          "s2_mgrs_tile": "50MRA",
+          "platform": "Sentinel-2A",
+          "datetime": "2021-07-28T02:23:31.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2021,
+          "calibration_sha256": "a8189760f3d44955624850034e718ce9750879417c9891570a533a29d770fffa",
+          "stac_item_sha256": "2dd5c0e0468cc4ec7c4efb46c8ac52254a54a76a69b5aa5cbb521e1e48858656"
+        }
+      }
+    },
+    {
+      "cell_id": "south_sulawesi_2022",
+      "province": "south_sulawesi",
+      "province_name": "South Sulawesi",
+      "island": "Sulawesi",
+      "year": 2022,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "High average cloud cover (16.9% > 12.0%)",
+        "32/64 patches have raw cloud cover > 20%",
+        "Substantial SCL cloud shadow interference (5.5% > 3.0%)",
+        "Low average valid pixel ratio (0.762 < 0.85)",
+        "High insufficient patch ratio (24/64 = 37.5% > 25%)"
+      ],
+      "patches": {
+        "total": 64,
+        "quality_eligible": 40,
+        "quality_insufficient": 24,
+        "eligible_ratio": 0.625
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 16.87,
+        "max_cloud_cover_pct": 24.84,
+        "min_cloud_cover_pct": 2.06,
+        "patches_cloud_gt_20_count": 32
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 5.45,
+        "high_proba_cloud_pct": 6.95,
+        "medium_proba_cloud_pct": 6.12,
+        "thin_cirrus_pct": 3.8,
+        "total_atmospheric_interference_pct": 22.32,
+        "vegetation_pct": 32.49,
+        "water_pct": 42.22,
+        "not_vegetated_pct": 1.93
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.762,
+        "min_valid_pixel_ratio": 0.0
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "50MQU",
+          "50MRA",
+          "50MRC",
+          "51MUT"
+        ],
+        "platforms": {
+          "Sentinel-2A": 48,
+          "Sentinel-2B": 16
+        },
+        "observation_date_range": "2022-06-10 to 2022-09-01",
+        "total_acquisition_dates": 4
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2022,
+          "actual_label_year": 2022,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2022-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_ESRI_20220901T225533_A037566_T50MRA_N04.00",
+          "s2_product_uri": "S2A_MSIL2A_20220901T022341_N0400_R103_T50MRA_20220901T225532.SAFE",
+          "s2_mgrs_tile": "50MRA",
+          "platform": "Sentinel-2A",
+          "datetime": "2022-09-01T02:23:41.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2022,
+          "calibration_sha256": "b57bfef6725861db9e329579ba3dfab69c95149760a8f29a8e927dbe14b32c97",
+          "stac_item_sha256": "f463623ca143417a79922805ce75379024002030da49d38db01d46219248d3b2"
+        }
+      }
+    },
+    {
+      "cell_id": "south_sulawesi_2023",
+      "province": "south_sulawesi",
+      "province_name": "South Sulawesi",
+      "island": "Sulawesi",
+      "year": 2023,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [
+        "Low average valid pixel ratio (0.827 < 0.85)"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 36,
+        "quality_insufficient": 12,
+        "eligible_ratio": 0.75
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 4.97,
+        "max_cloud_cover_pct": 7.84,
+        "min_cloud_cover_pct": 0.03,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 1.41,
+        "high_proba_cloud_pct": 2.17,
+        "medium_proba_cloud_pct": 2.56,
+        "thin_cirrus_pct": 0.24,
+        "total_atmospheric_interference_pct": 6.38,
+        "vegetation_pct": 26.25,
+        "water_pct": 41.87,
+        "not_vegetated_pct": 11.07
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.827,
+        "min_valid_pixel_ratio": 0.0
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "50MQU",
+          "50MRA",
+          "51MUT"
+        ],
+        "platforms": {
+          "Sentinel-2A": 16,
+          "Sentinel-2B": 32
+        },
+        "observation_date_range": "2023-08-29 to 2023-09-26",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2023,
+          "actual_label_year": 2023,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2023-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_MSFT_20230926T073851_A043143_T50MRA_N05.09",
+          "s2_product_uri": "S2A_MSIL2A_20230926T022331_N0509_R103_T50MRA_20230926T073850.SAFE",
+          "s2_mgrs_tile": "50MRA",
+          "platform": "Sentinel-2A",
+          "datetime": "2023-09-26T02:23:31.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2023,
+          "calibration_sha256": "56f56d15cf945f216e39a96b79768bdf5e607a61cb4d60c632326b815a78e443",
+          "stac_item_sha256": "e6c3445b8ee9f4b0e6ea4d396031e25f62a3b6cf78bffe211bf7d4c37d011524"
+        }
+      }
+    },
+    {
+      "cell_id": "south_sulawesi_2024",
+      "province": "south_sulawesi",
+      "province_name": "South Sulawesi",
+      "island": "Sulawesi",
+      "year": 2024,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "High average cloud cover (15.7% > 12.0%)",
+        "16/48 patches have raw cloud cover > 20%",
+        "Substantial SCL cloud shadow interference (3.7% > 3.0%)",
+        "Low average valid pixel ratio (0.802 < 0.85)"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 36,
+        "quality_insufficient": 12,
+        "eligible_ratio": 0.75
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 15.73,
+        "max_cloud_cover_pct": 31.26,
+        "min_cloud_cover_pct": 0.58,
+        "patches_cloud_gt_20_count": 16
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 3.69,
+        "high_proba_cloud_pct": 8.63,
+        "medium_proba_cloud_pct": 5.17,
+        "thin_cirrus_pct": 1.93,
+        "total_atmospheric_interference_pct": 19.42,
+        "vegetation_pct": 21.14,
+        "water_pct": 53.85,
+        "not_vegetated_pct": 4.59
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.802,
+        "min_valid_pixel_ratio": 0.0
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "50MQU",
+          "50MRA",
+          "51MUT"
+        ],
+        "platforms": {
+          "Sentinel-2A": 16,
+          "Sentinel-2B": 32
+        },
+        "observation_date_range": "2024-07-17 to 2024-09-10",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2024,
+          "actual_label_year": 2024,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2024-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_2APS_20240910T053751_A048148_T50MRA_N05.11",
+          "s2_product_uri": "S2A_MSIL2A_20240910T022321_N0511_R103_T50MRA_20240910T053751.SAFE",
+          "s2_mgrs_tile": "50MRA",
+          "platform": "Sentinel-2A",
+          "datetime": "2024-09-10T02:23:21.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2024,
+          "calibration_sha256": "1ffa15f2765fbd12ef336e864eed3e5d771c4be4a04151873fd894351206dbf6",
+          "stac_item_sha256": "bbc1c934ba610766c6f949f90f57522cb06a1842fbfab7419971f047d947450d"
+        }
+      }
+    },
+    {
+      "cell_id": "south_sulawesi_2025",
+      "province": "south_sulawesi",
+      "province_name": "South Sulawesi",
+      "island": "Sulawesi",
+      "year": 2025,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "High average cloud cover (14.7% > 12.0%)",
+        "16/48 patches have raw cloud cover > 20%",
+        "Substantial SCL cloud shadow interference (3.8% > 3.0%)",
+        "Low average valid pixel ratio (0.782 < 0.85)",
+        "High insufficient patch ratio (18/48 = 37.5% > 25%)"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 30,
+        "quality_insufficient": 18,
+        "eligible_ratio": 0.625
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 14.69,
+        "max_cloud_cover_pct": 28.19,
+        "min_cloud_cover_pct": 0.34,
+        "patches_cloud_gt_20_count": 16
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 3.79,
+        "high_proba_cloud_pct": 7.49,
+        "medium_proba_cloud_pct": 7.02,
+        "thin_cirrus_pct": 0.18,
+        "total_atmospheric_interference_pct": 18.48,
+        "vegetation_pct": 21.51,
+        "water_pct": 54.23,
+        "not_vegetated_pct": 5.08
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.782,
+        "min_valid_pixel_ratio": 0.0
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "50MQU",
+          "50MRA",
+          "51MUT"
+        ],
+        "platforms": {
+          "Sentinel-2B": 16,
+          "Sentinel-2A": 16,
+          "Sentinel-2C": 16
+        },
+        "observation_date_range": "2025-06-16 to 2025-09-30",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2025,
+          "actual_label_year": 2025,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2025-g00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_2BPS_20250930T054753_A044745_T50MRA_N05.11",
+          "s2_product_uri": "S2B_MSIL2A_20250930T020649_N0511_R103_T50MRA_20250930T054753.SAFE",
+          "s2_mgrs_tile": "50MRA",
+          "platform": "Sentinel-2B",
+          "datetime": "2025-09-30T02:06:49.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2025,
+          "calibration_sha256": "5f47aec70f31e00234c7db13c99d7944b91e83a7d6e75c85b56791708be254bc",
+          "stac_item_sha256": "ae8d714ab7454b5f9c837b2cdf3e2406d7cccfe1129abc1851fe71730fa93817"
+        }
+      }
+    },
+    {
+      "cell_id": "gorontalo_2020",
+      "province": "gorontalo",
+      "province_name": "Gorontalo",
+      "island": "Sulawesi",
+      "year": 2020,
+      "period": "T1_BASELINE",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 46,
+        "quality_insufficient": 2,
+        "eligible_ratio": 0.958
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 1.82,
+        "max_cloud_cover_pct": 3.13,
+        "min_cloud_cover_pct": 1.16,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.21,
+        "high_proba_cloud_pct": 1.06,
+        "medium_proba_cloud_pct": 0.31,
+        "thin_cirrus_pct": 0.45,
+        "total_atmospheric_interference_pct": 2.03,
+        "vegetation_pct": 40.63,
+        "water_pct": 54.91,
+        "not_vegetated_pct": 1.68
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.972,
+        "min_valid_pixel_ratio": 0.637
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51NVA",
+          "51NWA"
+        ],
+        "platforms": {
+          "Sentinel-2B": 32,
+          "Sentinel-2A": 16
+        },
+        "observation_date_range": "2020-08-19 to 2020-08-24",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2020,
+          "actual_label_year": 2020,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "grid-esri_io-gorontalo-2020-g00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_ESRI_20200909T185936_A018104_T51NVA_N02.12",
+          "s2_product_uri": "S2B_MSIL2A_20200824T021349_N0212_R060_T51NVA_20200909T185934.SAFE",
+          "s2_mgrs_tile": "51NVA",
+          "platform": "Sentinel-2B",
+          "datetime": "2020-08-24T02:13:49.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2020,
+          "calibration_sha256": "fd565449e4305d13c76c98e092cac806ee82fe9e6b32202b55d85d152d60ac58",
+          "stac_item_sha256": "82d659d8ba54fc908fbe66d5ddcc6d748edf05a2ccfad1491cf3b529232e0f23"
+        }
+      }
+    },
+    {
+      "cell_id": "gorontalo_2021",
+      "province": "gorontalo",
+      "province_name": "Gorontalo",
+      "island": "Sulawesi",
+      "year": 2021,
+      "period": "T1_BASELINE",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "High average cloud cover (18.2% > 12.0%)",
+        "16/48 patches have raw cloud cover > 20%",
+        "Low average valid pixel ratio (0.804 < 0.85)",
+        "High insufficient patch ratio (17/48 = 35.4% > 25%)"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 31,
+        "quality_insufficient": 17,
+        "eligible_ratio": 0.646
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 18.17,
+        "max_cloud_cover_pct": 21.83,
+        "min_cloud_cover_pct": 12.91,
+        "patches_cloud_gt_20_count": 16
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.68,
+        "high_proba_cloud_pct": 12.76,
+        "medium_proba_cloud_pct": 3.7,
+        "thin_cirrus_pct": 1.7,
+        "total_atmospheric_interference_pct": 18.84,
+        "vegetation_pct": 27.09,
+        "water_pct": 49.7,
+        "not_vegetated_pct": 1.48
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.804,
+        "min_valid_pixel_ratio": 0.124
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51NVA",
+          "51NWA"
+        ],
+        "platforms": {
+          "Sentinel-2B": 32,
+          "Sentinel-2A": 16
+        },
+        "observation_date_range": "2021-06-05 to 2021-08-09",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2021,
+          "actual_label_year": 2021,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": {
+          "dataset": "ESA WorldCover 10m 2021 v200",
+          "scene_id": "S2A_MSIL2A_20210605T021351_R060_T51NVA_20210605T192955",
+          "datetime": "2021-06-05T02:13:51.024000Z",
+          "cloud_cover": 19.76,
+          "label_source": "worldcover",
+          "image_path": "data/first-group-2021/gorontalo-2021/image.tif",
+          "label_path": "data/first-group-2021/gorontalo-2021/label-worldcover.tif"
+        },
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2021-g00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_ESRI_20210809T084746_A023109_T51NVA_N03.00",
+          "s2_product_uri": "S2B_MSIL2A_20210809T021349_N0300_R060_T51NVA_20210809T084746.SAFE",
+          "s2_mgrs_tile": "51NVA",
+          "platform": "Sentinel-2B",
+          "datetime": "2021-08-09T02:13:49.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2021,
+          "calibration_sha256": "743aceb56d264f53c1f2df817e3d434e5f078254ac653ffb1c53b4bda425ec07",
+          "stac_item_sha256": "a1fd7148f183685af4cac19c602cd960ab2f1bc57d3e99a8f6c8d7c2ec5fcb76"
+        }
+      }
+    },
+    {
+      "cell_id": "gorontalo_2022",
+      "province": "gorontalo",
+      "province_name": "Gorontalo",
+      "island": "Sulawesi",
+      "year": 2022,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "High average cloud cover (18.8% > 12.0%)",
+        "16/48 patches have raw cloud cover > 20%",
+        "Substantial SCL cloud shadow interference (4.1% > 3.0%)"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 36,
+        "quality_insufficient": 12,
+        "eligible_ratio": 0.75
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 18.77,
+        "max_cloud_cover_pct": 21.54,
+        "min_cloud_cover_pct": 16.31,
+        "patches_cloud_gt_20_count": 16
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 4.14,
+        "high_proba_cloud_pct": 8.02,
+        "medium_proba_cloud_pct": 7.72,
+        "thin_cirrus_pct": 3.03,
+        "total_atmospheric_interference_pct": 22.91,
+        "vegetation_pct": 25.85,
+        "water_pct": 49.48,
+        "not_vegetated_pct": 1.19
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.874,
+        "min_valid_pixel_ratio": 0.103
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51NVA",
+          "51NWA"
+        ],
+        "platforms": {
+          "Sentinel-2B": 32,
+          "Sentinel-2A": 16
+        },
+        "observation_date_range": "2022-06-25 to 2022-07-25",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2022,
+          "actual_label_year": 2022,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2022-g01-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_ESRI_20220625T132203_A027685_T51NWA_N04.00",
+          "s2_product_uri": "S2B_MSIL2A_20220625T021349_N0400_R060_T51NWA_20220625T132201.SAFE",
+          "s2_mgrs_tile": "51NWA",
+          "platform": "Sentinel-2B",
+          "datetime": "2022-06-25T02:13:49.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2022,
+          "calibration_sha256": "ff788ffef4f2308d3fb94839b3eaf214232d4ce1eb6933cd80bdd2374c2eb7aa",
+          "stac_item_sha256": "0a316a40ff8480be4b9667257c1cfe792b66686693df13fd6b22d4f76c5f670a"
+        }
+      }
+    },
+    {
+      "cell_id": "gorontalo_2023",
+      "province": "gorontalo",
+      "province_name": "Gorontalo",
+      "island": "Sulawesi",
+      "year": 2023,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 32,
+        "quality_eligible": 30,
+        "quality_insufficient": 2,
+        "eligible_ratio": 0.938
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 5.2,
+        "max_cloud_cover_pct": 6.3,
+        "min_cloud_cover_pct": 4.09,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.99,
+        "high_proba_cloud_pct": 1.48,
+        "medium_proba_cloud_pct": 3.18,
+        "thin_cirrus_pct": 0.54,
+        "total_atmospheric_interference_pct": 6.19,
+        "vegetation_pct": 43.56,
+        "water_pct": 47.91,
+        "not_vegetated_pct": 2.05
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.97,
+        "min_valid_pixel_ratio": 0.641
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51NUA",
+          "51NWA"
+        ],
+        "platforms": {
+          "Sentinel-2B": 16,
+          "Sentinel-2A": 16
+        },
+        "observation_date_range": "2023-09-26 to 2023-09-28",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2023,
+          "actual_label_year": 2023,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2023-g01-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_MSFT_20230928T072928_A034263_T51NWA_N05.09",
+          "s2_product_uri": "S2B_MSIL2A_20230928T021349_N0509_R060_T51NWA_20230928T072926.SAFE",
+          "s2_mgrs_tile": "51NWA",
+          "platform": "Sentinel-2B",
+          "datetime": "2023-09-28T02:13:49.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2023,
+          "calibration_sha256": "8f5a860a47f5647f13a2f9027fcf5cb1f73742c63e89dd965c2e7a7fbc0efb62",
+          "stac_item_sha256": "063969700334c99c0b28e7720125ba30f51d13cef4d4148298422fe91e293e62"
+        }
+      }
+    },
+    {
+      "cell_id": "gorontalo_2024",
+      "province": "gorontalo",
+      "province_name": "Gorontalo",
+      "island": "Sulawesi",
+      "year": 2024,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "High average cloud cover (12.9% > 12.0%)",
+        "16/48 patches have raw cloud cover > 20%"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 36,
+        "quality_insufficient": 12,
+        "eligible_ratio": 0.75
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 12.9,
+        "max_cloud_cover_pct": 22.37,
+        "min_cloud_cover_pct": 3.49,
+        "patches_cloud_gt_20_count": 16
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 2.76,
+        "high_proba_cloud_pct": 7.96,
+        "medium_proba_cloud_pct": 4.41,
+        "thin_cirrus_pct": 0.54,
+        "total_atmospheric_interference_pct": 15.67,
+        "vegetation_pct": 30.19,
+        "water_pct": 51.7,
+        "not_vegetated_pct": 2.04
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.857,
+        "min_valid_pixel_ratio": 0.087
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51NUA",
+          "51NVA",
+          "51NWA"
+        ],
+        "platforms": {
+          "Sentinel-2A": 48
+        },
+        "observation_date_range": "2024-07-29 to 2024-09-27",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2024,
+          "actual_label_year": 2024,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g01-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_2APS_20240729T081053_A047533_T51NWA_N05.11",
+          "s2_product_uri": "S2A_MSIL2A_20240729T021351_N0511_R060_T51NWA_20240729T081053.SAFE",
+          "s2_mgrs_tile": "51NWA",
+          "platform": "Sentinel-2A",
+          "datetime": "2024-07-29T02:13:51.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2024,
+          "calibration_sha256": "3363052c8b5c0c1ddb077dff651bfa52e57ef484866ab0067249bb394a7e051a",
+          "stac_item_sha256": "068942dbc57bb763385ac2afcf3aa969c46f067ea85bb536c9b466f551b681a8"
+        }
+      }
+    },
+    {
+      "cell_id": "gorontalo_2025",
+      "province": "gorontalo",
+      "province_name": "Gorontalo",
+      "island": "Sulawesi",
+      "year": 2025,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "High average cloud cover (18.1% > 12.0%)",
+        "Substantial SCL cloud shadow interference (3.7% > 3.0%)",
+        "Low average valid pixel ratio (0.831 < 0.85)",
+        "High insufficient patch ratio (15/48 = 31.2% > 25%)"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 33,
+        "quality_insufficient": 15,
+        "eligible_ratio": 0.688
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 18.09,
+        "max_cloud_cover_pct": 19.52,
+        "min_cloud_cover_pct": 15.23,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 3.73,
+        "high_proba_cloud_pct": 8.13,
+        "medium_proba_cloud_pct": 7.05,
+        "thin_cirrus_pct": 2.91,
+        "total_atmospheric_interference_pct": 21.82,
+        "vegetation_pct": 27.8,
+        "water_pct": 48.74,
+        "not_vegetated_pct": 1.28
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.831,
+        "min_valid_pixel_ratio": 0.089
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51NUA",
+          "51NVA"
+        ],
+        "platforms": {
+          "Sentinel-2A": 16,
+          "Sentinel-2B": 32
+        },
+        "observation_date_range": "2025-06-29 to 2025-07-29",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2025,
+          "actual_label_year": 2025,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g02-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_2APS_20250729T075530_A052753_T51NUA_N05.11",
+          "s2_product_uri": "S2A_MSIL2A_20250729T022341_N0511_R103_T51NUA_20250729T075530.SAFE",
+          "s2_mgrs_tile": "51NUA",
+          "platform": "Sentinel-2A",
+          "datetime": "2025-07-29T02:23:41.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2025,
+          "calibration_sha256": "313785ca04c2e40573514bd0ba8ccfd7e97c5ce32124c2996218c7b55873c1c7",
+          "stac_item_sha256": "99b101219f5498a42e6e735d6d3451f4a44e7072f7932babea71c404472b0650"
+        }
+      }
+    },
+    {
+      "cell_id": "southeast_sulawesi_2020",
+      "province": "southeast_sulawesi",
+      "province_name": "Southeast Sulawesi",
+      "island": "Sulawesi",
+      "year": 2020,
+      "period": "T1_BASELINE",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 41,
+        "quality_insufficient": 7,
+        "eligible_ratio": 0.854
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 4.7,
+        "max_cloud_cover_pct": 6.91,
+        "min_cloud_cover_pct": 2.88,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 0.95,
+        "high_proba_cloud_pct": 3.22,
+        "medium_proba_cloud_pct": 0.98,
+        "thin_cirrus_pct": 0.49,
+        "total_atmospheric_interference_pct": 5.64,
+        "vegetation_pct": 43.64,
+        "water_pct": 47.1,
+        "not_vegetated_pct": 1.72
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.927,
+        "min_valid_pixel_ratio": 0.45
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51MUQ",
+          "51MUR",
+          "51MVQ",
+          "51MVR"
+        ],
+        "platforms": {
+          "Sentinel-2B": 40,
+          "Sentinel-2A": 8
+        },
+        "observation_date_range": "2020-08-14 to 2020-08-19",
+        "total_acquisition_dates": 2
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2020,
+          "actual_label_year": 2020,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "grid-esri_io-southeast_sulawesi-2020-g00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_ESRI_20200816T065645_A017961_T51MUR_N02.12",
+          "s2_product_uri": "S2B_MSIL2A_20200814T021349_N0212_R060_T51MUR_20200816T065643.SAFE",
+          "s2_mgrs_tile": "51MUR",
+          "platform": "Sentinel-2B",
+          "datetime": "2020-08-14T02:13:49.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2020,
+          "calibration_sha256": "8e5e599a74e3a7eba8b7c9497cc79ac0fcbed8cb98e46ae714d84f7b30d33aa4",
+          "stac_item_sha256": "3cd30769bab1a565693ffb16e777f87856980061e171632233ecd87e9f9e0c24"
+        }
+      }
+    },
+    {
+      "cell_id": "southeast_sulawesi_2021",
+      "province": "southeast_sulawesi",
+      "province_name": "Southeast Sulawesi",
+      "island": "Sulawesi",
+      "year": 2021,
+      "period": "T1_BASELINE",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [
+        "High insufficient patch ratio (15/56 = 26.8% > 25%)"
+      ],
+      "patches": {
+        "total": 56,
+        "quality_eligible": 41,
+        "quality_insufficient": 15,
+        "eligible_ratio": 0.732
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 8.67,
+        "max_cloud_cover_pct": 11.36,
+        "min_cloud_cover_pct": 5.16,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 1.17,
+        "high_proba_cloud_pct": 5.79,
+        "medium_proba_cloud_pct": 1.53,
+        "thin_cirrus_pct": 1.35,
+        "total_atmospheric_interference_pct": 9.84,
+        "vegetation_pct": 45.18,
+        "water_pct": 40.6,
+        "not_vegetated_pct": 1.6
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.862,
+        "min_valid_pixel_ratio": 0.415
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51MUQ",
+          "51MUR",
+          "51MVQ"
+        ],
+        "platforms": {
+          "Sentinel-2A": 32,
+          "Sentinel-2B": 24
+        },
+        "observation_date_range": "2021-07-25 to 2021-09-08",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2021,
+          "actual_label_year": 2021,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": {
+          "dataset": "ESA WorldCover 10m 2021 v200",
+          "scene_id": "S2A_MSIL2A_20210725T021351_R060_T51MUR_20210725T120401",
+          "datetime": "2021-07-25T02:13:51.024000Z",
+          "cloud_cover": 9.75,
+          "label_source": "worldcover",
+          "image_path": "data/first-group-2021/southeast_sulawesi-2021/image.tif",
+          "label_path": "data/first-group-2021/southeast_sulawesi-2021/label-worldcover.tif"
+        },
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_ESRI_20210725T120403_A031803_T51MUR_N03.00",
+          "s2_product_uri": "S2A_MSIL2A_20210725T021351_N0300_R060_T51MUR_20210725T120401.SAFE",
+          "s2_mgrs_tile": "51MUR",
+          "platform": "Sentinel-2A",
+          "datetime": "2021-07-25T02:13:51.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2021,
+          "calibration_sha256": "532b58e9723524b781a1d704fd3883a8ba4e57032ac7db5ad804dbdf4d5dfea0",
+          "stac_item_sha256": "bdcc3e7d9b85d39124da563232e47e32452289e3e9ee854f2307879b5e79182b"
+        }
+      }
+    },
+    {
+      "cell_id": "southeast_sulawesi_2022",
+      "province": "southeast_sulawesi",
+      "province_name": "Southeast Sulawesi",
+      "island": "Sulawesi",
+      "year": 2022,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "NOMINAL",
+      "degradation_reasons": [
+        "Substantial SCL cloud shadow interference (3.8% > 3.0%)"
+      ],
+      "patches": {
+        "total": 48,
+        "quality_eligible": 37,
+        "quality_insufficient": 11,
+        "eligible_ratio": 0.771
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 9.36,
+        "max_cloud_cover_pct": 16.63,
+        "min_cloud_cover_pct": 3.63,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 3.78,
+        "high_proba_cloud_pct": 3.53,
+        "medium_proba_cloud_pct": 4.27,
+        "thin_cirrus_pct": 1.56,
+        "total_atmospheric_interference_pct": 13.14,
+        "vegetation_pct": 38.34,
+        "water_pct": 46.1,
+        "not_vegetated_pct": 1.85
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.878,
+        "min_valid_pixel_ratio": 0.306
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51MUQ",
+          "51MUR",
+          "51MVQ",
+          "51MVR"
+        ],
+        "platforms": {
+          "Sentinel-2A": 24,
+          "Sentinel-2B": 24
+        },
+        "observation_date_range": "2022-08-04 to 2022-09-28",
+        "total_acquisition_dates": 4
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2022,
+          "actual_label_year": 2022,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g00-r0-c0",
+          "s2_granule_id": "S2A_OPER_MSI_L2A_TL_S2RP_20240725T180712_A037952_T51MUR_N05.10",
+          "s2_product_uri": "S2A_MSIL2A_20220928T021351_N0510_R060_T51MUR_20240725T180712.SAFE",
+          "s2_mgrs_tile": "51MUR",
+          "platform": "Sentinel-2A",
+          "datetime": "2022-09-28T02:13:51.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2022,
+          "calibration_sha256": "1959d092c138e7e04b8cd0b85a54630271970536d9119353eee60946916ceda2",
+          "stac_item_sha256": "c27df57c0a0d763754c080ad007ff56936ece80bcad33a2c709d62d14d52e258"
+        }
+      }
+    },
+    {
+      "cell_id": "southeast_sulawesi_2023",
+      "province": "southeast_sulawesi",
+      "province_name": "Southeast Sulawesi",
+      "island": "Sulawesi",
+      "year": 2023,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "Low average valid pixel ratio (0.779 < 0.85)",
+        "High insufficient patch ratio (23/56 = 41.1% > 25%)"
+      ],
+      "patches": {
+        "total": 56,
+        "quality_eligible": 33,
+        "quality_insufficient": 23,
+        "eligible_ratio": 0.589
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 8.03,
+        "max_cloud_cover_pct": 13.41,
+        "min_cloud_cover_pct": 0.25,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 2.44,
+        "high_proba_cloud_pct": 3.7,
+        "medium_proba_cloud_pct": 3.39,
+        "thin_cirrus_pct": 0.94,
+        "total_atmospheric_interference_pct": 10.47,
+        "vegetation_pct": 30.77,
+        "water_pct": 56.28,
+        "not_vegetated_pct": 1.82
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.779,
+        "min_valid_pixel_ratio": 0.046
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51MUQ",
+          "51MUR",
+          "51MVQ",
+          "51MWR"
+        ],
+        "platforms": {
+          "Sentinel-2B": 56
+        },
+        "observation_date_range": "2023-07-10 to 2023-08-19",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2023,
+          "actual_label_year": 2023,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2023-g00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_MSFT_20230819T071259_A033691_T51MUR_N05.09",
+          "s2_product_uri": "S2B_MSIL2A_20230819T021349_N0509_R060_T51MUR_20230819T071259.SAFE",
+          "s2_mgrs_tile": "51MUR",
+          "platform": "Sentinel-2B",
+          "datetime": "2023-08-19T02:13:49.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2023,
+          "calibration_sha256": "037e7e42c6dea736c55bb360948397a61615d8f308d51c55cb087e3be80e030e",
+          "stac_item_sha256": "7d69c6dbd0913a863efb4cb838caad905c9882c5916eaa664347b507912b9370"
+        }
+      }
+    },
+    {
+      "cell_id": "southeast_sulawesi_2024",
+      "province": "southeast_sulawesi",
+      "province_name": "Southeast Sulawesi",
+      "island": "Sulawesi",
+      "year": 2024,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "High average cloud cover (19.7% > 12.0%)",
+        "56/73 patches have raw cloud cover > 20%",
+        "Substantial SCL cloud shadow interference (7.3% > 3.0%)",
+        "Low average valid pixel ratio (0.699 < 0.85)",
+        "High insufficient patch ratio (45/73 = 61.6% > 25%)"
+      ],
+      "patches": {
+        "total": 73,
+        "quality_eligible": 28,
+        "quality_insufficient": 45,
+        "eligible_ratio": 0.384
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 19.66,
+        "max_cloud_cover_pct": 24.45,
+        "min_cloud_cover_pct": 6.67,
+        "patches_cloud_gt_20_count": 56
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 7.32,
+        "high_proba_cloud_pct": 10.22,
+        "medium_proba_cloud_pct": 8.3,
+        "thin_cirrus_pct": 1.15,
+        "total_atmospheric_interference_pct": 26.99,
+        "vegetation_pct": 34.2,
+        "water_pct": 36.25,
+        "not_vegetated_pct": 1.81
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.699,
+        "min_valid_pixel_ratio": 0.056
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51MUQ",
+          "51MUR",
+          "51MVR"
+        ],
+        "platforms": {
+          "Sentinel-2B": 73
+        },
+        "observation_date_range": "2024-08-03 to 2024-09-12",
+        "total_acquisition_dates": 3
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2024,
+          "actual_label_year": 2024,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g02-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_2BPS_20240912T055427_A039268_T51MVR_N05.11",
+          "s2_product_uri": "S2B_MSIL2A_20240912T021209_N0511_R060_T51MVR_20240912T055427.SAFE",
+          "s2_mgrs_tile": "51MVR",
+          "platform": "Sentinel-2B",
+          "datetime": "2024-09-12T02:12:09.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2024,
+          "calibration_sha256": "53bf4304f790332834b72ef2374e4f2e56d0a99c234782725fd8b722eec213c1",
+          "stac_item_sha256": "4a0120d9c8688a822d31a6eb3be93346d2eecaa404a95841acd179c23a3359ec"
+        }
+      }
+    },
+    {
+      "cell_id": "southeast_sulawesi_2025",
+      "province": "southeast_sulawesi",
+      "province_name": "Southeast Sulawesi",
+      "island": "Sulawesi",
+      "year": 2025,
+      "period": "T2_MONITORING",
+      "split": "train",
+      "quality_status": "DEGRADED",
+      "degradation_reasons": [
+        "Substantial SCL cloud shadow interference (3.1% > 3.0%)",
+        "Low average valid pixel ratio (0.842 < 0.85)",
+        "High insufficient patch ratio (20/57 = 35.1% > 25%)"
+      ],
+      "patches": {
+        "total": 57,
+        "quality_eligible": 37,
+        "quality_insufficient": 20,
+        "eligible_ratio": 0.649
+      },
+      "cloud_metrics": {
+        "avg_cloud_cover_pct": 5.69,
+        "max_cloud_cover_pct": 11.48,
+        "min_cloud_cover_pct": 1.62,
+        "patches_cloud_gt_20_count": 0
+      },
+      "scl_atmospheric_percentages": {
+        "cloud_shadow_pct": 3.15,
+        "high_proba_cloud_pct": 2.54,
+        "medium_proba_cloud_pct": 3.08,
+        "thin_cirrus_pct": 0.07,
+        "total_atmospheric_interference_pct": 8.84,
+        "vegetation_pct": 30.42,
+        "water_pct": 58.89,
+        "not_vegetated_pct": 1.38
+      },
+      "valid_pixel_metrics": {
+        "avg_valid_pixel_ratio": 0.842,
+        "min_valid_pixel_ratio": 0.238
+      },
+      "satellite_acquisition": {
+        "mgrs_tiles": [
+          "51MUQ",
+          "51MUR",
+          "51MVQ",
+          "51MWR"
+        ],
+        "platforms": {
+          "Sentinel-2B": 17,
+          "Sentinel-2C": 40
+        },
+        "observation_date_range": "2025-06-09 to 2025-09-22",
+        "total_acquisition_dates": 4
+      },
+      "provenance": {
+        "esri_land_cover": {
+          "version": "Esri 10m Annual Land Cover (Impact Observatory)",
+          "nominal_year": 2025,
+          "actual_label_year": 2025,
+          "dataset_path": "data/first-group-training-esri-v1/"
+        },
+        "sentinel2_l2a": {
+          "level": "L2A_Surface_Reflectance",
+          "bands": [
+            "B02",
+            "B03",
+            "B04",
+            "B08",
+            "B11",
+            "B12"
+          ],
+          "resolution_meters": 10.0,
+          "normalized_scale": 0.0001
+        },
+        "worldcover_reference": null,
+        "sample_patch": {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g00-r0-c0",
+          "s2_granule_id": "S2B_OPER_MSI_L2A_TL_2BPS_20250609T035719_A043129_T51MUR_N05.11",
+          "s2_product_uri": "S2B_MSIL2A_20250609T021209_N0511_R060_T51MUR_20250609T035719.SAFE",
+          "s2_mgrs_tile": "51MUR",
+          "platform": "Sentinel-2B",
+          "datetime": "2025-06-09T02:12:09.024000Z",
+          "label_source": "esri_io",
+          "label_year": 2025,
+          "calibration_sha256": "987ab70edfa95f02361790cead89663a726974ee49293fe3276dd1ef63de35d3",
+          "stac_item_sha256": "8edfd67739720abbeace7c9d0a42a153bfec1eaf3d8b576e28f76878f97d435d"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "status": "TEMPORAL_CHANGE_FILTER_COMPLETE",
+  "time_horizon": {
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "total_years": 6,
+    "evaluated_pair": {
+      "from_year": 2020,
+      "to_year": 2021
+    }
+  },
+  "trajectory_filter_metrics": {
+    "total_pixels": 4096,
+    "total_bounces_smoothed": 86,
+    "confidence_reversals": 0,
+    "per_year_details": [
+      {
+        "time_index": 1,
+        "bounces_detected": 40,
+        "bounce_rate": 0.009766
+      },
+      {
+        "time_index": 2,
+        "bounces_detected": 23,
+        "bounce_rate": 0.005615
+      },
+      {
+        "time_index": 3,
+        "bounces_detected": 23,
+        "bounce_rate": 0.005615
+      },
+      {
+        "time_index": 4,
+        "bounces_detected": 0,
+        "bounce_rate": 0.0
+      }
+    ]
+  },
+  "transition_comparison": {
+    "raw_changed_pixels": 40,
+    "raw_changed_area_m2": 4000.0,
+    "raw_change_rate": 0.010808,
+    "filtered_changed_pixels": 0,
+    "filtered_changed_area_m2": 0.0,
+    "filtered_change_rate": 0.0,
+    "false_changes_removed_pixels": 40,
+    "false_change_reduction_rate": 1.0,
+    "confidence_mean_on_filtered_changes": 0.0
+  },
+  "matrix_conservation_verified": true,
+  "exported_artifacts": {
+    "transitions_raw_tif": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\lcluc-filter-workspace-20261019\\artifacts\\east_java\\adjacent_2020_2021\\transitions_raw.tif",
+    "transitions_filtered_tif": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\lcluc-filter-workspace-20261019\\artifacts\\east_java\\adjacent_2020_2021\\transitions_filtered.tif",
+    "change_confidence_tif": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\lcluc-filter-workspace-20261019\\artifacts\\east_java\\adjacent_2020_2021\\change_confidence.tif",
+    "transitions_raw_csv": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\lcluc-filter-workspace-20261019\\artifacts\\east_java\\adjacent_2020_2021\\transitions_raw.csv",
+    "transitions_filtered_csv": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\lcluc-filter-workspace-20261019\\artifacts\\east_java\\adjacent_2020_2021\\transitions_filtered.csv"
+  }
+}

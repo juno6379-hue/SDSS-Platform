@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "title": "Temporal Consistency & False Change Filter Multi-Year Benchmark",
+  "scope": "GAP_4_FALSE_CHANGE_FILTER_VERIFICATION",
+  "status": "VERIFICATION_SUCCESSFUL",
+  "benchmark_summary": {
+    "provinces_evaluated": 6,
+    "years_evaluated": 6,
+    "total_cells": 36,
+    "total_pixels_per_cell": 4096,
+    "total_pixels_evaluated": 147456,
+    "total_false_changes_removed": 240,
+    "adjacent_false_change_reduction_rate": 1.0,
+    "permanent_change_preservation_rate": 0.823333,
+    "matrix_arithmetic_conservation_pass_rate": 1.0,
+    "total_execution_seconds": 3.731
+  },
+  "province_details": [
+    {
+      "province": "banten",
+      "valid_pixels": 3287,
+      "total_pixels": 4096,
+      "bounces_injected": 95,
+      "bounces_smoothed": 86,
+      "adjacent_2020_2021": {
+        "raw_changed_pixels": 40,
+        "raw_changed_area_m2": 4000.0,
+        "raw_change_rate": 0.010724,
+        "filtered_changed_pixels": 0,
+        "filtered_changed_area_m2": 0.0,
+        "filtered_change_rate": 0.0,
+        "false_changes_removed_pixels": 40,
+        "false_change_reduction_rate": 1.0,
+        "confidence_mean_on_filtered_changes": 0.0
+      },
+      "baseline_2020_2025": {
+        "raw_changed_pixels": 79,
+        "raw_changed_area_m2": 7900.0,
+        "raw_change_rate": 0.020387,
+        "filtered_changed_pixels": 79,
+        "filtered_changed_area_m2": 7900.0,
+        "filtered_change_rate": 0.020387,
+        "false_changes_removed_pixels": 0,
+        "false_change_reduction_rate": 0.0,
+        "confidence_mean_on_filtered_changes": 0.1786625236272812
+      },
+      "matrix_conservation_verified": true,
+      "elapsed_seconds": 0.967
+    },
+    {
+      "province": "east_java",
+      "valid_pixels": 3107,
+      "total_pixels": 4096,
+      "bounces_injected": 95,
+      "bounces_smoothed": 86,
+      "adjacent_2020_2021": {
+        "raw_changed_pixels": 40,
+        "raw_changed_area_m2": 4000.0,
+        "raw_change_rate": 0.010808,
+        "filtered_changed_pixels": 0,
+        "filtered_changed_area_m2": 0.0,
+        "filtered_change_rate": 0.0,
+        "false_changes_removed_pixels": 40,
+        "false_change_reduction_rate": 1.0,
+        "confidence_mean_on_filtered_changes": 0.0
+      },
+      "baseline_2020_2025": {
+        "raw_changed_pixels": 86,
+        "raw_changed_area_m2": 8600.0,
+        "raw_change_rate": 0.023237,
+        "filtered_changed_pixels": 86,
+        "filtered_changed_area_m2": 8600.0,
+        "filtered_change_rate": 0.023237,
+        "false_changes_removed_pixels": 0,
+        "false_change_reduction_rate": 0.0,
+        "confidence_mean_on_filtered_changes": 0.17824582755565643
+      },
+      "matrix_conservation_verified": true,
+      "elapsed_seconds": 0.483
+    },
+    {
+      "province": "gorontalo",
+      "valid_pixels": 3290,
+      "total_pixels": 4096,
+      "bounces_injected": 95,
+      "bounces_smoothed": 85,
+      "adjacent_2020_2021": {
+        "raw_changed_pixels": 40,
+        "raw_changed_area_m2": 4000.0,
+        "raw_change_rate": 0.010428,
+        "filtered_changed_pixels": 0,
+        "filtered_changed_area_m2": 0.0,
+        "filtered_change_rate": 0.0,
+        "false_changes_removed_pixels": 40,
+        "false_change_reduction_rate": 1.0,
+        "confidence_mean_on_filtered_changes": 0.0
+      },
+      "baseline_2020_2025": {
+        "raw_changed_pixels": 82,
+        "raw_changed_area_m2": 8200.0,
+        "raw_change_rate": 0.021568,
+        "filtered_changed_pixels": 82,
+        "filtered_changed_area_m2": 8200.0,
+        "filtered_change_rate": 0.021568,
+        "false_changes_removed_pixels": 0,
+        "false_change_reduction_rate": 0.0,
+        "confidence_mean_on_filtered_changes": 0.18133759498596191
+      },
+      "matrix_conservation_verified": true,
+      "elapsed_seconds": 0.592
+    },
+    {
+      "province": "south_sulawesi",
+      "valid_pixels": 3181,
+      "total_pixels": 4096,
+      "bounces_injected": 95,
+      "bounces_smoothed": 83,
+      "adjacent_2020_2021": {
+        "raw_changed_pixels": 40,
+        "raw_changed_area_m2": 4000.0,
+        "raw_change_rate": 0.010647,
+        "filtered_changed_pixels": 0,
+        "filtered_changed_area_m2": 0.0,
+        "filtered_change_rate": 0.0,
+        "false_changes_removed_pixels": 40,
+        "false_change_reduction_rate": 1.0,
+        "confidence_mean_on_filtered_changes": 0.0
+      },
+      "baseline_2020_2025": {
+        "raw_changed_pixels": 81,
+        "raw_changed_area_m2": 8100.0,
+        "raw_change_rate": 0.021786,
+        "filtered_changed_pixels": 81,
+        "filtered_changed_area_m2": 8100.0,
+        "filtered_change_rate": 0.021786,
+        "false_changes_removed_pixels": 0,
+        "false_change_reduction_rate": 0.0,
+        "confidence_mean_on_filtered_changes": 0.1835331916809082
+      },
+      "matrix_conservation_verified": true,
+      "elapsed_seconds": 0.535
+    },
+    {
+      "province": "southeast_sulawesi",
+      "valid_pixels": 3450,
+      "total_pixels": 4096,
+      "bounces_injected": 95,
+      "bounces_smoothed": 87,
+      "adjacent_2020_2021": {
+        "raw_changed_pixels": 40,
+        "raw_changed_area_m2": 4000.0,
+        "raw_change_rate": 0.010251,
+        "filtered_changed_pixels": 0,
+        "filtered_changed_area_m2": 0.0,
+        "filtered_change_rate": 0.0,
+        "false_changes_removed_pixels": 40,
+        "false_change_reduction_rate": 1.0,
+        "confidence_mean_on_filtered_changes": 0.0
+      },
+      "baseline_2020_2025": {
+        "raw_changed_pixels": 83,
+        "raw_changed_area_m2": 8300.0,
+        "raw_change_rate": 0.021309,
+        "filtered_changed_pixels": 83,
+        "filtered_changed_area_m2": 8300.0,
+        "filtered_change_rate": 0.021309,
+        "false_changes_removed_pixels": 0,
+        "false_change_reduction_rate": 0.0,
+        "confidence_mean_on_filtered_changes": 0.18386922776699066
+      },
+      "matrix_conservation_verified": true,
+      "elapsed_seconds": 0.499
+    },
+    {
+      "province": "west_java",
+      "valid_pixels": 3152,
+      "total_pixels": 4096,
+      "bounces_injected": 95,
+      "bounces_smoothed": 89,
+      "adjacent_2020_2021": {
+        "raw_changed_pixels": 40,
+        "raw_changed_area_m2": 4000.0,
+        "raw_change_rate": 0.010535,
+        "filtered_changed_pixels": 0,
+        "filtered_changed_area_m2": 0.0,
+        "filtered_change_rate": 0.0,
+        "false_changes_removed_pixels": 40,
+        "false_change_reduction_rate": 1.0,
+        "confidence_mean_on_filtered_changes": 0.0
+      },
+      "baseline_2020_2025": {
+        "raw_changed_pixels": 83,
+        "raw_changed_area_m2": 8300.0,
+        "raw_change_rate": 0.022181,
+        "filtered_changed_pixels": 83,
+        "filtered_changed_area_m2": 8300.0,
+        "filtered_change_rate": 0.022181,
+        "false_changes_removed_pixels": 0,
+        "false_change_reduction_rate": 0.0,
+        "confidence_mean_on_filtered_changes": 0.18362373113632202
+      },
+      "matrix_conservation_verified": true,
+      "elapsed_seconds": 0.65
+    }
+  ]
+}

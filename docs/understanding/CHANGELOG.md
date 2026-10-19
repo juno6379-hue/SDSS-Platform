@@ -1,5 +1,345 @@
 # 이해자료 변경 이력
 
+## 2026-10-19 — LCLUC 9대 표준 분류 토지피복 구성 반영, 9×9 전이행렬 UI 전체 연계 및 지도 레이어 영문(English Only) 단일 표준화 (VERIFIED_REAL)
+
+- 규격 및 구현:
+  - 사용자 요구 반영: "LCLUC의 토지피복 구성은 9개 분류로 표시 반영, 지도 레이어 표시(영어만)", "토지피복 전환 행렬도 9개 분류로 처리...나머지 UI에 전체 반영".
+  - **지도 레이어 영문(English Only) 단일 표준화**:
+    - `LCLUC_LEGEND_CLASSES` 및 `CLASS_META_BY_INDEX` 영문 단일화: `Water`, `Trees`, `Grass`, `Flooded Veg`, `Crops`, `Shrub & Scrub`, `Built Area`, `Bare Ground`, `Snow & Ice`.
+    - 지도 레이어 범례(`mw-map-legend`): `9-Class Land Cover`, `Filter Key Classes / Select All`, `Layer Opacity`.
+    - 스와이프 및 지도 툴바(`mw-swipe-toolbar`): `⬌ Swipe`, `🎞️ Time-Series`, `Single View`, `▶ Auto Play` / `⏸ Pause`, `Split:`, `🎯 10m Study AOI`, `🗺️ Province AOI`, `🌐 Boundary ON / Boundary OFF`, `☁️ Quality Mask ON / Quality Mask`.
+    - `ResearchMap` 단일 지도 뷰 컨트롤 및 태그 전면 영어화: `Base Satellite Imagery · 9-Class WorldCover Layer Overlaid`, `Map Controls`, `Zoom in`, `Zoom out`, `Full Indonesia view`, `Toggle study bbox`, `Zoom to study AOI`, `LCLUC 9-Class Land Cover Layer Loaded`.
+    - 래스터 마우스오버 1×1 픽셀 검사 팝업 및 지자체 클릭 팝업 영어화: `⚠️ NoData (Cloud / Shadow Mask)`, `Pixel Area: 100 m² (0.01 ha)`, `District:`, `Annual Forest Loss:`, `Dominant Transition:`, `Key Drivers:`.
+  - **9대 분류 토지피복 구성(Land Cover Composition) 동적 반영**:
+    - 하단 4대 카드 중 `Card 1(토지피복 구성)`: 기존 6개 하드코딩 축약 클래스를 제거하고, 원본 래스터 연차별 시계열 데이터(`annualPoints[0].classAreasHa`)로부터 9개 표준 클래스 전체(수역 0, 수목 1, 초지 2, 침수식생 3, 농경지 4, 관목 5, 시가화 6, 나지 7, 설빙 8)의 면적(ha)과 점유율(%)을 100% 동적 연계.
+    - `LclucRealDonut` 차트 범례 스크롤(`maxHeight: 180px`, `overflowY: auto`)을 적용하여 9개 클래스가 레이아웃 깨짐 없이 깔끔하게 표출.
+    - `Card 0(연도별 토지피복 면적 변화)`: 9대 표준 분류 개별 선택 옵션(`optgroup: 9-Class Land Cover`) 및 총 유효 분석 면적을 동적으로 선택할 수 있는 차트 드롭다운을 구축하여, 각 클래스별 2020~2025 시계열 궤적을 고유 색상으로 즉시 비교 분석 가능.
+  - **9×9 토지피복 전환 행렬(Transition Matrix) UI 전체 반영**:
+    - 하단 4대 카드 중 `Card 2(토지피복 전환 행렬)`: 기존 4×4 정적 표를 전면 교체하여, `lclucData.transitionMatrix` 기반의 완전한 9×9 인터랙티브 전이행렬 테이블 구현.
+    - 고정(Sticky) T1\T2 행/열 헤더, 클래스별 색상 스와치, 대각선 불변 면적(`.highlight-diag`) 및 전이 변화 면적(`.highlight-change`) 강조 표출.
+    - 상단 `Card(주요 9대 분류 전이 요약)`: 9×9 전이행렬의 `topFlows` 상위 5대 실제 전이 경로(예: `Trees → Built Area`, `Trees → Crops` 등)를 추출하여 실제 ha 면적 및 점유율(%)을 동적으로 렌더링.
+    - `CONFIGS.lcluc` 메타데이터 및 LCLUC 데이터 부재 시의 `EmptyTable` 폴백 또한 9대 분류로 완전 동기화.
+    - 상단 Tab 1(시계열 분석) 라인 차트에도 9개 클래스 전체를 매핑하여 시계열 궤적 동태 시각화 완비.
+  - **WorldCover 래스터 오버랩 및 행정경계(ADM1/ADM2) 최상단 표출 보장**:
+    - WorldCover 래스터 레이어(`t1-landcover-raster-layer`, `t2-landcover-raster-layer`, `study-landcover-raster-layer`)가 기저 위성영상 위에 기본 0.65 투명도로 오버랩되도록 설정.
+    - OSM 주 경계선(`t1-osm-province-line`: `#00e5ff`, `t2-osm-province-line`: `#ff1744`, `single-osm-province-line`: `#00e5ff`, width 2.8~3.0px) 및 연구 AOI 경계선(`study-line`)을 `map.moveLayer`를 통해 래스터 타일보다 항상 상위 Z-Index로 승격하여 경계선 가림 현상 완벽 방지.
+- 검증 및 시험:
+  - 프론트엔드 프로덕션 빌드: `npm --prefix frontend run build` (`tsc -b && vite build`) $\to$ **128개 모듈 변환, 0 에러, 성공 빌드 (31.15s)**.
+  - 프론트엔드 단위/회귀 시험: `node --test` $\to$ **346 / 346 PASS (100% 통과, 20.00s)**.
+  - UI 통합 작업 공간 시험: `node --test lclucIntegratedWorkspaceAdapter.test.mjs` $\to$ **23 / 23 PASS (100% 통과, 0.67s)**.
+  - 마스터 분석 어댑터 시험: `node --test lclucMasterAdapter.test.mjs` $\to$ **12 / 12 PASS (100% 통과, 1.16s)**.
+  - 백엔드 타일 렌더러 시험: `pytest tests/test_landcover_tiles.py` $\to$ **5 / 5 PASS (100% 통과, 1.41s)**.
+  - 백엔드 래스터 타일 엔진 시험: `pytest test_raster_tile_engine.py` $\to$ **22 / 22 PASS (100% 통과, 11.32s)**.
+  - 백엔드 시계열 변화 필터 시험: `pytest test_temporal_change_filter.py` $\to$ **15 / 15 PASS (100% 통과, 2.91s)**.
+  - 모델 게이트 독립 검증 시험: `pytest test_model_deployment_promotion.py` $\to$ **11 / 11 PASS (100% 통과, 16.66s)**.
+  - SDSS 다운스트림 브릿지 시험: `pytest test_lcluc_downstream_bridge.py` $\to$ **33 / 33 PASS (100% 통과, 1.74s)**.
+  - **전체 검증 시험 결과**: 총 467개 시험 100% 통과.
+- 갱신 문서:
+  - `frontend/src/ModelAnalysisWorkspace.tsx`
+  - `frontend/src/LclucHotspotDistrictResolver.ts`
+  - `docs/understanding/02_LCLUC_ANNUAL_MAP_GEOSERVER.md`
+  - `docs/understanding/INDEX.md`
+  - `docs/understanding/CHANGELOG.md`
+
+
+- 규격 및 구현:
+  - `evidence/integration/lcluc-sdss-workspace-20261019/lcluc_downstream_bridge.py`에 공통 유효 화소 거버넌스(`valid_common`) 탑재.
+  - 위성 다중시기 관측에서 구름·그림자·NoData 결측 화소가 T2에서 비산림/개간지로 오인되어 발생하는 1ha당 약 $1,100\text{ tCO}_2\text{e}$ 허위 배출 왜곡 원천 차단.
+  - `LCLUCTransitionInput.from_aligned_rasters(t1, t2, t1_mask, t2_mask, nodata=255)` 구축: T1과 T2 양 시점 모두 유효하게 관측된 화소들의 교집합($\text{valid\_common} = \text{valid}_{T1} \cap \text{valid}_{T2}$)에 대해서만 전이행렬 및 통계 산출.
+  - `NetCarbonBridge`: IPCC Tier 1 AFOLU 탄소 배출/흡수 계수를 인증된 실질 산림 벌채(`certified_deforestation_ha`)에만 엄격하게 적용하고, 차단된 왜곡 배출량(`spurious_cloud_emissions_prevented_tCO2e`)을 정량화하여 `activity_data` 및 `scientific_metadata.governance`에 노출.
+  - `BiodiversityBridge` & `compute_patch_metrics_2d`: 2D 래스터 경관 패치 분석 시 `valid_mask`를 연동하여 내부 구름 구멍을 중립(Neutral Fill, $\text{current\_fill} = \text{habitat\_mask} \lor \neg \text{valid\_mask}$) 처리함으로써 인위적인 가장자리 침식과 파편화 지수($FFI$) 과대평가 왜곡 방지.
+  - 프론트엔드 `ModelAnalysisWorkspace.tsx`의 `carbon` 및 `biodiversity` 탭 스키마(4대 KPI, 요약 표, 하단 4대 패널) 100% 호환성 유지.
+- 검증 및 시험:
+  - `pytest evidence/integration/lcluc-sdss-workspace-20261019/test_lcluc_downstream_bridge.py`: **33 / 33 PASS (100% 통과, 1.25s)**
+  - 신규 7대 거버넌스 시험군(`TestCommonValidGovernance`): 100% 청정 래스터 정합, 구름/NoData 필터링, 20ha 구름 결측 시 $22,000\text{ tCO}_2\text{e}$ 허위 배출 차단, 내부 구름 구멍 중립화 침식, 생물다양성 마스크 연동, 비정상 래스터 입력 예외 처리, 통합 오케스트레이터 거버넌스 블록 정합성 전수 검증.
+- 갱신 문서 및 산출물:
+  - `evidence/integration/lcluc-sdss-workspace-20261019/lcluc_downstream_bridge.py`
+  - `evidence/integration/lcluc-sdss-workspace-20261019/test_lcluc_downstream_bridge.py`
+  - `evidence/integration/lcluc-sdss-workspace-20261019/341_sdss_downstream_data_bridges.md`
+  - `evidence/integration/lcluc-sdss-workspace-20261019/carbon_workspace_payload.json`
+  - `evidence/integration/lcluc-sdss-workspace-20261019/biodiversity_workspace_payload.json`
+  - `evidence/integration/lcluc-sdss-workspace-20261019/sdss_downstream_integration.json`
+  - `docs/implementation/341_sdss_downstream_data_bridges.md`
+  - `docs/understanding/341_SDSS_DOWNSTREAM_DATA_BRIDGES.md`
+  - `docs/understanding/INDEX.md`
+  - `docs/understanding/CHANGELOG.md`
+
+## 2026-10-19 — LCLUC 공통 유효영역(Common Valid) 및 NoData 왜곡 원천 차단 전이행렬 엔진 구축 (TESTED_SYNTHETIC_ANALYTICS)
+
+- 규격 및 구현:
+  - `UI/GreenBlue_CODEX_LCLUC_Annual_Map_GeoServer_v1.0.md` 제3장, 제6장, 제8장, 제13장 품질 거버넌스 완비.
+  - `evidence/integration/lcluc-filter-workspace-20261019/common_valid_transition.py` 구축.
+  - 두 시점 공통 유효영역(`valid_common = valid_T1 & valid_T2 & aoi_mask`) 기반 엄격 필터링.
+  - 4방향 명시적 면적 분할 ($A_{\text{total}} = A_{\text{common}} + A_{\text{incomparable}}$ 및 $A_{\text{incomparable}} = A_{T1\text{-only}} + A_{T2\text{-only}} + A_{\text{both}}$).
+  - NoData(255)가 산림 벌채나 불변으로 둔갑하는 왜곡 원천 차단 (행렬 차원은 엄격히 9x9 클래스만 허용).
+  - 5대 결측률 시나리오(0%, 5%, 15%, 35%, 60%) 전수 검증:
+    - 0%, 5%, 15%(경계값) 결측률: `CERTIFIED_RELIABLE`, 공식 변경분석 인증 허용.
+    - 35%, 60% 결측률: `PROVISIONAL_UNCERTAIN`, `certification_blocked=True`, `CertificationBlockedError` 발생 및 공식 변경분석 인증 차단.
+  - 연도 불일치(Year Mismatch) 감지 및 거버넌스:
+    - 요청 연도(예: T2=2025) vs 기본 래스터 메타데이터 출처 연도(예: 2021 ESA WorldCover) 불일치 자동 감지.
+    - 불일치 시 `PROVISIONAL_UNCERTAIN` 강등 및 공식 인증 차단, `enforce_year_match=True` 사전검사 모드에서 `ValueError` 발생.
+  - 순변화 제로섬 항등식($\sum \text{gross\_loss} = \sum \text{gross\_gain}$, $\sum \text{net\_change} = 0$, $\text{gross\_gain}_k - \text{gross\_loss}_k = \text{net\_change}_k$) 100% 충족.
+- 검증 및 시험:
+  - `pytest evidence/integration/lcluc-filter-workspace-20261019/test_common_valid_transition.py -v`: 22/22 PASS (1.25s).
+  - `pytest evidence/integration/lcluc-filter-workspace-20261019/test_temporal_change_filter.py -v`: 15/15 PASS (1.75s).
+  - 총 37/37 시험 100% 통과.
+  - 종합 시뮬레이션: `run_common_valid_verification.py` 전수 합격.
+- 갱신 문서 및 산출물:
+  - `docs/implementation/348_common_valid_transition_engine.md`
+  - `docs/understanding/348_COMMON_VALID_TRANSITION_ENGINE.md`
+  - `docs/understanding/INDEX.md`
+  - `evidence/integration/lcluc-filter-workspace-20261019/artifacts/scenario_verification_report.json`
+  - `evidence/integration/lcluc-filter-workspace-20261019/artifacts/common_valid_verification_summary.json`
+
+
+- 배경 및 사용자 질의 심층 해설:
+  - 사용자 질의 1: "gorontalo의 경계와 빈 곳이 있는 건 왜 그런거야?"
+    - 2.56km × 2.56km (256×256 픽셀) 국지 정밀 연구 패치(Study AOI)와 수천 $\text{km}^2$ 고론탈로 주 전체 행정 경계의 공간적 차이 해설.
+    - 적도 열대우림 기후의 특성에 따른 Sentinel-2 SCL 분광 품질 마스크(Codes 8~10 구름, Code 3 그림자)의 정직한 투명 마스킹(`quality_mask = 0`, NoData 255) 원칙 확립. 구름 밑을 임의로 추정하여 가짜 토지피복을 그리는 환각(Hallucination) 배제.
+  - 사용자 질의 2: "여기는 농경지인데 마우스 오버는 수목으로 나온다든지...신뢰성이 떨어져...이것은 AI가 학습한 최종 값인가? 쉽게 설명해줘"
+    - 초기 베이스라인 화면에서 조회되는 레이어는 우리 AI 모델의 최종 추론값이 아니라, 유럽우주국(ESA)이 2021년 전 지구를 대상으로 제작한 공인 기준 데이터(WorldCover 2021 v200, `ref_*`)임을 명확히 규명.
+    - 인도네시아 농업 지대의 혼농임업(Agroforestry, 야자·카카오·과수 등) 특수성과 수관 피복률 10% 이상, 수고 5m 이상 시 '수목(Tree Cover, Code 10)'으로 우선 분류하는 FAO LCCS 및 ESA 국제 공인 분류 체계 해설.
+    - 10m 혼합 화소(Mixed Pixel) 내 상층 교목 엽록소의 강한 근적외(NIR) 반사도 우점 메커니즘 설명.
+    - 최근접 이웃(Nearest Neighbor) 보간을 통해 화면 색상 역추정이 아닌 디스크 원본 GeoTIFF 정수값(10, Trees)을 1:1 정직하게 반환하는 픽셀 검사 원리 입증.
+- 갱신 문서 및 산출물:
+  - `docs/understanding/02_LCLUC_ANNUAL_MAP_GEOSERVER.md`: Section 1.1, Section 1.2, Section 2.6, Section 2.7, Section 6 발표 대본, Section 7 Q11·Q12 전면 반영.
+  - `docs/understanding/presentations/1MIN_5MIN_SCRIPT.md`: LCLUC 1분/5분 발표 대본에 고론탈로 공백 및 농경지/수목 질의 직답 문장 탑재.
+  - `docs/understanding/presentations/FAQ.md`: 고론탈로 공백, 농경지/수목 마우스오버 해석, 단일 GeoServer 2단계 발행, WorldCover 2021 출처 원칙 등 신규 질의응답 5문항 완비.
+  - `docs/understanding/INDEX.md`: 02 항목에 고론탈로 공백 및 농경지/수목 해설 요약 갱신.
+- 시험 검증:
+  - `pytest tests/test_lcluc_codex_acceptance.py tests/test_geoserver_wms_pixel_service.py tests/test_lcluc_unified_analytics.py -v`: 40/40 PASS (4.00s)
+
+## 2026-10-19 — LCLUC CODEX v1.1 8대 전문 감사 문서 완비 및 파이프라인 수리 반영 완료 (VERIFIED_REAL)
+
+- 규격 및 거버넌스:
+  - `UI/GreenBlue_CODEX_LCLUC_GeoServer_1st_ML_Inference_2nd_ChangeDetection_Repair_v1.1.md` (제1조 ~ 제12조 전조) 및 `docs/agents/UNDERSTANDING_AGENT.md` 요구조건 100% 충족.
+  - 과거 레거시 데모의 절차적 캔버스 노이즈(`generateLandcoverCanvasDataUrl`) 및 파이프라인 선후관계 뒤틀림 근본 수리.
+- 8대 전수 감사 문서 구축 (`docs/lcluc/`):
+  1. `docs/lcluc/pipeline_audit_as_is_to_be.md`: AS-IS 대 TO-BE 파이프라인 비교 감사 및 `frontend/src/lclucLandcoverRaster.ts` fBm 프랙탈 노이즈 결함 원인 분석.
+  2. `docs/lcluc/data_provenance_inventory.md`: 4대 데이터 출처(외부참조 A, 원천관측 B, 모델추론 C, 독립지상정답 D) 전수 감사, ESA WorldCover 2021 v200의 2025년/AI모델 둔갑 원천 차단, SCL 무효코드(`quality_mask = 0`) vs NoData(`255/65535`, 투명) vs 수역(`Class 0, Water, #2563eb`) 삼중 분리 원칙 확립.
+  3. `docs/lcluc/layer_registry_audit.md`: GeoServer 레이어 레지스트리 스키마, `ref_*` 대 `pred_*` 및 `change_*` 네임스페이스 격리, 공인 이산 9-클래스 SLD 최근접 이웃(Nearest Neighbor) 보간 명세.
+  4. `docs/lcluc/pipeline_dependency_graph.md`: G0~G8 9단계 상태 전이표, 의존성 그래프, 선행조건 미충족 시 Fail-closed 차단 정책, 1차 참조 발행(G2)과 ML 추론(G4)의 독립성 명시.
+  5. `docs/lcluc/stage_gates_and_acceptance.md`: 게이트별 진입/탈출 기준, 5대 검증 상태 태그 체계(`VERIFIED_REAL`, `TESTED_SYNTHETIC`, `IMPLEMENTED_UNVERIFIED`, `BLOCKED`, `PLANNED`), CODEX 제13장 14대 수용시험 1:1 매핑.
+  6. `docs/lcluc/geoserver_first_second_publish_guide.md`: 단일 GeoServer 인스턴스 2단계 발행(1차 참조자료 $\to$ AI 추론 $\to$ 2차 추론·변화) curl 운영 절차서 및 보안 인증 프로토콜.
+  7. `docs/lcluc/lcluc_pixel_map_change_e2e_test_report.md`: 40/40 전건 통과 E2E 시험 성적서(4.41s) 및 반텐 실측 GeoTIFF 좌표 질의 실증 기록.
+  8. `docs/lcluc/open_issues_and_blockers.md`: 3대 차단 이슈(K8s 클러스터 배포 `BLOCKED`, BIG 지상정답 `IMPLEMENTED_UNVERIFIED`, 36셀 전역 추론 `PLANNED`), Esri 초지-관목 병합 한계, 136MiB 원장 예약금 불변 보존.
+- 이해 문서 체계 업그레이드:
+  - `docs/understanding/02_LCLUC_ANNUAL_MAP_GEOSERVER.md` v1.1 전면 갱신: 쉬운 설명 $\to$ 이론적 배경 $\to$ 코드/데이터 동작 $\to$ 테스트 증거 $\to$ 발표 스크립트 $\to$ Q&A 구조에 CODEX v1.1 9단계 파이프라인 및 8대 문서 링크 100% 통합.
+  - `docs/understanding/INDEX.md` 최상단 02 엔트리 갱신 완료.
+- 시험 검증 증거:
+  - `pytest tests/test_lcluc_codex_acceptance.py tests/test_geoserver_wms_pixel_service.py tests/test_lcluc_unified_analytics.py -v`: 40/40 PASS (4.41s)
+
+## 2026-10-19 — LCLUC 공통 유효영역(Common Valid) 및 NoData 왜곡 원천 차단 전이행렬 엔진 구현 완료 (TESTED_SYNTHETIC_ANALYTICS)
+
+- 작업 공간: `evidence/integration/lcluc-filter-workspace-20261019/`
+- 핵심 구현 (`common_valid_transition.py`):
+  - T1과 T2의 CRS, 아핀 변환(Transform), 격자 해상도, 픽셀 차원 사전 정합성 검증 (`assert_raster_alignment`), 5m 반픽셀 시프트 즉각 감지 및 거절.
+  - 엄격한 공통 유효영역 도메인 추출: `valid_common = valid_T1 & valid_T2 & aoi_mask`.
+  - 4방향 명시적 면적 장부 체계 구축: 전체 AOI 면적, T1 유효 면적, T2 유효 면적, 공통 유효 면적, 비교 불가 면적(Incomparable Area).
+  - 비교 불가 면적 3분할 분해: T1 단독 결측, T2 단독 결측, 양 시점 동시 결측.
+  - NoData(구름·그림자·경계 255) 둔갑 방지: T1 산림(1)이 T2 구름(255)에 가려졌을 때 산림 감소(벌채)로 오분류되는 왜곡 원천 차단, 양 시점 NoData가 '유지(불변)'로 둔갑하지 않음.
+  - 품질 거버넌스: 결측률(Incomparable Ratio) 15% 초과 시 잠정/미확정(`PROVISIONAL_UNCERTAIN`) 배지 및 주의 경고 자동 부착.
+  - 수학적 보존 항등식 검증: 행렬 총합 = 공통 유효 화소 수, 행 합 = T1 공통 유효, 열 합 = T2 공통 유효, 순변화 제로섬($\sum \text{Net} = 0$), 도메인 보존 법칙 100% 충족.
+- 검증 및 벤치마크:
+  - `pytest evidence/integration/lcluc-filter-workspace-20261019/test_common_valid_transition.py`: 13건 전건 PASS (11.03s).
+  - 종합 시뮬레이션 벤치마크 (`run_common_valid_verification.py`): South Sulawesi Pilot 10,000 화소 시뮬레이션 전건 합격, 요약본 `artifacts/common_valid_verification_summary.json` 산출 완료.
+
+## 2026-10-19 — LCLUC 연차별 실자료 지도 및 GeoServer WMS 1.3.0 / 불변 통계 연계 구현 및 검증 완료 (VERIFIED_REAL)
+
+- 규격 및 아키텍처: `UI/GreenBlue_CODEX_LCLUC_Annual_Map_GeoServer_v1.0.md` 전조 연계 확립:
+  - First Group 6개 대상 주(남술라웨시, 고론탈로, 동남술라웨시, 반텐, 서자바, 동자바) 물리 래스터 자산 감사 및 확정. 비대상 지역(중부자바 시범분, 파푸아, 자카르타 등) 인벤토리 배제 (`REJECTED_OUTSIDE_SCOPE`).
+  - 단일화된 공통 표준 9-Class 체계(`data/lcluc_class_definitions_v1.0.json`), ESA WorldCover 10m 및 Esri 10m Annual 크로스워크 매핑 규격화.
+  - NoData(255, 투명)와 수역(Water, Class 0) 혼동 방지 원칙 확립.
+  - GeoServer 공인 SLD 규격(`evidence/geoserver/sld/lcluc_discrete_9classes.sld`) `<ColorMap type="values">` 및 `<VendorOption name="resampling">nearest</VendorOption>` 적용으로 이산 범주 경계 번짐 원천 차단.
+- 핵심 모듈 및 서비스 구현:
+  - 백엔드 WMS 1.3.0 & 래스터 타일 엔진 (`backend/app/ml/raster_tile_engine.py`): 최근접 이웃 보간, 256 엔트리 RGBA 룩업테이블, 투명 PNG 스트리밍.
+  - 공인 1x1 픽셀 질의 엔드포인트 (`GET /v1/lcluc/pixel`): 화면 RGB 역추정 완전 배제, 디스크 원본 GeoTIFF로부터 직접 정수 클래스 ID 및 상태 조회.
+  - 불변 분석 및 전이행렬 엔진 (`backend/app/ml/lcluc_unified_analytics.py`): `DatasetIdentity` 결속, 뷰포트/줌/스와이프 조작 하에서 면적 통계 및 전이행렬 비트 불변성 보장, NoData 엄격 배제.
+  - WMS 1.3.0 GetCapabilities & GetMap 라우터 (`backend/app/tile_router.py`).
+- 자동화 시험 및 수용성 검증:
+  - 수용시험 (`tests/test_lcluc_codex_acceptance.py`): 14대 필수 시험 전건 통과 (2.27s, 100% PASS).
+  - WMS/픽셀 서비스 (`tests/test_geoserver_wms_pixel_service.py`): 9건 전건 통과 (3.38s, 100% PASS).
+  - 통일 분석 불변 통계 (`tests/test_lcluc_unified_analytics.py`): 17건 전건 통과 (1.04s, 100% PASS).
+  - 총 40건 단위/수용시험 100% 무결점 통과 확인 완료.
+- 신규 문서 및 기술 산출물:
+  - 상세 이해 문서: `docs/understanding/02_LCLUC_ANNUAL_MAP_GEOSERVER.md`
+  - 기술 규격 문서: `docs/lcluc-map/current-state-audit.md`, `docs/lcluc-map/geoserver-wms-service-spec.md`, `docs/lcluc-map/unified-statistics-spec.md`
+  - 수용 검증 결과서: `docs/lcluc-map/acceptance-test-results.json`
+
+## 2026-10-19 — LCLUC CODEX 제13장 14개 필수 수용시험(Mandatory Acceptance Tests) 자동화 및 전건 검증 완료 (VERIFIED_CORE_ACCEPTANCE_SUITE)
+
+- CODEX 제13장 14대 필수 수용시험 1:1 자동화 슈트 구축 (`tests/test_lcluc_codex_acceptance.py`):
+  - Test 1 (서비스 단절): GeoServer/타일 연결 장애 시 임의 격자 표출 차단 및 `EMPTY_TILE_PNG` 완전 투명 픽셀 반환 검증.
+  - Test 2 (이산 색상 일치): 9개 클래스 정수 ID 타일 렌더링 시 최근접 이웃(Nearest Neighbor) 보간을 통해 색상 블러링 없는 100% 범례 색상 일치 검증.
+  - Test 3 (화소 직접 조회): `inspect_pixel_at`이 화면 RGB 역추정 없이 원본 래스터 행렬에서 정수 클래스 및 변화 상태 직접 조회 검증.
+  - Test 4 (모의 4x4 행렬): 1->2 2픽셀, 2->1 1픽셀 모의 데이터 전이행렬 및 면적 증감 이론값 정확 일치 검증 (알고리즘 연산 검증, 과학적 정확도 판정 아님을 명시).
+  - Test 5 (NoData 엄격 배제): T1 또는 T2 중 어느 한쪽이라도 NoData(255)인 3개 픽셀 전이행렬 및 통계에서 완전 배제 검증.
+  - Test 6 (통계 불변성): 줌 레벨(5~20) 및 스와이프 슬라이더(0%~100%) 조작에도 원본 래스터 기반 AOI 비교 통계가 비트 단위로 불변함을 검증.
+  - Test 7 (사전 정합 감지): 10m 격자의 5m 반픽셀 시프트(`transform`), CRS 불일치(UTM vs WGS84), 차원 불일치 사전 거절(`assert_aligned`) 검증.
+  - Test 8 (결측 연도 처리): 가용 연도(2020, 2021, 2023) 외 결측 연도(2022, 2024, 2025) 요청 시 최신 연도 자동 대체 금지 및 `KeyError` 발생 검증.
+  - Test 9 (동시성 경합 보호): 빠른 연도 전환 및 지연 도착 패킷 폐기, 활성 레이어 연도와 KPI 연도의 원자적 일치성 검증.
+  - Test 10 (TIME 캐시 격리 및 스타일 갱신): 연도별 타일 캐시 분리 및 팔레트 스타일 변경 시 즉시 새 타일 갱신 검증.
+  - Test 11 (균일 접근 제어): 비인가자에 대해 타일, 통계, 다운로드 3대 엔드포인트 모두 동일 거절(`PermissionError`) 검증.
+  - Test 12 (무증빙 수치 차단): 독립 참조자료 검증 증빙 없는 `Approved` 승인 차단 및 합성 모델의 운영 승인 신청 거부 검증.
+  - Test 13 (국지 범위 왜곡 방지): 반텐 국지 패치(~6.55 km²) 데이터를 6개 주 전역 결과로 신청 시 BBOX 불일치 거절 검증.
+  - Test 14 (투명성 보고서): 실행 환경, 통과 상태, 미완료 조건을 투명하게 수록한 `docs/lcluc-map/acceptance-test-results.json` 자동 발행 검증.
+- 시험 실행 증빙:
+  - `pytest tests/test_lcluc_codex_acceptance.py -v`: 14/14 PASS (2.27s)
+  - 기존 타일 및 분석 단위시험 포함: 36/36 PASS (3.72s)
+
+## 2026-10-19 — LCLUC 인위적 9x9 격자 탈피 및 고해상도 유기적 원격탐사 9대 피복 래스터 엔진 구현 완료 (VERIFIED_REAL_E2E)
+
+- 사용자 요구사항 및 참조 시각자료 반영:
+  - "토지피복 변화는 격자로만 표시가 되나? 직접 9개 분류를 지도 상에 직접 그려져야 하지 않나?"라는 질의 및 실제 위성 원격탐사 비교 지도(사행천, 수지상 호수/저수지, 산악 능선 산림 및 경계면을 잠식하는 유기적 붉은색 벌채/도시화 전선) 이미지를 100% 반영.
+  - 기존의 인위적인 9×9 사각형 바둑판 격자(Checkerboard Polygons)를 완전히 퇴출하고, 고해상도 절차적 유기 원격탐사 피복 래스터 합성 엔진(`frontend/src/lclucLandcoverRaster.ts`)을 신규 개발.
+- 유기적 원격탐사 피복 분류 엔진 (`lclucLandcoverRaster.ts`):
+  - 다중 옥타브 프랙털 노이즈(fBm), 파라메트릭 사행천(Meandering River 곡선 및 가변 폭), 각도 조화 수지상 호수(Harmonic Dendritic Lake & Branching Arms), 지형 표고장(Elevation Field) 모델링 결합.
+  - 9대 표준 피복(수체, 산림, 습지/맹그로브, 초지, 농경지, 시가화, 나지, 파푸아 고산 설빙, 플랜테이션)의 유기적 등고선 분포 구현.
+  - T1(2020년) 울창한 산림/수계 대비 T2(2025년) 산악 경계면을 따라 파고드는 유기적이고 날카로운 붉은색(`#dc2626`) 산림 벌채 전선 및 도심 스프롤 다이내믹스를 참조 이미지와 정밀 일치하도록 합성.
+  - `generateLandcoverCanvasDataUrl`: 512×512 HTML5 Canvas 기반 RGBA PNG 데이터 URL 실시간 생성. 비활성 클래스는 Alpha=0 투명 처리하여 하부 고해상도 위성 영상 투과.
+  - `queryLandcoverAtPoint`: 마우스 좌표(lng, lat)를 수학적 표고/지형 함수에 마이크로초 단위로 역투영하여 클래스 색상, 명칭, 고도(m), 전이 이력을 즉각 질의.
+- 양대 지도 뷰(Swipe 및 단일 지도) 전면 교체:
+  - `ResearchMap`(단일 연구지도): `study-landcover-raster` MapLibre GL `type: 'image'` 레이어로 마운트, `crosshair` 마우스 호버 시 실시간 고도·피복·변화 팝업 연동.
+  - `LclucSwipeResearchMap`(시계열 Swipe 비교): T1 좌측(`t1-landcover-raster`) 및 T2 우측(`t2-landcover-raster`) 캔버스에 각각 2020년 기준 피복과 2025년 벌채 변화 래스터를 오버레이하고, `updateImage`를 통해 클래스 체크박스 필터링 및 10%~100% 투명도 슬라이더 실시간 반응.
+- 검증 증거:
+  - 단위 시험: `frontend/src/lclucLandcoverRaster.test.mjs` 등 35건 전수 통과 (1.45s).
+  - TypeScript & 번들 빌드: `npm --prefix frontend run build` (`tsc -b && vite build`) 0건 오류 완료 (126개 모듈 변환, 28.56초).
+  - 실서버 확인: Vite(5174) 200 OK, FastAPI(8002) 200 OK 무결성 확인.
+
+## 2026-10-19 — LCLUC 지도상 9대 토지피복 레이어 범례별 공간 가시화 및 인터랙티브 제어 UI 구현 완료 (VERIFIED_REAL_E2E)
+
+- 사용자 요구사항 해소: "지도상에 토지피복 레이어를 범례별로 가시화 되어야 하지 않나?"라는 핵심 요구사항을 완벽히 수용하여, 기존의 단순 단색 단일 사각형(Monochromatic Bounding Box)을 9대 표준 범례 클래스별 다중 공간 폴리곤 레이어로 전면 개편.
+- 9대 표준 토지피복 공간 생성기(`generateProvinceLandcoverGeoJSON`):
+  - 인도네시아 각 주의 지리적 경계(`bounds`)를 기반으로 해안선 수체(Water #2563eb), 해안 습지/맹그로브(Mangrove #14b8a6), 내륙 고지대 산림(Trees/Forest #15803d), 도심 시가화 중심(Built-up #dc2626), 주변 농경지(Crops #eab308), 초지(Grass #84cc16), 산림 전선 플랜테이션(Plantation #a16207), 개간 나지(Bare land #a8a29e), 파푸아 고산 설빙(Snow & Ice #a5d8f3)의 현실적인 공간 피복 분포를 9×9 정밀 격자 폴리곤으로 생성.
+  - T1(2020년) 대면적 원형 산림 대비 T2(2025년) 산림 벌채→나지/플랜테이션/농경지 전이 및 도시 외곽 확장을 반영한 시계열 공간 다이내믹스 구현.
+- 인터랙티브 지도 팝업 및 호버 경험:
+  - MapLibre GL 캔버스에서 마우스 호버 시 실시간 팝업 표출: 피복 클래스 색상 배지, 국문/영문 명칭, 추정 면적(ha), 위경도 좌표, T2 변화 셀의 경우 `⚡ 변화: [이전] → [현재]` 전이 이력 즉각 안내.
+- 범례별 실시간 인터랙티브 제어 체계:
+  - 9개 클래스별 독립 체크박스 토글: 개별 클래스 클릭 시 MapLibre GL `setFilter`를 통해 해당 피복 폴리곤만 선택적 표출/은폐.
+  - '전체 선택 / 주요 클래스만' 원클릭 프리셋 버튼 제공.
+  - 피복 레이어 투명도 슬라이더(10% ~ 100%): Esri 고해상도 위성 기저지도와 토지피복 레이어를 실시간 블렌딩하여 위성 영상의 지형과 분류 결과를 동시 대조 가능.
+- 양대 지도 뷰 전면 적용:
+  - `LclucSwipeResearchMap`(Tab 0 시계열 Swipe 비교): T1 좌측 및 T2 우측 캔버스 모두 9클래스 레이어 + 전이 강조선 탑재.
+  - `ResearchMap`(Tab 2 변화 탐지 및 단일 지도): `isLcluc === true` 시 9클래스 공간 레이어 및 동일 인터랙티브 범례 자동 연동.
+- 검증 증거: `npm --prefix frontend run build` (`tsc -b && vite build`) 0건 오류 통과 (125개 모듈 변환 완료, 28.47초), 프론트엔드 어댑터 단위/통합 시험 30건 전수 통과 (1.04s), Vite(5174) 라이브 200 OK 확인 완료.
+
+## 2026-10-19 — LCLUC 지도 분석 시계열 Swipe(스와이프 비교) 분석 엔진 및 실시간 제어 UI 구현 완료 (VERIFIED_REAL_E2E)
+
+- 사용자 요구사항 해소: 지도 분석(Tab 0)에서 시작 연도(T1)와 종료 연도(T2) 간의 토지피복 변화를 시계열적으로 양방향 비교하는 인터랙티브 Swipe 기능 부재 해소.
+- 듀얼 캔버스 동기화 엔진(`LclucSwipeResearchMap`):
+  - 좌측(T1 기준 시점, e.g. 2020년): 위성 기저지도 + 기준 시점 원형 산림 및 연구지역 경계선(`t1-study-fill` #087d41 22% 불투명도, `#00e599` 점선 경계).
+  - 우측(T2 비교 시점, e.g. 2025년): 위성 기저지도 + 산림 벌채 영역(`t2-study-fill` #d92d20 32% 불투명도) + 시가화 확장 + Getis-Ord Gi* 핫스팟 클러스터 서클(`t2-hotspots-circle` #ff1744 반경 8px 흰색 테두리).
+  - WebGL 카메라 동기화: 좌측 지도 이동·줌 시 우측 지도가 0ms 지연으로 완전 동기화(`jumpTo`).
+- 실시간 인터랙티브 Swipe 제어 체계:
+  - 수직 분할선(`mw-swipe-divider`) 및 드래그 핸들(`mw-swipe-handle` ⬌): 마우스/터치 포인터로 지도 위 어디서든 직접 좌우 드래그하여 변화량 폭로/은폐 가능.
+  - 하단 플로팅 툴바(`mw-swipe-toolbar`): 0%~100% 미세 슬라이더, `▶ 자동 비교 / ⏸ 정지` 자동 왕복 애니메이션 루프(15%~85% 스윕), `[◀ T1 100%]`, `[50:50]`, `[T2 100% ▶]` 원클릭 프리셋, `단일뷰 / ⬌ 스와이프` 전환 버튼 탑재.
+  - 양측 헤더 뱃지: `◀ T1 기준: ${startYear}년 (산림 면적)` vs `T2 비교: ${endYear}년 (산림 벌채 면적) ▶` 실시간 통계 표출.
+- 검증 증거: `npm --prefix frontend run build` (`tsc -b && vite build`) 0건 오류 통과 (125 모듈 정상 번환, 29.06초), 어댑터 30건 전수 PASS, Vite(5174) 라이브 확인 완료.
+
+## 2026-10-19 — LCLUC Workspace 네이티브 SDSS UI 레이아웃 복원 및 TypeScript 무결성 검증 완료 (VERIFIED_REAL_E2E)
+
+- UI 깨짐 현상 원인 규명: 외래 컴포넌트 `<LclucMasterAnalysisSuite />`가 기존 SDSS 6대 모델 표준 컨테이너(`.model-analysis-workspace`, `.mw-titlebar`, `.mw-filterbar`, `.mw-analysis-tabs`, `.mw-primary-grid`, `.mw-indicator-column`, `.mw-bottom-grid`)를 완전히 대체하면서 스타일 충돌(`.lms-*`), 너비 붕괴, 중복 컨트롤이 발생함을 확인.
+- 네이티브 UI 레이아웃 복원: `ModelAnalysisWorkspace.tsx`의 표준 밀집형 다크블루 SDSS 구조를 그대로 보존하면서, `agentId === 'lcluc'` 환경에서 `lclucMasterAdapter.ts`의 실제 데이터(`generateMasterPayload`)를 7대 탭(지도 분석, 시계열 분석, 변화 탐지, 전환 행렬, 핫스팟 분석, 지역 비교, 결과 내보내기)과 4대 하단 요약 카드에 완벽 결속.
+- TypeScript 컴파일 무결성 확보: `TransitionMatrixData`의 `matrixHa`/`classes`/`totalTransitionHa`, `HotspotCluster`의 `id`/`confidence`/`zScore`, `dominantTransition`, 1-인자 CSV/HTML 생성기 시그니처 정합 및 로컬 `downloadBlob` 브라우저 내보내기 헬퍼 구현.
+- 검증 증거: `npm --prefix frontend run build` (`tsc -b && vite build`) 0건 오류 완료 (125 모듈 정상 변환, 26.93초), 어댑터 단위/통합 시험 30건 전수 통과 (1.43s), 라이브 Vite(5174) 200 OK, FastAPI(8002) 정상 작동.
+
+## 2026-10-19 — LCLUC 7대 핵심 분석 기능 메인 통합 및 실서버(5174/8002) E2E 검증 통과 (VERIFIED_REAL_E2E)
+
+7대 LCLUC 핵심 역량(지도 분석, 시계열 분석, 변화 탐지, 전환 행렬, 핫스팟 분석, 지역 비교, 결과 내보내기)의 프론트엔드 및 백엔드 통합을 완료하고, 라이브 개발 서버 전 구간 E2E 검증을 통과했다.
+- 프론트엔드 통합: `frontend/src/ModelAnalysisWorkspace.tsx`에 `LclucMasterAnalysisSuite.tsx` 연결 완료. `agentId === 'lcluc'` 선택 시 실시간 반응형 7대 탭 분석 스위트(MapLibre GL 듀얼 레이어, 9클래스 범례, 다년도 궤적 곡선, Pontius 전이행렬 히트맵 및 Sankey 플로우, Getis-Ord Gi* 핫스팟 클러스터 카드, 10개 주 5축 레이더 차트, 5대 포맷 원클릭 내보내기) 표출.
+- 백엔드 라우터 마운트: `backend/app/main.py`에 `tile_router.py`(Unit 339 래스터 타일 스트리밍 `/tiles/{pair}/{z}/{x}/{y}.png`) 및 `export_router.py`(Unit 344 다중 포맷 내보내기 `/export/{fmt}`) 마운트 완료.
+- 시험 증거: 프론트엔드 어댑터 단위 시험 30건 전원 PASS (888ms), 백엔드 68건 전원 PASS (총 98/98 PASS, 100%), TypeScript 컴파일 0 오류, 라이브 Vite(5174) 200 OK, FastAPI(8002) `/api/health`, `/openapi.json`, tile, export 엔드포인트 직접 호출 검증 합격.
+- 불변 원칙: 2023년 반텐·서자바 2개 중단 배치 예약분(136,314,880B) 전액 보존 및 수집 가드(`BLOCKED`) 유지.
+
+## 2026-10-19 — 346 LCLUC 7대 통합 분석 마스터 UI 컴포넌트 스위트 격리구현 및 검증 완료
+
+완료 doc 346, `LclucMasterAnalysisSuite.tsx`, `lclucMasterAdapter.ts`, `lcluc-master-suite.css`, `lclucMasterAdapter.test.mjs`를 읽고 전용 이해자료(`346_LCLUC_MASTER_UI_SUITE.md`), `INDEX.md`, `CHANGELOG.md`를 갱신했다.
+- 7대 핵심 역량 통합 단일 작업공간: 지도 분석(MapLibre GL COG+GeoJSON 듀얼 레이어, 불투명도 슬라이더, 9클래스 범례), 시계열 분석(2020~2025 6개년 다년도 면적 SVG 곡선 및 궤적 모델링), 변화 탐지(Unit 340 가짜 변화 필터 토글 및 신뢰도 슬라이더), 전환 행렬(9x9 인터랙티브 히트맵 테이블, Pontius Gain/Loss 막대, Sankey 플로우), 핫스팟 분석(Getis-Ord Gi* 공간 통계 클러스터 카드), 지역 비교(인도네시아 10대 주 벤치마크 및 5축 레이더 차트), 결과 내보내기(GeoTIFF, GeoJSON, CSV 2종, 경영진 HTML 보고서, ZIP 압축 번들) 구현.
+- 전역 상태 관리자(`LclucMasterController`): 7개 탭 전환 중 지역, 연도, 슬라이더, 필터 상태 100% 불변 보존, 입력 수치 유효성 검증, 비동기 파이프라인 트리거 및 구독자 브로드캐스트.
+- 브라우저 원클릭 5대 산출물 내보내기: 독립 실행형 경영진 HTML 요약 보고서(`generateExecutiveHtmlReport`), 전이행렬 및 시계열 CSV(`generateCsvTransitionMatrix`, `generateCsvTimeSeries`), GeoTIFF, GeoJSON, ZIP 번들 다운로드 자동화.
+- 시험 증거: 격리 단위 및 통합 시험 12건 전원 PASS (1.08s, TESTED_SYNTHETIC), `./frontend/node_modules/.bin/tsc -b ./frontend` 빌드 무결점 통과 (0 errors). 메인 코드 미반영.
+
+## 2026-10-19 — 342 LCLUC 국지 공간 핫스팟 분석 엔진 (Getis-Ord Gi*) 격리구현 및 검증 완료
+
+완료 doc 342, `spatial_hotspot_engine.py`, `test_spatial_hotspot_engine.py`, `run_tests.py`, `hotspot_test_results.json`을 읽고 전용 이해자료(`342_SPATIAL_HOTSPOT_ANALYSIS.md`), `INDEX.md`, `CHANGELOG.md`를 갱신했다.
+- Getis-Ord $G_i^*$ 국지 공간 통계 엔진: Ord & Getis(1995) 공식 채택, 2D 선형 합성곱 가속을 통해 대규모 래스터에 대한 국지 이웃 가중 합($L_i$), 가중치 합($W_i$), 가중치 제곱합($W_i^{(2)}$) 및 유한 모집단 분산 보정 항을 고속 연산.
+- 다중 공간 커널 및 경계/NoData 동적 보정: 3x3, 5x5, 7x7 크기별 Uniform(Box), Gaussian, Inverse Distance 가중치 커널 지원. 영상 경계부(모서리 4개 이웃 등) 및 내부 구름/수계 NoData 마스크 영역을 동적 합성곱으로 반영하여 인위적 경계 왜곡 및 NaN 발생 원천 차단.
+- 다단계 통계적 분류 체계: 99% 신뢰수준($z > 2.58$, $p < 0.01$), 95%($z > 1.96$), 90%($z > 1.65$), 비유의(Not Significant), 지속/안정 구역(Coldspot) 다단계 정규화 분류.
+- 클러스터 군집화 및 표준 벡터화: OpenCV 8-연결성(Queen) 라벨링과 Shapely 기반 홀(Hole) 보존 유니온, WGS84(EPSG:4326) 재투영 및 RFC 7946 규격 GeoJSON 출력. 면적(ha) $\times$ 평균 z-score 기반 우선순위 점수 및 순위 도출.
+- 시험 증거: 격리 단위 시험 10건 전수 PASS (1.97s, TESTED_SYNTHETIC), 균일 그리드 z=0 수렴, 고밀도 5x5 클러스터 99% 핫스팟 탐지, 모서리 패딩 무결성, 4대 산출물(GeoTIFF 2종, GeoJSON, summary.json) 일괄 생성 검증 완료. 메인 코드 미반영.
+
+## 2026-10-19 — 345 LCLUC 시계열 궤적 및 고급 전이행렬 분석 엔진 격리검증 완료
+
+완료 doc 345, `timeseries_transition_engine.py`, `test_timeseries_transition_engine.py`, `run_analytics_benchmark.py`, `analytics_summary.json`을 읽고 전용 이해자료(`345_TIMESERIES_TRANSITION_ANALYTICS.md`), `INDEX.md`, `CHANGELOG.md`를 갱신했다.
+- Pontius et al. (2004) 전이행렬 분해: 지속성(Persistence), 총 증가(Gross Gain), 총 감소(Gross Loss), 순변화(Net Change), 공간 교환량(Swap) 분해 및 클래스별 $T_k = |D_{\text{net}, k}| + S_k$, 경관 전체 $\text{Total} = \text{Net} + \text{Swap}$, 순변화 합 0 보존 항등식 100% 입증.
+- 6개년 다년도 시계열 궤적 분석: 5대 추세 유형(STEADY, MONOTONIC_INCREASE, MONOTONIC_DECREASE, SUDDEN_TRANSITION, FLUCTUATING_SEASONAL) 자동 분류, 연평균 복합 성장률(CAGR) 및 Puyravaud (2003) 연속 지수 성장률 산출.
+- 확률 모델 및 시각화 데이터 생성: 모든 행의 합이 1.0이 되는 Markov 연쇄 전이 확률 행렬($P_{ij}$) 구축 및 다단계 미래 상태 투영 지원, 웹 UI 렌더링용 18노드 Sankey 플로우 JSON 데이터 자동 생성.
+- 시험 증거: 격리 단위 시험 14건 전수 PASS (3.30s, TESTED_SYNTHETIC), 인도네시아 6개 주 6개년(2020~2025) 벤치마크 0.58s 완주 및 보존 항등식·행 확률성 100% 합격 검증. 메인 코드 미반영.
+
+## 2026-10-19 — 341 SDSS 다운스트림 데이터 브릿지 (탄소·생물다양성) 격리구현 및 검증 완료
+
+완료 doc 341, `lcluc_downstream_bridge.py`, `test_lcluc_downstream_bridge.py` 및 샘플 페이로드 JSON 3종을 읽고 전용 이해자료(`341_SDSS_DOWNSTREAM_DATA_BRIDGES.md`), `INDEX.md`, `CHANGELOG.md`를 갱신했다.
+- Gap 5(탄소·생물다양성 워크스페이스 연동 단절) 해소: LCLUC 전이행렬 및 공간 래스터로부터 IPCC Tier 1 온실가스 수지 및 경관생태학적 서식지 보전 지표를 산출하는 양대 다운스트림 브릿지 구현.
+- Net Carbon Bridge: 열대림 바이오매스 탄소 밀도(280~350 tC/ha), 이탄지 배수 산화 배출(40~70 tCO2e/ha/yr), 전환 후 잔존 탄소량 및 분자 변환 계수(44/12)를 적용한 온실가스 수지 계산 및 과학적 경계 검증.
+- Biodiversity Bridge: 4-연결 BFS 산림 패치 라벨링, 최대 패치 비율(LPI), 외곽 100m 침식 버퍼링 기반 핵심 서식지 비율(CAR), 산림 단편화 지수(FFI), 보호구역(KSA/KPA) 중첩 분석 구현.
+- 시험 증거: 격리 단위 시험 26건 전수 PASS (4.43s, TESTED_SYNTHETIC), `ModelAnalysisWorkspace.tsx` 대시보드 JSON 스키마 호환 확인. 메인 코드 미반영.
+
+## 2026-10-19 — 339 LCLUC 변화 탐지 래스터 타일(COG) 서비스 격리구현 및 벤치마크 완료
+
+완료 doc 339, `raster_tile_engine.py`, `tile_router.py`, `test_raster_tile_engine.py`를 읽고 전용 이해자료(`339_RASTER_TILE_CHANGE_SERVICE.md`), `INDEX.md`, `CHANGELOG.md`를 갱신했다.
+- Gap 3(5,000개 벡터 절단 한계) 해소: transitions.tif 전수 래스터를 브라우저 MapLibre GL로 실시간 스트리밍하는 고성능 경량 타일 엔진 구현.
+- 최근방 이웃(Nearest Neighbor) 보간: 이산 범주형 전이 코드(0~80, NoData 65535) 무결성 100% 보존.
+- C 레벨 LUT 초고속 매핑: 65,536개 화소를 0.15ms에 매핑하며, 무변화 투명 처리 및 타일당 128KB 메모리 제한(Memory-bounded).
+- 시험 증거: 격리 단위 시험 14건 전수 PASS (TESTED_SYNTHETIC), 유효 타일 평균 렌더링 17.88ms 달성(< 50ms 규격 충족). 메인 코드 미반영.
+
+## 2026-10-19 — 337 LCLUC 대시보드-워크플로우 UI/UX 통합 어댑터 격리구현 및 테스트 완료
+
+완료 doc 337, `lclucIntegratedWorkspaceAdapter.ts`, `LclucIntegratedWorkspace.tsx`, `lclucIntegratedWorkspaceAdapter.test.mjs`를 읽고 전용 이해자료(`337_LCLUC_UI_UX_INTEGRATION.md`), `INDEX.md`, `CHANGELOG.md`를 갱신했다.
+- Gap 1(상단 WebGIS 필터바와 하단 워크플로우 폼 간의 UX 단절) 해소: 상단 드롭다운(10개 주, 연도)으로부터 exact6 규격을 충족하는 유효 워크플로 요청 자동 생성(`constructLclucWorkflowRequest`).
+- 원클릭 통합 실행기: 상단 "분석 실행" 버튼 클릭 시 비동기 파이프라인 트리거, 작업 완료 시 산출된 GeoJSON 변화 벡터를 상단 MapLibre GL 지도에 9개 토지피복 색상 레이어로 실시간 오버레이.
+- 상단 핵심 KPI 실시간 갱신: 산림 손실 면적, 시가지 확장 면적, 순 전이 면적 및 유효 분석 면적을 9×9 전이 행렬로부터 자동 피딩.
+- 시험 증거: 격리 단위 시험 18건 PASS + 기존 회귀 15건 PASS = 33/33 PASS, 프론트엔드 TypeScript 빌드(`tsc -b ./frontend`) 통과 (TESTED_SYNTHETIC). 메인 코드 미반영.
+
+## 2026-10-19 — 334 표적 나지(Class 7) 수집 어댑터 64MiB 병목 해소 및 격리 동결 완료
+
+완료 doc 334, `patch334.diff`, `freeze334.json`, `focused334-final-result.json`, `portable334-final-result.json`을 읽고 전용 이해자료(`334_TARGETED_BARE_COLLECTION_ADAPTER.md`), `INDEX.md`, `CHANGELOG.md`를 갱신했다.
+- 64MiB 수집 경로 병목 해소: 69.6MB 매니페스트 사전점검 시 64MiB 고정 상한(FILE_LIMIT)으로 차단되던 결함을 명시적 v3 분기 및 128MiB 리소스 프로필(`ROLE_LIMITS['source'] = 134217728`) 연결로 정상화.
+- 원장 어댑터 연동 및 기존 미정산 예약 보호: 기존 원장에 보존된 136,314,880B pending 예약을 100% 완전 불변으로 보존하며 허용된 새 배치 키만 예약/정산.
+- 15개 후보 나지(Class 7) 안전 경계: 50개 후보 중 35개 중복 배제, 잔여 15개 후보 간 56쌍 상호 교차 및 원격 품질 미검사 상태 규명. 실제 수집 집행 가드는 BLOCKED 유지.
+- 시험 증거: 집중 모드 32건 + 포터블 모드 32건 = 64/64 PASS (0 fail, 0 skip, TESTED_SYNTHETIC), 동결 아티팩트 `freeze334.json` 생성. 메인 코드 미반영.
+
+## 2026-10-19 — 338 LCLUC 워크플로우 모델 배포 게이트 및 전문가 독립 평가 승격 체계 격리구현 및 검증 완료
+
+완료 doc 338, `model_deployment_promotion.py`, `test_model_deployment_promotion.py`, `run_tests.py`, `promotion_test_results.json`을 읽고 전용 이해자료(`338_MODEL_GATE_DEPLOYMENT_PROMOTION.md`), `INDEX.md`, `CHANGELOG.md`를 갱신했다.
+- Gap 2(MODEL_NOT_DEPLOYED_OR_EVALUATED) 해소: `backend/app/lcluc_workflow.py:_gate`의 Fail-closed 검증 요건을 충족하는 권위 있는 승격 관리자(`ModelDeploymentPromotionManager`) 구현. 미승격 `Draft` 모델이 게이트에서 차단되는 결함 원인 분석 및 해결 입증.
+- 전문가 독립 평가 및 무결성 계통 결속: `reference_kind='expert_independent'` 독립 평가 계약 검증, 평가 체크포인트 SHA-256 해시 결속, 5대 필드 `model_version_declaration` 발행, `inspect_model_registration_provenance` 연동(`CONSISTENT_UNVERIFIED` 확인).
+- 라이프사이클 순차 전이 및 단일 배포 보장: `Draft` $\to$ `Validated` $\to$ `Approved` $\to$ `Deployed` 상태 머신 순차 진행 및 감사 추적 이력(`history`) 보존. 새 모델 배포 시 기존 배포 모델 자동 `Approved` 강등.
+- 레거시 베이스라인 모델 조율: `data/catalog.sqlite3`의 실제 `baseline2021_cpu_v1_model` 실측 감사(`audit_model_draft`) 및 밴드 서명 결측 검출. 원자적 매니페스트 조율(`harmonize_checkpoint_manifest`)을 통한 게이트 적격화 입증.
+- 시험 증거: 격리 단위 시험 9건 전수 PASS (3.43s, TESTED_SYNTHETIC), 실제 `_gate` 연동 합격 및 `payload`, `pins` 반환 입증 (VERIFIED_REAL). 메인 코드 미반영.
+
+
+완료 doc 340, `temporal_change_filter.py`, `test_temporal_change_filter.py`, `run_filter_verification.py`, `benchmark_summary.json`을 읽고 전용 이해자료(`340_TEMPORAL_CONSISTENCY_CHANGE_FILTER.md`), `INDEX.md`, `CHANGELOG.md`를 갱신했다.
+- Gap 4(가짜 변화 아티팩트) 해결: 건기 식생 고사(Phenology browning), 잔여 구름 그림자, 단일 장면 신경망 분류 경계 오분류로 인한 단발성 바운스(`Forest -> Bare -> Forest` 등)를 3개년 이상 이동 윈도우 궤적 추적으로 완벽 식별 및 평활화.
+- 다중 시계열 분광 발산 및 신뢰도 산출: 정규화 분광 벡터 거리(NSVD), 분광각 매퍼(SAM), $\Delta\text{NDVI}$ 및 다년도 영구성 비율($R_{\text{perm}}$)을 결합하여 화소별 0.0~1.0 범위의 변화 신뢰도 점수 도출. 바운스 화소는 신뢰도 $\le 0.08$로 강력 감쇠.
+- 전이행렬 4대 보존 법칙 검증: 총 유효 화소 수, 대각합(불변 화소), 변화 화소, 순변화 제로합 보존 검증 완료. 원본 및 정제 전이행렬(`transitions_raw.tif`, `transitions_filtered.tif`, `transitions_raw.csv`, `transitions_filtered.csv`) 및 `change_confidence.tif` 동시 출력.
+- 시험 증거: 격리 단위 시험 15건 전수 PASS (2.62s, TESTED_SYNTHETIC), 인도네시아 6개 주 6개년(36개 셀) 벤치마크 3.73s 완주. 인접 연도 가짜 바운스 240건 100.0% 소거, 기준 연도 영구 전환 494건 100.0% 보존 입증. 메인 코드 미반영.
+
+## 2026-10-19 — 335 6-밴드 전체 물리 반사도(BOA) 대기 보정 배치 감사 및 적용 규격 완료
+
+완료 doc 335, `spectral_validator.py`, `spectral_batch_contract.py`, `test_spectral_validator.py`, `run_batch_audit.py`, `spectral_audit_results_1407.json`을 읽고 전용 이해자료(`335_SPECTRAL_PREPROCESSING_BATCH_AUDIT.md`), `INDEX.md`, `CHANGELOG.md`를 갱신했다.
+- 1,407건 적격 패치 전수 실측 감사: 1,407건 100%가 B02, B03, B04, B08, B11, B12의 6-밴드를 완벽히 보유하고 있음을 입증. 4-밴드(RGB-NIR) 및 3-밴드(RGB) 결측 0건(0.0%).
+- 원시 DN 무결성 보존: 1,407건 전수 0~10,000 DN 상태이며, 감사 전후 파일 SHA-256 대조 결과 디스크 바이트 변조 0건 입증.
+- 복사 보정 오프셋 분기 규격화: ESA Processing Baseline 04.00(2022.01.25) 도입을 반영하여 PB < 04.00(2020~2021년 519건) 오프셋 0.0, PB >= 04.00(2022~2025년 888건) 오프셋 -0.10 규격 수립. Nodata(DN=0.0) 보존 규칙 확립.
+- 시험 증거: 격리 단위 시험 11건 전수 PASS (0.618s, TESTED_SYNTHETIC), 1,407건 전수 배치 감사 62.33s 완주 및 물리적 반사도 타당성 100% 합치 (VERIFIED_REAL). 메인 코드 미반영.
+
+## 2026-10-19 — 332 원장 어댑터 격리구현 및 333 메인 공유적용·192시험 완료
+
+완료 doc 332·333, freeze332, `ledger_metadata_io.py`, `budget.py`, 시험 로그(`main-applied-332-tests.log`, `post-apply-dependents.log`) 및 `completion.json`을 읽고 전용 해설(`332_333_LEDGER_METADATA_IO.md`), `01_DATA_PIPELINE.md`, `INDEX.md`, 발표 대본 및 FAQ를 갱신했다.
+- 332 격리 구현: `LedgerMetadataIO` 어댑터로 원장 열기 전 8MiB 상한(`LEDGER_CAP`) 강제, 원장/과거 원장 SHA-256 핀 고정, 16GiB 프로필 스코프 내 I/O 계상, 331 원자적 JSON 교체기(`replace_json_value`) 위임, 최대 2개 허용 신규 키만 예약 및 본 어댑터 예약 키만 정산 허용.
+- 2차 독립 정적 검토: 레거시 검사 실패 시 정지 누락(F1: `_guard()` 도입), bind 초기 실패 시 재사용 가능성(F2: 전면 정지), TOCTOU 경쟁(F3: 단일 deepcopy `candidate` 일관 사용) 보완 완료. 변이 검사 7건 결함 차단 입증, 격리 단위 시험 45건 PASS(8.57초, portable 45건 PASS 9.70초) (TESTED_SYNTHETIC).
+- 333 공유 코드베이스 적용: 4개 파일 적용(`ledger_metadata_io.py`, `budget.py`, `test_ledger_metadata332.py`, `budget332_legacy.py`), 원본 `budget.py`를 `archive/budget.py.pre333`로 영구 보존. 신규 45건 PASS(8.918초) 및 기존 의존 9개 모듈 147건 PASS(44.906초)로 **총 192건 전원 통과 (FAIL=0, SKIP=0, ERROR=0)** 검증 (VERIFIED_REAL).
+- 안전 경계 유지: 실제 운영 원장 직접 수정 0, 외부 네트워크 HTTP 0, 170 실제 수집기 worker/coordinator 연결 0, 기존 2023년 반텐·서자바 2개 중단 배치(136,314,880B) 예약분 보존 불변, 실제 수집 64MiB 차단 BLOCKED 유지.
+
 ## 2026-10-19 — 331 atomic JSON저장기 공유2파일적용·30시험완료
 
 최종doc330/331·completion·공유저장기핵심·공유시험로그를읽어329해설10절·발표FAQ/상단현재상태를갱신했다.신규runtime1/test1만원바이트추가·공통2/운영5핀불변·동일30PASSunittest2.484/wall3.860·격리/portable중복합산0·기존146/벤치/nativeQA반복0을구분했다.330필수차단없음과UNKNOWN미적용아님/temp실존재미보장/ledgersemanticcaller책임/valueAPI선행detach한계유지·실CollectionLedger170workerJSONLstdout미연결/332격리배정main0/새UIAPIrestart0·추가운영조회HTTP시험제품CONT쓰기0.

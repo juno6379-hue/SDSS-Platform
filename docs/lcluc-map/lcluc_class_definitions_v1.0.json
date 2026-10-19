@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0",
+  "legend_version": "1.0",
+  "name": "SDSS-LCLUC Standard 9-Class Land Cover Classification",
+  "description": "Authoritative 9-class land cover definitions, styling, and official crosswalk mapping for SDSS-Platform LCLUC Workspace and GeoServer services.",
+  "nodata": {
+    "value_uint8": 255,
+    "value_uint16": 65535,
+    "name": "NoData",
+    "color": "#00000000",
+    "transparent": true,
+    "description": "Unclassified, cloud/shadow masked, or boundary exclusion pixels. Strictly distinguished from valid class 0 (Water)."
+  },
+  "classes": [
+    {
+      "class_id": 0,
+      "key": "water",
+      "name_ko": "수역",
+      "name_en": "Water",
+      "definition": "하천, 호소, 저수지, 해양 등 상시 또는 대부분 기간 수면으로 덮여 있는 개방 수면 구역",
+      "definition_ko": "하천, 호소, 저수지, 해양 등 상시 또는 대부분 기간 수면으로 덮여 있는 개방 수면 구역",
+      "definition_en": "Areas where water was predominantly present throughout the year, including rivers, lakes, reservoirs, ponds, coastal and open water bodies.",
+      "color": "#419bdf",
+      "legend_version": "1.0",
+      "nodata_code": 255
+    },
+    {
+      "class_id": 1,
+      "key": "trees",
+      "name_ko": "수목·산림",
+      "name_en": "Trees",
+      "definition": "교목 수관 피복률이 우세한 산림 및 수목 피복지 (맹그로브 포함, 법적 산림구획과 자동 동일시 불가)",
+      "definition_ko": "교목 수관 피복률이 우세한 산림 및 수목 피복지 (맹그로브 포함, 법적 산림구획과 자동 동일시 불가)",
+      "definition_en": "Areas dominated by trees with canopy cover; includes natural forests, commercial forestry, plantations, and coastal mangroves. Not identical to legal forest zones.",
+      "color": "#397d49",
+      "legend_version": "1.0",
+      "nodata_code": 255
+    },
+    {
+      "class_id": 2,
+      "key": "grass",
+      "name_ko": "초지",
+      "name_en": "Grass",
+      "definition": "자연 초원, 목초지, 사바나 초본 식생 및 이끼·지의류 피복지",
+      "definition_ko": "자연 초원, 목초지, 사바나 초본 식생 및 이끼·지의류 피복지",
+      "definition_en": "Open areas covered in natural herbaceous vegetation, grasslands, pasture, rangeland, savanna grasses, and mosses/lichens.",
+      "color": "#88b053",
+      "legend_version": "1.0",
+      "nodata_code": 255
+    },
+    {
+      "class_id": 3,
+      "key": "flooded_vegetation",
+      "name_ko": "침수식생·습지",
+      "name_en": "Flooded vegetation",
+      "definition": "계절성 또는 영구성 침수 수역에 생육하는 초본·습지 식생 구역",
+      "definition_ko": "계절성 또는 영구성 침수 수역에 생육하는 초본·습지 식생 구역",
+      "definition_en": "Areas of herbaceous wetland, periodically flooded marshes, swamps, tidal mudflat vegetation, and shallow inundation zones.",
+      "color": "#7a87c6",
+      "legend_version": "1.0",
+      "nodata_code": 255
+    },
+    {
+      "class_id": 4,
+      "key": "crops",
+      "name_ko": "농경지",
+      "name_en": "Crops",
+      "definition": "일년생 및 다년생 재배 작물, 논, 밭 등 인위적 농업 경작지",
+      "definition_ko": "일년생 및 다년생 재배 작물, 논, 밭 등 인위적 농업 경작지",
+      "definition_en": "Cultivated land with annual or perennial agricultural crops, including rice paddies, irrigated fields, and dry crops.",
+      "color": "#e49635",
+      "legend_version": "1.0",
+      "nodata_code": 255
+    },
+    {
+      "class_id": 5,
+      "key": "shrub_and_scrub",
+      "name_ko": "관목·덤불",
+      "name_en": "Shrub & scrub",
+      "definition": "낮은 목본 식생, 관목림, 덤불 및 저목 식생 구역",
+      "definition_ko": "낮은 목본 식생, 관목림, 덤불 및 저목 식생 구역",
+      "definition_en": "Areas dominated by woody shrubs, bushes, low scrub, and transitional woody vegetation without a continuous high canopy.",
+      "color": "#c2a867",
+      "legend_version": "1.0",
+      "nodata_code": 255
+    },
+    {
+      "class_id": 6,
+      "key": "built_area",
+      "name_ko": "시가지·인공구조물",
+      "name_en": "Built area",
+      "definition": "건물, 도로, 산업시설 등 불투수 인공 구조물이 지표면을 덮고 있는 구역",
+      "definition_ko": "건물, 도로, 산업시설 등 불투수 인공 구조물이 지표면을 덮고 있는 구역",
+      "definition_en": "Human-made structures and impervious surfaces, including residential buildings, paved transport networks, commercial, and industrial facilities.",
+      "color": "#c4281b",
+      "legend_version": "1.0",
+      "nodata_code": 255
+    },
+    {
+      "class_id": 7,
+      "key": "bare_ground",
+      "name_ko": "나지·토양",
+      "name_en": "Bare ground",
+      "definition": "식생 피복률이 극히 낮은 암석, 토양, 모래, 자갈, 비포장 공지 및 개간 나지",
+      "definition_ko": "식생 피복률이 극히 낮은 암석, 토양, 모래, 자갈, 비포장 공지 및 개간 나지",
+      "definition_en": "Areas of exposed bare soil, rocks, sand, gravel, quarries, construction clearings, and sparsely vegetated land.",
+      "color": "#a59b8f",
+      "legend_version": "1.0",
+      "nodata_code": 255
+    },
+    {
+      "class_id": 8,
+      "key": "snow_and_ice",
+      "name_ko": "설빙",
+      "name_en": "Snow & ice",
+      "definition": "영구 또는 계절성 적설, 빙하 및 만년설 구역",
+      "definition_ko": "영구 또는 계절성 적설, 빙하 및 만년설 구역",
+      "definition_en": "Areas of permanent or seasonal snow, ice caps, glaciers, and perennial firn.",
+      "color": "#e8f4fa",
+      "legend_version": "1.0",
+      "nodata_code": 255
+    }
+  ],
+  "crosswalks": {
+    "esa_worldcover_10m": {
+      "source_product": "ESA WorldCover 10m (v100/v200)",
+      "source_classes_count": 11,
+      "source_nodata_codes": [0, 255],
+      "mappings": [
+        {
+          "source_code": 10,
+          "source_name": "Tree cover",
+          "target_class_id": 1,
+          "target_key": "trees",
+          "notes": "Direct correspondence to Trees (1). Satellite spectral canopy cover; not legally synonymous with Kawasan Hutan."
+        },
+        {
+          "source_code": 20,
+          "source_name": "Shrubland",
+          "target_class_id": 5,
+          "target_key": "shrub_and_scrub",
+          "notes": "Direct correspondence to Shrub & scrub (5)."
+        },
+        {
+          "source_code": 30,
+          "source_name": "Grassland",
+          "target_class_id": 2,
+          "target_key": "grass",
+          "notes": "Direct correspondence to Grass (2)."
+        },
+        {
+          "source_code": 40,
+          "source_name": "Cropland",
+          "target_class_id": 4,
+          "target_key": "crops",
+          "notes": "Direct correspondence to Crops (4)."
+        },
+        {
+          "source_code": 50,
+          "source_name": "Built-up",
+          "target_class_id": 6,
+          "target_key": "built_area",
+          "notes": "Direct correspondence to Built area (6)."
+        },
+        {
+          "source_code": 60,
+          "source_name": "Bare / sparse vegetation",
+          "target_class_id": 7,
+          "target_key": "bare_ground",
+          "notes": "Direct correspondence to Bare ground (7)."
+        },
+        {
+          "source_code": 70,
+          "source_name": "Snow and ice",
+          "target_class_id": 8,
+          "target_key": "snow_and_ice",
+          "notes": "Direct correspondence to Snow & ice (8). Rare in equatorial Indonesia except Puncak Jaya."
+        },
+        {
+          "source_code": 80,
+          "source_name": "Permanent water bodies",
+          "target_class_id": 0,
+          "target_key": "water",
+          "notes": "CRITICAL: ESA code 80 maps to target Class 0 (Water). Must NOT be confused with ESA source NoData code 0."
+        },
+        {
+          "source_code": 90,
+          "source_name": "Herbaceous wetland",
+          "target_class_id": 3,
+          "target_key": "flooded_vegetation",
+          "notes": "Herbaceous wetland maps to Flooded vegetation (3)."
+        },
+        {
+          "source_code": 95,
+          "source_name": "Mangroves",
+          "target_class_id": 1,
+          "target_key": "trees",
+          "notes": "CLASSIFICATION LIMITATION: In WorldCover, Mangroves (95) are woody halophytic vegetation mapped to Trees (1) because 9-Class lacks a distinct mangrove class. May exhibit spectral overlap with Flooded vegetation (3)."
+        },
+        {
+          "source_code": 100,
+          "source_name": "Moss and lichen",
+          "target_class_id": 2,
+          "target_key": "grass",
+          "notes": "CLASSIFICATION LIMITATION: Low-profile non-vascular vegetation mapped to Grass (2)."
+        }
+      ],
+      "limitations": [
+        "1. NoData Disambiguation: Source value 0 represents NoData in WorldCover, but value 0 in the 9-Class standard represents Water. When remapping, source pixel 0 MUST be converted to target NoData 255, and only source pixel 80 converted to target 0 (Water).",
+        "2. Mangrove Aggregation: Mangroves (95) are merged into Trees (1). Downstream ecological analysis must account for tidal hydrology and salinity gradients not captured by the generic Trees class.",
+        "3. Forest Definition: Tree cover represents 10m spatial resolution satellite canopy detection and does not imply Indonesian Ministry of Environment and Forestry (KLHK) legal forest boundaries or permanent conservation status."
+      ]
+    },
+    "esri_io_10m": {
+      "source_product": "Esri 10m Annual Land Cover (Impact Observatory)",
+      "source_classes_count": 8,
+      "source_nodata_codes": [0, 255],
+      "mappings": [
+        {
+          "source_code": 1,
+          "source_name": "Water",
+          "target_class_id": 0,
+          "target_key": "water",
+          "notes": "Direct correspondence to Water (0)."
+        },
+        {
+          "source_code": 2,
+          "source_name": "Trees",
+          "target_class_id": 1,
+          "target_key": "trees",
+          "notes": "Direct correspondence to Trees (1)."
+        },
+        {
+          "source_code": 4,
+          "source_name": "Flooded vegetation",
+          "target_class_id": 3,
+          "target_key": "flooded_vegetation",
+          "notes": "Direct correspondence to Flooded vegetation (3)."
+        },
+        {
+          "source_code": 5,
+          "source_name": "Crops",
+          "target_class_id": 4,
+          "target_key": "crops",
+          "notes": "Direct correspondence to Crops (4)."
+        },
+        {
+          "source_code": 7,
+          "source_name": "Built Area",
+          "target_class_id": 6,
+          "target_key": "built_area",
+          "notes": "Direct correspondence to Built area (6)."
+        },
+        {
+          "source_code": 8,
+          "source_name": "Bare ground",
+          "target_class_id": 7,
+          "target_key": "bare_ground",
+          "notes": "Direct correspondence to Bare ground (7)."
+        },
+        {
+          "source_code": 9,
+          "source_name": "Snow/Ice",
+          "target_class_id": 8,
+          "target_key": "snow_and_ice",
+          "notes": "Direct correspondence to Snow & ice (8)."
+        },
+        {
+          "source_code": 11,
+          "source_name": "Rangeland",
+          "target_class_id": 2,
+          "target_key": "grass",
+          "notes": "CLASSIFICATION LIMITATION: Esri combines grass and shrub into single class Rangeland (11). Mapped to Grass (2); separate Shrub (5) cannot be distinguished in Esri data."
+        }
+      ],
+      "limitations": [
+        "1. NoData Disambiguation: Source value 0 is NoData in Esri, whereas 1 is Water. In standard 9-class, 0 is Water and 255 is NoData.",
+        "2. Rangeland Mixed Class: Esri Land Cover does not separate shrubs from grasses, resulting in zero representation of Shrub & scrub (5) when using Esri as reference."
+      ]
+    }
+  }
+}

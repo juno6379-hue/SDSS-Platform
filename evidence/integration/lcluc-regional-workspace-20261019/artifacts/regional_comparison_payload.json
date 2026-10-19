@@ -1,0 +1,631 @@
+{
+  "workspace": "lcluc_regional_comparison",
+  "timestamp": "2026-10-19T05:00:00Z",
+  "summary_kpis": [
+    {
+      "label": "분석 대상 주",
+      "value": 10,
+      "unit": "개 주"
+    },
+    {
+      "label": "고위험 지역 (High Risk)",
+      "value": 3,
+      "unit": "개 주"
+    },
+    {
+      "label": "평균 산림 보존율",
+      "value": 96.6,
+      "unit": "%"
+    },
+    {
+      "label": "최고 전이 압력 지역",
+      "value": "반텐 (Banten)",
+      "unit": "1위"
+    }
+  ],
+  "benchmarking_table": {
+    "title": "인도네시아 주별 LCLUC 비교 벤치마킹",
+    "columns": [
+      "순위",
+      "지역 (Province)",
+      "산림 벌채율 (%/년)",
+      "도시 확장 (ha/년)",
+      "산림 보존율 (%)",
+      "농업 전환 (ha)",
+      "전이 압력 (RTPI)",
+      "위험 등급"
+    ],
+    "rows": [
+      [
+        "1",
+        "반텐 (Banten)",
+        "1.50%",
+        "6,245.0",
+        "92.5%",
+        "9,425.0",
+        "28.8",
+        "HIGH_RISK"
+      ],
+      [
+        "2",
+        "리우 (Riau)",
+        "0.94%",
+        "6,525.0",
+        "95.3%",
+        "112,125.0",
+        "18.5",
+        "HIGH_RISK"
+      ],
+      [
+        "3",
+        "서자바 (West Java)",
+        "0.80%",
+        "14,810.0",
+        "96.0%",
+        "20,150.0",
+        "16.4",
+        "MODERATE"
+      ],
+      [
+        "4",
+        "고론탈로 (Gorontalo)",
+        "0.60%",
+        "1,060.0",
+        "97.0%",
+        "13,650.0",
+        "14.3",
+        "MODERATE"
+      ],
+      [
+        "5",
+        "북수마트라 (North Sumatra)",
+        "0.67%",
+        "7,125.0",
+        "96.7%",
+        "60,125.0",
+        "13.1",
+        "HIGH_RISK"
+      ],
+      [
+        "6",
+        "동남술라웨시 (Southeast Sulawesi)",
+        "0.56%",
+        "2,720.0",
+        "97.2%",
+        "40,300.0",
+        "12.8",
+        "MODERATE"
+      ],
+      [
+        "7",
+        "중앙자바 (Central Java)",
+        "0.53%",
+        "9,955.0",
+        "97.4%",
+        "10,075.0",
+        "10.7",
+        "MODERATE"
+      ],
+      [
+        "8",
+        "동자바 (East Java)",
+        "0.48%",
+        "11,490.0",
+        "97.6%",
+        "18,850.0",
+        "10.1",
+        "MODERATE"
+      ],
+      [
+        "9",
+        "남술라웨시 (South Sulawesi)",
+        "0.44%",
+        "4,390.0",
+        "97.8%",
+        "31,850.0",
+        "9.6",
+        "MODERATE"
+      ],
+      [
+        "10",
+        "아체 (Aceh)",
+        "0.23%",
+        "2,225.0",
+        "98.9%",
+        "27,625.0",
+        "5.5",
+        "MODERATE"
+      ]
+    ],
+    "total_provinces": 10,
+    "high_risk_count": 3,
+    "moderate_count": 7,
+    "stable_count": 0
+  },
+  "charts": {
+    "bar": {
+      "chart_type": "comparative_bar",
+      "title": "주별 산림 벌채율 대 도시 확장 속도 비교",
+      "categories": [
+        "반텐",
+        "리우",
+        "서자바",
+        "고론탈로",
+        "북수마트라",
+        "동남술라웨시",
+        "중앙자바",
+        "동자바",
+        "남술라웨시",
+        "아체"
+      ],
+      "series": [
+        {
+          "name": "연간 산림 벌채율 (%/년)",
+          "unit": "%/년",
+          "color": "#dc2626",
+          "data": [
+            1.501,
+            0.944,
+            0.797,
+            0.602,
+            0.667,
+            0.562,
+            0.525,
+            0.485,
+            0.437,
+            0.226
+          ]
+        },
+        {
+          "name": "연간 도시 확장 (ha/년)",
+          "unit": "ha/년",
+          "color": "#f97316",
+          "data": [
+            6245.0,
+            6525.0,
+            14810.0,
+            1060.0,
+            7125.0,
+            2720.0,
+            9955.0,
+            11490.0,
+            4390.0,
+            2225.0
+          ]
+        },
+        {
+          "name": "전이 압력 지수 (RTPI)",
+          "unit": "점수 (0–100)",
+          "color": "#7c3aed",
+          "data": [
+            28.81,
+            18.52,
+            16.37,
+            14.29,
+            13.08,
+            12.8,
+            10.73,
+            10.11,
+            9.6,
+            5.51
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "chart_type": "radar_5axis",
+      "title": "지역별 LCLUC 다차원 전이 프로파일",
+      "axes": [
+        "산림 보존율 (Retention)",
+        "도시 성장도 (Urban Growth)",
+        "경관 안정성 (Stability)",
+        "농업 확장 압력 (Agri Pressure)",
+        "탄소 위험도 (Carbon Risk)"
+      ],
+      "provinces": [
+        {
+          "province_id": "banten",
+          "name": "반텐 (Banten)",
+          "values": [
+            92.5,
+            29.4,
+            95.5,
+            31.4,
+            23.4
+          ],
+          "risk_status": "HIGH_RISK"
+        },
+        {
+          "province_id": "riau",
+          "name": "리우 (Riau)",
+          "values": [
+            95.3,
+            15.0,
+            97.8,
+            85.6,
+            15.4
+          ],
+          "risk_status": "HIGH_RISK"
+        },
+        {
+          "province_id": "west_java",
+          "name": "서자바 (West Java)",
+          "values": [
+            96.0,
+            17.4,
+            97.1,
+            29.2,
+            12.5
+          ],
+          "risk_status": "MODERATE"
+        },
+        {
+          "province_id": "gorontalo",
+          "name": "고론탈로 (Gorontalo)",
+          "values": [
+            97.0,
+            23.5,
+            97.8,
+            81.1,
+            10.2
+          ],
+          "risk_status": "MODERATE"
+        },
+        {
+          "province_id": "north_sumatra",
+          "name": "북수마트라 (North Sumatra)",
+          "values": [
+            96.7,
+            12.2,
+            98.3,
+            73.0,
+            10.8
+          ],
+          "risk_status": "HIGH_RISK"
+        },
+        {
+          "province_id": "southeast_sulawesi",
+          "name": "동남술라웨시 (Southeast Sulawesi)",
+          "values": [
+            97.2,
+            17.9,
+            98.1,
+            83.4,
+            9.5
+          ],
+          "risk_status": "MODERATE"
+        },
+        {
+          "province_id": "central_java",
+          "name": "중앙자바 (Central Java)",
+          "values": [
+            97.4,
+            11.7,
+            98.1,
+            23.4,
+            8.2
+          ],
+          "risk_status": "MODERATE"
+        },
+        {
+          "province_id": "east_java",
+          "name": "동자바 (East Java)",
+          "values": [
+            97.6,
+            12.7,
+            98.2,
+            33.3,
+            7.7
+          ],
+          "risk_status": "MODERATE"
+        },
+        {
+          "province_id": "south_sulawesi",
+          "name": "남술라웨시 (South Sulawesi)",
+          "values": [
+            97.8,
+            13.4,
+            98.5,
+            69.8,
+            7.2
+          ],
+          "risk_status": "MODERATE"
+        },
+        {
+          "province_id": "aceh",
+          "name": "아체 (Aceh)",
+          "values": [
+            98.9,
+            9.6,
+            99.1,
+            80.5,
+            3.9
+          ],
+          "risk_status": "MODERATE"
+        }
+      ]
+    }
+  },
+  "provinces_metrics": [
+    {
+      "province_id": "banten",
+      "name_ko": "반텐",
+      "name_en": "Banten",
+      "period": "2020–2025",
+      "elapsed_years": 5.0,
+      "total_area_ha": 996792.0,
+      "initial_forest_ha": 193258.4,
+      "final_forest_ha": 178758.4,
+      "gross_forest_loss_ha": 14500.0,
+      "net_forest_loss_ha": 14500.0,
+      "annual_deforestation_ha_yr": 2900.0,
+      "annual_deforestation_rate_pct": 1.501,
+      "initial_built_ha": 212584.24,
+      "final_built_ha": 243809.24,
+      "gross_urban_gain_ha": 31225.0,
+      "annual_urban_expansion_ha_yr": 6245.0,
+      "urban_expansion_growth_pct": 14.69,
+      "forest_retention_rate_pct": 92.5,
+      "agricultural_conversion_ha": 9425.0,
+      "agricultural_conversion_ratio_pct": 20.94,
+      "landscape_stability_index": 95.49,
+      "carbon_risk_score": 23.45,
+      "rtpi_score": 28.81,
+      "risk_status": "HIGH_RISK",
+      "rank": 1,
+      "percentile": 100.0
+    },
+    {
+      "province_id": "riau",
+      "name_ko": "리우",
+      "name_en": "Riau",
+      "period": "2020–2025",
+      "elapsed_years": 5.0,
+      "total_area_ha": 8726366.0,
+      "initial_forest_ha": 3654993.72,
+      "final_forest_ha": 3482493.72,
+      "gross_forest_loss_ha": 172500.0,
+      "net_forest_loss_ha": 172500.0,
+      "annual_deforestation_ha_yr": 34500.0,
+      "annual_deforestation_rate_pct": 0.944,
+      "initial_built_ha": 435118.3,
+      "final_built_ha": 467743.3,
+      "gross_urban_gain_ha": 32625.0,
+      "annual_urban_expansion_ha_yr": 6525.0,
+      "urban_expansion_growth_pct": 7.5,
+      "forest_retention_rate_pct": 95.28,
+      "agricultural_conversion_ha": 112125.0,
+      "agricultural_conversion_ratio_pct": 57.06,
+      "landscape_stability_index": 97.75,
+      "carbon_risk_score": 15.44,
+      "rtpi_score": 18.52,
+      "risk_status": "HIGH_RISK",
+      "rank": 2,
+      "percentile": 88.9
+    },
+    {
+      "province_id": "west_java",
+      "name_ko": "서자바",
+      "name_en": "West Java",
+      "period": "2020–2025",
+      "elapsed_years": 5.0,
+      "total_area_ha": 3610276.0,
+      "initial_forest_ha": 778310.72,
+      "final_forest_ha": 747310.72,
+      "gross_forest_loss_ha": 31000.0,
+      "net_forest_loss_ha": 31000.0,
+      "annual_deforestation_ha_yr": 6200.0,
+      "annual_deforestation_rate_pct": 0.797,
+      "initial_built_ha": 849066.24,
+      "final_built_ha": 923116.24,
+      "gross_urban_gain_ha": 74050.0,
+      "annual_urban_expansion_ha_yr": 14810.0,
+      "urban_expansion_growth_pct": 8.72,
+      "forest_retention_rate_pct": 96.02,
+      "agricultural_conversion_ha": 20150.0,
+      "agricultural_conversion_ratio_pct": 19.47,
+      "landscape_stability_index": 97.13,
+      "carbon_risk_score": 12.51,
+      "rtpi_score": 16.37,
+      "risk_status": "MODERATE",
+      "rank": 3,
+      "percentile": 77.8
+    },
+    {
+      "province_id": "gorontalo",
+      "name_ko": "고론탈로",
+      "name_en": "Gorontalo",
+      "period": "2020–2025",
+      "elapsed_years": 5.0,
+      "total_area_ha": 1129957.0,
+      "initial_forest_ha": 697938.34,
+      "final_forest_ha": 676938.34,
+      "gross_forest_loss_ha": 21000.0,
+      "net_forest_loss_ha": 21000.0,
+      "annual_deforestation_ha_yr": 4200.0,
+      "annual_deforestation_rate_pct": 0.602,
+      "initial_built_ha": 45028.28,
+      "final_built_ha": 50328.28,
+      "gross_urban_gain_ha": 5300.0,
+      "annual_urban_expansion_ha_yr": 1060.0,
+      "urban_expansion_growth_pct": 11.77,
+      "forest_retention_rate_pct": 96.99,
+      "agricultural_conversion_ha": 13650.0,
+      "agricultural_conversion_ratio_pct": 54.06,
+      "landscape_stability_index": 97.77,
+      "carbon_risk_score": 10.23,
+      "rtpi_score": 14.29,
+      "risk_status": "MODERATE",
+      "rank": 4,
+      "percentile": 66.7
+    },
+    {
+      "province_id": "north_sumatra",
+      "name_ko": "북수마트라",
+      "name_en": "North Sumatra",
+      "period": "2020–2025",
+      "elapsed_years": 5.0,
+      "total_area_ha": 7329123.0,
+      "initial_forest_ha": 2773286.74,
+      "final_forest_ha": 2680786.74,
+      "gross_forest_loss_ha": 92500.0,
+      "net_forest_loss_ha": 92500.0,
+      "annual_deforestation_ha_yr": 18500.0,
+      "annual_deforestation_rate_pct": 0.667,
+      "initial_built_ha": 583849.84,
+      "final_built_ha": 619474.84,
+      "gross_urban_gain_ha": 35625.0,
+      "annual_urban_expansion_ha_yr": 7125.0,
+      "urban_expansion_growth_pct": 6.1,
+      "forest_retention_rate_pct": 96.66,
+      "agricultural_conversion_ha": 60125.0,
+      "agricultural_conversion_ratio_pct": 48.68,
+      "landscape_stability_index": 98.31,
+      "carbon_risk_score": 10.83,
+      "rtpi_score": 13.08,
+      "risk_status": "HIGH_RISK",
+      "rank": 5,
+      "percentile": 55.6
+    },
+    {
+      "province_id": "southeast_sulawesi",
+      "name_ko": "동남술라웨시",
+      "name_en": "Southeast Sulawesi",
+      "period": "2020–2025",
+      "elapsed_years": 5.0,
+      "total_area_ha": 3817270.0,
+      "initial_forest_ha": 2207926.6,
+      "final_forest_ha": 2145926.6,
+      "gross_forest_loss_ha": 62000.0,
+      "net_forest_loss_ha": 62000.0,
+      "annual_deforestation_ha_yr": 12400.0,
+      "annual_deforestation_rate_pct": 0.562,
+      "initial_built_ha": 152270.8,
+      "final_built_ha": 165870.8,
+      "gross_urban_gain_ha": 13600.0,
+      "annual_urban_expansion_ha_yr": 2720.0,
+      "urban_expansion_growth_pct": 8.93,
+      "forest_retention_rate_pct": 97.19,
+      "agricultural_conversion_ha": 40300.0,
+      "agricultural_conversion_ratio_pct": 55.59,
+      "landscape_stability_index": 98.1,
+      "carbon_risk_score": 9.48,
+      "rtpi_score": 12.8,
+      "risk_status": "MODERATE",
+      "rank": 6,
+      "percentile": 44.4
+    },
+    {
+      "province_id": "central_java",
+      "name_ko": "중앙자바",
+      "name_en": "Central Java",
+      "period": "2020–2025",
+      "elapsed_years": 5.0,
+      "total_area_ha": 3329069.0,
+      "initial_forest_ha": 590412.42,
+      "final_forest_ha": 574912.42,
+      "gross_forest_loss_ha": 15500.0,
+      "net_forest_loss_ha": 15500.0,
+      "annual_deforestation_ha_yr": 3100.0,
+      "annual_deforestation_rate_pct": 0.525,
+      "initial_built_ha": 852817.94,
+      "final_built_ha": 902592.94,
+      "gross_urban_gain_ha": 49775.0,
+      "annual_urban_expansion_ha_yr": 9955.0,
+      "urban_expansion_growth_pct": 5.84,
+      "forest_retention_rate_pct": 97.37,
+      "agricultural_conversion_ha": 10075.0,
+      "agricultural_conversion_ratio_pct": 15.62,
+      "landscape_stability_index": 98.06,
+      "carbon_risk_score": 8.18,
+      "rtpi_score": 10.73,
+      "risk_status": "MODERATE",
+      "rank": 7,
+      "percentile": 33.3
+    },
+    {
+      "province_id": "east_java",
+      "name_ko": "동자바",
+      "name_en": "East Java",
+      "period": "2020–2025",
+      "elapsed_years": 5.0,
+      "total_area_ha": 4835975.0,
+      "initial_forest_ha": 1194993.75,
+      "final_forest_ha": 1165993.75,
+      "gross_forest_loss_ha": 29000.0,
+      "net_forest_loss_ha": 29000.0,
+      "annual_deforestation_ha_yr": 5800.0,
+      "annual_deforestation_rate_pct": 0.485,
+      "initial_built_ha": 908195.25,
+      "final_built_ha": 965645.25,
+      "gross_urban_gain_ha": 57450.0,
+      "annual_urban_expansion_ha_yr": 11490.0,
+      "urban_expansion_growth_pct": 6.33,
+      "forest_retention_rate_pct": 97.57,
+      "agricultural_conversion_ha": 18850.0,
+      "agricultural_conversion_ratio_pct": 22.18,
+      "landscape_stability_index": 98.24,
+      "carbon_risk_score": 7.67,
+      "rtpi_score": 10.11,
+      "risk_status": "MODERATE",
+      "rank": 8,
+      "percentile": 22.2
+    },
+    {
+      "province_id": "south_sulawesi",
+      "name_ko": "남술라웨시",
+      "name_en": "South Sulawesi",
+      "period": "2020–2025",
+      "elapsed_years": 5.0,
+      "total_area_ha": 4691248.0,
+      "initial_forest_ha": 2242439.04,
+      "final_forest_ha": 2193439.04,
+      "gross_forest_loss_ha": 49000.0,
+      "net_forest_loss_ha": 49000.0,
+      "annual_deforestation_ha_yr": 9800.0,
+      "annual_deforestation_rate_pct": 0.437,
+      "initial_built_ha": 327022.36,
+      "final_built_ha": 348972.36,
+      "gross_urban_gain_ha": 21950.0,
+      "annual_urban_expansion_ha_yr": 4390.0,
+      "urban_expansion_growth_pct": 6.71,
+      "forest_retention_rate_pct": 97.81,
+      "agricultural_conversion_ha": 31850.0,
+      "agricultural_conversion_ratio_pct": 46.5,
+      "landscape_stability_index": 98.54,
+      "carbon_risk_score": 7.23,
+      "rtpi_score": 9.6,
+      "risk_status": "MODERATE",
+      "rank": 9,
+      "percentile": 11.1
+    },
+    {
+      "province_id": "aceh",
+      "name_ko": "아체",
+      "name_en": "Aceh",
+      "period": "2020–2025",
+      "elapsed_years": 5.0,
+      "total_area_ha": 5804600.0,
+      "initial_forest_ha": 3767140.0,
+      "final_forest_ha": 3724640.0,
+      "gross_forest_loss_ha": 42500.0,
+      "net_forest_loss_ha": 42500.0,
+      "annual_deforestation_ha_yr": 8500.0,
+      "annual_deforestation_rate_pct": 0.226,
+      "initial_built_ha": 231824.0,
+      "final_built_ha": 242949.0,
+      "gross_urban_gain_ha": 11125.0,
+      "annual_urban_expansion_ha_yr": 2225.0,
+      "urban_expansion_growth_pct": 4.8,
+      "forest_retention_rate_pct": 98.87,
+      "agricultural_conversion_ha": 27625.0,
+      "agricultural_conversion_ratio_pct": 53.64,
+      "landscape_stability_index": 99.11,
+      "carbon_risk_score": 3.86,
+      "rtpi_score": 5.51,
+      "risk_status": "MODERATE",
+      "rank": 10,
+      "percentile": 0.0
+    }
+  ]
+}

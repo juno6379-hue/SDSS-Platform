@@ -1,0 +1,87 @@
+{
+  "unit": 334,
+  "at": "2026-10-19T04:19:02.887807+00:00",
+  "status": "FROZEN_VALIDATED_ISOLATED",
+  "test_metrics": {
+    "total_test_cases_per_run": 32,
+    "unit_334_cases": 9,
+    "legacy_regression_cases": 23,
+    "focused_pass": 32,
+    "portable_pass": 32,
+    "fail": 0,
+    "skip": 0
+  },
+  "preserved_pending_reservations_bytes": 136314880,
+  "document": {
+    "path": "docs/implementation/334_targeted_bare_collection_adapter_isolated.md",
+    "bytes": 11860,
+    "sha256": "61eba32236f2574207950072514d887db2ae684d5c77c15177ce593850977eb0"
+  },
+  "files": [
+    {
+      "path": "evidence/integration/target334-workspace-20261019/baseline-manifest334.json",
+      "bytes": 4066,
+      "sha256": "72f0662b2aa51c7e642f51d5632e3b68dbaf556a4fcd4b042ebd798c189d0f77"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/patch334-manifest.json",
+      "bytes": 1424,
+      "sha256": "0900b1858c9896ddf422086018f21d76a1a48b2aa6f06a2b11b15d2bf942560f"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/patch334.diff",
+      "bytes": 32223,
+      "sha256": "afc54c2a83180e715a5aca485abc02f1565c25b91cd2db11841e042e3244d325"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/finalize334.py",
+      "bytes": 6112,
+      "sha256": "6a084a741fcdaf17005fa7652898e89898c32c28504b2a8f725c692de1f9fa41"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/run334.py",
+      "bytes": 5215,
+      "sha256": "7768821310fe28eebbd530e693268530c377359184bbc99760d58782f9cd5784"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/focused334-final.log",
+      "bytes": 10446,
+      "sha256": "0b2a824f8bb83d815365f4e3ba395bf20b68236d2001fa938942b92a021a3cb7"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/focused334-final-result.json",
+      "bytes": 188,
+      "sha256": "503379d8935db540d4c20b2bdd1d17600262b687d13d375b70ab40794a71287d"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/portable334-final.log",
+      "bytes": 10160,
+      "sha256": "24963e526a7405e2c71cf87cb4e99633be971d999ba0fb95f97424ea5b946738"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/portable334-final-result.json",
+      "bytes": 258,
+      "sha256": "e95faf2a70cd549774782b40be0dc976d815be100118ea23ae01a8d6dcf3feb3"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/scripts/collect_targeted_bare.py",
+      "bytes": 24469,
+      "sha256": "74b84dc06a1e7b31feb12ecbd1f60ee3c094a773d755c2fb77ce268495522a44"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/tests/test_collect_targeted_bare334.py",
+      "bytes": 22760,
+      "sha256": "5a7ca385f7260b4a1d5b451ed9f126c13ff80550185a7a9c5ab0b8db8d150120"
+    },
+    {
+      "path": "evidence/integration/target334-workspace-20261019/tests/test_collect_targeted_bare_legacy.py",
+      "bytes": 25662,
+      "sha256": "d7018f927356ec3d08aa6ecce7d244fef2a3c9920c60e8b49d574cb33d7b848c"
+    }
+  ],
+  "baseline_dependencies_count": 22,
+  "operating_io": false,
+  "http": false,
+  "main_applied": false,
+  "summary": "Unit 334 128MiB preflight bottleneck resolution and LedgerMetadataIO adapter strictly isolated in target334-workspace-20261019."
+}

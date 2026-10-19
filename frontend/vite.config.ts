@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, fileURLToPath(new URL('.', import.meta.url)), 'VITE_');
   const target = env.VITE_API_PROXY_TARGET;
-  const paths = ['/api', '/v1', '/healthz', '/readyz', '/docs', '/openapi.json'];
+  const paths = ['/api', '/v1', '/geoserver', '/healthz', '/readyz', '/docs', '/openapi.json'];
   return {
     plugins: [react()],
     ...(target ? { server: { proxy: Object.fromEntries(paths.map(path => [path, { target, changeOrigin: true }])) } } : {}),

@@ -1,0 +1,23 @@
+{
+  "suite": "TestModelDeploymentPromotion",
+  "tests_run": 11,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "was_successful": true,
+  "elapsed_seconds": 5.56,
+  "timestamp": "2026-10-19T10:46:32Z",
+  "test_names": [
+    "test_authoritative_promotion_enables_gate_acceptance",
+    "test_baseline2021_model_import_and_promotion",
+    "test_checkpoint_sha256_immutable_binding_to_evaluation_certificate",
+    "test_evaluation_checkpoint_hash_mismatch_blocks_gate",
+    "test_evaluation_mismatch_blocks_gate",
+    "test_legacy_baseline_harmonization_and_gate_pass",
+    "test_promotion_demotes_prior_deployed_model",
+    "test_synthetic_model_rejected_from_promotion",
+    "test_tampered_checkpoint_fails_promotion",
+    "test_timeseries_2020_2025_enforces_deployed_status_and_independent_evaluation",
+    "test_unpromoted_draft_model_blocked_by_gate_with_gap2_code"
+  ]
+}

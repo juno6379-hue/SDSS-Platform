@@ -1,0 +1,65 @@
+[2026-10-19 13:15:58] ================================================================================
+[2026-10-19 13:15:58] Starting Temporal Consistency & False Change Filter Verification (Gap 4)
+[2026-10-19 13:15:58] Workspace Directory: E:\GeoAI–MLOps–SDSS\evidence\integration\lcluc-filter-workspace-20261019
+[2026-10-19 13:15:58] Artifacts Directory: E:\GeoAI–MLOps–SDSS\evidence\integration\lcluc-filter-workspace-20261019\artifacts
+[2026-10-19 13:15:58] ================================================================================
+[2026-10-19 13:15:58] Simulating 6 Indonesian Provinces across 6 Years (6 x 6 = 36 cells)...
+[2026-10-19 13:15:58] 
+Processing Province: BANTEN across 2020-2025...
+[2026-10-19 13:15:59]   > Valid Pixels: 3287 / 4096 (80.25%)
+[2026-10-19 13:15:59]   > Total Bounces Injected across 6 years: 95
+[2026-10-19 13:15:59]   > Total Trajectory Bounces Filtered: 86
+[2026-10-19 13:15:59]   > Adjacent 2020-2021 Raw Changes: 40 -> Filtered Changes: 0 (Removed 40 false changes, 100.0% reduction)
+[2026-10-19 13:15:59]   > Baseline 2020-2025 Permanent Changes Preserved: 79 / 79 (100.0%)
+[2026-10-19 13:15:59]   > Province Processed in 0.97s - Matrix Arithmetic Conservation: VERIFIED
+[2026-10-19 13:15:59] 
+Processing Province: EAST_JAVA across 2020-2025...
+[2026-10-19 13:16:00]   > Valid Pixels: 3107 / 4096 (75.85%)
+[2026-10-19 13:16:00]   > Total Bounces Injected across 6 years: 95
+[2026-10-19 13:16:00]   > Total Trajectory Bounces Filtered: 86
+[2026-10-19 13:16:00]   > Adjacent 2020-2021 Raw Changes: 40 -> Filtered Changes: 0 (Removed 40 false changes, 100.0% reduction)
+[2026-10-19 13:16:00]   > Baseline 2020-2025 Permanent Changes Preserved: 86 / 86 (100.0%)
+[2026-10-19 13:16:00]   > Province Processed in 0.48s - Matrix Arithmetic Conservation: VERIFIED
+[2026-10-19 13:16:00] 
+Processing Province: GORONTALO across 2020-2025...
+[2026-10-19 13:16:00]   > Valid Pixels: 3290 / 4096 (80.32%)
+[2026-10-19 13:16:00]   > Total Bounces Injected across 6 years: 95
+[2026-10-19 13:16:00]   > Total Trajectory Bounces Filtered: 85
+[2026-10-19 13:16:00]   > Adjacent 2020-2021 Raw Changes: 40 -> Filtered Changes: 0 (Removed 40 false changes, 100.0% reduction)
+[2026-10-19 13:16:00]   > Baseline 2020-2025 Permanent Changes Preserved: 82 / 82 (100.0%)
+[2026-10-19 13:16:00]   > Province Processed in 0.59s - Matrix Arithmetic Conservation: VERIFIED
+[2026-10-19 13:16:00] 
+Processing Province: SOUTH_SULAWESI across 2020-2025...
+[2026-10-19 13:16:01]   > Valid Pixels: 3181 / 4096 (77.66%)
+[2026-10-19 13:16:01]   > Total Bounces Injected across 6 years: 95
+[2026-10-19 13:16:01]   > Total Trajectory Bounces Filtered: 83
+[2026-10-19 13:16:01]   > Adjacent 2020-2021 Raw Changes: 40 -> Filtered Changes: 0 (Removed 40 false changes, 100.0% reduction)
+[2026-10-19 13:16:01]   > Baseline 2020-2025 Permanent Changes Preserved: 81 / 81 (100.0%)
+[2026-10-19 13:16:01]   > Province Processed in 0.53s - Matrix Arithmetic Conservation: VERIFIED
+[2026-10-19 13:16:01] 
+Processing Province: SOUTHEAST_SULAWESI across 2020-2025...
+[2026-10-19 13:16:01]   > Valid Pixels: 3450 / 4096 (84.23%)
+[2026-10-19 13:16:01]   > Total Bounces Injected across 6 years: 95
+[2026-10-19 13:16:01]   > Total Trajectory Bounces Filtered: 87
+[2026-10-19 13:16:01]   > Adjacent 2020-2021 Raw Changes: 40 -> Filtered Changes: 0 (Removed 40 false changes, 100.0% reduction)
+[2026-10-19 13:16:01]   > Baseline 2020-2025 Permanent Changes Preserved: 83 / 83 (100.0%)
+[2026-10-19 13:16:01]   > Province Processed in 0.5s - Matrix Arithmetic Conservation: VERIFIED
+[2026-10-19 13:16:01] 
+Processing Province: WEST_JAVA across 2020-2025...
+[2026-10-19 13:16:02]   > Valid Pixels: 3152 / 4096 (76.95%)
+[2026-10-19 13:16:02]   > Total Bounces Injected across 6 years: 95
+[2026-10-19 13:16:02]   > Total Trajectory Bounces Filtered: 89
+[2026-10-19 13:16:02]   > Adjacent 2020-2021 Raw Changes: 40 -> Filtered Changes: 0 (Removed 40 false changes, 100.0% reduction)
+[2026-10-19 13:16:02]   > Baseline 2020-2025 Permanent Changes Preserved: 83 / 83 (100.0%)
+[2026-10-19 13:16:02]   > Province Processed in 0.65s - Matrix Arithmetic Conservation: VERIFIED
+[2026-10-19 13:16:02] 
+================================================================================
+[2026-10-19 13:16:02] OVERALL 6-PROVINCE MULTI-TEMPORAL BENCHMARK SUMMARY
+[2026-10-19 13:16:02] ================================================================================
+[2026-10-19 13:16:02] Total Provinces Evaluated: 6
+[2026-10-19 13:16:02] Time Horizon: 2020 to 2025 (6 years, 36 composite cells)
+[2026-10-19 13:16:02] Total False Changes Removed (Adjacent 2020-2021): 240 / 240 (100.0%)
+[2026-10-19 13:16:02] Permanent Change Preservation Rate (Baseline 2020-2025): 82.33% (494 / 600)
+[2026-10-19 13:16:02] Matrix Arithmetic Conservation Check: 100% PASSED across all provinces
+[2026-10-19 13:16:02] Total Execution Time: 3.73s
+[2026-10-19 13:16:02] ================================================================================

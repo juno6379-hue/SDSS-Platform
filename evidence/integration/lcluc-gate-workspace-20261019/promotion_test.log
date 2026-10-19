@@ -1,0 +1,27 @@
+test_authoritative_promotion_enables_gate_acceptance (test_model_deployment_promotion.TestModelDeploymentPromotion.test_authoritative_promotion_enables_gate_acceptance)
+Promoted model passes strict _gate without MODEL_NOT_DEPLOYED_OR_EVALUATED or MODEL_EVALUATION_MISMATCH. ... ok
+test_baseline2021_model_import_and_promotion (test_model_deployment_promotion.TestModelDeploymentPromotion.test_baseline2021_model_import_and_promotion)
+Simulate baseline2021_cpu_v1_model registration and authoritative promotion. ... ok
+test_checkpoint_sha256_immutable_binding_to_evaluation_certificate (test_model_deployment_promotion.TestModelDeploymentPromotion.test_checkpoint_sha256_immutable_binding_to_evaluation_certificate)
+Verifies that checkpoint SHA-256 hashes are immutable and bound to evaluation certificates and version declarations. ... ok
+test_evaluation_checkpoint_hash_mismatch_blocks_gate (test_model_deployment_promotion.TestModelDeploymentPromotion.test_evaluation_checkpoint_hash_mismatch_blocks_gate)
+Evaluation checkpoint_sha256 differing from model_ref sha256 fails gate with MODEL_EVALUATION_MISMATCH. ... ok
+test_evaluation_mismatch_blocks_gate (test_model_deployment_promotion.TestModelDeploymentPromotion.test_evaluation_mismatch_blocks_gate)
+Evaluation with reference_kind != 'expert_independent' fails gate with MODEL_EVALUATION_MISMATCH. ... ok
+test_legacy_baseline_harmonization_and_gate_pass (test_model_deployment_promotion.TestModelDeploymentPromotion.test_legacy_baseline_harmonization_and_gate_pass)
+Legacy baseline models missing band_names are audited, harmonized, promoted, and pass _gate. ... ok
+test_promotion_demotes_prior_deployed_model (test_model_deployment_promotion.TestModelDeploymentPromotion.test_promotion_demotes_prior_deployed_model)
+Promoting model B demotes previously deployed model A to Approved. ... ok
+test_synthetic_model_rejected_from_promotion (test_model_deployment_promotion.TestModelDeploymentPromotion.test_synthetic_model_rejected_from_promotion)
+Models marked synthetic are strictly blocked from operational deployment. ... ok
+test_tampered_checkpoint_fails_promotion (test_model_deployment_promotion.TestModelDeploymentPromotion.test_tampered_checkpoint_fails_promotion)
+Tampered checkpoint byte hash is detected and rejected during audit/promotion. ... ok
+test_timeseries_2020_2025_enforces_deployed_status_and_independent_evaluation (test_model_deployment_promotion.TestModelDeploymentPromotion.test_timeseries_2020_2025_enforces_deployed_status_and_independent_evaluation)
+Enforces that 1st ML inference across full 6-year (2020-2025) time-series strictly requires status='Deployed' and independent_evaluation=True. ... ok
+test_unpromoted_draft_model_blocked_by_gate_with_gap2_code (test_model_deployment_promotion.TestModelDeploymentPromotion.test_unpromoted_draft_model_blocked_by_gate_with_gap2_code)
+Proof of Gap 2: Unpromoted Draft model fails gate with MODEL_NOT_DEPLOYED_OR_EVALUATED. ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 5.560s
+
+OK

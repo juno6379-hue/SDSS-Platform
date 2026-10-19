@@ -28,6 +28,8 @@ from .workflow_node_input_handoff_api import create_workflow_node_input_handoff_
 from .workflow_job_request_handoff_api import create_workflow_job_request_handoff_router
 from .workflow_job_model_record_handoff_api import create_workflow_job_model_record_handoff_router
 from .lcluc_workflow_api import create_lcluc_workflow_router
+from .tile_router import create_lcluc_tile_router
+from .export_router import create_lcluc_export_router
 from .annual_diagnostics_api import create_annual_diagnostics_router
 from .model_error_analysis_api import create_model_error_analysis_router
 from .store import Store, now
@@ -452,5 +454,7 @@ app.include_router(create_workflow_node_input_handoff_router())
 app.include_router(create_workflow_job_request_handoff_router())
 app.include_router(create_workflow_job_model_record_handoff_router())
 app.include_router(create_lcluc_workflow_router(lambda: store))
+app.include_router(create_lcluc_tile_router(lambda: store))
+app.include_router(create_lcluc_export_router(lambda: store))
 app.include_router(create_annual_diagnostics_router(lambda: store))
 app.include_router(create_model_error_analysis_router(lambda: store))

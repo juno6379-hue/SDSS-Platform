@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "title": "LCLUC Time-Series Trajectory & Transition Matrix Analytics Benchmark",
+  "status": "ANALYTICS_BENCHMARK_COMPLETE",
+  "scope": {
+    "provinces": [
+      "banten",
+      "east_java",
+      "gorontalo",
+      "south_sulawesi",
+      "southeast_sulawesi",
+      "west_java"
+    ],
+    "province_count": 6,
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "year_count": 6,
+    "baseline_period": {
+      "start_year": 2020,
+      "end_year": 2025
+    }
+  },
+  "overall_verification": {
+    "pontius_identities_pass_rate": 1.0,
+    "markov_stochasticity_pass_rate": 1.0,
+    "total_execution_seconds": 0.58
+  },
+  "province_benchmark_details": [
+    {
+      "province": "banten",
+      "trees_trend": "MONOTONIC_DECREASE",
+      "built_trend": "MONOTONIC_INCREASE",
+      "trees_cagr": -0.010428,
+      "built_cagr": 0.033351,
+      "total_landscape_ha": 100000.0,
+      "total_change_ha": 3397.7705,
+      "landscape_net_ha": 2297.7705,
+      "landscape_swap_ha": 1100.0,
+      "pontius_identities_verified": true,
+      "markov_stochasticity_verified": true,
+      "sankey_links_count": 14,
+      "elapsed_seconds": 0.452
+    },
+    {
+      "province": "east_java",
+      "trees_trend": "MONOTONIC_DECREASE",
+      "built_trend": "MONOTONIC_INCREASE",
+      "trees_cagr": -0.010929,
+      "built_cagr": 0.034157,
+      "total_landscape_ha": 100000.0,
+      "total_change_ha": 3505.9565,
+      "landscape_net_ha": 2405.9565,
+      "landscape_swap_ha": 1100.0,
+      "pontius_identities_verified": true,
+      "markov_stochasticity_verified": true,
+      "sankey_links_count": 14,
+      "elapsed_seconds": 0.036
+    },
+    {
+      "province": "gorontalo",
+      "trees_trend": "MONOTONIC_DECREASE",
+      "built_trend": "MONOTONIC_INCREASE",
+      "trees_cagr": -0.011159,
+      "built_cagr": 0.034552,
+      "total_landscape_ha": 100000.0,
+      "total_change_ha": 3555.3641,
+      "landscape_net_ha": 2455.3641,
+      "landscape_swap_ha": 1100.0,
+      "pontius_identities_verified": true,
+      "markov_stochasticity_verified": true,
+      "sankey_links_count": 14,
+      "elapsed_seconds": 0.022
+    },
+    {
+      "province": "south_sulawesi",
+      "trees_trend": "MONOTONIC_DECREASE",
+      "built_trend": "MONOTONIC_INCREASE",
+      "trees_cagr": -0.01196,
+      "built_cagr": 0.035877,
+      "total_landscape_ha": 100000.0,
+      "total_change_ha": 3727.4823,
+      "landscape_net_ha": 2627.4823,
+      "landscape_swap_ha": 1100.0,
+      "pontius_identities_verified": true,
+      "markov_stochasticity_verified": true,
+      "sankey_links_count": 14,
+      "elapsed_seconds": 0.021
+    },
+    {
+      "province": "southeast_sulawesi",
+      "trees_trend": "MONOTONIC_DECREASE",
+      "built_trend": "MONOTONIC_INCREASE",
+      "trees_cagr": -0.011382,
+      "built_cagr": 0.034943,
+      "total_landscape_ha": 100000.0,
+      "total_change_ha": 3603.2978,
+      "landscape_net_ha": 2503.2978,
+      "landscape_swap_ha": 1100.0,
+      "pontius_identities_verified": true,
+      "markov_stochasticity_verified": true,
+      "sankey_links_count": 14,
+      "elapsed_seconds": 0.025
+    },
+    {
+      "province": "west_java",
+      "trees_trend": "MONOTONIC_DECREASE",
+      "built_trend": "MONOTONIC_INCREASE",
+      "trees_cagr": -0.011309,
+      "built_cagr": 0.034813,
+      "total_landscape_ha": 100000.0,
+      "total_change_ha": 3587.7185,
+      "landscape_net_ha": 2487.7185,
+      "landscape_swap_ha": 1100.0,
+      "pontius_identities_verified": true,
+      "markov_stochasticity_verified": true,
+      "sankey_links_count": 14,
+      "elapsed_seconds": 0.018
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "from_year": 2020,
+    "to_year": 2025,
+    "total_landscape_area_ha": 100000.0,
+    "node_count": 18,
+    "link_count": 14,
+    "min_flow_threshold_ha": 0.1,
+    "includes_persistence": true
+  },
+  "nodes": [
+    {
+      "id": "2020_water",
+      "label": "Water (2020)",
+      "class_name": "water",
+      "class_idx": 0,
+      "year": 2020,
+      "role": "source"
+    },
+    {
+      "id": "2020_trees",
+      "label": "Trees (2020)",
+      "class_name": "trees",
+      "class_idx": 1,
+      "year": 2020,
+      "role": "source"
+    },
+    {
+      "id": "2020_grass",
+      "label": "Grass (2020)",
+      "class_name": "grass",
+      "class_idx": 2,
+      "year": 2020,
+      "role": "source"
+    },
+    {
+      "id": "2020_flooded_vegetation",
+      "label": "Flooded Vegetation (2020)",
+      "class_name": "flooded_vegetation",
+      "class_idx": 3,
+      "year": 2020,
+      "role": "source"
+    },
+    {
+      "id": "2020_crops",
+      "label": "Crops (2020)",
+      "class_name": "crops",
+      "class_idx": 4,
+      "year": 2020,
+      "role": "source"
+    },
+    {
+      "id": "2020_shrub_and_scrub",
+      "label": "Shrub And Scrub (2020)",
+      "class_name": "shrub_and_scrub",
+      "class_idx": 5,
+      "year": 2020,
+      "role": "source"
+    },
+    {
+      "id": "2020_built",
+      "label": "Built (2020)",
+      "class_name": "built",
+      "class_idx": 6,
+      "year": 2020,
+      "role": "source"
+    },
+    {
+      "id": "2020_bare",
+      "label": "Bare (2020)",
+      "class_name": "bare",
+      "class_idx": 7,
+      "year": 2020,
+      "role": "source"
+    },
+    {
+      "id": "2020_snow_and_ice",
+      "label": "Snow And Ice (2020)",
+      "class_name": "snow_and_ice",
+      "class_idx": 8,
+      "year": 2020,
+      "role": "source"
+    },
+    {
+      "id": "2025_water",
+      "label": "Water (2025)",
+      "class_name": "water",
+      "class_idx": 0,
+      "year": 2025,
+      "role": "target"
+    },
+    {
+      "id": "2025_trees",
+      "label": "Trees (2025)",
+      "class_name": "trees",
+      "class_idx": 1,
+      "year": 2025,
+      "role": "target"
+    },
+    {
+      "id": "2025_grass",
+      "label": "Grass (2025)",
+      "class_name": "grass",
+      "class_idx": 2,
+      "year": 2025,
+      "role": "target"
+    },
+    {
+      "id": "2025_flooded_vegetation",
+      "label": "Flooded Vegetation (2025)",
+      "class_name": "flooded_vegetation",
+      "class_idx": 3,
+      "year": 2025,
+      "role": "target"
+    },
+    {
+      "id": "2025_crops",
+      "label": "Crops (2025)",
+      "class_name": "crops",
+      "class_idx": 4,
+      "year": 2025,
+      "role": "target"
+    },
+    {
+      "id": "2025_shrub_and_scrub",
+      "label": "Shrub And Scrub (2025)",
+      "class_name": "shrub_and_scrub",
+      "class_idx": 5,
+      "year": 2025,
+      "role": "target"
+    },
+    {
+      "id": "2025_built",
+      "label": "Built (2025)",
+      "class_name": "built",
+      "class_idx": 6,
+      "year": 2025,
+      "role": "target"
+    },
+    {
+      "id": "2025_bare",
+      "label": "Bare (2025)",
+      "class_name": "bare",
+      "class_idx": 7,
+      "year": 2025,
+      "role": "target"
+    },
+    {
+      "id": "2025_snow_and_ice",
+      "label": "Snow And Ice (2025)",
+      "class_name": "snow_and_ice",
+      "class_idx": 8,
+      "year": 2025,
+      "role": "target"
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 10,
+      "source_id": "2020_trees",
+      "target_id": "2025_trees",
+      "from_class": "trees",
+      "to_class": "trees",
+      "is_persistence": true,
+      "value_ha": 42372.5177,
+      "percentage_of_total": 42.3725
+    },
+    {
+      "source": 4,
+      "target": 13,
+      "source_id": "2020_crops",
+      "target_id": "2025_crops",
+      "from_class": "crops",
+      "to_class": "crops",
+      "is_persistence": true,
+      "value_ha": 21200.0,
+      "percentage_of_total": 21.2
+    },
+    {
+      "source": 2,
+      "target": 11,
+      "source_id": "2020_grass",
+      "target_id": "2025_grass",
+      "from_class": "grass",
+      "to_class": "grass",
+      "is_persistence": true,
+      "value_ha": 7850.0,
+      "percentage_of_total": 7.85
+    },
+    {
+      "source": 6,
+      "target": 15,
+      "source_id": "2020_built",
+      "target_id": "2025_built",
+      "from_class": "built",
+      "to_class": "built",
+      "is_persistence": true,
+      "value_ha": 7000.0,
+      "percentage_of_total": 7.0
+    },
+    {
+      "source": 5,
+      "target": 14,
+      "source_id": "2020_shrub_and_scrub",
+      "target_id": "2025_shrub_and_scrub",
+      "from_class": "shrub_and_scrub",
+      "to_class": "shrub_and_scrub",
+      "is_persistence": true,
+      "value_ha": 6000.0,
+      "percentage_of_total": 6.0
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "source_id": "2020_water",
+      "target_id": "2025_water",
+      "from_class": "water",
+      "to_class": "water",
+      "is_persistence": true,
+      "value_ha": 5000.0,
+      "percentage_of_total": 5.0
+    },
+    {
+      "source": 3,
+      "target": 12,
+      "source_id": "2020_flooded_vegetation",
+      "target_id": "2025_flooded_vegetation",
+      "from_class": "flooded_vegetation",
+      "to_class": "flooded_vegetation",
+      "is_persistence": true,
+      "value_ha": 4000.0,
+      "percentage_of_total": 4.0
+    },
+    {
+      "source": 7,
+      "target": 16,
+      "source_id": "2020_bare",
+      "target_id": "2025_bare",
+      "from_class": "bare",
+      "to_class": "bare",
+      "is_persistence": true,
+      "value_ha": 2850.0,
+      "percentage_of_total": 2.85
+    },
+    {
+      "source": 1,
+      "target": 13,
+      "source_id": "2020_trees",
+      "target_id": "2025_crops",
+      "from_class": "trees",
+      "to_class": "crops",
+      "is_persistence": false,
+      "value_ha": 1707.8635,
+      "percentage_of_total": 1.7079
+    },
+    {
+      "source": 4,
+      "target": 15,
+      "source_id": "2020_crops",
+      "target_id": "2025_built",
+      "from_class": "crops",
+      "to_class": "built",
+      "is_persistence": false,
+      "value_ha": 800.0,
+      "percentage_of_total": 0.8
+    },
+    {
+      "source": 1,
+      "target": 15,
+      "source_id": "2020_trees",
+      "target_id": "2025_built",
+      "from_class": "trees",
+      "to_class": "built",
+      "is_persistence": false,
+      "value_ha": 788.2447,
+      "percentage_of_total": 0.7882
+    },
+    {
+      "source": 2,
+      "target": 16,
+      "source_id": "2020_grass",
+      "target_id": "2025_bare",
+      "from_class": "grass",
+      "to_class": "bare",
+      "is_persistence": false,
+      "value_ha": 150.0,
+      "percentage_of_total": 0.15
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "source_id": "2020_bare",
+      "target_id": "2025_grass",
+      "from_class": "bare",
+      "to_class": "grass",
+      "is_persistence": false,
+      "value_ha": 150.0,
+      "percentage_of_total": 0.15
+    },
+    {
+      "source": 1,
+      "target": 16,
+      "source_id": "2020_trees",
+      "target_id": "2025_bare",
+      "from_class": "trees",
+      "to_class": "bare",
+      "is_persistence": false,
+      "value_ha": 131.3741,
+      "percentage_of_total": 0.1314
+    }
+  ]
+}

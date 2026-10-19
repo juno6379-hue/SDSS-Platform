@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "section": "SECTION_2_ANNUAL_COMPOSITE_QUALITY_TRACKER",
+  "verification_id": "TC-SECTION2-VERIFY-20261019",
+  "timestamp": "2026-10-19T19:35:21Z",
+  "status": "VERIFIED_TESTED_SYNTHETIC",
+  "summary": {
+    "elapsed_seconds": 0.35,
+    "slices_tested": 8,
+    "raster_shape": [
+      64,
+      64
+    ],
+    "total_pixels": 4096,
+    "annual_median_coverage_ratio": 0.93457,
+    "dry_season_coverage_ratio": 0.909912,
+    "strict_nodata_preservation_verified": true,
+    "nodata_violations": 0
+  },
+  "annual_median_metadata": {
+    "schema_version": 1,
+    "scope": "ANNUAL_COMPOSITE_QUALITY_TRACKER",
+    "blending_method": "median",
+    "temporal_window": {
+      "name": "annual",
+      "start_date": null,
+      "end_date": null,
+      "total_slices_available": 8,
+      "total_slices_evaluated": 8,
+      "doy_span": [
+        20,
+        345
+      ]
+    },
+    "pixel_counts": {
+      "total_pixels": 4096,
+      "valid_composite_pixels": 3828,
+      "missing_nodata_pixels": 268,
+      "valid_coverage_ratio": 0.93457
+    },
+    "observation_count_distribution": {
+      "min_valid_observations": 0,
+      "max_valid_observations": 8,
+      "mean_valid_observations": 3.62,
+      "histogram": {
+        "0": 268,
+        "1": 118,
+        "2": 449,
+        "3": 920,
+        "4": 1147,
+        "5": 781,
+        "6": 341,
+        "7": 65,
+        "8": 7
+      }
+    },
+    "missingness_diagnostics": {
+      "procedural_interpolation_applied": false,
+      "nodata_strictly_preserved": true,
+      "missing_reasons_breakdown": {
+        "CLOUD": {
+          "code": 1,
+          "count": 8,
+          "percentage": 0.1953
+        },
+        "CLOUD_SHADOW": {
+          "code": 2,
+          "count": 0,
+          "percentage": 0.0
+        },
+        "THIN_CIRRUS": {
+          "code": 3,
+          "count": 4,
+          "percentage": 0.0977
+        },
+        "DEFECTIVE_OR_SNOW": {
+          "code": 4,
+          "count": 0,
+          "percentage": 0.0
+        },
+        "SENSOR_NODATA": {
+          "code": 5,
+          "count": 256,
+          "percentage": 6.25
+        }
+      }
+    }
+  },
+  "dry_season_metadata": {
+    "schema_version": 1,
+    "scope": "ANNUAL_COMPOSITE_QUALITY_TRACKER",
+    "blending_method": "median",
+    "temporal_window": {
+      "name": "dry_season_2024",
+      "start_date": "2024-06-01",
+      "end_date": "2024-09-30",
+      "total_slices_available": 8,
+      "total_slices_evaluated": 3,
+      "doy_span": [
+        167,
+        254
+      ]
+    },
+    "pixel_counts": {
+      "total_pixels": 4096,
+      "valid_composite_pixels": 3727,
+      "missing_nodata_pixels": 369,
+      "valid_coverage_ratio": 0.909912
+    },
+    "observation_count_distribution": {
+      "min_valid_observations": 0,
+      "max_valid_observations": 3,
+      "mean_valid_observations": 1.978,
+      "histogram": {
+        "0": 369,
+        "1": 708,
+        "2": 1662,
+        "3": 1357
+      }
+    },
+    "missingness_diagnostics": {
+      "procedural_interpolation_applied": false,
+      "nodata_strictly_preserved": true,
+      "missing_reasons_breakdown": {
+        "CLOUD": {
+          "code": 1,
+          "count": 91,
+          "percentage": 2.2217
+        },
+        "CLOUD_SHADOW": {
+          "code": 2,
+          "count": 5,
+          "percentage": 0.1221
+        },
+        "THIN_CIRRUS": {
+          "code": 3,
+          "count": 17,
+          "percentage": 0.415
+        },
+        "DEFECTIVE_OR_SNOW": {
+          "code": 4,
+          "count": 0,
+          "percentage": 0.0
+        },
+        "SENSOR_NODATA": {
+          "code": 5,
+          "count": 256,
+          "percentage": 6.25
+        }
+      }
+    }
+  },
+  "priority_blending_metadata": {
+    "schema_version": 1,
+    "scope": "ANNUAL_COMPOSITE_QUALITY_TRACKER",
+    "blending_method": "priority",
+    "temporal_window": {
+      "name": "annual",
+      "start_date": null,
+      "end_date": null,
+      "total_slices_available": 8,
+      "total_slices_evaluated": 8,
+      "doy_span": [
+        20,
+        345
+      ]
+    },
+    "pixel_counts": {
+      "total_pixels": 4096,
+      "valid_composite_pixels": 3828,
+      "missing_nodata_pixels": 268,
+      "valid_coverage_ratio": 0.93457
+    },
+    "observation_count_distribution": {
+      "min_valid_observations": 0,
+      "max_valid_observations": 8,
+      "mean_valid_observations": 3.62,
+      "histogram": {
+        "0": 268,
+        "1": 118,
+        "2": 449,
+        "3": 920,
+        "4": 1147,
+        "5": 781,
+        "6": 341,
+        "7": 65,
+        "8": 7
+      }
+    },
+    "missingness_diagnostics": {
+      "procedural_interpolation_applied": false,
+      "nodata_strictly_preserved": true,
+      "missing_reasons_breakdown": {
+        "CLOUD": {
+          "code": 1,
+          "count": 8,
+          "percentage": 0.1953
+        },
+        "CLOUD_SHADOW": {
+          "code": 2,
+          "count": 0,
+          "percentage": 0.0
+        },
+        "THIN_CIRRUS": {
+          "code": 3,
+          "count": 4,
+          "percentage": 0.0977
+        },
+        "DEFECTIVE_OR_SNOW": {
+          "code": 4,
+          "count": 0,
+          "percentage": 0.0
+        },
+        "SENSOR_NODATA": {
+          "code": 5,
+          "count": 256,
+          "percentage": 6.25
+        }
+      }
+    }
+  }
+}

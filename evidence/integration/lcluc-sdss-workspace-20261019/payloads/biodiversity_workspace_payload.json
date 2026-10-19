@@ -1,0 +1,237 @@
+{
+  "workspace": "biodiversity",
+  "region": "South Sulawesi",
+  "period": {
+    "from_year": 2020,
+    "to_year": 2025,
+    "elapsed_years": 5.0
+  },
+  "kpis": [
+    {
+      "label": "보호지역 면적",
+      "value": 585.6,
+      "formatted": "585.6",
+      "unit": "ha",
+      "icon": "forest",
+      "status": "CALCULATED_OVERLAY"
+    },
+    {
+      "label": "적합 서식지 비율",
+      "value": 21.9,
+      "formatted": "21.9",
+      "unit": "%",
+      "icon": "habitat",
+      "status": "CALCULATED_LCLUC"
+    },
+    {
+      "label": "연결성 지수",
+      "value": 0.07,
+      "formatted": "0.07",
+      "unit": "index",
+      "icon": "network",
+      "status": "CALCULATED_FRAGMENTATION"
+    },
+    {
+      "label": "보전 우선지역 수",
+      "value": 5,
+      "formatted": "5",
+      "unit": "개",
+      "icon": "location",
+      "status": "IDENTIFIED_ZONES"
+    }
+  ],
+  "summary": {
+    "title": "보전 우선순위",
+    "columns": [
+      "지역 / 구역",
+      "우선순위 점수",
+      "면적 (ha)",
+      "분류"
+    ],
+    "rows": [
+      [
+        "South Sulawesi Primary Intact Forest",
+        "0.94",
+        "140.0",
+        "핵심보호구역 (Strict Nature Reserve)"
+      ],
+      [
+        "South Sulawesi Wildlife Ecological Corridor",
+        "0.82",
+        "72.0",
+        "생태통로 (Wildlife Corridor)"
+      ],
+      [
+        "South Sulawesi Coastal Mangrove Marine Park",
+        "0.78",
+        "170.0",
+        "연안습지보호구역 (Ramsar/Marine)"
+      ],
+      [
+        "South Sulawesi Cloud Mountain Forest",
+        "0.71",
+        "88.0",
+        "고산서식지 (HCV 1)"
+      ],
+      [
+        "South Sulawesi Peat Swamp Hydrological Core",
+        "0.63",
+        "48.0",
+        "이탄지수문단위 (KHG Core)"
+      ]
+    ]
+  },
+  "bottom_panels": {
+    "trend": {
+      "title": "생물다양성 지수 추세",
+      "unit": "index",
+      "series": [
+        {
+          "year": "2020",
+          "biodiversity_index": 0.016
+        },
+        {
+          "year": "2021",
+          "biodiversity_index": 0.015
+        },
+        {
+          "year": "2022",
+          "biodiversity_index": 0.015
+        },
+        {
+          "year": "2023",
+          "biodiversity_index": 0.015
+        },
+        {
+          "year": "2024",
+          "biodiversity_index": 0.015
+        },
+        {
+          "year": "2025",
+          "biodiversity_index": 0.014
+        }
+      ]
+    },
+    "suitability_distribution": {
+      "title": "서식지 적합도 등급별 면적",
+      "classes": [
+        {
+          "grade": "매우 높음 (0.8–1.0)",
+          "color": "#f72d56",
+          "area_ha": 140.0,
+          "share_pct": 7.7
+        },
+        {
+          "grade": "높음 (0.6–0.8)",
+          "color": "#ff8b32",
+          "area_ha": 152.0,
+          "share_pct": 8.3
+        },
+        {
+          "grade": "중간 (0.4–0.6)",
+          "color": "#ffdf41",
+          "area_ha": 60.0,
+          "share_pct": 3.3
+        },
+        {
+          "grade": "낮음 (0.2–0.4)",
+          "color": "#2ba262",
+          "area_ha": 146.4,
+          "share_pct": 8.0
+        },
+        {
+          "grade": "매우 낮음 (0.0–0.2)",
+          "color": "#268afa",
+          "area_ha": 1331.6,
+          "share_pct": 72.8
+        },
+        {
+          "grade": "보호구역",
+          "color": "#7185b1",
+          "area_ha": 585.6,
+          "share_pct": 32.0
+        }
+      ]
+    },
+    "connectivity": {
+      "title": "서식지 연결성 분석",
+      "basis": "transition_matrix_analytical_proxy",
+      "connectivity_index": 0.0685,
+      "fragmentation_index": 0.8535,
+      "core_area_ratio": 0.1465,
+      "patch_count": 1,
+      "mean_patch_size_ha": 400.0,
+      "largest_patch_index_pct": 20.43
+    },
+    "threats": {
+      "title": "압력·위협 요인",
+      "items": [
+        {
+          "name": "산림 벌채",
+          "score": 0.65,
+          "impact_ha": 30.0,
+          "color": "#f72d56"
+        },
+        {
+          "name": "토지이용 변화",
+          "score": 0.25,
+          "impact_ha": 30.0,
+          "color": "#ff8b32"
+        },
+        {
+          "name": "광업",
+          "score": 0.15,
+          "impact_ha": 0.0,
+          "color": "#ffdf41"
+        },
+        {
+          "name": "도로·인프라",
+          "score": 0.1,
+          "impact_ha": 0.0,
+          "color": "#2ba262"
+        },
+        {
+          "name": "불법 포획",
+          "score": 0.28,
+          "impact_ha": 10.5,
+          "color": "#268afa"
+        },
+        {
+          "name": "침입종",
+          "score": 0.18,
+          "impact_ha": 36.6,
+          "color": "#7185b1"
+        }
+      ]
+    }
+  },
+  "habitat_metrics": {
+    "initial_habitat_ha": 430.0,
+    "final_habitat_ha": 400.0,
+    "forest_loss_ha": 30.0,
+    "forest_gain_ha": 0.0,
+    "net_forest_change_ha": -30.0,
+    "protected_habitat_ha": 180.0,
+    "common_valid_ha": 1830.0,
+    "cloud_excluded_ha": 0.0,
+    "valid_common_ratio": 1.0
+  },
+  "scientific_metadata": {
+    "landscape_model": "FRAGSTATS-compatible Core-Edge & Connected Component Model",
+    "parameters": {
+      "core_edge_buffer_m": 100.0,
+      "protected_area_overlap_weight": 0.4,
+      "connectivity_weight": 0.35,
+      "rarity_weight": 0.25,
+      "pixel_resolution_m": 10.0
+    },
+    "verification_status": "CALCULATED_LANDSCAPE_METRICS",
+    "governance": {
+      "filter_mode": "common_valid_mask",
+      "common_valid_ha": 1830.0,
+      "cloud_excluded_ha": 0.0,
+      "valid_common_ratio": 1.0,
+      "morphological_cloud_hole_suppression": false
+    }
+  }
+}

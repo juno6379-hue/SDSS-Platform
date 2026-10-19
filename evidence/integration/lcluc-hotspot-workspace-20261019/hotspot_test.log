@@ -1,0 +1,25 @@
+test_01_synthetic_uniform_grid_not_significant (test_spatial_hotspot_engine.TestSpatialHotspotEngine.test_01_synthetic_uniform_grid_not_significant)
+Uniform grid (zero variance) must produce z=0, p=1.0, and 100% Not Significant. ... ok
+test_02_high_density_synthetic_cluster (test_spatial_hotspot_engine.TestSpatialHotspotEngine.test_02_high_density_synthetic_cluster)
+Dense local cluster of change amidst background zeros must yield z > 2.58 (99% Hotspot). ... ok
+test_03_border_and_boundary_padding (test_spatial_hotspot_engine.TestSpatialHotspotEngine.test_03_border_and_boundary_padding)
+Corner and edge cells must adapt local weight sums W_i without index errors or NaNs. ... ok
+test_04_nodata_masking (test_spatial_hotspot_engine.TestSpatialHotspotEngine.test_04_nodata_masking)
+Masked NoData pixels must remain NaN in z/p and -99 in classification, while neighboring valid cells exclude them. ... ok
+test_05_multi_scale_kernels (test_spatial_hotspot_engine.TestSpatialHotspotEngine.test_05_multi_scale_kernels)
+Kernel generators must produce correct shapes, symmetries, and mathematical properties. ... ok
+test_06_transition_mask_extraction (test_spatial_hotspot_engine.TestSpatialHotspotEngine.test_06_transition_mask_extraction)
+Extraction of deforestation and urbanization masks must correctly isolate respective transitions. ... ok
+test_07_geojson_output_schema_and_vectorization (test_spatial_hotspot_engine.TestSpatialHotspotEngine.test_07_geojson_output_schema_and_vectorization)
+GeoJSON vector features must adhere strictly to RFC 7946 with rich property attributes. ... ok
+test_08_geotiff_raster_generation_and_nodata_preservation (test_spatial_hotspot_engine.TestSpatialHotspotEngine.test_08_geotiff_raster_generation_and_nodata_preservation)
+GeoTIFF rasters must preserve floating point z-scores, integer classes, and nodata values. ... ok
+test_09_end_to_end_raster_pipeline (test_spatial_hotspot_engine.TestSpatialHotspotEngine.test_09_end_to_end_raster_pipeline)
+SpatialHotspotEngine.analyze_rasters must execute end-to-end and output all 4 required artifacts. ... ok
+test_10_extreme_edge_cases (test_spatial_hotspot_engine.TestSpatialHotspotEngine.test_10_extreme_edge_cases)
+Handle single-pixel grids, all-NoData grids, and tiny grids gracefully. ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.962s
+
+OK

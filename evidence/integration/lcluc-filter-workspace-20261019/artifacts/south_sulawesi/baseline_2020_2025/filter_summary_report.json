@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "status": "TEMPORAL_CHANGE_FILTER_COMPLETE",
+  "time_horizon": {
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "total_years": 6,
+    "evaluated_pair": {
+      "from_year": 2020,
+      "to_year": 2025
+    }
+  },
+  "trajectory_filter_metrics": {
+    "total_pixels": 4096,
+    "total_bounces_smoothed": 83,
+    "confidence_reversals": 0,
+    "per_year_details": [
+      {
+        "time_index": 1,
+        "bounces_detected": 40,
+        "bounce_rate": 0.009766
+      },
+      {
+        "time_index": 2,
+        "bounces_detected": 21,
+        "bounce_rate": 0.005127
+      },
+      {
+        "time_index": 3,
+        "bounces_detected": 22,
+        "bounce_rate": 0.005371
+      },
+      {
+        "time_index": 4,
+        "bounces_detected": 0,
+        "bounce_rate": 0.0
+      }
+    ]
+  },
+  "transition_comparison": {
+    "raw_changed_pixels": 81,
+    "raw_changed_area_m2": 8100.0,
+    "raw_change_rate": 0.021786,
+    "filtered_changed_pixels": 81,
+    "filtered_changed_area_m2": 8100.0,
+    "filtered_change_rate": 0.021786,
+    "false_changes_removed_pixels": 0,
+    "false_change_reduction_rate": 0.0,
+    "confidence_mean_on_filtered_changes": 0.1835331916809082
+  },
+  "matrix_conservation_verified": true,
+  "exported_artifacts": {
+    "transitions_raw_tif": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\lcluc-filter-workspace-20261019\\artifacts\\south_sulawesi\\baseline_2020_2025\\transitions_raw.tif",
+    "transitions_filtered_tif": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\lcluc-filter-workspace-20261019\\artifacts\\south_sulawesi\\baseline_2020_2025\\transitions_filtered.tif",
+    "change_confidence_tif": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\lcluc-filter-workspace-20261019\\artifacts\\south_sulawesi\\baseline_2020_2025\\change_confidence.tif",
+    "transitions_raw_csv": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\lcluc-filter-workspace-20261019\\artifacts\\south_sulawesi\\baseline_2020_2025\\transitions_raw.csv",
+    "transitions_filtered_csv": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\lcluc-filter-workspace-20261019\\artifacts\\south_sulawesi\\baseline_2020_2025\\transitions_filtered.csv"
+  }
+}

@@ -1,0 +1,22 @@
+[2026-10-19 12:58:53] Starting Temporal Composite & Cloud-Masking Verification...
+[2026-10-19 12:58:53] Workspace Directory: E:\GeoAI–MLOps–SDSS\evidence\integration\temporal-composite-workspace-20261019
+[2026-10-19 12:58:53] Target Cells: 6 provinces x 6 years = 36 cells
+[2026-10-19 12:58:53] Step 1: Reading historical baseline from data/first-group-annual/...
+[2026-10-19 12:58:53]   Historical cells recorded: 36
+[2026-10-19 12:58:53]   Failed (429 rate limit / search bottleneck): 35 + 1
+[2026-10-19 12:58:53]   Delivered valid pixels: 0 (ratio: 0.0)
+[2026-10-19 12:58:53] Step 2: Generating synthetic multi-temporal slices (6 slices/yr, grid=(64, 64)) across 36 cells...
+[2026-10-19 12:58:56]   Standard policy (65% minimum) batch run complete.
+[2026-10-19 12:58:59]   High-quality policy (80% minimum) batch run complete.
+[2026-10-19 12:58:59] Step 3: Evaluating multi-temporal radiometric bounds and NDVI smoothness...
+[2026-10-19 12:58:59]   Province banten            : Radiometric=True | Smoothness=True (jump_rate: 1.19%)
+[2026-10-19 12:59:00]   Province east_java         : Radiometric=True | Smoothness=True (jump_rate: 1.23%)
+[2026-10-19 12:59:00]   Province gorontalo         : Radiometric=True | Smoothness=True (jump_rate: 1.99%)
+[2026-10-19 12:59:00]   Province south_sulawesi    : Radiometric=True | Smoothness=True (jump_rate: 1.82%)
+[2026-10-19 12:59:00]   Province southeast_sulawesi: Radiometric=True | Smoothness=True (jump_rate: 1.44%)
+[2026-10-19 12:59:01]   Province west_java         : Radiometric=True | Smoothness=True (jump_rate: 1.56%)
+[2026-10-19 12:59:01] Step 4: Benchmarking alternative blending operators (Median vs Medoid vs Max-NDVI)...
+[2026-10-19 12:59:01]   Method median    : valid_ratio=0.992432 time=0.0229s
+[2026-10-19 12:59:01]   Method medoid    : valid_ratio=0.992432 time=0.0240s
+[2026-10-19 12:59:01]   Method max_ndvi  : valid_ratio=0.992432 time=0.0030s
+[2026-10-19 12:59:01] Verification completed in 8.262s.

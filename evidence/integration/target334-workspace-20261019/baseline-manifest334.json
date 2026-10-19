@@ -1,0 +1,120 @@
+{
+  "unit": 334,
+  "target_file": {
+    "path": "scripts/collect_targeted_bare.py",
+    "bytes": 21923,
+    "sha256": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8"
+  },
+  "dependencies": [
+    {
+      "path": "backend/app/__init__.py",
+      "bytes": 60,
+      "sha256": "93a5b5d7da4a08613cd136c085e50f981372781506fdc4cc1c1f80808228d743"
+    },
+    {
+      "path": "backend/app/data/__init__.py",
+      "bytes": 84,
+      "sha256": "e1dcce3426c288e4fbea7a485b9dbb5ef96a9c09eb8d735aec68ec21c55c62d3"
+    },
+    {
+      "path": "backend/app/data/budget.py",
+      "bytes": 6578,
+      "sha256": "82f6e21f760536ae3094059760a87491bf22379926d75267bf844fa803f08d8d"
+    },
+    {
+      "path": "backend/app/data/ledger_metadata_io.py",
+      "bytes": 11834,
+      "sha256": "3882d21ad93aa0f9d418cda36a2fc26b8a8dae45a6d9793cfdeb24e1e8ba8c3b"
+    },
+    {
+      "path": "backend/app/data/parallel.py",
+      "bytes": 4364,
+      "sha256": "ff25bf4d83a43bb9b04ffcdadc31d6a02a6609e2c417d02c192c532cbd5b6ae3"
+    },
+    {
+      "path": "backend/app/data/service.py",
+      "bytes": 36547,
+      "sha256": "60c7186ce341d4a08bbd9a203c3e186f004a89202be5c7174567bcb265729787"
+    },
+    {
+      "path": "backend/app/data/targeted_atomic_json.py",
+      "bytes": 11914,
+      "sha256": "11ea4b0956468045bdd27f7dd605f0d61508fd3846000dba001ef9b4a87aaa66"
+    },
+    {
+      "path": "backend/app/data/targeted_bare_plan.py",
+      "bytes": 16966,
+      "sha256": "0577de883385f71d2007d2d2a043d683a8a78bf13b98f984e310546997aa2d2c"
+    },
+    {
+      "path": "backend/app/data/targeted_execution.py",
+      "bytes": 6435,
+      "sha256": "65488cea5f36e7072a3cf56fabfc1ade61f12abf63df0f239f71ecfa0b89a90d"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory.py",
+      "bytes": 10945,
+      "sha256": "b2051287775ae73f24b937aaa3c1a774582e4f66371a05784e317dc2ae5ff839"
+    },
+    {
+      "path": "backend/app/data/targeted_inventory_profile.py",
+      "bytes": 1900,
+      "sha256": "dc947980dc4fe69930ebd1bbd66a2b0e32f99432749754c55b27327ed78d8c6d"
+    },
+    {
+      "path": "backend/app/data/targeted_live_guards.py",
+      "bytes": 7558,
+      "sha256": "c774c6dc012254febb62156d51d68c56f87ef92d9d6abc7e85d9fe98a3167238"
+    },
+    {
+      "path": "backend/app/data/targeted_source_io.py",
+      "bytes": 3957,
+      "sha256": "c4854dc5887f83d1536e9741bf6f5f3cafc283cc704662c102e8a22bf8c78f6f"
+    },
+    {
+      "path": "backend/app/data/targeted_source_profile.py",
+      "bytes": 11581,
+      "sha256": "8e347589d802d22f89354b176d81da9ebdde27607986355ce3212ac4981493d9"
+    },
+    {
+      "path": "backend/app/ml/__init__.py",
+      "bytes": 79,
+      "sha256": "8ab5a31447b803b0089293866236a4be76c8516a45c98e68b41b3f3a0fcb44c8"
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "bytes": 12511,
+      "sha256": "73c9ba94cda1722ae87e7729ecd655ba5e9584fcb735c8c1f0e06734f8357d01"
+    },
+    {
+      "path": "backend/app/ml/per_scene_normalization_files.py",
+      "bytes": 9136,
+      "sha256": "77b6d844aa1a71304826d34f492780b80a8b0b7c7f21740856510d8acd463366"
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "bytes": 8513,
+      "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8"
+    },
+    {
+      "path": "scripts/collect_samples.py",
+      "bytes": 48320,
+      "sha256": "9ce6cf2a520edb14d8c67260e79fc5f605f11eab03d9d6773117e0fd193eb165"
+    },
+    {
+      "path": "scripts/collect_training_grid.py",
+      "bytes": 25287,
+      "sha256": "d312660f1a25fb6a9477f101e09aacd14f543636614726fb13092f42bceda3d6"
+    },
+    {
+      "path": "scripts/collect_training_parallel.py",
+      "bytes": 20117,
+      "sha256": "5e99234379cd45804d6eaf1b3b349210d5b9f26d5344e8ff6193dd74eb136b0c"
+    },
+    {
+      "path": "scripts/diagnose_stac.py",
+      "bytes": 10779,
+      "sha256": "a30a43cca57c9368fa977701084b73f93d3f8e89526d9e40eb35f6fc44e531d9"
+    }
+  ]
+}

@@ -1,0 +1,1305 @@
+{
+  "schema_version": 1,
+  "scope": "ANNUAL_TEMPORAL_COMPOSITE_36_CELLS_VERIFICATION",
+  "status": "BATCH_VERIFICATION_COMPLETE",
+  "cell_matrix": {
+    "provinces": [
+      "banten",
+      "east_java",
+      "gorontalo",
+      "south_sulawesi",
+      "southeast_sulawesi",
+      "west_java"
+    ],
+    "province_count": 6,
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "year_count": 6,
+    "total_expected_cells": 36,
+    "evaluated_cells": 36
+  },
+  "policy": {
+    "minimum_valid_numerator": 65,
+    "minimum_valid_denominator": 100,
+    "minimum_valid_ratio": 0.65
+  },
+  "summary_metrics": {
+    "total_cells": 36,
+    "cells_meeting_policy": 36,
+    "cell_policy_pass_rate": 1.0,
+    "mean_pre_composite_valid_ratio": 0.4947,
+    "mean_post_composite_valid_ratio": 0.9923,
+    "mean_gap_reduction_ratio": 0.985,
+    "total_single_scenes_evaluated": 216,
+    "single_scenes_meeting_policy": 58,
+    "single_scene_pass_rate": 0.2685
+  },
+  "cell_results": [
+    {
+      "province": "banten",
+      "year": 2020,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.821,
+          0.5935,
+          0.4636,
+          0.2495,
+          0.3982,
+          0.6858
+        ],
+        "mean_valid_ratio": 0.526164,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4072,
+        "gap_filled_pixels": 5,
+        "final_valid_pixels": 4077,
+        "persistent_gap_pixels": 19,
+        "final_valid_ratio": 0.995361,
+        "gap_reduction_ratio": 0.99021
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4077/4096 (0.9954)",
+        "valid_pixels": 4077,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "banten",
+      "year": 2021,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6477,
+          0.6353,
+          0.4431,
+          0.1799,
+          0.4238,
+          0.72
+        ],
+        "mean_valid_ratio": 0.497721,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4054,
+        "gap_filled_pixels": 23,
+        "final_valid_pixels": 4077,
+        "persistent_gap_pixels": 19,
+        "final_valid_ratio": 0.995361,
+        "gap_reduction_ratio": 0.990765
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4077/4096 (0.9954)",
+        "valid_pixels": 4077,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "banten",
+      "year": 2022,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7661,
+          0.7029,
+          0.3503,
+          0.356,
+          0.4238,
+          0.5874
+        ],
+        "mean_valid_ratio": 0.5212,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4054,
+        "gap_filled_pixels": 21,
+        "final_valid_pixels": 4075,
+        "persistent_gap_pixels": 21,
+        "final_valid_ratio": 0.994873,
+        "gap_reduction_ratio": 0.989292
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4075/4096 (0.9949)",
+        "valid_pixels": 4075,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "banten",
+      "year": 2023,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7429,
+          0.5583,
+          0.3743,
+          0.2563,
+          0.5027,
+          0.7488
+        ],
+        "mean_valid_ratio": 0.52124,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4063,
+        "gap_filled_pixels": 24,
+        "final_valid_pixels": 4087,
+        "persistent_gap_pixels": 9,
+        "final_valid_ratio": 0.997803,
+        "gap_reduction_ratio": 0.995411
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4087/4096 (0.9978)",
+        "valid_pixels": 4087,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "banten",
+      "year": 2024,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7585,
+          0.521,
+          0.4294,
+          0.239,
+          0.5007,
+          0.7041
+        ],
+        "mean_valid_ratio": 0.515137,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4051,
+        "gap_filled_pixels": 19,
+        "final_valid_pixels": 4070,
+        "persistent_gap_pixels": 26,
+        "final_valid_ratio": 0.993652,
+        "gap_reduction_ratio": 0.986908
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4070/4096 (0.9937)",
+        "valid_pixels": 4070,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "banten",
+      "year": 2025,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6499,
+          0.5615,
+          0.3149,
+          0.3171,
+          0.418,
+          0.729
+        ],
+        "mean_valid_ratio": 0.48877,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4050,
+        "gap_filled_pixels": 14,
+        "final_valid_pixels": 4064,
+        "persistent_gap_pixels": 32,
+        "final_valid_ratio": 0.992188,
+        "gap_reduction_ratio": 0.984718
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4064/4096 (0.9922)",
+        "valid_pixels": 4064,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "east_java",
+      "year": 2020,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7903,
+          0.6191,
+          0.314,
+          0.3413,
+          0.4976,
+          0.7095
+        ],
+        "mean_valid_ratio": 0.534424,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4063,
+        "gap_filled_pixels": 7,
+        "final_valid_pixels": 4070,
+        "persistent_gap_pixels": 26,
+        "final_valid_ratio": 0.993652,
+        "gap_reduction_ratio": 0.986366
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4070/4096 (0.9937)",
+        "valid_pixels": 4070,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "east_java",
+      "year": 2021,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7507,
+          0.6477,
+          0.395,
+          0.2583,
+          0.4468,
+          0.6528
+        ],
+        "mean_valid_ratio": 0.515259,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4053,
+        "gap_filled_pixels": 20,
+        "final_valid_pixels": 4073,
+        "persistent_gap_pixels": 23,
+        "final_valid_ratio": 0.994385,
+        "gap_reduction_ratio": 0.988416
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4073/4096 (0.9944)",
+        "valid_pixels": 4073,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "east_java",
+      "year": 2022,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7234,
+          0.5217,
+          0.4561,
+          0.2266,
+          0.3433,
+          0.7285
+        ],
+        "mean_valid_ratio": 0.490194,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4055,
+        "gap_filled_pixels": 17,
+        "final_valid_pixels": 4072,
+        "persistent_gap_pixels": 24,
+        "final_valid_ratio": 0.994141,
+        "gap_reduction_ratio": 0.988507
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4072/4096 (0.9941)",
+        "valid_pixels": 4072,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "east_java",
+      "year": 2023,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.8091,
+          0.6077,
+          0.3618,
+          0.2104,
+          0.428,
+          0.5862
+        ],
+        "mean_valid_ratio": 0.491536,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4052,
+        "gap_filled_pixels": 18,
+        "final_valid_pixels": 4070,
+        "persistent_gap_pixels": 26,
+        "final_valid_ratio": 0.993652,
+        "gap_reduction_ratio": 0.987516
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4070/4096 (0.9937)",
+        "valid_pixels": 4070,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "east_java",
+      "year": 2024,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6467,
+          0.7214,
+          0.4116,
+          0.3083,
+          0.4705,
+          0.7444
+        ],
+        "mean_valid_ratio": 0.540446,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4071,
+        "gap_filled_pixels": 11,
+        "final_valid_pixels": 4082,
+        "persistent_gap_pixels": 14,
+        "final_valid_ratio": 0.996582,
+        "gap_reduction_ratio": 0.992562
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4082/4096 (0.9966)",
+        "valid_pixels": 4082,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "east_java",
+      "year": 2025,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.679,
+          0.5415,
+          0.2578,
+          0.3232,
+          0.4265,
+          0.5864
+        ],
+        "mean_valid_ratio": 0.460571,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4011,
+        "gap_filled_pixels": 23,
+        "final_valid_pixels": 4034,
+        "persistent_gap_pixels": 62,
+        "final_valid_ratio": 0.984863,
+        "gap_reduction_ratio": 0.971939
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4034/4096 (0.9849)",
+        "valid_pixels": 4034,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "gorontalo",
+      "year": 2020,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6758,
+          0.5989,
+          0.3679,
+          0.239,
+          0.3467,
+          0.6536
+        ],
+        "mean_valid_ratio": 0.470947,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4040,
+        "gap_filled_pixels": 9,
+        "final_valid_pixels": 4049,
+        "persistent_gap_pixels": 47,
+        "final_valid_ratio": 0.988525,
+        "gap_reduction_ratio": 0.978311
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4049/4096 (0.9885)",
+        "valid_pixels": 4049,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "gorontalo",
+      "year": 2021,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6638,
+          0.5808,
+          0.3816,
+          0.1626,
+          0.4885,
+          0.6541
+        ],
+        "mean_valid_ratio": 0.480021,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4051,
+        "gap_filled_pixels": 14,
+        "final_valid_pixels": 4065,
+        "persistent_gap_pixels": 31,
+        "final_valid_ratio": 0.992432,
+        "gap_reduction_ratio": 0.985445
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4065/4096 (0.9924)",
+        "valid_pixels": 4065,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "gorontalo",
+      "year": 2022,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6462,
+          0.6069,
+          0.4526,
+          0.3093,
+          0.3931,
+          0.6831
+        ],
+        "mean_valid_ratio": 0.504476,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4048,
+        "gap_filled_pixels": 15,
+        "final_valid_pixels": 4063,
+        "persistent_gap_pixels": 33,
+        "final_valid_ratio": 0.991943,
+        "gap_reduction_ratio": 0.983741
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4063/4096 (0.9919)",
+        "valid_pixels": 4063,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "gorontalo",
+      "year": 2023,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.8145,
+          0.6191,
+          0.3408,
+          0.2925,
+          0.3098,
+          0.7207
+        ],
+        "mean_valid_ratio": 0.506592,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4049,
+        "gap_filled_pixels": 24,
+        "final_valid_pixels": 4073,
+        "persistent_gap_pixels": 23,
+        "final_valid_ratio": 0.994385,
+        "gap_reduction_ratio": 0.988619
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4073/4096 (0.9944)",
+        "valid_pixels": 4073,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "gorontalo",
+      "year": 2024,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6316,
+          0.5371,
+          0.2766,
+          0.175,
+          0.4302,
+          0.6628
+        ],
+        "mean_valid_ratio": 0.443766,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4005,
+        "gap_filled_pixels": 45,
+        "final_valid_pixels": 4050,
+        "persistent_gap_pixels": 46,
+        "final_valid_ratio": 0.98877,
+        "gap_reduction_ratio": 0.97981
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4050/4096 (0.9888)",
+        "valid_pixels": 4050,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6243,
+          0.5889,
+          0.2861,
+          0.2449,
+          0.3438,
+          0.6121
+        ],
+        "mean_valid_ratio": 0.440674,
+        "single_scene_passed_count": 0
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 3996,
+        "gap_filled_pixels": 17,
+        "final_valid_pixels": 4013,
+        "persistent_gap_pixels": 83,
+        "final_valid_ratio": 0.979736,
+        "gap_reduction_ratio": 0.963771
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4013/4096 (0.9797)",
+        "valid_pixels": 4013,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2020,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7922,
+          0.7056,
+          0.2903,
+          0.2017,
+          0.4558,
+          0.7427
+        ],
+        "mean_valid_ratio": 0.520955,
+        "single_scene_passed_count": 3
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4061,
+        "gap_filled_pixels": 13,
+        "final_valid_pixels": 4074,
+        "persistent_gap_pixels": 22,
+        "final_valid_ratio": 0.994629,
+        "gap_reduction_ratio": 0.988788
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4074/4096 (0.9946)",
+        "valid_pixels": 4074,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2021,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6301,
+          0.6299,
+          0.3042,
+          0.272,
+          0.3501,
+          0.6704
+        ],
+        "mean_valid_ratio": 0.467082,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4017,
+        "gap_filled_pixels": 31,
+        "final_valid_pixels": 4048,
+        "persistent_gap_pixels": 48,
+        "final_valid_ratio": 0.988281,
+        "gap_reduction_ratio": 0.97801
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4048/4096 (0.9883)",
+        "valid_pixels": 4048,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2022,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7695,
+          0.7271,
+          0.2698,
+          0.2332,
+          0.4363,
+          0.5725
+        ],
+        "mean_valid_ratio": 0.492635,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4051,
+        "gap_filled_pixels": 26,
+        "final_valid_pixels": 4077,
+        "persistent_gap_pixels": 19,
+        "final_valid_ratio": 0.995361,
+        "gap_reduction_ratio": 0.990857
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4077/4096 (0.9954)",
+        "valid_pixels": 4077,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2023,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7114,
+          0.6765,
+          0.3848,
+          0.3013,
+          0.3962,
+          0.6421
+        ],
+        "mean_valid_ratio": 0.508138,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4049,
+        "gap_filled_pixels": 15,
+        "final_valid_pixels": 4064,
+        "persistent_gap_pixels": 32,
+        "final_valid_ratio": 0.992188,
+        "gap_reduction_ratio": 0.984116
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4064/4096 (0.9922)",
+        "valid_pixels": 4064,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2024,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6418,
+          0.5337,
+          0.4116,
+          0.2178,
+          0.4617,
+          0.6619
+        ],
+        "mean_valid_ratio": 0.479167,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4025,
+        "gap_filled_pixels": 35,
+        "final_valid_pixels": 4060,
+        "persistent_gap_pixels": 36,
+        "final_valid_ratio": 0.991211,
+        "gap_reduction_ratio": 0.983125
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4060/4096 (0.9912)",
+        "valid_pixels": 4060,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2025,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6785,
+          0.5813,
+          0.2944,
+          0.3242,
+          0.4875,
+          0.6848
+        ],
+        "mean_valid_ratio": 0.498494,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4040,
+        "gap_filled_pixels": 12,
+        "final_valid_pixels": 4052,
+        "persistent_gap_pixels": 44,
+        "final_valid_ratio": 0.989258,
+        "gap_reduction_ratio": 0.97858
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4052/4096 (0.9893)",
+        "valid_pixels": 4052,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2020,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7686,
+          0.5613,
+          0.3669,
+          0.2952,
+          0.3662,
+          0.7246
+        ],
+        "mean_valid_ratio": 0.502645,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4045,
+        "gap_filled_pixels": 9,
+        "final_valid_pixels": 4054,
+        "persistent_gap_pixels": 42,
+        "final_valid_ratio": 0.989746,
+        "gap_reduction_ratio": 0.979383
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4054/4096 (0.9897)",
+        "valid_pixels": 4054,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7495,
+          0.5291,
+          0.3621,
+          0.1648,
+          0.3345,
+          0.6899
+        ],
+        "mean_valid_ratio": 0.462769,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4033,
+        "gap_filled_pixels": 29,
+        "final_valid_pixels": 4062,
+        "persistent_gap_pixels": 34,
+        "final_valid_ratio": 0.991699,
+        "gap_reduction_ratio": 0.984549
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4062/4096 (0.9917)",
+        "valid_pixels": 4062,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2022,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7083,
+          0.5688,
+          0.2791,
+          0.2808,
+          0.4709,
+          0.6653
+        ],
+        "mean_valid_ratio": 0.485596,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4051,
+        "gap_filled_pixels": 13,
+        "final_valid_pixels": 4064,
+        "persistent_gap_pixels": 32,
+        "final_valid_ratio": 0.992188,
+        "gap_reduction_ratio": 0.984813
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4064/4096 (0.9922)",
+        "valid_pixels": 4064,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2023,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.8032,
+          0.5569,
+          0.3892,
+          0.2737,
+          0.3557,
+          0.6025
+        ],
+        "mean_valid_ratio": 0.487101,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4062,
+        "gap_filled_pixels": 18,
+        "final_valid_pixels": 4080,
+        "persistent_gap_pixels": 16,
+        "final_valid_ratio": 0.996094,
+        "gap_reduction_ratio": 0.992384
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4080/4096 (0.9961)",
+        "valid_pixels": 4080,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6682,
+          0.613,
+          0.4448,
+          0.2874,
+          0.437,
+          0.5586
+        ],
+        "mean_valid_ratio": 0.492839,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4044,
+        "gap_filled_pixels": 22,
+        "final_valid_pixels": 4066,
+        "persistent_gap_pixels": 30,
+        "final_valid_ratio": 0.992676,
+        "gap_reduction_ratio": 0.985558
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4066/4096 (0.9927)",
+        "valid_pixels": 4066,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.812,
+          0.7166,
+          0.3423,
+          0.1919,
+          0.4917,
+          0.6882
+        ],
+        "mean_valid_ratio": 0.529256,
+        "single_scene_passed_count": 3
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4073,
+        "gap_filled_pixels": 5,
+        "final_valid_pixels": 4078,
+        "persistent_gap_pixels": 18,
+        "final_valid_ratio": 0.995605,
+        "gap_reduction_ratio": 0.990665
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4078/4096 (0.9956)",
+        "valid_pixels": 4078,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "west_java",
+      "year": 2020,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7188,
+          0.6418,
+          0.29,
+          0.2639,
+          0.4922,
+          0.5742
+        ],
+        "mean_valid_ratio": 0.487956,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4047,
+        "gap_filled_pixels": 8,
+        "final_valid_pixels": 4055,
+        "persistent_gap_pixels": 41,
+        "final_valid_ratio": 0.98999,
+        "gap_reduction_ratio": 0.980451
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4055/4096 (0.99)",
+        "valid_pixels": 4055,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "west_java",
+      "year": 2021,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7134,
+          0.5847,
+          0.3503,
+          0.2583,
+          0.4863,
+          0.6855
+        ],
+        "mean_valid_ratio": 0.503906,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4069,
+        "gap_filled_pixels": 12,
+        "final_valid_pixels": 4081,
+        "persistent_gap_pixels": 15,
+        "final_valid_ratio": 0.996338,
+        "gap_reduction_ratio": 0.992618
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4081/4096 (0.9963)",
+        "valid_pixels": 4081,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "west_java",
+      "year": 2022,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6355,
+          0.6099,
+          0.3521,
+          0.2959,
+          0.5078,
+          0.6455
+        ],
+        "mean_valid_ratio": 0.498372,
+        "single_scene_passed_count": 0
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4046,
+        "gap_filled_pixels": 21,
+        "final_valid_pixels": 4067,
+        "persistent_gap_pixels": 29,
+        "final_valid_ratio": 0.99292,
+        "gap_reduction_ratio": 0.985886
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4067/4096 (0.9929)",
+        "valid_pixels": 4067,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "west_java",
+      "year": 2023,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.6736,
+          0.6211,
+          0.3279,
+          0.2715,
+          0.4014,
+          0.5833
+        ],
+        "mean_valid_ratio": 0.470296,
+        "single_scene_passed_count": 1
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4021,
+        "gap_filled_pixels": 38,
+        "final_valid_pixels": 4059,
+        "persistent_gap_pixels": 37,
+        "final_valid_ratio": 0.990967,
+        "gap_reduction_ratio": 0.982947
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4059/4096 (0.991)",
+        "valid_pixels": 4059,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "west_java",
+      "year": 2024,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.7815,
+          0.6079,
+          0.2539,
+          0.2493,
+          0.4919,
+          0.6667
+        ],
+        "mean_valid_ratio": 0.499064,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4048,
+        "gap_filled_pixels": 22,
+        "final_valid_pixels": 4070,
+        "persistent_gap_pixels": 26,
+        "final_valid_ratio": 0.993652,
+        "gap_reduction_ratio": 0.987328
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4070/4096 (0.9937)",
+        "valid_pixels": 4070,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    },
+    {
+      "province": "west_java",
+      "year": 2025,
+      "status": "COMPOSITE_VERIFIED",
+      "pre_composite": {
+        "slice_count": 6,
+        "single_scene_valid_ratios": [
+          0.8062,
+          0.5303,
+          0.29,
+          0.1638,
+          0.4163,
+          0.6914
+        ],
+        "mean_valid_ratio": 0.474447,
+        "single_scene_passed_count": 2
+      },
+      "post_composite": {
+        "total_pixels": 4096,
+        "intra_year_valid_pixels": 4039,
+        "gap_filled_pixels": 11,
+        "final_valid_pixels": 4050,
+        "persistent_gap_pixels": 46,
+        "final_valid_ratio": 0.98877,
+        "gap_reduction_ratio": 0.978631
+      },
+      "policy_conformance": {
+        "caller_policy_met": true,
+        "required_ratio": "65/100 (0.65)",
+        "observed_ratio": "4050/4096 (0.9888)",
+        "valid_pixels": 4050,
+        "total_pixels": 4096,
+        "deficit_pixels": 0
+      }
+    }
+  ]
+}

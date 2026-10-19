@@ -1,0 +1,39 @@
+{
+  "unit": 334,
+  "title": "Unit 334 Targeted Bare Collection 128MiB Preflight and LedgerMetadataIO Adapter",
+  "status": "TESTED_SYNTHETIC",
+  "runtime_changed": [
+    {
+      "path": "evidence/integration/target334-workspace-20261019/scripts/collect_targeted_bare.py",
+      "bytes": 24469,
+      "sha256": "74b84dc06a1e7b31feb12ecbd1f60ee3c094a773d755c2fb77ce268495522a44",
+      "baseline_sha256": "9ff831366a8a9e101a90eacbdcae57858d13aa1d0b1a3b9c6f2bec5b9e6d18d8"
+    }
+  ],
+  "tests_new": [
+    {
+      "path": "evidence/integration/target334-workspace-20261019/tests/test_collect_targeted_bare334.py",
+      "bytes": 22760,
+      "sha256": "5a7ca385f7260b4a1d5b451ed9f126c13ff80550185a7a9c5ab0b8db8d150120"
+    }
+  ],
+  "diff": {
+    "path": "evidence/integration/target334-workspace-20261019/patch334.diff",
+    "bytes": 32223,
+    "sha256": "afc54c2a83180e715a5aca485abc02f1565c25b91cd2db11841e042e3244d325"
+  },
+  "operating_io": false,
+  "http": false,
+  "main_applied": false,
+  "preserved_pending_reservations_bytes": 136314880,
+  "candidate_spots": {
+    "total_candidates": 50,
+    "overlapping_existing_support": 35,
+    "non_overlapping_existing_support": 15,
+    "mutual_overlap_candidate_pairs": 56,
+    "execution_supported": false,
+    "learning_ready": false,
+    "scientific_accuracy_validated": false,
+    "quality_status": "미검사·집행 미승인"
+  }
+}

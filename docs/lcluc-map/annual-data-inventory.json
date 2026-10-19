@@ -1,0 +1,4293 @@
+{
+  "schema_version": "1.0",
+  "inventory_title": "SDSS-Platform First Group 6 Provinces LCLUC GeoTIFF Annual Inventory",
+  "generated_at": "2026-10-19T07:16:00Z",
+  "scope": {
+    "first_group_6_provinces": [
+      "banten",
+      "west_java",
+      "east_java",
+      "south_sulawesi",
+      "gorontalo",
+      "southeast_sulawesi"
+    ],
+    "rejected_provinces_policy": "Strictly reject any scenes outside the agreed First Group 6 provinces (e.g. Central Java, Papua, DKI Jakarta, East Kalimantan)."
+  },
+  "datasets": {
+    "first_group_2021_worldcover": {
+      "description": "Operational First Group 6 scenes (2021) paired with ESA WorldCover 10m reference labels",
+      "total_scenes": 6,
+      "scenes": [
+        {
+          "scene_id": "banten-2021",
+          "province": "banten",
+          "province_name": "Banten",
+          "year": 2021,
+          "source_collection": "ESA WorldCover 10m v200 + Sentinel-2 L2A",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-2021/banten-2021/image.tif",
+              "bytes": 307889,
+              "sha256": "d49550d9f6dc49b68f8428dec6aee6d40ee6dcfe0a8a2e8634f566a9715fa215",
+              "width": 256,
+              "height": 256,
+              "count": 3,
+              "dtype": "uint16",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                624160.0,
+                9287010.0,
+                626720.0,
+                9289570.0
+              ],
+              "bounds_wgs84": [
+                106.12273152409098,
+                -6.44913501032305,
+                106.14592942393988,
+                -6.42592997788579
+              ],
+              "value_range": [
+                349,
+                10440
+              ]
+            },
+            "label-worldcover": {
+              "relative_path": "data/first-group-2021/banten-2021/label-worldcover.tif",
+              "bytes": 4753,
+              "sha256": "0344b6eb8ea56e74e83d357da2053c662390cb073e37a6d3a911153741ea12fb",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                624160.0,
+                9287010.0,
+                626720.0,
+                9289570.0
+              ],
+              "bounds_wgs84": [
+                106.12273152409098,
+                -6.44913501032305,
+                106.14592942393988,
+                -6.42592997788579
+              ],
+              "unique_values": [
+                0,
+                10,
+                30,
+                40,
+                50,
+                60,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "east_java-2021",
+          "province": "east_java",
+          "province_name": "East Java",
+          "year": 2021,
+          "source_collection": "ESA WorldCover 10m v200 + Sentinel-2 L2A",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-2021/east_java-2021/image.tif",
+              "bytes": 296646,
+              "sha256": "f87ecc019bfc246c90fe4cca8255a2f19223cbeb8748b4fbff2c11422144972f",
+              "width": 256,
+              "height": 256,
+              "count": 3,
+              "dtype": "uint16",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639510.0,
+                9140510.0,
+                642070.0,
+                9143070.0
+              ],
+              "bounds_wgs84": [
+                112.26512343323425,
+                -7.773713193012255,
+                112.28840490333631,
+                -7.750492410941127
+              ],
+              "value_range": [
+                156,
+                11064
+              ]
+            },
+            "label-worldcover": {
+              "relative_path": "data/first-group-2021/east_java-2021/label-worldcover.tif",
+              "bytes": 7268,
+              "sha256": "85d8a77e0b8462dd09200ca7af99f154443c9ab66b39e9dd5f11bd3f06359a63",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639510.0,
+                9140510.0,
+                642070.0,
+                9143070.0
+              ],
+              "bounds_wgs84": [
+                112.26512343323425,
+                -7.773713193012255,
+                112.28840490333631,
+                -7.750492410941127
+              ],
+              "unique_values": [
+                0,
+                10,
+                30,
+                40,
+                50,
+                60,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "gorontalo-2021",
+          "province": "gorontalo",
+          "province_name": "Gorontalo",
+          "year": 2021,
+          "source_collection": "ESA WorldCover 10m v200 + Sentinel-2 L2A",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-2021/gorontalo-2021/image.tif",
+              "bytes": 310620,
+              "sha256": "f496fc7041762eaa967419c79f27e899b1a0d747888ad3395fd36aaf83d60d01",
+              "width": 256,
+              "height": 256,
+              "count": 3,
+              "dtype": "uint16",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                415900.0,
+                73040.0,
+                418460.0,
+                75600.0
+              ],
+              "bounds_wgs84": [
+                122.24418310913198,
+                0.6607576211285471,
+                122.26719230927489,
+                0.6839202747324102
+              ],
+              "value_range": [
+                140,
+                8040
+              ]
+            },
+            "label-worldcover": {
+              "relative_path": "data/first-group-2021/gorontalo-2021/label-worldcover.tif",
+              "bytes": 1896,
+              "sha256": "43caff1dc64766b3fe686e1c741fab5397720e5116c496f30dddc2ca09b93058",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                415900.0,
+                73040.0,
+                418460.0,
+                75600.0
+              ],
+              "bounds_wgs84": [
+                122.24418310913198,
+                0.6607576211285471,
+                122.26719230927489,
+                0.6839202747324102
+              ],
+              "unique_values": [
+                0,
+                10,
+                30
+              ]
+            },
+            "quality-mask": {
+              "relative_path": "data/first-group-2021/gorontalo-2021/quality-mask.tif",
+              "bytes": 1825,
+              "sha256": "cd969a773028683c29932dc79521224cba844e8039df4dd904207860237f4d6e",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                415900.0,
+                73040.0,
+                418460.0,
+                75600.0
+              ],
+              "bounds_wgs84": [
+                122.24418310913198,
+                0.6607576211285471,
+                122.26719230927489,
+                0.6839202747324102
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "south_sulawesi-2021",
+          "province": "south_sulawesi",
+          "province_name": "South Sulawesi",
+          "year": 2021,
+          "source_collection": "ESA WorldCover 10m v200 + Sentinel-2 L2A",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-2021/south_sulawesi-2021/image.tif",
+              "bytes": 320248,
+              "sha256": "68c3af7567e73a26e6c06c85ad1586d5a99b950b28eed671b1e6ae29e78fd7f7",
+              "width": 256,
+              "height": 256,
+              "count": 3,
+              "dtype": "uint16",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826250.0,
+                9579220.0,
+                828810.0,
+                9581780.0
+              ],
+              "bounds_wgs84": [
+                119.93698706991464,
+                -3.801853016538948,
+                119.96009090943026,
+                -3.7786450233158186
+              ],
+              "value_range": [
+                89,
+                10616
+              ]
+            },
+            "label-worldcover": {
+              "relative_path": "data/first-group-2021/south_sulawesi-2021/label-worldcover.tif",
+              "bytes": 4576,
+              "sha256": "2e795a49613cbf857e944d15d4c22dfa13e7a57f2127e0c51ab1a5de19088d31",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826250.0,
+                9579220.0,
+                828810.0,
+                9581780.0
+              ],
+              "bounds_wgs84": [
+                119.93698706991464,
+                -3.801853016538948,
+                119.96009090943026,
+                -3.7786450233158186
+              ],
+              "unique_values": [
+                0,
+                10,
+                30,
+                40,
+                50,
+                60,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "southeast_sulawesi-2021",
+          "province": "southeast_sulawesi",
+          "province_name": "Southeast Sulawesi",
+          "year": 2021,
+          "source_collection": "ESA WorldCover 10m v200 + Sentinel-2 L2A",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-2021/southeast_sulawesi-2021/image.tif",
+              "bytes": 295553,
+              "sha256": "4839e497f281ece7369466d5a6487d26149f846046f0234a032df67a24cebeb0",
+              "width": 256,
+              "height": 256,
+              "count": 3,
+              "dtype": "uint16",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                366840.0,
+                9578410.0,
+                369400.0,
+                9580970.0
+              ],
+              "bounds_wgs84": [
+                121.80077449830321,
+                -3.813393817230708,
+                121.82385767322708,
+                -3.790206896070414
+              ],
+              "value_range": [
+                7,
+                11992
+              ]
+            },
+            "label-worldcover": {
+              "relative_path": "data/first-group-2021/southeast_sulawesi-2021/label-worldcover.tif",
+              "bytes": 1836,
+              "sha256": "38e9551988632b3182a30d94da80ba966f7b3161e5108200185c0ef12f62ec30",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                366840.0,
+                9578410.0,
+                369400.0,
+                9580970.0
+              ],
+              "bounds_wgs84": [
+                121.80077449830321,
+                -3.813393817230708,
+                121.82385767322708,
+                -3.790206896070414
+              ],
+              "unique_values": [
+                0,
+                10,
+                30
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "west_java-2021",
+          "province": "west_java",
+          "province_name": "West Java",
+          "year": 2021,
+          "source_collection": "ESA WorldCover 10m v200 + Sentinel-2 L2A",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-2021/west_java-2021/image.tif",
+              "bytes": 193860,
+              "sha256": "facd2a5bcf366e40992399603c689c5c05cb8b6a8b0652c3271cd155a4f742e2",
+              "width": 256,
+              "height": 256,
+              "count": 3,
+              "dtype": "uint16",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                792000.0,
+                9238820.0,
+                794560.0,
+                9241380.0
+              ],
+              "bounds_wgs84": [
+                107.64198681787147,
+                -6.8790037713804395,
+                107.66526129547913,
+                -6.855742768823424
+              ],
+              "value_range": [
+                0,
+                10544
+              ]
+            },
+            "label-worldcover": {
+              "relative_path": "data/first-group-2021/west_java-2021/label-worldcover.tif",
+              "bytes": 5280,
+              "sha256": "83958f63ecff153bcfa2ab4dc196584530dec6993bf2e372ad77ec4d283517e7",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                792000.0,
+                9238820.0,
+                794560.0,
+                9241380.0
+              ],
+              "bounds_wgs84": [
+                107.64198681787147,
+                -6.8790037713804395,
+                107.66526129547913,
+                -6.855742768823424
+              ],
+              "unique_values": [
+                0,
+                10,
+                30,
+                40,
+                50
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "baseline_2021_candidates": {
+      "description": "Candidate pilot scenes for 2021 with ESA WorldCover 10m",
+      "total_scenes": 2,
+      "scenes": [
+        {
+          "scene_id": "south_sulawesi_candidate-2021",
+          "province": "south_sulawesi",
+          "province_name": "South Sulawesi",
+          "year": 2021,
+          "source_collection": "ESA WorldCover 10m v100 + Sentinel-2 L2A",
+          "files": {
+            "image": {
+              "relative_path": "data/baseline2021/south_sulawesi_candidate-2021/image.tif",
+              "bytes": 308075,
+              "sha256": "0f1d36edfa7e7f6662c413f3f0f12a694156e485be6c36f66277972958bfe154",
+              "width": 256,
+              "height": 256,
+              "count": 3,
+              "dtype": "uint16",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                775850.0,
+                9423400.0,
+                778410.0,
+                9425960.0
+              ],
+              "bounds_wgs84": [
+                119.4883503803959,
+                -5.211611771707443,
+                119.5115200853224,
+                -5.188383192646819
+              ],
+              "value_range": [
+                1,
+                14776
+              ]
+            },
+            "label-worldcover": {
+              "relative_path": "data/baseline2021/south_sulawesi_candidate-2021/label-worldcover.tif",
+              "bytes": 7639,
+              "sha256": "08c886ba5a955a578715fecd0cc92566f82ec41ca9f5347e95d70a86cb7619ca",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                775850.0,
+                9423400.0,
+                778410.0,
+                9425960.0
+              ],
+              "bounds_wgs84": [
+                119.4883503803959,
+                -5.211611771707443,
+                119.5115200853224,
+                -5.188383192646819
+              ],
+              "unique_values": [
+                0,
+                10,
+                30,
+                40,
+                50,
+                60,
+                80,
+                90
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "west_java_candidate-2021",
+          "province": "west_java",
+          "province_name": "West Java",
+          "year": 2021,
+          "source_collection": "ESA WorldCover 10m v100 + Sentinel-2 L2A",
+          "files": {
+            "image": {
+              "relative_path": "data/baseline2021/west_java_candidate-2021/image.tif",
+              "bytes": 295932,
+              "sha256": "188bfabcaec2bd64f53302369bbad957c99bb4bc7b19d6a19e499cace8adc9d5",
+              "width": 256,
+              "height": 256,
+              "count": 3,
+              "dtype": "uint16",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                697680.0,
+                9257780.0,
+                700240.0,
+                9260340.0
+              ],
+              "bounds_wgs84": [
+                106.7883077804666,
+                -6.711526846024936,
+                106.81154437037861,
+                -6.68829552714351
+              ],
+              "value_range": [
+                290,
+                8664
+              ]
+            },
+            "label-worldcover": {
+              "relative_path": "data/baseline2021/west_java_candidate-2021/label-worldcover.tif",
+              "bytes": 6908,
+              "sha256": "1679255689a7c535cbaf84dfc7e878cc462849c363580a2063aec8c1ab0ceb3b",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                697680.0,
+                9257780.0,
+                700240.0,
+                9260340.0
+              ],
+              "bounds_wgs84": [
+                106.7883077804666,
+                -6.711526846024936,
+                106.81154437037861,
+                -6.68829552714351
+              ],
+              "unique_values": [
+                0,
+                10,
+                30,
+                40,
+                50,
+                60
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "first_group_annual_raw_bands": {
+      "description": "Annual Sentinel-2 raw band acquisitions (unclassified / label collection unverified)",
+      "total_scenes": 3,
+      "scenes": [
+        {
+          "scene_id": "south_sulawesi-2020",
+          "chunk": "chunk-01",
+          "province": "south_sulawesi",
+          "province_name": "South Sulawesi",
+          "year": 2020,
+          "files": {
+            "raw-B02": {
+              "relative_path": "data/first-group-annual/chunk-01/south_sulawesi-2020/raw-B02.tif",
+              "bytes": 92133,
+              "sha256": "7d832b722f6a5e48350644d1ffd6e77934890670b3c4b3f8a1c4cbc718d63fd8",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint16",
+              "crs": "EPSG:32750",
+              "nodata": null,
+              "bounds_native": [
+                826250.0,
+                9579220.0,
+                828810.0,
+                9581780.0
+              ],
+              "bounds_wgs84": [
+                119.93698706991464,
+                -3.801853016538948,
+                119.96009090943026,
+                -3.7786450233158186
+              ],
+              "value_range": [
+                1,
+                3362
+              ]
+            },
+            "raw-B03": {
+              "relative_path": "data/first-group-annual/chunk-01/south_sulawesi-2020/raw-B03.tif",
+              "bytes": 95781,
+              "sha256": "db3526475a5f6565a5f9057287038af0560db20a31b669b7ff84359aeaf971f9",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint16",
+              "crs": "EPSG:32750",
+              "nodata": null,
+              "bounds_native": [
+                826250.0,
+                9579220.0,
+                828810.0,
+                9581780.0
+              ],
+              "bounds_wgs84": [
+                119.93698706991464,
+                -3.801853016538948,
+                119.96009090943026,
+                -3.7786450233158186
+              ],
+              "value_range": [
+                23,
+                3030
+              ]
+            },
+            "raw-B04": {
+              "relative_path": "data/first-group-annual/chunk-01/south_sulawesi-2020/raw-B04.tif",
+              "bytes": 94708,
+              "sha256": "db7363382d80cacc76c3bdc36d263d64ac1585d72ddcb45ec5e9d97d771ede9a",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint16",
+              "crs": "EPSG:32750",
+              "nodata": null,
+              "bounds_native": [
+                826250.0,
+                9579220.0,
+                828810.0,
+                9581780.0
+              ],
+              "bounds_wgs84": [
+                119.93698706991464,
+                -3.801853016538948,
+                119.96009090943026,
+                -3.7786450233158186
+              ],
+              "value_range": [
+                6,
+                2780
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "gorontalo-2020",
+          "chunk": "chunk-02",
+          "province": "gorontalo",
+          "province_name": "Gorontalo",
+          "year": 2020,
+          "files": {
+            "raw-B02": {
+              "relative_path": "data/first-group-annual/chunk-02/gorontalo-2020/raw-B02.tif",
+              "bytes": 108503,
+              "sha256": "d130d446be8d06c38fbdbe044f308b49286edc3a65b5a8baf5aadb4f127b4ef6",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint16",
+              "crs": "EPSG:32651",
+              "nodata": null,
+              "bounds_native": [
+                415900.0,
+                73040.0,
+                418460.0,
+                75600.0
+              ],
+              "bounds_wgs84": [
+                122.24418310913198,
+                0.6607576211285471,
+                122.26719230927489,
+                0.6839202747324102
+              ],
+              "value_range": [
+                188,
+                13624
+              ]
+            },
+            "raw-B03": {
+              "relative_path": "data/first-group-annual/chunk-02/gorontalo-2020/raw-B03.tif",
+              "bytes": 108993,
+              "sha256": "69a7628463e9a17462a35bf1f09dfeaf993a57636e0baab96b71fd3a2bd5ebbd",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint16",
+              "crs": "EPSG:32651",
+              "nodata": null,
+              "bounds_native": [
+                415900.0,
+                73040.0,
+                418460.0,
+                75600.0
+              ],
+              "bounds_wgs84": [
+                122.24418310913198,
+                0.6607576211285471,
+                122.26719230927489,
+                0.6839202747324102
+              ],
+              "value_range": [
+                182,
+                13000
+              ]
+            },
+            "raw-B04": {
+              "relative_path": "data/first-group-annual/chunk-02/gorontalo-2020/raw-B04.tif",
+              "bytes": 108634,
+              "sha256": "77e1870be5e1cf46fde26b5449569156f5b9176dd670ba382fabd003a0d3a164",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint16",
+              "crs": "EPSG:32651",
+              "nodata": null,
+              "bounds_native": [
+                415900.0,
+                73040.0,
+                418460.0,
+                75600.0
+              ],
+              "bounds_wgs84": [
+                122.24418310913198,
+                0.6607576211285471,
+                122.26719230927489,
+                0.6839202747324102
+              ],
+              "value_range": [
+                115,
+                12656
+              ]
+            },
+            "raw-B08": {
+              "relative_path": "data/first-group-annual/chunk-02/gorontalo-2020/raw-B08.tif",
+              "bytes": 106305,
+              "sha256": "0eb8f069cfda2829d2756b116e9c8f92ca1cebfb9dd883596c41a1c79b75e015",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint16",
+              "crs": "EPSG:32651",
+              "nodata": null,
+              "bounds_native": [
+                415900.0,
+                73040.0,
+                418460.0,
+                75600.0
+              ],
+              "bounds_wgs84": [
+                122.24418310913198,
+                0.6607576211285471,
+                122.26719230927489,
+                0.6839202747324102
+              ],
+              "value_range": [
+                377,
+                12216
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "southeast_sulawesi-2020",
+          "chunk": "chunk-03",
+          "province": "southeast_sulawesi",
+          "province_name": "Southeast Sulawesi",
+          "year": 2020,
+          "files": {
+            "raw-B02": {
+              "relative_path": "data/first-group-annual/chunk-03/southeast_sulawesi-2020/raw-B02.tif",
+              "bytes": 107074,
+              "sha256": "3497b0794308165d5c9392032337cca43227902b275785fb4b6a18da3f5f58db",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint16",
+              "crs": "EPSG:32751",
+              "nodata": null,
+              "bounds_native": [
+                366840.0,
+                9578410.0,
+                369400.0,
+                9580970.0
+              ],
+              "bounds_wgs84": [
+                121.80077449830321,
+                -3.813393817230708,
+                121.82385767322708,
+                -3.790206896070414
+              ],
+              "value_range": [
+                208,
+                12888
+              ]
+            },
+            "raw-B03": {
+              "relative_path": "data/first-group-annual/chunk-03/southeast_sulawesi-2020/raw-B03.tif",
+              "bytes": 107752,
+              "sha256": "06ea6929aa6394d563ed3beca8514dfce65e760eade52e7b10d918e0237e6bfd",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint16",
+              "crs": "EPSG:32751",
+              "nodata": null,
+              "bounds_native": [
+                366840.0,
+                9578410.0,
+                369400.0,
+                9580970.0
+              ],
+              "bounds_wgs84": [
+                121.80077449830321,
+                -3.813393817230708,
+                121.82385767322708,
+                -3.790206896070414
+              ],
+              "value_range": [
+                216,
+                12328
+              ]
+            },
+            "raw-B04": {
+              "relative_path": "data/first-group-annual/chunk-03/southeast_sulawesi-2020/raw-B04.tif",
+              "bytes": 107568,
+              "sha256": "8db7e5bd6af8a96904fa88685d9e73c1b0f32fefbbc4a53c780eaeed8f65d989",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint16",
+              "crs": "EPSG:32751",
+              "nodata": null,
+              "bounds_native": [
+                366840.0,
+                9578410.0,
+                369400.0,
+                9580970.0
+              ],
+              "bounds_wgs84": [
+                121.80077449830321,
+                -3.813393817230708,
+                121.82385767322708,
+                -3.790206896070414
+              ],
+              "value_range": [
+                141,
+                12128
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "first_group_training_esri_v1": {
+      "description": "Esri 10m Annual Land Cover training & evaluation patches (2020-2025) across First Group 6 provinces",
+      "total_patches": 1779,
+      "patches_by_year_and_province": {
+        "2020": {
+          "gorontalo": 48,
+          "southeast_sulawesi": 48,
+          "east_java": 48,
+          "banten": 65,
+          "west_java": 64,
+          "south_sulawesi": 64
+        },
+        "2021": {
+          "gorontalo": 48,
+          "south_sulawesi": 48,
+          "southeast_sulawesi": 56,
+          "banten": 64,
+          "west_java": 44,
+          "east_java": 32
+        },
+        "2022": {
+          "south_sulawesi": 64,
+          "southeast_sulawesi": 48,
+          "banten": 64,
+          "west_java": 60,
+          "east_java": 48,
+          "gorontalo": 48
+        },
+        "2023": {
+          "south_sulawesi": 48,
+          "southeast_sulawesi": 56,
+          "banten": 32,
+          "west_java": 32,
+          "east_java": 32,
+          "gorontalo": 32
+        },
+        "2024": {
+          "south_sulawesi": 48,
+          "banten": 64,
+          "west_java": 32,
+          "gorontalo": 48,
+          "east_java": 40,
+          "southeast_sulawesi": 73
+        },
+        "2025": {
+          "south_sulawesi": 48,
+          "southeast_sulawesi": 57,
+          "west_java": 32,
+          "banten": 48,
+          "east_java": 48,
+          "gorontalo": 48
+        }
+      },
+      "representative_sampled_patches": [
+        {
+          "patch_id": "grid-esri_io-gorontalo-2020-g00-r0-c0",
+          "province": "gorontalo",
+          "province_name": "Gorontalo",
+          "year": 2020,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-gorontalo-2020-g00/r00-c00/image.tif",
+              "bytes": 800147,
+              "sha256": "c93bd65a4f3ed2810d61532e846042549a6c1fad2eae86e36a105eb0bd290e58",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                410880.0,
+                75360.0,
+                413440.0,
+                77920.0
+              ],
+              "bounds_wgs84": [
+                122.1990671040458,
+                0.6817381803237004,
+                122.22207648846185,
+                0.704900916989313
+              ],
+              "value_range": [
+                104,
+                901
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-gorontalo-2020-g00/r00-c00/label.tif",
+              "bytes": 2944,
+              "sha256": "2ae5ea7410fe0cfe5daae6e9f5e4432abf763ed83ce68a2bc99da249d9cc1e4c",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                410880.0,
+                75360.0,
+                413440.0,
+                77920.0
+              ],
+              "bounds_wgs84": [
+                122.1990671040458,
+                0.6817381803237004,
+                122.22207648846185,
+                0.704900916989313
+              ],
+              "unique_values": [
+                2
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-gorontalo-2020-g00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "753bf4d15d427b9c4f530945c0dd5e9b70100311a57cbb856d28d394b7b0bf8c",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                410880.0,
+                75360.0,
+                413440.0,
+                77920.0
+              ],
+              "bounds_wgs84": [
+                122.1990671040458,
+                0.6817381803237004,
+                122.22207648846185,
+                0.704900916989313
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "grid-esri_io-southeast_sulawesi-2020-g00-r0-c0",
+          "province": "southeast_sulawesi",
+          "province_name": "Southeast Sulawesi",
+          "year": 2020,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-southeast_sulawesi-2020-g00/r00-c00/image.tif",
+              "bytes": 827061,
+              "sha256": "7ee4d498d9db2c4ea4fbc61d2c722a7e1eecd38269c8f737e210662da72499c5",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "value_range": [
+                102,
+                1854
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-southeast_sulawesi-2020-g00/r00-c00/label.tif",
+              "bytes": 3599,
+              "sha256": "85f0194edca06d296fac53ec849bb55d585e2bb14543b3b4d1f8a05ff589322f",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "unique_values": [
+                1,
+                2,
+                8,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-southeast_sulawesi-2020-g00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "cd5c3a9a7a4ae6bd3bdd3c552cff33819b053d030fe5bc608e392430dbd746f4",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "grid-esri_io-east_java-2020-g00-r0-c0",
+          "province": "east_java",
+          "province_name": "East Java",
+          "year": 2020,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-east_java-2020-g00/r00-c00/image.tif",
+              "bytes": 898250,
+              "sha256": "79e399f839213ef903042b3a460a19a6ff086a1d7ef2635355e1c5b2fc512d8a",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "value_range": [
+                366,
+                3492
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-east_java-2020-g00/r00-c00/label.tif",
+              "bytes": 5910,
+              "sha256": "471fad7ee5f1a6ff69bca2392100fa3510d1a54713d972c08d1701a954704a7a",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-east_java-2020-g00/r00-c00/quality.tif",
+              "bytes": 3029,
+              "sha256": "81b064d6de7efe222220c6a2dd29072d0b6e086f250a1ce42b911bf8e540fbe9",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "grid-esri_io-banten-2020-g00-r0-c0",
+          "province": "banten",
+          "province_name": "Banten",
+          "year": 2020,
+          "split": "val",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-banten-2020-g00/r00-c00/image.tif",
+              "bytes": 872069,
+              "sha256": "68fec23eaef9dc7a331f0b2cea65736e0d2d0a4eacc933a62ba00ed20a7d76b8",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                618880.0,
+                9289760.0,
+                621440.0,
+                9292320.0
+              ],
+              "bounds_wgs84": [
+                106.07494021869275,
+                -6.424365335966039,
+                106.0981350201426,
+                -6.401162258405327
+              ],
+              "value_range": [
+                181,
+                3046
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-banten-2020-g00/r00-c00/label.tif",
+              "bytes": 4650,
+              "sha256": "4729d96ad87a8cf4bd045cae1560a0a48f8714bcc170236e38d4052d5695d05d",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                618880.0,
+                9289760.0,
+                621440.0,
+                9292320.0
+              ],
+              "bounds_wgs84": [
+                106.07494021869275,
+                -6.424365335966039,
+                106.0981350201426,
+                -6.401162258405327
+              ],
+              "unique_values": [
+                2,
+                5,
+                7
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-banten-2020-g00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "47fb0f5ff9a14ba8c631f048be77773bcff686cc64f07ca94aa1682d69922fab",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                618880.0,
+                9289760.0,
+                621440.0,
+                9292320.0
+              ],
+              "bounds_wgs84": [
+                106.07494021869275,
+                -6.424365335966039,
+                106.0981350201426,
+                -6.401162258405327
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "grid-esri_io-west_java-2020-g00-r0-c0",
+          "province": "west_java",
+          "province_name": "West Java",
+          "year": 2020,
+          "split": "test",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-west_java-2020-g00/r00-c00/image.tif",
+              "bytes": 949290,
+              "sha256": "fd8618b2cb120105b433b4d1363b2838f78dd989a5d81817d8bb426a29d5b627",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                785270.0,
+                9237760.0,
+                787830.0,
+                9240320.0
+              ],
+              "bounds_wgs84": [
+                107.5811886117788,
+                -6.888915018614003,
+                107.60446194720934,
+                -6.865655648944417
+              ],
+              "value_range": [
+                40,
+                9160
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-west_java-2020-g00/r00-c00/label.tif",
+              "bytes": 3143,
+              "sha256": "7eae41637a702478742579ae148d9e57199df2a7f27f950b8a7eca8bf96b9c2e",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                785270.0,
+                9237760.0,
+                787830.0,
+                9240320.0
+              ],
+              "bounds_wgs84": [
+                107.5811886117788,
+                -6.888915018614003,
+                107.60446194720934,
+                -6.865655648944417
+              ],
+              "unique_values": [
+                0,
+                7,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/grid-esri_io-west_java-2020-g00/r00-c00/quality.tif",
+              "bytes": 3084,
+              "sha256": "1584734935bdb2783e90a592d4cb52043bc5a1e79d13ab1be2aec7333e0a540f",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                785270.0,
+                9237760.0,
+                787830.0,
+                9240320.0
+              ],
+              "bounds_wgs84": [
+                107.5811886117788,
+                -6.888915018614003,
+                107.60446194720934,
+                -6.865655648944417
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2020-g00-r0-c0",
+          "province": "south_sulawesi",
+          "province_name": "South Sulawesi",
+          "year": 2020,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2020-g00/r00-c00/image.tif",
+              "bytes": 910178,
+              "sha256": "ecf20bfcc9ec5a698a182daeb3f850af42020961a476c287acdab2dd1594d6fa",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "value_range": [
+                1,
+                6480
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2020-g00/r00-c00/label.tif",
+              "bytes": 7975,
+              "sha256": "fc38db0af59e00f89148fac4063aacfe1e90a945526ba112d44067a1399e8f92",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2020-g00/r00-c00/quality.tif",
+              "bytes": 3530,
+              "sha256": "82ba02e54f189bc3809bd0cad9924802cc84744a9fcfd159b1c8941ca874e702",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2021-g00-r0-c0",
+          "province": "gorontalo",
+          "province_name": "Gorontalo",
+          "year": 2021,
+          "split": "train",
+          "quality_status": "quality_insufficient",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2021-g00/r00-c00/image.tif",
+              "bytes": 936778,
+              "sha256": "2342abc7e653c9e58e94cd24c623cfd29827c4006985470343f8a9dde991a3a6",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                410880.0,
+                75360.0,
+                413440.0,
+                77920.0
+              ],
+              "bounds_wgs84": [
+                122.1990671040458,
+                0.6817381803237004,
+                122.22207648846185,
+                0.704900916989313
+              ],
+              "value_range": [
+                1,
+                12880
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2021-g00/r00-c00/label.tif",
+              "bytes": 4904,
+              "sha256": "ee3c97205db6bbb1e8764bbcd54479ce377e611dd1cf25fa904b69532a0313ad",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                410880.0,
+                75360.0,
+                413440.0,
+                77920.0
+              ],
+              "bounds_wgs84": [
+                122.1990671040458,
+                0.6817381803237004,
+                122.22207648846185,
+                0.704900916989313
+              ],
+              "unique_values": [
+                0,
+                2
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2021-g00/r00-c00/quality.tif",
+              "bytes": 4904,
+              "sha256": "d4b21d4b6b49a962081549af1a5ec8cc17cf8ce6cfa59c8d9d264bddfa1005df",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                410880.0,
+                75360.0,
+                413440.0,
+                77920.0
+              ],
+              "bounds_wgs84": [
+                122.1990671040458,
+                0.6817381803237004,
+                122.22207648846185,
+                0.704900916989313
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2021-g00-r0-c0",
+          "province": "south_sulawesi",
+          "province_name": "South Sulawesi",
+          "year": 2021,
+          "split": "train",
+          "quality_status": "quality_insufficient",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2021-g00/r00-c00/image.tif",
+              "bytes": 992543,
+              "sha256": "9b8ade39f9e40972d5e569fd568a2f12c15e2b962603e23247b986812a1a4a82",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "value_range": [
+                129,
+                11168
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2021-g00/r00-c00/label.tif",
+              "bytes": 6762,
+              "sha256": "2807f887694deb5563e8cf4528287d9667e2b9cd04967772e6edefa21790f624",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2021-g00/r00-c00/quality.tif",
+              "bytes": 5386,
+              "sha256": "f119a5bc2b22c56b679c5c8be18c3aea30c8bc560bfa0a74c619d0ea559d3a05",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2021-g00-r0-c0",
+          "province": "southeast_sulawesi",
+          "province_name": "Southeast Sulawesi",
+          "year": 2021,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2021-g00/r00-c00/image.tif",
+              "bytes": 818448,
+              "sha256": "18c3becf9959961b009f2a4d62a5fe2d85a64ed4130dea38661a1eeea19be97f",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "value_range": [
+                65,
+                1762
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2021-g00/r00-c00/label.tif",
+              "bytes": 3565,
+              "sha256": "53447492d9679d91a735c46ff68e3d35124e72adff6d6b22bba56687afd8ead2",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                4,
+                8,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2021-g00/r00-c00/quality.tif",
+              "bytes": 2959,
+              "sha256": "647ee3cfb62901cb3663682c72520e4592cda8bcdf3cd1744e6040a296f7dc5b",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2022-g00-r0-c0",
+          "province": "south_sulawesi",
+          "province_name": "South Sulawesi",
+          "year": 2022,
+          "split": "train",
+          "quality_status": "quality_insufficient",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2022-g00/r00-c00/image.tif",
+              "bytes": 913448,
+              "sha256": "fb0145eb18c050c6e7b1d5e87232286e67d09b3fe6869e76d4e57f43d99a5d7d",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "value_range": [
+                1002,
+                12080
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2022-g00/r00-c00/label.tif",
+              "bytes": 6759,
+              "sha256": "d317b4fd3af80bb6a613cb8b031ccc6ba0b2053fe8ec364603360ca1b6bb06e5",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2022-g00/r00-c00/quality.tif",
+              "bytes": 4519,
+              "sha256": "6abd80358c650fca7baf80ce315747e51bf3888535cbf111aba85f5b24d4ff27",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2022-g00-r0-c0",
+          "province": "southeast_sulawesi",
+          "province_name": "Southeast Sulawesi",
+          "year": 2022,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2022-g00/r00-c00/image.tif",
+              "bytes": 810787,
+              "sha256": "c58b226973a36ea8ebbaae2a790b594a443eb66528867d18d7f1b5849ee4c3a2",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "value_range": [
+                1125,
+                2874
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2022-g00/r00-c00/label.tif",
+              "bytes": 3460,
+              "sha256": "b0130409c8b901993eaa832742bc92b4bb3fe5268704ec4696289bbbc8ad5b07",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "unique_values": [
+                1,
+                2,
+                4,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2022-g00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "cd5c3a9a7a4ae6bd3bdd3c552cff33819b053d030fe5bc608e392430dbd746f4",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-00-r0-c0",
+          "province": "banten",
+          "province_name": "Banten",
+          "year": 2021,
+          "split": "val",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-00/r00-c00/image.tif",
+              "bytes": 931365,
+              "sha256": "d1c766d2b08d9a91e647875200598160b89963ff7774087746a8cd9ae51c7a73",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "value_range": [
+                264,
+                5024
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-00/r00-c00/label.tif",
+              "bytes": 6235,
+              "sha256": "9a6c7e87100c9003434e9f523692cade3a552d7c3b45103eb5ca81214308465a",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7,
+                8,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2021-v2-laneB-banten-boundary-00/r00-c00/quality.tif",
+              "bytes": 3130,
+              "sha256": "47bd45d99f27408446d08ff6817f9ceaea561a272c309a9d1d7b8686e36ba860",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-00-r0-c0",
+          "province": "west_java",
+          "province_name": "West Java",
+          "year": 2021,
+          "split": "test",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-00/r00-c00/image.tif",
+              "bytes": 829713,
+              "sha256": "801d681a6792e111407d3ff6f94aa118c2baa3d431400e75025138c8ecebac49",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "value_range": [
+                89,
+                1050
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-00/r00-c00/label.tif",
+              "bytes": 3552,
+              "sha256": "88907f86c1b4debeac5b82d9997cd6ef87d3c0ecc6d797070d137aff69b074be",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "unique_values": [
+                1,
+                2,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "d55c57e14a98a72edc8af95c9835336d98abd31f7cdf853787b622034381c5d7",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2023-g00-r0-c0",
+          "province": "south_sulawesi",
+          "province_name": "South Sulawesi",
+          "year": 2023,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2023-g00/r00-c00/image.tif",
+              "bytes": 882569,
+              "sha256": "c6eef628dd897585b449472f2de6b9a194218a64a66b9d522ffa3675eb059d8d",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "value_range": [
+                1164,
+                4984
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2023-g00/r00-c00/label.tif",
+              "bytes": 8325,
+              "sha256": "62b7e08bf196783270db1fb27a685f52f81cbe0a634f3ec55610c6a4a7d75b10",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2023-g00/r00-c00/quality.tif",
+              "bytes": 2956,
+              "sha256": "6c4920fed317dad21a30072eb5a051d941ee36d6cde52080d8c58019e718b95d",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2023-g00-r0-c0",
+          "province": "southeast_sulawesi",
+          "province_name": "Southeast Sulawesi",
+          "year": 2023,
+          "split": "train",
+          "quality_status": "quality_insufficient",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2023-g00/r00-c00/image.tif",
+              "bytes": 906112,
+              "sha256": "6c53dab5eaa9c17817ba431c7ea95f00c2b025acb7b80c36a663858652bb2177",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "value_range": [
+                1088,
+                8944
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2023-g00/r00-c00/label.tif",
+              "bytes": 4490,
+              "sha256": "09339cfaa88f25adccef3e94eed828b71bd9f5ce031a5dcf1ddd0d771e539b80",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2023-g00/r00-c00/quality.tif",
+              "bytes": 4190,
+              "sha256": "a3c5a78dae1577c861fda5915042f1fbce59b0834268748e0db1838f5b4e6ccc",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2021-g00-r0-c0",
+          "province": "east_java",
+          "province_name": "East Java",
+          "year": 2021,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-east_java-2021-g00/r00-c00/image.tif",
+              "bytes": 922325,
+              "sha256": "b4d5bfe86bc7dd31efa71f4f2a0dfe3c9b755acb50f5c11ed923ffa69c20af24",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "value_range": [
+                1,
+                14232
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-east_java-2021-g00/r00-c00/label.tif",
+              "bytes": 5682,
+              "sha256": "e743d90654fe7ae249460363758f01e5ea04c6dba310ab9db85b4f6c6b45eca2",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-east_java-2021-g00/r00-c00/quality.tif",
+              "bytes": 3007,
+              "sha256": "f27724fe4811e5881882fcf26b0373938065ba251fda3da1517659c5e2e9482b",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2024-g00-r0-c0",
+          "province": "south_sulawesi",
+          "province_name": "South Sulawesi",
+          "year": 2024,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2024-g00/r00-c00/image.tif",
+              "bytes": 883425,
+              "sha256": "5988636aeda6d54f9dcf8c87da6e4129f06e7cff3054c4e325f580b5e09ea3e0",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "value_range": [
+                1105,
+                4300
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2024-g00/r00-c00/label.tif",
+              "bytes": 7965,
+              "sha256": "ccb8fc66eb76a6f2732ec988a13688e4c4a05472fe1ae11abc1ee0008edfed47",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                7,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2024-g00/r00-c00/quality.tif",
+              "bytes": 3064,
+              "sha256": "f13fe32926da95ba9fa5c190bf245c506271a301bd70a21ffcc6499ef72969a5",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-00-r0-c0",
+          "province": "banten",
+          "province_name": "Banten",
+          "year": 2022,
+          "split": "val",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-00/r00-c00/image.tif",
+              "bytes": 924518,
+              "sha256": "d6b93e949f02c77c4b9dc5a9cd688a54c2a3c3ec62e39a33c1e2f69326e719f7",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "value_range": [
+                783,
+                9128
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-00/r00-c00/label.tif",
+              "bytes": 6301,
+              "sha256": "7cf62b342565e2efe117e88c5813ce7075f9d71869ed9d7fa73323586e6e9c87",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2022-v2-laneB-banten-boundary-00/r00-c00/quality.tif",
+              "bytes": 2974,
+              "sha256": "74506fd622d6808738edd63fe8f6b0dcb3892f48b41accbc8240f5a08cdb7e83",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-00-r0-c0",
+          "province": "west_java",
+          "province_name": "West Java",
+          "year": 2022,
+          "split": "test",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-00/r00-c00/image.tif",
+              "bytes": 789397,
+              "sha256": "6398c265fc2da7cb436332b4cb061379def7ea5ec1415b3890e7be3b01063759",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "value_range": [
+                1041,
+                1942
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-00/r00-c00/label.tif",
+              "bytes": 3535,
+              "sha256": "12e17d20fcf81f2bd7a510fec8e8ab8b18c52a5383d00b4ef15e8fbd63f170e0",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "unique_values": [
+                1,
+                2,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2022-v2-laneB-west_java-boundary-00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "d55c57e14a98a72edc8af95c9835336d98abd31f7cdf853787b622034381c5d7",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-00-r0-c0",
+          "province": "east_java",
+          "province_name": "East Java",
+          "year": 2022,
+          "split": "train",
+          "quality_status": "quality_insufficient",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-00/r00-c00/image.tif",
+              "bytes": 959560,
+              "sha256": "85002c5514ae901c2d7d9d184d8ad0e223e198e5d8c59b6675725f61c057048b",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                199980.0,
+                9082260.0,
+                202540.0,
+                9084820.0
+              ],
+              "bounds_wgs84": [
+                114.27648353473316,
+                -8.293349974852806,
+                114.29986265877935,
+                -8.270061967619199
+              ],
+              "value_range": [
+                1283,
+                12856
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-00/r00-c00/label.tif",
+              "bytes": 5501,
+              "sha256": "a40568484ea016b67a2dee85711a2faa15364ec2c27e4f03500f05f7a6519abd",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                199980.0,
+                9082260.0,
+                202540.0,
+                9084820.0
+              ],
+              "bounds_wgs84": [
+                114.27648353473316,
+                -8.293349974852806,
+                114.29986265877935,
+                -8.270061967619199
+              ],
+              "unique_values": [
+                0,
+                2,
+                5,
+                7
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-east_java-2022-v2-laneB-east_java-boundary-00/r00-c00/quality.tif",
+              "bytes": 4712,
+              "sha256": "a62ca66d3acdfc0735a5282b4b7004fdac0ec6008d204b5c1a959bff0b662b2d",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                199980.0,
+                9082260.0,
+                202540.0,
+                9084820.0
+              ],
+              "bounds_wgs84": [
+                114.27648353473316,
+                -8.293349974852806,
+                114.29986265877935,
+                -8.270061967619199
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-south_sulawesi-2025-g00-r0-c0",
+          "province": "south_sulawesi",
+          "province_name": "South Sulawesi",
+          "year": 2025,
+          "split": "train",
+          "quality_status": "quality_insufficient",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2025-g00/r00-c00/image.tif",
+              "bytes": 973168,
+              "sha256": "2b1689fbe5d2163754f42381df90ec150eb87703822471049ae26f43ec2c4c1a",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "value_range": [
+                1089,
+                11856
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2025-g00/r00-c00/label.tif",
+              "bytes": 5245,
+              "sha256": "6fb93e8ae5816857f9afee5d0eeaceec93dfdad55aaa6aeac7969d1a1d492dc8",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-south_sulawesi-2025-g00/r00-c00/quality.tif",
+              "bytes": 4224,
+              "sha256": "d20802f4520bc4ad4a4f25a9cab3f8057692bfceb13290dfeff9052c52fb8108",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                826870.0,
+                9580960.0,
+                829430.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                119.94251060847914,
+                -3.7861132028270363,
+                119.9656137370178,
+                -3.762905496689053
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2025-g00-r0-c0",
+          "province": "southeast_sulawesi",
+          "province_name": "Southeast Sulawesi",
+          "year": 2025,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2025-g00/r00-c00/image.tif",
+              "bytes": 811185,
+              "sha256": "8e61e0207ea3178e2a83b4c82dc295ae6d0567e86172a537552e9c08749d0eb6",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "value_range": [
+                1084,
+                3600
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2025-g00/r00-c00/label.tif",
+              "bytes": 3503,
+              "sha256": "c096fa74ff309757cf7a0be689534a3df281c38107c247db9384cb8a895a5de6",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "unique_values": [
+                1,
+                2,
+                4,
+                8,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2025-g00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "cd5c3a9a7a4ae6bd3bdd3c552cff33819b053d030fe5bc608e392430dbd746f4",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                358880.0,
+                9580960.0,
+                361440.0,
+                9583520.0
+              ],
+              "bounds_wgs84": [
+                121.72913286905188,
+                -3.7902283888121673,
+                121.75221651675388,
+                -3.7670403633687406
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00-r0-c0",
+          "province": "banten",
+          "province_name": "Banten",
+          "year": 2023,
+          "split": "val",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00/r00-c00/image.tif",
+              "bytes": 885121,
+              "sha256": "a37570469312511865e10ef9c397bac5f499e2d26ba6dfa74427ee14a727f39a",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "value_range": [
+                1318,
+                5132
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00/r00-c00/label.tif",
+              "bytes": 5856,
+              "sha256": "e9762ec14d47f8b6e6ce620c303b1624e66f18e896492128af40d9fcd10b965b",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00/r00-c00/quality.tif",
+              "bytes": 3404,
+              "sha256": "3926176d6e42b5619ab166ebf19f9447dd81899b7e78395a4b025085cce2fb70",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-00-r0-c0",
+          "province": "west_java",
+          "province_name": "West Java",
+          "year": 2023,
+          "split": "test",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-00/r00-c00/image.tif",
+              "bytes": 806061,
+              "sha256": "2595bdb9fe767934ec772b41252a09161cf5f22545856482984f765bd778520c",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "value_range": [
+                1067,
+                2248
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-00/r00-c00/label.tif",
+              "bytes": 4340,
+              "sha256": "ec98c49aa87e21eb28b25a2befab2c5ffcb51b401dc219254ccdeb8c4dd9ff39",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "unique_values": [
+                1,
+                2,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "d55c57e14a98a72edc8af95c9835336d98abd31f7cdf853787b622034381c5d7",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-00-r0-c0",
+          "province": "east_java",
+          "province_name": "East Java",
+          "year": 2023,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-00/r00-c00/image.tif",
+              "bytes": 866178,
+              "sha256": "6887df77199c3f98b1bc905215fa319f5afb66367774292a49212f930fa87298",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                199980.0,
+                9082260.0,
+                202540.0,
+                9084820.0
+              ],
+              "bounds_wgs84": [
+                114.27648353473316,
+                -8.293349974852806,
+                114.29986265877935,
+                -8.270061967619199
+              ],
+              "value_range": [
+                1389,
+                9376
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-00/r00-c00/label.tif",
+              "bytes": 4878,
+              "sha256": "3521a3a987f6c45e281c1a83de43124125ebdc5a6a07cd5eca78e1f36ae62969",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                199980.0,
+                9082260.0,
+                202540.0,
+                9084820.0
+              ],
+              "bounds_wgs84": [
+                114.27648353473316,
+                -8.293349974852806,
+                114.29986265877935,
+                -8.270061967619199
+              ],
+              "unique_values": [
+                2,
+                5,
+                7
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-east_java-2023-v2-laneB-east_java-boundary-00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "fc64998238b217ec896212770da2db1b7dac13774683effe4119c2879bab1658",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32750",
+              "nodata": 0.0,
+              "bounds_native": [
+                199980.0,
+                9082260.0,
+                202540.0,
+                9084820.0
+              ],
+              "bounds_wgs84": [
+                114.27648353473316,
+                -8.293349974852806,
+                114.29986265877935,
+                -8.270061967619199
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2022-g01-r0-c0",
+          "province": "gorontalo",
+          "province_name": "Gorontalo",
+          "year": 2022,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2022-g01/r00-c00/image.tif",
+              "bytes": 804426,
+              "sha256": "4ad8f9b1b85028309de66ca7080e8c024eab6851d7e78cfa7c5efb74383c4e5c",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                535680.0,
+                54560.0,
+                538240.0,
+                57120.0
+              ],
+              "bounds_wgs84": [
+                123.32065728744055,
+                0.49361237379472633,
+                123.34366503658717,
+                0.5167742703658862
+              ],
+              "value_range": [
+                1052,
+                3888
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2022-g01/r00-c00/label.tif",
+              "bytes": 2944,
+              "sha256": "50446657b5e56affe1701bde23bb1b1174aecf4889a902ab4f0c520681e74db0",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                535680.0,
+                54560.0,
+                538240.0,
+                57120.0
+              ],
+              "bounds_wgs84": [
+                123.32065728744055,
+                0.49361237379472633,
+                123.34366503658717,
+                0.5167742703658862
+              ],
+              "unique_values": [
+                2
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2022-g01/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "a55f2e111e48d376051fc3b3eca70b8b8460b013d8ac96f20b58b278ae126a98",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                535680.0,
+                54560.0,
+                538240.0,
+                57120.0
+              ],
+              "bounds_wgs84": [
+                123.32065728744055,
+                0.49361237379472633,
+                123.34366503658717,
+                0.5167742703658862
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2023-g01-r0-c0",
+          "province": "gorontalo",
+          "province_name": "Gorontalo",
+          "year": 2023,
+          "split": "train",
+          "quality_status": "quality_insufficient",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2023-g01/r00-c00/image.tif",
+              "bytes": 909696,
+              "sha256": "14d3f11f0ae298e96802b751dcc5e7d5981e15705e1d733b9da9f7ed6ffb8479",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                535680.0,
+                54560.0,
+                538240.0,
+                57120.0
+              ],
+              "bounds_wgs84": [
+                123.32065728744055,
+                0.49361237379472633,
+                123.34366503658717,
+                0.5167742703658862
+              ],
+              "value_range": [
+                1114,
+                10024
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2023-g01/r00-c00/label.tif",
+              "bytes": 4249,
+              "sha256": "d9af109b55d6e3f33d05dea7ce1b300d379b5329c6e6b5318148a3a10fef7d1b",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                535680.0,
+                54560.0,
+                538240.0,
+                57120.0
+              ],
+              "bounds_wgs84": [
+                123.32065728744055,
+                0.49361237379472633,
+                123.34366503658717,
+                0.5167742703658862
+              ],
+              "unique_values": [
+                0,
+                2
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2023-g01/r00-c00/quality.tif",
+              "bytes": 4249,
+              "sha256": "3485366c15df1c33c85c90fe1241048418dfef37efa07fb9d09359a57b347650",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                535680.0,
+                54560.0,
+                538240.0,
+                57120.0
+              ],
+              "bounds_wgs84": [
+                123.32065728744055,
+                0.49361237379472633,
+                123.34366503658717,
+                0.5167742703658862
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-00-r0-c0",
+          "province": "banten",
+          "province_name": "Banten",
+          "year": 2024,
+          "split": "val",
+          "quality_status": "quality_insufficient",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-00/r00-c00/image.tif",
+              "bytes": 944729,
+              "sha256": "61d09b6615e0ce77b889b9b0b70c21db9934bcca4972b913b50adaa4de959f78",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "value_range": [
+                1376,
+                18256
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-00/r00-c00/label.tif",
+              "bytes": 5450,
+              "sha256": "db34611a64c92095c7306514467041aacc8c4fce1a6a6fe9384a1e6c5e689e7c",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "unique_values": [
+                0,
+                1,
+                2,
+                5,
+                7,
+                8,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-banten-2024-v2-laneB-banten-boundary-00/r00-c00/quality.tif",
+              "bytes": 4020,
+              "sha256": "1e15b7e6823ad44d5321ba67f9f277b6b717da8d819529f062d6893a41aa7ae0",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                660480.0,
+                9310570.0,
+                663040.0,
+                9313130.0
+              ],
+              "bounds_wgs84": [
+                106.45050240471907,
+                -6.23524638314172,
+                106.47370039166853,
+                -6.212031523755689
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-00-r0-c0",
+          "province": "west_java",
+          "province_name": "West Java",
+          "year": 2024,
+          "split": "test",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-00/r00-c00/image.tif",
+              "bytes": 836824,
+              "sha256": "fb4433d0531d075698492c59622e32390dc04dfc04fbc2464b7db1b076fba134",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "value_range": [
+                1186,
+                2072
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-00/r00-c00/label.tif",
+              "bytes": 4234,
+              "sha256": "b69e11f5bf429789be9a888e34cfb145d785585aa399ed8ab77235b52727e7b7",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "unique_values": [
+                1,
+                2,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2024-v2-laneB-west_java-boundary-00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "d55c57e14a98a72edc8af95c9835336d98abd31f7cdf853787b622034381c5d7",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2024-g01-r0-c0",
+          "province": "gorontalo",
+          "province_name": "Gorontalo",
+          "year": 2024,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2024-g01/r00-c00/image.tif",
+              "bytes": 859920,
+              "sha256": "44d95eeb8db2c98bbbca146610cc3799089085a484e600898f5ef5be1fab4d18",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                535680.0,
+                54560.0,
+                538240.0,
+                57120.0
+              ],
+              "bounds_wgs84": [
+                123.32065728744055,
+                0.49361237379472633,
+                123.34366503658717,
+                0.5167742703658862
+              ],
+              "value_range": [
+                1051,
+                7324
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2024-g01/r00-c00/label.tif",
+              "bytes": 3641,
+              "sha256": "37d726101b82e8750abb525414fa9079579869a88e8e1979a563073faf22b743",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                535680.0,
+                54560.0,
+                538240.0,
+                57120.0
+              ],
+              "bounds_wgs84": [
+                123.32065728744055,
+                0.49361237379472633,
+                123.34366503658717,
+                0.5167742703658862
+              ],
+              "unique_values": [
+                0,
+                2
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2024-g01/r00-c00/quality.tif",
+              "bytes": 3641,
+              "sha256": "43a08368bca586a62d842dd938bc2794223aa9f3bc8d236c962b89f81e22c373",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                535680.0,
+                54560.0,
+                538240.0,
+                57120.0
+              ],
+              "bounds_wgs84": [
+                123.32065728744055,
+                0.49361237379472633,
+                123.34366503658717,
+                0.5167742703658862
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2024-g00-r0-c0",
+          "province": "east_java",
+          "province_name": "East Java",
+          "year": 2024,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-east_java-2024-g00/r00-c00/image.tif",
+              "bytes": 896180,
+              "sha256": "0ecb7be761a348b7f517ca6899d27c1a942e7287ffe4c7965cfedc1e1e8cd1b5",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "value_range": [
+                1199,
+                6376
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-east_java-2024-g00/r00-c00/label.tif",
+              "bytes": 5496,
+              "sha256": "360cce616289f2243630db6726936d9738f38ef6d3a78078e6335bb19c03836e",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "unique_values": [
+                1,
+                2,
+                5,
+                7
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-east_java-2024-g00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "90ff0e42dd231c8fcece81a287e2c23f4fdbaab30fc2cc5652401c334d0b5741",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-00-r0-c0",
+          "province": "west_java",
+          "province_name": "West Java",
+          "year": 2025,
+          "split": "test",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-00/r00-c00/image.tif",
+              "bytes": 782501,
+              "sha256": "30658a1b8921d4e82275760147b19499e1c03ac6ee0eb5f64aaa4b60bcc15309",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "value_range": [
+                1144,
+                2026
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-00/r00-c00/label.tif",
+              "bytes": 3237,
+              "sha256": "097092064bda09635200c685d03f2eddfa26091131fa9c05d252f67c98722444",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "unique_values": [
+                1,
+                2,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-extra-west_java-2025-v2-laneB-west_java-boundary-00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "d55c57e14a98a72edc8af95c9835336d98abd31f7cdf853787b622034381c5d7",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                247010.0,
+                9228430.0,
+                249570.0,
+                9230990.0
+              ],
+              "bounds_wgs84": [
+                108.7102013388872,
+                -6.974846509225914,
+                108.73347047206597,
+                -6.951595628155452
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-banten-2025-g00-r0-c0",
+          "province": "banten",
+          "province_name": "Banten",
+          "year": 2025,
+          "split": "val",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-banten-2025-g00/r00-c00/image.tif",
+              "bytes": 864934,
+              "sha256": "95813525c4dc113f8d9c9ea7970e6ade1f0524962fac168296eee57e81fc8522",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                618880.0,
+                9289760.0,
+                621440.0,
+                9292320.0
+              ],
+              "bounds_wgs84": [
+                106.07494021869275,
+                -6.424365335966039,
+                106.0981350201426,
+                -6.401162258405327
+              ],
+              "value_range": [
+                1148,
+                2964
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-banten-2025-g00/r00-c00/label.tif",
+              "bytes": 6139,
+              "sha256": "11ca07a9b3f728c80a242611a884759015e97370c433ec8e0a81c3385de7343c",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                618880.0,
+                9289760.0,
+                621440.0,
+                9292320.0
+              ],
+              "bounds_wgs84": [
+                106.07494021869275,
+                -6.424365335966039,
+                106.0981350201426,
+                -6.401162258405327
+              ],
+              "unique_values": [
+                2,
+                5,
+                7,
+                11
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-banten-2025-g00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "47fb0f5ff9a14ba8c631f048be77773bcff686cc64f07ca94aa1682d69922fab",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32748",
+              "nodata": 0.0,
+              "bounds_native": [
+                618880.0,
+                9289760.0,
+                621440.0,
+                9292320.0
+              ],
+              "bounds_wgs84": [
+                106.07494021869275,
+                -6.424365335966039,
+                106.0981350201426,
+                -6.401162258405327
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-east_java-2025-g00-r0-c0",
+          "province": "east_java",
+          "province_name": "East Java",
+          "year": 2025,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-east_java-2025-g00/r00-c00/image.tif",
+              "bytes": 887742,
+              "sha256": "0707bb8be6553dc0eb39f9fc83adb2c22539c0ab610afbe8ce73d0c959df0c8d",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "value_range": [
+                1239,
+                11576
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-east_java-2025-g00/r00-c00/label.tif",
+              "bytes": 5764,
+              "sha256": "a6719c7d43399438c4e6d441a6120ecb6b586bcc548d8340ce98490197b2ebf3",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "unique_values": [
+                1,
+                2,
+                5,
+                7
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-east_java-2025-g00/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "90ff0e42dd231c8fcece81a287e2c23f4fdbaab30fc2cc5652401c334d0b5741",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32749",
+              "nodata": 0.0,
+              "bounds_native": [
+                639670.0,
+                9144160.0,
+                642230.0,
+                9146720.0
+              ],
+              "bounds_wgs84": [
+                112.26647566499005,
+                -7.740700333579438,
+                112.28975508857876,
+                -7.717479749043688
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-gorontalo-2025-g02-r0-c0",
+          "province": "gorontalo",
+          "province_name": "Gorontalo",
+          "year": 2025,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2025-g02/r00-c00/image.tif",
+              "bytes": 779116,
+              "sha256": "c316b7795e130a61e6273ad0a87e11e3616443cab765098d195c6ec5969a82da",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                306870.0,
+                75370.0,
+                309430.0,
+                77930.0
+              ],
+              "bounds_wgs84": [
+                121.2645261737085,
+                0.6815808497619605,
+                121.28753180945816,
+                0.7047398135679871
+              ],
+              "value_range": [
+                1083,
+                2410
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2025-g02/r00-c00/label.tif",
+              "bytes": 2944,
+              "sha256": "f79eb628543ba6b66693f46c52976908d2a629e3e3ac288afaf07e73edbb6785",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                306870.0,
+                75370.0,
+                309430.0,
+                77930.0
+              ],
+              "bounds_wgs84": [
+                121.2645261737085,
+                0.6815808497619605,
+                121.28753180945816,
+                0.7047398135679871
+              ],
+              "unique_values": [
+                2
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-gorontalo-2025-g02/r00-c00/quality.tif",
+              "bytes": 2944,
+              "sha256": "88c0c5bbcc5df0c672b5d95e7aac95e1696bef7c528a259f9cd869bc7c3a73ae",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32651",
+              "nodata": 0.0,
+              "bounds_native": [
+                306870.0,
+                75370.0,
+                309430.0,
+                77930.0
+              ],
+              "bounds_wgs84": [
+                121.2645261737085,
+                0.6815808497619605,
+                121.28753180945816,
+                0.7047398135679871
+              ],
+              "unique_values": [
+                1
+              ]
+            }
+          }
+        },
+        {
+          "patch_id": "parallel-v2-grid-esri_io-southeast_sulawesi-2024-g02-r0-c0",
+          "province": "southeast_sulawesi",
+          "province_name": "Southeast Sulawesi",
+          "year": 2024,
+          "split": "train",
+          "quality_status": "quality_eligible",
+          "files": {
+            "image": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2024-g02/r00-c00/image.tif",
+              "bytes": 846197,
+              "sha256": "35a25eb92d78044f87217a6fa1824b42f0404df7d000a404f01454ce03ee6c5a",
+              "width": 256,
+              "height": 256,
+              "count": 6,
+              "dtype": "float32",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                504470.0,
+                9549760.0,
+                507030.0,
+                9552320.0
+              ],
+              "bounds_wgs84": [
+                123.0402706630167,
+                -4.073392663337129,
+                123.06333574908166,
+                -4.050231233941454
+              ],
+              "value_range": [
+                1110,
+                12360
+              ]
+            },
+            "label": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2024-g02/r00-c00/label.tif",
+              "bytes": 3059,
+              "sha256": "547dd3f69d57bdee3f4c1a240012a7367c482a6611ddbc1d869662522366e68d",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                504470.0,
+                9549760.0,
+                507030.0,
+                9552320.0
+              ],
+              "bounds_wgs84": [
+                123.0402706630167,
+                -4.073392663337129,
+                123.06333574908166,
+                -4.050231233941454
+              ],
+              "unique_values": [
+                0,
+                2
+              ]
+            },
+            "quality": {
+              "relative_path": "data/first-group-training-esri-v1/patches/parallel-v2-grid-esri_io-southeast_sulawesi-2024-g02/r00-c00/quality.tif",
+              "bytes": 3059,
+              "sha256": "69733f2273ad6377db7200435ce07eb0e33e69b2d9a4031a8f3111ee8120528b",
+              "width": 256,
+              "height": 256,
+              "count": 1,
+              "dtype": "uint8",
+              "crs": "EPSG:32751",
+              "nodata": 0.0,
+              "bounds_native": [
+                504470.0,
+                9549760.0,
+                507030.0,
+                9552320.0
+              ],
+              "bounds_wgs84": [
+                123.0402706630167,
+                -4.073392663337129,
+                123.06333574908166,
+                -4.050231233941454
+              ],
+              "unique_values": [
+                0,
+                1
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "rejected_entries": [
+    {
+      "scene_id": "central_java_candidate-2021",
+      "path": "data/baseline2021/central_java_candidate-2021",
+      "province": "central_java",
+      "reason": "Central Java (Outside First Group 6 scope)"
+    }
+  ]
+}

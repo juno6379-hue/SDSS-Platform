@@ -1,0 +1,257 @@
+{
+  "workspace": "carbon",
+  "region": "South Sulawesi",
+  "period": {
+    "from_year": 2020,
+    "to_year": 2025,
+    "elapsed_years": 5.0
+  },
+  "kpis": [
+    {
+      "label": "총 배출량",
+      "value": 32450.0,
+      "formatted": "32,450.0",
+      "unit": "tCO₂e",
+      "icon": "emissions",
+      "status": "CALCULATED_TIER1"
+    },
+    {
+      "label": "총 흡수량",
+      "value": 0.0,
+      "formatted": "0.0",
+      "unit": "tCO₂e",
+      "icon": "leaf",
+      "status": "CALCULATED_TIER1"
+    },
+    {
+      "label": "순 탄소 배출",
+      "value": 32450.0,
+      "formatted": "32,450.0",
+      "unit": "tCO₂e",
+      "icon": "carbon",
+      "status": "CALCULATED_TIER1"
+    },
+    {
+      "label": "감축 잠재량",
+      "value": 33009.2,
+      "formatted": "33,009.2",
+      "unit": "tCO₂e",
+      "icon": "target",
+      "status": "ESTIMATED_MITIGATION"
+    }
+  ],
+  "summary": {
+    "title": "탄소 배출 핫스팟",
+    "columns": [
+      "지역",
+      "순 배출량",
+      "변화",
+      "주요 기여 부문"
+    ],
+    "rows": [
+      [
+        "South Sulawesi",
+        "+32,450.0 tCO₂e",
+        "+3.8%",
+        "산림·토지이용"
+      ],
+      [
+        "East Kalimantan",
+        "+12,450,200.0 tCO₂e",
+        "+6.2%",
+        "산림·토지이용"
+      ],
+      [
+        "Riau",
+        "+9,810,400.0 tCO₂e",
+        "+4.7%",
+        "산림·토지이용"
+      ],
+      [
+        "Central Kalimantan",
+        "+8,320,100.0 tCO₂e",
+        "+5.1%",
+        "산림·토지이용"
+      ],
+      [
+        "South Sumatra",
+        "+5,140,800.0 tCO₂e",
+        "+2.9%",
+        "농업"
+      ],
+      [
+        "West Kalimantan",
+        "+4,920,600.0 tCO₂e",
+        "+3.4%",
+        "산림·토지이용"
+      ]
+    ]
+  },
+  "bottom_panels": {
+    "trend": {
+      "title": "부문별 탄소 배출 추세",
+      "unit": "tCO₂e",
+      "series": [
+        {
+          "year": "2020",
+          "gross_emissions_tCO2e": 5192.0,
+          "gross_removals_tCO2e": 0.0,
+          "net_tCO2e": 6490.0
+        },
+        {
+          "year": "2021",
+          "gross_emissions_tCO2e": 5451.6,
+          "gross_removals_tCO2e": 0.0,
+          "net_tCO2e": 6490.0
+        },
+        {
+          "year": "2022",
+          "gross_emissions_tCO2e": 5711.2,
+          "gross_removals_tCO2e": 0.0,
+          "net_tCO2e": 6490.0
+        },
+        {
+          "year": "2023",
+          "gross_emissions_tCO2e": 5970.8,
+          "gross_removals_tCO2e": 0.0,
+          "net_tCO2e": 6490.0
+        },
+        {
+          "year": "2024",
+          "gross_emissions_tCO2e": 6230.4,
+          "gross_removals_tCO2e": 0.0,
+          "net_tCO2e": 6490.0
+        },
+        {
+          "year": "2025",
+          "gross_emissions_tCO2e": 6490.0,
+          "gross_removals_tCO2e": 0.0,
+          "net_tCO2e": 6490.0
+        }
+      ]
+    },
+    "absorption": {
+      "title": "탄소 흡수 분포",
+      "unit": "tCO₂e",
+      "total_removal_tCO2e": 0.0,
+      "reforestation_ha": 0.0,
+      "sequestration_rate_tC_ha_yr": 6.5
+    },
+    "sector_balance": {
+      "title": "부문별 탄소 수지",
+      "columns": [
+        "부문",
+        "배출",
+        "흡수",
+        "수지"
+      ],
+      "rows": [
+        [
+          "산업·에너지",
+          "4,500.0",
+          "0.0",
+          "+4,500.0"
+        ],
+        [
+          "교통",
+          "3,200.0",
+          "0.0",
+          "+3,200.0"
+        ],
+        [
+          "건물",
+          "1,800.0",
+          "0.0",
+          "+1,800.0"
+        ],
+        [
+          "농업",
+          "2,500.0",
+          "350.0",
+          "+2,150.0"
+        ],
+        [
+          "토지이용·산림",
+          "32,450.0",
+          "0.0",
+          "+32,450.0"
+        ],
+        [
+          "폐기물",
+          "1,200.0",
+          "0.0",
+          "+1,200.0"
+        ]
+      ]
+    },
+    "mitigation_options": {
+      "title": "감축 옵션과 잠재량",
+      "options": [
+        {
+          "name": "산림·이탄지 복원",
+          "potential_tCO2e": 17164.8,
+          "share_pct": 52.0
+        },
+        {
+          "name": "지속가능한 농업",
+          "potential_tCO2e": 6601.8,
+          "share_pct": 20.0
+        },
+        {
+          "name": "청정에너지 전환",
+          "potential_tCO2e": 4621.3,
+          "share_pct": 14.0
+        },
+        {
+          "name": "교통 효율 개선",
+          "potential_tCO2e": 2970.8,
+          "share_pct": 9.0
+        },
+        {
+          "name": "폐기물 통합관리",
+          "potential_tCO2e": 1650.5,
+          "share_pct": 5.0
+        }
+      ]
+    }
+  },
+  "activity_data": {
+    "deforestation_ha": 30.0,
+    "certified_deforestation_ha": 30.0,
+    "peat_loss_ha": 0.0,
+    "reforestation_ha": 0.0,
+    "certified_reforestation_ha": 0.0,
+    "total_area_ha": 1830.0,
+    "common_valid_ha": 1830.0,
+    "cloud_excluded_ha": 0.0,
+    "valid_common_ratio": 1.0,
+    "spurious_cloud_emissions_prevented_tCO2e": 0.0
+  },
+  "scientific_metadata": {
+    "standard": "IPCC 2006 / 2019 Refinement Tier 1 & 2013 Wetlands Supplement",
+    "emission_factors": {
+      "forest_loss_biomass_c_density_tC_ha": 300.0,
+      "peat_oxidation_ef_tCO2e_ha_yr": 55.0,
+      "plantation_c_stock_tC_ha": 60.0,
+      "shrub_c_stock_tC_ha": 35.0,
+      "grass_c_stock_tC_ha": 6.0,
+      "crops_c_stock_tC_ha": 5.0,
+      "mangrove_c_stock_tC_ha": 320.0,
+      "reforestation_accumulation_tC_ha_yr": 6.5,
+      "mangrove_accumulation_tC_ha_yr": 7.5
+    },
+    "conversion_factors": {
+      "c_to_co2_ratio": 3.6666666666666665,
+      "m2_per_ha": 10000.0
+    },
+    "verification_status": "CALCULATED_TIER1",
+    "governance": {
+      "filter_mode": "common_valid_mask",
+      "common_valid_ha": 1830.0,
+      "cloud_excluded_ha": 0.0,
+      "valid_common_ratio": 1.0,
+      "cloud_gap_distortion_prevented": true,
+      "spurious_cloud_emissions_prevented_tCO2e": 0.0
+    }
+  }
+}
