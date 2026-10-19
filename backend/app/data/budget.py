@@ -1,5 +1,5 @@
 """과거 원장을 보존하면서 여러 순차 수집 실행의 신규 예산을 공유한다."""
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -17,7 +17,7 @@ class CollectionLedger:
     비정상 중단의 pending 예약은 자동 환불하지 않는다. 원장 lock은 다른
     수집 프로세스와 경합하면 즉시 실패하며 잠긴 채 재시도하지 않는다.
     """
-    def __init__(self, path, historical_paths, additional_budget=4 * 1024 ** 3, initial_metadata_charge=0):
+    def __init__(self, path, historical_paths, additional_budget=4 * 1024 ** 3, initial_metadata_charge=0, *, metadata_io=None):
         self.path = Path(path)
         self.historical_paths = [Path(p).resolve() for p in historical_paths]
         if not 1 <= additional_budget <= 4 * 1024 ** 3:
@@ -26,6 +26,12 @@ class CollectionLedger:
         if not 0 <= initial_metadata_charge <= additional_budget:
             raise ValueError("외부 조사 HTTP 본문 계측은 신규 예산 범위 안이어야 합니다")
         self.initial_metadata_charge = initial_metadata_charge
+        self.metadata_io = metadata_io
+        if metadata_io is not None:
+            from .ledger_metadata_io import LedgerMetadataIO
+            if type(metadata_io) is not LedgerMetadataIO:
+                raise ValueError('LEDGER_METADATA_ADAPTER_INVALID')
+            metadata_io.bind(self)
 
     @contextmanager
     def locked(self):
@@ -40,6 +46,8 @@ class CollectionLedger:
             lock.unlink()
 
     def _read(self):
+        if self.metadata_io is not None:
+            return self.metadata_io.read(self)
         if self.path.exists():
             state = json.loads(self.path.read_text(encoding="utf-8"))
             if state["additional_maximum_bytes"] != self.additional_budget:
@@ -59,17 +67,25 @@ class CollectionLedger:
                 "rate_limit_active": False}
 
     def _save(self, state):
+        if self.metadata_io is not None:
+            return self.metadata_io.save(self, state)
         state["updated_at"] = datetime.now(timezone.utc).isoformat()
         temp = self.path.with_suffix(".tmp")
         temp.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
         temp.replace(self.path)
 
+    def _guard(self):
+        # metadata_io 모드에서는 legacy 검사 실패도 어댑터를 중단시킨다. 기본 None 경로는 무동작이다.
+        return nullcontext() if self.metadata_io is None else self.metadata_io.stop_on_failure(self)
+
     def snapshot(self):
-        with self.locked():
+        with self._guard(), self.locked():
             return self._read()
 
     def reserve(self, key, maximum, config_sha256):
-        with self.locked():
+        with self._guard(), self.locked():
+            if self.metadata_io is not None:
+                self.metadata_io.reserve_arguments(self, key, maximum, config_sha256)
             state = self._read()
             if state["rate_limit_active"]:
                 raise RuntimeError("전역 HTTP429 회로가 열려 추가 요청을 중단합니다")
@@ -91,7 +107,9 @@ class CollectionLedger:
             return True
 
     def settle(self, key, measured_or_reserved, report_path=None, rate_limit=None):
-        with self.locked():
+        with self._guard(), self.locked():
+            if self.metadata_io is not None:
+                self.metadata_io.settle_arguments(self, key, measured_or_reserved, report_path)
             state = self._read()
             batch = state["batches"][key]
             if batch["status"] != "pending":

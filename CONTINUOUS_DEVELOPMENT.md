@@ -1,5 +1,20 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-19 12:51 KST — 332 원장 어댑터 메인 공유 적용(333) 완료·192건 전수 통과
+
+332 격리 작업공간(`target332-workspace-20261019`)에서 독립 정적 검토 2회(Round 1 F1~F3 도출, Round 2 차단 결함 없음 판정)와 45건 PASS(돌연변이 검사 7건 FAIL로 결함 검출력 입증)로 동결된 `freeze332.json`(SHA b6f23c4b459f499a5511e2c206d5292ab741dad2e41bd3604fa1a88d3de32584)을 메인 코드베이스에 반영했다(`apply333.py`).
+
+기존 `backend/app/data/budget.py`는 원본 바이트 검증 후 `archive/budget.py.pre333`로 백업 보존했다. 반영 파일: `backend/app/data/ledger_metadata_io.py`, `backend/app/data/budget.py`, `tests/test_ledger_metadata332.py`, `tests/fixtures/budget332_legacy.py`.
+
+메인 환경 전체 회귀 시험:
+- 신규 `test_ledger_metadata332.py`: 45건 전부 PASS (8.918초)
+- 기존 `budget.py` 의존 9개 모듈: 147건 전부 PASS (44.906초)
+- 합계 192건 전부 통과 (FAIL=0, SKIP=0, ERROR=0)
+완료 증거: `evidence/integration/target333-application-root-20261019/completion.json`, `docs/implementation/333_ledger_metadata_io_shared_application.md`.
+
+운영 원장·후보·실제 데이터 쓰기 0, 외부 HTTP 0, 수집기 worker 연결 0. 기존 2023년 반텐·서자바 2개 중단 배치 예약분(136,314,880B) 전액 보존 상태 유지. 다음 334는 실제 타깃 수집 진입점(`collect_targeted_bare.py`)의 64MiB 호출부를 명시 128MiB/원장 어댑터 계약으로 연결하여 64MiB 수집 차단을 해소하는 작업이다.
+
+
 ## 2026-10-19 11:42 KST — 서버 재기동·API 재확인·미커밋 변경 커밋
 
 00:16 이후 원장 갱신과 실제 작업이 없었다(collector/QA/native/시험 프로세스 0, 332 격리 작업공간 00:18 이후 수정 없음·freeze 없음 → 중단 상태). 프로젝트 API 8002/frontend 5174가 꺼져 있어 재기동했다. API는 기존 명시 진입점 `evidence/integration/profile237-api-entrypoint-root-20261018.py`(source-profile237 결속)로, frontend는 `npm run dev -- --port 5174 --strictPort`로 실행했다. 첫 시도에서 profile 없이 일반 uvicorn으로 띄운 API는 current_manifest 미일치로 보여 중단하고 교체했다(로그 restart333-*-20261019 보존).

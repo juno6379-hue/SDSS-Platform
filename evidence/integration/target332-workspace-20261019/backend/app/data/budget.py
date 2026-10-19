@@ -1,5 +1,5 @@
 """과거 원장을 보존하면서 여러 순차 수집 실행의 신규 예산을 공유한다."""
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -74,12 +74,16 @@ class CollectionLedger:
         temp.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
         temp.replace(self.path)
 
+    def _guard(self):
+        # metadata_io 모드에서는 legacy 검사 실패도 어댑터를 중단시킨다. 기본 None 경로는 무동작이다.
+        return nullcontext() if self.metadata_io is None else self.metadata_io.stop_on_failure(self)
+
     def snapshot(self):
-        with self.locked():
+        with self._guard(), self.locked():
             return self._read()
 
     def reserve(self, key, maximum, config_sha256):
-        with self.locked():
+        with self._guard(), self.locked():
             if self.metadata_io is not None:
                 self.metadata_io.reserve_arguments(self, key, maximum, config_sha256)
             state = self._read()
@@ -103,7 +107,7 @@ class CollectionLedger:
             return True
 
     def settle(self, key, measured_or_reserved, report_path=None, rate_limit=None):
-        with self.locked():
+        with self._guard(), self.locked():
             if self.metadata_io is not None:
                 self.metadata_io.settle_arguments(self, key, measured_or_reserved, report_path)
             state = self._read()

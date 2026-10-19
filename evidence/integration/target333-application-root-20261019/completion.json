@@ -1,0 +1,46 @@
+{
+  "unit": 333,
+  "status": "APPLIED_TO_MAIN_VERIFIED",
+  "application": {
+    "unit": 333,
+    "at": "2026-10-19T03:48:31.743685+00:00",
+    "freeze332_sha256": "b6f23c4b459f499a5511e2c206d5292ab741dad2e41bd3604fa1a88d3de32584",
+    "applied": [
+      {
+        "path": "backend/app/data/ledger_metadata_io.py",
+        "sha256": "3882d21ad93aa0f9d418cda36a2fc26b8a8dae45a6d9793cfdeb24e1e8ba8c3b"
+      },
+      {
+        "path": "backend/app/data/budget.py",
+        "sha256": "82f6e21f760536ae3094059760a87491bf22379926d75267bf844fa803f08d8d"
+      },
+      {
+        "path": "tests/test_ledger_metadata332.py",
+        "sha256": "8ffd1bd670583c944e63bd3334387652477496c1db4f881d59ed6198402d2e00"
+      },
+      {
+        "path": "tests/fixtures/budget332_legacy.py",
+        "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77"
+      }
+    ],
+    "archived_original": {
+      "path": "archive/budget.py.pre333",
+      "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77"
+    },
+    "operating_io": false,
+    "http": false,
+    "collector_connected": false,
+    "real_ledger_connected": false,
+    "server_restart": false
+  },
+  "tests": {
+    "test_ledger_metadata332_pass": 45,
+    "dependents_pass": 147,
+    "skip": 0,
+    "fail": 0
+  },
+  "operating_io": false,
+  "http": false,
+  "collector_connected": false,
+  "real_ledger_connected": false
+}

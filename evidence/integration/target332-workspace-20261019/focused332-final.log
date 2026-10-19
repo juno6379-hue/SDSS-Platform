@@ -1,0 +1,50 @@
+test_429_circuit_and_old_pending_preserved (test_ledger_metadata332.LedgerTests.test_429_circuit_and_old_pending_preserved) ... ok
+test_allowlist_max_two (test_ledger_metadata332.LedgerTests.test_allowlist_max_two) ... ok
+test_bool_measurement_rejected (test_ledger_metadata332.LedgerTests.test_bool_measurement_rejected) ... ok
+test_constructor_history_order_exact (test_ledger_metadata332.LedgerTests.test_constructor_history_order_exact) ... ok
+test_different_operation_rejected (test_ledger_metadata332.LedgerTests.test_different_operation_rejected) ... ok
+test_exhaustion_propagates_no_save (test_ledger_metadata332.LedgerTests.test_exhaustion_propagates_no_save) ... ok
+test_existing_key_cannot_be_allowed (test_ledger_metadata332.LedgerTests.test_existing_key_cannot_be_allowed) ... ok
+test_external_reference_path_before_read (test_ledger_metadata332.LedgerTests.test_external_reference_path_before_read) ... ok
+test_global_constants_modification_rejected (test_ledger_metadata332.LedgerTests.test_global_constants_modification_rejected) ... ok
+test_history_change_during_write_reports_applied (test_ledger_metadata332.LedgerTests.test_history_change_during_write_reports_applied) ... ok
+test_history_eight_mib_before_its_open (test_ledger_metadata332.LedgerTests.test_history_eight_mib_before_its_open) ... ok
+test_history_replacement_stops_no_write (test_ledger_metadata332.LedgerTests.test_history_replacement_stops_no_write) ... ok
+test_ledger_eight_mib_before_read_open (test_ledger_metadata332.LedgerTests.test_ledger_eight_mib_before_read_open) ... ok
+test_ledger_history_order_exact (test_ledger_metadata332.LedgerTests.test_ledger_history_order_exact) ... ok
+test_legacy_fixture_strict_missing_and_tamper (test_ledger_metadata332.LedgerTests.test_legacy_fixture_strict_missing_and_tamper) ... ok
+test_legacy_initialization_exact (test_ledger_metadata332.LedgerTests.test_legacy_initialization_exact) ... ok
+test_legacy_none_exact_bytes_and_errors (test_ledger_metadata332.LedgerTests.test_legacy_none_exact_bytes_and_errors) ... ok
+test_lock_competition_no_removal_of_other_lock (test_ledger_metadata332.LedgerTests.test_lock_competition_no_removal_of_other_lock) ... ok
+test_marker_and_scope_required (test_ledger_metadata332.LedgerTests.test_marker_and_scope_required) ... ok
+test_no_auto_initialization (test_ledger_metadata332.LedgerTests.test_no_auto_initialization) ... ok
+test_old_pending_never_settled (test_ledger_metadata332.LedgerTests.test_old_pending_never_settled) ... ok
+test_partial_write_stops_original_unchanged (test_ledger_metadata332.LedgerTests.test_partial_write_stops_original_unchanged) ... ok
+test_postcommit_failure_no_pin_advance_no_retry (test_ledger_metadata332.LedgerTests.test_postcommit_failure_no_pin_advance_no_retry) ... ok
+test_reference_alias_rejected (test_ledger_metadata332.LedgerTests.test_reference_alias_rejected) ... ok
+test_reserve_settle_and_old_rows_exact_same_budget (test_ledger_metadata332.LedgerTests.test_reserve_settle_and_old_rows_exact_same_budget) ... ok
+test_review_direct_save_clearing_rate_limit_rejected (test_ledger_metadata332.LedgerTests.test_review_direct_save_clearing_rate_limit_rejected) ... ok
+test_review_direct_save_over_budget_rejected (test_ledger_metadata332.LedgerTests.test_review_direct_save_over_budget_rejected) ... ok
+test_review_f1_lock_competition_stops (test_ledger_metadata332.LedgerTests.test_review_f1_lock_competition_stops) ... ok
+test_review_f1_over_budget_reserve_stops_no_write (test_ledger_metadata332.LedgerTests.test_review_f1_over_budget_reserve_stops_no_write) ... ok
+test_review_f1_settle_twice_stops (test_ledger_metadata332.LedgerTests.test_review_f1_settle_twice_stops) ... ok
+test_review_f2_bind_failure_stops_reuse (test_ledger_metadata332.LedgerTests.test_review_f2_bind_failure_stops_reuse) ... ok
+test_review_f2_second_bind_stops (test_ledger_metadata332.LedgerTests.test_review_f2_second_bind_stops) ... ok
+test_review_f3_caller_mutation_after_validation_not_written (test_ledger_metadata332.LedgerTests.test_review_f3_caller_mutation_after_validation_not_written) ... ok
+test_review_f7_array_history_rejected (test_ledger_metadata332.LedgerTests.test_review_f7_array_history_rejected) ... ok
+test_review_legacy_error_parity (test_ledger_metadata332.LedgerTests.test_review_legacy_error_parity) ... ok
+test_review_unknown_replace_outcome_original_kept (test_ledger_metadata332.LedgerTests.test_review_unknown_replace_outcome_original_kept) ... ok
+test_second_allowed_key_and_exact_charge (test_ledger_metadata332.LedgerTests.test_second_allowed_key_and_exact_charge) ... ok
+test_semantic_old_row_modification_rejected (test_ledger_metadata332.LedgerTests.test_semantic_old_row_modification_rejected) ... ok
+test_settle_measurement_bounds (test_ledger_metadata332.LedgerTests.test_settle_measurement_bounds) ... ok
+test_settle_only_this_instance_reserved (test_ledger_metadata332.LedgerTests.test_settle_only_this_instance_reserved) ... ok
+test_strict_duplicate_json (test_ledger_metadata332.LedgerTests.test_strict_duplicate_json) ... ok
+test_unknown_key_and_wrong_config_and_bool_amount (test_ledger_metadata332.LedgerTests.test_unknown_key_and_wrong_config_and_bool_amount) ... ok
+test_unknown_write_conservative_stops_no_refund (test_ledger_metadata332.LedgerTests.test_unknown_write_conservative_stops_no_refund) ... ok
+test_wrong_current_pin (test_ledger_metadata332.LedgerTests.test_wrong_current_pin) ... ok
+test_wrong_history_pin (test_ledger_metadata332.LedgerTests.test_wrong_history_pin) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 8.570s
+
+OK

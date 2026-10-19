@@ -1,0 +1,170 @@
+{
+  "unit": 332,
+  "at": "2026-10-19T03:39:51.770144+00:00",
+  "status": "FROZEN_REVIEWED_NO_BLOCKING",
+  "unique_synthetic_cases": 45,
+  "focused_pass": 45,
+  "portable_same_cases_pass": 45,
+  "skip": 0,
+  "pre_review_cases_pass": 34,
+  "mutation_failures_on_pre_review_code": 7,
+  "review": "independent static review: round1 F1-F3 fixed, F4-F9 documented; round2 no blocking",
+  "document": {
+    "path": "docs/implementation/332_ledger_metadata_io_isolated.md",
+    "bytes": 11138,
+    "sha256": "0440e8ec7622d0538206d4fff8d3e761265be711a4b2cedbad932259d7f126e1"
+  },
+  "files": [
+    {
+      "path": "evidence/integration/target332-workspace-20261019/baseline-manifest332.json",
+      "bytes": 759,
+      "sha256": "44cebfc2314da9c5a9449880561a877099038c52ce649e998a8551117bf55652"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/patch332-manifest.json",
+      "bytes": 2371,
+      "sha256": "ab3ddaf91be7c47796f93285c720bcfddb2f74f265dac5778b935b1273316a20"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/patch332.diff",
+      "bytes": 46895,
+      "sha256": "9920e5609bc10a2d9b222a000343f464ad5aea70afb5359e77366d206d206e78"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/finalize332.py",
+      "bytes": 4841,
+      "sha256": "e952b630b4fe45b25e16f0c63779d5e3bb9b50cf745ab3ab5faef9ad86ec990e"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/run332.py",
+      "bytes": 2066,
+      "sha256": "7b8894353f0660edd389c0bec6502eb45d90c228ebde2e7c8165c53e4da7a913"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/focused332-launcher-import-error.log",
+      "bytes": 2950,
+      "sha256": "f1674203d23e238d46770a0480a3ad0b9b4f6a01af3c6076cd88064a0f1773b3"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/focused332-first.log",
+      "bytes": 9212,
+      "sha256": "32593760db59d1110dde4f9272033436d3d7f4f29d4bfc4ee0b7bbc511297e5d"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/pre-review332/budget.py",
+      "bytes": 6265,
+      "sha256": "cf593551a5a875d38b4ba8727c6cdbddc852b38d0c1c8661f7d89021f26624b2"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/pre-review332/ledger_metadata_io.py",
+      "bytes": 11052,
+      "sha256": "48534b0e420d8d4a390cb28f0598a271a8cb283f192515153f6be747c3e2e909"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/pre-review332/test_ledger_metadata332.py",
+      "bytes": 17776,
+      "sha256": "4f06b2d0cedb6a7ca414b5ba82a975ccb4bb914fd48391bc13dd842c11a2a084"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/pre-review332/focused332-final.log",
+      "bytes": 4226,
+      "sha256": "35f04397a5168bc3589ad0203426e80017bdfe2b33e52c0f695df1de0594089a"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/pre-review332/focused332-final-result.json",
+      "bytes": 63,
+      "sha256": "5d268088b4ff283f78cf3a32c12f662be7b49523c83cd1a74e28cfd514f64a7d"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/pre-review332/portable332-final.log",
+      "bytes": 4226,
+      "sha256": "f5f37306349de3f1a21a171b61e53a5307c33973d0a7c6c82612c59b34a85db1"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/pre-review332/portable332-final-result.json",
+      "bytes": 1234,
+      "sha256": "2144014d656216dd701563678664e6f3d5de49dbd28abe5addddcc227ebfe746"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/mutation332-pre-review-code.log",
+      "bytes": 9752,
+      "sha256": "335d24a0c67abc6c5a3353aed7b6b7ecbecd34548d39f14d3638ca3dfc2a8ab4"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/review332-static.md",
+      "bytes": 2258,
+      "sha256": "d4ff531219c47f23165c6a2d5d2d2abe8fbc41f0cca0a4de7ef9faf16a54f1a1"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/focused332-final.log",
+      "bytes": 5678,
+      "sha256": "6385129d8fcefb0ebb5bbbe00f94df10fea992c3d6d339ad5c9053aa25ad804b"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/focused332-final-result.json",
+      "bytes": 62,
+      "sha256": "6b765f252d4a0b5a176ced7abaa36c727e2b6231b07a2e0f8ada37c506a4d765"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/portable332-final.log",
+      "bytes": 5678,
+      "sha256": "2fc59c42fec01f813ac27281a2021ec75a04299291c3a9f734bfbef020095874"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/portable332-final-result.json",
+      "bytes": 1234,
+      "sha256": "6dca1323cd2acc83bb83ec67bd4a878aae7c9f7a2ac3c0f9717b6d4b65aa77ae"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/backend/app/data/ledger_metadata_io.py",
+      "bytes": 11834,
+      "sha256": "3882d21ad93aa0f9d418cda36a2fc26b8a8dae45a6d9793cfdeb24e1e8ba8c3b"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/backend/app/data/budget.py",
+      "bytes": 6578,
+      "sha256": "82f6e21f760536ae3094059760a87491bf22379926d75267bf844fa803f08d8d"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/tests/test_ledger_metadata332.py",
+      "bytes": 24040,
+      "sha256": "8ffd1bd670583c944e63bd3334387652477496c1db4f881d59ed6198402d2e00"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/tests/fixtures/budget332_legacy.py",
+      "bytes": 5492,
+      "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77"
+    }
+  ],
+  "baseline_checks": [
+    {
+      "path": "backend/app/data/budget.py",
+      "bytes": 5492,
+      "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+      "main_and_baseline_equal": true
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "bytes": 12511,
+      "sha256": "73c9ba94cda1722ae87e7729ecd655ba5e9584fcb735c8c1f0e06734f8357d01",
+      "main_and_baseline_equal": true
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "bytes": 8513,
+      "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+      "main_and_baseline_equal": true
+    },
+    {
+      "path": "backend/app/data/targeted_atomic_json.py",
+      "bytes": 11914,
+      "sha256": "11ea4b0956468045bdd27f7dd605f0d61508fd3846000dba001ef9b4a87aaa66",
+      "main_and_baseline_equal": true
+    }
+  ],
+  "operating_io": false,
+  "http": false,
+  "native": false,
+  "main_applied": false,
+  "coverage": "Explicit opt-in ledger metadata_io adapter; no 170 coordinator/worker/real ledger connection"
+}

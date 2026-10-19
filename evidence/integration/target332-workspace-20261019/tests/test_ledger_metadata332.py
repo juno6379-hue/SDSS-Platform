@@ -195,9 +195,12 @@ class LedgerTests(unittest.TestCase):
 
     def test_settle_measurement_bounds(self):
         with profile.scope(profile.NAME):
-            ledger,_ = self.ledger(); ledger.reserve('new1',100,'a'*64)
+            ledger,io = self.ledger(); ledger.reserve('new1',100,'a'*64)
             with self.assertRaises(ValueError): ledger.settle('new1',101)
-            self.assertEqual(ledger.snapshot()['new_charged_bytes'],235)
+            # Review F1: a legacy-level check failure also stops the adapter.
+            self.assertTrue(io._stopped)
+            with self.assertRaisesRegex(ValueError,'STOPPED'): ledger.snapshot()
+        self.assertEqual(json.loads(self.path.read_bytes())['new_charged_bytes'],235)
 
     def test_bool_measurement_rejected(self):
         with profile.scope(profile.NAME):
@@ -326,6 +329,116 @@ class LedgerTests(unittest.TestCase):
     def test_legacy_fixture_strict_missing_and_tamper(self):
         with patch.object(Path,'read_bytes',return_value=b'changed'):
             with self.assertRaisesRegex(RuntimeError,'FIXTURE_CHANGED'): load_legacy()
+
+
+    # --- Review (independent static review 332) follow-up tests ---
+
+    def test_review_f1_over_budget_reserve_stops_no_write(self):
+        with profile.scope(profile.NAME):
+            ledger,io=self.ledger()
+            with self.assertRaises(ValueError): ledger.reserve('new1',900,'a'*64)
+            self.assertTrue(io._stopped)
+            with self.assertRaisesRegex(ValueError,'STOPPED'): ledger.reserve('new2',1,'b'*64)
+        self.assertEqual(self.path.read_bytes(),self.raw)
+
+    def test_review_f1_settle_twice_stops(self):
+        with profile.scope(profile.NAME):
+            ledger,io=self.ledger(); ledger.reserve('new1',100,'a'*64); ledger.settle('new1',40)
+            after=self.path.read_bytes()
+            with self.assertRaisesRegex(RuntimeError,'정산'): ledger.settle('new1',0)
+            self.assertTrue(io._stopped)
+        self.assertEqual(self.path.read_bytes(),after)
+
+    def test_review_f1_lock_competition_stops(self):
+        with profile.scope(profile.NAME):
+            ledger,io=self.ledger()
+            with ledger.locked():
+                with self.assertRaises(FileExistsError): ledger.snapshot()
+            self.assertTrue(io._stopped)
+
+    def test_review_f2_bind_failure_stops_reuse(self):
+        with profile.scope(profile.NAME):
+            io=self.adapter()
+            with self.assertRaisesRegex(ValueError,'CONSTRUCTOR_BINDING'):
+                CollectionLedger(self.path,list(reversed(self.histories)),1000,metadata_io=io)
+            self.assertTrue(io._stopped)
+            with self.assertRaisesRegex(ValueError,'STOPPED'):
+                CollectionLedger(self.path,self.histories,1000,metadata_io=io)
+        self.assertFalse(self.path.with_suffix('.lock').exists())
+
+    def test_review_f2_second_bind_stops(self):
+        with profile.scope(profile.NAME):
+            ledger,io=self.ledger()
+            with self.assertRaisesRegex(ValueError,'ALREADY_BOUND'): io.bind(ledger)
+            self.assertTrue(io._stopped)
+
+    def test_review_f3_caller_mutation_after_validation_not_written(self):
+        original=writer.replace_json_value
+        holder={}
+        def mutate_then_write(root,path,value,**kwargs):
+            holder['state']['batches']['old1']['charged_bytes']=0  # caller object changes after validation
+            return original(root,path,value,**kwargs)
+        with profile.scope(profile.NAME):
+            ledger,io=self.ledger(); state=ledger.snapshot()
+            state['batches']['new1']={'status':'pending','reserved_bytes':100,'charged_bytes':100,'config_sha256':'a'*64}
+            state['new_charged_bytes']+=100; holder['state']=state
+            with patch.object(writer,'replace_json_value',mutate_then_write), ledger.locked():
+                ledger._save(state)
+            disk=json.loads(self.path.read_bytes())
+            self.assert_old_pending(disk)
+            self.assertEqual(io._before['batches']['old1'],self.old_pending['old1'])
+            self.assertEqual(io._pin,sha(self.path))
+
+    def test_review_direct_save_over_budget_rejected(self):
+        with profile.scope(profile.NAME):
+            ledger,io=self.ledger(); state=ledger.snapshot()
+            state['batches']['new1']={'status':'pending','reserved_bytes':900,'charged_bytes':900,'config_sha256':'a'*64}
+            state['new_charged_bytes']+=900
+            with ledger.locked():
+                with self.assertRaisesRegex(ValueError,'BUDGET_BINDING'): ledger._save(state)
+            self.assertTrue(io._stopped)
+        self.assertEqual(self.path.read_bytes(),self.raw)
+
+    def test_review_direct_save_clearing_rate_limit_rejected(self):
+        with profile.scope(profile.NAME):
+            ledger,io=self.ledger(); ledger.reserve('new1',100,'a'*64); ledger.reserve('new2',100,'b'*64)
+            ledger.settle('new1',100,rate_limit={'http_status':429})
+            after=self.path.read_bytes(); state=ledger.snapshot()
+            state['new_charged_bytes']-=100
+            state['batches']['new2'].update(status='settled',charged_bytes=0,report_path=None)
+            state['rate_limit_active']=False
+            with ledger.locked():
+                with self.assertRaisesRegex(ValueError,'TRANSITION'): ledger._save(state)
+            self.assertTrue(io._stopped)
+        self.assertEqual(self.path.read_bytes(),after)
+
+    def test_review_unknown_replace_outcome_original_kept(self):
+        with profile.scope(profile.NAME):
+            ledger,io=self.ledger()
+            with patch.object(writer.os,'replace',side_effect=OSError('replace')):
+                with self.assertRaises(OSError) as caught: ledger.reserve('new1',100,'a'*64)
+            self.assertEqual(caught.exception.ledger_metadata_commit_outcome,'UNKNOWN')
+            self.assertTrue(io._stopped); self.assertEqual(io._pin,self.pin); self.assertEqual(io._owned,set())
+        self.assertEqual(self.path.read_bytes(),self.raw)
+
+    def test_review_f7_array_history_rejected(self):
+        self.histories[0].write_text('[1]',encoding='utf-8')
+        refs=[{'path':str(p),'sha256':sha(p)} for p in self.histories]
+        state=copy.deepcopy(self.initial); state['historical_ledgers']=refs
+        self.path.write_text(json.dumps(state)); self.pin=sha(self.path); raw=self.path.read_bytes()
+        with profile.scope(profile.NAME):
+            with self.assertRaisesRegex(ValueError,'OBJECT_REQUIRED'): self.ledger(historical_refs=refs)
+        self.assertEqual(self.path.read_bytes(),raw)
+
+    def test_review_legacy_error_parity(self):
+        legacy=load_legacy()
+        for cls in (legacy.CollectionLedger,CollectionLedger):
+            self.path.write_bytes(self.raw)
+            ledger=cls(self.path,self.histories,1000)
+            with self.assertRaisesRegex(ValueError,'잔여량'): ledger.reserve('x',900,'f'*64)
+            with self.assertRaisesRegex(RuntimeError,'설정 변경'): ledger.reserve('old1',1,'f'*64)
+            with self.assertRaisesRegex(RuntimeError,'미측정'): ledger.reserve('old1',1,'1'*64)
+            self.assertEqual(self.path.read_bytes(),self.raw)
 
 
 if __name__=='__main__': unittest.main()

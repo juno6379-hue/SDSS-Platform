@@ -1,4 +1,5 @@
 """Explicit bounded existing-ledger adapter. No collection/network integration."""
+from contextlib import contextmanager
 import copy
 from datetime import datetime, timezone
 import json
@@ -95,19 +96,31 @@ class LedgerMetadataIO:
               state['new_charged_bytes'] <= ledger.additional_budget, 'LEDGER_BUDGET_BINDING_INVALID')
 
     def bind(self, ledger):
-        _need(self._owner is None and not self._stopped, 'LEDGER_ADAPTER_ALREADY_BOUND')
-        _need(_local(ledger.path) == self._path and ledger.historical_paths == [p for p, _ in self._history],
-              'LEDGER_CONSTRUCTOR_BINDING_INVALID')
-        _need(type(ledger.additional_budget) is int and type(ledger.initial_metadata_charge) is int,
-              'LEDGER_BUDGET_BINDING_INVALID')
-        # Existing destination/parents must be valid before locked() can create a lock.
-        writer._parents(self._root, self._path)
-        writer._identity(self._path, file=True)
-        self._owner = ledger
+        _need(not self._stopped, 'LEDGER_ADAPTER_STOPPED')
         try:
+            # Review F2: every bind failure (including a second bind) stops the adapter.
+            _need(self._owner is None, 'LEDGER_ADAPTER_ALREADY_BOUND')
+            _need(_local(ledger.path) == self._path and ledger.historical_paths == [p for p, _ in self._history],
+                  'LEDGER_CONSTRUCTOR_BINDING_INVALID')
+            _need(type(ledger.additional_budget) is int and type(ledger.initial_metadata_charge) is int,
+                  'LEDGER_BUDGET_BINDING_INVALID')
+            # Existing destination/parents must be valid before locked() can create a lock.
+            writer._parents(self._root, self._path)
+            writer._identity(self._path, file=True)
+            self._owner = ledger
             with ledger.locked():
                 state = self.read(ledger)
                 _need(not any(k in state['batches'] for k in self._allowed), 'LEDGER_ALLOWED_KEY_NOT_NEW')
+        except BaseException:
+            self._stopped = True
+            raise
+
+    @contextmanager
+    def stop_on_failure(self, ledger):
+        """Review F1: failures raised by legacy checks between read and save also stop."""
+        _need(not self._stopped, 'LEDGER_ADAPTER_STOPPED')
+        try:
+            yield
         except BaseException:
             self._stopped = True
             raise
@@ -193,16 +206,20 @@ class LedgerMetadataIO:
         try:
             self._check(ledger)
             with profile.io_transaction():
-                reserved_key = self._transition(state, ledger)
+                # Review F3: the validated copy is exactly what is written and recorded.
+                candidate = copy.deepcopy(state)
+                reserved_key = self._transition(candidate, ledger)
                 self._histories()
-                state['updated_at'] = datetime.now(timezone.utc).isoformat()
-                result = writer.replace_json_value(self._root, self._path, state, role='ledger',
+                candidate['updated_at'] = datetime.now(timezone.utc).isoformat()
+                result = writer.replace_json_value(self._root, self._path, candidate, role='ledger',
                     expected_sha256=self._pin, manifest_profile=dict(profile.MARKER))
                 self._histories()  # Failure here is after apply: stop, never refund/rollback.
                 self._pin = result.sha256
-                self._before = copy.deepcopy(state)
+                self._before = copy.deepcopy(candidate)
                 if reserved_key is not None:
                     self._owned.add(reserved_key)
+                if type(state) is dict:
+                    state['updated_at'] = candidate['updated_at']
                 return None
         except BaseException as exc:
             self._stopped = True

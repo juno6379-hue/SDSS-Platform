@@ -1,0 +1,67 @@
+{
+  "unit": 332,
+  "status": "TESTED_SYNTHETIC_REVIEWED",
+  "runtime_new": [
+    {
+      "path": "evidence/integration/target332-workspace-20261019/backend/app/data/ledger_metadata_io.py",
+      "bytes": 11834,
+      "sha256": "3882d21ad93aa0f9d418cda36a2fc26b8a8dae45a6d9793cfdeb24e1e8ba8c3b"
+    }
+  ],
+  "runtime_changed": [
+    {
+      "path": "evidence/integration/target332-workspace-20261019/backend/app/data/budget.py",
+      "bytes": 6578,
+      "sha256": "82f6e21f760536ae3094059760a87491bf22379926d75267bf844fa803f08d8d",
+      "baseline_sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77"
+    }
+  ],
+  "tests_new": [
+    {
+      "path": "evidence/integration/target332-workspace-20261019/tests/test_ledger_metadata332.py",
+      "bytes": 24040,
+      "sha256": "8ffd1bd670583c944e63bd3334387652477496c1db4f881d59ed6198402d2e00"
+    },
+    {
+      "path": "evidence/integration/target332-workspace-20261019/tests/fixtures/budget332_legacy.py",
+      "bytes": 5492,
+      "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77"
+    }
+  ],
+  "copied_unchanged_dependencies": [
+    {
+      "path": "backend/app/data/budget.py",
+      "bytes": 5492,
+      "sha256": "9ad96b0e9d44cb8018ed15f214dac4e2b2fb89a743f79cd15b31de1f4a828b77",
+      "main_and_baseline_equal": true
+    },
+    {
+      "path": "backend/app/ml/manifest_resource_profile.py",
+      "bytes": 12511,
+      "sha256": "73c9ba94cda1722ae87e7729ecd655ba5e9584fcb735c8c1f0e06734f8357d01",
+      "main_and_baseline_equal": true
+    },
+    {
+      "path": "backend/app/ml/split_json_io.py",
+      "bytes": 8513,
+      "sha256": "81a40a9990d4fe0adfbb04c26030ccc5b0c26cbf460c1f02b3560c5bbc687ff8",
+      "main_and_baseline_equal": true
+    },
+    {
+      "path": "backend/app/data/targeted_atomic_json.py",
+      "bytes": 11914,
+      "sha256": "11ea4b0956468045bdd27f7dd605f0d61508fd3846000dba001ef9b4a87aaa66",
+      "main_and_baseline_equal": true
+    }
+  ],
+  "diff": {
+    "path": "evidence/integration/target332-workspace-20261019/patch332.diff",
+    "bytes": 46895,
+    "sha256": "9920e5609bc10a2d9b222a000343f464ad5aea70afb5359e77366d206d206e78"
+  },
+  "operating_io": false,
+  "http": false,
+  "collector_connected": false,
+  "real_ledger_connected": false,
+  "main_applied": false
+}

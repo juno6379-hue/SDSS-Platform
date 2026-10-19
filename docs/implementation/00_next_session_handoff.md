@@ -1,5 +1,11 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-19 12:51 KST — 332 원장 어댑터 메인 공유 적용(333) 완료·192건 전수 통과
+
+332 격리 작업공간(`target332-workspace-20261019`)에서 독립 정적 검토 2회(Round 1 F1~F3 도출, Round 2 차단 결함 없음 판정)와 45건 PASS(돌연변이 검사 7건 FAIL로 결함 검출력 입증)로 동결된 `freeze332.json`(SHA b6f23c4b459f499a5511e2c206d5292ab741dad2e41bd3604fa1a88d3de32584)을 메인 코드베이스에 반영했다(`apply333.py`). 신규 `test_ledger_metadata332.py` 45건 + 기존 의존 9개 모듈 147건 = 총 192건 전수 PASS 완료. 운영 원장 쓰기 0, 외부 HTTP 0. 2023년 반텐·서자바 2개 중단 배치 예약분(136,314,880B) 전액 보존 유지. 다음 334는 실제 타깃 수집 진입점(`collect_targeted_bare.py`)의 64MiB 호출부를 명시 128MiB/원장 어댑터 계약으로 연결하여 64MiB 수집 차단을 해소하는 작업이다.
+
+
+
 ## 2026-10-19 11:42 KST — 서버 재기동·커밋 a63ae6c
 
 API 8002는 반드시 `python evidence/integration/profile237-api-entrypoint-root-20261018.py`(source-profile237 결속, CORS env `GEOAI_CORS_ORIGINS`에 5174 포함)로, frontend는 `frontend`에서 `npm run dev -- --port 5174 --strictPort`로 띄운다. 일반 `uvicorn app.main:app`으로 띄우면 profile이 없어 current_manifest 미일치·image cell 0으로 보인다. 재기동 뒤 collection-status는 1407/후보1391 current/blocker3/잔여1799757940/pending136314880/bare50 current로 323과 같다. 실브라우저 육안 확인은 미수행. 미커밋 3446파일을 a63ae6c로 커밋했고(push 안 함) 50MB 초과 candidate.json 10개는 .gitignore로 제외, `Ref/`는 미추적이다. 332는 중단 상태이며 재개 여부를 결정해야 한다.
