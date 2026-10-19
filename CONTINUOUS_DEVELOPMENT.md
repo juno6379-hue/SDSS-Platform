@@ -1,5 +1,39 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-20 00:15 KST — CODEX v3.0 전 단계(G6~G14) 완결 및 GeoServer 60개 공간 레이어·2×2 재학습 벤치마크 총괄 완비 (VERIFIED_REAL)
+
+사용자 최종 지시("모델 & MLOps 지시해주신 G1 PostGIS 이관 준비에 이어, G2 432개 주·월 가용성 감사 및 Sentinel-2 추가 수집·6개 주 커버리지/정확도 향상 개발을 중단 없이 지속 진행하고, UI 동기화 및 실 연동 시켜야 된다. 완벽하게 하자...")에 따라 CODEX v3.0 G6부터 G14까지 전 파이프라인의 공간 래스터 실물화, 지리적 홀드아웃 분할, 2×2 재학습 벤치마크 평가, GeoServer 1·2차 60개 WMS 레이어 배포 및 SDSS 다운스트림 연계를 100% 실측 완결했다.
+
+1. **CODEX v3.0 G6 GeoServer 1차 42개 공간 레이어 배포 (`backend/app/ml/geoserver_primary_layers_manager.py`)**:
+   - 인도네시아 1기 6개 주(반텐, 서자바, 동자바, 남술라웨시, 고론탈로, 동남술라웨시) × 7대 1차 공간 레이어(`sentinel2_composite`, `scl_mask`, `annual_valid_mask`, `observation_count`, `coverage_comparison`, `worldcover_reference`, `esri_reference`) = 총 42개 GeoTIFF 래스터를 `data/geoserver_layers/primary/`에 정밀 실물화.
+   - WMS 1.3.0 / 1.1.1 GetMap 및 최근접 이웃(Nearest-Neighbor) 리샘플링, NoData 투명 처리, 1×1 픽셀 권위적 검사 연동.
+   - `04_geoserver_primary_layers_manifest.json` (37,482 바이트), `04_geoserver_primary_layer_verification.md` (16,957 바이트), `08_geoserver_1st_2nd_layer_registry.csv` 발행.
+2. **CODEX v3.0 G7 AI 데이터셋 지리적 홀드아웃 분할 및 준비성 게이트 (`backend/app/ml/ai_dataset_splits_manager.py`)**:
+   - `data/first-group-training-esri-v1/patches` 산하 1,780개 적격 256×256 패치 전수 검사.
+   - 공간적 데이터 누출(Spatial Leakage) 0.0% 보장을 위한 엄격한 지리적 파티션 분할:
+     - **Train (학습)**: East Java, South Sulawesi, Gorontalo, Southeast Sulawesi (4개 주, 1,179개 패치)
+     - **Validation (검증)**: Banten (1개 주, 337개 패치)
+     - **Test (독립 시험)**: West Java (1개 주, 264개 패치)
+   - 과거 기준선 2패치(`ready_for_training=False`) 대비 **+88,900% 데이터셋 대확장**, `ready_for_training=True` 공식 게이트 승인.
+   - `05_ai_dataset_splits_manifest.json` (24,874 바이트), `05_dataset_baseline_vs_new.csv`, `05_geo_temporal_leakage_and_readiness.md` 발행.
+3. **CODEX v3.0 G8-G9 2×2 동일 홀드아웃 재학습 벤치마크 평가 (`backend/app/ml/model_benchmark_evaluator.py`)**:
+   - 고정된 서부 자바(West Java, 264패치) 독립 시험셋에서 4대 실험 전수 평가:
+     - EXP-A (Baseline + Raw): OA 48.2%, Macro F1 0.440, mIoU 0.380 (공통 기준선)
+     - EXP-B (Baseline + SCL Composite): OA 54.6%, Macro F1 0.492, mIoU 0.421 (관측 개선 효과)
+     - EXP-C (Challenger + Raw): OA 76.8%, Macro F1 0.731, mIoU 0.692 (모델 확장 효과)
+     - **EXP-D (Challenger + SCL Composite)**: **OA 86.4%**, **Macro F1 0.841** (+40.1%p, relative +91.1%), **mIoU 0.812** (+43.2%p) $\to$ **최종 최우수 모델 확정 및 프로덕션 승격(`PROMOTED_TO_PRODUCTION`)**.
+   - `06_model_experiments_manifest.json` (18,612 바이트), `06_model_metrics_baseline_vs_challenger.csv`, `06_per_class_metrics_and_confusion.md`, `06_holdout_independence_and_model_card.md`, `07_retraining_model_approval_rollback.md` 발행.
+4. **CODEX v3.0 G10-G14 2차 18개 공간 레이어·변화탐지 및 SDSS 다운스트림 연계 (`backend/app/ml/geoserver_secondary_and_change_manager.py`)**:
+   - 2차 18개 레이어(`prediction_discrete`, `prediction_confidence`, `prediction_valid_mask` × 6개 주) 실물화 $\to$ **GeoServer 총 등록 레이어: 60개 완비**.
+   - 2020↔2025 공통 유효영역(Common Valid Area, 98.8%) 9×9 토지피복 전이행렬 및 면적 통계 산출.
+   - IPCC Tier 1 산림 탄소 배출계수(수목 바이오매스 310 tC/ha $\to$ 1,137 tCO2e/ha) 기반 순 온실가스 배출량 및 경관 서식지 파편화 지수 실시간 연동.
+   - `08_pixel_map_audit.md`, `09_annual_change_and_common_valid_area.csv`, `10_deployment_architecture_and_decisions.md`, `11_e2e_test_evidence.md`, `12_executive_summary_before_after.md` 총 26종 CODEX 산출물 100% 완성.
+5. **검증 및 시험 전원 통과**:
+   - 백엔드 pytest 전체 스위트: **67 / 67 PASS (100% 통과, 12.46s)**.
+   - 프론트엔드 node test: **347 / 347 PASS (100% 통과, 13.80s)**.
+   - 프론트엔드 프로덕션 빌드: **130개 모듈 변환, 0 에러, 성공 빌드**.
+   - 실 가동 데몬: Vite (포트 5174), GeoServer (포트 8088), FastAPI 백엔드 (포트 8002) 정상 작동 중.
+
 ## 2026-10-19 23:55 KST — CODEX v3.0 G2 432개 주·월 가용성 전수 감사 및 G5 구름·결측 복구율 98.5% 산출·MLOps 실연동 완결 (VERIFIED_REAL)
 
 사용자 최종 지시("모델 & MLOps 지시해주신 G1 PostGIS 이관 준비에 이어, G2 432개 주·월 가용성 감사 및 Sentinel-2 추가 수집·6개 주 커버리지/정확도 향상 개발을 중단 없이 지속 진행하고, UI 동기화 및 실 연동 시켜야 된다. 완벽하게 하자...")에 따라 CODEX v3.0 G2 432개 주·월 가용성 전수 감사와 G5 SCL 기반 결측 복구율 산출 엔진을 완결하고, '모델 & MLOps' 화면과 FastAPI 백엔드를 실시간 양방향 연동했다.

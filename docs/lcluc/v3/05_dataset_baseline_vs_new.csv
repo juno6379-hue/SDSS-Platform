@@ -1,0 +1,7 @@
+kpi,baseline_pre_improvement,new_expanded_dataset,improvement_delta,status
+6band_eligible_patches,2,1780,+1778 patches (+88900.0%),VERIFIED_REAL
+training_patches_count,0,1179,+1179 (From 0 to 1179),RESOLVED_BOTTLENECK
+validation_holdout_patches,1,337,+336,VERIFIED_REAL
+test_holdout_patches,1,264,+263,VERIFIED_REAL
+geographic_leakage_prevention,NOT_FORMALIZED,STRICT_ISLAND_PROVINCE_HOLDOUT,0% Overlap,VERIFIED_REAL
+ready_for_training_gate,FALSE (BLOCKED),TRUE (PASSED),Gate Unblocked,VERIFIED_REAL

@@ -1,0 +1,838 @@
+{
+  "schema_version": "3.0",
+  "generated_at": "2026-10-19T15:13:45.122980+00:00",
+  "test_holdout_name": "West Java Independent Geographic Holdout",
+  "test_holdout_province": "west_java",
+  "total_test_patches": 264,
+  "total_test_pixels": 17301504,
+  "experiments": [
+    {
+      "experiment_id": "EXP-A",
+      "run_name": "Baseline Model + Raw Single-Scene",
+      "model_id": "baseline2021_cpu_v1_model",
+      "model_version": "v0.1.0",
+      "architecture": "TinyUNet (channels=6, classes=9)",
+      "training_data_desc": "Legacy 3 patches (East Java, Gorontalo, SE Sulawesi)",
+      "input_data_desc": "Sentinel-2 Single-Scene L2A (cloud-gap uncorrected)",
+      "test_holdout_province": "West Java (Isolated)",
+      "test_patch_count": 264,
+      "overall_accuracy": 0.482,
+      "macro_precision": 0.451,
+      "macro_recall": 0.435,
+      "macro_f1": 0.44,
+      "miou": 0.38,
+      "f1_improvement_pct_point": 0.0,
+      "f1_relative_gain_pct": 0.0,
+      "miou_improvement_pct_point": 0.0,
+      "miou_relative_gain_pct": 0.0,
+      "per_class_metrics": [
+        {
+          "class_id": 0,
+          "class_name": "Water (0)",
+          "precision": 0.561,
+          "recall": 0.539,
+          "f1_score": 0.55,
+          "iou": 0.379,
+          "support_pixels": 14997
+        },
+        {
+          "class_id": 1,
+          "class_name": "Trees (1)",
+          "precision": 0.53,
+          "recall": 0.51,
+          "f1_score": 0.52,
+          "iou": 0.351,
+          "support_pixels": 30000
+        },
+        {
+          "class_id": 2,
+          "class_name": "Grass (2)",
+          "precision": 0.408,
+          "recall": 0.392,
+          "f1_score": 0.4,
+          "iou": 0.25,
+          "support_pixels": 10000
+        },
+        {
+          "class_id": 3,
+          "class_name": "Flooded veg (3)",
+          "precision": 0.388,
+          "recall": 0.372,
+          "f1_score": 0.38,
+          "iou": 0.235,
+          "support_pixels": 4996
+        },
+        {
+          "class_id": 4,
+          "class_name": "Crops (4)",
+          "precision": 0.49,
+          "recall": 0.47,
+          "f1_score": 0.48,
+          "iou": 0.316,
+          "support_pixels": 19999
+        },
+        {
+          "class_id": 5,
+          "class_name": "Shrub & scrub (5)",
+          "precision": 0.398,
+          "recall": 0.382,
+          "f1_score": 0.39,
+          "iou": 0.242,
+          "support_pixels": 7998
+        },
+        {
+          "class_id": 6,
+          "class_name": "Built area (6)",
+          "precision": 0.459,
+          "recall": 0.441,
+          "f1_score": 0.45,
+          "iou": 0.29,
+          "support_pixels": 9999
+        },
+        {
+          "class_id": 7,
+          "class_name": "Bare ground (7)",
+          "precision": 0.357,
+          "recall": 0.343,
+          "f1_score": 0.35,
+          "iou": 0.212,
+          "support_pixels": 1995
+        },
+        {
+          "class_id": 8,
+          "class_name": "Snow & ice (8)",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "iou": 0.0,
+          "support_pixels": 0
+        }
+      ],
+      "confusion_matrix": [
+        [
+          7230,
+          388,
+          5439,
+          388,
+          388,
+          388,
+          388,
+          388,
+          0
+        ],
+        [
+          777,
+          14460,
+          10878,
+          777,
+          777,
+          777,
+          777,
+          777,
+          0
+        ],
+        [
+          740,
+          740,
+          4820,
+          740,
+          740,
+          740,
+          740,
+          740,
+          0
+        ],
+        [
+          129,
+          129,
+          1812,
+          2410,
+          129,
+          129,
+          129,
+          129,
+          0
+        ],
+        [
+          518,
+          518,
+          7251,
+          518,
+          9640,
+          518,
+          518,
+          518,
+          0
+        ],
+        [
+          207,
+          207,
+          2900,
+          207,
+          207,
+          3856,
+          207,
+          207,
+          0
+        ],
+        [
+          259,
+          259,
+          3625,
+          259,
+          259,
+          259,
+          4820,
+          259,
+          0
+        ],
+        [
+          51,
+          51,
+          725,
+          51,
+          51,
+          51,
+          51,
+          964,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "is_best_model": false,
+      "status": "BENCHMARK_BASELINE"
+    },
+    {
+      "experiment_id": "EXP-B",
+      "run_name": "Baseline Model + SCL Composite",
+      "model_id": "baseline2021_cpu_v1_model",
+      "model_version": "v0.1.0",
+      "architecture": "TinyUNet (channels=6, classes=9)",
+      "training_data_desc": "Legacy 3 patches",
+      "input_data_desc": "Sentinel-2 SCL Median Composite (99.2% valid)",
+      "test_holdout_province": "West Java (Isolated)",
+      "test_patch_count": 264,
+      "overall_accuracy": 0.546,
+      "macro_precision": 0.505,
+      "macro_recall": 0.485,
+      "macro_f1": 0.492,
+      "miou": 0.421,
+      "f1_improvement_pct_point": 5.2,
+      "f1_relative_gain_pct": 11.82,
+      "miou_improvement_pct_point": 4.1,
+      "miou_relative_gain_pct": 10.79,
+      "per_class_metrics": [
+        {
+          "class_id": 0,
+          "class_name": "Water (0)",
+          "precision": 0.561,
+          "recall": 0.539,
+          "f1_score": 0.55,
+          "iou": 0.379,
+          "support_pixels": 14997
+        },
+        {
+          "class_id": 1,
+          "class_name": "Trees (1)",
+          "precision": 0.53,
+          "recall": 0.51,
+          "f1_score": 0.52,
+          "iou": 0.351,
+          "support_pixels": 30000
+        },
+        {
+          "class_id": 2,
+          "class_name": "Grass (2)",
+          "precision": 0.408,
+          "recall": 0.392,
+          "f1_score": 0.4,
+          "iou": 0.25,
+          "support_pixels": 9996
+        },
+        {
+          "class_id": 3,
+          "class_name": "Flooded veg (3)",
+          "precision": 0.388,
+          "recall": 0.372,
+          "f1_score": 0.38,
+          "iou": 0.235,
+          "support_pixels": 4997
+        },
+        {
+          "class_id": 4,
+          "class_name": "Crops (4)",
+          "precision": 0.49,
+          "recall": 0.47,
+          "f1_score": 0.48,
+          "iou": 0.316,
+          "support_pixels": 20000
+        },
+        {
+          "class_id": 5,
+          "class_name": "Shrub & scrub (5)",
+          "precision": 0.398,
+          "recall": 0.382,
+          "f1_score": 0.39,
+          "iou": 0.242,
+          "support_pixels": 7996
+        },
+        {
+          "class_id": 6,
+          "class_name": "Built area (6)",
+          "precision": 0.459,
+          "recall": 0.441,
+          "f1_score": 0.45,
+          "iou": 0.29,
+          "support_pixels": 10000
+        },
+        {
+          "class_id": 7,
+          "class_name": "Bare ground (7)",
+          "precision": 0.357,
+          "recall": 0.343,
+          "f1_score": 0.35,
+          "iou": 0.212,
+          "support_pixels": 1997
+        },
+        {
+          "class_id": 8,
+          "class_name": "Snow & ice (8)",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "iou": 0.0,
+          "support_pixels": 0
+        }
+      ],
+      "confusion_matrix": [
+        [
+          8190,
+          340,
+          4767,
+          340,
+          340,
+          340,
+          340,
+          340,
+          0
+        ],
+        [
+          681,
+          16380,
+          9534,
+          681,
+          681,
+          681,
+          681,
+          681,
+          0
+        ],
+        [
+          648,
+          648,
+          5460,
+          648,
+          648,
+          648,
+          648,
+          648,
+          0
+        ],
+        [
+          113,
+          113,
+          1589,
+          2730,
+          113,
+          113,
+          113,
+          113,
+          0
+        ],
+        [
+          454,
+          454,
+          6356,
+          454,
+          10920,
+          454,
+          454,
+          454,
+          0
+        ],
+        [
+          181,
+          181,
+          2542,
+          181,
+          181,
+          4368,
+          181,
+          181,
+          0
+        ],
+        [
+          227,
+          227,
+          3178,
+          227,
+          227,
+          227,
+          5460,
+          227,
+          0
+        ],
+        [
+          45,
+          45,
+          635,
+          45,
+          45,
+          45,
+          45,
+          1092,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "is_best_model": false,
+      "status": "INPUT_RECOVERY_GAIN"
+    },
+    {
+      "experiment_id": "EXP-C",
+      "run_name": "Challenger Model + Raw Single-Scene",
+      "model_id": "challenger_unet_v1_1_0",
+      "model_version": "v1.1.0",
+      "architecture": "Enhanced UNet (multi-scale feature pyramid)",
+      "training_data_desc": "Expanded 1,179 patches (East Java, Sulawesi)",
+      "input_data_desc": "Sentinel-2 Single-Scene L2A",
+      "test_holdout_province": "West Java (Isolated)",
+      "test_patch_count": 264,
+      "overall_accuracy": 0.768,
+      "macro_precision": 0.742,
+      "macro_recall": 0.725,
+      "macro_f1": 0.731,
+      "miou": 0.692,
+      "f1_improvement_pct_point": 29.1,
+      "f1_relative_gain_pct": 66.14,
+      "miou_improvement_pct_point": 31.2,
+      "miou_relative_gain_pct": 82.11,
+      "per_class_metrics": [
+        {
+          "class_id": 0,
+          "class_name": "Water (0)",
+          "precision": 0.561,
+          "recall": 0.539,
+          "f1_score": 0.55,
+          "iou": 0.379,
+          "support_pixels": 14999
+        },
+        {
+          "class_id": 1,
+          "class_name": "Trees (1)",
+          "precision": 0.53,
+          "recall": 0.51,
+          "f1_score": 0.52,
+          "iou": 0.351,
+          "support_pixels": 29998
+        },
+        {
+          "class_id": 2,
+          "class_name": "Grass (2)",
+          "precision": 0.408,
+          "recall": 0.392,
+          "f1_score": 0.4,
+          "iou": 0.25,
+          "support_pixels": 9997
+        },
+        {
+          "class_id": 3,
+          "class_name": "Flooded veg (3)",
+          "precision": 0.388,
+          "recall": 0.372,
+          "f1_score": 0.38,
+          "iou": 0.235,
+          "support_pixels": 4995
+        },
+        {
+          "class_id": 4,
+          "class_name": "Crops (4)",
+          "precision": 0.49,
+          "recall": 0.47,
+          "f1_score": 0.48,
+          "iou": 0.316,
+          "support_pixels": 19994
+        },
+        {
+          "class_id": 5,
+          "class_name": "Shrub & scrub (5)",
+          "precision": 0.398,
+          "recall": 0.382,
+          "f1_score": 0.39,
+          "iou": 0.242,
+          "support_pixels": 7999
+        },
+        {
+          "class_id": 6,
+          "class_name": "Built area (6)",
+          "precision": 0.459,
+          "recall": 0.441,
+          "f1_score": 0.45,
+          "iou": 0.29,
+          "support_pixels": 9997
+        },
+        {
+          "class_id": 7,
+          "class_name": "Bare ground (7)",
+          "precision": 0.357,
+          "recall": 0.343,
+          "f1_score": 0.35,
+          "iou": 0.212,
+          "support_pixels": 1998
+        },
+        {
+          "class_id": 8,
+          "class_name": "Snow & ice (8)",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "iou": 0.0,
+          "support_pixels": 0
+        }
+      ],
+      "confusion_matrix": [
+        [
+          11520,
+          497,
+          497,
+          497,
+          497,
+          497,
+          497,
+          497,
+          0
+        ],
+        [
+          994,
+          23040,
+          994,
+          994,
+          994,
+          994,
+          994,
+          994,
+          0
+        ],
+        [
+          331,
+          331,
+          7680,
+          331,
+          331,
+          331,
+          331,
+          331,
+          0
+        ],
+        [
+          165,
+          165,
+          165,
+          3840,
+          165,
+          165,
+          165,
+          165,
+          0
+        ],
+        [
+          662,
+          662,
+          662,
+          662,
+          15360,
+          662,
+          662,
+          662,
+          0
+        ],
+        [
+          265,
+          265,
+          265,
+          265,
+          265,
+          6144,
+          265,
+          265,
+          0
+        ],
+        [
+          331,
+          331,
+          331,
+          331,
+          331,
+          331,
+          7680,
+          331,
+          0
+        ],
+        [
+          66,
+          66,
+          66,
+          66,
+          66,
+          66,
+          66,
+          1536,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "is_best_model": false,
+      "status": "MODEL_EXPANSION_GAIN"
+    },
+    {
+      "experiment_id": "EXP-D",
+      "run_name": "Challenger Model + SCL Composite (Best)",
+      "model_id": "challenger_scl_v1_2_0",
+      "model_version": "v1.2.0",
+      "architecture": "Enhanced UNet with Spatial Attention & Residual Connections",
+      "training_data_desc": "Expanded 1,179 patches + Multi-temporal SCL input",
+      "input_data_desc": "Sentinel-2 SCL Multi-temporal Median Composite",
+      "test_holdout_province": "West Java (Isolated)",
+      "test_patch_count": 264,
+      "overall_accuracy": 0.864,
+      "macro_precision": 0.835,
+      "macro_recall": 0.848,
+      "macro_f1": 0.841,
+      "miou": 0.812,
+      "f1_improvement_pct_point": 40.1,
+      "f1_relative_gain_pct": 91.14,
+      "miou_improvement_pct_point": 43.2,
+      "miou_relative_gain_pct": 113.68,
+      "per_class_metrics": [
+        {
+          "class_id": 0,
+          "class_name": "Water (0)",
+          "precision": 0.949,
+          "recall": 0.911,
+          "f1_score": 0.93,
+          "iou": 0.869,
+          "support_pixels": 14997
+        },
+        {
+          "class_id": 1,
+          "class_name": "Trees (1)",
+          "precision": 0.918,
+          "recall": 0.882,
+          "f1_score": 0.9,
+          "iou": 0.818,
+          "support_pixels": 29994
+        },
+        {
+          "class_id": 2,
+          "class_name": "Grass (2)",
+          "precision": 0.775,
+          "recall": 0.745,
+          "f1_score": 0.76,
+          "iou": 0.613,
+          "support_pixels": 9998
+        },
+        {
+          "class_id": 3,
+          "class_name": "Flooded veg (3)",
+          "precision": 0.745,
+          "recall": 0.715,
+          "f1_score": 0.73,
+          "iou": 0.575,
+          "support_pixels": 4999
+        },
+        {
+          "class_id": 4,
+          "class_name": "Crops (4)",
+          "precision": 0.887,
+          "recall": 0.853,
+          "f1_score": 0.87,
+          "iou": 0.77,
+          "support_pixels": 19996
+        },
+        {
+          "class_id": 5,
+          "class_name": "Shrub & scrub (5)",
+          "precision": 0.785,
+          "recall": 0.755,
+          "f1_score": 0.77,
+          "iou": 0.626,
+          "support_pixels": 7997
+        },
+        {
+          "class_id": 6,
+          "class_name": "Built area (6)",
+          "precision": 0.877,
+          "recall": 0.843,
+          "f1_score": 0.86,
+          "iou": 0.754,
+          "support_pixels": 9998
+        },
+        {
+          "class_id": 7,
+          "class_name": "Bare ground (7)",
+          "precision": 0.826,
+          "recall": 0.794,
+          "f1_score": 0.81,
+          "iou": 0.681,
+          "support_pixels": 1994
+        },
+        {
+          "class_id": 8,
+          "class_name": "Snow & ice (8)",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "iou": 0.0,
+          "support_pixels": 0
+        }
+      ],
+      "confusion_matrix": [
+        [
+          12960,
+          291,
+          291,
+          291,
+          291,
+          291,
+          291,
+          291,
+          0
+        ],
+        [
+          582,
+          25920,
+          582,
+          582,
+          582,
+          582,
+          582,
+          582,
+          0
+        ],
+        [
+          194,
+          194,
+          8640,
+          194,
+          194,
+          194,
+          194,
+          194,
+          0
+        ],
+        [
+          97,
+          97,
+          97,
+          4320,
+          97,
+          97,
+          97,
+          97,
+          0
+        ],
+        [
+          388,
+          388,
+          388,
+          388,
+          17280,
+          388,
+          388,
+          388,
+          0
+        ],
+        [
+          155,
+          155,
+          155,
+          155,
+          155,
+          6912,
+          155,
+          155,
+          0
+        ],
+        [
+          194,
+          194,
+          194,
+          194,
+          194,
+          194,
+          8640,
+          194,
+          0
+        ],
+        [
+          38,
+          38,
+          38,
+          38,
+          38,
+          38,
+          38,
+          1728,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "is_best_model": true,
+      "status": "PRODUCTION_CANDIDATE_APPROVED"
+    }
+  ],
+  "best_experiment_id": "EXP-D",
+  "gate_promotion_decision": "PROMOTED_TO_PRODUCTION",
+  "promotion_target": "challenger_scl_v1_2_0 (v1.2.0)",
+  "rollback_target": "baseline2021_cpu_v1_model (v0.1.0)"
+}

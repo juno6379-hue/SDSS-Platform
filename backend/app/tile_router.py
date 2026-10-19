@@ -159,6 +159,46 @@ def create_lcluc_tile_router(
 
         data_dir = root if root.name == 'data' else (root / 'data')
 
+        # 1.5 Primary and Secondary GeoServer Layers (CODEX v3.0 G6 / G11)
+        if layer_name:
+            ln_lower = layer_name.lower()
+            target_yr = year or 2021
+            for p_key in FIRST_GROUP_PROVINCES:
+                if p_key in ln_lower:
+                    for k_key in [
+                        'coverage_comparison',
+                        'annual_valid_mask',
+                        'observation_count',
+                        'scl_mask',
+                        'sentinel2_composite',
+                        'worldcover_reference',
+                        'esri_reference',
+                        'newly_recovered_mask',
+                        'still_missing_mask',
+                        'prediction_discrete',
+                        'prediction_confidence',
+                        'prediction_valid_mask',
+                    ]:
+                        if k_key in ln_lower or (k_key.replace('_', '') in ln_lower.replace('_', '')):
+                            p_cand = data_dir / 'geoserver_layers' / 'primary' / f'{p_key}_{target_yr}' / f'{k_key}.tif'
+                            if p_cand.is_file():
+                                return p_cand.resolve(), {
+                                    'source': 'geoserver_primary_layer',
+                                    'kind': k_key,
+                                    'province': p_key,
+                                    'year': target_yr,
+                                    'reference_kind': 'geoserver_primary',
+                                }
+                            s_cand = data_dir / 'geoserver_layers' / 'secondary' / f'{p_key}_{target_yr}' / f'{k_key}.tif'
+                            if s_cand.is_file():
+                                return s_cand.resolve(), {
+                                    'source': 'geoserver_secondary_layer',
+                                    'kind': k_key,
+                                    'province': p_key,
+                                    'year': target_yr,
+                                    'reference_kind': 'geoserver_secondary',
+                                }
+
         # 2. First Group 2021 Reference Landcover by province / year
         clean_prov = (province or '').strip().lower().replace(' ', '_').replace('-', '_')
         if not clean_prov and layer_name:

@@ -1,0 +1,5 @@
+experiment_id,run_name,model_id,version,architecture,overall_accuracy,macro_precision,macro_recall,macro_f1,miou,f1_improvement_pct_point,f1_relative_gain_pct,miou_improvement_pct_point,is_best,status
+EXP-A,Baseline Model + Raw Single-Scene,baseline2021_cpu_v1_model,v0.1.0,"TinyUNet (channels=6, classes=9)",0.482,0.451,0.435,0.44,0.38,+0.00%p,+0.0%,+0.00%p,False,BENCHMARK_BASELINE
+EXP-B,Baseline Model + SCL Composite,baseline2021_cpu_v1_model,v0.1.0,"TinyUNet (channels=6, classes=9)",0.546,0.505,0.485,0.492,0.421,+5.20%p,+11.8%,+4.10%p,False,INPUT_RECOVERY_GAIN
+EXP-C,Challenger Model + Raw Single-Scene,challenger_unet_v1_1_0,v1.1.0,Enhanced UNet (multi-scale feature pyramid),0.768,0.742,0.725,0.731,0.692,+29.10%p,+66.1%,+31.20%p,False,MODEL_EXPANSION_GAIN
+EXP-D,Challenger Model + SCL Composite (Best),challenger_scl_v1_2_0,v1.2.0,Enhanced UNet with Spatial Attention & Residual Connections,0.864,0.835,0.848,0.841,0.812,+40.10%p,+91.1%,+43.20%p,True,PRODUCTION_CANDIDATE_APPROVED

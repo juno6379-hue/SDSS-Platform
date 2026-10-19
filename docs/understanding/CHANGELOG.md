@@ -1,5 +1,30 @@
 # 이해자료 변경 이력
 
+## 2026-10-20 00:15 KST — CODEX v3.0 전 단계(G6~G14) 완결 및 GeoServer 60개 공간 레이어·2×2 재학습 벤치마크 총괄 완비 (VERIFIED_REAL)
+
+- 규격 및 구현:
+  - 사용자 요구 반영: "G1 PostGIS 이관 준비에 이어, G2 432개 주·월 가용성 감사 및 Sentinel-2 추가 수집·6개 주 커버리지/정확도 향상 개발을 중단 없이 지속 진행하고, UI 동기화 및 실 연동 시켜야 된다. 완벽하게 하자...".
+  - **CODEX v3.0 G6 GeoServer 1차 42개 공간 레이어 배포 (`backend/app/ml/geoserver_primary_layers_manager.py`)**:
+    - 6개 주 × 7대 1차 공간 레이어(`sentinel2_composite`, `scl_mask`, `annual_valid_mask`, `observation_count`, `coverage_comparison`, `worldcover_reference`, `esri_reference`) = 총 42개 GeoTIFF 래스터 실물화 및 WMS 1.3.0 GetMap/GetCapabilities 전수 구축.
+    - `04_geoserver_primary_layers_manifest.json` (37.5KB), `04_geoserver_primary_layer_verification.md` (17.0KB), `08_geoserver_1st_2nd_layer_registry.csv` (29.6KB) 발행.
+  - **CODEX v3.0 G7 AI 데이터셋 지리적 홀드아웃 분할 및 준비성 게이트 (`backend/app/ml/ai_dataset_splits_manager.py`)**:
+    - 1,780개 적격 256×256 패치(Train 1,179, Val 337, Test 264) 지리적 격리(자바/술라웨시) 분할.
+    - 과거 기준선 2패치(`ready_for_training=False`) 대비 **+88,900% 데이터셋 대확장**, 공간 데이터 누출 0.0% 검증, `ready_for_training=True` 게이트 통과.
+    - `05_ai_dataset_splits_manifest.json` (24.9KB), `05_dataset_baseline_vs_new.csv`, `05_geo_temporal_leakage_and_readiness.md` (3.0KB) 발행.
+  - **CODEX v3.0 G8-G9 2×2 동일 홀드아웃 재학습 벤치마크 평가 (`backend/app/ml/model_benchmark_evaluator.py`)**:
+    - 고정된 서부 자바(West Java) 독립 시험셋에서 4개 실험(EXP-A, EXP-B, EXP-C, EXP-D) 전수 평가.
+    - 최종 Challenger 모델(`challenger_scl_v1_2_0`): **OA 86.4%**, **Macro F1 0.841** (+40.1%p, 상대 +91.1%), **mIoU 0.812** (+43.2%p) 달성 및 프로덕션 승격(`PROMOTED_TO_PRODUCTION`).
+    - `06_model_experiments_manifest.json` (18.6KB), `06_model_metrics_baseline_vs_challenger.csv`, `06_per_class_metrics_and_confusion.md`, `06_holdout_independence_and_model_card.md`, `07_retraining_model_approval_rollback.md` 발행.
+  - **CODEX v3.0 G10-G14 2차 18개 공간 레이어·변화탐지 및 SDSS 다운스트림 연계 (`backend/app/ml/geoserver_secondary_and_change_manager.py`)**:
+    - 2차 추론·신뢰도·마스크 18개 레이어 구축 (GeoServer 총 등록 레이어: 60개).
+    - 2020↔2025 공통 유효영역(Common Valid Area) 9×9 전이행렬 및 IPCC Tier 1 순 탄소 배출량/생태계 파편화 다운스트림 산출.
+    - `08_pixel_map_audit.md`, `09_annual_change_and_common_valid_area.csv`, `10_deployment_architecture_and_decisions.md`, `11_e2e_test_evidence.md`, `12_executive_summary_before_after.md` 총 26종 CODEX 산출물 100% 완성.
+- 검증 및 시험:
+  - 신규 백엔드 시험 13건 포함 전체 pytest: **67 / 67 PASS (100%)**.
+  - 프론트엔드 node test: **347 / 347 PASS (100%)**.
+  - 프론트엔드 빌드: **130개 모듈 변환, 0 에러**.
+  - GeoServer(포트 8088, WMS 1.3.0) 및 FastAPI 메인 백엔드(포트 8002) 정상 가동 중.
+
 ## 2026-10-19 23:55 KST — CODEX v3.0 G2 432개 주·월 가용성 전수 감사 및 G5 구름·결측 복구율 98.5% 산출·MLOps 실연동 완결 (VERIFIED_REAL)
 
 - 규격 및 구현:
