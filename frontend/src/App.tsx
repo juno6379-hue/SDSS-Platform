@@ -14,7 +14,7 @@ import DashboardReference from './DashboardReference';
 import DataCatalogReference from './DataCatalogReference';
 import CatalogInsights from './CatalogInsights';
 import {parseRoute,routeHash,appHistoryDepth,appHistoryState,navigationResponseCurrent,insightDatasetId,readCatalogSession} from './catalogNavigation';
-import { PlatformSidebar, PlatformContext, ToolboxHub, ModelWorkspace, navigationForStep, titleForStep, menuSections } from './PlatformShell';
+import { PlatformSidebar, PlatformContext, ToolboxHub, ModelWorkspace, ModelMlopsWorkspace, navigationForStep, titleForStep, menuSections } from './PlatformShell';
 
 type RecordValue = Record<string, unknown>;
 type Bbox = [number, number, number, number];
@@ -208,8 +208,39 @@ export default function App() {
       {step === 11 && <><section className="panel"><label>등록 데이터 검색<input value={catalogSearch} onChange={e=>setCatalogSearch(e.target.value)} placeholder="ID, 지역, 출처, 메타데이터 검색"/></label><p className="help">서버에서 조회한 등록 데이터의 메타데이터를 검색합니다.</p></section><ResourceList title="데이터 메타데이터·출처" data={resources.datasets===undefined?undefined:datasets.filter(row=>JSON.stringify(row).toLocaleLowerCase().includes(catalogSearch.toLocaleLowerCase()))} error={errors.datasets}/></>}
       {step === 14 && <><MapView bbox={bbox} geometry={geometry} boundary={provinceGeometry} viewBounds={mapBounds}/><AnalysisReview initialSelected={activeAnalysis} analyses={analyses} onView={(geo,bounds)=>{setGeometry(geo);setProvinceGeometry(undefined);if(bounds){setBbox(bounds);setMapBounds(bounds);}}}/></>}
       {(step === 15 || step === 16) && <GeoQuery initialKind={step === 15 ? 'execution' : 'evidence'} analyses={analyses} onAgentCenter={()=>navigate(9)} onReviewResult={id=>{setActiveAnalysis(id);navigate(14);}}/>}
-      {step === 17 && <ModelReview models={models} onJob={addJob} onChanged={refresh} onInference={id=>{setActiveModel(id);navigate(4);}}/>}
-      {step === 18 && <><ResourceList title="등록 모델 상태" data={resources.models} error={errors.models}/><section className="panel"><h2>운영 모니터링</h2><p className="empty">운영 Kubernetes·성능 지표·알림 API 연결 대기</p></section></>}
+      {currentMenu === 5 && (
+        <>
+          <ModelMlopsWorkspace onNavigate={navigate} activeStep={step} />
+          {step === 6 && (
+            <details className="panel" style={{ marginTop: '16px' }}>
+              <summary>기존 모델 레지스트리 상세 검토 및 추론 연결 (Legacy View)</summary>
+              <ModelReview models={models} onJob={addJob} onChanged={refresh} onInference={id => { setActiveModel(id); navigate(4); }}/>
+            </details>
+          )}
+          {step === 3 && (
+            <details className="panel" open style={{ marginTop: '16px' }}>
+              <summary>전문가 파라미터 · 재학습 요청 (Legacy Workflow)</summary>
+              <Workflow index={1} onJob={addJob} initialModelId={activeModel}/>
+            </details>
+          )}
+          {step === 17 && (
+            <details className="panel" style={{ marginTop: '16px' }}>
+              <summary>전문가 검토 · 배포 관리 (Legacy View)</summary>
+              <ModelReview models={models} onJob={addJob} onChanged={refresh} onInference={id => { setActiveModel(id); navigate(4); }}/>
+            </details>
+          )}
+          {step === 18 && (
+            <details className="panel" style={{ marginTop: '16px' }}>
+              <summary>서버 원본 등록 모델 상태 (Raw API Resource)</summary>
+              <ResourceList title="등록 모델 상태" data={resources.models} error={errors.models}/>
+              <section className="panel" style={{ marginTop: '8px' }}>
+                <h2>운영 모니터링 상세</h2>
+                <p className="empty">운영 Kubernetes·성능 지표·알림 API 연결 대기</p>
+              </section>
+            </details>
+          )}
+        </>
+      )}
       {step === 19 && <AnalysisReview initialSelected={activeAnalysis} analyses={analyses} onView={(geo,bounds)=>{setGeometry(geo);if(bounds)setBbox(bounds);navigate(14);}}/>}
       {step === 20 && <section className="panel"><span className="eyebrow">SPATIAL PLANNING</span><h2>RDTR 공간계획 검토</h2><p className="muted">지역 공간계획의 공식 경계·용도지역·정책 근거와 권한이 연결된 뒤 분석 결과를 중첩합니다.</p><p className="empty">공식 RDTR/RTRW 데이터와 검토·승인 API 미연결</p><div className="button-row"><button className="secondary" onClick={()=>navigate(14)}>분석 지도 보기</button><button disabled>계획 승인 API 미연결</button></div></section>}
       {step === 21 && <section className="panel"><h2>검토·승인 이력</h2><p className="empty">기관별 보고서 승인·전자서명 이력 API 미연결</p><button className="secondary" onClick={()=>navigate(17)}>모델의 실제 승인 근거 검토</button></section>}
@@ -220,8 +251,7 @@ export default function App() {
 
       {(step === 1 || step === 25) && <FirstGroupScope onSelect={(area, feature, provinceBbox) => { setBbox(area); setBboxText(area.join(',')); setGeometry(undefined); setProvinceGeometry(feature); setMapBounds(provinceBbox); }}/>}
       {(step === 1 || step === 25) && <><div className="two-col data-layout"><section className="panel"><span className="eyebrow">PROCESS 01</span><h2>관측 조건 설정</h2><label>관심 영역 (W, S, E, N)<input value={bboxText} onChange={e => setBboxText(e.target.value)} /></label><small className="help">경도·위도, EPSG:4326 · 예: 106.6,-6.4,107.1,-6.0</small><button className="secondary" onClick={() => { try { readBbox(); setActionError(''); } catch (e) { setActionError(String(e)); } }}>지도에서 영역 확인</button><div className="two-col"><label>시작일<input type="date" value={startDate} onChange={e => setStartDate(e.target.value)}/></label><label>종료일<input type="date" value={endDate} onChange={e => setEndDate(e.target.value)}/></label></div><label>위성<select value={satellite} onChange={e => setSatellite(e.target.value)}><option value="sentinel-2">Sentinel-2</option><option value="landsat">Landsat</option></select></label><label>최대 운량 {cloud}%<input type="range" min="0" max="100" value={cloud} onChange={e => setCloud(Number(e.target.value))}/></label><div className="button-row"><button disabled={busy} onClick={() => satelliteAction('/data/search')}>영상 검색 →</button><button className="secondary" disabled={busy} onClick={() => satelliteAction('/data/worldcover/plan')}>WorldCover 계획</button><button className="secondary" disabled={busy} onClick={() => satelliteAction('/data/dynamic-world/export')}>Dynamic World 내보내기</button></div></section><MapView bbox={bbox} geometry={geometry} boundary={provinceGeometry} viewBounds={mapBounds}/></div><section className="panel"><h2>실제 영상 다운로드</h2><p className="muted">검색 결과의 다운로드 가능한 자산 URL을 입력하세요. 인증이 필요한 제공처는 서버 자격증명이 필요할 수 있습니다.</p><div className="download-fields"><label>자산 URL<input type="url" placeholder="https://…" value={downloadUrl} onChange={e => setDownloadUrl(e.target.value)}/></label><label>저장 파일명<input value={filename} onChange={e => setFilename(e.target.value)}/></label><button disabled={busy || !downloadUrl || !filename} onClick={() => void action('/data/download', { url: downloadUrl, filename, max_bytes: 1000000000 })}>다운로드</button></div></section></>}
-      {step >= 2 && step <= 5 && <><Workflow key={step} index={step - 2} onJob={addJob} initialModelId={activeModel}/>{step === 2 && <ResourceList title="등록 데이터셋" data={resources.datasets} error={errors.datasets}/ >}{step === 5 && <><MapView bbox={bbox} geometry={geometry} boundary={provinceGeometry} viewBounds={mapBounds}/><AnalysisReview initialSelected={activeAnalysis} analyses={analyses} onView={(geo, bounds) => { setGeometry(geo); setProvinceGeometry(undefined); if (bounds) { setBbox(bounds); setMapBounds(bounds); } window.requestAnimationFrame(() => document.querySelector('.map-shell')?.scrollIntoView({behavior:'smooth'})); }}/></>}</>}
-      {step === 6 && <ModelReview models={models} onJob={addJob} onChanged={refresh} onInference={id => { setActiveModel(id); navigate(4); }}/>}
+      {step >= 2 && step <= 5 && step !== 3 && <><Workflow key={step} index={step - 2} onJob={addJob} initialModelId={activeModel}/>{step === 2 && <ResourceList title="등록 데이터셋" data={resources.datasets} error={errors.datasets}/ >}{step === 5 && <><MapView bbox={bbox} geometry={geometry} boundary={provinceGeometry} viewBounds={mapBounds}/><AnalysisReview initialSelected={activeAnalysis} analyses={analyses} onView={(geo, bounds) => { setGeometry(geo); setProvinceGeometry(undefined); if (bounds) { setBbox(bounds); setMapBounds(bounds); } window.requestAnimationFrame(() => document.querySelector('.map-shell')?.scrollIntoView({behavior:'smooth'})); }}/></>}</>}
       {step === 9 && <AgentCenter tools={rows(resources.tools)} models={models} jobs={rows(resources.jobs)} onNavigate={navigate} onStandardLayer={(geo,bounds)=>{setGeometry(geo);setProvinceGeometry(undefined);if(bounds){setBbox(bounds);setMapBounds(bounds);}navigate(14);}}/>}
       {step === 8 && <TemporalCompare/>}
       {step === 7 && <GeoQuery analyses={analyses} onAgentCenter={() => navigate(9)} onReviewResult={id => {setActiveAnalysis(id);navigate(5);}}/>}

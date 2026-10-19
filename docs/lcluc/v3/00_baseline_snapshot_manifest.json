@@ -1,0 +1,177 @@
+{
+  "manifest_version": "3.0.0",
+  "snapshot_id": "BASELINE-G0-20261019",
+  "baseline_type": "VERIFIED_PRE_IMPROVEMENT",
+  "created_at_utc": "2026-10-19T14:26:28.767323+00:00",
+  "git": {
+    "commit": "7a630e7c8e2a4d76994a0f77a0c8b3310e9a786b",
+    "branch": "main",
+    "dirty": true,
+    "status_summary": "M frontend/src/App.tsx\n M frontend/src/PlatformShell.tsx\n?? UI/GreenBlue_CODEX_LCLUC_PostGIS_Coverage_MLOps_Deployment_Master_v3.0.md\n?? docs/lcluc/v3/\n?? frontend/src/ModelMlopsWorkspace.tsx\n?? frontend/src/model-mlops-workspace.css\n?? frontend/src/modelMlopsWorkspace.test.mjs\n?? scripts/g0_baseline_audit.py"
+  },
+  "sqlite_inventory": [
+    {
+      "rel_path": "data/catalog.sqlite3",
+      "size_bytes": 155648,
+      "mtime": "2026-10-16T07:03:54.400151+00:00",
+      "sha256": "7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b",
+      "integrity": "ok",
+      "tables_count": 1,
+      "tables": [
+        {
+          "table_name": "records",
+          "row_count": 14,
+          "sql": "CREATE TABLE records (kind TEXT, id TEXT, body TEXT, PRIMARY KEY(kind,id))",
+          "indexes": [
+            "sqlite_autoindex_records_1"
+          ]
+        }
+      ]
+    }
+  ],
+  "raw_data_summary": {
+    "total_files": 10303,
+    "total_bytes": 6962645630,
+    "total_mb": 6640.1,
+    "extensions": {
+      ".json": 2971,
+      ".sqlite3": 1,
+      ".geojson": 4,
+      ".jsonl": 165,
+      ".tif": 7005,
+      ".lock": 1,
+      ".npz": 3,
+      ".log": 3,
+      ".xml": 147,
+      ".reboot187-preserved-20261018": 1,
+      ".pt": 1,
+      ".png": 1
+    },
+    "annual_patches_count": 72,
+    "sample_assets": [
+      {
+        "path": "data/budget-atomic-probe.json",
+        "size": 6
+      },
+      {
+        "path": "data/catalog.sqlite3",
+        "size": 155648
+      },
+      {
+        "path": "data/collection_quality_status.json",
+        "size": 128947
+      },
+      {
+        "path": "data/lcluc_class_definitions_v1.0.json",
+        "size": 12115
+      },
+      {
+        "path": "data/audits/alignment.json",
+        "size": 44774
+      },
+      {
+        "path": "data/audits/annual-alignment.json",
+        "size": 18064
+      },
+      {
+        "path": "data/audits/collection-status-response.json",
+        "size": 19304
+      },
+      {
+        "path": "data/audits/cpu-training-benchmark.json",
+        "size": 1624
+      },
+      {
+        "path": "data/audits/esri-gorontalo2020-initial16-inputs.json",
+        "size": 596250
+      },
+      {
+        "path": "data/audits/esri-gorontalo2020-initial16-quality.json",
+        "size": 24971
+      },
+      {
+        "path": "data/audits/esri-gorontalo2020-initial16-readiness.json",
+        "size": 26215
+      },
+      {
+        "path": "data/audits/esri-initial6batch-inputs.json",
+        "size": 2985861
+      },
+      {
+        "path": "data/audits/esri-initial6batch-quality.json",
+        "size": 117833
+      },
+      {
+        "path": "data/audits/esri-v1-alignment-20261016.json",
+        "size": 2327747
+      },
+      {
+        "path": "data/audits/gmais-ml-contract-review.json",
+        "size": 848
+      },
+      {
+        "path": "data/audits/gmais-ml-current-inventory.json",
+        "size": 4287
+      },
+      {
+        "path": "data/audits/recovery32-alignment.json",
+        "size": 18406
+      },
+      {
+        "path": "data/audits/training-contract.json",
+        "size": 30890
+      },
+      {
+        "path": "data/audits/training-v1-alignment.json",
+        "size": 43603
+      },
+      {
+        "path": "data/audits/esri-v1-snapshot-20261016/annual-window-report.json",
+        "size": 4238165
+      }
+    ]
+  },
+  "geoserver_audit": {
+    "status": "ONLINE_HTTP_200",
+    "wms_endpoint": "http://127.0.0.1:8088/geoserver/wms",
+    "layers_count": 6,
+    "layers": [
+      {
+        "name": "lcluc:south_sulawesi_2021",
+        "title": "South Sulawesi (ESA WorldCover 10m 2021)",
+        "crs": "EPSG:32750"
+      },
+      {
+        "name": "lcluc:west_java_2021",
+        "title": "West Java (ESA WorldCover 10m 2021)",
+        "crs": "EPSG:32748"
+      },
+      {
+        "name": "lcluc:banten_2021",
+        "title": "Banten (ESA WorldCover 10m 2021)",
+        "crs": "EPSG:32748"
+      },
+      {
+        "name": "lcluc:east_java_2021",
+        "title": "East Java (ESA WorldCover 10m 2021)",
+        "crs": "EPSG:32749"
+      },
+      {
+        "name": "lcluc:gorontalo_2021",
+        "title": "Gorontalo (ESA WorldCover 10m 2021)",
+        "crs": "EPSG:32651"
+      },
+      {
+        "name": "lcluc:southeast_sulawesi_2021",
+        "title": "Southeast Sulawesi (ESA WorldCover 10m 2021)",
+        "crs": "EPSG:32751"
+      }
+    ]
+  },
+  "mlops_audit": {
+    "models_count": 0,
+    "models": [],
+    "store_status": "NOT_FOUND"
+  },
+  "provenance_policy": "FROZEN_IMMUTABLE_BASELINE_V3"
+}

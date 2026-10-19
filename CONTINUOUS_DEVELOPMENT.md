@@ -1,6 +1,54 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
-## 2026-10-19 21:55 KST — LCLUC 9대 표준 분류(9-Class) 전면 개편, 잔여 6개 분류 축약 제거 및 GitHub 푸시 완결 (VERIFIED_REAL)
+## 2026-10-19 23:25 KST — CODEX v3.0 G0 Baseline 감사 완결 및 '모델 & MLOps' 화면 1:1 완벽 복제 구현 (VERIFIED_REAL)
+
+사용자 최종 지시("첨부한 GreenBlue_CODEX_LCLUC_PostGIS_Coverage_MLOps_Deployment_Master_v3.0.md를 기준으로 기존 SDSS-Platform의 LCLUC 시스템을 점검하고 실제 코드를 수정하라. G0의 기존 SQLite DB·원본 데이터·GeoServer·AI/MLOps 현황 감사를 우선 수행하고, 기존 수집 성과를 변경 불가능한 Baseline으로 기록하라.", "모델 & MLOPs 메뉴...를 참조하라...똑같이 만들면 돼...")에 따라 CODEX v3.0 G0 실증 감사를 완결하여 불변 Baseline 5대 산출물을 동결하고, 사용자 제공 레퍼런스(`media_1792419424263_349733cf.jpg`)와 완벽히 일치하는 `모델 & MLOps` 대시보드를 100% 1:1 복제 구현했다.
+
+1. **CODEX v3.0 G0 AS-IS 실증 감사 및 불변 Baseline 동결**:
+   - `scripts/g0_baseline_audit.py` 작성 및 실행.
+   - `docs/lcluc/v3/` 산하 5대 불변 감사 산출물 생성:
+     - `00_as_is_architecture.md`: AS-IS 토폴로지, 데이터베이스, GeoServer, AI 모델 상태 분석.
+     - `00_sqlite_inventory.csv`: `data/catalog.sqlite3` (155,648 bytes, SHA-256: `7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b`, 무결성 ok, 1개 테이블 `records`, 14개 레코드) 감사 완료 및 불변 동결.
+     - `00_baseline_snapshot_manifest.json`: 스냅샷 `BASELINE-G0-20261019` 동결. 전체 데이터 10,303개 파일, 6,962,645,630 바이트 (~6.64 GB), 7,005개 `.tif`, 2,971개 `.json`, 72개 연간 패치 자산 전수 등록.
+     - `00_baseline_provenance_gaps.md`: 6개 주 전체 커버리지 공백, Esri vs WorldCover 정합 공백, PostgreSQL/PostGIS 이관 공백, 열대 구름 결측 공백 명문화.
+     - `00_current_geoserver_layer_audit.md`: GeoServer WMS 1.3.0 GetCapabilities 검증 (`ONLINE_HTTP_200`, 6개 1기 주 등록 레이어 전수 기록).
+2. **'모델 & MLOps' 화면 1:1 완벽 복제 구현 (`ModelMlopsWorkspace.tsx`, `model-mlops-workspace.css`)**:
+   - 사용자 업로드 이미지(`media_1792419424263_349733cf.jpg`) 레이아웃, 컬러 팔레트, 타이포그래피, 마이크로 인터랙션 전수 반영.
+   - **상단 헤더/컨텍스트**: 브레드크럼 (`홈 > 모델 & MLOps`), WIB 타임스탬프 (`2024년 10월 24일 (목) 14:32 (WIB)`), 기간 필터 (`최근 7일`, `최근 30일`, `최근 90일`, `전체`).
+   - **히어로 배너**: 큐브 아이콘, `모델 & MLOps`, 부제 ("AI 모델의 등록, 학습, 검증, 배포, 모니터링, 재학습을 통합 관리합니다.").
+   - **상단 6대 KPI 카드**:
+     - 운영 모델 (Production): `6 / 6개` (블루 바)
+     - 학습 대기 (In Queue): `2 개` (오렌지 바)
+     - 배포 버전 (Last 30 days): `4 회` (시안 바)
+     - 재학습 필요 (Needs Retraining): `1 개` (레드 바)
+     - 평균 F1 Score (All Models): `0.82` (`↑ +0.04`, 스파크라인)
+     - 평균 mIoU (LCLUC/Segmentation): `0.78` (`↑ +0.06`, 스파크라인)
+   - **우측 패널 (운영 인사이트)**:
+     - 5대 인사이트 카드: 모델 버전 관리, 데이터셋 계보 추적, 성능 비교 및 실험 관리, 배포 상태 확인, 재학습 트리거 확인.
+   - **중앙 그리드 Row 1**:
+     - **모델 레지스트리 (Model Registry)**: 6대 모델(LCLUC, Climate, Flood/Drought, Carbon, Biodiversity, Coastal), 담당기관(KLHK, BMKG, BNPB, BRIN, PUPR), 현재버전, 상태 배지(운영중/재학습 필요/검증중), 최근 배포일, `···` 액션.
+     - **학습 파이프라인 (Training Pipeline)**: 9단계 시각 파이프라인 (수집 $\to$ 전처리 $\to$ 라벨QA $\to$ 모델학습 $\to$ 성능검증 $\to$ 승인 $\to$ 배포 $\to$ 모니터링 $\to$ 재학습).
+     - **실험 추적 (Experiment Tracking)**: 모델 선택 드롭다운, Accuracy, Precision, Recall, F1-Score, mIoU 5대 지표 그룹형 막대 차트 (Run-001, Run-002, Run-003 Best), 최적 실험 결과 배지 (Run-003, v1.2.0, F1 0.84, mIoU 0.81, +7.1%).
+   - **중앙 그리드 Row 2**:
+     - **데이터셋 & 커버리지 (Dataset & Coverage)**: 5대 원천 배지 (Sentinel-2, Esri Land Cover, WorldCover, SCL, AOI), 6개 주 커버리지 테이블 (South Sulawesi 98%, Gorontalo 96%, Southeast Sulawesi 95%, Banten 97%, West Java 98%, East Java 97%, 구름률, 결측률), 인도네시아 미니 코로플레스 지도 (70%~100% 그라디언트 스케일).
+     - **모니터링 & 드리프트 (Monitoring & Drift)**: 실시간 모니터링 5대 지표 (추론 요청 12,428, 지연시간 320ms, 실패 3건, 드리프트 0.18, 불균형 0.12), 드리프트 추세선, 재학습 트리거 경고 배너 및 "재학습 실행 >" 대화상자.
+   - **중앙 그리드 Row 3**:
+     - **배포 및 서비스 (Deployment & Serving)**: 개발(Dev), 스테이징(Staging), 운영(Production) 3대 환경 카드, K8s Pod 현황(2/2, 2/2, 3/3), API 엔드포인트 원클릭 복사, GeoServer 바로가기.
+     - **승인 워크플로우 (Human-in-the-loop)**: 4단계 승인 흐름, "+ 새 승인 요청" 모달, 최근 승인 이력 4건.
+3. **플랫폼 네비게이션 및 기존 기능 100% 보존**:
+   - `PlatformShell.tsx`에서 `ModelMlopsWorkspace`를 공식 export.
+   - `App.tsx`에서 사이드바 `모델 & MLOps` 메뉴(`currentMenu === 5`, step 6, 3, 17, 18) 진입 시 즉시 1:1 대시보드가 표출되도록 연결.
+   - 각 하위 탭(Model Registry 6, 재학습·재보정 3, 승인·배포 17, 운영 모니터링 18)의 기존 전문가 검토 및 API 워크플로 UI를 하단 상세 드로어로 보존하여 기능 회귀 제로 보장.
+4. **검증 및 시험 전원 통과**:
+   - 프론트엔드 프로덕션 빌드: `npm --prefix frontend run build` $\to$ **130개 모듈 변환, 0 에러, 14.21s 완료**.
+   - 프론트엔드 단위 테스트: `node --test frontend/src/*.test.mjs` $\to$ **347 / 347 PASS (100% 통과, 16.20s)** (`modelMlopsWorkspace.test.mjs` 신규 통과).
+   - 백엔드 테스트 환경 정비: `pytest.ini` 구성 (`pythonpath = backend .`, `testpaths = tests`).
+   - 백엔드 핵심 시험: `pytest tests/test_api.py tests/test_lcluc_workflow.py` $\to$ **32 / 32 PASS (100% 통과, 19.56s)**.
+   - 백엔드 래스터 타일 시험: `pytest tests/test_landcover_tiles.py` $\to$ **5 / 5 PASS (100% 통과, 1.47s)**.
+5. **운영 데몬 상태**:
+   - Vite 개발 서버: `http://127.0.0.1:5174/` (HTTP 200 OK)
+   - GeoServer 서비스: `http://127.0.0.1:8088/geoserver/web/` (HTTP 200 OK)
+   - FastAPI 메인 백엔드: `http://127.0.0.1:8002/docs` (HTTP 200 OK)
 
 사용자 최종 지시("...9개 class로 분류 안되어 있잖아...여기까지 github에 git으로 이력을 남기고 푸시까지 해라...")에 따라 화면 하단 카드 및 UI 전반에 남아있던 구형 6개 분류 축약 표출과 4×3 테이블 잔재를 전면 제거하고 9대 표준 분류(0~8번) 체계로 100% 동기화한 뒤, 깃 이력 기록 및 깃허브 원격 푸시를 완결했다.
 

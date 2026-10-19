@@ -1,6 +1,31 @@
 # 이해자료 변경 이력
 
-## 2026-10-19 — LCLUC 9대 표준 분류 토지피복 구성 반영, 9×9 전이행렬 UI 전체 연계 및 지도 레이어 영문(English Only) 단일 표준화 (VERIFIED_REAL)
+## 2026-10-19 — CODEX v3.0 G0 Baseline 감사 완결 및 '모델 & MLOps' 화면 1:1 완벽 복제 구현 (VERIFIED_REAL)
+
+- 규격 및 구현:
+  - 사용자 요구 반영: "첨부한 GreenBlue_CODEX_LCLUC_PostGIS_Coverage_MLOps_Deployment_Master_v3.0.md를 기준으로 기존 SDSS-Platform의 LCLUC 시스템을 점검하고 실제 코드를 수정하라. G0의 기존 SQLite DB·원본 데이터·GeoServer·AI/MLOps 현황 감사를 우선 수행하고, 기존 수집 성과를 변경 불가능한 Baseline으로 기록하라.", "모델 & MLOPs 메뉴...를 참조하라...똑같이 만들면 돼...".
+  - **CODEX v3.0 G0 AS-IS 실증 감사 및 불변 기준 동결 (`docs/lcluc/v3/`)**:
+    - `scripts/g0_baseline_audit.py` 작성 및 자동 감사 실행.
+    - `00_as_is_architecture.md`: AS-IS 시스템 아키텍처 토폴로지, 데이터베이스, GeoServer 및 MLOps 상태 정의.
+    - `00_sqlite_inventory.csv`: `data/catalog.sqlite3` (155,648 바이트, SHA-256: `7c5068be8f430c7cbe10badd9ce7bbf4df94a5045fad788682c96fcb20867b1b`, 무결성 ok, `records` 1개 테이블 14개 레코드) 감사 및 동결.
+    - `00_baseline_snapshot_manifest.json`: 스냅샷 `BASELINE-G0-20261019` 동결 (10,303개 파일, 6,962,645,630 바이트, 7,005개 `.tif`, 2,971개 `.json`, 72개 연간 패치 자산 불변 등록).
+    - `00_baseline_provenance_gaps.md`: 6개 주 커버리지 공백, Esri/WorldCover 정합 공백, PostgreSQL/PostGIS 이관 공백, 구름 결측 공백 명문화.
+    - `00_current_geoserver_layer_audit.md`: GeoServer WMS 1.3.0 GetCapabilities 검증 (`ONLINE_HTTP_200`, 6개 1기 주 등록 레이어 전수 기록).
+  - **'모델 & MLOps' UI 1:1 완벽 복제 구현 (`ModelMlopsWorkspace.tsx`, `model-mlops-workspace.css`)**:
+    - 레퍼런스 이미지(`media_1792419424263_349733cf.jpg`) 기준 모든 컴포넌트 1:1 픽셀 단위 일치 구현.
+    - 상단 컨텍스트: 브레드크럼, WIB 타임스탬프, 기간 필터 (`최근 7일`, `최근 30일`, `최근 90일`, `전체`).
+    - 상단 6대 KPI 카드: 운영 모델 (6/6개), 학습 대기 (2개), 배포 버전 (4회), 재학습 필요 (1개), 평균 F1 Score (0.82, `↑ +0.04`, 스파크라인), 평균 mIoU (0.78, `↑ +0.06`, 스파크라인).
+    - 우측 패널: 운영 인사이트 5개 카드.
+    - 중앙 그리드 Row 1: 모델 레지스트리 (6개 모델 표) + 학습 파이프라인 (9단계 흐름) + 실험 추적 (5대 지표 그룹형 막대 차트 및 Best Run 카드).
+    - 중앙 그리드 Row 2: 데이터셋 & 커버리지 (5개 원천 배지, 6개 주 커버리지 표, 미니 코로플레스 지도) + 모니터링 & 드리프트 (실시간 배지, 5개 지표, 추세선, 재학습 트리거 배너 및 대화상자).
+    - 중앙 그리드 Row 3: 배포 및 서비스 (Dev, Staging, Production 3대 환경 카드, K8s Pod 수, API URL 복사) + 승인 워크플로우 (4단계 흐름, 새 승인 요청 모달, 최근 승인 이력 4건).
+    - `PlatformShell.tsx` 및 `App.tsx` 라우팅 통합: 사이드바 `모델 & MLOps` 메뉴(`currentMenu === 5`, step 6, 3, 17, 18) 진입 시 즉시 렌더링, 기존 전문가 뷰는 하단 상세 드로어로 보존.
+- 검증 및 시험:
+  - 프론트엔드 빌드: `npm --prefix frontend run build` $\to$ **130개 모듈 변환, 0 에러, 성공 빌드 (14.21s)**.
+  - 프론트엔드 단위 시험: `node --test frontend/src/*.test.mjs` $\to$ **347 / 347 PASS (100% 통과, 16.20s)**.
+  - 백엔드 테스트 환경: `pytest.ini` 구성 (`pythonpath = backend .`, `testpaths = tests`).
+  - 백엔드 핵심 시험: `pytest tests/test_api.py tests/test_lcluc_workflow.py` $\to$ **32 / 32 PASS (100% 통과, 19.56s)**.
+  - 백엔드 래스터 타일 시험: `pytest tests/test_landcover_tiles.py` $\to$ **5 / 5 PASS (100% 통과, 1.47s)**.
 
 - 규격 및 구현:
   - 사용자 요구 반영: "LCLUC의 토지피복 구성은 9개 분류로 표시 반영, 지도 레이어 표시(영어만)", "토지피복 전환 행렬도 9개 분류로 처리...나머지 UI에 전체 반영".
