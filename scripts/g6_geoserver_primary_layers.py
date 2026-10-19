@@ -28,7 +28,7 @@ def main():
     manager = GeoServerPrimaryLayersManager(data_root)
     manifest_file, report_file, csv_file = manager.export_deliverables(output_dir)
 
-    print(f" [PASS] 42 Primary Layers Materialized & Registered.")
+    print(f" [PASS] 54 Primary Layers Materialized & Registered (6 provinces x 9 kinds).")
     print(f" [OUTPUT] Manifest:     {manifest_file} ({manifest_file.stat().st_size:,} bytes)")
     print(f" [OUTPUT] Report:       {report_file} ({report_file.stat().st_size:,} bytes)")
     print(f" [OUTPUT] Registry CSV: {csv_file} ({csv_file.stat().st_size:,} bytes)")

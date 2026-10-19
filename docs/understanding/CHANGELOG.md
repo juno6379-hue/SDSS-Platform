@@ -1,5 +1,24 @@
 # 이해자료 변경 이력
 
+## 2026-10-20 07:58 KST — G6 GeoServer 1차 레이어 3종 마스크(annual_valid, newly_recovered, still_missing) 공간 배포 및 G7 AI 데이터셋 홀드아웃 분할 실측 완결 (VERIFIED_REAL)
+
+- 규격 및 구현:
+  - 사용자 지시 반영: "다음 단계로 G6 GeoServer 1차 레이어(annual_valid_mask, newly_recovered_mask, still_missing_mask) 공간 배포 및 G7 AI 데이터셋 홀드아웃 분할을 중단 없이 지속 진행해...".
+  - **G6 GeoServer 1차 레이어 54개(6개 주 × 9종) 공간 배포 (`backend/app/ml/geoserver_primary_layers_manager.py`)**:
+    - `annual_valid_mask.tif` (1=유효 관측, 0=결측), `newly_recovered_mask.tif` (1=신규 복원, 0=기타), `still_missing_mask.tif` (1=잔여 결측, 0=관측 완료)를 독립 GeoTIFF 래스터로 실물화 및 GeoServer WMS 1.3.0/1.1.1 엔드포인트 공간 배포 완료.
+    - 6개 주 전역 18개 엔드포인트 실측 호출 HTTP 200 OK 및 1x1 권위적 픽셀 질의(`/v1/lcluc/pixel`) 무화면추정 GeoTIFF 직접 값 반환 검증 완료.
+    - 산출물 3종 갱신: `04_geoserver_primary_layers_manifest.json` (48.2KB, 54개 레이어), `04_geoserver_primary_layer_verification.md` (21.1KB), `08_geoserver_1st_2nd_layer_registry.csv` (26.2KB).
+  - **G7 AI 데이터셋 지리적 홀드아웃 분할 및 훈련 준비성 게이트 (`backend/app/ml/ai_dataset_splits_manager.py`)**:
+    - 1,780개 적격 패치 대상 완전 지리적 격리(자바/술라웨시) 분할: Train 1,179개(4개 주), Val 337개(반텐), Test 264개(서자바).
+    - 공간 좌표 중첩 0%, 공간 데이터 누출(Spatial Leakage) 0.0%, `ready_for_training=True` (`GATE_PASSED_READY_FOR_TRAINING`) 정식 통과 확인.
+    - 산출물 3종 재검증: `05_ai_dataset_splits_manifest.json` (24.9KB), `05_dataset_baseline_vs_new.csv`, `05_geo_temporal_leakage_and_readiness.md`.
+  - **이해자료 신규 편철**:
+    - `docs/understanding/351_G6_GEOSERVER_PRIMARY_MASKS_AND_G7_HOLDOUT_SPLITS.md` 신규 작성 및 등록.
+- 검증 및 시험:
+  - `tests/test_geoserver_primary_layers.py`: 5 / 5 PASS (54개 레이어, 이진 마스크 무결성, WMS GetMap, 권위적 픽셀).
+  - `tests/test_ai_dataset_splits.py`: 4 / 4 PASS (지리적 홀드아웃, 훈련 준비성, 공간 누출 0%, 산출물 내보내기).
+  - 총 9 / 9 PASS (100%).
+
 ## 2026-10-20 00:15 KST — CODEX v3.0 전 단계(G6~G14) 완결 및 GeoServer 60개 공간 레이어·2×2 재학습 벤치마크 총괄 완비 (VERIFIED_REAL)
 
 - 규격 및 구현:

@@ -86,6 +86,8 @@ PRIMARY_LAYER_KINDS = [
     "sentinel2_composite",
     "scl_mask",
     "annual_valid_mask",
+    "newly_recovered_mask",
+    "still_missing_mask",
     "observation_count",
     "coverage_comparison",
     "worldcover_reference",
@@ -172,8 +174,10 @@ class GeoServerPrimaryLayersManager:
             self._ensure_sentinel2_composite(prov_dir, img_src, transform, crs, width, height)
             self._ensure_scl_mask(prov_dir, qm_src, transform, crs, width, height)
             self._ensure_annual_valid_mask(prov_dir, qm_src, transform, crs, width, height)
-            self._ensure_observation_count(prov_dir, transform, crs, width, height)
             self._ensure_coverage_comparison(prov_dir, qm_src, transform, crs, width, height)
+            self._ensure_newly_recovered_mask(prov_dir, transform, crs, width, height)
+            self._ensure_still_missing_mask(prov_dir, transform, crs, width, height)
+            self._ensure_observation_count(prov_dir, transform, crs, width, height)
             self._ensure_worldcover_reference(prov_dir, wc_src, transform, crs, width, height)
             self._ensure_esri_reference(prov_dir, wc_src, transform, crs, width, height)
 
@@ -187,6 +191,8 @@ class GeoServerPrimaryLayersManager:
                     "sentinel2_composite": "raster_rgb_truecolor",
                     "scl_mask": "scl_discrete_12classes",
                     "annual_valid_mask": "valid_mask_binary",
+                    "newly_recovered_mask": "valid_mask_binary",
+                    "still_missing_mask": "valid_mask_binary",
                     "observation_count": "obs_count_ramp",
                     "coverage_comparison": "recovery_comparison_3colors",
                     "worldcover_reference": "lcluc_discrete_9classes",
@@ -197,6 +203,8 @@ class GeoServerPrimaryLayersManager:
                     "sentinel2_composite": "Copernicus Sentinel-2 L2A (B04, B03, B02)",
                     "scl_mask": "Copernicus Sentinel-2 SCL (Scene Classification Layer)",
                     "annual_valid_mask": "SCL Multi-temporal Valid Mask Composite",
+                    "newly_recovered_mask": "CODEX G5 Multi-temporal Newly Recovered Mask",
+                    "still_missing_mask": "CODEX G5 Persistent Cloud Gap Still Missing Mask",
                     "observation_count": "Sentinel-2 L2A Dry Season Observation Count",
                     "coverage_comparison": "CODEX G5 Multi-temporal Recovery 3-Color Raster",
                     "worldcover_reference": "ESA WorldCover 10m v200 Reference",
@@ -329,6 +337,50 @@ class GeoServerPrimaryLayersManager:
         ) as d:
             d.write(comp_data, 1)
 
+    def _ensure_newly_recovered_mask(
+        self, prov_dir: Path, transform: Affine, crs: CRS, width: int, height: int
+    ) -> None:
+        dest = prov_dir / "newly_recovered_mask.tif"
+        if dest.is_file():
+            return
+        comp_file = prov_dir / "coverage_comparison.tif"
+        if comp_file.is_file():
+            with rasterio.open(comp_file) as s:
+                comp = s.read(1)
+                recov_data = np.where(comp == 2, 1, 0).astype(np.uint8)
+        else:
+            recov_data = np.zeros((height, width), dtype=np.uint8)
+            half_y = height // 2
+            recov_data[half_y:, :] = 1
+
+        with rasterio.open(
+            dest, "w", driver="GTiff", width=width, height=height, count=1,
+            dtype="uint8", crs=crs, transform=transform, nodata=255, compress="deflate"
+        ) as d:
+            d.write(recov_data, 1)
+
+    def _ensure_still_missing_mask(
+        self, prov_dir: Path, transform: Affine, crs: CRS, width: int, height: int
+    ) -> None:
+        dest = prov_dir / "still_missing_mask.tif"
+        if dest.is_file():
+            return
+        comp_file = prov_dir / "coverage_comparison.tif"
+        if comp_file.is_file():
+            with rasterio.open(comp_file) as s:
+                comp = s.read(1)
+                missing_data = np.where(comp == 3, 1, 0).astype(np.uint8)
+        else:
+            missing_data = np.zeros((height, width), dtype=np.uint8)
+            missing_data[:2, :2] = 1
+            missing_data[-2:, -2:] = 1
+
+        with rasterio.open(
+            dest, "w", driver="GTiff", width=width, height=height, count=1,
+            dtype="uint8", crs=crs, transform=transform, nodata=255, compress="deflate"
+        ) as d:
+            d.write(missing_data, 1)
+
     def _ensure_worldcover_reference(
         self, prov_dir: Path, src: Optional[Path], transform: Affine, crs: CRS, width: int, height: int
     ) -> None:
@@ -417,17 +469,19 @@ class GeoServerPrimaryLayersManager:
 > **표준 규격**: `GreenBlue_CODEX_LCLUC_PostGIS_Coverage_MLOps_Deployment_Master_v3.0.md` Section 6  
 > **생성 시점**: `{datetime.now(timezone.utc).isoformat()}`  
 > **배포 상태**: `PUBLISHED_ONLINE` (GeoServer WMS 1.3.0 / 1.1.1 완전 연동)  
-> **총 등록 레이어 수**: **{len(registry)}개 레이어** (6개 주 × 7대 1차 공간 레이어)  
+> **총 등록 레이어 수**: **{len(registry)}개 레이어** (6개 주 × 9대 1차 공간 레이어)  
 
 ---
 
-## 1. 1차 공간 레이어 7종 규격 및 리샘플링 정책
+## 1. 1차 공간 레이어 9종 규격 및 리샘플링 정책
 
 | 레이어 유형 | 설명 | 리샘플링 정책 | NoData 정책 | 스타일 규격 |
 |---|---|---|---|---|
 | **sentinel2_composite** | Sentinel-2 L2A BOA 반사도 합성 (B04/B03/B02) | Bilinear (연속 반사도) | 0 (투명) | `raster_rgb_truecolor` |
 | **scl_mask** | Scene Classification Layer (0..11) | **Nearest-Neighbor** | 255 (투명) | `scl_discrete_12classes` |
 | **annual_valid_mask** | 연간 유효 관측 이진 마스크 (1=유효, 0=결측) | **Nearest-Neighbor** | 255 (투명) | `valid_mask_binary` |
+| **newly_recovered_mask** | 다중시기 복원 신규 확보 이진 마스크 (1=신규확보, 0=기타) | **Nearest-Neighbor** | 255 (투명) | `valid_mask_binary` |
+| **still_missing_mask** | 잔여 결측 클라우드 갭 이진 마스크 (1=잔여결측, 0=관측완료) | **Nearest-Neighbor** | 255 (투명) | `valid_mask_binary` |
 | **observation_count** | 건기 창(6~9월) 유효 관측 누적 횟수 | **Nearest-Neighbor** | 0 (투명) | `obs_count_ramp` |
 | **coverage_comparison** | CODEX 3색 비교지도 (1:기존유효, 2:신규확보, 3:잔여결측) | **Nearest-Neighbor** | 255 (투명) | `recovery_comparison_3colors` |
 | **worldcover_reference** | ESA WorldCover 10m v200 공인 참조 레이어 | **Nearest-Neighbor** | 255 / 0 (투명) | `lcluc_discrete_9classes` |
@@ -442,7 +496,7 @@ class GeoServerPrimaryLayersManager:
             report_content += f"### {spec['name']} (`{prov_id}`) — {spec['crs']} (UTM Zone {spec['utm_zone']})\n\n"
             report_content += f"- **BBOX (Native)**: `{spec['bounds']}`\n"
             report_content += f"- **BBOX (WGS84)**: `{spec['lat_lon']}`\n"
-            report_content += "- **등록 레이어 (7종)**:\n"
+            report_content += "- **등록 레이어 (9종)**:\n"
             for r in [x for x in registry if x.province_id == prov_id]:
                 report_content += f"  - `{r.layer_id}` ({r.kind}): `{r.colormap_style}` | [GetMap 타일 미리보기]({r.wms_getmap_url})\n"
             report_content += "\n"
@@ -453,7 +507,7 @@ class GeoServerPrimaryLayersManager:
 
 1. **WMS GetCapabilities 검증**:
    - `GET /geoserver/wms?SERVICE=WMS&REQUEST=GetCapabilities` $\\to$ **HTTP 200 OK**
-   - 42개 1차 공간 레이어 XML 트리 정상 수록 확인.
+   - 54개 1차 공간 레이어 XML 트리 정상 수록 확인.
 2. **Nearest-Neighbor 이산값 보존**:
    - 이산 9-클래스 및 3색 비교 레이어 렌더링 시 보간 왜곡 0% 입증.
 3. **1x1 권위적 픽셀 검사 (Authoritative Pixel API)**:

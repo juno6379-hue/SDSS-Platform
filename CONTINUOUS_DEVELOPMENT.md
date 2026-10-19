@@ -1,5 +1,34 @@
 # 전체 개발 지속·중간 보고 운영 원장
 
+## 2026-10-20 07:59 KST — G6 GeoServer 1차 레이어(annual_valid, newly_recovered, still_missing) 공간 배포 및 G7 AI 데이터셋 홀드아웃 분할 실측 완결 (VERIFIED_REAL)
+
+사용자 직접 지시("다음 단계로 G6 GeoServer 1차 레이어(annual_valid_mask, newly_recovered_mask, still_missing_mask) 공간 배포 및 G7 AI 데이터셋 홀드아웃 분할을 중단 없이 지속 진행해...")에 따라 G6 1차 마스크 3종의 전수 실물화/공간 배포 및 G7 지리적 홀드아웃 분할을 100% 실측 완료했다.
+
+1. **CODEX v3.0 G6 GeoServer 1차 레이어 3종 마스크 공간 배포 (`backend/app/ml/geoserver_primary_layers_manager.py`)**:
+   - 기존 `annual_valid_mask` 외에 `newly_recovered_mask`(신규 복원 이진 마스크) 및 `still_missing_mask`(잔여 결측 이진 마스크)를 독립 GeoTIFF 래스터로 실물화.
+   - 1차 레이어 종류: 7종 $\to$ 9종 (`sentinel2_composite`, `scl_mask`, `annual_valid_mask`, `newly_recovered_mask`, `still_missing_mask`, `observation_count`, `coverage_comparison`, `worldcover_reference`, `esri_reference`).
+   - 총 1차 레이어 수: 6개 주 × 9종 = **54개 1차 공간 레이어** (2차 18개 합산 총 72개 GeoServer WMS 레이어 완비).
+   - 실측 HTTP 200 OK: 6개 주 × 3개 마스크 = 18개 GetMap WMS 1.3.0 엔드포인트 전수 200 OK 및 PNG 바이트 스트림 반환.
+   - 1x1 권위적 픽셀 API 검사(`GET /v1/lcluc/pixel`): 화면 추정이 아닌 원본 GeoTIFF 윈도우 직접 읽기를 통한 exact 정수 및 provenance 반환 검증.
+   - 산출물 갱신: `04_geoserver_primary_layers_manifest.json` (48,220B), `04_geoserver_primary_layer_verification.md` (21,134B), `08_geoserver_1st_2nd_layer_registry.csv` (26,172B).
+2. **CODEX v3.0 G7 AI 데이터셋 지리적 홀드아웃 분할 및 준비성 게이트 (`backend/app/ml/ai_dataset_splits_manager.py`)**:
+   - 1,780개 적격 6밴드 패치(1억 1,600만 화소)를 행정구역 및 도서 단위로 완전 격리 분할.
+   - **Train**: East Java, South Sulawesi, Gorontalo, Southeast Sulawesi (1,179개 패치)
+   - **Validation**: Banten (337개 패치)
+   - **Test**: West Java (264개 패치)
+   - 공간 좌표 중첩 0%, 공간 데이터 누출(Spatial Leakage) 0.0%, `ready_for_training=True` (`GATE_PASSED_READY_FOR_TRAINING`) 무결성 재입증.
+   - 산출물 갱신: `05_ai_dataset_splits_manifest.json` (24,874B), `05_dataset_baseline_vs_new.csv` (507B), `05_geo_temporal_leakage_and_readiness.md` (3,032B).
+3. **단위 및 통합 자동화 시험 전수 통과**:
+   - `tests/test_geoserver_primary_layers.py`: 5 / 5 PASS.
+   - `tests/test_ai_dataset_splits.py`: 4 / 4 PASS.
+   - 총 9 / 9 PASS (100%).
+4. **이해자료 갱신 및 신규 등록**:
+   - `docs/understanding/351_G6_GEOSERVER_PRIMARY_MASKS_AND_G7_HOLDOUT_SPLITS.md` 신규 작성.
+   - `docs/understanding/INDEX.md`, `docs/understanding/CHANGELOG.md` 최신화.
+5. **활성 운영 프로세스 및 10분 모니터링 타이머**:
+   - GeoServer WMS (8088), FastAPI (8002), Vite (5174) 3종 전원 정상 가동 중.
+   - Task 5517 (600초 타이머, 만료 예정 ~08:03 KST) 지속 가동 중.
+
 ## 2026-10-20 07:42 KST — CODEX v3.0 통합 시스템 운영 모니터링 및 프로세스 헬스체크 정상 (VERIFIED_REAL)
 
 10분 주기 정기 점검 규격에 따라 전체 활성 프로세스, 엔드포인트 헬스체크 및 원격 저장소 동기화 상태를 재확인했다.

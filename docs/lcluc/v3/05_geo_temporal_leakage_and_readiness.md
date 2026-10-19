@@ -1,7 +1,7 @@
 # G7 — AI-Ready 데이터셋 분할 및 지리적 홀드아웃·학습 준비성 게이트 보고서
 
 > **표준 규격**: `GreenBlue_CODEX_LCLUC_PostGIS_Coverage_MLOps_Deployment_Master_v3.0.md` Section 7.1  
-> **생성 시점**: `2026-10-19T15:12:23.857150+00:00`  
+> **생성 시점**: `2026-10-19T22:58:22.492194+00:00`  
 > **게이트 상태**: `GATE_PASSED_READY_FOR_TRAINING` (`ready_for_training=True`)  
 > **데이터셋 확장율**: **+88,900.0%** (과거 적격 2패치 $\to$ 현재 실측 1,780패치)  
 
