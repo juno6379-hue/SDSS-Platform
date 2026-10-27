@@ -71,10 +71,13 @@ def migrate_and_verify():
     # 3. Check Live PostgreSQL connection if POSTGRES_DSN is set
     postgres_dsn = os.getenv("POSTGRES_DSN")
     live_migration_executed = False
-    target_row_count = len(source_records)
+    target_row_count = None
     pg_status = "NOT_CONFIGURED"
+    target_schema_provisioned = False
 
-    if postgres_dsn:
+    if postgres_dsn and validation_errors:
+        pg_status = "BLOCKED_SOURCE_VALIDATION_ERRORS"
+    elif postgres_dsn:
         try:
             import psycopg2
             pg_conn = psycopg2.connect(postgres_dsn)
@@ -96,11 +99,28 @@ def migrate_and_verify():
             target_row_count = pg_cur.fetchone()[0]
             pg_conn.close()
             live_migration_executed = True
-            pg_status = "CONNECTED_AND_MIGRATED"
+            target_schema_provisioned = True
+            pg_status = "CONNECTED_AND_BACKFILLED_UNVERIFIED"
         except Exception as e:
             pg_status = f"FAILED: {e}"
     else:
-        pg_status = "STANDALONE_DRY_RUN_VERIFIED"
+        pg_status = "BLOCKED_NO_POSTGIS_PILOT_EXECUTION"
+
+    target_row_count_display = (
+        str(target_row_count) if live_migration_executed else "N/A (not executed)"
+    )
+    if live_migration_executed:
+        parity_status = (
+            "ROW_COUNT_MATCH_ONLY"
+            if target_row_count == len(source_records)
+            else "ROW_COUNT_MISMATCH"
+        )
+    else:
+        parity_status = "NOT_MEASURED"
+    schema_status = (
+        "DDL_APPLIED_UNVERIFIED" if target_schema_provisioned else "DDL_ONLY_NOT_APPLIED"
+    )
+    validation_status = "PASS" if not validation_errors else "BLOCKED"
 
     # 4. Generate Verification Document
     report_md = f"""# G1 SQLite → PostgreSQL/PostGIS Migration Verification Report
@@ -117,10 +137,10 @@ def migrate_and_verify():
 
 | Metric | Source (SQLite) | Target (PostGIS Schema) | Reconciled Parity |
 |---|---|---|---|
-| Total Records | {len(source_records)} | {target_row_count} | 100% MATCH |
-| Validation Errors | 0 | 0 | PASS |
-| Integrity Check | ok | ok | PASS |
-| PostGIS DDL Tables | N/A | {len(ddl_tables)} tables provisioned | PASS |
+| Total Records | {len(source_records)} | {target_row_count_display} | {parity_status} |
+| SQLite JSON Validation Errors | {len(validation_errors)} | N/A | {validation_status} |
+| PostGIS Integrity Check | N/A | N/A | NOT_EXECUTED |
+| PostGIS DDL Tables | N/A | {len(ddl_tables)} tables declared | {schema_status} |
 
 ---
 
@@ -147,20 +167,18 @@ def migrate_and_verify():
     report_md += f"""
 ---
 
-## 4. Architectural Guarantee
+## 4. 구현 범위와 제한
 
-1. **Zero Downtime Dual Mode**:
-   - `backend/app/store.py` operates automatically with SQLite when `POSTGRES_DSN` is omitted, and activates PostgreSQL/PostGIS pooling when `POSTGRES_DSN` is supplied.
-2. **Schema Integrity**:
-   - DDL defines spatial indices (`GIST`) over `geometry(MultiPolygon, 4326)` for provinces and AOI footprints.
-   - B-tree and GIN indices are provisioned for sub-second query performance.
-3. **Rollback Drill**:
-   - Source `data/catalog.sqlite3` remains immutable and read-only.
+1. 이 스크립트는 SQLite를 read-only로 검사하고 PostGIS DDL을 준비한다.
+2. `POSTGRES_DSN`이 없으면 실제 PostGIS 연결, DDL 적용, backfill, row parity, 공간 무결성, 성능, cutover, rollback은 모두 실행하지 않는다.
+3. DDL에 정의된 인덱스는 선언일 뿐이며 실제 생성이나 성능을 보장하지 않는다.
+4. Source `data/catalog.sqlite3`는 read-only로 열며 이 실행에서 수정하지 않는다.
+5. `CONNECTED_AND_BACKFILLED_UNVERIFIED`도 운영 승인이나 zero-downtime 보장이 아니다. 행수 외 checksum·PK/FK·geometry 검증, cutover 승인, rollback drill이 필요하다.
 """
     verification_path = OUTPUT_DIR / "01_sqlite_to_postgis_verification.md"
     verification_path.write_text(report_md, encoding="utf-8")
 
-    print("[G1 MIGRATION & VERIFICATION COMPLETE] Verification report written.")
+    print(f"[G1 MIGRATION INSPECTION {pg_status}] Verification report written.")
     return True
 
 if __name__ == "__main__":

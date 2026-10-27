@@ -1,9 +1,9 @@
 # G7 — AI-Ready 데이터셋 분할 및 지리적 홀드아웃·학습 준비성 게이트 보고서
 
-> **표준 규격**: `GreenBlue_CODEX_LCLUC_PostGIS_Coverage_MLOps_Deployment_Master_v3.0.md` Section 7.1  
-> **생성 시점**: `2026-10-19T22:58:22.492194+00:00`  
-> **게이트 상태**: `GATE_PASSED_READY_FOR_TRAINING` (`ready_for_training=True`)  
-> **데이터셋 확장율**: **+88,900.0%** (과거 적격 2패치 $\to$ 현재 실측 1,780패치)  
+> **표준 규격**: `GreenBlue_CODEX_LCLUC_PostGIS_Coverage_MLOps_Deployment_Master_v3.0.md` Section 7.1
+> **생성 시점**: `2026-10-21T02:55:28.672634+00:00`
+> **게이트 상태**: `BLOCKED_FAIL_CLOSED` (`ready_for_training=False`)
+> **데이터셋 이전/이후 개선율**: `BLOCKED_BASELINE_NOT_PINNED` — 같은 정의·분모·시점의 과거 baseline이 권위 증거로 고정되지 않았다.
 
 ---
 
@@ -11,29 +11,32 @@
 
 | 핵심 지표 (KPI) | 이전 (Baseline) | 이후 (New Expanded) | 개선량 / 성과 | 상태 |
 |---|---|---|---|---|
-| **6밴드+라벨·마스크 적격 패치** | **2개** (Banten 1, West Java 1) | **1,780개** | **+1,778개 (+88,900.0%)** | `VERIFIED_REAL` |
-| **학습용 패치 (Train)** | **0개** (`BLOCKED`) | **1,179개** | **학습 불능 공백 완전 해소** | `RESOLVED_BOTTLENECK` |
-| **검증용 홀드아웃 (Val - Banten)** | 1개 | **337개** | +336개 확장 | `VERIFIED_REAL` |
-| **시험용 독립 홀드아웃 (Test - West Java)** | 1개 | **264개** | +263개 확장 | `VERIFIED_REAL` |
-| **총 학습 픽셀 수 (256×256)** | 131,072 화소 | **116,654,080 화소** | **890.0배 데이터 확장** | `VERIFIED_REAL` |
-| **`ready_for_training` 게이트** | `False` (차단) | **`True` (통과)** | **정식 MLOps 재학습 개시 가능** | `GATE_PASSED` |
+| **6밴드+라벨·마스크 적격 패치** | `NOT_PINNED` | **1,407개** | 같은 정의의 과거 baseline 부재로 개선량 미산출 | `BLOCKED_BASELINE_NOT_PINNED` |
+| **학습 후보 패치 (Train)** | `NOT_PINNED` | **865개** | **패치 수량만으로 학습할 수 없음 (SCENE_SPLIT_LEAKAGE, LEDGER_LEARNING_READY_FALSE, COVERAGE_LEARNING_READY_FALSE, CLASS_COVERAGE_POLICY_FAILED)** | `BLOCKED_BY_READINESS_GATE` |
+| **검증 후보 홀드아웃 (Val - Banten)** | `NOT_PINNED` | **292개** | 현재 권위 재고만 검증 | `VERIFIED_REAL_CURRENT_INVENTORY` |
+| **시험 후보 홀드아웃 (Test - West Java)** | `NOT_PINNED` | **250개** | 현재 권위 재고만 검증 | `VERIFIED_REAL_CURRENT_INVENTORY` |
+| **후보 raster grid 화소 (256×256)** | `NOT_PINNED` | **92,209,152 화소** | 유효 학습 화소·실행 학습량으로 해석 금지 | `VERIFIED_REAL_CURRENT_INVENTORY` |
+| **`ready_for_training` 게이트** | `False` (차단) | **`False` (BLOCKED_FAIL_CLOSED)** | **SCENE_SPLIT_LEAKAGE, LEDGER_LEARNING_READY_FALSE, COVERAGE_LEARNING_READY_FALSE, CLASS_COVERAGE_POLICY_FAILED** | `BLOCKED` |
 
 ---
 
 ## 2. 지리적 홀드아웃(Geographic Holdout) 및 공간 누출 차단 검증
 
-본 프로젝트는 모델의 과적합 및 공간적 데이터 누출(Spatial Data Leakage)을 원천 차단하기 위해 **지리적 분할 원칙**을 강제한다:
+권위 원장의 province-split 정책, `scene_id`의 split 간 교차, 실제 raster footprint의 면적 교차를 각각 독립적으로 검사한다.
 
-1. **Train (학습 파티션 - 1,179개 패치)**:
-   - **배정 주**: East Java (248개), South Sulawesi (320개), Gorontalo (272개), Southeast Sulawesi (339개)
-   - **지리적 특성**: 자바 동부 화산·농경지대 및 술라웨시 열대 우림·산림·관목 지형 대표
-2. **Validation (검증 파티션 - 337개 패치)**:
-   - **배정 주**: Banten (337개)
-   - **지리적 특성**: 자바 서단 해안·구릉 농업 지대 (Train 주와 완벽한 행정구역 및 공간 분리)
-3. **Test (시험 독립 파티션 - 264개 패치)**:
-   - **배정 주**: West Java (264개)
-   - **지리적 특성**: 수도권 인접 도시화·고도 농업 복합 지형
-   - **독립성 보장**: Train 및 Val에 전혀 포함되지 않은 완전 독립 지리 표본으로, 모델의 일반화 성능을 정밀 측정
+1. **Train (학습 파티션 - 865개 패치)**:
+   - **배정 주**: east_java, gorontalo, south_sulawesi, southeast_sulawesi
+2. **Validation (검증 파티션 - 292개 패치)**:
+   - **배정 주**: banten
+3. **Test (시험 독립 파티션 - 250개 패치)**:
+   - **배정 주**: west_java
+
+- **교차 split scene_id**: S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431
+- **교차 split raster footprint 쌍**: 없음
+- **class 기여 정책 실패**: test:8:fraction_below_0.5pct, test:8:contributors_below_5, train:8:fraction_below_0.5pct, train:8:contributors_below_5, val:8:fraction_below_0.5pct, val:8:contributors_below_5
+- **현재 차단 사유**: SCENE_SPLIT_LEAKAGE, LEDGER_LEARNING_READY_FALSE, COVERAGE_LEARNING_READY_FALSE, CLASS_COVERAGE_POLICY_FAILED
+- **권위 보고서 실행 플래그**: `True` — 수집/감사 보고서 생성 여부이며 모델 학습 실행을 뜻하지 않는다.
+- **실제 모델 학습 실행**: `False`
 
 ---
 

@@ -1,0 +1,32 @@
+{
+  "schema_version": "province-year-scl-full-tile-pilot-decision/1.0",
+  "authorized_by": "USER_EXPLICIT_INSTRUCTION",
+  "recorded_at": "2026-10-27T16:52:32+09:00",
+  "decision": "RUN_ONE_FULL_TILE_STRATEGY_PILOT",
+  "batch_key": "unit366-fulltile-east_java-2021-01",
+  "province_id": "east_java",
+  "year": 2021,
+  "scene_id": "S2B_MSIL2A_20210811T023549_R089_T49MFM_20210811T163939",
+  "boundary_sha256": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423",
+  "starting_mosaic_sha256": "9259b3d0d6c5da47f616b3b6ec9b45b0c8cfccf56e0095beb0a23ad1f6b93ae3",
+  "source_report_sha256": "dd00d483e1dd2e42c17b4bf86f496dedff242367b9035db0ea5fdc1cfff6f3b7",
+  "policy": {
+    "max_full_tiles": 1,
+    "reservation_bytes": 67108864,
+    "max_side": 8192,
+    "stop_on_failure": true
+  },
+  "approvals": {
+    "collection_pilot": true,
+    "automatic_training": false,
+    "automatic_deployment": false
+  },
+  "purpose": "Measure full-MGRS-tile transfer cost and 1 km observed gain before choosing the next collection batch size.",
+  "stop_conditions": [
+    "HTTP_429_OR_TRANSFER_FAILURE",
+    "BUDGET_OR_DISK_INSUFFICIENT",
+    "EXECUTION_LOCK_CONFLICT",
+    "SCL_GRID_OR_VALUE_DOMAIN_FAILURE",
+    "MOSAIC_VALIDATION_FAILURE"
+  ]
+}

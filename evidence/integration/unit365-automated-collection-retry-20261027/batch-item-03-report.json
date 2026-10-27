@@ -1,0 +1,162 @@
+{
+  "accepted_asset": {
+    "bytes": 435375,
+    "cloud_cover": 2.357898,
+    "collection": "sentinel-2-l2a",
+    "datetime": "2024-07-26T02:35:29.024000Z",
+    "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\unit365-auto-retry1-03-east_java-2024\\east_java-pilot-00-2024\\raw-SCL.tif",
+    "quality": {
+      "clear_fraction": 0.999855,
+      "clear_pixels": 4193695,
+      "cloud_pixels": 0,
+      "histogram": {
+        "2": 609,
+        "4": 2846375,
+        "5": 1258318,
+        "6": 4025,
+        "7": 84977
+      },
+      "nodata_pixels": 0,
+      "pixel_count": 4194304,
+      "quality_status": "OBSERVATION_ELIGIBLE",
+      "shadow_pixels": 609,
+      "unclassified_pixels": 0
+    },
+    "scene_id": "S2B_MSIL2A_20240726T023529_R089_T49MFM_20240726T062840",
+    "sha256": "8d8402f3e66957550adc621d45086d8e3afdedef7af5c572dc69cdfecf0d2569",
+    "source_role": "SENTINEL_2_L2A_SCL_CAUSE_AND_OBSERVATION_EVIDENCE",
+    "source_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/49/M/FM/2024/07/26/S2B_MSIL2A_20240726T023529_N0511_R089_T49MFM_20240726T062840.SAFE/GRANULE/L2A_T49MFM_A038582_20240726T025546/IMG_DATA/R20m/T49MFM_20240726T023529_SCL_20m.tif",
+    "transfer": {
+      "http_body_bytes": 786432,
+      "max_http_body_bytes": 33554432,
+      "measurement_scope": "Python이 실제 읽은 COG Range 응답 본문; SAS JSON/HEAD/오류본문/TLS overhead 제외",
+      "transfer_measurement_known": true
+    }
+  },
+  "budget": {
+    "ledger_charge_bytes": 942303,
+    "ledger_charge_reason": "Measured COG Range plus bounded metadata response bodies",
+    "local_scl_file_bytes": 435375,
+    "measured_scl_range_body_bytes": 786432,
+    "metadata": {
+      "charged_bytes": 155871,
+      "maximum_bytes": 4194304,
+      "read_body_bytes": 155871
+    },
+    "reservation_bytes": 50331648
+  },
+  "candidate_audit": [
+    {
+      "cloud_cover": 0.767885,
+      "duplicate_scene_id": true,
+      "scene_id": "S2B_MSIL2A_20240716T023529_R089_T49MFM_20240716T073248",
+      "status": "REJECTED_DUPLICATE_SCENE_ID"
+    },
+    {
+      "cloud_cover": 2.357898,
+      "duplicate_scene_id": false,
+      "quality": {
+        "clear_fraction": 0.999855,
+        "clear_pixels": 4193695,
+        "cloud_pixels": 0,
+        "histogram": {
+          "2": 609,
+          "4": 2846375,
+          "5": 1258318,
+          "6": 4025,
+          "7": 84977
+        },
+        "nodata_pixels": 0,
+        "pixel_count": 4194304,
+        "quality_status": "OBSERVATION_ELIGIBLE",
+        "shadow_pixels": 609,
+        "unclassified_pixels": 0
+      },
+      "resolution": [
+        20.0,
+        20.0
+      ],
+      "scene_id": "S2B_MSIL2A_20240726T023529_R089_T49MFM_20240726T062840",
+      "status": "ACCEPTED",
+      "transfer": {
+        "http_body_bytes": 786432,
+        "max_http_body_bytes": 33554432,
+        "measurement_scope": "Python이 실제 읽은 COG Range 응답 본문; SAS JSON/HEAD/오류본문/TLS overhead 제외",
+        "transfer_measurement_known": true
+      }
+    }
+  ],
+  "completed_at": "2026-10-27T07:35:28.793914+00:00",
+  "config": {
+    "batch_key": "unit365-auto-retry1-03-east_java-2024",
+    "bbox": [
+      112.05865696217215,
+      -7.411374227806588,
+      112.12865696217214,
+      -7.341374227806588
+    ],
+    "boundary_sha256": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423",
+    "cloud_cover_max": 20,
+    "collection": "sentinel-2-l2a",
+    "cross_check_decision_sha256": "45497e5ff6eaad1acbd0fca4af29d81fdf4b7233bff5c27ae6a358ed4f9f9619",
+    "endpoint": "planetary-computer",
+    "metadata_budget_bytes": 4194304,
+    "province_id": "east_java",
+    "reservation_bytes": 50331648,
+    "schema_version": "province-year-sentinel-scl-pilot/1.0",
+    "season": [
+      "2024-06-01",
+      "2024-09-30"
+    ],
+    "window_side": 2048,
+    "year": 2024
+  },
+  "config_sha256": "263ea83ec99726a8d12d4114ab4e11df2cc247ac5d1d94ea25b8c8910be77261",
+  "execution": {
+    "collector_invoked": true,
+    "execution_lock_acquired": true,
+    "ledger_reserved": true,
+    "ledger_settled": true,
+    "remote_sentinel_downloads": 1
+  },
+  "schema_version": "province-year-sentinel-scl-pilot/1.0",
+  "search": {
+    "cloud_cover_response_verified": true,
+    "endpoint": "https://planetarycomputer.microsoft.com/api/stac/v1/search",
+    "item_count": 10,
+    "metadata_body_bytes": null,
+    "metadata_budget_treatment": "UNMEASURED_CHARGE_FULL_RESERVATION",
+    "query": {
+      "bbox": [
+        112.05865696217215,
+        -7.411374227806588,
+        112.12865696217214,
+        -7.341374227806588
+      ],
+      "collections": [
+        "sentinel-2-l2a"
+      ],
+      "datetime": "2024-06-01T00:00:00Z/2024-09-30T23:59:59Z",
+      "limit": 20,
+      "query": {
+        "eo:cloud_cover": {
+          "lte": 20.0
+        }
+      },
+      "sortby": [
+        {
+          "direction": "asc",
+          "field": "properties.eo:cloud_cover"
+        }
+      ]
+    }
+  },
+  "search_attempts": [
+    {
+      "attempt": 1,
+      "status": "SUCCESS"
+    }
+  ],
+  "started_at": "2026-10-27T07:35:00.107802+00:00",
+  "status": "COLLECTED_AND_SCL_QA_COMPLETED"
+}

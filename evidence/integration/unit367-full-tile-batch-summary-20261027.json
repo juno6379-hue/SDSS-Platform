@@ -1,0 +1,105 @@
+{
+  "schema_version": "province-year-scl-full-tile-batch-summary/1.0",
+  "status": "FULL_TILE_PILOT_AND_BATCH2_COMPLETED_MORE_GAPS_REMAIN",
+  "completed_at": "2026-10-27T17:05:36+09:00",
+  "strategy": {
+    "name": "PINNED_SENTINEL_2_SCL_FULL_MGRS_TILE",
+    "tile_shape": [5490, 5490],
+    "resolution_m": 20,
+    "pilot_tiles": 1,
+    "approved_followup_tiles": 2,
+    "completed_tiles": 3,
+    "stop_on_failure": true
+  },
+  "items": [
+    {
+      "province_id": "east_java",
+      "year": 2021,
+      "scene_id": "S2B_MSIL2A_20210811T023549_R089_T49MFM_20210811T163939",
+      "clear_fraction": 0.725252,
+      "range_body_bytes": 3399268,
+      "ledger_charge_bytes": 3399668,
+      "observed_gain_pixels": 7033,
+      "decision_sha256": "6473a06e088767bbc79059a60eae6411361b4692232fd26ffdc972f5cdcc9bea",
+      "report_sha256": "9b17e46ca6b5d09213b2d37d557656ddfd22226298555afb3bec50997b1421ca"
+    },
+    {
+      "province_id": "east_java",
+      "year": 2023,
+      "scene_id": "S2A_MSIL2A_20230905T023531_R089_T49MEM_20240916T145247",
+      "clear_fraction": 0.995867,
+      "range_body_bytes": 2886467,
+      "ledger_charge_bytes": 2886869,
+      "observed_gain_pixels": 8211,
+      "decision_sha256": "e3ccdd80f1e0f927c56511ea1b194972a20b2e8f2dcf2f5c7c4b28896e90b333",
+      "report_sha256": "71ae9982c9fe6a7d52bde944d90c58ff7e527041bcc2edaea204b999e31fdd3c"
+    },
+    {
+      "province_id": "east_java",
+      "year": 2024,
+      "scene_id": "S2B_MSIL2A_20240726T023529_R089_T49MFM_20240726T062840",
+      "clear_fraction": 0.770732,
+      "range_body_bytes": 2431938,
+      "ledger_charge_bytes": 2432340,
+      "observed_gain_pixels": 7511,
+      "decision_sha256": "deb042987e5e7c7e5a1f9cff4536128c3bbfb34d840e3be1373db6bdca48e3fe",
+      "report_sha256": "15ee21f9e3306f94babe0393a9418200d2d64f1477bc57ab2c112eebf24576db"
+    }
+  ],
+  "aggregate": {
+    "starting_observed_pixels": 14948,
+    "ending_observed_pixels": 37703,
+    "observed_gain_pixels": 22755,
+    "starting_observed_pct": 1.330393,
+    "ending_observed_pct": 3.355619,
+    "starting_outside_footprint_pixels": 1107605,
+    "ending_outside_footprint_pixels": 1079260,
+    "outside_footprint_reduction_pixels": 28345,
+    "range_body_bytes": 8717673,
+    "ledger_charge_bytes": 8718877,
+    "corresponding_2048_window_observed_gain_pixels": 4891,
+    "corresponding_2048_window_range_body_bytes": 2555904,
+    "observed_gain_factor_vs_windows": 4.652423,
+    "range_body_factor_vs_windows": 3.410798,
+    "observed_gain_per_range_byte_efficiency_factor": 1.364028
+  },
+  "final_mosaic": {
+    "path": "evidence/integration/unit367-full-tile-batch-item2-20261027/updated-mosaics/province-year-scl-mosaic-manifest.json",
+    "sha256": "8285cffc8e151ee6bc79abde1ab50ad1eeebedb3aac6977f0bbfb0cdef789a11",
+    "source_asset_count": 127,
+    "total_boundary_pixels": 1123578,
+    "total_gap_pixels": 1085875,
+    "cause_pixels": {
+      "CLOUD": 1377,
+      "SHADOW": 901,
+      "NODATA": 4337,
+      "OUTSIDE_FOOTPRINT": 1079260
+    }
+  },
+  "ledger_after": {
+    "remaining_bytes": 1704005367,
+    "sha256": "97f04bbba9e1e8c6e8ed2e6a58592a8c7e1ddefe6775bc2b770a8da7e1da8448",
+    "preexisting_pending_batches_preserved": 2,
+    "rate_limit_active": false,
+    "execution_lock_released": true
+  },
+  "next_scale_decision": {
+    "recommended_max_full_tiles": 6,
+    "status": "PLANNED_REQUIRES_PINNED_CANDIDATE_SELECTION_AND_PREFLIGHT",
+    "reason": "Three real full tiles improved observed gain per transferred Range byte by about 36% versus their 2048 windows, but all evidence is from East Java and does not yet prove cross-province behavior.",
+    "requirements": [
+      "SELECT_DISTINCT_HIGH_GAP_PROVINCE_YEAR_CELLS",
+      "PIN_LOCAL_STAC_SCENE_AND_SOURCE_WINDOW_EVIDENCE",
+      "RESERVE_AT_MOST_384_MIB",
+      "STOP_ON_FIRST_FAILURE_OR_HTTP_429",
+      "REBUILD_AND_VALIDATE_MOSAIC_AFTER_BATCH",
+      "KEEP_TRAINING_AND_DEPLOYMENT_APPROVAL_GATED"
+    ]
+  },
+  "gates": {
+    "boundary": "PROVISIONAL_BIG_BASELINE_BOUNDARY_APPROVAL_PENDING",
+    "full_collection_completeness": "BLOCKED_MORE_GAPS_REMAIN",
+    "automatic_training": "BLOCKED_REQUIRES_HUMAN_APPROVAL",
+    "automatic_deployment": "BLOCKED_REQUIRES_HUMAN_APPROVAL"
+  }
+}

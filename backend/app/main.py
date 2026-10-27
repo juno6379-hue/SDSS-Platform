@@ -160,7 +160,29 @@ def submit(module, function, payload, kind=None, model_to_evaluate=None, runtime
 
 @app.get('/api/health')
 def health():
-    return {'status': 'ok', 'mode': 'local-development', 'storage': 'sqlite', 'dependencies': {name: bool(importlib.util.find_spec(name)) for name in ['torch', 'rasterio', 'pyproj', 'ee', 'mlflow']}, 'authentication': 'token' if os.getenv('GEOAI_API_TOKEN') else 'localhost-only; configure GEOAI_API_TOKEN for shared access'}
+    storage_status = store.storage_status()
+    storage_state = storage_status.get('status')
+    service_status = {
+        'READY': 'ok',
+        'DEGRADED_DEV_FALLBACK': 'degraded',
+        'BLOCKED_POSTGRES_INSPECTION_ONLY': 'blocked',
+    }.get(storage_state, 'blocked')
+    return {
+        'status': service_status,
+        'ready': service_status == 'ok',
+        'mode': 'local-development',
+        'storage': storage_status['active_backend'],
+        'storage_status': storage_status,
+        'dependencies': {
+            name: bool(importlib.util.find_spec(name))
+            for name in ['torch', 'rasterio', 'pyproj', 'ee', 'mlflow']
+        },
+        'authentication': (
+            'token'
+            if os.getenv('GEOAI_API_TOKEN')
+            else 'localhost-only; configure GEOAI_API_TOKEN for shared access'
+        ),
+    }
 
 
 @app.get('/api/dashboard')

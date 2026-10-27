@@ -1,10 +1,12 @@
 {
-  "schema_version": "3.0",
-  "generated_at": "2026-10-19T15:13:45.122980+00:00",
-  "test_holdout_name": "West Java Independent Geographic Holdout",
+  "schema_version": "3.1",
+  "generated_at": "2026-10-20T08:15:32.956942+00:00",
+  "test_holdout_name": "West Java holdout (independence not verified)",
   "test_holdout_province": "west_java",
-  "total_test_patches": 264,
-  "total_test_pixels": 17301504,
+  "total_test_patches": 0,
+  "total_test_pixels": 0,
+  "scenario_test_patches": 264,
+  "scenario_test_pixels": 17301504,
   "experiments": [
     {
       "experiment_id": "EXP-A",
@@ -12,10 +14,10 @@
       "model_id": "baseline2021_cpu_v1_model",
       "model_version": "v0.1.0",
       "architecture": "TinyUNet (channels=6, classes=9)",
-      "training_data_desc": "Legacy 3 patches (East Java, Gorontalo, SE Sulawesi)",
+      "training_data_desc": "Scenario assumption: legacy 3 patches (East Java, Gorontalo, SE Sulawesi)",
       "input_data_desc": "Sentinel-2 Single-Scene L2A (cloud-gap uncorrected)",
-      "test_holdout_province": "West Java (Isolated)",
-      "test_patch_count": 264,
+      "test_holdout_province": "West Java (scenario; independence unverified)",
+      "scenario_patch_count": 264,
       "overall_accuracy": 0.482,
       "macro_precision": 0.451,
       "macro_recall": 0.435,
@@ -210,7 +212,14 @@
         ]
       ],
       "is_best_model": false,
-      "status": "BENCHMARK_BASELINE"
+      "status": "SYNTHETIC_SCENARIO_ONLY",
+      "evidence_status": "TESTED_SYNTHETIC",
+      "metrics_origin": "DETERMINISTIC_SCENARIO_FIXTURE",
+      "training_executed": false,
+      "prediction_artifacts_verified": false,
+      "scientific_accuracy_validated": false,
+      "promotion_eligible": false,
+      "is_scenario_reference": false
     },
     {
       "experiment_id": "EXP-B",
@@ -218,10 +227,10 @@
       "model_id": "baseline2021_cpu_v1_model",
       "model_version": "v0.1.0",
       "architecture": "TinyUNet (channels=6, classes=9)",
-      "training_data_desc": "Legacy 3 patches",
+      "training_data_desc": "Scenario assumption: legacy 3 patches",
       "input_data_desc": "Sentinel-2 SCL Median Composite (99.2% valid)",
-      "test_holdout_province": "West Java (Isolated)",
-      "test_patch_count": 264,
+      "test_holdout_province": "West Java (scenario; independence unverified)",
+      "scenario_patch_count": 264,
       "overall_accuracy": 0.546,
       "macro_precision": 0.505,
       "macro_recall": 0.485,
@@ -416,7 +425,14 @@
         ]
       ],
       "is_best_model": false,
-      "status": "INPUT_RECOVERY_GAIN"
+      "status": "SYNTHETIC_SCENARIO_ONLY",
+      "evidence_status": "TESTED_SYNTHETIC",
+      "metrics_origin": "DETERMINISTIC_SCENARIO_FIXTURE",
+      "training_executed": false,
+      "prediction_artifacts_verified": false,
+      "scientific_accuracy_validated": false,
+      "promotion_eligible": false,
+      "is_scenario_reference": false
     },
     {
       "experiment_id": "EXP-C",
@@ -424,10 +440,10 @@
       "model_id": "challenger_unet_v1_1_0",
       "model_version": "v1.1.0",
       "architecture": "Enhanced UNet (multi-scale feature pyramid)",
-      "training_data_desc": "Expanded 1,179 patches (East Java, Sulawesi)",
+      "training_data_desc": "Scenario assumption: 1,179 training patches (East Java, Sulawesi)",
       "input_data_desc": "Sentinel-2 Single-Scene L2A",
-      "test_holdout_province": "West Java (Isolated)",
-      "test_patch_count": 264,
+      "test_holdout_province": "West Java (scenario; independence unverified)",
+      "scenario_patch_count": 264,
       "overall_accuracy": 0.768,
       "macro_precision": 0.742,
       "macro_recall": 0.725,
@@ -622,7 +638,14 @@
         ]
       ],
       "is_best_model": false,
-      "status": "MODEL_EXPANSION_GAIN"
+      "status": "SYNTHETIC_SCENARIO_ONLY",
+      "evidence_status": "TESTED_SYNTHETIC",
+      "metrics_origin": "DETERMINISTIC_SCENARIO_FIXTURE",
+      "training_executed": false,
+      "prediction_artifacts_verified": false,
+      "scientific_accuracy_validated": false,
+      "promotion_eligible": false,
+      "is_scenario_reference": false
     },
     {
       "experiment_id": "EXP-D",
@@ -630,10 +653,10 @@
       "model_id": "challenger_scl_v1_2_0",
       "model_version": "v1.2.0",
       "architecture": "Enhanced UNet with Spatial Attention & Residual Connections",
-      "training_data_desc": "Expanded 1,179 patches + Multi-temporal SCL input",
+      "training_data_desc": "Scenario assumption: 1,179 training patches + multi-temporal SCL input",
       "input_data_desc": "Sentinel-2 SCL Multi-temporal Median Composite",
-      "test_holdout_province": "West Java (Isolated)",
-      "test_patch_count": 264,
+      "test_holdout_province": "West Java (scenario; independence unverified)",
+      "scenario_patch_count": 264,
       "overall_accuracy": 0.864,
       "macro_precision": 0.835,
       "macro_recall": 0.848,
@@ -827,12 +850,36 @@
           0
         ]
       ],
-      "is_best_model": true,
-      "status": "PRODUCTION_CANDIDATE_APPROVED"
+      "is_best_model": false,
+      "status": "SYNTHETIC_SCENARIO_ONLY",
+      "evidence_status": "TESTED_SYNTHETIC",
+      "metrics_origin": "DETERMINISTIC_SCENARIO_FIXTURE",
+      "training_executed": false,
+      "prediction_artifacts_verified": false,
+      "scientific_accuracy_validated": false,
+      "promotion_eligible": false,
+      "is_scenario_reference": true
     }
   ],
-  "best_experiment_id": "EXP-D",
-  "gate_promotion_decision": "PROMOTED_TO_PRODUCTION",
-  "promotion_target": "challenger_scl_v1_2_0 (v1.2.0)",
-  "rollback_target": "baseline2021_cpu_v1_model (v0.1.0)"
+  "best_experiment_id": null,
+  "scenario_reference_experiment_id": "EXP-D",
+  "gate_promotion_decision": "BLOCKED_NO_EXECUTED_TRAINING_OR_MEASURED_PREDICTIONS",
+  "promotion_target": null,
+  "rollback_target": null,
+  "evidence_status": "TESTED_SYNTHETIC",
+  "metrics_origin": "DETERMINISTIC_SCENARIO_FIXTURE",
+  "training_executed": false,
+  "prediction_artifacts_verified": false,
+  "holdout_independence_verified": false,
+  "scientific_accuracy_validated": false,
+  "promotion_authorized": false,
+  "blocking_reasons": [
+    "NO_EXECUTED_TRAINING_RUN",
+    "NO_MODEL_CHECKPOINT_HASH",
+    "NO_MEASURED_PREDICTION_ARTIFACTS",
+    "NO_INDEPENDENT_LABEL_ARTIFACTS",
+    "SOURCE_SCENE_SPLIT_CONFLICT_PRESENT",
+    "DATASET_LEARNING_READY_FALSE",
+    "NO_HUMAN_APPROVAL_RECORD"
+  ]
 }

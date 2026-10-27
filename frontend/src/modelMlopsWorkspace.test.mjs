@@ -44,7 +44,8 @@ test('ModelMlopsWorkspace files and components exist', () => {
   assert.match(tsxContent, /Run-001/);
   assert.match(tsxContent, /Run-002/);
   assert.match(tsxContent, /Run-003/);
-  assert.match(tsxContent, /최적 실험 결과/);
+  assert.match(tsxContent, /TESTED_SYNTHETIC/);
+  assert.match(tsxContent, /과학 성능·승격 근거로 사용 금지/);
 
   // Verify 6 Provinces in Dataset Coverage
   assert.match(tsxContent, /South Sulawesi/);
@@ -62,8 +63,14 @@ test('ModelMlopsWorkspace files and components exist', () => {
   assert.match(tsxContent, /클래스 불균형/);
 
   // Verify Retraining Trigger Alert Banner
-  assert.match(tsxContent, /재학습 트리거/);
-  assert.match(tsxContent, /재학습 실행/);
+  assert.match(tsxContent, /재학습 차단/);
+  assert.match(tsxContent, /BLOCKED_NO_EXECUTED_TRAINING_OR_MEASURED_PREDICTIONS/);
+  assert.match(tsxContent, /주 전체 보완·재학습 증거 게이트/);
+  assert.match(tsxContent, /retraining_readiness/);
+  assert.match(tsxContent, /NO_VERIFIED_CONFIDENCE_CALIBRATION/);
+  assert.match(tsxContent, /NO_INDEPENDENT_GROUND_TRUTH_EVALUATION/);
+  assert.match(tsxContent, /confidence는 모델 확률의 보정 상태이며 accuracy가 아닙니다/);
+  assert.match(tsxContent, /Esri weak label은 독립 정답으로 사용하지 않습니다/);
 
   // Verify 3 Deployment Environments
   assert.match(tsxContent, /개발 \(Dev\)/);
@@ -72,7 +79,7 @@ test('ModelMlopsWorkspace files and components exist', () => {
 
   // Verify 4-step Human-in-the-loop Approval Workflow
   assert.match(tsxContent, /승인 워크플로우/);
-  assert.match(tsxContent, /새 승인 요청/);
+  assert.match(tsxContent, /승인 요청 차단/);
   assert.match(tsxContent, /최근 승인 이력/);
 
   // Verify 5 Operational Insights in Right Panel
@@ -82,6 +89,17 @@ test('ModelMlopsWorkspace files and components exist', () => {
   assert.match(tsxContent, /성능 비교 및 실험 관리/);
   assert.match(tsxContent, /배포 상태 확인/);
   assert.match(tsxContent, /재학습 트리거 확인/);
+
+  // Fail closed when operational evidence is missing.
+  assert.match(tsxContent, /BLOCKED_SUMMARY_UNAVAILABLE/);
+  assert.match(tsxContent, /coveragePct: null/);
+  assert.match(tsxContent, /setTrainingAllowed\(false\)/);
+  assert.match(tsxContent, /setApprovalAllowed\(false\)/);
+  assert.doesNotMatch(tsxContent, /const DEFAULT_APPROVALS/);
+  assert.doesNotMatch(tsxContent, /status: '운영중'/);
+  assert.doesNotMatch(tsxContent, /12,428/);
+  assert.doesNotMatch(tsxContent, /↑ \+18%/);
+  assert.match(tsxContent, /커버리지 미측정 · 위치 안내만 제공/);
 
   // Verify CSS classes
   assert.match(cssContent, /\.mlops-workspace/);

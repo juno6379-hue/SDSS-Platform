@@ -1,48 +1,74 @@
 # 이해자료 변경 이력
 
-## 2026-10-20 07:58 KST — G6 GeoServer 1차 레이어 3종 마스크(annual_valid, newly_recovered, still_missing) 공간 배포 및 G7 AI 데이터셋 홀드아웃 분할 실측 완결 (VERIFIED_REAL)
+## 2026-10-27 — Unit366–367 Sentinel-2 SCL full-tile 전략·batch 해설
 
-- 규격 및 구현:
-  - 사용자 지시 반영: "다음 단계로 G6 GeoServer 1차 레이어(annual_valid_mask, newly_recovered_mask, still_missing_mask) 공간 배포 및 G7 AI 데이터셋 홀드아웃 분할을 중단 없이 지속 진행해...".
-  - **G6 GeoServer 1차 레이어 54개(6개 주 × 9종) 공간 배포 (`backend/app/ml/geoserver_primary_layers_manager.py`)**:
-    - `annual_valid_mask.tif` (1=유효 관측, 0=결측), `newly_recovered_mask.tif` (1=신규 복원, 0=기타), `still_missing_mask.tif` (1=잔여 결측, 0=관측 완료)를 독립 GeoTIFF 래스터로 실물화 및 GeoServer WMS 1.3.0/1.1.1 엔드포인트 공간 배포 완료.
-    - 6개 주 전역 18개 엔드포인트 실측 호출 HTTP 200 OK 및 1x1 권위적 픽셀 질의(`/v1/lcluc/pixel`) 무화면추정 GeoTIFF 직접 값 반환 검증 완료.
-    - 산출물 3종 갱신: `04_geoserver_primary_layers_manifest.json` (48.2KB, 54개 레이어), `04_geoserver_primary_layer_verification.md` (21.1KB), `08_geoserver_1st_2nd_layer_registry.csv` (26.2KB).
-  - **G7 AI 데이터셋 지리적 홀드아웃 분할 및 훈련 준비성 게이트 (`backend/app/ml/ai_dataset_splits_manager.py`)**:
-    - 1,780개 적격 패치 대상 완전 지리적 격리(자바/술라웨시) 분할: Train 1,179개(4개 주), Val 337개(반텐), Test 264개(서자바).
-    - 공간 좌표 중첩 0%, 공간 데이터 누출(Spatial Leakage) 0.0%, `ready_for_training=True` (`GATE_PASSED_READY_FOR_TRAINING`) 정식 통과 확인.
-    - 산출물 3종 재검증: `05_ai_dataset_splits_manifest.json` (24.9KB), `05_dataset_baseline_vs_new.csv`, `05_geo_temporal_leakage_and_readiness.md`.
-  - **이해자료 신규 편철**:
-    - `docs/understanding/351_G6_GEOSERVER_PRIMARY_MASKS_AND_G7_HOLDOUT_SPLITS.md` 신규 작성 및 등록.
-- 검증 및 시험:
-  - `tests/test_geoserver_primary_layers.py`: 5 / 5 PASS (54개 레이어, 이진 마스크 무결성, WMS GetMap, 권위적 픽셀).
-  - `tests/test_ai_dataset_splits.py`: 4 / 4 PASS (지리적 홀드아웃, 훈련 준비성, 공간 누출 0%, 산출물 내보내기).
-  - 총 9 / 9 PASS (100%).
+완료 구현 문서, Unit366 pilot·Unit367 item1/item2 보고서와 합산 evidence, `read_cog_full_tile`·collector·CLI·시험을 읽고 `367_FULL_TILE_STRATEGY_AND_BATCH.md`를 추가했다. East Java 2021/2023/2024 full SCL tile 3건의 clear 72.5252/99.5867/77.0732%를 반영했고, 2021·2024 swath 밖 NoData가 전체 분모에 포함돼 기존 patch 80% 기준과 다른 지표임을 설명했다.
 
-## 2026-10-20 00:15 KST — CODEX v3.0 전 단계(G6~G14) 완결 및 GeoServer 60개 공간 레이어·2×2 재학습 벤치마크 총괄 완비 (VERIFIED_REAL)
+실제 full-tile Range 8,717,673B·charge 8,718,877B·observed +22,755와 대응 2048 windows Range 2,555,904B·+4,891을 비교해 East Java 표본의 gain-per-byte factor 1.364028을 기록했다. 세 표본 모두 같은 주이므로 타 주에 일반화하지 않았다. 최종 observed 37,703/1,123,578=3.355619%, gap 1,085,875, assets 127, manifest SHA `8285cffc...89a11`, ledger remaining 1,704,005,367B/SHA `97f04bbb...a8448`, pending2 보존·lock0·rate false를 반영했다.
 
-- 규격 및 구현:
-  - 사용자 요구 반영: "G1 PostGIS 이관 준비에 이어, G2 432개 주·월 가용성 감사 및 Sentinel-2 추가 수집·6개 주 커버리지/정확도 향상 개발을 중단 없이 지속 진행하고, UI 동기화 및 실 연동 시켜야 된다. 완벽하게 하자...".
-  - **CODEX v3.0 G6 GeoServer 1차 42개 공간 레이어 배포 (`backend/app/ml/geoserver_primary_layers_manager.py`)**:
-    - 6개 주 × 7대 1차 공간 레이어(`sentinel2_composite`, `scl_mask`, `annual_valid_mask`, `observation_count`, `coverage_comparison`, `worldcover_reference`, `esri_reference`) = 총 42개 GeoTIFF 래스터 실물화 및 WMS 1.3.0 GetMap/GetCapabilities 전수 구축.
-    - `04_geoserver_primary_layers_manifest.json` (37.5KB), `04_geoserver_primary_layer_verification.md` (17.0KB), `08_geoserver_1st_2nd_layer_registry.csv` (29.6KB) 발행.
-  - **CODEX v3.0 G7 AI 데이터셋 지리적 홀드아웃 분할 및 준비성 게이트 (`backend/app/ml/ai_dataset_splits_manager.py`)**:
-    - 1,780개 적격 256×256 패치(Train 1,179, Val 337, Test 264) 지리적 격리(자바/술라웨시) 분할.
-    - 과거 기준선 2패치(`ready_for_training=False`) 대비 **+88,900% 데이터셋 대확장**, 공간 데이터 누출 0.0% 검증, `ready_for_training=True` 게이트 통과.
-    - `05_ai_dataset_splits_manifest.json` (24.9KB), `05_dataset_baseline_vs_new.csv`, `05_geo_temporal_leakage_and_readiness.md` (3.0KB) 발행.
-  - **CODEX v3.0 G8-G9 2×2 동일 홀드아웃 재학습 벤치마크 평가 (`backend/app/ml/model_benchmark_evaluator.py`)**:
-    - 고정된 서부 자바(West Java) 독립 시험셋에서 4개 실험(EXP-A, EXP-B, EXP-C, EXP-D) 전수 평가.
-    - 최종 Challenger 모델(`challenger_scl_v1_2_0`): **OA 86.4%**, **Macro F1 0.841** (+40.1%p, 상대 +91.1%), **mIoU 0.812** (+43.2%p) 달성 및 프로덕션 승격(`PROMOTED_TO_PRODUCTION`).
-    - `06_model_experiments_manifest.json` (18.6KB), `06_model_metrics_baseline_vs_challenger.csv`, `06_per_class_metrics_and_confusion.md`, `06_holdout_independence_and_model_card.md`, `07_retraining_model_approval_rollback.md` 발행.
-  - **CODEX v3.0 G10-G14 2차 18개 공간 레이어·변화탐지 및 SDSS 다운스트림 연계 (`backend/app/ml/geoserver_secondary_and_change_manager.py`)**:
-    - 2차 추론·신뢰도·마스크 18개 레이어 구축 (GeoServer 총 등록 레이어: 60개).
-    - 2020↔2025 공통 유효영역(Common Valid Area) 9×9 전이행렬 및 IPCC Tier 1 순 탄소 배출량/생태계 파편화 다운스트림 산출.
-    - `08_pixel_map_audit.md`, `09_annual_change_and_common_valid_area.csv`, `10_deployment_architecture_and_decisions.md`, `11_e2e_test_evidence.md`, `12_executive_summary_before_after.md` 총 26종 CODEX 산출물 100% 완성.
-- 검증 및 시험:
-  - 신규 백엔드 시험 13건 포함 전체 pytest: **67 / 67 PASS (100%)**.
-  - 프론트엔드 node test: **347 / 347 PASS (100%)**.
-  - 프론트엔드 빌드: **130개 모듈 변환, 0 에러**.
-  - GeoServer(포트 8088, WMS 1.3.0) 및 FastAPI 메인 백엔드(포트 8002) 정상 가동 중.
+독립 validator와 실제 수집·QA·mosaic는 VERIFIED_REAL, 회귀 45PASS/88warnings/11subtests/55.23초는 TESTED_SYNTHETIC으로 구분했다. BIG 경계 승인·전체 completeness는 BLOCKED, training/deployment 0/사람 승인형이다. 다음 최대 6 full tiles/384MiB는 후보 pin·preflight 전 `PLANNED_REQUIRES_PINNED_CANDIDATE_SELECTION_AND_PREFLIGHT`이며 실행 완료로 표현하지 않았다. API8002/UI5174/WMS8088 HTTP200은 기존 서비스 가용성 표본이고 API/UI 계약 변경·자동 화면 연결 근거가 아니므로 UI 변경 없음도 기록했다. INDEX를 갱신했으며 이해자료 외 제품·운영파일·시험 수정과 추가 수집·학습·배포·UI·브라우저 실행은 0이다.
+
+## 2026-10-27 — Unit365 Sentinel-2 결측 수집 one-shot guarded batch 해설
+
+Unit364/365 실행 evidence, 완료 orchestrator/collector/CLI·시험과 구현 문서를 읽고 `365_AUTOMATED_GAP_COLLECTION_BATCH.md`를 추가했다. Unit364 첫 STAC `RemoteDisconnected`가 downloads 0·후속 2건 미시작·lock release·50,331,648B 전액 charge로 끝난 실제 실패와, Unit365가 새 key·bounded retry로 East Java 2021/2023/2024의 2048×2048 SCL 3건을 실제 수집한 결과를 분리했다.
+
+Unit365 clear 97.4523/99.5910/99.9855%, charge 합계 3,147,616B, observed +4,891, OUTSIDE_FOOTPRINT -4,935, 전체 observed 14,948/1,123,578=1.330393%, 124 unique assets, manifest SHA `9259b3d0...b93ae3`, ledger remaining 1,712,724,244B와 SHA `2b98eadb...65862`를 반영했다. 독립 validator는 VERIFIED_REAL, 관련 회귀 33PASS/105warnings/87.82초는 TESTED_SYNTHETIC으로 구분했다.
+
+경계 승인·native-resolution 전체 completeness는 BLOCKED, training/deployment는 0/사람 승인형이다. 약 693 windows는 단순 면적 비례의 거친 추정이지 실행 queue·완료 증거가 아니며, 자동화는 one-shot guarded batch일 뿐 무기한 scheduler나 다음 batch 자동 승인이 아님을 명시했다. API8002/UI5174/WMS8088 HTTP200은 기존 서비스 가용성 표본이고 API/UI 계약 변경·신규 mosaic 자동 화면 연결 근거가 아니므로 UI 변경 없음도 기록했다. INDEX를 갱신했으며 이해자료 외 제품·운영파일·시험 수정과 추가 수집·학습·배포·UI·브라우저 실행은 0이다.
+
+## 2026-10-27 — Unit363 승인 전 BIG 기준 제한적 Sentinel-2 pilot 해설
+
+완료된 collector/planner/evidence builder, CLI 2개, 시험 3개와 Unit363 고정 evidence를 읽고 `363_PROVISIONAL_SENTINEL_PILOT.md`를 추가했다. GISTARU `SKIPPED_BY_USER_DECISION`은 pilot 범위만, BIG는 `PROVISIONAL_BIG_BASELINE`/승인 대기, 신규 Sentinel-2 SCL 1건은 VERIFIED_REAL, 갱신 36셀 mosaic는 `VERIFIED_REAL_LOCAL_ARTIFACTS_BOUNDARY_APPROVAL_PENDING`, 학습·배포는 0/BLOCKED로 구분했다.
+
+East Java 2023 scene `S2A_MSIL2A_20230905T023531_R089_T49MFM_20230905T081430`의 cloud metadata 0.945937%와 256×256 SCL clear 100%, Range body 196,608B·local SCL 4,872B·원장 보수 charge 33,554,432B를 반영했다. pilot 원장은 settled, lock은 제거, active collector는 0이다. 기존 Banten·West Java pending 2건은 다른 key이고 Unit363이 건드리지 않았음을 명시했다.
+
+East Java 2023 observed 194→219(+25), OUTSIDE_FOOTPRINT 47,837→47,812(-25), 전체 observed 10,057/1,123,578=0.895087%, source assets 121을 기록했다. 전수 validator PASS와 집중 회귀 29PASS/105warnings/90.18초, compileall·diff-check PASS를 설명하되, 1km inventory를 최종 10m/20m 과학 제품이나 승인 통계로 확대하지 않았다. INDEX를 갱신했으며 이해자료 외 제품·운영파일·시험 수정과 추가 수집·학습·배포·UI·브라우저 실행은 0이다.
+
+## 2026-10-27 — Unit362 6개 주 경계 후보·GISTARU·36셀 SCL 모자이크 해설
+
+완료 builder/CLI/검증기/시험과 고정 evidence 5종을 읽고 `362_PROVINCE_BOUNDARY_GISTARU_AND_SCL_MOSAICS.md`를 추가했다. BIG 공식 공개 layer 12에서 받은 6개 주 경계는 SHA까지 고정했지만 현행 유효일자·관할기관·통계 승인이 없어 `CANDIDATE_PENDING_COMPETENT_AUTHORITY_AND_STATISTICAL_APPROVAL / IMPLEMENTED_UNVERIFIED`로 설명했다. GISTARU Java/Sulawesi 정확한 후보 URL은 고정됐으나 DNS/HTTP 실패로 layer id/name·query·metadata는 BLOCKED임을 유지했다.
+
+로컬 raw SCL 120개로 만든 36셀 EPSG:6933 1km observed/cause GeoTIFF 72개는 `VERIFIED_REAL_LOCAL_ARTIFACTS_BOUNDARY_APPROVAL_PENDING`으로 기록했다. observed 10,032/1,123,578=0.892862%, gap 1,113,546과 CLOUD607·SHADOW374·NODATA0·OUTSIDE_FOOTPRINT1,112,565를 반영했다. 1km는 수집 인벤토리이지 최종 10m/20m 과학 제품이나 승인 통계가 아님을 명시했다. 회귀 25PASS/102warnings, compileall·diff-check PASS와 새 Sentinel 다운로드·collector·ledger·lock 0을 구분했다. INDEX를 갱신했으며 제품·운영 자료·시험 수정 및 새 HTTP·수집·UI·브라우저 실행은 0이다.
+
+## 2026-10-21 — Unit361 Root 실행 서비스·브라우저 후속
+
+Root 최종 통합 회귀 80PASS/171warnings/2subtests/67.26초와 실행 중 API/UI/GeoServer 확인을 361 해설에 추가했다. API8002 summary2.1과 UI5174/proxy, GetCapabilities는 200이고 legacy Esri GetMap은 409였다. 실제 브라우저에서 9개 BLOCKED 단계, confidence와 독립 accuracy/F1/mIoU 미측정, 재학습·승인 차단을 확인했다. 이는 로컬 화면 적용 검증이며 실제 수집·학습·과학 정확도·운영 승격 근거가 아니다.
+
+## 2026-10-21 — Unit361 최종 구현 해설·자료 역할과 MLOps 게이트
+
+기존 설명 초안을 최종 코드·시험 인계로 갱신하고 `361_DATA_ROLES_AND_OBSERVATION_GAPS.md`로 이름을 바꿨다. 완료 planner/Esri 문서·실제 planner/manager/tile/router·MLOps/UI와 시험 계약·보존 planner 로그·manifest3.2를 읽었다. GISTARU는 권위 경계 교차검증, Esri는 연차 weak label, Sentinel-2/SCL은 관측·원인 mosaic의 역할로 나눴다. planner1.1의 exact GISTARU URL/레이어/질의/outSR4326/시점/metadata·비교 SHA 및 36셀 같은 EPSG:6933 계약을 설명했다. 현재 live metadata·권위 경계·운영 mosaic 부족으로 실제 계획·수집은 0/BLOCKED다.
+
+Esri P0는 기존6파일의 WorldCover LUT 6/6 일치 감사, 생성 경로 제거·격리·WMS/픽셀/direct path HTTP409, primary manifest3.2의 accepted48/quarantined6으로 교정됐다. accepted는 전수 게시가 아니며 실제 Esri도 weak_label_agreement·independent_ground_truth=false/model_prediction=false다. MLOps summary2.1/retraining-readiness1.0의 9단계·필수 증거·confidence calibration과 독립 accuracy·null/false·UI 증거 게이트를 설명하고 실제 학습·예측·승격·배포0을 유지했다.
+
+보존 planner20PASS/23warnings/22.01초와 Root최종21PASS, 앞선 Esri53PASS와 관련최종59PASS/147warnings/2subtests는 겹친 배치로 합산하지 않았다. MLOps API8PASS·UI source1PASS·frontend build 성공은 구현/계약 검증이며 새 UI의 실브라우저 완료 근거는 아니다. 진단 coverage0.42~4.49%는 최종 권위 측정으로 승격하지 않았다. 역할표·실행/현재상태표·도식·시험범위·1/5/10분대본·FAQ를 최종화했다. 제품·implementation·운영데이터 수정/새시험·HTTP·수집·서비스재시작0이다.
+
+## 2026-10-21 — Unit360 최종 통합 검증과 실제 UI 동작 반영
+
+완료 357/358/359/360 구현 문서와 현재 secondary manager·MLOps router/UI·G7 baseline/gate·PostGIS 무연결 script 및 시험 계약을 읽어 기존 통합 해설·상태표·대본·Q&A를 갱신했다. 초기 UI5174 연결 거부·실브라우저 미확인 상태는 Root의 최종 실제 검증으로 대체했다. MLOps blocked/null/disabled, Swipe118레이어·35시리즈·210쌍/183시각허용·27차단·model_prediction0, 0/50/100·ArrowRight51은 UI 동작 VERIFIED_REAL이다. API/UI/GeoServer HTTP200은 전수 게시·과학적 정확도·운영 배포 근거가 아니다.
+
+358 focused8PASS와 primary+secondary+tiles31PASS/137warnings/20.32초는 실제 inference/secondary/change 성공이 아닌 차단 계약 시험이다. 359 8PASS/1warning/14.33초는 기존 approval의 미검증 기록/IMPLEMENTED_UNVERIFIED·verified0와 retrain/approval POST409 write-free를 검증했다. G7은 권위 원본 전체58PASS/425.71초 뒤에도 baseline NOT_PINNED·improvement null·learning_ready=false다. PostGIS 무연결 최종 재실행1PASS/10.70초도 실제 pilot은 BLOCKED다. G7/PostGIS 시간은 Root unified exec stdout 확인이며 별도 로그 경로를 만들지 않았다. 시험 배치는 중복 합산하지 않는다.
+
+실제 학습·예측·승격·배포0, 원본1779/1407(865/292/250)·scene충돌1, 353 운영36셀/동일grid복구차단은 유지했다. 기존 approval 기록 존재와 검증된 승인을 분리했고 실제 추론/독립평가/마스크/pilot/추가 UI 자동E2E를 후속으로 남겼다. 지정 이해문서3개 외 제품·implementation·운영파일 수정0/새 시험·HTTP·서비스 재시작0이다.
+
+## 2026-10-21 — 352·353·355·357 완료 범위 통합 해설
+
+완료 구현 문서와 실제 코드·시험 계약·353 보존 로그를 읽어 통합 해설 `353_357_EVIDENCE_COVERAGE_POSTGIS_AND_SWIPE.md`를 추가했다. 쉬운 설명 → 이론 → 코드/데이터 → 상태별 시험 근거 → 1·5·10분 발표 → Q&A 순서로 작성했다. 원본 1779/품질 적격 1407(865/292/250)·scene 충돌 1·learning_ready=false와 실제 학습·예측·승격·배포 0을 유지한다.
+
+352의 고정 지표·264패치는 TESTED_SYNTHETIC이다. 353 초기 반텐2023 read-only 기록은 UTM/EPSG:6933 면적 혼합으로 유효 VERIFIED_REAL 근거에서 철회했으며, 현재 재측정 없이 BLOCKED다. 과거 completion의 성공 문자열은 현재 상태로 사용하지 않는다. 36셀은 우선 대상 6개 주×6년 범위이며 인도네시아 전국 측정이 아니다. 동일-grid before/after 전이가 없으면 복구량·복구율은 null/BLOCKED다. 최종 40PASS/14.31초는 합성/계약 회귀 범위다.
+
+355는 저장소 fail-closed·임시 SQLite reconcile을 시험했지만 실제 PostGIS DDL·typed backfill·운영 이관·cutover는 미완료다. 14/28/74 시험 배치는 중복 합산하지 않는다. 357은 실제 읽기 감사의 118 source window·35시리즈·210연도쌍 중 183개 시각 비교/27개 차단, model_prediction 0·통계/픽셀 API 차단을 구분한다. 8PASS·프런트 build와 UI5174 연결 거부/실브라우저 미검증을 분리했다. 349는 편집하지 않았고 구현·운영 데이터·시험 수정/새 시험·HTTP·수집·DB·서비스 재시작은 0이다.
+
+## 2026-10-20 — Unit352 G6~G9 이해자료 증거 교정
+
+352 완료 감사·evaluator/tests·06 JSON/CSV/카드/혼동행렬·07 차단서를 직접 읽어 350 해설을 전면 교정했다. 쉬운 설명 → 이론 → 코드/데이터 → 시험 근거 → 1·5·10분 대본 → Q&A를 현재 상태에 맞춰 다시 작성했다. 합성 점수는 TESTED_SYNTHETIC/DETERMINISTIC_SCENARIO_FIXTURE로만 표기하고 실제 학습·예측·정확도·승격·기관 승인 주장을 제거했다. Root352의 4PASS/3.08초 및 compile 기록은 차단 계약의 합성 시험 범위로 인용했으며, 이해 담당의 시험 실행은 0이다. G6의 파일 존재/합성 생성/서비스 표본/목록 공백/registry 손실과 G7의 권위 원본 집계·진행 중인 코드를 구분했다. INDEX의 350/351 현재 요약과 과거 완료 이력도 교정했다. 제품·운영 자료 쓰기·HTTP·학습·추가 시험은 0이다.
+
+## 2026-10-20 — 과거350/351 완료 기록 교정
+
+이전 07:58의 G6/G7 완결 기록과 00:15의 G6~G14/벤치마크 완결 기록은 Unit352 독립감사로 철회·대체한다. 파일 생성/합성 시험/표본 서비스 응답을 전수 게시·학습 준비·실제 정확도·운영 승격으로 확대한 기록이었다. 기존 350 본문은 교정판으로 대체했다. 351은 동시 소유 범위 밖이므로 수정하지 않고, INDEX에 현재 근거로 인용할 수 없음을 명시했다.
+
+현재 G6는 로컬 TIFF 54개 존재 범위만 VERIFIED_REAL이다. coverage_comparison의 고정 배열과 파생 마스크는 합성이며, GetCapabilities의 named 목록 부재와 registry의 primary 54행이 이전 secondary 18행을 덮은 결함이 남았다. 표본 GetMap PNG 200은 표본 관측이다. G7 권위 원본은 1779행/1407개 적격(865292250)이며, scene 충돌 1건·learning_ready false 상태다. G7 교정 코드는 진행 중이다. 1780개 폴더 인벤토리는 적격 수가 아니다.
+
+G8/G9는 schema3.1의 TESTED_SYNTHETIC 시나리오다. 264패치·고정 OA/F1/mIoU·혼동행렬은 합성 예시이며 검증 test 패치/픽셀은 0/0이다. 학습/예측/독립성/정확도/승격은 false이고 best/promotion/rollback 대상은 null이다. 사람·기관 승인 기록은 없으며 승격 BLOCKED를 유지한다. 과거 시험 수·build는 실제 모델 성능/승격 증거가 아니며 이번 전체 검증으로 합산하지 않는다.
 
 ## 2026-10-19 23:55 KST — CODEX v3.0 G2 432개 주·월 가용성 전수 감사 및 G5 구름·결측 복구율 98.5% 산출·MLOps 실연동 완결 (VERIFIED_REAL)
 

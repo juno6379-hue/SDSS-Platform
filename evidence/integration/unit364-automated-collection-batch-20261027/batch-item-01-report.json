@@ -1,0 +1,42 @@
+{
+  "budget_failure_policy": "FULL_RESERVATION_CHARGED_NO_AUTOMATIC_REFUND",
+  "candidate_audit": [],
+  "completed_at": "2026-10-27T07:30:44.366710+00:00",
+  "config": {
+    "batch_key": "unit364-auto-01-east_java-2021",
+    "bbox": [
+      112.05865696217215,
+      -7.411374227806588,
+      112.12865696217214,
+      -7.341374227806588
+    ],
+    "boundary_sha256": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423",
+    "cloud_cover_max": 20,
+    "collection": "sentinel-2-l2a",
+    "cross_check_decision_sha256": "45497e5ff6eaad1acbd0fca4af29d81fdf4b7233bff5c27ae6a358ed4f9f9619",
+    "endpoint": "planetary-computer",
+    "metadata_budget_bytes": 4194304,
+    "province_id": "east_java",
+    "reservation_bytes": 50331648,
+    "schema_version": "province-year-sentinel-scl-pilot/1.0",
+    "season": [
+      "2021-06-01",
+      "2021-09-30"
+    ],
+    "window_side": 2048,
+    "year": 2021
+  },
+  "config_sha256": "35f37feeec7f4c9a44a9a34da3527e054e850d38ef622d7cc2dd3fa7369841b0",
+  "error": "STAC 검색 실패: RemoteDisconnected",
+  "error_type": "RuntimeError",
+  "execution": {
+    "collector_invoked": true,
+    "execution_lock_acquired": true,
+    "ledger_reserved": true,
+    "ledger_settled": true,
+    "remote_sentinel_downloads": 0
+  },
+  "schema_version": "province-year-sentinel-scl-pilot/1.0",
+  "started_at": "2026-10-27T07:30:28.400655+00:00",
+  "status": "FAILED"
+}

@@ -1,0 +1,37 @@
+{
+  "budget": {
+    "additional_maximum_bytes": 4294967296,
+    "ledger_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json",
+    "new_charged_bytes_before": 2582243052,
+    "pilot_reservation_bytes": 67108864,
+    "preexisting_pending_batches": [
+      "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01"
+    ],
+    "rate_limit_active": false,
+    "remaining_before": 1712724244
+  },
+  "checked_at": "2026-10-27T07:52:53.961713+00:00",
+  "duplicate_check": {
+    "existing_stac_item_count": 131,
+    "scene_id_rechecked_after_live_search": true,
+    "selected_pixel_outside_existing_footprint": true
+  },
+  "errors": [],
+  "schema_version": "province-year-pilot-preflight/1.0",
+  "selected_target": {
+    "cause": "OUTSIDE_FOOTPRINT",
+    "province_id": "east_java",
+    "strategy": "EXPAND_PINNED_SCENE_TO_FULL_MGRS_TILE",
+    "year": 2021
+  },
+  "source_report_sha256": "dd00d483e1dd2e42c17b4bf86f496dedff242367b9035db0ea5fdc1cfff6f3b7",
+  "source_scene_id": "S2B_MSIL2A_20210811T023549_R089_T49MFM_20210811T163939",
+  "status": "PASS",
+  "storage": {
+    "minimum_required_free_bytes": 268435456,
+    "workspace_drive_free_bytes": 1989265072128,
+    "workspace_drive_total_bytes": 2000290414592,
+    "workspace_drive_used_bytes": 11025342464
+  }
+}

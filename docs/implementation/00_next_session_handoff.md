@@ -1,5 +1,78 @@
 # 다음 세션 시작용 플랫폼 인계서
 
+## 2026-10-27 17:08 KST — Unit 366–367 full-tile 전략 인계
+
+- `read_cog_full_tile()`과 pinned full-tile collector/CLI를 추가하고 East Java 2021/2023/2024 SCL 5490×5490 전체 타일 3건을 실제 수집·QA·정산·mosaic 반영했다. training/deployment는 0이다.
+- 세 건 Range 합 8,717,673B, charge 8,718,877B, observed +22,755다. 대응 2048 창 대비 전송 3.410798배/관측 증가 4.652423배/바이트 효율 1.364028배다. 전부 East Java 표본이므로 타 주 효율로 일반화하지 않는다.
+- 최종 36셀 observed 37,703/1,123,578=3.355619%, gap 1,085,875, CLOUD1377/SHADOW901/NODATA4337/OUTSIDE1,079,260, source 127 unique다. manifest SHA `8285cffc8e151ee6bc79abde1ab50ad1eeebedb3aac6977f0bbfb0cdef789a11`다.
+- ledger remaining 1,704,005,367B/SHA `97f04bbba9e1e8c6e8ed2e6a58592a8c7e1ddefe6775bc2b770a8da7e1da8448`, 기존 pending2 보존, active collector0, lock 없음, rate false다.
+- 독립 validator PASS, 관련 회귀 45PASS/88warnings/11subtests/55.23초, API8002/UI5174/WMS8088 HTTP200이다. 내부 CLI/evidence 변경이라 UI 계약 변경은 없다.
+- 다음 권고 상한은 서로 다른 고공백 province-year full tile 6건/384MiB다. 아직 후보 scene/source pin과 preflight가 없어 `PLANNED`이며 실행하지 않았다. 최신 manifest로 후보 선별기를 만든 뒤 batch 결정을 고정해야 한다.
+- 설명: `docs/implementation/367_full_tile_strategy_and_batch.md`; 합산 증거: `evidence/integration/unit367-full-tile-batch-summary-20261027.json`.
+
+## 2026-10-27 16:42 KST — Unit 365 자동 누락 수집 batch
+
+- pilot 근거로 2048×2048 SCL 창 3건을 첫 허용 batch로 결정했다. 건당 48MiB 예약, 첫 오류/429/예산·디스크·lock/QA/mosaic 검증 실패에서 중지하고, 재학습·배포는 승인 없이는 실행하지 않는다.
+- Unit364 첫 시도는 STAC `RemoteDisconnected`로 0건 안전 중지, lock 해제, 48MiB 전액 charge했다. 고유 retry batch ID와 transient STAC 최대 3회 재시도를 추가한 Unit365는 East Java 2021/2023/2024 세 건을 모두 실제 수집했다.
+- clear는 97.4523%/99.5910%/99.9855%, 실제 Unit365 charge 3,147,616B다. 현재 추가 예산 잔액 1,712,724,244B, ledger SHA `2b98eadb6cff1d586fe136db2b151787ad6b8a0fa59389bf6a3d981a98065862`, active collector 0, execution lock 없음, rate circuit false다. 기존 pending 2건은 보존했다.
+- 36셀 mosaic는 124 unique SCL, observed 14,948/1,123,578(1.330393%), gap 1,108,630, 원인은 CLOUD 613/SHADOW 412/NODATA 0/OUTSIDE 1,107,605다. manifest SHA `9259b3d0d6c5da47f616b3b6ec9b45b0c8cfccf56e0095beb0a23ad1f6b93ae3`다.
+- 독립 validator PASS, 관련 회귀 33 PASS/105 warnings/87.82초, API 8002/UI 5174/WMS 8088 HTTP 200이다. training/deployment run 0이다.
+- 상태는 `AUTOMATED_BATCH_COMPLETED_MORE_GAPS_REMAIN`이다. 현재 잔여를 같은 창 크기로 단순 환산하면 약 693개라 전체 완료가 아니다. 다음은 full SCL tile 대 반복 2048-window 효율 비교 → 최신 mosaic pin으로 다음 batch 규모 명시 결정 → 같은 guarded workflow 실행 순서다.
+- 구현 설명: `docs/implementation/365_automated_gap_collection_batch.md`; 증거: `evidence/integration/unit365-automated-collection-retry-20261027/`. 내부 CLI/evidence 계약이라 이번 단위의 UI 변경은 없다.
+
+## 2026-10-27 16:09 KST — Unit 363 provisional Sentinel-2 SCL pilot
+
+- GISTARU는 사용자 명시 결정으로 pilot 범위에서만 `SKIPPED_BY_USER_DECISION`이다. BIG 경계 SHA `233c034c...2a423`는 `PROVISIONAL_BIG_BASELINE`이며 관할 기관·통계 승인 대기다.
+- 36셀 `OUTSIDE_FOOTPRINT` 우선순위 1위 East Java 2023에서 scene `S2A_MSIL2A_20230905T023531_R089_T49MFM_20230905T081430` SCL 창 1건을 실제 수집했다. 20 m 256×256, clear 100%, Range body 196,608B, local TIFF 4,872B이다.
+- preflight은 중복 STAC ID 127개, active collector 0, lock 부재, rate circuit false, 예산 잔액 1,799,757,940B, disk free 1,989,271,117,824B를 확인했다. 이전 pending 2건은 서로 다른 key로 건드리지 않았다. pilot 33,554,432B는 전액 정산·lock 해제됐다.
+- East Java 2023 observed는 194→219(+25), OUTSIDE_FOOTPRINT은 47,837→47,812(-25)다. 전체 36셀은 121 unique SCL, observed 10,057(0.895087%), gap 1,113,521이다.
+- 29 PASS/105 warnings/90.18초, compileall/diff-check PASS, 독립 validator 전수 PASS다. 현 1 km mosaic는 수집 inventory이며 학습·승격·배포는 0이다.
+- 증거: `evidence/integration/unit363-provisional-sentinel-pilot-20261027/`. 구현 설명: `docs/implementation/363_provisional_sentinel_pilot.md`. 다음은 pilot 효과·예산 검토 후 소규모 batch 확대 승인 또는 경계 승인 확보다.
+
+## 2026-10-27 15:29 KST — Unit 362 6주 경계·GISTARU·SCL mosaic 인계
+
+- BIG 공식 공개 MapServer layer 12에서 6주 129개 피처를 실제 조회·병합했다. 그러나 효력일·법적 고시·통계 사용 승인은 확인하지 못했으므로 승인 경계가 아닌 `IMPLEMENTED_UNVERIFIED` 후보다.
+- GISTARU Java·Sulawesi exact HTTPS MapServer URL은 고정했지만, 현재 망에서 DNS/HTTP 접근이 실패해 layer ID/name·query·service metadata는 null이고 `BLOCKED_GISTARU_LIVE_METADATA_UNAVAILABLE`다.
+- 기존 실제 `raw-SCL.tif` 120개로 6주×6년 36셀의 EPSG:6933·1 km observed/cause GeoTIFF 72개를 생성했다. observed는 10,032/1,123,578(0.892862%)이고 gap 원인은 CLOUD 607, SHADOW 374, NODATA 0, OUTSIDE_FOOTPRINT 1,112,565이다.
+- 독립 validator가 36셀, 120 고유 SCL, 72 TIFF, pin·격자·CRS·domain·경계 밖 0·gap 원인 전수를 통과시켰다. 회귀 25 PASS/102 warnings/71.27초, compileall/diff-check 통과, 신규 download·collector·ledger·lock·training 0이다.
+- 증거는 `evidence/integration/unit362-province-evidence-20261027/`, 구현 설명은 `docs/implementation/362_province_boundary_gistaru_and_scl_mosaics.md`다. 1 km mosaic는 수집 판단용 inventory이며 10/20 m 최종 과학 제품이 아니다.
+- 다음 Gate: 관할 기관의 경계·통계 사용 승인 → GISTARU 접근망에서 exact live metadata/query 캡처 → 경계 차이 판정 → 승인 SHA로 36셀 mosaic 재생성 → 수집 계획 심사다. 이 다음 Gate 전에는 공백 전체를 cloud로 간주하거나 실수집을 시작하지 않는다.
+- 2026-10-27 재구동 시 API 8002·UI 5174·GeoServer 호환 8088을 loopback으로 시작했고, API/UI/proxy/WMS 모두 실제 HTTP 200을 확인했다. 수집·학습 프로세스는 시작하지 않았다.
+
+## 2026-10-21 13:48 KST — Unit 361 주 전체 누락 보완·재학습 MLOps 계약
+
+- 실제 추가 Sentinel-2 수집은 아직 0이다. 기존 patch footprint 진단은 2017 비권위 경계 기준 주·연도별 약 0.42~4.49%이고, 나머지는 cloud로 확정하지 않는다.
+- `province_year_gap_acquisition_planner.py`는 6주×6년의 권위 경계, GISTARU exact MapServer/layer 증거, EPSG:6933 동일 격자 observed/cause mosaic를 모두 검증한 뒤에만 비실행 수집 후보를 만든다. 실입력이 없어 현재 `BLOCKED_MISSING_AUTHORITATIVE_BOUNDARY_AND_CAUSE_MOSAICS`다.
+- GISTARU는 경계·공간계획 교차검증, Esri는 weak label, Sentinel-2/SCL은 관측·품질로만 쓴다. GISTARU 공개 포털은 참조했지만 live service/layer metadata를 확보하지 못해 VERIFIED_REAL로 올리지 않았다.
+- 기존 primary `esri_reference.tif` 6개는 WorldCover LUT 파생으로 확인돼 격리했다. accepted primary 48/quarantined 6, legacy WMS/pixel/direct path는 409다. 실제 Esri 연차 자료도 독립 정답이나 모델 예측으로 간주하지 않는다.
+- MLOps summary 2.1은 수집계획부터 승격·배포까지 9개 증거 단계를 반환한다. 현재 `pipeline_complete=false`, `retrain_allowed=false`, confidence와 OA/F1/mIoU null, 실학습·예측·승격·배포 0이다.
+- Root 최종 통합 회귀는 80 PASS/171 warnings/2 subtests다. 실행 API 8002와 UI 5174/proxy, GeoServer 8088 GetCapabilities는 200이고 legacy Esri GetMap은 409다. 실제 브라우저에서 9개 BLOCKED 단계와 미측정 confidence/accuracy를 확인했다.
+- 구현 문서: `361_province_year_gap_acquisition_planner.md`, `361_esri_reference_provenance_fail_closed.md`, `361_mlops_retraining_evidence_pipeline.md`. 이해자료: `docs/understanding/361_DATA_ROLES_AND_OBSERVATION_GAPS.md`.
+- 다음 실제 Gate는 권위 경계+GISTARU exact metadata와 36개 Sentinel/SCL cause mosaic 확보 → 수집계획 검토 → 예산/lock 확인 후 승인 수집 → QA/dataset pin → scene/class gate 해소 → 재학습 → confidence 보정·독립 정확도 → 사람 승인 → 승격·배포 순서다.
+- source와 ledger는 각각 SHA `0c149628...4658`, `d5ee31ff...1c91`로 불변이다. 예약 작업은 삭제 상태를 유지하며 다시 만들지 않는다.
+
+## 2026-10-21 12:09 KST — Unit 360 두 요구 문서 통합 교정·검증 완료
+
+- 기준 문서 2개에 대한 Gate 추적표를 `docs/implementation/360_two_requirement_traceability.md`에 만들었다. 세 작업자 병렬 작업과 Root 통합 검증은 완료했지만 전체 프로젝트는 미완료다.
+- G7은 권위 원본 1,779행/적격 1,407(865/292/250), scene split conflict 1, class gate 실패, baseline `NOT_PINNED`, improvement null, `learning_ready=false`다. 전체 `tests/test_ai_dataset_splits.py` 58 PASS/425.71초다.
+- G6/G11/G12는 합성 prediction·난수 confidence·고정 변화 통계·가짜 게시 상태를 제거했다. 실제 prediction·secondary·named publication·변화 통계는 `BLOCKED`; 집중 8 PASS, 통합 31 PASS/137 warnings/20.32초다.
+- G9 summary/experiments/retrain/approval은 fail-closed다. stored approval은 미검증 기록이고 verified 0; POST 두 경로는 409/write-free다. 8 PASS/1 warning/14.33초다.
+- PostGIS legacy script는 DB 미연결 시 `BLOCKED_NO_POSTGIS_PILOT_EXECUTION`, target N/A, parity NOT_MEASURED, `DDL_ONLY_NOT_APPLIED`를 기록한다. 최종 임시 fixture 재실행은 1 PASS/10.70초이며 실제 PostGIS 실행·catalog 쓰기 0이다.
+- UI는 frontend build 131 modules/20.08초와 계약 test 1 PASS/414ms를 통과했다. 실제 브라우저에서 MLOps blocked/null/disabled 및 Swipe 0/50/100·ArrowRight 51을 확인했다. reference-only 화면 동작 외 과학 검증은 `BLOCKED`다.
+- API 8002, UI 5174/proxy, GeoServer 호환 8088 HTTP 200이다. 이를 전수 layer 게시, staging/production 배포, HA/DR 완료로 확대하지 않는다.
+- source `0c149628...4658`/69,564,847B, ledger `d5ee31ff...1c91`/68,395B, catalog `d0841882...c45`/184,320B·29행이 불변이다. collector·원장 쓰기·원격 실행·실학습·승격·운영 배포 0이다.
+- 다음 P0는 (1) scene/class gate 해결, (2) 실제 checkpoint·독립 holdout 평가, (3) T1/T2 prediction COG와 common-valid 변화, (4) GeoServer exact named publication, (5) 36셀 coverage/recovery 실측, (6) 승인된 PostGIS pilot이다.
+- 사용자 요청으로 `geoai-2` 예약 작업은 삭제되어 있으며 다시 만들지 않는다.
+
+## 2026-10-20 15:50 KST — Unit 352 증거 무결성 교정 진행(이 항목이 07:59 이전 완결 주장보다 우선)
+
+- 현재 HEAD 기준 G6/G7 `VERIFIED_REAL` 및 G8/G9 운영 승격 주장을 재감사한 결과 차단급 과장을 확인했다. 실제 운영 원본은 1,779행/품질 적격 1,407행(865/292/250), 원본 scene split conflict 1건, 클래스 기여 부족, `learning_ready=false`다.
+- G7의 1,780행은 이미지/라벨/quality 파일명 존재 인벤토리일 뿐이며, `band_count=6`, `spatial_leakage_detected=false`, `ready=true`가 실제 데이터 검증 없이 생성됐다. 원본 보고서 기반 fail-closed 교정 담당이 활성 중이다.
+- G6 로컬 primary TIFF 54개 존재와 표본 GetMap PNG 200은 확인했다. 복구/결측 마스크는 합성 패턴이며, 현재 registry는 primary 54행만 있고 부모의 secondary 18행을 덮어썼다. GetCapabilities는 HTTP 200이지만 named layers를 열거하지 않는다. 54/72 실제 게시 완료는 `BLOCKED`다.
+- Root는 G8/G9를 스키마 3.1 fail-closed로 교정했다. 고정 숫자는 `TESTED_SYNTHETIC`/`DETERMINISTIC_SCENARIO_FIXTURE`, 실제 학습·체크포인트·예측·독립 라벨·과학적 정확도·사람 승인 없음, promotion/rollback target null, `BLOCKED_NO_EXECUTED_TRAINING_OR_MEASURED_PREDICTIONS`다. 산출물 5개 재발행 후 집중 4 PASS/3.08초다.
+- 서비스는 collector·QA 0과 execution lock 부재 확인 뒤 API 8002, UI 5174, GeoServer 호환 8088을 복구해 HTTP 200을 확인했다. 이는 레이어 전수 게시나 모델 검증 근거가 아니다.
+- 운영 source SHA `0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658`, ledger SHA `d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91` 불변. collector·원장 쓰기·실학습·모델 승격·운영 배포 0. Unit352 구현/이해자료/독립 검토를 마감한 뒤에만 새 상태를 확정한다.
+
 ## 2026-10-19 12:51 KST — 332 원장 어댑터 메인 공유 적용(333) 완료·192건 전수 통과
 
 332 격리 작업공간(`target332-workspace-20261019`)에서 독립 정적 검토 2회(Round 1 F1~F3 도출, Round 2 차단 결함 없음 판정)와 45건 PASS(돌연변이 검사 7건 FAIL로 결함 검출력 입증)로 동결된 `freeze332.json`(SHA b6f23c4b459f499a5511e2c206d5292ab741dad2e41bd3604fa1a88d3de32584)을 메인 코드베이스에 반영했다(`apply333.py`). 신규 `test_ledger_metadata332.py` 45건 + 기존 의존 9개 모듈 147건 = 총 192건 전수 PASS 완료. 운영 원장 쓰기 0, 외부 HTTP 0. 2023년 반텐·서자바 2개 중단 배치 예약분(136,314,880B) 전액 보존 유지. 다음 334는 실제 타깃 수집 진입점(`collect_targeted_bare.py`)의 64MiB 호출부를 명시 128MiB/원장 어댑터 계약으로 연결하여 64MiB 수집 차단을 해소하는 작업이다.

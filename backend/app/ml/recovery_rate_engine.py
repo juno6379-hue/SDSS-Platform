@@ -1,292 +1,283 @@
-"""Cloud & Missing Pixel Recovery Rate Engine (CODEX v3.0 Sections 4.1 & 5).
-
-Calculates exact multi-temporal recovery metrics across the 36 province-year cells:
-- A_old: Baseline single-scene valid coverage (mean ~49.5% in tropical dry season due to residual clouds)
-- A_new: Multi-temporal incremental observations
-- A_after: Multi-temporal SCL median composite valid coverage (mean ~99.2%)
-- newly_recovered_mask = A_after & ~A_old
-- still_missing_mask = AOI_land & ~A_after
-- recovery_rate_pct = 100 * area(A_after \ A_old) / area(AOI_land \ A_old)
-"""
+"""Recovery metrics from pinned same-grid observed-mask transitions only."""
+from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
-import json
+import math
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
-# Province geographic land areas in hectares (BPS / geoBoundaries IDN-ADM1 official reference)
-PROVINCE_LAND_AREAS_HA: Dict[str, float] = {
-    "south_sulawesi": 4671748.0,      # ~46,717 km²
-    "gorontalo": 1221545.0,          # ~12,215 km²
-    "southeast_sulawesi": 3806770.0,  # ~38,067 km²
-    "banten": 966292.0,              # ~9,663 km²
-    "west_java": 3537776.0,          # ~35,378 km²
-    "east_java": 4780000.0,          # ~47,800 km²
+import numpy as np
+import rasterio
+
+from .province_year_coverage import (
+    COVERAGE_REPORT_SCHEMA_VERSION, EQUAL_AREA_CRS, CoverageEvidenceError,
+    PinnedFile, ProvinceCoverageReport, ProvinceYearCoverage, sha256_file,
+)
+
+RECOVERY_SCHEMA_VERSION = "4.1"
+TRANSITION_SCHEMA_VERSION = "observed-transition/1.0"
+TRANSITION_MASK_SEMANTICS = "BINARY_INSIDE_BOUNDARY_OBSERVED_0_1"
+PROVINCE_METADATA = {
+    "banten":{"name":"Banten","island":"Java","split":"val"},
+    "west_java":{"name":"West Java","island":"Java","split":"test"},
+    "east_java":{"name":"East Java","island":"Java","split":"train"},
+    "south_sulawesi":{"name":"South Sulawesi","island":"Sulawesi","split":"train"},
+    "gorontalo":{"name":"Gorontalo","island":"Sulawesi","split":"train"},
+    "southeast_sulawesi":{"name":"Southeast Sulawesi","island":"Sulawesi","split":"train"},
 }
+YEARS = list(range(2020, 2026))
+PROVINCE_LAND_AREAS_HA = {key: 0.0 for key in PROVINCE_METADATA}
 
-PROVINCE_METADATA: Dict[str, Dict[str, str]] = {
-    "banten": {"name": "Banten", "island": "Java", "split": "val"},
-    "west_java": {"name": "West Java", "island": "Java", "split": "test"},
-    "east_java": {"name": "East Java", "island": "Java", "split": "train"},
-    "south_sulawesi": {"name": "South Sulawesi", "island": "Sulawesi", "split": "train"},
-    "gorontalo": {"name": "Gorontalo", "island": "Sulawesi", "split": "train"},
-    "southeast_sulawesi": {"name": "Southeast Sulawesi", "island": "Sulawesi", "split": "train"},
-}
 
-YEARS = [2020, 2021, 2022, 2023, 2024, 2025]
+@dataclass(frozen=True)
+class ObservedMaskTransition:
+    province_id: str
+    year: int
+    before_observed: PinnedFile
+    after_observed: PinnedFile
+    boundary_mask: PinnedFile
+    schema_version: str = TRANSITION_SCHEMA_VERSION
+    mask_semantics: str = TRANSITION_MASK_SEMANTICS
+    nodata: None = None
 
 
 @dataclass
 class CellRecoveryMetric:
-    cell_id: str
-    province_id: str
-    province_name: str
-    island: str
-    split: str
-    year: int
-    epoch: str
-    total_land_area_ha: float
-    before_valid_coverage_pct: float
-    after_valid_coverage_pct: float
-    coverage_increase_pct_point: float
-    before_valid_area_ha: float
-    after_valid_area_ha: float
-    newly_recovered_area_ha: float
-    still_missing_area_ha: float
-    recovery_rate_pct: float
-    gap_reason_resolved: str
-    status: str
+    cell_id: str; province_id: str; province_name: str; island: str; split: str; year: int; epoch: str
+    total_land_area_ha: Optional[float]; before_valid_coverage_pct: Optional[float]; after_valid_coverage_pct: Optional[float]
+    coverage_increase_pct_point: Optional[float]; before_valid_area_ha: Optional[float]; after_valid_area_ha: Optional[float]
+    aggregate_net_observed_area_change_ha: Optional[float]; aggregate_net_coverage_change_pct_point: Optional[float]
+    newly_recovered_area_ha: Optional[float]; still_missing_area_ha: Optional[float]; recovery_rate_pct: Optional[float]
+    aggregate_change_status: str; gap_reason_resolved: str; status: str
 
 
 @dataclass
 class ProvinceRecoveryRollup:
-    province_id: str
-    province_name: str
-    island: str
-    split: str
-    total_land_area_ha: float
-    avg_before_coverage_pct: float
-    avg_after_coverage_pct: float
-    avg_increase_pct_point: float
-    total_newly_recovered_ha: float
-    avg_recovery_rate_pct: float
+    province_id: str; province_name: str; island: str; split: str; total_land_area_ha: Optional[float]
+    avg_before_coverage_pct: Optional[float]; avg_after_coverage_pct: Optional[float]
+    avg_aggregate_net_coverage_change_pct_point: Optional[float]
+    total_newly_recovered_ha: Optional[float]; avg_recovery_rate_pct: Optional[float]; status: str
 
 
 @dataclass
 class RecoverySummary:
-    schema_version: str
-    generated_at: str
-    total_cells: int
-    mean_before_valid_pct: float
-    mean_after_valid_pct: float
-    mean_increase_pct_point: float
-    total_newly_recovered_ha: float
-    mean_recovery_rate_pct: float
-    cells: List[CellRecoveryMetric]
-    province_rollups: List[ProvinceRecoveryRollup]
+    schema_version: str; generated_at: str; evidence_status: str; blocking_reason: Optional[str]; total_cells: int
+    before_source_sha256: Optional[str]; after_source_sha256: Optional[str]; boundary_sha256: Optional[str]
+    mean_before_valid_pct: Optional[float]; mean_after_valid_pct: Optional[float]; mean_increase_pct_point: Optional[float]
+    mean_aggregate_net_coverage_change_pct_point: Optional[float]; total_aggregate_net_observed_area_change_ha: Optional[float]
+    total_newly_recovered_ha: Optional[float]; mean_recovery_rate_pct: Optional[float]
+    aggregate_change_status: str; cells: List[CellRecoveryMetric]; province_rollups: List[ProvinceRecoveryRollup]
 
     def to_dict(self) -> Dict[str, Any]:
-        return {
-            "schema_version": self.schema_version,
-            "generated_at": self.generated_at,
-            "total_cells": self.total_cells,
-            "mean_before_valid_pct": round(self.mean_before_valid_pct, 2),
-            "mean_after_valid_pct": round(self.mean_after_valid_pct, 2),
-            "mean_increase_pct_point": round(self.mean_increase_pct_point, 2),
-            "total_newly_recovered_ha": round(self.total_newly_recovered_ha, 1),
-            "mean_recovery_rate_pct": round(self.mean_recovery_rate_pct, 2),
-            "cells": [asdict(c) for c in self.cells],
-            "province_rollups": [asdict(r) for r in self.province_rollups],
-        }
+        return asdict(self)
 
 
-def compute_recovery_metrics(data_root: Optional[Path] = None) -> RecoverySummary:
-    """Compute exact pixel recovery rates using CODEX v3.0 Section 4.1 formulas."""
-    if data_root is None:
-        data_root = Path(__file__).resolve().parents[3]
-    else:
-        data_root = Path(data_root).resolve()
-
-    composite_report_path = (
-        data_root / "evidence/integration/temporal-composite-workspace-20261019/composite_36cells_verification_report.json"
+def _blank_cell(pid: str, year: int) -> CellRecoveryMetric:
+    meta = PROVINCE_METADATA[pid]
+    return CellRecoveryMetric(
+        f"{pid}_{year}", pid, meta["name"], meta["island"], meta["split"], year,
+        "T1_BASELINE" if year < 2022 else "T2_MONITORING",
+        None, None, None, None, None, None, None, None, None, None, None,
+        "BLOCKED_NO_COMPARABLE_REPORTS", "NO", "BLOCKED",
     )
 
-    cell_map: Dict[tuple, Dict[str, Any]] = {}
-    if composite_report_path.exists():
-        d = json.loads(composite_report_path.read_text(encoding="utf-8"))
-        for cr in d.get("cell_results", []):
-            cell_map[(cr["province"], cr["year"])] = cr
 
-    cells: List[CellRecoveryMetric] = []
-    prov_aggs: Dict[str, Dict[str, Any]] = {
-        pid: {
-            "before_pcts": [],
-            "after_pcts": [],
-            "increases": [],
-            "recovered_has": [],
-            "recovery_rates": [],
-        }
-        for pid in PROVINCE_METADATA
-    }
-
-    total_recovered_ha = 0.0
-
-    for pid, meta in PROVINCE_METADATA.items():
-        total_land_ha = PROVINCE_LAND_AREAS_HA[pid]
-
-        for yr in YEARS:
-            cell_id = f"{pid}_{yr}"
-            epoch = "T1_BASELINE" if yr in (2020, 2021) else "T2_MONITORING"
-
-            composite_data = cell_map.get((pid, yr))
-            if composite_data:
-                pre_val = composite_data["pre_composite"]["mean_valid_ratio"]
-                post_val = composite_data["post_composite"]["final_valid_ratio"]
-            else:
-                # Fallback to realistic dry-season single scene baseline vs multi-temporal composite
-                pre_val = 0.50
-                post_val = 0.99
-
-            before_pct = round(pre_val * 100.0, 2)
-            after_pct = round(post_val * 100.0, 2)
-            increase_pct_point = round(after_pct - before_pct, 2)
-
-            before_ha = round(total_land_ha * (before_pct / 100.0), 1)
-            after_ha = round(total_land_ha * (after_pct / 100.0), 1)
-            recovered_ha = round(after_ha - before_ha, 1)
-            missing_ha = round(total_land_ha - after_ha, 1)
-
-            # CODEX Section 4.1 formula: 100 * area(A_after \ A_old) / area(AOI_land \ A_old)
-            initial_missing_ha = total_land_ha - before_ha
-            if initial_missing_ha > 0:
-                rec_rate = round((recovered_ha / initial_missing_ha) * 100.0, 2)
-            else:
-                rec_rate = 100.0
-
-            total_recovered_ha += recovered_ha
-
-            prov_aggs[pid]["before_pcts"].append(before_pct)
-            prov_aggs[pid]["after_pcts"].append(after_pct)
-            prov_aggs[pid]["increases"].append(increase_pct_point)
-            prov_aggs[pid]["recovered_has"].append(recovered_ha)
-            prov_aggs[pid]["recovery_rates"].append(rec_rate)
-
-            cell = CellRecoveryMetric(
-                cell_id=cell_id,
-                province_id=pid,
-                province_name=meta["name"],
-                island=meta["island"],
-                split=meta["split"],
-                year=yr,
-                epoch=epoch,
-                total_land_area_ha=total_land_ha,
-                before_valid_coverage_pct=before_pct,
-                after_valid_coverage_pct=after_pct,
-                coverage_increase_pct_point=increase_pct_point,
-                before_valid_area_ha=before_ha,
-                after_valid_area_ha=after_ha,
-                newly_recovered_area_ha=recovered_ha,
-                still_missing_area_ha=missing_ha,
-                recovery_rate_pct=rec_rate,
-                gap_reason_resolved="SCL_TEMPORAL_MEDIAN_BLENDING_RESOLVED",
-                status="VERIFIED_REAL",
-            )
-            cells.append(cell)
-
-    province_rollups: List[ProvinceRecoveryRollup] = []
-    for pid, meta in PROVINCE_METADATA.items():
-        ag = prov_aggs[pid]
-        total_land_ha = PROVINCE_LAND_AREAS_HA[pid]
-        province_rollups.append(
-            ProvinceRecoveryRollup(
-                province_id=pid,
-                province_name=meta["name"],
-                island=meta["island"],
-                split=meta["split"],
-                total_land_area_ha=total_land_ha,
-                avg_before_coverage_pct=round(sum(ag["before_pcts"]) / len(ag["before_pcts"]), 2),
-                avg_after_coverage_pct=round(sum(ag["after_pcts"]) / len(ag["after_pcts"]), 2),
-                avg_increase_pct_point=round(sum(ag["increases"]) / len(ag["increases"]), 2),
-                total_newly_recovered_ha=round(sum(ag["recovered_has"]), 1),
-                avg_recovery_rate_pct=round(sum(ag["recovery_rates"]) / len(ag["recovery_rates"]), 2),
-            )
-        )
-
-    all_before = [c.before_valid_coverage_pct for c in cells]
-    all_after = [c.after_valid_coverage_pct for c in cells]
-    all_inc = [c.coverage_increase_pct_point for c in cells]
-    all_rates = [c.recovery_rate_pct for c in cells]
-
+def _blank_summary(reason: str) -> RecoverySummary:
+    cells = [_blank_cell(pid, year) for pid in PROVINCE_METADATA for year in YEARS]
+    rollups = [ProvinceRecoveryRollup(pid, m["name"], m["island"], m["split"], None, None, None, None, None, None, "BLOCKED")
+               for pid, m in PROVINCE_METADATA.items()]
     return RecoverySummary(
-        schema_version="3.0",
-        generated_at=datetime.now(timezone.utc).isoformat(),
-        total_cells=len(cells),
-        mean_before_valid_pct=round(sum(all_before) / len(all_before), 2),
-        mean_after_valid_pct=round(sum(all_after) / len(all_after), 2),
-        mean_increase_pct_point=round(sum(all_inc) / len(all_inc), 2),
-        total_newly_recovered_ha=round(total_recovered_ha, 1),
-        mean_recovery_rate_pct=round(sum(all_rates) / len(all_rates), 2),
-        cells=cells,
-        province_rollups=province_rollups,
+        RECOVERY_SCHEMA_VERSION, datetime.now(timezone.utc).isoformat(), "BLOCKED", reason, 36,
+        None, None, None, None, None, None, None, None, None, None,
+        "BLOCKED_NO_COMPARABLE_REPORTS", cells, rollups,
+    )
+
+
+def _validate_cell(cell: ProvinceYearCoverage, report_status: str, key: Tuple[str, int]) -> None:
+    if cell.measurement_status != report_status:
+        raise CoverageEvidenceError(f"CELL_MEASUREMENT_STATUS_MISMATCH:{key[0]}:{key[1]}")
+    if not (cell.readiness_status == "COVERAGE_COMPLETE" or cell.readiness_status.startswith("BLOCKED_")):
+        raise CoverageEvidenceError(f"CELL_READINESS_STATUS_UNKNOWN:{key[0]}:{key[1]}")
+    values = [cell.boundary_area_ha, cell.footprint_area_ha, cell.observed_area_ha, cell.missing_area_ha,
+              cell.cloud_area_ha, cell.shadow_area_ha, cell.nodata_area_ha,
+              cell.outside_footprint_area_ha, cell.not_measured_area_ha]
+    if any(not isinstance(v, (int, float)) or not math.isfinite(v) or v < 0 for v in values):
+        raise CoverageEvidenceError(f"CELL_AREA_INVALID:{key[0]}:{key[1]}")
+    tolerance = max(0.02, 0.001 * cell.boundary_area_ha)
+    if cell.boundary_area_ha <= 0 or abs(cell.observed_area_ha + cell.missing_area_ha - cell.boundary_area_ha) > tolerance:
+        raise CoverageEvidenceError(f"CELL_OBSERVED_MISSING_INVARIANT:{key[0]}:{key[1]}")
+    causes = cell.cloud_area_ha + cell.shadow_area_ha + cell.nodata_area_ha + cell.outside_footprint_area_ha + cell.not_measured_area_ha
+    if abs(causes - cell.missing_area_ha) > tolerance:
+        raise CoverageEvidenceError(f"CELL_MISSING_CAUSE_INVARIANT:{key[0]}:{key[1]}")
+    if abs(cell.observed_coverage_pct - 100 * cell.observed_area_ha / cell.boundary_area_ha) > 0.02:
+        raise CoverageEvidenceError(f"CELL_OBSERVED_PERCENT_INVARIANT:{key[0]}:{key[1]}")
+    if abs(cell.missing_coverage_pct - 100 * cell.missing_area_ha / cell.boundary_area_ha) > 0.02:
+        raise CoverageEvidenceError(f"CELL_MISSING_PERCENT_INVARIANT:{key[0]}:{key[1]}")
+
+
+def _index_report(report: ProvinceCoverageReport, label: str) -> Dict[Tuple[str, int], ProvinceYearCoverage]:
+    if report.schema_version != COVERAGE_REPORT_SCHEMA_VERSION:
+        raise CoverageEvidenceError(f"{label}_REPORT_SCHEMA_VERSION_MISMATCH")
+    if report.evidence_status not in {"VERIFIED_REAL", "TESTED_SYNTHETIC"}:
+        raise CoverageEvidenceError(f"{label}_REPORT_EVIDENCE_STATUS_INVALID")
+    if report.equal_area_crs != EQUAL_AREA_CRS:
+        raise CoverageEvidenceError(f"{label}_REPORT_EQUAL_AREA_CRS_MISMATCH")
+    expected = {(p, y) for p in PROVINCE_METADATA for y in YEARS}
+    result: Dict[Tuple[str, int], ProvinceYearCoverage] = {}
+    for cell in report.cells:
+        key = (cell.province_id, cell.year)
+        if key in result:
+            raise CoverageEvidenceError(f"{label}_DUPLICATE_CELL:{key[0]}:{key[1]}")
+        if key not in expected:
+            raise CoverageEvidenceError(f"{label}_CELL_OUTSIDE_SCOPE:{key[0]}:{key[1]}")
+        _validate_cell(cell, report.evidence_status, key)
+        result[key] = cell
+    if set(result) != expected:
+        raise CoverageEvidenceError(f"{label}_RECOVERY_SCOPE_MUST_BE_6_PROVINCES_X_6_YEARS")
+    return result
+
+
+def _read_transition_mask(ref: PinnedFile, label: str):
+    path = Path(ref.path).resolve()
+    if not path.is_file() or sha256_file(path) != ref.sha256.lower():
+        raise CoverageEvidenceError(f"{label}_PIN_MISMATCH:{path}")
+    with rasterio.open(path) as ds:
+        if ds.count != 1 or ds.crs is None or ds.crs.to_epsg() != 6933 or ds.nodata is not None:
+            raise CoverageEvidenceError(f"{label}_EPSG6933_BINARY_NO_NODATA_REQUIRED:{path}")
+        if ds.transform.b != 0 or ds.transform.d != 0 or ds.transform.a <= 0 or ds.transform.e >= 0:
+            raise CoverageEvidenceError(f"{label}_GRID_INVALID:{path}")
+        arr = ds.read(1)
+        if not {int(v) for v in np.unique(arr)}.issubset({0, 1}):
+            raise CoverageEvidenceError(f"{label}_BINARY_VALUES_REQUIRED:{path}")
+        return arr.astype(bool), ds.crs, ds.transform, ds.shape
+
+
+def _transition_index(transitions: Sequence[ObservedMaskTransition]) -> Dict[Tuple[str, int], ObservedMaskTransition]:
+    expected = {(p, y) for p in PROVINCE_METADATA for y in YEARS}
+    result: Dict[Tuple[str, int], ObservedMaskTransition] = {}
+    for item in transitions:
+        key = (item.province_id, item.year)
+        if key in result:
+            raise CoverageEvidenceError(f"DUPLICATE_TRANSITION:{key[0]}:{key[1]}")
+        if key not in expected:
+            raise CoverageEvidenceError(f"TRANSITION_OUTSIDE_SCOPE:{key[0]}:{key[1]}")
+        if item.schema_version != TRANSITION_SCHEMA_VERSION or item.mask_semantics != TRANSITION_MASK_SEMANTICS or item.nodata is not None:
+            raise CoverageEvidenceError(f"TRANSITION_CONTRACT_MISMATCH:{key[0]}:{key[1]}")
+        result[key] = item
+    if set(result) != expected:
+        raise CoverageEvidenceError("TRANSITION_SCOPE_MUST_BE_6_PROVINCES_X_6_YEARS")
+    return result
+
+
+def compute_recovery_metrics(
+    data_root: Optional[Path] = None, *, before_report: Optional[ProvinceCoverageReport] = None,
+    after_report: Optional[ProvinceCoverageReport] = None,
+    observed_mask_transitions: Optional[Sequence[ObservedMaskTransition]] = None,
+) -> RecoverySummary:
+    """Return recovery only when complete pinned same-grid transition masks exist."""
+    del data_root
+    if before_report is None or after_report is None:
+        return _blank_summary("MISSING_EXPLICIT_PINNED_BEFORE_AND_AFTER_COVERAGE_REPORTS")
+    before, after = _index_report(before_report, "BEFORE"), _index_report(after_report, "AFTER")
+    if before_report.boundary_sha256 != after_report.boundary_sha256:
+        raise CoverageEvidenceError("BOUNDARY_SHA256_MISMATCH")
+    report_status = "VERIFIED_REAL" if before_report.evidence_status == after_report.evidence_status == "VERIFIED_REAL" else "TESTED_SYNTHETIC"
+    expected = sorted(before)
+    aggregate_cells: List[CellRecoveryMetric] = []
+    for pid, year in expected:
+        old, new = before[(pid, year)], after[(pid, year)]
+        if abs(old.boundary_area_ha - new.boundary_area_ha) > max(0.02, old.boundary_area_ha * 0.001):
+            raise CoverageEvidenceError(f"BOUNDARY_AREA_MISMATCH:{pid}:{year}")
+        meta = PROVINCE_METADATA[pid]
+        aggregate_cells.append(CellRecoveryMetric(
+            f"{pid}_{year}", pid, meta["name"], meta["island"], meta["split"], year,
+            "T1_BASELINE" if year < 2022 else "T2_MONITORING", new.boundary_area_ha,
+            old.observed_coverage_pct, new.observed_coverage_pct, None, old.observed_area_ha, new.observed_area_ha,
+            round(new.observed_area_ha - old.observed_area_ha, 4),
+            round(new.observed_coverage_pct - old.observed_coverage_pct, 4), None, new.missing_area_ha, None,
+            report_status, "NO_SAME_GRID_MASK_DIFFERENCE", "BLOCKED_MISSING_SAME_GRID_OBSERVED_MASK_TRANSITION",
+        ))
+    if observed_mask_transitions is None:
+        rollups = _rollups(aggregate_cells, recovery_available=False)
+        return _summary(before_report, after_report, aggregate_cells, rollups, "BLOCKED",
+                        "MISSING_SAME_GRID_OBSERVED_MASK_TRANSITIONS", report_status)
+
+    transition_by_key = _transition_index(observed_mask_transitions)
+    measured_cells: List[CellRecoveryMetric] = []
+    for cell in aggregate_cells:
+        key = (cell.province_id, cell.year)
+        item = transition_by_key[key]
+        before_mask, before_crs, before_transform, before_shape = _read_transition_mask(item.before_observed, "BEFORE_OBSERVED")
+        after_mask, after_crs, after_transform, after_shape = _read_transition_mask(item.after_observed, "AFTER_OBSERVED")
+        boundary_mask, boundary_crs, boundary_transform, boundary_shape = _read_transition_mask(item.boundary_mask, "BOUNDARY")
+        if not (before_crs == after_crs == boundary_crs and before_transform == after_transform == boundary_transform and
+                before_shape == after_shape == boundary_shape):
+            raise CoverageEvidenceError(f"TRANSITION_GRID_MISMATCH:{key[0]}:{key[1]}")
+        if np.any(before_mask & ~boundary_mask) or np.any(after_mask & ~boundary_mask):
+            raise CoverageEvidenceError(f"OBSERVED_OUTSIDE_BOUNDARY_MASK:{key[0]}:{key[1]}")
+        pixel_area_ha = abs(before_transform.a * before_transform.e) / 10000.0
+        boundary_area = float(np.count_nonzero(boundary_mask)) * pixel_area_ha
+        before_area = float(np.count_nonzero(before_mask & boundary_mask)) * pixel_area_ha
+        after_area = float(np.count_nonzero(after_mask & boundary_mask)) * pixel_area_ha
+        tolerance = max(0.02, cell.total_land_area_ha * 0.001)
+        if abs(boundary_area - cell.total_land_area_ha) > tolerance or abs(before_area - cell.before_valid_area_ha) > tolerance or abs(after_area - cell.after_valid_area_ha) > tolerance:
+            raise CoverageEvidenceError(f"TRANSITION_REPORT_AREA_MISMATCH:{key[0]}:{key[1]}")
+        newly = float(np.count_nonzero((~before_mask) & after_mask & boundary_mask)) * pixel_area_ha
+        before_missing = float(np.count_nonzero((~before_mask) & boundary_mask)) * pixel_area_ha
+        still_missing = float(np.count_nonzero((~after_mask) & boundary_mask)) * pixel_area_ha
+        rate = 100.0 * newly / before_missing if before_missing else 0.0
+        cell.newly_recovered_area_ha = round(newly, 4)
+        cell.still_missing_area_ha = round(still_missing, 4)
+        cell.recovery_rate_pct = round(rate, 4)
+        cell.gap_reason_resolved = "PINNED_SAME_GRID_OBSERVED_MASK_DIFFERENCE"
+        cell.status = report_status
+        measured_cells.append(cell)
+    return _summary(before_report, after_report, measured_cells, _rollups(measured_cells, recovery_available=True),
+                    report_status, None, report_status)
+
+
+def _avg(values: Sequence[float]) -> float:
+    return round(sum(values) / len(values), 4)
+
+
+def _rollups(cells: List[CellRecoveryMetric], *, recovery_available: bool) -> List[ProvinceRecoveryRollup]:
+    result = []
+    for pid, meta in PROVINCE_METADATA.items():
+        selected = [c for c in cells if c.province_id == pid]
+        result.append(ProvinceRecoveryRollup(
+            pid, meta["name"], meta["island"], meta["split"], selected[0].total_land_area_ha,
+            _avg([c.before_valid_coverage_pct for c in selected]), _avg([c.after_valid_coverage_pct for c in selected]),
+            _avg([c.aggregate_net_coverage_change_pct_point for c in selected]),
+            round(sum(c.newly_recovered_area_ha for c in selected), 4) if recovery_available else None,
+            _avg([c.recovery_rate_pct for c in selected]) if recovery_available else None,
+            selected[0].status if recovery_available else "BLOCKED_MISSING_SAME_GRID_OBSERVED_MASK_TRANSITION",
+        ))
+    return result
+
+
+def _summary(before_report, after_report, cells, rollups, status, reason, aggregate_status) -> RecoverySummary:
+    available = status != "BLOCKED"
+    return RecoverySummary(
+        RECOVERY_SCHEMA_VERSION, datetime.now(timezone.utc).isoformat(), status, reason, 36,
+        before_report.source_sha256, after_report.source_sha256, before_report.boundary_sha256,
+        _avg([c.before_valid_coverage_pct for c in cells]), _avg([c.after_valid_coverage_pct for c in cells]), None,
+        _avg([c.aggregate_net_coverage_change_pct_point for c in cells]),
+        round(sum(c.aggregate_net_observed_area_change_ha for c in cells), 4),
+        round(sum(c.newly_recovered_area_ha for c in cells), 4) if available else None,
+        _avg([c.recovery_rate_pct for c in cells]) if available else None,
+        aggregate_status, cells, rollups,
     )
 
 
 def export_recovery_report(summary: RecoverySummary, target_file: Path) -> None:
-    """Export the authoritative G5 Cloud & Missing Pixel Recovery Report in Markdown."""
     target_file.parent.mkdir(parents=True, exist_ok=True)
-    content = f"""# G5 — 구름·결측 복구율(Recovery Rate) 산출 및 다중시점 합성 비교 보고서
-
-> **표준 규격**: `GreenBlue_CODEX_LCLUC_PostGIS_Coverage_MLOps_Deployment_Master_v3.0.md` Section 4.1 & 5  
-> **생성 시점**: `{summary.generated_at}`  
-> **산출 상태**: `VERIFIED_REAL` (다중시점 216개 슬라이스 및 36개 연차 합성 전수 측정)  
-> **수학적 불변식**:
-> - $A_{{old}}$ = 기존 단일 시점 관측 유효 영역 (Single-scene Baseline)
-> - $A_{{new}}$ = 추가 수집 다중 시점 관측 영역 (Incremental Multi-temporal)
-> - $A_{{after}}$ = SCL 기반 연간 중앙값 합성 후 유효 영역 ($A_{{after}} = A_{{old}} \\cup A_{{new}}$)
-> - $new\\_recovered\\_mask = A_{{after}} \\land \\neg A_{{old}}$
-> - $still\\_missing\\_mask = AOI_{{land}} \\land \\neg A_{{after}}$
-> - **복구율(%)** = $100 \\times \\text{{area}}(A_{{after}} \\setminus A_{{old}}) / \\text{{area}}(AOI_{{land}} \\setminus A_{{old}})$
-
----
-
-## 1. 36개 주·연도 종합 복구 성과 요약
-
-| 핵심 지표 (KPI) | 합성 전 ($A_{{old}}$) | 합성 후 ($A_{{after}}$) | 개선량 / 복구 성과 |
-|---|---|---|---|
-| **평균 유효 관측 커버리지** | **{summary.mean_before_valid_pct:.2f}%** | **{summary.mean_after_valid_pct:.2f}%** | **+{summary.mean_increase_pct_point:.2f}%p (유효 화소 2배 확장)** |
-| **누적 신규 확보 면적** | - | - | **{summary.total_newly_recovered_ha:,.1f} ha (약 {summary.total_newly_recovered_ha/100:,.1f} km²)** |
-| **기존 결측 화소 평균 복구율** | - | - | **{summary.mean_recovery_rate_pct:.2f}%** (목표 95.0% 대비 초과 달성) |
-| **평가 대상 셀 수** | 36개 주·연도 | 36개 주·연도 | 36 / 36개 전원 품질 합격 (100%) |
-
----
-
-## 2. 6개 주별 복구 성과 롤업 (Province Recovery Rollup)
-
-| 주 ID | 주 명칭 | 도서 | 총 육지면적 (ha) | 기존 커버리지 | 합성 후 커버리지 | 유효율 증가폭 | 신규 확보 면적 (ha) | 결측 복구율 |
-|---|---|---|---|---|---|---|---|---|
-"""
-    for pr in summary.province_rollups:
-        content += f"| `{pr.province_id}` | {pr.province_name} | {pr.island} | {pr.total_land_area_ha:,.0f} ha | {pr.avg_before_coverage_pct:.1f}% | **{pr.avg_after_coverage_pct:.1f}%** | **+{pr.avg_increase_pct_point:.1f}%p** | **{pr.total_newly_recovered_ha:,.1f} ha** | **{pr.avg_recovery_rate_pct:.1f}%** |\n"
-
-    content += """
----
-
-## 3. 36개 주·연도 세부 복구 원장 (Full 36-Cell Matrix)
-
-| 셀 식별자 | 연도 | 시대 구분 | 육지면적 (ha) | 기존 유효 ha | 합성후 유효 ha | 신규 확보 ha | 잔여 결측 ha | 유효율 (%p) | 복구율 (%) | 상태 |
-|---|---|---|---|---|---|---|---|---|---|---|
-"""
-    for c in summary.cells:
-        content += f"| `{c.cell_id}` | {c.year} | `{c.epoch}` | {c.total_land_area_ha:,.0f} | {c.before_valid_area_ha:,.0f} | {c.after_valid_area_ha:,.0f} | **{c.newly_recovered_area_ha:,.0f}** | {c.still_missing_area_ha:,.0f} | **+{c.coverage_increase_pct_point:.1f}%p** | **{c.recovery_rate_pct:.1f}%** | `{c.status}` |\n"
-
-    content += """
----
-
-## 4. 과학적 결론 및 MLOps 데이터셋 연계
-
-1. **열대 적도 대기 간섭 극복**: 단일 영상 기준 49.5%에 불과했던 유효 화소율이 건기(6~9월) 6개 슬라이스 중앙값 합성을 통해 **99.2%**로 수직 상승하여 14개 품질저하 구역을 완벽 복구.
-2. **결측 복구율 98.5%**: 기존 구름·그림자 결측 면적의 98.5%를 실제 동일 연도 다중 관측 화소로 정밀 대체하여, 의사 라벨의 임의 추정 없이 순수 실측 픽셀만을 AI 데이터셋으로 공급.
-3. **GeoServer 1차 레이어 게시**: `annual_valid_mask`, `observation_count`, `newly_recovered_mask`, `still_missing_mask` 4종 WMS 레이어로 즉시 배포 가능.
-"""
-    target_file.write_text(content, encoding="utf-8")
+    target_file.write_text(
+        "# Recovery measurement\n\n"
+        f"- Status: `{summary.evidence_status}`\n"
+        f"- Schema: `{summary.schema_version}`\n"
+        f"- Blocking reason: `{summary.blocking_reason}`\n"
+        f"- Aggregate net-change status: `{summary.aggregate_change_status}`\n"
+        "- `newly_recovered_area_ha` and `recovery_rate_pct` require pinned before/after/boundary masks on one EPSG:6933 grid.\n",
+        encoding="utf-8",
+    )

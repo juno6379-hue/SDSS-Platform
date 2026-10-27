@@ -1,0 +1,88 @@
+{
+  "created_at": "2026-10-27T07:33:05.480096+00:00",
+  "deployment_authorized": false,
+  "policy": {
+    "distinct_province_year_per_batch": true,
+    "max_transient_stac_attempts": 3,
+    "max_windows_per_batch": 3,
+    "metadata_budget_bytes_per_window": 4194304,
+    "recalculate_mosaic_after_batch": true,
+    "reservation_bytes_per_window": 50331648,
+    "stop_on_first_failure": true,
+    "stop_on_http_429": true,
+    "window_side_scl20m": 2048
+  },
+  "scale_estimate": {
+    "estimate_limitations": [
+      "Area scaling ignores coastlines, scene edges, repeat overlap, clouds, and MGRS tile boundaries.",
+      "This estimate is for the 1 km inventory, not final native-resolution scientific completeness."
+    ],
+    "outside_footprint_pixels_before": 1112540,
+    "pilot_256_observed_gain_pixels": 25,
+    "planning_gain_pixels_per_2048_window": 1600,
+    "rough_windows_to_full_inventory_coverage": 696,
+    "window_area_scale_vs_pilot": 64
+  },
+  "schema_version": "province-year-automated-collection-batch-plan/1.0",
+  "status": "PLANNED_GUARDED_EXECUTION",
+  "targets": [
+    {
+      "cause": "OUTSIDE_FOOTPRINT",
+      "center_wgs84": [
+        112.09365696217215,
+        -7.376374227806588
+      ],
+      "distance_from_existing_or_boundary_pixels_1km": 61,
+      "duplicate_spatial_check": "SELECTED_PIXEL_CAUSE_EQUALS_OUTSIDE_FOOTPRINT",
+      "mosaic_col": 116,
+      "mosaic_row": 296,
+      "province_id": "east_java",
+      "search_bbox_wgs84": [
+        112.05865696217215,
+        -7.411374227806588,
+        112.12865696217214,
+        -7.341374227806588
+      ],
+      "year": 2021
+    },
+    {
+      "cause": "OUTSIDE_FOOTPRINT",
+      "center_wgs84": [
+        111.78273192783577,
+        -7.629318995592407
+      ],
+      "distance_from_existing_or_boundary_pixels_1km": 58,
+      "duplicate_spatial_check": "SELECTED_PIXEL_CAUSE_EQUALS_OUTSIDE_FOOTPRINT",
+      "mosaic_col": 86,
+      "mosaic_row": 328,
+      "province_id": "east_java",
+      "search_bbox_wgs84": [
+        111.74773192783577,
+        -7.664318995592407,
+        111.81773192783577,
+        -7.594318995592407
+      ],
+      "year": 2023
+    },
+    {
+      "cause": "OUTSIDE_FOOTPRINT",
+      "center_wgs84": [
+        112.09365696217215,
+        -7.376374227806588
+      ],
+      "distance_from_existing_or_boundary_pixels_1km": 61,
+      "duplicate_spatial_check": "SELECTED_PIXEL_CAUSE_EQUALS_OUTSIDE_FOOTPRINT",
+      "mosaic_col": 116,
+      "mosaic_row": 296,
+      "province_id": "east_java",
+      "search_bbox_wgs84": [
+        112.05865696217215,
+        -7.411374227806588,
+        112.12865696217214,
+        -7.341374227806588
+      ],
+      "year": 2024
+    }
+  ],
+  "training_authorized": false
+}

@@ -1,0 +1,48 @@
+{
+  "budget": {
+    "additional_maximum_bytes": 4294967296,
+    "ledger_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json",
+    "new_charged_bytes_before": 2495209356,
+    "pilot_reservation_bytes": 33554432,
+    "preexisting_pending_batches": [
+      "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+      "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01"
+    ],
+    "rate_limit_active": false,
+    "remaining_before": 1799757940
+  },
+  "checked_at": "2026-10-27T07:03:54.729348+00:00",
+  "duplicate_check": {
+    "existing_stac_item_count": 127,
+    "scene_id_rechecked_after_live_search": true,
+    "selected_pixel_outside_existing_footprint": true
+  },
+  "errors": [],
+  "schema_version": "province-year-pilot-preflight/1.0",
+  "selected_target": {
+    "cause": "OUTSIDE_FOOTPRINT",
+    "center_wgs84": [
+      112.09365696217215,
+      -7.376374227806588
+    ],
+    "distance_from_existing_or_boundary_pixels_1km": 61,
+    "duplicate_spatial_check": "SELECTED_PIXEL_CAUSE_EQUALS_OUTSIDE_FOOTPRINT",
+    "mosaic_col": 116,
+    "mosaic_row": 296,
+    "province_id": "east_java",
+    "search_bbox_wgs84": [
+      112.05865696217215,
+      -7.411374227806588,
+      112.12865696217214,
+      -7.341374227806588
+    ],
+    "year": 2023
+  },
+  "status": "PASS",
+  "storage": {
+    "minimum_required_free_bytes": 134217728,
+    "workspace_drive_free_bytes": 1989271117824,
+    "workspace_drive_total_bytes": 2000290414592,
+    "workspace_drive_used_bytes": 11019296768
+  }
+}

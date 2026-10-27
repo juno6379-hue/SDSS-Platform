@@ -1,0 +1,126 @@
+{
+  "boundary": {
+    "path": "evidence\\integration\\unit362-province-evidence-20261027\\six-province-boundary-candidate.geojson",
+    "sha256": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423",
+    "status": "PROVISIONAL_BIG_BASELINE"
+  },
+  "comparison": {
+    "after": {
+      "cause_pixels": {
+        "CLOUD": 0,
+        "NODATA": 0,
+        "OUTSIDE_FOOTPRINT": 47812,
+        "SHADOW": 0
+      },
+      "observed_pixels": 219,
+      "source_asset_count": 3
+    },
+    "before": {
+      "cause_pixels": {
+        "CLOUD": 0,
+        "NODATA": 0,
+        "OUTSIDE_FOOTPRINT": 47837,
+        "SHADOW": 0
+      },
+      "observed_pixels": 194,
+      "source_asset_count": 2
+    },
+    "observed_pixel_delta": 25,
+    "outside_footprint_pixel_delta": -25,
+    "province_id": "east_java",
+    "year": 2023
+  },
+  "completed_at": "2026-10-27T07:06:13.084592+00:00",
+  "decision": {
+    "path": "evidence\\integration\\unit363-provisional-sentinel-pilot-20261027\\cross-check-decision.json",
+    "sha256": "45497e5ff6eaad1acbd0fca4af29d81fdf4b7233bff5c27ae6a358ed4f9f9619"
+  },
+  "execution": {
+    "collector_invoked": true,
+    "execution_lock_acquired": true,
+    "ledger_written": true,
+    "new_sentinel_downloads": 1,
+    "training_runs": 0
+  },
+  "budget_final": {
+    "ledger_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json",
+    "ledger_sha256": "984271b537d24d4183e8962e3d6a8d7b49d5293e876354675d80e98a6a73c61e",
+    "remaining_bytes": 1766203508,
+    "pilot_batch_status": "settled",
+    "pilot_charged_bytes": 33554432,
+    "preexisting_pending_batches_preserved": 2,
+    "rate_limit_active": false,
+    "execution_lock_exists_after": false
+  },
+  "gistaru": "SKIPPED_BY_USER_DECISION",
+  "pilot_report": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\unit363-provisional-sentinel-pilot-20261027\\pilot-acquisition-report.json",
+    "sha256": "cc21a8d894751d1c05ac2b6950a6da04fab7a3934452db9d1a843b2aea760ba7"
+  },
+  "plan": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\unit363-provisional-sentinel-pilot-20261027\\provisional-gap-acquisition-plan.json",
+    "sha256": "9857659909ccd374660a88176b8d0d5bff86b4da4c3d6467b44852159bd9e8d9",
+    "target_count": 1614
+  },
+  "preflight": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\unit363-provisional-sentinel-pilot-20261027\\pilot-preflight.json",
+    "sha256": "77c1f6910595e24cbece88564912b7b94697262d9bb4bd264ac6c8cda2dce6d5"
+  },
+  "priority": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\unit363-provisional-sentinel-pilot-20261027\\36-cell-gap-priority.json",
+    "sha256": "1b3a33a0be27b5e7199884baaaabe9275205b92f46fe9e9e310e9e3cdce86d47"
+  },
+  "remaining_blockers": [
+    "BOUNDARY_APPROVAL_PENDING",
+    "NOT_AUTHORIZED_FOR_TRAINING_OR_DEPLOYMENT"
+  ],
+  "verification": {
+    "pytest": "29 passed, 105 warnings, 90.18s",
+    "compileall": "passed",
+    "git_diff_check": "passed",
+    "independent_validator": "passed: 36 cells, 121 unique SCL assets, 72 GeoTIFFs",
+    "active_collector_after": 0,
+    "local_services_http": {
+      "api_8002": 200,
+      "ui_5174": 200,
+      "wms_8088": 200
+    }
+  },
+  "schema_version": "province-year-provisional-pilot-completion/1.0",
+  "status": "PILOT_COLLECTED_QA_AND_MOSAIC_UPDATED_BOUNDARY_APPROVAL_PENDING",
+  "updated_mosaic": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\unit363-provisional-sentinel-pilot-20261027\\updated-mosaics\\province-year-scl-mosaic-manifest.json",
+    "sha256": "f9bda6ace328095f8d3faaad18d1e2c63ce0c7b07e09e14b3c9cdffb7cb12acb",
+    "validation": {
+      "cause_pixels": {
+        "CLOUD": 607,
+        "NODATA": 0,
+        "OUTSIDE_FOOTPRINT": 1112540,
+        "SHADOW": 374
+      },
+      "cell_count": 36,
+      "checks": {
+        "all_epsg_6933": true,
+        "all_gap_pixels_classified": true,
+        "all_nodata_unset": true,
+        "all_outside_boundary_zero": true,
+        "all_pins_match": true,
+        "all_same_grid_per_cell": true,
+        "all_value_domains_valid": true,
+        "collector_invoked": true,
+        "ledger_written": true
+      },
+      "manifest_path": "E:/GeoAI–MLOps–SDSS/evidence/integration/unit363-provisional-sentinel-pilot-20261027/updated-mosaics/province-year-scl-mosaic-manifest.json",
+      "manifest_sha256": "f9bda6ace328095f8d3faaad18d1e2c63ce0c7b07e09e14b3c9cdffb7cb12acb",
+      "observed_pct": 0.895087,
+      "schema_version": "province-year-scl-mosaic-validation/1.0",
+      "source_asset_count": 121,
+      "status": "VERIFIED_REAL_LOCAL_ARTIFACTS_BOUNDARY_APPROVAL_PENDING",
+      "total_boundary_pixels": 1123578,
+      "total_gap_pixels": 1113521,
+      "total_observed_pixels": 10057,
+      "unique_source_asset_count": 121,
+      "validated_at": "2026-10-27T07:06:08.019383+00:00"
+    }
+  }
+}

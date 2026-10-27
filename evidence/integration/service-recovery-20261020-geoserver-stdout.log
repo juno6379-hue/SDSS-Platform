@@ -1,0 +1,16 @@
+================================================================================
+ [GeoServer] GeoAI LCLUC Discrete Classification WMS Service
+ [GeoServer] Web Administration Console: http://127.0.0.1:8088/geoserver/web
+ [GeoServer] WMS 1.3.0 GetCapabilities:  http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&REQUEST=GetCapabilities
+ [GeoServer] WMS 1.1.1 GetCapabilities:  http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
+ [GeoServer] Authoritative Pixel API:    http://127.0.0.1:8088/v1/lcluc/pixel
+================================================================================
+INFO:     127.0.0.1:50064 - "GET /geoserver/wms?SERVICE=WMS&REQUEST=GetCapabilities HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52216 - "GET /geoserver/wms?SERVICE=WMS&REQUEST=GetCapabilities HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52222 - "GET /geoserver/wms?SERVICE=WMS&REQUEST=GetCapabilities HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52244 - "GET /geoserver/wms?service=WMS&request=GetCapabilities HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:52260 - "GET /geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63734 - "GET /geoserver/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=lcluc%3Aprimary_annual_valid_mask_banten_2021&SRS=EPSG%3A32748&BBOX=624160,9287010,626720,9289570&WIDTH=64&HEIGHT=64&FORMAT=image%2Fpng&TRANSPARENT=TRUE HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56186 - "GET /geoserver/wms?service=WMS&request=GetCapabilities HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:64239 - "GET /geoserver/wms?SERVICE=WMS&REQUEST=GetCapabilities HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64240 - "GET /geoserver/web HTTP/1.1" 200 OK

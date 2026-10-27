@@ -12,7 +12,7 @@ interface ModelItem {
   subName: string;
   agency: string;
   version: string;
-  status: '운영중' | '재학습 필요' | '검증중';
+  status: '검증중';
   statusType: 'active' | 'warning' | 'info';
   deployDate: string;
   iconBg: string;
@@ -24,11 +24,11 @@ const INITIAL_MODELS: ModelItem[] = [
     id: 1,
     name: 'LCLUC',
     subName: '(Land Cover & Land Use Change)',
-    agency: '환경부 (KLHK)',
-    version: 'v1.2.0',
-    status: '운영중',
-    statusType: 'active',
-    deployDate: '2024-10-12',
+    agency: '책임 미확정',
+    version: '미검증',
+    status: '검증중',
+    statusType: 'info',
+    deployDate: '미배포',
     iconBg: '#eff6ff',
     iconText: '🛰️',
   },
@@ -36,11 +36,11 @@ const INITIAL_MODELS: ModelItem[] = [
     id: 2,
     name: 'Climate Downscaling',
     subName: '(기후 상세화)',
-    agency: '기상기후지질청 (BMKG)',
-    version: 'v1.1.0',
-    status: '운영중',
-    statusType: 'active',
-    deployDate: '2024-10-08',
+    agency: '책임 미확정',
+    version: '미검증',
+    status: '검증중',
+    statusType: 'info',
+    deployDate: '미배포',
     iconBg: '#fff7ed',
     iconText: '☀️',
   },
@@ -48,11 +48,11 @@ const INITIAL_MODELS: ModelItem[] = [
     id: 3,
     name: 'Flood & Drought',
     subName: '(홍수·가뭄 예측)',
-    agency: '국가재난방재청 (BNPB)',
-    version: 'v1.1.1',
-    status: '운영중',
-    statusType: 'active',
-    deployDate: '2024-10-15',
+    agency: '책임 미확정',
+    version: '미검증',
+    status: '검증중',
+    statusType: 'info',
+    deployDate: '미배포',
     iconBg: '#ecfeff',
     iconText: '🌊',
   },
@@ -60,11 +60,11 @@ const INITIAL_MODELS: ModelItem[] = [
     id: 4,
     name: 'Net Carbon Footprint',
     subName: '(탄소 순배출량)',
-    agency: '환경부 (KLHK)',
-    version: 'v1.0.3',
-    status: '재학습 필요',
-    statusType: 'warning',
-    deployDate: '2024-09-28',
+    agency: '책임 미확정',
+    version: '미검증',
+    status: '검증중',
+    statusType: 'info',
+    deployDate: '미배포',
     iconBg: '#ecfdf5',
     iconText: '🌱',
   },
@@ -72,11 +72,11 @@ const INITIAL_MODELS: ModelItem[] = [
     id: 5,
     name: 'Biodiversity',
     subName: '(생물다양성 서식지)',
-    agency: '국립연구혁신청 (BRIN)',
-    version: 'v1.0.1',
-    status: '운영중',
-    statusType: 'active',
-    deployDate: '2024-10-05',
+    agency: '책임 미확정',
+    version: '미검증',
+    status: '검증중',
+    statusType: 'info',
+    deployDate: '미배포',
     iconBg: '#f0fdf4',
     iconText: '🌲',
   },
@@ -84,11 +84,11 @@ const INITIAL_MODELS: ModelItem[] = [
     id: 6,
     name: 'Coastal Inundation & Land Subsidence',
     subName: '(연안 침수·지반침하)',
-    agency: '공공사업주택부 (PUPR)',
-    version: 'v1.1.0',
+    agency: '책임 미확정',
+    version: '미검증',
     status: '검증중',
     statusType: 'info',
-    deployDate: '2024-10-10',
+    deployDate: '미배포',
     iconBg: '#eff6ff',
     iconText: '🌊',
   },
@@ -97,19 +97,51 @@ const INITIAL_MODELS: ModelItem[] = [
 interface CoverageRow {
   province: string;
   areaKm2: string;
-  coveragePct: number;
-  cloudPct: number;
-  missingPct: number;
+  coveragePct: number | null;
+  cloudPct: number | null;
+  missingPct: number | null;
 }
 
-const COVERAGE_DATA: CoverageRow[] = [
-  { province: 'South Sulawesi', areaKm2: '46,717', coveragePct: 98, cloudPct: 12, missingPct: 2 },
-  { province: 'Gorontalo', areaKm2: '12,435', coveragePct: 96, cloudPct: 15, missingPct: 4 },
-  { province: 'Southeast Sulawesi', areaKm2: '38,068', coveragePct: 95, cloudPct: 14, missingPct: 5 },
-  { province: 'Banten', areaKm2: '9,662', coveragePct: 97, cloudPct: 11, missingPct: 3 },
-  { province: 'West Java', areaKm2: '35,377', coveragePct: 98, cloudPct: 10, missingPct: 2 },
-  { province: 'East Java', areaKm2: '47,799', coveragePct: 97, cloudPct: 12, missingPct: 3 },
-];
+const EMPTY_COVERAGE_DATA: CoverageRow[] = [
+  'South Sulawesi', 'Gorontalo', 'Southeast Sulawesi', 'Banten', 'West Java', 'East Java',
+].map((province) => ({
+  province,
+  areaKm2: '미측정',
+  coveragePct: null,
+  cloudPct: null,
+  missingPct: null,
+}));
+
+type NullableKpis = {
+  modelsProd: number | null;
+  inQueue: number | null;
+  deployments30d: number | null;
+  retrainNeeded: number | null;
+  avgF1: number | null;
+  avgMiou: number | null;
+};
+
+function numericOrNull(value: unknown): number | null {
+  return typeof value === 'number' && Number.isFinite(value) ? value : null;
+}
+
+function displayMetric(value: number | null, digits = 0): string {
+  return value === null ? '미측정' : value.toFixed(digits);
+}
+
+function coverageCell(value: number | null): string {
+  return value === null ? '미측정' : `${value}%`;
+}
+
+function approvalStatus(value: unknown): string {
+  return typeof value === 'string' && value.trim() ? value : '상태 미확인';
+}
+
+function stringOrFallback(value: unknown, fallback: string): string {
+  return typeof value === 'string' && value.trim() ? value : fallback;
+}
+
+const PIPELINE_BLOCKED_LABEL = '실행 근거 없음';
 
 interface ExperimentMetrics {
   accuracy: [number, number, number];
@@ -172,12 +204,12 @@ interface ApprovalItem {
   status_code: string;
 }
 
-const DEFAULT_APPROVALS: ApprovalItem[] = [
-  { id: 'APP-1', model_name: 'LCLUC v1.2.0', requested_by: 'Rizky A.', date: '2024-10-22', status: '승인', status_code: 'approved' },
-  { id: 'APP-2', model_name: 'Flood & Drought v1.1.1', requested_by: 'Siti N.', date: '2024-10-18', status: '승인', status_code: 'approved' },
-  { id: 'APP-3', model_name: 'Carbon v1.0.3', requested_by: 'Budi P.', date: '2024-10-14', status: '검토중', status_code: 'pending' },
-  { id: 'APP-4', model_name: 'Coastal v1.1.0', requested_by: 'Andi K.', date: '2024-10-10', status: '승인', status_code: 'approved' },
-];
+interface RetrainingStage {
+  id: string;
+  name: string;
+  status: string;
+  reasonCode: string;
+}
 
 export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlopsWorkspaceProps) {
   const [period, setPeriod] = useState('최근 7일');
@@ -186,52 +218,113 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
   const [showApprovalModal, setShowApprovalModal] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  const [liveKpis, setLiveKpis] = useState({
-    modelsProd: 6,
-    inQueue: 2,
-    deployments30d: 4,
-    retrainNeeded: 1,
-    avgF1: 0.82,
-    avgMiou: 0.78,
+  const [liveKpis, setLiveKpis] = useState<NullableKpis>({
+    modelsProd: null,
+    inQueue: null,
+    deployments30d: null,
+    retrainNeeded: null,
+    avgF1: null,
+    avgMiou: null,
   });
 
-  const [approvalsList, setApprovalsList] = useState<ApprovalItem[]>(DEFAULT_APPROVALS);
+  const [coverageRows, setCoverageRows] = useState<CoverageRow[]>(EMPTY_COVERAGE_DATA);
+  const [summaryStatus, setSummaryStatus] = useState('LOADING');
+  const [reasonCodes, setReasonCodes] = useState<string[]>([]);
+  const [trainingAllowed, setTrainingAllowed] = useState(false);
+  const [approvalAllowed, setApprovalAllowed] = useState(false);
+  const [approvalsList, setApprovalsList] = useState<ApprovalItem[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [approvalModel, setApprovalModel] = useState('LCLUC');
   const [approvalVersion, setApprovalVersion] = useState('v1.2.1-candidate');
-  const [approvalRationale, setApprovalRationale] = useState('2020-2025 First Group 6개 주 벤치마크 테스트셋 검증 완료. F1 Score 0.84 및 mIoU 0.81 달성.');
+  const [approvalRationale, setApprovalRationale] = useState('');
+  const [retrainingStages, setRetrainingStages] = useState<RetrainingStage[]>([]);
+  const [confidenceStatus, setConfidenceStatus] = useState('미측정');
+  const [accuracyStatus, setAccuracyStatus] = useState('미측정');
 
   useEffect(() => {
     let active = true;
     async function loadSummary() {
       try {
         const res = await fetch('/v1/mlops/summary');
-        if (!res.ok) return;
+        if (!res.ok) throw new Error(`SUMMARY_HTTP_${res.status}`);
         const data = await res.json();
-        if (!active || !data || data.status !== 'success') return;
+        if (!active || !data) return;
+        setSummaryStatus(stringOrFallback(data.status, 'BLOCKED_INVALID_SUMMARY'));
+        setReasonCodes(Array.isArray(data.reason_codes) ? data.reason_codes.filter((v: unknown) => typeof v === 'string') : []);
+        setTrainingAllowed(data.actions?.retrain_allowed === true || data.training?.action_allowed === true);
+        setApprovalAllowed(data.actions?.approval_allowed === true || data.approval?.action_allowed === true);
+        const readiness = data.retraining_readiness;
+        if (Array.isArray(readiness?.stages)) {
+          setRetrainingStages(readiness.stages.map((stage: any) => ({
+            id: stringOrFallback(stage?.id, 'unknown-stage'),
+            name: stringOrFallback(stage?.name, '단계 미확인'),
+            status: stringOrFallback(stage?.status, 'blocked'),
+            reasonCode: stringOrFallback(stage?.reason_code, 'EVIDENCE_REQUIRED'),
+          })));
+        } else {
+          setRetrainingStages([]);
+        }
+        setConfidenceStatus(
+          readiness?.confidence?.value == null
+            ? `미측정 · ${stringOrFallback(readiness?.confidence?.reason_code, 'NO_VERIFIED_CONFIDENCE_CALIBRATION')}`
+            : String(readiness.confidence.value),
+        );
+        setAccuracyStatus(
+          readiness?.accuracy?.overall_accuracy == null
+            ? `미측정 · ${stringOrFallback(readiness?.accuracy?.reason_code, 'NO_INDEPENDENT_GROUND_TRUTH_EVALUATION')}`
+            : String(readiness.accuracy.overall_accuracy),
+        );
         if (data.kpis) {
           setLiveKpis({
-            modelsProd: data.kpis.models_in_production?.value ?? 6,
-            inQueue: data.kpis.training_in_queue?.value ?? 2,
-            deployments30d: data.kpis.deployments_30d?.value ?? 4,
-            retrainNeeded: data.kpis.retraining_needed?.value ?? 1,
-            avgF1: data.kpis.mean_f1_score?.value ?? 0.82,
-            avgMiou: data.kpis.mean_miou?.value ?? 0.78,
+            modelsProd: numericOrNull(data.kpis.models_in_production?.value),
+            inQueue: numericOrNull(data.kpis.training_in_queue?.value),
+            deployments30d: numericOrNull(data.kpis.deployments_30d?.value),
+            retrainNeeded: numericOrNull(data.kpis.retraining_needed?.value),
+            avgF1: numericOrNull(data.kpis.mean_f1_score?.value),
+            avgMiou: numericOrNull(data.kpis.mean_miou?.value),
           });
         }
-        if (Array.isArray(data.approvals) && data.approvals.length > 0) {
+        const provinces = data.coverage_audit?.provinces;
+        if (Array.isArray(provinces)) {
+          setCoverageRows(EMPTY_COVERAGE_DATA.map((fallback) => {
+            const source = provinces.find((row: any) => row?.province === fallback.province || row?.name === fallback.province);
+            if (!source) return fallback;
+            return {
+              province: fallback.province,
+              areaKm2: source.area_km2 == null ? '미측정' : String(source.area_km2),
+              coveragePct: numericOrNull(source.coverage_pct),
+              cloudPct: numericOrNull(source.cloud_pct),
+              missingPct: numericOrNull(source.missing_pct),
+            };
+          }));
+        } else {
+          setCoverageRows(EMPTY_COVERAGE_DATA);
+        }
+        if (Array.isArray(data.approvals)) {
           const mapped: ApprovalItem[] = data.approvals.map((a: any) => ({
-            id: a.id || String(Math.random()),
-            model_name: a.model_name || a.model_id,
-            requested_by: a.requested_by,
-            date: a.date?.substring(0, 10) || '2024-10-24',
-            status: a.status || '승인',
-            status_code: a.status_code || 'approved',
+            id: stringOrFallback(a.id, 'approval-id-missing'),
+            model_name: stringOrFallback(a.model_name || a.model_id, '모델 미확인'),
+            requested_by: stringOrFallback(a.requested_by, '요청자 미확인'),
+            date: typeof a.date === 'string' ? a.date.substring(0, 10) : '일자 미확인',
+            status: approvalStatus(a.status),
+            status_code: stringOrFallback(a.status_code, 'unknown'),
           }));
           setApprovalsList(mapped);
+        } else {
+          setApprovalsList([]);
         }
       } catch {
-        // Fallback silently to baseline
+        if (!active) return;
+        setSummaryStatus('BLOCKED_SUMMARY_UNAVAILABLE');
+        setReasonCodes(['SUMMARY_UNAVAILABLE']);
+        setTrainingAllowed(false);
+        setApprovalAllowed(false);
+        setApprovalsList([]);
+        setCoverageRows(EMPTY_COVERAGE_DATA);
+        setRetrainingStages([]);
+        setConfidenceStatus('미측정 · SUMMARY_UNAVAILABLE');
+        setAccuracyStatus('미측정 · SUMMARY_UNAVAILABLE');
+        setLiveKpis({ modelsProd: null, inQueue: null, deployments30d: null, retrainNeeded: null, avgF1: null, avgMiou: null });
       }
     }
     loadSummary();
@@ -239,6 +332,10 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
   }, [period]);
 
   async function handleExecuteRetrain() {
+    if (!trainingAllowed) {
+      triggerToast('BLOCKED: 실행된 학습 및 검증된 재학습 근거가 없습니다.');
+      return;
+    }
     setIsSubmitting(true);
     try {
       const res = await fetch('/v1/mlops/retrain', {
@@ -252,19 +349,25 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           holdout_split: 'test_west_java_val_banten',
         }),
       });
+      if (!res.ok) throw new Error(`RETRAIN_HTTP_${res.status}`);
       const data = await res.json();
+      if (data.status !== 'success' && data.status !== 'accepted') throw new Error('RETRAIN_NOT_ACCEPTED');
       setShowRetrainModal(false);
-      setLiveKpis(prev => ({ ...prev, inQueue: prev.inQueue + 1 }));
+      setLiveKpis(prev => ({ ...prev, inQueue: prev.inQueue === null ? 1 : prev.inQueue + 1 }));
       triggerToast(data.message || '재학습 작업이 대기열에 성공적으로 등록되었습니다.');
     } catch {
       setShowRetrainModal(false);
-      triggerToast('재학습 작업이 대기열에 등록되었습니다.');
+      triggerToast('재학습 요청이 수락되지 않았습니다.');
     } finally {
       setIsSubmitting(false);
     }
   }
 
   async function handleExecuteApproval() {
+    if (!approvalAllowed) {
+      triggerToast('BLOCKED: 검증된 모델·사람 승인 근거가 없습니다.');
+      return;
+    }
     setIsSubmitting(true);
     try {
       const res = await fetch('/v1/mlops/approval', {
@@ -278,14 +381,16 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           rationale: approvalRationale,
         }),
       });
+      if (!res.ok) throw new Error(`APPROVAL_HTTP_${res.status}`);
       const data = await res.json();
+      if (data.status !== 'success' && data.status !== 'accepted') throw new Error('APPROVAL_NOT_ACCEPTED');
       setShowApprovalModal(false);
       if (data.approval) {
         const item: ApprovalItem = {
           id: data.approval.id,
           model_name: data.approval.model_name || `${approvalModel} ${approvalVersion}`,
           requested_by: data.approval.requested_by || 'GeoAI Team',
-          date: data.approval.date?.substring(0, 10) || '2024-10-24',
+          date: data.approval.date?.substring(0, 10) || '일자 미확인',
           status: '검토중',
           status_code: 'pending',
         };
@@ -294,20 +399,13 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
       triggerToast(data.message || '승인 요청이 성공적으로 접수되었습니다.');
     } catch {
       setShowApprovalModal(false);
-      triggerToast('승인 요청이 등록되어 기술검토 대기열에 추가되었습니다.');
+      triggerToast('승인 요청이 수락되지 않았습니다.');
     } finally {
       setIsSubmitting(false);
     }
   }
 
   const experimentData = EXPERIMENT_RUNS[selectedExperimentModel] || EXPERIMENT_RUNS['lcluc'];
-
-  function handleCopy(text: string) {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(text);
-      triggerToast(`복사되었습니다: ${text}`);
-    }
-  }
 
   function triggerToast(msg: string) {
     setToastMessage(msg);
@@ -325,8 +423,8 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
         </div>
         <div className="mlops-top-controls">
           <div className="mlops-timestamp">
-            <span role="img" aria-label="calendar">📅</span>
-            <span>2024년 10월 24일 (목) 14:32 (WIB)</span>
+            <span role="img" aria-label="evidence">🔒</span>
+            <span>요약 API 증거 상태 기준</span>
           </div>
           <select
             className="mlops-period-select"
@@ -350,6 +448,10 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
         <div className="mlops-hero-text">
           <h1>모델 & MLOps</h1>
           <p>AI 모델의 등록, 학습, 검증, 배포, 모니터링, 재학습을 통합 관리합니다.</p>
+          <p role="status" style={{ marginTop: '8px', color: '#b45309', fontWeight: 700 }}>
+            {summaryStatus} · 실제 학습·측정 예측·사람 승인·운영 배포 근거 없음
+            {reasonCodes.length > 0 ? ` · ${reasonCodes.join(', ')}` : ''}
+          </p>
         </div>
       </div>
 
@@ -366,8 +468,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">{liveKpis.modelsProd}</span>
-              <span className="mlops-kpi-unit">/ 6개</span>
+              <span className="mlops-kpi-value">{displayMetric(liveKpis.modelsProd)}</span>
             </div>
           </div>
         </div>
@@ -383,8 +484,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">{liveKpis.inQueue}</span>
-              <span className="mlops-kpi-unit">개</span>
+              <span className="mlops-kpi-value">{displayMetric(liveKpis.inQueue)}</span>
             </div>
           </div>
         </div>
@@ -400,8 +500,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">{liveKpis.deployments30d}</span>
-              <span className="mlops-kpi-unit">회</span>
+              <span className="mlops-kpi-value">{displayMetric(liveKpis.deployments30d)}</span>
             </div>
           </div>
         </div>
@@ -417,8 +516,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">{liveKpis.retrainNeeded}</span>
-              <span className="mlops-kpi-unit">개</span>
+              <span className="mlops-kpi-value">{displayMetric(liveKpis.retrainNeeded)}</span>
             </div>
           </div>
         </div>
@@ -434,12 +532,8 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">{liveKpis.avgF1.toFixed(2)}</span>
+              <span className="mlops-kpi-value">{displayMetric(liveKpis.avgF1, 2)}</span>
             </div>
-            <span className="mlops-kpi-trend">↑ +0.04</span>
-            <svg className="mlops-kpi-sparkline" viewBox="0 0 54 22" fill="none">
-              <path d="M2 18 Q 15 12, 28 14 T 52 4" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
-            </svg>
           </div>
         </div>
 
@@ -454,12 +548,8 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
           </div>
           <div className="mlops-kpi-body">
             <div>
-              <span className="mlops-kpi-value">{liveKpis.avgMiou.toFixed(2)}</span>
+              <span className="mlops-kpi-value">{displayMetric(liveKpis.avgMiou, 2)}</span>
             </div>
-            <span className="mlops-kpi-trend">↑ +0.06</span>
-            <svg className="mlops-kpi-sparkline" viewBox="0 0 54 22" fill="none">
-              <path d="M2 19 Q 16 16, 29 11 T 52 3" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
-            </svg>
           </div>
         </div>
       </div>
@@ -551,38 +641,38 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
 
                 <div className="mlops-pipeline-flow">
                   {/* Step 1 */}
-                  <div className="mlops-pipeline-step completed">
+                  <div className="mlops-pipeline-step pending">
                     <div className="mlops-pipeline-icon">🗄️</div>
                     <span className="mlops-pipeline-name">데이터 수집</span>
                     <span className="mlops-pipeline-sub">Data Ingestion</span>
-                    <span className="mlops-pipeline-badge green">✓ 완료</span>
+                    <span className="mlops-pipeline-badge gray">{PIPELINE_BLOCKED_LABEL}</span>
                   </div>
                   <span className="mlops-pipeline-arrow">→</span>
 
                   {/* Step 2 */}
-                  <div className="mlops-pipeline-step completed">
+                  <div className="mlops-pipeline-step pending">
                     <div className="mlops-pipeline-icon">⚙️</div>
                     <span className="mlops-pipeline-name">전처리</span>
                     <span className="mlops-pipeline-sub">Preprocessing</span>
-                    <span className="mlops-pipeline-badge green">✓ 완료</span>
+                    <span className="mlops-pipeline-badge gray">{PIPELINE_BLOCKED_LABEL}</span>
                   </div>
                   <span className="mlops-pipeline-arrow">→</span>
 
                   {/* Step 3 */}
-                  <div className="mlops-pipeline-step completed">
+                  <div className="mlops-pipeline-step pending">
                     <div className="mlops-pipeline-icon">🛡️</div>
                     <span className="mlops-pipeline-name">라벨/정합성</span>
                     <span className="mlops-pipeline-sub">QA</span>
-                    <span className="mlops-pipeline-badge green">✓ 완료</span>
+                    <span className="mlops-pipeline-badge gray">{PIPELINE_BLOCKED_LABEL}</span>
                   </div>
                   <span className="mlops-pipeline-arrow">→</span>
 
                   {/* Step 4 */}
-                  <div className="mlops-pipeline-step running">
+                  <div className="mlops-pipeline-step pending">
                     <div className="mlops-pipeline-icon">🧠</div>
                     <span className="mlops-pipeline-name">모델 학습</span>
                     <span className="mlops-pipeline-sub">Training</span>
-                    <span className="mlops-pipeline-badge blue">● 진행중</span>
+                    <span className="mlops-pipeline-badge gray">BLOCKED</span>
                   </div>
                   <span className="mlops-pipeline-arrow">→</span>
 
@@ -614,11 +704,11 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                   <span className="mlops-pipeline-arrow">→</span>
 
                   {/* Step 8 */}
-                  <div className="mlops-pipeline-step completed">
+                  <div className="mlops-pipeline-step pending">
                     <div className="mlops-pipeline-icon">📈</div>
                     <span className="mlops-pipeline-name">모니터링</span>
                     <span className="mlops-pipeline-sub">Monitoring</span>
-                    <span className="mlops-pipeline-badge green">● 운영중</span>
+                    <span className="mlops-pipeline-badge gray">미검증</span>
                   </div>
                   <span className="mlops-pipeline-arrow">→</span>
 
@@ -627,8 +717,32 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                     <div className="mlops-pipeline-icon">🔄</div>
                     <span className="mlops-pipeline-name">재학습</span>
                     <span className="mlops-pipeline-sub">Retraining</span>
-                    <span className="mlops-pipeline-badge orange">조건부</span>
+                    <span className="mlops-pipeline-badge gray">BLOCKED</span>
                   </div>
+                </div>
+                <div
+                  data-testid="retraining-evidence-contract"
+                  style={{ marginTop: '12px', padding: '12px', borderRadius: '10px', background: '#fff7ed', color: '#7c2d12' }}
+                >
+                  <strong>주 전체 보완·재학습 증거 게이트</strong>
+                  <div style={{ marginTop: '6px', lineHeight: 1.55 }}>
+                    {retrainingStages.length > 0
+                      ? retrainingStages.map((stage) => (
+                        <div key={stage.id}>
+                          {stage.name}: {stage.status.toUpperCase()} · {stage.reasonCode}
+                        </div>
+                      ))
+                      : <div>BLOCKED · 재학습 준비성 근거를 불러오지 못했습니다.</div>}
+                  </div>
+                  <div style={{ marginTop: '8px' }}>
+                    모델 confidence: {confidenceStatus}
+                  </div>
+                  <div>
+                    독립 accuracy/F1/mIoU: {accuracyStatus}
+                  </div>
+                  <small style={{ display: 'block', marginTop: '6px' }}>
+                    confidence는 모델 확률의 보정 상태이며 accuracy가 아닙니다. Esri weak label은 독립 정답으로 사용하지 않습니다.
+                  </small>
                 </div>
               </div>
 
@@ -666,7 +780,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                     </div>
                     <div className="mlops-legend-item">
                       <span className="mlops-legend-dot run3" />
-                      <span>Run-003 (Best)</span>
+                      <span>Run-003 (합성 예시)</span>
                     </div>
                   </div>
                 </div>
@@ -797,10 +911,10 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                   {/* Best Run Box */}
                   <div className="mlops-best-run-box">
                     <span className="mlops-best-run-title">
-                      🏆 최적 실험 결과 <br /> (Best Run)
+                      TESTED_SYNTHETIC <br /> (결정론적 시나리오)
                     </span>
                     <span className="mlops-best-run-name">
-                      {experimentData.bestRun} <small style={{ fontSize: '11px', color: '#64748b' }}>{experimentData.bestVersion}</small>
+                      {experimentData.bestRun} <small style={{ fontSize: '11px', color: '#64748b' }}>실학습 버전 아님</small>
                     </span>
                     <div className="mlops-best-run-metric">
                       <span>F1-Score</span>
@@ -811,7 +925,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                       <strong>{experimentData.bestMiou}</strong>
                     </div>
                     <span className="mlops-best-run-badge">
-                      {experimentData.gainPct}
+                      과학 성능·승격 근거로 사용 금지
                     </span>
                   </div>
                 </div>
@@ -870,7 +984,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                       </tr>
                     </thead>
                     <tbody>
-                      {COVERAGE_DATA.map((row) => (
+                      {coverageRows.map((row) => (
                         <tr key={row.province}>
                           <td style={{ fontWeight: 600, color: '#1e293b' }}>{row.province}</td>
                           <td style={{ color: '#475569' }}>{row.areaKm2}</td>
@@ -879,14 +993,14 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                               <div className="mlops-coverage-bar-bg">
                                 <div
                                   className="mlops-coverage-bar-fill"
-                                  style={{ width: `${row.coveragePct}%` }}
+                                  style={{ width: `${row.coveragePct ?? 0}%` }}
                                 />
                               </div>
-                              <span className="mlops-coverage-pct-txt">{row.coveragePct}%</span>
+                              <span className="mlops-coverage-pct-txt">{coverageCell(row.coveragePct)}</span>
                             </div>
                           </td>
-                          <td className="mlops-diff-red">▲ {row.cloudPct}%</td>
-                          <td className="mlops-diff-red">▲ {row.missingPct}%</td>
+                          <td className="mlops-diff-red">{coverageCell(row.cloudPct)}</td>
+                          <td className="mlops-diff-red">{coverageCell(row.missingPct)}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -901,7 +1015,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    {/* Simplified Indonesian Archipelago with shaded Java & Sulawesi */}
+                    {/* 위치 안내용 단색 개략도. 커버리지 측정값은 아직 없다. */}
                     {/* Sumatra background outline */}
                     <path
                       d="M20 50 L45 75 L70 100 L55 110 L30 85 Z"
@@ -912,15 +1026,15 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                     {/* West Java & Banten */}
                     <path
                       d="M75 115 L95 118 L110 116 L105 125 L80 123 Z"
-                      fill="#0ea5e9"
-                      stroke="#0284c7"
+                      fill="#e2e8f0"
+                      stroke="#cbd5e1"
                       strokeWidth="1.5"
                     />
                     {/* East Java */}
                     <path
                       d="M112 116 L145 115 L155 122 L120 124 Z"
-                      fill="#0284c7"
-                      stroke="#0369a1"
+                      fill="#e2e8f0"
+                      stroke="#cbd5e1"
                       strokeWidth="1.5"
                     />
                     {/* Kalimantan outline */}
@@ -934,21 +1048,21 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                     {/* Gorontalo (Northern arm) */}
                     <path
                       d="M185 45 L210 40 L215 48 L195 50 Z"
-                      fill="#0f766e"
-                      stroke="#115e59"
+                      fill="#e2e8f0"
+                      stroke="#cbd5e1"
                       strokeWidth="1.5"
                     />
                     {/* South & Southeast Sulawesi */}
                     <path
                       d="M180 55 L190 70 L185 95 L175 100 L172 75 L180 55 Z"
-                      fill="#0f766e"
-                      stroke="#115e59"
+                      fill="#e2e8f0"
+                      stroke="#cbd5e1"
                       strokeWidth="1.5"
                     />
                     <path
                       d="M188 75 L205 85 L200 95 L185 90 Z"
-                      fill="#0d9488"
-                      stroke="#0f766e"
+                      fill="#e2e8f0"
+                      stroke="#cbd5e1"
                       strokeWidth="1.5"
                     />
                     {/* Maluku & Papua background */}
@@ -966,14 +1080,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                     />
                   </svg>
                   <div className="mlops-mini-map-legend">
-                    <span className="mlops-mini-map-legend-label">커버리지율</span>
-                    <div className="mlops-mini-map-gradient-bar" />
-                    <div className="mlops-mini-map-scale-ticks">
-                      <span>70%</span>
-                      <span>80%</span>
-                      <span>90%</span>
-                      <span>100%</span>
-                    </div>
+                    <span className="mlops-mini-map-legend-label">커버리지 미측정 · 위치 안내만 제공</span>
                   </div>
                 </div>
               </div>
@@ -984,7 +1091,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
               <div className="mlops-section-header">
                 <div className="mlops-section-header-title">
                   <span>모니터링 & 드리프트 (Monitoring & Drift)</span>
-                  <span className="mlops-live-badge">● 실시간</span>
+                  <span className="mlops-live-badge">근거 없음</span>
                 </div>
                 <button className="mlops-section-link" onClick={() => onNavigate?.(18)}>
                   전체보기 →
@@ -995,51 +1102,28 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
               <div className="mlops-monitoring-kpis-grid">
                 <div className="mlops-mon-kpi-col">
                   <span className="mlops-mon-kpi-label">추론 요청 수<br />(Inference)</span>
-                  <span className="mlops-mon-kpi-val">12,428</span>
-                  <span className="mlops-mon-kpi-delta">↑ +18%</span>
+                  <span className="mlops-mon-kpi-val">미측정</span>
                 </div>
                 <div className="mlops-mon-kpi-col">
                   <span className="mlops-mon-kpi-label">평균 지연시간<br />(Latency)</span>
-                  <span className="mlops-mon-kpi-val">320 ms</span>
-                  <span className="mlops-mon-kpi-delta">↓ -12%</span>
+                  <span className="mlops-mon-kpi-val">미측정</span>
                 </div>
                 <div className="mlops-mon-kpi-col">
                   <span className="mlops-mon-kpi-label">실패한 작업<br />(Failed Jobs)</span>
-                  <span className="mlops-mon-kpi-val">3</span>
-                  <span className="mlops-mon-kpi-delta">↓ -57%</span>
+                  <span className="mlops-mon-kpi-val">미측정</span>
                 </div>
                 <div className="mlops-mon-kpi-col">
                   <span className="mlops-mon-kpi-label">데이터 드리프트<br />(Data Drift)</span>
-                  <span className="mlops-mon-kpi-val">0.18</span>
-                  <span className="mlops-mon-kpi-delta">↓ -0.06</span>
+                  <span className="mlops-mon-kpi-val">미측정</span>
                 </div>
                 <div className="mlops-mon-kpi-col">
                   <span className="mlops-mon-kpi-label">클래스 불균형<br />(Class Imbalance)</span>
-                  <span className="mlops-mon-kpi-val">0.12</span>
-                  <span className="mlops-mon-kpi-delta">↓ -0.03</span>
+                  <span className="mlops-mon-kpi-val">미측정</span>
                 </div>
               </div>
 
-              {/* Drift Trend Chart */}
-              <div className="mlops-drift-sparkline-wrap">
-                <svg viewBox="0 0 400 48" style={{ width: '100%', height: '100%' }} preserveAspectRatio="none">
-                  {/* Grid line */}
-                  <line x1="0" y1="24" x2="400" y2="24" stroke="#f1f5f9" strokeDasharray="3,3" />
-                  {/* Coral Drift Line */}
-                  <path
-                    d="M0 34 Q 40 38, 80 30 T 160 36 T 240 28 T 320 22 T 400 16"
-                    fill="none"
-                    stroke="#f87171"
-                    strokeWidth="2"
-                  />
-                  {/* Blue Inference Line */}
-                  <path
-                    d="M0 42 Q 50 30, 100 35 T 200 25 T 300 18 T 400 12"
-                    fill="none"
-                    stroke="#38bdf8"
-                    strokeWidth="2"
-                  />
-                </svg>
+              <div className="mlops-drift-sparkline-wrap" role="status">
+                측정 예측과 기준 성능이 없어 추론·드리프트 시계열을 표시할 수 없습니다.
               </div>
 
               {/* Alert Banner */}
@@ -1047,17 +1131,19 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                 <div className="mlops-alert-left">
                   <div className="mlops-alert-icon">⚠️</div>
                   <div className="mlops-alert-text">
-                    <span className="mlops-alert-title">재학습 트리거 (Retraining Trigger)</span>
+                    <span className="mlops-alert-title">재학습 차단 (Retraining Blocked)</span>
                     <span className="mlops-alert-desc">
-                      Carbon 모델에서 성능 저하 패턴이 감지되었습니다. F1 Score가 지난 2주간 0.12 하락하여 임계값(0.10)을 초과했습니다.
+                      실행된 학습·측정 예측·독립 검증 근거가 없어 재학습 트리거를 판단할 수 없습니다.
                     </span>
                   </div>
                 </div>
                 <button
                   className="mlops-btn-retrain"
                   onClick={() => setShowRetrainModal(true)}
+                  disabled={!trainingAllowed}
+                  title={!trainingAllowed ? 'BLOCKED_NO_EXECUTED_TRAINING_OR_MEASURED_PREDICTIONS' : undefined}
                 >
-                  재학습 실행 &gt;
+                  {trainingAllowed ? '재학습 실행 >' : '재학습 차단'}
                 </button>
               </div>
             </div>
@@ -1084,26 +1170,25 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                       <div className="mlops-env-title">개발 (Dev)</div>
                       <div className="mlops-env-sub">개발/실험 환경</div>
                     </div>
-                    <span className="mlops-badge-status active">운영중</span>
+                    <span className="mlops-badge-status info">미검증</span>
                   </div>
                   <div className="mlops-env-pods-info">
                     <span className="k8s-icon">☸</span>
                     <span>Kubernetes</span>
-                    <strong style={{ marginLeft: 'auto' }}>2 / 2 pods</strong>
+                    <strong style={{ marginLeft: 'auto' }}>실행 근거 없음</strong>
                   </div>
                   <div className="mlops-env-endpoints">
                     <div className="mlops-env-endpoint-row">
                       <span
                         className="mlops-env-endpoint-link"
-                        title="https://dev-api.sdss.id"
-                        onClick={() => handleCopy('https://dev-api.sdss.id')}
+                        title="검증되지 않은 계획 endpoint"
                       >
-                        🔗 https://dev-api.sdss.id
+                        🔒 계획 endpoint · 미검증
                       </span>
                       <button
                         className="mlops-btn-action-more"
-                        onClick={() => handleCopy('https://dev-api.sdss.id')}
-                        title="주소 복사"
+                        onClick={() => triggerToast('검증된 개발 endpoint가 없습니다.')}
+                        title="미검증"
                       >
                         📋
                       </button>
@@ -1128,26 +1213,25 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                       <div className="mlops-env-title">스테이징 (Staging)</div>
                       <div className="mlops-env-sub">사전 검증 환경</div>
                     </div>
-                    <span className="mlops-badge-status active">운영중</span>
+                    <span className="mlops-badge-status info">미검증</span>
                   </div>
                   <div className="mlops-env-pods-info">
                     <span className="k8s-icon">☸</span>
                     <span>Kubernetes</span>
-                    <strong style={{ marginLeft: 'auto' }}>2 / 2 pods</strong>
+                    <strong style={{ marginLeft: 'auto' }}>실행 근거 없음</strong>
                   </div>
                   <div className="mlops-env-endpoints">
                     <div className="mlops-env-endpoint-row">
                       <span
                         className="mlops-env-endpoint-link"
-                        title="https://stg-api.sdss.id"
-                        onClick={() => handleCopy('https://stg-api.sdss.id')}
+                        title="검증되지 않은 계획 endpoint"
                       >
-                        🔗 https://stg-api.sdss.id
+                        🔒 계획 endpoint · 미검증
                       </span>
                       <button
                         className="mlops-btn-action-more"
-                        onClick={() => handleCopy('https://stg-api.sdss.id')}
-                        title="주소 복사"
+                        onClick={() => triggerToast('검증된 스테이징 endpoint가 없습니다.')}
+                        title="미검증"
                       >
                         📋
                       </button>
@@ -1172,26 +1256,25 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                       <div className="mlops-env-title">운영 (Production)</div>
                       <div className="mlops-env-sub">대국민 서비스</div>
                     </div>
-                    <span className="mlops-badge-status active">운영중</span>
+                    <span className="mlops-badge-status info">미검증</span>
                   </div>
                   <div className="mlops-env-pods-info">
                     <span className="k8s-icon">☸</span>
                     <span>Kubernetes</span>
-                    <strong style={{ marginLeft: 'auto' }}>3 / 3 pods</strong>
+                    <strong style={{ marginLeft: 'auto' }}>실행 근거 없음</strong>
                   </div>
                   <div className="mlops-env-endpoints">
                     <div className="mlops-env-endpoint-row">
                       <span
                         className="mlops-env-endpoint-link"
-                        title="https://api.sdss.id"
-                        onClick={() => handleCopy('https://api.sdss.id')}
+                        title="검증되지 않은 계획 endpoint"
                       >
-                        🔗 https://api.sdss.id
+                        🔒 계획 endpoint · 미검증
                       </span>
                       <button
                         className="mlops-btn-action-more"
-                        onClick={() => handleCopy('https://api.sdss.id')}
-                        title="주소 복사"
+                        onClick={() => triggerToast('검증된 운영 endpoint가 없습니다.')}
+                        title="미검증"
                       >
                         📋
                       </button>
@@ -1221,8 +1304,10 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                   <button
                     className="mlops-btn-new-request"
                     onClick={() => setShowApprovalModal(true)}
+                    disabled={!approvalAllowed}
+                    title={!approvalAllowed ? 'BLOCKED_NO_HUMAN_APPROVAL_EVIDENCE' : undefined}
                   >
-                    + 새 승인 요청
+                    {approvalAllowed ? '+ 새 승인 요청' : '승인 요청 차단'}
                   </button>
                   <button className="mlops-section-link" onClick={() => onNavigate?.(17)}>
                     전체보기 →
@@ -1271,6 +1356,9 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
                     </tr>
                   </thead>
                   <tbody>
+                    {approvalsList.length === 0 && (
+                      <tr><td colSpan={4} style={{ color: '#64748b' }}>확인된 승인 이력이 없습니다.</td></tr>
+                    )}
                     {approvalsList.map((app) => (
                       <tr key={app.id}>
                         <td style={{ fontWeight: 600, color: '#1e293b' }}>{app.model_name}</td>
@@ -1311,7 +1399,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
             <div className="mlops-insight-content">
               <span className="mlops-insight-title">모델 버전 관리</span>
               <span className="mlops-insight-desc">
-                6개 기후·환경 AI 모델의 버전과 배포 이력을 통합 관리합니다.
+                모델 항목은 계획 목록이며 실제 버전·배포 이력은 확인되지 않았습니다.
               </span>
             </div>
           </div>
@@ -1333,7 +1421,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
             <div className="mlops-insight-content">
               <span className="mlops-insight-title">성능 비교 및 실험 관리</span>
               <span className="mlops-insight-desc">
-                다양한 실험 결과를 비교하고 최적의 모델을 선택할 수 있습니다.
+                합성 시나리오는 UI 동작 확인용이며 최적 모델이나 과학 성능을 뜻하지 않습니다.
               </span>
             </div>
           </div>
@@ -1344,7 +1432,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
             <div className="mlops-insight-content">
               <span className="mlops-insight-title">배포 상태 확인</span>
               <span className="mlops-insight-desc">
-                개발·스테이징·운영 환경의 배포 상태와 API 서비스를 모니터링합니다.
+                로컬 서비스 상태만 별도 확인하며 개발·스테이징·운영 배포는 검증되지 않았습니다.
               </span>
             </div>
           </div>
@@ -1355,7 +1443,7 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
             <div className="mlops-insight-content">
               <span className="mlops-insight-title">재학습 트리거 확인</span>
               <span className="mlops-insight-desc">
-                데이터 드리프트, 성능 저하 시 재학습 필요 시점을 자동으로 탐지합니다.
+                측정 예측과 기준 성능이 없어 재학습 필요 시점 판단은 차단됩니다.
               </span>
             </div>
           </div>
@@ -1372,13 +1460,13 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
             </div>
             <div className="mlops-modal-body">
               <p>
-                <strong>대상 모델:</strong> Net Carbon Footprint (KLHK) v1.0.3
+                <strong>상태:</strong> BLOCKED_NO_EXECUTED_TRAINING_OR_MEASURED_PREDICTIONS
               </p>
               <p>
-                <strong>트리거 사유:</strong> F1 Score가 지난 2주간 0.12 하락 (임계값 0.10 초과).
+                <strong>사유:</strong> 실행된 학습·checkpoint·측정 예측·독립 검증이 없습니다.
               </p>
               <p>
-                재학습 파이프라인(데이터 수집 → 전처리 → 분할 검증)을 비동기 워커로 즉시 발송하시겠습니까?
+                현재 재학습 요청을 보낼 수 없습니다.
               </p>
             </div>
             <div className="mlops-modal-footer">
@@ -1392,10 +1480,10 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
               </button>
               <button
                 className="mlops-btn-retrain"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !trainingAllowed}
                 onClick={handleExecuteRetrain}
               >
-                {isSubmitting ? '요청 처리 중...' : '재학습 작업 시작'}
+                {isSubmitting ? '요청 처리 중...' : trainingAllowed ? '재학습 작업 시작' : '재학습 차단'}
               </button>
             </div>
           </div>
@@ -1449,10 +1537,10 @@ export default function ModelMlopsWorkspace({ onNavigate, activeStep }: ModelMlo
               </button>
               <button
                 className="mlops-btn-new-request"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !approvalAllowed || approvalRationale.trim().length === 0}
                 onClick={handleExecuteApproval}
               >
-                {isSubmitting ? '요청 제출 중...' : '승인 요청 제출'}
+                {isSubmitting ? '요청 제출 중...' : approvalAllowed ? '승인 요청 제출' : '승인 요청 차단'}
               </button>
             </div>
           </div>

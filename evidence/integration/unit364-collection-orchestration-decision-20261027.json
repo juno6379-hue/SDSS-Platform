@@ -1,0 +1,46 @@
+{
+  "schema_version": "province-year-collection-orchestration-decision/1.0",
+  "authorized_by": "USER_EXPLICIT_INSTRUCTION",
+  "recorded_at": "2026-10-27T16:29:45.8527829+09:00",
+  "decision": "AUTOMATE_GAP_COLLECTION_WITH_APPROVAL_GATED_TRAINING_DEPLOYMENT",
+  "boundary_sha256": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423",
+  "starting_mosaic_sha256": "f9bda6ace328095f8d3faaad18d1e2c63ce0c7b07e09e14b3c9cdffb7cb12acb",
+  "policy": {
+    "max_windows_per_batch": 3,
+    "window_side_scl20m": 2048,
+    "reservation_bytes_per_window": 50331648,
+    "metadata_budget_bytes_per_window": 4194304,
+    "stop_on_first_failure": true,
+    "stop_on_http_429": true,
+    "distinct_province_year_per_batch": true,
+    "recalculate_mosaic_after_batch": true
+  },
+  "automation_scope": [
+    "MONITOR_GAPS",
+    "PLAN_DISTINCT_PROVINCE_YEAR_TARGETS",
+    "CHECK_DUPLICATES_BUDGET_STORAGE_AND_LOCK",
+    "COLLECT_SENTINEL_2_SCL_WINDOWS",
+    "RUN_SCL_QA",
+    "SETTLE_LEDGER",
+    "REBUILD_AND_VALIDATE_1KM_MOSAICS"
+  ],
+  "approvals": {
+    "collection_batch": true,
+    "automatic_training": false,
+    "automatic_deployment": false
+  },
+  "stop_conditions": [
+    "HTTP_429",
+    "FIRST_COLLECTION_FAILURE",
+    "BUDGET_INSUFFICIENT",
+    "DISK_INSUFFICIENT",
+    "EXECUTION_LOCK_CONFLICT",
+    "SCL_QA_OR_MOSAIC_VALIDATION_FAILURE"
+  ],
+  "remaining_blockers": [
+    "BOUNDARY_APPROVAL_PENDING",
+    "FULL_NATIVE_RESOLUTION_COMPLETENESS_NOT_PROVEN",
+    "TRAINING_REQUIRES_HUMAN_APPROVAL",
+    "DEPLOYMENT_REQUIRES_HUMAN_APPROVAL"
+  ]
+}

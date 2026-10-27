@@ -1,0 +1,48 @@
+{
+  "schema_version": "province-year-evidence-bundle/1.1",
+  "status": "PARTIAL_BLOCKED_GISTARU_AND_BOUNDARY_APPROVAL",
+  "generated_at": "2026-10-27T06:27:06.751198+00:00",
+  "boundary_candidate": {
+    "path": "six-province-boundary-candidate.geojson",
+    "sha256": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423",
+    "status": "CANDIDATE_PENDING_COMPETENT_AUTHORITY_AND_STATISTICAL_APPROVAL"
+  },
+  "gistaru_discovery": {
+    "path": "gistaru-service-discovery.json",
+    "sha256": "e1017e8a1e501ebdf35e2d7ab2bd125b536a695af62003a5bf88c6d5a9da4633",
+    "status": "BLOCKED_GISTARU_LIVE_METADATA_UNAVAILABLE"
+  },
+  "scl_mosaics": {
+    "path": "province-year-scl-mosaic-manifest.json",
+    "sha256": "44ca741bd85567d2b010536623bf214109cc5a91c0cf326253ecd1ad5b617ccd",
+    "cell_count": 36,
+    "source_asset_count": 120,
+    "status": "VERIFIED_REAL_LOCAL_ARTIFACTS_BOUNDARY_APPROVAL_PENDING"
+  },
+  "validation": {
+    "path": "validation.json",
+    "sha256": "8a167882cbb21acdf23355136876ff639e0e44f981d3ea2017d9a5cb240e7bd6",
+    "cell_count": 36,
+    "total_boundary_pixels": 1123578,
+    "total_observed_pixels": 10032,
+    "observed_pct": 0.892862,
+    "cause_pixels": {
+      "CLOUD": 607,
+      "SHADOW": 374,
+      "NODATA": 0,
+      "OUTSIDE_FOOTPRINT": 1112565
+    }
+  },
+  "tests": {
+    "pytest": "25 passed, 102 warnings, 71.27s",
+    "compileall": "passed",
+    "diff_check": "passed"
+  },
+  "execution": {
+    "new_sentinel_downloads": 0,
+    "collector_invoked": false,
+    "ledger_written": false,
+    "execution_lock_acquired": false,
+    "training_runs": 0
+  }
+}

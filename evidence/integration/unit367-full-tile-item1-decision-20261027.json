@@ -1,0 +1,33 @@
+{
+  "schema_version": "province-year-scl-full-tile-pilot-decision/1.0",
+  "authorized_by": "USER_EXPLICIT_INSTRUCTION",
+  "recorded_at": "2026-10-27T17:00:00+09:00",
+  "decision": "RUN_ONE_FULL_TILE_STRATEGY_PILOT",
+  "batch_group_id": "unit367-full-tile-batch2",
+  "batch_group_max_tiles": 2,
+  "batch_group_index": 1,
+  "batch_key": "unit367-fulltile-east_java-2023-01",
+  "province_id": "east_java",
+  "year": 2023,
+  "scene_id": "S2A_MSIL2A_20230905T023531_R089_T49MEM_20240916T145247",
+  "source_window_observed_gain_pixels": 1640,
+  "boundary_sha256": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423",
+  "starting_mosaic_sha256": "63b6db7881ce71824abe82410961d829083cfaa6fff6ec7b43453cc76f985fdd",
+  "source_report_sha256": "d18ad4ee8fec669ef65d099fb0caf8df105c5b87dfc7307b41c82bcaf330c77e",
+  "policy": {
+    "max_full_tiles": 1,
+    "reservation_bytes": 67108864,
+    "max_side": 8192,
+    "stop_on_failure": true
+  },
+  "approvals": {
+    "collection_pilot": true,
+    "automatic_training": false,
+    "automatic_deployment": false
+  },
+  "batch_scale_decision": {
+    "allowed_full_tiles": 2,
+    "reason": "Unit366 produced 4.38x observed gain for 3.99x Range bytes; expand only to two sequential full tiles with validation between items.",
+    "maximum_group_reservation_bytes": 134217728
+  }
+}

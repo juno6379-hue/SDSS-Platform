@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""CLI Runner for G8-G9 Model Retraining & Same-Holdout Benchmark Comparison (CODEX v3.0 Section 7).
+"""CLI runner for the fail-closed G8-G9 deterministic scenario fixture.
 
-Executes the 2x2 benchmark matrix on the fixed West Java geographic holdout,
-computes metrics, and writes the 5 G8-G9 deliverables to docs/lcluc/v3/.
+Writes five explicitly TESTED_SYNTHETIC records. It does not train, predict,
+verify holdout independence, approve a model, or deploy anything.
 """
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ def main():
     output_dir = PROJECT_ROOT / "docs" / "lcluc" / "v3"
 
     print("=" * 80)
-    print(" [G8-G9] CODEX v3.0 Model Retraining & Same-Holdout Benchmark Evaluator")
+    print(" [G8-G9] Deterministic Scenario Export (TESTED_SYNTHETIC / PROMOTION BLOCKED)")
     print(f" Data Root:   {data_root}")
     print(f" Output Dir:  {output_dir}")
     print("=" * 80)
@@ -28,7 +28,7 @@ def main():
     evaluator = ModelBenchmarkEvaluator(data_root)
     manifest_f, csv_f, conf_f, card_f, gov_f = evaluator.export_deliverables(output_dir)
 
-    print(f" [PASS] 2x2 Model Benchmark Comparison Completed.")
+    print(" [PASS] Fail-closed scenario records exported; no model promotion authorized.")
     print(f" [OUTPUT] Manifest:   {manifest_f} ({manifest_f.stat().st_size:,} bytes)")
     print(f" [OUTPUT] CSV:        {csv_f} ({csv_f.stat().st_size:,} bytes)")
     print(f" [OUTPUT] Confusion:  {conf_f} ({conf_f.stat().st_size:,} bytes)")

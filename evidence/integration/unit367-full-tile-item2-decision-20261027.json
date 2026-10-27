@@ -1,0 +1,33 @@
+{
+  "schema_version": "province-year-scl-full-tile-pilot-decision/1.0",
+  "authorized_by": "USER_EXPLICIT_INSTRUCTION",
+  "recorded_at": "2026-10-27T17:01:45+09:00",
+  "decision": "RUN_ONE_FULL_TILE_STRATEGY_PILOT",
+  "batch_group_id": "unit367-full-tile-batch2",
+  "batch_group_max_tiles": 2,
+  "batch_group_index": 2,
+  "batch_key": "unit367-fulltile-east_java-2024-02",
+  "province_id": "east_java",
+  "year": 2024,
+  "scene_id": "S2B_MSIL2A_20240726T023529_R089_T49MFM_20240726T062840",
+  "source_window_observed_gain_pixels": 1645,
+  "boundary_sha256": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423",
+  "starting_mosaic_sha256": "dc0cd2ace5032aba29279a4588008f7fa2c9aea34baa57873e6aabc5fdb132e2",
+  "source_report_sha256": "c3237a656c63c03d191699a1d592ed29fcb84d478247b3e33c4e17c03993f615",
+  "policy": {
+    "max_full_tiles": 1,
+    "reservation_bytes": 67108864,
+    "max_side": 8192,
+    "stop_on_failure": true
+  },
+  "approvals": {
+    "collection_pilot": true,
+    "automatic_training": false,
+    "automatic_deployment": false
+  },
+  "batch_scale_decision": {
+    "allowed_full_tiles": 2,
+    "reason": "Unit366 efficiency gate passed and Unit367 item1 completed with mosaic validation; execute only the second approved tile.",
+    "maximum_group_reservation_bytes": 134217728
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "unit": "353/354",
+  "generated_at": "2026-10-21T02:21:54.928153+00:00",
+  "status": {
+    "focused_and_related_regression": "TESTED_SYNTHETIC_41_PASS",
+    "g2_cli": "PASS_EXIT_0_NULL_SAFE",
+    "g5_cli": "PASS_EXIT_0_NULL_SAFE",
+    "operating_inventory": "VERIFIED_REAL_1779_ROWS_1407_ELIGIBLE_372_INSUFFICIENT",
+    "operating_36_cell_coverage": "BLOCKED_NO_CONTRACT_COMPLIANT_PROVINCE_MASK_MOSAICS",
+    "operating_recovery": "BLOCKED_NO_PINNED_BEFORE_AFTER_BOUNDARY_MASK_TRANSITIONS",
+    "legacy_real_smoke": "WITHDRAWN_NOT_REVALIDATED_BY_CURRENT_EQUAL_AREA_ALGORITHM"
+  },
+  "operating_inputs": {
+    "source": {
+      "size": 69564847,
+      "sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+      "path": "data\\first-group-training-esri-v1\\annual-window-report.json"
+    },
+    "ledger": {
+      "size": 68395,
+      "sha256": "d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91",
+      "path": "data\\first-group-training-budget\\global-ledger.json"
+    }
+  },
+  "api_contract": {
+    "schema_version": "4.1",
+    "http_status": 200,
+    "status": "blocked",
+    "reason_code": "MISSING_EXPLICIT_PINNED_BEFORE_AND_AFTER_COVERAGE_REPORTS",
+    "recovery_values": null
+  },
+  "legacy_smoke_provenance": {
+    "path": "evidence/integration/unit353-coverage-contract-20261021/real-smoke.json",
+    "algorithm": "PRE_1_1_MIXED_UTM_PIXEL_AND_EPSG6933_BOUNDARY_AREA",
+    "current_algorithm_revalidated": false,
+    "accepted_as_verified_real": false
+  },
+  "catalog_incident": {
+    "status": "LOGICALLY_RESTORED_BY_ROOT_PHYSICAL_BYTE_IDENTITY_NOT_RESTORED",
+    "path": "data\\catalog.sqlite3",
+    "records_before": 53,
+    "deleted_rows": 24,
+    "records_after": 29,
+    "target_rows_remaining": 0,
+    "integrity_check": "ok",
+    "raw_sha256_after": "d08418826b858deccad972d5326cfaa2122f56aa13faef0fc1e3628650fdfc45",
+    "physical_byte_identity_restored": false,
+    "evidence_dir": "evidence/integration/unit355-catalog-incident-20261021",
+    "test_isolation_after_correction": "TEMPORARY_DIRECTORY_STORE_AND_COPIED_SOURCE_FIXTURE"
+  },
+  "artifacts": {
+    "backend/app/ml/province_year_coverage.py": {
+      "size": 17478,
+      "sha256": "65cb85e58e713eb9878c3372a6893e302b20403810a44db80f563dfa7c40a5db"
+    },
+    "backend/app/ml/province_month_coverage_audit.py": {
+      "size": 13015,
+      "sha256": "1bfbf8c44bc40a093f3de7583ac6e6438d375900abd212e03b27a6be6e2ef3b3"
+    },
+    "backend/app/ml/recovery_rate_engine.py": {
+      "size": 16525,
+      "sha256": "a99018f32fc521f5af356c07007bc5844581d1c94d8ce7d20e664ba5a326532a"
+    },
+    "backend/app/mlops_router.py": {
+      "size": 19086,
+      "sha256": "bf64792adb4f28562438da1657ec9d6cda66875899891394898076b8d89b48ed"
+    },
+    "scripts/g2_province_month_audit.py": {
+      "size": 3090,
+      "sha256": "88715a482ce6aeabf1f189133dc94ce4f5d393e5a2c70b46469def97d91fc915"
+    },
+    "scripts/g5_recovery_rate_report.py": {
+      "size": 2271,
+      "sha256": "941af45fb43efe607dc05c2b5556f658f565aaca1932933ac349622956897054"
+    },
+    "tests/test_province_year_coverage.py": {
+      "size": 6931,
+      "sha256": "f8a6708c1fd95f6349a9f94a6510fc1cfae9f9d597750f8d87ce593b674ab17f"
+    },
+    "tests/test_province_month_coverage_audit.py": {
+      "size": 4003,
+      "sha256": "3c7316ff30f554c3d8eb43ce5c00875bdc7870dd9da15afaae4ff6ebda9d5dd5"
+    },
+    "tests/test_recovery_rate_engine.py": {
+      "size": 5249,
+      "sha256": "9f437f767258b05dfbd16fcb84fe20bea1843c5225005ef6aceeedc54b146ae9"
+    },
+    "tests/test_mlops_router.py": {
+      "size": 5390,
+      "sha256": "dcec31025c4f06dc401812b37cd7e693dfa03aaab0f45a82ece76f84d0687db0"
+    },
+    "docs/implementation/353_province_coverage_fail_closed.md": {
+      "size": 6247,
+      "sha256": "f41054804a556a773df79451e506e02c172709354097df275827d731979ec546"
+    },
+    "docs/lcluc/v3/02_432_province_month_availability_audit.csv": {
+      "size": 100082,
+      "sha256": "47539bb7035d96bebfa268235e29a6f6f618241584ad6c4608c8173384a68091"
+    },
+    "docs/lcluc/v3/02_432_province_month_availability_report.md": {
+      "size": 1780,
+      "sha256": "0c330f47a25108fe18a92027538fe4a2d9bc36d04f7bc7184ebded3600cc5174"
+    },
+    "docs/lcluc/v3/03_recovery_rate_report.md": {
+      "size": 1663,
+      "sha256": "58ab834b67875fa0699a3e5ae8f51b45bf67491fbd86513baab8ca40941574bd"
+    },
+    "docs/understanding/349_PROVINCE_MONTH_AUDIT_AND_MLOPS_RECOVERY.md": {
+      "size": 5265,
+      "sha256": "8ba2e8904d13c12ae647cb244767ca04ce0565fdc9fd05a8fd5a8c9156f86762"
+    },
+    "evidence/integration/unit353-coverage-contract-20261021/focused-tests.log": {
+      "size": 1929,
+      "sha256": "7feeae250bc285f4781cc363dbba5379b2e3749ac1c613f12a2be7d64c230178"
+    },
+    "evidence/integration/unit353-coverage-contract-20261021/router-contract-existing-test.log": {
+      "size": 667,
+      "sha256": "b49adcc267c587ca115d2253cf6b8be2f007461860388848c16091b727197233"
+    },
+    "evidence/integration/unit353-coverage-contract-20261021/g2-cli.log": {
+      "size": 2509,
+      "sha256": "484930ee97b108096caa74dad537447bec57b79668265696111fbc635546dd91"
+    },
+    "evidence/integration/unit353-coverage-contract-20261021/g5-cli.log": {
+      "size": 1458,
+      "sha256": "eff533b1eb04705c51410c1174226b655309b9f87e2648cdf49797dc0c268f4f"
+    },
+    "evidence/integration/unit353-coverage-contract-20261021/real-smoke.json": {
+      "size": 1404,
+      "sha256": "d7cbd5ee1dd7165886e6b5be8d049dcc3f75f4a0e66b4c48ea8ab97de2fd37d2"
+    },
+    "evidence/integration/unit355-catalog-incident-20261021/catalog-recovery-result.json": {
+      "size": 798,
+      "sha256": "5cd5cc791e7ca8afd7da2e1f858b6e965790f09483e18e65df75d450b4af6547"
+    },
+    "evidence/integration/unit355-catalog-incident-20261021/catalog-unintended-test-rows.json": {
+      "size": 21322,
+      "sha256": "b372557710bd43084225415d8b0786cab036575057fbde9a30605fc0dd953135"
+    },
+    "evidence/integration/unit355-catalog-incident-20261021/catalog-after-unintended-open.sqlite3": {
+      "size": 184320,
+      "sha256": "dc6bf624a39829a49a8dd7cbef196ca69b356bad0b4c8f879b2f82f1e0972e67"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "completed_at": "2026-10-27T07:56:36.490480+00:00",
+  "execution": {
+    "deployment_runs": 0,
+    "execution_lock_released": true,
+    "remote_sentinel_downloads": 1,
+    "training_runs": 0
+  },
+  "schema_version": "province-year-scl-full-tile-pilot-completion/1.0",
+  "status": "FULL_TILE_PILOT_COMPLETED_MORE_GAPS_REMAIN",
+  "strategy_comparison": {
+    "cell_observed_after": 8843,
+    "cell_observed_before": 1810,
+    "cell_observed_gain_pixels": 7033,
+    "full_tile_content_length_bytes": 5103204,
+    "full_tile_range_body_bytes": 3399268,
+    "full_tile_shape": [
+      5490,
+      5490
+    ],
+    "total_observed_after": 21981,
+    "total_observed_before": 14948,
+    "total_observed_gain_pixels": 7033,
+    "window_observed_gain_pixels": 1606,
+    "window_range_body_bytes": 851968,
+    "window_side": 2048
+  },
+  "updated_mosaic": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\unit366-full-tile-strategy-pilot-20261027\\updated-mosaics\\province-year-scl-mosaic-manifest.json",
+    "sha256": "63b6db7881ce71824abe82410961d829083cfaa6fff6ec7b43453cc76f985fdd",
+    "validation": {
+      "cause_pixels": {
+        "CLOUD": 1136,
+        "NODATA": 2153,
+        "OUTSIDE_FOOTPRINT": 1097556,
+        "SHADOW": 752
+      },
+      "cell_count": 36,
+      "checks": {
+        "all_epsg_6933": true,
+        "all_gap_pixels_classified": true,
+        "all_nodata_unset": true,
+        "all_outside_boundary_zero": true,
+        "all_pins_match": true,
+        "all_same_grid_per_cell": true,
+        "all_value_domains_valid": true,
+        "collector_invoked": true,
+        "ledger_written": true
+      },
+      "manifest_path": "E:/GeoAI–MLOps–SDSS/evidence/integration/unit366-full-tile-strategy-pilot-20261027/updated-mosaics/province-year-scl-mosaic-manifest.json",
+      "manifest_sha256": "63b6db7881ce71824abe82410961d829083cfaa6fff6ec7b43453cc76f985fdd",
+      "observed_pct": 1.956339,
+      "schema_version": "province-year-scl-mosaic-validation/1.0",
+      "source_asset_count": 125,
+      "status": "VERIFIED_REAL_LOCAL_ARTIFACTS_BOUNDARY_APPROVAL_PENDING",
+      "total_boundary_pixels": 1123578,
+      "total_gap_pixels": 1101597,
+      "total_observed_pixels": 21981,
+      "unique_source_asset_count": 125,
+      "validated_at": "2026-10-27T07:56:34.165644+00:00"
+    }
+  }
+}

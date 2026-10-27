@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """CLI Runner for G7 AI Dataset Splits & Training Readiness Gate (CODEX v3.0 Section 7.1).
 
-Scans the dataset patches, partitions into Geographic Holdout (Train/Val/Test),
-evaluates zero-leakage and readiness criteria, and writes the 3 G7 deliverables to docs/lcluc/v3/.
+Performs a read-only audit of the authoritative annual report and pinned local
+rasters, evaluates leakage and readiness criteria, and writes the three G7
+evidence deliverables.  It does not train a model or promote a dataset.
 """
 from __future__ import annotations
 
@@ -28,7 +29,7 @@ def main():
     manager = AIDatasetSplitsManager(data_root)
     manifest_f, csv_f, report_f = manager.export_deliverables(output_dir)
 
-    print(f" [PASS] Geographic Holdout Splits Evaluated.")
+    print(" [AUDIT] Geographic holdout and fail-closed readiness evaluated.")
     print(f" [OUTPUT] Manifest: {manifest_f} ({manifest_f.stat().st_size:,} bytes)")
     print(f" [OUTPUT] CSV:      {csv_f} ({csv_f.stat().st_size:,} bytes)")
     print(f" [OUTPUT] Report:   {report_f} ({report_f.stat().st_size:,} bytes)")

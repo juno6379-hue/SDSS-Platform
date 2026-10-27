@@ -1,0 +1,195 @@
+{
+  "batch_size_completed": 3,
+  "batch_size_planned": 3,
+  "budget": {
+    "total_ledger_charge_bytes": 3147616,
+    "total_reservation_upper_bound_bytes": 150994944
+  },
+  "comparison": {
+    "cells": [
+      {
+        "observed_after": 1810,
+        "observed_before": 204,
+        "observed_delta": 1606,
+        "outside_after": 46179,
+        "outside_before": 47824,
+        "outside_delta": -1645,
+        "province_id": "east_java",
+        "year": 2021
+      },
+      {
+        "observed_after": 1859,
+        "observed_before": 219,
+        "observed_delta": 1640,
+        "outside_after": 46167,
+        "outside_before": 47812,
+        "outside_delta": -1645,
+        "province_id": "east_java",
+        "year": 2023
+      },
+      {
+        "observed_after": 1906,
+        "observed_before": 261,
+        "observed_delta": 1645,
+        "outside_after": 46123,
+        "outside_before": 47768,
+        "outside_delta": -1645,
+        "province_id": "east_java",
+        "year": 2024
+      }
+    ],
+    "observed_after": 14948,
+    "observed_before": 10057,
+    "observed_delta": 4891,
+    "outside_after": 1107605,
+    "outside_before": 1112540,
+    "outside_delta": -4935
+  },
+  "completed_at": "2026-10-27T07:37:35.311612+00:00",
+  "errors": [],
+  "execution": {
+    "collector_invoked": true,
+    "deployment_runs": 0,
+    "execution_lock_released": true,
+    "ledger_written": true,
+    "remote_sentinel_downloads": 3,
+    "training_runs": 0
+  },
+  "gates": {
+    "automatic_deployment": "BLOCKED_REQUIRES_HUMAN_APPROVAL",
+    "automatic_training": "BLOCKED_REQUIRES_HUMAN_APPROVAL",
+    "boundary": "PROVISIONAL_BIG_BASELINE_BOUNDARY_APPROVAL_PENDING",
+    "gistaru": "SKIPPED_BY_USER_DECISION"
+  },
+  "reports": [
+    {
+      "ledger_charge_bytes": 978712,
+      "local_scl_bytes": 446308,
+      "province_id": "east_java",
+      "quality": {
+        "clear_fraction": 0.974523,
+        "clear_pixels": 4087444,
+        "cloud_pixels": 12171,
+        "histogram": {
+          "2": 76086,
+          "3": 18603,
+          "4": 3204059,
+          "5": 805334,
+          "6": 5951,
+          "7": 72100,
+          "8": 4000,
+          "9": 8171
+        },
+        "nodata_pixels": 0,
+        "pixel_count": 4194304,
+        "quality_status": "OBSERVATION_ELIGIBLE",
+        "shadow_pixels": 94689,
+        "unclassified_pixels": 0
+      },
+      "range_body_bytes": 851968,
+      "scene_id": "S2B_MSIL2A_20210811T023549_R089_T49MFM_20210811T163939",
+      "year": 2021
+    },
+    {
+      "ledger_charge_bytes": 1226601,
+      "local_scl_bytes": 421689,
+      "province_id": "east_java",
+      "quality": {
+        "clear_fraction": 0.99591,
+        "clear_pixels": 4177150,
+        "cloud_pixels": 4807,
+        "histogram": {
+          "2": 8319,
+          "3": 4028,
+          "4": 2138980,
+          "5": 1971132,
+          "6": 5064,
+          "7": 61974,
+          "8": 2108,
+          "9": 2699
+        },
+        "nodata_pixels": 0,
+        "pixel_count": 4194304,
+        "quality_status": "OBSERVATION_ELIGIBLE",
+        "shadow_pixels": 12347,
+        "unclassified_pixels": 0
+      },
+      "range_body_bytes": 917504,
+      "scene_id": "S2A_MSIL2A_20230905T023531_R089_T49MEM_20240916T145247",
+      "year": 2023
+    },
+    {
+      "ledger_charge_bytes": 942303,
+      "local_scl_bytes": 435375,
+      "province_id": "east_java",
+      "quality": {
+        "clear_fraction": 0.999855,
+        "clear_pixels": 4193695,
+        "cloud_pixels": 0,
+        "histogram": {
+          "2": 609,
+          "4": 2846375,
+          "5": 1258318,
+          "6": 4025,
+          "7": 84977
+        },
+        "nodata_pixels": 0,
+        "pixel_count": 4194304,
+        "quality_status": "OBSERVATION_ELIGIBLE",
+        "shadow_pixels": 609,
+        "unclassified_pixels": 0
+      },
+      "range_body_bytes": 786432,
+      "scene_id": "S2B_MSIL2A_20240726T023529_R089_T49MFM_20240726T062840",
+      "year": 2024
+    }
+  ],
+  "scale_estimate": {
+    "estimate_limitations": [
+      "Area scaling ignores coastlines, scene edges, repeat overlap, clouds, and MGRS tile boundaries.",
+      "This estimate is for the 1 km inventory, not final native-resolution scientific completeness."
+    ],
+    "outside_footprint_pixels_before": 1112540,
+    "pilot_256_observed_gain_pixels": 25,
+    "planning_gain_pixels_per_2048_window": 1600,
+    "rough_windows_to_full_inventory_coverage": 696,
+    "window_area_scale_vs_pilot": 64
+  },
+  "schema_version": "province-year-automated-collection-batch-completion/1.0",
+  "status": "AUTOMATED_BATCH_COMPLETED_MORE_GAPS_REMAIN",
+  "updated_mosaic": {
+    "path": "E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\unit365-automated-collection-retry-20261027\\updated-mosaics\\province-year-scl-mosaic-manifest.json",
+    "sha256": "9259b3d0d6c5da47f616b3b6ec9b45b0c8cfccf56e0095beb0a23ad1f6b93ae3",
+    "validation": {
+      "cause_pixels": {
+        "CLOUD": 613,
+        "NODATA": 0,
+        "OUTSIDE_FOOTPRINT": 1107605,
+        "SHADOW": 412
+      },
+      "cell_count": 36,
+      "checks": {
+        "all_epsg_6933": true,
+        "all_gap_pixels_classified": true,
+        "all_nodata_unset": true,
+        "all_outside_boundary_zero": true,
+        "all_pins_match": true,
+        "all_same_grid_per_cell": true,
+        "all_value_domains_valid": true,
+        "collector_invoked": true,
+        "ledger_written": true
+      },
+      "manifest_path": "E:/GeoAI–MLOps–SDSS/evidence/integration/unit365-automated-collection-retry-20261027/updated-mosaics/province-year-scl-mosaic-manifest.json",
+      "manifest_sha256": "9259b3d0d6c5da47f616b3b6ec9b45b0c8cfccf56e0095beb0a23ad1f6b93ae3",
+      "observed_pct": 1.330393,
+      "schema_version": "province-year-scl-mosaic-validation/1.0",
+      "source_asset_count": 124,
+      "status": "VERIFIED_REAL_LOCAL_ARTIFACTS_BOUNDARY_APPROVAL_PENDING",
+      "total_boundary_pixels": 1123578,
+      "total_gap_pixels": 1108630,
+      "total_observed_pixels": 14948,
+      "unique_source_asset_count": 124,
+      "validated_at": "2026-10-27T07:37:30.338942+00:00"
+    }
+  }
+}

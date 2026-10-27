@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""CLI Runner for G10-G14 Secondary Layers, Change Detection, and SDSS Deliverables.
+"""Export local fail-closed G10-G14 evidence reports.
 
-Materializes secondary prediction layers (discrete, confidence, mask),
-computes 2020-2025 Common Valid Area changes and SDSS bridges,
-and exports all final CODEX v3.0 deliverables.
+The command inspects supplied evidence and writes BLOCKED/null reports when
+executed inference or T1/T2 inputs are absent. It never publishes GeoServer
+layers, writes an operational registry, or executes change detection.
 """
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ def main():
     output_dir = PROJECT_ROOT / "docs" / "lcluc" / "v3"
 
     print("=" * 80)
-    print(" [G10-G14] CODEX v3.0 Secondary Layers, Change Detection & Final Deliverables")
+    print(" [G10-G14] CODEX v3.0 Fail-Closed Secondary Evidence Export")
     print(f" Data Root:   {data_root}")
     print(f" Output Dir:  {output_dir}")
     print("=" * 80)
@@ -29,7 +29,7 @@ def main():
     manager = GeoServerSecondaryAndChangeManager(data_root)
     results = manager.export_all_downstream_deliverables(output_dir)
 
-    print(" [PASS] Secondary layers materialized & change detection completed.")
+    print(" [BLOCKED] Reports exported; no model inference, publication, or measured change completed.")
     for k, p in results.items():
         print(f" [OUTPUT] {k:15}: {p} ({p.stat().st_size:,} bytes)")
     print("=" * 80)

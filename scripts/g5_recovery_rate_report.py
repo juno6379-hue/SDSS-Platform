@@ -16,6 +16,10 @@ from app.ml.recovery_rate_engine import (
 )
 
 
+def _metric(value, suffix="", precision=2):
+    return "null" if value is None else f"{value:.{precision}f}{suffix}"
+
+
 def main():
     print("=" * 70)
     print("CODEX v3.0 G5: Cloud & Missing Pixel Recovery Rate Report")
@@ -24,11 +28,13 @@ def main():
     summary = compute_recovery_metrics(data_root=ROOT)
 
     print(f"Total cells evaluated:       {summary.total_cells}")
-    print(f"Mean Before Valid Coverage:  {summary.mean_before_valid_pct:.2f}%")
-    print(f"Mean After Valid Coverage:   {summary.mean_after_valid_pct:.2f}%")
-    print(f"Mean %p Increase:            +{summary.mean_increase_pct_point:.2f}%p")
-    print(f"Total Newly Recovered Area:  {summary.total_newly_recovered_ha:,.1f} ha")
-    print(f"Mean Missing Recovery Rate:  {summary.mean_recovery_rate_pct:.2f}%")
+    print(f"Evidence status:             {summary.evidence_status}")
+    print(f"Blocking reason:             {summary.blocking_reason}")
+    print(f"Mean Before Valid Coverage:  {_metric(summary.mean_before_valid_pct, '%')}")
+    print(f"Mean After Valid Coverage:   {_metric(summary.mean_after_valid_pct, '%')}")
+    print(f"Aggregate Net Change:        {_metric(summary.mean_aggregate_net_coverage_change_pct_point, '%p')}")
+    print(f"Total Newly Recovered Area:  {_metric(summary.total_newly_recovered_ha, ' ha', 1)}")
+    print(f"Mean Missing Recovery Rate:  {_metric(summary.mean_recovery_rate_pct, '%')}")
 
     out_file = ROOT / "docs/lcluc/v3/03_recovery_rate_report.md"
     export_recovery_report(summary, out_file)
@@ -36,10 +42,17 @@ def main():
 
     print("\nProvince Rollups:")
     for pr in summary.province_rollups:
-        print(f"  {pr.province_name:20s}: Before={pr.avg_before_coverage_pct:5.1f}%, After={pr.avg_after_coverage_pct:5.1f}%, Inc=+{pr.avg_increase_pct_point:4.1f}%p, Recovered={pr.total_newly_recovered_ha:11,.0f} ha, Rate={pr.avg_recovery_rate_pct:5.1f}%")
+        print(
+            f"  {pr.province_name:20s}: status={pr.status}, "
+            f"Before={_metric(pr.avg_before_coverage_pct, '%', 1)}, "
+            f"After={_metric(pr.avg_after_coverage_pct, '%', 1)}, "
+            f"Net={_metric(pr.avg_aggregate_net_coverage_change_pct_point, '%p', 1)}, "
+            f"Recovered={_metric(pr.total_newly_recovered_ha, ' ha', 0)}, "
+            f"Rate={_metric(pr.avg_recovery_rate_pct, '%', 1)}"
+        )
 
     print("=" * 70)
-    print("G5 RECOVERY REPORT COMPLETE: VERIFIED REAL")
+    print(f"G5 RECOVERY REPORT COMPLETE: {summary.evidence_status}")
     print("=" * 70)
 
 

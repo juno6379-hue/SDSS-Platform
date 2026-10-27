@@ -1,0 +1,36 @@
+exit=0
+======================================================================
+CODEX v3.0 G2: 432 Province-Month Availability & Gap Analysis Audit
+======================================================================
+Total Province-Month cells evaluated: 432 (expected: 432)
+Dry Season (Jun-Sep) window cells:   144 (33.3%)
+Wet Season (Oct-May) excluded cells: 288 (66.7%)
+Active acquired observation cells:   77
+Total patch inventory:               1,779
+Eligible 6-band patches:             1,407 (79.1%)
+Insufficient patches:                372 (20.9%)
+Coverage measurement status:         BLOCKED_NOT_MEASURED
+Nominal cells:                        0
+Degraded cells:                       0
+Unclassified cells:                   432
+Exported CSV: E:\GeoAI–MLOps–SDSS\docs\lcluc\v3\02_432_province_month_availability_audit.csv (100,515 bytes)
+Exported Markdown: E:\GeoAI–MLOps–SDSS\docs\lcluc\v3\02_432_province_month_availability_report.md (307 bytes)
+
+Province Rollups:
+  Banten              :  337 patches,  292 eligible ( 86.7%), cloud: null, valid: null, unclassified: 72
+  West Java           :  264 patches,  250 eligible ( 94.7%), cloud: null, valid: null, unclassified: 72
+  East Java           :  248 patches,  209 eligible ( 84.3%), cloud: null, valid: null, unclassified: 72
+  South Sulawesi      :  320 patches,  227 eligible ( 70.9%), cloud: null, valid: null, unclassified: 72
+  Gorontalo           :  272 patches,  212 eligible ( 77.9%), cloud: null, valid: null, unclassified: 72
+  Southeast Sulawesi  :  338 patches,  217 eligible ( 64.2%), cloud: null, valid: null, unclassified: 72
+
+Year Rollups:
+  2020 (T1_BASELINE  ):  337 patches,  284 eligible ( 84.3%), cloud: null, valid: null, unclassified: 72
+  2021 (T1_BASELINE  ):  292 patches,  235 eligible ( 80.5%), cloud: null, valid: null, unclassified: 72
+  2022 (T2_MONITORING):  332 patches,  254 eligible ( 76.5%), cloud: null, valid: null, unclassified: 72
+  2023 (T2_MONITORING):  232 patches,  191 eligible ( 82.3%), cloud: null, valid: null, unclassified: 72
+  2024 (T2_MONITORING):  305 patches,  220 eligible ( 72.1%), cloud: null, valid: null, unclassified: 72
+  2025 (T2_MONITORING):  281 patches,  223 eligible ( 79.4%), cloud: null, valid: null, unclassified: 72
+======================================================================
+G2 INVENTORY AUDIT COMPLETE: 432/432 CELLS; COVERAGE BLOCKED_NOT_MEASURED
+======================================================================

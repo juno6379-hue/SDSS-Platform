@@ -1,0 +1,45 @@
+{
+  "schema_version": "legacy-esri-lut-audit/1.0",
+  "evidence_status": "VERIFIED_REAL_LOCAL_BYTES",
+  "mapping_semantics": "256-entry uint8 LUT initialized to 0, then 10->1,20->5,30->2,40->4,50->6,60->7,80->0,90->3",
+  "files_checked": 6,
+  "exact_matches": 6,
+  "rows": [
+    {
+      "province_year": "banten_2021",
+      "shape_match": true,
+      "pixel_exact": true,
+      "pixels": 65536
+    },
+    {
+      "province_year": "east_java_2021",
+      "shape_match": true,
+      "pixel_exact": true,
+      "pixels": 65536
+    },
+    {
+      "province_year": "gorontalo_2021",
+      "shape_match": true,
+      "pixel_exact": true,
+      "pixels": 65536
+    },
+    {
+      "province_year": "south_sulawesi_2021",
+      "shape_match": true,
+      "pixel_exact": true,
+      "pixels": 65536
+    },
+    {
+      "province_year": "southeast_sulawesi_2021",
+      "shape_match": true,
+      "pixel_exact": true,
+      "pixels": 65536
+    },
+    {
+      "province_year": "west_java_2021",
+      "shape_match": true,
+      "pixel_exact": true,
+      "pixels": 65536
+    }
+  ]
+}

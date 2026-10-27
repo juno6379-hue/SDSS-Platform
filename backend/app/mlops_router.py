@@ -1,19 +1,14 @@
-"""FastAPI Router for Model & MLOps Workspace.
+"""FastAPI routes for bounded MLOps evidence and explicit execution requests.
 
-Provides live backend APIs for:
-- Top 6 MLOps KPIs (Operating Models, In Queue, Deployments, Retraining Needed, F1, mIoU)
-- Model Registry & Human-in-the-loop Approvals
-- 9-Step Training Pipeline & Experiment Tracking
-- 432 Province-Month Availability Audit & Degraded Quality Tracker
-- Multi-temporal SCL Cloud & Missing Pixel Recovery Rate
-- Automated & Human-in-the-loop Retraining Execution Trigger
+The summary route is fail-closed: inventory facts may be shown, while coverage,
+model metrics, promotion, and deployment stay blocked until their own evidence
+contracts are satisfied.
 """
 
-from datetime import datetime, timezone
+import hashlib
 import json
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
-import uuid
 
 from fastapi import APIRouter, Body, HTTPException, Request
 from pydantic import BaseModel, Field
@@ -22,128 +17,8 @@ from .ml.province_month_coverage_audit import build_province_month_audit
 from .ml.recovery_rate_engine import compute_recovery_metrics
 from .store import Store, now
 
-# Default authoritative models registry
-DEFAULT_MODELS = [
-    {
-        "id": "lcluc_segmentation",
-        "name": "토지피복 분류 (LCLUC)",
-        "agency": "KLHK (환경산림부)",
-        "version": "v1.2.0",
-        "status": "production",
-        "status_label": "운영중",
-        "badge_color": "green",
-        "last_deployed": "2024-10-15",
-        "metrics": {"f1": 0.84, "miou": 0.81, "accuracy": 0.86},
-        "description": "Sentinel-2 6-밴드 + SCL 연간 합성 기반 9-Class 토지피복 분할 모델",
-    },
-    {
-        "id": "climate_interpolation",
-        "name": "기후 공간보간 (Climate)",
-        "agency": "BMKG (기상기후지질청)",
-        "version": "v2.0.1",
-        "status": "production",
-        "status_label": "운영중",
-        "badge_color": "green",
-        "last_deployed": "2024-09-28",
-        "metrics": {"f1": 0.88, "miou": 0.83, "accuracy": 0.91},
-        "description": "강수량 및 기온 지상 관측소-위성 다중 스케일 크리깅 공간보간 모델",
-    },
-    {
-        "id": "flood_drought_hazard",
-        "name": "홍수/가뭄 위험 (Flood/Drought)",
-        "agency": "BNPB (국가재난방지청)",
-        "version": "v1.0.4",
-        "status": "needs_retraining",
-        "status_label": "재학습 필요",
-        "badge_color": "red",
-        "last_deployed": "2024-08-10",
-        "metrics": {"f1": 0.72, "miou": 0.68, "accuracy": 0.76},
-        "description": "몬순 강수 패턴 변화에 따른 극치 수문재해 예측 모델 (드리프트 감지)",
-    },
-    {
-        "id": "carbon_flux",
-        "name": "탄소 순흡수원 (Carbon)",
-        "agency": "BRIN (국가연구혁신청)",
-        "version": "v1.1.2",
-        "status": "production",
-        "status_label": "운영중",
-        "badge_color": "green",
-        "last_deployed": "2024-10-02",
-        "metrics": {"f1": 0.85, "miou": 0.79, "accuracy": 0.88},
-        "description": "IPCC Tier 1 산림 탄소 축적 및 토지전환 배출계수 산출 모델",
-    },
-    {
-        "id": "biodiversity_connectivity",
-        "name": "생태계 연결성 (Biodiversity)",
-        "agency": "KLHK (환경산림부)",
-        "version": "v0.9.1",
-        "status": "validating",
-        "status_label": "검증중",
-        "badge_color": "blue",
-        "last_deployed": "2024-10-18",
-        "metrics": {"f1": 0.79, "miou": 0.75, "accuracy": 0.82},
-        "description": "핵심 서식지 파편화 및 보호구역 회랑 연결성 평가 모델",
-    },
-    {
-        "id": "coastal_erosion",
-        "name": "연안 침식/취약성 (Coastal)",
-        "agency": "PUPR (공공사업주택부)",
-        "version": "v1.0.0",
-        "status": "production",
-        "status_label": "운영중",
-        "badge_color": "green",
-        "last_deployed": "2024-09-12",
-        "metrics": {"f1": 0.81, "miou": 0.77, "accuracy": 0.85},
-        "description": "자바-술라웨시 해안선 변위 및 침수 취약성 모니터링 모델",
-    },
-]
-
-DEFAULT_APPROVALS = [
-    {
-        "id": "APP-2024-001",
-        "model_id": "lcluc_segmentation",
-        "model_name": "LCLUC Land Cover v1.2.0",
-        "requested_by": "GeoAI 팀 최준오",
-        "date": "2024-10-24 10:15",
-        "status": "승인 완료",
-        "status_code": "approved",
-        "reviewer": "수석 데이터 심의관 (KLHK)",
-        "notes": "독립 홀드아웃 mIoU 0.81 달성 및 SCL 연간합성 99.2% 검증 통과",
-    },
-    {
-        "id": "APP-2024-002",
-        "model_id": "climate_interpolation",
-        "model_name": "Climate Spatial v2.0.1",
-        "requested_by": "MLOps 파이프라인 자동화",
-        "date": "2024-10-22 14:30",
-        "status": "승인 완료",
-        "status_code": "approved",
-        "reviewer": "시스템 자동 승인 (기준 충족)",
-        "notes": "BMKG 지상관측소 124개소 교차검증 RMSE 1.4℃ 이내 달성",
-    },
-    {
-        "id": "APP-2024-003",
-        "model_id": "biodiversity_connectivity",
-        "model_name": "Biodiversity v0.9.1",
-        "requested_by": "연구팀 김태현",
-        "date": "2024-10-24 11:20",
-        "status": "검토 중",
-        "status_code": "pending",
-        "reviewer": "생태계 평가 위원회 배정",
-        "notes": "술라웨시 고유종 서식지 파편화 지수 현장 표본 추가 검토 중",
-    },
-    {
-        "id": "APP-2024-004",
-        "model_id": "flood_drought_hazard",
-        "model_name": "Flood/Drought v1.0.4",
-        "requested_by": "재학습 드리프트 감지기",
-        "date": "2024-10-24 09:00",
-        "status": "재학습 권고",
-        "status_code": "retraining_requested",
-        "reviewer": "BNPB 수문재해 모니터링반",
-        "notes": "2024 몬순 강수 편차로 피처 드리프트(0.18) 임계 초과",
-    },
-]
+SUMMARY_SCHEMA_VERSION = "2.1"
+MODEL_EVIDENCE_RELATIVE_PATH = Path("docs/lcluc/v3/06_model_experiments_manifest.json")
 
 
 class RetrainRequestPayload(BaseModel):
@@ -163,138 +38,407 @@ class ApprovalRequestPayload(BaseModel):
     rationale: str = Field(..., description="Scientific or operational justification")
 
 
+def _load_model_evidence(data_root: Path) -> tuple[Dict[str, Any], Optional[str]]:
+    """Read the bounded Unit352 manifest without promoting scenario metrics."""
+    candidates = [
+        data_root / MODEL_EVIDENCE_RELATIVE_PATH,
+        data_root.parent / MODEL_EVIDENCE_RELATIVE_PATH,
+    ]
+    manifest_path = next((path for path in candidates if path.is_file()), None)
+    if manifest_path is None:
+        return {}, "MODEL_EVIDENCE_MISSING"
+    try:
+        payload = manifest_path.read_bytes()
+        value = json.loads(payload.decode("utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return {}, "MODEL_EVIDENCE_INVALID"
+    if not isinstance(value, dict):
+        return {}, "MODEL_EVIDENCE_INVALID"
+    if value.get("schema_version") != "3.1":
+        return {}, "MODEL_EVIDENCE_SCHEMA_UNSUPPORTED"
+    required_booleans = (
+        "training_executed",
+        "prediction_artifacts_verified",
+        "scientific_accuracy_validated",
+        "promotion_authorized",
+    )
+    if any(type(value.get(field)) is not bool for field in required_booleans):
+        return {}, "MODEL_EVIDENCE_CONTRACT_INCOMPLETE"
+    value["_source_sha256"] = hashlib.sha256(payload).hexdigest()
+    return value, None
+
+
+def _blocked_pipeline_steps() -> List[Dict[str, Any]]:
+    names = (
+        (1, "collection", "수집", "🛰️"),
+        (2, "preprocessing", "전처리", "⚙️"),
+        (3, "label_qa", "라벨QA", "🏷️"),
+        (4, "model_training", "모델학습", "🧠"),
+        (5, "validation", "성능검증", "📊"),
+        (6, "approval", "승인", "🛡️"),
+        (7, "deployment", "배포", "🚀"),
+        (8, "monitoring", "모니터링", "📈"),
+        (9, "retraining", "재학습", "🔄"),
+    )
+    return [
+        {
+            "step": step,
+            "id": step_id,
+            "name": name,
+            "status": "blocked",
+            "reason_code": "NO_VERIFIED_EXECUTION_EVIDENCE",
+            "icon": icon,
+        }
+        for step, step_id, name, icon in names
+    ]
+
+
+def _build_retraining_readiness(
+    *,
+    coverage_status: str,
+    training_executed: bool,
+    predictions_verified: bool,
+    scientific_accuracy_validated: bool,
+    promotion_authorized: bool,
+    deployment_executed: bool,
+) -> Dict[str, Any]:
+    """Describe the evidence chain required before retraining or promotion.
+
+    Confidence is a model-output property and must be calibrated on a pinned
+    calibration set. Accuracy/F1/mIoU require predictions compared with an
+    independent labelled holdout. Neither an Esri weak label nor a reference
+    map can satisfy the independent-ground-truth gate.
+    """
+    collection_ready = coverage_status == "VERIFIED_REAL"
+    stages = [
+        {
+            "id": "gap_measurement",
+            "name": "주 전체 누락 측정",
+            "status": "ready" if collection_ready else "blocked",
+            "reason_code": None
+            if collection_ready
+            else "BLOCKED_MISSING_AUTHORITATIVE_BOUNDARY_AND_CAUSE_MOSAICS",
+            "required_evidence": [
+                "authoritative_boundary_sha256",
+                "same_grid_observed_mask_sha256",
+                "same_grid_cause_mask_sha256",
+            ],
+        },
+        {
+            "id": "collection_execution",
+            "name": "Sentinel-2 누락 관측 수집",
+            "status": "blocked",
+            "reason_code": "NO_EXECUTED_PROVINCE_GAP_COLLECTION",
+            "required_evidence": [
+                "collection_plan_sha256",
+                "sentinel2_asset_sha256",
+                "scl_asset_sha256",
+                "collection_receipt_sha256",
+            ],
+        },
+        {
+            "id": "dataset_freeze",
+            "name": "품질검사와 학습 데이터 동결",
+            "status": "blocked",
+            "reason_code": "NO_IMMUTABLE_RETRAINING_DATASET_PIN",
+            "required_evidence": [
+                "quality_gate_report_sha256",
+                "dataset_manifest_sha256",
+                "split_manifest_sha256",
+                "scene_leakage_zero",
+            ],
+        },
+        {
+            "id": "training",
+            "name": "재학습",
+            "status": "complete" if training_executed else "blocked",
+            "reason_code": None if training_executed else "NO_EXECUTED_TRAINING_RUN",
+            "required_evidence": ["training_run_id", "checkpoint_sha256", "training_log_sha256"],
+        },
+        {
+            "id": "prediction",
+            "name": "고정 holdout 예측",
+            "status": "complete" if predictions_verified else "blocked",
+            "reason_code": None
+            if predictions_verified
+            else "NO_MEASURED_PREDICTION_ARTIFACTS",
+            "required_evidence": ["prediction_manifest_sha256", "holdout_manifest_sha256"],
+        },
+        {
+            "id": "confidence_calibration",
+            "name": "신뢰도 보정",
+            "status": "blocked",
+            "reason_code": "NO_VERIFIED_CONFIDENCE_CALIBRATION",
+            "required_evidence": [
+                "calibration_set_sha256",
+                "reliability_bins",
+                "expected_calibration_error",
+                "brier_score",
+            ],
+        },
+        {
+            "id": "independent_accuracy",
+            "name": "독립 정확도 평가",
+            "status": "complete" if scientific_accuracy_validated else "blocked",
+            "reason_code": None
+            if scientific_accuracy_validated
+            else "NO_INDEPENDENT_GROUND_TRUTH_EVALUATION",
+            "required_evidence": [
+                "independent_label_manifest_sha256",
+                "overall_accuracy",
+                "macro_f1",
+                "miou",
+                "per_class_metrics",
+            ],
+        },
+        {
+            "id": "human_approval",
+            "name": "사람 승인",
+            "status": "complete" if promotion_authorized else "blocked",
+            "reason_code": None if promotion_authorized else "PROMOTION_NOT_AUTHORIZED",
+            "required_evidence": ["approval_record_sha256", "approver", "approved_at"],
+        },
+        {
+            "id": "promotion_and_deployment",
+            "name": "승격·배포·롤백 준비",
+            "status": "complete" if deployment_executed else "blocked",
+            "reason_code": None if deployment_executed else "DEPLOYMENT_NOT_EXECUTED",
+            "required_evidence": [
+                "promotion_receipt_sha256",
+                "deployment_receipt_sha256",
+                "rollback_target_sha256",
+            ],
+        },
+    ]
+    pipeline_complete = collection_ready and all(
+        stage["status"] == "complete" for stage in stages[1:]
+    )
+    return {
+        "schema_version": "retraining-readiness/1.0",
+        "status": "ready" if pipeline_complete else "blocked",
+        "pipeline_complete": pipeline_complete,
+        "retrain_allowed": False,
+        "automatic_gate_bypass_allowed": False,
+        "weak_labels_can_measure_accuracy": False,
+        "reference_landcover_can_replace_observations": False,
+        "stages": stages,
+        "confidence": {
+            "value": None,
+            "status": "blocked",
+            "reason_code": "NO_VERIFIED_CONFIDENCE_CALIBRATION",
+            "meaning": "MODEL_PROBABILITY_CALIBRATION_NOT_CORRECTNESS",
+        },
+        "accuracy": {
+            "overall_accuracy": None,
+            "macro_f1": None,
+            "miou": None,
+            "status": "blocked" if not scientific_accuracy_validated else "verified",
+            "reason_code": None
+            if scientific_accuracy_validated
+            else "NO_INDEPENDENT_GROUND_TRUTH_EVALUATION",
+            "independent_ground_truth_required": True,
+        },
+    }
+
+
+def _build_fail_closed_summary(store: Store) -> Dict[str, Any]:
+    reason_codes: List[str] = []
+    audit = None
+    try:
+        audit = build_province_month_audit(store.root)
+    except Exception:
+        reason_codes.append("COVERAGE_AUDIT_UNAVAILABLE")
+
+    try:
+        recovery = compute_recovery_metrics(store.root.parent)
+        if recovery.evidence_status == "BLOCKED" and recovery.blocking_reason:
+            reason_codes.append(recovery.blocking_reason)
+    except Exception:
+        recovery = None
+        reason_codes.append("RECOVERY_EVIDENCE_UNAVAILABLE")
+
+    manifest, manifest_error = _load_model_evidence(store.root)
+    if manifest_error:
+        reason_codes.append(manifest_error)
+
+    training_executed = manifest.get("training_executed") is True
+    predictions_verified = manifest.get("prediction_artifacts_verified") is True
+    scientific_accuracy_validated = manifest.get("scientific_accuracy_validated") is True
+    promotion_authorized = manifest.get("promotion_authorized") is True
+    metrics_verified = training_executed and predictions_verified and scientific_accuracy_validated
+    deployment_executed = manifest.get("deployment_executed") is True
+    if not training_executed:
+        reason_codes.append("NO_EXECUTED_TRAINING_RUN")
+    if not predictions_verified:
+        reason_codes.append("NO_MEASURED_PREDICTION_ARTIFACTS")
+    if not metrics_verified:
+        reason_codes.append("NO_VERIFIED_MODEL_METRICS")
+    if not promotion_authorized:
+        reason_codes.append("PROMOTION_NOT_AUTHORIZED")
+    if not deployment_executed:
+        reason_codes.append("DEPLOYMENT_NOT_EXECUTED")
+
+    try:
+        approvals = []
+        for item in store.list("mlops_approvals"):
+            approvals.append(
+                {
+                    **item,
+                    "original_status": item.get("status"),
+                    "status": "미검증 기록",
+                    "status_code": "unverified",
+                    "evidence_status": "IMPLEMENTED_UNVERIFIED",
+                    "human_approval_verified": False,
+                }
+            )
+    except Exception:
+        approvals = []
+        reason_codes.append("APPROVAL_STORE_UNAVAILABLE")
+
+    if audit is None:
+        provinces = []
+        coverage_status = "BLOCKED_AUDIT_UNAVAILABLE"
+        coverage_audit: Dict[str, Any] = {
+            "status": coverage_status,
+            "evidence_status": "BLOCKED",
+            "source_sha256": None,
+            "total_cells": 432,
+            "total_unique_scenes": None,
+            "total_patches_inventory": None,
+            "total_eligible_patches": None,
+            "total_insufficient_patches": None,
+            "provinces": provinces,
+        }
+    else:
+        coverage_status = audit.coverage_measurement_status
+        provinces = [
+            {
+                "province": item.province_name,
+                "province_id": item.province_id,
+                "id": item.province_id,
+                "name": item.province_name,
+                "valid_coverage_pct": None,
+                "coverage_pct": None,
+                "cloud_pct": None,
+                "missing_pct": None,
+                "status": coverage_status,
+                "reason_code": "ACTUAL_PINNED_PROVINCE_MASK_UNION_REQUIRED",
+            }
+            for item in audit.province_rollups
+        ]
+        coverage_audit = {
+            "status": coverage_status,
+            "evidence_status": audit.evidence_status,
+            "source_sha256": audit.source_sha256,
+            "total_cells": audit.total_cells,
+            "total_unique_scenes": audit.total_unique_scenes,
+            "total_patches_inventory": audit.total_patches_inventory,
+            "total_eligible_patches": audit.total_eligible_patches,
+            "total_insufficient_patches": audit.total_insufficient_patches,
+            "provinces": provinces,
+        }
+        if coverage_status != "VERIFIED_REAL":
+            reason_codes.append(coverage_status)
+
+    model_evidence = {
+        "schema_version": manifest.get("schema_version"),
+        "source_sha256": manifest.get("_source_sha256"),
+        "evidence_status": manifest.get("evidence_status", "BLOCKED"),
+        "metrics_origin": manifest.get("metrics_origin"),
+        "training_executed": training_executed,
+        "predictions_verified": predictions_verified,
+        "metrics_verified": metrics_verified,
+        "promotion_authorized": promotion_authorized,
+        "deployment_executed": deployment_executed,
+        "model_prediction_layers": 0 if not predictions_verified else None,
+        "best_experiment_id": manifest.get("best_experiment_id") if metrics_verified else None,
+        "promotion_target": manifest.get("promotion_target") if promotion_authorized else None,
+        "gate_promotion_decision": manifest.get(
+            "gate_promotion_decision", "BLOCKED_MODEL_EVIDENCE_UNAVAILABLE"
+        ),
+    }
+    recovery_summary = {
+        "schema_version": recovery.schema_version if recovery else None,
+        "status": recovery.evidence_status if recovery else "BLOCKED",
+        "reason_code": recovery.blocking_reason if recovery else "RECOVERY_EVIDENCE_UNAVAILABLE",
+        "mean_before_valid_pct": recovery.mean_before_valid_pct if recovery else None,
+        "mean_after_valid_pct": recovery.mean_after_valid_pct if recovery else None,
+        "mean_recovery_rate_pct": recovery.mean_recovery_rate_pct if recovery else None,
+    }
+    retraining_readiness = _build_retraining_readiness(
+        coverage_status=coverage_status,
+        training_executed=training_executed,
+        predictions_verified=predictions_verified,
+        scientific_accuracy_validated=scientific_accuracy_validated,
+        promotion_authorized=promotion_authorized,
+        deployment_executed=deployment_executed,
+    )
+    deduplicated_reasons = list(dict.fromkeys(reason_codes))
+    unavailable_metric = {"value": None, "label": "미측정", "status": "blocked"}
+    return {
+        "schema_version": SUMMARY_SCHEMA_VERSION,
+        "status": "blocked" if deduplicated_reasons else "success",
+        "reason_codes": deduplicated_reasons,
+        "timestamp": now(),
+        "kpis": {
+            "models_in_production": {"value": 0, "active_production": 0, "total": None, "label": "0개", "status": "blocked"},
+            "training_in_queue": {"value": 0, "label": "0개", "status": "blocked"},
+            "deployments_30d": {"value": 0, "label": "0회", "status": "blocked"},
+            "retraining_needed": dict(unavailable_metric),
+            "mean_f1_score": {**unavailable_metric, "change": None, "trend": None},
+            "mean_miou": {**unavailable_metric, "change": None, "trend": None},
+        },
+        "models": [],
+        "pipeline_steps": _blocked_pipeline_steps(),
+        "experiments": [],
+        "coverage_audit": coverage_audit,
+        "coverage_provinces": provinces,
+        "recovery_summary": recovery_summary,
+        "retraining_readiness": retraining_readiness,
+        "model_evidence": model_evidence,
+        "actions": {
+            "retrain_allowed": False,
+            "approval_allowed": False,
+            "reason_code": "BLOCKED_NO_EXECUTED_TRAINING_OR_MEASURED_PREDICTIONS",
+        },
+        "approval_evidence": {
+            "human_approval_verified": False,
+            "verified_approval_count": 0,
+            "stored_record_count": len(approvals),
+            "status": "BLOCKED_NO_VERIFIED_HUMAN_APPROVAL",
+        },
+        "monitoring": {
+            "status": "blocked",
+            "reason_code": "NO_VERIFIED_RUNTIME_MONITORING_EVIDENCE",
+            "inference_requests_24h": None,
+            "avg_latency_ms": None,
+            "error_count_24h": None,
+            "feature_drift_score": None,
+            "class_imbalance_ratio": None,
+            "drift_trend": None,
+            "active_alert": None,
+        },
+        "deployments": {
+            environment: {
+                "status": "blocked",
+                "reason_code": "NO_VERIFIED_DEPLOYMENT_EVIDENCE",
+                "pods": None,
+                "url": None,
+                "version": None,
+            }
+            for environment in ("dev", "staging", "production", "geoserver")
+        },
+        "approvals": approvals,
+    }
+
+
 def create_mlops_router(store_getter: Callable[[], Store]) -> APIRouter:
     router = APIRouter(prefix="/v1/mlops", tags=["Model & MLOps"])
 
     @router.get("/summary")
     def get_mlops_summary():
-        """Retrieve aggregated MLOps dashboard summary, KPIs, and operational state."""
-        store = store_getter()
-
-        # Dynamic calculation based on registered models
-        models = DEFAULT_MODELS.copy()
-
-        # Check for any dynamically updated models in store
-        try:
-            stored_models = store.list("models")
-            for sm in stored_models:
-                for idx, m in enumerate(models):
-                    if m["id"] == sm.get("name") or m["id"] == sm.get("id"):
-                        if sm.get("status") == "Deployed":
-                            models[idx]["status"] = "production"
-                            models[idx]["status_label"] = "운영중"
-                            models[idx]["badge_color"] = "green"
-        except Exception:
-            pass
-
-        prod_count = sum(1 for m in models if m["status"] == "production")
-        retrain_count = sum(1 for m in models if m["status"] == "needs_retraining")
-        validating_count = sum(1 for m in models if m["status"] == "validating")
-
-        f1_scores = [m["metrics"]["f1"] for m in models if "metrics" in m and "f1" in m["metrics"]]
-        miou_scores = [m["metrics"]["miou"] for m in models if "metrics" in m and "miou" in m["metrics"]]
-
-        avg_f1 = round(sum(f1_scores) / len(f1_scores), 2) if f1_scores else 0.82
-        avg_miou = round(sum(miou_scores) / len(miou_scores), 2) if miou_scores else 0.78
-
-        # Load approval history (merge stored approvals with default)
-        approvals = DEFAULT_APPROVALS.copy()
-        try:
-            stored_apps = store.list("mlops_approvals")
-            for sa in stored_apps:
-                approvals.insert(0, sa)
-        except Exception:
-            pass
-
-        return {
-            "status": "success",
-            "timestamp": now(),
-            "kpis": {
-                "models_in_production": {"value": len(models), "active_production": prod_count, "total": len(models), "label": f"{len(models)} / {len(models)}개"},
-                "training_in_queue": {"value": 2, "label": "2 개"},
-                "deployments_30d": {"value": 4, "label": "4 회"},
-                "retraining_needed": {"value": retrain_count, "label": f"{retrain_count} 개"},
-                "mean_f1_score": {"value": avg_f1, "change": "+0.04", "trend": "up"},
-                "mean_miou": {"value": avg_miou, "change": "+0.06", "trend": "up"},
-            },
-            "models": models,
-            "pipeline_steps": [
-                {"step": 1, "id": "collection", "name": "수집", "status": "completed", "icon": "🛰️"},
-                {"step": 2, "id": "preprocessing", "name": "전처리", "status": "completed", "icon": "⚙️"},
-                {"step": 3, "id": "label_qa", "name": "라벨QA", "status": "completed", "icon": "🏷️"},
-                {"step": 4, "id": "model_training", "name": "모델학습", "status": "active", "icon": "🧠"},
-                {"step": 5, "id": "validation", "name": "성능검증", "status": "pending", "icon": "📊"},
-                {"step": 6, "id": "approval", "name": "승인", "status": "pending", "icon": "🛡️"},
-                {"step": 7, "id": "deployment", "name": "배포", "status": "pending", "icon": "🚀"},
-                {"step": 8, "id": "monitoring", "name": "모니터링", "status": "pending", "icon": "📈"},
-                {"step": 9, "id": "retraining", "name": "재학습", "status": "pending", "icon": "🔄"},
-            ],
-            "experiments": [
-                {
-                    "run_id": "Run-001",
-                    "version": "v1.0.0",
-                    "name": "Baseline (Single Scene)",
-                    "accuracy": 0.74,
-                    "precision": 0.71,
-                    "recall": 0.69,
-                    "f1": 0.70,
-                    "miou": 0.66,
-                    "is_best": False,
-                },
-                {
-                    "run_id": "Run-002",
-                    "version": "v1.1.0",
-                    "name": "Enhanced Augmentation",
-                    "accuracy": 0.81,
-                    "precision": 0.78,
-                    "recall": 0.77,
-                    "f1": 0.78,
-                    "miou": 0.73,
-                    "is_best": False,
-                },
-                {
-                    "run_id": "Run-003",
-                    "version": "v1.2.0",
-                    "name": "SCL Multi-temporal Composite",
-                    "accuracy": 0.86,
-                    "precision": 0.83,
-                    "recall": 0.85,
-                    "f1": 0.84,
-                    "miou": 0.81,
-                    "is_best": True,
-                    "improvement": "+7.1% mIoU",
-                },
-            ],
-            "coverage_provinces": [
-                {"id": "south_sulawesi", "name": "South Sulawesi", "coverage_pct": 98.2, "cloud_pct": 4.8, "missing_pct": 1.8, "status": "NOMINAL"},
-                {"id": "gorontalo", "name": "Gorontalo", "coverage_pct": 96.4, "cloud_pct": 6.2, "missing_pct": 3.6, "status": "NOMINAL"},
-                {"id": "southeast_sulawesi", "name": "Southeast Sulawesi", "coverage_pct": 95.1, "cloud_pct": 8.1, "missing_pct": 4.9, "status": "NOMINAL"},
-                {"id": "banten", "name": "Banten", "coverage_pct": 97.5, "cloud_pct": 3.5, "missing_pct": 2.5, "status": "NOMINAL"},
-                {"id": "west_java", "name": "West Java", "coverage_pct": 98.6, "cloud_pct": 2.9, "missing_pct": 1.4, "status": "NOMINAL"},
-                {"id": "east_java", "name": "East Java", "coverage_pct": 97.8, "cloud_pct": 3.1, "missing_pct": 2.2, "status": "NOMINAL"},
-            ],
-            "monitoring": {
-                "inference_requests_24h": 12428,
-                "avg_latency_ms": 320,
-                "error_count_24h": 3,
-                "feature_drift_score": 0.18,
-                "class_imbalance_ratio": 0.12,
-                "drift_trend": [0.08, 0.09, 0.11, 0.13, 0.15, 0.18],
-                "active_alert": {
-                    "model_id": "flood_drought_hazard",
-                    "severity": "warning",
-                    "title": "Flood/Drought 모델 드리프트 감지 (0.18 > 0.15)",
-                    "message": "몬순 강수 패턴 변화로 피처 드리프트가 감지되었습니다. 재학습 실행을 권장합니다.",
-                },
-            },
-            "deployments": {
-                "dev": {"status": "healthy", "pods": "2/2", "url": "https://api-dev.sdss.big.go.id/v1", "version": "v1.3.0-rc1"},
-                "staging": {"status": "healthy", "pods": "2/2", "url": "https://api-staging.sdss.big.go.id/v1", "version": "v1.2.1"},
-                "production": {"status": "healthy", "pods": "3/3", "url": "https://api.sdss.big.go.id/v1", "version": "v1.2.0"},
-                "geoserver": {"status": "online", "url": "http://127.0.0.1:8088/geoserver/web", "version": "WMS 1.3.0"},
-            },
-            "approvals": approvals,
-        }
+        """Return a bounded, evidence-backed dashboard summary."""
+        return _build_fail_closed_summary(store_getter())
 
     @router.get("/coverage/audit")
     def get_coverage_audit():
@@ -312,119 +456,47 @@ def create_mlops_router(store_getter: Callable[[], Store]) -> APIRouter:
         store = store_getter()
         summary = compute_recovery_metrics(store.root.parent)
         return {
-            "status": "success",
+            "schema_version": summary.schema_version,
+            "status": "blocked" if summary.evidence_status == "BLOCKED" else "success",
+            "reason_code": summary.blocking_reason,
             "recovery_summary": summary.to_dict(),
         }
 
     @router.get("/experiments")
     def get_experiments():
-        """Retrieve experiment tracking history across benchmark runs."""
+        """Expose the absence of executed experiments without scenario scores."""
         return {
-            "status": "success",
-            "runs": [
-                {
-                    "run_id": "Run-001",
-                    "version": "v1.0.0",
-                    "name": "Baseline (Single Scene)",
-                    "accuracy": 0.74,
-                    "precision": 0.71,
-                    "recall": 0.69,
-                    "f1": 0.70,
-                    "miou": 0.66,
-                    "is_best": False,
-                    "created_at": "2024-09-01T00:00:00Z",
-                },
-                {
-                    "run_id": "Run-002",
-                    "version": "v1.1.0",
-                    "name": "Enhanced Augmentation",
-                    "accuracy": 0.81,
-                    "precision": 0.78,
-                    "recall": 0.77,
-                    "f1": 0.78,
-                    "miou": 0.73,
-                    "is_best": False,
-                    "created_at": "2024-09-20T00:00:00Z",
-                },
-                {
-                    "run_id": "Run-003",
-                    "version": "v1.2.0",
-                    "name": "SCL Multi-temporal Composite",
-                    "accuracy": 0.86,
-                    "precision": 0.83,
-                    "recall": 0.85,
-                    "f1": 0.84,
-                    "miou": 0.81,
-                    "is_best": True,
-                    "created_at": "2024-10-15T00:00:00Z",
-                    "improvement": "+7.1% mIoU",
-                },
-            ],
+            "schema_version": SUMMARY_SCHEMA_VERSION,
+            "status": "blocked",
+            "reason_code": "BLOCKED_NO_EXECUTED_TRAINING_OR_MEASURED_PREDICTIONS",
+            "runs": [],
+            "best_run": None,
+            "metrics": None,
         }
 
     @router.post("/retrain")
     def trigger_retraining(payload: RetrainRequestPayload = Body(...)):
-        """Trigger an official MLOps model retraining job with verified holdout constraints."""
-        store = store_getter()
-        model_id = payload.model_id
-        target_version = payload.target_version or "v1.2.1"
-        job_id = f"retrain-{model_id}-{uuid.uuid4().hex[:8]}"
-
-        job_record = {
-            "id": job_id,
-            "kind": "model_retraining",
-            "model_id": model_id,
-            "target_version": target_version,
-            "dataset_version": payload.dataset_version,
-            "epochs": payload.epochs,
-            "holdout_split": payload.holdout_split,
-            "priority": payload.priority,
-            "status": "queued",
-            "created_at": now(),
-            "started_at": None,
-            "finished_at": None,
-            "progress_pct": 0,
-            "message": f"모델 {model_id} 재학습 작업이 성공적으로 대기열에 등록되었습니다.",
-        }
-
-        store.put("jobs", job_record)
-        store.put("mlops_retrain_jobs", job_record)
-
-        return {
-            "status": "success",
-            "job_id": job_id,
-            "job": job_record,
-            "message": f"모델 [{model_id}]의 재학습 작업({job_id})이 대기열에 정상 등록되었습니다.",
-        }
+        """Reject retraining until executed-training and prediction evidence exists."""
+        raise HTTPException(
+            status_code=409,
+            detail={
+                "status": "blocked",
+                "reason_code": "BLOCKED_NO_EXECUTED_TRAINING_OR_MEASURED_PREDICTIONS",
+                "model_id": payload.model_id,
+            },
+        )
 
     @router.post("/approval")
     def submit_approval_request(payload: ApprovalRequestPayload = Body(...)):
-        """Submit a Human-in-the-loop deployment approval request."""
-        store = store_getter()
-        ticket_id = f"APP-{datetime.now(timezone.utc).strftime('%Y%m%d')}-{uuid.uuid4().hex[:4].upper()}"
-
-        approval_record = {
-            "id": ticket_id,
-            "model_id": payload.model_id,
-            "model_name": f"{payload.model_id} ({payload.version})",
-            "version": payload.version,
-            "target_env": payload.target_env,
-            "requested_by": payload.requested_by,
-            "date": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M"),
-            "status": "검토 중",
-            "status_code": "pending",
-            "reviewer": "전문가 심의위원회 배정 대기",
-            "notes": payload.rationale,
-            "created_at": now(),
-        }
-
-        store.put("mlops_approvals", approval_record)
-
-        return {
-            "status": "success",
-            "ticket_id": ticket_id,
-            "approval": approval_record,
-            "message": f"승인 요청({ticket_id})이 성공적으로 접수되었습니다. 전문가 심의 후 배포가 진행됩니다.",
-        }
+        """Reject approval until measured metrics and an approvable candidate exist."""
+        raise HTTPException(
+            status_code=409,
+            detail={
+                "status": "blocked",
+                "reason_code": "BLOCKED_NO_VERIFIED_CANDIDATE_OR_HUMAN_APPROVAL_BASIS",
+                "model_id": payload.model_id,
+                "version": payload.version,
+            },
+        )
 
     return router

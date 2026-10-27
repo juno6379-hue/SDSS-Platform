@@ -17,6 +17,10 @@ from app.ml.province_month_coverage_audit import (
 )
 
 
+def _metric(value, suffix="", precision=2):
+    return "null" if value is None else f"{value:.{precision}f}{suffix}"
+
+
 def main():
     print("=" * 70)
     print("CODEX v3.0 G2: 432 Province-Month Availability & Gap Analysis Audit")
@@ -32,8 +36,10 @@ def main():
     print(f"Total patch inventory:               {result.total_patches_inventory:,}")
     print(f"Eligible 6-band patches:             {result.total_eligible_patches:,} ({result.overall_eligible_rate*100:.1f}%)")
     print(f"Insufficient patches:                {result.total_insufficient_patches:,} ({(1-result.overall_eligible_rate)*100:.1f}%)")
-    print(f"Nominal 36-year cells:               {result.nominal_cells_count}")
-    print(f"Degraded 36-year cells:              {result.degraded_cells_count}")
+    print(f"Coverage measurement status:         {result.coverage_measurement_status}")
+    print(f"Nominal cells:                        {result.nominal_cells_count}")
+    print(f"Degraded cells:                       {result.degraded_cells_count}")
+    print(f"Unclassified cells:                   {result.unclassified_cells_count}")
 
     csv_out = ROOT / "docs/lcluc/v3/02_432_province_month_availability_audit.csv"
     md_out = ROOT / "docs/lcluc/v3/02_432_province_month_availability_report.md"
@@ -46,14 +52,14 @@ def main():
 
     print("\nProvince Rollups:")
     for pr in result.province_rollups:
-        print(f"  {pr.province_name:20s}: {pr.total_patches:4d} patches, {pr.eligible_patches:4d} eligible ({pr.eligible_rate*100:5.1f}%), cloud: {pr.avg_cloud_cover_pct:5.2f}%, valid: {pr.avg_valid_coverage_pct:5.1f}%")
+        print(f"  {pr.province_name:20s}: {pr.total_patches:4d} patches, {pr.eligible_patches:4d} eligible ({pr.eligible_rate*100:5.1f}%), cloud: {_metric(pr.avg_cloud_cover_pct, '%')}, valid: {_metric(pr.avg_valid_coverage_pct, '%')}, unclassified: {pr.unclassified_cell_count}")
 
     print("\nYear Rollups:")
     for yr in result.year_rollups:
-        print(f"  {yr.year} ({yr.epoch:13s}): {yr.total_patches:4d} patches, {yr.eligible_patches:4d} eligible ({yr.eligible_rate*100:5.1f}%), cloud: {yr.avg_cloud_cover_pct:5.2f}%, valid: {yr.avg_valid_coverage_pct:5.1f}%")
+        print(f"  {yr.year} ({yr.epoch:13s}): {yr.total_patches:4d} patches, {yr.eligible_patches:4d} eligible ({yr.eligible_rate*100:5.1f}%), cloud: {_metric(yr.avg_cloud_cover_pct, '%')}, valid: {_metric(yr.avg_valid_coverage_pct, '%')}, unclassified: {yr.unclassified_cell_count}")
 
     print("=" * 70)
-    print("G2 AUDIT COMPLETE: 432/432 CELLS VERIFIED REAL")
+    print("G2 INVENTORY AUDIT COMPLETE: 432/432 CELLS; COVERAGE BLOCKED_NOT_MEASURED")
     print("=" * 70)
 
 

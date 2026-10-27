@@ -1,0 +1,88 @@
+{
+  "actual_operational_plan_status": "BLOCKED_MISSING_AUTHORITATIVE_BOUNDARY_AND_SAME_GRID_MOSAICS",
+  "artifacts": {
+    "backend/app/ml/province_year_gap_acquisition_planner.py": {
+      "bytes": 24401,
+      "sha256": "0dcec3c5f9f832efe58de3ffc07432ae5f33f68863cdeebd2020e0fc4a931f75"
+    },
+    "docs/implementation/361_province_year_gap_acquisition_planner.md": {
+      "bytes": 9164,
+      "sha256": "1f0d2daf3707955069ef6e90dfc5be77ac18167249210f783290decea60a9543"
+    },
+    "evidence\\integration\\unit361-gap-acquisition-planner-20261021\\pytest.log": {
+      "bytes": 669,
+      "sha256": "0225f741df6e4d8012c7119921411923001874683c69282d850e2b9fe9a1d373"
+    },
+    "scripts/plan_province_year_gap_acquisition.py": {
+      "bytes": 2602,
+      "sha256": "af17d4bf29253314e364b1f76d780ea138783a9c245567f9c79754ff92f38d8a"
+    },
+    "tests/test_province_year_gap_acquisition_planner.py": {
+      "bytes": 13747,
+      "sha256": "192394dfa701f853ca5d243a3d4d6023d855f66aba1a5a5503d7e242c5dd6106"
+    }
+  },
+  "mlops_handoff": {
+    "immutable_dataset_pin": null,
+    "required_gates": [
+      "coverage_boundary_cause_evidence",
+      "acquisition_execution",
+      "acquisition_quality_qa",
+      "immutable_dataset_pin",
+      "retraining_readiness"
+    ],
+    "retraining_ready": false,
+    "status": "BLOCKED_PENDING_ACQUISITION_AND_DATASET_PIN"
+  },
+  "operating_files_after": [
+    {
+      "bytes": 69564847,
+      "path": "data/first-group-training-esri-v1/annual-window-report.json",
+      "sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658"
+    },
+    {
+      "bytes": 68395,
+      "path": "data/first-group-training-budget/global-ledger.json",
+      "sha256": "d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91"
+    },
+    {
+      "bytes": 184320,
+      "path": "data/catalog.sqlite3",
+      "sha256": "d08418826b858deccad972d5326cfaa2122f56aa13faef0fc1e3628650fdfc45"
+    }
+  ],
+  "operating_files_before": [
+    {
+      "bytes": 69564847,
+      "path": "data/first-group-training-esri-v1/annual-window-report.json",
+      "sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658"
+    },
+    {
+      "bytes": 68395,
+      "path": "data/first-group-training-budget/global-ledger.json",
+      "sha256": "d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91"
+    },
+    {
+      "bytes": 184320,
+      "path": "data/catalog.sqlite3",
+      "sha256": "d08418826b858deccad972d5326cfaa2122f56aa13faef0fc1e3628650fdfc45"
+    }
+  ],
+  "operating_files_unchanged": true,
+  "side_effects": {
+    "collector_invoked": false,
+    "execution_lock_acquired": false,
+    "ledger_written": false,
+    "remote_downloads_performed": false,
+    "training_executed": false
+  },
+  "status": "IMPLEMENTED_UNVERIFIED",
+  "test_evidence_status": "TESTED_SYNTHETIC",
+  "tests": {
+    "failed": 0,
+    "passed": 20,
+    "seconds": 22.01,
+    "warnings": 23
+  },
+  "unit": 361
+}

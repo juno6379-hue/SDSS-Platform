@@ -97,6 +97,34 @@ class DataServiceTests(unittest.TestCase):
         self.assertIs(caught.exception.__cause__, original)
         self.assertEqual(caught.exception.http_body_bytes, 123)
 
+    def test_full_tile_reader_propagates_stage_and_measured_bytes(self):
+        from types import SimpleNamespace
+        original = RuntimeError("mock full-tile range failure")
+
+        def failed_impl(url, cap, max_side, holder):
+            holder.update(
+                stage="range_raster_read",
+                reader=SimpleNamespace(
+                    measurement_known=True, transferred=456, last_error=original,
+                ),
+            )
+            raise RuntimeError("mock CPL wrapper")
+
+        with patch.object(service, "_read_cog_full_tile_impl", side_effect=failed_impl):
+            with self.assertRaises(service.AssetTransferError) as caught:
+                service.read_cog_full_tile(self.url)
+        self.assertIs(caught.exception.__cause__, original)
+        self.assertEqual(caught.exception.stage, "range_raster_read")
+        self.assertEqual(caught.exception.http_body_bytes, 456)
+
+    def test_full_tile_reader_rejects_policy_values_before_network(self):
+        with patch.object(service, "resolve_asset_url") as network:
+            with self.assertRaises(service.AssetTransferError):
+                service.read_cog_full_tile(self.url, max_transfer_bytes=0)
+            with self.assertRaises(service.AssetTransferError):
+                service.read_cog_full_tile(self.url, max_side=8193)
+        network.assert_not_called()
+
     def test_full_download_does_not_retry_provider_429(self):
         from urllib.error import HTTPError
         original = HTTPError(self.url, 429, "Too Many Requests", {"Retry-After": "60"}, None)

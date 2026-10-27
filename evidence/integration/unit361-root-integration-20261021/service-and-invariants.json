@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-21T04:54:28.683008+00:00",
+  "services": {
+    "api_health": 200,
+    "ui": 200,
+    "ui_proxy_health": 200,
+    "geoserver_capabilities": 200,
+    "legacy_esri_getmap": 409
+  },
+  "mlops": {
+    "summary_schema": "2.1",
+    "readiness_schema": "retraining-readiness/1.0",
+    "pipeline_complete": false,
+    "retrain_allowed": false,
+    "stage_count": 9,
+    "blocked_stage_count": 9,
+    "confidence": null,
+    "overall_accuracy": null,
+    "macro_f1": null,
+    "miou": null
+  },
+  "execution": {
+    "active_execution_lock": false,
+    "collector_or_qa_process_count": 0,
+    "collection_executed": 0,
+    "training_executed": 0,
+    "promotion_executed": 0,
+    "deployment_executed": 0
+  },
+  "immutable": {
+    "source_bytes": 69564847,
+    "source_sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger_bytes": 68395,
+    "ledger_sha256": "d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91",
+    "catalog_bytes": 184320,
+    "catalog_sha256": "d08418826b858deccad972d5326cfaa2122f56aa13faef0fc1e3628650fdfc45"
+  }
+}

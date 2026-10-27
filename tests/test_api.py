@@ -43,6 +43,33 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(inventory.json()['summary']['expected_cells'], 36)
         self.assertFalse(inventory.json()['summary']['learning_ready'])
 
+    def test_health_reports_selected_storage_without_credentials(self):
+        payload = self.client.get('/api/health').json()
+        self.assertEqual(payload['status'], 'ok')
+        self.assertTrue(payload['ready'])
+        self.assertEqual(payload['storage'], 'sqlite-dev')
+        self.assertEqual(payload['storage_status']['active_backend'], 'sqlite-dev')
+        self.assertEqual(payload['storage_status']['configured_mode'], 'sqlite-dev')
+        self.assertFalse(payload['storage_status']['fallback_used'])
+        self.assertNotIn('dsn', str(payload).lower())
+
+    def test_health_does_not_promote_blocked_or_degraded_storage(self):
+        base = {
+            'configured_mode': 'postgres-inspect', 'active_backend': 'postgres-inspect',
+            'environment': 'development', 'writable': False, 'fallback_used': False,
+            'fallback_reason': None, 'schema_health': {'status': 'IMPLEMENTED_UNVERIFIED'},
+        }
+        for storage_state, expected in (
+            ('BLOCKED_POSTGRES_INSPECTION_ONLY', 'blocked'),
+            ('DEGRADED_DEV_FALLBACK', 'degraded'),
+        ):
+            with self.subTest(storage_state=storage_state), patch.object(
+                main.store, 'storage_status', return_value={**base, 'status': storage_state}
+            ):
+                payload = self.client.get('/api/health').json()
+            self.assertEqual(payload['status'], expected)
+            self.assertFalse(payload['ready'])
+
     def test_approval_and_unapproved_inference_are_blocked(self):
         model = main.store.put('models', {'status': 'Draft', 'independent_evaluation': False})
         response = self.client.post(f"/api/models/{model['id']}/transition", json={'status': 'Validated', 'reason': '단위시험'})

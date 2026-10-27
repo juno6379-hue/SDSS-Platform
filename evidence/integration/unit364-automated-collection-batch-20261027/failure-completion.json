@@ -1,0 +1,14 @@
+{
+  "schema_version": "province-year-automated-collection-batch-failure/1.0",
+  "status": "AUTOMATED_BATCH_STOPPED_WITHOUT_NEW_ASSET",
+  "completed_at": "2026-10-27T16:30:44.366710+09:00",
+  "reason": "TRANSIENT_STAC_REMOTE_DISCONNECTED",
+  "failed_batch_key": "unit364-auto-01-east_java-2021",
+  "reservation_bytes_charged_without_refund": 50331648,
+  "remote_sentinel_downloads": 0,
+  "remaining_items_not_started": 2,
+  "execution_lock_released": true,
+  "training_runs": 0,
+  "deployment_runs": 0,
+  "next_action": "RETRY_TRANSIENT_STAC_FAILURE_WITH_NEW_BATCH_KEY_AND_MAXIMUM_THREE_ATTEMPTS"
+}

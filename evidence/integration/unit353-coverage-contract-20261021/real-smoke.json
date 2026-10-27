@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-21T01:53:36.543182+00:00",
+  "evidence_status": "VERIFIED_REAL",
+  "source_sha256": "5a63d8c8c49ab4f31dacc6a5782a5f9729698606688a161cdda6a26b960c4dba",
+  "boundary_sha256": "ac63b5dfce946c26855c55ac439a6bb21b321b7810b310ec1c33fd87463cb129",
+  "cause_semantics": "QUALITY_MASK_ONLY_INVALID_CAUSE_IS_NOT_MEASURED",
+  "coverage_states": [
+    "OBSERVED",
+    "MISSING",
+    "CLOUD",
+    "SHADOW",
+    "NODATA",
+    "OUTSIDE_FOOTPRINT",
+    "NOT_MEASURED"
+  ],
+  "cells": [
+    {
+      "province_id": "banten",
+      "year": 2023,
+      "boundary_area_ha": 934638.1434,
+      "patch_rows_count": 32,
+      "unique_scene_count": 2,
+      "footprint_area_ha": 20975.231,
+      "observed_area_ha": 20632.71,
+      "missing_area_ha": 914005.4334,
+      "cloud_area_ha": 0.0,
+      "shadow_area_ha": 0.0,
+      "nodata_area_ha": 0.0,
+      "outside_footprint_area_ha": 913662.9125,
+      "not_measured_area_ha": 342.521,
+      "observed_coverage_pct": 2.2076,
+      "missing_coverage_pct": 97.7924,
+      "measurement_status": "VERIFIED_REAL",
+      "readiness_status": "BLOCKED_INCOMPLETE_PROVINCE_COVERAGE",
+      "reason": "ACTUAL_PINNED_MASK_PIXELS_AND_FOOTPRINT_UNION"
+    }
+  ],
+  "smoke_scope": "BANTEN_2023_ONLY",
+  "full_6x6_status": "IMPLEMENTED_UNVERIFIED_ON_OPERATING_36_CELLS",
+  "wall_seconds": 0.901
+}

@@ -1,0 +1,91 @@
+{
+  "accepted_asset": {
+    "bytes": 2771469,
+    "cloud_cover": 2.357898,
+    "collection": "sentinel-2-l2a",
+    "datetime": "2024-07-26T02:35:29.024000Z",
+    "expands_source_asset_sha256": "8d8402f3e66957550adc621d45086d8e3afdedef7af5c572dc69cdfecf0d2569",
+    "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\unit367-fulltile-east_java-2024-02\\east_java-fulltile-00-2024\\raw-SCL.tif",
+    "quality": {
+      "clear_fraction": 0.770732,
+      "clear_pixels": 23229944,
+      "cloud_pixels": 567841,
+      "histogram": {
+        "0": 6057587,
+        "2": 35445,
+        "3": 249283,
+        "4": 15102931,
+        "5": 7710893,
+        "6": 119121,
+        "7": 296999,
+        "8": 225469,
+        "9": 342372
+      },
+      "nodata_pixels": 6057587,
+      "pixel_count": 30140100,
+      "quality_status": "OBSERVATION_ELIGIBLE",
+      "shadow_pixels": 284728,
+      "unclassified_pixels": 0
+    },
+    "resolution": [
+      20.0,
+      20.0
+    ],
+    "scene_id": "S2B_MSIL2A_20240726T023529_R089_T49MFM_20240726T062840",
+    "sha256": "b89b294360912568320c8bfcad6ccffa155e2e812857b54ed8c9d440291f6919",
+    "shape": [
+      5490,
+      5490
+    ],
+    "source_role": "SENTINEL_2_L2A_SCL_FULL_TILE_STRATEGY_EVIDENCE",
+    "source_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/49/M/FM/2024/07/26/S2B_MSIL2A_20240726T023529_N0511_R089_T49MFM_20240726T062840.SAFE/GRANULE/L2A_T49MFM_A038582_20240726T025546/IMG_DATA/R20m/T49MFM_20240726T023529_SCL_20m.tif",
+    "transfer": {
+      "full_tile": true,
+      "http_body_bytes": 2431938,
+      "max_http_body_bytes": 62914560,
+      "measurement_scope": "Python이 실제 읽은 COG Range 응답 본문; SAS JSON/HEAD/오류본문/TLS overhead 제외",
+      "source_content_length_bytes": 3611586,
+      "transfer_measurement_known": true
+    }
+  },
+  "budget": {
+    "ledger_charge_bytes": 2432340,
+    "local_scl_file_bytes": 2771469,
+    "measured_scl_range_body_bytes": 2431938,
+    "metadata": {
+      "charged_bytes": 402,
+      "maximum_bytes": 4194304,
+      "read_body_bytes": 402
+    },
+    "reservation_bytes": 67108864,
+    "source_content_length_bytes": 3611586
+  },
+  "completed_at": "2026-10-27T08:03:31.703359+00:00",
+  "config": {
+    "batch_key": "unit367-fulltile-east_java-2024-02",
+    "boundary_sha256": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423",
+    "max_range_bytes": 62914560,
+    "max_side": 8192,
+    "metadata_budget_bytes": 4194304,
+    "province_id": "east_java",
+    "reservation_bytes": 67108864,
+    "scene_id": "S2B_MSIL2A_20240726T023529_R089_T49MFM_20240726T062840",
+    "schema_version": "province-year-scl-full-tile-pilot/1.0",
+    "source_report_sha256": "c3237a656c63c03d191699a1d592ed29fcb84d478247b3e33c4e17c03993f615",
+    "starting_mosaic_sha256": "dc0cd2ace5032aba29279a4588008f7fa2c9aea34baa57873e6aabc5fdb132e2",
+    "year": 2024
+  },
+  "config_sha256": "81eb9cd2f7285cb4da90f2a741bf88aa295bb1bb8f2990902f201134c5c9f371",
+  "execution": {
+    "collector_invoked": true,
+    "deployment_runs": 0,
+    "execution_lock_acquired": true,
+    "ledger_reserved": true,
+    "ledger_settled": true,
+    "remote_sentinel_downloads": 1,
+    "training_runs": 0
+  },
+  "schema_version": "province-year-scl-full-tile-pilot/1.0",
+  "started_at": "2026-10-27T08:02:00.918824+00:00",
+  "status": "COLLECTED_AND_SCL_QA_COMPLETED"
+}

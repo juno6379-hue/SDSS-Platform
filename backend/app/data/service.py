@@ -363,6 +363,56 @@ def read_cog_window(url, bbox, side=256, max_transfer_bytes=32 * 1024 * 1024, wi
         raise AssetTransferError(holder["stage"], count, known) from cause
 
 
+def read_cog_full_tile(url, max_transfer_bytes=64 * 1024 * 1024, max_side=8192):
+    """Read one complete, bounded single-band COG for a guarded full-tile pilot."""
+    holder = {"stage": "validation_and_dependencies"}
+    try:
+        return _read_cog_full_tile_impl(url, max_transfer_bytes, max_side, holder)
+    except Exception as exc:
+        reader = holder.get("reader")
+        known = reader.measurement_known if reader is not None else True
+        count = reader.transferred if reader is not None else 0
+        cause = getattr(reader, "last_error", None) or exc
+        raise AssetTransferError(holder["stage"], count, known) from cause
+
+
+def _read_cog_full_tile_impl(url, max_transfer_bytes, max_side, holder):
+    import rasterio
+    max_transfer_bytes = _integer(max_transfer_bytes, "max_transfer_bytes", 1, HARD_MAX_BYTES)
+    max_side = _integer(max_side, "max_side", 1, 8192)
+    holder["stage"] = "sas_token"
+    signed = resolve_asset_url(url)
+    holder["stage"] = "head_metadata"
+    reader = HTTPRangeReader(signed, max_transfer_bytes)
+    holder["reader"] = reader
+    holder["stage"] = "range_raster_read"
+
+    def opener(path, mode="r"):
+        if path != signed:
+            raise FileNotFoundError("요청하지 않은 COG 보조파일")
+        return reader
+
+    with rasterio.Env(GDAL_DISABLE_READDIR_ON_OPEN="EMPTY_DIR"):
+        with rasterio.open(signed, opener=opener) as src:
+            if src.count != 1 or src.crs is None:
+                raise ValueError("전체 타일은 CRS가 있는 단일 band COG여야 합니다")
+            if src.width > max_side or src.height > max_side:
+                raise ValueError("전체 타일 크기 상한 초과")
+            pixels = src.read()
+            if pixels.shape != (1, src.height, src.width):
+                raise ValueError("전체 타일 읽기 크기 불일치")
+            profile = src.profile.copy()
+            profile.update(width=src.width, height=src.height, driver="GTiff")
+    return pixels, profile, {
+        "http_body_bytes": reader.transferred,
+        "source_content_length_bytes": reader.size,
+        "max_http_body_bytes": reader.limit,
+        "measurement_scope": RANGE_MEASUREMENT_SCOPE,
+        "transfer_measurement_known": True,
+        "full_tile": True,
+    }
+
+
 def _read_cog_window_impl(url, bbox, side, max_transfer_bytes, holder, window_guard=None):
     import rasterio
     from rasterio.warp import transform

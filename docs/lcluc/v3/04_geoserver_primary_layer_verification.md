@@ -1,129 +1,40 @@
-# G6 — GeoServer 1차 공간 레이어 연계 및 WMS 서비스 검증 보고서
+# G6 1차 GeoServer 레이어 증거 교정
 
-> **표준 규격**: `GreenBlue_CODEX_LCLUC_PostGIS_Coverage_MLOps_Deployment_Master_v3.0.md` Section 6  
-> **생성 시점**: `2026-10-19T22:57:54.177242+00:00`  
-> **배포 상태**: `PUBLISHED_ONLINE` (GeoServer WMS 1.3.0 / 1.1.1 완전 연동)  
-> **총 등록 레이어 수**: **54개 레이어** (6개 주 × 9대 1차 공간 레이어)  
+> 상태: `BLOCKED`
+> 교정 단위: Unit358 + Unit361
+> 실제 확인 범위: 로컬 primary GeoTIFF 54개 파일 존재·SHA-256, 그중 `esri_reference` 6개의 WorldCover LUT 변환 일치
 
----
+## 확인된 사실
 
-## 1. 1차 공간 레이어 9종 규격 및 리샘플링 정책
+- 6개 주 × 9종 기존 경로에 로컬 GeoTIFF 54개가 물리적으로 존재한다.
+- 그중 6개 `esri_reference.tif`는 각 주의 `worldcover_reference.tif`에 기존 LUT를 적용한 결과와 픽셀 단위로 전부 일치했다. Esri 원천 증거가 아니다.
+- [04_geoserver_primary_layers_manifest.json](04_geoserver_primary_layers_manifest.json)은 이 6개를 `BLOCKED_LEGACY_WORLDCOVER_CROSSWALK_QUARANTINED`로 표시하고, 제공 경로·WMS URL·인정 SHA를 `null`로 차단한다. 물리 파일은 감사 증거로 보존하며 삭제하지 않았다.
+- GeoServer 호환 서비스의 GetCapabilities HTTP 200과 일부 표본 GetMap PNG 200 이력은 있다.
 
-| 레이어 유형 | 설명 | 리샘플링 정책 | NoData 정책 | 스타일 규격 |
-|---|---|---|---|---|
-| **sentinel2_composite** | Sentinel-2 L2A BOA 반사도 합성 (B04/B03/B02) | Bilinear (연속 반사도) | 0 (투명) | `raster_rgb_truecolor` |
-| **scl_mask** | Scene Classification Layer (0..11) | **Nearest-Neighbor** | 255 (투명) | `scl_discrete_12classes` |
-| **annual_valid_mask** | 연간 유효 관측 이진 마스크 (1=유효, 0=결측) | **Nearest-Neighbor** | 255 (투명) | `valid_mask_binary` |
-| **newly_recovered_mask** | 다중시기 복원 신규 확보 이진 마스크 (1=신규확보, 0=기타) | **Nearest-Neighbor** | 255 (투명) | `valid_mask_binary` |
-| **still_missing_mask** | 잔여 결측 클라우드 갭 이진 마스크 (1=잔여결측, 0=관측완료) | **Nearest-Neighbor** | 255 (투명) | `valid_mask_binary` |
-| **observation_count** | 건기 창(6~9월) 유효 관측 누적 횟수 | **Nearest-Neighbor** | 0 (투명) | `obs_count_ramp` |
-| **coverage_comparison** | CODEX 3색 비교지도 (1:기존유효, 2:신규확보, 3:잔여결측) | **Nearest-Neighbor** | 255 (투명) | `recovery_comparison_3colors` |
-| **worldcover_reference** | ESA WorldCover 10m v200 공인 참조 레이어 | **Nearest-Neighbor** | 255 / 0 (투명) | `lcluc_discrete_9classes` |
-| **esri_reference** | Esri 10m Annual Land Cover 공인 참조 레이어 | **Nearest-Neighbor** | 255 / 0 (투명) | `lcluc_discrete_9classes` |
+이 사실은 나머지 후보 48개가 GetCapabilities에 전부 열거되었다는 증거가 아니다. `esri_reference` 6개는 코드·manifest·registry·WMS/pixel 경로에서 일괄 차단한다. 나머지 레이어도 capabilities 원문과 SHA가 확보되기 전에는 `PUBLISHED_ONLINE`로 표시하지 않는다.
 
----
+## Esri weak label의 올바른 역할
 
-## 2. 6개 주별 등록 현황 (First Group 6 Provinces)
+실제 Esri 10m Annual Land Cover 파일은 `data/first-group-training-esri-v1/annual-window-report.json`이 직접 참조한 `quality_eligible` 행의 `label_path`, `label_source_url`, `label_dataset_version`, 파일 SHA, quality mask로만 등록한다. UI Swipe에서도 이 경로는 `weak_label_agreement`, `independent_ground_truth=false`, `model_prediction=false`인 참조 자료이며 변화통계·정확도·승격 입력이 아니다. 고정 2021 `primary_esri_reference_*`를 만들거나 제공하는 경로와 분리한다.
 
-### Banten (`banten`) — EPSG:32748 (UTM Zone 48S)
+## 합성 fixture와 원천 계보
 
-- **BBOX (Native)**: `[624160.0, 9287010.0, 626720.0, 9289570.0]`
-- **BBOX (WGS84)**: `[-6.447, 106.123, -6.424, 106.146]`
-- **등록 레이어 (9종)**:
-  - `lcluc:primary_sentinel2_composite_banten_2021` (sentinel2_composite): `raster_rgb_truecolor` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_sentinel2_composite_banten_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_scl_mask_banten_2021` (scl_mask): `scl_discrete_12classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_scl_mask_banten_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_annual_valid_mask_banten_2021` (annual_valid_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_annual_valid_mask_banten_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_newly_recovered_mask_banten_2021` (newly_recovered_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_newly_recovered_mask_banten_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_still_missing_mask_banten_2021` (still_missing_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_still_missing_mask_banten_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_observation_count_banten_2021` (observation_count): `obs_count_ramp` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_observation_count_banten_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_coverage_comparison_banten_2021` (coverage_comparison): `recovery_comparison_3colors` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_coverage_comparison_banten_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_worldcover_reference_banten_2021` (worldcover_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_worldcover_reference_banten_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_esri_reference_banten_2021` (esri_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_esri_reference_banten_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
+다음 3종 × 6개 주, 총 18개는 결정적 합성 패턴에서 생성된 fixture로 확인되어 `TESTED_SYNTHETIC`으로 표시한다.
 
-### West Java (`west_java`) — EPSG:32748 (UTM Zone 48S)
+- `coverage_comparison`
+- `newly_recovered_mask`
+- `still_missing_mask`
 
-- **BBOX (Native)**: `[792000.0, 9238820.0, 794560.0, 9241380.0]`
-- **BBOX (WGS84)**: `[-6.883, 107.641, -6.86, 107.664]`
-- **등록 레이어 (9종)**:
-  - `lcluc:primary_sentinel2_composite_west_java_2021` (sentinel2_composite): `raster_rgb_truecolor` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_sentinel2_composite_west_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_scl_mask_west_java_2021` (scl_mask): `scl_discrete_12classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_scl_mask_west_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_annual_valid_mask_west_java_2021` (annual_valid_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_annual_valid_mask_west_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_newly_recovered_mask_west_java_2021` (newly_recovered_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_newly_recovered_mask_west_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_still_missing_mask_west_java_2021` (still_missing_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_still_missing_mask_west_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_observation_count_west_java_2021` (observation_count): `obs_count_ramp` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_observation_count_west_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_coverage_comparison_west_java_2021` (coverage_comparison): `recovery_comparison_3colors` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_coverage_comparison_west_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_worldcover_reference_west_java_2021` (worldcover_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_worldcover_reference_west_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_esri_reference_west_java_2021` (esri_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_esri_reference_west_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
+나머지 18개 source-backed 후보도 이번 단위에서는 파일 존재와 SHA만 확인했다. Sentinel-2/WorldCover 원천의 실제 다운로드 provenance, 원천 asset SHA, 처리 graph가 독립적으로 검증되지 않았으므로 `LOCAL_FILE_SHA_VERIFIED_PROVENANCE_UNVERIFIED`다. 별도 18개는 합성 fixture, 6개는 legacy WorldCover 교차표 차단 대상이다.
 
-### East Java (`east_java`) — EPSG:32749 (UTM Zone 49S)
+## 현재 수용 기준
 
-- **BBOX (Native)**: `[639510.0, 9140510.0, 642070.0, 9143070.0]`
-- **BBOX (WGS84)**: `[-7.771, 112.265, -7.748, 112.288]`
-- **등록 레이어 (9종)**:
-  - `lcluc:primary_sentinel2_composite_east_java_2021` (sentinel2_composite): `raster_rgb_truecolor` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_sentinel2_composite_east_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_scl_mask_east_java_2021` (scl_mask): `scl_discrete_12classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_scl_mask_east_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_annual_valid_mask_east_java_2021` (annual_valid_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_annual_valid_mask_east_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_newly_recovered_mask_east_java_2021` (newly_recovered_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_newly_recovered_mask_east_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_still_missing_mask_east_java_2021` (still_missing_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_still_missing_mask_east_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_observation_count_east_java_2021` (observation_count): `obs_count_ramp` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_observation_count_east_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_coverage_comparison_east_java_2021` (coverage_comparison): `recovery_comparison_3colors` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_coverage_comparison_east_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_worldcover_reference_east_java_2021` (worldcover_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_worldcover_reference_east_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_esri_reference_east_java_2021` (esri_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_esri_reference_east_java_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
+레이어별 `VERIFIED_REAL` 또는 게시 완료 판정에는 다음 자료가 모두 필요하다.
 
-### South Sulawesi (`south_sulawesi`) — EPSG:32750 (UTM Zone 50S)
+1. 불변 원천 asset URI와 SHA-256
+2. 생성 코드/설정/입력 SHA를 잇는 lineage
+3. 출력 GeoTIFF SHA, CRS, affine, bounds, resolution, shape, nodata/mask
+4. GetCapabilities 원문과 SHA 및 기대 named-layer 전수 열거
+5. 해당 named layer의 GetMap과 원본 픽셀 대조 증거
 
-- **BBOX (Native)**: `[826250.0, 9579220.0, 828810.0, 9581780.0]`
-- **BBOX (WGS84)**: `[-3.801, 119.937, -3.778, 119.96]`
-- **등록 레이어 (9종)**:
-  - `lcluc:primary_sentinel2_composite_south_sulawesi_2021` (sentinel2_composite): `raster_rgb_truecolor` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_sentinel2_composite_south_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_scl_mask_south_sulawesi_2021` (scl_mask): `scl_discrete_12classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_scl_mask_south_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_annual_valid_mask_south_sulawesi_2021` (annual_valid_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_annual_valid_mask_south_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_newly_recovered_mask_south_sulawesi_2021` (newly_recovered_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_newly_recovered_mask_south_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_still_missing_mask_south_sulawesi_2021` (still_missing_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_still_missing_mask_south_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_observation_count_south_sulawesi_2021` (observation_count): `obs_count_ramp` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_observation_count_south_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_coverage_comparison_south_sulawesi_2021` (coverage_comparison): `recovery_comparison_3colors` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_coverage_comparison_south_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_worldcover_reference_south_sulawesi_2021` (worldcover_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_worldcover_reference_south_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_esri_reference_south_sulawesi_2021` (esri_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_esri_reference_south_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-
-### Gorontalo (`gorontalo`) — EPSG:32651 (UTM Zone 51N)
-
-- **BBOX (Native)**: `[415900.0, 73040.0, 418460.0, 75600.0]`
-- **BBOX (WGS84)**: `[0.66, 122.245, 0.683, 122.268]`
-- **등록 레이어 (9종)**:
-  - `lcluc:primary_sentinel2_composite_gorontalo_2021` (sentinel2_composite): `raster_rgb_truecolor` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_sentinel2_composite_gorontalo_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_scl_mask_gorontalo_2021` (scl_mask): `scl_discrete_12classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_scl_mask_gorontalo_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_annual_valid_mask_gorontalo_2021` (annual_valid_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_annual_valid_mask_gorontalo_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_newly_recovered_mask_gorontalo_2021` (newly_recovered_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_newly_recovered_mask_gorontalo_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_still_missing_mask_gorontalo_2021` (still_missing_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_still_missing_mask_gorontalo_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_observation_count_gorontalo_2021` (observation_count): `obs_count_ramp` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_observation_count_gorontalo_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_coverage_comparison_gorontalo_2021` (coverage_comparison): `recovery_comparison_3colors` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_coverage_comparison_gorontalo_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_worldcover_reference_gorontalo_2021` (worldcover_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_worldcover_reference_gorontalo_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_esri_reference_gorontalo_2021` (esri_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_esri_reference_gorontalo_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-
-### Southeast Sulawesi (`southeast_sulawesi`) — EPSG:32751 (UTM Zone 51S)
-
-- **BBOX (Native)**: `[366840.0, 9578410.0, 369400.0, 9580970.0]`
-- **BBOX (WGS84)**: `[-3.812, 121.799, -3.789, 121.822]`
-- **등록 레이어 (9종)**:
-  - `lcluc:primary_sentinel2_composite_southeast_sulawesi_2021` (sentinel2_composite): `raster_rgb_truecolor` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_sentinel2_composite_southeast_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_scl_mask_southeast_sulawesi_2021` (scl_mask): `scl_discrete_12classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_scl_mask_southeast_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_annual_valid_mask_southeast_sulawesi_2021` (annual_valid_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_annual_valid_mask_southeast_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_newly_recovered_mask_southeast_sulawesi_2021` (newly_recovered_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_newly_recovered_mask_southeast_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_still_missing_mask_southeast_sulawesi_2021` (still_missing_mask): `valid_mask_binary` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_still_missing_mask_southeast_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_observation_count_southeast_sulawesi_2021` (observation_count): `obs_count_ramp` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_observation_count_southeast_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_coverage_comparison_southeast_sulawesi_2021` (coverage_comparison): `recovery_comparison_3colors` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_coverage_comparison_southeast_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_worldcover_reference_southeast_sulawesi_2021` (worldcover_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_worldcover_reference_southeast_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-  - `lcluc:primary_esri_reference_southeast_sulawesi_2021` (esri_reference): `lcluc_discrete_9classes` | [GetMap 타일 미리보기](http://127.0.0.1:8088/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=lcluc:primary_esri_reference_southeast_sulawesi_2021&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png)
-
----
-
-## 3. GeoServer WMS 1.3.0 / 1.1.1 및 1x1 픽셀 검증 결과
-
-1. **WMS GetCapabilities 검증**:
-   - `GET /geoserver/wms?SERVICE=WMS&REQUEST=GetCapabilities` $\to$ **HTTP 200 OK**
-   - 54개 1차 공간 레이어 XML 트리 정상 수록 확인.
-2. **Nearest-Neighbor 이산값 보존**:
-   - 이산 9-클래스 및 3색 비교 레이어 렌더링 시 보간 왜곡 0% 입증.
-3. **1x1 권위적 픽셀 검사 (Authoritative Pixel API)**:
-   - `GET /v1/lcluc/pixel?lat=-6.43&lng=106.13&layer=primary:coverage_comparison:banten:2021`
-   - 화면 캡처 RGB 추정이 아닌 원본 GeoTIFF 윈도우 직접 읽기를 통한 정수 클래스 반환.
+현재는 4와 5가 전수 기준으로 없고, 합성 18개는 1~3의 실제 관측 계보가 없다. 그래서 전수 게시, 구름 복구 면적, 과학 통계 근거로 사용할 수 없다.

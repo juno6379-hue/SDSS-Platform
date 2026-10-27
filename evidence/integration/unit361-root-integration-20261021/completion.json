@@ -1,0 +1,86 @@
+{
+  "schema_version": "unit361-root-integration-completion/1.0",
+  "status": "IMPLEMENTED_UNVERIFIED_BLOCKED_OPERATIONAL_INPUTS",
+  "blocker": "BLOCKED_MISSING_AUTHORITATIVE_BOUNDARY_AND_CAUSE_MOSAICS",
+  "actual_execution": {
+    "additional_collection": 0,
+    "training_runs": 0,
+    "measured_predictions": 0,
+    "human_approvals": 0,
+    "promotions": 0,
+    "deployments": 0
+  },
+  "tests": {
+    "pytest": "80 passed, 171 warnings, 2 subtests, 67.26s",
+    "ui_contract": "1 passed, 126.263ms",
+    "frontend_build": "131 modules, 22.27s",
+    "compileall": "passed",
+    "diff_check": "passed"
+  },
+  "local_runtime": {
+    "checked_at": "2026-10-21T04:54:28.683008+00:00",
+    "services": {
+      "api_health": 200,
+      "ui": 200,
+      "ui_proxy_health": 200,
+      "geoserver_capabilities": 200,
+      "legacy_esri_getmap": 409
+    },
+    "mlops": {
+      "summary_schema": "2.1",
+      "readiness_schema": "retraining-readiness/1.0",
+      "pipeline_complete": false,
+      "retrain_allowed": false,
+      "stage_count": 9,
+      "blocked_stage_count": 9,
+      "confidence": null,
+      "overall_accuracy": null,
+      "macro_f1": null,
+      "miou": null
+    },
+    "execution": {
+      "active_execution_lock": false,
+      "collector_or_qa_process_count": 0,
+      "collection_executed": 0,
+      "training_executed": 0,
+      "promotion_executed": 0,
+      "deployment_executed": 0
+    },
+    "immutable": {
+      "source_bytes": 69564847,
+      "source_sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+      "ledger_bytes": 68395,
+      "ledger_sha256": "d5ee31ff7970adaaa6b166805c240616efa8e9af713bb8394c7a166346f21c91",
+      "catalog_bytes": 184320,
+      "catalog_sha256": "d08418826b858deccad972d5326cfaa2122f56aa13faef0fc1e3628650fdfc45"
+    }
+  },
+  "files": {
+    "backend/app/ml/province_year_gap_acquisition_planner.py": "e7c2043f15e5878ef5b7667fa67b9d34a229a51304dab51dc113273bdd700645",
+    "scripts/plan_province_year_gap_acquisition.py": "af17d4bf29253314e364b1f76d780ea138783a9c245567f9c79754ff92f38d8a",
+    "tests/test_province_year_gap_acquisition_planner.py": "23d4528249c0029475aa73804f5f2a5adb234f9c1641daa9414f36881e7cf7ef",
+    "backend/app/ml/geoserver_primary_layers_manager.py": "228306cdb14156a2976968e21cf005e936e9622eeb3a88c8abb8ca77067a112a",
+    "backend/app/tile_router.py": "3f82066487466a74b2dd0cbdb870bc06d6ecaadd199c01fb770f0ce33bf82525",
+    "backend/app/landcover_tiles.py": "20c56c4c844b131d02d1cb898f1e65f2db8386b7bb1afbfa2b041cb757dfc75d",
+    "tests/test_geoserver_esri_reference_fail_closed.py": "63ddc08f4e33bb8eafa5e6034d75e544949fdd7dd93b7425ade9f4aebdfbd25b",
+    "backend/app/mlops_router.py": "fcaf8d50803724e95a418ce5115e1ae64f3f0eda193b0aeaa7f2e023ccc4e6b6",
+    "tests/test_mlops_router.py": "b2ec0c236fc874614b1663262ee929e02b1b00f3a784369645fc31b231d9abdf",
+    "frontend/src/ModelMlopsWorkspace.tsx": "fe9ec0c08ae35d0c5cce5aea9390a3008254d3bd132292a99b240d166de5fd1b",
+    "frontend/src/modelMlopsWorkspace.test.mjs": "d8b634788b52cc6e3c06f8a8653af74df61d43cdd420a522ca45d156e1107017",
+    "docs/implementation/361_province_year_gap_acquisition_planner.md": "b6f285f59d6404b24832c88f3b97c0f50992017f876cf5957677a446a579b495",
+    "docs/implementation/361_esri_reference_provenance_fail_closed.md": "bb2fff56e6a4dd7f9025d710cb6057629d48b4a94259492d5d31ede3c1e313a5",
+    "docs/implementation/361_mlops_retraining_evidence_pipeline.md": "dd62f4e5a2070c0bea164550838d795916d8fd3effc657d5e0044a704c67e5fe",
+    "docs/understanding/361_DATA_ROLES_AND_OBSERVATION_GAPS.md": "1e267b9b6565e57e8d357f90aeadc45c85cbea2810ae276269a1264eedeb9a19",
+    "docs/understanding/INDEX.md": "27f77f7589255460731585fb5623308e2a2a26d7b4d8263f69710ef2dd4e0799",
+    "docs/understanding/CHANGELOG.md": "207240b7d4fafd684e6eba3421407203d3a2fbf38919bff12a0cad89e427086a",
+    "CONTINUOUS_DEVELOPMENT.md": "300006e08195f3e16c65ee9e2095dab241127913472b889d0ce1756f1c1a4826",
+    "docs/implementation/00_next_session_handoff.md": "e06c8a0d81ef170b4a528b1db9695346b7631c69f996cdf6c33d8254bbb05884"
+  },
+  "evidence": {
+    "pytest_log": "pytest.log",
+    "ui_test_log": "ui-test.log",
+    "frontend_build_log": "frontend-build.log",
+    "service_and_invariants": "service-and-invariants.json",
+    "legacy_esri_lut_audit": "legacy-esri-lut-audit.json"
+  }
+}
